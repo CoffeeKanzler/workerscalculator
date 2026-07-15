@@ -39,6 +39,9 @@ def resolve_name(formula, lang):
             parts.append(lit)
     return ''.join(parts).strip()
 
+# fixes for machine-translated EN terms in the sheet's translation table
+EN_FIXES = {'Eat': 'Food'}
+
 def cell_names(cF, cV):
     """Return (de, en) for a cell that is either a literal or a translation formula."""
     f = cF.value
@@ -53,7 +56,7 @@ def cell_names(cF, cV):
             de = v
         if not en:
             en = de
-        return de, en
+        return de, EN_FIXES.get(en, en)
     return str(f), str(f)
 
 def num(x, default=0):
