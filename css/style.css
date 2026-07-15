@@ -88,6 +88,7 @@ input:focus, select:focus { outline: 1px solid var(--accent); }
 input.num { width: 90px; text-align: right; }
 input.price { width: 110px; }
 input.price.overridden { border-color: var(--accent2); color: var(--accent2); }
+input.price.fallback { border-style: dashed; color: var(--muted); }
 input[type=search] { width: 260px; margin: 4px 0; }
 input[type=text] { width: 160px; }
 

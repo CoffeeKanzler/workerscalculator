@@ -78,10 +78,14 @@ function basePrices() {
     const rec = state.statsRecords[Math.min(state.recordIndex, state.statsRecords.length - 1)];
     const p = recordToPrices(rec, state.statsRecords);
     // Older game versions don't export every resource (e.g. no "eletric" row);
-    // fall back to the sample defaults for anything missing.
+    // fall back to the sample defaults for anything missing and remember which.
+    p.fallback = {};
     for (const tbl of ['purchaseUSD', 'purchaseRUB', 'sellUSD', 'sellRUB']) {
       for (const [k, v] of Object.entries(DATA.defaults[tbl])) {
-        if (p[tbl][k] === undefined) p[tbl][k] = v;
+        if (p[tbl][k] === undefined) {
+          p[tbl][k] = v;
+          p.fallback[`${tbl}.${k}`] = true;
+        }
       }
     }
     return p;
@@ -260,8 +264,13 @@ function renderCurrentTab() {
 // ---------------------------------------------------------------- prices tab
 function priceCell(table, key, prices) {
   const val = prices[table]?.[key];
+  const isFallback = prices.fallback?.[`${table}.${key}`];
   return el('input', {
-    type: 'number', step: 'any', class: 'num price' + (state.overrides[`${table}.${key}`] !== undefined ? ' overridden' : ''),
+    type: 'number', step: 'any',
+    class: 'num price' + (state.overrides[`${table}.${key}`] !== undefined ? ' overridden' : '') + (isFallback ? ' fallback' : ''),
+    ...(isFallback ? { title: state.lang === 'de'
+      ? 'Nicht in deiner stats.ini enthalten (ältere Spielversion) – Beispielwert von 1979'
+      : 'Not present in your stats.ini (older game version) – sample value from 1979' } : {}),
     value: val !== undefined ? Math.round(val * 1000) / 1000 : '',
     onchange: e => {
       const v = parseFloat(e.target.value);
