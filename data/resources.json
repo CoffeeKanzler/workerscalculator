@@ -1,0 +1,584 @@
+{
+ "resources": [
+  {
+   "key": "eletric",
+   "tid": 141,
+   "de": "Strom",
+   "en": "Electricity"
+  },
+  {
+   "key": "vehicles",
+   "de": "vehicles",
+   "en": "vehicles"
+  },
+  {
+   "key": "trains",
+   "de": "trains",
+   "en": "trains"
+  },
+  {
+   "key": "heat",
+   "tid": 9,
+   "de": "Heißwasser",
+   "en": "Hot water"
+  },
+  {
+   "key": "gravel",
+   "tid": 23,
+   "de": "Kies",
+   "en": "Gravel"
+  },
+  {
+   "key": "rawgravel",
+   "tid": 117,
+   "de": "Bruchstein",
+   "en": "Broken stone"
+  },
+  {
+   "key": "plants",
+   "tid": 134,
+   "de": "Pflanzen",
+   "en": "Plant"
+  },
+  {
+   "key": "steel",
+   "tid": 25,
+   "de": "Stahl",
+   "en": "Steel"
+  },
+  {
+   "key": "aluminium",
+   "tid": 109,
+   "de": "Aluminium",
+   "en": "aluminum"
+  },
+  {
+   "key": "prefabpanels",
+   "tid": 29,
+   "de": "Plattenbauteile",
+   "en": "Plate components"
+  },
+  {
+   "key": "bricks",
+   "tid": 24,
+   "de": "Ziegel",
+   "en": "Brick"
+  },
+  {
+   "key": "wood",
+   "tid": 127,
+   "de": "Holz",
+   "en": "Wood"
+  },
+  {
+   "key": "oil",
+   "tid": 149,
+   "de": "Öl",
+   "en": "oil"
+  },
+  {
+   "key": "chemicals",
+   "tid": 118,
+   "de": "Chemikalien",
+   "en": "chemicals"
+  },
+  {
+   "key": "coal",
+   "tid": 130,
+   "de": "Kohle",
+   "en": "Coal"
+  },
+  {
+   "key": "rawcoal",
+   "tid": 131,
+   "de": "Kohlenerz",
+   "en": "coal ore"
+  },
+  {
+   "key": "iron",
+   "tid": 120,
+   "de": "Eisen",
+   "en": "iron"
+  },
+  {
+   "key": "rawiron",
+   "tid": 121,
+   "de": "Eisenerz",
+   "en": "iron ore"
+  },
+  {
+   "key": "bauxite",
+   "tid": 113,
+   "de": "Bauxit",
+   "en": "bauxite"
+  },
+  {
+   "key": "rawbauxite",
+   "tid": 136,
+   "de": "Rohes Bauxit",
+   "en": "Raw bauxite"
+  },
+  {
+   "key": "bitumen",
+   "tid": 115,
+   "de": "Bitumen",
+   "en": "bitumen"
+  },
+  {
+   "key": "boards",
+   "tid": 28,
+   "de": "Bretter",
+   "en": "Boards"
+  },
+  {
+   "key": "uranium",
+   "tid": 144,
+   "de": "Uranerz",
+   "en": "Uranium ore"
+  },
+  {
+   "key": "yellowcake",
+   "tid": 145,
+   "de": "Uranoxid",
+   "en": "Uranium oxide"
+  },
+  {
+   "key": "uf6",
+   "tid": 143,
+   "de": "UF6",
+   "en": "UF6"
+  },
+  {
+   "key": "nuclearfuel",
+   "tid": 128,
+   "de": "Kernbrennstoff",
+   "en": "nuclear fuel"
+  },
+  {
+   "key": "nuclearfuelburned",
+   "tid": 126,
+   "de": "Gebrauchter Kernbrennstoff",
+   "en": "Spent nuclear fuel"
+  },
+  {
+   "key": "fuel",
+   "tid": 142,
+   "de": "Treibstoff",
+   "en": "fuel"
+  },
+  {
+   "key": "fabric",
+   "tid": 140,
+   "de": "Stoff",
+   "en": "Fabric"
+  },
+  {
+   "key": "alcohol",
+   "tid": 46,
+   "de": "Alkohol",
+   "en": "alcohol"
+  },
+  {
+   "key": "cement",
+   "tid": 148,
+   "de": "Zement",
+   "en": "cement"
+  },
+  {
+   "key": "alumina",
+   "tid": 110,
+   "de": "Aluminiumoxid",
+   "en": "Aluminum oxide"
+  },
+  {
+   "key": "food",
+   "tid": 123,
+   "de": "Essen",
+   "en": "Eat"
+  },
+  {
+   "key": "clothes",
+   "tid": 129,
+   "de": "Kleidung",
+   "en": "Clothing"
+  },
+  {
+   "key": "meat",
+   "tid": 124,
+   "de": "Fleisch",
+   "en": "Meat"
+  },
+  {
+   "key": "livestock",
+   "tid": 146,
+   "de": "Vieh",
+   "en": "cattle"
+  },
+  {
+   "key": "asphalt",
+   "tid": 27,
+   "de": "Asphalt",
+   "en": "Asphalt"
+  },
+  {
+   "key": "concrete",
+   "tid": 26,
+   "de": "Beton",
+   "en": "Concrete"
+  },
+  {
+   "key": "ecomponents",
+   "tid": 30,
+   "de": "Elektronik-Bauteile",
+   "en": "Electronic components"
+  },
+  {
+   "key": "mcomponents",
+   "tid": 31,
+   "de": "Mechanik-Bauteile",
+   "en": "Mechanical components"
+  },
+  {
+   "key": "plastics",
+   "tid": 132,
+   "de": "Kunststoffe",
+   "en": "plastics"
+  },
+  {
+   "key": "eletronics",
+   "tid": 122,
+   "de": "Elektronik",
+   "en": "electronics"
+  },
+  {
+   "key": "explosives",
+   "tid": 139,
+   "de": "Sprengstoff",
+   "en": "explosive"
+  },
+  {
+   "key": "water",
+   "tid": 147,
+   "de": "Wasser",
+   "en": "Water"
+  },
+  {
+   "key": "usagewater",
+   "tid": 16,
+   "de": "Abwasser",
+   "en": "Sewage"
+  },
+  {
+   "key": "fertiliser_liquid",
+   "tid": 125,
+   "de": "Flüssigdünger",
+   "en": "Liquid fertilizer"
+  },
+  {
+   "key": "waste_gravel",
+   "tid": 112,
+   "de": "Bauschutt",
+   "en": "Construction debris"
+  },
+  {
+   "key": "waste_steel",
+   "tid": 133,
+   "de": "Metallschrott",
+   "en": "scrap metal"
+  },
+  {
+   "key": "waste_aluminium",
+   "tid": 162,
+   "de": "Aluminiumschrott",
+   "en": "Aluminium scrap"
+  },
+  {
+   "key": "waste_plastic",
+   "tid": 135,
+   "de": "Plastikmüll",
+   "en": "Plastic waste"
+  },
+  {
+   "key": "waste_bio",
+   "tid": 114,
+   "de": "Biomüll",
+   "en": "organic waste"
+  },
+  {
+   "key": "fertiliser",
+   "tid": 119,
+   "de": "Dünger",
+   "en": "fertilizer"
+  },
+  {
+   "key": "waste_burnable",
+   "tid": 116,
+   "de": "Brennbarer Müll",
+   "en": "Combustible waste"
+  },
+  {
+   "key": "waste_toxic",
+   "tid": 137,
+   "de": "Sondermüll",
+   "en": "hazardous waste"
+  },
+  {
+   "key": "waste_other",
+   "tid": 138,
+   "de": "Sonstigermüll",
+   "en": "Other waste"
+  },
+  {
+   "key": "waste_ash",
+   "tid": 111,
+   "de": "Asche",
+   "en": "ash"
+  },
+  {
+   "key": "workers",
+   "tid": 37,
+   "de": "Arbeiter",
+   "en": "Workers"
+  }
+ ],
+ "defaults": {
+  "purchaseUSD": {
+   "eletric": 0.571332,
+   "vehicles": 0.0,
+   "trains": 0.0,
+   "heat": 1.051173,
+   "gravel": 11.232898,
+   "rawgravel": 5.724579,
+   "plants": 25.94099,
+   "steel": 679.356323,
+   "aluminium": 1024.40625,
+   "prefabpanels": 28.556208,
+   "bricks": 32.907398,
+   "wood": 8.232321,
+   "oil": 138.91568,
+   "chemicals": 1529.69104,
+   "coal": 17.69693,
+   "rawcoal": 8.976463,
+   "iron": 75.715248,
+   "rawiron": 34.094894,
+   "bauxite": 52.984287,
+   "rawbauxite": 28.830616,
+   "bitumen": 541.659607,
+   "boards": 12.766354,
+   "uranium": 24.221668,
+   "yellowcake": 1327.161865,
+   "uf6": 7362.574707,
+   "nuclearfuel": 170070.96875,
+   "nuclearfuelburned": -1633.759521,
+   "fuel": 330.976654,
+   "fabric": 573.324707,
+   "alcohol": 377.124695,
+   "cement": 39.712639,
+   "alumina": 427.427856,
+   "food": 188.41655,
+   "clothes": 2100.590332,
+   "meat": 378.707672,
+   "livestock": 142.496887,
+   "asphalt": 85.257835,
+   "concrete": 23.734518,
+   "ecomponents": 1830.605103,
+   "mcomponents": 1148.961914,
+   "plastics": 1381.616333,
+   "eletronics": 2108.815186,
+   "explosives": 1987.977295,
+   "water": 15.120751,
+   "usagewater": -12.864247,
+   "fertiliser_liquid": 61.762619,
+   "waste_gravel": 5.168151,
+   "waste_steel": 350.984406,
+   "waste_aluminium": 497.62326,
+   "waste_plastic": 242.358368,
+   "waste_bio": 2.197264,
+   "fertiliser": 0.598822,
+   "waste_burnable": -3.859274,
+   "waste_toxic": -1040.303467,
+   "waste_other": -9.004973,
+   "waste_ash": -7.718549
+  },
+  "purchaseRUB": {
+   "eletric": 2.365144,
+   "vehicles": 0.0,
+   "trains": 0.0,
+   "heat": 1.054538,
+   "gravel": 52.944824,
+   "rawgravel": 25.010948,
+   "plants": 142.813217,
+   "steel": 1938.012207,
+   "aluminium": 5654.640625,
+   "prefabpanels": 148.937927,
+   "bricks": 159.033218,
+   "wood": 17.676374,
+   "oil": 115.427963,
+   "chemicals": 7760.473633,
+   "coal": 52.672836,
+   "rawcoal": 23.706341,
+   "iron": 104.069382,
+   "rawiron": 41.911018,
+   "bauxite": 307.257141,
+   "rawbauxite": 167.261017,
+   "bitumen": 896.528198,
+   "boards": 34.939007,
+   "uranium": 115.946938,
+   "yellowcake": 7216.845215,
+   "uf6": 38950.269531,
+   "nuclearfuel": 808441.5,
+   "nuclearfuelburned": -9570.361328,
+   "fuel": 549.9729,
+   "fabric": 3197.919434,
+   "alcohol": 2279.255371,
+   "cement": 183.933868,
+   "alumina": 2358.058105,
+   "food": 1109.829712,
+   "clothes": 11990.239258,
+   "meat": 2148.409912,
+   "livestock": 810.024963,
+   "asphalt": 170.346619,
+   "concrete": 117.802094,
+   "ecomponents": 8284.888672,
+   "mcomponents": 3718.115967,
+   "plastics": 4715.040039,
+   "eletronics": 8931.807617,
+   "explosives": 10796.993164,
+   "water": 84.223465,
+   "usagewater": -75.35717,
+   "fertiliser_liquid": 331.765198,
+   "waste_gravel": 21.497326,
+   "waste_steel": 963.993469,
+   "waste_aluminium": 2742.504883,
+   "waste_plastic": 753.26178,
+   "waste_bio": 5.974467,
+   "fertiliser": 2.149536,
+   "waste_burnable": -22.607153,
+   "waste_toxic": -6494.153809,
+   "waste_other": -52.750019,
+   "waste_ash": -45.214306
+  },
+  "sellUSD": {
+   "eletric": 0.516919,
+   "vehicles": 0.0,
+   "trains": 0.0,
+   "heat": 0.951061,
+   "gravel": 10.163098,
+   "rawgravel": 5.179381,
+   "plants": 23.470421,
+   "steel": 614.655762,
+   "aluminium": 926.843811,
+   "prefabpanels": 25.836571,
+   "bricks": 29.773361,
+   "wood": 7.44829,
+   "oil": 125.685623,
+   "chemicals": 1384.006226,
+   "coal": 16.011509,
+   "rawcoal": 8.121562,
+   "iron": 68.504272,
+   "rawiron": 30.847761,
+   "bauxite": 47.938164,
+   "rawbauxite": 26.084845,
+   "bitumen": 490.072998,
+   "boards": 11.550511,
+   "uranium": 21.914843,
+   "yellowcake": 1200.765503,
+   "uf6": 6661.376953,
+   "nuclearfuel": 153873.734375,
+   "nuclearfuelburned": -1805.734131,
+   "fuel": 299.455078,
+   "fabric": 518.722351,
+   "alcohol": 341.208069,
+   "cement": 35.930485,
+   "alumina": 386.720459,
+   "food": 170.472122,
+   "clothes": 1900.53418,
+   "meat": 342.640289,
+   "livestock": 128.925766,
+   "asphalt": 77.138046,
+   "concrete": 21.474089,
+   "ecomponents": 1656.261719,
+   "mcomponents": 1039.536987,
+   "plastics": 1250.033936,
+   "eletronics": 1907.975708,
+   "explosives": 1798.646118,
+   "water": 13.68068,
+   "usagewater": -14.218378,
+   "fertiliser_liquid": 55.880466,
+   "waste_gravel": 4.675947,
+   "waste_steel": 317.557312,
+   "waste_aluminium": 450.230591,
+   "waste_plastic": 219.276627,
+   "waste_bio": 1.988001,
+   "fertiliser": 0.541791,
+   "waste_burnable": -4.265513,
+   "waste_toxic": -1149.809082,
+   "waste_other": -9.952865,
+   "waste_ash": -8.531027
+  },
+  "sellRUB": {
+   "eletric": 2.139893,
+   "vehicles": 0.0,
+   "trains": 0.0,
+   "heat": 0.954105,
+   "gravel": 47.902462,
+   "rawgravel": 22.628954,
+   "plants": 129.21196,
+   "steel": 1753.439575,
+   "aluminium": 5116.103516,
+   "prefabpanels": 134.753372,
+   "bricks": 143.887207,
+   "wood": 15.99291,
+   "oil": 104.434822,
+   "chemicals": 7021.381348,
+   "coal": 47.656376,
+   "rawcoal": 21.448595,
+   "iron": 94.158012,
+   "rawiron": 37.919495,
+   "bauxite": 277.994568,
+   "rawbauxite": 151.331406,
+   "bitumen": 811.144592,
+   "boards": 31.611483,
+   "uranium": 104.904373,
+   "yellowcake": 6529.526855,
+   "uf6": 35240.722656,
+   "nuclearfuel": 731447.0625,
+   "nuclearfuelburned": -10577.767578,
+   "fuel": 497.594543,
+   "fabric": 2893.355713,
+   "alcohol": 2062.183594,
+   "cement": 166.416367,
+   "alumina": 2133.481201,
+   "food": 1004.131653,
+   "clothes": 10848.3125,
+   "meat": 1943.799438,
+   "livestock": 732.879761,
+   "asphalt": 154.123138,
+   "concrete": 106.582848,
+   "ecomponents": 7495.852051,
+   "mcomponents": 3364.009766,
+   "plastics": 4265.98877,
+   "eletronics": 8081.15918,
+   "explosives": 9768.708984,
+   "water": 76.202187,
+   "usagewater": -83.289505,
+   "fertiliser_liquid": 300.168518,
+   "waste_gravel": 19.449963,
+   "waste_steel": 872.18457,
+   "waste_aluminium": 2481.313965,
+   "waste_plastic": 681.522583,
+   "waste_bio": 5.40547,
+   "fertiliser": 1.944818,
+   "waste_burnable": -24.986853,
+   "waste_toxic": -7177.749023,
+   "waste_other": -58.30265,
+   "waste_ash": -49.973705
+  },
+  "deliveryCostUSD": 7.899113,
+  "deliveryCostRUB": 35.254826,
+  "workdayCostUSD": 13.541313,
+  "workdayCostRUB": 79.323341,
+  "imigrantCostRUB": 2560.2146,
+  "imigrantCostUSD": 55.066608
+ }
+}

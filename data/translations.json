@@ -1,0 +1,2350 @@
+{
+ "1": {
+  "de": "Stadtname:",
+  "en": "Cityname:"
+ },
+ "2": {
+  "de": "Einwohner",
+  "en": "Residents"
+ },
+ "3": {
+  "de": "Arbeiter überschuss",
+  "en": "Worker surplus"
+ },
+ "4": {
+  "de": "Einkaufsplätze für",
+  "en": "Shopping places for"
+ },
+ "5": {
+  "de": "Ø Produktivität der Stadt",
+  "en": "Ø City productivity"
+ },
+ "6": {
+  "de": "Max Stromverbrauch",
+  "en": "Max power consumption"
+ },
+ "7": {
+  "de": "Max Wattzahl",
+  "en": "Max wattage"
+ },
+ "8": {
+  "de": "Umspannwerke",
+  "en": "Substations"
+ },
+ "9": {
+  "de": "Heißwasser",
+  "en": "Hot water"
+ },
+ "10": {
+  "de": "Heizwerk",
+  "en": "Heating plant"
+ },
+ "11": {
+  "de": "Wärmetauscher",
+  "en": "Heat exchanger"
+ },
+ "12": {
+  "de": "Wasserverbrauch",
+  "en": "Water consumption"
+ },
+ "13": {
+  "de": "Wasseraufbereitung",
+  "en": "Water treatment"
+ },
+ "14": {
+  "de": "Wasseranschluss",
+  "en": "Water connection"
+ },
+ "15": {
+  "de": "Klärwerk",
+  "en": "Sewage treatment plant"
+ },
+ "16": {
+  "de": "Abwasser",
+  "en": "Sewage"
+ },
+ "17": {
+  "de": "Erzeugter Müll",
+  "en": "Garbage generated"
+ },
+ "18": {
+  "de": "Baukosten",
+  "en": "Building-costs"
+ },
+ "19": {
+  "de": "Bau mit Gastarbeitern?",
+  "en": "Construction with guest workers?"
+ },
+ "20": {
+  "de": "Baukosten Rubel",
+  "en": "Construction costs rubles"
+ },
+ "21": {
+  "de": "Baukosten Dollar",
+  "en": "Construction costs dollar"
+ },
+ "22": {
+  "de": "Arbeitstage",
+  "en": "Working days"
+ },
+ "23": {
+  "de": "Kies",
+  "en": "Gravel"
+ },
+ "24": {
+  "de": "Ziegel",
+  "en": "Brick"
+ },
+ "25": {
+  "de": "Stahl",
+  "en": "Steel"
+ },
+ "26": {
+  "de": "Beton",
+  "en": "Concrete"
+ },
+ "27": {
+  "de": "Asphalt",
+  "en": "Asphalt"
+ },
+ "28": {
+  "de": "Bretter",
+  "en": "Boards"
+ },
+ "29": {
+  "de": "Plattenbauteile",
+  "en": "Plate components"
+ },
+ "30": {
+  "de": "Elektronik-Bauteile",
+  "en": "Electronic components"
+ },
+ "31": {
+  "de": "Mechanik-Bauteile",
+  "en": "Mechanical components"
+ },
+ "32": {
+  "de": "Typ",
+  "en": "Type"
+ },
+ "33": {
+  "de": "Gebäude",
+  "en": "Building"
+ },
+ "34": {
+  "de": "Art",
+  "en": "Art"
+ },
+ "35": {
+  "de": "Anzahl",
+  "en": "Number"
+ },
+ "36": {
+  "de": "Qualität",
+  "en": "Quality"
+ },
+ "37": {
+  "de": "Arbeiter",
+  "en": "Workers"
+ },
+ "38": {
+  "de": "Besucher/Kunden",
+  "en": "Visitors/customers"
+ },
+ "39": {
+  "de": "Heißwasser Pro Einwohner",
+  "en": "Hot water per inhabitant"
+ },
+ "40": {
+  "de": "Müll",
+  "en": "Garbage"
+ },
+ "41": {
+  "de": "Empfohle für",
+  "en": "Recommended for"
+ },
+ "42": {
+  "de": "Wasserverbrauch geteilt durch",
+  "en": "Water consumption divided by"
+ },
+ "43": {
+  "de": "Produktivität der Republik?",
+  "en": "Productivity of the Republic?"
+ },
+ "44": {
+  "de": "Ja",
+  "en": "Yes"
+ },
+ "45": {
+  "de": "Nein",
+  "en": "No"
+ },
+ "46": {
+  "de": "Alkohol",
+  "en": "alcohol"
+ },
+ "47": {
+  "de": "Attraktionen",
+  "en": "Attractions"
+ },
+ "48": {
+  "de": "Einkaufzentrum",
+  "en": "shopping center"
+ },
+ "49": {
+  "de": "Feuerwehr",
+  "en": "Fire department"
+ },
+ "50": {
+  "de": "Gerichtsgebäude",
+  "en": "Courthouse"
+ },
+ "51": {
+  "de": "Kultur",
+  "en": "culture"
+ },
+ "52": {
+  "de": "Plattenbau",
+  "en": "Prefab Housing"
+ },
+ "53": {
+  "de": "Sonstiges",
+  "en": "Miscellaneous"
+ },
+ "54": {
+  "de": "Sport",
+  "en": "sport"
+ },
+ "55": {
+  "de": "Universität",
+  "en": "university"
+ },
+ "56": {
+  "de": "Kneipe",
+  "en": "Bar"
+ },
+ "57": {
+  "de": "Strandcafe",
+  "en": "Beach cafe"
+ },
+ "58": {
+  "de": "Cafe - Der Ausblick",
+  "en": "Cafe - The View"
+ },
+ "59": {
+  "de": "Cafe Delikat",
+  "en": "Cafe Delikat"
+ },
+ "60": {
+  "de": "Risenrad",
+  "en": "Giant rim"
+ },
+ "61": {
+  "de": "Teetassen Karussell",
+  "en": "Teacup Carousel"
+ },
+ "62": {
+  "de": "Karussell - Die Überraschung",
+  "en": "Carousel - The Surprise"
+ },
+ "63": {
+  "de": "Autoscooter",
+  "en": "Bumper cars"
+ },
+ "64": {
+  "de": "Aussichtsturm",
+  "en": "Observation tower"
+ },
+ "65": {
+  "de": "Zoo",
+  "en": "zoo"
+ },
+ "66": {
+  "de": "Einkaufszentrum",
+  "en": "Shopping center"
+ },
+ "67": {
+  "de": "Panorama-Restaurant",
+  "en": "Panorama Restaurant"
+ },
+ "68": {
+  "de": "Lebensmittelmarkt",
+  "en": "Food market"
+ },
+ "69": {
+  "de": "Fernsehsenderhaus",
+  "en": "TV station building"
+ },
+ "70": {
+  "de": "Feuerwache",
+  "en": "Fire station"
+ },
+ "71": {
+  "de": "Gefängnis",
+  "en": "Jail"
+ },
+ "72": {
+  "de": "Geheimpolizei",
+  "en": "Secret police"
+ },
+ "73": {
+  "de": "Kindergarten",
+  "en": "Kindergarten"
+ },
+ "74": {
+  "de": "Kino",
+  "en": "cinema"
+ },
+ "75": {
+  "de": "Krankenhaus",
+  "en": "hospital"
+ },
+ "76": {
+  "de": "Galarie der Kunst",
+  "en": "Art Gallery"
+ },
+ "77": {
+  "de": "Theater der Republik",
+  "en": "Theatre of the Republic"
+ },
+ "78": {
+  "de": "Museum der Republik",
+  "en": "Museum of the Republic"
+ },
+ "79": {
+  "de": "Pyramidenmuseum",
+  "en": "Pyramid Museum"
+ },
+ "80": {
+  "de": "Museeum des Nationalen Aufstandes",
+  "en": "Museum of the National Uprising"
+ },
+ "81": {
+  "de": "Palast des Kommunismus",
+  "en": "Palace of Communism"
+ },
+ "82": {
+  "de": "Polizei",
+  "en": "police"
+ },
+ "83": {
+  "de": "Rathaus",
+  "en": "City hall"
+ },
+ "84": {
+  "de": "Rundfunkhaus",
+  "en": "Broadcasting House"
+ },
+ "85": {
+  "de": "Schule",
+  "en": "School"
+ },
+ "86": {
+  "de": "Werkstatt",
+  "en": "Workshop"
+ },
+ "87": {
+  "de": "Hallenbad",
+  "en": "Indoor swimming pool"
+ },
+ "88": {
+  "de": "Sporthalle",
+  "en": "Sports hall"
+ },
+ "89": {
+  "de": "Studentenwohnheim",
+  "en": "Student residence"
+ },
+ "90": {
+  "de": "Medizinische Universität",
+  "en": "Medical University"
+ },
+ "91": {
+  "de": "Technische Universität",
+  "en": "Technical University"
+ },
+ "92": {
+  "de": "Parteizentrale klein",
+  "en": "small party headquarters"
+ },
+ "93": {
+  "de": "Zentrale der Kommunitischen Partei",
+  "en": "Central Office of the Communist Party"
+ },
+ "94": {
+  "de": "Waisenhaus",
+  "en": "orphanage"
+ },
+ "95": {
+  "de": "Landhaus",
+  "en": "Country house"
+ },
+ "96": {
+  "de": "Ziegelhaus",
+  "en": "brick house"
+ },
+ "97": {
+  "de": "klein",
+  "en": "small"
+ },
+ "98": {
+  "de": "mittel",
+  "en": "medium"
+ },
+ "99": {
+  "de": "groß",
+  "en": "large"
+ },
+ "100": {
+  "de": "Effiziens",
+  "en": "Efficiency"
+ },
+ "101": {
+  "de": "Preis/Effizienz",
+  "en": "Price/Efficiency"
+ },
+ "102": {
+  "de": "mehr als eins empfohlen",
+  "en": "more than one recommended"
+ },
+ "103": {
+  "de": "Großes Heizwerk",
+  "en": "Large heating plant"
+ },
+ "104": {
+  "de": "Kleines Heizwerk",
+  "en": "Small heating plant"
+ },
+ "105": {
+  "de": "Kleine Wasseraufbereitung",
+  "en": "Small water treatment"
+ },
+ "106": {
+  "de": "Große Wasseraufbereitung",
+  "en": "Large-scale water treatment"
+ },
+ "107": {
+  "de": "Großes klärwerk",
+  "en": "Large sewage treatment plant"
+ },
+ "108": {
+  "de": "Kleines Klärwerk",
+  "en": "Small sewage treatment plant"
+ },
+ "109": {
+  "de": "Aluminium",
+  "en": "aluminum"
+ },
+ "110": {
+  "de": "Aluminiumoxid",
+  "en": "Aluminum oxide"
+ },
+ "111": {
+  "de": "Asche",
+  "en": "ash"
+ },
+ "112": {
+  "de": "Bauschutt",
+  "en": "Construction debris"
+ },
+ "113": {
+  "de": "Bauxit",
+  "en": "bauxite"
+ },
+ "114": {
+  "de": "Biomüll",
+  "en": "organic waste"
+ },
+ "115": {
+  "de": "Bitumen",
+  "en": "bitumen"
+ },
+ "116": {
+  "de": "Brennbarer Müll",
+  "en": "Combustible waste"
+ },
+ "117": {
+  "de": "Bruchstein",
+  "en": "Broken stone"
+ },
+ "118": {
+  "de": "Chemikalien",
+  "en": "chemicals"
+ },
+ "119": {
+  "de": "Dünger",
+  "en": "fertilizer"
+ },
+ "120": {
+  "de": "Eisen",
+  "en": "iron"
+ },
+ "121": {
+  "de": "Eisenerz",
+  "en": "iron ore"
+ },
+ "122": {
+  "de": "Elektronik",
+  "en": "electronics"
+ },
+ "123": {
+  "de": "Essen",
+  "en": "Eat"
+ },
+ "124": {
+  "de": "Fleisch",
+  "en": "Meat"
+ },
+ "125": {
+  "de": "Flüssigdünger",
+  "en": "Liquid fertilizer"
+ },
+ "126": {
+  "de": "Gebrauchter Kernbrennstoff",
+  "en": "Spent nuclear fuel"
+ },
+ "127": {
+  "de": "Holz",
+  "en": "Wood"
+ },
+ "128": {
+  "de": "Kernbrennstoff",
+  "en": "nuclear fuel"
+ },
+ "129": {
+  "de": "Kleidung",
+  "en": "Clothing"
+ },
+ "130": {
+  "de": "Kohle",
+  "en": "Coal"
+ },
+ "131": {
+  "de": "Kohlenerz",
+  "en": "coal ore"
+ },
+ "132": {
+  "de": "Kunststoffe",
+  "en": "plastics"
+ },
+ "133": {
+  "de": "Metallschrott",
+  "en": "scrap metal"
+ },
+ "134": {
+  "de": "Pflanzen",
+  "en": "Plant"
+ },
+ "135": {
+  "de": "Plastikmüll",
+  "en": "Plastic waste"
+ },
+ "136": {
+  "de": "Rohes Bauxit",
+  "en": "Raw bauxite"
+ },
+ "137": {
+  "de": "Sondermüll",
+  "en": "hazardous waste"
+ },
+ "138": {
+  "de": "Sonstigermüll",
+  "en": "Other waste"
+ },
+ "139": {
+  "de": "Sprengstoff",
+  "en": "explosive"
+ },
+ "140": {
+  "de": "Stoff",
+  "en": "Fabric"
+ },
+ "141": {
+  "de": "Strom",
+  "en": "Electricity"
+ },
+ "142": {
+  "de": "Treibstoff",
+  "en": "fuel"
+ },
+ "143": {
+  "de": "UF6",
+  "en": "UF6"
+ },
+ "144": {
+  "de": "Uranerz",
+  "en": "Uranium ore"
+ },
+ "145": {
+  "de": "Uranoxid",
+  "en": "Uranium oxide"
+ },
+ "146": {
+  "de": "Vieh",
+  "en": "cattle"
+ },
+ "147": {
+  "de": "Wasser",
+  "en": "Water"
+ },
+ "148": {
+  "de": "Zement",
+  "en": "cement"
+ },
+ "149": {
+  "de": "Öl",
+  "en": "oil"
+ },
+ "150": {
+  "de": "Ware",
+  "en": "Goods"
+ },
+ "151": {
+  "de": "verkaufen",
+  "en": "sell"
+ },
+ "152": {
+  "de": "kaufen",
+  "en": "buy"
+ },
+ "153": {
+  "de": "Rubel",
+  "en": "ruble"
+ },
+ "154": {
+  "de": "Dollar",
+  "en": "dollar"
+ },
+ "155": {
+  "de": "Hotel",
+  "en": "hotel"
+ },
+ "156": {
+  "de": "Kleines Hotel",
+  "en": "Small hotel"
+ },
+ "157": {
+  "de": "Berg Hotel",
+  "en": "Mountain Hotel"
+ },
+ "158": {
+  "de": "Stadthotel",
+  "en": "City hotel"
+ },
+ "159": {
+  "de": "Hotel Ukraine",
+  "en": "Hotel Ukraine"
+ },
+ "160": {
+  "de": "3 Sterne",
+  "en": "3 stars"
+ },
+ "161": {
+  "de": "4 Sterne",
+  "en": "4 stars"
+ },
+ "162": {
+  "de": "Aluminiumschrott",
+  "en": "Aluminium scrap"
+ },
+ "163": {
+  "de": "Fußballplatz",
+  "en": "football pitch"
+ },
+ "164": {
+  "de": "Tennisplatz",
+  "en": "tennis court"
+ },
+ "165": {
+  "de": "Strand",
+  "en": "Beach"
+ },
+ "166": {
+  "de": "Schwimmbad",
+  "en": "Swimming pool"
+ },
+ "167": {
+  "de": "Volleyballplatz",
+  "en": "volleyball court"
+ },
+ "168": {
+  "de": "Basket- und Volleyballplatz",
+  "en": "Basketball and volleyball court"
+ },
+ "169": {
+  "de": "Tag",
+  "en": "day"
+ },
+ "170": {
+  "de": "Monat",
+  "en": "Month"
+ },
+ "171": {
+  "de": "Jahr",
+  "en": "Year"
+ },
+ "172": {
+  "de": "Zeitangabe",
+  "en": "Time indication"
+ },
+ "173": {
+  "de": "Hektar",
+  "en": "Hectares"
+ },
+ "174": {
+  "de": "Mit Jahreszeiten?",
+  "en": "With seasons?"
+ },
+ "175": {
+  "de": "Düngestatus",
+  "en": "Fertilization status"
+ },
+ "176": {
+  "de": "Hektar berechnen",
+  "en": "Calculate hectares"
+ },
+ "177": {
+  "de": "Kleines Feld",
+  "en": "Small field"
+ },
+ "178": {
+  "de": "Mittleres Feld",
+  "en": "Middle field"
+ },
+ "179": {
+  "de": "Großes Feld",
+  "en": "Large field"
+ },
+ "180": {
+  "de": "Bitte Feld anzahl prüfen",
+  "en": "Please check the number of fields."
+ },
+ "181": {
+  "de": "Flüssigkeitstank",
+  "en": "liquid tank"
+ },
+ "182": {
+  "de": "Offene Ladefläche",
+  "en": "Open loading area"
+ },
+ "183": {
+  "de": "Abgedeckte Ladefläche",
+  "en": "Covered loading area"
+ },
+ "184": {
+  "de": "Staubgut-Behälter",
+  "en": "Dust container"
+ },
+ "185": {
+  "de": "Kipper",
+  "en": "tipper"
+ },
+ "186": {
+  "de": "Passagiere",
+  "en": "passengers"
+ },
+ "187": {
+  "de": "Ladefläche",
+  "en": "Loading area"
+ },
+ "188": {
+  "de": "Gemischter Müll",
+  "en": "Mixed waste"
+ },
+ "189": {
+  "de": "Lok länge",
+  "en": "Locomotive length"
+ },
+ "190": {
+  "de": "Gewünschte Zug Länge?",
+  "en": "Desired train length?"
+ },
+ "191": {
+  "de": "Wagon Typ?",
+  "en": "Wagon type?"
+ },
+ "192": {
+  "de": "Gewünschte Ware?",
+  "en": "Desired item?"
+ },
+ "193": {
+  "de": "Fahrzeugname",
+  "en": "Vehicle name"
+ },
+ "194": {
+  "de": "Frachtart",
+  "en": "Type of freight"
+ },
+ "195": {
+  "de": "Bauland",
+  "en": "Building land"
+ },
+ "196": {
+  "de": "Von",
+  "en": "From"
+ },
+ "197": {
+  "de": "Bis",
+  "en": "Until"
+ },
+ "198": {
+  "de": "Antriebsart",
+  "en": "Drive type"
+ },
+ "199": {
+  "de": "Max. Geschwindigkeit",
+  "en": "Maximum speed"
+ },
+ "200": {
+  "de": "Motorleistung",
+  "en": "Engine power"
+ },
+ "201": {
+  "de": "Leergewicht",
+  "en": "empty weight"
+ },
+ "202": {
+  "de": "Startbahn",
+  "en": "Runway"
+ },
+ "203": {
+  "de": "Breite",
+  "en": "Width"
+ },
+ "204": {
+  "de": "Höhe",
+  "en": "Height"
+ },
+ "205": {
+  "de": "Länge",
+  "en": "length"
+ },
+ "206": {
+  "de": "Gleisbau",
+  "en": "Track construction"
+ },
+ "207": {
+  "de": "Löschwasser",
+  "en": "extinguishing water"
+ },
+ "208": {
+  "de": "Güterwagon",
+  "en": "freight wagon"
+ },
+ "209": {
+  "de": "Passagierwagen",
+  "en": "passenger car"
+ },
+ "210": {
+  "de": "Triebwagen",
+  "en": "Railcar"
+ },
+ "211": {
+  "de": "Zugverband",
+  "en": "train consist"
+ },
+ "212": {
+  "de": "Straßenbahn",
+  "en": "tram"
+ },
+ "213": {
+  "de": "U-Bahn",
+  "en": "subway"
+ },
+ "214": {
+  "de": "Lokomotive",
+  "en": "locomotive"
+ },
+ "215": {
+  "de": "Frachtschiff",
+  "en": "cargo ship"
+ },
+ "216": {
+  "de": "Passagierschiff",
+  "en": "passenger ship"
+ },
+ "217": {
+  "de": "Hubschrauber",
+  "en": "helicopter"
+ },
+ "218": {
+  "de": "Flugzeug",
+  "en": "Airplane"
+ },
+ "219": {
+  "de": "Produktion",
+  "en": "production"
+ },
+ "220": {
+  "de": "Verbrauch",
+  "en": "consumption"
+ },
+ "221": {
+  "de": "Gebäudegruppe",
+  "en": "Building group"
+ },
+ "222": {
+  "de": "Profit",
+  "en": "profit"
+ },
+ "223": {
+  "de": "Profit pro Arbeiter",
+  "en": "Profit per worker"
+ },
+ "224": {
+  "de": "Tage bis zur Amortisation",
+  "en": "Days until amortization"
+ },
+ "225": {
+  "de": "Einnahmen",
+  "en": "revenue"
+ },
+ "226": {
+  "de": "Ausgaben",
+  "en": "expenditure"
+ },
+ "227": {
+  "de": "Stromverbrauch",
+  "en": "electricity consumption"
+ },
+ "228": {
+  "de": "Wasser & Abwasser",
+  "en": "Water & Wastewater"
+ },
+ "229": {
+  "de": "Lebensmittel/Alkohol/Pflanzen",
+  "en": "Food/Alcohol/Plants"
+ },
+ "230": {
+  "de": "Bauindustrie",
+  "en": "Construction industry"
+ },
+ "231": {
+  "de": "Fossile Brennstoffe",
+  "en": "Fossil fuels"
+ },
+ "232": {
+  "de": "Metallurgie",
+  "en": "metallurgy"
+ },
+ "233": {
+  "de": "Fortschrittliche Industrie",
+  "en": "Advanced Industry"
+ },
+ "234": {
+  "de": "Müllverbrennung",
+  "en": "Waste incineration"
+ },
+ "235": {
+  "de": "Kraftwerk",
+  "en": "power plant"
+ },
+ "236": {
+  "de": "Kohlekraftwerk",
+  "en": "coal-fired power plant"
+ },
+ "237": {
+  "de": "Gaskraftwerk",
+  "en": "Gas power plant"
+ },
+ "238": {
+  "de": "Solarkraftwerk",
+  "en": "Solar power plant"
+ },
+ "239": {
+  "de": "Kernkraftwerk mit einem Reaktor",
+  "en": "Nuclear power plant with one reactor"
+ },
+ "240": {
+  "de": "Kernkraftwerk mit zwei Reaktoren",
+  "en": "Nuclear power plant with two reactors"
+ },
+ "241": {
+  "de": "Zaporozie Reactor",
+  "en": "Zaporozie Reactor"
+ },
+ "242": {
+  "de": "Stoff-Fabrik",
+  "en": "Fabric factory"
+ },
+ "243": {
+  "de": "Bekleidungsfabrik",
+  "en": "Clothing factory"
+ },
+ "244": {
+  "de": "Nahrungsmittelfabrik",
+  "en": "food factory"
+ },
+ "245": {
+  "de": "Brennerei",
+  "en": "distillery"
+ },
+ "246": {
+  "de": "Viehzucht",
+  "en": "Livestock farming"
+ },
+ "247": {
+  "de": "Schlachthof",
+  "en": "slaughterhouse"
+ },
+ "248": {
+  "de": "Kiesgrube",
+  "en": "gravel pit"
+ },
+ "249": {
+  "de": "Kieswerk",
+  "en": "gravel pit"
+ },
+ "250": {
+  "de": "Zementwerk",
+  "en": "cement plant"
+ },
+ "251": {
+  "de": "Betonwerk",
+  "en": "concrete plant"
+ },
+ "252": {
+  "de": "Fabrik für Plattenbauteile",
+  "en": "Factory for prefabricated building components"
+ },
+ "253": {
+  "de": "Asphaltanlage",
+  "en": "Asphalt plant"
+ },
+ "254": {
+  "de": "Ziegelfabrik",
+  "en": "brick factory"
+ },
+ "255": {
+  "de": "Sprengstoff-Fabrik",
+  "en": "Explosives factory"
+ },
+ "256": {
+  "de": "Holzfällerposten",
+  "en": "Lumberjack post"
+ },
+ "257": {
+  "de": "Sägewerk",
+  "en": "sawmill"
+ },
+ "258": {
+  "de": "Ölförderpumpe",
+  "en": "Oil pump"
+ },
+ "259": {
+  "de": "Ölraffinerie",
+  "en": "oil refinery"
+ },
+ "260": {
+  "de": "Kohlemine",
+  "en": "coal mine"
+ },
+ "261": {
+  "de": "Verarbeitungsanlage für Kohlenerz",
+  "en": "Coal ore processing plant"
+ },
+ "262": {
+  "de": "Chemieanlage",
+  "en": "chemical plant"
+ },
+ "263": {
+  "de": "Kunstofffabrik",
+  "en": "plastics factory"
+ },
+ "264": {
+  "de": "Eisenmine",
+  "en": "Iron mine"
+ },
+ "265": {
+  "de": "Verarbeitungsanlage für Eisenerz",
+  "en": "Iron ore processing plant"
+ },
+ "266": {
+  "de": "Stahlwerk",
+  "en": "steelworks"
+ },
+ "267": {
+  "de": "Bauxit-Mine",
+  "en": "Bauxite mine"
+ },
+ "268": {
+  "de": "Bauxit-Verarbeitungsanlage",
+  "en": "Bauxite processing plant"
+ },
+ "269": {
+  "de": "Aluminiumoxid-Fabrik",
+  "en": "Aluminum oxide factory"
+ },
+ "270": {
+  "de": "Aluminiumwerk",
+  "en": "Aluminium plant"
+ },
+ "271": {
+  "de": "Uranmine",
+  "en": "uranium mine"
+ },
+ "272": {
+  "de": "Uranaufbereitungsanlage",
+  "en": "uranium processing plant"
+ },
+ "273": {
+  "de": "Uranumwandlungsanlage",
+  "en": "uranium conversion plant"
+ },
+ "274": {
+  "de": "Herstellung von Kernbrennstoff",
+  "en": "Production of nuclear fuel"
+ },
+ "275": {
+  "de": "Fabrik für Elektronische Bauteile",
+  "en": "Factory for Electronic Components"
+ },
+ "276": {
+  "de": "Elektronikmontagehalle",
+  "en": "Electronics assembly hall"
+ },
+ "277": {
+  "de": "Fabrik für Mechanische Bauteile",
+  "en": "Factory for Mechanical Components"
+ },
+ "278": {
+  "de": "Kies-Recycling Anlage",
+  "en": "Gravel recycling plant"
+ },
+ "279": {
+  "de": "Plastik-Recycling Anlage",
+  "en": "Plastic recycling plant"
+ },
+ "280": {
+  "de": "Stahl-Recycling Anlage",
+  "en": "Steel recycling plant"
+ },
+ "281": {
+  "de": "Aluminium-Recycling Anlage",
+  "en": "Aluminum recycling plant"
+ },
+ "282": {
+  "de": "Kompostieranlage",
+  "en": "Composting plant"
+ },
+ "283": {
+  "de": "Kunstdüngerfabrik",
+  "en": "fertilizer factory"
+ },
+ "284": {
+  "de": "Trinkwasser",
+  "en": "drinking water"
+ },
+ "285": {
+  "de": "Mit Mods?",
+  "en": "With mods?"
+ },
+ "286": {
+  "de": "Palast der Republik",
+  "en": "Palace of the Republic"
+ },
+ "287": {
+  "de": "Arbeiter pro Schicht notwendig",
+  "en": "workers required per shift"
+ },
+ "288": {
+  "de": "Gesamt",
+  "en": "In total"
+ },
+ "289": {
+  "de": "Auslastung",
+  "en": "Occupancy"
+ },
+ "290": {
+  "de": "Spezialwert",
+  "en": "Special value"
+ },
+ "291": {
+  "de": "Stück",
+  "en": "Piece"
+ },
+ "292": {
+  "de": "Pro Zyklus",
+  "en": "Per cycle"
+ },
+ "293": {
+  "de": "Personenkraftwagen",
+  "en": "passenger cars"
+ },
+ "294": {
+  "de": "Bagger",
+  "en": "Excavator"
+ },
+ "295": {
+  "de": "Bus",
+  "en": "bus"
+ },
+ "296": {
+  "de": "Kühlung",
+  "en": "cooling"
+ },
+ "297": {
+  "de": "Ladung",
+  "en": "cargo"
+ },
+ "298": {
+  "de": "Heute",
+  "en": "Today"
+ },
+ "299": {
+  "de": "Bulgarien",
+  "en": "Bulgaria"
+ },
+ "300": {
+  "de": "Kanada",
+  "en": "Canada"
+ },
+ "301": {
+  "de": "China",
+  "en": "China"
+ },
+ "302": {
+  "de": "Ost Deutschland",
+  "en": "East Germany"
+ },
+ "303": {
+  "de": "West Deutschland",
+  "en": "West Germany"
+ },
+ "304": {
+  "de": "Deutschland",
+  "en": "Germany"
+ },
+ "305": {
+  "de": "Frankreich",
+  "en": "France"
+ },
+ "306": {
+  "de": "Korea",
+  "en": "Korea"
+ },
+ "307": {
+  "de": "Polen",
+  "en": "Poland"
+ },
+ "308": {
+  "de": "Rumänien",
+  "en": "Romania"
+ },
+ "309": {
+  "de": "Schweden",
+  "en": "Sweden"
+ },
+ "310": {
+  "de": "Sowjetunion",
+  "en": "Soviet Union"
+ },
+ "311": {
+  "de": "Tschechoslowakei",
+  "en": "Czechoslovakia"
+ },
+ "312": {
+  "de": "Ukraine",
+  "en": "Ukraine"
+ },
+ "313": {
+  "de": "Ukrainische SSR",
+  "en": "Ukrainian SSR"
+ },
+ "314": {
+  "de": "Ungarn",
+  "en": "Hungary"
+ },
+ "315": {
+  "de": "Usa",
+  "en": "USA"
+ },
+ "316": {
+  "de": "Vereinigtes Königreich",
+  "en": "United Kingdom"
+ },
+ "317": {
+  "de": "Undergrund Kabel",
+  "en": "Underground cable"
+ },
+ "318": {
+  "de": "Oberirdisches Kabel",
+  "en": "Overhead cable"
+ },
+ "319": {
+  "de": "Fahrzeuge",
+  "en": "vehicles"
+ },
+ "320": {
+  "de": "Wohnhäuser",
+  "en": "residential buildings"
+ },
+ "321": {
+  "de": "Kulturzentrum",
+  "en": "Cultural Center"
+ },
+ "322": {
+  "de": "Restaurant",
+  "en": "restaurant"
+ },
+ "323": {
+  "de": "Kiosk (Alkohol)",
+  "en": "Kiosk (alcohol)"
+ },
+ "324": {
+  "de": "Kiosk (Lebensmittel)",
+  "en": "Kiosk (groceries)"
+ },
+ "325": {
+  "de": "Early Wohnhäuser",
+  "en": "Early Residential Buildings"
+ },
+ "326": {
+  "de": "Kleines Geschäft",
+  "en": "Small shop"
+ },
+ "327": {
+  "de": "Generisches Wohnhaus",
+  "en": "Generic residential building"
+ },
+ "328": {
+  "de": "Gute Wärmeeffizienz",
+  "en": "Good thermal efficiency"
+ },
+ "329": {
+  "de": "Mittelmäßige Wärmeeffizienz",
+  "en": "Average heat efficiency"
+ },
+ "330": {
+  "de": "Schlechte Wärmeeffizienz",
+  "en": "Poor heat efficiency"
+ },
+ "331": {
+  "de": "winzig",
+  "en": "tiny"
+ },
+ "332": {
+  "de": "Planierraupe",
+  "en": "bulldozer"
+ },
+ "333": {
+  "de": "Trolleybus",
+  "en": "Trolleybus"
+ },
+ "334": {
+  "de": "Abgedeckter LKW",
+  "en": "Covered truck"
+ },
+ "335": {
+  "de": "Trockenschüttguttank",
+  "en": "Dry bulk material tank"
+ },
+ "336": {
+  "de": "Tanklaster",
+  "en": "Tanker truck"
+ },
+ "337": {
+  "de": "Gabelstapler",
+  "en": "Forklift"
+ },
+ "338": {
+  "de": "Kühllaster",
+  "en": "refrigerated truck"
+ },
+ "339": {
+  "de": "Betonmischer",
+  "en": "Concrete mixer"
+ },
+ "340": {
+  "de": "Asphaltleger",
+  "en": "Asphalt paver"
+ },
+ "341": {
+  "de": "Straßenkran",
+  "en": "road crane"
+ },
+ "342": {
+  "de": "Walze",
+  "en": "roller"
+ },
+ "343": {
+  "de": "Turmdrehkran",
+  "en": "Tower crane"
+ },
+ "344": {
+  "de": "Abwassertank",
+  "en": "Wastewater tank"
+ },
+ "345": {
+  "de": "Schneepflug",
+  "en": "Snowplow"
+ },
+ "346": {
+  "de": "Müllfahrzeug",
+  "en": "Garbage truck"
+ },
+ "347": {
+  "de": "Wassertank",
+  "en": "water tank"
+ },
+ "348": {
+  "de": "Mähdrescher",
+  "en": "combine harvester"
+ },
+ "349": {
+  "de": "Traktor",
+  "en": "tractor"
+ },
+ "350": {
+  "de": "Krankenwagen",
+  "en": "ambulance"
+ },
+ "351": {
+  "de": "Feuerwerhfahrzeug",
+  "en": "fire engine"
+ },
+ "352": {
+  "de": "Polizeiwagen",
+  "en": "police car"
+ },
+ "353": {
+  "de": "Gefangenen Bus",
+  "en": "Prisoner bus"
+ },
+ "354": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "355": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "356": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "357": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "358": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "359": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "360": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "361": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "362": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "363": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "364": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "365": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "366": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "367": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "368": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "369": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "370": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "371": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "372": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "373": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "374": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "375": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "376": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "377": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "378": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "379": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "380": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "381": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "382": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "383": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "384": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "385": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "386": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "387": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "388": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "389": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "390": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "391": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "392": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "393": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "394": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "395": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "396": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "397": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "398": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "399": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "400": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "401": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "402": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "403": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "404": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "405": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "406": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "407": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "408": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "409": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "410": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "411": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "412": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "413": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "414": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "415": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "416": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "417": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "418": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "419": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "420": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "421": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "422": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "423": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "424": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "425": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "426": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "427": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "428": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "429": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "430": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "431": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "432": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "433": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "434": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "435": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "436": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "437": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "438": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "439": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "440": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "441": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "442": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "443": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "444": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "445": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "446": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "447": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "448": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "449": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "450": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "451": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "452": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "453": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "454": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "455": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "456": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "457": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "458": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "459": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "460": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "461": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "462": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "463": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "464": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "465": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "466": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "467": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "468": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "469": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "470": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "471": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "472": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "473": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "474": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "475": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "476": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "477": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "478": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "479": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "480": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "481": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "482": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "483": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "484": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "485": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "486": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "487": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "488": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "489": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "490": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "491": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "492": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "493": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "494": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "495": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "496": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "497": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "498": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "499": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "500": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "501": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "502": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "503": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "504": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "505": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "506": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "507": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "508": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "509": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "510": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "511": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "512": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "513": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "514": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "515": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "516": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "517": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "518": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "519": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "520": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "521": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "522": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "523": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "524": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "525": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "526": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "527": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "528": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "529": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "530": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "531": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "532": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "533": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "534": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "535": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "536": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "537": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "538": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "539": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "540": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "541": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "542": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "543": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "544": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "545": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "546": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "547": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "548": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "549": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "550": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "551": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "552": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "553": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "554": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "555": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "556": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "557": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "558": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "559": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "560": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "561": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "562": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "563": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "564": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "565": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "566": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "567": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "568": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "569": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "570": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "571": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "572": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "573": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "574": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "575": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "576": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "577": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "578": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "579": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "580": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "581": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "582": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "583": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "584": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "585": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "586": {
+  "de": "",
+  "en": "#VALUE!"
+ },
+ "587": {
+  "de": "",
+  "en": "#VALUE!"
+ }
+}

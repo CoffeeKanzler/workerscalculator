@@ -1,0 +1,2326 @@
+{
+ "1920": {
+  "usagewater": {
+   "sellRUB": -3.3075,
+   "buyRUB": -2.9925,
+   "sellUSD": -4.41,
+   "buyUSD": -3.99
+  },
+  "alcohol": {
+   "sellRUB": 85.505455,
+   "buyRUB": 94.50602,
+   "sellUSD": 112.974983,
+   "buyUSD": 124.867081
+  },
+  "aluminium": {
+   "sellRUB": 222.438675,
+   "buyRUB": 245.853256,
+   "sellUSD": 289.733521,
+   "buyUSD": 320.231781
+  },
+  "alumina": {
+   "sellRUB": 94.891129,
+   "buyRUB": 104.879662,
+   "sellUSD": 122.954803,
+   "buyUSD": 135.897415
+  },
+  "waste_aluminium": {
+   "sellRUB": 108.158043,
+   "buyRUB": 119.543091,
+   "sellUSD": 140.789474,
+   "buyUSD": 155.609406
+  },
+  "waste_ash": {
+   "sellRUB": -1.9845,
+   "buyRUB": -1.7955,
+   "sellUSD": -2.646,
+   "buyUSD": -2.394
+  },
+  "asphalt": {
+   "sellRUB": 11.253036,
+   "buyRUB": 12.437566,
+   "sellUSD": 12.756189,
+   "buyUSD": 14.098945
+  },
+  "waste_gravel": {
+   "sellRUB": 1.109414,
+   "buyRUB": 1.226194,
+   "sellUSD": 1.347205,
+   "buyUSD": 1.489016
+  },
+  "bauxite": {
+   "sellRUB": 13.620397,
+   "buyRUB": 15.054123,
+   "sellUSD": 17.295065,
+   "buyUSD": 19.115597
+  },
+  "concrete": {
+   "sellRUB": 4.9931,
+   "buyRUB": 5.518689,
+   "sellUSD": 6.366079,
+   "buyUSD": 7.036193
+  },
+  "waste_bio": {
+   "sellRUB": 0.451014,
+   "buyRUB": 0.498489,
+   "sellUSD": 0.400901,
+   "buyUSD": 0.443101
+  },
+  "bitumen": {
+   "sellRUB": 68.427727,
+   "buyRUB": 417.0,
+   "sellUSD": 75.986115,
+   "buyUSD": 83.984642
+  },
+  "waste_burnable": {
+   "sellRUB": -0.99225,
+   "buyRUB": -0.89775,
+   "sellUSD": -1.323,
+   "buyUSD": -1.197
+  },
+  "boards": {
+   "sellRUB": 4.406908,
+   "buyRUB": 4.870793,
+   "sellUSD": 4.761528,
+   "buyUSD": 5.262742
+  },
+  "rawgravel": {
+   "sellRUB": 1.260314,
+   "buyRUB": 1.392978,
+   "sellUSD": 1.546225,
+   "buyUSD": 1.708985
+  },
+  "chemicals": {
+   "sellRUB": 295.741119,
+   "buyRUB": 326.871735,
+   "sellUSD": 386.063019,
+   "buyUSD": 426.701233
+  },
+  "fertiliser": {
+   "sellRUB": 0.809334,
+   "buyRUB": 0.894527,
+   "sellUSD": 0.951894,
+   "buyUSD": 1.052093
+  },
+  "iron": {
+   "sellRUB": 5.18917,
+   "buyRUB": 5.735399,
+   "sellUSD": 5.892771,
+   "buyUSD": 6.513062
+  },
+  "rawiron": {
+   "sellRUB": 2.17146,
+   "buyRUB": 2.400034,
+   "sellUSD": 2.42107,
+   "buyUSD": 2.675919
+  },
+  "eletronics": {
+   "sellRUB": 247.97641,
+   "buyRUB": 274.079163,
+   "sellUSD": 318.062042,
+   "buyUSD": 351.542267
+  },
+  "ecomponents": {
+   "sellRUB": 236.757187,
+   "buyRUB": 261.678986,
+   "sellUSD": 306.672516,
+   "buyUSD": 338.953827
+  },
+  "food": {
+   "sellRUB": 38.145958,
+   "buyRUB": 42.16132,
+   "sellUSD": 50.43042,
+   "buyUSD": 55.738884
+  },
+  "meat": {
+   "sellRUB": 78.331284,
+   "buyRUB": 86.576675,
+   "sellUSD": 103.418106,
+   "buyUSD": 114.304222
+  },
+  "fertiliser_liquid": {
+   "sellRUB": 12.250986,
+   "buyRUB": 13.540564,
+   "sellUSD": 16.190008,
+   "buyUSD": 17.89422
+  },
+  "nuclearfuelburned": {
+   "sellRUB": -420.05246,
+   "buyRUB": -380.047485,
+   "sellUSD": -560.069946,
+   "buyUSD": -506.72998
+  },
+  "wood": {
+   "sellRUB": 3.086733,
+   "buyRUB": 3.411652,
+   "sellUSD": 3.249588,
+   "buyUSD": 3.59165
+  },
+  "nuclearfuel": {
+   "sellRUB": 39126.328125,
+   "buyRUB": 43244.890625,
+   "sellUSD": 48560.113281,
+   "buyUSD": 53671.707031
+  },
+  "gravel": {
+   "sellRUB": 2.429339,
+   "buyRUB": 2.685059,
+   "sellUSD": 3.038598,
+   "buyUSD": 3.35845
+  },
+  "clothes": {
+   "sellRUB": 438.381622,
+   "buyRUB": 484.527069,
+   "sellUSD": 581.141968,
+   "buyUSD": 642.314758
+  },
+  "coal": {
+   "sellRUB": 4.746308,
+   "buyRUB": 5.245919,
+   "sellUSD": 5.29316,
+   "buyUSD": 5.850334
+  },
+  "rawcoal": {
+   "sellRUB": 2.483732,
+   "buyRUB": 2.745177,
+   "sellUSD": 2.721474,
+   "buyUSD": 3.007945
+  },
+  "plastics": {
+   "sellRUB": 220.737518,
+   "buyRUB": 243.973053,
+   "sellUSD": 271.86731,
+   "buyUSD": 300.484924
+  },
+  "mcomponents": {
+   "sellRUB": 179.626602,
+   "buyRUB": 198.534653,
+   "sellUSD": 218.863861,
+   "buyUSD": 241.902145
+  },
+  "waste_steel": {
+   "sellRUB": 51.524788,
+   "buyRUB": 56.948448,
+   "sellUSD": 61.251087,
+   "buyUSD": 67.69857
+  },
+  "plants": {
+   "sellRUB": 5.708478,
+   "buyRUB": 6.309371,
+   "sellUSD": 7.404228,
+   "buyUSD": 8.18362
+  },
+  "waste_plastic": {
+   "sellRUB": 37.217804,
+   "buyRUB": 41.135468,
+   "sellUSD": 45.206696,
+   "buyUSD": 49.965294
+  },
+  "prefabpanels": {
+   "sellRUB": 6.137969,
+   "buyRUB": 6.78407,
+   "sellUSD": 7.889738,
+   "buyUSD": 8.720236
+  },
+  "rawbauxite": {
+   "sellRUB": 7.553907,
+   "buyRUB": 8.349054,
+   "sellUSD": 9.554476,
+   "buyUSD": 10.56021
+  },
+  "waste_toxic": {
+   "sellRUB": -277.829987,
+   "buyRUB": -251.369995,
+   "sellUSD": -370.439972,
+   "buyUSD": -335.159973
+  },
+  "waste_other": {
+   "sellRUB": -2.31525,
+   "buyRUB": -2.09475,
+   "sellUSD": -3.086999,
+   "buyUSD": -2.793
+  },
+  "explosives": {
+   "sellRUB": 410.201477,
+   "buyRUB": 453.380554,
+   "sellUSD": 539.069031,
+   "buyUSD": 595.81311
+  },
+  "steel": {
+   "sellRUB": 100.375206,
+   "buyRUB": 110.941017,
+   "sellUSD": 120.025772,
+   "buyUSD": 132.660065
+  },
+  "fabric": {
+   "sellRUB": 119.187172,
+   "buyRUB": 131.733185,
+   "sellUSD": 157.258041,
+   "buyUSD": 173.811508
+  },
+  "eletric": {
+   "sellRUB": 0.13289,
+   "buyRUB": 0.146879,
+   "sellUSD": 0.158761,
+   "buyUSD": 0.175472
+  },
+  "fuel": {
+   "sellRUB": 41.038673,
+   "buyRUB": 45.358532,
+   "sellUSD": 45.570381,
+   "buyUSD": 50.36726
+  },
+  "uf6": {
+   "sellRUB": 1618.087769,
+   "buyRUB": 1788.412842,
+   "sellUSD": 2092.50293,
+   "buyUSD": 2312.766357
+  },
+  "uranium": {
+   "sellRUB": 5.454898,
+   "buyRUB": 6.029098,
+   "sellUSD": 7.133977,
+   "buyUSD": 7.884922
+  },
+  "yellowcake": {
+   "sellRUB": 287.005432,
+   "buyRUB": 317.216522,
+   "sellUSD": 379.532745,
+   "buyUSD": 419.483551
+  },
+  "livestock": {
+   "sellRUB": 30.326382,
+   "buyRUB": 33.518631,
+   "sellUSD": 40.026478,
+   "buyUSD": 44.239788
+  },
+  "water": {
+   "sellRUB": 3.062536,
+   "buyRUB": 3.384908,
+   "sellUSD": 4.095054,
+   "buyUSD": 4.526112
+  },
+  "cement": {
+   "sellRUB": 8.821368,
+   "buyRUB": 9.749933,
+   "sellUSD": 10.945896,
+   "buyUSD": 12.098095
+  },
+  "bricks": {
+   "sellRUB": 7.56035,
+   "buyRUB": 8.356175,
+   "sellUSD": 9.394054,
+   "buyUSD": 10.382901
+  },
+  "oil": {
+   "sellRUB": 14.510339,
+   "buyRUB": 16.037743,
+   "sellUSD": 14.776207,
+   "buyUSD": 16.331596
+  },
+  "workers": {
+   "sellRUB": 0,
+   "buyRUB": 3.15,
+   "sellUSD": 0,
+   "buyUSD": 4.2
+  },
+  "heat": {
+   "sellRUB": 0.332701,
+   "buyRUB": 0.367722,
+   "sellUSD": 0.332752,
+   "buyUSD": 0.367778
+  }
+ },
+ "1930": {
+  "usagewater": {
+   "sellRUB": -3.78,
+   "buyRUB": -3.42,
+   "sellUSD": -5.04,
+   "buyUSD": -4.56
+  },
+  "alcohol": {
+   "sellRUB": 97.64666,
+   "buyRUB": 107.925255,
+   "sellUSD": 129.033661,
+   "buyUSD": 142.616135
+  },
+  "aluminium": {
+   "sellRUB": 253.358276,
+   "buyRUB": 280.027557,
+   "sellUSD": 330.253967,
+   "buyUSD": 365.017517
+  },
+  "alumina": {
+   "sellRUB": 107.969498,
+   "buyRUB": 119.334709,
+   "sellUSD": 140.036667,
+   "buyUSD": 154.777359
+  },
+  "waste_aluminium": {
+   "sellRUB": 123.18087,
+   "buyRUB": 136.147278,
+   "sellUSD": 160.467575,
+   "buyUSD": 177.358887
+  },
+  "waste_ash": {
+   "sellRUB": -2.268,
+   "buyRUB": -2.052,
+   "sellUSD": -3.024,
+   "buyUSD": -2.736
+  },
+  "asphalt": {
+   "sellRUB": 12.826418,
+   "buyRUB": 14.176566,
+   "sellUSD": 14.544306,
+   "buyUSD": 16.075285
+  },
+  "waste_gravel": {
+   "sellRUB": 1.251778,
+   "buyRUB": 1.383544,
+   "sellUSD": 1.523539,
+   "buyUSD": 1.683912
+  },
+  "bauxite": {
+   "sellRUB": 15.45288,
+   "buyRUB": 17.079498,
+   "sellUSD": 19.6525,
+   "buyUSD": 21.721184
+  },
+  "concrete": {
+   "sellRUB": 5.663276,
+   "buyRUB": 6.25941,
+   "sellUSD": 7.230941,
+   "buyUSD": 7.992092
+  },
+  "waste_bio": {
+   "sellRUB": 0.5216,
+   "buyRUB": 0.576505,
+   "sellUSD": 0.463645,
+   "buyUSD": 0.512449
+  },
+  "bitumen": {
+   "sellRUB": 78.096741,
+   "buyRUB": 417.0,
+   "sellUSD": 86.734894,
+   "buyUSD": 95.864883
+  },
+  "waste_burnable": {
+   "sellRUB": -1.134,
+   "buyRUB": -1.026,
+   "sellUSD": -1.512,
+   "buyUSD": -1.368
+  },
+  "boards": {
+   "sellRUB": 4.89787,
+   "buyRUB": 5.413435,
+   "sellUSD": 5.30315,
+   "buyUSD": 5.861376
+  },
+  "rawgravel": {
+   "sellRUB": 1.423873,
+   "buyRUB": 1.573754,
+   "sellUSD": 1.750628,
+   "buyUSD": 1.934905
+  },
+  "chemicals": {
+   "sellRUB": 337.6633,
+   "buyRUB": 373.206757,
+   "sellUSD": 440.850586,
+   "buyUSD": 487.25592
+  },
+  "fertiliser": {
+   "sellRUB": 0.903609,
+   "buyRUB": 0.998726,
+   "sellUSD": 1.062871,
+   "buyUSD": 1.174752
+  },
+  "iron": {
+   "sellRUB": 6.110281,
+   "buyRUB": 6.753468,
+   "sellUSD": 6.914393,
+   "buyUSD": 7.642223
+  },
+  "rawiron": {
+   "sellRUB": 2.565986,
+   "buyRUB": 2.83609,
+   "sellUSD": 2.851255,
+   "buyUSD": 3.151386
+  },
+  "eletronics": {
+   "sellRUB": 318.00116,
+   "buyRUB": 351.474945,
+   "sellUSD": 406.87146,
+   "buyUSD": 449.700012
+  },
+  "ecomponents": {
+   "sellRUB": 299.8573,
+   "buyRUB": 331.421234,
+   "sellUSD": 387.354828,
+   "buyUSD": 428.128998
+  },
+  "food": {
+   "sellRUB": 43.568722,
+   "buyRUB": 48.154903,
+   "sellUSD": 57.606861,
+   "buyUSD": 63.670742
+  },
+  "meat": {
+   "sellRUB": 89.44368,
+   "buyRUB": 98.858795,
+   "sellUSD": 118.104973,
+   "buyUSD": 130.537064
+  },
+  "fertiliser_liquid": {
+   "sellRUB": 13.989398,
+   "buyRUB": 15.461967,
+   "sellUSD": 18.4879,
+   "buyUSD": 20.433994
+  },
+  "nuclearfuelburned": {
+   "sellRUB": -480.059967,
+   "buyRUB": -434.339996,
+   "sellUSD": -640.080017,
+   "buyUSD": -579.119995
+  },
+  "wood": {
+   "sellRUB": 3.419996,
+   "buyRUB": 3.779995,
+   "sellUSD": 3.606116,
+   "buyUSD": 3.985707
+  },
+  "nuclearfuel": {
+   "sellRUB": 43999.089844,
+   "buyRUB": 48630.574219,
+   "sellUSD": 54775.53125,
+   "buyUSD": 60541.375
+  },
+  "gravel": {
+   "sellRUB": 2.751692,
+   "buyRUB": 3.041344,
+   "sellUSD": 3.447987,
+   "buyUSD": 3.810933
+  },
+  "clothes": {
+   "sellRUB": 500.804932,
+   "buyRUB": 553.521179,
+   "sellUSD": 663.938904,
+   "buyUSD": 733.827148
+  },
+  "coal": {
+   "sellRUB": 5.219542,
+   "buyRUB": 5.768967,
+   "sellUSD": 5.844515,
+   "buyUSD": 6.459728
+  },
+  "rawcoal": {
+   "sellRUB": 2.721658,
+   "buyRUB": 3.008148,
+   "sellUSD": 2.993364,
+   "buyUSD": 3.308455
+  },
+  "plastics": {
+   "sellRUB": 251.991409,
+   "buyRUB": 278.516815,
+   "sellUSD": 310.408356,
+   "buyUSD": 343.082886
+  },
+  "mcomponents": {
+   "sellRUB": 203.865356,
+   "buyRUB": 225.32486,
+   "sellUSD": 248.707916,
+   "buyUSD": 274.887665
+  },
+  "waste_steel": {
+   "sellRUB": 58.372509,
+   "buyRUB": 64.516991,
+   "sellUSD": 69.488274,
+   "buyUSD": 76.802834
+  },
+  "plants": {
+   "sellRUB": 6.512733,
+   "buyRUB": 7.198284,
+   "sellUSD": 8.450734,
+   "buyUSD": 9.340285
+  },
+  "waste_plastic": {
+   "sellRUB": 42.484104,
+   "buyRUB": 46.956112,
+   "sellUSD": 51.610847,
+   "buyUSD": 57.043568
+  },
+  "prefabpanels": {
+   "sellRUB": 6.975582,
+   "buyRUB": 7.709854,
+   "sellUSD": 8.977604,
+   "buyUSD": 9.922615
+  },
+  "rawbauxite": {
+   "sellRUB": 8.565231,
+   "buyRUB": 9.466834,
+   "sellUSD": 10.851598,
+   "buyUSD": 11.993871
+  },
+  "waste_toxic": {
+   "sellRUB": -317.519989,
+   "buyRUB": -287.279999,
+   "sellUSD": -423.359955,
+   "buyUSD": -383.040009
+  },
+  "waste_other": {
+   "sellRUB": -2.646,
+   "buyRUB": -2.394,
+   "sellUSD": -3.528,
+   "buyUSD": -3.192
+  },
+  "explosives": {
+   "sellRUB": 468.453522,
+   "buyRUB": 517.764404,
+   "sellUSD": 615.716064,
+   "buyUSD": 680.528259
+  },
+  "steel": {
+   "sellRUB": 113.763443,
+   "buyRUB": 125.738541,
+   "sellUSD": 136.221207,
+   "buyUSD": 150.560287
+  },
+  "fabric": {
+   "sellRUB": 136.116287,
+   "buyRUB": 150.444321,
+   "sellUSD": 179.615509,
+   "buyUSD": 198.5224
+  },
+  "eletric": {
+   "sellRUB": 0.148334,
+   "buyRUB": 0.163948,
+   "sellUSD": 0.177905,
+   "buyUSD": 0.196631
+  },
+  "fuel": {
+   "sellRUB": 46.838058,
+   "buyRUB": 51.768379,
+   "sellUSD": 52.017159,
+   "buyUSD": 57.492645
+  },
+  "uf6": {
+   "sellRUB": 1833.110229,
+   "buyRUB": 2026.06897,
+   "sellUSD": 2374.159912,
+   "buyUSD": 2624.071289
+  },
+  "uranium": {
+   "sellRUB": 6.12569,
+   "buyRUB": 6.770499,
+   "sellUSD": 8.018856,
+   "buyUSD": 8.862946
+  },
+  "yellowcake": {
+   "sellRUB": 325.682343,
+   "buyRUB": 359.964691,
+   "sellUSD": 430.885162,
+   "buyUSD": 476.241455
+  },
+  "livestock": {
+   "sellRUB": 34.627697,
+   "buyRUB": 38.272717,
+   "sellUSD": 45.709778,
+   "buyUSD": 50.521328
+  },
+  "water": {
+   "sellRUB": 3.494051,
+   "buyRUB": 3.861846,
+   "sellUSD": 4.671077,
+   "buyUSD": 5.162769
+  },
+  "cement": {
+   "sellRUB": 9.95991,
+   "buyRUB": 11.008322,
+   "sellUSD": 12.387938,
+   "buyUSD": 13.691932
+  },
+  "bricks": {
+   "sellRUB": 8.504686,
+   "buyRUB": 9.399916,
+   "sellUSD": 10.600347,
+   "buyUSD": 11.716172
+  },
+  "oil": {
+   "sellRUB": 16.552126,
+   "buyRUB": 18.294455,
+   "sellUSD": 16.85597,
+   "buyUSD": 18.630283
+  },
+  "workers": {
+   "sellRUB": 0,
+   "buyRUB": 3.6,
+   "sellUSD": 0,
+   "buyUSD": 4.8
+  },
+  "heat": {
+   "sellRUB": 0.380229,
+   "buyRUB": 0.420253,
+   "sellUSD": 0.380286,
+   "buyUSD": 0.420317
+  }
+ },
+ "1940": {
+  "usagewater": {
+   "sellRUB": -5.67,
+   "buyRUB": -5.13,
+   "sellUSD": -7.56,
+   "buyUSD": -6.84
+  },
+  "alcohol": {
+   "sellRUB": 146.578995,
+   "buyRUB": 162.008362,
+   "sellUSD": 193.660065,
+   "buyUSD": 214.045319
+  },
+  "aluminium": {
+   "sellRUB": 380.022888,
+   "buyRUB": 420.025299,
+   "sellUSD": 495.367584,
+   "buyUSD": 547.511536
+  },
+  "alumina": {
+   "sellRUB": 162.015427,
+   "buyRUB": 179.069672,
+   "sellUSD": 210.116684,
+   "buyUSD": 232.234238
+  },
+  "waste_aluminium": {
+   "sellRUB": 184.762939,
+   "buyRUB": 204.211655,
+   "sellUSD": 240.693619,
+   "buyUSD": 266.029785
+  },
+  "waste_ash": {
+   "sellRUB": -3.402,
+   "buyRUB": -3.078,
+   "sellUSD": -4.536,
+   "buyUSD": -4.104
+  },
+  "asphalt": {
+   "sellRUB": 18.703882,
+   "buyRUB": 20.67271,
+   "sellUSD": 21.280724,
+   "buyUSD": 23.5208
+  },
+  "waste_gravel": {
+   "sellRUB": 1.911227,
+   "buyRUB": 2.112409,
+   "sellUSD": 2.318871,
+   "buyUSD": 2.562962
+  },
+  "bauxite": {
+   "sellRUB": 23.06572,
+   "buyRUB": 25.493689,
+   "sellUSD": 29.365154,
+   "buyUSD": 32.456223
+  },
+  "concrete": {
+   "sellRUB": 8.583452,
+   "buyRUB": 9.486974,
+   "sellUSD": 10.935081,
+   "buyUSD": 12.086142
+  },
+  "waste_bio": {
+   "sellRUB": 0.79332,
+   "buyRUB": 0.876827,
+   "sellUSD": 0.705173,
+   "buyUSD": 0.779402
+  },
+  "bitumen": {
+   "sellRUB": 112.990524,
+   "buyRUB": 417.0,
+   "sellUSD": 125.947784,
+   "buyUSD": 139.205429
+  },
+  "waste_burnable": {
+   "sellRUB": -1.701,
+   "buyRUB": -1.539,
+   "sellUSD": -2.268,
+   "buyUSD": -2.052
+  },
+  "boards": {
+   "sellRUB": 7.326241,
+   "buyRUB": 8.097425,
+   "sellUSD": 7.934162,
+   "buyUSD": 8.769336
+  },
+  "rawgravel": {
+   "sellRUB": 2.169881,
+   "buyRUB": 2.398289,
+   "sellUSD": 2.660014,
+   "buyUSD": 2.940016
+  },
+  "chemicals": {
+   "sellRUB": 504.855347,
+   "buyRUB": 557.997986,
+   "sellUSD": 659.639526,
+   "buyUSD": 729.075256
+  },
+  "fertiliser": {
+   "sellRUB": 1.405042,
+   "buyRUB": 1.552941,
+   "sellUSD": 1.652401,
+   "buyUSD": 1.826337
+  },
+  "iron": {
+   "sellRUB": 9.053051,
+   "buyRUB": 10.006003,
+   "sellUSD": 10.25922,
+   "buyUSD": 11.339137
+  },
+  "rawiron": {
+   "sellRUB": 3.795152,
+   "buyRUB": 4.194642,
+   "sellUSD": 4.223055,
+   "buyUSD": 4.667587
+  },
+  "eletronics": {
+   "sellRUB": 531.421875,
+   "buyRUB": 587.360962,
+   "sellUSD": 678.656555,
+   "buyUSD": 750.094055
+  },
+  "ecomponents": {
+   "sellRUB": 493.158844,
+   "buyRUB": 545.070313,
+   "sellUSD": 635.81311,
+   "buyUSD": 702.740784
+  },
+  "food": {
+   "sellRUB": 65.395714,
+   "buyRUB": 72.279465,
+   "sellUSD": 86.453018,
+   "buyUSD": 95.553337
+  },
+  "meat": {
+   "sellRUB": 134.27243,
+   "buyRUB": 148.406372,
+   "sellUSD": 177.265228,
+   "buyUSD": 195.924728
+  },
+  "fertiliser_liquid": {
+   "sellRUB": 20.957695,
+   "buyRUB": 23.163767,
+   "sellUSD": 27.70573,
+   "buyUSD": 30.622122
+  },
+  "nuclearfuelburned": {
+   "sellRUB": -720.089966,
+   "buyRUB": -651.51001,
+   "sellUSD": -960.119995,
+   "buyUSD": -868.679993
+  },
+  "wood": {
+   "sellRUB": 5.113754,
+   "buyRUB": 5.652043,
+   "sellUSD": 5.392933,
+   "buyUSD": 5.96061
+  },
+  "nuclearfuel": {
+   "sellRUB": 67746.460938,
+   "buyRUB": 74877.65625,
+   "sellUSD": 83919.234375,
+   "buyUSD": 92752.84375
+  },
+  "gravel": {
+   "sellRUB": 4.179129,
+   "buyRUB": 4.619038,
+   "sellUSD": 5.223573,
+   "buyUSD": 5.773423
+  },
+  "clothes": {
+   "sellRUB": 751.089294,
+   "buyRUB": 830.151306,
+   "sellUSD": 995.791931,
+   "buyUSD": 1100.612183
+  },
+  "coal": {
+   "sellRUB": 8.339274,
+   "buyRUB": 9.217093,
+   "sellUSD": 9.276734,
+   "buyUSD": 10.253233
+  },
+  "rawcoal": {
+   "sellRUB": 4.373444,
+   "buyRUB": 4.833807,
+   "sellUSD": 4.781003,
+   "buyUSD": 5.284266
+  },
+  "plastics": {
+   "sellRUB": 372.142029,
+   "buyRUB": 411.31485,
+   "sellUSD": 459.769073,
+   "buyUSD": 508.165771
+  },
+  "mcomponents": {
+   "sellRUB": 311.671478,
+   "buyRUB": 344.479004,
+   "sellUSD": 378.935364,
+   "buyUSD": 418.823273
+  },
+  "waste_steel": {
+   "sellRUB": 89.678123,
+   "buyRUB": 99.117928,
+   "sellUSD": 106.351784,
+   "buyUSD": 117.5467
+  },
+  "plants": {
+   "sellRUB": 9.788554,
+   "buyRUB": 10.818928,
+   "sellUSD": 12.695554,
+   "buyUSD": 14.031928
+  },
+  "waste_plastic": {
+   "sellRUB": 62.53735,
+   "buyRUB": 69.120224,
+   "sellUSD": 76.227783,
+   "buyUSD": 84.251755
+  },
+  "prefabpanels": {
+   "sellRUB": 10.548594,
+   "buyRUB": 11.658972,
+   "sellUSD": 13.551632,
+   "buyUSD": 14.978118
+  },
+  "rawbauxite": {
+   "sellRUB": 12.779088,
+   "buyRUB": 14.124255,
+   "sellUSD": 16.208637,
+   "buyUSD": 17.914808
+  },
+  "waste_toxic": {
+   "sellRUB": -476.279999,
+   "buyRUB": -430.920013,
+   "sellUSD": -635.039978,
+   "buyUSD": -574.559998
+  },
+  "waste_other": {
+   "sellRUB": -3.969,
+   "buyRUB": -3.591,
+   "sellUSD": -5.291999,
+   "buyUSD": -4.788
+  },
+  "explosives": {
+   "sellRUB": 701.409302,
+   "buyRUB": 775.241882,
+   "sellUSD": 922.26355,
+   "buyUSD": 1019.343933
+  },
+  "steel": {
+   "sellRUB": 174.573074,
+   "buyRUB": 192.949173,
+   "sellUSD": 208.259705,
+   "buyUSD": 230.181763
+  },
+  "fabric": {
+   "sellRUB": 204.10553,
+   "buyRUB": 225.590302,
+   "sellUSD": 269.355225,
+   "buyUSD": 297.708405
+  },
+  "eletric": {
+   "sellRUB": 0.231438,
+   "buyRUB": 0.2558,
+   "sellUSD": 0.2758,
+   "buyUSD": 0.304831
+  },
+  "fuel": {
+   "sellRUB": 67.763,
+   "buyRUB": 74.895943,
+   "sellUSD": 75.531654,
+   "buyUSD": 83.482353
+  },
+  "uf6": {
+   "sellRUB": 2785.44043,
+   "buyRUB": 3078.644287,
+   "sellUSD": 3598.912354,
+   "buyUSD": 3977.745361
+  },
+  "uranium": {
+   "sellRUB": 9.370811,
+   "buyRUB": 10.357211,
+   "sellUSD": 12.253815,
+   "buyUSD": 13.54369
+  },
+  "yellowcake": {
+   "sellRUB": 492.461304,
+   "buyRUB": 544.299316,
+   "sellUSD": 651.176086,
+   "buyUSD": 719.720886
+  },
+  "livestock": {
+   "sellRUB": 51.984043,
+   "buyRUB": 57.456043,
+   "sellUSD": 68.607491,
+   "buyUSD": 75.82933
+  },
+  "water": {
+   "sellRUB": 5.241604,
+   "buyRUB": 5.793351,
+   "sellUSD": 7.007405,
+   "buyUSD": 7.745027
+  },
+  "cement": {
+   "sellRUB": 15.217813,
+   "buyRUB": 16.819689,
+   "sellUSD": 18.859861,
+   "buyUSD": 20.84511
+  },
+  "bricks": {
+   "sellRUB": 13.09495,
+   "buyRUB": 14.473364,
+   "sellUSD": 16.238443,
+   "buyUSD": 17.947752
+  },
+  "oil": {
+   "sellRUB": 23.579765,
+   "buyRUB": 26.061844,
+   "sellUSD": 24.035536,
+   "buyUSD": 26.56559
+  },
+  "workers": {
+   "sellRUB": 0,
+   "buyRUB": 5.4,
+   "sellUSD": 0,
+   "buyUSD": 7.2
+  },
+  "heat": {
+   "sellRUB": 0.570347,
+   "buyRUB": 0.630384,
+   "sellUSD": 0.570434,
+   "buyUSD": 0.63048
+  }
+ },
+ "1950": {
+  "usagewater": {
+   "sellRUB": -8.0325,
+   "buyRUB": -7.2675,
+   "sellUSD": -10.71,
+   "buyUSD": -9.69
+  },
+  "alcohol": {
+   "sellRUB": 207.391052,
+   "buyRUB": 229.221695,
+   "sellUSD": 274.088867,
+   "buyUSD": 302.940308
+  },
+  "aluminium": {
+   "sellRUB": 540.769653,
+   "buyRUB": 597.692749,
+   "sellUSD": 704.174011,
+   "buyUSD": 778.297546
+  },
+  "alumina": {
+   "sellRUB": 230.723907,
+   "buyRUB": 255.01062,
+   "sellUSD": 298.867035,
+   "buyUSD": 330.326721
+  },
+  "waste_aluminium": {
+   "sellRUB": 262.950195,
+   "buyRUB": 290.629181,
+   "sellUSD": 342.185028,
+   "buyUSD": 378.204498
+  },
+  "waste_ash": {
+   "sellRUB": -4.8195,
+   "buyRUB": -4.3605,
+   "sellUSD": -6.426,
+   "buyUSD": -5.814
+  },
+  "asphalt": {
+   "sellRUB": 27.77099,
+   "buyRUB": 30.69425,
+   "sellUSD": 31.421518,
+   "buyUSD": 34.729046
+  },
+  "waste_gravel": {
+   "sellRUB": 2.677925,
+   "buyRUB": 2.959811,
+   "sellUSD": 3.25542,
+   "buyUSD": 3.598096
+  },
+  "bauxite": {
+   "sellRUB": 33.135246,
+   "buyRUB": 36.623169,
+   "sellUSD": 42.059441,
+   "buyUSD": 46.486752
+  },
+  "concrete": {
+   "sellRUB": 12.094489,
+   "buyRUB": 13.367593,
+   "sellUSD": 15.425878,
+   "buyUSD": 17.049652
+  },
+  "waste_bio": {
+   "sellRUB": 1.132824,
+   "buyRUB": 1.252069,
+   "sellUSD": 1.006955,
+   "buyUSD": 1.11295
+  },
+  "bitumen": {
+   "sellRUB": 169.55159,
+   "buyRUB": 417.0,
+   "sellUSD": 187.907715,
+   "buyUSD": 207.687485
+  },
+  "waste_burnable": {
+   "sellRUB": -2.40975,
+   "buyRUB": -2.18025,
+   "sellUSD": -3.213,
+   "buyUSD": -2.907
+  },
+  "boards": {
+   "sellRUB": 10.384909,
+   "buyRUB": 11.478057,
+   "sellUSD": 11.246129,
+   "buyUSD": 12.429932
+  },
+  "rawgravel": {
+   "sellRUB": 3.043767,
+   "buyRUB": 3.364163,
+   "sellUSD": 3.738122,
+   "buyUSD": 4.131608
+  },
+  "chemicals": {
+   "sellRUB": 719.272217,
+   "buyRUB": 794.985046,
+   "sellUSD": 938.547913,
+   "buyUSD": 1037.342285
+  },
+  "fertiliser": {
+   "sellRUB": 1.809652,
+   "buyRUB": 2.000142,
+   "sellUSD": 2.128821,
+   "buyUSD": 2.352907
+  },
+  "iron": {
+   "sellRUB": 12.616249,
+   "buyRUB": 13.944275,
+   "sellUSD": 14.324987,
+   "buyUSD": 15.832881
+  },
+  "rawiron": {
+   "sellRUB": 5.279801,
+   "buyRUB": 5.835569,
+   "sellUSD": 5.885996,
+   "buyUSD": 6.505574
+  },
+  "eletronics": {
+   "sellRUB": 841.713196,
+   "buyRUB": 930.314575,
+   "sellUSD": 1071.101929,
+   "buyUSD": 1183.849487
+  },
+  "ecomponents": {
+   "sellRUB": 766.245117,
+   "buyRUB": 846.902405,
+   "sellUSD": 984.497192,
+   "buyUSD": 1088.128418
+  },
+  "food": {
+   "sellRUB": 92.535782,
+   "buyRUB": 102.27639,
+   "sellUSD": 122.366905,
+   "buyUSD": 135.247635
+  },
+  "meat": {
+   "sellRUB": 189.957047,
+   "buyRUB": 209.952515,
+   "sellUSD": 250.8629,
+   "buyUSD": 277.269531
+  },
+  "fertiliser_liquid": {
+   "sellRUB": 29.760941,
+   "buyRUB": 32.893673,
+   "sellUSD": 39.320473,
+   "buyUSD": 43.459465
+  },
+  "nuclearfuelburned": {
+   "sellRUB": -1020.127441,
+   "buyRUB": -922.972534,
+   "sellUSD": -1360.170044,
+   "buyUSD": -1230.630005
+  },
+  "wood": {
+   "sellRUB": 7.249294,
+   "buyRUB": 8.012377,
+   "sellUSD": 7.644798,
+   "buyUSD": 8.449513
+  },
+  "nuclearfuel": {
+   "sellRUB": 95280.4375,
+   "buyRUB": 105309.953125,
+   "sellUSD": 118185.945313,
+   "buyUSD": 130626.570313
+  },
+  "gravel": {
+   "sellRUB": 5.875451,
+   "buyRUB": 6.493919,
+   "sellUSD": 7.355079,
+   "buyUSD": 8.129298
+  },
+  "clothes": {
+   "sellRUB": 1064.422119,
+   "buyRUB": 1176.466431,
+   "sellUSD": 1411.083252,
+   "buyUSD": 1559.618408
+  },
+  "coal": {
+   "sellRUB": 11.606062,
+   "buyRUB": 12.827752,
+   "sellUSD": 12.93413,
+   "buyUSD": 14.295617
+  },
+  "rawcoal": {
+   "sellRUB": 6.077158,
+   "buyRUB": 6.716858,
+   "sellUSD": 6.654533,
+   "buyUSD": 7.35501
+  },
+  "plastics": {
+   "sellRUB": 540.687073,
+   "buyRUB": 597.601501,
+   "sellUSD": 664.824402,
+   "buyUSD": 734.805847
+  },
+  "mcomponents": {
+   "sellRUB": 437.368164,
+   "buyRUB": 483.406891,
+   "sellUSD": 532.658691,
+   "buyUSD": 588.728027
+  },
+  "waste_steel": {
+   "sellRUB": 125.540176,
+   "buyRUB": 138.754929,
+   "sellUSD": 149.161194,
+   "buyUSD": 164.862366
+  },
+  "plants": {
+   "sellRUB": 13.815661,
+   "buyRUB": 15.269941,
+   "sellUSD": 17.933912,
+   "buyUSD": 19.821692
+  },
+  "waste_plastic": {
+   "sellRUB": 91.303833,
+   "buyRUB": 100.914757,
+   "sellUSD": 110.698433,
+   "buyUSD": 122.350899
+  },
+  "prefabpanels": {
+   "sellRUB": 14.878859,
+   "buyRUB": 16.445055,
+   "sellUSD": 19.133163,
+   "buyUSD": 21.147179
+  },
+  "rawbauxite": {
+   "sellRUB": 18.37937,
+   "buyRUB": 20.314041,
+   "sellUSD": 23.237896,
+   "buyUSD": 25.683989
+  },
+  "waste_toxic": {
+   "sellRUB": -674.72998,
+   "buyRUB": -610.470032,
+   "sellUSD": -899.639954,
+   "buyUSD": -813.960022
+  },
+  "waste_other": {
+   "sellRUB": -5.622749,
+   "buyRUB": -5.08725,
+   "sellUSD": -7.496999,
+   "buyUSD": -6.783
+  },
+  "explosives": {
+   "sellRUB": 997.017944,
+   "buyRUB": 1101.967163,
+   "sellUSD": 1310.006226,
+   "buyUSD": 1447.901611
+  },
+  "steel": {
+   "sellRUB": 244.525665,
+   "buyRUB": 270.265198,
+   "sellUSD": 292.248474,
+   "buyUSD": 323.011444
+  },
+  "fabric": {
+   "sellRUB": 289.34317,
+   "buyRUB": 319.800323,
+   "sellUSD": 381.779663,
+   "buyUSD": 421.96698
+  },
+  "eletric": {
+   "sellRUB": 0.324237,
+   "buyRUB": 0.358367,
+   "sellUSD": 0.387092,
+   "buyUSD": 0.427839
+  },
+  "fuel": {
+   "sellRUB": 101.687149,
+   "buyRUB": 112.391052,
+   "sellUSD": 112.692749,
+   "buyUSD": 124.55513
+  },
+  "uf6": {
+   "sellRUB": 3929.440186,
+   "buyRUB": 4343.064941,
+   "sellUSD": 5080.429688,
+   "buyUSD": 5615.211426
+  },
+  "uranium": {
+   "sellRUB": 13.138023,
+   "buyRUB": 14.520974,
+   "sellUSD": 17.189672,
+   "buyUSD": 18.999113
+  },
+  "yellowcake": {
+   "sellRUB": 694.722229,
+   "buyRUB": 767.85083,
+   "sellUSD": 918.881653,
+   "buyUSD": 1015.606018
+  },
+  "livestock": {
+   "sellRUB": 73.539284,
+   "buyRUB": 81.280258,
+   "sellUSD": 97.088943,
+   "buyUSD": 107.30883
+  },
+  "water": {
+   "sellRUB": 7.425248,
+   "buyRUB": 8.206852,
+   "sellUSD": 9.92662,
+   "buyUSD": 10.971527
+  },
+  "cement": {
+   "sellRUB": 21.382666,
+   "buyRUB": 23.633472,
+   "sellUSD": 26.542244,
+   "buyUSD": 29.336164
+  },
+  "bricks": {
+   "sellRUB": 18.413404,
+   "buyRUB": 20.351656,
+   "sellUSD": 22.866686,
+   "buyUSD": 25.273705
+  },
+  "oil": {
+   "sellRUB": 36.250008,
+   "buyRUB": 40.065796,
+   "sellUSD": 36.895683,
+   "buyUSD": 40.779438
+  },
+  "workers": {
+   "sellRUB": 0,
+   "buyRUB": 7.65,
+   "sellUSD": 0,
+   "buyUSD": 10.200001
+  },
+  "heat": {
+   "sellRUB": 0.807989,
+   "buyRUB": 0.893041,
+   "sellUSD": 0.808112,
+   "buyUSD": 0.893177
+  }
+ },
+ "1960": {
+  "usagewater": {
+   "sellRUB": -9.45,
+   "buyRUB": -8.55,
+   "sellUSD": -12.599999,
+   "buyUSD": -11.4
+  },
+  "alcohol": {
+   "sellRUB": 243.953369,
+   "buyRUB": 269.63266,
+   "sellUSD": 322.4263,
+   "buyUSD": 356.365906
+  },
+  "aluminium": {
+   "sellRUB": 634.307617,
+   "buyRUB": 701.076843,
+   "sellUSD": 826.557617,
+   "buyUSD": 913.56366
+  },
+  "alumina": {
+   "sellRUB": 270.461182,
+   "buyRUB": 298.930756,
+   "sellUSD": 350.633698,
+   "buyUSD": 387.54248
+  },
+  "waste_aluminium": {
+   "sellRUB": 308.407135,
+   "buyRUB": 340.871033,
+   "sellUSD": 401.629272,
+   "buyUSD": 443.906036
+  },
+  "waste_ash": {
+   "sellRUB": -5.67,
+   "buyRUB": -5.13,
+   "sellUSD": -7.56,
+   "buyUSD": -6.84
+  },
+  "asphalt": {
+   "sellRUB": 31.935534,
+   "buyRUB": 35.297169,
+   "sellUSD": 36.230278,
+   "buyUSD": 40.043991
+  },
+  "waste_gravel": {
+   "sellRUB": 3.16534,
+   "buyRUB": 3.498534,
+   "sellUSD": 3.844749,
+   "buyUSD": 4.24946
+  },
+  "bauxite": {
+   "sellRUB": 38.692265,
+   "buyRUB": 42.765133,
+   "sellUSD": 49.191326,
+   "buyUSD": 54.369362
+  },
+  "concrete": {
+   "sellRUB": 14.251232,
+   "buyRUB": 15.751361,
+   "sellUSD": 18.171587,
+   "buyUSD": 20.084385
+  },
+  "waste_bio": {
+   "sellRUB": 1.2825,
+   "buyRUB": 1.4175,
+   "sellUSD": 1.14,
+   "buyUSD": 1.26
+  },
+  "bitumen": {
+   "sellRUB": 194.009171,
+   "buyRUB": 417.0,
+   "sellUSD": 215.60463,
+   "buyUSD": 238.299835
+  },
+  "waste_burnable": {
+   "sellRUB": -2.835,
+   "buyRUB": -2.565,
+   "sellUSD": -3.78,
+   "buyUSD": -3.42
+  },
+  "boards": {
+   "sellRUB": 12.222473,
+   "buyRUB": 13.509049,
+   "sellUSD": 13.235677,
+   "buyUSD": 14.628905
+  },
+  "rawgravel": {
+   "sellRUB": 3.596109,
+   "buyRUB": 3.974647,
+   "sellUSD": 4.412998,
+   "buyUSD": 4.877524
+  },
+  "chemicals": {
+   "sellRUB": 843.812012,
+   "buyRUB": 932.634338,
+   "sellUSD": 1101.810913,
+   "buyUSD": 1217.791016
+  },
+  "fertiliser": {
+   "sellRUB": 2.232342,
+   "buyRUB": 2.467325,
+   "sellUSD": 2.625723,
+   "buyUSD": 2.902115
+  },
+  "iron": {
+   "sellRUB": 15.280069,
+   "buyRUB": 16.888496,
+   "sellUSD": 17.290354,
+   "buyUSD": 19.11039
+  },
+  "rawiron": {
+   "sellRUB": 6.415554,
+   "buyRUB": 7.090875,
+   "sellUSD": 7.128725,
+   "buyUSD": 7.879116
+  },
+  "eletronics": {
+   "sellRUB": 1088.696289,
+   "buyRUB": 1203.295898,
+   "sellUSD": 1384.319702,
+   "buyUSD": 1530.037476
+  },
+  "ecomponents": {
+   "sellRUB": 972.413269,
+   "buyRUB": 1074.772461,
+   "sellUSD": 1248.205322,
+   "buyUSD": 1379.595337
+  },
+  "food": {
+   "sellRUB": 108.848877,
+   "buyRUB": 120.306648,
+   "sellUSD": 143.945236,
+   "buyUSD": 159.097366
+  },
+  "meat": {
+   "sellRUB": 223.448395,
+   "buyRUB": 246.969284,
+   "sellUSD": 295.109283,
+   "buyUSD": 326.173401
+  },
+  "fertiliser_liquid": {
+   "sellRUB": 34.973965,
+   "buyRUB": 38.655434,
+   "sellUSD": 46.222866,
+   "buyUSD": 51.088432
+  },
+  "nuclearfuelburned": {
+   "sellRUB": -1200.149902,
+   "buyRUB": -1085.849976,
+   "sellUSD": -1600.199951,
+   "buyUSD": -1447.799927
+  },
+  "wood": {
+   "sellRUB": 8.532475,
+   "buyRUB": 9.43063,
+   "sellUSD": 8.997774,
+   "buyUSD": 9.944908
+  },
+  "nuclearfuel": {
+   "sellRUB": 111624.453125,
+   "buyRUB": 123374.390625,
+   "sellUSD": 138572.453125,
+   "buyUSD": 153159.015625
+  },
+  "gravel": {
+   "sellRUB": 6.934212,
+   "buyRUB": 7.664129,
+   "sellUSD": 8.674953,
+   "buyUSD": 9.588106
+  },
+  "clothes": {
+   "sellRUB": 1251.719116,
+   "buyRUB": 1383.479004,
+   "sellUSD": 1659.571167,
+   "buyUSD": 1834.262817
+  },
+  "coal": {
+   "sellRUB": 13.521533,
+   "buyRUB": 14.944851,
+   "sellUSD": 15.083967,
+   "buyUSD": 16.671753
+  },
+  "rawcoal": {
+   "sellRUB": 7.073785,
+   "buyRUB": 7.818393,
+   "sellUSD": 7.753049,
+   "buyUSD": 8.569159
+  },
+  "plastics": {
+   "sellRUB": 628.30658,
+   "buyRUB": 694.444092,
+   "sellUSD": 774.36322,
+   "buyUSD": 855.875122
+  },
+  "mcomponents": {
+   "sellRUB": 515.861511,
+   "buyRUB": 570.16272,
+   "sellUSD": 627.968018,
+   "buyUSD": 694.069885
+  },
+  "waste_steel": {
+   "sellRUB": 148.167938,
+   "buyRUB": 163.764557,
+   "sellUSD": 175.957397,
+   "buyUSD": 194.479218
+  },
+  "plants": {
+   "sellRUB": 16.245001,
+   "buyRUB": 17.955,
+   "sellUSD": 21.09,
+   "buyUSD": 23.309999
+  },
+  "waste_plastic": {
+   "sellRUB": 105.85463,
+   "buyRUB": 116.997215,
+   "sellUSD": 128.674332,
+   "buyUSD": 142.218994
+  },
+  "prefabpanels": {
+   "sellRUB": 17.527031,
+   "buyRUB": 19.371981,
+   "sellUSD": 22.532099,
+   "buyUSD": 24.903898
+  },
+  "rawbauxite": {
+   "sellRUB": 21.448496,
+   "buyRUB": 23.70623,
+   "sellUSD": 27.16441,
+   "buyUSD": 30.023821
+  },
+  "waste_toxic": {
+   "sellRUB": -793.799988,
+   "buyRUB": -718.200012,
+   "sellUSD": -1058.399902,
+   "buyUSD": -957.599976
+  },
+  "waste_other": {
+   "sellRUB": -6.614999,
+   "buyRUB": -5.985,
+   "sellUSD": -8.819999,
+   "buyUSD": -7.98
+  },
+  "explosives": {
+   "sellRUB": 1170.755737,
+   "buyRUB": 1293.993164,
+   "sellUSD": 1538.89502,
+   "buyUSD": 1700.883911
+  },
+  "steel": {
+   "sellRUB": 288.554138,
+   "buyRUB": 318.928253,
+   "sellUSD": 344.698639,
+   "buyUSD": 380.982697
+  },
+  "fabric": {
+   "sellRUB": 340.134308,
+   "buyRUB": 375.937897,
+   "sellUSD": 448.890778,
+   "buyUSD": 496.142395
+  },
+  "eletric": {
+   "sellRUB": 0.379252,
+   "buyRUB": 0.419173,
+   "sellUSD": 0.45321,
+   "buyUSD": 0.500917
+  },
+  "fuel": {
+   "sellRUB": 116.354301,
+   "buyRUB": 128.602112,
+   "sellUSD": 129.302078,
+   "buyUSD": 142.912811
+  },
+  "uf6": {
+   "sellRUB": 4614.935059,
+   "buyRUB": 5100.717773,
+   "sellUSD": 5969.027832,
+   "buyUSD": 6597.34668
+  },
+  "uranium": {
+   "sellRUB": 15.454656,
+   "buyRUB": 17.081461,
+   "sellUSD": 20.220861,
+   "buyUSD": 22.349373
+  },
+  "yellowcake": {
+   "sellRUB": 817.256042,
+   "buyRUB": 903.282959,
+   "sellUSD": 1080.963867,
+   "buyUSD": 1194.749512
+  },
+  "livestock": {
+   "sellRUB": 86.504639,
+   "buyRUB": 95.61039,
+   "sellUSD": 114.212891,
+   "buyUSD": 126.235298
+  },
+  "water": {
+   "sellRUB": 8.74,
+   "buyRUB": 9.659999,
+   "sellUSD": 11.685,
+   "buyUSD": 12.915
+  },
+  "cement": {
+   "sellRUB": 25.176313,
+   "buyRUB": 27.82645,
+   "sellUSD": 31.246408,
+   "buyUSD": 34.535503
+  },
+  "bricks": {
+   "sellRUB": 21.574963,
+   "buyRUB": 23.84601,
+   "sellUSD": 26.814117,
+   "buyUSD": 29.636656
+  },
+  "oil": {
+   "sellRUB": 41.008541,
+   "buyRUB": 45.325226,
+   "sellUSD": 41.768158,
+   "buyUSD": 46.164806
+  },
+  "workers": {
+   "sellRUB": 0,
+   "buyRUB": 9.0,
+   "sellUSD": 0,
+   "buyUSD": 12.0
+  },
+  "heat": {
+   "sellRUB": 0.950576,
+   "buyRUB": 1.050637,
+   "sellUSD": 0.950721,
+   "buyUSD": 1.050797
+  }
+ },
+ "1970": {
+  "usagewater": {
+   "sellRUB": -9.45,
+   "buyRUB": -8.55,
+   "sellUSD": -12.599999,
+   "buyUSD": -11.4
+  },
+  "alcohol": {
+   "sellRUB": 243.953369,
+   "buyRUB": 269.63266,
+   "sellUSD": 322.4263,
+   "buyUSD": 356.365906
+  },
+  "aluminium": {
+   "sellRUB": 634.307617,
+   "buyRUB": 701.076843,
+   "sellUSD": 826.557617,
+   "buyUSD": 913.56366
+  },
+  "alumina": {
+   "sellRUB": 270.461182,
+   "buyRUB": 298.930756,
+   "sellUSD": 350.633698,
+   "buyUSD": 387.54248
+  },
+  "waste_aluminium": {
+   "sellRUB": 308.407135,
+   "buyRUB": 340.871033,
+   "sellUSD": 401.629272,
+   "buyUSD": 443.906036
+  },
+  "waste_ash": {
+   "sellRUB": -5.67,
+   "buyRUB": -5.13,
+   "sellUSD": -7.56,
+   "buyUSD": -6.84
+  },
+  "asphalt": {
+   "sellRUB": 31.935534,
+   "buyRUB": 35.297169,
+   "sellUSD": 36.230278,
+   "buyUSD": 40.043991
+  },
+  "waste_gravel": {
+   "sellRUB": 3.16534,
+   "buyRUB": 3.498534,
+   "sellUSD": 3.844749,
+   "buyUSD": 4.24946
+  },
+  "bauxite": {
+   "sellRUB": 38.692265,
+   "buyRUB": 42.765133,
+   "sellUSD": 49.191326,
+   "buyUSD": 54.369362
+  },
+  "concrete": {
+   "sellRUB": 14.251232,
+   "buyRUB": 15.751361,
+   "sellUSD": 18.171587,
+   "buyUSD": 20.084385
+  },
+  "waste_bio": {
+   "sellRUB": 1.2825,
+   "buyRUB": 1.4175,
+   "sellUSD": 1.14,
+   "buyUSD": 1.26
+  },
+  "bitumen": {
+   "sellRUB": 194.009171,
+   "buyRUB": 417.0,
+   "sellUSD": 215.60463,
+   "buyUSD": 238.299835
+  },
+  "waste_burnable": {
+   "sellRUB": -2.835,
+   "buyRUB": -2.565,
+   "sellUSD": -3.78,
+   "buyUSD": -3.42
+  },
+  "boards": {
+   "sellRUB": 12.222473,
+   "buyRUB": 13.509049,
+   "sellUSD": 13.235677,
+   "buyUSD": 14.628905
+  },
+  "rawgravel": {
+   "sellRUB": 3.596109,
+   "buyRUB": 3.974647,
+   "sellUSD": 4.412998,
+   "buyUSD": 4.877524
+  },
+  "chemicals": {
+   "sellRUB": 843.812012,
+   "buyRUB": 932.634338,
+   "sellUSD": 1101.810913,
+   "buyUSD": 1217.791016
+  },
+  "fertiliser": {
+   "sellRUB": 2.232342,
+   "buyRUB": 2.467325,
+   "sellUSD": 2.625723,
+   "buyUSD": 2.902115
+  },
+  "iron": {
+   "sellRUB": 15.280069,
+   "buyRUB": 16.888496,
+   "sellUSD": 17.290354,
+   "buyUSD": 19.11039
+  },
+  "rawiron": {
+   "sellRUB": 6.415554,
+   "buyRUB": 7.090875,
+   "sellUSD": 7.128725,
+   "buyUSD": 7.879116
+  },
+  "eletronics": {
+   "sellRUB": 1088.696289,
+   "buyRUB": 1203.295898,
+   "sellUSD": 1384.319702,
+   "buyUSD": 1530.037476
+  },
+  "ecomponents": {
+   "sellRUB": 972.413269,
+   "buyRUB": 1074.772461,
+   "sellUSD": 1248.205322,
+   "buyUSD": 1379.595337
+  },
+  "food": {
+   "sellRUB": 108.848877,
+   "buyRUB": 120.306648,
+   "sellUSD": 143.945236,
+   "buyUSD": 159.097366
+  },
+  "meat": {
+   "sellRUB": 223.448395,
+   "buyRUB": 246.969284,
+   "sellUSD": 295.109283,
+   "buyUSD": 326.173401
+  },
+  "fertiliser_liquid": {
+   "sellRUB": 34.973965,
+   "buyRUB": 38.655434,
+   "sellUSD": 46.222866,
+   "buyUSD": 51.088432
+  },
+  "nuclearfuelburned": {
+   "sellRUB": -1200.149902,
+   "buyRUB": -1085.849976,
+   "sellUSD": -1600.199951,
+   "buyUSD": -1447.799927
+  },
+  "wood": {
+   "sellRUB": 8.532475,
+   "buyRUB": 9.43063,
+   "sellUSD": 8.997774,
+   "buyUSD": 9.944908
+  },
+  "nuclearfuel": {
+   "sellRUB": 111624.453125,
+   "buyRUB": 123374.390625,
+   "sellUSD": 138572.453125,
+   "buyUSD": 153159.015625
+  },
+  "gravel": {
+   "sellRUB": 6.934212,
+   "buyRUB": 42.0,
+   "sellUSD": 8.674953,
+   "buyUSD": 9.588106
+  },
+  "clothes": {
+   "sellRUB": 1251.719116,
+   "buyRUB": 1383.479004,
+   "sellUSD": 1659.571167,
+   "buyUSD": 1834.262817
+  },
+  "coal": {
+   "sellRUB": 13.521533,
+   "buyRUB": 14.944851,
+   "sellUSD": 15.083967,
+   "buyUSD": 16.671753
+  },
+  "rawcoal": {
+   "sellRUB": 7.073785,
+   "buyRUB": 7.818393,
+   "sellUSD": 7.753049,
+   "buyUSD": 8.569159
+  },
+  "plastics": {
+   "sellRUB": 628.30658,
+   "buyRUB": 694.444092,
+   "sellUSD": 774.36322,
+   "buyUSD": 855.875122
+  },
+  "mcomponents": {
+   "sellRUB": 515.861511,
+   "buyRUB": 570.16272,
+   "sellUSD": 627.968018,
+   "buyUSD": 694.069885
+  },
+  "waste_steel": {
+   "sellRUB": 148.167938,
+   "buyRUB": 163.764557,
+   "sellUSD": 175.957397,
+   "buyUSD": 194.479218
+  },
+  "plants": {
+   "sellRUB": 16.245001,
+   "buyRUB": 17.955,
+   "sellUSD": 21.09,
+   "buyUSD": 23.309999
+  },
+  "waste_plastic": {
+   "sellRUB": 105.85463,
+   "buyRUB": 116.997215,
+   "sellUSD": 128.674332,
+   "buyUSD": 142.218994
+  },
+  "prefabpanels": {
+   "sellRUB": 17.527031,
+   "buyRUB": 19.371981,
+   "sellUSD": 22.532099,
+   "buyUSD": 24.903898
+  },
+  "rawbauxite": {
+   "sellRUB": 21.448496,
+   "buyRUB": 23.70623,
+   "sellUSD": 27.16441,
+   "buyUSD": 30.023821
+  },
+  "waste_toxic": {
+   "sellRUB": -793.799988,
+   "buyRUB": -718.200012,
+   "sellUSD": -1058.399902,
+   "buyUSD": -957.599976
+  },
+  "waste_other": {
+   "sellRUB": -6.614999,
+   "buyRUB": -5.985,
+   "sellUSD": -8.819999,
+   "buyUSD": -7.98
+  },
+  "explosives": {
+   "sellRUB": 1170.755737,
+   "buyRUB": 1293.993164,
+   "sellUSD": 1538.89502,
+   "buyUSD": 1700.883911
+  },
+  "steel": {
+   "sellRUB": 288.554138,
+   "buyRUB": 318.928253,
+   "sellUSD": 344.698639,
+   "buyUSD": 380.982697
+  },
+  "fabric": {
+   "sellRUB": 340.134308,
+   "buyRUB": 375.937897,
+   "sellUSD": 448.890778,
+   "buyUSD": 496.142395
+  },
+  "eletric": {
+   "sellRUB": 0.379252,
+   "buyRUB": 0.419173,
+   "sellUSD": 0.45321,
+   "buyUSD": 0.500917
+  },
+  "fuel": {
+   "sellRUB": 116.354301,
+   "buyRUB": 128.602112,
+   "sellUSD": 129.302078,
+   "buyUSD": 142.912811
+  },
+  "uf6": {
+   "sellRUB": 4614.935059,
+   "buyRUB": 5100.717773,
+   "sellUSD": 5969.027832,
+   "buyUSD": 6597.34668
+  },
+  "uranium": {
+   "sellRUB": 15.454656,
+   "buyRUB": 17.081461,
+   "sellUSD": 20.220861,
+   "buyUSD": 22.349373
+  },
+  "yellowcake": {
+   "sellRUB": 817.256042,
+   "buyRUB": 903.282959,
+   "sellUSD": 1080.963867,
+   "buyUSD": 1194.749512
+  },
+  "livestock": {
+   "sellRUB": 86.504639,
+   "buyRUB": 95.61039,
+   "sellUSD": 114.212891,
+   "buyUSD": 126.235298
+  },
+  "water": {
+   "sellRUB": 8.74,
+   "buyRUB": 9.659999,
+   "sellUSD": 11.685,
+   "buyUSD": 12.915
+  },
+  "cement": {
+   "sellRUB": 25.176313,
+   "buyRUB": 27.82645,
+   "sellUSD": 31.246408,
+   "buyUSD": 34.535503
+  },
+  "bricks": {
+   "sellRUB": 21.574963,
+   "buyRUB": 23.84601,
+   "sellUSD": 26.814117,
+   "buyUSD": 29.636656
+  },
+  "oil": {
+   "sellRUB": 41.008541,
+   "buyRUB": 45.325226,
+   "sellUSD": 41.768158,
+   "buyUSD": 46.164806
+  },
+  "workers": {
+   "sellRUB": 0,
+   "buyRUB": 9.0,
+   "sellUSD": 0,
+   "buyUSD": 12.0
+  },
+  "heat": {
+   "sellRUB": 0.950576,
+   "buyRUB": 1.050637,
+   "sellUSD": 0.950721,
+   "buyUSD": 1.050797
+  }
+ },
+ "1980": {
+  "usagewater": {
+   "sellRUB": -9.45,
+   "buyRUB": -8.55,
+   "sellUSD": -12.599999,
+   "buyUSD": -11.4
+  },
+  "alcohol": {
+   "sellRUB": 243.953369,
+   "buyRUB": 269.63266,
+   "sellUSD": 322.4263,
+   "buyUSD": 356.365906
+  },
+  "aluminium": {
+   "sellRUB": 634.307617,
+   "buyRUB": 701.076843,
+   "sellUSD": 826.557617,
+   "buyUSD": 913.56366
+  },
+  "alumina": {
+   "sellRUB": 270.461182,
+   "buyRUB": 298.930756,
+   "sellUSD": 350.633698,
+   "buyUSD": 387.54248
+  },
+  "waste_aluminium": {
+   "sellRUB": 308.407135,
+   "buyRUB": 340.871033,
+   "sellUSD": 401.629272,
+   "buyUSD": 443.906036
+  },
+  "waste_ash": {
+   "sellRUB": -5.67,
+   "buyRUB": -5.13,
+   "sellUSD": -7.56,
+   "buyUSD": -6.84
+  },
+  "asphalt": {
+   "sellRUB": 31.935534,
+   "buyRUB": 35.297169,
+   "sellUSD": 36.230278,
+   "buyUSD": 40.043991
+  },
+  "waste_gravel": {
+   "sellRUB": 3.16534,
+   "buyRUB": 3.498534,
+   "sellUSD": 3.844749,
+   "buyUSD": 4.24946
+  },
+  "bauxite": {
+   "sellRUB": 38.692265,
+   "buyRUB": 42.765133,
+   "sellUSD": 49.191326,
+   "buyUSD": 54.369362
+  },
+  "concrete": {
+   "sellRUB": 14.251232,
+   "buyRUB": 15.751361,
+   "sellUSD": 18.171587,
+   "buyUSD": 20.084385
+  },
+  "waste_bio": {
+   "sellRUB": 1.2825,
+   "buyRUB": 1.4175,
+   "sellUSD": 1.14,
+   "buyUSD": 1.26
+  },
+  "bitumen": {
+   "sellRUB": 194.009171,
+   "buyRUB": 417.0,
+   "sellUSD": 215.60463,
+   "buyUSD": 238.299835
+  },
+  "waste_burnable": {
+   "sellRUB": -2.835,
+   "buyRUB": -2.565,
+   "sellUSD": -3.78,
+   "buyUSD": -3.42
+  },
+  "boards": {
+   "sellRUB": 12.222473,
+   "buyRUB": 13.509049,
+   "sellUSD": 13.235677,
+   "buyUSD": 14.628905
+  },
+  "rawgravel": {
+   "sellRUB": 3.596109,
+   "buyRUB": 3.974647,
+   "sellUSD": 4.412998,
+   "buyUSD": 4.877524
+  },
+  "chemicals": {
+   "sellRUB": 843.812012,
+   "buyRUB": 932.634338,
+   "sellUSD": 1101.810913,
+   "buyUSD": 1217.791016
+  },
+  "fertiliser": {
+   "sellRUB": 2.232342,
+   "buyRUB": 2.467325,
+   "sellUSD": 2.625723,
+   "buyUSD": 2.902115
+  },
+  "iron": {
+   "sellRUB": 15.280069,
+   "buyRUB": 16.888496,
+   "sellUSD": 17.290354,
+   "buyUSD": 19.11039
+  },
+  "rawiron": {
+   "sellRUB": 6.415554,
+   "buyRUB": 7.090875,
+   "sellUSD": 7.128725,
+   "buyUSD": 7.879116
+  },
+  "eletronics": {
+   "sellRUB": 1088.696289,
+   "buyRUB": 1203.295898,
+   "sellUSD": 1384.319702,
+   "buyUSD": 1530.037476
+  },
+  "ecomponents": {
+   "sellRUB": 972.413269,
+   "buyRUB": 1074.772461,
+   "sellUSD": 1248.205322,
+   "buyUSD": 1379.595337
+  },
+  "food": {
+   "sellRUB": 108.848877,
+   "buyRUB": 120.306648,
+   "sellUSD": 143.945236,
+   "buyUSD": 159.097366
+  },
+  "meat": {
+   "sellRUB": 223.448395,
+   "buyRUB": 246.969284,
+   "sellUSD": 295.109283,
+   "buyUSD": 326.173401
+  },
+  "fertiliser_liquid": {
+   "sellRUB": 34.973965,
+   "buyRUB": 38.655434,
+   "sellUSD": 46.222866,
+   "buyUSD": 51.088432
+  },
+  "nuclearfuelburned": {
+   "sellRUB": -1200.149902,
+   "buyRUB": -1085.849976,
+   "sellUSD": -1600.199951,
+   "buyUSD": -1447.799927
+  },
+  "wood": {
+   "sellRUB": 8.532475,
+   "buyRUB": 9.43063,
+   "sellUSD": 8.997774,
+   "buyUSD": 9.944908
+  },
+  "nuclearfuel": {
+   "sellRUB": 111624.453125,
+   "buyRUB": 123374.390625,
+   "sellUSD": 138572.453125,
+   "buyUSD": 153159.015625
+  },
+  "gravel": {
+   "sellRUB": 6.934212,
+   "buyRUB": 42.0,
+   "sellUSD": 8.674953,
+   "buyUSD": 9.588106
+  },
+  "clothes": {
+   "sellRUB": 1251.719116,
+   "buyRUB": 1383.479004,
+   "sellUSD": 1659.571167,
+   "buyUSD": 1834.262817
+  },
+  "coal": {
+   "sellRUB": 13.521533,
+   "buyRUB": 14.944851,
+   "sellUSD": 15.083967,
+   "buyUSD": 16.671753
+  },
+  "rawcoal": {
+   "sellRUB": 7.073785,
+   "buyRUB": 7.818393,
+   "sellUSD": 7.753049,
+   "buyUSD": 8.569159
+  },
+  "plastics": {
+   "sellRUB": 628.30658,
+   "buyRUB": 694.444092,
+   "sellUSD": 774.36322,
+   "buyUSD": 855.875122
+  },
+  "mcomponents": {
+   "sellRUB": 515.861511,
+   "buyRUB": 570.16272,
+   "sellUSD": 627.968018,
+   "buyUSD": 694.069885
+  },
+  "waste_steel": {
+   "sellRUB": 148.167938,
+   "buyRUB": 163.764557,
+   "sellUSD": 175.957397,
+   "buyUSD": 194.479218
+  },
+  "plants": {
+   "sellRUB": 16.245001,
+   "buyRUB": 17.955,
+   "sellUSD": 21.09,
+   "buyUSD": 23.309999
+  },
+  "waste_plastic": {
+   "sellRUB": 105.85463,
+   "buyRUB": 116.997215,
+   "sellUSD": 128.674332,
+   "buyUSD": 142.218994
+  },
+  "prefabpanels": {
+   "sellRUB": 17.527031,
+   "buyRUB": 19.371981,
+   "sellUSD": 22.532099,
+   "buyUSD": 24.903898
+  },
+  "rawbauxite": {
+   "sellRUB": 21.448496,
+   "buyRUB": 23.70623,
+   "sellUSD": 27.16441,
+   "buyUSD": 30.023821
+  },
+  "waste_toxic": {
+   "sellRUB": -793.799988,
+   "buyRUB": -718.200012,
+   "sellUSD": -1058.399902,
+   "buyUSD": -957.599976
+  },
+  "waste_other": {
+   "sellRUB": -6.614999,
+   "buyRUB": -5.985,
+   "sellUSD": -8.819999,
+   "buyUSD": -7.98
+  },
+  "explosives": {
+   "sellRUB": 1170.755737,
+   "buyRUB": 1293.993164,
+   "sellUSD": 1538.89502,
+   "buyUSD": 1700.883911
+  },
+  "steel": {
+   "sellRUB": 288.554138,
+   "buyRUB": 318.928253,
+   "sellUSD": 344.698639,
+   "buyUSD": 380.982697
+  },
+  "fabric": {
+   "sellRUB": 340.134308,
+   "buyRUB": 375.937897,
+   "sellUSD": 448.890778,
+   "buyUSD": 496.142395
+  },
+  "eletric": {
+   "sellRUB": 0.379252,
+   "buyRUB": 0.419173,
+   "sellUSD": 0.45321,
+   "buyUSD": 0.500917
+  },
+  "fuel": {
+   "sellRUB": 116.354301,
+   "buyRUB": 128.602112,
+   "sellUSD": 129.302078,
+   "buyUSD": 142.912811
+  },
+  "uf6": {
+   "sellRUB": 4614.935059,
+   "buyRUB": 5100.717773,
+   "sellUSD": 5969.027832,
+   "buyUSD": 6597.34668
+  },
+  "uranium": {
+   "sellRUB": 15.454656,
+   "buyRUB": 17.081461,
+   "sellUSD": 20.220861,
+   "buyUSD": 22.349373
+  },
+  "yellowcake": {
+   "sellRUB": 817.256042,
+   "buyRUB": 903.282959,
+   "sellUSD": 1080.963867,
+   "buyUSD": 1194.749512
+  },
+  "livestock": {
+   "sellRUB": 86.504639,
+   "buyRUB": 95.61039,
+   "sellUSD": 114.212891,
+   "buyUSD": 126.235298
+  },
+  "water": {
+   "sellRUB": 8.74,
+   "buyRUB": 9.659999,
+   "sellUSD": 11.685,
+   "buyUSD": 12.915
+  },
+  "cement": {
+   "sellRUB": 25.176313,
+   "buyRUB": 27.82645,
+   "sellUSD": 31.246408,
+   "buyUSD": 34.535503
+  },
+  "bricks": {
+   "sellRUB": 21.574963,
+   "buyRUB": 23.84601,
+   "sellUSD": 26.814117,
+   "buyUSD": 29.636656
+  },
+  "oil": {
+   "sellRUB": 41.008541,
+   "buyRUB": 45.325226,
+   "sellUSD": 41.768158,
+   "buyUSD": 46.164806
+  },
+  "workers": {
+   "sellRUB": 0,
+   "buyRUB": 9.0,
+   "sellUSD": 0,
+   "buyUSD": 12.0
+  },
+  "heat": {
+   "sellRUB": 0.950576,
+   "buyRUB": 1.050637,
+   "sellUSD": 0.950721,
+   "buyUSD": 1.050797
+  }
+ }
+}
