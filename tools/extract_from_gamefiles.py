@@ -53,7 +53,7 @@ def load_localization(media):
     return tables
 
 ECON_TOKENS = {
-    'NAME', 'WORKERS_NEEDED', 'PROFESORS_NEEDED', 'PRODUCTION', 'CONSUMPTION',
+    'NAME', 'NAME_STR', 'WORKERS_NEEDED', 'PROFESORS_NEEDED', 'PRODUCTION', 'CONSUMPTION',
     'CONSUMPTION_PER_SECOND', 'CITIZEN_ABLE_SERVE', 'QUALITY_OF_LIVING',
     'ATTRACTIVE_SCORE', 'STORAGE', 'COST_RESOURCE', 'WASTE_CONSUMPTION',
     'ELETRIC_CONSUMPTION_LIGHTING_WORKER_FACTOR',
@@ -63,9 +63,9 @@ ECON_TOKENS = {
 TYPE_RE = re.compile(r'^\$(TYPE_[A-Z_]+|SUBTYPE_[A-Z_]+|CIVIL_BUILDING)\b')
 
 
-def parse_building(path):
+def parse_building(path, ident=None):
     b = {
-        'id': os.path.splitext(os.path.basename(path))[0],
+        'id': ident or os.path.splitext(os.path.basename(path))[0],
         'nameId': None, 'types': [], 'workers': 0, 'professors': 0,
         'production': {}, 'consumption': {}, 'livingSpace': 0,
         'citizenAbleServe': 0, 'qualityOfLiving': None, 'attractiveScore': None,
@@ -88,7 +88,9 @@ def parse_building(path):
         if key not in ECON_TOKENS:
             continue
         try:
-            if key == 'NAME' and args:
+            if key == 'NAME_STR' and args:
+                b['nameStr'] = ' '.join(args).strip('"')
+            elif key == 'NAME' and args:
                 b['nameId'] = int(args[0])
             elif key == 'WORKERS_NEEDED':
                 b['workers'] = float(args[0])
@@ -126,6 +128,18 @@ def extract_buildings(media):
             b = parse_building(os.path.join(root, fn))
             if b:
                 out.append(b)
+    # DLC / CWC buildings live in <dlc>/buildings/<name>/building.ini with $NAME_STR
+    for dlc in sorted(os.listdir(media)):
+        broot = os.path.join(media, dlc, 'buildings')
+        if not os.path.isdir(broot):
+            continue
+        for sub in sorted(os.listdir(broot)):
+            ini = os.path.join(broot, sub, 'building.ini')
+            if os.path.isfile(ini):
+                b = parse_building(ini, ident=f'{dlc}/{sub}')
+                if b:
+                    b['dlc'] = dlc
+                    out.append(b)
     return out
 
 
@@ -223,6 +237,191 @@ def extract_vehicles(media):
     return out
 
 
+# resource key -> building group (sheet group names), for buildings without a sheet match
+GROUP_BY_RESOURCE = {
+    'eletric': ('Strom', 'Electricity'),
+    'heat': ('Heizwerk', 'Heating plant'),
+    'water': ('Wasser & Abwasser', 'Water & Wastewater'),
+    'usagewater': ('Wasser & Abwasser', 'Water & Wastewater'),
+    'plants': ('Lebensmittel/Alkohol/Pflanzen', 'Food/Alcohol/Plants'),
+    'food': ('Lebensmittel/Alkohol/Pflanzen', 'Food/Alcohol/Plants'),
+    'alcohol': ('Lebensmittel/Alkohol/Pflanzen', 'Food/Alcohol/Plants'),
+    'meat': ('Lebensmittel/Alkohol/Pflanzen', 'Food/Alcohol/Plants'),
+    'livestock': ('Lebensmittel/Alkohol/Pflanzen', 'Food/Alcohol/Plants'),
+    'fertiliser': ('Lebensmittel/Alkohol/Pflanzen', 'Food/Alcohol/Plants'),
+    'fertiliser_liquid': ('Lebensmittel/Alkohol/Pflanzen', 'Food/Alcohol/Plants'),
+    'gravel': ('Bauindustrie', 'Construction industry'),
+    'rawgravel': ('Bauindustrie', 'Construction industry'),
+    'cement': ('Bauindustrie', 'Construction industry'),
+    'concrete': ('Bauindustrie', 'Construction industry'),
+    'asphalt': ('Bauindustrie', 'Construction industry'),
+    'bricks': ('Bauindustrie', 'Construction industry'),
+    'boards': ('Bauindustrie', 'Construction industry'),
+    'wood': ('Bauindustrie', 'Construction industry'),
+    'prefabpanels': ('Bauindustrie', 'Construction industry'),
+    'rawcoal': ('Fossile Brennstoffe', 'Fossil fuels'),
+    'coal': ('Fossile Brennstoffe', 'Fossil fuels'),
+    'oil': ('Fossile Brennstoffe', 'Fossil fuels'),
+    'fuel': ('Fossile Brennstoffe', 'Fossil fuels'),
+    'bitumen': ('Fossile Brennstoffe', 'Fossil fuels'),
+    'chemicals': ('Fossile Brennstoffe', 'Fossil fuels'),
+    'plastics': ('Fossile Brennstoffe', 'Fossil fuels'),
+    'rawiron': ('Metallurgie', 'metallurgy'),
+    'iron': ('Metallurgie', 'metallurgy'),
+    'steel': ('Metallurgie', 'metallurgy'),
+    'rawbauxite': ('Metallurgie', 'metallurgy'),
+    'bauxite': ('Metallurgie', 'metallurgy'),
+    'alumina': ('Metallurgie', 'metallurgy'),
+    'aluminium': ('Metallurgie', 'metallurgy'),
+}
+ADVANCED = ('Hochentwickelte Industrie', 'Advanced Industry')
+MISC = ('Sonstiges', 'Miscellaneous')
+for k in ('uranium', 'yellowcake', 'uf6', 'nuclearfuel', 'nuclearfuelburned',
+          'ecomponents', 'mcomponents', 'eletronics', 'explosives', 'fabric',
+          'clothes', 'vehicles'):
+    GROUP_BY_RESOURCE[k] = ADVANCED
+
+# game construction-resource key -> app material field
+CONSTRUCTION_MAP = {
+    'workers': 'workdays', 'gravel': 'gravel', 'bricks': 'bricks', 'steel': 'steel',
+    'concrete': 'concrete', 'asphalt': 'asphalt', 'boards': 'boards',
+    'prefabpanels': 'panels', 'ecomponents': 'ecomponents', 'mcomponents': 'mcomponents',
+}
+
+EXTRA_FIELDS = ['power', 'maxKW', 'water', 'hotwater', 'wastePerWorker', 'workdays',
+                'gravel', 'bricks', 'steel', 'concrete', 'asphalt', 'boards', 'panels',
+                'ecomponents', 'mcomponents']
+
+
+def build_dataset(buildings, repo_root, loc):
+    """Merge game rates with sheet-measured extras into the app's
+    production_buildings.json shape -> data/game/production_buildings.json."""
+    sheet = json.load(open(os.path.join(repo_root, 'data', 'production_buildings.json')))
+    res = json.load(open(os.path.join(repo_root, 'data', 'resources.json')))['resources']
+    bykey = {r['key']: r for r in res}
+    de2key = {r['de']: r['key'] for r in res}
+
+    # index sheet rows for extras lookup: exact name, then normalized token set
+    # (handles "Kleines Heizwerk" vs "Heizwerk (klein)" word-order/inflection)
+    SPELLING = {'kohlenerz': 'kohleerz', 'kunstoff': 'kunststoff',
+                'herstellung': '', 'von': '', 'kernbrennstoff': 'kernbrennstofffabrik'}
+
+    # sheet rows whose names can't be derived from the game name
+    GAMEID_ALIASES = {
+        'heating_plant_big': 'Kleine Wasseraufbereitung',  # sheet data-entry bug: big heating plant row is mislabeled
+        'cement_plant': 'Zementwerk klein',
+        'cwc/CementPlant': 'Zementwerk groß',
+    }
+
+    def norm(name):
+        name = name.lower().replace('kunstoff', 'kunststoff')
+        tokens = re.sub(r'[(),/-]', ' ', name).split()
+        out = set()
+        for tk in tokens:
+            tk = SPELLING.get(tk, tk)
+            tk = re.sub(r'(es|er|en|e|s)$', '', tk) if len(tk) > 4 else tk
+            if tk:
+                out.add(tk)
+        return frozenset(out)
+
+    sheet_by_name, sheet_by_norm = {}, {}
+    for s in sheet:
+        sheet_by_name.setdefault(s['de'].lower(), []).append(s)
+        sheet_by_norm.setdefault(norm(s['de']), []).append(s)
+
+    def sheet_match(g, name):
+        alias = GAMEID_ALIASES.get(g['id'])
+        cands = (sheet_by_name.get(alias.lower(), []) if alias
+                 else sheet_by_name.get(name.lower()) or sheet_by_norm.get(norm(name)) or [])
+        for s in cands:
+            if s['workers'] == g['workers']:
+                return s
+        return cands[0] if cands else None
+
+    out, seen = [], {}
+    for g in buildings:
+        if not (g['production'] or g['consumption']):
+            continue
+        if not g.get('de') and not g.get('nameStr'):
+            continue
+        # farms produce via attached fields; their ini rate is not per-worker.
+        # The app has a dedicated field/hectare calculator instead.
+        if 'TYPE_FARM' in g['types'] or (not g['workers'] and sum(g['production'].values()) < 0.1):
+            continue
+        NAME_OVERRIDES = {'cwc/CementPlant': ('Zementwerk groß', 'Cement plant large')}
+        name_de = g.get('de') or g['nameStr']
+        name_en = g.get('en') or g.get('nameStr') or name_de
+        if g['id'] in NAME_OVERRIDES:
+            name_de, name_en = NAME_OVERRIDES[g['id']]
+        s = sheet_match(g, name_de)
+
+        # dedupe: visual variants (_v2/_v3) share name+stats -> keep first;
+        # same name but different stats -> qualify with worker count
+        sig = (name_de, g['workers'], tuple(sorted(g['production'].items())),
+               tuple(sorted(g['consumption'].items())))
+        if sig in seen:
+            continue
+        seen[sig] = True
+        collision = any(k[0] == name_de and k != sig for k in seen)
+        if collision:
+            name_de = f'{name_de} ({int(g["workers"])} 👷)'
+            name_en = f'{name_en} ({int(g["workers"])} 👷)'
+
+        heat_only = set(g['production']) == {'heat'}
+        prods, cons = [], []
+        for key, rate in g['production'].items():
+            r = bykey.get(key)
+            if not r:
+                continue
+            if heat_only and s:
+                # heating output does not follow the ×workers rule; trust the sheet
+                tday = next((p['rate'] for p in s['production'] if de2key.get(p['de']) == key), rate)
+            elif heat_only:
+                tday = rate
+            else:
+                tday = rate * g['workers'] if g['workers'] else rate
+            prods.append({'de': r['de'], 'en': r['en'], 'rate': round(tday, 4)})
+        for key, rate in g['consumption'].items():
+            r = bykey.get(key)
+            if not r:
+                continue
+            tday = rate * g['workers'] if g['workers'] else rate
+            cons.append({'de': r['de'], 'en': r['en'], 'rate': round(tday, 4)})
+
+        entry = {
+            'gameId': g['id'],
+            'group': None,
+            'de': name_de, 'en': name_en,
+            'workers': g['workers'],
+            'production': prods,
+            'consumption': cons,
+            'measured': bool(s),   # extras below come from the sheet (measured in-game)
+        }
+        if s:
+            entry['group'] = s['group']
+            for f in EXTRA_FIELDS:
+                entry[f] = s.get(f, 0)
+        else:
+            main_key = next(iter(g['production']), None) or next(iter(g['consumption']), None)
+            gr = GROUP_BY_RESOURCE.get(main_key, MISC)
+            entry['group'] = {'de': gr[0], 'en': gr[1]}
+            for f in EXTRA_FIELDS:
+                entry[f] = 0
+            for ck, field in CONSTRUCTION_MAP.items():
+                if ck in g.get('constructionResources', {}):
+                    entry[field] = g['constructionResources'][ck]
+        out.append(entry)
+
+    out.sort(key=lambda e: (e['group']['de'], e['de']))
+    path = os.path.join(repo_root, 'data', 'game', 'production_buildings.json')
+    with open(path, 'w') as f:
+        json.dump(out, f, ensure_ascii=False, indent=1)
+    n_measured = sum(1 for e in out if e['measured'])
+    print(f'game dataset: {len(out)} production buildings '
+          f'({n_measured} with sheet-measured extras) -> data/game/production_buildings.json')
+    return out
+
+
 def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__)
@@ -261,6 +460,8 @@ def main():
     with open(os.path.join(outdir, 'names.json'), 'w') as f:
         json.dump(names, f, ensure_ascii=False, indent=1)
     print(f'names: {len(names)} ids × {len(loc)} languages -> data/game/names.json')
+
+    build_dataset(buildings, repo_root, loc)
 
     if '--validate' in sys.argv:
         validate(buildings, repo_root)
