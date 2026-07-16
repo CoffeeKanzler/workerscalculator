@@ -1,8 +1,8 @@
-import { STRINGS } from './i18n.js';
-import { parseStatsIni, recordToPrices } from './statsini.js';
-import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js';
-import { stateToFragment, fragmentToState, downloadJson } from './share.js';
-import { solveChain, producersByResource, defaultProducer } from './chain.js';
+import { STRINGS } from './i18n.js?v=7';
+import { parseStatsIni, recordToPrices } from './statsini.js?v=7';
+import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=7';
+import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=7';
+import { solveChain, producersByResource, defaultProducer } from './chain.js?v=7';
 
 const TABS = ['prices', 'production', 'chain', 'analysis', 'city', 'trains', 'research', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
@@ -809,7 +809,9 @@ function utilizationCell(u) {
 
 // ---------------------------------------------------------------- trains tab
 function renderTrains() {
-  const locos = DATA.vehicles.filter(v => v.attrs['Typ'] === 'Lokomotive' || v.attrs['Typ'] === 'Triebwagen');
+  const locos = DATA.vehicles
+    .filter(v => v.attrs['Typ'] === 'Lokomotive' || v.attrs['Typ'] === 'Triebwagen')
+    .sort((a, b) => (b.attrs['Motorleistung'] ?? 0) - (a.attrs['Motorleistung'] ?? 0));
   const wagons = DATA.vehicles.filter(v => ['Güterwagon', 'Passagierwagen'].includes(v.attrs['Typ']));
   // cargo options: resource names (German) that appear as capacity attrs on wagons
   const resDeNames = new Set(DATA.resources.map(r => r.de));
@@ -826,17 +828,20 @@ function renderTrains() {
   const locoLen = loco?.attrs['Länge'] ?? 0;
   const usable = Math.max(0, tr.length - locoLen * tr.locoCount);
 
-  const cargoRes = DATA.resources.find(r => r.de === tr.cargo);
   const cargoLabel = c => {
     const r = DATA.resources.find(x => x.de === c);
     return r ? rname(r) : (c === 'Passagiere' ? (state.lang === 'de' ? 'Passagiere' : 'Passengers') : c);
   };
+  const locoLabel = l => {
+    const a = l.attrs;
+    return `${l.name} — ${fmt(a['Motorleistung'] ?? 0, 0)} kW, ${fmt(a['Max. Geschwindigkeit'] ?? 0, 0)} km/h, `
+      + `${a['Länge'] ?? '?'} m, ${a['Antriebsart'] ?? '?'} (${a['Von'] ?? '?'}–${a['Bis'] ?? '?'})`;
+  };
 
   const settings = el('div', { class: 'settingsbar' },
-    el('label', {}, t('cargo') + ' ', selectInput(cargos.map(c => [c, cargoLabel(c)]), tr.cargo, v => tr.cargo = v)),
+    el('label', {}, t('cargo') + ' ', selectInput(cargos.map(c => [c, cargoLabel(c)]), tr.cargo, v => { tr.cargo = v; tr.wagonName = null; })),
     el('label', {}, t('loco') + ' ',
-      selectInput(locos.map(l => [l.name, `${l.name} (${l.attrs['Länge'] ?? '?'} m, ${l.attrs['Max. Geschwindigkeit'] ?? '?'} km/h)`]),
-        loco?.name, v => tr.locoName = v)),
+      selectInput(locos.map(l => [l.name, locoLabel(l)]), loco?.name, v => tr.locoName = v)),
     el('label', {}, t('locoCount') + ' ', numInput(tr.locoCount, v => tr.locoCount = Math.max(1, v), { min: 1, step: 1 })),
     el('label', {}, t('trainLength') + ' ', numInput(tr.length, v => tr.length = v, { min: 0, step: 10 })));
 
@@ -850,23 +855,69 @@ function renderTrains() {
     })
     .sort((a, b) => b.total - a.total);
 
-  const tbl = el('table', { class: 'data wide' },
+  if (!rows.some(r => r.w.name === tr.wagonName)) tr.wagonName = rows[0]?.w.name ?? null;
+
+  const tbl = el('table', { class: 'data wide selectable' },
     el('thead', {}, el('tr', {},
       el('th', {}, t('wagon')), el('th', {}, t('length')), el('th', {}, `t / ${t('wagon')}`),
       el('th', {}, t('speed')), el('th', {}, t('from')),
       el('th', {}, t('wagonCount')), el('th', {}, t('totalCapacity')))),
-    el('tbody', {}, rows.map(r => el('tr', {},
+    el('tbody', {}, rows.map(r => el('tr', {
+      class: r.w.name === tr.wagonName ? 'selected' : '',
+      onclick: () => { tr.wagonName = r.w.name; tr.wagonCountOverride = null; update(); },
+    },
       el('td', {}, r.w.name), el('td', { class: 'r' }, fmt(r.len, 1)),
       el('td', { class: 'r' }, fmt(r.cap, 1)), el('td', { class: 'r' }, fmt(r.speed, 0)),
       el('td', { class: 'r' }, r.from ?? '—'),
       el('td', { class: 'r' }, fmt(r.n, 0)),
       el('td', { class: 'r pos' }, fmt(r.total, 1) + (tr.cargo === 'Passagiere' ? '' : ' t'))))));
 
-  return el('section', {}, settings,
-    el('p', { class: 'hint' },
-      `${t('loco')}: ${loco?.name ?? '—'} × ${tr.locoCount} = ${fmt(locoLen * tr.locoCount, 1)} m → ` +
-      `${fmt(usable, 1)} m ${state.lang === 'de' ? 'für Wagons' : 'for wagons'}`),
-    tbl);
+  // ---- your train summary
+  const sel = rows.find(r => r.w.name === tr.wagonName);
+  let summary = null;
+  if (sel && loco) {
+    const nAuto = sel.n;
+    const n = tr.wagonCountOverride ?? nAuto;
+    const la = loco.attrs, wa = sel.w.attrs;
+    const totalLen = locoLen * tr.locoCount + n * sel.len;
+    const capacity = n * sel.cap;
+    const emptyW = (la['Leergewicht'] ?? 0) * tr.locoCount + (wa['Leergewicht'] ?? 0) * n;
+    const cargoW = tr.cargo === 'Passagiere' ? 0 : capacity;
+    const loadedW = emptyW + cargoW;
+    const powerKW = (la['Motorleistung'] ?? 0) * tr.locoCount;
+    const kwPerT = loadedW ? powerKW / loadedW : 0;
+    const speeds = [la['Max. Geschwindigkeit'], wa['Max. Geschwindigkeit']].filter(x => x > 0);
+    const vmax = speeds.length ? Math.min(...speeds) : null;
+    const eraFrom = Math.max(la['Von'] ?? 0, wa['Von'] ?? 0);
+    const kwCls = kwPerT >= 2 ? 'pos' : kwPerT >= 1 ? 'warn' : 'neg';
+    summary = el('div', { class: 'totalsbox' },
+      el('h3', {}, t('yourTrain')),
+      kv(t('loco'), `${loco.name} × ${tr.locoCount}`),
+      kv(t('wagon'), sel.w.name),
+      kv(t('wagonCount'), el('span', {},
+        numInput(n, v => { tr.wagonCountOverride = Math.max(0, Math.round(v)); }, { min: 0, step: 1 }),
+        tr.wagonCountOverride !== null && tr.wagonCountOverride !== nAuto
+          ? el('button', { class: 'danger', onclick: () => { tr.wagonCountOverride = null; update(); } }, '↺')
+          : '')),
+      kv(t('totalLength'), fmt(totalLen, 1) + ' m / ' + fmt(tr.length, 0) + ' m',
+        totalLen > tr.length ? 'neg' : 'pos'),
+      kv(t('totalCapacity'), fmt(capacity, 1) + (tr.cargo === 'Passagiere' ? '' : ' t')),
+      kv(t('emptyWeight'), fmt(emptyW, 1) + ' t'),
+      kv(t('loadedWeight'), fmt(loadedW, 1) + ' t'),
+      kv(t('power'), fmt(powerKW, 0) + ' kW (' + (la['Antriebsart'] ?? '?') + ')'),
+      kv(t('powerPerTon'), fmt(kwPerT, 2) + ' kW/t', kwCls),
+      kv(t('speed'), vmax !== null ? fmt(vmax, 0) + ' km/h' : '—'),
+      kv(t('from'), fmt(eraFrom, 0)),
+      la['Antriebsart'] === 'E' ? el('p', { class: 'hint' }, t('catenaryNote')) : null,
+      el('p', { class: 'hint' }, t('powerHint')));
+  }
+
+  return el('section', {},
+    el('p', { class: 'hint' }, t('trainHint')),
+    settings,
+    el('div', { class: 'columns' },
+      el('div', {}, tbl),
+      summary));
 }
 
 // ---------------------------------------------------------------- research tab

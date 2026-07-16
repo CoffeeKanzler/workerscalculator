@@ -59,6 +59,11 @@ export const STRINGS = {
     chainImportBill: 'Import-Rechnung', chainByproducts: 'Überschüsse / Nebenprodukte',
     chainHint: 'Gib ein Ziel vor – die komplette Produktionskette wird rückwärts berechnet. Jede Zwischenware kannst du stattdessen importieren oder den Produzenten wechseln.',
     chainDiverged: 'Diese Kette konvergiert nicht (ein Kreislauf verbraucht mehr als er erzeugt). Wechsle einen Produzenten oder importiere eine Zwischenware.',
+    trainHint: 'Wagon in der Tabelle anklicken, um den Zug zusammenzustellen.',
+    yourTrain: 'Dein Zug', totalLength: 'Zuglänge', emptyWeight: 'Leergewicht',
+    loadedWeight: 'Gewicht beladen', powerPerTon: 'Leistung pro Tonne',
+    catenaryNote: 'E-Lok: benötigt Oberleitung auf der ganzen Strecke.',
+    powerHint: 'Faustregel: ab ~1 kW/t fährt der Zug an, ab ~2 kW/t auch an Steigungen zügig. Hängt vom Gelände ab.',
   },
   en: {
     appTitle: 'W&R: Soviet Republic – Economy Planner',
@@ -119,5 +124,10 @@ export const STRINGS = {
     chainImportBill: 'Import bill', chainByproducts: 'Surplus / byproducts',
     chainHint: 'State a goal – the whole production chain is computed backwards. Switch any intermediate to import instead, or pick a different producer.',
     chainDiverged: 'This chain does not converge (a cycle consumes more than it produces). Switch a producer or import an intermediate resource.',
+    trainHint: 'Click a wagon in the table to compose your train.',
+    yourTrain: 'Your train', totalLength: 'Train length', emptyWeight: 'Empty weight',
+    loadedWeight: 'Loaded weight', powerPerTon: 'Power per ton',
+    catenaryNote: 'Electric locomotive: needs catenary along the whole route.',
+    powerHint: 'Rule of thumb: ~1 kW/t gets the train moving, ~2 kW/t handles inclines briskly. Depends on terrain.',
   },
 };

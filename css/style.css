@@ -115,7 +115,8 @@ button.danger:hover { border-color: var(--neg); }
 .settingsbar label { display: flex; align-items: center; gap: 6px; color: var(--muted); }
 
 .columns { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; margin-top: 10px; }
-.columns > div { flex: 1 1 380px; min-width: 320px; }
+.columns > div { flex: 1 1 380px; min-width: 0; overflow-x: auto; }
+.columns > .totalsbox { flex: 0 1 340px; min-width: 280px; overflow-x: visible; }
 
 .totalsbox {
   flex: 0 1 340px; background: var(--panel); border: 1px solid var(--border);
@@ -136,6 +137,10 @@ button.danger:hover { border-color: var(--neg); }
 .chart .axislabel { fill: var(--muted); font-size: 10px; }
 .legend { display: flex; gap: 14px; margin-top: 6px; flex-wrap: wrap; }
 .legend i { display: inline-block; width: 12px; height: 3px; margin-right: 4px; vertical-align: middle; }
+
+table.selectable tbody tr { cursor: pointer; }
+table.selectable tbody tr.selected td { background: rgba(199, 74, 58, 0.18); }
+table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
 
 .citytabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
 .citytabs button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
