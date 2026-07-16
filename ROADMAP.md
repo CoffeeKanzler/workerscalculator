@@ -127,20 +127,23 @@ lengths, heating-plant output semantics.
 
 ### 5.1 Vehicle production tab ✅ done 2026-07-16
 (Implemented from the original sheet: exact vehicle selection, material cost,
-workday throughput, period totals, and profit per worker. Sale value stays a
-manual field because `stats.ini` does not export vehicle sale prices; binary
-save-file research and automatic per-save ranking remain a follow-up.)
+workday throughput, period totals, and profit per worker. Vehicle export values
+are now reconstructed from the executable's ordered component formula and the
+selected save's live RUB/USD resource prices.)
 - **What:** Port the sheet's `Fahrzeugproduktion`: pick producible vehicles, material cost
   (steel, plastics, fabric, m/e-components, electronics) vs. sale value, profit per year.
   Data already in `data/vehicles.json` (Arbeitstage, material columns).
 - **Effort:** medium.
 
-### 5.1a Save-based vehicle profit recommendations
-- **What:** Read vehicle sale values from an uploaded save if a reliable source
-  can be identified, then rank producible vehicles by profit per worker in ₽/$.
-- **Status:** `stats.ini` contains resource prices but no vehicle sale values.
-  `vehicles.bin` and `usedveh.bin` are binary and may contain instance/used-market
-  values, which are not yet proven to equal the new vehicle factory sale value.
+### 5.1a Save-based vehicle profit recommendations ✅
+- `stats.ini` upload selects the live `$STAT_CURRENT` global economy snapshot while
+  excluding `$STAT_CITY` histories.
+- Vehicle sale values use current save prices, recovered component order, native
+  east/west currency behavior, cross-market multipliers, and aircraft doubling.
+- Recommendations rank profit per worker within road vehicles, trains, boats, or
+  aircraft and can be added directly to the production plan.
+- **Next:** map blueprint purchase cost and owned `$BLUEPRINT_OWNED` entries so the
+  ranking can show license payback time.
 
 ### 5.1b Train planner on game vehicle data
 (Partially implemented 2026-07-16: game-only locomotives and DLC vehicles are
