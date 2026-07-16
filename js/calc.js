@@ -43,7 +43,10 @@ export class Economy {
     if (!key) return 0;
     if (key === 'workers') return this.workday(currency);
     if (this.inputPriceMode === 'buy') return this.buy(key, currency) + this.delivery(key, currency);
-    return this.sell(key, currency) - this.delivery(key, currency);
+    // Consuming a locally produced input is not a border delivery. Keep its
+    // opportunity value unchanged; delivery only applies to actual exports or
+    // to imported inputs in buy mode.
+    return this.sell(key, currency);
   }
 
   keyForName(name) {

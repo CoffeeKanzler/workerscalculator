@@ -46,12 +46,23 @@ test('Kohlekraftwerk profit matches sheet G24 = 1852.097 ₽/day', () => {
   assert.ok(Math.abs(profit - 1852.097176) < 0.01, `profit ${profit}`);
 });
 
-test('delivery cost lowers sell and raises buy, but not for wire/pipe goods', () => {
+test('delivery cost lowers exports and raises imported inputs, but not wire/pipe goods', () => {
   const e = eco({ inputPriceMode: 'buy', includeDelivery: true });
   assert.equal(e.outputPrice('steel', 'RUB'), defaults.sellRUB.steel - defaults.deliveryCostRUB);
   assert.equal(e.inputPrice('steel', 'RUB'), defaults.purchaseRUB.steel + defaults.deliveryCostRUB);
   assert.equal(e.outputPrice('eletric', 'RUB'), defaults.sellRUB.eletric);
   assert.equal(e.inputPrice('water', 'RUB'), defaults.purchaseRUB.water);
+});
+
+test('delivery never discounts consumed inputs in sell-price opportunity mode', () => {
+  const e = eco({ inputPriceMode: 'sell', includeDelivery: true });
+  assert.equal(e.inputPrice('steel', 'RUB'), defaults.sellRUB.steel);
+
+  const distillery = byDe('Brennerei');
+  const withoutDelivery = eco({ inputPriceMode: 'sell', includeDelivery: false })
+    .buildingProfit(distillery, 'RUB').profit;
+  const withDelivery = e.buildingProfit(distillery, 'RUB').profit;
+  assert.ok(withDelivery <= withoutDelivery);
 });
 
 test('build cost = workdays × workday cost + Σ material × buy price', () => {
