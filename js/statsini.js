@@ -1,6 +1,7 @@
 // Parser for Workers & Resources: Soviet Republic stats.ini exports.
-// The file holds a sequence of $STAT_RECORD blocks (one per autosaved snapshot),
-// each containing $-sections that end with $end. Price sections have lines:
+// The file holds $STAT_RECORD history plus a final $STAT_CURRENT snapshot.
+// Later $STAT_CITY blocks are separate histories and are ignored. Price
+// sections contain lines:
 //   <resourceKey> <value> <growthFactor>
 
 const PRICE_SECTIONS = {
@@ -33,10 +34,15 @@ export function parseStatsIni(text) {
     if (line.startsWith('$')) {
       const parts = line.split(/\s+/);
       const name = parts[0].slice(1);
-      if (name === 'STAT_RECORD') {
-        rec = { index: records.length, day: null, year: null };
+      if (name === 'STAT_RECORD' || name === 'STAT_CURRENT') {
+        rec = { index: records.length, day: null, year: null, current: name === 'STAT_CURRENT' };
         for (const s of Object.values(PRICE_SECTIONS)) rec[s] = {};
         records.push(rec);
+        section = null;
+      } else if (name === 'STAT_CITY') {
+        // City histories follow the global records and repeat the same economy
+        // section names. They are not valid price snapshots for the planner.
+        rec = null;
         section = null;
       } else if (name === 'end') {
         section = null;

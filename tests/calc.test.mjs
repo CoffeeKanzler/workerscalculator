@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   Economy, evaluatePlan, evaluateCity, lowTechPoints,
-  evaluateVehicleProduction, SEASON_FACTOR, NO_SEASON_FACTOR,
+  evaluateVehicleProduction, vehicleSaleValue, SEASON_FACTOR, NO_SEASON_FACTOR,
 } from '../js/calc.js';
 
 const res = JSON.parse(readFileSync(new URL('../data/resources.json', import.meta.url)));
@@ -151,3 +151,55 @@ test('vehicle production follows sheet material and workday throughput formula',
   assert.equal(result.profit, 9168.8);
   assert.ok(Math.abs(result.profitPerWorker - 91.688) < 1e-9);
 });
+
+test('vehicle sale value uses save prices and game export adjustments', () => {
+  const vehicle = {
+    attrs: {
+      Typ: 'Bus', Bauland: 'Sowjetunion', Arbeitstage: 100,
+      Stahl: 2, Aluminium: 0, Kunststoffe: 0, Stoff: 0,
+      'Mechanik-Bauteile': 3, 'Elektronik-Bauteile': 0, Elektronik: 0,
+    },
+  };
+  const fakeEco = {
+    workday: currency => currency === 'RUB' ? 10 : 4,
+    sell: (key, currency) => ({ steel: 20, mcomponents: 30 })[key] * (currency === 'RUB' ? 1 : 0.5),
+  };
+  assert.equal(vehicleSaleValue(vehicle, 'RUB', fakeEco), 100 * 10 * 0.45 + 2 * 20 + 3 * 30);
+  const usd = (((100 * 4) * 0.65 + 2 * 10) * 0.65 + 3 * 15) * 0.65;
+  assert.ok(Math.abs(vehicleSaleValue(vehicle, 'USD', fakeEco) - usd) < 1e-9);
+});
+
+test('western aircraft get RUB cross-market adjustment and aircraft multiplier', () => {
+  const vehicle = {
+    attrs: {
+      Typ: 'Flugzeug', Bauland: 'West Germany', Arbeitstage: 10,
+      Stahl: 1, Aluminium: 0, Kunststoffe: 0, Stoff: 0,
+      'Mechanik-Bauteile': 0, 'Elektronik-Bauteile': 0, Elektronik: 0,
+    },
+  };
+  const fakeEco = { workday: () => 10, sell: () => 20 };
+  const expected = ((10 * 10 * 0.45) * 1.27 + 20) * 1.27 * 2;
+  assert.ok(Math.abs(vehicleSaleValue(vehicle, 'RUB', fakeEco) - expected) < 1e-9);
+});
+
+test('cross-market formula restores separate body and engine component order', () => {
+  const vehicle = {
+    attrs: {
+      Typ: 'Flugzeug', Bauland: 'West Germany', Leergewicht: 2, Motorleistung: 1000,
+      Arbeitstage: 500, Stahl: 10, Aluminium: 0, Kunststoffe: 0, Stoff: 0,
+      'Mechanik-Bauteile': 20, 'Elektronik-Bauteile': 0, Elektronik: 0,
+    },
+  };
+  const fakeEco = { workday: () => 1, sell: () => 1 };
+  const workerParts = splitByRatio(500, 350, 150);
+  const mechanicalParts = splitByRatio(20, .34, .7);
+  let expected = 0;
+  for (const amount of [workerParts[0] * .45, 10, mechanicalParts[0], workerParts[1] * .45, mechanicalParts[1]]) {
+    expected = (expected + amount) * 1.27;
+  }
+  assert.ok(Math.abs(vehicleSaleValue(vehicle, 'RUB', fakeEco) - expected * 2) < 1e-9);
+});
+
+function splitByRatio(total, first, second) {
+  return [total * first / (first + second), total * second / (first + second)];
+}

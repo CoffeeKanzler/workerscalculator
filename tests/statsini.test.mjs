@@ -61,3 +61,49 @@ test('records without price data are dropped', () => {
   const recs = parseStatsIni('$STAT_RECORD 0\n$DATE_YEAR 1980\n$Citizens_Born 5\n');
   assert.equal(recs.length, 0);
 });
+
+test('city statistics after global records do not overwrite global prices or date', () => {
+  const text = `$STAT_RECORD 0
+$DATE_DAY 113
+$DATE_YEAR 2001
+$Economy_PurchaseCostUSD
+  steel 100 1.05
+$end
+$Economy_SellCostUSD
+  steel 90 0.95
+$end
+$STAT_CITY 1
+$DATE_DAY 30
+$DATE_YEAR 1990
+$Economy_SellCostUSD
+  steel 999 0.95
+$end
+`;
+  const recs = parseStatsIni(text);
+  assert.equal(recs.length, 1);
+  assert.equal(recs[0].year, 2001);
+  assert.equal(recs[0].day, 113);
+  assert.equal(recs[0].sellUSD.steel, 90);
+});
+
+test('current snapshot is a separate newest global price record', () => {
+  const text = `$STAT_RECORD 0
+$DATE_DAY 100
+$DATE_YEAR 2001
+$Economy_PurchaseCostUSD
+  steel 100 1.05
+$end
+$STAT_CURRENT
+$DATE_DAY 103
+$DATE_YEAR 2001
+$Economy_PurchaseCostUSD
+  steel 110 1.05
+$end
+`;
+  const recs = parseStatsIni(text);
+  assert.equal(recs.length, 2);
+  assert.equal(recs[0].purchaseUSD.steel, 100);
+  assert.equal(recs[1].purchaseUSD.steel, 110);
+  assert.equal(recs[1].day, 103);
+  assert.equal(recs[1].current, true);
+});

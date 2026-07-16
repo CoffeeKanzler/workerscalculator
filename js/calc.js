@@ -101,9 +101,99 @@ export const VEHICLE_PRODUCTION_MATERIALS = [
   'Mechanik-Bauteile', 'Elektronik-Bauteile', 'Elektronik',
 ];
 
+const VEHICLE_COMPONENT_KEYS = {
+  Stahl: 'steel', Aluminium: 'aluminium', Kunststoffe: 'plastics', Stoff: 'fabric',
+  'Mechanik-Bauteile': 'mcomponents', 'Elektronik-Bauteile': 'ecomponents',
+  Elektronik: 'eletronics',
+};
+
+const WESTERN_VEHICLE_ORIGINS = new Set([
+  'Deutschland', 'France', 'Frankreich', 'Germany', 'Italy', 'Japan', 'Kanada',
+  'Schweden', 'South Korea', 'Sweden', 'USA', 'Usa', 'Vereinigtes Königreich',
+  'West Deutschland', 'West Germany',
+]);
+
+const SHIP_TYPES = new Set(['Frachtschiff', 'Passagierschiff']);
+const RAIL_TYPES = new Set([
+  'Gleisbau', 'Güterwagon', 'Lokomotive', 'Passagierwagen', 'Straßenbahn',
+  'Triebwagen', 'U-Bahn', 'Zugverband',
+]);
+
+function splitComponent(total, bodyWeight, engineWeight) {
+  if (!(total > 0)) return [0, 0];
+  const weight = bodyWeight + engineWeight;
+  if (!(weight > 0)) return [total, 0];
+  return [total * bodyWeight / weight, total * engineWeight / weight];
+}
+
+function orderedVehicleComponents(attrs) {
+  const total = key => key === 'workers'
+    ? (attrs.Arbeitstage ?? 0)
+    : (attrs[Object.keys(VEHICLE_COMPONENT_KEYS).find(name => VEHICLE_COMPONENT_KEYS[name] === key)] ?? 0);
+  const w = attrs.Leergewicht ?? 0;
+  const power = attrs.Motorleistung ?? 0;
+  const type = attrs.Typ;
+  let body;
+  let engine;
+
+  if (type === 'Flugzeug' || type === 'Hubschrauber') {
+    const p = power / 1000;
+    body = { workers: 175 * w, steel: .05 * w, aluminium: .75 * w, plastics: .015 * w,
+      fabric: .0035, mcomponents: .17 * w, ecomponents: .035 * w, eletronics: .015 * w };
+    engine = { workers: 150 * p, mcomponents: .7 * p, ecomponents: .08 * p, eletronics: .02 * p };
+  } else if (SHIP_TYPES.has(type)) {
+    const p = power / 100;
+    const electric = attrs.Antriebsart === 'E';
+    body = { workers: 25 * w, steel: .5 * w, plastics: .01 * w, fabric: .002,
+      mcomponents: .06 * w, ecomponents: .005 * w };
+    engine = { workers: 10 * p, steel: (electric ? .5 : .6) * p,
+      mcomponents: (electric ? .35 : .65) * p, ecomponents: (electric ? .25 : .01) * p };
+  } else if (RAIL_TYPES.has(type)) {
+    const p = power / 100;
+    const electric = attrs.Antriebsart === 'E';
+    body = { workers: 45 * w, steel: .85 * w, plastics: .04 * w, fabric: .005,
+      mcomponents: .06 * w, ecomponents: .01 * w };
+    engine = ['Güterwagon', 'Passagierwagen'].includes(type) ? {}
+      : { workers: 25 * p, steel: (electric ? .5 : .6) * p,
+        mcomponents: (electric ? .35 : .65) * p, ecomponents: (electric ? .25 : .06) * p };
+  } else {
+    const p = power / 100;
+    body = { workers: 55 * w, steel: .85 * w, plastics: .04 * w, fabric: .005,
+      mcomponents: .06 * w, ecomponents: .01 * w };
+    engine = { workers: 65 * p, steel: .5 * p, mcomponents: .45 * p, ecomponents: .05 * p };
+  }
+
+  const keys = ['workers', 'steel', 'aluminium', 'plastics', 'fabric', 'mcomponents', 'ecomponents', 'eletronics'];
+  const split = Object.fromEntries(keys.map(key => [key, splitComponent(total(key), body[key] ?? 0, engine[key] ?? 0)]));
+  return [
+    ...keys.map(key => [key, split[key][0]]),
+    ...keys.map(key => [key, split[key][1]]),
+  ].filter(([, amount]) => amount > 0);
+}
+
+// The executable settles exports from the production-component bill. Its
+// origin adjustment is inside the loop, so component order is significant.
+export function vehicleSaleValue(vehicle, currency, eco) {
+  const attrs = vehicle?.attrs ?? {};
+  const western = WESTERN_VEHICLE_ORIGINS.has(attrs.Bauland);
+  const crossMarketFactor = currency === 'USD'
+    ? (western ? 1 : 0.65)
+    : (western ? 1.27 : 1);
+  const components = orderedVehicleComponents(attrs);
+
+  let value = 0;
+  for (const [key, amount] of components) {
+    if (!(amount > 0)) continue;
+    let price = key === 'workers' ? eco.workday(currency) : eco.sell(key, currency);
+    if (currency === 'RUB' && key === 'workers') price *= 0.45;
+    value = (value + amount * price) * crossMarketFactor;
+  }
+  if (attrs.Typ === 'Flugzeug' || attrs.Typ === 'Hubschrauber') value *= 2;
+  return value;
+}
+
 // Fahrzeugproduktion sheet: material expense per vehicle, then scale output by
 // assigned workers, productivity, required workdays, and the selected period.
-// Sale value is entered by the player because stats.ini does not export it.
 export function evaluateVehicleProduction(vehicle, settings, eco) {
   const attrs = vehicle?.attrs ?? {};
   const days = settings.timeUnit === 'year' ? 365 : settings.timeUnit === 'month' ? 30 : 1;
@@ -113,11 +203,12 @@ export function evaluateVehicleProduction(vehicle, settings, eco) {
   const materialCostPerUnit = VEHICLE_PRODUCTION_MATERIALS.reduce((sum, material) =>
     sum + (attrs[material] ?? 0) * eco.inputPrice(material, settings.currency), 0);
   const units = workdays > 0 ? workers * productivity * days / workdays : 0;
-  const income = units * (settings.salePrice ?? 0);
+  const salePrice = settings.salePrice ?? vehicleSaleValue(vehicle, settings.currency, eco);
+  const income = units * salePrice;
   const expenses = units * materialCostPerUnit;
   const profit = income - expenses;
   return {
-    materialCostPerUnit, units, income, expenses, profit,
+    salePrice, materialCostPerUnit, units, income, expenses, profit,
     profitPerWorker: workers > 0 ? profit / workers : 0,
   };
 }

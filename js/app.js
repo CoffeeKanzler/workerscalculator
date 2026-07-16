@@ -1,6 +1,6 @@
 import { STRINGS } from './i18n.js?v=13';
-import { parseStatsIni, recordToPrices } from './statsini.js?v=13';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=13';
+import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=14';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=13';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -280,7 +280,7 @@ function renderHeader() {
   const extras = [];
   if (state.priceSource === 'stats' && state.statsRecords?.length) {
     extras.push(el('label', {}, t('record') + ' ',
-      selectInput(state.statsRecords.map((r, i) => [i, `${r.year ?? '?'} / ${r.day ?? '?'}`]),
+      selectInput(state.statsRecords.map((r, i) => [i, `${r.year ?? '?'} / ${r.day ?? '?'}${r.current ? ` (${t('current')})` : ''}`]),
         state.recordIndex, v => { state.recordIndex = parseInt(v); })));
   }
   if (state.priceSource === 'decade') {
@@ -710,7 +710,7 @@ function renderVehicleProduction() {
     .sort((a, b) => a.localeCompare(b));
   if (!plan.rows.length && available.length) {
     const initial = available.find(({ vehicle }) => vehicle.attrs.Typ === 'Bus') ?? available[0];
-    plan.rows.push({ type: initial.vehicle.attrs.Typ, vehicleIndex: initial.index, workers: 100, salePrice: 0 });
+    plan.rows.push({ type: initial.vehicle.attrs.Typ, vehicleIndex: initial.index, workers: 100 });
   }
 
   const vehicleLabel = vehicle => {
@@ -740,7 +740,7 @@ function renderVehicleProduction() {
       if (selected && row.vehicleIndex !== selected.index) row.vehicleIndex = selected.index;
       const result = evaluateVehicleProduction(vehicle, {
         workers: row.workers, productivity: plan.productivity, timeUnit: plan.timeUnit,
-        salePrice: row.salePrice, currency: state.currency,
+        currency: state.currency,
       }, eco);
       results.push({ row, result });
       const materialLine = vehicle
@@ -757,7 +757,7 @@ function renderVehicleProduction() {
           String(selected?.index ?? ''), v => { row.vehicleIndex = Number(v); }),
           materialLine ? el('div', { class: 'subline' }, materialLine) : null),
         el('td', {}, numInput(row.workers, v => row.workers = v, { min: 0, step: 10 })),
-        el('td', {}, numInput(row.salePrice, v => row.salePrice = v, { min: 0, step: 100 })),
+        el('td', { class: 'r' }, fmt(result.salePrice, 0)),
         el('td', { class: 'r' }, vehicle ? fmt(vehicle.attrs.Arbeitstage, 0) : '—'),
         el('td', { class: 'r' }, fmt(result.units, 2)),
         el('td', { class: 'r' }, fmt(result.materialCostPerUnit, 0)),
@@ -780,7 +780,7 @@ function renderVehicleProduction() {
     settings, renderCalcOpts(), el('div', { class: 'tablewrap' }, table),
     el('button', { onclick: () => {
       const initial = available[0];
-      if (initial) plan.rows.push({ type: initial.vehicle.attrs.Typ, vehicleIndex: initial.index, workers: 100, salePrice: 0 });
+      if (initial) plan.rows.push({ type: initial.vehicle.attrs.Typ, vehicleIndex: initial.index, workers: 100 });
       update();
     } }, t('addVehicle')),
     el('div', { class: 'totalsbox vehicletotals' },
