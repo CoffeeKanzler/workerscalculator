@@ -4,7 +4,7 @@ import {
   SEASON_FACTOR, NO_SEASON_FACTOR, FIELD_SIZES, QUALITY_BUILDINGS_DE, TUNABLES,
   SERVICES, SECRET_POLICE_PER_BUILDINGS, HEAT_PER_SPECIAL, CABLES,
   HEAT_EXCHANGERS, NON_DELIVERABLE,
-} from './community_constants.js?v=12';
+} from './community_constants.js?v=13';
 
 export {
   SEASON_FACTOR, NO_SEASON_FACTOR, FIELD_SIZES, QUALITY_BUILDINGS_DE,
@@ -94,6 +94,32 @@ export class Economy {
     for (const c of b.consumption) expenses += this.inputPrice(c.de, currency) * c.rate * count * productivity;
     return { income, expenses, profit: income - expenses };
   }
+}
+
+export const VEHICLE_PRODUCTION_MATERIALS = [
+  'Stahl', 'Aluminium', 'Kunststoffe', 'Stoff',
+  'Mechanik-Bauteile', 'Elektronik-Bauteile', 'Elektronik',
+];
+
+// Fahrzeugproduktion sheet: material expense per vehicle, then scale output by
+// assigned workers, productivity, required workdays, and the selected period.
+// Sale value is entered by the player because stats.ini does not export it.
+export function evaluateVehicleProduction(vehicle, settings, eco) {
+  const attrs = vehicle?.attrs ?? {};
+  const days = settings.timeUnit === 'year' ? 365 : settings.timeUnit === 'month' ? 30 : 1;
+  const workdays = attrs.Arbeitstage ?? 0;
+  const workers = settings.workers ?? 0;
+  const productivity = settings.productivity ?? 1;
+  const materialCostPerUnit = VEHICLE_PRODUCTION_MATERIALS.reduce((sum, material) =>
+    sum + (attrs[material] ?? 0) * eco.inputPrice(material, settings.currency), 0);
+  const units = workdays > 0 ? workers * productivity * days / workdays : 0;
+  const income = units * (settings.salePrice ?? 0);
+  const expenses = units * materialCostPerUnit;
+  const profit = income - expenses;
+  return {
+    materialCostPerUnit, units, income, expenses, profit,
+    profitPerWorker: workers > 0 ? profit / workers : 0,
+  };
 }
 
 // Full production-plan evaluation (ProduktionProductions sheet).

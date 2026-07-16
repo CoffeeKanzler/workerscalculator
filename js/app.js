@@ -1,17 +1,17 @@
-import { STRINGS } from './i18n.js?v=12';
-import { parseStatsIni, recordToPrices } from './statsini.js?v=12';
-import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=12';
-import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=12';
-import { solveChain, producersByResource, defaultProducer } from './chain.js?v=12';
-import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=12';
+import { STRINGS } from './i18n.js?v=13';
+import { parseStatsIni, recordToPrices } from './statsini.js?v=13';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=13';
+import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
+import { solveChain, producersByResource, defaultProducer } from './chain.js?v=13';
+import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain,
-} from './train.js?v=12';
+} from './train.js?v=13';
 
-const TABS = ['prices', 'production', 'chain', 'analysis', 'city', 'trains', 'research', 'advanced', 'help'];
+const TABS = ['prices', 'production', 'chain', 'analysis', 'vehicleprod', 'city', 'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
-  'cities', 'activeCity', 'vanillaOnly', 'train', 'lowtech', 'calcOpts', 'dataset', 'chain', 'tuning'];
+  'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset', 'chain', 'tuning'];
 
 // ---------------------------------------------------------------- state
 const LS_KEY = 'wr-planner-v1';
@@ -35,6 +35,7 @@ const state = {
   cities: [],
   activeCity: 0,
   vanillaOnly: false,
+  vehicleProduction: { productivity: 1, timeUnit: 'year', rows: [] },
   train: { cargo: 'Kohle', length: 450, locoName: null, locoCount: 1 },
   calcOpts: { inputPriceMode: 'sell', includeDelivery: false },
   dataset: 'game',   // 'game' (current game files) | 'sheet' (spreadsheet snapshot)
@@ -91,6 +92,7 @@ async function loadData() {
     prodSets: { sheet: prod, game: prodGame },
     cityBuildings: city,
     // Game-only rail vehicles join the pool; hard-attached tenders stay nested.
+    sheetVehicles: veh.vehicles,
     vehicles: veh.vehicles.concat(rail),
     decades: dec,
   };
@@ -313,7 +315,7 @@ function renderHeader() {
 
 function renderTabs() {
   const labels = { prices: 'tabPrices', production: 'tabProduction', chain: 'tabChain',
-    analysis: 'tabAnalysis', city: 'tabCity', trains: 'tabTrains', research: 'tabResearch',
+    analysis: 'tabAnalysis', vehicleprod: 'tabVehicleProd', city: 'tabCity', trains: 'tabTrains', research: 'tabResearch',
     advanced: 'tabAdvanced', help: 'tabHelp' };
   return el('nav', {}, ...TABS.map(id => el('button', {
     class: state.tab === id ? 'active' : '',
@@ -327,6 +329,7 @@ function renderCurrentTab() {
     case 'production': return renderProduction();
     case 'chain': return renderChain();
     case 'analysis': return renderAnalysis();
+    case 'vehicleprod': return renderVehicleProduction();
     case 'city': return renderCity();
     case 'trains': return renderTrains();
     case 'research': return renderResearch();
@@ -696,6 +699,97 @@ function renderAnalysis() {
         el('td', { class: 'r' }, fmt(r.buildCost, 0)))))));
 }
 
+// ---------------------------------------------------------------- vehicle production tab
+function renderVehicleProduction() {
+  const plan = state.vehicleProduction ??= { productivity: 1, timeUnit: 'year', rows: [] };
+  const eco = economy();
+  const available = DATA.sheetVehicles
+    .map((vehicle, index) => ({ vehicle, index }))
+    .filter(({ vehicle }) => (vehicle.attrs.Arbeitstage ?? 0) > 0);
+  const types = [...new Set(available.map(({ vehicle }) => vehicle.attrs.Typ))]
+    .sort((a, b) => a.localeCompare(b));
+  if (!plan.rows.length && available.length) {
+    const initial = available.find(({ vehicle }) => vehicle.attrs.Typ === 'Bus') ?? available[0];
+    plan.rows.push({ type: initial.vehicle.attrs.Typ, vehicleIndex: initial.index, workers: 100, salePrice: 0 });
+  }
+
+  const vehicleLabel = vehicle => {
+    const attrs = vehicle.attrs;
+    const era = `${attrs.Von ?? '?'}–${typeof attrs.Bis === 'number' ? attrs.Bis : '∞'}`;
+    return `${vehicle.name} — ${era} · ${fmt(attrs.Arbeitstage, 0)} ${t('workdaysShort')}`;
+  };
+  const settings = el('div', { class: 'settingsbar' },
+    el('label', {}, t('productivity') + ' ', pctInput(plan.productivity, v => plan.productivity = v)),
+    el('label', {}, t('timeUnit') + ' ', selectInput(
+      [['day', t('day')], ['month', t('month')], ['year', t('year')]],
+      plan.timeUnit, v => plan.timeUnit = v)));
+
+  const results = [];
+  const table = el('table', { class: 'data wide' },
+    el('thead', {}, el('tr', {},
+      el('th', {}, t('vehicleType')), el('th', {}, t('vehicle')), el('th', {}, t('workers')),
+      el('th', {}, `${t('saleValue')} ${cur()}`), el('th', {}, t('workdaysShort')),
+      el('th', {}, t('unitsPeriod')), el('th', {}, `${t('materialPerUnit')} ${cur()}`),
+      el('th', {}, `${t('income')} ${cur()}`), el('th', {}, `${t('expenses')} ${cur()}`),
+      el('th', {}, `${t('profit')} ${cur()}`), el('th', {}, t('profitPerWorker')), el('th', {}))),
+    el('tbody', {}, plan.rows.map((row, rowIndex) => {
+      const inType = available.filter(({ vehicle }) => vehicle.attrs.Typ === row.type);
+      let selected = available.find(({ index }) => index === Number(row.vehicleIndex));
+      if (!selected || selected.vehicle.attrs.Typ !== row.type) selected = inType[0];
+      const vehicle = selected?.vehicle;
+      if (selected && row.vehicleIndex !== selected.index) row.vehicleIndex = selected.index;
+      const result = evaluateVehicleProduction(vehicle, {
+        workers: row.workers, productivity: plan.productivity, timeUnit: plan.timeUnit,
+        salePrice: row.salePrice, currency: state.currency,
+      }, eco);
+      results.push({ row, result });
+      const materialLine = vehicle
+        ? VEHICLE_PRODUCTION_MATERIALS.filter(name => (vehicle.attrs[name] ?? 0) > 0)
+          .map(name => `${name}: ${fmt(vehicle.attrs[name], 2)} t`).join(' · ')
+        : '';
+      return el('tr', {},
+        el('td', {}, selectInput(types.map(type => [type, type]), row.type, v => {
+          row.type = v;
+          row.vehicleIndex = available.find(({ vehicle: item }) => item.attrs.Typ === v)?.index ?? null;
+        })),
+        el('td', {}, selectInput(
+          inType.map(({ vehicle: item, index }) => [String(index), vehicleLabel(item)]),
+          String(selected?.index ?? ''), v => { row.vehicleIndex = Number(v); }),
+          materialLine ? el('div', { class: 'subline' }, materialLine) : null),
+        el('td', {}, numInput(row.workers, v => row.workers = v, { min: 0, step: 10 })),
+        el('td', {}, numInput(row.salePrice, v => row.salePrice = v, { min: 0, step: 100 })),
+        el('td', { class: 'r' }, vehicle ? fmt(vehicle.attrs.Arbeitstage, 0) : '—'),
+        el('td', { class: 'r' }, fmt(result.units, 2)),
+        el('td', { class: 'r' }, fmt(result.materialCostPerUnit, 0)),
+        el('td', { class: 'r' }, fmt(result.income, 0)),
+        el('td', { class: 'r' }, fmt(result.expenses, 0)),
+        el('td', { class: `r ${result.profit < 0 ? 'neg' : 'pos'}` }, fmt(result.profit, 0)),
+        el('td', { class: 'r' }, fmt(result.profitPerWorker, 1)),
+        el('td', {}, el('button', { class: 'danger', onclick: () => { plan.rows.splice(rowIndex, 1); update(); } }, '✕')));
+    })));
+  const totals = results.reduce((sum, item) => {
+    sum.workers += item.row.workers || 0;
+    sum.income += item.result.income;
+    sum.expenses += item.result.expenses;
+    sum.profit += item.result.profit;
+    return sum;
+  }, { workers: 0, income: 0, expenses: 0, profit: 0 });
+
+  return el('section', {},
+    el('p', { class: 'hint' }, t('vehicleProdHint')),
+    settings, renderCalcOpts(), el('div', { class: 'tablewrap' }, table),
+    el('button', { onclick: () => {
+      const initial = available[0];
+      if (initial) plan.rows.push({ type: initial.vehicle.attrs.Typ, vehicleIndex: initial.index, workers: 100, salePrice: 0 });
+      update();
+    } }, t('addVehicle')),
+    el('div', { class: 'totalsbox vehicletotals' },
+      kv(t('workers'), fmt(totals.workers, 0)),
+      kv(`${t('income')} ${cur()}`, fmt(totals.income, 0)),
+      kv(`${t('expenses')} ${cur()}`, fmt(totals.expenses, 0)),
+      kv(`${t('profit')} ${cur()}`, fmt(totals.profit, 0), totals.profit < 0 ? 'neg' : 'pos')));
+}
+
 // ---------------------------------------------------------------- city tab
 function renderCity() {
   if (!state.cities.length) state.cities.push(defaultCity());
@@ -726,10 +820,26 @@ function renderCity() {
     el('label', {}, t('vanillaOnly') + ' ', el('input', {
       type: 'checkbox', checked: state.vanillaOnly, onchange: e => { state.vanillaOnly = e.target.checked; update(); } })));
 
-  const pool = DATA.cityBuildings.filter(b => !state.vanillaOnly || b.kind === 'Vanilla');
-  const types = [...new Set(pool.map(b => b.type[state.lang]))].sort((a, b) => a.localeCompare(b));
+  const allIndexed = DATA.cityBuildings.map((building, index) => ({ building, index }));
+  const pool = allIndexed.filter(({ building }) => !state.vanillaOnly || building.kind === 'Vanilla');
+  const typeMap = new Map(pool.map(({ building }) => [building.type.de, building.type]));
+  const types = [...typeMap.entries()].sort((a, b) => a[1][state.lang].localeCompare(b[1][state.lang]));
+  const resolveRow = row => {
+    if (Number.isInteger(row.buildingIndex)) return DATA.cityBuildings[row.buildingIndex];
+    return DATA.cityBuildings.find(building => building.de === row.name);
+  };
+  const cityBuildingLabel = building => {
+    const details = [];
+    if (building.inhabitants > 0) details.push(`${fmt(building.inhabitants, 0)} ${t('residentsShort')}`);
+    if (building.workers > 0) details.push(`${fmt(building.workers, 0)} ${t('workersShort')}`);
+    const capacity = Math.max(building.visitors ?? 0, building.special ?? 0);
+    if (capacity > 0) details.push(`${fmt(capacity, 0)} ${t('capacityShort')}`);
+    details.push(`${fmt(building.workdays, 0)} ${t('workdaysShort')}`);
+    details.push(building.kind === 'Vanilla' ? 'Vanilla' : 'Mod');
+    return `${building[state.lang]} — ${details.join(' · ')}`;
+  };
 
-  const rowsResolved = city.rows.map(r => ({ ...r, building: pool.find(b => b.de === r.name) || DATA.cityBuildings.find(b => b.de === r.name) }));
+  const rowsResolved = city.rows.map(r => ({ ...r, building: resolveRow(r) }));
   const res = evaluateCity({ ...city, rows: rowsResolved }, eco);
 
   const tbl = el('table', { class: 'data wide' },
@@ -739,13 +849,23 @@ function renderCity() {
       el('th', {}, t('waterUse')), el('th', {}, t('hotwater')), el('th', {}, t('wasteOut')),
       el('th', {}, `${t('buildCost')} ${cur()}`), el('th', {}))),
     el('tbody', {}, city.rows.map((row, idx) => {
-      const b = pool.find(x => x.de === row.name) || DATA.cityBuildings.find(x => x.de === row.name);
-      const typeSel = selectInput([t('none'), ...types], row.type ?? t('none'),
-        v => { row.type = v; row.name = null; });
-      const inType = pool.filter(x => x.type[state.lang] === row.type);
+      const b = resolveRow(row);
+      const selectedType = typeMap.has(row.type)
+        ? row.type
+        : (pool.find(({ building }) => Object.values(building.type).includes(row.type))?.building.type.de ?? row.type);
+      const typeSel = selectInput([[t('none'), t('none')], ...types.map(([key, label]) => [key, label[state.lang]])],
+        selectedType ?? t('none'), v => { row.type = v; row.name = null; delete row.buildingIndex; });
+      const inType = pool.filter(({ building }) => building.type.de === selectedType);
+      const selectedIndex = Number.isInteger(row.buildingIndex)
+        ? row.buildingIndex
+        : allIndexed.find(({ building }) => building.de === row.name)?.index;
       const bSel = selectInput(
-        [[', ', t('none')], ...inType.map(x => [x.de, x[state.lang]])],
-        row.name ?? ', ', v => { row.name = v === ', ' ? null : v; });
+        [['', t('none')], ...inType.map(({ building, index }) => [String(index), cityBuildingLabel(building)])],
+        selectedIndex === undefined ? '' : String(selectedIndex), v => {
+          if (v === '') { row.name = null; delete row.buildingIndex; return; }
+          row.buildingIndex = Number(v);
+          row.name = DATA.cityBuildings[row.buildingIndex].de;
+        });
       const n = row.count || 0;
       return el('tr', {},
         el('td', {}, typeSel), el('td', {}, bSel),
@@ -761,7 +881,7 @@ function renderCity() {
     })));
 
   const addBtn = el('button', {
-    onclick: () => { city.rows.push({ type: types[0], name: null, count: 1 }); update(); },
+    onclick: () => { city.rows.push({ type: types[0]?.[0], name: null, count: 1 }); update(); },
   }, t('addRow'));
 
   const services = el('table', { class: 'data' },
@@ -805,7 +925,7 @@ function renderCity() {
       return kv(r ? rname(r) : m, fmt(amt, 1));
     }));
 
-  return el('section', {}, cityTabs, settings, tbl, addBtn,
+  return el('section', {}, cityTabs, settings, el('div', { class: 'tablewrap' }, tbl), addBtn,
     el('div', { class: 'columns' },
       el('div', {}, el('h3', {}, t('services')), services),
       summary, mats));

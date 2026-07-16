@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   Economy, evaluatePlan, evaluateCity, lowTechPoints,
-  SEASON_FACTOR, NO_SEASON_FACTOR,
+  evaluateVehicleProduction, SEASON_FACTOR, NO_SEASON_FACTOR,
 } from '../js/calc.js';
 
 const res = JSON.parse(readFileSync(new URL('../data/resources.json', import.meta.url)));
@@ -125,4 +125,29 @@ test('LowTech example from the sheet = 4 points', () => {
   assert.equal(lowTechPoints({
     population: 4578, cities: 1, currentYear: 1940, startYear: 1920, researched: 1,
   }), 4);
+});
+
+test('vehicle production follows sheet material and workday throughput formula', () => {
+  const vehicle = {
+    attrs: {
+      Arbeitstage: 1000, Stahl: 10, Aluminium: 2, Kunststoffe: 3,
+      Stoff: 4, 'Mechanik-Bauteile': 5, 'Elektronik-Bauteile': 6,
+      Elektronik: 7,
+    },
+  };
+  const prices = {
+    Stahl: 2, Aluminium: 3, Kunststoffe: 4, Stoff: 5,
+    'Mechanik-Bauteile': 6, 'Elektronik-Bauteile': 7, Elektronik: 8,
+  };
+  const fakeEco = { inputPrice: name => prices[name] ?? 0 };
+  const result = evaluateVehicleProduction(vehicle, {
+    workers: 100, productivity: 0.8, timeUnit: 'year', salePrice: 500,
+    currency: 'RUB',
+  }, fakeEco);
+  assert.equal(result.materialCostPerUnit, 186);
+  assert.equal(result.units, 29.2);
+  assert.equal(result.income, 14600);
+  assert.equal(result.expenses, 5431.2);
+  assert.equal(result.profit, 9168.8);
+  assert.ok(Math.abs(result.profitPerWorker - 91.688) < 1e-9);
 });
