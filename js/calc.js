@@ -1,10 +1,10 @@
 // Economy formulas replicated from the community planning spreadsheet.
 // Curated constants live in community_constants.js — edit values there.
 import {
-  SEASON_FACTOR, NO_SEASON_FACTOR, FIELD_SIZES, QUALITY_BUILDINGS_DE,
+  SEASON_FACTOR, NO_SEASON_FACTOR, FIELD_SIZES, QUALITY_BUILDINGS_DE, TUNABLES,
   SERVICES, SECRET_POLICE_PER_BUILDINGS, HEAT_PER_SPECIAL, CABLES,
   HEAT_EXCHANGERS, NON_DELIVERABLE,
-} from './community_constants.js?v=9';
+} from './community_constants.js?v=10';
 
 export {
   SEASON_FACTOR, NO_SEASON_FACTOR, FIELD_SIZES, QUALITY_BUILDINGS_DE,
@@ -150,7 +150,7 @@ export function evaluatePlan(rows, fields, settings, eco) {
   // Fields: plants production from hectares.
   const hectares = fields.hectares ??
     (fields.small * FIELD_SIZES.small + fields.medium * FIELD_SIZES.medium + fields.large * FIELD_SIZES.large);
-  const factor = settings.seasons ? SEASON_FACTOR : NO_SEASON_FACTOR;
+  const factor = settings.seasons ? TUNABLES.seasonFactor : TUNABLES.noSeasonFactor;
   const plants = hectares * factor * (settings.fertilizer || 1) * tf;
   if (plants > 0) {
     addBal('Pflanzen', plants, 0);
@@ -203,16 +203,16 @@ export function evaluateCity(city, eco) {
   const residential = rows.filter(r => (r.building.inhabitants ?? 0) > 0)
     .reduce((a, r) => a + r.count, 0);
   const secretCap = rows.filter(r => r.building.type.de === 'Geheimpolizei')
-    .reduce((a, r) => a + (r.building.special ?? 0) * r.count, 0) * prod * SECRET_POLICE_PER_BUILDINGS;
+    .reduce((a, r) => a + (r.building.special ?? 0) * r.count, 0) * prod * TUNABLES.secretPolicePerBuildings;
   res.residentialBuildings = residential;
   res.secretPolice = {
     provided: secretCap,
-    needed: residential / SECRET_POLICE_PER_BUILDINGS,
+    needed: residential / TUNABLES.secretPolicePerBuildings,
     utilization: secretCap > 0 ? residential / secretCap : null,
   };
   // Heating plants inside the city (special value → m³ hot water).
   const heatCap = rows.filter(r => r.building.type.de === 'Heizwerk')
-    .reduce((a, r) => a + (r.building.special ?? 0) * r.count, 0) * HEAT_PER_SPECIAL;
+    .reduce((a, r) => a + (r.building.special ?? 0) * r.count, 0) * TUNABLES.heatPerSpecial;
   res.heating = { provided: heatCap, utilization: heatCap > 0 ? res.hotwater / heatCap : null };
   // Infrastructure sizing.
   const cable = CABLES.find(c => c.de === city.cable) || CABLES[2];

@@ -12,6 +12,40 @@ export const NO_SEASON_FACTOR = 0.2255655296229; // without seasons
 // Field sizes in hectares.
 export const FIELD_SIZES = { small: 0.39, medium: 1.57, large: 4.81 };
 
+// Runtime-tunable copies of the constants above. The formulas in calc.js read
+// THESE, so the app's advanced mode can override values per session (and share
+// them via share links). The exported constants remain the documented defaults.
+export const TUNABLE_DEFAULTS = {
+  seasonFactor: SEASON_FACTOR,
+  noSeasonFactor: NO_SEASON_FACTOR,
+  fieldSmall: 0.39, fieldMedium: 1.57, fieldLarge: 4.81,
+  secretPolicePerBuildings: 7,
+  heatPerSpecial: 5,
+  exchangerSmall: 100, exchangerLarge: 300,
+  serviceShopping: 19, serviceKindergarten: 15, serviceSchool: 18,
+  serviceUniversity: 64, serviceCourt: 600, servicePolice: 150,
+  serviceAttraction: 140, serviceHospital: 100,
+};
+export const TUNABLES = { ...TUNABLE_DEFAULTS };
+
+const SERVICE_KEYS = {
+  shopping: 'serviceShopping', kindergarten: 'serviceKindergarten',
+  school: 'serviceSchool', university: 'serviceUniversity', court: 'serviceCourt',
+  police: 'servicePolice', attraction: 'serviceAttraction', hospital: 'serviceHospital',
+};
+
+// Apply overrides ({tunableKey: value}) on top of the defaults and sync the
+// SERVICES ratios. Pass {} to reset everything.
+export function applyTuning(overrides = {}) {
+  Object.assign(TUNABLES, TUNABLE_DEFAULTS, overrides);
+  FIELD_SIZES.small = TUNABLES.fieldSmall;
+  FIELD_SIZES.medium = TUNABLES.fieldMedium;
+  FIELD_SIZES.large = TUNABLES.fieldLarge;
+  HEAT_EXCHANGERS.small = TUNABLES.exchangerSmall;
+  HEAT_EXCHANGERS.large = TUNABLES.exchangerLarge;
+  for (const svc of SERVICES) svc.ratio = TUNABLES[SERVICE_KEYS[svc.id]];
+}
+
 // Buildings whose output scales with the resource richness ("quality") of the
 // deposit instead of plain building count. German names as used in the data.
 export const QUALITY_BUILDINGS_DE = new Set([

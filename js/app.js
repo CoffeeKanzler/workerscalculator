@@ -1,13 +1,14 @@
-import { STRINGS } from './i18n.js?v=9';
-import { parseStatsIni, recordToPrices } from './statsini.js?v=9';
-import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=9';
-import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=9';
-import { solveChain, producersByResource, defaultProducer } from './chain.js?v=9';
+import { STRINGS } from './i18n.js?v=10';
+import { parseStatsIni, recordToPrices } from './statsini.js?v=10';
+import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=10';
+import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=10';
+import { solveChain, producersByResource, defaultProducer } from './chain.js?v=10';
+import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=10';
 
-const TABS = ['prices', 'production', 'chain', 'analysis', 'city', 'trains', 'research', 'help'];
+const TABS = ['prices', 'production', 'chain', 'analysis', 'city', 'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
-  'cities', 'activeCity', 'vanillaOnly', 'train', 'lowtech', 'calcOpts', 'dataset', 'chain'];
+  'cities', 'activeCity', 'vanillaOnly', 'train', 'lowtech', 'calcOpts', 'dataset', 'chain', 'tuning'];
 
 // ---------------------------------------------------------------- state
 const LS_KEY = 'wr-planner-v1';
@@ -34,6 +35,7 @@ const state = {
   train: { cargo: 'Kohle', length: 450, locoName: null, locoCount: 1 },
   calcOpts: { inputPriceMode: 'sell', includeDelivery: false },
   dataset: 'game',   // 'game' (current game files) | 'sheet' (spreadsheet snapshot)
+  tuning: {},        // advanced-mode overrides for community constants
   chain: { goal: 'steel', amount: 43, imports: [], producerChoice: {}, includeUtilities: true },
   lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0 },
   analysisSort: { col: 'profit', dir: -1 },
@@ -305,7 +307,8 @@ function renderHeader() {
 
 function renderTabs() {
   const labels = { prices: 'tabPrices', production: 'tabProduction', chain: 'tabChain',
-    analysis: 'tabAnalysis', city: 'tabCity', trains: 'tabTrains', research: 'tabResearch', help: 'tabHelp' };
+    analysis: 'tabAnalysis', city: 'tabCity', trains: 'tabTrains', research: 'tabResearch',
+    advanced: 'tabAdvanced', help: 'tabHelp' };
   return el('nav', {}, ...TABS.map(id => el('button', {
     class: state.tab === id ? 'active' : '',
     onclick: () => { state.tab = id; update(); },
@@ -321,6 +324,7 @@ function renderCurrentTab() {
     case 'city': return renderCity();
     case 'trains': return renderTrains();
     case 'research': return renderResearch();
+    case 'advanced': return renderAdvanced();
     case 'help': return renderHelp();
     default: return el('div');
   }
@@ -1124,6 +1128,37 @@ function renderResearch() {
       kv(t('ltAvail'), fmt(pts, 0), pts < 0 ? 'neg' : 'pos')));
 }
 
+// ---------------------------------------------------------------- advanced tab
+const TUNABLE_GROUPS = [
+  { title: 'advFields', keys: ['seasonFactor', 'noSeasonFactor', 'fieldSmall', 'fieldMedium', 'fieldLarge'] },
+  { title: 'advServices', keys: ['serviceShopping', 'serviceKindergarten', 'serviceSchool', 'serviceUniversity',
+    'serviceCourt', 'servicePolice', 'serviceAttraction', 'serviceHospital'] },
+  { title: 'advCity', keys: ['secretPolicePerBuildings', 'heatPerSpecial', 'exchangerSmall', 'exchangerLarge'] },
+];
+
+function renderAdvanced() {
+  const overridden = Object.keys(state.tuning).length;
+  return el('section', {},
+    el('p', { class: 'hint' }, t('advHint')),
+    ...TUNABLE_GROUPS.map(g => el('div', { class: 'totalsbox advgroup' },
+      el('h3', {}, t(g.title)),
+      ...g.keys.map(key => el('div', { class: 'kv' },
+        el('span', { class: state.tuning[key] !== undefined ? 'warn' : '' }, t('adv_' + key)),
+        el('input', {
+          type: 'number', step: 'any', class: 'num price' + (state.tuning[key] !== undefined ? ' overridden' : ''),
+          value: TUNABLES[key],
+          onchange: e => {
+            const v = parseFloat(e.target.value);
+            if (Number.isNaN(v) || v === TUNABLE_DEFAULTS[key]) delete state.tuning[key];
+            else state.tuning[key] = v;
+            update();
+          },
+        }))))),
+    overridden ? el('button', { class: 'danger', onclick: () => { state.tuning = {}; update(); } },
+      `${t('reset')} (${overridden})`) : null,
+    el('p', { class: 'hint' }, t('advShareHint')));
+}
+
 // ---------------------------------------------------------------- help tab
 function renderHelp() {
   const de = state.lang === 'de';
@@ -1212,6 +1247,7 @@ window.addEventListener('hashchange', () => {
 
 // ---------------------------------------------------------------- boot
 function update() {
+  applyTuning(state.tuning);
   saveState();
   syncHash();
   render();
@@ -1222,6 +1258,7 @@ state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.cal
 loadData().then(async () => {
   await applyHash();
   if (!state.cities.length) state.cities.push(defaultCity());
+  applyTuning(state.tuning);
   saveState();
   syncHash();
   render();

@@ -131,6 +131,26 @@ lengths, heating-plant output semantics.
   Data already in `data/vehicles.json` (Arbeitstage, material columns).
 - **Effort:** medium.
 
+### 5.1b Train planner on game vehicle data
+- **What:** Move the train planner from the sheet's 95 rail vehicles to the game
+  files. Vehicle lengths come from `bbox.bin` next to each model (24 bytes,
+  6 little-endian floats = min/max XYZ; z-extent = length — validated:
+  box270 → 15.04 m vs sheet 15 m). Also scan DLC vehicle dirs
+  (`cwc/vehicles`, `dlc1/vehicles`, …).
+- **Why:** covers game-only vehicles (CWC electrics; steam locos for owners of
+  Early Start — their files only ship when the DLC is owned) and stays current
+  with patches. Open question: per-cargo tonnage (sheet has per-resource
+  capacities; game files have one `RESOURCE_CAPACITY` + transport type).
+- **Effort:** medium.
+
+### 5.4 Full advanced mode (edit all data)
+- **What:** Extend the Advanced tab (community constants are editable since
+  2026-07-16, session-scoped + in share links) to building data: override
+  production rates, workers, extras per building; a "custom building" row;
+  possibly user-defined formulas for profit metrics.
+- **Effort:** medium-large. Data overrides are straightforward (same pattern as
+  `state.tuning`); formula editing needs a safe expression evaluator.
+
 ### 5.2 More languages
 - **What:** The sheet's translation table has 27 languages (machine-translated beyond de/en);
   game localization files (3.1) would provide proper ones. UI strings in `js/i18n.js`
