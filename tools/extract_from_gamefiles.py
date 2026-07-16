@@ -17,7 +17,40 @@ Known unit semantics (verified against the sheet / game UI):
 import json
 import os
 import re
+import struct
 import sys
+
+# Game string tables: sovietXXX.btf at media_soviet root.
+# Format (all big-endian): u32 entryCount, u32 fileSize, u32 blobCharCount,
+# then entryCount × (u32 id, u32 charOffset, u16 charLen), then UTF-16-BE blob.
+BTF_LANGS = {
+    'German': 'de', 'English': 'en', 'Russian': 'ru', 'Czech': 'cs',
+    'Slovak': 'sk', 'Polish': 'pl', 'Hungarian': 'hu', 'French': 'fr',
+    'Italian': 'it', 'Spanish': 'es', 'PortugueseBrazil': 'pt',
+    'Romanian': 'ro', 'Serbian': 'sr', 'Bulgarian': 'bg', 'Turkish': 'tr',
+    'Ukrainian': 'uk', 'Japanese': 'ja', 'Korean': 'ko',
+    'Chinese': 'zh', 'ChineseTraditional': 'zh-TW',
+}
+
+
+def load_btf(path):
+    data = open(path, 'rb').read()
+    count = struct.unpack('>I', data[:4])[0]
+    blob = data[12 + count * 10:]
+    out = {}
+    for i in range(count):
+        rid, off, ln = struct.unpack('>IIH', data[12 + i * 10:12 + i * 10 + 10])
+        out[rid] = blob[off * 2:(off + ln) * 2].decode('utf-16-be', errors='replace')
+    return out
+
+
+def load_localization(media):
+    tables = {}
+    for name, code in BTF_LANGS.items():
+        p = os.path.join(media, f'soviet{name}.btf')
+        if os.path.isfile(p):
+            tables[code] = load_btf(p)
+    return tables
 
 ECON_TOKENS = {
     'NAME', 'WORKERS_NEEDED', 'PROFESORS_NEEDED', 'PRODUCTION', 'CONSUMPTION',
@@ -97,46 +130,39 @@ def extract_buildings(media):
 
 
 def validate(buildings, repo_root):
-    """Compare game rates against sheet-derived production data.
-
-    Matches sheet buildings to game buildings by (produced resource, workers)
-    and reports the implied multiplier sheet_t_per_day / game_rate.
-    """
+    """Compare game rates against sheet-derived production data, matched by
+    German name, and report the implied multiplier sheet_t_per_day / game_rate."""
     sheet = json.load(open(os.path.join(repo_root, 'data', 'production_buildings.json')))
     res = json.load(open(os.path.join(repo_root, 'data', 'resources.json')))['resources']
     de2key = {r['de']: r['key'] for r in res}
 
-    by_workers = {}
+    by_de = {}
     for g in buildings:
-        if g['production'] and g['workers']:
-            by_workers.setdefault(g['workers'], []).append(g)
+        if g.get('de'):
+            by_de.setdefault(g['de'].lower(), g)
 
-    print(f'{"sheet building":42s} {"game file":28s} {"resource":12s} '
+    print(f'{"sheet building":42s} {"game building":28s} {"resource":12s} '
           f'{"sheet t/d":>9s} {"rate":>8s} {"mult":>7s} {"≈workers?":>9s}')
-    matched = unmatched = 0
+    matched, unmatched = 0, []
     for s in sheet:
-        cands = by_workers.get(s['workers'], [])
-        hit = None
+        # strip sheet-only suffixes like ' Early'
+        base = re.sub(r'\s+(early|groß|klein)\s*$', '', s['de'], flags=re.I).lower()
+        g = by_de.get(s['de'].lower()) or by_de.get(base)
+        if not g or not g['production']:
+            unmatched.append(s['de'])
+            continue
         for p in s['production']:
             key = de2key.get(p['de'])
-            if not key:
+            if not key or key not in g['production']:
                 continue
-            for g in cands:
-                if key in g['production']:
-                    hit = (g, key, p['rate'])
-                    break
-            if hit:
-                break
-        if not hit:
-            unmatched += 1
-            continue
-        g, key, sheet_rate = hit
-        mult = sheet_rate / g['production'][key] if g['production'][key] else 0
-        approx = 'yes' if abs(mult - s['workers']) / max(s['workers'], 1) < 0.05 else ''
-        print(f'{s["de"][:41]:42s} {g["id"][:27]:28s} {key:12s} '
-              f'{sheet_rate:9.2f} {g["production"][key]:8.3f} {mult:7.1f} {approx:>9s}')
-        matched += 1
-    print(f'\nmatched {matched} / {len(sheet)} sheet buildings ({unmatched} unmatched)')
+            rate = g['production'][key]
+            mult = p['rate'] / rate if rate else 0
+            approx = 'yes' if s['workers'] and abs(mult - s['workers']) / s['workers'] < 0.05 else ''
+            print(f'{s["de"][:41]:42s} {g["id"][:27]:28s} {key:12s} '
+                  f'{p["rate"]:9.2f} {rate:8.3f} {mult:7.1f} {approx:>9s}')
+            matched += 1
+    print(f'\nmatched {matched} production lines; unmatched sheet buildings: {len(unmatched)}')
+    print('  ' + ', '.join(unmatched[:25]) + (' …' if len(unmatched) > 25 else ''))
 
 
 VEHICLE_DIRS = ['vehicles', 'trains', 'airplanes', 'helicopters', 'ships']
@@ -205,17 +231,36 @@ def main():
     outdir = os.path.join(repo_root, 'data', 'game')
     os.makedirs(outdir, exist_ok=True)
 
+    loc = load_localization(media)
+    print(f'localization: {len(loc)} languages, {len(loc.get("en", {}))} strings (en)')
+
+    def attach_names(items):
+        for it in items:
+            nid = it.get('nameId')
+            if nid is not None:
+                it['de'] = loc.get('de', {}).get(nid)
+                it['en'] = loc.get('en', {}).get(nid)
+
     buildings = extract_buildings(media)
+    attach_names(buildings)
     with open(os.path.join(outdir, 'buildings_raw.json'), 'w') as f:
         json.dump(buildings, f, ensure_ascii=False, indent=1)
     print(f'buildings with economic data: {len(buildings)} -> data/game/buildings_raw.json')
 
     vehicles = extract_vehicles(media)
+    attach_names(vehicles)
     with open(os.path.join(outdir, 'vehicles_raw.json'), 'w') as f:
         json.dump(vehicles, f, ensure_ascii=False, indent=1)
     from collections import Counter
     print(f'vehicles: {len(vehicles)} -> data/game/vehicles_raw.json '
           f'{dict(Counter(v["category"] for v in vehicles))}')
+
+    # full multi-language name table for every referenced id (for ROADMAP 5.2)
+    ids = {it.get('nameId') for it in buildings + vehicles} - {None}
+    names = {str(i): {code: tbl[i] for code, tbl in loc.items() if i in tbl} for i in sorted(ids)}
+    with open(os.path.join(outdir, 'names.json'), 'w') as f:
+        json.dump(names, f, ensure_ascii=False, indent=1)
+    print(f'names: {len(names)} ids × {len(loc)} languages -> data/game/names.json')
 
     if '--validate' in sys.argv:
         validate(buildings, repo_root)

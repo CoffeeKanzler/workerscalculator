@@ -55,7 +55,19 @@ both "sell (like the sheet)" and "buy (import view)", default sell.)
 
 ## Phase 3 – Data quality & freshness
 
-### 3.1 Extract data from game files instead of the spreadsheet ⭐
+### 3.1 Extract data from game files instead of the spreadsheet ⭐ (in progress)
+Status 2026-07-16: `tools/extract_from_gamefiles.py` parses buildings
+(238 with economic data), vehicles (531 incl. trains/planes/helicopters/ships)
+and the localization string tables (`soviet<Language>.btf`, 20 languages,
+format reverse-engineered: big-endian id/offset/len directory + UTF-16-BE blob).
+Verified unit rule: ini production/consumption values are t per worker per day
+(t/day = value × workers) for factories AND mines. Validation against the sheet
+found real version drift (e.g. nuclear plant 40 workers in game vs 60 in sheet).
+Still open: merge step into app data (game rates + sheet-measured power/water/
+waste/construction), `data/community/` split, app integration.
+Not in game inis (stay sheet/community-sourced): per-building power/water/waste,
+full construction bills (partly `$COST_RESOURCE_AUTO` from 3D geometry), wagon
+lengths, heating-plant output semantics.
 - **What:** New extractor `tools/extract_from_gamefiles.py` parsing the game install:
   - `media_soviet/buildings_types/*.ini` → production/consumption, workers, power, water,
     construction bill (complete + always current with game patches)
