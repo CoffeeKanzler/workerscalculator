@@ -15,16 +15,11 @@ nested `tender` object with the tender's name, length, empty weight, availabilit
 and DLC metadata. Tender records will not be emitted as top-level selectable
 rail vehicles.
 
-Three Early Start pairs are not declared with `$TRAINSET` and require explicit,
-documented game-id mappings:
-
-- `ol49` -> `25d49`
-- `ty45` -> `32d43`
-- `pm2` -> `34d44`
-
-Steam tank locomotives and other steam vehicles without a paired tender remain
-standalone. The extractor will fail clearly when a declared `$TRAINSET` target
-cannot be found, instead of silently generating incomplete planner data.
+All tender-equipped Early Start locomotives, including `ol49`, `ty45`, and
+`pm2`, declare their association with `$TRAINSET`. Steam tank locomotives and
+other steam vehicles without a paired tender remain standalone. The extractor
+will fail clearly when a steam locomotive's declared `$TRAINSET` target cannot
+be found, instead of silently generating incomplete planner data.
 
 ## Planner Behavior
 
@@ -66,7 +61,7 @@ state, and calculating physical totals used by both recommendation and UI code.
 
 Node tests will verify:
 
-- extractor output contains declared and fallback tender pairs;
+- extractor output contains every declared tender pair;
 - tenders are absent from the selectable top-level vehicle list;
 - one locomotive derives exactly one locked tender directly behind it;
 - locomotive counts derive matching tender counts;
