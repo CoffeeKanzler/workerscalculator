@@ -79,7 +79,7 @@ sheet. The current set, for review:
 
 | Formula | Implementation | Sheet origin |
 |---|---|---|
-| Profit | Σ production×sell − Σ consumption×buy, ×count ×timeFactor ×productivity | `ProduktionProductions` J/K columns |
+| Profit | Σ production×sell − Σ consumption×**inputPrice**, ×count ×timeFactor ×productivity. The sheet values consumption at the *sell* price (opportunity cost) — the app defaults to that and offers a buy-price/import mode plus optional per-ton delivery cost | `ProduktionProductions` J/K columns (VLOOKUP col 2 = sell) |
 | Mine output | rate × count × **quality** (richness) for the 8 mine types | `ProduktionProductions` M column IF |
 | Profit per worker | profit / (workers per shift / 2) | H column |
 | Amortization | build cost / profit per day | I column |
@@ -95,8 +95,15 @@ sheet. The current set, for review:
 | LowTech points | ⌊pop/2500⌋ + settlements + decade bonus − researched | `LowTech Forschung` F2 |
 
 To change a formula: edit `js/calc.js`, note the sheet cell you derived it from
-in the comment, and check the affected tab in the browser. (A proper test
-suite is planned – ROADMAP 1.1 – after which `node --test` will verify these.)
+in the comment, add or adjust a test in `tests/`, and run:
+
+```bash
+npm test          # node --test, no dependencies
+```
+
+The tests pin sheet-exact reference values (e.g. distillery profit 7506.114 ₽/day
+at sample prices) — if your change breaks one intentionally, update the test
+with the new reference and say why in the commit message.
 
 ## stats.ini compatibility
 

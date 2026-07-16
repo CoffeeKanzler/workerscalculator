@@ -4,9 +4,9 @@ Planned improvements, ordered by value. Each item is independently shippable;
 none are started until picked. See [CONTRIBUTING.md](CONTRIBUTING.md) for how
 the code and data fit together.
 
-## Phase 1 – Correctness & trust
+## Phase 1 – Correctness & trust ✅ done 2026-07-16
 
-### 1.1 Unit tests for the formula layer
+### 1.1 Unit tests for the formula layer ✅
 - **What:** Test harness (plain Node, no framework needed) for `js/calc.js` and
   `js/statsini.js`. Pin known-good values:
   - Brennerei (distillery) profit at sample prices ≈ 7 506 ₽/day (sheet `ProduktionProductions` row 26)
@@ -16,7 +16,10 @@ the code and data fit together.
 - **Why:** the formulas are the product; right now only manual browser checks protect them.
 - **Effort:** small. **Files:** `tests/calc.test.mjs`, `package.json` (test script only).
 
-### 1.2 Delivery cost in profit calculations
+### 1.2 Delivery cost in profit calculations ✅
+(Also added while implementing: input-price mode toggle — the sheet values
+consumption at **sell** prices, an opportunity-cost view; the app now supports
+both "sell (like the sheet)" and "buy (import view)", default sell.)
 - **What:** Toggle "prices incl. delivery cost": effective sell = sell − deliveryCost/t,
   effective buy = buy + deliveryCost/t. Applies to production planner + price analysis.
 - **Why:** the game charges per-ton customs/delivery at the border (sample save: ~4 ₽ / 7 $).

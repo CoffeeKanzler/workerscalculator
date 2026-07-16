@@ -25,6 +25,7 @@ const state = {
   activeCity: 0,
   vanillaOnly: false,
   train: { cargo: 'Kohle', length: 450, locoName: null, locoCount: 1 },
+  calcOpts: { inputPriceMode: 'sell', includeDelivery: false },
   lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0 },
   analysisSort: { col: 'profit', dir: -1 },
   analysisSearch: '',
@@ -117,7 +118,18 @@ function currentPrices() {
 }
 
 function economy() {
-  return new Economy(DATA.resources, currentPrices());
+  return new Economy(DATA.resources, currentPrices(), state.calcOpts);
+}
+
+// Shared toggles for how profit is computed (production + analysis tabs).
+function renderCalcOpts() {
+  return el('div', { class: 'settingsbar' },
+    el('label', {}, t('inputPriceMode') + ' ',
+      selectInput([['sell', t('inputPriceSell')], ['buy', t('inputPriceBuy')]],
+        state.calcOpts.inputPriceMode, v => { state.calcOpts.inputPriceMode = v; })),
+    el('label', {}, t('includeDelivery') + ' ', el('input', {
+      type: 'checkbox', checked: state.calcOpts.includeDelivery,
+      onchange: e => { state.calcOpts.includeDelivery = e.target.checked; update(); } })));
 }
 
 // ---------------------------------------------------------------- helpers
@@ -459,7 +471,7 @@ function renderProduction() {
     kv(t('wasteOut'), fmt(result.totalWaste, 1)),
     kv(t('buildCost') + ` ${cur()}`, fmt(result.totalBuildCost, 0)));
 
-  return el('section', {}, settings, fieldsBox, tbl, addBtn,
+  return el('section', {}, settings, renderCalcOpts(), fieldsBox, tbl, addBtn,
     el('div', { class: 'columns' }, el('div', {}, el('h3', {}, t('balance')), balance), totals));
 }
 
@@ -501,6 +513,7 @@ function renderAnalysis() {
 
   return el('section', {},
     el('p', { class: 'hint' }, t('analysisHint')),
+    renderCalcOpts(),
     el('input', {
       type: 'search', placeholder: t('searchPlaceholder'), value: state.analysisSearch,
       oninput: e => { state.analysisSearch = e.target.value; update(); },
@@ -754,6 +767,7 @@ function update() {
 }
 
 loadState();
+state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.calcOpts || {}) };
 loadData().then(() => {
   if (!state.cities.length) state.cities.push(defaultCity());
   render();

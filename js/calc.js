@@ -12,13 +12,42 @@ export const QUALITY_BUILDINGS_DE = new Set([
   'Kiesgrube', 'Holzfällerposten', 'Kiesgrube Groß',
 ]);
 
+// Goods that move via wires/pipes and never pay border delivery cost.
+export const NON_DELIVERABLE = new Set(['eletric', 'heat', 'water', 'usagewater']);
+
 export class Economy {
-  constructor(resources, prices) {
+  // opts.inputPriceMode: 'sell' (like the sheet: inputs valued at what you could
+  //   have sold them for) or 'buy' (import view: inputs valued at purchase price).
+  // opts.includeDelivery: apply per-ton delivery cost to border trades.
+  constructor(resources, prices, opts = {}) {
     this.resources = resources;               // [{key, de, en, tid}]
     this.byDe = new Map(resources.map(r => [r.de, r]));
     this.byEn = new Map(resources.map(r => [r.en, r]));
     this.byKey = new Map(resources.map(r => [r.key, r]));
     this.prices = prices;                     // {purchaseUSD:{key:v}, ... , workdayCostRUB, ...}
+    this.inputPriceMode = opts.inputPriceMode ?? 'sell';
+    this.includeDelivery = opts.includeDelivery ?? false;
+  }
+
+  delivery(key, currency) {
+    if (!this.includeDelivery || NON_DELIVERABLE.has(key)) return 0;
+    return (currency === 'USD' ? this.prices.deliveryCostUSD : this.prices.deliveryCostRUB) ?? 0;
+  }
+
+  // Price used for produced goods (revenue side).
+  outputPrice(nameOrKey, currency) {
+    const key = this.byKey.has(nameOrKey) ? nameOrKey : this.keyForName(nameOrKey);
+    if (!key) return 0;
+    return this.sell(key, currency) - this.delivery(key, currency);
+  }
+
+  // Price used for consumed goods (cost side), per inputPriceMode.
+  inputPrice(nameOrKey, currency) {
+    const key = this.byKey.has(nameOrKey) ? nameOrKey : this.keyForName(nameOrKey);
+    if (!key) return 0;
+    if (key === 'workers') return this.workday(currency);
+    if (this.inputPriceMode === 'buy') return this.buy(key, currency) + this.delivery(key, currency);
+    return this.sell(key, currency) - this.delivery(key, currency);
   }
 
   keyForName(name) {
@@ -65,8 +94,8 @@ export class Economy {
   buildingProfit(b, currency, productivity = 1, count = 1, quality = 1) {
     const mult = QUALITY_BUILDINGS_DE.has(b.de) ? count * quality : count;
     let income = 0, expenses = 0;
-    for (const p of b.production) income += this.sell(p.de, currency) * p.rate * mult * productivity;
-    for (const c of b.consumption) expenses += this.buy(c.de, currency) * c.rate * count * productivity;
+    for (const p of b.production) income += this.outputPrice(p.de, currency) * p.rate * mult * productivity;
+    for (const c of b.consumption) expenses += this.inputPrice(c.de, currency) * c.rate * count * productivity;
     return { income, expenses, profit: income - expenses };
   }
 }
@@ -99,12 +128,12 @@ export function evaluatePlan(rows, fields, settings, eco) {
     let income = 0, expenses = 0;
     for (const p of b.production) {
       const amt = p.rate * mult * tf * prod * flow;
-      income += eco.sell(p.de, settings.currency) * amt;
+      income += eco.outputPrice(p.de, settings.currency) * amt;
       addBal(p.de, amt, 0);
     }
     for (const c of b.consumption) {
       const amt = c.rate * count * tf * prod * flow;
-      expenses += eco.buy(c.de, settings.currency) * amt;
+      expenses += eco.inputPrice(c.de, settings.currency) * amt;
       addBal(c.de, 0, amt);
     }
     const workers = b.workers * count;

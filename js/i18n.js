@@ -42,6 +42,10 @@ export const STRINGS = {
     ltHint: 'Übersichtshilfe für die Community-Regel „LowTech“ von DasBreitschwert: 1 Punkt pro Siedlung (≥200 EW), 1 Punkt je 2.500 Gesamteinwohner, plus 1 Punkt pro angefangenem Jahrzehnt bis 1980 (bei Startjahr ≤ 1960).',
     searchPlaceholder: 'Suchen…', all: 'Alle', none: '—', vanillaOnly: 'Nur Vanilla',
     total: 'Gesamt', save: 'Gespeichert', reset: 'Zurücksetzen',
+    inputPriceMode: 'Verbrauch bewertet zum',
+    inputPriceSell: 'Verkaufspreis (wie Spreadsheet)',
+    inputPriceBuy: 'Kaufpreis (Import-Sicht)',
+    includeDelivery: 'Lieferkosten pro Tonne einrechnen',
   },
   en: {
     appTitle: 'W&R: Soviet Republic – Economy Planner',
@@ -85,5 +89,9 @@ export const STRINGS = {
     ltHint: 'Helper for the community rule “LowTech” by DasBreitschwert: 1 point per settlement (≥200 pop), 1 point per 2,500 total population, plus 1 point per started decade until 1980 (when starting ≤ 1960).',
     searchPlaceholder: 'Search…', all: 'All', none: '—', vanillaOnly: 'Vanilla only',
     total: 'Total', save: 'Saved', reset: 'Reset',
+    inputPriceMode: 'Inputs valued at',
+    inputPriceSell: 'sell price (like the spreadsheet)',
+    inputPriceBuy: 'buy price (import view)',
+    includeDelivery: 'Include per-ton delivery cost',
   },
 };
