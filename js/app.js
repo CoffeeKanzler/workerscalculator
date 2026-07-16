@@ -1,9 +1,9 @@
-import { STRINGS } from './i18n.js?v=10';
-import { parseStatsIni, recordToPrices } from './statsini.js?v=10';
-import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=10';
-import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=10';
-import { solveChain, producersByResource, defaultProducer } from './chain.js?v=10';
-import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=10';
+import { STRINGS } from './i18n.js?v=11';
+import { parseStatsIni, recordToPrices } from './statsini.js?v=11';
+import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=11';
+import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=11';
+import { solveChain, producersByResource, defaultProducer } from './chain.js?v=11';
+import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=11';
 
 const TABS = ['prices', 'production', 'chain', 'analysis', 'city', 'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
@@ -74,19 +74,22 @@ const DATA_V = new URL(import.meta.url).searchParams.get('v') ?? '0';
 
 async function loadData() {
   const get = path => fetch(`${path}?v=${DATA_V}`);
-  const [res, prod, prodGame, city, veh, dec] = await Promise.all([
+  const [res, prod, prodGame, city, veh, rail, dec] = await Promise.all([
     get('data/resources.json').then(r => r.json()),
     get('data/production_buildings.json').then(r => r.json()),
     get('data/game/production_buildings.json').then(r => r.ok ? r.json() : null).catch(() => null),
     get('data/city_buildings.json').then(r => r.json()),
     get('data/vehicles.json').then(r => r.json()),
+    get('data/game/rail_vehicles.json').then(r => r.ok ? r.json() : []).catch(() => []),
     get('data/decade_prices.json').then(r => r.json()),
   ]);
   DATA = {
     resources: res.resources, defaults: res.defaults,
     prodSets: { sheet: prod, game: prodGame },
     cityBuildings: city,
-    vehicles: veh.vehicles, decades: dec,
+    // game-only rail vehicles (steam locos, tenders, DLC engines) join the pool
+    vehicles: veh.vehicles.concat(rail),
+    decades: dec,
   };
 }
 
@@ -891,7 +894,8 @@ function renderTrains() {
   const consist = trainConsist();
   const byName = new Map(DATA.vehicles.map(v => [v.name, v]));
   const isLoco = v => ['Lokomotive', 'Triebwagen'].includes(v.attrs['Typ']);
-  const locos = DATA.vehicles.filter(isLoco)
+  // loco menu also offers tenders (steam locos need one coupled)
+  const locos = DATA.vehicles.filter(v => isLoco(v) || v.attrs['Typ'] === 'Tender')
     .sort((a, b) => (b.attrs['Motorleistung'] ?? 0) - (a.attrs['Motorleistung'] ?? 0));
   const wagons = DATA.vehicles.filter(v => ['Güterwagon', 'Passagierwagen'].includes(v.attrs['Typ']));
 
@@ -910,6 +914,9 @@ function renderTrains() {
   };
   const locoLabel = l => {
     const a = l.attrs;
+    if (a['Typ'] === 'Tender') {
+      return `${l.name} — Tender, ${a['Länge'] ?? '?'} m (${a['Von'] ?? '?'}–${a['Bis'] ?? '?'})`;
+    }
     return `${l.name} — ${fmt(a['Motorleistung'] ?? 0, 0)} kW, ${fmt(a['Max. Geschwindigkeit'] ?? 0, 0)} km/h, `
       + `${a['Länge'] ?? '?'} m, ${a['Antriebsart'] ?? '?'} (${a['Von'] ?? '?'}–${a['Bis'] ?? '?'})`;
   };
@@ -918,9 +925,19 @@ function renderTrains() {
   // carries one cargo at a time even if it could take alternatives.
   const addToConsist = (name, front = false, cargo = null) => {
     const seg = consist.find(s => s.name === name && s.cargo === cargo);
-    if (seg) seg.count++;
-    else if (front) consist.unshift({ name, count: 1, cargo });
-    else consist.push({ name, count: 1, cargo });
+    if (seg) { seg.count++; update(); return; }
+    const entry = { name, count: 1, cargo };
+    const isTender = byName.get(name)?.attrs['Typ'] === 'Tender';
+    if (isTender) {
+      // couple the tender directly behind the last locomotive
+      let lastLoco = -1;
+      consist.forEach((s, i) => { if (isLoco(byName.get(s.name) ?? { attrs: {} })) lastLoco = i; });
+      consist.splice(lastLoco + 1, 0, entry);
+    } else if (front) {
+      consist.unshift(entry);
+    } else {
+      consist.push(entry);
+    }
     update();
   };
 
@@ -953,7 +970,7 @@ function renderTrains() {
     }, '+ ' + t('cargo')) : null,
     el('label', {}, t('targetKwt') + ' ', numInput(reco.kwt, v => reco.kwt = v || 2, { min: 0.5, step: 0.5 })),
     el('label', {}, t('drive') + ' ',
-      selectInput([['all', t('all')], ['D', 'Diesel'], ['E', 'E']], reco.drive, v => reco.drive = v)),
+      selectInput([['all', t('all')], ['D', 'Diesel'], ['E', 'E'], ['S', 'Dampf/Steam']], reco.drive, v => reco.drive = v)),
     el('button', { class: 'primary', onclick: () => {
       const rec = recommendTrain(tr, locos, wagons, resDeNames);
       if (rec) { tr.consist = rec; update(); }
@@ -1016,6 +1033,8 @@ function renderTrains() {
   const totalCost = segs.reduce((a, s) => a + vehicleCost(s.v, eco, state.currency) * s.count, 0);
   const eraFrom = Math.max(0, ...segs.map(s => s.v.attrs['Von'] ?? 0));
   const isElectric = segs.some(s => isLoco(s.v) && s.v.attrs['Antriebsart'] === 'E');
+  const hasSteam = segs.some(s => isLoco(s.v) && s.v.attrs['Antriebsart'] === 'S');
+  const hasTender = segs.some(s => s.v.attrs['Typ'] === 'Tender');
   const kwCls = kwPerT >= 2 ? 'pos' : kwPerT >= 1 ? 'warn' : 'neg';
 
   // ---- visual train (SVG, widths proportional to real lengths)
@@ -1098,6 +1117,7 @@ function renderTrains() {
     kv(t('from'), eraFrom ? String(eraFrom) : '—'),
     kv(`${t('prodCost')} ${cur()}`, fmt(totalCost, 0)),
     isElectric ? el('p', { class: 'hint' }, t('catenaryNote')) : null,
+    hasSteam && !hasTender ? el('p', { class: 'warn' }, t('steamTenderNote')) : null,
     el('p', { class: 'hint' }, t('wagonSpeedNote')),
     el('p', { class: 'hint' }, t('powerHint')));
 

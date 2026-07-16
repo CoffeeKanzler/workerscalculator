@@ -192,8 +192,25 @@ VEHICLE_SCALARS = {
 }
 
 
+def bbox_length(vdir):
+    """Vehicle length in meters from bbox.bin (6 big/little-endian floats:
+    min XYZ, max XYZ; the z extent is the length). Validated against the
+    sheet's lengths (e.g. box270 -> 15.04 m vs 15 m)."""
+    p = os.path.join(vdir, 'bbox.bin')
+    if not os.path.isfile(p):
+        return None
+    data = open(p, 'rb').read()
+    if len(data) < 24:
+        return None
+    f = struct.unpack('<6f', data[:24])
+    return round(abs(f[5] - f[2]), 2)
+
+
 def parse_vehicle(path, category):
     v = {'id': os.path.basename(os.path.dirname(path)), 'category': category}
+    length = bbox_length(os.path.dirname(path))
+    if length:
+        v['length'] = length
     try:
         text = open(path, encoding='utf-8', errors='replace').read()
     except OSError:
@@ -224,15 +241,22 @@ def parse_vehicle(path, category):
 
 def extract_vehicles(media):
     out = []
-    for d in VEHICLE_DIRS:
-        root = os.path.join(media, d)
+    roots = [(d, os.path.join(media, d)) for d in VEHICLE_DIRS]
+    # DLC vehicle folders: <dlc>/vehicles/<name>/script.ini
+    for dlc in sorted(os.listdir(media)):
+        vroot = os.path.join(media, dlc, 'vehicles')
+        if os.path.isdir(vroot):
+            roots.append((f'{dlc}/vehicles', vroot))
+    for cat, root in roots:
         if not os.path.isdir(root):
             continue
         for sub in sorted(os.listdir(root)):
             script = os.path.join(root, sub, 'script.ini')
             if os.path.isfile(script):
-                v = parse_vehicle(script, d)
+                v = parse_vehicle(script, cat)
                 if v:
+                    if '/' in cat:
+                        v['dlc'] = cat.split('/')[0]
                     out.append(v)
     return out
 
@@ -431,6 +455,44 @@ def build_dataset(buildings, repo_root, loc):
     return out
 
 
+def build_rail_vehicles(vehicles, repo_root):
+    """Game-only rail locomotives/tenders in the sheet's attr shape so the
+    train planner can merge them (steam locos ship with the Early Start DLC
+    and are absent from the sheet)."""
+    sheet = json.load(open(os.path.join(repo_root, 'data', 'vehicles.json')))['vehicles']
+    sheet_names = {v['name'].lower() for v in sheet}
+    out = []
+    for v in vehicles:
+        t = v.get('type', '')
+        group = v.get('trainGroup', '')
+        is_loco = t == 'VEHICLETYPE_RAIL_LOCOMOTIVE' and group in ('locomotive', 'locomotive_steam')
+        is_tender = t == 'VEHICLETYPE_RAIL_VAGON' and group == 'locomotive'
+        if not (is_loco or is_tender):
+            continue
+        name = v.get('de') or v.get('en') or v['id']
+        if name.lower() in sheet_names:
+            continue
+        attrs = {
+            'Typ': 'Tender' if is_tender else 'Lokomotive',
+            'Länge': v.get('length'),
+            'Leergewicht': v.get('emptyWeight'),
+            'Von': v.get('from'), 'Bis': v.get('to'),
+        }
+        if is_loco:
+            attrs['Motorleistung'] = v.get('powerKW')
+            attrs['Max. Geschwindigkeit'] = v.get('speed')
+            attrs['Antriebsart'] = 'S' if group == 'locomotive_steam' else '?'
+        entry = {'name': name, 'attrs': {k: x for k, x in attrs.items() if x is not None}}
+        if v.get('dlc'):
+            entry['dlc'] = v['dlc']
+        out.append(entry)
+    path = os.path.join(repo_root, 'data', 'game', 'rail_vehicles.json')
+    with open(path, 'w') as f:
+        json.dump(out, f, ensure_ascii=False, indent=1)
+    n_steam = sum(1 for e in out if e['attrs'].get('Antriebsart') == 'S')
+    print(f'game-only rail vehicles: {len(out)} ({n_steam} steam) -> data/game/rail_vehicles.json')
+
+
 def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__)
@@ -471,6 +533,7 @@ def main():
     print(f'names: {len(names)} ids × {len(loc)} languages -> data/game/names.json')
 
     build_dataset(buildings, repo_root, loc)
+    build_rail_vehicles(vehicles, repo_root)
 
     if '--validate' in sys.argv:
         validate(buildings, repo_root)

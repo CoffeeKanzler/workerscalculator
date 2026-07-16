@@ -1,0 +1,613 @@
+[
+ {
+  "name": "060 DA",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 16.99,
+   "Leergewicht": 118.0,
+   "Von": 1970,
+   "Bis": 1976,
+   "Motorleistung": 1250.0,
+   "Max. Geschwindigkeit": 115.0,
+   "Antriebsart": "?"
+  }
+ },
+ {
+  "name": "Elec. Lokomotive Typ 163",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 18.36,
+   "Leergewicht": 85.0,
+   "Von": 1984,
+   "Bis": 1992,
+   "Motorleistung": 3480.0,
+   "Max. Geschwindigkeit": 120.0,
+   "Antriebsart": "?"
+  }
+ },
+ {
+  "name": "ChS2 (25E)",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 18.94,
+   "Leergewicht": 120.0,
+   "Von": 1958,
+   "Bis": 1976,
+   "Motorleistung": 3190.0,
+   "Max. Geschwindigkeit": 75.0,
+   "Antriebsart": "?"
+  }
+ },
+ {
+  "name": "DR Baureihe V 100",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 13.95,
+   "Leergewicht": 64.0,
+   "Von": 1966,
+   "Bis": 1985,
+   "Motorleistung": 736.0,
+   "Max. Geschwindigkeit": 100.0,
+   "Antriebsart": "?"
+  }
+ },
+ {
+  "name": "SU45",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 18.94,
+   "Leergewicht": 118.0,
+   "Von": 1959,
+   "Bis": 1993,
+   "Motorleistung": 1544.0,
+   "Max. Geschwindigkeit": 97.0,
+   "Antriebsart": "?"
+  }
+ },
+ {
+  "name": "russian_service_tbm_kt1_loco",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 7.94,
+   "Leergewicht": 170.0,
+   "Von": 1970,
+   "Bis": 1990,
+   "Motorleistung": 80.0,
+   "Max. Geschwindigkeit": 60.0,
+   "Antriebsart": "?"
+  }
+ },
+ {
+  "name": "Class 350 Lokomotive",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 16.87,
+   "Leergewicht": 90.0,
+   "Von": 1973,
+   "Bis": 1978,
+   "Motorleistung": 4000.0,
+   "Max. Geschwindigkeit": 160.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "cwc"
+ },
+ {
+  "name": "Class 749 \"Bardotka\"",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 16.5,
+   "Leergewicht": 75.0,
+   "Von": 1964,
+   "Bis": 1971,
+   "Motorleistung": 1103.0,
+   "Max. Geschwindigkeit": 100.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "cwc"
+ },
+ {
+  "name": "M61 Lokomotive",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 18.93,
+   "Leergewicht": 102.0,
+   "Von": 1954,
+   "Bis": 1969,
+   "Motorleistung": 1435.0,
+   "Max. Geschwindigkeit": 105.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "cwc"
+ },
+ {
+  "name": "Class 700 \"Pig\" Lokomotive",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 7.26,
+   "Leergewicht": 22.0,
+   "Von": 1957,
+   "Bis": 1962,
+   "Motorleistung": 121.0,
+   "Max. Geschwindigkeit": 40.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "cwc"
+ },
+ {
+  "name": "Class 700A \"Pig\" Lokomotive",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 7.26,
+   "Leergewicht": 22.0,
+   "Von": 1957,
+   "Bis": 1962,
+   "Motorleistung": 121.0,
+   "Max. Geschwindigkeit": 40.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "cwc"
+ },
+ {
+  "name": "Class 701 \"Pig\" Lokomotive",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 7.26,
+   "Leergewicht": 22.0,
+   "Von": 1977,
+   "Bis": 1991,
+   "Motorleistung": 169.0,
+   "Max. Geschwindigkeit": 40.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "cwc"
+ },
+ {
+  "name": "Class 702 \"Pig\" Lokomotive",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 7.18,
+   "Leergewicht": 24.0,
+   "Von": 1967,
+   "Bis": 1971,
+   "Motorleistung": 157.0,
+   "Max. Geschwindigkeit": 40.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "cwc"
+ },
+ {
+  "name": "25D49 (Ol49) Tender",
+  "attrs": {
+   "Typ": "Tender",
+   "Länge": 6.77,
+   "Leergewicht": 15.0,
+   "Von": 1951,
+   "Bis": 1985
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "32D43 (Ty45) Tender",
+  "attrs": {
+   "Typ": "Tender",
+   "Länge": 8.48,
+   "Leergewicht": 21.0,
+   "Von": 1946,
+   "Bis": 1951
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "34D44 (Pm2) Tender",
+  "attrs": {
+   "Typ": "Tender",
+   "Länge": 8.22,
+   "Leergewicht": 40.0,
+   "Von": 1930,
+   "Bis": 1982
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "Э-Serie 1912/1926/1931",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 12.88,
+   "Leergewicht": 78.0,
+   "Von": 1912,
+   "Bis": 1967,
+   "Motorleistung": 750.0,
+   "Max. Geschwindigkeit": 65.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "E late Tender",
+  "attrs": {
+   "Typ": "Tender",
+   "Länge": 9.09,
+   "Leergewicht": 24.0,
+   "Von": 1912,
+   "Bis": 1978
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "FD-Serie",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 17.14,
+   "Leergewicht": 134.0,
+   "Von": 1931,
+   "Bis": 1978,
+   "Motorleistung": 2205.0,
+   "Max. Geschwindigkeit": 85.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "FD Tender",
+  "attrs": {
+   "Typ": "Tender",
+   "Länge": 12.86,
+   "Leergewicht": 34.0,
+   "Von": 1931,
+   "Bis": 1978
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "IS-Serie",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 16.62,
+   "Leergewicht": 118.0,
+   "Von": 1931,
+   "Bis": 1972,
+   "Motorleistung": 2135.0,
+   "Max. Geschwindigkeit": 115.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "IS Tender",
+  "attrs": {
+   "Typ": "Tender",
+   "Länge": 12.93,
+   "Leergewicht": 34.0,
+   "Von": 1931,
+   "Bis": 1972
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "Preußische T18 (Oko1)",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 14.39,
+   "Leergewicht": 105.0,
+   "Von": 1912,
+   "Bis": 1972,
+   "Motorleistung": 838.0,
+   "Max. Geschwindigkeit": 100.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "SO-Tender",
+  "attrs": {
+   "Typ": "Tender",
+   "Länge": 7.55,
+   "Leergewicht": 24.0,
+   "Von": 1924,
+   "Bis": 1978
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "SO-Serie Mod. 1928",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 12.83,
+   "Leergewicht": 93.0,
+   "Von": 1934,
+   "Bis": 1978,
+   "Motorleistung": 1430.0,
+   "Max. Geschwindigkeit": 75.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "WR-360 C12",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 9.91,
+   "Leergewicht": 40.0,
+   "Von": 1937,
+   "Bis": 1981,
+   "Motorleistung": 265.0,
+   "Max. Geschwindigkeit": 60.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "BBÖ 214",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 16.11,
+   "Leergewicht": 118.0,
+   "Von": 1928,
+   "Bis": 1962,
+   "Motorleistung": 2160.0,
+   "Max. Geschwindigkeit": 120.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "BBO214 Tender",
+  "attrs": {
+   "Typ": "Tender",
+   "Länge": 7.11,
+   "Leergewicht": 20.0,
+   "Von": 1928,
+   "Bis": 1962
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "Br80",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 8.61,
+   "Leergewicht": 44.0,
+   "Von": 1927,
+   "Bis": 1977,
+   "Motorleistung": 423.0,
+   "Max. Geschwindigkeit": 45.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "Br81",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 10.11,
+   "Leergewicht": 52.0,
+   "Von": 1928,
+   "Bis": 1963,
+   "Motorleistung": 633.0,
+   "Max. Geschwindigkeit": 45.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "Ol49",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 13.09,
+   "Leergewicht": 125.0,
+   "Von": 1951,
+   "Bis": 1985,
+   "Motorleistung": 949.0,
+   "Max. Geschwindigkeit": 100.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "Pm3 Tender",
+  "attrs": {
+   "Typ": "Tender",
+   "Länge": 7.51,
+   "Leergewicht": 25.0,
+   "Von": 1930,
+   "Bis": 1978
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "Pm2",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 14.24,
+   "Leergewicht": 91.0,
+   "Von": 1930,
+   "Bis": 1982,
+   "Motorleistung": 1433.0,
+   "Max. Geschwindigkeit": 130.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "Pm3",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 14.15,
+   "Leergewicht": 101.0,
+   "Von": 1939,
+   "Bis": 1978,
+   "Motorleistung": 1544.0,
+   "Max. Geschwindigkeit": 155.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "russian_diesel_te1",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 16.98,
+   "Leergewicht": 123.0,
+   "Von": 1947,
+   "Bis": 1960,
+   "Motorleistung": 735.0,
+   "Max. Geschwindigkeit": 90.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "russian_electric_so",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 13.75,
+   "Leergewicht": 93.4,
+   "Von": 1936,
+   "Bis": 1957,
+   "Motorleistung": 440.0,
+   "Max. Geschwindigkeit": 65.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "russian_electric_vl19",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 16.12,
+   "Leergewicht": 120.0,
+   "Von": 1932,
+   "Bis": 1947,
+   "Motorleistung": 1800.0,
+   "Max. Geschwindigkeit": 70.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "russian_electric_vl22m",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 16.21,
+   "Leergewicht": 132.0,
+   "Von": 1946,
+   "Bis": 1958,
+   "Motorleistung": 2400.0,
+   "Max. Geschwindigkeit": 90.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "Dampf P36",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 17.35,
+   "Leergewicht": 133.0,
+   "Von": 1952,
+   "Bis": 1974,
+   "Motorleistung": 2089.0,
+   "Max. Geschwindigkeit": 125.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "Dampf Su 250",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 14.34,
+   "Leergewicht": 88.0,
+   "Von": 1924,
+   "Bis": 1978,
+   "Motorleistung": 1360.0,
+   "Max. Geschwindigkeit": 97.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "TKh48",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 10.35,
+   "Leergewicht": 34.0,
+   "Von": 1948,
+   "Bis": 1961,
+   "Motorleistung": 296.0,
+   "Max. Geschwindigkeit": 40.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "TKt48",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 14.43,
+   "Leergewicht": 78.0,
+   "Von": 1950,
+   "Bis": 1992,
+   "Motorleistung": 1060.0,
+   "Max. Geschwindigkeit": 80.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "Ty45",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 13.43,
+   "Leergewicht": 90.0,
+   "Von": 1946,
+   "Bis": 1951,
+   "Motorleistung": 1264.0,
+   "Max. Geschwindigkeit": 75.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "west_diesel_RSD1",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 16.51,
+   "Leergewicht": 121.0,
+   "Von": 1942,
+   "Bis": 1947,
+   "Motorleistung": 745.0,
+   "Max. Geschwindigkeit": 105.0,
+   "Antriebsart": "?"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "Dampfkran Industrieanlagen Bay City",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 8.46,
+   "Leergewicht": 22.0,
+   "Von": 1913,
+   "Bis": 1950,
+   "Motorleistung": 680.0,
+   "Max. Geschwindigkeit": 45.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ },
+ {
+  "name": "west_service_steamcrane_v2",
+  "attrs": {
+   "Typ": "Lokomotive",
+   "Länge": 8.46,
+   "Leergewicht": 22.0,
+   "Von": 1913,
+   "Bis": 1950,
+   "Motorleistung": 680.0,
+   "Max. Geschwindigkeit": 45.0,
+   "Antriebsart": "S"
+  },
+  "dlc": "dlc3"
+ }
+]

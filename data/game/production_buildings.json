@@ -50,6 +50,57 @@
   "mcomponents": 8.4
  },
  {
+  "gameId": "dlc3/asphalt_plant",
+  "group": {
+   "de": "Bauindustrie",
+   "en": "Construction industry"
+  },
+  "de": "Asphaltanlage (5 👷)",
+  "en": "Asphalt plant (5 👷)",
+  "workers": 5.0,
+  "production": [
+   {
+    "de": "Asphalt",
+    "en": "Asphalt",
+    "rate": 70.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Kies",
+    "en": "Gravel",
+    "rate": 60.0
+   },
+   {
+    "de": "Bitumen",
+    "en": "bitumen",
+    "rate": 10.0
+   },
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 7.5
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 18.0,
+  "maxKW": 302.0,
+  "water": 0.1,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 1439.0,
+  "gravel": 19.0,
+  "bricks": 0.0,
+  "steel": 40.0,
+  "concrete": 25.0,
+  "asphalt": 15.0,
+  "boards": 0.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 8.4
+ },
+ {
   "gameId": "concrete_plant",
   "group": {
    "de": "Bauindustrie",
@@ -88,6 +139,62 @@
    }
   ],
   "measured": true,
+  "power": 15.0,
+  "maxKW": 252.0,
+  "water": 85.1,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 1436.0,
+  "gravel": 18.0,
+  "bricks": 60.0,
+  "steel": 29.0,
+  "concrete": 24.0,
+  "asphalt": 12.0,
+  "boards": 40.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 2.4
+ },
+ {
+  "gameId": "dlc3/concrete_plant",
+  "group": {
+   "de": "Bauindustrie",
+   "en": "Construction industry"
+  },
+  "de": "Betonwerk (5 👷)",
+  "en": "Concrete plant (5 👷)",
+  "workers": 5.0,
+  "production": [
+   {
+    "de": "Beton",
+    "en": "Concrete",
+    "rate": 60.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Kies",
+    "en": "Gravel",
+    "rate": 45.0
+   },
+   {
+    "de": "Zement",
+    "en": "cement",
+    "rate": 10.0
+   },
+   {
+    "de": "Wasser",
+    "en": "Water",
+    "rate": 30.0
+   },
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 0.35
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
   "power": 15.0,
   "maxKW": 252.0,
   "water": 85.1,
@@ -155,6 +262,57 @@
   "mcomponents": 7.3
  },
  {
+  "gameId": "dlc3/prefab_factory",
+  "group": {
+   "de": "Bauindustrie",
+   "en": "Construction industry"
+  },
+  "de": "Fabrik für Plattenbauteile (50 👷)",
+  "en": "Prefab panels factory (50 👷)",
+  "workers": 50.0,
+  "production": [
+   {
+    "de": "Plattenbauteile",
+    "en": "Plate components",
+    "rate": 55.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Zement",
+    "en": "cement",
+    "rate": 7.5
+   },
+   {
+    "de": "Kies",
+    "en": "Gravel",
+    "rate": 50.0
+   },
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 3.75
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 8.0,
+  "maxKW": 132.0,
+  "water": 1.3,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 2233.0,
+  "gravel": 25.0,
+  "bricks": 63.0,
+  "steel": 82.0,
+  "concrete": 207.0,
+  "asphalt": 20.0,
+  "boards": 21.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 7.3
+ },
+ {
   "gameId": "woodcutting_post",
   "group": {
    "de": "Bauindustrie",
@@ -172,6 +330,41 @@
   ],
   "consumption": [],
   "measured": true,
+  "power": 7.2,
+  "maxKW": 119.0,
+  "water": 0.2,
+  "hotwater": 0,
+  "wastePerWorker": 0.43,
+  "workdays": 217.0,
+  "gravel": 6.5,
+  "bricks": 0.0,
+  "steel": 1.5,
+  "concrete": 8.5,
+  "asphalt": 5.2,
+  "boards": 10.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 0.0
+ },
+ {
+  "gameId": "dlc3/h_woodcutting_post",
+  "group": {
+   "de": "Bauindustrie",
+   "en": "Construction industry"
+  },
+  "de": "Holzfällerposten (5 👷)",
+  "en": "Woodcutting post (5 👷)",
+  "workers": 5.0,
+  "production": [
+   {
+    "de": "Holz",
+    "en": "Wood",
+    "rate": 31.25
+   }
+  ],
+  "consumption": [],
+  "measured": true,
+  "dlc": "dlc3",
   "power": 7.2,
   "maxKW": 119.0,
   "water": 0.2,
@@ -492,6 +685,57 @@
   "mcomponents": 4.2
  },
  {
+  "gameId": "dlc3/cement_plant",
+  "group": {
+   "de": "Bauindustrie",
+   "en": "Construction industry"
+  },
+  "de": "Zementwerk (20 👷)",
+  "en": "Cement plant (20 👷)",
+  "workers": 20.0,
+  "production": [
+   {
+    "de": "Zement",
+    "en": "cement",
+    "rate": 39.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Kohle",
+    "en": "Coal",
+    "rate": 11.25
+   },
+   {
+    "de": "Kies",
+    "en": "Gravel",
+    "rate": 105.0
+   },
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 1.2
+   }
+  ],
+  "measured": false,
+  "dlc": "dlc3",
+  "power": 0,
+  "maxKW": 0,
+  "water": 0,
+  "hotwater": 0,
+  "wastePerWorker": 0,
+  "workdays": 0,
+  "gravel": 0,
+  "bricks": 0,
+  "steel": 0,
+  "concrete": 0,
+  "asphalt": 0,
+  "boards": 0,
+  "panels": 0,
+  "ecomponents": 0,
+  "mcomponents": 0
+ },
+ {
   "gameId": "cwc/CementPlant",
   "group": {
    "de": "Bauindustrie",
@@ -583,6 +827,47 @@
   "mcomponents": 0.0
  },
  {
+  "gameId": "dlc3/brick_factory_small",
+  "group": {
+   "de": "Bauindustrie",
+   "en": "Construction industry"
+  },
+  "de": "Ziegelfabrik (30 👷)",
+  "en": "Brick factory (30 👷)",
+  "workers": 30.0,
+  "production": [
+   {
+    "de": "Ziegel",
+    "en": "Brick",
+    "rate": 15.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Kohle",
+    "en": "Coal",
+    "rate": 10.5
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 3.0,
+  "maxKW": 50.0,
+  "water": 1.5,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 2723.0,
+  "gravel": 37.0,
+  "bricks": 157.0,
+  "steel": 30.0,
+  "concrete": 49.0,
+  "asphalt": 30.0,
+  "boards": 70.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 0.0
+ },
+ {
   "gameId": "production_train",
   "group": {
    "de": "Fortschrittliche Industrie",
@@ -625,6 +910,66 @@
    }
   ],
   "measured": false,
+  "power": 0,
+  "maxKW": 0,
+  "water": 0,
+  "hotwater": 0,
+  "wastePerWorker": 0,
+  "workdays": 0,
+  "gravel": 0,
+  "bricks": 0,
+  "steel": 0,
+  "concrete": 0,
+  "asphalt": 0,
+  "boards": 0,
+  "panels": 0,
+  "ecomponents": 0,
+  "mcomponents": 0
+ },
+ {
+  "gameId": "dlc3/production_train",
+  "group": {
+   "de": "Fortschrittliche Industrie",
+   "en": "Advanced Industry"
+  },
+  "de": "Eisenbahn-Fertigungslinie (200 👷)",
+  "en": "Railway production line (200 👷)",
+  "workers": 200.0,
+  "production": [],
+  "consumption": [
+   {
+    "de": "Stahl",
+    "en": "Steel",
+    "rate": 200.0
+   },
+   {
+    "de": "Kunststoffe",
+    "en": "plastics",
+    "rate": 200.0
+   },
+   {
+    "de": "Mechanik-Bauteile",
+    "en": "Mechanical components",
+    "rate": 200.0
+   },
+   {
+    "de": "Elektronik-Bauteile",
+    "en": "Electronic components",
+    "rate": 200.0
+   },
+   {
+    "de": "Stoff",
+    "en": "Fabric",
+    "rate": 200.0
+   },
+   {
+    "de": "Elektronik",
+    "en": "electronics",
+    "rate": 200.0
+   }
+  ],
+  "measured": false,
+  "dlc": "dlc3",
   "power": 0,
   "maxKW": 0,
   "water": 0,
@@ -692,6 +1037,57 @@
   "mcomponents": 0.77
  },
  {
+  "gameId": "dlc3/electronics_factory",
+  "group": {
+   "de": "Fortschrittliche Industrie",
+   "en": "Advanced Industry"
+  },
+  "de": "Elektronikmontagehalle (150 👷)",
+  "en": "Electronics assembly hall (150 👷)",
+  "workers": 150.0,
+  "production": [
+   {
+    "de": "Elektronik",
+    "en": "electronics",
+    "rate": 4.5
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Elektronik-Bauteile",
+    "en": "Electronic components",
+    "rate": 1.5
+   },
+   {
+    "de": "Bretter",
+    "en": "Boards",
+    "rate": 4.5
+   },
+   {
+    "de": "Mechanik-Bauteile",
+    "en": "Mechanical components",
+    "rate": 1.5
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 5.4,
+  "maxKW": 90.0,
+  "water": 3.0,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 1760.0,
+  "gravel": 43.0,
+  "bricks": 35.0,
+  "steel": 44.0,
+  "concrete": 121.0,
+  "asphalt": 34.0,
+  "boards": 11.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 0.77
+ },
+ {
   "gameId": "eletronic_components_factory",
   "group": {
    "de": "Fortschrittliche Industrie",
@@ -742,6 +1138,57 @@
   "mcomponents": 0.9
  },
  {
+  "gameId": "dlc3/electronic_components_factory",
+  "group": {
+   "de": "Fortschrittliche Industrie",
+   "en": "Advanced Industry"
+  },
+  "de": "Fabrik für elektronische Bauteile (75 👷)",
+  "en": "Electrical components factory (75 👷)",
+  "workers": 75.0,
+  "production": [
+   {
+    "de": "Elektronik-Bauteile",
+    "en": "Electronic components",
+    "rate": 1.875
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Kies",
+    "en": "Gravel",
+    "rate": 2.25
+   },
+   {
+    "de": "Stahl",
+    "en": "Steel",
+    "rate": 0.75
+   },
+   {
+    "de": "Chemikalien",
+    "en": "chemicals",
+    "rate": 0.6
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 6.3,
+  "maxKW": 105.0,
+  "water": 3.0,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 3629.0,
+  "gravel": 42.0,
+  "bricks": 143.0,
+  "steel": 82.0,
+  "concrete": 318.0,
+  "asphalt": 33.0,
+  "boards": 47.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 0.9
+ },
+ {
   "gameId": "mechanical_components_factory",
   "group": {
    "de": "Fortschrittliche Industrie",
@@ -765,6 +1212,47 @@
    }
   ],
   "measured": true,
+  "power": 8.1,
+  "maxKW": 135.0,
+  "water": 3.0,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 5122.0,
+  "gravel": 88.0,
+  "bricks": 142.0,
+  "steel": 133.0,
+  "concrete": 375.0,
+  "asphalt": 70.0,
+  "boards": 47.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 2.7
+ },
+ {
+  "gameId": "dlc3/mechanical_components_factory",
+  "group": {
+   "de": "Fortschrittliche Industrie",
+   "en": "Advanced Industry"
+  },
+  "de": "Fabrik für mechanische Bauteile (40 👷)",
+  "en": "Mechanical components factory (40 👷)",
+  "workers": 40.0,
+  "production": [
+   {
+    "de": "Mechanik-Bauteile",
+    "en": "Mechanical components",
+    "rate": 4.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Stahl",
+    "en": "Steel",
+    "rate": 6.0
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
   "power": 8.1,
   "maxKW": 135.0,
   "water": 3.0,
@@ -824,6 +1312,66 @@
    }
   ],
   "measured": false,
+  "power": 0,
+  "maxKW": 0,
+  "water": 0,
+  "hotwater": 0,
+  "wastePerWorker": 0,
+  "workdays": 0,
+  "gravel": 0,
+  "bricks": 0,
+  "steel": 0,
+  "concrete": 0,
+  "asphalt": 0,
+  "boards": 0,
+  "panels": 0,
+  "ecomponents": 0,
+  "mcomponents": 0
+ },
+ {
+  "gameId": "dlc3/production_vehicle",
+  "group": {
+   "de": "Fortschrittliche Industrie",
+   "en": "Advanced Industry"
+  },
+  "de": "Fahrzeug-Fertigungslinie (200 👷)",
+  "en": "Vehicle production line (200 👷)",
+  "workers": 200.0,
+  "production": [],
+  "consumption": [
+   {
+    "de": "Stahl",
+    "en": "Steel",
+    "rate": 200.0
+   },
+   {
+    "de": "Kunststoffe",
+    "en": "plastics",
+    "rate": 200.0
+   },
+   {
+    "de": "Mechanik-Bauteile",
+    "en": "Mechanical components",
+    "rate": 200.0
+   },
+   {
+    "de": "Elektronik-Bauteile",
+    "en": "Electronic components",
+    "rate": 200.0
+   },
+   {
+    "de": "Stoff",
+    "en": "Fabric",
+    "rate": 200.0
+   },
+   {
+    "de": "Elektronik",
+    "en": "electronics",
+    "rate": 200.0
+   }
+  ],
+  "measured": false,
+  "dlc": "dlc3",
   "power": 0,
   "maxKW": 0,
   "water": 0,
@@ -905,6 +1453,106 @@
   "mcomponents": 0
  },
  {
+  "gameId": "dlc3/production_airplane",
+  "group": {
+   "de": "Fortschrittliche Industrie",
+   "en": "Advanced Industry"
+  },
+  "de": "Flugzeugproduktionslinie (250 👷)",
+  "en": "Airplane production line (250 👷)",
+  "workers": 250.0,
+  "production": [],
+  "consumption": [
+   {
+    "de": "Stahl",
+    "en": "Steel",
+    "rate": 250.0
+   },
+   {
+    "de": "Aluminium",
+    "en": "aluminum",
+    "rate": 250.0
+   },
+   {
+    "de": "Kunststoffe",
+    "en": "plastics",
+    "rate": 250.0
+   },
+   {
+    "de": "Mechanik-Bauteile",
+    "en": "Mechanical components",
+    "rate": 250.0
+   },
+   {
+    "de": "Elektronik-Bauteile",
+    "en": "Electronic components",
+    "rate": 250.0
+   },
+   {
+    "de": "Stoff",
+    "en": "Fabric",
+    "rate": 250.0
+   },
+   {
+    "de": "Elektronik",
+    "en": "electronics",
+    "rate": 250.0
+   }
+  ],
+  "measured": false,
+  "dlc": "dlc3",
+  "power": 0,
+  "maxKW": 0,
+  "water": 0,
+  "hotwater": 0,
+  "wastePerWorker": 0,
+  "workdays": 0,
+  "gravel": 0,
+  "bricks": 0,
+  "steel": 0,
+  "concrete": 0,
+  "asphalt": 0,
+  "boards": 0,
+  "panels": 0,
+  "ecomponents": 0,
+  "mcomponents": 0
+ },
+ {
+  "gameId": "dlc3/h_stud_farm",
+  "group": {
+   "de": "Fortschrittliche Industrie",
+   "en": "Advanced Industry"
+  },
+  "de": "Gestüt",
+  "en": "Stud farm",
+  "workers": 50.0,
+  "production": [],
+  "consumption": [
+   {
+    "de": "Pflanzen",
+    "en": "Plant",
+    "rate": 50.0
+   }
+  ],
+  "measured": false,
+  "dlc": "dlc3",
+  "power": 0,
+  "maxKW": 0,
+  "water": 0,
+  "hotwater": 0,
+  "wastePerWorker": 0,
+  "workdays": 0,
+  "gravel": 0,
+  "bricks": 0,
+  "steel": 0,
+  "concrete": 0,
+  "asphalt": 0,
+  "boards": 0,
+  "panels": 0,
+  "ecomponents": 0,
+  "mcomponents": 0
+ },
+ {
   "gameId": "nuclear_fuel_plant",
   "group": {
    "de": "Fortschrittliche Industrie",
@@ -953,6 +1601,51 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 15.0
+ },
+ {
+  "gameId": "dlc3/h_carpenter",
+  "group": {
+   "de": "Fortschrittliche Industrie",
+   "en": "Advanced Industry"
+  },
+  "de": "Tischlerwerkstatt",
+  "en": "Carpenter's workshop",
+  "workers": 20.0,
+  "production": [],
+  "consumption": [
+   {
+    "de": "Bretter",
+    "en": "Boards",
+    "rate": 20.0
+   },
+   {
+    "de": "Stoff",
+    "en": "Fabric",
+    "rate": 20.0
+   },
+   {
+    "de": "Stahl",
+    "en": "Steel",
+    "rate": 20.0
+   }
+  ],
+  "measured": false,
+  "dlc": "dlc3",
+  "power": 0,
+  "maxKW": 0,
+  "water": 0,
+  "hotwater": 0,
+  "wastePerWorker": 0,
+  "workdays": 0,
+  "gravel": 0,
+  "bricks": 0,
+  "steel": 0,
+  "concrete": 0,
+  "asphalt": 0,
+  "boards": 0,
+  "panels": 0,
+  "ecomponents": 0,
+  "mcomponents": 0
  },
  {
   "gameId": "drydock",
@@ -1093,6 +1786,41 @@
   "mcomponents": 4.1
  },
  {
+  "gameId": "dlc3/mine_uranium",
+  "group": {
+   "de": "Fortschrittliche Industrie",
+   "en": "Advanced Industry"
+  },
+  "de": "Uranmine (75 👷)",
+  "en": "Uranium mine (75 👷)",
+  "workers": 75.0,
+  "production": [
+   {
+    "de": "Uranerz",
+    "en": "Uranium ore",
+    "rate": 56.25
+   }
+  ],
+  "consumption": [],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 4.5,
+  "maxKW": 75.0,
+  "water": 2.0,
+  "hotwater": 0,
+  "wastePerWorker": 0.43,
+  "workdays": 5205.0,
+  "gravel": 18.0,
+  "bricks": 0.0,
+  "steel": 144.0,
+  "concrete": 243.0,
+  "asphalt": 14.0,
+  "boards": 98.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 4.1
+ },
+ {
   "gameId": "uranium_conversion",
   "group": {
    "de": "Fortschrittliche Industrie",
@@ -1191,6 +1919,72 @@
    }
   ],
   "measured": true,
+  "power": 25.0,
+  "maxKW": 420.0,
+  "water": 1.2,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 2260.0,
+  "gravel": 48.0,
+  "bricks": 52.0,
+  "steel": 45.0,
+  "concrete": 62.0,
+  "asphalt": 38.0,
+  "boards": 17.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 5.8
+ },
+ {
+  "gameId": "dlc3/chemical_plant",
+  "group": {
+   "de": "Fossile Brennstoffe",
+   "en": "Fossil fuels"
+  },
+  "de": "Chemieanlage (200 👷)",
+  "en": "Chemical plant (200 👷)",
+  "workers": 200.0,
+  "production": [
+   {
+    "de": "Chemikalien",
+    "en": "chemicals",
+    "rate": 2.7
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Kies",
+    "en": "Gravel",
+    "rate": 2.4
+   },
+   {
+    "de": "Holz",
+    "en": "Wood",
+    "rate": 2.8
+   },
+   {
+    "de": "Pflanzen",
+    "en": "Plant",
+    "rate": 2.6
+   },
+   {
+    "de": "Öl",
+    "en": "oil",
+    "rate": 4.0
+   },
+   {
+    "de": "Wasser",
+    "en": "Water",
+    "rate": 34.0
+   },
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 150.0
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
   "power": 25.0,
   "maxKW": 420.0,
   "water": 1.2,
@@ -1308,6 +2102,41 @@
   "mcomponents": 3.5
  },
  {
+  "gameId": "dlc3/mine_coal",
+  "group": {
+   "de": "Fossile Brennstoffe",
+   "en": "Fossil fuels"
+  },
+  "de": "Kohlemine (100 👷)",
+  "en": "Coal mine (100 👷)",
+  "workers": 100.0,
+  "production": [
+   {
+    "de": "Kohlenerz",
+    "en": "coal ore",
+    "rate": 420.0
+   }
+  ],
+  "consumption": [],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 9.2,
+  "maxKW": 154.0,
+  "water": 4.4,
+  "hotwater": 0,
+  "wastePerWorker": 0.43,
+  "workdays": 3878.0,
+  "gravel": 9.4,
+  "bricks": 0.0,
+  "steel": 74.0,
+  "concrete": 249.0,
+  "asphalt": 7.6,
+  "boards": 75.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 3.5
+ },
+ {
   "gameId": "plastics_factory",
   "group": {
    "de": "Fossile Brennstoffe",
@@ -1386,6 +2215,52 @@
    }
   ],
   "measured": true,
+  "power": 15.0,
+  "maxKW": 257.0,
+  "water": 0.3,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 4122.0,
+  "gravel": 65.0,
+  "bricks": 0.0,
+  "steel": 200.0,
+  "concrete": 360.0,
+  "asphalt": 52.0,
+  "boards": 0.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 4.2
+ },
+ {
+  "gameId": "dlc3/coal_processing",
+  "group": {
+   "de": "Fossile Brennstoffe",
+   "en": "Fossil fuels"
+  },
+  "de": "Verarbeitungsanlage für Kohleerz (20 👷)",
+  "en": "Coal processing plant (20 👷)",
+  "workers": 20.0,
+  "production": [
+   {
+    "de": "Kohle",
+    "en": "Coal",
+    "rate": 160.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Kohlenerz",
+    "en": "coal ore",
+    "rate": 280.0
+   },
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 3.32
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
   "power": 15.0,
   "maxKW": 257.0,
   "water": 0.3,
@@ -1533,6 +2408,47 @@
   "mcomponents": 2.2
  },
  {
+  "gameId": "dlc3/heating_plant_big",
+  "group": {
+   "de": "Heizwerk",
+   "en": "Heating plant"
+  },
+  "de": "Heizwerk (20 👷)",
+  "en": "Heating plant (20 👷)",
+  "workers": 20.0,
+  "production": [
+   {
+    "de": "Heißwasser",
+    "en": "Hot water",
+    "rate": 350.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Kohle",
+    "en": "Coal",
+    "rate": 5.6
+   }
+  ],
+  "measured": false,
+  "dlc": "dlc3",
+  "power": 0,
+  "maxKW": 0,
+  "water": 0,
+  "hotwater": 0,
+  "wastePerWorker": 0,
+  "workdays": 0,
+  "gravel": 0,
+  "bricks": 0,
+  "steel": 0,
+  "concrete": 0,
+  "asphalt": 0,
+  "boards": 0,
+  "panels": 0,
+  "ecomponents": 0,
+  "mcomponents": 0
+ },
+ {
   "gameId": "heating_plant_small",
   "group": {
    "de": "Heizwerk",
@@ -1556,6 +2472,88 @@
    }
   ],
   "measured": true,
+  "power": 12.0,
+  "maxKW": 213.0,
+  "water": 0.14,
+  "hotwater": 0,
+  "wastePerWorker": 0.33,
+  "workdays": 904.0,
+  "gravel": 14.0,
+  "bricks": 32.0,
+  "steel": 20.0,
+  "concrete": 18.0,
+  "asphalt": 11.0,
+  "boards": 10.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 1.6
+ },
+ {
+  "gameId": "dlc3/heating_plant_tiny",
+  "group": {
+   "de": "Heizwerk",
+   "en": "Heating plant"
+  },
+  "de": "Heizwerk (klein) (3 👷)",
+  "en": "Small heating plant (3 👷)",
+  "workers": 3.0,
+  "production": [
+   {
+    "de": "Heißwasser",
+    "en": "Hot water",
+    "rate": 210.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Kohle",
+    "en": "Coal",
+    "rate": 0.6
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 12.0,
+  "maxKW": 213.0,
+  "water": 0.14,
+  "hotwater": 0,
+  "wastePerWorker": 0.33,
+  "workdays": 904.0,
+  "gravel": 14.0,
+  "bricks": 32.0,
+  "steel": 20.0,
+  "concrete": 18.0,
+  "asphalt": 11.0,
+  "boards": 10.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 1.6
+ },
+ {
+  "gameId": "dlc3/heating_plant_small",
+  "group": {
+   "de": "Heizwerk",
+   "en": "Heating plant"
+  },
+  "de": "Heizwerk (klein) (5 👷)",
+  "en": "Small heating plant (5 👷)",
+  "workers": 5.0,
+  "production": [
+   {
+    "de": "Heißwasser",
+    "en": "Hot water",
+    "rate": 210.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Kohle",
+    "en": "Coal",
+    "rate": 1.5
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
   "power": 12.0,
   "maxKW": 213.0,
   "water": 0.14,
@@ -1640,6 +2638,57 @@
    }
   ],
   "measured": true,
+  "power": 13.0,
+  "maxKW": 220.0,
+  "water": 2.0,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 1542.0,
+  "gravel": 19.0,
+  "bricks": 91.0,
+  "steel": 26.0,
+  "concrete": 25.0,
+  "asphalt": 15.0,
+  "boards": 30.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 0.0
+ },
+ {
+  "gameId": "dlc3/distillery_small",
+  "group": {
+   "de": "Lebensmittel/Alkohol/Pflanzen",
+   "en": "Food/Alcohol/Plants"
+  },
+  "de": "Brennerei (35 👷)",
+  "en": "Distillery (35 👷)",
+  "workers": 35.0,
+  "production": [
+   {
+    "de": "Alkohol",
+    "en": "alcohol",
+    "rate": 2.1
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Pflanzen",
+    "en": "Plant",
+    "rate": 10.5
+   },
+   {
+    "de": "Wasser",
+    "en": "Water",
+    "rate": 4.725
+   },
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 2.8
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
   "power": 13.0,
   "maxKW": 220.0,
   "water": 2.0,
@@ -1792,6 +2841,98 @@
   "mcomponents": 0.0
  },
  {
+  "gameId": "dlc3/food_factory_old",
+  "group": {
+   "de": "Lebensmittel/Alkohol/Pflanzen",
+   "en": "Food/Alcohol/Plants"
+  },
+  "de": "Nahrungsmittelfabrik (150 👷)",
+  "en": "Food factory (150 👷)",
+  "workers": 150.0,
+  "production": [
+   {
+    "de": "Essen",
+    "en": "Food",
+    "rate": 15.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Pflanzen",
+    "en": "Plant",
+    "rate": 37.5
+   },
+   {
+    "de": "Wasser",
+    "en": "Water",
+    "rate": 7.5
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 7.6,
+  "maxKW": 127.0,
+  "water": 3.4,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 2426.0,
+  "gravel": 35.0,
+  "bricks": 139.0,
+  "steel": 40.0,
+  "concrete": 46.0,
+  "asphalt": 28.0,
+  "boards": 46.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 0.0
+ },
+ {
+  "gameId": "dlc3/food_factory_small",
+  "group": {
+   "de": "Lebensmittel/Alkohol/Pflanzen",
+   "en": "Food/Alcohol/Plants"
+  },
+  "de": "Nahrungsmittelfabrik (30 👷)",
+  "en": "Food factory (30 👷)",
+  "workers": 30.0,
+  "production": [
+   {
+    "de": "Essen",
+    "en": "Food",
+    "rate": 2.7
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Pflanzen",
+    "en": "Plant",
+    "rate": 7.5
+   },
+   {
+    "de": "Wasser",
+    "en": "Water",
+    "rate": 1.5
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 7.6,
+  "maxKW": 127.0,
+  "water": 3.4,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 2426.0,
+  "gravel": 35.0,
+  "bricks": 139.0,
+  "steel": 40.0,
+  "concrete": 46.0,
+  "asphalt": 28.0,
+  "boards": 46.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 0.0
+ },
+ {
   "gameId": "slaughterhouse",
   "group": {
    "de": "Lebensmittel/Alkohol/Pflanzen",
@@ -1815,6 +2956,47 @@
    }
   ],
   "measured": true,
+  "power": 3.4,
+  "maxKW": 56.0,
+  "water": 1.56,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 1446.0,
+  "gravel": 26.0,
+  "bricks": 28.0,
+  "steel": 28.0,
+  "concrete": 34.0,
+  "asphalt": 21.0,
+  "boards": 9.5,
+  "panels": 71.0,
+  "ecomponents": 0.0,
+  "mcomponents": 0.0
+ },
+ {
+  "gameId": "dlc3/slaughterhouse",
+  "group": {
+   "de": "Lebensmittel/Alkohol/Pflanzen",
+   "en": "Food/Alcohol/Plants"
+  },
+  "de": "Schlachthof (35 👷)",
+  "en": "Slaughterhouse (35 👷)",
+  "workers": 35.0,
+  "production": [
+   {
+    "de": "Fleisch",
+    "en": "Meat",
+    "rate": 42.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Vieh",
+    "en": "cattle",
+    "rate": 105.0
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
   "power": 3.4,
   "maxKW": 56.0,
   "water": 1.56,
@@ -1860,6 +3042,52 @@
    }
   ],
   "measured": true,
+  "power": 3.0,
+  "maxKW": 50.0,
+  "water": 2.3,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 1993.0,
+  "gravel": 30.0,
+  "bricks": 101.0,
+  "steel": 41.0,
+  "concrete": 39.0,
+  "asphalt": 24.0,
+  "boards": 33.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 0.0
+ },
+ {
+  "gameId": "dlc3/livestock_farm",
+  "group": {
+   "de": "Lebensmittel/Alkohol/Pflanzen",
+   "en": "Food/Alcohol/Plants"
+  },
+  "de": "Viehzucht (35 👷)",
+  "en": "Livestock farm (35 👷)",
+  "workers": 35.0,
+  "production": [
+   {
+    "de": "Vieh",
+    "en": "cattle",
+    "rate": 7.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Pflanzen",
+    "en": "Plant",
+    "rate": 14.0
+   },
+   {
+    "de": "Wasser",
+    "en": "Water",
+    "rate": 8.75
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
   "power": 3.0,
   "maxKW": 50.0,
   "water": 2.3,
@@ -2090,6 +3318,41 @@
   "mcomponents": 3.5
  },
  {
+  "gameId": "dlc3/mine_iron",
+  "group": {
+   "de": "Metallurgie",
+   "en": "metallurgy"
+  },
+  "de": "Eisenmine (125 👷)",
+  "en": "Iron mine (125 👷)",
+  "workers": 125.0,
+  "production": [
+   {
+    "de": "Eisenerz",
+    "en": "iron ore",
+    "rate": 500.0
+   }
+  ],
+  "consumption": [],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 11.0,
+  "maxKW": 187.0,
+  "water": 5.0,
+  "hotwater": 0,
+  "wastePerWorker": 0.43,
+  "workdays": 3928.0,
+  "gravel": 9.4,
+  "bricks": 0.0,
+  "steel": 74.0,
+  "concrete": 249.0,
+  "asphalt": 7.6,
+  "boards": 75.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 3.5
+ },
+ {
   "gameId": "steel_mill",
   "group": {
    "de": "Metallurgie",
@@ -2235,6 +3498,52 @@
   "mcomponents": 4.2
  },
  {
+  "gameId": "dlc3/iron_processing",
+  "group": {
+   "de": "Metallurgie",
+   "en": "metallurgy"
+  },
+  "de": "Verarbeitungsanlage für Eisenerz (8 👷)",
+  "en": "Iron processing plant (8 👷)",
+  "workers": 8.0,
+  "production": [
+   {
+    "de": "Eisen",
+    "en": "iron",
+    "rate": 56.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Eisenerz",
+    "en": "iron ore",
+    "rate": 120.0
+   },
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 1.28
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 17.0,
+  "maxKW": 287.0,
+  "water": 0.3,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 4122.0,
+  "gravel": 65.0,
+  "bricks": 0.0,
+  "steel": 200.0,
+  "concrete": 360.0,
+  "asphalt": 52.0,
+  "boards": 0.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 4.2
+ },
+ {
   "gameId": "waste_aluminiumrecycling",
   "group": {
    "de": "Sonstiges",
@@ -2315,6 +3624,47 @@
   "mcomponents": 0.0
  },
  {
+  "gameId": "dlc3/clothing_factory",
+  "group": {
+   "de": "Sonstiges",
+   "en": "Miscellaneous"
+  },
+  "de": "Bekleidungsfabrik (80 👷)",
+  "en": "Clothing factory (80 👷)",
+  "workers": 80.0,
+  "production": [
+   {
+    "de": "Kleidung",
+    "en": "Clothing",
+    "rate": 1.08
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Stoff",
+    "en": "Fabric",
+    "rate": 2.16
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 3.6,
+  "maxKW": 60.0,
+  "water": 1.6,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 1728.0,
+  "gravel": 44.0,
+  "bricks": 25.0,
+  "steel": 40.0,
+  "concrete": 224.0,
+  "asphalt": 35.0,
+  "boards": 8.6,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 0.0
+ },
+ {
   "gameId": "waste_gravelrecycling",
   "group": {
    "de": "Sonstiges",
@@ -2343,6 +3693,52 @@
    }
   ],
   "measured": true,
+  "power": 18.0,
+  "maxKW": 307.0,
+  "water": 0.3,
+  "hotwater": 0,
+  "wastePerWorker": 0.0,
+  "workdays": 807.0,
+  "gravel": 25.0,
+  "bricks": 0.0,
+  "steel": 24.0,
+  "concrete": 33.0,
+  "asphalt": 20.0,
+  "boards": 0.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 1.8
+ },
+ {
+  "gameId": "dlc3/waste_gravel",
+  "group": {
+   "de": "Sonstiges",
+   "en": "Miscellaneous"
+  },
+  "de": "Kies-Recycling Anlage (5 👷)",
+  "en": "Gravel recycling plant (5 👷)",
+  "workers": 5.0,
+  "production": [
+   {
+    "de": "Kies",
+    "en": "Gravel",
+    "rate": 20.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Bauschutt",
+    "en": "Construction debris",
+    "rate": 30.0
+   },
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 0.5
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
   "power": 18.0,
   "maxKW": 307.0,
   "water": 0.3,
@@ -2601,6 +3997,35 @@
   "mcomponents": 4.2
  },
  {
+  "gameId": "dlc3/incinerator",
+  "group": {
+   "de": "Sonstiges",
+   "en": "Miscellaneous"
+  },
+  "de": "Müllverbrennung (klein) (10 👷)",
+  "en": "Incinerator (small) (10 👷)",
+  "workers": 10.0,
+  "production": [],
+  "consumption": [],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 3.0,
+  "maxKW": 50.0,
+  "water": 0.3,
+  "hotwater": 0,
+  "wastePerWorker": 0,
+  "workdays": 2232.0,
+  "gravel": 24.0,
+  "bricks": 110.0,
+  "steel": 34.0,
+  "concrete": 31.0,
+  "asphalt": 19.0,
+  "boards": 36.0,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 4.2
+ },
+ {
   "gameId": "waste_plasticrecycling",
   "group": {
    "de": "Sonstiges",
@@ -2831,6 +4256,57 @@
   "mcomponents": 25.0
  },
  {
+  "gameId": "dlc3/power_plant_nuclear_single_reactor",
+  "group": {
+   "de": "Strom",
+   "en": "Electricity"
+  },
+  "de": "Kernkraftwerk mit einem Reaktor (40 👷)",
+  "en": "Single-reactor nuclear power plant (40 👷)",
+  "workers": 40.0,
+  "production": [
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 2320.0
+   },
+   {
+    "de": "Gebrauchter Kernbrennstoff",
+    "en": "Spent nuclear fuel",
+    "rate": 0.01
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Kernbrennstoff",
+    "en": "nuclear fuel",
+    "rate": 0.02
+   },
+   {
+    "de": "Wasser",
+    "en": "Water",
+    "rate": 3.4
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 7.8,
+  "maxKW": 0.0,
+  "water": 1.2,
+  "hotwater": 0,
+  "wastePerWorker": 0.33,
+  "workdays": 12561.0,
+  "gravel": 181.0,
+  "bricks": 129.0,
+  "steel": 439.0,
+  "concrete": 235.0,
+  "asphalt": 145.0,
+  "boards": 43.0,
+  "panels": 0.0,
+  "ecomponents": 18.0,
+  "mcomponents": 25.0
+ },
+ {
   "gameId": "powerplant_nuclear_double",
   "group": {
    "de": "Strom",
@@ -2904,6 +4380,47 @@
    }
   ],
   "measured": true,
+  "power": 0.6,
+  "maxKW": 0.0,
+  "water": 0.4,
+  "hotwater": 0,
+  "wastePerWorker": 0.33,
+  "workdays": 7631.0,
+  "gravel": 142.0,
+  "bricks": 0.0,
+  "steel": 287.0,
+  "concrete": 871.0,
+  "asphalt": 113.0,
+  "boards": 0.0,
+  "panels": 0.0,
+  "ecomponents": 3.7,
+  "mcomponents": 7.3
+ },
+ {
+  "gameId": "dlc3/power_plant_coal",
+  "group": {
+   "de": "Strom",
+   "en": "Electricity"
+  },
+  "de": "Kohlekraftwerk (10 👷)",
+  "en": "Coal power plant (10 👷)",
+  "workers": 10.0,
+  "production": [
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 600.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Kohle",
+    "en": "Coal",
+    "rate": 12.0
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
   "power": 0.6,
   "maxKW": 0.0,
   "water": 0.4,
@@ -3342,6 +4859,108 @@
   "mcomponents": 1.6
  },
  {
+  "gameId": "dlc3/water_treatment",
+  "group": {
+   "de": "Wasser & Abwasser",
+   "en": "Water & Wastewater"
+  },
+  "de": "Wasseraufbereitung (klein) (10 👷)",
+  "en": "Water treatment (small) (10 👷)",
+  "workers": 10.0,
+  "production": [
+   {
+    "de": "Wasser",
+    "en": "Water",
+    "rate": 240.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 1.35
+   },
+   {
+    "de": "Abwasser",
+    "en": "Sewage",
+    "rate": 26.0
+   },
+   {
+    "de": "Chemikalien",
+    "en": "chemicals",
+    "rate": 0.5
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 3.9,
+  "maxKW": 167.0,
+  "water": 0.1,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 609.0,
+  "gravel": 8.3,
+  "bricks": 23.0,
+  "steel": 10.0,
+  "concrete": 10.0,
+  "asphalt": 6.7,
+  "boards": 7.8,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 1.6
+ },
+ {
+  "gameId": "dlc3/water_treatment_small",
+  "group": {
+   "de": "Wasser & Abwasser",
+   "en": "Water & Wastewater"
+  },
+  "de": "Wasseraufbereitung (klein) (5 👷)",
+  "en": "Water treatment (small) (5 👷)",
+  "workers": 5.0,
+  "production": [
+   {
+    "de": "Wasser",
+    "en": "Water",
+    "rate": 120.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 0.35
+   },
+   {
+    "de": "Abwasser",
+    "en": "Sewage",
+    "rate": 13.0
+   },
+   {
+    "de": "Chemikalien",
+    "en": "chemicals",
+    "rate": 0.25
+   }
+  ],
+  "measured": true,
+  "dlc": "dlc3",
+  "power": 3.9,
+  "maxKW": 167.0,
+  "water": 0.1,
+  "hotwater": 0,
+  "wastePerWorker": 0.6,
+  "workdays": 609.0,
+  "gravel": 8.3,
+  "bricks": 23.0,
+  "steel": 10.0,
+  "concrete": 10.0,
+  "asphalt": 6.7,
+  "boards": 7.8,
+  "panels": 0.0,
+  "ecomponents": 0.0,
+  "mcomponents": 1.6
+ },
+ {
   "gameId": "water_well_big",
   "group": {
    "de": "Wasser & Abwasser",
@@ -3382,6 +5001,47 @@
   "mcomponents": 0
  },
  {
+  "gameId": "dlc3/water_well",
+  "group": {
+   "de": "Wasser & Abwasser",
+   "en": "Water & Wastewater"
+  },
+  "de": "Wasserbrunnen (groß) (8 👷)",
+  "en": "Big water well (8 👷)",
+  "workers": 8.0,
+  "production": [
+   {
+    "de": "Wasser",
+    "en": "Water",
+    "rate": 1920.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 0.84
+   }
+  ],
+  "measured": false,
+  "dlc": "dlc3",
+  "power": 0,
+  "maxKW": 0,
+  "water": 0,
+  "hotwater": 0,
+  "wastePerWorker": 0,
+  "workdays": 0,
+  "gravel": 0,
+  "bricks": 0,
+  "steel": 0,
+  "concrete": 0,
+  "asphalt": 0,
+  "boards": 0,
+  "panels": 0,
+  "ecomponents": 0,
+  "mcomponents": 0
+ },
+ {
   "gameId": "water_well_small",
   "group": {
    "de": "Wasser & Abwasser",
@@ -3405,6 +5065,47 @@
    }
   ],
   "measured": false,
+  "power": 0,
+  "maxKW": 0,
+  "water": 0,
+  "hotwater": 0,
+  "wastePerWorker": 0,
+  "workdays": 0,
+  "gravel": 0,
+  "bricks": 0,
+  "steel": 0,
+  "concrete": 0,
+  "asphalt": 0,
+  "boards": 0,
+  "panels": 0,
+  "ecomponents": 0,
+  "mcomponents": 0
+ },
+ {
+  "gameId": "dlc3/water_well_small",
+  "group": {
+   "de": "Wasser & Abwasser",
+   "en": "Water & Wastewater"
+  },
+  "de": "Wasserbrunnen (klein) (5 👷)",
+  "en": "Small water well (5 👷)",
+  "workers": 5.0,
+  "production": [
+   {
+    "de": "Wasser",
+    "en": "Water",
+    "rate": 250.0
+   }
+  ],
+  "consumption": [
+   {
+    "de": "Strom",
+    "en": "Electricity",
+    "rate": 0.175
+   }
+  ],
+  "measured": false,
+  "dlc": "dlc3",
   "power": 0,
   "maxKW": 0,
   "water": 0,

@@ -8290,5 +8290,3492 @@
   "dlc": "dlc2",
   "de": "Tempel",
   "en": "Temple"
+ },
+ {
+  "id": "dlc3/airport_terminal_small",
+  "nameId": 6386,
+  "types": [
+   "TYPE_PASSANGER_STATION",
+   "SUBTYPE_AIRPLANE"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 300.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Passagierterminal",
+  "en": "Airport terminal"
+ },
+ {
+  "id": "dlc3/art_gallery",
+  "nameId": 6029,
+  "types": [
+   "TYPE_ATTRACTION"
+  ],
+  "workers": 15.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 5.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 0.75,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Galerie der Kunst",
+  "en": "Gallery of art"
+ },
+ {
+  "id": "dlc3/asphalt_plant",
+  "nameId": 6169,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 5.0,
+  "professors": 0,
+  "production": {
+   "asphalt": 14.0
+  },
+  "consumption": {
+   "gravel": 12.0,
+   "bitumen": 2.0,
+   "eletric": 1.5
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Asphaltanlage",
+  "en": "Asphalt plant"
+ },
+ {
+  "id": "dlc3/beer_stand",
+  "nameId": 6274,
+  "types": [
+   "TYPE_PUB"
+  ],
+  "workers": 2.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 12.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kiosk (Alkohol)",
+  "en": "Alcohol kiosk"
+ },
+ {
+  "id": "dlc3/brick_factory_small",
+  "nameId": 6171,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 30.0,
+  "professors": 0,
+  "production": {
+   "bricks": 0.5
+  },
+  "consumption": {
+   "coal": 0.35
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Ziegelfabrik",
+  "en": "Brick factory"
+ },
+ {
+  "id": "dlc3/bus_station",
+  "nameId": 1801,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 1500.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Busbahnhof",
+  "en": "Bus platform"
+ },
+ {
+  "id": "dlc3/cafe",
+  "nameId": 90001,
+  "types": [
+   "TYPE_PUB"
+  ],
+  "workers": 5.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 7.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 3.0,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Spa-Café",
+  "en": "Spa Cafe"
+ },
+ {
+  "id": "dlc3/car_dealer",
+  "nameId": 2043,
+  "types": [
+   "TYPE_CAR_DEALER"
+  ],
+  "workers": 10.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Autohändler",
+  "en": "Car dealer"
+ },
+ {
+  "id": "dlc3/cement_plant",
+  "nameId": 6170,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {
+   "cement": 1.95
+  },
+  "consumption": {
+   "coal": 0.5625,
+   "gravel": 5.25,
+   "eletric": 0.06
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Zementwerk",
+  "en": "Cement plant"
+ },
+ {
+  "id": "dlc3/chemical_plant",
+  "nameId": 6054,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 200.0,
+  "professors": 0,
+  "production": {
+   "chemicals": 0.0135
+  },
+  "consumption": {
+   "gravel": 0.012,
+   "wood": 0.014,
+   "plants": 0.013,
+   "oil": 0.02,
+   "water": 0.17,
+   "eletric": 0.75
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Chemieanlage",
+  "en": "Chemical plant"
+ },
+ {
+  "id": "dlc3/church",
+  "nameId": 90002,
+  "types": [
+   "TYPE_CHURCH"
+  ],
+  "workers": 5.0,
+  "professors": 5.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 40.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kirche St. Petersburg",
+  "en": "St. Petersburg Church"
+ },
+ {
+  "id": "dlc3/church2",
+  "nameId": 90002,
+  "types": [
+   "TYPE_CHURCH"
+  ],
+  "workers": 5.0,
+  "professors": 5.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 40.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kirche St. Petersburg",
+  "en": "St. Petersburg Church"
+ },
+ {
+  "id": "dlc3/cinema",
+  "nameId": 6253,
+  "types": [
+   "TYPE_KINO"
+  ],
+  "workers": 5.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 20.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kino",
+  "en": "Cinema"
+ },
+ {
+  "id": "dlc3/clinic_small",
+  "nameId": 6270,
+  "types": [
+   "TYPE_HOSPITAL"
+  ],
+  "workers": 7.0,
+  "professors": 7.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 3.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Klinik (klein)",
+  "en": "Small clinic"
+ },
+ {
+  "id": "dlc3/clothing_factory",
+  "nameId": 6352,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 80.0,
+  "professors": 0,
+  "production": {
+   "clothes": 0.0135
+  },
+  "consumption": {
+   "fabric": 0.027
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bekleidungsfabrik",
+  "en": "Clothing factory"
+ },
+ {
+  "id": "dlc3/coal_processing",
+  "nameId": 6162,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {
+   "coal": 8.0
+  },
+  "consumption": {
+   "rawcoal": 14.0,
+   "eletric": 0.166
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Verarbeitungsanlage für Kohleerz",
+  "en": "Coal processing plant"
+ },
+ {
+  "id": "dlc3/concrete_plant",
+  "nameId": 6168,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 5.0,
+  "professors": 0,
+  "production": {
+   "concrete": 12.0
+  },
+  "consumption": {
+   "gravel": 9.0,
+   "cement": 2.0,
+   "water": 6.0,
+   "eletric": 0.07
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Betonwerk",
+  "en": "Concrete plant"
+ },
+ {
+  "id": "dlc3/courthouse",
+  "nameId": 6264,
+  "types": [
+   "TYPE_COURT_HOUSE"
+  ],
+  "workers": 25.0,
+  "professors": 15.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Gerichtsgebäude",
+  "en": "Court house"
+ },
+ {
+  "id": "dlc3/department_store_1",
+  "nameId": 6261,
+  "types": [
+   "TYPE_SHOP"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 5.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kleines Einkaufszentrum",
+  "en": "Small shopping center"
+ },
+ {
+  "id": "dlc3/department_store_2",
+  "nameId": 6261,
+  "types": [
+   "TYPE_SHOP"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 5.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kleines Einkaufszentrum",
+  "en": "Small shopping center"
+ },
+ {
+  "id": "dlc3/department_store_3",
+  "nameId": 6261,
+  "types": [
+   "TYPE_SHOP"
+  ],
+  "workers": 30.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 6.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kleines Einkaufszentrum",
+  "en": "Small shopping center"
+ },
+ {
+  "id": "dlc3/department_store_4",
+  "nameId": 6261,
+  "types": [
+   "TYPE_SHOP"
+  ],
+  "workers": 25.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 6.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kleines Einkaufszentrum",
+  "en": "Small shopping center"
+ },
+ {
+  "id": "dlc3/distillery_old",
+  "nameId": 6102,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 100.0,
+  "professors": 0,
+  "production": {
+   "alcohol": 0.06
+  },
+  "consumption": {
+   "plants": 0.3,
+   "water": 0.135,
+   "eletric": 0.17
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Brennerei",
+  "en": "Distillery"
+ },
+ {
+  "id": "dlc3/distillery_small",
+  "nameId": 6102,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 35.0,
+  "professors": 0,
+  "production": {
+   "alcohol": 0.06
+  },
+  "consumption": {
+   "plants": 0.3,
+   "water": 0.135,
+   "eletric": 0.08
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Brennerei",
+  "en": "Distillery"
+ },
+ {
+  "id": "dlc3/dormitory",
+  "nameId": 6006,
+  "types": [
+   "TYPE_LIVING",
+   "SUBTYPE_HOSTEL"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 75.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Studentenwohnheim",
+  "en": "University halls of residence"
+ },
+ {
+  "id": "dlc3/electronic_components_factory",
+  "nameId": 6355,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 75.0,
+  "professors": 0,
+  "production": {
+   "ecomponents": 0.025
+  },
+  "consumption": {
+   "gravel": 0.03,
+   "steel": 0.01,
+   "chemicals": 0.008
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Fabrik für elektronische Bauteile",
+  "en": "Electrical components factory"
+ },
+ {
+  "id": "dlc3/electronics_factory",
+  "nameId": 6356,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 150.0,
+  "professors": 0,
+  "production": {
+   "eletronics": 0.03
+  },
+  "consumption": {
+   "ecomponents": 0.01,
+   "boards": 0.03,
+   "mcomponents": 0.01
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Elektronikmontagehalle",
+  "en": "Electronics assembly hall"
+ },
+ {
+  "id": "dlc3/explosives_factory",
+  "nameId": 26365,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 75.0,
+  "professors": 0,
+  "production": {
+   "explosives": 0.015
+  },
+  "consumption": {
+   "chemicals": 0.01,
+   "gravel": 0.03,
+   "wood": 0.02
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Sprengstoff-Fabrik",
+  "en": "Explosives factory"
+ },
+ {
+  "id": "dlc3/expo_hall",
+  "nameId": 90004,
+  "types": [
+   "TYPE_ATTRACTION"
+  ],
+  "workers": 40.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 8.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 2.5,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Ausstellungshalle",
+  "en": "Expo hall"
+ },
+ {
+  "id": "dlc3/farm1",
+  "nameId": 6115,
+  "types": [
+   "TYPE_FARM"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {
+   "plants": 10.0
+  },
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bauernhof (klein)",
+  "en": "Small farm"
+ },
+ {
+  "id": "dlc3/farm2",
+  "nameId": 6116,
+  "types": [
+   "TYPE_FARM"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {
+   "plants": 10.0
+  },
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bauernhof (mittel)",
+  "en": "Medium farm"
+ },
+ {
+  "id": "dlc3/farm3",
+  "nameId": 6117,
+  "types": [
+   "TYPE_FARM"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {
+   "plants": 10.0
+  },
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bauernhof (groß)",
+  "en": "Large farm"
+ },
+ {
+  "id": "dlc3/fire_station_big",
+  "nameId": 6259,
+  "types": [
+   "TYPE_FIRESTATION"
+  ],
+  "workers": 30.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Feuerwache",
+  "en": "Fire station"
+ },
+ {
+  "id": "dlc3/fire_station_small",
+  "nameId": 6259,
+  "types": [
+   "TYPE_FIRESTATION"
+  ],
+  "workers": 30.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Feuerwache",
+  "en": "Fire station"
+ },
+ {
+  "id": "dlc3/food_factory_old",
+  "nameId": 6101,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 150.0,
+  "professors": 0,
+  "production": {
+   "food": 0.1
+  },
+  "consumption": {
+   "plants": 0.25,
+   "water": 0.05
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Nahrungsmittelfabrik",
+  "en": "Food factory"
+ },
+ {
+  "id": "dlc3/food_factory_small",
+  "nameId": 6101,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 30.0,
+  "professors": 0,
+  "production": {
+   "food": 0.09
+  },
+  "consumption": {
+   "plants": 0.25,
+   "water": 0.05
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Nahrungsmittelfabrik",
+  "en": "Food factory"
+ },
+ {
+  "id": "dlc3/food_kiosk",
+  "nameId": 6273,
+  "types": [
+   "TYPE_SHOP"
+  ],
+  "workers": 2.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 12.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kiosk (Lebensmittel)",
+  "en": "Grocery kiosk"
+ },
+ {
+  "id": "dlc3/grocery_store",
+  "nameId": 6250,
+  "types": [
+   "TYPE_SHOP"
+  ],
+  "workers": 15.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 7.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Lebensmittelmarkt",
+  "en": "Grocery store"
+ },
+ {
+  "id": "dlc3/h_carpenter",
+  "nameId": 90005,
+  "types": [
+   "TYPE_PRODUCTION_LINE",
+   "SUBTYPE_HORSE_WAGON"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {
+   "vehicles": 1.0
+  },
+  "consumption": {
+   "boards": 1.0,
+   "fabric": 1.0,
+   "steel": 1.0
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Tischlerwerkstatt",
+  "en": "Carpenter's workshop"
+ },
+ {
+  "id": "dlc3/h_clinic",
+  "nameId": 6270,
+  "types": [
+   "TYPE_HOSPITAL"
+  ],
+  "workers": 4.0,
+  "professors": 4.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 3.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Klinik (klein)",
+  "en": "Small clinic"
+ },
+ {
+  "id": "dlc3/h_clinic_v2",
+  "nameId": 6270,
+  "types": [
+   "TYPE_HOSPITAL"
+  ],
+  "workers": 5.0,
+  "professors": 5.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 3.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Klinik (klein)",
+  "en": "Small clinic"
+ },
+ {
+  "id": "dlc3/h_dealer",
+  "nameId": 90007,
+  "types": [
+   "TYPE_CAR_DEALER"
+  ],
+  "workers": 10.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Pferdehändler",
+  "en": "Horse dealer"
+ },
+ {
+  "id": "dlc3/h_farm",
+  "nameId": 6115,
+  "types": [
+   "TYPE_FARM"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {
+   "plants": 10.0
+  },
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bauernhof (klein)",
+  "en": "Small farm"
+ },
+ {
+  "id": "dlc3/h_fire_station",
+  "nameId": 6259,
+  "types": [
+   "TYPE_FIRESTATION"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Feuerwache",
+  "en": "Fire station"
+ },
+ {
+  "id": "dlc3/h_fire_station_v2",
+  "nameId": 6259,
+  "types": [
+   "TYPE_FIRESTATION"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Feuerwache",
+  "en": "Fire station"
+ },
+ {
+  "id": "dlc3/h_police",
+  "nameId": 6267,
+  "types": [
+   "TYPE_POLICE_STATION"
+  ],
+  "workers": 4.0,
+  "professors": 4.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Polizeirevier (klein)",
+  "en": "Police station (small)"
+ },
+ {
+  "id": "dlc3/h_police_v2",
+  "nameId": 6267,
+  "types": [
+   "TYPE_POLICE_STATION"
+  ],
+  "workers": 6.0,
+  "professors": 6.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Polizeirevier (klein)",
+  "en": "Police station (small)"
+ },
+ {
+  "id": "dlc3/h_repair_station",
+  "nameId": 90013,
+  "types": [
+   "TYPE_REPAIR_OFFICE",
+   "SUBTYPE_HORSE_WAGON"
+  ],
+  "workers": 10.0,
+  "professors": 10.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Pferdearzt und Tischlerei",
+  "en": "Horse veterinary & carpenter's shop"
+ },
+ {
+  "id": "dlc3/h_scrapping",
+  "nameId": 90014,
+  "types": [
+   "TYPE_SCRAPYARD"
+  ],
+  "workers": 25.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Schlachthof",
+  "en": "Knacker’s yard"
+ },
+ {
+  "id": "dlc3/h_stud_farm",
+  "nameId": 90015,
+  "types": [
+   "TYPE_PRODUCTION_LINE",
+   "SUBTYPE_HORSE_STUD"
+  ],
+  "workers": 50.0,
+  "professors": 0,
+  "production": {
+   "vehicles": 1.0
+  },
+  "consumption": {
+   "plants": 1.0
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Gestüt",
+  "en": "Stud farm"
+ },
+ {
+  "id": "dlc3/h_woodcutting_post",
+  "nameId": 7001,
+  "types": [
+   "TYPE_MINE_WOOD"
+  ],
+  "workers": 5.0,
+  "professors": 0,
+  "production": {
+   "wood": 6.25
+  },
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Holzfällerposten",
+  "en": "Woodcutting post"
+ },
+ {
+  "id": "dlc3/heating_plant_big",
+  "nameId": 6335,
+  "types": [
+   "TYPE_HEATING_PLANT"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {
+   "heat": 350.0
+  },
+  "consumption": {
+   "coal": 0.28
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Heizwerk",
+  "en": "Heating plant"
+ },
+ {
+  "id": "dlc3/heating_plant_small",
+  "nameId": 6333,
+  "types": [
+   "TYPE_HEATING_PLANT"
+  ],
+  "workers": 5.0,
+  "professors": 0,
+  "production": {
+   "heat": 300.0
+  },
+  "consumption": {
+   "coal": 0.3
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Heizwerk (klein)",
+  "en": "Small heating plant"
+ },
+ {
+  "id": "dlc3/heating_plant_tiny",
+  "nameId": 6333,
+  "types": [
+   "TYPE_HEATING_PLANT"
+  ],
+  "workers": 3.0,
+  "professors": 0,
+  "production": {
+   "heat": 200.0
+  },
+  "consumption": {
+   "coal": 0.2
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Heizwerk (klein)",
+  "en": "Small heating plant"
+ },
+ {
+  "id": "dlc3/historic_train_station",
+  "nameId": 1802,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 1500.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bahnhof",
+  "en": "Train platform"
+ },
+ {
+  "id": "dlc3/historic_train_station_big",
+  "nameId": 1802,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 2500.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bahnhof",
+  "en": "Train platform"
+ },
+ {
+  "id": "dlc3/hospital",
+  "nameId": 6256,
+  "types": [
+   "TYPE_HOSPITAL"
+  ],
+  "workers": 25.0,
+  "professors": 25.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 3.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Krankenhaus",
+  "en": "Hospital"
+ },
+ {
+  "id": "dlc3/hospital_big",
+  "nameId": 6256,
+  "types": [
+   "TYPE_HOSPITAL"
+  ],
+  "workers": 60.0,
+  "professors": 60.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 4.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Krankenhaus",
+  "en": "Hospital"
+ },
+ {
+  "id": "dlc3/hotel1",
+  "nameId": 6024,
+  "types": [
+   "TYPE_HOTEL"
+  ],
+  "workers": 10.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 5.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 3.8,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Berghotel ***",
+  "en": "Mountain hotel***"
+ },
+ {
+  "id": "dlc3/hotel2",
+  "nameId": 90016,
+  "types": [
+   "TYPE_HOTEL"
+  ],
+  "workers": 30.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 4.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 3.0,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Hotel ***",
+  "en": "Hotel***"
+ },
+ {
+  "id": "dlc3/hotel3",
+  "nameId": 90017,
+  "types": [
+   "TYPE_HOTEL"
+  ],
+  "workers": 35.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 5.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 2.3,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Hotel **",
+  "en": "Hotel**"
+ },
+ {
+  "id": "dlc3/hotel4",
+  "nameId": 90016,
+  "types": [
+   "TYPE_HOTEL"
+  ],
+  "workers": 75.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 4.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 3.0,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Hotel ***",
+  "en": "Hotel***"
+ },
+ {
+  "id": "dlc3/hotel5",
+  "nameId": 6043,
+  "types": [
+   "TYPE_HOTEL"
+  ],
+  "workers": 100.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 3.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 4.0,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Stadthotel ****",
+  "en": "City hotel****"
+ },
+ {
+  "id": "dlc3/house_of_culture2",
+  "nameId": 6272,
+  "types": [
+   "TYPE_KINO"
+  ],
+  "workers": 5.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 6.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kulturzentrum",
+  "en": "House of culture"
+ },
+ {
+  "id": "dlc3/incinerator",
+  "nameId": 7557,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 10.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {
+   "waste": 2.0
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Müllverbrennung (klein)",
+  "en": "Incinerator (small)"
+ },
+ {
+  "id": "dlc3/iron_processing",
+  "nameId": 6161,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 8.0,
+  "professors": 0,
+  "production": {
+   "iron": 7.0
+  },
+  "consumption": {
+   "rawiron": 15.0,
+   "eletric": 0.16
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Verarbeitungsanlage für Eisenerz",
+  "en": "Iron processing plant"
+ },
+ {
+  "id": "dlc3/kindergarten_big",
+  "nameId": 6251,
+  "types": [
+   "TYPE_KINDERGARTEN"
+  ],
+  "workers": 15.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 10.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kindergarten",
+  "en": "Kindergarten"
+ },
+ {
+  "id": "dlc3/kindergarten_small",
+  "nameId": 6251,
+  "types": [
+   "TYPE_KINDERGARTEN"
+  ],
+  "workers": 10.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 10.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kindergarten",
+  "en": "Kindergarten"
+ },
+ {
+  "id": "dlc3/labour_pickup_hall",
+  "nameId": 90024,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 200.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 200.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Arbeitszentrum",
+  "en": "Labour pickup hall"
+ },
+ {
+  "id": "dlc3/livestock_farm",
+  "nameId": 6104,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 35.0,
+  "professors": 0,
+  "production": {
+   "livestock": 0.2
+  },
+  "consumption": {
+   "plants": 0.4,
+   "water": 0.25
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Viehzucht",
+  "en": "Livestock farm"
+ },
+ {
+  "id": "dlc3/market_hall",
+  "nameId": 90025,
+  "types": [
+   "TYPE_SHOP"
+  ],
+  "workers": 35.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 7.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Markthalle",
+  "en": "Market hall"
+ },
+ {
+  "id": "dlc3/mechanical_components_factory",
+  "nameId": 6357,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 40.0,
+  "professors": 0,
+  "production": {
+   "mcomponents": 0.1
+  },
+  "consumption": {
+   "steel": 0.15
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Fabrik für mechanische Bauteile",
+  "en": "Mechanical components factory"
+ },
+ {
+  "id": "dlc3/metro_station",
+  "nameId": 1826,
+  "types": [
+   "TYPE_PASSANGER_STATION",
+   "SUBTYPE_METRO"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 500.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "U-Bahn-Station mit Eingang",
+  "en": "Metro station with entrance"
+ },
+ {
+  "id": "dlc3/mine_coal",
+  "nameId": 6159,
+  "types": [
+   "TYPE_MINE_COAL"
+  ],
+  "workers": 100.0,
+  "professors": 0,
+  "production": {
+   "rawcoal": 4.2
+  },
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {
+   "workers": 1500.0,
+   "boards": 37.5,
+   "concrete": 90.0,
+   "steel": 22.5
+  },
+  "dlc": "dlc3",
+  "de": "Kohlemine",
+  "en": "Coal mine"
+ },
+ {
+  "id": "dlc3/mine_iron",
+  "nameId": 6160,
+  "types": [
+   "TYPE_MINE_IRON"
+  ],
+  "workers": 125.0,
+  "professors": 0,
+  "production": {
+   "rawiron": 4.0
+  },
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {
+   "workers": 1500.0,
+   "boards": 37.5,
+   "concrete": 90.0,
+   "steel": 22.5
+  },
+  "dlc": "dlc3",
+  "de": "Eisenmine",
+  "en": "Iron mine"
+ },
+ {
+  "id": "dlc3/mine_uranium",
+  "nameId": 6314,
+  "types": [
+   "TYPE_MINE_URANIUM"
+  ],
+  "workers": 75.0,
+  "professors": 0,
+  "production": {
+   "uranium": 0.75
+  },
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Uranmine",
+  "en": "Uranium mine"
+ },
+ {
+  "id": "dlc3/museum1",
+  "nameId": 6036,
+  "types": [
+   "TYPE_ATTRACTION"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 4.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 3.2,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Museum der Republik",
+  "en": "Museum of the Republic"
+ },
+ {
+  "id": "dlc3/museum2",
+  "nameId": 6036,
+  "types": [
+   "TYPE_ATTRACTION"
+  ],
+  "workers": 30.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 4.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 3.5,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Museum der Republik",
+  "en": "Museum of the Republic"
+ },
+ {
+  "id": "dlc3/national_theatre",
+  "nameId": 6034,
+  "types": [
+   "TYPE_KINO"
+  ],
+  "workers": 40.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 5.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 4.0,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Theater der Republik",
+  "en": "Republic theater"
+ },
+ {
+  "id": "dlc3/nuclear_fuel_plant",
+  "nameId": 6317,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 50.0,
+  "professors": 70.0,
+  "production": {
+   "nuclearfuel": 0.0019,
+   "vehicles": 1.0
+  },
+  "consumption": {
+   "uf6": 0.008,
+   "chemicals": 0.015,
+   "vehicles": 1.0,
+   "eletric": 0.7
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kernbrennstofffabrik",
+  "en": "Nuclear fuel fabrication"
+ },
+ {
+  "id": "dlc3/orphanage_big",
+  "nameId": 6263,
+  "types": [
+   "TYPE_ORPHANAGE"
+  ],
+  "workers": 40.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 4.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Waisenhaus",
+  "en": "Orphanage"
+ },
+ {
+  "id": "dlc3/orphanage_small",
+  "nameId": 6263,
+  "types": [
+   "TYPE_ORPHANAGE"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 3.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Waisenhaus",
+  "en": "Orphanage"
+ },
+ {
+  "id": "dlc3/police_station_big",
+  "nameId": 9073,
+  "types": [
+   "TYPE_POLICE_STATION"
+  ],
+  "workers": 45.0,
+  "professors": 45.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Polizeirevier",
+  "en": "Police station"
+ },
+ {
+  "id": "dlc3/police_station_small",
+  "nameId": 9073,
+  "types": [
+   "TYPE_POLICE_STATION"
+  ],
+  "workers": 8.0,
+  "professors": 8.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Polizeirevier",
+  "en": "Police station"
+ },
+ {
+  "id": "dlc3/power_plant_coal",
+  "nameId": 6300,
+  "types": [
+   "TYPE_POWERPLANT"
+  ],
+  "workers": 10.0,
+  "professors": 0,
+  "production": {
+   "eletric": 60.0
+  },
+  "consumption": {
+   "coal": 1.2
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kohlekraftwerk",
+  "en": "Coal power plant"
+ },
+ {
+  "id": "dlc3/power_plant_nuclear_single_reactor",
+  "nameId": 6318,
+  "types": [
+   "TYPE_POWERPLANT"
+  ],
+  "workers": 40.0,
+  "professors": 20.0,
+  "production": {
+   "eletric": 58.0,
+   "nuclearfuelburned": 0.00025,
+   "vehicles": 1.0
+  },
+  "consumption": {
+   "nuclearfuel": 0.0005,
+   "vehicles": 1.0,
+   "water": 0.085
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kernkraftwerk mit einem Reaktor",
+  "en": "Single-reactor nuclear power plant"
+ },
+ {
+  "id": "dlc3/prefab1",
+  "nameId": 6010,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 40.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.85,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Plattenbau",
+  "en": "Flats - prefab "
+ },
+ {
+  "id": "dlc3/prefab2",
+  "nameId": 6010,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 68.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.85,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Plattenbau",
+  "en": "Flats - prefab "
+ },
+ {
+  "id": "dlc3/prefab3",
+  "nameId": 6010,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 72.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.75,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Plattenbau",
+  "en": "Flats - prefab "
+ },
+ {
+  "id": "dlc3/prefab_factory",
+  "nameId": 6172,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 50.0,
+  "professors": 0,
+  "production": {
+   "prefabpanels": 1.1
+  },
+  "consumption": {
+   "cement": 0.15,
+   "gravel": 1.0,
+   "eletric": 0.075
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Fabrik für Plattenbauteile",
+  "en": "Prefab panels factory"
+ },
+ {
+  "id": "dlc3/prison",
+  "nameId": 6265,
+  "types": [
+   "TYPE_PRISON"
+  ],
+  "workers": 40.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 3.0,
+  "qualityOfLiving": 0.5,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Gefängnis",
+  "en": "Prison"
+ },
+ {
+  "id": "dlc3/prison_small",
+  "nameId": 6265,
+  "types": [
+   "TYPE_PRISON"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 3.0,
+  "qualityOfLiving": 0.5,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Gefängnis",
+  "en": "Prison"
+ },
+ {
+  "id": "dlc3/production_airplane",
+  "nameId": 2087,
+  "types": [
+   "TYPE_PRODUCTION_LINE",
+   "SUBTYPE_AIRPLANE"
+  ],
+  "workers": 250.0,
+  "professors": 150.0,
+  "production": {
+   "vehicles": 1.0
+  },
+  "consumption": {
+   "steel": 1.0,
+   "aluminium": 1.0,
+   "plastics": 1.0,
+   "mcomponents": 1.0,
+   "ecomponents": 1.0,
+   "fabric": 1.0,
+   "eletronics": 1.0
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Flugzeugproduktionslinie",
+  "en": "Airplane production line"
+ },
+ {
+  "id": "dlc3/production_train",
+  "nameId": 2021,
+  "types": [
+   "TYPE_PRODUCTION_LINE",
+   "SUBTYPE_RAIL"
+  ],
+  "workers": 200.0,
+  "professors": 50.0,
+  "production": {
+   "vehicles": 1.0
+  },
+  "consumption": {
+   "steel": 1.0,
+   "plastics": 1.0,
+   "mcomponents": 1.0,
+   "ecomponents": 1.0,
+   "fabric": 1.0,
+   "eletronics": 1.0
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Eisenbahn-Fertigungslinie",
+  "en": "Railway production line"
+ },
+ {
+  "id": "dlc3/production_vehicle",
+  "nameId": 2020,
+  "types": [
+   "TYPE_PRODUCTION_LINE",
+   "SUBTYPE_ROAD"
+  ],
+  "workers": 200.0,
+  "professors": 50.0,
+  "production": {
+   "vehicles": 1.0
+  },
+  "consumption": {
+   "steel": 1.0,
+   "plastics": 1.0,
+   "mcomponents": 1.0,
+   "ecomponents": 1.0,
+   "fabric": 1.0,
+   "eletronics": 1.0
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Fahrzeug-Fertigungslinie",
+  "en": "Vehicle production line"
+ },
+ {
+  "id": "dlc3/pub",
+  "nameId": 6254,
+  "types": [
+   "TYPE_PUB"
+  ],
+  "workers": 5.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 10.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kneipe",
+  "en": "Pub"
+ },
+ {
+  "id": "dlc3/pub_big2",
+  "nameId": 6254,
+  "types": [
+   "TYPE_PUB"
+  ],
+  "workers": 10.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 12.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kneipe",
+  "en": "Pub"
+ },
+ {
+  "id": "dlc3/radio_station",
+  "nameId": 2670,
+  "types": [
+   "TYPE_BROADCAST",
+   "SUBTYPE_RADIO"
+  ],
+  "workers": 50.0,
+  "professors": 25.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Rundfunkhaus",
+  "en": "Radio station"
+ },
+ {
+  "id": "dlc3/rail_construction_office_small",
+  "nameId": 6152,
+  "types": [
+   "TYPE_CONSTRUCTION_OFFICE_RAIL"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Eisenbahnbauamt",
+  "en": "Rail construction office"
+ },
+ {
+  "id": "dlc3/rail_station_passenger_big_old",
+  "nameId": 1802,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 2000.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bahnhof",
+  "en": "Train platform"
+ },
+ {
+  "id": "dlc3/rail_station_passenger_big_oneway_old",
+  "nameId": 1802,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 1000.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bahnhof",
+  "en": "Train platform"
+ },
+ {
+  "id": "dlc3/rail_station_passenger_big_single_platform_old",
+  "nameId": 1802,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 1000.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bahnhof",
+  "en": "Train platform"
+ },
+ {
+  "id": "dlc3/rail_station_passenger_old",
+  "nameId": 1802,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 1000.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bahnhof",
+  "en": "Train platform"
+ },
+ {
+  "id": "dlc3/rail_station_passenger_oneway_old",
+  "nameId": 1802,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 1000.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bahnhof",
+  "en": "Train platform"
+ },
+ {
+  "id": "dlc3/rail_station_passenger_single_platform_old",
+  "nameId": 1802,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 1000.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bahnhof",
+  "en": "Train platform"
+ },
+ {
+  "id": "dlc3/rail_station_passenger_small_old",
+  "nameId": 1804,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 500.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bahnsteig klein",
+  "en": "Train platform small"
+ },
+ {
+  "id": "dlc3/rail_station_passenger_small_oneway_old",
+  "nameId": 1804,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 250.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bahnsteig klein",
+  "en": "Train platform small"
+ },
+ {
+  "id": "dlc3/rail_station_passenger_small_single_platform_old",
+  "nameId": 1804,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 250.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Bahnsteig klein",
+  "en": "Train platform small"
+ },
+ {
+  "id": "dlc3/repair_station1",
+  "nameId": 26330,
+  "types": [
+   "TYPE_REPAIR_OFFICE"
+  ],
+  "workers": 15.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Werkstatt (klein)",
+  "en": "Vehicle repair station (small)"
+ },
+ {
+  "id": "dlc3/repair_station2",
+  "nameId": 26338,
+  "types": [
+   "TYPE_REPAIR_OFFICE"
+  ],
+  "workers": 25.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Werkstatt (mittel)",
+  "en": "Vehicle repair station (medium)"
+ },
+ {
+  "id": "dlc3/residential1",
+  "nameId": 6099,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 20.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.6,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Landhäuser (geringe Wohnqualität)",
+  "en": "Low-quality rural flats"
+ },
+ {
+  "id": "dlc3/residential10",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 72.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential11",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 80.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.85,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential12",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 55.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential13",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 60.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential14",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 65.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential15",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 75.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential16",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 90.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential17",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 65.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential18",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 145.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential19",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 32.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential2",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 18.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential20",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 48.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential21",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 125.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential22",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 115.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential23",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 60.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential24",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 90.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential25",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 120.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential26",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 150.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential27",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 210.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential28",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 150.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.75,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential29",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 200.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.75,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential3",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 20.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.85,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential30",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 125.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential4",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 10.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.85,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential5",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 50.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.85,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential6",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 36.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.85,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential7",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 50.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.85,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential8",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 56.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.85,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential9",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 48.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential_wood1",
+  "nameId": 6099,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 20.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.6,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Landhäuser (geringe Wohnqualität)",
+  "en": "Low-quality rural flats"
+ },
+ {
+  "id": "dlc3/residential_wood2",
+  "nameId": null,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 5.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.85,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "nameStr": "Wooden house",
+  "dlc": "dlc3"
+ },
+ {
+  "id": "dlc3/restaurant",
+  "nameId": 90027,
+  "types": [
+   "TYPE_SHOP",
+   "SUBTYPE_RESTAURANT"
+  ],
+  "workers": 10.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 3.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 2.5,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Restaurant",
+  "en": "Restaurant"
+ },
+ {
+  "id": "dlc3/restaurant2",
+  "nameId": null,
+  "types": [
+   "TYPE_SHOP",
+   "SUBTYPE_RESTAURANT"
+  ],
+  "workers": 15.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 4.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 3.0,
+  "constructionResources": {},
+  "nameStr": "Restaurant",
+  "dlc": "dlc3"
+ },
+ {
+  "id": "dlc3/school_big",
+  "nameId": 6252,
+  "types": [
+   "TYPE_SCHOOL"
+  ],
+  "workers": 40.0,
+  "professors": 40.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 12.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Schule",
+  "en": "School"
+ },
+ {
+  "id": "dlc3/school_medium",
+  "nameId": 6252,
+  "types": [
+   "TYPE_SCHOOL"
+  ],
+  "workers": 25.0,
+  "professors": 25.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 12.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Schule",
+  "en": "School"
+ },
+ {
+  "id": "dlc3/school_small",
+  "nameId": 6252,
+  "types": [
+   "TYPE_SCHOOL"
+  ],
+  "workers": 10.0,
+  "professors": 10.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 12.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Schule",
+  "en": "School"
+ },
+ {
+  "id": "dlc3/scrapping_facility_old1",
+  "nameId": 26361,
+  "types": [
+   "TYPE_SCRAPYARD",
+   "SUBTYPE_AIRPLANE"
+  ],
+  "workers": 40.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Verschrottungsanlage (klein)",
+  "en": "Scrapping facility (small)"
+ },
+ {
+  "id": "dlc3/scrapping_facility_old2",
+  "nameId": 26362,
+  "types": [
+   "TYPE_SCRAPYARD",
+   "SUBTYPE_AIRPLANE"
+  ],
+  "workers": 80.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Verschrottungsanlage (groß)",
+  "en": "Scrapping facility (large)"
+ },
+ {
+  "id": "dlc3/slaughterhouse",
+  "nameId": 6105,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 35.0,
+  "professors": 0,
+  "production": {
+   "meat": 1.2
+  },
+  "consumption": {
+   "livestock": 3.0
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Schlachthof",
+  "en": "Slaughterhouse"
+ },
+ {
+  "id": "dlc3/small_store",
+  "nameId": 6260,
+  "types": [
+   "TYPE_SHOP"
+  ],
+  "workers": 12.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 7.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kleines Geschäft",
+  "en": "Small store"
+ },
+ {
+  "id": "dlc3/sports_hall",
+  "nameId": 6271,
+  "types": [
+   "TYPE_SPORT"
+  ],
+  "workers": 10.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 7.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 2.0,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Sporthalle",
+  "en": "Sport hall"
+ },
+ {
+  "id": "dlc3/sports_hall2",
+  "nameId": 6271,
+  "types": [
+   "TYPE_SPORT"
+  ],
+  "workers": 30.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 7.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 3.0,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Sporthalle",
+  "en": "Sport hall"
+ },
+ {
+  "id": "dlc3/sports_hall3",
+  "nameId": 6271,
+  "types": [
+   "TYPE_SPORT"
+  ],
+  "workers": 50.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 8.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 4.0,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Sporthalle",
+  "en": "Sport hall"
+ },
+ {
+  "id": "dlc3/swimming_hall",
+  "nameId": 6030,
+  "types": [
+   "TYPE_ATTRACTION"
+  ],
+  "workers": 15.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 5.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 1.8,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Hallenbad",
+  "en": "Indoor pool"
+ },
+ {
+  "id": "dlc3/theatre",
+  "nameId": null,
+  "types": [
+   "TYPE_KINO"
+  ],
+  "workers": 10.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 10.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "nameStr": "Theatre",
+  "dlc": "dlc3"
+ },
+ {
+  "id": "dlc3/town_hall",
+  "nameId": 13500,
+  "types": [
+   "TYPE_CITYHALL"
+  ],
+  "workers": 25.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Rathaus / Buchhaltungsbüro",
+  "en": "City accounting office"
+ },
+ {
+  "id": "dlc3/tv_station",
+  "nameId": 2700,
+  "types": [
+   "TYPE_BROADCAST",
+   "SUBTYPE_TELEVISION"
+  ],
+  "workers": 40.0,
+  "professors": 25.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Fernsehsenderhaus",
+  "en": "Television station"
+ },
+ {
+  "id": "dlc3/university_medical",
+  "nameId": 6007,
+  "types": [
+   "TYPE_UNIVERSITY",
+   "SUBTYPE_MEDICAL"
+  ],
+  "workers": 35.0,
+  "professors": 35.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 4.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Medizinische Universität",
+  "en": "Medical university"
+ },
+ {
+  "id": "dlc3/university_soviet",
+  "nameId": 6020,
+  "types": [
+   "TYPE_UNIVERSITY",
+   "SUBTYPE_SOVIET"
+  ],
+  "workers": 65.0,
+  "professors": 65.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 4.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Zentrale der kommunistischen Partei",
+  "en": "Headquarters of the Communist Party "
+ },
+ {
+  "id": "dlc3/university_soviet_small",
+  "nameId": 6098,
+  "types": [
+   "TYPE_UNIVERSITY",
+   "SUBTYPE_SOVIET"
+  ],
+  "workers": 40.0,
+  "professors": 40.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 2.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Parteizentrale (klein)",
+  "en": "Small headquarters of the Party "
+ },
+ {
+  "id": "dlc3/university_technical",
+  "nameId": 6013,
+  "types": [
+   "TYPE_UNIVERSITY",
+   "SUBTYPE_TECHNICAL"
+  ],
+  "workers": 45.0,
+  "professors": 45.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 3.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Technische Universität",
+  "en": "Technical university"
+ },
+ {
+  "id": "dlc3/university_technical_small",
+  "nameId": 6013,
+  "types": [
+   "TYPE_UNIVERSITY",
+   "SUBTYPE_TECHNICAL"
+  ],
+  "workers": 25.0,
+  "professors": 25.0,
+  "production": {},
+  "consumption": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 2.0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Technische Universität",
+  "en": "Technical university"
+ },
+ {
+  "id": "dlc3/uranium_conversion",
+  "nameId": 6316,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 80.0,
+  "professors": 40.0,
+  "production": {
+   "uf6": 0.012,
+   "vehicles": 1.0
+  },
+  "consumption": {
+   "yellowcake": 0.025,
+   "chemicals": 0.0026,
+   "eletric": 0.8
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Uranumwandlungsanlage",
+  "en": "Uranium conversion plant"
+ },
+ {
+  "id": "dlc3/uranium_processing",
+  "nameId": 6315,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 60.0,
+  "professors": 15.0,
+  "production": {
+   "yellowcake": 0.0285
+  },
+  "consumption": {
+   "uranium": 0.6,
+   "eletric": 0.6
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Uranaufbereitungsanlage",
+  "en": "Uranium processing plant"
+ },
+ {
+  "id": "dlc3/waste_gravel",
+  "nameId": 7565,
+  "types": [
+   "TYPE_FACTORY"
+  ],
+  "workers": 5.0,
+  "professors": 0,
+  "production": {
+   "gravel": 4.0
+  },
+  "consumption": {
+   "waste_gravel": 6.0,
+   "eletric": 0.1
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Kies-Recycling Anlage",
+  "en": "Gravel recycling plant"
+ },
+ {
+  "id": "dlc3/water_treatment",
+  "nameId": 7514,
+  "types": [
+   "TYPE_WATER_TREATMENT"
+  ],
+  "workers": 10.0,
+  "professors": 0,
+  "production": {
+   "water": 24.0
+  },
+  "consumption": {
+   "eletric": 0.135,
+   "usagewater": 2.6,
+   "chemicals": 0.05
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wasseraufbereitung (klein)",
+  "en": "Water treatment (small)"
+ },
+ {
+  "id": "dlc3/water_treatment_small",
+  "nameId": 7514,
+  "types": [
+   "TYPE_WATER_TREATMENT"
+  ],
+  "workers": 5.0,
+  "professors": 0,
+  "production": {
+   "water": 24.0
+  },
+  "consumption": {
+   "eletric": 0.07,
+   "usagewater": 2.6,
+   "chemicals": 0.05
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wasseraufbereitung (klein)",
+  "en": "Water treatment (small)"
+ },
+ {
+  "id": "dlc3/water_well",
+  "nameId": 7501,
+  "types": [
+   "TYPE_MINE_WATER"
+  ],
+  "workers": 8.0,
+  "professors": 0,
+  "production": {
+   "water": 240.0
+  },
+  "consumption": {
+   "eletric": 0.105
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wasserbrunnen (groß)",
+  "en": "Big water well"
+ },
+ {
+  "id": "dlc3/water_well_small",
+  "nameId": 7500,
+  "types": [
+   "TYPE_MINE_WATER"
+  ],
+  "workers": 5.0,
+  "professors": 0,
+  "production": {
+   "water": 50.0
+  },
+  "consumption": {
+   "eletric": 0.035
+  },
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "constructionResources": {},
+  "dlc": "dlc3",
+  "de": "Wasserbrunnen (klein)",
+  "en": "Small water well"
  }
 ]
