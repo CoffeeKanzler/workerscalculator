@@ -50,7 +50,7 @@ test('legacy manual tenders are removed from persisted consist', () => {
   assert.deepEqual(normalizeConsist([
     { name: 'FD', count: 1 },
     { name: 'FD Tender', count: 1 },
-  ], vehicles), [{ name: 'FD', count: 1 }]);
+  ], [steam, tankEngine, wagon]), [{ name: 'FD', count: 1 }]);
 });
 
 test('each locomotive instance expands to an adjacent locked tender', () => {
