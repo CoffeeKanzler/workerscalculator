@@ -1,6 +1,6 @@
 import { STRINGS } from './i18n.js?v=13';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=14';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=15';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=13';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -702,6 +702,7 @@ function renderAnalysis() {
 // ---------------------------------------------------------------- vehicle production tab
 function renderVehicleProduction() {
   const plan = state.vehicleProduction ??= { productivity: 1, timeUnit: 'year', rows: [] };
+  plan.recommendationGroup ??= 'road';
   const eco = economy();
   const available = DATA.sheetVehicles
     .map((vehicle, index) => ({ vehicle, index }))
@@ -723,6 +724,37 @@ function renderVehicleProduction() {
     el('label', {}, t('timeUnit') + ' ', selectInput(
       [['day', t('day')], ['month', t('month')], ['year', t('year')]],
       plan.timeUnit, v => plan.timeUnit = v)));
+
+  const recommendations = recommendVehicleProduction(
+    available.map(item => item.vehicle).filter(vehicle => vehicleProductionGroup(vehicle) === plan.recommendationGroup),
+    { workers: 100, productivity: plan.productivity, timeUnit: plan.timeUnit, currency: state.currency },
+    eco,
+  );
+  const recommendationTable = el('div', { class: 'tablewrap recommendations' },
+    el('table', { class: 'data wide' },
+      el('thead', {}, el('tr', {},
+        el('th', {}, '#'), el('th', {}, t('vehicle')), el('th', {}, t('vehicleType')),
+        el('th', {}, t('origin')), el('th', {}, `${t('saleValue')} ${cur()}`),
+        el('th', {}, `${t('materialPerUnit')} ${cur()}`),
+        el('th', {}, `${t('profitPerWorker')} / ${t(plan.timeUnit)}`), el('th', {}))),
+      el('tbody', {}, recommendations.map((item, rank) => {
+        const source = available.find(candidate => candidate.vehicle === item.vehicle);
+        return el('tr', {},
+          el('td', { class: 'r' }, rank + 1),
+          el('td', {}, item.vehicle.name),
+          el('td', {}, item.vehicle.attrs.Typ ?? '—'),
+          el('td', {}, item.vehicle.attrs.Bauland ?? '—'),
+          el('td', { class: 'r' }, fmt(item.result.salePrice, 0)),
+          el('td', { class: 'r' }, fmt(item.result.materialCostPerUnit, 0)),
+          el('td', { class: 'r pos' }, fmt(item.result.profitPerWorker, 1)),
+          el('td', {}, el('button', {
+            title: t('addVehicle'),
+            onclick: () => {
+              if (source) plan.rows.push({ type: source.vehicle.attrs.Typ, vehicleIndex: source.index, workers: 100 });
+              update();
+            },
+          }, '+')));
+      }))));
 
   const results = [];
   const table = el('table', { class: 'data wide' },
@@ -777,7 +809,14 @@ function renderVehicleProduction() {
 
   return el('section', {},
     el('p', { class: 'hint' }, t('vehicleProdHint')),
-    settings, renderCalcOpts(), el('div', { class: 'tablewrap' }, table),
+    settings, renderCalcOpts(),
+    el('h3', {}, t('bestVehicles')),
+    el('div', { class: 'settingsbar' },
+      el('label', {}, t('vehicleGroup') + ' ', selectInput(
+        [['road', t('roadVehicles')], ['trains', t('trains')], ['boats', t('boats')], ['aircraft', t('aircraft')]],
+        plan.recommendationGroup, value => { plan.recommendationGroup = value; }))),
+    recommendationTable,
+    el('div', { class: 'tablewrap' }, table),
     el('button', { onclick: () => {
       const initial = available[0];
       if (initial) plan.rows.push({ type: initial.vehicle.attrs.Typ, vehicleIndex: initial.index, workers: 100 });

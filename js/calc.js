@@ -119,6 +119,14 @@ const RAIL_TYPES = new Set([
   'Triebwagen', 'U-Bahn', 'Zugverband',
 ]);
 
+export function vehicleProductionGroup(vehicle) {
+  const type = vehicle?.attrs?.Typ;
+  if (SHIP_TYPES.has(type)) return 'boats';
+  if (RAIL_TYPES.has(type)) return 'trains';
+  if (type === 'Flugzeug' || type === 'Hubschrauber') return 'aircraft';
+  return 'road';
+}
+
 function splitComponent(total, bodyWeight, engineWeight) {
   if (!(total > 0)) return [0, 0];
   const weight = bodyWeight + engineWeight;
@@ -211,6 +219,15 @@ export function evaluateVehicleProduction(vehicle, settings, eco) {
     salePrice, materialCostPerUnit, units, income, expenses, profit,
     profitPerWorker: workers > 0 ? profit / workers : 0,
   };
+}
+
+export function recommendVehicleProduction(vehicles, settings, eco, limit = 5) {
+  return vehicles
+    .filter(vehicle => (vehicle?.attrs?.Arbeitstage ?? 0) > 0)
+    .map((vehicle, index) => ({ vehicle, index, result: evaluateVehicleProduction(vehicle, settings, eco) }))
+    .filter(row => Number.isFinite(row.result.profitPerWorker) && row.result.profit > 0)
+    .sort((a, b) => b.result.profitPerWorker - a.result.profitPerWorker)
+    .slice(0, limit);
 }
 
 // Full production-plan evaluation (ProduktionProductions sheet).

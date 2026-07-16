@@ -6,7 +6,8 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   Economy, evaluatePlan, evaluateCity, lowTechPoints,
-  evaluateVehicleProduction, vehicleSaleValue, SEASON_FACTOR, NO_SEASON_FACTOR,
+  evaluateVehicleProduction, recommendVehicleProduction, vehicleSaleValue,
+  vehicleProductionGroup, SEASON_FACTOR, NO_SEASON_FACTOR,
 } from '../js/calc.js';
 
 const res = JSON.parse(readFileSync(new URL('../data/resources.json', import.meta.url)));
@@ -203,3 +204,27 @@ test('cross-market formula restores separate body and engine component order', (
 function splitByRatio(total, first, second) {
   return [total * first / (first + second), total * second / (first + second)];
 }
+
+test('vehicle recommendations rank profitable models per worker', () => {
+  const vehicles = [
+    { name: 'Slow', attrs: { Typ: 'Bus', Arbeitstage: 100, Stahl: 5 } },
+    { name: 'Best', attrs: { Typ: 'Bus', Arbeitstage: 50, Stahl: 2 } },
+    { name: 'Loss', attrs: { Typ: 'Bus', Arbeitstage: 10, Stahl: 100 } },
+    { name: 'No recipe', attrs: { Typ: 'Bus', Arbeitstage: 0 } },
+  ];
+  const fakeEco = { inputPrice: () => 10 };
+  const rows = recommendVehicleProduction(vehicles, {
+    workers: 100, productivity: 1, timeUnit: 'year', currency: 'RUB',
+    salePrice: 100,
+  }, fakeEco, 2);
+  assert.deepEqual(rows.map(row => row.vehicle.name), ['Best', 'Slow']);
+  assert.ok(rows[0].result.profitPerWorker > rows[1].result.profitPerWorker);
+});
+
+test('vehicle production groups match factory categories', () => {
+  const vehicle = type => ({ attrs: { Typ: type } });
+  assert.equal(vehicleProductionGroup(vehicle('Bus')), 'road');
+  assert.equal(vehicleProductionGroup(vehicle('Lokomotive')), 'trains');
+  assert.equal(vehicleProductionGroup(vehicle('Frachtschiff')), 'boats');
+  assert.equal(vehicleProductionGroup(vehicle('Hubschrauber')), 'aircraft');
+});
