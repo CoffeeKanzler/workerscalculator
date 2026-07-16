@@ -1,8 +1,8 @@
-import { STRINGS } from './i18n.js?v=8';
-import { parseStatsIni, recordToPrices } from './statsini.js?v=8';
-import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=8';
-import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=8';
-import { solveChain, producersByResource, defaultProducer } from './chain.js?v=8';
+import { STRINGS } from './i18n.js?v=9';
+import { parseStatsIni, recordToPrices } from './statsini.js?v=9';
+import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=9';
+import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=9';
+import { solveChain, producersByResource, defaultProducer } from './chain.js?v=9';
 
 const TABS = ['prices', 'production', 'chain', 'analysis', 'city', 'trains', 'research', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
@@ -826,6 +826,62 @@ function trainConsist() {
   return tr.consist;
 }
 
+// Production cost of a vehicle from its material bill (the game computes real
+// purchase prices the same way; the ini COST_RUB fields are placeholders).
+const VEHICLE_MATERIALS = ['Stahl', 'Aluminium', 'Kunststoffe', 'Stoff', 'Mechanik-Bauteile', 'Elektronik-Bauteile', 'Elektronik'];
+function vehicleCost(v, eco, currency) {
+  let cost = (v.attrs['Arbeitstage'] ?? 0) * eco.workday(currency);
+  for (const m of VEHICLE_MATERIALS) cost += (v.attrs[m] ?? 0) * eco.buy(m, currency);
+  return cost;
+}
+
+function eraOk(v, year) {
+  if (!year) return true;
+  const from = v.attrs['Von'] ?? 0;
+  const to = typeof v.attrs['Bis'] === 'number' ? v.attrs['Bis'] : 3000;
+  return from <= year && year <= to;
+}
+
+// Recommend a consist: best wagon (t per meter) for each requested cargo,
+// then the loco reaching the kW/t target with the least train length.
+function recommendTrain(tr, locos, wagons, resDeNames) {
+  const year = tr.year || null;
+  const wants = tr.reco.rows.filter(r => r.cargo && r.tons > 0);
+  const consist = [];
+  let wagonWeight = 0, wagonLen = 0;
+  for (const want of wants) {
+    const cands = wagons.filter(w => (w.attrs[want.cargo] ?? 0) > 0 && eraOk(w, year) && (w.attrs['Länge'] ?? 0) > 0);
+    if (!cands.length) continue;
+    const best = cands.reduce((a, b) =>
+      (b.attrs[want.cargo] / b.attrs['Länge'] > a.attrs[want.cargo] / a.attrs['Länge']) ? b : a);
+    const n = Math.ceil(want.tons / best.attrs[want.cargo]);
+    consist.push({ name: best.name, count: n, cargo: want.cargo });
+    wagonWeight += n * ((best.attrs['Leergewicht'] ?? 0) + best.attrs[want.cargo]);
+    wagonLen += n * best.attrs['Länge'];
+  }
+  if (!consist.length) return null;
+  const kwt = tr.reco.kwt || 2;
+  let bestPick = null;
+  for (const l of locos) {
+    if (!eraOk(l, year)) continue;
+    if (tr.reco.drive !== 'all' && l.attrs['Antriebsart'] !== tr.reco.drive) continue;
+    const power = l.attrs['Motorleistung'] ?? 0;
+    const lw = l.attrs['Leergewicht'] ?? 0;
+    const llen = l.attrs['Länge'] ?? 0;
+    const denom = power - kwt * lw;
+    if (denom <= 0) continue;
+    const n = Math.max(1, Math.ceil(kwt * wagonWeight / denom));
+    if (n > 6) continue;
+    const totalLen = wagonLen + n * llen;
+    const score = totalLen; // shortest train wins, tie: fewer locos
+    if (!bestPick || score < bestPick.score || (score === bestPick.score && n < bestPick.n)) {
+      bestPick = { loco: l, n, score };
+    }
+  }
+  if (bestPick) consist.unshift({ name: bestPick.loco.name, count: bestPick.n, cargo: null });
+  return consist;
+}
+
 function renderTrains() {
   const tr = state.train;
   const consist = trainConsist();
@@ -865,37 +921,65 @@ function renderTrains() {
   };
 
   // ---- settings
-  if (!tr.pickLoco) tr.pickLoco = locos[0]?.name;
+  const eco = economy();
+  if (!tr.reco) tr.reco = { rows: [{ cargo: tr.cargo, tons: 300 }], kwt: 2, drive: 'all' };
+  const eraLocos = locos.filter(l => eraOk(l, tr.year));
+  if (!eraLocos.some(l => l.name === tr.pickLoco)) tr.pickLoco = eraLocos[0]?.name;
   const settings = el('div', { class: 'settingsbar' },
     el('label', {}, t('trainLength') + ' ', numInput(tr.length, v => tr.length = v, { min: 0, step: 10 })),
+    el('label', {}, t('eraYear') + ' ', el('input', {
+      type: 'number', class: 'num', value: tr.year ?? '', placeholder: '—', min: 1900, step: 1,
+      onchange: e => { tr.year = parseInt(e.target.value) || null; update(); } })),
     el('label', {}, t('loco') + ' ',
-      selectInput(locos.map(l => [l.name, locoLabel(l)]), tr.pickLoco, v => { tr.pickLoco = v; })),
+      selectInput(eraLocos.map(l => [l.name, locoLabel(l)]), tr.pickLoco, v => { tr.pickLoco = v; })),
     el('button', { onclick: () => addToConsist(tr.pickLoco, true) }, '+ ' + t('loco')),
     el('label', {}, t('cargo') + ' ', selectInput(cargos.map(c => [c, cargoLabel(c)]), tr.cargo, v => tr.cargo = v)),
     consist.length ? el('button', { class: 'danger', onclick: () => { tr.consist = []; update(); } }, t('reset')) : null);
 
+  // ---- recommendation panel
+  const reco = tr.reco;
+  const recoBox = el('div', { class: 'settingsbar' },
+    el('strong', {}, t('recoTitle')),
+    ...reco.rows.map((r, i) => el('span', { class: 'recorow' },
+      selectInput(cargos.map(c => [c, cargoLabel(c)]), r.cargo, v => r.cargo = v),
+      numInput(r.tons, v => r.tons = v, { min: 0, step: 50 }), ' t ',
+      reco.rows.length > 1 ? el('button', { class: 'danger', onclick: () => { reco.rows.splice(i, 1); update(); } }, '✕') : null)),
+    reco.rows.length < 4 ? el('button', {
+      onclick: () => { reco.rows.push({ cargo: cargos.find(c => !reco.rows.some(r => r.cargo === c)) ?? cargos[0], tons: 100 }); update(); },
+    }, '+ ' + t('cargo')) : null,
+    el('label', {}, t('targetKwt') + ' ', numInput(reco.kwt, v => reco.kwt = v || 2, { min: 0.5, step: 0.5 })),
+    el('label', {}, t('drive') + ' ',
+      selectInput([['all', t('all')], ['D', 'Diesel'], ['E', 'E']], reco.drive, v => reco.drive = v)),
+    el('button', { class: 'primary', onclick: () => {
+      const rec = recommendTrain(tr, locos, wagons, resDeNames);
+      if (rec) { tr.consist = rec; update(); }
+    } }, '⚙ ' + t('recommend')));
+
   // ---- wagon table (click = add)
   const usedLen = consist.reduce((a, s) => a + (byName.get(s.name)?.attrs['Länge'] ?? 0) * s.count, 0);
   const rows = wagons
-    .filter(w => (w.attrs[tr.cargo] ?? 0) > 0)
+    .filter(w => (w.attrs[tr.cargo] ?? 0) > 0 && eraOk(w, tr.year))
     .map(w => ({
       w, len: w.attrs['Länge'] ?? 0, cap: w.attrs[tr.cargo] ?? 0,
-      speed: w.attrs['Max. Geschwindigkeit'], from: w.attrs['Von'],
+      cost: vehicleCost(w, eco, state.currency), from: w.attrs['Von'],
       fit: w.attrs['Länge'] > 0 ? Math.floor(Math.max(0, tr.length - usedLen) / w.attrs['Länge']) : 0,
     }))
-    .sort((a, b) => b.cap - a.cap);
+    .sort((a, b) => b.cap / (b.len || 1) - a.cap / (a.len || 1));
 
   const tbl = el('table', { class: 'data wide selectable' },
     el('thead', {}, el('tr', {},
       el('th', {}, t('wagon')), el('th', {}, t('length')), el('th', {}, `t / ${t('wagon')}`),
-      el('th', {}, t('speed')), el('th', {}, t('from')), el('th', {}, t('stillFits')), el('th', {}))),
+      el('th', {}, 't/m'), el('th', {}, t('from')), el('th', {}, `${t('prodCost')} ${cur()}`),
+      el('th', {}, t('stillFits')), el('th', {}))),
     el('tbody', {}, rows.map(r => el('tr', {
       class: consist.some(s => s.name === r.w.name) ? 'selected' : '',
       onclick: () => addToConsist(r.w.name, false, tr.cargo),
     },
       el('td', {}, r.w.name), el('td', { class: 'r' }, fmt(r.len, 1)),
-      el('td', { class: 'r' }, fmt(r.cap, 1)), el('td', { class: 'r' }, fmt(r.speed, 0)),
+      el('td', { class: 'r' }, fmt(r.cap, 1)),
+      el('td', { class: 'r' }, fmt(r.len ? r.cap / r.len : 0, 2)),
       el('td', { class: 'r' }, r.from ?? '—'),
+      el('td', { class: 'r' }, fmt(r.cost, 0)),
       el('td', { class: 'r' }, fmt(r.fit, 0)),
       el('td', {}, el('button', {}, '+'))))));
 
@@ -921,8 +1005,11 @@ function renderTrains() {
   const cargoW = [...capacities.entries()].filter(([k]) => k !== 'Passagiere').reduce((a, [, v]) => a + v, 0);
   const loadedW = emptyW + cargoW;
   const kwPerT = loadedW ? powerKW / loadedW : 0;
+  // Train speed = slowest vehicle WITH a limit. Wagons carry no speed limit in
+  // the game files, so in practice this is the locomotive's maximum.
   const speeds = segs.map(s => s.v.attrs['Max. Geschwindigkeit']).filter(x => x > 0);
   const vmax = speeds.length ? Math.min(...speeds) : null;
+  const totalCost = segs.reduce((a, s) => a + vehicleCost(s.v, eco, state.currency) * s.count, 0);
   const eraFrom = Math.max(0, ...segs.map(s => s.v.attrs['Von'] ?? 0));
   const isElectric = segs.some(s => isLoco(s.v) && s.v.attrs['Antriebsart'] === 'E');
   const kwCls = kwPerT >= 2 ? 'pos' : kwPerT >= 1 ? 'warn' : 'neg';
@@ -1003,14 +1090,17 @@ function renderTrains() {
     kv(t('loadedWeight'), fmt(loadedW, 1) + ' t'),
     kv(t('power'), fmt(powerKW, 0) + ' kW' + (isElectric ? ' (E)' : '')),
     kv(t('powerPerTon'), fmt(kwPerT, 2) + ' kW/t', kwCls),
-    kv(t('speed'), vmax !== null ? fmt(vmax, 0) + ' km/h' : '—'),
+    kv(t('speedLoco'), vmax !== null ? fmt(vmax, 0) + ' km/h' : '—'),
     kv(t('from'), eraFrom ? String(eraFrom) : '—'),
+    kv(`${t('prodCost')} ${cur()}`, fmt(totalCost, 0)),
     isElectric ? el('p', { class: 'hint' }, t('catenaryNote')) : null,
+    el('p', { class: 'hint' }, t('wagonSpeedNote')),
     el('p', { class: 'hint' }, t('powerHint')));
 
   return el('section', {},
     el('p', { class: 'hint' }, t('trainHint2')),
     settings,
+    recoBox,
     el('div', { class: 'trainvizbox' }, svg),
     el('div', { class: 'columns' },
       el('div', {}, tbl),

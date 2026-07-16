@@ -1,7 +1,7 @@
 // Production chain solver: state a goal ("N t/day of X") and compute the whole
 // upstream chain — which buildings, how many, workers, power, construction cost,
 // and the import bill for everything you choose not to produce.
-import { QUALITY_BUILDINGS_DE } from './community_constants.js?v=8';
+import { QUALITY_BUILDINGS_DE } from './community_constants.js?v=9';
 
 // Build an index: resource key -> [{building, rate}] of producers.
 export function producersByResource(buildings, eco) {
