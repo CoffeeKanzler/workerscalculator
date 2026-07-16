@@ -311,6 +311,7 @@ def build_dataset(buildings, repo_root, loc):
         'heating_plant_big': 'Kleine Wasseraufbereitung',  # sheet data-entry bug: big heating plant row is mislabeled
         'cement_plant': 'Zementwerk klein',
         'cwc/CementPlant': 'Zementwerk groß',
+        'cwc/chemical_plant_big': 'Chemieanlage groß',
     }
 
     def norm(name):
@@ -348,7 +349,10 @@ def build_dataset(buildings, repo_root, loc):
         # The app has a dedicated field/hectare calculator instead.
         if 'TYPE_FARM' in g['types'] or (not g['workers'] and sum(g['production'].values()) < 0.1):
             continue
-        NAME_OVERRIDES = {'cwc/CementPlant': ('Zementwerk groß', 'Cement plant large')}
+        NAME_OVERRIDES = {
+            'cwc/CementPlant': ('Zementwerk groß', 'Cement plant large'),
+            'cwc/chemical_plant_big': ('Chemieanlage groß', 'Chemical plant large'),
+        }
         name_de = g.get('de') or g['nameStr']
         name_en = g.get('en') or g.get('nameStr') or name_de
         if g['id'] in NAME_OVERRIDES:
@@ -400,6 +404,8 @@ def build_dataset(buildings, repo_root, loc):
             'consumption': cons,
             'measured': bool(s),   # extras below come from the sheet (measured in-game)
         }
+        if g.get('dlc'):
+            entry['dlc'] = g['dlc']
         if s:
             entry['group'] = s['group']
             for f in EXTRA_FIELDS:

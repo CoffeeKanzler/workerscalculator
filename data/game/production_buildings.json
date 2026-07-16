@@ -525,6 +525,7 @@
    }
   ],
   "measured": true,
+  "dlc": "cwc",
   "power": 9.0,
   "maxKW": 149.0,
   "water": 0.8,
@@ -1212,8 +1213,8 @@
    "de": "Fossile Brennstoffe",
    "en": "Fossil fuels"
   },
-  "de": "Chemieanlage (700 👷)",
-  "en": "Chemical plant (700 👷)",
+  "de": "Chemieanlage groß",
+  "en": "Chemical plant large",
   "workers": 700.0,
   "production": [
    {
@@ -1255,21 +1256,22 @@
    }
   ],
   "measured": true,
-  "power": 25.0,
-  "maxKW": 420.0,
-  "water": 1.2,
+  "dlc": "cwc",
+  "power": 168.0,
+  "maxKW": 3.3,
+  "water": 14.0,
   "hotwater": 0,
   "wastePerWorker": 0.6,
-  "workdays": 2260.0,
-  "gravel": 48.0,
-  "bricks": 52.0,
-  "steel": 45.0,
-  "concrete": 62.0,
-  "asphalt": 38.0,
-  "boards": 17.0,
+  "workdays": 23681.0,
+  "gravel": 445.0,
+  "bricks": 413.0,
+  "steel": 607.0,
+  "concrete": 2473.0,
+  "asphalt": 356.0,
+  "boards": 137.0,
   "panels": 0.0,
   "ecomponents": 0.0,
-  "mcomponents": 5.8
+  "mcomponents": 26.0
  },
  {
   "gameId": "coal_mine",
@@ -3088,6 +3090,7 @@
    }
   ],
   "measured": true,
+  "dlc": "dlc1",
   "power": 8.0,
   "maxKW": 0.0,
   "water": 1.36,

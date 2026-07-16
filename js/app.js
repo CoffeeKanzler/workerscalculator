@@ -187,6 +187,22 @@ function numInput(value, onchange, opts = {}) {
   });
 }
 
+// Percent input for values stored as factors (game UI shows productivity in %).
+function pctInput(factor, onchange) {
+  const input = el('input', {
+    type: 'number', value: Math.round((factor ?? 1) * 1000) / 10, step: 5, min: 0,
+    class: 'num pct',
+    onchange: e => { onchange((parseFloat(e.target.value) || 0) / 100); update(); },
+  });
+  return el('span', { class: 'pctwrap' }, input, ' %');
+}
+
+// Display name incl. DLC marker (DLC files ship with every install, but the
+// buildings are only placeable when the DLC is owned).
+function bname(b) {
+  return b[state.lang] + (b.dlc ? ' [DLC]' : '');
+}
+
 function selectInput(options, value, onchange, opts = {}) {
   const s = el('select', { class: opts.class ?? '', onchange: e => { onchange(e.target.value); update(); } });
   for (const o of options) {
@@ -428,7 +444,7 @@ function renderProduction() {
     state.plan.fields, s, eco);
 
   const settings = el('div', { class: 'settingsbar' },
-    el('label', {}, t('productivity') + ' ', numInput(s.productivity, v => s.productivity = v, { step: 0.05, min: 0 })),
+    el('label', {}, t('productivity') + ' ', pctInput(s.productivity, v => s.productivity = v)),
     el('label', {}, t('timeUnit') + ' ',
       selectInput([['day', t('day')], ['month', t('month')], ['year', t('year')]], s.timeUnit, v => s.timeUnit = v)),
     el('label', {}, t('seasons') + ' ', el('input', {
@@ -452,7 +468,7 @@ function renderProduction() {
         v => { row.group = v; row.name = null; });
       const inGroup = prodBuildings().filter(x => x.group[state.lang] === row.group);
       const bSel = selectInput(
-        [[', ', t('none')], ...inGroup.map(x => [x.de, x[state.lang]])],
+        [[', ', t('none')], ...inGroup.map(x => [x.de, bname(x)])],
         row.name ?? ', ', v => { row.name = v === ', ' ? null : v; });
       const isMine = b && QUALITY_BUILDINGS_DE.has(b.de);
       return el('tr', {},
@@ -544,7 +560,7 @@ function renderChain() {
         ch.goal, v => { ch.goal = v; })),
     el('label', {}, t('chainAmount') + ' ', numInput(ch.amount, v => ch.amount = v, { min: 0, step: 1 })),
     el('label', {}, t('productivity') + ' ',
-      numInput(state.plan.settings.productivity, v => state.plan.settings.productivity = v, { step: 0.05, min: 0 })),
+      pctInput(state.plan.settings.productivity, v => state.plan.settings.productivity = v)),
     el('label', {}, t('chainUtilities') + ' ', el('input', {
       type: 'checkbox', checked: ch.includeUtilities,
       onchange: e => { ch.includeUtilities = e.target.checked; update(); } })));
@@ -577,9 +593,9 @@ function renderChain() {
       const producerSel = !row.imported && row.producers?.length > 1
         ? selectInput(row.producers.map(de => {
             const b = buildings.find(x => x.de === de);
-            return [de, b ? b[state.lang] : de];
+            return [de, b ? bname(b) : de];
           }), row.building.de, v => { ch.producerChoice[row.key] = v; })
-        : el('span', {}, row.imported ? '—' : row.building[state.lang]);
+        : el('span', {}, row.imported ? '—' : bname(row.building));
       return el('tr', {},
         el('td', {}, resLabel(row.key)),
         el('td', { class: 'r' }, fmt(row.demand, 1)),
@@ -661,7 +677,7 @@ function renderAnalysis() {
         th('amortDays', t('amortDays')), th('income', `${t('income')} ${cur()}`),
         th('expenses', `${t('expenses')} ${cur()}`), th('buildCost', `${t('buildCost')} ${cur()}`))),
       el('tbody', {}, rows.map(r => el('tr', {},
-        el('td', {}, r.b[state.lang]), el('td', {}, r.b.group[state.lang]),
+        el('td', {}, bname(r.b)), el('td', {}, r.b.group[state.lang]),
         el('td', { class: 'r' }, fmt(r.b.workers, 0)),
         el('td', { class: 'r ' + (r.profit < 0 ? 'neg' : 'pos') }, fmt(r.profit)),
         el('td', { class: 'r' }, fmt(r.profitPerWorker)),
@@ -691,7 +707,7 @@ function renderCity() {
   const settings = el('div', { class: 'settingsbar' },
     el('label', {}, t('cityName') + ' ', el('input', {
       type: 'text', value: city.name, onchange: e => { city.name = e.target.value; update(); } })),
-    el('label', {}, t('productivity') + ' ', numInput(city.productivity, v => city.productivity = v, { step: 0.05, min: 0 })),
+    el('label', {}, t('productivity') + ' ', pctInput(city.productivity, v => city.productivity = v)),
     el('label', {}, t('cable') + ' ',
       selectInput(CABLES.map(c => [c.de, c[state.lang]]), city.cable, v => city.cable = v)),
     el('label', {}, t('heatExchangers') + ' ',
