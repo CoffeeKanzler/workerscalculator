@@ -29,7 +29,10 @@ both "sell (like the sheet)" and "buy (import view)", default sell.)
 
 ## Phase 2 – The features a spreadsheet can't do
 
-### 2.1 Production chain solver ⭐ flagship feature
+### 2.1 Production chain solver ⭐ flagship feature ✅ done 2026-07-16
+(Implemented in `js/chain.js` + "Production chain" tab: fixpoint solver,
+per-resource import toggle & producer choice, power/water expansion,
+byproduct surplus report, 5 tests.)
 - **What:** Inverse planning. User states a goal ("20 t/day clothes"), the app walks the
   production graph backwards and proposes building counts for the whole upstream chain
   (fabric → chemicals/plants → power/water → workers), with totals: workers, build cost,
@@ -55,7 +58,12 @@ both "sell (like the sheet)" and "buy (import view)", default sell.)
 
 ## Phase 3 – Data quality & freshness
 
-### 3.1 Extract data from game files instead of the spreadsheet ⭐ (in progress)
+### 3.1 Extract data from game files instead of the spreadsheet ⭐ ✅ done 2026-07-16
+(Full pipeline: buildings + vehicles + 20-language localization; merged app
+dataset `data/game/production_buildings.json`; dataset switch in the header
+= 3.2 for the production planner. Community constants split into
+`js/community_constants.js`. Still sheet-sourced: city buildings, vehicle
+lengths, per-building power/water/waste, decade prices.)
 Status 2026-07-16: `tools/extract_from_gamefiles.py` parses buildings
 (238 with economic data), vehicles (531 incl. trains/planes/helicopters/ships)
 and the localization string tables (`soviet<Language>.btf`, 20 languages,

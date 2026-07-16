@@ -15,6 +15,13 @@ GitHub Pages web app from the community planning spreadsheet
 - **Prices** – buy/sell prices for all resources in ₽ and $, fully editable
   (play "what if"), with a price-history chart across all snapshots in your file.
   Decade presets (1920–1980) from the spreadsheet are included as a fallback.
+- **Production chain solver** – state a goal ("20 t/day of steel") and the
+  whole upstream chain is computed backwards: buildings, counts, workers,
+  power, construction cost. Any intermediate can be switched to import
+  (priced at current buy + delivery cost) and producers are swappable.
+- **Two building datasets** – extracted from the current game files
+  (77 buildings, 20 languages, via `tools/extract_from_gamefiles.py`) or the
+  spreadsheet snapshot, switchable in the header.
 - **Production planner** – add production buildings, set count/quality,
   productivity of the republic, time unit (day/month/year), seasons,
   Slower-Calendar-Flow mod factor and fertilizer status. Calculates profit,

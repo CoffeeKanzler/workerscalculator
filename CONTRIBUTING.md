@@ -31,10 +31,33 @@ Every push to `main` deploys automatically to GitHub Pages.
 Rule of thumb: **numbers and formulas belong in `js/calc.js` or `data/`, never
 in `js/app.js`.** The UI only displays what the calc layer computes.
 
-## Updating the game data (when the spreadsheet changes)
+## The three data sources
 
-The spreadsheet is the upstream source for building stats, vehicles, prices and
-translations. When it gets updated:
+| Source | Where | How to update |
+|---|---|---|
+| **Game files** (authoritative: production/consumption rates, workers, names in 20 languages, vehicles) | `data/game/*.json` | run `tools/extract_from_gamefiles.py <path-to-media_soviet>` against the current game version |
+| **Community constants** (measured/derived: service ratios, field yields, heat-exchanger sizes, …) | [`js/community_constants.js`](js/community_constants.js) | edit directly — every value is commented; small PRs welcome |
+| **Spreadsheet** (city buildings incl. mods, vehicle lengths, measured per-building power/water/waste/construction, decade prices) | `data/*.json` | see below |
+
+The app ships both production datasets — "Game files (current)" and
+"Spreadsheet" — switchable in the header. The game dataset merges game rates
+with the sheet's measured extras (power, water, construction bill) by building
+name; buildings without a sheet match carry `"measured": false`.
+
+### Updating from the game files
+
+```bash
+python3 tools/extract_from_gamefiles.py /path/to/SovietRepublic/media_soviet
+npm test
+```
+
+Regenerates `data/game/`: `buildings_raw.json`, `vehicles_raw.json`,
+`names.json` (all localized names, 20 languages from the `soviet<Language>.btf`
+string tables) and `production_buildings.json` (the merged app dataset).
+Unit rule verified against the sheet: ini values are t per worker per day,
+so t/day = value × workers (factories and mines; heating plants are special-cased).
+
+## Updating the spreadsheet-derived data (when the sheet changes)
 
 1. Open the [Google Sheet](https://docs.google.com/spreadsheets/d/1rq76hTLnW1C5QbiQynHSbIJwOgg-wfOgSfZmsfm9kh0/edit)
    → **File → Download → Microsoft Excel (.xlsx)**, save as `workers.xlsx`
