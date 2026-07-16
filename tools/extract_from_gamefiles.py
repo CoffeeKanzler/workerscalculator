@@ -207,7 +207,8 @@ def bbox_length(vdir):
 
 
 def parse_vehicle(path, category):
-    v = {'id': os.path.basename(os.path.dirname(path)), 'category': category}
+    v = {'id': os.path.basename(os.path.dirname(path)), 'category': category,
+         'trainSet': []}
     length = bbox_length(os.path.dirname(path))
     if length:
         v['length'] = length
@@ -232,10 +233,14 @@ def parse_vehicle(path, category):
             elif key == 'AVAILABLE' and len(args) >= 2:
                 v['from'] = int(float(args[0]))
                 v['to'] = int(float(args[1]))
+            elif key == 'TRAINSET' and args:
+                v['trainSet'].append(args[0])
             elif key.startswith('TRAINGROUP_'):
                 v['trainGroup'] = key[len('TRAINGROUP_'):].lower()
         except (ValueError, IndexError):
             pass
+    if not v['trainSet']:
+        del v['trainSet']
     return v if 'type' in v else None
 
 
@@ -456,41 +461,80 @@ def build_dataset(buildings, repo_root, loc):
 
 
 def build_rail_vehicles(vehicles, repo_root):
-    """Game-only rail locomotives/tenders in the sheet's attr shape so the
-    train planner can merge them (steam locos ship with the Early Start DLC
-    and are absent from the sheet)."""
+    """Game-only rail locomotives in the sheet's attr shape.
+
+    Steam tenders are nested on their locomotive because the game attaches
+    $TRAINSET components automatically; they are not purchasable vehicles.
+    """
     sheet = json.load(open(os.path.join(repo_root, 'data', 'vehicles.json')))['vehicles']
     sheet_names = {v['name'].lower() for v in sheet}
+    by_id = {v['id'].lower(): v for v in vehicles}
+
+    def resolve(ref):
+        direct = by_id.get(ref.lower())
+        if direct:
+            return direct
+        local = ref.split('_', 1)[1] if '_' in ref else ref
+        return by_id.get(local.lower())
+
+    def tender_entry(v):
+        attrs = {
+            'Typ': 'Tender',
+            'Länge': v.get('length'),
+            'Leergewicht': v.get('emptyWeight'),
+            'Von': v.get('from'), 'Bis': v.get('to'),
+        }
+        result = {
+            'name': v.get('de') or v.get('en') or v['id'],
+            'attrs': {k: x for k, x in attrs.items() if x is not None},
+        }
+        if v.get('dlc'):
+            result['dlc'] = v['dlc']
+        return result
+
     out = []
     for v in vehicles:
         t = v.get('type', '')
         group = v.get('trainGroup', '')
         is_loco = t == 'VEHICLETYPE_RAIL_LOCOMOTIVE' and group in ('locomotive', 'locomotive_steam')
-        is_tender = t == 'VEHICLETYPE_RAIL_VAGON' and group == 'locomotive'
-        if not (is_loco or is_tender):
+        if not is_loco:
             continue
         name = v.get('de') or v.get('en') or v['id']
         if name.lower() in sheet_names:
             continue
         attrs = {
-            'Typ': 'Tender' if is_tender else 'Lokomotive',
+            'Typ': 'Lokomotive',
             'Länge': v.get('length'),
             'Leergewicht': v.get('emptyWeight'),
             'Von': v.get('from'), 'Bis': v.get('to'),
+            'Motorleistung': v.get('powerKW'),
+            'Max. Geschwindigkeit': v.get('speed'),
+            'Antriebsart': 'S' if group == 'locomotive_steam' else '?',
         }
-        if is_loco:
-            attrs['Motorleistung'] = v.get('powerKW')
-            attrs['Max. Geschwindigkeit'] = v.get('speed')
-            attrs['Antriebsart'] = 'S' if group == 'locomotive_steam' else '?'
         entry = {'name': name, 'attrs': {k: x for k, x in attrs.items() if x is not None}}
         if v.get('dlc'):
             entry['dlc'] = v['dlc']
+        if group == 'locomotive_steam':
+            targets = [resolve(ref) for ref in v.get('trainSet', [])]
+            unresolved = [ref for ref, target in zip(v.get('trainSet', []), targets) if not target]
+            if unresolved:
+                raise ValueError(f'{v["id"]}: unresolved $TRAINSET target(s): {unresolved}')
+            tenders = [target for target in targets
+                       if target.get('type') == 'VEHICLETYPE_RAIL_VAGON'
+                       and (target.get('trainGroup') == 'locomotive'
+                            or 'tender' in target['id'].lower())]
+            if len(tenders) > 1:
+                raise ValueError(f'{v["id"]}: multiple tender targets')
+            if tenders:
+                entry['tender'] = tender_entry(tenders[0])
         out.append(entry)
     path = os.path.join(repo_root, 'data', 'game', 'rail_vehicles.json')
     with open(path, 'w') as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
     n_steam = sum(1 for e in out if e['attrs'].get('Antriebsart') == 'S')
-    print(f'game-only rail vehicles: {len(out)} ({n_steam} steam) -> data/game/rail_vehicles.json')
+    n_paired = sum(1 for e in out if e.get('tender'))
+    print(f'game-only rail vehicles: {len(out)} ({n_steam} steam, {n_paired} paired) '
+          '-> data/game/rail_vehicles.json')
 
 
 def main():

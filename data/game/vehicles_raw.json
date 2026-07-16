@@ -6449,6 +6449,9 @@
  {
   "id": "russian_crane",
   "category": "trains",
+  "trainSet": [
+   "russian_crane_vagon"
+  ],
   "length": 8.87,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5289,
@@ -6467,6 +6470,13 @@
  {
   "id": "russian_crane_v2",
   "category": "trains",
+  "trainSet": [
+   "russian_crane_vagon",
+   "russian_crane_vagon",
+   "russian_crane_vagon",
+   "russian_crane_vagon",
+   "russian_loco_m62"
+  ],
   "length": 8.87,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5289,
@@ -6978,6 +6988,9 @@
  {
   "id": "russian_metro_717",
   "category": "trains",
+  "trainSet": [
+   "russian_metro_717_vagon"
+  ],
   "length": 19.44,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5961,
@@ -6997,6 +7010,9 @@
  {
   "id": "russian_metro_717_5",
   "category": "trains",
+  "trainSet": [
+   "russian_metro_717_5_vagon"
+  ],
   "length": 19.44,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5962,
@@ -7044,6 +7060,9 @@
  {
   "id": "russian_metro_720",
   "category": "trains",
+  "trainSet": [
+   "russian_metro_720_vagon"
+  ],
   "length": 20.17,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5963,
@@ -7077,6 +7096,9 @@
  {
   "id": "russian_metro_Ecs",
   "category": "trains",
+  "trainSet": [
+   "russian_metro_Ecs_vagon"
+  ],
   "length": 19.44,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5965,
@@ -7110,6 +7132,9 @@
  {
   "id": "russian_metro_astra",
   "category": "trains",
+  "trainSet": [
+   "russian_metro_astra_vagon"
+  ],
   "length": 19.43,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5964,
@@ -7145,6 +7170,9 @@
  {
   "id": "russian_metro_mfav",
   "category": "trains",
+  "trainSet": [
+   "russian_metro_mfav_vagon"
+  ],
   "length": 10.35,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5966,
@@ -7291,6 +7319,9 @@
  {
   "id": "russian_service_agmu",
   "category": "trains",
+  "trainSet": [
+   "russian_service_agmu_vagon"
+  ],
   "length": 9.6,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5190,
@@ -7323,6 +7354,9 @@
  {
   "id": "russian_service_dkgu5",
   "category": "trains",
+  "trainSet": [
+   "russian_service_dkgu5_vagon"
+  ],
   "length": 12.65,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5194,
@@ -7341,6 +7375,10 @@
  {
   "id": "russian_service_dkgu5_v2",
   "category": "trains",
+  "trainSet": [
+   "russian_service_dkgu5_vagon",
+   "russian_service_dkgu5_vagon"
+  ],
   "length": 12.65,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5194,
@@ -7374,6 +7412,11 @@
  {
   "id": "russian_service_edk300",
   "category": "trains",
+  "trainSet": [
+   "russian_service_edk300_vagon",
+   "russian_service_edk300_vagon_2",
+   "russian_service_edk300_vagon_2"
+  ],
   "length": 10.83,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5709,
@@ -7413,6 +7456,9 @@
  {
   "id": "russian_service_muv69",
   "category": "trains",
+  "trainSet": [
+   "russian_service_muv69_vagon"
+  ],
   "length": 7.67,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5206,
@@ -7445,6 +7491,10 @@
  {
   "id": "russian_service_tbm_kt1_56",
   "category": "trains",
+  "trainSet": [
+   "russian_service_tbm_kt1_platform",
+   "russian_service_tbm_kt1_loco"
+  ],
   "length": 3.8,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5710,
@@ -7509,6 +7559,12 @@
  {
   "id": "russian_service_uk25_v2",
   "category": "trains",
+  "trainSet": [
+   "russian_service_uk25_vagon",
+   "russian_service_uk25_vagon",
+   "russian_service_uk25_vagon",
+   "russian_service_uk25_vagon"
+  ],
   "length": 19.03,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5204,
@@ -7544,6 +7600,9 @@
  {
   "id": "russian_set_d1",
   "category": "trains",
+  "trainSet": [
+   "russian_set_d1_v"
+  ],
   "length": 25.62,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5079,
@@ -7580,6 +7639,9 @@
  {
   "id": "russian_set_dp",
   "category": "trains",
+  "trainSet": [
+   "russian_set_dp_v"
+  ],
   "length": 26.78,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "trainGroup": "trainset",
@@ -7616,6 +7678,9 @@
  {
   "id": "russian_set_dr1a",
   "category": "trains",
+  "trainSet": [
+   "russian_set_dr1a_v"
+  ],
   "length": 26.3,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5083,
@@ -7691,6 +7756,12 @@
  {
   "id": "russian_set_er1",
   "category": "trains",
+  "trainSet": [
+   "russian_set_er1_e",
+   "russian_set_er1_e",
+   "russian_set_er1_v",
+   "russian_set_er1_e"
+  ],
   "length": 20.49,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5085,
@@ -7744,6 +7815,10 @@
  {
   "id": "russian_set_er2",
   "category": "trains",
+  "trainSet": [
+   "russian_set_er2_v",
+   "russian_set_er2_v"
+  ],
   "length": 20.11,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5706,
@@ -7802,6 +7877,9 @@
  {
   "id": "russian_tram_102na",
   "category": "trains",
+  "trainSet": [
+   "russian_tram_102na_v"
+  ],
   "length": 10.4,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5412,
@@ -7880,6 +7958,10 @@
  {
   "id": "russian_tram_ganz",
   "category": "trains",
+  "trainSet": [
+   "russian_tram_ganz_v1",
+   "russian_tram_ganz_v2"
+  ],
   "length": 10.71,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5418,
@@ -7938,6 +8020,9 @@
  {
   "id": "russian_tram_kt8",
   "category": "trains",
+  "trainSet": [
+   "russian_tram_kt8_v"
+  ],
   "length": 11.92,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5365,
@@ -8757,6 +8842,9 @@
  {
   "id": "west_metro_ma51",
   "category": "trains",
+  "trainSet": [
+   "west_metro_ma51_vagon"
+  ],
   "length": 13.31,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5967,
@@ -8807,6 +8895,10 @@
  {
   "id": "west_metro_tube",
   "category": "trains",
+  "trainSet": [
+   "west_metro_tube_vagon",
+   "west_metro_tube_vagon"
+  ],
   "length": 15.97,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5968,
@@ -10233,6 +10325,10 @@
  {
   "id": "ej460_head",
   "category": "cwc/vehicles",
+  "trainSet": [
+   "CWC_ej460_wagon",
+   "CWC_ej460_wagon"
+  ],
   "length": 25.69,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 5944,
@@ -11123,6 +11219,9 @@
  {
   "id": "Eseries",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_Etender"
+  ],
   "length": 12.88,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91064,
@@ -11211,6 +11310,9 @@
  {
   "id": "FDseries",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_FDtender"
+  ],
   "length": 17.14,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91066,
@@ -11268,6 +11370,9 @@
  {
   "id": "ISseries",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_IStender"
+  ],
   "length": 16.62,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91097,
@@ -11581,6 +11686,9 @@
  {
   "id": "SoSeries",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_SOtender"
+  ],
   "length": 12.83,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91199,
@@ -12400,6 +12508,9 @@
  {
   "id": "bbo214",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_bbotender"
+  ],
   "length": 16.11,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91028,
@@ -15455,6 +15566,9 @@
  {
   "id": "ol49",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_25d49"
+  ],
   "length": 13.09,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91133,
@@ -16472,6 +16586,9 @@
  {
   "id": "pm2",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_34d44"
+  ],
   "length": 14.24,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91155,
@@ -16490,6 +16607,9 @@
  {
   "id": "pm3",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_otuatender"
+  ],
   "length": 14.15,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91156,
@@ -17195,6 +17315,9 @@
  {
   "id": "russian_metro_AB",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_metro_ABv"
+  ],
   "length": 19.0,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91171,
@@ -17263,6 +17386,18 @@
  {
   "id": "russian_service_BR_weimar_long",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_BR_kassel",
+   "DLC3_russian_service_BR_kassel",
+   "DLC3_br80"
+  ],
   "length": 5.26,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "costRUB": 3000.0,
@@ -17278,6 +17413,13 @@
  {
   "id": "russian_service_BR_weimar_short",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_BR_kassel",
+   "DLC3_br80"
+  ],
   "length": 5.26,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "costRUB": 3000.0,
@@ -17293,6 +17435,10 @@
  {
   "id": "russian_service_dampfdrehkran",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_dampfdrehkran_vagon"
+  ],
   "length": 5.46,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91173,
@@ -17311,6 +17457,12 @@
  {
   "id": "russian_service_dampfdrehkran_v2",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_dampfdrehkran_vagon",
+   "DLC3_russian_service_dampfdrehkran_vagon"
+  ],
   "length": 5.46,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "costRUB": 3000.0,
@@ -17359,6 +17511,9 @@
  {
   "id": "russian_service_manual_machine",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_service_manual_machine_vagon"
+  ],
   "length": 3.36,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91176,
@@ -17394,6 +17549,10 @@
  {
   "id": "russian_service_weimar",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_service_weimar_vagon",
+   "DLC3_russian_service_weimar_vagon2"
+  ],
   "length": 5.26,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91178,
@@ -17412,6 +17571,11 @@
  {
   "id": "russian_service_weimar_v2",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_service_weimar_vagon",
+   "DLC3_russian_service_weimar_vagon2",
+   "DLC3_russian_service_weimar_vagon2"
+  ],
   "length": 5.26,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "costRUB": 3000.0,
@@ -17459,6 +17623,12 @@
  {
   "id": "russian_service_ya3",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_service_ya3_vagon",
+   "DLC3_russian_service_ya3_vagon2",
+   "DLC3_russian_service_ya3_vagon2",
+   "DLC3_russian_service_ya3_vagon2"
+  ],
   "length": 13.36,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "costRUB": 3000.0,
@@ -17502,6 +17672,9 @@
  {
   "id": "russian_set_bakuemu",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_tram_bakuemu_v"
+  ],
   "length": 18.72,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91181,
@@ -17545,6 +17718,9 @@
  {
   "id": "russian_steam_p36",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_steam_p36_tender"
+  ],
   "length": 17.35,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91182,
@@ -17580,6 +17756,9 @@
  {
   "id": "russian_steam_su",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_steam_su_tender"
+  ],
   "length": 14.34,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91184,
@@ -17615,6 +17794,9 @@
  {
   "id": "russian_tram_bakuemu",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_russian_tram_bakuemu_v"
+  ],
   "length": 18.72,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91186,
@@ -18282,6 +18464,9 @@
  {
   "id": "ty45",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_32d43"
+  ],
   "length": 13.43,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91214,
@@ -18316,6 +18501,9 @@
  {
   "id": "west_service_steamcrane",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_west_service_steamcrane_vagon"
+  ],
   "length": 8.46,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "nameId": 91218,
@@ -18334,6 +18522,10 @@
  {
   "id": "west_service_steamcrane_v2",
   "category": "dlc3/vehicles",
+  "trainSet": [
+   "DLC3_west_service_steamcrane_vagon2",
+   "DLC3_west_service_steamcrane_vagon"
+  ],
   "length": 8.46,
   "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
   "costUSD": 3000.0,

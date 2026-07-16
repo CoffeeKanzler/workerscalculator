@@ -176,39 +176,6 @@
   "dlc": "cwc"
  },
  {
-  "name": "25D49 (Ol49) Tender",
-  "attrs": {
-   "Typ": "Tender",
-   "Länge": 6.77,
-   "Leergewicht": 15.0,
-   "Von": 1951,
-   "Bis": 1985
-  },
-  "dlc": "dlc3"
- },
- {
-  "name": "32D43 (Ty45) Tender",
-  "attrs": {
-   "Typ": "Tender",
-   "Länge": 8.48,
-   "Leergewicht": 21.0,
-   "Von": 1946,
-   "Bis": 1951
-  },
-  "dlc": "dlc3"
- },
- {
-  "name": "34D44 (Pm2) Tender",
-  "attrs": {
-   "Typ": "Tender",
-   "Länge": 8.22,
-   "Leergewicht": 40.0,
-   "Von": 1930,
-   "Bis": 1982
-  },
-  "dlc": "dlc3"
- },
- {
   "name": "Э-Serie 1912/1926/1931",
   "attrs": {
    "Typ": "Lokomotive",
@@ -220,18 +187,18 @@
    "Max. Geschwindigkeit": 65.0,
    "Antriebsart": "S"
   },
-  "dlc": "dlc3"
- },
- {
-  "name": "E late Tender",
-  "attrs": {
-   "Typ": "Tender",
-   "Länge": 9.09,
-   "Leergewicht": 24.0,
-   "Von": 1912,
-   "Bis": 1978
-  },
-  "dlc": "dlc3"
+  "dlc": "dlc3",
+  "tender": {
+   "name": "E late Tender",
+   "attrs": {
+    "Typ": "Tender",
+    "Länge": 9.09,
+    "Leergewicht": 24.0,
+    "Von": 1912,
+    "Bis": 1978
+   },
+   "dlc": "dlc3"
+  }
  },
  {
   "name": "FD-Serie",
@@ -245,18 +212,18 @@
    "Max. Geschwindigkeit": 85.0,
    "Antriebsart": "S"
   },
-  "dlc": "dlc3"
- },
- {
-  "name": "FD Tender",
-  "attrs": {
-   "Typ": "Tender",
-   "Länge": 12.86,
-   "Leergewicht": 34.0,
-   "Von": 1931,
-   "Bis": 1978
-  },
-  "dlc": "dlc3"
+  "dlc": "dlc3",
+  "tender": {
+   "name": "FD Tender",
+   "attrs": {
+    "Typ": "Tender",
+    "Länge": 12.86,
+    "Leergewicht": 34.0,
+    "Von": 1931,
+    "Bis": 1978
+   },
+   "dlc": "dlc3"
+  }
  },
  {
   "name": "IS-Serie",
@@ -270,18 +237,18 @@
    "Max. Geschwindigkeit": 115.0,
    "Antriebsart": "S"
   },
-  "dlc": "dlc3"
- },
- {
-  "name": "IS Tender",
-  "attrs": {
-   "Typ": "Tender",
-   "Länge": 12.93,
-   "Leergewicht": 34.0,
-   "Von": 1931,
-   "Bis": 1972
-  },
-  "dlc": "dlc3"
+  "dlc": "dlc3",
+  "tender": {
+   "name": "IS Tender",
+   "attrs": {
+    "Typ": "Tender",
+    "Länge": 12.93,
+    "Leergewicht": 34.0,
+    "Von": 1931,
+    "Bis": 1972
+   },
+   "dlc": "dlc3"
+  }
  },
  {
   "name": "Preußische T18 (Oko1)",
@@ -298,17 +265,6 @@
   "dlc": "dlc3"
  },
  {
-  "name": "SO-Tender",
-  "attrs": {
-   "Typ": "Tender",
-   "Länge": 7.55,
-   "Leergewicht": 24.0,
-   "Von": 1924,
-   "Bis": 1978
-  },
-  "dlc": "dlc3"
- },
- {
   "name": "SO-Serie Mod. 1928",
   "attrs": {
    "Typ": "Lokomotive",
@@ -320,7 +276,18 @@
    "Max. Geschwindigkeit": 75.0,
    "Antriebsart": "S"
   },
-  "dlc": "dlc3"
+  "dlc": "dlc3",
+  "tender": {
+   "name": "SO-Tender",
+   "attrs": {
+    "Typ": "Tender",
+    "Länge": 7.55,
+    "Leergewicht": 24.0,
+    "Von": 1924,
+    "Bis": 1978
+   },
+   "dlc": "dlc3"
+  }
  },
  {
   "name": "WR-360 C12",
@@ -348,18 +315,18 @@
    "Max. Geschwindigkeit": 120.0,
    "Antriebsart": "S"
   },
-  "dlc": "dlc3"
- },
- {
-  "name": "BBO214 Tender",
-  "attrs": {
-   "Typ": "Tender",
-   "Länge": 7.11,
-   "Leergewicht": 20.0,
-   "Von": 1928,
-   "Bis": 1962
-  },
-  "dlc": "dlc3"
+  "dlc": "dlc3",
+  "tender": {
+   "name": "BBO214 Tender",
+   "attrs": {
+    "Typ": "Tender",
+    "Länge": 7.11,
+    "Leergewicht": 20.0,
+    "Von": 1928,
+    "Bis": 1962
+   },
+   "dlc": "dlc3"
+  }
  },
  {
   "name": "Br80",
@@ -401,18 +368,18 @@
    "Max. Geschwindigkeit": 100.0,
    "Antriebsart": "S"
   },
-  "dlc": "dlc3"
- },
- {
-  "name": "Pm3 Tender",
-  "attrs": {
-   "Typ": "Tender",
-   "Länge": 7.51,
-   "Leergewicht": 25.0,
-   "Von": 1930,
-   "Bis": 1978
-  },
-  "dlc": "dlc3"
+  "dlc": "dlc3",
+  "tender": {
+   "name": "25D49 (Ol49) Tender",
+   "attrs": {
+    "Typ": "Tender",
+    "Länge": 6.77,
+    "Leergewicht": 15.0,
+    "Von": 1951,
+    "Bis": 1985
+   },
+   "dlc": "dlc3"
+  }
  },
  {
   "name": "Pm2",
@@ -426,7 +393,18 @@
    "Max. Geschwindigkeit": 130.0,
    "Antriebsart": "S"
   },
-  "dlc": "dlc3"
+  "dlc": "dlc3",
+  "tender": {
+   "name": "34D44 (Pm2) Tender",
+   "attrs": {
+    "Typ": "Tender",
+    "Länge": 8.22,
+    "Leergewicht": 40.0,
+    "Von": 1930,
+    "Bis": 1982
+   },
+   "dlc": "dlc3"
+  }
  },
  {
   "name": "Pm3",
@@ -440,7 +418,18 @@
    "Max. Geschwindigkeit": 155.0,
    "Antriebsart": "S"
   },
-  "dlc": "dlc3"
+  "dlc": "dlc3",
+  "tender": {
+   "name": "Pm3 Tender",
+   "attrs": {
+    "Typ": "Tender",
+    "Länge": 7.51,
+    "Leergewicht": 25.0,
+    "Von": 1930,
+    "Bis": 1978
+   },
+   "dlc": "dlc3"
+  }
  },
  {
   "name": "russian_diesel_te1",
@@ -510,7 +499,17 @@
    "Max. Geschwindigkeit": 125.0,
    "Antriebsart": "S"
   },
-  "dlc": "dlc3"
+  "dlc": "dlc3",
+  "tender": {
+   "name": "Dampf P36",
+   "attrs": {
+    "Typ": "Tender",
+    "Länge": 13.93,
+    "Von": 1930,
+    "Bis": 1993
+   },
+   "dlc": "dlc3"
+  }
  },
  {
   "name": "Dampf Su 250",
@@ -524,7 +523,17 @@
    "Max. Geschwindigkeit": 97.0,
    "Antriebsart": "S"
   },
-  "dlc": "dlc3"
+  "dlc": "dlc3",
+  "tender": {
+   "name": "Dampf Su 250",
+   "attrs": {
+    "Typ": "Tender",
+    "Länge": 10.04,
+    "Von": 1930,
+    "Bis": 1993
+   },
+   "dlc": "dlc3"
+  }
  },
  {
   "name": "TKh48",
@@ -566,7 +575,18 @@
    "Max. Geschwindigkeit": 75.0,
    "Antriebsart": "S"
   },
-  "dlc": "dlc3"
+  "dlc": "dlc3",
+  "tender": {
+   "name": "32D43 (Ty45) Tender",
+   "attrs": {
+    "Typ": "Tender",
+    "Länge": 8.48,
+    "Leergewicht": 21.0,
+    "Von": 1946,
+    "Bis": 1951
+   },
+   "dlc": "dlc3"
+  }
  },
  {
   "name": "west_diesel_RSD1",
