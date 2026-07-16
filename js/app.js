@@ -47,8 +47,7 @@ function defaultCity() {
 function saveState() {
   const { statsRecords, ...rest } = state;
   const slim = { ...rest };
-  // keep parsed records (they're small once parsed) but cap at 120 records
-  slim.statsRecords = statsRecords ? statsRecords.slice(-120) : null;
+  slim.statsRecords = statsRecords;
   try { localStorage.setItem(LS_KEY, JSON.stringify(slim)); } catch (e) { /* quota */ }
 }
 
@@ -183,13 +182,22 @@ function selectInput(options, value, onchange, opts = {}) {
 }
 
 // ---------------------------------------------------------------- stats.ini loading
+const MAX_RECORDS = 365;
+
 function handleFile(file) {
   const reader = new FileReader();
   reader.onload = () => {
-    const records = parseStatsIni(reader.result);
+    let records = parseStatsIni(reader.result);
     if (!records.length) {
       alert('No $STAT_RECORD price data found in this file.');
       return;
+    }
+    // Very long games export thousands of snapshots (53 MB files exist);
+    // downsample evenly, always keeping the newest record.
+    if (records.length > MAX_RECORDS) {
+      const step = Math.ceil(records.length / MAX_RECORDS);
+      records = records.filter((r, i) => i % step === 0 || i === records.length - 1);
+      records.forEach((r, i) => { r.index = i; });
     }
     state.statsRecords = records;
     state.statsName = file.name;
