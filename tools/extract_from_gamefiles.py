@@ -139,17 +139,84 @@ def validate(buildings, repo_root):
     print(f'\nmatched {matched} / {len(sheet)} sheet buildings ({unmatched} unmatched)')
 
 
+VEHICLE_DIRS = ['vehicles', 'trains', 'airplanes', 'helicopters', 'ships']
+
+VEHICLE_SCALARS = {
+    'NAME': ('nameId', int), 'DESCRIPTION': ('descriptionId', int),
+    'COST_RUB': ('costRUB', float), 'COST_USD': ('costUSD', float),
+    'MOVEMENT_SPEED': ('speed', float), 'MOVEMENT_POWER_KW': ('powerKW', float),
+    'MOVEMENT_EMPTY_WEIGHT': ('emptyWeight', float),
+    'MOVEMENT_CONSPUMPTION': ('consumption', float),
+    'RESOURCE_CAPACITY': ('capacity', float),
+    'COUNTRY': ('countryId', int),
+}
+
+
+def parse_vehicle(path, category):
+    v = {'id': os.path.basename(os.path.dirname(path)), 'category': category}
+    try:
+        text = open(path, encoding='utf-8', errors='replace').read()
+    except OSError:
+        return None
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line.startswith('$'):
+            continue
+        parts = line[1:].split()
+        key, args = parts[0], parts[1:]
+        try:
+            if key in VEHICLE_SCALARS and args:
+                field, conv = VEHICLE_SCALARS[key]
+                v[field] = conv(float(args[0])) if conv is int else conv(args[0])
+            elif key == 'TYPE' and args:
+                v['type'] = args[0]
+            elif key == 'RESOURCE_TRANSPORT_TYPE' and args:
+                v['transportType'] = args[0]
+            elif key == 'AVAILABLE' and len(args) >= 2:
+                v['from'] = int(float(args[0]))
+                v['to'] = int(float(args[1]))
+            elif key.startswith('TRAINGROUP_'):
+                v['trainGroup'] = key[len('TRAINGROUP_'):].lower()
+        except (ValueError, IndexError):
+            pass
+    return v if 'type' in v else None
+
+
+def extract_vehicles(media):
+    out = []
+    for d in VEHICLE_DIRS:
+        root = os.path.join(media, d)
+        if not os.path.isdir(root):
+            continue
+        for sub in sorted(os.listdir(root)):
+            script = os.path.join(root, sub, 'script.ini')
+            if os.path.isfile(script):
+                v = parse_vehicle(script, d)
+                if v:
+                    out.append(v)
+    return out
+
+
 def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     media = sys.argv[1]
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    buildings = extract_buildings(media)
     outdir = os.path.join(repo_root, 'data', 'game')
     os.makedirs(outdir, exist_ok=True)
+
+    buildings = extract_buildings(media)
     with open(os.path.join(outdir, 'buildings_raw.json'), 'w') as f:
         json.dump(buildings, f, ensure_ascii=False, indent=1)
     print(f'buildings with economic data: {len(buildings)} -> data/game/buildings_raw.json')
+
+    vehicles = extract_vehicles(media)
+    with open(os.path.join(outdir, 'vehicles_raw.json'), 'w') as f:
+        json.dump(vehicles, f, ensure_ascii=False, indent=1)
+    from collections import Counter
+    print(f'vehicles: {len(vehicles)} -> data/game/vehicles_raw.json '
+          f'{dict(Counter(v["category"] for v in vehicles))}')
+
     if '--validate' in sys.argv:
         validate(buildings, repo_root)
 
