@@ -33,6 +33,13 @@ GitHub Pages web app from the community planning spreadsheet
 - **LowTech research** – point calculator for the community rule by DasBreitschwert.
 - German / English UI (game terms extracted from the sheet's translation table).
 
+**Live: https://coffeekanzler.github.io/workerscalculator/**
+
+Credit: all game data and planning formulas originate from the community
+spreadsheet by **project7_2020**. See [CONTRIBUTING.md](CONTRIBUTING.md) for how
+to update data/formulas (including a German guide for the sheet author) and
+[ROADMAP.md](ROADMAP.md) for planned improvements.
+
 ## Development
 
 Static site, no build step. Serve the folder with any web server:
