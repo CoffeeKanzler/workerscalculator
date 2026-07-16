@@ -47,7 +47,13 @@ header h1 {
 .dropzone.over, .dropzone:hover { background: rgba(199, 74, 58, 0.22); }
 .hidden { display: none; }
 
-.langswitch { margin-left: auto; display: flex; gap: 2px; }
+.sharebtns { margin-left: auto; display: flex; gap: 4px; }
+.sharebtns button, .iconbtn {
+  background: var(--panel2); border: 1px solid var(--border); border-radius: 5px;
+  padding: 5px 10px; cursor: pointer; font-size: 14px; color: var(--text);
+}
+.sharebtns button:hover, .iconbtn:hover { border-color: var(--accent); }
+.langswitch { display: flex; gap: 2px; }
 .langswitch button, nav button {
   background: var(--panel2); color: var(--muted); border: 1px solid var(--border);
   padding: 5px 12px; cursor: pointer; border-radius: 5px; font-weight: 600;

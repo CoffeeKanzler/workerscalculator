@@ -46,6 +46,10 @@ export const STRINGS = {
     inputPriceSell: 'Verkaufspreis (wie Spreadsheet)',
     inputPriceBuy: 'Kaufpreis (Import-Sicht)',
     includeDelivery: 'Lieferkosten pro Tonne einrechnen',
+    exportPlan: 'Plan als Datei exportieren',
+    importPlan: 'Plan aus Datei importieren',
+    shareLink: 'Teilen-Link kopieren',
+    shareCopied: 'Link in die Zwischenablage kopiert!',
   },
   en: {
     appTitle: 'W&R: Soviet Republic – Economy Planner',
@@ -93,5 +97,9 @@ export const STRINGS = {
     inputPriceSell: 'sell price (like the spreadsheet)',
     inputPriceBuy: 'buy price (import view)',
     includeDelivery: 'Include per-ton delivery cost',
+    exportPlan: 'Export plan as file',
+    importPlan: 'Import plan from file',
+    shareLink: 'Copy share link',
+    shareCopied: 'Link copied to clipboard!',
   },
 };

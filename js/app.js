@@ -1,6 +1,12 @@
 import { STRINGS } from './i18n.js';
 import { parseStatsIni, recordToPrices } from './statsini.js';
 import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js';
+import { stateToFragment, fragmentToState, downloadJson } from './share.js';
+
+const TABS = ['prices', 'production', 'analysis', 'city', 'trains', 'research', 'help'];
+// Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
+const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
+  'cities', 'activeCity', 'vanillaOnly', 'train', 'lowtech', 'calcOpts'];
 
 // ---------------------------------------------------------------- state
 const LS_KEY = 'wr-planner-v1';
@@ -242,6 +248,12 @@ function renderHeader() {
       el('label', {}, t('currency') + ' ',
         selectInput([['RUB', '₽ Rubel'], ['USD', '$ Dollar']], state.currency,
           v => { state.currency = v; state.plan.settings.currency = v; })),
+      el('div', { class: 'sharebtns' },
+        el('button', { title: t('exportPlan'), onclick: exportPlan }, '⬇'),
+        el('label', { title: t('importPlan'), class: 'iconbtn' }, '⬆',
+          el('input', { type: 'file', accept: '.json', class: 'hidden',
+            onchange: e => e.target.files[0] && importPlan(e.target.files[0]) })),
+        el('button', { title: t('shareLink'), onclick: shareLink }, '🔗')),
       el('div', { class: 'langswitch' },
         ...['de', 'en'].map(l => el('button', {
           class: state.lang === l ? 'active' : '',
@@ -250,14 +262,12 @@ function renderHeader() {
 }
 
 function renderTabs() {
-  const tabs = [
-    ['prices', 'tabPrices'], ['production', 'tabProduction'], ['analysis', 'tabAnalysis'],
-    ['city', 'tabCity'], ['trains', 'tabTrains'], ['research', 'tabResearch'], ['help', 'tabHelp'],
-  ];
-  return el('nav', {}, ...tabs.map(([id, label]) => el('button', {
+  const labels = { prices: 'tabPrices', production: 'tabProduction', analysis: 'tabAnalysis',
+    city: 'tabCity', trains: 'tabTrains', research: 'tabResearch', help: 'tabHelp' };
+  return el('nav', {}, ...TABS.map(id => el('button', {
     class: state.tab === id ? 'active' : '',
     onclick: () => { state.tab = id; update(); },
-  }, t(label))));
+  }, t(labels[id]))));
 }
 
 function renderCurrentTab() {
@@ -760,16 +770,80 @@ function renderHelp() {
       de ? 'Original-Spreadsheet' : 'Original spreadsheet')));
 }
 
+// ---------------------------------------------------------------- share / routing
+function sharedState() {
+  return Object.fromEntries(SHARE_KEYS.map(k => [k, state[k]]));
+}
+
+function applySharedState(obj) {
+  for (const k of SHARE_KEYS) if (obj[k] !== undefined) state[k] = obj[k];
+}
+
+function exportPlan() {
+  downloadJson(sharedState(), 'wr-plan.json');
+}
+
+function importPlan(file) {
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      applySharedState(JSON.parse(reader.result));
+      update();
+    } catch (e) { alert('Invalid plan file: ' + e.message); }
+  };
+  reader.readAsText(file);
+}
+
+async function shareLink() {
+  const frag = await stateToFragment(sharedState());
+  const url = `${location.origin}${location.pathname}#s=${frag}`;
+  try {
+    await navigator.clipboard.writeText(url);
+    alert(t('shareCopied'));
+  } catch (e) {
+    prompt(t('shareLink'), url);
+  }
+}
+
+function syncHash() {
+  const want = '#/' + state.tab;
+  if (location.hash !== want) history.replaceState(null, '', want);
+}
+
+async function applyHash() {
+  const h = location.hash;
+  if (h.startsWith('#s=')) {
+    try {
+      applySharedState(await fragmentToState(h.slice(3)));
+    } catch (e) { console.warn('bad share link', e); }
+    history.replaceState(null, '', '#/' + state.tab);
+  } else if (h.startsWith('#/') && TABS.includes(h.slice(2))) {
+    state.tab = h.slice(2);
+  }
+}
+
+window.addEventListener('hashchange', () => {
+  const h = location.hash;
+  if (h.startsWith('#/') && TABS.includes(h.slice(2)) && h.slice(2) !== state.tab) {
+    state.tab = h.slice(2);
+    update();
+  }
+});
+
 // ---------------------------------------------------------------- boot
 function update() {
   saveState();
+  syncHash();
   render();
 }
 
 loadState();
 state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.calcOpts || {}) };
-loadData().then(() => {
+loadData().then(async () => {
+  await applyHash();
   if (!state.cities.length) state.cities.push(defaultCity());
+  saveState();
+  syncHash();
   render();
 }).catch(err => {
   $('#app').textContent = 'Failed to load data files: ' + err +
