@@ -590,13 +590,7 @@
   "de": "Eisenbahn-Fertigungslinie",
   "en": "Railway production line",
   "workers": 400.0,
-  "production": [
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 400.0
-   }
-  ],
+  "production": [],
   "consumption": [
    {
     "de": "Stahl",
@@ -795,13 +789,7 @@
   "de": "Fahrzeug-Fertigungslinie",
   "en": "Vehicle production line",
   "workers": 400.0,
-  "production": [
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 400.0
-   }
-  ],
+  "production": [],
   "consumption": [
    {
     "de": "Stahl",
@@ -860,13 +848,7 @@
   "de": "Flugzeugproduktionslinie",
   "en": "Airplane production line",
   "workers": 500.0,
-  "production": [
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 500.0
-   }
-  ],
+  "production": [],
   "consumption": [
    {
     "de": "Stahl",
@@ -935,11 +917,6 @@
     "de": "Kernbrennstoff",
     "en": "nuclear fuel",
     "rate": 0.095
-   },
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 50.0
    }
   ],
   "consumption": [
@@ -952,11 +929,6 @@
     "de": "Chemikalien",
     "en": "chemicals",
     "rate": 0.75
-   },
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 50.0
    },
    {
     "de": "Strom",
@@ -990,13 +962,7 @@
   "de": "Trockendock (groß)",
   "en": "Dry dock (big)",
   "workers": 400.0,
-  "production": [
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 400.0
-   }
-  ],
+  "production": [],
   "consumption": [
    {
     "de": "Stahl",
@@ -1139,11 +1105,6 @@
     "de": "UF6",
     "en": "UF6",
     "rate": 0.96
-   },
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 80.0
    }
   ],
   "consumption": [
@@ -2836,11 +2797,6 @@
     "de": "Gebrauchter Kernbrennstoff",
     "en": "Spent nuclear fuel",
     "rate": 0.02
-   },
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 40.0
    }
   ],
   "consumption": [
@@ -2848,11 +2804,6 @@
     "de": "Kernbrennstoff",
     "en": "nuclear fuel",
     "rate": 0.04
-   },
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 40.0
    },
    {
     "de": "Wasser",
@@ -2896,11 +2847,6 @@
     "de": "Gebrauchter Kernbrennstoff",
     "en": "Spent nuclear fuel",
     "rate": 0.04
-   },
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 80.0
    }
   ],
   "consumption": [
@@ -2908,11 +2854,6 @@
     "de": "Kernbrennstoff",
     "en": "nuclear fuel",
     "rate": 0.08
-   },
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 80.0
    },
    {
     "de": "Wasser",
@@ -3132,11 +3073,6 @@
     "de": "Gebrauchter Kernbrennstoff",
     "en": "Spent nuclear fuel",
     "rate": 0.0225
-   },
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 45.0
    }
   ],
   "consumption": [
@@ -3144,11 +3080,6 @@
     "de": "Kernbrennstoff",
     "en": "nuclear fuel",
     "rate": 0.045
-   },
-   {
-    "de": "vehicles",
-    "en": "vehicles",
-    "rate": 45.0
    },
    {
     "de": "Wasser",

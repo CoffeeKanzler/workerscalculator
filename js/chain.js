@@ -109,10 +109,16 @@ export function solveChain(goalKey, amount, buildings, eco, opts = {}) {
     // converged?
     let stable = true;
     for (const [k, v] of next) {
-      if (Math.abs((demands.get(k) ?? 0) - v) > 1e-6) { stable = false; break; }
+      if (Math.abs((demands.get(k) ?? 0) - v) > Math.max(1e-6, v * 1e-6)) { stable = false; break; }
     }
+    const prevTotal = [...demands.values()].reduce((a, b) => a + b, 0);
+    const nextTotal = [...next.values()].reduce((a, b) => a + b, 0);
     demands = next;
     if (stable && pass > 0) break;
+    // runaway cycle (a chain that consumes more of a resource than it makes)
+    if (pass > 20 && nextTotal > prevTotal * 1.05) {
+      return { rows: [], totals: {}, byproducts: new Map(), demands, diverged: true };
+    }
   }
 
   // assemble result rows

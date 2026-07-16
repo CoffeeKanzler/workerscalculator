@@ -8,6 +8,24 @@ const { resources, defaults } = JSON.parse(readFileSync(new URL('../data/resourc
 const gameBuildings = JSON.parse(readFileSync(new URL('../data/game/production_buildings.json', import.meta.url)));
 const eco = new Economy(resources, defaults);
 
+test('vehicles/trains transit markers are excluded from the dataset', () => {
+  for (const b of gameBuildings) {
+    for (const p of [...b.production, ...b.consumption]) {
+      assert.ok(!['vehicles', 'trains'].includes(eco.keyForName(p.de)),
+        `${b.de} has pseudo-resource ${p.de}`);
+    }
+  }
+});
+
+test('nuclear power chain converges (Zaporozie reactor)', () => {
+  const r = solveChain('eletric', 5850, gameBuildings, eco,
+    { producerChoice: new Map([['eletric', 'Zaporozie Reactor']]) });
+  assert.ok(!r.diverged, 'chain diverged');
+  const row = r.rows.find(x => x.key === 'eletric');
+  assert.equal(row.building.de, 'Zaporozie Reactor');
+  assert.ok(r.rows.find(x => x.key === 'nuclearfuel'), 'fuel chain present');
+});
+
 test('producers index covers core resources', () => {
   const idx = producersByResource(gameBuildings, eco);
   for (const key of ['steel', 'eletric', 'bricks', 'fuel', 'food', 'clothes']) {

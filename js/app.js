@@ -544,6 +544,13 @@ function renderChain() {
       type: 'checkbox', checked: ch.includeUtilities,
       onchange: e => { ch.includeUtilities = e.target.checked; update(); } })));
 
+  if (result.diverged) {
+    return el('section', {},
+      el('p', { class: 'hint' }, t('chainHint')),
+      settings,
+      el('p', { class: 'neg' }, t('chainDiverged')));
+  }
+
   const rows = [...result.rows].sort((a, b) => (a.imported ? 1 : 0) - (b.imported ? 1 : 0) || b.demand - a.demand);
   const tbl = el('table', { class: 'data wide' },
     el('thead', {}, el('tr', {},

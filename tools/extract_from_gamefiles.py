@@ -367,11 +367,14 @@ def build_dataset(buildings, repo_root, loc):
             name_de = f'{name_de} ({int(g["workers"])} 👷)'
             name_en = f'{name_en} ({int(g["workers"])} 👷)'
 
-        heat_only = set(g['production']) == {'heat'}
+        # 'vehicles'/'trains' entries are service-vehicle transit markers in the
+        # inis (produced AND consumed 1:1), not real economic output.
+        PSEUDO = {'vehicles', 'trains'}
+        heat_only = set(g['production']) - PSEUDO == {'heat'}
         prods, cons = [], []
         for key, rate in g['production'].items():
             r = bykey.get(key)
-            if not r:
+            if not r or key in PSEUDO:
                 continue
             if heat_only and s:
                 # heating output does not follow the ×workers rule; trust the sheet
@@ -383,7 +386,7 @@ def build_dataset(buildings, repo_root, loc):
             prods.append({'de': r['de'], 'en': r['en'], 'rate': round(tday, 4)})
         for key, rate in g['consumption'].items():
             r = bykey.get(key)
-            if not r:
+            if not r or key in PSEUDO:
                 continue
             tday = rate * g['workers'] if g['workers'] else rate
             cons.append({'de': r['de'], 'en': r['en'], 'rate': round(tday, 4)})

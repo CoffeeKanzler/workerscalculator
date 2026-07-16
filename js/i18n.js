@@ -58,6 +58,7 @@ export const STRINGS = {
     chainImportCost: 'Importkosten', chainRevenue: 'Erlös (Ziel-Ware)',
     chainImportBill: 'Import-Rechnung', chainByproducts: 'Überschüsse / Nebenprodukte',
     chainHint: 'Gib ein Ziel vor – die komplette Produktionskette wird rückwärts berechnet. Jede Zwischenware kannst du stattdessen importieren oder den Produzenten wechseln.',
+    chainDiverged: 'Diese Kette konvergiert nicht (ein Kreislauf verbraucht mehr als er erzeugt). Wechsle einen Produzenten oder importiere eine Zwischenware.',
   },
   en: {
     appTitle: 'W&R: Soviet Republic – Economy Planner',
@@ -117,5 +118,6 @@ export const STRINGS = {
     chainImportCost: 'Import cost', chainRevenue: 'Revenue (goal resource)',
     chainImportBill: 'Import bill', chainByproducts: 'Surplus / byproducts',
     chainHint: 'State a goal – the whole production chain is computed backwards. Switch any intermediate to import instead, or pick a different producer.',
+    chainDiverged: 'This chain does not converge (a cycle consumes more than it produces). Switch a producer or import an intermediate resource.',
   },
 };
