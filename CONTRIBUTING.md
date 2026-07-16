@@ -155,6 +155,13 @@ Diese Web-App ist aus deinem Spreadsheet gebaut – Formeln und Spieldaten wurde
 extrahiert und laufen jetzt komplett im Browser (nichts wird hochgeladen):
 **https://coffeekanzler.github.io/workerscalculator/**
 
+**Update Juli 2026:** Produktions-/Verbrauchsraten und Gebäudenamen kommen
+inzwischen direkt aus den Spieldateien (`tools/extract_from_gamefiles.py`) –
+dein Sheet bleibt die Quelle für alles Gemessene: Stromverbrauch, Wasser, Müll,
+Baukosten pro Gebäude, die komplette Stadtplanungs-Daten und die
+Planungs-Konstanten (jetzt einzeln editierbar in `js/community_constants.js`).
+Die App kann zwischen beiden Datensätzen umschalten.
+
 Wenn du dein Sheet aktualisierst, kommen die Änderungen so in die App:
 
 1. Sheet als **.xlsx herunterladen** (Datei → Herunterladen → Microsoft Excel).
