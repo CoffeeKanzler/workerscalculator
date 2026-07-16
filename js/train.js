@@ -7,16 +7,6 @@ function vehicleMap(vehicles) {
     : new Map(vehicles.map(vehicle => [vehicle.name, vehicle]));
 }
 
-export function normalizeConsist(consist, vehicles) {
-  const byName = vehicleMap(vehicles);
-  const tenderNames = new Set([...byName.values()]
-    .map(vehicle => vehicle.tender?.name)
-    .filter(Boolean));
-  return consist.filter(segment =>
-    byName.get(segment.name)?.attrs?.Typ !== 'Tender'
-    && !tenderNames.has(segment.name));
-}
-
 export function expandConsist(consist, vehicles) {
   const byName = vehicleMap(vehicles);
   const expanded = [];

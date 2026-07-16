@@ -4,6 +4,9 @@ import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowT
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=11';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=11';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=11';
+import {
+  isLocomotive, evaluateConsist, eraOk, recommendTrain,
+} from './train.js?v=12';
 
 const TABS = ['prices', 'production', 'chain', 'analysis', 'city', 'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
@@ -87,7 +90,7 @@ async function loadData() {
     resources: res.resources, defaults: res.defaults,
     prodSets: { sheet: prod, game: prodGame },
     cityBuildings: city,
-    // game-only rail vehicles (steam locos, tenders, DLC engines) join the pool
+    // Game-only rail vehicles join the pool; hard-attached tenders stay nested.
     vehicles: veh.vehicles.concat(rail),
     decades: dec,
   };
@@ -842,60 +845,11 @@ function vehicleCost(v, eco, currency) {
   return cost;
 }
 
-function eraOk(v, year) {
-  if (!year) return true;
-  const from = v.attrs['Von'] ?? 0;
-  const to = typeof v.attrs['Bis'] === 'number' ? v.attrs['Bis'] : 3000;
-  return from <= year && year <= to;
-}
-
-// Recommend a consist: best wagon (t per meter) for each requested cargo,
-// then the loco reaching the kW/t target with the least train length.
-function recommendTrain(tr, locos, wagons, resDeNames) {
-  const year = tr.year || null;
-  const wants = tr.reco.rows.filter(r => r.cargo && r.tons > 0);
-  const consist = [];
-  let wagonWeight = 0, wagonLen = 0;
-  for (const want of wants) {
-    const cands = wagons.filter(w => (w.attrs[want.cargo] ?? 0) > 0 && eraOk(w, year) && (w.attrs['Länge'] ?? 0) > 0);
-    if (!cands.length) continue;
-    const best = cands.reduce((a, b) =>
-      (b.attrs[want.cargo] / b.attrs['Länge'] > a.attrs[want.cargo] / a.attrs['Länge']) ? b : a);
-    const n = Math.ceil(want.tons / best.attrs[want.cargo]);
-    consist.push({ name: best.name, count: n, cargo: want.cargo });
-    wagonWeight += n * ((best.attrs['Leergewicht'] ?? 0) + best.attrs[want.cargo]);
-    wagonLen += n * best.attrs['Länge'];
-  }
-  if (!consist.length) return null;
-  const kwt = tr.reco.kwt || 2;
-  let bestPick = null;
-  for (const l of locos) {
-    if (!eraOk(l, year)) continue;
-    if (tr.reco.drive !== 'all' && l.attrs['Antriebsart'] !== tr.reco.drive) continue;
-    const power = l.attrs['Motorleistung'] ?? 0;
-    const lw = l.attrs['Leergewicht'] ?? 0;
-    const llen = l.attrs['Länge'] ?? 0;
-    const denom = power - kwt * lw;
-    if (denom <= 0) continue;
-    const n = Math.max(1, Math.ceil(kwt * wagonWeight / denom));
-    if (n > 6) continue;
-    const totalLen = wagonLen + n * llen;
-    const score = totalLen; // shortest train wins, tie: fewer locos
-    if (!bestPick || score < bestPick.score || (score === bestPick.score && n < bestPick.n)) {
-      bestPick = { loco: l, n, score };
-    }
-  }
-  if (bestPick) consist.unshift({ name: bestPick.loco.name, count: bestPick.n, cargo: null });
-  return consist;
-}
-
 function renderTrains() {
   const tr = state.train;
   const consist = trainConsist();
   const byName = new Map(DATA.vehicles.map(v => [v.name, v]));
-  const isLoco = v => ['Lokomotive', 'Triebwagen'].includes(v.attrs['Typ']);
-  // loco menu also offers tenders (steam locos need one coupled)
-  const locos = DATA.vehicles.filter(v => isLoco(v) || v.attrs['Typ'] === 'Tender')
+  const locos = DATA.vehicles.filter(isLocomotive)
     .sort((a, b) => (b.attrs['Motorleistung'] ?? 0) - (a.attrs['Motorleistung'] ?? 0));
   const wagons = DATA.vehicles.filter(v => ['Güterwagon', 'Passagierwagen'].includes(v.attrs['Typ']));
 
@@ -914,9 +868,6 @@ function renderTrains() {
   };
   const locoLabel = l => {
     const a = l.attrs;
-    if (a['Typ'] === 'Tender') {
-      return `${l.name} — Tender, ${a['Länge'] ?? '?'} m (${a['Von'] ?? '?'}–${a['Bis'] ?? '?'})`;
-    }
     return `${l.name} — ${fmt(a['Motorleistung'] ?? 0, 0)} kW, ${fmt(a['Max. Geschwindigkeit'] ?? 0, 0)} km/h, `
       + `${a['Länge'] ?? '?'} m, ${a['Antriebsart'] ?? '?'} (${a['Von'] ?? '?'}–${a['Bis'] ?? '?'})`;
   };
@@ -927,13 +878,7 @@ function renderTrains() {
     const seg = consist.find(s => s.name === name && s.cargo === cargo);
     if (seg) { seg.count++; update(); return; }
     const entry = { name, count: 1, cargo };
-    const isTender = byName.get(name)?.attrs['Typ'] === 'Tender';
-    if (isTender) {
-      // couple the tender directly behind the last locomotive
-      let lastLoco = -1;
-      consist.forEach((s, i) => { if (isLoco(byName.get(s.name) ?? { attrs: {} })) lastLoco = i; });
-      consist.splice(lastLoco + 1, 0, entry);
-    } else if (front) {
+    if (front) {
       consist.unshift(entry);
     } else {
       consist.push(entry);
@@ -972,12 +917,12 @@ function renderTrains() {
     el('label', {}, t('drive') + ' ',
       selectInput([['all', t('all')], ['D', 'Diesel'], ['E', 'E'], ['S', 'Dampf/Steam']], reco.drive, v => reco.drive = v)),
     el('button', { class: 'primary', onclick: () => {
-      const rec = recommendTrain(tr, locos, wagons, resDeNames);
+      const rec = recommendTrain(tr, locos, wagons);
       if (rec) { tr.consist = rec; update(); }
     } }, '⚙ ' + t('recommend')));
 
   // ---- wagon table (click = add)
-  const usedLen = consist.reduce((a, s) => a + (byName.get(s.name)?.attrs['Länge'] ?? 0) * s.count, 0);
+  const usedLen = evaluateConsist(consist, byName, resDeNames).totalLength;
   const rows = wagons
     .filter(w => (w.attrs[tr.cargo] ?? 0) > 0 && eraOk(w, tr.year))
     .map(w => ({
@@ -1005,36 +950,25 @@ function renderTrains() {
       el('td', {}, el('button', {}, '+'))))));
 
   // ---- consist evaluation
-  const segs = consist.map((s, origIdx) => ({ ...s, origIdx, v: byName.get(s.name) })).filter(s => s.v);
-  for (const s of segs) {
+  const editableSegs = consist
+    .map((s, origIdx) => ({ ...s, origIdx, v: byName.get(s.name) }))
+    .filter(s => s.v);
+  for (const s of editableSegs) {
     // migrated/legacy segments: assign the first cargo the wagon can carry
-    if (!s.cargo && !isLoco(s.v)) {
+    if (!s.cargo && !isLocomotive(s.v)) {
       s.cargo = Object.keys(s.v.attrs).find(k => resDeNames.has(k) && s.v.attrs[k] > 0) ?? null;
       const orig = consist.find(c => c.name === s.name && !c.cargo);
       if (orig) orig.cargo = s.cargo;
     }
   }
-  const totalLen = segs.reduce((a, s) => a + (s.v.attrs['Länge'] ?? 0) * s.count, 0);
-  const powerKW = segs.filter(s => isLoco(s.v)).reduce((a, s) => a + (s.v.attrs['Motorleistung'] ?? 0) * s.count, 0);
-  const emptyW = segs.reduce((a, s) => a + (s.v.attrs['Leergewicht'] ?? 0) * s.count, 0);
-  const capacities = new Map();
-  for (const s of segs) {
-    if (isLoco(s.v) || !s.cargo) continue;
-    const cap = s.v.attrs[s.cargo];
-    if (cap > 0) capacities.set(s.cargo, (capacities.get(s.cargo) ?? 0) + cap * s.count);
-  }
-  const cargoW = [...capacities.entries()].filter(([k]) => k !== 'Passagiere').reduce((a, [, v]) => a + v, 0);
-  const loadedW = emptyW + cargoW;
-  const kwPerT = loadedW ? powerKW / loadedW : 0;
-  // Train speed = slowest vehicle WITH a limit. Wagons carry no speed limit in
-  // the game files, so in practice this is the locomotive's maximum.
-  const speeds = segs.map(s => s.v.attrs['Max. Geschwindigkeit']).filter(x => x > 0);
-  const vmax = speeds.length ? Math.min(...speeds) : null;
+  const evaluated = evaluateConsist(consist, byName, resDeNames);
+  const segs = evaluated.segments.map(s => ({ ...s, v: s.vehicle, origIdx: s.sourceIndex }));
+  const {
+    totalLength: totalLen, powerKW, emptyWeight: emptyW, capacities,
+    loadedWeight: loadedW, kwPerT, maxSpeed: vmax,
+    availableFrom: eraFrom, isElectric,
+  } = evaluated;
   const totalCost = segs.reduce((a, s) => a + vehicleCost(s.v, eco, state.currency) * s.count, 0);
-  const eraFrom = Math.max(0, ...segs.map(s => s.v.attrs['Von'] ?? 0));
-  const isElectric = segs.some(s => isLoco(s.v) && s.v.attrs['Antriebsart'] === 'E');
-  const hasSteam = segs.some(s => isLoco(s.v) && s.v.attrs['Antriebsart'] === 'S');
-  const hasTender = segs.some(s => s.v.attrs['Typ'] === 'Tender');
   const kwCls = kwPerT >= 2 ? 'pos' : kwPerT >= 1 ? 'warn' : 'neg';
 
   // ---- visual train (SVG, widths proportional to real lengths)
@@ -1062,7 +996,7 @@ function renderTrains() {
   let x = 2;
   for (const s of segs) {
     const len = s.v.attrs['Länge'] ?? 10;
-    const loco = isLoco(s.v);
+    const loco = isLocomotive(s.v);
     const color = loco ? 'var(--accent)' : (CARGO_COLORS[s.v.attrs['Frachtart']] ?? '#666');
     for (let i = 0; i < s.count; i++) {
       const g = document.createElementNS(svgNS, 'g');
@@ -1094,15 +1028,24 @@ function renderTrains() {
 
   // ---- consist editor
   const editor = el('div', { class: 'consist' },
-    segs.length ? null : el('p', { class: 'hint' }, t('trainHint')),
-    ...segs.map(s => el('div', { class: 'consistseg' },
-      el('i', { style: `background:${isLoco(s.v) ? 'var(--accent)' : (CARGO_COLORS[s.v.attrs['Frachtart']] ?? '#666')}` }),
-      el('span', { class: 'segname' }, s.name + (s.cargo && !isLoco(s.v) ? ` → ${cargoLabel(s.cargo)}` : '')),
-      numInput(s.count, v => {
-        consist[s.origIdx].count = Math.max(0, Math.round(v));
-        if (!consist[s.origIdx].count) consist.splice(s.origIdx, 1);
-      }, { min: 0, step: 1 }),
-      el('button', { class: 'danger', onclick: () => { consist.splice(s.origIdx, 1); update(); } }, '✕'))));
+    editableSegs.length ? null : el('p', { class: 'hint' }, t('trainHint')),
+    ...editableSegs.flatMap(s => {
+      const rows = [el('div', { class: 'consistseg' },
+        el('i', { style: `background:${isLocomotive(s.v) ? 'var(--accent)' : (CARGO_COLORS[s.v.attrs['Frachtart']] ?? '#666')}` }),
+        el('span', { class: 'segname' }, s.name + (s.cargo && !isLocomotive(s.v) ? ` → ${cargoLabel(s.cargo)}` : '')),
+        numInput(s.count, v => {
+          consist[s.origIdx].count = Math.max(0, Math.round(v));
+          if (!consist[s.origIdx].count) consist.splice(s.origIdx, 1);
+        }, { min: 0, step: 1 }),
+        el('button', { class: 'danger', onclick: () => { consist.splice(s.origIdx, 1); update(); } }, '✕'))];
+      if (isLocomotive(s.v) && s.v.tender) {
+        rows.push(el('div', { class: 'consistseg locked' },
+          el('i', { style: 'background:#666' }),
+          el('span', { class: 'segname' }, s.v.tender.name),
+          el('span', { class: 'locklabel' }, `${s.count} × ${t('included')}`)));
+      }
+      return rows;
+    }));
 
   const summary = el('div', { class: 'totalsbox' },
     el('h3', {}, t('yourTrain')),
@@ -1117,7 +1060,6 @@ function renderTrains() {
     kv(t('from'), eraFrom ? String(eraFrom) : '—'),
     kv(`${t('prodCost')} ${cur()}`, fmt(totalCost, 0)),
     isElectric ? el('p', { class: 'hint' }, t('catenaryNote')) : null,
-    hasSteam && !hasTender ? el('p', { class: 'warn' }, t('steamTenderNote')) : null,
     el('p', { class: 'hint' }, t('wagonSpeedNote')),
     el('p', { class: 'hint' }, t('powerHint')));
 

@@ -159,6 +159,8 @@ button.primary:hover { filter: brightness(1.15); }
 .consistseg i { width: 14px; height: 10px; border-radius: 2px; flex: none; }
 .consistseg .segname { flex: 1; }
 .consistseg input.num { width: 64px; }
+.consistseg.locked { color: var(--muted); padding-left: 22px; }
+.consistseg.locked .locklabel { font-size: 12px; }
 
 table.selectable tbody tr { cursor: pointer; }
 table.selectable tbody tr.selected td { background: rgba(199, 74, 58, 0.18); }

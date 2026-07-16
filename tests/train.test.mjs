@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
-  expandConsist, normalizeConsist, evaluateConsist, recommendTrain,
+  expandConsist, evaluateConsist, recommendTrain,
 } from '../js/train.js';
 
 const rail = JSON.parse(readFileSync(new URL('../data/game/rail_vehicles.json', import.meta.url)));
@@ -45,13 +45,6 @@ const wagon = {
   },
 };
 const vehicles = [steam, tankEngine, wagon, tender];
-
-test('legacy manual tenders are removed from persisted consist', () => {
-  assert.deepEqual(normalizeConsist([
-    { name: 'FD', count: 1 },
-    { name: 'FD Tender', count: 1 },
-  ], [steam, tankEngine, wagon]), [{ name: 'FD', count: 1 }]);
-});
 
 test('each locomotive instance expands to an adjacent locked tender', () => {
   const expanded = expandConsist([{ name: 'FD', count: 2 }], vehicles);
