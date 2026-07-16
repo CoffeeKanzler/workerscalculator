@@ -1,8 +1,8 @@
-import { STRINGS } from './i18n.js?v=7';
-import { parseStatsIni, recordToPrices } from './statsini.js?v=7';
-import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=7';
-import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=7';
-import { solveChain, producersByResource, defaultProducer } from './chain.js?v=7';
+import { STRINGS } from './i18n.js?v=8';
+import { parseStatsIni, recordToPrices } from './statsini.js?v=8';
+import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=8';
+import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=8';
+import { solveChain, producersByResource, defaultProducer } from './chain.js?v=8';
 
 const TABS = ['prices', 'production', 'chain', 'analysis', 'city', 'trains', 'research', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
@@ -808,12 +808,33 @@ function utilizationCell(u) {
 }
 
 // ---------------------------------------------------------------- trains tab
+const CARGO_COLORS = {
+  'Kipper': '#8a6d3b', 'Offene Ladefläche': '#7a8a4a', 'Abgedeckte Ladefläche': '#4a7a8a',
+  'Flüssigkeitstank': '#5b5b8a', 'Kühlung': '#4a8a7d', 'Passagiere': '#8a4a6b',
+  'Staubgut-Behälter': '#8a7d4a', 'Beton': '#6f6f6f', 'Müll': '#556b2f',
+  'Vieh': '#a0785a', 'Ladung': '#4a6d8a',
+};
+
+function trainConsist() {
+  const tr = state.train;
+  if (!Array.isArray(tr.consist)) {
+    // migrate from the old single-loco/single-wagon shape
+    tr.consist = [];
+    if (tr.locoName) tr.consist.push({ name: tr.locoName, count: tr.locoCount || 1 });
+    if (tr.wagonName) tr.consist.push({ name: tr.wagonName, count: tr.wagonCountOverride || 10 });
+  }
+  return tr.consist;
+}
+
 function renderTrains() {
-  const locos = DATA.vehicles
-    .filter(v => v.attrs['Typ'] === 'Lokomotive' || v.attrs['Typ'] === 'Triebwagen')
+  const tr = state.train;
+  const consist = trainConsist();
+  const byName = new Map(DATA.vehicles.map(v => [v.name, v]));
+  const isLoco = v => ['Lokomotive', 'Triebwagen'].includes(v.attrs['Typ']);
+  const locos = DATA.vehicles.filter(isLoco)
     .sort((a, b) => (b.attrs['Motorleistung'] ?? 0) - (a.attrs['Motorleistung'] ?? 0));
   const wagons = DATA.vehicles.filter(v => ['Güterwagon', 'Passagierwagen'].includes(v.attrs['Typ']));
-  // cargo options: resource names (German) that appear as capacity attrs on wagons
+
   const resDeNames = new Set(DATA.resources.map(r => r.de));
   resDeNames.add('Passagiere');
   const cargoSet = new Set();
@@ -821,12 +842,7 @@ function renderTrains() {
     if (resDeNames.has(k) && typeof w.attrs[k] === 'number' && w.attrs[k] > 0) cargoSet.add(k);
   }
   const cargos = [...cargoSet].sort((a, b) => a.localeCompare(b));
-  const tr = state.train;
   if (!cargos.includes(tr.cargo)) tr.cargo = cargos[0];
-
-  const loco = locos.find(l => l.name === tr.locoName) || locos[0];
-  const locoLen = loco?.attrs['Länge'] ?? 0;
-  const usable = Math.max(0, tr.length - locoLen * tr.locoCount);
 
   const cargoLabel = c => {
     const r = DATA.resources.find(x => x.de === c);
@@ -838,86 +854,167 @@ function renderTrains() {
       + `${a['Länge'] ?? '?'} m, ${a['Antriebsart'] ?? '?'} (${a['Von'] ?? '?'}–${a['Bis'] ?? '?'})`;
   };
 
-  const settings = el('div', { class: 'settingsbar' },
-    el('label', {}, t('cargo') + ' ', selectInput(cargos.map(c => [c, cargoLabel(c)]), tr.cargo, v => { tr.cargo = v; tr.wagonName = null; })),
-    el('label', {}, t('loco') + ' ',
-      selectInput(locos.map(l => [l.name, locoLabel(l)]), loco?.name, v => tr.locoName = v)),
-    el('label', {}, t('locoCount') + ' ', numInput(tr.locoCount, v => tr.locoCount = Math.max(1, v), { min: 1, step: 1 })),
-    el('label', {}, t('trainLength') + ' ', numInput(tr.length, v => tr.length = v, { min: 0, step: 10 })));
+  // Each wagon segment is assigned the cargo it was added under — a wagon
+  // carries one cargo at a time even if it could take alternatives.
+  const addToConsist = (name, front = false, cargo = null) => {
+    const seg = consist.find(s => s.name === name && s.cargo === cargo);
+    if (seg) seg.count++;
+    else if (front) consist.unshift({ name, count: 1, cargo });
+    else consist.push({ name, count: 1, cargo });
+    update();
+  };
 
+  // ---- settings
+  if (!tr.pickLoco) tr.pickLoco = locos[0]?.name;
+  const settings = el('div', { class: 'settingsbar' },
+    el('label', {}, t('trainLength') + ' ', numInput(tr.length, v => tr.length = v, { min: 0, step: 10 })),
+    el('label', {}, t('loco') + ' ',
+      selectInput(locos.map(l => [l.name, locoLabel(l)]), tr.pickLoco, v => { tr.pickLoco = v; })),
+    el('button', { onclick: () => addToConsist(tr.pickLoco, true) }, '+ ' + t('loco')),
+    el('label', {}, t('cargo') + ' ', selectInput(cargos.map(c => [c, cargoLabel(c)]), tr.cargo, v => tr.cargo = v)),
+    consist.length ? el('button', { class: 'danger', onclick: () => { tr.consist = []; update(); } }, t('reset')) : null);
+
+  // ---- wagon table (click = add)
+  const usedLen = consist.reduce((a, s) => a + (byName.get(s.name)?.attrs['Länge'] ?? 0) * s.count, 0);
   const rows = wagons
     .filter(w => (w.attrs[tr.cargo] ?? 0) > 0)
-    .map(w => {
-      const len = w.attrs['Länge'] ?? 0;
-      const cap = w.attrs[tr.cargo] ?? 0;
-      const n = len > 0 ? Math.floor(usable / len) : 0;
-      return { w, len, cap, n, total: n * cap, speed: w.attrs['Max. Geschwindigkeit'], from: w.attrs['Von'] };
-    })
-    .sort((a, b) => b.total - a.total);
-
-  if (!rows.some(r => r.w.name === tr.wagonName)) tr.wagonName = rows[0]?.w.name ?? null;
+    .map(w => ({
+      w, len: w.attrs['Länge'] ?? 0, cap: w.attrs[tr.cargo] ?? 0,
+      speed: w.attrs['Max. Geschwindigkeit'], from: w.attrs['Von'],
+      fit: w.attrs['Länge'] > 0 ? Math.floor(Math.max(0, tr.length - usedLen) / w.attrs['Länge']) : 0,
+    }))
+    .sort((a, b) => b.cap - a.cap);
 
   const tbl = el('table', { class: 'data wide selectable' },
     el('thead', {}, el('tr', {},
       el('th', {}, t('wagon')), el('th', {}, t('length')), el('th', {}, `t / ${t('wagon')}`),
-      el('th', {}, t('speed')), el('th', {}, t('from')),
-      el('th', {}, t('wagonCount')), el('th', {}, t('totalCapacity')))),
+      el('th', {}, t('speed')), el('th', {}, t('from')), el('th', {}, t('stillFits')), el('th', {}))),
     el('tbody', {}, rows.map(r => el('tr', {
-      class: r.w.name === tr.wagonName ? 'selected' : '',
-      onclick: () => { tr.wagonName = r.w.name; tr.wagonCountOverride = null; update(); },
+      class: consist.some(s => s.name === r.w.name) ? 'selected' : '',
+      onclick: () => addToConsist(r.w.name, false, tr.cargo),
     },
       el('td', {}, r.w.name), el('td', { class: 'r' }, fmt(r.len, 1)),
       el('td', { class: 'r' }, fmt(r.cap, 1)), el('td', { class: 'r' }, fmt(r.speed, 0)),
       el('td', { class: 'r' }, r.from ?? '—'),
-      el('td', { class: 'r' }, fmt(r.n, 0)),
-      el('td', { class: 'r pos' }, fmt(r.total, 1) + (tr.cargo === 'Passagiere' ? '' : ' t'))))));
+      el('td', { class: 'r' }, fmt(r.fit, 0)),
+      el('td', {}, el('button', {}, '+'))))));
 
-  // ---- your train summary
-  const sel = rows.find(r => r.w.name === tr.wagonName);
-  let summary = null;
-  if (sel && loco) {
-    const nAuto = sel.n;
-    const n = tr.wagonCountOverride ?? nAuto;
-    const la = loco.attrs, wa = sel.w.attrs;
-    const totalLen = locoLen * tr.locoCount + n * sel.len;
-    const capacity = n * sel.cap;
-    const emptyW = (la['Leergewicht'] ?? 0) * tr.locoCount + (wa['Leergewicht'] ?? 0) * n;
-    const cargoW = tr.cargo === 'Passagiere' ? 0 : capacity;
-    const loadedW = emptyW + cargoW;
-    const powerKW = (la['Motorleistung'] ?? 0) * tr.locoCount;
-    const kwPerT = loadedW ? powerKW / loadedW : 0;
-    const speeds = [la['Max. Geschwindigkeit'], wa['Max. Geschwindigkeit']].filter(x => x > 0);
-    const vmax = speeds.length ? Math.min(...speeds) : null;
-    const eraFrom = Math.max(la['Von'] ?? 0, wa['Von'] ?? 0);
-    const kwCls = kwPerT >= 2 ? 'pos' : kwPerT >= 1 ? 'warn' : 'neg';
-    summary = el('div', { class: 'totalsbox' },
-      el('h3', {}, t('yourTrain')),
-      kv(t('loco'), `${loco.name} × ${tr.locoCount}`),
-      kv(t('wagon'), sel.w.name),
-      kv(t('wagonCount'), el('span', {},
-        numInput(n, v => { tr.wagonCountOverride = Math.max(0, Math.round(v)); }, { min: 0, step: 1 }),
-        tr.wagonCountOverride !== null && tr.wagonCountOverride !== nAuto
-          ? el('button', { class: 'danger', onclick: () => { tr.wagonCountOverride = null; update(); } }, '↺')
-          : '')),
-      kv(t('totalLength'), fmt(totalLen, 1) + ' m / ' + fmt(tr.length, 0) + ' m',
-        totalLen > tr.length ? 'neg' : 'pos'),
-      kv(t('totalCapacity'), fmt(capacity, 1) + (tr.cargo === 'Passagiere' ? '' : ' t')),
-      kv(t('emptyWeight'), fmt(emptyW, 1) + ' t'),
-      kv(t('loadedWeight'), fmt(loadedW, 1) + ' t'),
-      kv(t('power'), fmt(powerKW, 0) + ' kW (' + (la['Antriebsart'] ?? '?') + ')'),
-      kv(t('powerPerTon'), fmt(kwPerT, 2) + ' kW/t', kwCls),
-      kv(t('speed'), vmax !== null ? fmt(vmax, 0) + ' km/h' : '—'),
-      kv(t('from'), fmt(eraFrom, 0)),
-      la['Antriebsart'] === 'E' ? el('p', { class: 'hint' }, t('catenaryNote')) : null,
-      el('p', { class: 'hint' }, t('powerHint')));
+  // ---- consist evaluation
+  const segs = consist.map((s, origIdx) => ({ ...s, origIdx, v: byName.get(s.name) })).filter(s => s.v);
+  for (const s of segs) {
+    // migrated/legacy segments: assign the first cargo the wagon can carry
+    if (!s.cargo && !isLoco(s.v)) {
+      s.cargo = Object.keys(s.v.attrs).find(k => resDeNames.has(k) && s.v.attrs[k] > 0) ?? null;
+      const orig = consist.find(c => c.name === s.name && !c.cargo);
+      if (orig) orig.cargo = s.cargo;
+    }
+  }
+  const totalLen = segs.reduce((a, s) => a + (s.v.attrs['Länge'] ?? 0) * s.count, 0);
+  const powerKW = segs.filter(s => isLoco(s.v)).reduce((a, s) => a + (s.v.attrs['Motorleistung'] ?? 0) * s.count, 0);
+  const emptyW = segs.reduce((a, s) => a + (s.v.attrs['Leergewicht'] ?? 0) * s.count, 0);
+  const capacities = new Map();
+  for (const s of segs) {
+    if (isLoco(s.v) || !s.cargo) continue;
+    const cap = s.v.attrs[s.cargo];
+    if (cap > 0) capacities.set(s.cargo, (capacities.get(s.cargo) ?? 0) + cap * s.count);
+  }
+  const cargoW = [...capacities.entries()].filter(([k]) => k !== 'Passagiere').reduce((a, [, v]) => a + v, 0);
+  const loadedW = emptyW + cargoW;
+  const kwPerT = loadedW ? powerKW / loadedW : 0;
+  const speeds = segs.map(s => s.v.attrs['Max. Geschwindigkeit']).filter(x => x > 0);
+  const vmax = speeds.length ? Math.min(...speeds) : null;
+  const eraFrom = Math.max(0, ...segs.map(s => s.v.attrs['Von'] ?? 0));
+  const isElectric = segs.some(s => isLoco(s.v) && s.v.attrs['Antriebsart'] === 'E');
+  const kwCls = kwPerT >= 2 ? 'pos' : kwPerT >= 1 ? 'warn' : 'neg';
+
+  // ---- visual train (SVG, widths proportional to real lengths)
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const viewLen = Math.max(tr.length, totalLen) + 14;
+  const H = 46;
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${viewLen} ${H}`);
+  svg.setAttribute('class', 'trainviz');
+  svg.setAttribute('preserveAspectRatio', 'none');
+  // rail
+  const rail = document.createElementNS(svgNS, 'rect');
+  rail.setAttribute('x', 0); rail.setAttribute('y', H - 6);
+  rail.setAttribute('width', viewLen); rail.setAttribute('height', 1.6);
+  rail.setAttribute('fill', 'var(--border)');
+  svg.append(rail);
+  // desired-length marker
+  const marker = document.createElementNS(svgNS, 'line');
+  marker.setAttribute('x1', tr.length); marker.setAttribute('x2', tr.length);
+  marker.setAttribute('y1', 2); marker.setAttribute('y2', H - 2);
+  marker.setAttribute('stroke', totalLen > tr.length ? 'var(--neg)' : 'var(--accent2)');
+  marker.setAttribute('stroke-dasharray', '3 2');
+  marker.setAttribute('stroke-width', '1');
+  svg.append(marker);
+  let x = 2;
+  for (const s of segs) {
+    const len = s.v.attrs['Länge'] ?? 10;
+    const loco = isLoco(s.v);
+    const color = loco ? 'var(--accent)' : (CARGO_COLORS[s.v.attrs['Frachtart']] ?? '#666');
+    for (let i = 0; i < s.count; i++) {
+      const g = document.createElementNS(svgNS, 'g');
+      const body = document.createElementNS(svgNS, loco ? 'polygon' : 'rect');
+      const w = len - 1;
+      if (loco) {
+        body.setAttribute('points',
+          `${x},${H - 8} ${x},${H - 26} ${x + w * 0.72},${H - 26} ${x + w * 0.86},${H - 33} ${x + w},${H - 33} ${x + w},${H - 8}`);
+      } else {
+        body.setAttribute('x', x); body.setAttribute('y', H - 24);
+        body.setAttribute('width', w); body.setAttribute('height', 16);
+        body.setAttribute('rx', 1.4);
+      }
+      body.setAttribute('fill', color);
+      const title = document.createElementNS(svgNS, 'title');
+      title.textContent = `${s.name} (${len} m)`;
+      g.append(body, title);
+      for (const wx of [x + w * 0.2, x + w * 0.8]) {
+        const wheel = document.createElementNS(svgNS, 'circle');
+        wheel.setAttribute('cx', wx); wheel.setAttribute('cy', H - 7);
+        wheel.setAttribute('r', 1.8);
+        wheel.setAttribute('fill', '#2a2d33');
+        g.append(wheel);
+      }
+      svg.append(g);
+      x += len;
+    }
   }
 
+  // ---- consist editor
+  const editor = el('div', { class: 'consist' },
+    segs.length ? null : el('p', { class: 'hint' }, t('trainHint')),
+    ...segs.map(s => el('div', { class: 'consistseg' },
+      el('i', { style: `background:${isLoco(s.v) ? 'var(--accent)' : (CARGO_COLORS[s.v.attrs['Frachtart']] ?? '#666')}` }),
+      el('span', { class: 'segname' }, s.name + (s.cargo && !isLoco(s.v) ? ` → ${cargoLabel(s.cargo)}` : '')),
+      numInput(s.count, v => {
+        consist[s.origIdx].count = Math.max(0, Math.round(v));
+        if (!consist[s.origIdx].count) consist.splice(s.origIdx, 1);
+      }, { min: 0, step: 1 }),
+      el('button', { class: 'danger', onclick: () => { consist.splice(s.origIdx, 1); update(); } }, '✕'))));
+
+  const summary = el('div', { class: 'totalsbox' },
+    el('h3', {}, t('yourTrain')),
+    kv(t('totalLength'), fmt(totalLen, 1) + ' m / ' + fmt(tr.length, 0) + ' m', totalLen > tr.length ? 'neg' : 'pos'),
+    ...[...capacities.entries()].map(([k, v]) =>
+      kv(cargoLabel(k), fmt(v, 1) + (k === 'Passagiere' ? '' : ' t'), 'pos')),
+    kv(t('emptyWeight'), fmt(emptyW, 1) + ' t'),
+    kv(t('loadedWeight'), fmt(loadedW, 1) + ' t'),
+    kv(t('power'), fmt(powerKW, 0) + ' kW' + (isElectric ? ' (E)' : '')),
+    kv(t('powerPerTon'), fmt(kwPerT, 2) + ' kW/t', kwCls),
+    kv(t('speed'), vmax !== null ? fmt(vmax, 0) + ' km/h' : '—'),
+    kv(t('from'), eraFrom ? String(eraFrom) : '—'),
+    isElectric ? el('p', { class: 'hint' }, t('catenaryNote')) : null,
+    el('p', { class: 'hint' }, t('powerHint')));
+
   return el('section', {},
-    el('p', { class: 'hint' }, t('trainHint')),
+    el('p', { class: 'hint' }, t('trainHint2')),
     settings,
+    el('div', { class: 'trainvizbox' }, svg),
     el('div', { class: 'columns' },
       el('div', {}, tbl),
-      summary));
+      el('div', { class: 'consistcol' }, el('h3', {}, t('consist')), editor, summary)));
 }
 
 // ---------------------------------------------------------------- research tab
