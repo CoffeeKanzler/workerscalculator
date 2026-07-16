@@ -274,7 +274,7 @@ GROUP_BY_RESOURCE = {
     'alumina': ('Metallurgie', 'metallurgy'),
     'aluminium': ('Metallurgie', 'metallurgy'),
 }
-ADVANCED = ('Hochentwickelte Industrie', 'Advanced Industry')
+ADVANCED = ('Fortschrittliche Industrie', 'Advanced Industry')
 MISC = ('Sonstiges', 'Miscellaneous')
 for k in ('uranium', 'yellowcake', 'uf6', 'nuclearfuel', 'nuclearfuelburned',
           'ecomponents', 'mcomponents', 'eletronics', 'explosives', 'fabric',

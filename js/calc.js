@@ -1,19 +1,15 @@
 // Economy formulas replicated from the community planning spreadsheet.
+// Curated constants live in community_constants.js — edit values there.
+import {
+  SEASON_FACTOR, NO_SEASON_FACTOR, FIELD_SIZES, QUALITY_BUILDINGS_DE,
+  SERVICES, SECRET_POLICE_PER_BUILDINGS, HEAT_PER_SPECIAL, CABLES,
+  HEAT_EXCHANGERS, NON_DELIVERABLE,
+} from './community_constants.js';
 
-// Season factors for fields (t plants per hectare per day), from the sheet.
-export const SEASON_FACTOR = 0.1708767123287;   // with seasons
-export const NO_SEASON_FACTOR = 0.2255655296229; // without seasons
-export const FIELD_SIZES = { small: 0.39, medium: 1.57, large: 4.81 }; // hectares
-
-// Buildings whose output scales with the "quality" column (resource richness %)
-// instead of plain count in the sheet. We treat quality as an extra multiplier.
-export const QUALITY_BUILDINGS_DE = new Set([
-  'Kohlemine', 'Eisenmine', 'Ölförderpumpe', 'Bauxit-Mine', 'Uranmine',
-  'Kiesgrube', 'Holzfällerposten', 'Kiesgrube Groß',
-]);
-
-// Goods that move via wires/pipes and never pay border delivery cost.
-export const NON_DELIVERABLE = new Set(['eletric', 'heat', 'water', 'usagewater']);
+export {
+  SEASON_FACTOR, NO_SEASON_FACTOR, FIELD_SIZES, QUALITY_BUILDINGS_DE,
+  SERVICES, CABLES, NON_DELIVERABLE,
+};
 
 export class Economy {
   // opts.inputPriceMode: 'sell' (like the sheet: inputs valued at what you could
@@ -165,29 +161,6 @@ export function evaluatePlan(rows, fields, settings, eco) {
 }
 
 // City evaluation (StädteCitys Neu sheet).
-// Service coverage: 1 provided "place" serves `ratio` inhabitants.
-// capacity source column depends on the service type.
-export const SERVICES = [
-  { id: 'shopping',    typeDe: 'Einkaufzentrum',   src: 'visitors', ratio: 19 },
-  { id: 'kindergarten',typeDe: 'Kindergarten',     src: 'visitors', ratio: 15 },
-  { id: 'school',      typeDe: 'Schule',           src: 'visitors', ratio: 18 },
-  { id: 'university',  typeDe: 'Universität',      src: 'visitors', ratio: 64 },
-  { id: 'court',       typeDe: 'Gerichtsgebäude',  src: 'special',  ratio: 600 },
-  { id: 'police',      typeDe: 'Polizei',          src: 'special',  ratio: 150 },
-  { id: 'attraction',  typeDe: 'Attraktionen',     src: 'visitors', ratio: 140 },
-  { id: 'hospital',    typeDe: 'Krankenhaus',      src: 'visitors', ratio: 100 },
-];
-
-export const CABLES = [
-  { de: 'Untergrund Kabel 0,65 MW', en: 'Underground cable 0.65 MW', mw: 0.65 },
-  { de: 'Untergrund Kabel 1,15 MW', en: 'Underground cable 1.15 MW', mw: 1.15 },
-  { de: 'Untergrund Kabel 1,85 MW', en: 'Underground cable 1.85 MW', mw: 1.85 },
-  { de: 'Oberirdisches Kabel 0,65 MW', en: 'Overhead cable 0.65 MW', mw: 0.65 },
-  { de: 'Oberirdisches Kabel 1,2 MW', en: 'Overhead cable 1.2 MW', mw: 1.2 },
-  { de: 'Oberirdisches Kabel 1,5 MW', en: 'Overhead cable 1.5 MW', mw: 1.5 },
-  { de: 'Oberirdisches Kabel 2,35 MW', en: 'Overhead cable 2.35 MW', mw: 2.35 },
-];
-
 export function evaluateCity(city, eco) {
   const prod = city.productivity;
   const rows = city.rows.filter(r => r.building && r.count > 0);
@@ -230,17 +203,21 @@ export function evaluateCity(city, eco) {
   const residential = rows.filter(r => (r.building.inhabitants ?? 0) > 0)
     .reduce((a, r) => a + r.count, 0);
   const secretCap = rows.filter(r => r.building.type.de === 'Geheimpolizei')
-    .reduce((a, r) => a + (r.building.special ?? 0) * r.count, 0) * prod * 7;
+    .reduce((a, r) => a + (r.building.special ?? 0) * r.count, 0) * prod * SECRET_POLICE_PER_BUILDINGS;
   res.residentialBuildings = residential;
-  res.secretPolice = { provided: secretCap, needed: residential / 7, utilization: secretCap > 0 ? residential / secretCap : null };
-  // Heating plants inside the city (special value * 5 = m³ hot water).
+  res.secretPolice = {
+    provided: secretCap,
+    needed: residential / SECRET_POLICE_PER_BUILDINGS,
+    utilization: secretCap > 0 ? residential / secretCap : null,
+  };
+  // Heating plants inside the city (special value → m³ hot water).
   const heatCap = rows.filter(r => r.building.type.de === 'Heizwerk')
-    .reduce((a, r) => a + (r.building.special ?? 0) * r.count, 0) * 5;
+    .reduce((a, r) => a + (r.building.special ?? 0) * r.count, 0) * HEAT_PER_SPECIAL;
   res.heating = { provided: heatCap, utilization: heatCap > 0 ? res.hotwater / heatCap : null };
   // Infrastructure sizing.
   const cable = CABLES.find(c => c.de === city.cable) || CABLES[2];
   res.transformers = res.maxKW / 1000 / cable.mw;
-  res.heatExchangers = res.hotwater / (city.exchanger === 'large' ? 300 : 100);
+  res.heatExchangers = res.hotwater / (city.exchanger === 'large' ? HEAT_EXCHANGERS.large : HEAT_EXCHANGERS.small);
   res.waterConnections = res.water / (city.waterDivisor || 3);
   return res;
 }

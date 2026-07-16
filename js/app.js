@@ -2,11 +2,12 @@ import { STRINGS } from './i18n.js';
 import { parseStatsIni, recordToPrices } from './statsini.js';
 import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js';
+import { solveChain, producersByResource, defaultProducer } from './chain.js';
 
-const TABS = ['prices', 'production', 'analysis', 'city', 'trains', 'research', 'help'];
+const TABS = ['prices', 'production', 'chain', 'analysis', 'city', 'trains', 'research', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
-  'cities', 'activeCity', 'vanillaOnly', 'train', 'lowtech', 'calcOpts'];
+  'cities', 'activeCity', 'vanillaOnly', 'train', 'lowtech', 'calcOpts', 'dataset', 'chain'];
 
 // ---------------------------------------------------------------- state
 const LS_KEY = 'wr-planner-v1';
@@ -32,6 +33,8 @@ const state = {
   vanillaOnly: false,
   train: { cargo: 'Kohle', length: 450, locoName: null, locoCount: 1 },
   calcOpts: { inputPriceMode: 'sell', includeDelivery: false },
+  dataset: 'game',   // 'game' (current game files) | 'sheet' (spreadsheet snapshot)
+  chain: { goal: 'steel', amount: 43, imports: [], producerChoice: {}, includeUtilities: true },
   lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0 },
   analysisSort: { col: 'profit', dir: -1 },
   analysisSearch: '',
@@ -64,18 +67,25 @@ function loadState() {
 let DATA = null; // {resources, defaults, prodBuildings, cityBuildings, vehicles, decades}
 
 async function loadData() {
-  const [res, prod, city, veh, dec] = await Promise.all([
+  const [res, prod, prodGame, city, veh, dec] = await Promise.all([
     fetch('data/resources.json').then(r => r.json()),
     fetch('data/production_buildings.json').then(r => r.json()),
+    fetch('data/game/production_buildings.json').then(r => r.ok ? r.json() : null).catch(() => null),
     fetch('data/city_buildings.json').then(r => r.json()),
     fetch('data/vehicles.json').then(r => r.json()),
     fetch('data/decade_prices.json').then(r => r.json()),
   ]);
   DATA = {
     resources: res.resources, defaults: res.defaults,
-    prodBuildings: prod, cityBuildings: city,
+    prodSets: { sheet: prod, game: prodGame },
+    cityBuildings: city,
     vehicles: veh.vehicles, decades: dec,
   };
+}
+
+// Active production-building dataset ('game' from game files, 'sheet' from the spreadsheet).
+function prodBuildings() {
+  return DATA.prodSets[state.dataset] || DATA.prodSets.sheet;
 }
 
 // ---------------------------------------------------------------- prices
@@ -256,6 +266,9 @@ function renderHeader() {
       el('label', {}, t('currency') + ' ',
         selectInput([['RUB', '₽ Rubel'], ['USD', '$ Dollar']], state.currency,
           v => { state.currency = v; state.plan.settings.currency = v; })),
+      DATA.prodSets.game ? el('label', {}, t('dataset') + ' ',
+        selectInput([['game', t('datasetGame')], ['sheet', t('datasetSheet')]],
+          state.dataset, v => { state.dataset = v; })) : null,
       el('div', { class: 'sharebtns' },
         el('button', { title: t('exportPlan'), onclick: exportPlan }, '⬇'),
         el('label', { title: t('importPlan'), class: 'iconbtn' }, '⬆',
@@ -270,8 +283,8 @@ function renderHeader() {
 }
 
 function renderTabs() {
-  const labels = { prices: 'tabPrices', production: 'tabProduction', analysis: 'tabAnalysis',
-    city: 'tabCity', trains: 'tabTrains', research: 'tabResearch', help: 'tabHelp' };
+  const labels = { prices: 'tabPrices', production: 'tabProduction', chain: 'tabChain',
+    analysis: 'tabAnalysis', city: 'tabCity', trains: 'tabTrains', research: 'tabResearch', help: 'tabHelp' };
   return el('nav', {}, ...TABS.map(id => el('button', {
     class: state.tab === id ? 'active' : '',
     onclick: () => { state.tab = id; update(); },
@@ -282,6 +295,7 @@ function renderCurrentTab() {
   switch (state.tab) {
     case 'prices': return renderPrices();
     case 'production': return renderProduction();
+    case 'chain': return renderChain();
     case 'analysis': return renderAnalysis();
     case 'city': return renderCity();
     case 'trains': return renderTrains();
@@ -405,7 +419,7 @@ function renderProduction() {
   const s = state.plan.settings;
   s.currency = state.currency;
   const result = evaluatePlan(
-    state.plan.rows.map(r => ({ ...r, building: DATA.prodBuildings.find(b => b.de === r.name) })),
+    state.plan.rows.map(r => ({ ...r, building: prodBuildings().find(b => b.de === r.name) })),
     state.plan.fields, s, eco);
 
   const settings = el('div', { class: 'settingsbar' },
@@ -417,7 +431,7 @@ function renderProduction() {
     el('label', {}, t('calendarFlow') + ' ', numInput(s.calendarFlow, v => s.calendarFlow = v || 1, { step: 0.1, min: 0 })),
     el('label', {}, t('fertilizer') + ' ', numInput(s.fertilizer, v => s.fertilizer = v || 1, { step: 0.1, min: 0 })));
 
-  const groups = [...new Set(DATA.prodBuildings.map(b => b.group[state.lang]))];
+  const groups = [...new Set(prodBuildings().map(b => b.group[state.lang]))];
 
   const tbl = el('table', { class: 'data wide' },
     el('thead', {}, el('tr', {},
@@ -427,11 +441,11 @@ function renderProduction() {
       el('th', {}, t('amortDays')), el('th', {}, `${t('income')} ${cur()}`),
       el('th', {}, `${t('expenses')} ${cur()}`), el('th', {}, `${t('buildCost')} ${cur()}`), el('th', {}))),
     el('tbody', {}, state.plan.rows.map((row, idx) => {
-      const b = DATA.prodBuildings.find(x => x.de === row.name);
+      const b = prodBuildings().find(x => x.de === row.name);
       const res = result.rows.find(r => r.name === row.name && r.count === row.count) ?? {};
       const groupSel = selectInput([t('none'), ...groups], row.group ?? t('none'),
         v => { row.group = v; row.name = null; });
-      const inGroup = DATA.prodBuildings.filter(x => x.group[state.lang] === row.group);
+      const inGroup = prodBuildings().filter(x => x.group[state.lang] === row.group);
       const bSel = selectInput(
         [[', ', t('none')], ...inGroup.map(x => [x.de, x[state.lang]])],
         row.name ?? ', ', v => { row.name = v === ', ' ? null : v; });
@@ -497,10 +511,102 @@ function kv(k, v, cls = '') {
   return el('div', { class: 'kv' }, el('span', {}, k), el('strong', { class: cls }, v));
 }
 
+// ---------------------------------------------------------------- chain tab
+function renderChain() {
+  const eco = economy();
+  const buildings = prodBuildings();
+  const ch = state.chain;
+  const index = producersByResource(buildings, eco);
+  const producible = [...index.keys()];
+  if (!producible.includes(ch.goal)) ch.goal = producible.includes('steel') ? 'steel' : producible[0];
+
+  const resLabel = key => {
+    const r = DATA.resources.find(x => x.key === key);
+    return r ? rname(r) : key;
+  };
+
+  const result = solveChain(ch.goal, ch.amount, buildings, eco, {
+    productivity: state.plan.settings.productivity,
+    currency: state.currency,
+    imports: new Set(ch.imports),
+    producerChoice: new Map(Object.entries(ch.producerChoice)),
+    includeUtilities: ch.includeUtilities,
+  });
+
+  const settings = el('div', { class: 'settingsbar' },
+    el('label', {}, t('chainGoal') + ' ',
+      selectInput(producible.map(k => [k, resLabel(k)]).sort((a, b) => a[1].localeCompare(b[1])),
+        ch.goal, v => { ch.goal = v; })),
+    el('label', {}, t('chainAmount') + ' ', numInput(ch.amount, v => ch.amount = v, { min: 0, step: 1 })),
+    el('label', {}, t('productivity') + ' ',
+      numInput(state.plan.settings.productivity, v => state.plan.settings.productivity = v, { step: 0.05, min: 0 })),
+    el('label', {}, t('chainUtilities') + ' ', el('input', {
+      type: 'checkbox', checked: ch.includeUtilities,
+      onchange: e => { ch.includeUtilities = e.target.checked; update(); } })));
+
+  const rows = [...result.rows].sort((a, b) => (a.imported ? 1 : 0) - (b.imported ? 1 : 0) || b.demand - a.demand);
+  const tbl = el('table', { class: 'data wide' },
+    el('thead', {}, el('tr', {},
+      el('th', {}, t('resource')), el('th', {}, 't / ' + t('day')),
+      el('th', {}, t('chainSource')), el('th', {}, t('building')),
+      el('th', {}, t('count')), el('th', {}, t('workers')),
+      el('th', {}, `${t('buildCost')} ${cur()}`), el('th', {}, `${t('chainImportCost')} ${cur()}`))),
+    el('tbody', {}, rows.map(row => {
+      const importable = row.imported ? row.importable : true;
+      const srcToggle = importable && row.key !== ch.goal
+        ? selectInput([['produce', t('chainProduce')], ['import', t('chainImport')]],
+            row.imported ? 'import' : 'produce',
+            v => {
+              ch.imports = v === 'import'
+                ? [...new Set([...ch.imports, row.key])]
+                : ch.imports.filter(k => k !== row.key);
+            })
+        : el('span', { class: 'hint' }, row.imported ? t('chainImport') : t('chainProduce'));
+      const producerSel = !row.imported && row.producers?.length > 1
+        ? selectInput(row.producers.map(de => {
+            const b = buildings.find(x => x.de === de);
+            return [de, b ? b[state.lang] : de];
+          }), row.building.de, v => { ch.producerChoice[row.key] = v; })
+        : el('span', {}, row.imported ? '—' : row.building[state.lang]);
+      return el('tr', {},
+        el('td', {}, resLabel(row.key)),
+        el('td', { class: 'r' }, fmt(row.demand, 1)),
+        el('td', {}, srcToggle),
+        el('td', {}, producerSel),
+        el('td', { class: 'r' }, row.imported ? '—' : `${fmt(row.countCeil, 0)} (${fmt(row.count, 2)})`),
+        el('td', { class: 'r' }, row.imported ? '—' : fmt(row.building.workers * row.countCeil, 0)),
+        el('td', { class: 'r' }, row.imported ? '—' : fmt(eco.buildCost(row.building, state.currency) * row.countCeil, 0)),
+        el('td', { class: 'r ' + (row.imported ? 'warn' : '') }, row.imported ? fmt(row.importCost, 0) : '—'));
+    })));
+
+  const byp = [...result.byproducts.entries()].filter(([, v]) => v > 0.05);
+  const totals = el('div', { class: 'totalsbox' },
+    el('h3', {}, t('totals') + ` (${t('day')})`),
+    kv(t('chainRevenue') + ` ${cur()}`, fmt(result.totals.revenue, 0), 'pos'),
+    kv(t('chainImportBill') + ` ${cur()}`, fmt(result.totals.importCost, 0), result.totals.importCost ? 'warn' : ''),
+    kv(t('workersTotal'), fmt(result.totals.workers * 3, 0)),
+    kv(t('workersPerShift'), fmt(result.totals.workers, 0)),
+    kv(t('powerUse'), fmt(result.totals.power, 1)),
+    kv(t('maxWatt'), fmt(result.totals.maxKW, 0)),
+    kv(t('waterUse'), fmt(result.totals.water, 1)),
+    kv(`${t('buildCost')} ${cur()}`, fmt(result.totals.buildCost, 0)));
+
+  const bypBox = el('div', { class: 'totalsbox' },
+    el('h3', {}, t('chainByproducts')),
+    byp.length
+      ? byp.map(([k, v]) => kv(resLabel(k), fmt(v, 1) + ' t'))
+      : el('p', { class: 'hint' }, '—'));
+
+  return el('section', {},
+    el('p', { class: 'hint' }, t('chainHint')),
+    settings, tbl,
+    el('div', { class: 'columns' }, totals, bypBox));
+}
+
 // ---------------------------------------------------------------- analysis tab
 function renderAnalysis() {
   const eco = economy();
-  const rows = DATA.prodBuildings.map(b => {
+  const rows = prodBuildings().map(b => {
     const { income, expenses, profit } = eco.buildingProfit(b, state.currency);
     const buildCost = eco.buildCost(b, state.currency);
     return {
