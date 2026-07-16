@@ -40,21 +40,12 @@ Train recommendations continue to store only locomotive and cargo-wagon
 segments. Their length and loaded-weight calculations include the selected
 locomotive's tender before choosing locomotive count and reporting feasibility.
 
-## Saved-State Compatibility
-
-Existing saved or shared consists may contain top-level tender segments from
-the current implementation. On evaluation, those legacy segments are discarded
-when they match a tender now derived from a selected locomotive. Unmatched
-legacy tender segments are ignored because tenders are not independently valid.
-The normalized consist is written back to state so subsequent exports no longer
-contain manual tenders.
-
 ## Structure
 
 Tender expansion and consist evaluation will live in a focused, testable
 `js/train.js` module rather than remaining embedded in DOM rendering code. The
-module will expose pure helpers for expanding locked tenders, normalizing legacy
-state, and calculating physical totals used by both recommendation and UI code.
+module will expose pure helpers for expanding locked tenders and calculating
+physical totals used by both recommendation and UI code.
 `js/app.js` remains responsible for controls and rendering.
 
 ## Testing
@@ -66,7 +57,6 @@ Node tests will verify:
 - one locomotive derives exactly one locked tender directly behind it;
 - locomotive counts derive matching tender counts;
 - length and empty weight include the tender while cargo capacity does not;
-- legacy manually selected tenders are removed without duplicating derived ones;
 - steam tank locomotives without tender data remain standalone;
 - recommendations account for tender length and weight.
 

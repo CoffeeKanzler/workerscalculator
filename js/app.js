@@ -1,9 +1,9 @@
-import { STRINGS } from './i18n.js?v=11';
-import { parseStatsIni, recordToPrices } from './statsini.js?v=11';
-import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=11';
-import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=11';
-import { solveChain, producersByResource, defaultProducer } from './chain.js?v=11';
-import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=11';
+import { STRINGS } from './i18n.js?v=12';
+import { parseStatsIni, recordToPrices } from './statsini.js?v=12';
+import { Economy, evaluatePlan, evaluateCity, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=12';
+import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=12';
+import { solveChain, producersByResource, defaultProducer } from './chain.js?v=12';
+import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=12';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain,
 } from './train.js?v=12';

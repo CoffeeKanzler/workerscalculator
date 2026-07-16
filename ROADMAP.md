@@ -132,6 +132,10 @@ lengths, heating-plant output semantics.
 - **Effort:** medium.
 
 ### 5.1b Train planner on game vehicle data
+(Partially implemented 2026-07-16: game-only locomotives and DLC vehicles are
+merged into the planner; steam tenders are read from `$TRAINSET` and attached
+automatically, matching the game. Still open: replace sheet wagons and their
+per-cargo capacities with game data.)
 - **What:** Move the train planner from the sheet's 95 rail vehicles to the game
   files. Vehicle lengths come from `bbox.bin` next to each model (24 bytes,
   6 little-endian floats = min/max XYZ; z-extent = length — validated:

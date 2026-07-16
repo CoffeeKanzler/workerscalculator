@@ -174,5 +174,8 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 
 @media (max-width: 700px) {
   .controls, .settingsbar { flex-direction: column; align-items: stretch; }
+  .settingsbar > * { width: 100%; max-width: 100%; }
+  .settingsbar label { min-width: 0; flex-wrap: wrap; }
+  .settingsbar label select { min-width: 0; max-width: 100%; }
   .langswitch { margin-left: 0; }
 }
