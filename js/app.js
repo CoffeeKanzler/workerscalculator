@@ -66,14 +66,19 @@ function loadState() {
 // ---------------------------------------------------------------- data
 let DATA = null; // {resources, defaults, prodBuildings, cityBuildings, vehicles, decades}
 
+// Data version: bumped together with the ?v= in index.html on each release so
+// GitHub Pages' 10-minute cache can't serve stale JSON to a fresh app.
+const DATA_V = new URL(import.meta.url).searchParams.get('v') ?? '0';
+
 async function loadData() {
+  const get = path => fetch(`${path}?v=${DATA_V}`);
   const [res, prod, prodGame, city, veh, dec] = await Promise.all([
-    fetch('data/resources.json').then(r => r.json()),
-    fetch('data/production_buildings.json').then(r => r.json()),
-    fetch('data/game/production_buildings.json').then(r => r.ok ? r.json() : null).catch(() => null),
-    fetch('data/city_buildings.json').then(r => r.json()),
-    fetch('data/vehicles.json').then(r => r.json()),
-    fetch('data/decade_prices.json').then(r => r.json()),
+    get('data/resources.json').then(r => r.json()),
+    get('data/production_buildings.json').then(r => r.json()),
+    get('data/game/production_buildings.json').then(r => r.ok ? r.json() : null).catch(() => null),
+    get('data/city_buildings.json').then(r => r.json()),
+    get('data/vehicles.json').then(r => r.json()),
+    get('data/decade_prices.json').then(r => r.json()),
   ]);
   DATA = {
     resources: res.resources, defaults: res.defaults,
