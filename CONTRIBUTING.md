@@ -212,3 +212,9 @@ Wichtig dabei:
   werden Ziegel, Asphalt und Plattenbauteile versehentlich mit den
   Arbeitstagskosten (E$55) statt ihren eigenen Preisen multipliziert –
   in der App ist das korrigiert.
+- Ebenfalls gefunden: In `Fahrzeuge` gibt es zwei Zeilen namens
+  "ER1 (Triebzug)" – die zweite (Von 1962, Bis 1984, 120 km/h) sind eigentlich
+  die Werte des ER2, nicht eines zweiten ER1 (Baujahre/Geschwindigkeit passen
+  exakt zu `russian_set_er2` in den Spieldateien, ER2 fehlte komplett). In der
+  App als "ER2 (Triebzug)" umbenannt – im Sheet selbst wäre das auch noch zu
+  korrigieren, sonst kommt beim nächsten Re-Export wieder die falsche Zeile.
