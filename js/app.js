@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=38';
+import { STRINGS } from './i18n.js?v=39';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -15,6 +15,7 @@ import {
 import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
+import { resolveVehicleModels, shareSafeSaveImport } from './fleet.js?v=1';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',
@@ -175,7 +176,8 @@ async function loadData() {
     resources: res.resources, defaults: res.defaults,
     prodSets: { sheet: prod, game: prodGame },
     cityBuildings: city,
-    rawBuildings, workshopIndex, workshopBuildings: [], localWorkshopBuildings: [], workshopProduction: [],
+    rawBuildings, rawVehicles, workshopIndex, workshopBuildings: [], workshopVehicles: [],
+    localWorkshopBuildings: [], workshopProduction: [],
     // Game-only rail vehicles join the pool; hard-attached tenders stay nested.
     sheetVehicles: veh.vehicles,
     vehicles: mergeVehiclePools(veh.vehicles, rail, rawVehicles),
@@ -183,8 +185,11 @@ async function loadData() {
   };
 }
 
-async function loadWorkshopCatalogForBuildings(buildings) {
-  const ids = [...new Set(buildings.map(building => /^(\d{6,20})\//.exec(building.type)?.[1]).filter(Boolean))];
+async function loadWorkshopCatalogForSave(buildings, vehicles = []) {
+  const ids = [...new Set([
+    ...buildings.map(building => /^(\d{6,20})\//.exec(building.type)?.[1]),
+    ...vehicles.map(vehicle => /^(\d{6,20})\//.exec(vehicle.model)?.[1]),
+  ].filter(Boolean))];
   const available = ids.filter(id => DATA.workshopIndex?.items?.[id]);
   const loaded = await Promise.all(available.map(async id => {
     const entry = DATA.workshopIndex.items[id];
@@ -201,12 +206,17 @@ async function loadWorkshopCatalogForBuildings(buildings) {
   for (const building of loaded.flatMap(item => item?.buildings ?? [])) combined.set(building.id, building);
   for (const building of DATA.localWorkshopBuildings ?? []) combined.set(building.id, building);
   DATA.workshopBuildings = [...combined.values()];
+  DATA.workshopVehicles = loaded.flatMap(item => item?.vehicles ?? []);
   DATA.workshopProduction = DATA.workshopBuildings.map(workshopProductionBuilding).filter(Boolean);
-  const resolvedIds = new Set(DATA.workshopBuildings.map(building => building.workshopId).filter(Boolean));
+  const resolvedIds = new Set([
+    ...DATA.workshopBuildings.map(building => building.workshopId),
+    ...DATA.workshopVehicles.map(vehicle => vehicle.workshopId),
+  ].filter(Boolean));
   return {
     referenced: ids.length,
     resolved: ids.filter(id => resolvedIds.has(id)).length,
     buildingDefinitions: DATA.workshopBuildings.length,
+    vehicleDefinitions: DATA.workshopVehicles.length,
     localDefinitions: DATA.localWorkshopBuildings?.length ?? 0,
   };
 }
@@ -1483,6 +1493,9 @@ function buildOperationalServices(buildings, citizens, rawBuildings, cityStats, 
 
 function buildImportedPlanning(sourceName, settlements, buildings, membershipAudit, {
   citizens = null, citizenFileSummary = null, header = null, research = null,
+  vehicles = null, vehicleFileSummary = null,
+  usedVehicleOffers = null, usedVehicleFileSummary = null,
+  vehicleModelCoverage = null, usedVehicleModelCoverage = null,
   sourceStatus = {}, parserWarnings = [], defaultProductivity = 1, workshopCatalog = null,
   cityStats = [], mapClimate = null, events = null,
 } = {}) {
@@ -1623,6 +1636,12 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
         invalidResidenceRefs: citizenResult.invalidResidenceRefs,
         populatedScopeCount: citizenScopes.size,
       } : null,
+      ownedVehicles: vehicles,
+      vehicleFileSummary,
+      vehicleModelCoverage,
+      usedVehicleOffers,
+      usedVehicleFileSummary,
+      usedVehicleModelCoverage,
       observedBuildings: compactObservedBuildings(buildings),
       observedProductionRows: cloneStateValue(productionRows),
       research: research ?? null,
@@ -1659,7 +1678,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=4', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=5', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -1720,6 +1739,8 @@ async function handleSaveDirectory(fileList) {
   const buildingsFile = byName.get('buildings_game.bin');
   const statsFile = byName.get('stats.ini');
   const workersFile = byName.get('workers.bin');
+  const vehiclesFile = byName.get('vehicles.bin');
+  const usedVehiclesFile = byName.get('usedveh.bin');
   const headerFile = byName.get('header.bin');
   const researchFile = byName.get('research.bin');
   const eventsFile = byName.get('events.bin');
@@ -1737,13 +1758,16 @@ async function handleSaveDirectory(fileList) {
 
   try {
     const readOptional = file => file ? file.arrayBuffer() : Promise.resolve(null);
-    const [namepointBuffer, buildingBuffer, workerBuffer, headerBuffer, researchBuffer, eventsBuffer, statsText, materialText] = await Promise.all([
+    const [namepointBuffer, buildingBuffer, workerBuffer, vehicleBuffer, usedVehicleBuffer,
+      headerBuffer, researchBuffer, eventsBuffer, statsText, materialText] = await Promise.all([
       namepoints.arrayBuffer(), buildingsFile.arrayBuffer(), readOptional(workersFile),
+      readOptional(vehiclesFile), readOptional(usedVehiclesFile),
       readOptional(headerFile), readOptional(researchFile), readOptional(eventsFile), statsFile ? statsFile.text() : '',
       materialFile ? materialFile.text() : '',
     ]);
     const parsed = await parseSaveInWorker({
       namepoints: namepointBuffer, buildings: buildingBuffer, workers: workerBuffer,
+      vehicles: vehicleBuffer, usedVehicles: usedVehicleBuffer,
       header: headerBuffer, research: researchBuffer, events: eventsBuffer, stats: statsText, material: materialText,
     });
     const relative = namepoints.webkitRelativePath || buildingsFile.webkitRelativePath || '';
@@ -1751,11 +1775,21 @@ async function handleSaveDirectory(fileList) {
       || namepoints.name.replace(/\.bin$/i, '') || 'W&R save';
     const statsRecords = parsed.statsRecords ?? [];
     const productivity = latestProductivity(statsRecords, 1);
-    const workshopCatalog = await loadWorkshopCatalogForBuildings(parsed.buildings);
+    const workshopCatalog = await loadWorkshopCatalogForSave(parsed.buildings, parsed.vehicles ?? []);
+    const ownedFleet = parsed.vehicles
+      ? resolveVehicleModels(parsed.vehicles, { game: DATA.rawVehicles, workshop: DATA.workshopVehicles }) : null;
+    const usedMarket = parsed.usedVehicleOffers
+      ? resolveVehicleModels(parsed.usedVehicleOffers, { game: DATA.rawVehicles, workshop: DATA.workshopVehicles }) : null;
     const imported = buildImportedPlanning(sourceName, parsed.settlements, parsed.buildings,
       parsed.membershipAudit, {
         citizens: parsed.citizens,
         citizenFileSummary: parsed.citizenFileSummary,
+        vehicles: ownedFleet?.records ?? null,
+        vehicleFileSummary: parsed.vehicleFileSummary,
+        vehicleModelCoverage: ownedFleet?.summary ?? null,
+        usedVehicleOffers: usedMarket?.records ?? null,
+        usedVehicleFileSummary: parsed.usedVehicleFileSummary,
+        usedVehicleModelCoverage: usedMarket?.summary ?? null,
         header: parsed.header,
         research: parsed.research,
         events: parsed.events,
@@ -1875,6 +1909,7 @@ function renderSaveImport() {
     ? el('p', { class: state.importStatusError ? 'neg' : 'pos' }, state.importStatus) : null;
   const sourceFiles = {
     namepoints: 'namepoints.bin', buildings: 'buildings_game.bin', workers: 'workers.bin',
+    vehicles: 'vehicles.bin', usedVehicles: 'usedveh.bin',
     header: 'header.bin', research: 'research.bin', events: 'events.bin', stats: 'stats.ini',
     material: 'material.mtl',
   };
@@ -1902,6 +1937,8 @@ function renderSaveImport() {
         kv(t('importedBuildings'), fmt(info.buildingCount, 0)),
         kv(t('importedStatsRecords'), info.statsRecordCount ? fmt(info.statsRecordCount, 0) : t('notFound')),
         kv(t('importedCitizens'), info.citizenSummary ? fmt(info.citizenCount, 0) : t('notFound')),
+        kv(t('importedVehicles'), info.vehicleFileSummary ? fmt(info.vehicleFileSummary.recordCount, 0) : t('notFound')),
+        kv(t('importedUsedVehicles'), info.usedVehicleFileSummary ? fmt(info.usedVehicleFileSummary.recordCount, 0) : t('notFound')),
         info.citizenSummary ? kv(t('unassignedCitizens'), fmt(info.citizenSummary.unassigned, 0)) : null,
         info.citizenSummary ? kv(t('populatedScopes'), fmt(info.citizenSummary.populatedScopeCount, 0)) : null,
         info.research ? kv(t('importedResearch'), `${fmt(info.researchComplete, 0)} / ${fmt(info.research.length, 0)}`) : null,
@@ -3013,7 +3050,9 @@ function renderHelp() {
 
 // ---------------------------------------------------------------- share / routing
 function sharedState() {
-  return stateProjection(SHARE_KEYS);
+  const projected = stateProjection(SHARE_KEYS);
+  projected.saveImport = shareSafeSaveImport(projected.saveImport);
+  return projected;
 }
 
 function cloneStateValue(value) {

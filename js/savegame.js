@@ -52,10 +52,24 @@ class BinaryCursor {
     return value;
   }
 
+  f64beAt(offset, context) {
+    if (offset < 0 || offset + 8 > this.bytes.length) throw new Error(`${context}: value is outside the file`);
+    return this.view.getFloat64(offset, false);
+  }
+
   asciiZ(offset, size) {
     let end = offset;
     const limit = offset + size;
     while (end < limit && this.bytes[end] !== 0) end += 1;
+    return ascii.decode(this.bytes.subarray(offset, end));
+  }
+
+  asciiZStrict(offset, size, context) {
+    if (offset < 0 || offset + size > this.bytes.length) throw new Error(`${context}: string is outside the file`);
+    let end = offset;
+    const limit = offset + size;
+    while (end < limit && this.bytes[end] !== 0) end += 1;
+    if (end === limit) throw new Error(`${context}: missing NUL terminator`);
     return ascii.decode(this.bytes.subarray(offset, end));
   }
 
@@ -222,6 +236,174 @@ export function parseWorkers(buffer, { saveVersion = 124 } = {}) {
   return {
     citizens,
     summary: { recordCount: count, byteLength: c.bytes.length, trailingBytes: 0 },
+  };
+}
+
+function skipVehicleNested(c, context) {
+  c.require(0x18, `${context} header`);
+  const count = c.countAt(c.offset + 8, `${context} entry count`);
+  c.skip(0x18 + count * 0x48, context);
+}
+
+export function parseVehicles(buffer, { onProgress } = {}) {
+  const c = new BinaryCursor(buffer);
+  const total = c.u32('vehicle count');
+  if (total > 1_000_000) throw new Error(`implausible vehicle count ${total}`);
+  const vehicles = [];
+  const fixedSize = 0x7e8;
+  const headerSize = 0x40;
+
+  for (let index = 0; index < total; index += 1) {
+    const start = c.offset;
+    c.require(fixedSize + headerSize, `vehicle ${index} fixed/header blocks`);
+    const h = start + fixedSize;
+    const count = (offset, context) => c.countAt(start + offset, `vehicle ${index} ${context}`);
+    const headerCount = (offset, context) => c.countAt(h + offset, `vehicle ${index} ${context}`);
+    const childCount = count(0x008, 'child count');
+    const cargoCount = count(0x00c, 'cargo count');
+    const nestedCount = count(0x0b0, 'nested-pair count');
+    const blobSize = headerCount(0x24, 'state blob size');
+    const trailingNameCount = headerCount(0x34, 'trailing-name count');
+
+    c.offset = h + headerSize;
+    c.skip(childCount * 4, `vehicle ${index} children`);
+    const cargoStart = c.offset;
+    c.skip(cargoCount * 0x48, `vehicle ${index} cargo`);
+    c.skip(count(0x7c0, 'linked count') * 4, `vehicle ${index} linked IDs`);
+    c.skip(count(0x018, 'pointer-ID count') * 4, `vehicle ${index} pointer IDs`);
+    for (let item = 0; item < nestedCount; item += 1) {
+      skipVehicleNested(c, `vehicle ${index} nested ${item}.0`);
+      skipVehicleNested(c, `vehicle ${index} nested ${item}.1`);
+    }
+    c.skip(count(0x0b4, 'ID count') * 4, `vehicle ${index} IDs`);
+    c.skip(count(0x0c0, 'paired A count') * 8, `vehicle ${index} paired A`);
+    c.skip(count(0x0c4, 'paired B count') * 8, `vehicle ${index} paired B`);
+    c.skip(count(0x0d0, 'triples A count') * 0x0c, `vehicle ${index} triples A`);
+    c.skip(count(0x0d4, 'triples B count') * 0x0c, `vehicle ${index} triples B`);
+    c.skip(count(0x0a8, 'triples C count') * 0x0c, `vehicle ${index} triples C`);
+    c.skip(count(0x100, 'paired C count') * 8, `vehicle ${index} paired C`);
+    c.skip(count(0x720, 'row A count') * 0x18, `vehicle ${index} rows A`);
+    c.skip(count(0x724, 'row B count') * 0x18, `vehicle ${index} rows B`);
+    if (c.view.getUint32(start + 0x7dc, true) !== 0) c.skip(0x200, `vehicle ${index} optional 0x200 block`);
+    if (c.view.getInt32(start + 0x7d4, true) === -1) c.skip(0x0c, `vehicle ${index} optional 0x0c block`);
+    c.skip(headerCount(0x00, 'attachment count') * 0x0c, `vehicle ${index} attachments`);
+    c.skip(headerCount(0x10, 'quad count') * 0x10, `vehicle ${index} quads`);
+    if (c.view.getUint8(h + 0x14) !== 0) c.skip(0x80, `vehicle ${index} optional name block`);
+    const blobStart = c.offset;
+    c.skip(blobSize, `vehicle ${index} state blob`);
+    c.skip(trailingNameCount * 0x80, `vehicle ${index} trailing names`);
+
+    const cargo = [];
+    for (let item = 0; item < cargoCount; item += 1) {
+      const offset = cargoStart + item * 0x48;
+      const entry = {
+        resource: c.asciiZStrict(offset, 0x40, `vehicle ${index} cargo ${item} resource`),
+        amount: c.view.getFloat32(offset + 0x40, true),
+        flags: c.view.getUint32(offset + 0x44, true),
+      };
+      if (entry.amount > 0) cargo.push(entry);
+    }
+    vehicles.push({
+      index,
+      id: c.view.getInt32(start, true),
+      model: c.asciiZStrict(start + 0x728, 0x80, `vehicle ${index} model`),
+      ownershipField: c.view.getInt32(start + 0x10, true),
+      fuel: c.view.getFloat32(start + 0x7b8, true),
+      state: c.view.getInt32(start + 0x7cc, true),
+      progress: c.view.getFloat32(start + 0x7d0, true),
+      accumulatedUsage: blobSize >= 8
+        ? c.f64beAt(blobStart, `vehicle ${index} accumulated usage`) : null,
+      age: blobSize >= 16 ? c.f64beAt(blobStart + 8, `vehicle ${index} age`) : null,
+      cargo,
+    });
+    if (onProgress && (index % 100 === 0 || index + 1 === total)) onProgress(index + 1, total);
+  }
+
+  if (c.offset !== c.bytes.length) throw new Error(`vehicles.bin has ${c.bytes.length - c.offset} trailing bytes`);
+  return {
+    vehicles,
+    summary: { recordCount: total, byteLength: c.bytes.length, trailingBytes: 0 },
+  };
+}
+
+export function parseUsedVehicles(buffer) {
+  const c = new BinaryCursor(buffer);
+  c.require(0x48, 'usedveh.bin header');
+  const u24be = offset => (c.bytes[offset] << 16) | (c.bytes[offset + 1] << 8) | c.bytes[offset + 2];
+  const declaredCount = c.view.getUint32(0x44, true);
+  if (declaredCount > 1_000_000) throw new Error(`implausible used vehicle count ${declaredCount}`);
+  const declaredDataStart = u24be(0x28);
+  const declaredDataLength = u24be(0x30);
+  const dataStart = c.bytes.length - declaredDataLength;
+  if (declaredDataStart !== dataStart) {
+    throw new Error(`usedveh.bin data start mismatch: header=${declaredDataStart}, EOF-derived=${dataStart}`);
+  }
+  if (dataStart < 0x48 || dataStart > c.bytes.length) throw new Error(`usedveh.bin invalid data start ${dataStart}`);
+
+  const offers = [];
+  const spans = [];
+  let cursor = dataStart;
+  while (cursor < c.bytes.length) {
+    const start = cursor;
+    if (start + 0x20 > c.bytes.length) throw new Error(`usedveh.bin truncated record header at 0x${start.toString(16)}`);
+    const valueCount = c.view.getUint16(start, false);
+    const age = c.view.getFloat64(start + 2, false);
+    const accumulatedUsage = c.view.getFloat64(start + 10, false);
+    const modifier = c.view.getFloat64(start + 18, false);
+    const taggedLength = c.view.getUint32(start + 26, false);
+    const taggedStart = start + 30;
+    const taggedEnd = taggedStart + taggedLength;
+    if (taggedEnd + 2 > c.bytes.length) throw new Error(`usedveh.bin truncated tagged block at 0x${start.toString(16)}`);
+    let tagCursor = taggedStart;
+    let model = null;
+    let metadata = null;
+    while (tagCursor < taggedEnd) {
+      if (tagCursor + 4 > taggedEnd) throw new Error(`usedveh.bin truncated tag header at 0x${tagCursor.toString(16)}`);
+      const id = c.view.getUint16(tagCursor, false);
+      const length = c.view.getUint16(tagCursor + 2, false);
+      const valueStart = tagCursor + 4;
+      const valueEnd = valueStart + length;
+      if (valueEnd > taggedEnd) throw new Error(`usedveh.bin tag ${id} overruns record at 0x${start.toString(16)}`);
+      if (id === 1) {
+        if (!length || c.bytes[valueEnd - 1] !== 0) throw new Error(`usedveh.bin model tag is not NUL-terminated at 0x${start.toString(16)}`);
+        model = ascii.decode(c.bytes.subarray(valueStart, valueEnd - 1));
+      } else if (id === 2) {
+        if (length !== 4) throw new Error(`usedveh.bin metadata tag length ${length}, expected 4`);
+        metadata = c.view.getInt32(valueStart, false);
+      }
+      tagCursor = valueEnd;
+    }
+    if (c.view.getUint16(taggedEnd, false) !== 0) throw new Error(`usedveh.bin record terminator is not zero at 0x${start.toString(16)}`);
+    if (valueCount !== 1 || model === null || metadata === null
+        || ![age, accumulatedUsage, modifier].every(Number.isFinite)) {
+      throw new Error(`usedveh.bin invalid record ${offers.length} at 0x${start.toString(16)}`);
+    }
+    cursor = taggedEnd + 2;
+    spans.push({ start, length: cursor - start });
+    offers.push({ index: offers.length, model, age, accumulatedUsage, modifier, metadata });
+  }
+  if (offers.length !== declaredCount) {
+    throw new Error(`usedveh.bin count mismatch: header=${declaredCount}, traversed=${offers.length}`);
+  }
+
+  const expectedIndex = [];
+  for (let index = 0; index < spans.length; index += 1) {
+    const relativeStart = spans[index].start - dataStart;
+    if (spans[index].length > 0xff) throw new Error('usedveh.bin unsupported compact-index record width');
+    expectedIndex.push(relativeStart & 0xff, 0, 0, 0, spans[index].length);
+    if (index + 1 < spans.length) {
+      const next = spans[index + 1].start - dataStart;
+      expectedIndex.push((next >>> 24) & 0xff, (next >>> 16) & 0xff, (next >>> 8) & 0xff);
+    }
+  }
+  const actualIndex = c.bytes.subarray(0x48, dataStart);
+  if (actualIndex.length !== expectedIndex.length
+      || expectedIndex.some((value, index) => actualIndex[index] !== value)) {
+    throw new Error('usedveh.bin compact span index does not match traversed records');
+  }
+  return {
+    offers,
+    summary: { recordCount: declaredCount, byteLength: c.bytes.length, trailingBytes: 0 },
   };
 }
 

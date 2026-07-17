@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   parseBuildingsGame, parseWorkers, parseHeader, parseMapClimate, parseResearch,
+  parseVehicles, parseUsedVehicles,
 } from '../js/savegame.js';
 import * as savegame from '../js/savegame.js';
 
@@ -12,6 +13,116 @@ function writeUtf16(bytes, offset, text) {
     bytes[offset + index * 2 + 1] = 0;
   });
 }
+
+function vehicleFixture({ cargo = [], optionalBranches = false } = {}) {
+  const fixed = 0x7e8;
+  const header = 0x40;
+  const blobSize = 16;
+  const dynamicSize = cargo.length * 0x48
+    + (optionalBranches ? 0x200 + 0x0c + 0x0c + 0x10 + 0x80 + 0x80 : 0)
+    + blobSize;
+  const buffer = new ArrayBuffer(4 + fixed + header + dynamicSize);
+  const view = new DataView(buffer);
+  const bytes = new Uint8Array(buffer);
+  const start = 4;
+  const h = start + fixed;
+  view.setUint32(0, 1, true);
+  view.setInt32(start, 0, true);
+  view.setUint32(start + 0x0c, cargo.length, true);
+  bytes.set(new TextEncoder().encode('tanker\0'), start + 0x728);
+  view.setFloat32(start + 0x7b8, 93.6, true);
+  view.setInt32(start + 0x7cc, -1, true);
+  view.setFloat32(start + 0x7d0, 0.75, true);
+  view.setUint32(h + 0x24, blobSize, true);
+  let cursor = h + header;
+  for (const item of cargo) {
+    bytes.set(new TextEncoder().encode(`${item.resource}\0`), cursor);
+    view.setFloat32(cursor + 0x40, item.amount, true);
+    view.setUint32(cursor + 0x44, item.flags ?? 0, true);
+    cursor += 0x48;
+  }
+  if (optionalBranches) {
+    view.setUint32(start + 0x7dc, 1, true);
+    view.setInt32(start + 0x7d4, -1, true);
+    view.setUint32(h, 1, true);
+    view.setUint32(h + 0x10, 1, true);
+    view.setUint8(h + 0x14, 1);
+    view.setUint32(h + 0x34, 1, true);
+    cursor += 0x200 + 0x0c + 0x0c + 0x10 + 0x80;
+  }
+  view.setFloat64(cursor, 21772.365181054876, false);
+  view.setFloat64(cursor + 8, 630.9812399897511, false);
+  return buffer;
+}
+
+test('vehicle records expose decision fields and require exact EOF', () => {
+  const buffer = vehicleFixture({ cargo: [{ resource: 'oil', amount: 4338.07470703125, flags: 3 }] });
+  const parsed = parseVehicles(buffer);
+
+  assert.deepEqual(parsed.summary, { recordCount: 1, byteLength: buffer.byteLength, trailingBytes: 0 });
+  assert.equal(parsed.vehicles[0].id, 0);
+  assert.equal(parsed.vehicles[0].model, 'tanker');
+  assert.equal(parsed.vehicles[0].state, -1);
+  assert.equal(parsed.vehicles[0].progress, 0.75);
+  assert.ok(Math.abs(parsed.vehicles[0].fuel - 93.6) < 1e-4);
+  assert.equal(parsed.vehicles[0].accumulatedUsage, 21772.365181054876);
+  assert.equal(parsed.vehicles[0].age, 630.9812399897511);
+  assert.deepEqual(parsed.vehicles[0].cargo, [{ resource: 'oil', amount: 4338.07470703125, flags: 3 }]);
+
+  const appended = new Uint8Array(buffer.byteLength + 1);
+  appended.set(new Uint8Array(buffer));
+  assert.throws(() => parseVehicles(appended.buffer), /trailing bytes/);
+  assert.throws(() => parseVehicles(buffer.slice(0, -1)), /state blob/);
+});
+
+test('vehicle traversal consumes writer-proven optional blocks', () => {
+  const buffer = vehicleFixture({ optionalBranches: true });
+  const parsed = parseVehicles(buffer);
+  assert.equal(parsed.vehicles.length, 1);
+  assert.equal(parsed.summary.byteLength, buffer.byteLength);
+});
+
+function usedVehicleFixture() {
+  const model = new TextEncoder().encode('tanker\0');
+  const taggedLength = 4 + model.length + 8;
+  const recordLength = 0x20 + taggedLength;
+  const dataStart = 0x4d;
+  const buffer = new ArrayBuffer(dataStart + recordLength);
+  const bytes = new Uint8Array(buffer);
+  const view = new DataView(buffer);
+  bytes.set([(dataStart >>> 16) & 0xff, (dataStart >>> 8) & 0xff, dataStart & 0xff], 0x28);
+  bytes.set([(recordLength >>> 16) & 0xff, (recordLength >>> 8) & 0xff, recordLength & 0xff], 0x30);
+  view.setUint32(0x44, 1, true);
+  bytes.set([0, 0, 0, 0, recordLength], 0x48);
+  const start = dataStart;
+  view.setUint16(start, 1, false);
+  view.setFloat64(start + 2, 12.5, false);
+  view.setFloat64(start + 10, 4.25, false);
+  view.setFloat64(start + 18, -0.1, false);
+  view.setUint32(start + 26, taggedLength, false);
+  let cursor = start + 30;
+  view.setUint16(cursor, 1, false);
+  view.setUint16(cursor + 2, model.length, false);
+  bytes.set(model, cursor + 4);
+  cursor += 4 + model.length;
+  view.setUint16(cursor, 2, false);
+  view.setUint16(cursor + 2, 4, false);
+  view.setInt32(cursor + 4, 118, false);
+  view.setUint16(start + recordLength - 2, 0, false);
+  return buffer;
+}
+
+test('used market records expose model and saved offer factors at exact EOF', () => {
+  const buffer = usedVehicleFixture();
+  const parsed = parseUsedVehicles(buffer);
+
+  assert.deepEqual(parsed.summary, { recordCount: 1, byteLength: buffer.byteLength, trailingBytes: 0 });
+  assert.deepEqual(parsed.offers, [{
+    index: 0, model: 'tanker', age: 12.5, accumulatedUsage: 4.25,
+    modifier: -0.1, metadata: 118,
+  }]);
+  assert.throws(() => parseUsedVehicles(buffer.slice(0, -1)), /data start mismatch|truncated/);
+});
 
 test('live building exposes configured caps, current workers and mine quality', () => {
   // A zero-count record traverses only the writer's 0x6d8 fixed payload and

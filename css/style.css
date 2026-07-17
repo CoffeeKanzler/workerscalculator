@@ -315,6 +315,12 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 
 @media (max-width: 700px) {
   .controls, .settingsbar { flex-direction: column; align-items: stretch; }
+  .controls > * { min-width: 0; max-width: 100%; }
+  .controls label { min-width: 0; flex-wrap: wrap; }
+  .controls label select { min-width: 0; max-width: 100%; }
+  .sharebtns { margin-left: 0; }
+  .saveslots { flex-wrap: wrap; }
+  .saveslotnotice { width: 100%; white-space: normal; }
   .settingsbar > * { width: 100%; max-width: 100%; }
   .settingsbar label { min-width: 0; flex-wrap: wrap; }
   .settingsbar label select { min-width: 0; max-width: 100%; }
@@ -335,4 +341,12 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
   .alert { grid-template-columns: 1fr; gap: 3px; }
   .start-grid { grid-template-columns: 1fr; }
   .start-card.current-republic { grid-column: auto; }
+  .more-nav-menu {
+    left: 0;
+    right: auto;
+    width: min(364px, calc(100vw - 32px));
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .more-nav-menu button { min-width: 0; }
 }

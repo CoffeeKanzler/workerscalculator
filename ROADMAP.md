@@ -176,6 +176,12 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   crime stages (awaiting police, investigation, or court), while clinic records expose
   current patients and effective treatment capacity. Prison/orphan occupancy follows live
   citizen residence links; cumulative `stats.ini` failures stay labelled as history.
+  - **Fleet sources:** optional `vehicles.bin` and `usedveh.bin` now traverse writer-defined
+  record boundaries in the import worker and require exact EOF. The supplied save validates
+  at 1,294 owned records and 75 current used-market offers. Compact model, age, saved usage,
+  state, fuel, positive cargo and offer facts are retained in the named snapshot; vanilla
+  models resolve against current game-file data and numeric Workshop identities remain exact.
+  Missing or unsupported optional files remain visibly unavailable instead of becoming zero.
   - **Map/game settings:** verified season state from `header.bin` and climate family from
   `material.mtl` now control whether heating applies. A Misc section exposes verified
   settings. Continue mapping the remaining header settings with controlled save diffs;
@@ -188,11 +194,14 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   observed occupancy without inventing capacity. For packages Steam does not expose
   anonymously, users can optionally select their installed
   `steamapps/workshop/content/784150` folder; its `building.ini` facts are read locally
-  and never uploaded. Inventory buffers,
-  vehicle/line state, and logistics topology are not decoded yet.
-  - **Next high-value save modules:** building inventories and production buffers;
-  vehicles, lines, and schedules; used-vehicle export versus recycling opportunities at
-  the save's current market prices; distribution/logistics bottlenecks; and optional live
+  and never uploaded. Inventory buffers, vehicle lines/schedules and logistics topology are
+  not decoded yet. Fleet economic ranking remains deliberately unavailable until the corrected
+  normal-vehicle recycling formula and every export-setting gate are verified; an earlier
+  10%/20%/70% assumption was found to apply to container vehicles, not ships, and was not
+  shipped as a recommendation.
+  - **Next high-value save modules:** finish verified owned-fleet export/recycling opportunities;
+  building inventories and production buffers; vehicle lines and schedules; distribution/logistics
+  bottlenecks; and optional live
   follow of a save directory. Cosmetic map/network geometry stays out of scope until a
   planner feature needs it.
 

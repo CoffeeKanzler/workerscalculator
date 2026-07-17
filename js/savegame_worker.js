@@ -1,11 +1,11 @@
 import {
   parseNamepoints, parseBuildingsGame, parseWorkers, parseHeader, parseResearch, parseEvents,
-  parseMapClimate, reconcileSettlementMembership,
-} from './savegame.js?v=4';
+  parseMapClimate, parseVehicles, parseUsedVehicles, reconcileSettlementMembership,
+} from './savegame.js?v=5';
 import { parseCityStatsIni, parseStatsIni } from './statsini.js?v=16';
 
 const sourceStatus = (payload) => Object.fromEntries(
-  ['namepoints', 'buildings', 'workers', 'header', 'research', 'events', 'stats', 'material']
+  ['namepoints', 'buildings', 'workers', 'vehicles', 'usedVehicles', 'header', 'research', 'events', 'stats', 'material']
     .map((key) => [key, payload[key] ? 'pending' : 'missing']),
 );
 
@@ -47,6 +47,10 @@ self.onmessage = ({ data }) => {
     const workers = optional('workers', (buffer) => parseWorkers(buffer, {
       saveVersion: header?.saveVersion ?? 124,
     }));
+    const vehicles = optional('vehicles', (buffer) => parseVehicles(buffer, {
+      onProgress: (done, total) => self.postMessage({ type: 'progress', file: 'vehicles', done, total }),
+    }));
+    const usedVehicles = optional('usedVehicles', parseUsedVehicles);
     const research = optional('research', parseResearch);
     const events = optional('events', parseEvents);
     const statsRecords = optional('stats', parseStatsIni);
@@ -57,6 +61,9 @@ self.onmessage = ({ data }) => {
       parsed: {
         settlements, buildings, citizens: workers?.citizens ?? null,
         citizenFileSummary: workers?.summary ?? null, header, research, events, mapClimate,
+        vehicles: vehicles?.vehicles ?? null, vehicleFileSummary: vehicles?.summary ?? null,
+        usedVehicleOffers: usedVehicles?.offers ?? null,
+        usedVehicleFileSummary: usedVehicles?.summary ?? null,
         statsRecords, cityStats, membershipAudit, sourceStatus: status, warnings,
       },
     });
