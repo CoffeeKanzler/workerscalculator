@@ -561,7 +561,7 @@ function renderProduction() {
       return el('tr', {},
         el('td', {}, groupSel), el('td', {}, bSel),
         el('td', {}, numInput(row.count, v => row.count = v, { min: 0, step: 1 })),
-        el('td', {}, isMine ? numInput(row.quality ?? 1, v => row.quality = v, { step: 0.05, min: 0 }) : '—'),
+        el('td', {}, isMine ? pctInput(row.quality ?? 1, v => row.quality = v) : '—'),
         el('td', { class: 'r' }, b ? fmt(b.workers * row.count, 0) : '—'),
         el('td', { class: 'r ' + ((res.profit ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profit)),
         el('td', { class: 'r ' + ((res.profitPerWorker ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profitPerWorker)),
@@ -692,7 +692,7 @@ function renderChain() {
         el('td', {}, srcToggle),
         el('td', {}, producerSel),
         el('td', {}, isMine
-          ? numInput(ch.quality[row.key] ?? 1, v => ch.quality[row.key] = v, { step: 0.05, min: 0 })
+          ? pctInput(ch.quality[row.key] ?? 1, v => ch.quality[row.key] = v)
           : '—'),
         el('td', { class: 'r' }, row.imported ? '—' : `${fmt(row.countCeil, 0)} (${fmt(row.count, 2)})`),
         // Actual workers the target demand needs vs. the full capacity of the
