@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1879774662",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:44:18+00:00",
+  "buildings": [
+    {
+      "id": "1879774662/Fire41621",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fire Station 4-16-21",
+      "workshopId": "1879774662",
+      "modPath": "Fire41621"
+    },
+    {
+      "id": "1879774662/Fire41621_brick",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fire Station 4-16-21 brick",
+      "workshopId": "1879774662",
+      "modPath": "Fire41621_brick"
+    }
+  ],
+  "vehicles": []
+}

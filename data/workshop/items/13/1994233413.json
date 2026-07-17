@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1994233413",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:59:31+00:00",
+  "buildings": [
+    {
+      "id": "1994233413/Leningrad_SKK",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 95.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 32.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Leningrad_SKK",
+      "workshopId": "1994233413",
+      "modPath": "Leningrad_SKK"
+    }
+  ],
+  "vehicles": []
+}

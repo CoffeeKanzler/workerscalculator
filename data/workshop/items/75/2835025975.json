@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2835025975",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:47:49+00:00",
+  "buildings": [
+    {
+      "id": "2835025975/cieplownia",
+      "nameId": 6333,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 6.0,
+      "professors": 0,
+      "production": {
+        "heat": 300.0
+      },
+      "consumption": {
+        "coal": 0.3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2835025975",
+      "modPath": "cieplownia"
+    }
+  ],
+  "vehicles": []
+}

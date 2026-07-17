@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2252548153",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:57:41+00:00",
+  "buildings": [
+    {
+      "id": "2252548153/kek-trol",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Perpendicular Parking 2 (trolleybus)",
+      "workshopId": "2252548153",
+      "modPath": "kek-trol"
+    },
+    {
+      "id": "2252548153/kek1",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Perpendicular Parking 2",
+      "workshopId": "2252548153",
+      "modPath": "kek1"
+    }
+  ],
+  "vehicles": []
+}

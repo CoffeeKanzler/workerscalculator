@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1965405254",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:41:35+00:00",
+  "buildings": [
+    {
+      "id": "1965405254/F_lrg",
+      "nameId": null,
+      "types": [
+        "TYPE_FIELD"
+      ],
+      "workers": 175.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Square Field",
+      "workshopId": "1965405254",
+      "modPath": "F_lrg"
+    },
+    {
+      "id": "1965405254/F_med",
+      "nameId": null,
+      "types": [
+        "TYPE_FIELD"
+      ],
+      "workers": 150.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Square Field",
+      "workshopId": "1965405254",
+      "modPath": "F_med"
+    },
+    {
+      "id": "1965405254/F_sm",
+      "nameId": null,
+      "types": [
+        "TYPE_FIELD"
+      ],
+      "workers": 75.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Square Field",
+      "workshopId": "1965405254",
+      "modPath": "F_sm"
+    },
+    {
+      "id": "1965405254/test_3",
+      "nameId": null,
+      "types": [
+        "TYPE_FIELD"
+      ],
+      "workers": 1500.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Massive field",
+      "workshopId": "1965405254",
+      "modPath": "test_3"
+    }
+  ],
+  "vehicles": []
+}

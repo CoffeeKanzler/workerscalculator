@@ -86,7 +86,7 @@ test('production grouping preserves configured staffing and exact mine quality',
     group: 'Mining', name: 'Coal mine', count: 1, quality: 0.6,
     qualityEstimated: false, scopeId: 7, sourceGameId: 'industry/coal_mine',
     observedBuildingIndices: [2], currentWorkers: 95, configuredWorkers: 100,
-    configuredWorkersHighEducation: 2, nominalWorkers: 120,
+    configuredWorkersHighEducation: 2, nominalWorkers: 120, constructionProgress: 1,
   });
   assert.deepEqual(result.unmatched, []);
 });

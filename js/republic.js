@@ -6,8 +6,13 @@ function productionByScope(rows = []) {
     const key = Number.isInteger(row.scopeId) ? row.scopeId : null;
     const item = scopes.get(key) ?? {
       configuredIndustryWorkers: 0, currentIndustryWorkers: 0,
-      productionBuildingCount: 0,
+      productionBuildingCount: 0, constructionBuildingCount: 0,
     };
+    if ((row.constructionProgress ?? 1) < 1) {
+      item.constructionBuildingCount += row.count ?? 0;
+      scopes.set(key, item);
+      continue;
+    }
     item.configuredIndustryWorkers += ((row.configuredWorkers ?? 0)
       + (row.configuredWorkersHighEducation ?? 0)) * (row.count ?? 0);
     item.currentIndustryWorkers += (row.currentWorkers ?? 0) * (row.count ?? 0);
@@ -32,12 +37,14 @@ function actualProjection(observed = {}) {
       adults: citizens?.adults ?? null,
       productivity: citizens?.productivity ?? null,
       health: citizens?.health ?? null,
+      criminality: citizens?.criminality ?? null,
       food: citizens?.food ?? null,
       happiness: citizens?.happiness ?? null,
       loyalty: citizens?.loyalty ?? null,
       configuredIndustryWorkers: industry.configuredIndustryWorkers ?? 0,
       currentIndustryWorkers: industry.currentIndustryWorkers ?? 0,
       productionBuildingCount: industry.productionBuildingCount ?? 0,
+      constructionBuildingCount: industry.constructionBuildingCount ?? 0,
     };
   });
   const populated = areas.filter(area => Number.isFinite(area.population));

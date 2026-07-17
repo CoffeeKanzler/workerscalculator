@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2661606204",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:43:40+00:00",
+  "buildings": [
+    {
+      "id": "2661606204/Bridge",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 2.0,
+        "concrete": 10.0,
+        "workers": 300.0,
+        "bricks": 6.0,
+        "steel": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bridge over highway",
+      "workshopId": "2661606204",
+      "modPath": "Bridge"
+    }
+  ],
+  "vehicles": []
+}

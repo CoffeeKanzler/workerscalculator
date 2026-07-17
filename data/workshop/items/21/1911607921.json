@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1911607921",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:32:48+00:00",
+  "buildings": [
+    {
+      "id": "1911607921/halbleiterwerk",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 300.0,
+      "professors": 0,
+      "production": {
+        "ecomponents": 0.025
+      },
+      "consumption": {
+        "plastics": 0.01,
+        "steel": 0.01,
+        "chemicals": 0.008
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.4
+      },
+      "nameStr": "Large Electronic Component Factory",
+      "workshopId": "1911607921",
+      "modPath": "halbleiterwerk"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1882410479",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:54:25+00:00",
+  "buildings": [
+    {
+      "id": "1882410479/kinder212-2-66",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 18.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kindergarten - pr. 212-2-66",
+      "workshopId": "1882410479",
+      "modPath": "kinder212-2-66"
+    }
+  ],
+  "vehicles": []
+}

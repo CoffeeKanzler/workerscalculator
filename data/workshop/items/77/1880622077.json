@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1880622077",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:48:01+00:00",
+  "buildings": [
+    {
+      "id": "1880622077/School222",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 10.0,
+      "professors": 15.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old school - pr. 222",
+      "workshopId": "1880622077",
+      "modPath": "School222"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2415573253",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:37:00+00:00",
+  "buildings": [
+    {
+      "id": "2415573253/faelbud",
+      "nameId": 6172,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200.0,
+      "professors": 0,
+      "production": {
+        "prefabpanels": 1.1
+      },
+      "consumption": {
+        "gravel": 1.0,
+        "cement": 0.15
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.3
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2415573253",
+      "modPath": "faelbud"
+    }
+  ],
+  "vehicles": []
+}

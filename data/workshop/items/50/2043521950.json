@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2043521950",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:39:54+00:00",
+  "buildings": [
+    {
+      "id": "2043521950/Wheel_Obozrenie",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Wheel_Obozrenie",
+      "workshopId": "2043521950",
+      "modPath": "Wheel_Obozrenie"
+    }
+  ],
+  "vehicles": []
+}

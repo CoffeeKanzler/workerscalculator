@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2599444196",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:52:58+00:00",
+  "buildings": [
+    {
+      "id": "2599444196/ourw",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Polish street lamp (OURW-400)",
+      "workshopId": "2599444196",
+      "modPath": "ourw"
+    },
+    {
+      "id": "2599444196/ourw2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Polish double street lamp (OURW-400)",
+      "workshopId": "2599444196",
+      "modPath": "ourw2"
+    },
+    {
+      "id": "2599444196/ozpr",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Polish park lamp (OZPR-125)",
+      "workshopId": "2599444196",
+      "modPath": "ozpr"
+    }
+  ],
+  "vehicles": []
+}

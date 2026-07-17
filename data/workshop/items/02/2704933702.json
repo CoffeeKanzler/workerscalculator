@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2704933702",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:47:46+00:00",
+  "buildings": [
+    {
+      "id": "2704933702/I-521A-var1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 336.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 336.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Series I-521A-var1",
+      "workshopId": "2704933702",
+      "modPath": "I-521A-var1"
+    },
+    {
+      "id": "2704933702/I-521A-var2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 340.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 340.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Series I-521A-var2",
+      "workshopId": "2704933702",
+      "modPath": "I-521A-var2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2063696518",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:49:22+00:00",
+  "buildings": [
+    {
+      "id": "2063696518/combined_large",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 50000.0,
+        "RESOURCE_TRANSPORT_COOLER": 7000.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 3500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Cargo Large Storage",
+      "workshopId": "2063696518",
+      "modPath": "combined_large"
+    },
+    {
+      "id": "2063696518/combined_small",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 4000.0,
+        "RESOURCE_TRANSPORT_COOLER": 1500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Cargo Small Storage",
+      "workshopId": "2063696518",
+      "modPath": "combined_small"
+    },
+    {
+      "id": "2063696518/combined_vehicle",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 50000.0,
+        "RESOURCE_TRANSPORT_COOLER": 5000.0,
+        "RESOURCE_TRANSPORT_VEHICLES": 400.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 3500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Cargo Large / Vehicle Storage",
+      "workshopId": "2063696518",
+      "modPath": "combined_vehicle"
+    }
+  ],
+  "vehicles": []
+}

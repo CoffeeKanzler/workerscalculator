@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2776314625",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:47:14+00:00",
+  "buildings": [
+    {
+      "id": "2776314625/Kostel1",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 4.0,
+      "professors": 1.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 60.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Baroque Church",
+      "workshopId": "2776314625",
+      "modPath": "Kostel1"
+    }
+  ],
+  "vehicles": []
+}

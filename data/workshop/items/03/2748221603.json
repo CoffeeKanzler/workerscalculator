@@ -1,0 +1,652 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2748221603",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:45:29+00:00",
+  "buildings": [
+    {
+      "id": "2748221603/bigbulk",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big Bulk Harbor",
+      "workshopId": "2748221603",
+      "modPath": "bigbulk"
+    },
+    {
+      "id": "2748221603/bigdrybulkport",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big Dry Bulk Harbor",
+      "workshopId": "2748221603",
+      "modPath": "bigdrybulkport"
+    },
+    {
+      "id": "2748221603/bigoil",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big Oil Terminal",
+      "workshopId": "2748221603",
+      "modPath": "bigoil"
+    },
+    {
+      "id": "2748221603/bigport1",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "big Harbor",
+      "workshopId": "2748221603",
+      "modPath": "bigport1"
+    },
+    {
+      "id": "2748221603/bigport2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 10000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big Harbor with warehouses",
+      "workshopId": "2748221603",
+      "modPath": "bigport2"
+    },
+    {
+      "id": "2748221603/bigshipyard",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 1600.0,
+      "professors": 400.0,
+      "production": {
+        "vehicles": 5.0
+      },
+      "consumption": {
+        "steel": 1.0,
+        "plastics": 1.0,
+        "mcomponents": 1.0,
+        "ecomponents": 1.0,
+        "fabric": 1.0,
+        "eletronics": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 6.0
+      },
+      "nameStr": "Big Shipyard",
+      "workshopId": "2748221603",
+      "modPath": "bigshipyard"
+    },
+    {
+      "id": "2748221603/bigwarehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 7500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "big Port Warehouse",
+      "workshopId": "2748221603",
+      "modPath": "bigwarehouse"
+    },
+    {
+      "id": "2748221603/containerport",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150.0,
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Container Port",
+      "workshopId": "2748221603",
+      "modPath": "containerport"
+    },
+    {
+      "id": "2748221603/cruiseshipterminal",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cruiseship Terminal",
+      "workshopId": "2748221603",
+      "modPath": "cruiseshipterminal"
+    },
+    {
+      "id": "2748221603/floatingdrydock",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 400.0,
+      "professors": 100.0,
+      "production": {
+        "vehicles": 3.0
+      },
+      "consumption": {
+        "steel": 1.0,
+        "plastics": 1.0,
+        "mcomponents": 1.0,
+        "ecomponents": 1.0,
+        "fabric": 1.0,
+        "eletronics": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 6.0
+      },
+      "nameStr": "floating Drydock",
+      "workshopId": "2748221603",
+      "modPath": "floatingdrydock"
+    },
+    {
+      "id": "2748221603/mediumbulk",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Bulk Harbor",
+      "workshopId": "2748221603",
+      "modPath": "mediumbulk"
+    },
+    {
+      "id": "2748221603/mediumdrybulkport",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Dry Bulk Harbor",
+      "workshopId": "2748221603",
+      "modPath": "mediumdrybulkport"
+    },
+    {
+      "id": "2748221603/mediumoil",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Oil Terminal",
+      "workshopId": "2748221603",
+      "modPath": "mediumoil"
+    },
+    {
+      "id": "2748221603/mediumpassengerport",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Ferry Port",
+      "workshopId": "2748221603",
+      "modPath": "mediumpassengerport"
+    },
+    {
+      "id": "2748221603/mediumport1",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "medium Harbor",
+      "workshopId": "2748221603",
+      "modPath": "mediumport1"
+    },
+    {
+      "id": "2748221603/mediumport2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 7500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "medium Harbor with Warehouses",
+      "workshopId": "2748221603",
+      "modPath": "mediumport2"
+    },
+    {
+      "id": "2748221603/mediumwarehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 5000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Port Warehouse",
+      "workshopId": "2748221603",
+      "modPath": "mediumwarehouse"
+    },
+    {
+      "id": "2748221603/smallbulk",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Bulk Harbor",
+      "workshopId": "2748221603",
+      "modPath": "smallbulk"
+    },
+    {
+      "id": "2748221603/smalldrybulkport",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Dry Bulk Harbor",
+      "workshopId": "2748221603",
+      "modPath": "smalldrybulkport"
+    },
+    {
+      "id": "2748221603/smalloil",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Oil Terminal",
+      "workshopId": "2748221603",
+      "modPath": "smalloil"
+    },
+    {
+      "id": "2748221603/smallpassengerport",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Ferry Port",
+      "workshopId": "2748221603",
+      "modPath": "smallpassengerport"
+    },
+    {
+      "id": "2748221603/smallport1",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "small Harbor",
+      "workshopId": "2748221603",
+      "modPath": "smallport1"
+    },
+    {
+      "id": "2748221603/smallport2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 5000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "small Harbor with Warehouses",
+      "workshopId": "2748221603",
+      "modPath": "smallport2"
+    },
+    {
+      "id": "2748221603/smallshipyard",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 200.0,
+      "professors": 50.0,
+      "production": {
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "steel": 1.0,
+        "plastics": 1.0,
+        "mcomponents": 1.0,
+        "ecomponents": 1.0,
+        "fabric": 1.0,
+        "eletronics": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 6.0
+      },
+      "nameStr": "Small Shipyard",
+      "workshopId": "2748221603",
+      "modPath": "smallshipyard"
+    }
+  ],
+  "vehicles": []
+}

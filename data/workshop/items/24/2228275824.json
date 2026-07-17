@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2228275824",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:40:01+00:00",
+  "buildings": [
+    {
+      "id": "2228275824/domkultury3",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 6.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House of culture Maki",
+      "workshopId": "2228275824",
+      "modPath": "domkultury3"
+    }
+  ],
+  "vehicles": []
+}

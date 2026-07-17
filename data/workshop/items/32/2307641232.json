@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2307641232",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:00:43+00:00",
+  "buildings": [
+    {
+      "id": "2307641232/Continental",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 40.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1240.0,
+        "steel": 48.0,
+        "asphalt": 60.0,
+        "gravel": 30.0,
+        "prefabpanels": 348.0,
+        "concrete": 132.0,
+        "ecomponents": 7.0,
+        "boards": 46.0,
+        "mcomponents": 6.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel Continental",
+      "workshopId": "2307641232",
+      "modPath": "Continental"
+    }
+  ],
+  "vehicles": []
+}

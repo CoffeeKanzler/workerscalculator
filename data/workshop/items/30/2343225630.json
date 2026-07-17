@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2343225630",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:44:25+00:00",
+  "buildings": [
+    {
+      "id": "2343225630/CityMagazynA",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 150.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2343225630",
+      "modPath": "CityMagazynA"
+    },
+    {
+      "id": "2343225630/CityMagazynA2",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 150.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2343225630",
+      "modPath": "CityMagazynA2"
+    }
+  ],
+  "vehicles": []
+}

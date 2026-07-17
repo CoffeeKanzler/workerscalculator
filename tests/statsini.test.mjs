@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseStatsIni, recordToPrices } from '../js/statsini.js';
+import { parseCityStatsIni, parseStatsIni, recordToPrices } from '../js/statsini.js';
 
 const SAMPLE = `$STAT_RECORD 0
 ====
@@ -145,4 +145,31 @@ $end`;
   assert.equal(record.dead, 2);
   assert.equal(record.averageProductivity, 0.91);
   assert.equal(record.year, 2000);
+});
+
+test('parses settlement crime counters without treating them as republic prices', () => {
+  const records = parseCityStatsIni(`$STAT_CITY 24
+$DATE_DAY 53
+$DATE_YEAR 1960
+$Citizens_Born 12
+Crime_Executed_0 18
+Crime_Executed_1 4
+Crime_Executed_2 2
+Crime_Error_NoPolice 3
+Crime_Error_NotInvestigated 1
+Crime_Error_NotCourt 5
+Crime_Prisoners_Escaped 2
+$STAT_CITY 25
+$DATE_YEAR 1960
+Crime_Executed_0 1
+`);
+  assert.equal(records.length, 2);
+  assert.deepEqual(records[0], {
+    scopeId: 24, day: 53, year: 1960, born: 12,
+    minorCrimes: 18, mediumCrimes: 4, seriousCrimes: 2,
+    withoutPolice: 3, notInvestigated: 1, withoutCourt: 5, prisonersEscaped: 2,
+    recordedCrimes: 24, unresolvedCrimes: 9,
+  });
+  assert.equal(records[1].scopeId, 25);
+  assert.equal(records[1].recordedCrimes, 1);
 });

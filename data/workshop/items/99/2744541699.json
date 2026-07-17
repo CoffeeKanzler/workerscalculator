@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2744541699",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:59:06+00:00",
+  "buildings": [
+    {
+      "id": "2744541699/msp1929",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 26.0,
+      "professors": 0,
+      "production": {
+        "eletric": 29.05
+      },
+      "consumption": {
+        "coal": 0.77
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old Power Plant (30s)",
+      "workshopId": "2744541699",
+      "modPath": "msp1929"
+    },
+    {
+      "id": "2744541699/oldsubstation",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old Substation",
+      "workshopId": "2744541699",
+      "modPath": "oldsubstation"
+    }
+  ],
+  "vehicles": []
+}

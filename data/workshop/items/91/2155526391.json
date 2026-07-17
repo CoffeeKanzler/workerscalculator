@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2155526391",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:42:38+00:00",
+  "buildings": [
+    {
+      "id": "2155526391/heat_plant",
+      "nameId": 6335,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 45.0,
+      "professors": 0,
+      "production": {
+        "heat": 920.0
+      },
+      "consumption": {
+        "wood": 2.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2155526391",
+      "modPath": "heat_plant"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  parseBuildingsGame, parseWorkers, parseHeader, parseResearch,
+  parseBuildingsGame, parseWorkers, parseHeader, parseMapClimate, parseResearch,
 } from '../js/savegame.js';
 
 function writeUtf16(bytes, offset, text) {
@@ -23,6 +23,7 @@ test('live building exposes configured caps, current workers and mine quality', 
   bytes.set(new TextEncoder().encode('coal_mine'), 4);
   view.setInt32(4 + 0x100, 31, true);
   view.setInt32(4 + 0x478, 95, true);
+  view.setFloat32(4 + 0x3e8, 1, true);
   view.setInt32(4 + 0x4a0, 120, true);
   view.setInt32(4 + 0x4a4, 0, true);
   view.setFloat32(4 + 0x4a8, 0.56467056, true);
@@ -32,6 +33,7 @@ test('live building exposes configured caps, current workers and mine quality', 
   assert.equal(building.type, 'coal_mine');
   assert.equal(building.settlementId, 31);
   assert.equal(building.currentWorkers, 95);
+  assert.equal(building.constructionProgress, 1);
   assert.equal(building.configuredWorkers, 120);
   assert.equal(building.configuredWorkersHighEducation, 0);
   assert.ok(Math.abs(building.mineQuality - 0.56467056) < 1e-6);
@@ -58,6 +60,7 @@ test('worker records expose residence and citizen status fields', () => {
   assert.equal(parsed.citizens[0].residenceBuildingIndex, 7);
   assert.equal(parsed.citizens[0].education, 2);
   assert.equal(parsed.citizens[0].age, 40);
+  assert.equal(parsed.citizens[0].citizenType, 0);
   assert.ok(Math.abs(parsed.citizens[0].happiness - 0.8) < 1e-6);
 });
 
@@ -66,6 +69,7 @@ test('header exposes save version title and source path', () => {
   const view = new DataView(buffer);
   const bytes = new Uint8Array(buffer);
   view.setUint32(0, 124, true);
+  view.setInt32(0x1c4, 1, true);
   writeUtf16(bytes, 4, 'Republic 2001\0');
   bytes.set(new TextEncoder().encode('save/453 - Republic 2001\0'), 0x104);
 
@@ -73,7 +77,17 @@ test('header exposes save version title and source path', () => {
     saveVersion: 124,
     title: 'Republic 2001',
     savePath: 'save/453 - Republic 2001',
+    settings: { seasonsEnabled: true },
   });
+});
+
+test('map terrain material identifies climate heating rules', () => {
+  assert.deepEqual(parseMapClimate('$TEXTURE 5 dlc2/tiles_middleeast/newdesert1d.dds'),
+    { id: 'middleeast', heatingRequired: false });
+  assert.deepEqual(parseMapClimate('$TEXTURE 5 dlc2/tiles_siberia/grass2.dds'),
+    { id: 'siberia', heatingRequired: true });
+  assert.deepEqual(parseMapClimate('$TEXTURE 5 tiles_normal/grass2.dds'),
+    { id: 'temperate', heatingRequired: true });
 });
 
 test('research records expose exact progress and building reference', () => {

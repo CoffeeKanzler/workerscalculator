@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1905935423",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:50:39+00:00",
+  "buildings": [
+    {
+      "id": "1905935423/trainshed",
+      "nameId": null,
+      "types": [
+        "TYPE_RAILDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2600.0,
+        "concrete": 70.0,
+        "gravel": 100.0,
+        "steel": 30.0,
+        "bricks": 150.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large Rail Depot",
+      "workshopId": "1905935423",
+      "modPath": "trainshed"
+    },
+    {
+      "id": "1905935423/trainshed2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAILDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2600.0,
+        "concrete": 70.0,
+        "gravel": 100.0,
+        "steel": 30.0,
+        "bricks": 150.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large Rail Depot Updated",
+      "workshopId": "1905935423",
+      "modPath": "trainshed2"
+    }
+  ],
+  "vehicles": []
+}

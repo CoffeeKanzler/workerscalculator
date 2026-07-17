@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2841904117",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:41:59+00:00",
+  "buildings": [
+    {
+      "id": "2841904117/asfaltownia",
+      "nameId": 6169,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {
+        "asphalt": 14.0
+      },
+      "consumption": {
+        "gravel": 12.0,
+        "bitumen": 2.0,
+        "eletric": 1.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2841904117",
+      "modPath": "asfaltownia"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1880499803",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:58:25+00:00",
+  "buildings": [
+    {
+      "id": "1880499803/LaundryPipes",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Laundry Place",
+      "workshopId": "1880499803",
+      "modPath": "LaundryPipes"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2139847626",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:56:07+00:00",
+  "buildings": [
+    {
+      "id": "2139847626/stadium1",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 100.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gradski Stadion",
+      "workshopId": "2139847626",
+      "modPath": "stadium1"
+    }
+  ],
+  "vehicles": []
+}

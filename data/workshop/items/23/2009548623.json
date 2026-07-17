@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2009548623",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:47:41+00:00",
+  "buildings": [
+    {
+      "id": "2009548623/bak",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Toprus Bak Station",
+      "workshopId": "2009548623",
+      "modPath": "bak"
+    },
+    {
+      "id": "2009548623/bakfix",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Toprus Bak FIXED",
+      "workshopId": "2009548623",
+      "modPath": "bakfix"
+    }
+  ],
+  "vehicles": []
+}

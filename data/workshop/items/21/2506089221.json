@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2506089221",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:42:07+00:00",
+  "buildings": [
+    {
+      "id": "2506089221/cegielnia",
+      "nameId": 6171,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 70.0,
+      "professors": 0,
+      "production": {
+        "bricks": 0.68
+      },
+      "consumption": {
+        "coal": 0.45
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2506089221",
+      "modPath": "cegielnia"
+    }
+  ],
+  "vehicles": []
+}

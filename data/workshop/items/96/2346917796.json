@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2346917796",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:41:03+00:00",
+  "buildings": [
+    {
+      "id": "2346917796/zakladymiesne",
+      "nameId": 6105,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {
+        "meat": 0.1
+      },
+      "consumption": {
+        "livestock": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2346917796",
+      "modPath": "zakladymiesne"
+    }
+  ],
+  "vehicles": []
+}

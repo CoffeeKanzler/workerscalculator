@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2505444648",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:38:07+00:00",
+  "buildings": [
+    {
+      "id": "2505444648/zelazo",
+      "nameId": 6161,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {
+        "iron": 7.0
+      },
+      "consumption": {
+        "rawiron": 15.0
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.45
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2505444648",
+      "modPath": "zelazo"
+    }
+  ],
+  "vehicles": []
+}

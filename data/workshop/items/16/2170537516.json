@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2170537516",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:56:30+00:00",
+  "buildings": [
+    {
+      "id": "2170537516/geobh",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 30.0,
+      "professors": 30.0,
+      "production": {
+        "heat": 400.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 5049.0,
+        "concrete": 210.0,
+        "steel": 110.4,
+        "ecomponents": 3.1415,
+        "mcomponents": 15.399999999999999,
+        "gravel": 45.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large geothermal heating plant",
+      "workshopId": "2170537516",
+      "modPath": "geobh"
+    },
+    {
+      "id": "2170537516/geobp",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 45.0,
+      "professors": 45.0,
+      "production": {
+        "eletric": 21.5
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 11059.0,
+        "concrete": 390.0,
+        "steel": 231.5,
+        "ecomponents": 12.241499999999998,
+        "mcomponents": 82.5,
+        "gravel": 135.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large geothermal power plant",
+      "workshopId": "2170537516",
+      "modPath": "geobp"
+    },
+    {
+      "id": "2170537516/geomh",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 20.0,
+      "professors": 20.0,
+      "production": {
+        "heat": 400.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3424.0,
+        "concrete": 160.0,
+        "steel": 78.4,
+        "ecomponents": 2.1415,
+        "mcomponents": 11.1,
+        "gravel": 35.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium geothermal heating plant",
+      "workshopId": "2170537516",
+      "modPath": "geomh"
+    },
+    {
+      "id": "2170537516/geomini",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5.0,
+      "professors": 5.0,
+      "production": {
+        "heat": 400.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1199.0,
+        "concrete": 44.5,
+        "steel": 22.9,
+        "ecomponents": 0.75,
+        "mcomponents": 4.3415,
+        "gravel": 19.93
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Micro geothermal heating plant",
+      "workshopId": "2170537516",
+      "modPath": "geomini"
+    },
+    {
+      "id": "2170537516/geomp",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 30.0,
+      "professors": 30.0,
+      "production": {
+        "eletric": 21.5
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 7659.0,
+        "concrete": 281.0,
+        "steel": 153.5,
+        "ecomponents": 8.8415,
+        "mcomponents": 58.5,
+        "gravel": 99.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium geothermal power plant",
+      "workshopId": "2170537516",
+      "modPath": "geomp"
+    },
+    {
+      "id": "2170537516/geosh",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 10.0,
+      "professors": 10.0,
+      "production": {
+        "heat": 400.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2049.0,
+        "concrete": 79.0,
+        "steel": 42.4,
+        "ecomponents": 1.1415,
+        "mcomponents": 6.4,
+        "gravel": 18.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small geothermal heating plant",
+      "workshopId": "2170537516",
+      "modPath": "geosh"
+    },
+    {
+      "id": "2170537516/geosp",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 15.0,
+      "professors": 15.0,
+      "production": {
+        "eletric": 21.5
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 4459.0,
+        "concrete": 218.0,
+        "steel": 124.6,
+        "ecomponents": 6.041499999999999,
+        "mcomponents": 42.599999999999994,
+        "gravel": 55.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small geothermal power plant",
+      "workshopId": "2170537516",
+      "modPath": "geosp"
+    }
+  ],
+  "vehicles": []
+}

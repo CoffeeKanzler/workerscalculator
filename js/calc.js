@@ -329,7 +329,7 @@ export function evaluateCity(city, eco) {
     power: sum(b => b.power),
     maxKW: sum(b => b.maxKW),
     water: sum(b => b.water),
-    hotwater: sum(b => b.hotwater),
+    hotwater: city.heatingEnabled === false ? 0 : sum(b => b.hotwater),
     waste: sum(b => b.waste),
     workdays: sum(b => b.workdays),
     materials: {},

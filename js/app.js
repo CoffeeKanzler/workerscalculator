@@ -1,6 +1,6 @@
-import { STRINGS } from './i18n.js?v=34';
-import { parseStatsIni, recordToPrices } from './statsini.js?v=15';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=24';
+import { STRINGS } from './i18n.js?v=37';
+import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -11,8 +11,8 @@ import { createIndexedDbSnapshotStore, migrateLegacySnapshots } from './storage.
 import {
   aggregateCitizensByScope, compactObservedBuildings, groupObservedProduction,
   inferObservedHousing, latestProductivity, matchObservedBuilding,
-} from './save_model.js?v=3';
-import { buildRepublicModel, republicAlerts } from './republic.js?v=3';
+} from './save_model.js?v=4';
+import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 
@@ -740,17 +740,22 @@ function renderProduction() {
     visibleRows.map(({ row }) => ({ ...row, building: prodBuildings().find(b => b.de === row.name) })),
     state.plan.fields, s, eco);
 
+  const workspaceBar = el('div', { class: 'workspace-bar' },
+    returnToRepublicButton(),
+    el('label', { class: 'workspace-context' }, el('span', {}, t('productionArea')),
+      selectInput(scopeOptions, String(state.productionScope), v => { state.productionScope = v; })),
+    el('label', { class: 'workspace-context compact' }, el('span', {}, t('timeUnit')),
+      selectInput([['day', t('day')], ['month', t('month')], ['year', t('year')]], s.timeUnit, v => s.timeUnit = v)),
+    el('div', { class: 'workspace-actions' },
+      el('button', { onclick: () => { state.productionDetails = !state.productionDetails; update(); } },
+        t(state.productionDetails ? 'hideEconomicDetails' : 'showEconomicDetails'))));
+
   const settings = el('div', { class: 'settingsbar' },
     el('label', {}, t('productivity') + ' ', pctInput(s.productivity, v => s.productivity = v)),
-    el('label', {}, t('timeUnit') + ' ',
-      selectInput([['day', t('day')], ['month', t('month')], ['year', t('year')]], s.timeUnit, v => s.timeUnit = v)),
     el('label', {}, t('seasons') + ' ', el('input', {
       type: 'checkbox', checked: s.seasons, onchange: e => { s.seasons = e.target.checked; update(); } })),
     el('label', {}, t('calendarFlow') + ' ', numInput(s.calendarFlow, v => s.calendarFlow = v || 1, { step: 0.1, min: 0 })),
-    el('label', {}, t('fertilizer') + ' ', numInput(s.fertilizer, v => s.fertilizer = v || 1, { step: 0.1, min: 0 })),
-    el('label', {}, t('area') + ' ', selectInput(scopeOptions, String(state.productionScope), v => { state.productionScope = v; })),
-    el('button', { onclick: () => { state.productionDetails = !state.productionDetails; update(); } },
-      t(state.productionDetails ? 'hideEconomicDetails' : 'showEconomicDetails')));
+    el('label', {}, t('fertilizer') + ' ', numInput(s.fertilizer, v => s.fertilizer = v || 1, { step: 0.1, min: 0 })));
 
   const groups = [...new Set(prodBuildings().map(b => b.group[state.lang]))];
 
@@ -782,7 +787,9 @@ function renderProduction() {
           + `${t('configuredWorkers')}: ${fmt(row.configuredWorkers ?? 0, 0)}`
           + (row.configuredWorkersHighEducation
             ? ` + ${fmt(row.configuredWorkersHighEducation, 0)} ${t('highEducationWorkers')}` : ''),
-          el('span', { class: 'evidence-badge exact' }, t('exact')))) : bSel;
+          el('span', { class: `evidence-badge ${(row.constructionProgress ?? 1) < 1 ? 'missing' : 'exact'}` },
+            (row.constructionProgress ?? 1) < 1
+              ? `${t('underConstruction')} ${fmt(row.constructionProgress * 100, 0)} %` : t('exact')))) : bSel;
       return el('tr', {},
         el('td', {}, areaName), el('td', {}, groupSel), el('td', {}, buildingCell),
         el('td', {}, numInput(row.count, v => row.count = v, { min: 0, step: 1 })),
@@ -843,8 +850,15 @@ function renderProduction() {
     kv(t('wasteOut'), fmt(result.totalWaste, 1)),
     kv(t('buildCost') + ` ${cur()}`, fmt(result.totalBuildCost, 0)));
 
-  return el('section', {}, returnToRepublicButton(), settings, renderCalcOpts(), fieldsBox, tbl, addBtn,
-    el('div', { class: 'columns' }, el('div', {}, el('h3', {}, t('balance')), balance), totals));
+  const assumptions = el('details', { class: 'planner-assumptions secondary-section' },
+    el('summary', {}, t('planAssumptions')), settings, renderCalcOpts(), fieldsBox);
+  const planEditor = el('div', { class: 'planner-main' },
+    el('div', { class: 'planner-table' },
+      visibleRows.length ? el('div', { class: 'tablewrap' }, tbl) : el('p', { class: 'empty-state' }, t('emptyProductionArea')),
+      addBtn), totals);
+
+  return el('section', {}, workspaceBar, assumptions, planEditor,
+    el('div', {}, el('h3', {}, t('balance')), el('div', { class: 'tablewrap' }, balance)));
 }
 
 function kv(k, v, cls = '') {
@@ -1295,6 +1309,7 @@ function matchSaveBuilding(type, entries, idOf) {
   const exact = new Map(entries.map(entry => [String(idOf(entry) ?? '').toLowerCase(), entry]));
   for (const candidate of candidates) if (exact.has(candidate)) return exact.get(candidate);
 
+  if (/^\d{6,20}\//.test(candidates.at(-1))) return null;
   const basename = candidates.at(-1).split('/').at(-1);
   const matches = entries.filter(entry => String(idOf(entry) ?? '').toLowerCase().split('/').at(-1) === basename);
   return matches.length === 1 ? matches[0] : null;
@@ -1315,6 +1330,7 @@ function importedCityBuilding(raw, sourceType) {
     special: specialTypes.has(mappedType[0]) ? capacity : 0,
     visitors: specialTypes.has(mappedType[0]) ? 0 : capacity,
     inhabitants: raw.livingSpace ?? 0,
+    citizenAbleServe: raw.citizenAbleServe ?? 0,
     power: 0, maxKW: 0, water: 0, hotwater: 0, waste: 0, workdays: 0,
     gravel: materials.gravel ?? 0,
     bricks: materials.bricks ?? 0,
@@ -1329,9 +1345,83 @@ function importedCityBuilding(raw, sourceType) {
   };
 }
 
+const OPERATIONAL_TYPES = new Map([
+  ['TYPE_HOSPITAL', 'clinics'],
+  ['TYPE_POLICE_STATION', 'police'],
+  ['TYPE_COURT_HOUSE', 'courts'],
+  ['TYPE_PRISON', 'prisons'],
+  ['TYPE_ORPHANAGE', 'orphanages'],
+]);
+
+function emptyFacilitySummary() {
+  return {
+    buildingCount: 0, currentWorkers: 0, configuredWorkers: 0,
+    nominalWorkers: 0, configuredCapacity: 0, nominalCapacity: 0, occupants: 0,
+    underConstructionCount: 0,
+  };
+}
+
+function addFacility(summary, record, raw, occupants) {
+  const serve = raw.citizenAbleServe ?? 0;
+  summary.buildingCount += 1;
+  summary.currentWorkers += record.currentWorkers ?? 0;
+  summary.configuredWorkers += record.configuredWorkers ?? 0;
+  summary.nominalWorkers += raw.workers ?? 0;
+  summary.configuredCapacity += (record.configuredWorkers ?? 0) * serve;
+  summary.nominalCapacity += (raw.workers ?? 0) * serve;
+  summary.occupants += occupants ?? 0;
+}
+
+function buildOperationalServices(buildings, citizens, rawBuildings, cityStats) {
+  const residentsByBuilding = new Map();
+  for (const citizen of citizens ?? []) {
+    const index = citizen.residenceBuildingIndex;
+    if (index >= 0) residentsByBuilding.set(index, (residentsByBuilding.get(index) ?? 0) + 1);
+  }
+  const crimeByScope = new Map((cityStats ?? []).map(record => [record.scopeId, record]));
+  const regional = new Map();
+  const republic = {
+    courts: emptyFacilitySummary(), prisons: emptyFacilitySummary(),
+    orphanages: emptyFacilitySummary(), crime: {
+      recordedCrimes: 0, unresolvedCrimes: 0, withoutPolice: 0,
+      notInvestigated: 0, withoutCourt: 0, prisonersEscaped: 0,
+    },
+  };
+  for (const record of buildings) {
+    const raw = matchSaveBuilding(record.type, rawBuildings, entry => entry.id);
+    const key = raw?.types?.map(type => OPERATIONAL_TYPES.get(type)).find(Boolean);
+    if (!key) continue;
+    if (key === 'clinics' || key === 'police') {
+      if (!Number.isInteger(record.scopeId)) continue;
+      const scope = regional.get(record.scopeId) ?? {
+        scopeId: record.scopeId, clinics: emptyFacilitySummary(), police: emptyFacilitySummary(),
+      };
+      if ((record.constructionProgress ?? 1) < 1) scope[key].underConstructionCount += 1;
+      else addFacility(scope[key], record, raw, residentsByBuilding.get(record.index));
+      regional.set(record.scopeId, scope);
+    } else {
+      if ((record.constructionProgress ?? 1) < 1) republic[key].underConstructionCount += 1;
+      else addFacility(republic[key], record, raw, residentsByBuilding.get(record.index));
+    }
+  }
+  for (const crime of crimeByScope.values()) {
+    for (const key of Object.keys(republic.crime)) republic.crime[key] += crime[key] ?? 0;
+    if (!regional.has(crime.scopeId)) {
+      regional.set(crime.scopeId, {
+        scopeId: crime.scopeId, clinics: emptyFacilitySummary(), police: emptyFacilitySummary(),
+      });
+    }
+  }
+  return {
+    regional: [...regional.values()].map(scope => ({ ...scope, crime: crimeByScope.get(scope.scopeId) ?? null })),
+    republic,
+  };
+}
+
 function buildImportedPlanning(sourceName, settlements, buildings, membershipAudit, {
   citizens = null, citizenFileSummary = null, header = null, research = null,
   sourceStatus = {}, parserWarnings = [], defaultProductivity = 1, workshopCatalog = null,
+  cityStats = [], mapClimate = null,
 } = {}) {
   const occupiedScopeIds = new Set(buildings.map(building => building.scopeId).filter(Number.isInteger));
   const occupiedSettlements = settlements.filter(settlement => occupiedScopeIds.has(settlement.id));
@@ -1369,8 +1459,12 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
       const current = rows.get(key) ?? {
         type: cityBuilding.type.de, name: cityBuilding.de, count: 0,
         importedBuilding: cityBuilding, sourceGameId: record.type,
+        currentWorkers: 0, configuredWorkers: 0, nominalWorkers: 0,
       };
       current.count += 1;
+      current.currentWorkers += record.currentWorkers ?? 0;
+      current.configuredWorkers += record.configuredWorkers ?? 0;
+      current.nominalWorkers += cityBuilding.workers ?? 0;
       rows.set(key, current);
       cityCount += 1;
       continue;
@@ -1386,6 +1480,19 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
     const current = unmatched.get(key) ?? { scopeId: record.scopeId, type: record.type, count: 0 };
     current.count += 1;
     unmatched.set(key, current);
+  }
+
+  // Imported service calculations honor the save's per-building worker limit.
+  // Rows are grouped, so store the mean per instance before evaluateCity applies count.
+  for (const rows of cityRows.values()) for (const row of rows.values()) {
+    const serve = row.importedBuilding.citizenAbleServe ?? 0;
+    if (!(serve > 0) || !(row.count > 0)) continue;
+    const configuredPerBuilding = row.configuredWorkers / row.count;
+    row.importedBuilding = {
+      ...row.importedBuilding,
+      workers: configuredPerBuilding,
+      visitors: configuredPerBuilding * serve,
+    };
   }
 
   for (const group of inferredHousing) {
@@ -1420,6 +1527,8 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
     scopeId: settlement.id,
     source: 'save',
     productivity: citizenScopes.get(settlement.id)?.productivity ?? defaultProductivity,
+    heatingEnabled: (header?.settings?.seasonsEnabled ?? true) && (mapClimate?.heatingRequired ?? true),
+    heatingClimate: mapClimate?.id ?? null,
     observed: citizenScopes.get(settlement.id) ?? null,
     unresolvedBuildingCount: unresolvedByScope.get(settlement.id) ?? 0,
     sourcePosition: { x: settlement.x, y: settlement.y, z: settlement.z },
@@ -1434,12 +1543,14 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
   for (const warning of parserWarnings) warnings.push(`${warning.file}: ${warning.message}`);
   const researchComplete = research?.filter(item => item.progress >= 1).length ?? 0;
   const researchPartial = research?.filter(item => item.progress > 0 && item.progress < 1).length ?? 0;
+  const operationalServices = buildOperationalServices(buildings, citizens, rawBuildings, cityStats);
 
   return {
     cities,
     productionRows,
     metadata: {
       version: 2, sourceName, importedAt: new Date().toISOString(), header, sourceStatus,
+      mapClimate,
       settlementCount: occupiedSettlements.length, sourceSettlementCount: settlements.length,
       emptySettlementCount: settlements.length - occupiedSettlements.length, buildingCount: buildings.length,
       citizenCount: citizenResult?.recordCount ?? 0,
@@ -1452,6 +1563,8 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
       observedBuildings: compactObservedBuildings(buildings),
       observedProductionRows: cloneStateValue(productionRows),
       research: research ?? null,
+      cityStats,
+      operationalServices,
       researchComplete, researchPartial,
       cityScopeCount: cities.length, productionScopeCount: productionScopeIds.size,
       scopes: occupiedSettlements.map(settlement => ({
@@ -1483,7 +1596,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=2', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=3', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -1528,7 +1641,7 @@ async function handleLocalWorkshopDirectory(fileList) {
 }
 
 function renderLocalWorkshopPicker() {
-  return el('details', { class: 'workshop-local-picker' },
+  return el('details', { class: 'workshop-local-picker secondary-section' },
     el('summary', {}, t('localWorkshopTitle')),
     el('p', { class: 'hint' }, t('localWorkshopHint')),
     el('label', { class: 'importpicker' }, '🧩 ', t('chooseWorkshopFolder'),
@@ -1546,6 +1659,7 @@ async function handleSaveDirectory(fileList) {
   const workersFile = byName.get('workers.bin');
   const headerFile = byName.get('header.bin');
   const researchFile = byName.get('research.bin');
+  const materialFile = byName.get('material.mtl');
   if (!namepoints || !buildingsFile) {
     state.importStatus = t('importMissingFiles');
     state.importStatusError = true;
@@ -1559,13 +1673,14 @@ async function handleSaveDirectory(fileList) {
 
   try {
     const readOptional = file => file ? file.arrayBuffer() : Promise.resolve(null);
-    const [namepointBuffer, buildingBuffer, workerBuffer, headerBuffer, researchBuffer, statsText] = await Promise.all([
+    const [namepointBuffer, buildingBuffer, workerBuffer, headerBuffer, researchBuffer, statsText, materialText] = await Promise.all([
       namepoints.arrayBuffer(), buildingsFile.arrayBuffer(), readOptional(workersFile),
       readOptional(headerFile), readOptional(researchFile), statsFile ? statsFile.text() : '',
+      materialFile ? materialFile.text() : '',
     ]);
     const parsed = await parseSaveInWorker({
       namepoints: namepointBuffer, buildings: buildingBuffer, workers: workerBuffer,
-      header: headerBuffer, research: researchBuffer, stats: statsText,
+      header: headerBuffer, research: researchBuffer, stats: statsText, material: materialText,
     });
     const relative = namepoints.webkitRelativePath || buildingsFile.webkitRelativePath || '';
     const sourceName = parsed.header?.title || relative.split('/')[0]
@@ -1583,6 +1698,8 @@ async function handleSaveDirectory(fileList) {
         parserWarnings: parsed.warnings,
         defaultProductivity: productivity,
         workshopCatalog,
+        cityStats: parsed.cityStats ?? [],
+        mapClimate: parsed.mapClimate,
       });
     imported.metadata.statsRecordCount = statsRecords.length;
     imported.metadata.latestProductivity = productivity;
@@ -1602,6 +1719,9 @@ async function handleSaveDirectory(fileList) {
     }
     next.plan.settings = { ...cloneStateValue(state.plan.settings), currency: state.currency };
     next.plan.settings.productivity = productivity;
+    if (typeof parsed.header?.settings?.seasonsEnabled === 'boolean') {
+      next.plan.settings.seasons = parsed.header.settings.seasonsEnabled;
+    }
     next.plan.rows = imported.productionRows;
     next.cities = imported.cities;
     next.saveImport = imported.metadata;
@@ -1661,8 +1781,8 @@ function renderHome() {
     el('span', { class: 'hint' }, `${fmt(state.saveImport.citizenCount ?? 0, 0)} ${t('importedCitizens')} · `
       + `${fmt(state.saveImport.buildingCount ?? 0, 0)} ${t('importedBuildings')}`),
     el('button', { class: 'primary', onclick: () => { state.tab = 'republic'; update(); } }, t('continueRepublic'))) : null;
-  const saved = namedSnapshotNames.length ? el('div', { class: 'recent-republics' },
-    el('h3', {}, t('savedSnapshots')),
+  const saved = namedSnapshotNames.length ? el('details', { class: 'recent-republics secondary-section' },
+    el('summary', {}, `${t('savedSnapshots')} (${fmt(namedSnapshotNames.length, 0)})`),
     el('div', { class: 'snapshot-grid' }, ...namedSnapshotNames.map(name => el('button', {
       onclick: async () => {
         if (await loadNamedState(name)) {
@@ -1691,6 +1811,7 @@ function renderSaveImport() {
   const sourceFiles = {
     namepoints: 'namepoints.bin', buildings: 'buildings_game.bin', workers: 'workers.bin',
     header: 'header.bin', research: 'research.bin', stats: 'stats.ini',
+    material: 'material.mtl',
   };
   const coverage = info?.sourceStatus ? el('div', { class: 'coverage-grid' },
     ...Object.entries(sourceFiles).map(([key, filename]) => {
@@ -1754,16 +1875,17 @@ function renderCity() {
   const city = state.cities[state.activeCity];
   const eco = economy();
 
-  const cityTabs = el('div', { class: 'citytabs' },
-    ...state.cities.map((c, i) => el('button', {
-      class: i === state.activeCity ? 'active' : '',
-      onclick: () => { state.activeCity = i; update(); },
-    }, c.name || `${t('city')} ${i + 1}`)),
-    el('button', { onclick: () => { state.cities.push(defaultCity()); state.activeCity = state.cities.length - 1; update(); } }, t('addCity')),
+  const workspaceBar = el('div', { class: 'workspace-bar' },
+    returnToRepublicButton(),
+    el('label', { class: 'workspace-context' }, el('span', {}, t('cityArea')), selectInput(
+      state.cities.map((item, index) => [String(index), item.name || `${t('city')} ${index + 1}`]),
+      String(state.activeCity), value => { state.activeCity = Number(value); })),
+    el('div', { class: 'workspace-actions' },
+      el('button', { onclick: () => { state.cities.push(defaultCity()); state.activeCity = state.cities.length - 1; update(); } }, t('addCity')),
     state.cities.length > 1 ? el('button', {
       class: 'danger',
       onclick: () => { state.cities.splice(state.activeCity, 1); state.activeCity = 0; update(); },
-    }, t('removeCity')) : null);
+    }, t('removeCity')) : null));
 
   const settings = el('div', { class: 'settingsbar' },
     el('label', {}, t('cityName') + ' ', el('input', {
@@ -1778,6 +1900,8 @@ function renderCity() {
       type: 'checkbox', checked: state.vanillaOnly, onchange: e => { state.vanillaOnly = e.target.checked; update(); } })),
     el('button', { onclick: () => { state.cityDetails = !state.cityDetails; update(); } },
       t(state.cityDetails ? 'hideUtilityDetails' : 'showUtilityDetails')));
+  const assumptions = el('details', { class: 'planner-assumptions secondary-section' },
+    el('summary', {}, t('planAssumptions')), settings);
   const observedCard = city.observed ? el('div', { class: 'totalsbox observed-card' },
     el('h3', {}, t('observedAtSave'), el('span', { class: 'evidence-badge derived' }, t('derived'))),
     kv(t('population'), fmt(city.observed.residents, 0)),
@@ -1787,7 +1911,32 @@ function renderCity() {
     kv(t('happiness'), fmt(city.observed.happiness * 100, 1) + ' %'),
     kv(t('food'), fmt(city.observed.food * 100, 1) + ' %'),
     kv(t('health'), fmt(city.observed.health * 100, 1) + ' %'),
-    kv(t('loyalty'), fmt(city.observed.loyalty * 100, 1) + ' %')) : null;
+    kv(t('loyalty'), fmt(city.observed.loyalty * 100, 1) + ' %'),
+    Number.isFinite(city.observed.criminality)
+      ? kv(t('criminality'), fmt(city.observed.criminality * 100, 2) + ' %') : null) : null;
+  const cityOperations = state.saveImport?.operationalServices?.regional
+    ?.find(scope => scope.scopeId === city.scopeId);
+  const crime = cityOperations?.crime;
+  const clinics = cityOperations?.clinics;
+  const police = cityOperations?.police;
+  const clinicLoad = clinics?.configuredCapacity > 0 && city.observed
+    ? city.observed.residents / (clinics.configuredCapacity * city.productivity * 100) : null;
+  const regionalOperationsCard = cityOperations ? el('div', { class: 'totalsbox operational-card' },
+    el('h3', {}, t('regionalSafetyHealth'), el('span', { class: 'evidence-badge exact' }, t('exact'))),
+    kv(t('policeStations'), fmt(police.buildingCount, 0)),
+    police.underConstructionCount ? kv(t('underConstruction'), fmt(police.underConstructionCount, 0), 'warn') : null,
+    kv(t('staffing'), `${fmt(police.currentWorkers, 0)} / ${fmt(police.configuredWorkers, 0)}`,
+      police.buildingCount && police.currentWorkers === 0 ? 'neg' : ''),
+    kv(t('unresolvedCrimeCases'), fmt((crime?.withoutPolice ?? 0) + (crime?.notInvestigated ?? 0), 0),
+      (crime?.withoutPolice ?? 0) + (crime?.notInvestigated ?? 0) > 0 ? 'warn' : ''),
+    kv(t('clinics'), fmt(clinics.buildingCount, 0)),
+    clinics.underConstructionCount ? kv(t('underConstruction'), fmt(clinics.underConstructionCount, 0), 'warn') : null,
+    kv(t('staffing'), `${fmt(clinics.currentWorkers, 0)} / ${fmt(clinics.configuredWorkers, 0)}`,
+      clinics.buildingCount && clinics.currentWorkers === 0 ? 'neg' : ''),
+    kv(t('clinicTreatmentSlots'), fmt(clinics.configuredCapacity, 0)),
+    kv(t('estimatedClinicLoad'), clinicLoad == null ? '—' : fmt(clinicLoad * 100, 0) + ' %',
+      clinicLoad > 1 ? 'neg' : clinicLoad > 0.85 ? 'warn' : 'pos'),
+    el('p', { class: 'hint' }, t('crimeHistoryNote'))) : null;
   const coverageCard = city.unresolvedBuildingCount > 0 ? el('div', { class: 'totalsbox' },
     el('h3', { class: 'warn' }, t('incompleteCoverage')),
     kv(t('unresolvedCityBuildings'), fmt(city.unresolvedBuildingCount, 0), 'warn'),
@@ -1930,9 +2079,12 @@ function renderCity() {
       return kv(r ? rname(r) : m, fmt(amt, 1));
     }));
 
-  return el('section', {}, returnToRepublicButton(), cityTabs, observedCard, coverageCard,
-    city.observed ? el('h3', { class: 'plan-heading' }, t('planAssumptions')) : null,
-    settings, el('div', { class: 'tablewrap' }, tbl), addBtn,
+  return el('section', {}, workspaceBar,
+    (observedCard || regionalOperationsCard || coverageCard)
+      ? el('div', { class: 'columns operational-summary' }, observedCard, regionalOperationsCard, coverageCard) : null,
+    assumptions,
+    city.rows.length ? el('div', { class: 'tablewrap' }, tbl) : el('p', { class: 'empty-state' }, t('emptyCityPlan')),
+    addBtn,
     el('div', { class: 'columns' },
       el('div', {}, el('h3', {}, t('services')), services),
       summary, mats));
@@ -2197,16 +2349,12 @@ function renderRepublic() {
       / republicModel.actual.totals.configuredIndustryWorkers : null;
   const cards = state.republicView === 'actual' ? [
     metricCard(t('population'), fmt(view.totals.population, 0), t('derived')),
-    metricCard(t('importedSettlements'), fmt(view.totals.occupiedNamedAreas, 0), t('exact')),
-    metricCard(t('importedBuildings'), fmt(view.totals.liveBuildingCount, 0), t('exact')),
     metricCard(t('configuredWorkers'), fmt(view.totals.configuredIndustryWorkers, 0), t('exact')),
     metricCard(t('currentStaffing'), staffingRatio == null ? null : fmt(staffingRatio * 100, 1) + ' %', t('exact'), staffingRatio < 0.7 ? 'warn' : ''),
     metricCard(t('productivity'), Number.isFinite(state.saveImport?.latestProductivity)
       ? fmt(state.saveImport.latestProductivity * 100, 4) + ' %'
       : view.totals.productivity == null ? null : fmt(view.totals.productivity * 100, 2) + ' %',
     Number.isFinite(state.saveImport?.latestProductivity) ? 'stats.ini' : t('derived')),
-    metricCard(t('importedResearch'), state.saveImport?.research
-      ? `${fmt(state.saveImport.researchComplete, 0)} / ${fmt(state.saveImport.research.length, 0)}` : null, t('exact')),
   ] : [
     metricCard(t('population'), Number.isFinite(view.totals.population) ? fmt(view.totals.population, 0) : null, t('editablePlan')),
     metricCard(t('configuredWorkers'), Number.isFinite(view.totals.configuredIndustryWorkers)
@@ -2245,7 +2393,7 @@ function renderRepublic() {
   });
   const areaTable = el('table', { class: 'data wide area-health' },
     el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('population')),
-      el('th', {}, t('productivity')), el('th', {}, t('health')),
+      el('th', {}, t('productivity')), el('th', {}, t('health')), el('th', {}, t('criminality')),
       el('th', {}, t('configuredWorkers')), el('th', {}, t('currentWorkers')),
       el('th', {}, t('plannedWorkers')), el('th', {}, t('netAvailableWorkers')), el('th', {}, t('status')), el('th', {}))),
     el('tbody', {}, ...areaIds.map(scopeId => {
@@ -2257,10 +2405,15 @@ function renderRepublic() {
         el('td', {}, actual.name ?? planned.name ?? `${t('area')} ${scopeId}`,
           (planned.unresolvedBuildingCount ?? 0) > 0
             ? el('small', { class: 'warn' }, ` · ${fmt(planned.unresolvedBuildingCount, 0)} ${t('unresolvedShort')}`)
+            : null,
+          (actual.constructionBuildingCount ?? 0) > 0
+            ? el('small', { class: 'warn' }, ` · ${fmt(actual.constructionBuildingCount, 0)} ${t('underConstruction')}`)
             : null),
         el('td', { class: 'r' }, actual.population == null ? '—' : fmt(actual.population, 0)),
         el('td', { class: 'r' }, actual.productivity == null ? '—' : fmt(actual.productivity * 100, 1) + ' %'),
         el('td', { class: 'r' }, actual.health == null ? '—' : fmt(actual.health * 100, 1) + ' %'),
+        el('td', { class: `r ${(actual.criminality ?? 0) >= 0.01 ? 'warn' : ''}` },
+          actual.criminality == null ? '—' : fmt(actual.criminality * 100, 2) + ' %'),
         el('td', { class: 'r' }, fmt(actual.configuredIndustryWorkers ?? 0, 0)),
         el('td', { class: 'r' }, fmt(actual.currentIndustryWorkers ?? 0, 0)),
         el('td', { class: 'r' }, fmt(planned.configuredIndustryWorkers ?? 0, 0)),
@@ -2282,6 +2435,62 @@ function renderRepublic() {
   const alertList = el('div', { class: 'alert-list' },
     el('h3', {}, t('attention')), ...alertItems);
 
+  const republicOperations = state.saveImport?.operationalServices?.republic;
+  const facilityStaff = facility => facility.buildingCount
+    ? `${fmt(facility.currentWorkers, 0)} / ${fmt(facility.configuredWorkers, 0)}` : '—';
+  const institutionCard = (title, facility, extra = []) => el('div', { class: 'totalsbox institution-card' },
+    el('h3', {}, title, el('span', { class: 'evidence-badge exact' }, t('exact'))),
+    kv(t('building'), fmt(facility.buildingCount, 0)),
+    facility.underConstructionCount ? kv(t('underConstruction'), fmt(facility.underConstructionCount, 0), 'warn') : null,
+    kv(t('staffing'), facilityStaff(facility),
+      facility.buildingCount && facility.currentWorkers === 0 ? 'neg' : ''),
+    ...extra);
+  const crimeHistoryByScope = new Map((state.saveImport?.operationalServices?.regional ?? [])
+    .map(scope => [scope.scopeId, scope.crime]));
+  const topCrimeAreas = republicModel.actual.areas
+    .filter(area => Number.isFinite(area.criminality) && (area.population ?? 0) > 0)
+    .sort((a, b) => b.criminality - a.criminality)
+    .slice(0, 5);
+  const crimeRanking = topCrimeAreas.length ? el('div', { class: 'crime-ranking' },
+    el('h4', {}, t('topCrimeAreas')),
+    el('table', { class: 'data' },
+      el('thead', {}, el('tr', {}, el('th', {}), el('th', {}, t('area')),
+        el('th', {}, t('criminality')), el('th', {}, t('unresolvedCrimeCases')))),
+      el('tbody', {}, ...topCrimeAreas.map((area, index) => {
+        const history = crimeHistoryByScope.get(area.scopeId);
+        return el('tr', {},
+          el('td', { class: 'r' }, `${index + 1}.`),
+          el('td', {}, area.name),
+          el('td', { class: `r ${area.criminality >= 0.01 ? 'warn' : ''}` },
+            fmt(area.criminality * 100, 2) + ' %'),
+          el('td', { class: 'r' }, history ? fmt(history.unresolvedCrimes ?? 0, 0) : '—'));
+      }))),
+    el('p', { class: 'hint' }, t('currentCrimeRankingNote'))) : null;
+  const institutionOverview = republicOperations ? el('section', { class: 'institution-overview' },
+    el('h3', {}, t('republicInstitutions')),
+    el('div', { class: 'institution-grid' },
+      institutionCard(t('courts'), republicOperations.courts, [
+        kv(t('casesWithoutCourt'), fmt(republicOperations.crime.withoutCourt, 0),
+          republicOperations.crime.withoutCourt > 0 ? 'warn' : ''),
+        el('p', { class: 'hint' }, t('liveQueueUnavailable')),
+      ]),
+      institutionCard(t('prisons'), republicOperations.prisons, [
+        kv(t('occupants'), republicOperations.prisons.configuredCapacity > 0
+          ? `${fmt(republicOperations.prisons.occupants, 0)} / ${fmt(republicOperations.prisons.configuredCapacity, 0)}` : '—',
+        republicOperations.prisons.configuredCapacity > 0
+          && republicOperations.prisons.occupants > republicOperations.prisons.configuredCapacity ? 'neg' : ''),
+        kv(t('prisonersEscaped'), fmt(republicOperations.crime.prisonersEscaped, 0),
+          republicOperations.crime.prisonersEscaped > 0 ? 'warn' : ''),
+      ]),
+      institutionCard(t('orphanages'), republicOperations.orphanages, [
+        kv(t('occupants'), republicOperations.orphanages.configuredCapacity > 0
+          ? `${fmt(republicOperations.orphanages.occupants, 0)} / ${fmt(republicOperations.orphanages.configuredCapacity, 0)}` : '—'),
+        kv(t('configuredCapacity'), republicOperations.orphanages.configuredCapacity > 0
+          ? fmt(republicOperations.orphanages.configuredCapacity, 0) : '—'),
+      ])),
+    crimeRanking,
+    el('p', { class: 'hint' }, t('crimeHistoryNote'))) : null;
+
   const historyRecords = filterRange(state.statsRecords ?? [], state.republicRange);
   const series = (label, color, valueOf) => ({ label, color, points: seriesFromRecords(historyRecords, valueOf) });
   const resourceKeys = [...new Set((state.statsRecords ?? []).flatMap(record =>
@@ -2295,9 +2504,9 @@ function renderRepublic() {
     const resource = DATA.resources.find(item => item.key === key);
     return [key, resource ? rname(resource) : key];
   });
-  const charts = state.statsRecords?.length ? el('div', { class: 'history-section' },
+  const charts = state.statsRecords?.length ? el('details', { class: 'history-section secondary-section' },
+    el('summary', {}, `${t('republicHistory')} (${fmt(state.statsRecords.length, 0)})`),
     el('div', { class: 'chart-controls settingsbar' },
-      el('strong', {}, t('republicHistory')),
       ...['month', 'year', 'all'].map(range => el('button', {
         class: state.republicRange === range ? 'active' : '',
         onclick: () => { state.republicRange = range; update(); },
@@ -2334,9 +2543,19 @@ function renderRepublic() {
       el('td', {}, item.key),
       el('td', { class: 'r' }, fmt(item.progress * 100, 1) + ' %'),
       el('td', { class: 'r' }, item.buildingIndex >= 0 ? fmt(item.buildingIndex, 0) : '—'))))) : null;
-  const researchDetails = state.saveImport?.research ? el('details', { class: 'planning-details' },
+  const researchDetails = state.saveImport?.research ? el('details', { class: 'planning-details secondary-section' },
     el('summary', {}, `${t('researchProgress')}: ${state.saveImport.researchComplete} / ${state.saveImport.research.length}`),
     el('div', { class: 'tablewrap' }, researchTable)) : null;
+  const importedSettings = state.saveImport?.header?.settings;
+  const mapClimate = state.saveImport?.mapClimate;
+  const settingsDetails = importedSettings ? el('details', { class: 'planning-details secondary-section' },
+    el('summary', {}, t('gameSettings')),
+    el('div', { class: 'totalsbox' },
+      kv(t('seasons'), t(importedSettings.seasonsEnabled ? 'enabled' : 'disabled')),
+      mapClimate ? kv(t('mapClimate'), t(`climate.${mapClimate.id}`)) : null,
+      kv(t('heatingCalculation'), t(importedSettings.seasonsEnabled && (mapClimate?.heatingRequired ?? true)
+        ? 'enabled' : 'disabled')),
+      el('p', { class: 'hint' }, t('verifiedSettingsOnly')))) : null;
 
   return el('section', {},
     el('div', { class: 'command-center' },
@@ -2349,11 +2568,17 @@ function renderRepublic() {
           ...(!observedImport && name !== 'plan' ? { disabled: '' } : {}),
           onclick: () => { state.republicView = name; update(); },
         }, t(`view.${name}`))))),
+      state.saveImport ? el('div', { class: 'command-meta' },
+        el('span', {}, `${fmt(view.totals.occupiedNamedAreas ?? state.saveImport.settlementCount, 0)} ${t('importedSettlements')}`),
+        el('span', {}, `${fmt(view.totals.liveBuildingCount ?? state.saveImport.buildingCount, 0)} ${t('importedBuildings')}`),
+        state.saveImport.research ? el('span', {}, `${fmt(state.saveImport.researchComplete, 0)} / ${fmt(state.saveImport.research.length, 0)} ${t('importedResearch')}`) : null) : null,
       el('div', { class: 'metric-grid' }, ...cards),
       alertList,
+      institutionOverview,
       el('div', { class: 'tablewrap' }, areaTable),
       charts,
       researchDetails,
+      settingsDetails,
       el('details', { class: 'planning-details' }, el('summary', {}, t('planningDetails')),
         el('p', { class: 'hint' }, t('republicHint')),
         el('p', { class: 'hint warn' }, t('republicConsumptionBlocked')),

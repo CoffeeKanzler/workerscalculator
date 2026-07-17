@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2029137014",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:01:22+00:00",
+  "buildings": [
+    {
+      "id": "2029137014/Gate_Road",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 30.0,
+        "concrete": 2.0,
+        "steel": 4.0,
+        "mcomponents": 0.1,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large metal gate",
+      "workshopId": "2029137014",
+      "modPath": "Gate_Road"
+    }
+  ],
+  "vehicles": []
+}

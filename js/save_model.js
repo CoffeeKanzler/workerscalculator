@@ -43,6 +43,7 @@ export function aggregateCitizensByScope(citizens, buildings) {
       food: 0,
       health: 0,
       loyalty: 0,
+      criminality: 0,
     };
     aggregate.residents += 1;
     aggregate.adults += citizen.age > 21 ? 1 : 0;
@@ -52,6 +53,7 @@ export function aggregateCitizensByScope(citizens, buildings) {
     aggregate.food += citizen.food;
     aggregate.health += citizen.health;
     aggregate.loyalty += citizen.loyalty;
+    aggregate.criminality += citizen.criminality ?? 0;
     scopes.set(residence.scopeId, aggregate);
   }
 
@@ -62,6 +64,7 @@ export function aggregateCitizensByScope(citizens, buildings) {
     aggregate.food = average(aggregate.food, count);
     aggregate.health = average(aggregate.health, count);
     aggregate.loyalty = average(aggregate.loyalty, count);
+    aggregate.criminality = average(aggregate.criminality, count);
   }
 
   return {
@@ -76,9 +79,10 @@ export function compactObservedBuildings(buildings) {
   const keys = [
     'index', 'type', 'name', 'scopeId', 'x', 'y', 'z', 'currentWorkers',
     'configuredWorkers', 'configuredWorkersHighEducation', 'mineQuality',
+    'constructionProgress',
   ];
   return buildings.map((building) => Object.fromEntries(
-    keys.map((key) => [key, building[key]]),
+    keys.filter((key) => building[key] !== undefined).map((key) => [key, building[key]]),
   ));
 }
 
@@ -100,6 +104,10 @@ export function matchObservedBuilding(type, catalog, idOf = (entry) => entry.gam
   const exact = new Map(catalog.map((entry) => [String(idOf(entry) ?? '').toLowerCase(), entry]));
   for (const candidate of candidates) if (exact.has(candidate)) return exact.get(candidate);
 
+  // A Workshop path's numeric prefix is its authoritative item identity.
+  // Never resolve an unavailable mod to an unrelated mod that happens to use
+  // the same generic basename (hospital, sad, block1, ...).
+  if (/^\d{6,20}\//.test(candidates.at(-1))) return null;
   const basename = candidates.at(-1).split('/').at(-1);
   const matches = catalog.filter((entry) =>
     String(idOf(entry) ?? '').toLowerCase().split('/').at(-1) === basename);
@@ -123,14 +131,17 @@ export function groupObservedProduction(buildings, catalog) {
       continue;
     }
 
+    const constructionProgress = record.constructionProgress ?? 1;
     const key = [record.scopeId ?? 'none', building.de, record.configuredWorkers,
-      record.configuredWorkersHighEducation, record.currentWorkers, record.mineQuality].join('\0');
+      record.configuredWorkersHighEducation, record.currentWorkers, record.mineQuality,
+      constructionProgress].join('\0');
     const row = grouped.get(key) ?? {
       group: building.group?.de ?? '', name: building.de, count: 0,
       quality: Number.isFinite(record.mineQuality) && record.mineQuality > 0 ? record.mineQuality : 1,
       qualityEstimated: !(Number.isFinite(record.mineQuality) && record.mineQuality > 0), scopeId: record.scopeId,
       sourceGameId: record.type, observedBuildingIndices: [], currentWorkers: 0,
       configuredWorkers: 0, configuredWorkersHighEducation: 0, nominalWorkers: 0,
+      constructionProgress,
     };
     row.count += 1;
     row.observedBuildingIndices.push(record.index);

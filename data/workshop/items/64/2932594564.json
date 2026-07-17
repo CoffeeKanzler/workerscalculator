@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2932594564",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:47:10+00:00",
+  "buildings": [
+    {
+      "id": "2932594564/eh6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 89.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 89.0
+      },
+      "constructionResources": {
+        "workers": 850.0,
+        "gravel": 10.0,
+        "bricks": 90.0,
+        "concrete": 20.0,
+        "boards": 50.0,
+        "steel": 35.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "QL's Corner House Goltz",
+      "workshopId": "2932594564",
+      "modPath": "eh6"
+    },
+    {
+      "id": "2932594564/eh7",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 122.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 122.0
+      },
+      "constructionResources": {
+        "workers": 1130.0,
+        "gravel": 20.0,
+        "bricks": 100.0,
+        "concrete": 20.0,
+        "boards": 80.0,
+        "steel": 40.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "QL's Corner House Mommsen",
+      "workshopId": "2932594564",
+      "modPath": "eh7"
+    },
+    {
+      "id": "2932594564/rh10",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60.0
+      },
+      "constructionResources": {
+        "workers": 540.0,
+        "gravel": 10.0,
+        "bricks": 70.0,
+        "concrete": 12.0,
+        "boards": 45.0,
+        "steel": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "QL's Row House Mehring",
+      "workshopId": "2932594564",
+      "modPath": "rh10"
+    },
+    {
+      "id": "2932594564/rh11",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 98.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 98.0
+      },
+      "constructionResources": {
+        "workers": 860.0,
+        "gravel": 20.0,
+        "bricks": 90.0,
+        "concrete": 15.0,
+        "boards": 70.0,
+        "steel": 40.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "QL's Row House Wilhelm",
+      "workshopId": "2932594564",
+      "modPath": "rh11"
+    },
+    {
+      "id": "2932594564/rh12",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 128.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 128.0
+      },
+      "constructionResources": {
+        "workers": 920.0,
+        "gravel": 20.0,
+        "bricks": 80.0,
+        "concrete": 15.0,
+        "boards": 80.0,
+        "steel": 30.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "QL's Row House Yorck",
+      "workshopId": "2932594564",
+      "modPath": "rh12"
+    },
+    {
+      "id": "2932594564/rh13",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 122.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 122.0
+      },
+      "constructionResources": {
+        "workers": 980.0,
+        "gravel": 20.0,
+        "bricks": 100.0,
+        "concrete": 25.0,
+        "boards": 90.0,
+        "steel": 30.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "QL's Row House Ziehten",
+      "workshopId": "2932594564",
+      "modPath": "rh13"
+    },
+    {
+      "id": "2932594564/rh6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 62.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 62.0
+      },
+      "constructionResources": {
+        "workers": 620.0,
+        "gravel": 10.0,
+        "bricks": 70.0,
+        "concrete": 12.0,
+        "boards": 40.0,
+        "steel": 15.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "QL's Row House Eisenach",
+      "workshopId": "2932594564",
+      "modPath": "rh6"
+    },
+    {
+      "id": "2932594564/rh7",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 90.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 90.0
+      },
+      "constructionResources": {
+        "workers": 880.0,
+        "gravel": 10.0,
+        "bricks": 65.0,
+        "concrete": 12.0,
+        "boards": 60.0,
+        "steel": 25.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "QL's Row House Friedrich",
+      "workshopId": "2932594564",
+      "modPath": "rh7"
+    },
+    {
+      "id": "2932594564/rh8",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 102.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 102.0
+      },
+      "constructionResources": {
+        "workers": 920.0,
+        "gravel": 20.0,
+        "bricks": 100.0,
+        "concrete": 30.0,
+        "boards": 80.0,
+        "steel": 30.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "QL's Row House Joachimsthal",
+      "workshopId": "2932594564",
+      "modPath": "rh8"
+    },
+    {
+      "id": "2932594564/rh9",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 128.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 128.0
+      },
+      "constructionResources": {
+        "workers": 860.0,
+        "gravel": 20.0,
+        "bricks": 100.0,
+        "concrete": 30.0,
+        "boards": 90.0,
+        "steel": 50.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "QL's Row House Charlotte",
+      "workshopId": "2932594564",
+      "modPath": "rh9"
+    }
+  ],
+  "vehicles": []
+}

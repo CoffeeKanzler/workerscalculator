@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2167779188",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:44:50+00:00",
+  "buildings": [
+    {
+      "id": "2167779188/StationLongRename",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10000.0
+      },
+      "constructionResources": {
+        "gravel": 480.0,
+        "concrete": 80.0,
+        "workers": 4500.0,
+        "steel": 65.0,
+        "bricks": 120.0,
+        "asphalt": 70.0,
+        "boards": 125.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Train Station 'Baltis' LONG RENAME",
+      "workshopId": "2167779188",
+      "modPath": "StationLongRename"
+    },
+    {
+      "id": "2167779188/StationMediumRename",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5000.0
+      },
+      "constructionResources": {
+        "gravel": 275.0,
+        "concrete": 65.0,
+        "workers": 2750.0,
+        "steel": 65.0,
+        "bricks": 120.0,
+        "asphalt": 70.0,
+        "boards": 120.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Train Station 'Baltis' MEDIUM RENAME",
+      "workshopId": "2167779188",
+      "modPath": "StationMediumRename"
+    },
+    {
+      "id": "2167779188/StationShortRename",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1500.0
+      },
+      "constructionResources": {
+        "gravel": 195.0,
+        "concrete": 55.0,
+        "workers": 1900.0,
+        "steel": 55.0,
+        "bricks": 120.0,
+        "asphalt": 70.0,
+        "boards": 117.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Train Station 'Baltis' SHORT RENAME",
+      "workshopId": "2167779188",
+      "modPath": "StationShortRename"
+    }
+  ],
+  "vehicles": []
+}

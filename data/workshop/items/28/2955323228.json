@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2955323228",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:48:42+00:00",
+  "buildings": [
+    {
+      "id": "2955323228/pesa",
+      "nameId": 2021,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_RAIL"
+      ],
+      "workers": 1000.0,
+      "professors": 250.0,
+      "production": {
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "steel": 1.0,
+        "plastics": 1.0,
+        "mcomponents": 1.0,
+        "ecomponents": 1.0,
+        "fabric": 1.0,
+        "eletronics": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 6.0
+      },
+      "workshopId": "2955323228",
+      "modPath": "pesa"
+    }
+  ],
+  "vehicles": []
+}

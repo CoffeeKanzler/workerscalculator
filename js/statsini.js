@@ -1,7 +1,8 @@
 // Parser for Workers & Resources: Soviet Republic stats.ini exports.
 // The file holds $STAT_RECORD history plus a final $STAT_CURRENT snapshot.
-// Later $STAT_CITY blocks are separate histories and are ignored. Price
-// sections contain lines:
+// Later $STAT_CITY blocks are separate settlement snapshots. They are ignored
+// by parseStatsIni so they cannot contaminate republic prices, and exposed by
+// parseCityStatsIni for save-backed operational reporting. Price sections contain lines:
 //   <resourceKey> <value> <growthFactor>
 
 const MAP_SECTIONS = {
@@ -46,6 +47,25 @@ const SCALAR_KEYS = {
   Citizens_AverageLifespan: 'averageLifespan',
 };
 
+const CRIME_KEYS = {
+  Executed_0: 'minorCrimes',
+  Executed_1: 'mediumCrimes',
+  Executed_2: 'seriousCrimes',
+  Executed_3: 'executed3',
+  Executed_4: 'executed4',
+  Error_NoPolice: 'withoutPolice',
+  Error_NotInvestigated: 'notInvestigated',
+  Error_NotCourt: 'withoutCourt',
+  Prisoners_Escaped: 'prisonersEscaped',
+};
+
+function parseCrimeLine(line, target) {
+  const match = line.match(/^Crime_(\S+)\s+(-?[\d.]+)/);
+  if (!match || !(match[1] in CRIME_KEYS)) return false;
+  target[CRIME_KEYS[match[1]]] = parseFloat(match[2]);
+  return true;
+}
+
 export function parseStatsIni(text) {
   const records = [];
   let rec = null;
@@ -78,6 +98,7 @@ export function parseStatsIni(text) {
       }
       continue;
     }
+    if (rec && parseCrimeLine(line, rec)) continue;
     if (rec && section) {
       const m = line.match(/^(\S+)\s+(-?[\d.]+)/);
       if (m) rec[section][m[1]] = parseFloat(m[2]);
@@ -86,6 +107,40 @@ export function parseStatsIni(text) {
   const out = records.filter(r => r.year !== null || r.current);
   out.forEach((r, i) => { r.index = i; });
   return out;
+}
+
+export function parseCityStatsIni(text) {
+  const records = [];
+  let rec = null;
+  for (const rawLine of text.split(/\r?\n/)) {
+    const line = rawLine.trim();
+    if (!line) continue;
+    const city = line.match(/^\$STAT_CITY\s+(\d+)/);
+    if (city) {
+      rec = { scopeId: Number(city[1]), day: null, year: null };
+      records.push(rec);
+      continue;
+    }
+    if (!rec) continue;
+    if (line.startsWith('$STAT_')) {
+      rec = null;
+      continue;
+    }
+    const scalar = line.match(/^\$(DATE_DAY|DATE_YEAR|Citizens_Born|Citizens_Dead|Citizens_Escaped)\s+(-?[\d.]+)/);
+    if (scalar) {
+      const key = SCALAR_KEYS[scalar[1]];
+      if (key) rec[key] = parseFloat(scalar[2]);
+      continue;
+    }
+    parseCrimeLine(line, rec);
+  }
+  for (const record of records) {
+    record.recordedCrimes = (record.minorCrimes ?? 0) + (record.mediumCrimes ?? 0)
+      + (record.seriousCrimes ?? 0) + (record.executed3 ?? 0) + (record.executed4 ?? 0);
+    record.unresolvedCrimes = (record.withoutPolice ?? 0) + (record.notInvestigated ?? 0)
+      + (record.withoutCourt ?? 0);
+  }
+  return records;
 }
 
 // Some snapshots contain 0.000000 for the scalar costs (game quirk); fall back

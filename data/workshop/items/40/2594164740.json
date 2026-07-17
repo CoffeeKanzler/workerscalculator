@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2594164740",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:53:29+00:00",
+  "buildings": [
+    {
+      "id": "2594164740/polmozbyt",
+      "nameId": 2043,
+      "types": [
+        "TYPE_CAR_DEALER"
+      ],
+      "workers": 40.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 5.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2594164740",
+      "modPath": "polmozbyt"
+    }
+  ],
+  "vehicles": []
+}

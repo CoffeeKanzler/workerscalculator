@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1878758975",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:45:21+00:00",
+  "buildings": [
+    {
+      "id": "1878758975/Barracks001",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.7,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Workers' barracks 1",
+      "workshopId": "1878758975",
+      "modPath": "Barracks001"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1906221342",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:00:52+00:00",
+  "buildings": [
+    {
+      "id": "1906221342/Electric_Substation_Tower",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_ELETRIC": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electric Substation Tower",
+      "workshopId": "1906221342",
+      "modPath": "Electric_Substation_Tower"
+    },
+    {
+      "id": "1906221342/Electric_Switch_Tower",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electric Switch Tower",
+      "workshopId": "1906221342",
+      "modPath": "Electric_Switch_Tower"
+    }
+  ],
+  "vehicles": []
+}

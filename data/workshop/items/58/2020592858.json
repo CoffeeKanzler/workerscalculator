@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2020592858",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:38:31+00:00",
+  "buildings": [
+    {
+      "id": "2020592858/aggregatehabour",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {
+        "gravel": 3.0,
+        "workers": 70.0,
+        "boards": 10.0,
+        "bricks": 15.0,
+        "steel": 3.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Aggregate Unloading Dock",
+      "workshopId": "2020592858",
+      "modPath": "aggregatehabour"
+    },
+    {
+      "id": "2020592858/aggregatestore",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 50.0
+      },
+      "constructionResources": {
+        "gravel": 3.0,
+        "workers": 70.0,
+        "boards": 10.0,
+        "bricks": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Aggregate Store",
+      "workshopId": "2020592858",
+      "modPath": "aggregatestore"
+    },
+    {
+      "id": "2020592858/boatyard",
+      "nameId": null,
+      "types": [
+        "TYPE_SHIP_DOCK"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 650.0,
+        "gravel": 50.0,
+        "bricks": 100.0,
+        "boards": 150.0,
+        "concrete": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Boat Yard",
+      "workshopId": "2020592858",
+      "modPath": "boatyard"
+    },
+    {
+      "id": "2020592858/house1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16.0
+      },
+      "constructionResources": {
+        "workers": 240.0,
+        "gravel": 40.0,
+        "boards": 21.0,
+        "bricks": 52.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Seafront House",
+      "workshopId": "2020592858",
+      "modPath": "house1"
+    },
+    {
+      "id": "2020592858/house2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10.0
+      },
+      "constructionResources": {
+        "workers": 230.0,
+        "gravel": 40.0,
+        "boards": 17.0,
+        "bricks": 46.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Seafront House 2",
+      "workshopId": "2020592858",
+      "modPath": "house2"
+    },
+    {
+      "id": "2020592858/house3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10.0
+      },
+      "constructionResources": {
+        "workers": 200.0,
+        "gravel": 40.0,
+        "boards": 17.0,
+        "bricks": 46.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Hillside House",
+      "workshopId": "2020592858",
+      "modPath": "house3"
+    },
+    {
+      "id": "2020592858/lighthouse",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8.0
+      },
+      "constructionResources": {
+        "workers": 390.0,
+        "gravel": 40.0,
+        "boards": 33.0,
+        "bricks": 92.0,
+        "steel": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Lighthouse",
+      "workshopId": "2020592858",
+      "modPath": "lighthouse"
+    },
+    {
+      "id": "2020592858/offshorebar",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 3.0,
+        "workers": 60.0,
+        "boards": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Offshore Pub",
+      "workshopId": "2020592858",
+      "modPath": "offshorebar"
+    },
+    {
+      "id": "2020592858/openstore",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 50.0
+      },
+      "constructionResources": {
+        "gravel": 3.0,
+        "workers": 70.0,
+        "boards": 10.0,
+        "bricks": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Open Store",
+      "workshopId": "2020592858",
+      "modPath": "openstore"
+    },
+    {
+      "id": "2020592858/ruraldock",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 300.0,
+        "gravel": 10.0,
+        "bricks": 20.0,
+        "boards": 60.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Rural Dock",
+      "workshopId": "2020592858",
+      "modPath": "ruraldock"
+    },
+    {
+      "id": "2020592858/ruraldockreverse",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 300.0,
+        "gravel": 10.0,
+        "bricks": 20.0,
+        "boards": 60.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Rural Dock Reversed",
+      "workshopId": "2020592858",
+      "modPath": "ruraldockreverse"
+    },
+    {
+      "id": "2020592858/ruralpub",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 3.0,
+        "workers": 60.0,
+        "boards": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Pub",
+      "workshopId": "2020592858",
+      "modPath": "ruralpub"
+    },
+    {
+      "id": "2020592858/ruralseawall",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20.0,
+        "gravel": 10.0,
+        "bricks": 10.0,
+        "boards": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Seawall",
+      "workshopId": "2020592858",
+      "modPath": "ruralseawall"
+    },
+    {
+      "id": "2020592858/ruralseawall4",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20.0,
+        "gravel": 10.0,
+        "bricks": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Rural Seawall 4",
+      "workshopId": "2020592858",
+      "modPath": "ruralseawall4"
+    },
+    {
+      "id": "2020592858/ruralshop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 3.0,
+        "workers": 70.0,
+        "boards": 10.0,
+        "bricks": 15.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Shop",
+      "workshopId": "2020592858",
+      "modPath": "ruralshop"
+    },
+    {
+      "id": "2020592858/waterfrontbar",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 3.0,
+        "workers": 60.0,
+        "boards": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Waterfront Pub",
+      "workshopId": "2020592858",
+      "modPath": "waterfrontbar"
+    },
+    {
+      "id": "2020592858/waterfrontcafe",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 3.0,
+        "workers": 70.0,
+        "boards": 10.0,
+        "bricks": 15.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Waterfront Cafe",
+      "workshopId": "2020592858",
+      "modPath": "waterfrontcafe"
+    },
+    {
+      "id": "2020592858/waterfrontstore",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 100.0
+      },
+      "constructionResources": {
+        "gravel": 3.0,
+        "workers": 160.0,
+        "bricks": 10.0,
+        "boards": 40.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Waterfront Store",
+      "workshopId": "2020592858",
+      "modPath": "waterfrontstore"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2716477442",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:39:07+00:00",
+  "buildings": [
+    {
+      "id": "2716477442/prison",
+      "nameId": 6265,
+      "types": [
+        "TYPE_PRISON"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": 0.45,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2716477442",
+      "modPath": "prison"
+    }
+  ],
+  "vehicles": []
+}

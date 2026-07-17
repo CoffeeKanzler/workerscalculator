@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2090967078",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:54:15+00:00",
+  "buildings": [
+    {
+      "id": "2090967078/cobblestone_parking_L",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 293.0,
+        "concrete": 6.6,
+        "gravel": 2.7,
+        "bricks": 19.8,
+        "prefabpanels": 8.4,
+        "ecomponents": 0.028
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large cobblestone parking (30x)",
+      "workshopId": "2090967078",
+      "modPath": "cobblestone_parking_L"
+    },
+    {
+      "id": "2090967078/cobblestone_parking_m",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 205.0,
+        "concrete": 4.6,
+        "gravel": 2.0,
+        "bricks": 10.7,
+        "prefabpanels": 5.6,
+        "ecomponents": 0.014
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium cobblestone parking (16x)",
+      "workshopId": "2090967078",
+      "modPath": "cobblestone_parking_m"
+    },
+    {
+      "id": "2090967078/cobblestone_parking_s",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 115.0,
+        "concrete": 3.9000000000000004,
+        "gravel": 1.5,
+        "bricks": 6.8,
+        "prefabpanels": 3.7,
+        "ecomponents": 0.007
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small cobblestone parking (6x)",
+      "workshopId": "2090967078",
+      "modPath": "cobblestone_parking_s"
+    },
+    {
+      "id": "2090967078/dirt_parking_m_damsign",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 109.0,
+        "boards": 5.6,
+        "gravel": 4.8,
+        "concrete": 3.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium dirt parking (16x), fallen sign",
+      "workshopId": "2090967078",
+      "modPath": "dirt_parking_m_damsign"
+    },
+    {
+      "id": "2090967078/dirt_parking_m_normsign",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 109.0,
+        "boards": 5.6,
+        "gravel": 4.8,
+        "concrete": 3.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium dirt parking (16x)",
+      "workshopId": "2090967078",
+      "modPath": "dirt_parking_m_normsign"
+    },
+    {
+      "id": "2090967078/dirt_parking_s",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 69.0,
+        "boards": 2.6,
+        "gravel": 2.2,
+        "concrete": 1.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small dirt parking (6x)",
+      "workshopId": "2090967078",
+      "modPath": "dirt_parking_s"
+    },
+    {
+      "id": "2090967078/gravel_parking_L",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 99.0,
+        "prefabpanels": 7.0,
+        "gravel": 21.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large gravel parking (30x)",
+      "workshopId": "2090967078",
+      "modPath": "gravel_parking_L"
+    },
+    {
+      "id": "2090967078/gravel_parking_m",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 79.0,
+        "prefabpanels": 4.2,
+        "gravel": 11.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium gravel parking (16x)",
+      "workshopId": "2090967078",
+      "modPath": "gravel_parking_m"
+    },
+    {
+      "id": "2090967078/gravel_parking_s",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 59.0,
+        "prefabpanels": 3.0,
+        "gravel": 7.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small gravel parking (6x)",
+      "workshopId": "2090967078",
+      "modPath": "gravel_parking_s"
+    },
+    {
+      "id": "2090967078/prefab_n_parking_L",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 168.0,
+        "concrete": 6.6,
+        "gravel": 2.7,
+        "prefabpanels": 28.4,
+        "ecomponents": 0.028
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large prefab parking (30x)",
+      "workshopId": "2090967078",
+      "modPath": "prefab_n_parking_L"
+    },
+    {
+      "id": "2090967078/prefab_n_parking_m",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 128.0,
+        "concrete": 4.6,
+        "gravel": 2.0,
+        "prefabpanels": 18.0,
+        "ecomponents": 0.014
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium prefab parking (16x)",
+      "workshopId": "2090967078",
+      "modPath": "prefab_n_parking_m"
+    },
+    {
+      "id": "2090967078/prefab_n_parking_s",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 82.0,
+        "concrete": 3.9000000000000004,
+        "gravel": 1.5,
+        "prefabpanels": 10.7,
+        "ecomponents": 0.007
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small prefab parking (6x)",
+      "workshopId": "2090967078",
+      "modPath": "prefab_n_parking_s"
+    }
+  ],
+  "vehicles": []
+}

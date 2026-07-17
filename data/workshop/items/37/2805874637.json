@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2805874637",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:46:09+00:00",
+  "buildings": [
+    {
+      "id": "2805874637/agk",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 4.0,
+      "professors": 1.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 50.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Village Church",
+      "workshopId": "2805874637",
+      "modPath": "agk"
+    }
+  ],
+  "vehicles": []
+}

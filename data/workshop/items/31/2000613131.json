@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2000613131",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:44:56+00:00",
+  "buildings": [
+    {
+      "id": "2000613131/garage1R",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 40.0,
+      "professors": 10.0,
+      "production": {
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "steel": 1.0,
+        "plastics": 1.0,
+        "mcomponents": 1.0,
+        "ecomponents": 1.0,
+        "fabric": 1.0,
+        "eletronics": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 3.0
+      },
+      "nameStr": "Motor Works 1 Red",
+      "workshopId": "2000613131",
+      "modPath": "garage1R"
+    },
+    {
+      "id": "2000613131/garage1W",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 40.0,
+      "professors": 10.0,
+      "production": {
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "steel": 1.0,
+        "plastics": 1.0,
+        "mcomponents": 1.0,
+        "ecomponents": 1.0,
+        "fabric": 1.0,
+        "eletronics": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 3.0
+      },
+      "nameStr": "Motor Works 1 White",
+      "workshopId": "2000613131",
+      "modPath": "garage1W"
+    },
+    {
+      "id": "2000613131/garage2R",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 40.0,
+      "professors": 10.0,
+      "production": {
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "steel": 1.0,
+        "plastics": 1.0,
+        "mcomponents": 1.0,
+        "ecomponents": 1.0,
+        "fabric": 1.0,
+        "eletronics": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 3.0
+      },
+      "nameStr": "Motor Works 2 Red",
+      "workshopId": "2000613131",
+      "modPath": "garage2R"
+    },
+    {
+      "id": "2000613131/garage2W",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 40.0,
+      "professors": 10.0,
+      "production": {
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "steel": 1.0,
+        "plastics": 1.0,
+        "mcomponents": 1.0,
+        "ecomponents": 1.0,
+        "fabric": 1.0,
+        "eletronics": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 3.0
+      },
+      "nameStr": "Motor Works 2 White",
+      "workshopId": "2000613131",
+      "modPath": "garage2W"
+    }
+  ],
+  "vehicles": []
+}

@@ -76,3 +76,18 @@ test('unresolved Workshop buildings surface as an area coverage warning', () => 
     severity: alert.severity, scopeId: alert.scopeId, observed: alert.observed,
   }, { severity: 'warning', scopeId: 40, observed: 48 });
 });
+
+test('buildings under construction are not reported as critically understaffed', () => {
+  const model = buildRepublicModel({
+    observed: {
+      scopes: [{ id: 8, name: 'New works', citizens: null }],
+      productionRows: [{ scopeId: 8, count: 2, configuredWorkers: 100,
+        currentWorkers: 0, constructionProgress: 0.4 }],
+      sourceStatus: { buildings: 'exact' },
+    },
+    planned: { totals: {}, areas: [] },
+  });
+  assert.equal(model.actual.areas[0].constructionBuildingCount, 2);
+  assert.equal(model.actual.areas[0].configuredIndustryWorkers, 0);
+  assert.ok(!republicAlerts(model).some(alert => alert.metric === 'staffing'));
+});

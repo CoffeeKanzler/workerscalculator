@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2392641939",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:36:38+00:00",
+  "buildings": [
+    {
+      "id": "2392641939/karlmarxstatue",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Karl Marx Statue",
+      "workshopId": "2392641939",
+      "modPath": "karlmarxstatue"
+    }
+  ],
+  "vehicles": []
+}

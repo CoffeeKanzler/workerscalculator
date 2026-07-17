@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2425675174",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:58:49+00:00",
+  "buildings": [
+    {
+      "id": "2425675174/leninstatue",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lenin Statue",
+      "workshopId": "2425675174",
+      "modPath": "leninstatue"
+    }
+  ],
+  "vehicles": []
+}

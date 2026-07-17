@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1924517931",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:41:52+00:00",
+  "buildings": [
+    {
+      "id": "1924517931/prefab",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 840.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 840.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Peoples Palace Flats",
+      "workshopId": "1924517931",
+      "modPath": "prefab"
+    }
+  ],
+  "vehicles": []
+}

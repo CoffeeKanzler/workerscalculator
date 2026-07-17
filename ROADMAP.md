@@ -115,6 +115,17 @@ side by side.)
 
 ## Phase 4 – Usability & reach
 
+### 4.0 Save-first workspace UX 🧪 beta 2026-07-17
+- **Start:** Continue/open/manual-plan are the only primary choices; installed-Workshop
+  setup and older snapshots are collapsed secondary actions.
+- **Republic:** Operational metrics, alerts, and actionable areas come first. History,
+  research, and planning internals remain available through progressive disclosure.
+- **City / Production:** Imported areas use one contextual workspace selector instead
+  of horizontal button strips. Assumptions are collapsed, while building rows,
+  consequences, totals, and incomplete-data warnings stay primary.
+- **Responsive:** workspace controls stack without document-level horizontal overflow;
+  dense planner tables remain horizontally scrollable inside their own containers.
+
 ### 4.1 Plan export / import / share links ✅ done
 (Export/import as JSON and gzip-compressed share links are implemented -
 the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
@@ -155,9 +166,18 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   the active economics source. Share links still omit private history.
   - **Exact operating facts:** `buildings_game.bin` (not `buildings.bin`) supplies live
   current staffing, configured ordinary/higher-education caps, and per-instance mine
-  quality. Production rows aggregate only identical saved configurations, so the sample's
+  quality. Its exact construction-completion field keeps unfinished factories and services
+  visible as future plan capacity without producing false live-staffing alerts. Production rows aggregate only identical saved configurations, so the sample's
   fabric factory remains visible as 93 current / 100 configured and coal mine 1157 as
   95 / 120 at about 56.47% quality.
+  - **Public services:** citizen criminality and settlement crime histories are imported.
+  Police and clinic staffing/capacity remain regional; courts, prisons, and orphanages are
+  summarized republic-wide. Prison/orphan occupancy follows live citizen residence links,
+  while cumulative `stats.ini` failures are labelled as history rather than a live queue.
+  - **Map/game settings:** verified season state from `header.bin` and climate family from
+  `material.mtl` now control whether heating applies. A Misc section exposes verified
+  settings. Continue mapping the remaining header settings with controlled save diffs;
+  unknown values must not enter calculations.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
   catalog contains only compact parsed INI facts under `data/workshop/`, never mod assets.

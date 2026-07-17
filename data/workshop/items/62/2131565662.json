@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2131565662",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:40:17+00:00",
+  "buildings": [
+    {
+      "id": "2131565662/factory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {
+        "food": 0.4
+      },
+      "consumption": {
+        "plants": 0.8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.67
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 52.0,
+        "ecomponents": 20.0,
+        "workers": 600.0
+      },
+      "electricWorkerFactors": {
+        "living": 1.0
+      },
+      "nameStr": "Automatic bread factory",
+      "workshopId": "2131565662",
+      "modPath": "factory"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1985870383",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:43:56+00:00",
+  "buildings": [
+    {
+      "id": "1985870383/Kukuruza",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 368.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 368.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kukuruza_23",
+      "workshopId": "1985870383",
+      "modPath": "Kukuruza"
+    }
+  ],
+  "vehicles": []
+}

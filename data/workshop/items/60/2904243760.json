@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2904243760",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:54:50+00:00",
+  "buildings": [
+    {
+      "id": "2904243760/zajezdnia",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO",
+        "SUBTYPE_TRAM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tram depot",
+      "workshopId": "2904243760",
+      "modPath": "zajezdnia"
+    },
+    {
+      "id": "2904243760/zajezdnia_kolej",
+      "nameId": null,
+      "types": [
+        "TYPE_RAILDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tram depot (rail version)",
+      "workshopId": "2904243760",
+      "modPath": "zajezdnia_kolej"
+    }
+  ],
+  "vehicles": []
+}

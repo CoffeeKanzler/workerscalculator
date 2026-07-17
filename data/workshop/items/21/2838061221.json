@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2838061221",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:38:29+00:00",
+  "buildings": [
+    {
+      "id": "2838061221/Worker_Kolhoznitza",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 160.0,
+        "gravel": 80.0,
+        "asphalt": 30.0,
+        "workers": 290.0,
+        "bricks": 100.0,
+        "steel": 65.0,
+        "boards": 40.0,
+        "ecomponents": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Павильон СССР | USSR Pavilion ",
+      "workshopId": "2838061221",
+      "modPath": "Worker_Kolhoznitza"
+    },
+    {
+      "id": "2838061221/Worker_Kolhoznitza/monument",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 10.0,
+        "concrete": 65.0,
+        "workers": 160.0,
+        "steel": 60.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Рабочий и колхозница | Worker and Kolkhoznitza",
+      "workshopId": "2838061221",
+      "modPath": "Worker_Kolhoznitza/monument"
+    }
+  ],
+  "vehicles": []
+}

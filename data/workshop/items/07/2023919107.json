@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2023919107",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:55:06+00:00",
+  "buildings": [
+    {
+      "id": "2023919107/Fence_po2_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "prefabpanels": 0.7,
+        "concrete": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fence PO-2 panel x1",
+      "workshopId": "2023919107",
+      "modPath": "Fence_po2_1"
+    },
+    {
+      "id": "2023919107/Fence_po2_10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10.0,
+        "prefabpanels": 7.0,
+        "concrete": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fence PO-2 panel x10",
+      "workshopId": "2023919107",
+      "modPath": "Fence_po2_10"
+    },
+    {
+      "id": "2023919107/Fence_po2_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2.0,
+        "prefabpanels": 1.4,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fence PO-2 panel x2",
+      "workshopId": "2023919107",
+      "modPath": "Fence_po2_2"
+    },
+    {
+      "id": "2023919107/no_pedestrian/Fence_po2_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "prefabpanels": 0.7,
+        "concrete": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fence PO-2 panel x1",
+      "workshopId": "2023919107",
+      "modPath": "no_pedestrian/Fence_po2_1"
+    },
+    {
+      "id": "2023919107/no_pedestrian/Fence_po2_10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10.0,
+        "prefabpanels": 7.0,
+        "concrete": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fence PO-2 panel x10",
+      "workshopId": "2023919107",
+      "modPath": "no_pedestrian/Fence_po2_10"
+    },
+    {
+      "id": "2023919107/no_pedestrian/Fence_po2_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2.0,
+        "prefabpanels": 1.4,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fence PO-2 panel x2",
+      "workshopId": "2023919107",
+      "modPath": "no_pedestrian/Fence_po2_2"
+    }
+  ],
+  "vehicles": []
+}

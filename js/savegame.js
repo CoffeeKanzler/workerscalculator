@@ -99,7 +99,18 @@ export function parseHeader(buffer) {
     saveVersion: c.view.getUint32(0, true),
     title: c.utf16Z(4, 0x100),
     savePath: c.asciiZ(0x104, Math.min(0x100, c.bytes.length - 0x104)),
+    settings: {
+      seasonsEnabled: c.view.getInt32(0x1c4, true) !== 0,
+    },
   };
+}
+
+export function parseMapClimate(text) {
+  const source = String(text ?? '').toLowerCase();
+  if (source.includes('dlc2/tiles_middleeast/')) return { id: 'middleeast', heatingRequired: false };
+  if (source.includes('dlc2/tiles_asia/')) return { id: 'asia', heatingRequired: false };
+  if (source.includes('dlc2/tiles_siberia/')) return { id: 'siberia', heatingRequired: true };
+  return { id: 'temperate', heatingRequired: true };
 }
 
 export function parseResearch(buffer) {
@@ -142,6 +153,8 @@ export function parseWorkers(buffer, { saveVersion = 124 } = {}) {
       food: c.view.getFloat32(start + 0x8c, true),
       health: c.view.getFloat32(start + 0x90, true),
       loyalty: c.view.getFloat32(start + 0x94, true),
+      criminality: c.view.getFloat32(start + 0xa4, true),
+      citizenType: c.view.getInt8(start + 0x700),
     });
     const citizenType = c.view.getInt8(start + 0x700);
     const hasExtraName = c.view.getUint8(start + 0x70c) !== 0;
@@ -233,6 +246,7 @@ export function parseBuildingsGame(buffer, { onProgress } = {}) {
       configuredWorkers: c.view.getInt32(start + first(0x288), true),
       configuredWorkersHighEducation: c.view.getInt32(start + first(0x284), true),
       mineQuality: c.view.getFloat32(start + first(0x280), true),
+      constructionProgress: c.view.getFloat32(start + 0x3e8, true),
     };
     c.offset = start + 0x6d8;
 

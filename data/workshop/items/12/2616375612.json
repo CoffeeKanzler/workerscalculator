@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2616375612",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:52:25+00:00",
+  "buildings": [
+    {
+      "id": "2616375612/zajezdnia_trolejbus1",
+      "nameId": 1608,
+      "types": [
+        "TYPE_ROADDEPO",
+        "SUBTYPE_TROLLEYBUS"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2616375612",
+      "modPath": "zajezdnia_trolejbus1"
+    },
+    {
+      "id": "2616375612/zajezdnia_trolejbus2",
+      "nameId": 1608,
+      "types": [
+        "TYPE_ROADDEPO",
+        "SUBTYPE_TROLLEYBUS"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2616375612",
+      "modPath": "zajezdnia_trolejbus2"
+    }
+  ],
+  "vehicles": []
+}

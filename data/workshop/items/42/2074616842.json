@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2074616842",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:58:57+00:00",
+  "buildings": [
+    {
+      "id": "2074616842/sklep",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "GS Samopomoc Chlopska",
+      "workshopId": "2074616842",
+      "modPath": "sklep"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,11 +1,11 @@
 import {
   parseNamepoints, parseBuildingsGame, parseWorkers, parseHeader, parseResearch,
-  reconcileSettlementMembership,
-} from './savegame.js?v=2';
-import { parseStatsIni } from './statsini.js?v=15';
+  parseMapClimate, reconcileSettlementMembership,
+} from './savegame.js?v=3';
+import { parseCityStatsIni, parseStatsIni } from './statsini.js?v=16';
 
 const sourceStatus = (payload) => Object.fromEntries(
-  ['namepoints', 'buildings', 'workers', 'header', 'research', 'stats']
+  ['namepoints', 'buildings', 'workers', 'header', 'research', 'stats', 'material']
     .map((key) => [key, payload[key] ? 'pending' : 'missing']),
 );
 
@@ -49,12 +49,14 @@ self.onmessage = ({ data }) => {
     }));
     const research = optional('research', parseResearch);
     const statsRecords = optional('stats', parseStatsIni);
+    const cityStats = data.stats ? parseCityStatsIni(data.stats) : [];
+    const mapClimate = optional('material', parseMapClimate);
     self.postMessage({
       type: 'complete',
       parsed: {
         settlements, buildings, citizens: workers?.citizens ?? null,
-        citizenFileSummary: workers?.summary ?? null, header, research,
-        statsRecords, membershipAudit, sourceStatus: status, warnings,
+        citizenFileSummary: workers?.summary ?? null, header, research, mapClimate,
+        statsRecords, cityStats, membershipAudit, sourceStatus: status, warnings,
       },
     });
   } catch {

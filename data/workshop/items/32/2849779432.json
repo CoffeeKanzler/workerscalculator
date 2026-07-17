@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2849779432",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:43:23+00:00",
+  "buildings": [
+    {
+      "id": "2849779432/apk",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 8.0,
+      "professors": 3.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 120.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 5300.0,
+        "gravel": 80.0,
+        "bricks": 780.0,
+        "concrete": 116.0,
+        "boards": 390.0,
+        "mcomponents": 8.0,
+        "steel": 160.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Apostel Paulus Kirche",
+      "workshopId": "2849779432",
+      "modPath": "apk"
+    }
+  ],
+  "vehicles": []
+}

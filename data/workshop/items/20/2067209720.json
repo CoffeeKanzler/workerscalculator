@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2067209720",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:35:42+00:00",
+  "buildings": [
+    {
+      "id": "2067209720/PalaceOfSoviet",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 250.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 2900.0,
+        "workers": 10000.0,
+        "boards": 100.0,
+        "bricks": 4.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Palace of Soviet",
+      "workshopId": "2067209720",
+      "modPath": "PalaceOfSoviet"
+    }
+  ],
+  "vehicles": []
+}

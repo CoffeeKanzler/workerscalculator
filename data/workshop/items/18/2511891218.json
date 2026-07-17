@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2511891218",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:36:44+00:00",
+  "buildings": [
+    {
+      "id": "2511891218/szpital",
+      "nameId": 6256,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 30.0,
+      "professors": 30.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2511891218",
+      "modPath": "szpital"
+    }
+  ],
+  "vehicles": []
+}
