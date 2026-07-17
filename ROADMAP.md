@@ -211,7 +211,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   supplied save has live inventory rows in 1,328 of 1,812 buildings. Matching production
   rows show exact fill levels plus clearly derived days-to-empty/full at configured staffing
   and imported productivity; unlike water, waste, and production stores remain separate, and
-  transient over-capacity amounts are not clamped. These are buffer projections, not claimed
+  transient over-capacity amounts are not clamped. Sub-day input and output constraints also
+  surface in the Republic attention list and link back to the affected production area.
+  These are buffer projections, not claimed
   actual throughput; rolling throughput fields remain gated until each production type is safe.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop

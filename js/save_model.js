@@ -238,6 +238,37 @@ export function productionBufferStatus(row, building, settings, keyForName) {
   });
 }
 
+export function productionBufferAlerts(rows, catalog, settings, keyForName, thresholdDays = 1) {
+  const alerts = [];
+  for (const row of rows ?? []) {
+    if ((row.constructionProgress ?? 1) < 1 || !(row.count > 0)) continue;
+    const building = catalog.find(item => item.de === row.name);
+    if (!building) continue;
+    for (const store of productionBufferStatus(row, building, settings, keyForName)) {
+      for (const resource of store.resources) {
+        if (store.inputFlag && Number.isFinite(resource.daysRemaining)
+            && resource.daysRemaining < thresholdDays) {
+          alerts.push({
+            severity: 'warning', scopeId: row.scopeId ?? null, metric: 'buffer.input',
+            observed: resource.daysRemaining, building: row.name, resource: resource.resource,
+            evidence: 'buildings_game.bin + configured rate',
+          });
+        }
+      }
+      if (store.outputFlag && Number.isFinite(store.daysUntilFull)
+          && store.daysUntilFull < thresholdDays) {
+        alerts.push({
+          severity: 'warning', scopeId: row.scopeId ?? null, metric: 'buffer.output',
+          observed: store.daysUntilFull, building: row.name, resource: null,
+          evidence: 'buildings_game.bin + configured rate',
+        });
+      }
+    }
+  }
+  return alerts.sort((a, b) => a.observed - b.observed
+    || String(a.building).localeCompare(String(b.building)) || a.metric.localeCompare(b.metric));
+}
+
 export function latestProductivity(records, fallback = 1) {
   for (let index = records.length - 1; index >= 0; index -= 1) {
     const value = records[index]?.averageProductivity;

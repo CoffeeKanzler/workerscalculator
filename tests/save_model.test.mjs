@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   citizenProductivity, aggregateCitizensByScope, compactObservedBuildings,
-  groupObservedProduction, latestProductivity, productionBufferStatus,
+  groupObservedProduction, latestProductivity, productionBufferStatus, productionBufferAlerts,
   inferObservedHousing,
 } from '../js/save_model.js';
 
@@ -118,6 +118,27 @@ test('production buffers distinguish exact fill from configured-rate estimates',
   assert.equal(status[0].resources[1].daysRemaining, 0);
   assert.equal(status[1].fillRatio, 0.7);
   assert.equal(status[1].daysUntilFull, 0.9);
+});
+
+test('production buffer alerts rank sub-day input and output constraints', () => {
+  const rows = [{
+    name: 'Fabric', scopeId: 4, count: 1, configuredWorkers: 100, productivity: 1,
+    inventoryStores: [
+      { inputFlag: 1, outputFlag: 0, selector: -1, capacity: 40,
+        resources: [{ resource: 'plants', amount: 10 }] },
+      { inputFlag: 0, outputFlag: 1, selector: -1, capacity: 15,
+        resources: [{ resource: 'fabric', amount: 10.5 }] },
+    ],
+  }];
+  const catalog = [{ de: 'Fabric', workers: 100, production: [{ de: 'Fabric', rate: 5 }],
+    consumption: [{ de: 'Plants', rate: 20 }] }];
+  const keyForName = name => ({ Fabric: 'fabric', Plants: 'plants' })[name];
+  assert.deepEqual(productionBufferAlerts(rows, catalog, { calendarFlow: 1 }, keyForName), [
+    { severity: 'warning', scopeId: 4, metric: 'buffer.input', observed: 0.5,
+      building: 'Fabric', resource: 'plants', evidence: 'buildings_game.bin + configured rate' },
+    { severity: 'warning', scopeId: 4, metric: 'buffer.output', observed: 0.9,
+      building: 'Fabric', resource: null, evidence: 'buildings_game.bin + configured rate' },
+  ]);
 });
 
 test('production grouping preserves configured staffing and exact mine quality', () => {

@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=47';
+import { STRINGS } from './i18n.js?v=48';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -11,7 +11,8 @@ import { createIndexedDbSnapshotStore, migrateLegacySnapshots } from './storage.
 import {
   aggregateCitizensByScope, compactObservedBuildings, groupObservedProduction,
   inferObservedHousing, latestProductivity, matchObservedBuilding, productionBufferStatus,
-} from './save_model.js?v=5';
+  productionBufferAlerts,
+} from './save_model.js?v=6';
 import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
@@ -2402,7 +2403,14 @@ function renderRepublic() {
     },
   });
   if (!observedImport && state.republicView !== 'plan') state.republicView = 'plan';
-  const alerts = republicAlerts(republicModel);
+  const bufferAlerts = productionBufferAlerts(
+    state.plan.rows, prodBuildings(), state.plan.settings, name => eco.keyForName(name),
+  ).map(alert => ({ ...alert, scopeName: plannerScopeName(alert.scopeId) }));
+  const severityOrder = { critical: 0, warning: 1 };
+  const alerts = [...republicAlerts(republicModel), ...bufferAlerts].sort((a, b) =>
+    severityOrder[a.severity] - severityOrder[b.severity]
+      || (a.observed ?? Infinity) - (b.observed ?? Infinity)
+      || String(a.scopeName).localeCompare(String(b.scopeName)));
 
   const cityBody = cityResults.map(({ city, res, industry }, i) => {
     const available = city.syntheticArea ? null : res.workerSurplus - industry.workersPerShift;
@@ -2586,7 +2594,9 @@ function renderRepublic() {
       el('span', {}, t(`alert.${alert.metric}`)),
       Number.isFinite(alert.observed) ? el('span', { class: 'alert-value' },
         alert.metric === 'staffing' || alert.metric === 'health' || alert.metric === 'food'
-          ? fmt(alert.observed * 100, 1) + ' %' : fmt(alert.observed, 1)) : null))
+          ? fmt(alert.observed * 100, 1) + ' %'
+          : alert.metric.startsWith('buffer.') ? `${fmt(alert.observed, 2)} ${t('day')}`
+            : fmt(alert.observed, 1)) : null))
     : [el('p', { class: 'hint pos' }, t('noAlerts'))];
   const alertList = el('div', { class: 'alert-list' },
     el('h3', {}, t('attention')), ...alertItems);
