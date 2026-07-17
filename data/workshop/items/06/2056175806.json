@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2056175806",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:26:03+00:00",
+  "buildings": [
+    {
+      "id": "2056175806/gai",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 70.0,
+        "gravel": 8.0,
+        "concrete": 1.0,
+        "asphalt": 5.0,
+        "steel": 6.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Stationary post of GAI",
+      "workshopId": "2056175806",
+      "modPath": "gai"
+    },
+    {
+      "id": "2056175806/gai_2",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 2.0,
+      "professors": 2.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 70.0,
+        "gravel": 8.0,
+        "concrete": 1.0,
+        "asphalt": 5.0,
+        "steel": 6.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Stationary post of GAI",
+      "workshopId": "2056175806",
+      "modPath": "gai_2"
+    }
+  ],
+  "vehicles": []
+}

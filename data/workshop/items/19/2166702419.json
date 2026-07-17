@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2166702419",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:19:11+00:00",
+  "buildings": [
+    {
+      "id": "2166702419/fpp_l",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 15.0,
+      "professors": 15.0,
+      "production": {
+        "eletric": 190.0
+      },
+      "consumption": {
+        "fuel": 2.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 8451.0,
+        "concrete": 89.0,
+        "prefabpanels": 188.159,
+        "steel": 357.359,
+        "ecomponents": 13.8,
+        "mcomponents": 28.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large adv. gas powerplant",
+      "workshopId": "2166702419",
+      "modPath": "fpp_l"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2194244101",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:11:59+00:00",
+  "buildings": [
+    {
+      "id": "2194244101/Chemlab",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 15.0,
+      "professors": 15.0,
+      "production": {
+        "chemicals": 0.005
+      },
+      "consumption": {
+        "gravel": 0.002,
+        "wood": 0.002,
+        "plants": 0.002,
+        "oil": 0.002
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.12
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Chemical Lab",
+      "workshopId": "2194244101",
+      "modPath": "Chemlab"
+    }
+  ],
+  "vehicles": []
+}

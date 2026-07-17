@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2913689992",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:25:13+00:00",
+  "buildings": [
+    {
+      "id": "2913689992/Inter",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 45.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel InterContinental Warsaw",
+      "workshopId": "2913689992",
+      "modPath": "Inter"
+    },
+    {
+      "id": "2913689992/Marriott",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 150.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel Marriott Warsaw",
+      "workshopId": "2913689992",
+      "modPath": "Marriott"
+    },
+    {
+      "id": "2913689992/WFC",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 680.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warsaw Financial Center",
+      "workshopId": "2913689992",
+      "modPath": "WFC"
+    },
+    {
+      "id": "2913689992/novotel",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 150.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel Novotel 'Forum' Warsaw",
+      "workshopId": "2913689992",
+      "modPath": "novotel"
+    },
+    {
+      "id": "2913689992/zlota",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 574.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 574.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Złota 44",
+      "workshopId": "2913689992",
+      "modPath": "zlota"
+    }
+  ],
+  "vehicles": []
+}

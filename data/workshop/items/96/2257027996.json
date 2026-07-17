@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2257027996",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:15:36+00:00",
+  "buildings": [
+    {
+      "id": "2257027996/Pelmen",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Пельменная | Dumpling",
+      "workshopId": "2257027996",
+      "modPath": "Pelmen"
+    }
+  ],
+  "vehicles": []
+}

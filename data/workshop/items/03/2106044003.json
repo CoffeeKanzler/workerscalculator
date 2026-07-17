@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2106044003",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:16:30+00:00",
+  "buildings": [
+    {
+      "id": "2106044003/Cool_pond",
+      "nameId": null,
+      "types": [
+        "TYPE_COOLING_TOWER",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling pond",
+      "workshopId": "2106044003",
+      "modPath": "Cool_pond"
+    },
+    {
+      "id": "2106044003/Spray_Pond",
+      "nameId": null,
+      "types": [
+        "TYPE_COOLING_TOWER",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Spray pond",
+      "workshopId": "2106044003",
+      "modPath": "Spray_Pond"
+    }
+  ],
+  "vehicles": []
+}

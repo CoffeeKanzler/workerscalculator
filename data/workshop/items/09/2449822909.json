@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2449822909",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:24:02+00:00",
+  "buildings": [
+    {
+      "id": "2449822909/plattenbau",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 272.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 272.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Plattenbau (HAL IW70 P2-11 Halle-Unterplan)",
+      "workshopId": "2449822909",
+      "modPath": "plattenbau"
+    }
+  ],
+  "vehicles": []
+}

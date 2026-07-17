@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1997358391",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:13:35+00:00",
+  "buildings": [
+    {
+      "id": "1997358391/depot",
+      "nameId": null,
+      "types": [
+        "TYPE_RAILDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Long rail depot",
+      "workshopId": "1997358391",
+      "modPath": "depot"
+    },
+    {
+      "id": "1997358391/depot_2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAILDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Long rail depot with the motto",
+      "workshopId": "1997358391",
+      "modPath": "depot_2"
+    }
+  ],
+  "vehicles": []
+}

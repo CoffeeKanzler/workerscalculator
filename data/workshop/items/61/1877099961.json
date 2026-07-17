@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1877099961",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:27:18+00:00",
+  "buildings": [
+    {
+      "id": "1877099961/data",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 32.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.78,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 32.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pyramiden Barracks",
+      "workshopId": "1877099961",
+      "modPath": "data"
+    },
+    {
+      "id": "1877099961/data2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pyramiden Barracks fancy version",
+      "workshopId": "1877099961",
+      "modPath": "data2"
+    }
+  ],
+  "vehicles": []
+}

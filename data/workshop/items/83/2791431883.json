@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2791431883",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:14:06+00:00",
+  "buildings": [
+    {
+      "id": "2791431883/C1",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 125.0,
+      "professors": 25.0,
+      "production": {
+        "eletric": 80.35
+      },
+      "consumption": {
+        "coal": 1.4,
+        "water": 0.16
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big coal power plant (50s)",
+      "workshopId": "2791431883",
+      "modPath": "C1"
+    },
+    {
+      "id": "2791431883/house",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 130.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 130.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "50s House",
+      "workshopId": "2791431883",
+      "modPath": "house"
+    },
+    {
+      "id": "2791431883/offices",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 45.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "50s City Hall",
+      "workshopId": "2791431883",
+      "modPath": "offices"
+    }
+  ],
+  "vehicles": []
+}

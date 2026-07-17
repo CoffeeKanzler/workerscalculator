@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3305159826",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:33:40+00:00",
+  "buildings": [
+    {
+      "id": "3305159826/prefabrykaty_male",
+      "nameId": 6172,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {
+        "prefabpanels": 1.1
+      },
+      "consumption": {
+        "gravel": 1.0,
+        "cement": 0.15
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.08
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3305159826",
+      "modPath": "prefabrykaty_male"
+    }
+  ],
+  "vehicles": []
+}

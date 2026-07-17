@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2039899446",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:25:54+00:00",
+  "buildings": [
+    {
+      "id": "2039899446/Bus_station_s",
+      "nameId": 1813,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 340.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 340.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2039899446",
+      "modPath": "Bus_station_s"
+    },
+    {
+      "id": "2039899446/Bus_station_st",
+      "nameId": 1814,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 340.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 340.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2039899446",
+      "modPath": "Bus_station_st"
+    }
+  ],
+  "vehicles": []
+}

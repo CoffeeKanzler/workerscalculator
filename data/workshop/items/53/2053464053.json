@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2053464053",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:31:18+00:00",
+  "buildings": [
+    {
+      "id": "2053464053/1-447C-33_red",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Project 1-447C-33 (red)",
+      "workshopId": "2053464053",
+      "modPath": "1-447C-33_red"
+    },
+    {
+      "id": "2053464053/1-447C-36_red",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Project 1-447C-36 Red",
+      "workshopId": "2053464053",
+      "modPath": "1-447C-36_red"
+    }
+  ],
+  "vehicles": []
+}

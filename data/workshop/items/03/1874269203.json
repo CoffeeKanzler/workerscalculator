@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1874269203",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:35:05+00:00",
+  "buildings": [
+    {
+      "id": "1874269203/domek",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 13.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Restaurant",
+      "workshopId": "1874269203",
+      "modPath": "domek"
+    }
+  ],
+  "vehicles": []
+}

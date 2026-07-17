@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2081995562",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:31:57+00:00",
+  "buildings": [
+    {
+      "id": "2081995562/Small_coldstore",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 32.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small cold store",
+      "workshopId": "2081995562",
+      "modPath": "Small_coldstore"
+    },
+    {
+      "id": "2081995562/coldstore_XS",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 8.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "XS cold store",
+      "workshopId": "2081995562",
+      "modPath": "coldstore_XS"
+    }
+  ],
+  "vehicles": []
+}

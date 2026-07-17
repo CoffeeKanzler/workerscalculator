@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1890242175",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:14:50+00:00",
+  "buildings": [
+    {
+      "id": "1890242175/grain_silo_multi",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Grain Silo Multi",
+      "workshopId": "1890242175",
+      "modPath": "grain_silo_multi"
+    }
+  ],
+  "vehicles": []
+}

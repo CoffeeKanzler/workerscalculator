@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2410935496",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:19:55+00:00",
+  "buildings": [
+    {
+      "id": "2410935496/warehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 300.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Warehouse",
+      "workshopId": "2410935496",
+      "modPath": "warehouse"
+    }
+  ],
+  "vehicles": []
+}

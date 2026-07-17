@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1876204294",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:29:35+00:00",
+  "buildings": [
+    {
+      "id": "1876204294/silo",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 270.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cement Silo Multi",
+      "workshopId": "1876204294",
+      "modPath": "silo"
+    }
+  ],
+  "vehicles": []
+}

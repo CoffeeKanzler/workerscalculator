@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2153085817",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:32:42+00:00",
+  "buildings": [
+    {
+      "id": "2153085817/DPRK_Sungni_Lofts",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 745.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 745.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sungni Lofts",
+      "workshopId": "2153085817",
+      "modPath": "DPRK_Sungni_Lofts"
+    }
+  ],
+  "vehicles": []
+}

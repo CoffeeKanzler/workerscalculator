@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2306679954",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:16:06+00:00",
+  "buildings": [
+    {
+      "id": "2306679954/225",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 90.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 90.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "121, 2 sect, 9 fl, 225deg",
+      "workshopId": "2306679954",
+      "modPath": "225"
+    },
+    {
+      "id": "2306679954/45",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 90.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 90.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "121, 2 sect, 9 fl, 45deg",
+      "workshopId": "2306679954",
+      "modPath": "45"
+    },
+    {
+      "id": "2306679954/AR-4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 170.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 170.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "121, 4 sect, 9 fl (AR)",
+      "workshopId": "2306679954",
+      "modPath": "AR-4"
+    },
+    {
+      "id": "2306679954/dom",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 45.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 45.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "121, 1 sect, 9 fl",
+      "workshopId": "2306679954",
+      "modPath": "dom"
+    },
+    {
+      "id": "2306679954/dom-2sek",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 86.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 86.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "121, 2 sect, 9 fl",
+      "workshopId": "2306679954",
+      "modPath": "dom-2sek"
+    },
+    {
+      "id": "2306679954/dom-3sek",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 130.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 130.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "121, 3 sect, 9 fl",
+      "workshopId": "2306679954",
+      "modPath": "dom-3sek"
+    },
+    {
+      "id": "2306679954/dom-4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 170.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 170.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "121, 4 sect, 9 fl",
+      "workshopId": "2306679954",
+      "modPath": "dom-4"
+    }
+  ],
+  "vehicles": []
+}

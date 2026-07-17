@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2216809398",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:27:49+00:00",
+  "buildings": [
+    {
+      "id": "2216809398/small_steel_mill",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200.0,
+      "professors": 0,
+      "production": {
+        "steel": 0.07
+      },
+      "consumption": {
+        "coal": 0.96,
+        "iron": 0.48
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 250.0,
+        "concrete": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small steel mill",
+      "workshopId": "2216809398",
+      "modPath": "small_steel_mill"
+    },
+    {
+      "id": "2216809398/small_steel_mill_R",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 220.0,
+      "professors": 0,
+      "production": {
+        "steel": 0.07
+      },
+      "consumption": {
+        "coal": 0.96,
+        "iron": 0.48
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.12
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 250.0,
+        "concrete": 20.0,
+        "steel": 50.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small steel mill",
+      "workshopId": "2216809398",
+      "modPath": "small_steel_mill_R"
+    }
+  ],
+  "vehicles": []
+}

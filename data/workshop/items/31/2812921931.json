@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2812921931",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:10:58+00:00",
+  "buildings": [
+    {
+      "id": "2812921931/steelmill",
+      "nameId": 6353,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 150.0,
+      "professors": 0,
+      "production": {
+        "steel": 0.086
+      },
+      "consumption": {
+        "coal": 0.75,
+        "iron": 0.4
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.19
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2812921931",
+      "modPath": "steelmill"
+    }
+  ],
+  "vehicles": []
+}

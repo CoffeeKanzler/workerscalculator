@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2968249224",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:33:58+00:00",
+  "buildings": [
+    {
+      "id": "2968249224/cinema",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 46.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 415.0,
+        "concrete": 738.0,
+        "workers": 430.0,
+        "bricks": 60.0,
+        "prefabpanels": 75.0,
+        "ecomponents": 15.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "DDR Rundkino",
+      "workshopId": "2968249224",
+      "modPath": "cinema"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2220861231",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:26:12+00:00",
+  "buildings": [
+    {
+      "id": "2220861231/SmallRailDepot",
+      "nameId": null,
+      "types": [
+        "TYPE_RAILDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Rail Depot",
+      "workshopId": "2220861231",
+      "modPath": "SmallRailDepot"
+    }
+  ],
+  "vehicles": []
+}

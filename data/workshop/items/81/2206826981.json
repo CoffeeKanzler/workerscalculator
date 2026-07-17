@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2206826981",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:33:23+00:00",
+  "buildings": [
+    {
+      "id": "2206826981/druzhba",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 250.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 250.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Friendship house",
+      "workshopId": "2206826981",
+      "modPath": "druzhba"
+    }
+  ],
+  "vehicles": []
+}

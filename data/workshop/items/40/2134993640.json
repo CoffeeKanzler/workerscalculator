@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2134993640",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:22:08+00:00",
+  "buildings": [
+    {
+      "id": "2134993640/DramaticTheater",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 40.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 16.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.9,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dramatic theater",
+      "workshopId": "2134993640",
+      "modPath": "DramaticTheater"
+    },
+    {
+      "id": "2134993640/DramaticTheater1",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 40.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 16.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dramatic theater (extended)",
+      "workshopId": "2134993640",
+      "modPath": "DramaticTheater1"
+    }
+  ],
+  "vehicles": []
+}

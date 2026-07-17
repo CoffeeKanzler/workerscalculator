@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2040734025",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:26:40+00:00",
+  "buildings": [
+    {
+      "id": "2040734025/mod_farm",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 10.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Modified Agro Farm",
+      "workshopId": "2040734025",
+      "modPath": "mod_farm"
+    },
+    {
+      "id": "2040734025/mod_farm2",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 10.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Modified Agro Farm2",
+      "workshopId": "2040734025",
+      "modPath": "mod_farm2"
+    }
+  ],
+  "vehicles": []
+}

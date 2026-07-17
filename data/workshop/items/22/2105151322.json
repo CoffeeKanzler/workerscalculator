@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2105151322",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:14:36+00:00",
+  "buildings": [
+    {
+      "id": "2105151322/cerkiew_bstok",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 1.0,
+      "professors": 1.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 2.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cerkiew Św. Jana Teologa",
+      "workshopId": "2105151322",
+      "modPath": "cerkiew_bstok"
+    }
+  ],
+  "vehicles": []
+}

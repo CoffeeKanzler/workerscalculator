@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2186444766",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:29:03+00:00",
+  "buildings": [
+    {
+      "id": "2186444766/p1000",
+      "nameId": 6330,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2186444766",
+      "modPath": "p1000"
+    },
+    {
+      "id": "2186444766/p150",
+      "nameId": 6330,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2186444766",
+      "modPath": "p150"
+    },
+    {
+      "id": "2186444766/p300",
+      "nameId": 6330,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2186444766",
+      "modPath": "p300"
+    },
+    {
+      "id": "2186444766/p500",
+      "nameId": 6330,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2186444766",
+      "modPath": "p500"
+    },
+    {
+      "id": "2186444766/p750",
+      "nameId": 6330,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2186444766",
+      "modPath": "p750"
+    }
+  ],
+  "vehicles": []
+}

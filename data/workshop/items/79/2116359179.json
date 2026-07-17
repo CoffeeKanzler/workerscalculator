@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2116359179",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:34:49+00:00",
+  "buildings": [
+    {
+      "id": "2116359179/Radio_Mast",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 7.0,
+      "professors": 3.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 500.0,
+        "lighting": 500.0
+      },
+      "nameStr": "Longwave Transmitter",
+      "workshopId": "2116359179",
+      "modPath": "Radio_Mast"
+    }
+  ],
+  "vehicles": []
+}

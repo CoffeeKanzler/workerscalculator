@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1891841959",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:30:42+00:00",
+  "buildings": [
+    {
+      "id": "1891841959/woodenhouse1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 7.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 7.0
+      },
+      "constructionResources": {
+        "workers": 45.0,
+        "gravel": 1.0,
+        "boards": 12.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Dedina Drevenica 1",
+      "workshopId": "1891841959",
+      "modPath": "woodenhouse1"
+    },
+    {
+      "id": "1891841959/woodenhouse2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4.0
+      },
+      "constructionResources": {
+        "workers": 45.0,
+        "gravel": 1.0,
+        "boards": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Dedina Drevenica 1",
+      "workshopId": "1891841959",
+      "modPath": "woodenhouse2"
+    }
+  ],
+  "vehicles": []
+}

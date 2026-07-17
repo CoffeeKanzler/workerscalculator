@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2457207338",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:24:32+00:00",
+  "buildings": [
+    {
+      "id": "2457207338/alyoshamonument",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Alyosha Monument",
+      "workshopId": "2457207338",
+      "modPath": "alyoshamonument"
+    }
+  ],
+  "vehicles": []
+}

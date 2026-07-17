@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2090969572",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:17:20+00:00",
+  "buildings": [
+    {
+      "id": "2090969572/EternalFlame",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Eternal flame",
+      "workshopId": "2090969572",
+      "modPath": "EternalFlame"
+    }
+  ],
+  "vehicles": []
+}

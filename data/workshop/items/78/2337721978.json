@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2337721978",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:22:55+00:00",
+  "buildings": [
+    {
+      "id": "2337721978/ukr_museum",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 12.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "National Museum",
+      "workshopId": "2337721978",
+      "modPath": "ukr_museum"
+    }
+  ],
+  "vehicles": []
+}
