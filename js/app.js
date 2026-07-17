@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=20';
+import { STRINGS } from './i18n.js?v=21';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=22';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -8,7 +8,7 @@ import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain,
 } from './train.js?v=13';
 
-const TABS = ['prices', 'production', 'chain', 'analysis', 'vehicleprod', 'city', 'trains', 'research', 'advanced', 'help'];
+const TABS = ['prices', 'production', 'chain', 'analysis', 'vehicleprod', 'city', 'republic', 'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
   'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset', 'chain', 'tuning', 'tab'];
@@ -363,8 +363,8 @@ function renderHeader() {
 
 function renderTabs() {
   const labels = { prices: 'tabPrices', production: 'tabProduction', chain: 'tabChain',
-    analysis: 'tabAnalysis', vehicleprod: 'tabVehicleProd', city: 'tabCity', trains: 'tabTrains', research: 'tabResearch',
-    advanced: 'tabAdvanced', help: 'tabHelp' };
+    analysis: 'tabAnalysis', vehicleprod: 'tabVehicleProd', city: 'tabCity', republic: 'tabRepublic',
+    trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
   return el('nav', {}, ...TABS.map(id => el('button', {
     class: state.tab === id ? 'active' : '',
     onclick: () => { state.tab = id; update(); },
@@ -379,6 +379,7 @@ function renderCurrentTab() {
     case 'analysis': return renderAnalysis();
     case 'vehicleprod': return renderVehicleProduction();
     case 'city': return renderCity();
+    case 'republic': return renderRepublic();
     case 'trains': return renderTrains();
     case 'research': return renderResearch();
     case 'advanced': return renderAdvanced();
@@ -1131,6 +1132,83 @@ function utilizationCell(u) {
 function workersNeededCell(w) {
   if (w === null) return el('td', { class: 'r' }, '—');
   return el('td', { class: 'r' }, `${fmt(w.optimal, 0)} / ${fmt(w.max, 0)}`);
+}
+
+// ---------------------------------------------------------------- republic overview tab
+// Combines the City tab's plan(s) and the Production tab's plan - both are
+// the app's own hypothetical-plan state already, so no save-file parsing is
+// needed. Food/clothes/alcohol demand vs. production is NOT shown: no
+// per-citizen consumption rate was found in the game files, our datasets,
+// or the accessible spreadsheet (see ROADMAP.md 2.2).
+function renderRepublic() {
+  const eco = economy();
+  if (!state.cities.length) state.cities.push(defaultCity());
+
+  const cityResults = state.cities.map(city => {
+    const rowsResolved = city.rows.map(r => ({
+      ...r,
+      building: Number.isInteger(r.buildingIndex)
+        ? DATA.cityBuildings[r.buildingIndex]
+        : DATA.cityBuildings.find(b => b.de === r.name),
+    }));
+    return { city, res: evaluateCity({ ...city, rows: rowsResolved }, eco) };
+  });
+  const sumCities = fn => cityResults.reduce((a, { res }) => a + (fn(res) || 0), 0);
+  const cityTotals = {
+    population: sumCities(r => r.population),
+    workersNeeded: sumCities(r => r.workersNeeded),
+    workerSurplus: sumCities(r => r.workerSurplus),
+    power: sumCities(r => r.power),
+    maxKW: sumCities(r => r.maxKW),
+    water: sumCities(r => r.water),
+    waste: sumCities(r => r.waste),
+    buildCostRUB: sumCities(r => r.buildCostRUB),
+    buildCostUSD: sumCities(r => r.buildCostUSD),
+  };
+  const cityBuildCost = state.currency === 'USD' ? cityTotals.buildCostUSD : cityTotals.buildCostRUB;
+
+  state.plan.settings.currency = state.currency;
+  const planRows = state.plan.rows.map(r => ({ ...r, building: prodBuildings().find(b => b.de === r.name) }));
+  const plan = evaluatePlan(planRows, state.plan.fields, state.plan.settings, eco);
+
+  // Both sides are already per-shift figures (the sheet's workerSurplus
+  // formula accounts for the city's own 3-shift service staffing), so they
+  // compare directly: workers the cities can send out vs. what industry needs.
+  const netWorkers = cityTotals.workerSurplus - plan.workersPerShift;
+
+  const cityRows = el('table', { class: 'data' },
+    el('thead', {}, el('tr', {},
+      el('th', {}, t('city')), el('th', {}, t('population')), el('th', {}, t('workerSurplus')),
+      el('th', {}, t('maxWatt')), el('th', {}, t('waterUse')), el('th', {}, t('wasteOut')))),
+    el('tbody', {}, cityResults.map(({ city, res }, i) => el('tr', {},
+      el('td', {}, city.name || `${t('city')} ${i + 1}`),
+      el('td', { class: 'r' }, fmt(res.population, 0)),
+      el('td', { class: 'r ' + (res.workerSurplus < 0 ? 'neg' : 'pos') }, fmt(res.workerSurplus, 1)),
+      el('td', { class: 'r' }, fmt(res.maxKW, 0)),
+      el('td', { class: 'r' }, fmt(res.water, 1)),
+      el('td', { class: 'r' }, fmt(res.waste, 1))))));
+
+  const totals = el('div', { class: 'totalsbox' },
+    el('h3', {}, t('republicWorkers')),
+    kv(t('population'), fmt(cityTotals.population, 0)),
+    kv(t('republicCityWorkers'), fmt(cityTotals.workersNeeded, 0)),
+    kv(t('workerSurplus'), fmt(cityTotals.workerSurplus, 1), cityTotals.workerSurplus < 0 ? 'neg' : 'pos'),
+    kv(t('republicIndustryWorkers'), fmt(plan.workersPerShift, 0)),
+    kv(t('republicNetWorkers'), fmt(netWorkers, 1), netWorkers < 0 ? 'neg' : 'pos'));
+
+  const utilities = el('div', { class: 'totalsbox' },
+    el('h3', {}, t('republicUtilities')),
+    kv(t('maxWatt'), fmt(cityTotals.maxKW + plan.totalMaxKW, 0)),
+    kv(t('powerUse'), fmt(cityTotals.power + plan.totalPower, 1)),
+    kv(t('waterUse'), fmt(cityTotals.water + plan.totalWater, 1)),
+    kv(t('wasteOut'), fmt(cityTotals.waste + plan.totalWaste, 1)),
+    kv(`${t('buildCost')} ${cur()}`, fmt(cityBuildCost + plan.totalBuildCost, 0)));
+
+  return el('section', {},
+    el('p', { class: 'hint' }, t('republicHint')),
+    el('p', { class: 'hint warn' }, t('republicConsumptionBlocked')),
+    el('div', { class: 'tablewrap' }, cityRows),
+    el('div', { class: 'columns' }, totals, utilities));
 }
 
 // ---------------------------------------------------------------- trains tab
