@@ -45,6 +45,13 @@ class BinaryCursor {
     return value;
   }
 
+  f32(context) {
+    this.require(4, context);
+    const value = this.view.getFloat32(this.offset, true);
+    this.offset += 4;
+    return value;
+  }
+
   asciiZ(offset, size) {
     let end = offset;
     const limit = offset + size;
@@ -113,6 +120,51 @@ export function parseMapClimate(text) {
   return { id: 'temperate', heatingRequired: true };
 }
 
+export function parseEvents(buffer) {
+  const c = new BinaryCursor(buffer);
+  const count = c.u32('emergency event count');
+  if (count > 1_000_000) throw new Error(`implausible emergency event count ${count}`);
+  const events = [];
+  for (let index = 0; index < count; index += 1) {
+    const eventType = c.i32(`event ${index} type`);
+    const location = {
+      objectIndex: c.i32(`event ${index} location index`),
+      objectKind: c.i32(`event ${index} location kind`),
+    };
+    const subject = {
+      objectIndex: c.i32(`event ${index} subject index`),
+      objectKind: c.i32(`event ${index} subject kind`),
+    };
+    const assignmentCount = c.i32(`event ${index} assignment count`);
+    if (assignmentCount < 0 || assignmentCount > 100_000) {
+      throw new Error(`event ${index}: invalid assignment count ${assignmentCount}`);
+    }
+    const assignmentIndices = [];
+    for (let item = 0; item < assignmentCount; item += 1) {
+      assignmentIndices.push(c.i32(`event ${index} assignment ${item} index`));
+    }
+    const assignments = assignmentIndices.map((objectIndex, item) => ({
+      objectIndex,
+      objectKind: c.i32(`event ${index} assignment ${item} kind`),
+    }));
+    const event = { index, eventType, location, subject, assignments };
+    if (eventType >= 3 && eventType <= 5) {
+      Object.assign(event, {
+        accumulatedProgress: c.f32(`event ${index} accumulated progress`),
+        priorProgress: c.f32(`event ${index} prior progress`),
+        normalizedStageProgress: c.f32(`event ${index} normalized stage progress`),
+        state: c.i32(`event ${index} state`),
+        field68: c.f32(`event ${index} field 68`),
+        field6c: c.f32(`event ${index} field 6c`),
+      });
+      c.skip(0x20, `event ${index} reserved tail`);
+    }
+    events.push(event);
+  }
+  if (c.offset !== c.bytes.length) throw new Error(`events.bin has ${c.bytes.length - c.offset} trailing bytes`);
+  return events;
+}
+
 export function parseResearch(buffer) {
   const c = new BinaryCursor(buffer);
   const count = c.u32('research count');
@@ -155,6 +207,8 @@ export function parseWorkers(buffer, { saveVersion = 124 } = {}) {
       loyalty: c.view.getFloat32(start + 0x94, true),
       criminality: c.view.getFloat32(start + 0xa4, true),
       citizenType: c.view.getInt8(start + 0x700),
+      sentenceProgress: c.view.getInt16(start + 0x708, true),
+      sentenceTotal: c.view.getInt16(start + 0x70a, true),
     });
     const citizenType = c.view.getInt8(start + 0x700);
     const hasExtraName = c.view.getUint8(start + 0x70c) !== 0;
@@ -243,6 +297,11 @@ export function parseBuildingsGame(buffer, { onProgress } = {}) {
       y: c.view.getFloat32(start + 0x3a0, true),
       z: c.view.getFloat32(start + 0x3a4, true),
       currentWorkers: c.view.getInt32(start + first(0x2b0), true),
+      currentVisitors: c.view.getInt32(start + 0x47c, true),
+      effectiveServiceCapacity: c.view.getFloat32(start + 0x490, true),
+      incompleteCaseCount: c.view.getFloat32(start + 0x4b8, true),
+      currentWorkPerActiveCase: c.view.getFloat32(start + 0x4bc, true),
+      savedAssignedEventCount: c.view.getInt32(start + 0x594, true),
       configuredWorkers: c.view.getInt32(start + first(0x288), true),
       configuredWorkersHighEducation: c.view.getInt32(start + first(0x284), true),
       mineQuality: c.view.getFloat32(start + first(0x280), true),

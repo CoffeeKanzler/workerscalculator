@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=37';
+import { STRINGS } from './i18n.js?v=38';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -1357,26 +1357,77 @@ function emptyFacilitySummary() {
   return {
     buildingCount: 0, currentWorkers: 0, configuredWorkers: 0,
     nominalWorkers: 0, configuredCapacity: 0, nominalCapacity: 0, occupants: 0,
+    currentVisitors: 0, effectiveServiceCapacity: 0, assignedEvents: 0,
     underConstructionCount: 0,
   };
 }
 
-function addFacility(summary, record, raw, occupants) {
-  const serve = raw.citizenAbleServe ?? 0;
+function addFacility(summary, record, raw, occupants, assignedEvents = 0) {
+  const serve = raw?.citizenAbleServe ?? 0;
   summary.buildingCount += 1;
   summary.currentWorkers += record.currentWorkers ?? 0;
   summary.configuredWorkers += record.configuredWorkers ?? 0;
-  summary.nominalWorkers += raw.workers ?? 0;
+  summary.nominalWorkers += raw?.workers ?? 0;
   summary.configuredCapacity += (record.configuredWorkers ?? 0) * serve;
-  summary.nominalCapacity += (raw.workers ?? 0) * serve;
+  summary.nominalCapacity += (raw?.workers ?? 0) * serve;
   summary.occupants += occupants ?? 0;
+  summary.currentVisitors += record.currentVisitors ?? 0;
+  summary.effectiveServiceCapacity += record.effectiveServiceCapacity ?? 0;
+  summary.assignedEvents += assignedEvents;
 }
 
-function buildOperationalServices(buildings, citizens, rawBuildings, cityStats) {
+function buildOperationalServices(buildings, citizens, rawBuildings, cityStats, events) {
   const residentsByBuilding = new Map();
   for (const citizen of citizens ?? []) {
     const index = citizen.residenceBuildingIndex;
     if (index >= 0) residentsByBuilding.set(index, (residentsByBuilding.get(index) ?? 0) + 1);
+  }
+  const buildingsByIndex = new Map(buildings.map(building => [building.index, building]));
+  const assignedEventsByBuilding = new Map();
+  const eventCourtBuildings = new Set();
+  const eventPoliceBuildings = new Set();
+  const liveByScope = new Map();
+  const liveQueue = events ? {
+    available: true, total: events.length, medicalEmergencies: 0,
+    crimes: 0, awaitingPolice: 0, underInvestigation: 0, atCourt: 0,
+    mild: 0, medium: 0, serious: 0,
+  } : { available: false };
+  const scopeLive = scopeId => {
+    const current = liveByScope.get(scopeId) ?? {
+      medicalEmergencies: 0, crimes: 0, awaitingPolice: 0,
+      underInvestigation: 0, atCourt: 0, mild: 0, medium: 0, serious: 0,
+    };
+    liveByScope.set(scopeId, current);
+    return current;
+  };
+  for (const event of events ?? []) {
+    const location = event.location.objectKind === 0
+      ? buildingsByIndex.get(event.location.objectIndex) : null;
+    const scope = Number.isInteger(location?.scopeId) ? scopeLive(location.scopeId) : null;
+    if (event.eventType === 1) {
+      liveQueue.medicalEmergencies += 1;
+      if (scope) scope.medicalEmergencies += 1;
+      continue;
+    }
+    if (event.eventType < 3 || event.eventType > 5) continue;
+    liveQueue.crimes += 1;
+    if (scope) scope.crimes += 1;
+    const severity = event.eventType === 3 ? 'mild' : event.eventType === 4 ? 'medium' : 'serious';
+    liveQueue[severity] += 1;
+    if (scope) scope[severity] += 1;
+    const stage = event.state === 0 ? 'awaitingPolice' : event.state === 2 ? 'underInvestigation'
+      : event.state === 3 ? 'atCourt' : null;
+    if (stage) {
+      liveQueue[stage] += 1;
+      if (scope) scope[stage] += 1;
+    }
+    for (const assignment of event.assignments) {
+      if (assignment.objectKind !== 0) continue;
+      assignedEventsByBuilding.set(assignment.objectIndex,
+        (assignedEventsByBuilding.get(assignment.objectIndex) ?? 0) + 1);
+      if (event.state === 2) eventPoliceBuildings.add(assignment.objectIndex);
+      if (event.state === 3) eventCourtBuildings.add(assignment.objectIndex);
+    }
   }
   const crimeByScope = new Map((cityStats ?? []).map(record => [record.scopeId, record]));
   const regional = new Map();
@@ -1389,7 +1440,9 @@ function buildOperationalServices(buildings, citizens, rawBuildings, cityStats) 
   };
   for (const record of buildings) {
     const raw = matchSaveBuilding(record.type, rawBuildings, entry => entry.id);
-    const key = raw?.types?.map(type => OPERATIONAL_TYPES.get(type)).find(Boolean);
+    const key = raw?.types?.map(type => OPERATIONAL_TYPES.get(type)).find(Boolean)
+      ?? (eventPoliceBuildings.has(record.index) ? 'police' : null)
+      ?? (eventCourtBuildings.has(record.index) ? 'courts' : null);
     if (!key) continue;
     if (key === 'clinics' || key === 'police') {
       if (!Number.isInteger(record.scopeId)) continue;
@@ -1397,11 +1450,13 @@ function buildOperationalServices(buildings, citizens, rawBuildings, cityStats) 
         scopeId: record.scopeId, clinics: emptyFacilitySummary(), police: emptyFacilitySummary(),
       };
       if ((record.constructionProgress ?? 1) < 1) scope[key].underConstructionCount += 1;
-      else addFacility(scope[key], record, raw, residentsByBuilding.get(record.index));
+      else addFacility(scope[key], record, raw, residentsByBuilding.get(record.index),
+        assignedEventsByBuilding.get(record.index));
       regional.set(record.scopeId, scope);
     } else {
       if ((record.constructionProgress ?? 1) < 1) republic[key].underConstructionCount += 1;
-      else addFacility(republic[key], record, raw, residentsByBuilding.get(record.index));
+      else addFacility(republic[key], record, raw, residentsByBuilding.get(record.index),
+        assignedEventsByBuilding.get(record.index));
     }
   }
   for (const crime of crimeByScope.values()) {
@@ -1412,16 +1467,24 @@ function buildOperationalServices(buildings, citizens, rawBuildings, cityStats) 
       });
     }
   }
+  for (const scopeId of liveByScope.keys()) {
+    if (!regional.has(scopeId)) regional.set(scopeId, {
+      scopeId, clinics: emptyFacilitySummary(), police: emptyFacilitySummary(),
+    });
+  }
   return {
-    regional: [...regional.values()].map(scope => ({ ...scope, crime: crimeByScope.get(scope.scopeId) ?? null })),
-    republic,
+    regional: [...regional.values()].map(scope => ({
+      ...scope, crime: crimeByScope.get(scope.scopeId) ?? null,
+      live: events ? liveByScope.get(scope.scopeId) ?? scopeLive(scope.scopeId) : null,
+    })),
+    republic: { ...republic, liveQueue },
   };
 }
 
 function buildImportedPlanning(sourceName, settlements, buildings, membershipAudit, {
   citizens = null, citizenFileSummary = null, header = null, research = null,
   sourceStatus = {}, parserWarnings = [], defaultProductivity = 1, workshopCatalog = null,
-  cityStats = [], mapClimate = null,
+  cityStats = [], mapClimate = null, events = null,
 } = {}) {
   const occupiedScopeIds = new Set(buildings.map(building => building.scopeId).filter(Number.isInteger));
   const occupiedSettlements = settlements.filter(settlement => occupiedScopeIds.has(settlement.id));
@@ -1543,7 +1606,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
   for (const warning of parserWarnings) warnings.push(`${warning.file}: ${warning.message}`);
   const researchComplete = research?.filter(item => item.progress >= 1).length ?? 0;
   const researchPartial = research?.filter(item => item.progress > 0 && item.progress < 1).length ?? 0;
-  const operationalServices = buildOperationalServices(buildings, citizens, rawBuildings, cityStats);
+  const operationalServices = buildOperationalServices(buildings, citizens, rawBuildings, cityStats, events);
 
   return {
     cities,
@@ -1596,7 +1659,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=3', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=4', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -1659,6 +1722,7 @@ async function handleSaveDirectory(fileList) {
   const workersFile = byName.get('workers.bin');
   const headerFile = byName.get('header.bin');
   const researchFile = byName.get('research.bin');
+  const eventsFile = byName.get('events.bin');
   const materialFile = byName.get('material.mtl');
   if (!namepoints || !buildingsFile) {
     state.importStatus = t('importMissingFiles');
@@ -1673,14 +1737,14 @@ async function handleSaveDirectory(fileList) {
 
   try {
     const readOptional = file => file ? file.arrayBuffer() : Promise.resolve(null);
-    const [namepointBuffer, buildingBuffer, workerBuffer, headerBuffer, researchBuffer, statsText, materialText] = await Promise.all([
+    const [namepointBuffer, buildingBuffer, workerBuffer, headerBuffer, researchBuffer, eventsBuffer, statsText, materialText] = await Promise.all([
       namepoints.arrayBuffer(), buildingsFile.arrayBuffer(), readOptional(workersFile),
-      readOptional(headerFile), readOptional(researchFile), statsFile ? statsFile.text() : '',
+      readOptional(headerFile), readOptional(researchFile), readOptional(eventsFile), statsFile ? statsFile.text() : '',
       materialFile ? materialFile.text() : '',
     ]);
     const parsed = await parseSaveInWorker({
       namepoints: namepointBuffer, buildings: buildingBuffer, workers: workerBuffer,
-      header: headerBuffer, research: researchBuffer, stats: statsText, material: materialText,
+      header: headerBuffer, research: researchBuffer, events: eventsBuffer, stats: statsText, material: materialText,
     });
     const relative = namepoints.webkitRelativePath || buildingsFile.webkitRelativePath || '';
     const sourceName = parsed.header?.title || relative.split('/')[0]
@@ -1694,6 +1758,7 @@ async function handleSaveDirectory(fileList) {
         citizenFileSummary: parsed.citizenFileSummary,
         header: parsed.header,
         research: parsed.research,
+        events: parsed.events,
         sourceStatus: parsed.sourceStatus,
         parserWarnings: parsed.warnings,
         defaultProductivity: productivity,
@@ -1810,7 +1875,7 @@ function renderSaveImport() {
     ? el('p', { class: state.importStatusError ? 'neg' : 'pos' }, state.importStatus) : null;
   const sourceFiles = {
     namepoints: 'namepoints.bin', buildings: 'buildings_game.bin', workers: 'workers.bin',
-    header: 'header.bin', research: 'research.bin', stats: 'stats.ini',
+    header: 'header.bin', research: 'research.bin', events: 'events.bin', stats: 'stats.ini',
     material: 'material.mtl',
   };
   const coverage = info?.sourceStatus ? el('div', { class: 'coverage-grid' },
@@ -1919,22 +1984,30 @@ function renderCity() {
   const crime = cityOperations?.crime;
   const clinics = cityOperations?.clinics;
   const police = cityOperations?.police;
-  const clinicLoad = clinics?.configuredCapacity > 0 && city.observed
-    ? city.observed.residents / (clinics.configuredCapacity * city.productivity * 100) : null;
+  const live = cityOperations?.live;
+  const clinicLoad = clinics?.effectiveServiceCapacity > 0
+    ? clinics.currentVisitors / clinics.effectiveServiceCapacity : null;
   const regionalOperationsCard = cityOperations ? el('div', { class: 'totalsbox operational-card' },
     el('h3', {}, t('regionalSafetyHealth'), el('span', { class: 'evidence-badge exact' }, t('exact'))),
     kv(t('policeStations'), fmt(police.buildingCount, 0)),
     police.underConstructionCount ? kv(t('underConstruction'), fmt(police.underConstructionCount, 0), 'warn') : null,
     kv(t('staffing'), `${fmt(police.currentWorkers, 0)} / ${fmt(police.configuredWorkers, 0)}`,
       police.buildingCount && police.currentWorkers === 0 ? 'neg' : ''),
+    live ? kv(t('livePoliceCases'), fmt(live.awaitingPolice + live.underInvestigation, 0),
+      live.awaitingPolice > 0 ? 'warn' : '') : kv(t('liveQueue'), t('unavailable')),
+    live?.awaitingPolice ? kv(t('awaitingPolice'), fmt(live.awaitingPolice, 0), 'warn') : null,
+    live?.underInvestigation ? kv(t('underInvestigation'), fmt(live.underInvestigation, 0)) : null,
     kv(t('unresolvedCrimeCases'), fmt((crime?.withoutPolice ?? 0) + (crime?.notInvestigated ?? 0), 0),
       (crime?.withoutPolice ?? 0) + (crime?.notInvestigated ?? 0) > 0 ? 'warn' : ''),
     kv(t('clinics'), fmt(clinics.buildingCount, 0)),
     clinics.underConstructionCount ? kv(t('underConstruction'), fmt(clinics.underConstructionCount, 0), 'warn') : null,
     kv(t('staffing'), `${fmt(clinics.currentWorkers, 0)} / ${fmt(clinics.configuredWorkers, 0)}`,
       clinics.buildingCount && clinics.currentWorkers === 0 ? 'neg' : ''),
-    kv(t('clinicTreatmentSlots'), fmt(clinics.configuredCapacity, 0)),
-    kv(t('estimatedClinicLoad'), clinicLoad == null ? '—' : fmt(clinicLoad * 100, 0) + ' %',
+    kv(t('currentPatients'), clinics.effectiveServiceCapacity > 0
+      ? `${fmt(clinics.currentVisitors, 0)} / ${fmt(clinics.effectiveServiceCapacity, 0)}` : '—'),
+    live ? kv(t('activeMedicalEmergencies'), fmt(live.medicalEmergencies, 0),
+      live.medicalEmergencies > 0 ? 'warn' : '') : null,
+    kv(t('currentClinicLoad'), clinicLoad == null ? '—' : fmt(clinicLoad * 100, 0) + ' %',
       clinicLoad > 1 ? 'neg' : clinicLoad > 0.85 ? 'warn' : 'pos'),
     el('p', { class: 'hint' }, t('crimeHistoryNote'))) : null;
   const coverageCard = city.unresolvedBuildingCount > 0 ? el('div', { class: 'totalsbox' },
@@ -2436,6 +2509,7 @@ function renderRepublic() {
     el('h3', {}, t('attention')), ...alertItems);
 
   const republicOperations = state.saveImport?.operationalServices?.republic;
+  const republicLiveQueue = republicOperations?.liveQueue ?? { available: false };
   const facilityStaff = facility => facility.buildingCount
     ? `${fmt(facility.currentWorkers, 0)} / ${fmt(facility.configuredWorkers, 0)}` : '—';
   const institutionCard = (title, facility, extra = []) => el('div', { class: 'totalsbox institution-card' },
@@ -2470,24 +2544,36 @@ function renderRepublic() {
     el('h3', {}, t('republicInstitutions')),
     el('div', { class: 'institution-grid' },
       institutionCard(t('courts'), republicOperations.courts, [
+        republicLiveQueue.available
+          ? kv(t('liveCourtCases'), fmt(republicLiveQueue.atCourt, 0),
+            republicLiveQueue.atCourt > 0 ? 'warn' : '')
+          : kv(t('liveQueue'), t('unavailable')),
         kv(t('casesWithoutCourt'), fmt(republicOperations.crime.withoutCourt, 0),
           republicOperations.crime.withoutCourt > 0 ? 'warn' : ''),
-        el('p', { class: 'hint' }, t('liveQueueUnavailable')),
+        !republicLiveQueue.available
+          ? el('p', { class: 'hint' }, t('liveQueueUnavailable')) : null,
       ]),
       institutionCard(t('prisons'), republicOperations.prisons, [
-        kv(t('occupants'), republicOperations.prisons.configuredCapacity > 0
-          ? `${fmt(republicOperations.prisons.occupants, 0)} / ${fmt(republicOperations.prisons.configuredCapacity, 0)}` : '—',
-        republicOperations.prisons.configuredCapacity > 0
-          && republicOperations.prisons.occupants > republicOperations.prisons.configuredCapacity ? 'neg' : ''),
+        kv(t('occupants'), fmt(republicOperations.prisons.occupants, 0)),
+        kv(t('effectiveServiceCapacity'), republicOperations.prisons.effectiveServiceCapacity > 0
+          ? fmt(republicOperations.prisons.effectiveServiceCapacity, 0) : '—'),
         kv(t('prisonersEscaped'), fmt(republicOperations.crime.prisonersEscaped, 0),
           republicOperations.crime.prisonersEscaped > 0 ? 'warn' : ''),
       ]),
       institutionCard(t('orphanages'), republicOperations.orphanages, [
-        kv(t('occupants'), republicOperations.orphanages.configuredCapacity > 0
-          ? `${fmt(republicOperations.orphanages.occupants, 0)} / ${fmt(republicOperations.orphanages.configuredCapacity, 0)}` : '—'),
-        kv(t('configuredCapacity'), republicOperations.orphanages.configuredCapacity > 0
+        kv(t('occupants'), fmt(republicOperations.orphanages.occupants, 0)),
+        kv(t('serviceCapacity'), republicOperations.orphanages.configuredCapacity > 0
           ? fmt(republicOperations.orphanages.configuredCapacity, 0) : '—'),
       ])),
+    republicLiveQueue.available ? el('div', { class: 'live-queue-summary' },
+      el('h4', {}, t('liveRepublicCases')),
+      kv(t('activeMedicalEmergencies'), fmt(republicLiveQueue.medicalEmergencies, 0),
+        republicLiveQueue.medicalEmergencies > 0 ? 'warn' : ''),
+      kv(t('awaitingPolice'), fmt(republicLiveQueue.awaitingPolice, 0),
+        republicLiveQueue.awaitingPolice > 0 ? 'warn' : ''),
+      kv(t('underInvestigation'), fmt(republicLiveQueue.underInvestigation, 0)),
+      kv(t('liveCourtCases'), fmt(republicLiveQueue.atCourt, 0)),
+      kv(t('crimeSeverity'), `${fmt(republicLiveQueue.mild, 0)} / ${fmt(republicLiveQueue.medium, 0)} / ${fmt(republicLiveQueue.serious, 0)} ${t('mildMediumSerious')}`)) : null,
     crimeRanking,
     el('p', { class: 'hint' }, t('crimeHistoryNote'))) : null;
 

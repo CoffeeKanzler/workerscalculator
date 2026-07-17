@@ -1,11 +1,11 @@
 import {
-  parseNamepoints, parseBuildingsGame, parseWorkers, parseHeader, parseResearch,
+  parseNamepoints, parseBuildingsGame, parseWorkers, parseHeader, parseResearch, parseEvents,
   parseMapClimate, reconcileSettlementMembership,
-} from './savegame.js?v=3';
+} from './savegame.js?v=4';
 import { parseCityStatsIni, parseStatsIni } from './statsini.js?v=16';
 
 const sourceStatus = (payload) => Object.fromEntries(
-  ['namepoints', 'buildings', 'workers', 'header', 'research', 'stats', 'material']
+  ['namepoints', 'buildings', 'workers', 'header', 'research', 'events', 'stats', 'material']
     .map((key) => [key, payload[key] ? 'pending' : 'missing']),
 );
 
@@ -48,6 +48,7 @@ self.onmessage = ({ data }) => {
       saveVersion: header?.saveVersion ?? 124,
     }));
     const research = optional('research', parseResearch);
+    const events = optional('events', parseEvents);
     const statsRecords = optional('stats', parseStatsIni);
     const cityStats = data.stats ? parseCityStatsIni(data.stats) : [];
     const mapClimate = optional('material', parseMapClimate);
@@ -55,7 +56,7 @@ self.onmessage = ({ data }) => {
       type: 'complete',
       parsed: {
         settlements, buildings, citizens: workers?.citizens ?? null,
-        citizenFileSummary: workers?.summary ?? null, header, research, mapClimate,
+        citizenFileSummary: workers?.summary ?? null, header, research, events, mapClimate,
         statsRecords, cityStats, membershipAudit, sourceStatus: status, warnings,
       },
     });

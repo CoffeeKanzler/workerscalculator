@@ -172,8 +172,10 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   95 / 120 at about 56.47% quality.
   - **Public services:** citizen criminality and settlement crime histories are imported.
   Police and clinic staffing/capacity remain regional; courts, prisons, and orphanages are
-  summarized republic-wide. Prison/orphan occupancy follows live citizen residence links,
-  while cumulative `stats.ini` failures are labelled as history rather than a live queue.
+  summarized republic-wide. `events.bin` supplies exact current medical emergencies and
+  crime stages (awaiting police, investigation, or court), while clinic records expose
+  current patients and effective treatment capacity. Prison/orphan occupancy follows live
+  citizen residence links; cumulative `stats.ini` failures stay labelled as history.
   - **Map/game settings:** verified season state from `header.bin` and climate family from
   `material.mtl` now control whether heating applies. A Misc section exposes verified
   settings. Continue mapping the remaining header settings with controlled save diffs;
@@ -189,7 +191,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   and never uploaded. Inventory buffers,
   vehicle/line state, and logistics topology are not decoded yet.
   - **Next high-value save modules:** building inventories and production buffers;
-  vehicles, lines, and schedules; distribution/logistics bottlenecks; and optional live
+  vehicles, lines, and schedules; used-vehicle export versus recycling opportunities at
+  the save's current market prices; distribution/logistics bottlenecks; and optional live
   follow of a save directory. Cosmetic map/network geometry stays out of scope until a
   planner feature needs it.
 
