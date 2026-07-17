@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=39';
+import { STRINGS } from './i18n.js?v=40';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -15,7 +15,7 @@ import {
 import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
-import { resolveVehicleModels, shareSafeSaveImport } from './fleet.js?v=1';
+import { resolveVehicleModels, shareSafeSaveImport, shipEconomicOpportunity, shipUsedMarketQuote } from './fleet.js?v=2';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',
@@ -1678,7 +1678,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=5', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=6', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -2564,7 +2564,7 @@ function renderRepublic() {
     .slice(0, 5);
   const crimeRanking = topCrimeAreas.length ? el('div', { class: 'crime-ranking' },
     el('h4', {}, t('topCrimeAreas')),
-    el('table', { class: 'data' },
+    el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
       el('thead', {}, el('tr', {}, el('th', {}), el('th', {}, t('area')),
         el('th', {}, t('criminality')), el('th', {}, t('unresolvedCrimeCases')))),
       el('tbody', {}, ...topCrimeAreas.map((area, index) => {
@@ -2575,7 +2575,7 @@ function renderRepublic() {
           el('td', { class: `r ${area.criminality >= 0.01 ? 'warn' : ''}` },
             fmt(area.criminality * 100, 2) + ' %'),
           el('td', { class: 'r' }, history ? fmt(history.unresolvedCrimes ?? 0, 0) : '—'));
-      }))),
+      })))),
     el('p', { class: 'hint' }, t('currentCrimeRankingNote'))) : null;
   const institutionOverview = republicOperations ? el('section', { class: 'institution-overview' },
     el('h3', {}, t('republicInstitutions')),
@@ -2613,6 +2613,88 @@ function renderRepublic() {
       kv(t('crimeSeverity'), `${fmt(republicLiveQueue.mild, 0)} / ${fmt(republicLiveQueue.medium, 0)} / ${fmt(republicLiveQueue.serious, 0)} ${t('mildMediumSerious')}`)) : null,
     crimeRanking,
     el('p', { class: 'hint' }, t('crimeHistoryNote'))) : null;
+
+  const fleetRecords = state.saveImport?.ownedVehicles ?? [];
+  const fleetSettings = state.saveImport?.header?.settings;
+  const priceRecord = state.statsRecords?.[Math.min(state.recordIndex, (state.statsRecords?.length ?? 1) - 1)];
+  const shipOpportunities = fleetSettings && Number.isFinite(priceRecord?.year)
+    ? fleetRecords.map(record => shipEconomicOpportunity(record, {
+      year: priceRecord.year,
+      currency: state.currency,
+      saleAdjustmentLevel: fleetSettings.vehicleSaleAdjustmentLevel,
+      depreciationLevel: fleetSettings.depreciationLevel,
+      economy: eco,
+    })).filter(Boolean).sort((a, b) => (b.advantage ?? -Infinity) - (a.advantage ?? -Infinity)) : [];
+  const usedFleetRecords = state.saveImport?.usedVehicleOffers ?? [];
+  const usedShipQuotes = Number.isFinite(priceRecord?.year)
+    ? usedFleetRecords.map(offer => shipUsedMarketQuote(offer, {
+      year: priceRecord.year, currency: state.currency, economy: eco,
+    })).filter(Boolean).sort((a, b) => a.purchaseValue - b.purchaseValue) : [];
+  const fleetActionLabel = action => t(action === 'recycle' ? 'fleetRecycle' : 'fleetExport');
+  const materialSummary = opportunity => Object.entries(opportunity.recycling.materials)
+    .filter(([, amount]) => amount > 0.01)
+    .map(([key, amount]) => {
+      const resource = DATA.resources.find(item => item.key === key);
+      return `${resource ? rname(resource) : key}: ${fmt(amount, 2)} t`;
+    }).join(' · ');
+  const opportunityCard = opportunity => el('div', { class: 'totalsbox institution-card' },
+    el('h3', {}, opportunity.record.modelFacts.name,
+      el('span', { class: 'evidence-badge derived' }, fleetActionLabel(opportunity.cashOutAction))),
+    kv(t('fleetExportPayout'), `${fmt(opportunity.exportValue, 0)} ${cur()}`),
+    kv(t('fleetRecycleAfterLabor'), Number.isFinite(opportunity.recycleAfterLabor)
+      ? `${fmt(opportunity.recycleAfterLabor, 0)} ${cur()}` : '—'),
+    kv(t('fleetAdvantage'), Number.isFinite(opportunity.advantage)
+      ? `${fmt(opportunity.advantage, 0)} ${cur()}` : '—'),
+    opportunity.recycling.ignoredCargo.length
+      ? el('p', { class: 'hint warn' }, t('fleetCargoExcluded')) : null);
+  const fleetDetailsTable = shipOpportunities.length ? el('table', { class: 'data wide' },
+    el('thead', {}, el('tr', {},
+      el('th', {}, t('vehicle')), el('th', {}, t('fleetCashOutAction')),
+      el('th', {}, t('fleetExportPayout')), el('th', {}, t('fleetRecycleGross')),
+      el('th', {}, t('fleetLaborCost')), el('th', {}, t('fleetRecycleAfterLabor')),
+      el('th', {}, t('fleetAdvantage')), el('th', {}, t('fleetWorkdays')))),
+    el('tbody', {}, ...shipOpportunities.map(opportunity => el('tr', {},
+      el('td', {}, opportunity.record.modelFacts.name,
+        el('div', { class: 'subline' }, `${t('fleetSavedMultiplier')}: ${fmt(opportunity.exportMultiplier.multiplier * 100, 1)} %`),
+        el('div', { class: 'subline' }, materialSummary(opportunity)),
+        opportunity.recycling.ignoredCargo.length
+          ? el('div', { class: 'subline warn' }, t('fleetCargoExcluded')) : null),
+      el('td', {}, fleetActionLabel(opportunity.cashOutAction)),
+      el('td', { class: 'r' }, fmt(opportunity.exportValue, 0)),
+      el('td', { class: 'r' }, Number.isFinite(opportunity.recoveredValue.immediateExportValue)
+        ? fmt(opportunity.recoveredValue.immediateExportValue, 0) : '—'),
+      el('td', { class: 'r' }, Number.isFinite(opportunity.laborOpportunityCost)
+        ? fmt(opportunity.laborOpportunityCost, 0) : '—'),
+      el('td', { class: 'r' }, Number.isFinite(opportunity.recycleAfterLabor)
+        ? fmt(opportunity.recycleAfterLabor, 0) : '—'),
+      el('td', { class: 'r' }, Number.isFinite(opportunity.advantage)
+        ? fmt(opportunity.advantage, 0) : '—'),
+      el('td', { class: 'r' }, fmt(opportunity.recycling.workdays, 0)))))) : null;
+  const fleetOpportunities = fleetRecords.length ? el('section', { class: 'institution-overview' },
+    el('h3', {}, t('fleetEconomicOpportunities'), el('span', { class: 'evidence-badge exact' }, t('exact'))),
+    el('p', { class: 'hint' }, t('fleetEconomicHint')),
+    shipOpportunities.length
+      ? el('div', { class: 'institution-grid' }, ...shipOpportunities.slice(0, 3).map(opportunityCard))
+      : el('p', { class: 'hint warn' }, t('fleetNoExactOpportunities')),
+    el('p', { class: 'hint' }, t('fleetCoverageHint')
+      .replace('{exact}', fmt(shipOpportunities.length, 0)).replace('{total}', fmt(fleetRecords.length, 0))),
+    usedShipQuotes.length ? el('div', { class: 'used-fleet-offers' },
+      el('h4', {}, t('fleetUsedHeading')),
+      el('p', { class: 'hint' }, t('fleetUsedHint')),
+      el('div', { class: 'institution-grid' }, ...usedShipQuotes.slice(0, 3).map(quote =>
+        el('div', { class: 'totalsbox institution-card' },
+          el('h3', {}, quote.offer.modelFacts.name,
+            el('span', { class: 'evidence-badge exact' }, t('exact'))),
+          kv(t('fleetUsedPrice'), `${fmt(quote.purchaseValue, 0)} ${cur()}`),
+          kv(t('fleetOfferFactor'), `${fmt(quote.factor * 100, 1)} %`),
+          kv(t('fleetCapacity'), Number.isFinite(quote.offer.modelFacts.capacity)
+            ? `${fmt(quote.offer.modelFacts.capacity, 0)} t` : '—')))),
+      el('p', { class: 'hint' }, t('fleetUsedCoverage')
+        .replace('{exact}', fmt(usedShipQuotes.length, 0)).replace('{total}', fmt(usedFleetRecords.length, 0)))) : null,
+    shipOpportunities.length ? el('details', { class: 'secondary-section' },
+      el('summary', {}, `${t('fleetDetails')} (${fmt(shipOpportunities.length, 0)})`),
+      el('p', { class: 'hint warn' }, t('fleetKeepCaveat')),
+      el('div', { class: 'tablewrap' }, fleetDetailsTable)) : null) : null;
 
   const historyRecords = filterRange(state.statsRecords ?? [], state.republicRange);
   const series = (label, color, valueOf) => ({ label, color, points: seriesFromRecords(historyRecords, valueOf) });
@@ -2675,6 +2757,10 @@ function renderRepublic() {
     el('summary', {}, t('gameSettings')),
     el('div', { class: 'totalsbox' },
       kv(t('seasons'), t(importedSettings.seasonsEnabled ? 'enabled' : 'disabled')),
+      Number.isFinite(importedSettings.vehicleSaleAdjustmentLevel)
+        ? kv(t('fleetStateAdjustmentSetting'), `${importedSettings.vehicleSaleAdjustmentLevel < 2 ? 80 : 20} %`) : null,
+      Number.isFinite(importedSettings.depreciationLevel)
+        ? kv(t('fleetDepreciationSetting'), t(importedSettings.depreciationLevel > 0 ? 'enabled' : 'disabled')) : null,
       mapClimate ? kv(t('mapClimate'), t(`climate.${mapClimate.id}`)) : null,
       kv(t('heatingCalculation'), t(importedSettings.seasonsEnabled && (mapClimate?.heatingRequired ?? true)
         ? 'enabled' : 'disabled')),
@@ -2698,6 +2784,7 @@ function renderRepublic() {
       el('div', { class: 'metric-grid' }, ...cards),
       alertList,
       institutionOverview,
+      fleetOpportunities,
       el('div', { class: 'tablewrap' }, areaTable),
       charts,
       researchDetails,

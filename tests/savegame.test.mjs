@@ -196,6 +196,8 @@ test('header exposes save version title and source path', () => {
   const bytes = new Uint8Array(buffer);
   view.setUint32(0, 124, true);
   view.setInt32(0x1c4, 1, true);
+  view.setInt32(0x1fc, 2, true);
+  view.setInt32(0x200, 1, true);
   writeUtf16(bytes, 4, 'Republic 2001\0');
   bytes.set(new TextEncoder().encode('save/453 - Republic 2001\0'), 0x104);
 
@@ -203,7 +205,11 @@ test('header exposes save version title and source path', () => {
     saveVersion: 124,
     title: 'Republic 2001',
     savePath: 'save/453 - Republic 2001',
-    settings: { seasonsEnabled: true },
+    settings: {
+      seasonsEnabled: true,
+      vehicleSaleAdjustmentLevel: 2,
+      depreciationLevel: 1,
+    },
   });
 });
 

@@ -122,6 +122,8 @@ export function parseHeader(buffer) {
     savePath: c.asciiZ(0x104, Math.min(0x100, c.bytes.length - 0x104)),
     settings: {
       seasonsEnabled: c.view.getInt32(0x1c4, true) !== 0,
+      vehicleSaleAdjustmentLevel: c.view.getInt32(0x1fc, true),
+      depreciationLevel: c.view.getInt32(0x200, true),
     },
   };
 }

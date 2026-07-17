@@ -2,11 +2,33 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   ownedVehicleDepreciationFactor,
+  ownedVehicleExportMultiplier,
+  usedVehicleOfferFactor,
+  vehicleRuntimeCategory,
+  defaultVehicleLifespan,
   containerRecyclingTargets,
+  shipRecyclingTargets,
+  shipProductionRecipe,
+  vehicleComponentBaseValue,
+  shipEconomicOpportunity,
+  shipUsedMarketQuote,
+  ownedVehicleExportValue,
   valueRecoveredMaterials,
   resolveVehicleModels,
   shareSafeSaveImport,
 } from '../js/fleet.js';
+
+test('runtime vehicle categories and default lifespans follow the executable type table', () => {
+  assert.equal(vehicleRuntimeCategory('VEHICLETYPE_SHIP'), 6);
+  assert.equal(vehicleRuntimeCategory('VEHICLETYPE_CONTAINER'), 9);
+  assert.equal(vehicleRuntimeCategory('VEHICLETYPE_HELICOPTER'), 10);
+  assert.equal(vehicleRuntimeCategory('unrecognized'), 11);
+  assert.equal(defaultVehicleLifespan(6), 21915);
+  assert.equal(defaultVehicleLifespan(4), 18262.5);
+  assert.equal(defaultVehicleLifespan(3), 0);
+  assert.equal(defaultVehicleLifespan(10), 5478.75);
+  assert.equal(defaultVehicleLifespan(1), 7305);
+});
 
 test('owned depreciation follows the signed-state age and saved-usage branches', () => {
   const common = { age: 250, accumulatedUsage: 100, lifespan: 1000 };
@@ -27,6 +49,57 @@ test('owned depreciation clamps age and usage extremes without inventing value',
   }), null);
 });
 
+test('owned export combines saved state adjustment and gated depreciation', () => {
+  const tanker = {
+    age: 630.9812399897511,
+    accumulatedUsage: 21772.365181054876,
+    state: 0,
+    ownershipField: -1,
+  };
+  assert.deepEqual(ownedVehicleExportMultiplier(tanker, {
+    category: 6, lifespan: 21915, saleAdjustmentLevel: 2, depreciationLevel: 1,
+  }), {
+    multiplier: 0.2,
+    stateAdjustment: 0.2,
+    depreciation: 1,
+    depreciationEnabled: true,
+  });
+
+  const worn = ownedVehicleExportMultiplier({
+    age: 500, accumulatedUsage: 100, state: -1, ownershipField: 0,
+  }, { category: 1, lifespan: 1000, saleAdjustmentLevel: 0, depreciationLevel: 1 });
+  assert.deepEqual(worn, {
+    multiplier: 0.32000000000000006,
+    stateAdjustment: 0.8,
+    depreciation: 0.4,
+    depreciationEnabled: true,
+  });
+});
+
+test('owned export skips depreciation for excluded categories and saved gates', () => {
+  const record = { age: 900, accumulatedUsage: 0, state: 1, ownershipField: -1 };
+  assert.deepEqual(ownedVehicleExportMultiplier(record, {
+    category: 9, lifespan: null, saleAdjustmentLevel: 2, depreciationLevel: 1,
+  }), {
+    multiplier: 1,
+    stateAdjustment: 1,
+    depreciation: 1,
+    depreciationEnabled: false,
+  });
+  assert.equal(ownedVehicleExportMultiplier(record, {
+    category: 1, lifespan: null, saleAdjustmentLevel: 2, depreciationLevel: 1,
+  }), null);
+});
+
+test('used-market factor applies the saved random modifier after age and usage', () => {
+  assert.ok(Math.abs(usedVehicleOfferFactor({
+    age: 250, accumulatedUsage: 100, lifespan: 1000, modifier: 0.1,
+  }) - 0.64625) < 1e-12);
+  assert.equal(usedVehicleOfferFactor({
+    age: 1, accumulatedUsage: 1, lifespan: 0, modifier: 0,
+  }), null);
+});
+
 test('container recycling produces exact base targets and work requirement', () => {
   const result = containerRecyclingTargets({ emptyWeight: 8780.2 });
 
@@ -35,6 +108,119 @@ test('container recycling produces exact base targets and work requirement', () 
   assert.ok(Math.abs(result.materials.waste_other - 6146.14) < 1e-9);
   assert.equal(result.workdays, 87802);
   assert.equal(result.cargoIncluded, false);
+});
+
+test('normal ship recycling reproduces exact float32 targets for owned ships', () => {
+  const cases = [
+    [{ emptyWeight: 674, powerKW: 1342 }, [2549, 345.6617126464844, 6.766839504241943, 52.03102111816406]],
+    [{ emptyWeight: 8780.2, powerKW: 18000 }, [33197, 4508.0986328125, 88.16199493408203, 679.15478515625]],
+    [{ emptyWeight: 1170.1, powerKW: 736 }, [4400, 584.197265625, 11.715719223022461, 86.16856384277344]],
+  ];
+  for (const [facts, expected] of cases) {
+    const result = shipRecyclingTargets({ ...facts, year: 2001, transportSubtype: 3, capacity: 0, electric: false });
+    assert.equal(result.workdays, expected[0]);
+    assert.equal(result.materials.waste_steel, expected[1]);
+    assert.equal(result.materials.waste_plastic, expected[2]);
+    assert.equal(result.materials.waste_bio, 0.0004000000189989805);
+    assert.equal(result.materials.waste_burnable, 0.0012000000569969416);
+    assert.equal(result.materials.waste_other, expected[3]);
+  }
+});
+
+test('ship cargo is reported but never added to recycling targets', () => {
+  const base = { emptyWeight: 8780.2, powerKW: 18000, year: 2001,
+    transportSubtype: 3, capacity: 19250, electric: false };
+  const empty = shipRecyclingTargets(base);
+  const loaded = shipRecyclingTargets({ ...base, cargo: [{ resource: 'oil', amount: 4338.07470703125 }] });
+
+  assert.deepEqual(loaded.materials, empty.materials);
+  assert.equal(loaded.workdays, empty.workdays);
+  assert.deepEqual(loaded.ignoredCargo, [{ resource: 'oil', amount: 4338.07470703125 }]);
+});
+
+test('passenger and electric ship recipe branches stay explicit', () => {
+  const diesel = shipRecyclingTargets({ emptyWeight: 100, powerKW: 1000, year: 1940,
+    transportSubtype: 7, capacity: 200, electric: false });
+  const electric = shipRecyclingTargets({ emptyWeight: 100, powerKW: 1000, year: 1940,
+    transportSubtype: 7, capacity: 200, electric: true });
+
+  assert.equal(diesel.materials.waste_plastic > 0, true); // electronic components still recover plastic
+  assert.equal(electric.materials.waste_steel < diesel.materials.waste_steel, true);
+  assert.equal(electric.workdays, diesel.workdays);
+});
+
+test('ship component base value preserves ordered cross-market recurrence', () => {
+  const recipe = shipProductionRecipe({ emptyWeight: 10, powerKW: 100, year: 2001,
+    transportSubtype: 3, capacity: 0, electric: false });
+  const economy = { workday: () => 10, sell: key => ({
+    steel: 20, plastics: 30, fabric: 40, mcomponents: 50, ecomponents: 60,
+  })[key] };
+  let expected = 0;
+  for (const [resource, amount] of recipe) {
+    const price = resource === 'workers' ? 10 : economy.sell(resource, 'USD');
+    expected = (expected + amount * price) * 0.65;
+  }
+  assert.equal(vehicleComponentBaseValue(recipe, 'RUB', 'USD', economy), expected);
+  assert.equal(vehicleComponentBaseValue(recipe, null, 'USD', economy), null);
+});
+
+test('ship opportunity compares exact export with derived recycling labor view', () => {
+  const economy = {
+    workday: () => 10,
+    sell: key => ({ steel: 20, plastics: 30, fabric: 40, mcomponents: 50,
+      ecomponents: 60, waste_steel: 8, waste_plastic: 4, waste_bio: 1,
+      waste_burnable: -2, waste_other: -5 })[key],
+    buy: key => ({ waste_steel: 12, waste_plastic: 7, waste_bio: 2,
+      waste_burnable: -1, waste_other: -3 })[key],
+  };
+  const record = {
+    age: 630.9812399897511, accumulatedUsage: 21772.365181054876,
+    state: 0, ownershipField: -1, cargo: [{ resource: 'oil', amount: 4338 }],
+    modelFacts: {
+      runtimeCategory: 6, emptyWeight: 8780.2, powerKW: 18000,
+      transportSubtype: 3, capacity: 19250, electric: false,
+      originCurrency: 'RUB', lifespanDays: 21915,
+    },
+  };
+  const result = shipEconomicOpportunity(record, {
+    year: 2001, currency: 'RUB', saleAdjustmentLevel: 2, depreciationLevel: 1, economy,
+  });
+
+  assert.equal(result.exportMultiplier.multiplier, 0.2);
+  assert.equal(result.recycling.workdays, 33197);
+  assert.deepEqual(result.recycling.ignoredCargo, [{ resource: 'oil', amount: 4338 }]);
+  assert.equal(result.laborOpportunityCost, 331970);
+  assert.equal(result.cashOutAction, result.recycleAfterLabor > result.exportValue ? 'recycle' : 'export');
+  assert.equal(result.advantage, Math.abs(result.exportValue - result.recycleAfterLabor));
+});
+
+test('owned payout preserves float32 adjustment order', () => {
+  const multiplier = { stateAdjustment: 0.8, depreciation: 0.4 };
+  const expected = Math.fround(Math.fround(Math.fround(12345678.9) * Math.fround(0.8)) * Math.fround(0.4));
+  assert.equal(ownedVehicleExportValue(12345678.9, multiplier), expected);
+});
+
+test('ship opportunity remains unavailable without exact model facts', () => {
+  assert.equal(shipEconomicOpportunity({ modelFacts: null }, {
+    year: 2001, currency: 'RUB', saleAdjustmentLevel: 2, depreciationLevel: 1,
+    economy: { workday: () => 1, sell: () => 1, buy: () => 1 },
+  }), null);
+});
+
+test('used ship quote applies age usage and offer modifier to current component value', () => {
+  const economy = { workday: () => 10, sell: () => 20 };
+  const offer = {
+    age: 250, accumulatedUsage: 100, modifier: 0.1,
+    modelFacts: {
+      runtimeCategory: 6, emptyWeight: 100, powerKW: 1000,
+      transportSubtype: 11, capacity: 200, electric: false,
+      originCurrency: 'RUB', lifespanDays: 1000,
+    },
+  };
+  const result = shipUsedMarketQuote(offer, { year: 2001, currency: 'RUB', economy });
+  assert.ok(result.baseValue > 0);
+  assert.ok(Math.abs(result.factor - 0.64625) < 1e-12);
+  assert.equal(result.purchaseValue, Math.fround(result.baseValue * result.factor));
 });
 
 test('container transport subtype 12/13 doubles work but not recovered materials', () => {
@@ -96,15 +282,22 @@ test('missing recovery prices remain unavailable instead of becoming zero', () =
 
 test('fleet model resolution prefers exact authoritative game IDs', () => {
   const records = [{ model: 'tanker' }, { model: '1945481818/UAZ_452' }, { model: 'unknown' }];
-  const game = [{ id: 'tanker', en: 'The Pride', type: 'VEHICLETYPE_SHIP', emptyWeight: 8780.2 }];
-  const workshop = [{ id: '1945481818/UAZ_452', type: 'VEHICLETYPE_ROAD', emptyWeight: 1.85 }];
+  const game = [{ id: 'tanker', en: 'The Pride', type: 'VEHICLETYPE_SHIP', emptyWeight: 8780.2,
+    powerKW: 18000, capacity: 19250, transportType: 'RESOURCE_TRANSPORT_OIL', from: 1979, costRUB: 4300 }];
+  const workshop = [{ id: '1945481818/UAZ_452', type: 'VEHICLETYPE_ROAD', emptyWeight: 1.85,
+    lifespanYears: 12 }];
   const resolved = resolveVehicleModels(records, { game, workshop });
 
   assert.deepEqual(resolved.records.map(record => record.modelFacts), [
     { id: 'tanker', name: 'The Pride', type: 'VEHICLETYPE_SHIP', category: null,
-      emptyWeight: 8780.2, source: 'game-file' },
+      runtimeCategory: 6, emptyWeight: 8780.2, powerKW: 18000, capacity: 19250,
+      transportType: 'RESOURCE_TRANSPORT_OIL', transportSubtype: 3, availableFrom: 1979,
+      originCurrency: 'RUB', lifespanDays: 21915, electric: false, source: 'game-file' },
     { id: '1945481818/UAZ_452', name: '1945481818/UAZ_452', type: 'VEHICLETYPE_ROAD',
-      category: null, emptyWeight: 1.85, source: 'workshop-catalog' },
+      category: null, runtimeCategory: 1, emptyWeight: 1.85, powerKW: null, capacity: null,
+      transportType: null, transportSubtype: null, availableFrom: null,
+      originCurrency: null, lifespanDays: 4383,
+      electric: null, source: 'workshop-catalog' },
     null,
   ]);
   assert.deepEqual(resolved.summary, {
@@ -118,6 +311,13 @@ test('numeric Workshop models never resolve by basename', () => {
     game: [], workshop: [{ id: '1945481818/UAZ_452', type: 'VEHICLETYPE_ROAD' }],
   });
   assert.equal(resolved.records[0].modelFacts, null);
+});
+
+test('legacy Workshop facts without lifespan presence stay unavailable', () => {
+  const resolved = resolveVehicleModels([{ model: '1945481818/UAZ_452' }], {
+    workshop: [{ id: '1945481818/UAZ_452', type: 'VEHICLETYPE_ROAD' }],
+  });
+  assert.equal(resolved.records[0].modelFacts.lifespanDays, null);
 });
 
 test('shared plans retain fleet coverage but omit per-vehicle save facts', () => {

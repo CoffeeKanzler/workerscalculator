@@ -198,6 +198,7 @@ VEHICLE_SCALARS = {
     'MOVEMENT_EMPTY_WEIGHT': ('emptyWeight', float),
     'MOVEMENT_CONSPUMPTION': ('consumption', float),
     'RESOURCE_CAPACITY': ('capacity', float),
+    'LIFESPAN': ('lifespanYears', float),
     'COUNTRY': ('countryId', int),
 }
 
@@ -218,7 +219,7 @@ def bbox_length(vdir):
 
 def parse_vehicle(path, category):
     v = {'id': os.path.basename(os.path.dirname(path)), 'category': category,
-         'trainSet': []}
+         'trainSet': [], 'lifespanYears': 0.0}
     length = bbox_length(os.path.dirname(path))
     if length:
         v['length'] = length

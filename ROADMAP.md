@@ -186,6 +186,15 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   `material.mtl` now control whether heating applies. A Misc section exposes verified
   settings. Continue mapping the remaining header settings with controlled save diffs;
   unknown values must not enter calculations.
+  - **Vehicle economics:** the Republic overview ranks exactly resolved owned ships by
+  their two cash-out routes. Current export payout uses live save prices, the saved sale
+  adjustment, and verified depreciation gates. Normal scrapyard targets use the category-6
+  component recipe and exact float32 conversion/rounding; loaded cargo is excluded because
+  it contributes no ship-recycling output. Gross recovery, work target, and the separately
+  labelled labor-opportunity-cost view remain distinct, while keeping an operating vehicle
+  is deliberately not assigned an invented cash value. The supplied save yields complete
+  comparisons for all three owned ships and an exact current quote for the one ship among
+  its 75 used-market offers; capacity and operating role remain an explicit replacement caveat.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
   catalog contains only compact parsed INI facts under `data/workshop/`, never mod assets.
@@ -195,11 +204,12 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   anonymously, users can optionally select their installed
   `steamapps/workshop/content/784150` folder; its `building.ini` facts are read locally
   and never uploaded. Inventory buffers, vehicle lines/schedules and logistics topology are
-  not decoded yet. Fleet economic ranking remains deliberately unavailable until the corrected
-  normal-vehicle recycling formula and every export-setting gate are verified; an earlier
-  10%/20%/70% assumption was found to apply to container vehicles, not ships, and was not
-  shipped as a recommendation.
-  - **Next high-value save modules:** finish verified owned-fleet export/recycling opportunities;
+  not decoded yet. Road/rail/air recycling remains unavailable until each category conversion
+  is independently verified. Workshop vehicle lifespans are used only when their exact
+  `$LIFESPAN` fact is present; vanilla/DLC models use verified category defaults. An earlier
+  10%/20%/70% assumption was found to apply to container vehicles, not ships, and was never
+  shipped as a ship recommendation.
+  - **Next high-value save modules:** broaden exact recycling beyond ships and add used-market replacement ranking;
   building inventories and production buffers; vehicle lines and schedules; distribution/logistics
   bottlenecks; and optional live
   follow of a save directory. Cosmetic map/network geometry stays out of scope until a

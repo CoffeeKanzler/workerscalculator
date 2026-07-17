@@ -238,6 +238,7 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .save-identity { max-width: 680px; margin-bottom: 12px; }
 .sourceid .evidence-badge { vertical-align: middle; }
 .command-center { display: grid; gap: 14px; }
+.command-center > * { min-width: 0; }
 .command-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
 .command-header h2 { margin: 0 0 3px; }
 .command-meta { display: flex; flex-wrap: wrap; gap: 7px; color: var(--muted); font-size: 13px; }
