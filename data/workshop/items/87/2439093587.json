@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2439093587",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:36:44+00:00",
+  "buildings": [
+    {
+      "id": "2439093587/verticalfarm",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 400.0,
+      "professors": 200.0,
+      "production": {
+        "plants": 1.0
+      },
+      "consumption": {
+        "chemicals": 0.009
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.056
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 2885.0,
+        "gravel": 350.0,
+        "asphalt": 300.0,
+        "workers": 8500.0,
+        "steel": 2200.0,
+        "prefabpanels": 1950.0,
+        "bricks": 800.0,
+        "ecomponents": 750.0,
+        "mcomponents": 650.0
+      },
+      "electricWorkerFactors": {
+        "living": 0.1
+      },
+      "nameStr": "Vertical Farm",
+      "workshopId": "2439093587",
+      "modPath": "verticalfarm"
+    }
+  ],
+  "vehicles": []
+}

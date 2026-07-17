@@ -221,7 +221,7 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   because the same offsets have incompatible meanings there.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
-  catalog contains 288 packages with 854 building and 63 vehicle definitions as compact
+  catalog contains 299 packages with 867 building and 63 vehicle definitions as compact
   parsed INI facts under `data/workshop/`, never mod assets. Save seeding prioritizes exact
   Workshop identities found in owned and used-market vehicles as well as buildings.
   The browser resolves available packages automatically, imports exact mod housing,

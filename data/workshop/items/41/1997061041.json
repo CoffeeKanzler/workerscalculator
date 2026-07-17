@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1997061041",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:34:16+00:00",
+  "buildings": [
+    {
+      "id": "1997061041/school",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 20.0,
+      "professors": 35.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 125.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalin style school",
+      "workshopId": "1997061041",
+      "modPath": "school"
+    }
+  ],
+  "vehicles": []
+}

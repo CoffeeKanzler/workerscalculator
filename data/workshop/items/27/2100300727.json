@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2100300727",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:37:17+00:00",
+  "buildings": [
+    {
+      "id": "2100300727/JoeWheel",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1300.0,
+        "concrete": 29.0,
+        "gravel": 18.0,
+        "boards": 11.0,
+        "steel": 34.0,
+        "mcomponents": 1.5,
+        "ecomponents": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Colorful ferris wheel",
+      "workshopId": "2100300727",
+      "modPath": "JoeWheel"
+    },
+    {
+      "id": "2100300727/fe_wheel",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1300.0,
+        "concrete": 29.0,
+        "gravel": 18.0,
+        "boards": 11.0,
+        "steel": 34.0,
+        "mcomponents": 1.5,
+        "ecomponents": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ferris wheel (Pripyat)",
+      "workshopId": "2100300727",
+      "modPath": "fe_wheel"
+    }
+  ],
+  "vehicles": []
+}

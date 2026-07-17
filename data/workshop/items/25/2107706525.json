@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2107706525",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:36:28+00:00",
+  "buildings": [
+    {
+      "id": "2107706525/small_storage_for_shop_pub",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Storage - Shop/Pub",
+      "workshopId": "2107706525",
+      "modPath": "small_storage_for_shop_pub"
+    }
+  ],
+  "vehicles": []
+}

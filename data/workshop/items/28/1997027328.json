@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1997027328",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:33:35+00:00",
+  "buildings": [
+    {
+      "id": "1997027328/Kindergarten_Teremok",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kindergarten_Teremok",
+      "workshopId": "1997027328",
+      "modPath": "Kindergarten_Teremok"
+    }
+  ],
+  "vehicles": []
+}

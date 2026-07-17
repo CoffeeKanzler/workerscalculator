@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2855372485",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:39:05+00:00",
+  "buildings": [
+    {
+      "id": "2855372485/Skola",
+      "nameId": 6252,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 6.0,
+      "professors": 8.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 11.5,
+        "workers": 518.0,
+        "bricks": 34.6,
+        "boards": 12.3,
+        "steel": 2.3
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2855372485",
+      "modPath": "Skola"
+    }
+  ],
+  "vehicles": []
+}

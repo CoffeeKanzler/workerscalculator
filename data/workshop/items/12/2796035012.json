@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2796035012",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:34:07+00:00",
+  "buildings": [
+    {
+      "id": "2796035012/canal",
+      "nameId": null,
+      "types": [
+        "TYPE_SEWAGE_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_SEWAGE": 5.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sewer 3x3 switch",
+      "workshopId": "2796035012",
+      "modPath": "canal"
+    },
+    {
+      "id": "2796035012/canal4x4",
+      "nameId": null,
+      "types": [
+        "TYPE_SEWAGE_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_SEWAGE": 5.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sewer 4x4 switch",
+      "workshopId": "2796035012",
+      "modPath": "canal4x4"
+    }
+  ],
+  "vehicles": []
+}

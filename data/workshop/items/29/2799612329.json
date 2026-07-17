@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2799612329",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:37:48+00:00",
+  "buildings": [
+    {
+      "id": "2799612329/katedrala_sa",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 120.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sacred Heart Cathedral Sarajevo",
+      "workshopId": "2799612329",
+      "modPath": "katedrala_sa"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1905838399",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:33:59+00:00",
+  "buildings": [
+    {
+      "id": "1905838399/OilCompany",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 100.0,
+      "professors": 100.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oil Company",
+      "workshopId": "1905838399",
+      "modPath": "OilCompany"
+    }
+  ],
+  "vehicles": []
+}
