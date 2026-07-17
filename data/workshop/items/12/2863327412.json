@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2863327412",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:31:54+00:00",
+  "buildings": [
+    {
+      "id": "2863327412/cinema_pobeda",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cinema Pobeda",
+      "workshopId": "2863327412",
+      "modPath": "cinema_pobeda"
+    }
+  ],
+  "vehicles": []
+}
