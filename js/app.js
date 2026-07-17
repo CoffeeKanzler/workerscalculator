@@ -1,6 +1,6 @@
 import { STRINGS } from './i18n.js?v=15';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=20';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=21';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=13';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -646,7 +646,12 @@ function renderChain() {
         el('td', {}, srcToggle),
         el('td', {}, producerSel),
         el('td', { class: 'r' }, row.imported ? '—' : `${fmt(row.countCeil, 0)} (${fmt(row.count, 2)})`),
-        el('td', { class: 'r' }, row.imported ? '—' : fmt(row.building.workers * row.countCeil, 0)),
+        // Actual workers the target demand needs vs. the full capacity of the
+        // buildings you'll actually construct (count is fractional, but you
+        // can only build whole buildings, so countCeil is the real headcount).
+        row.imported ? el('td', { class: 'r' }, '—') : workersNeededCell({
+          optimal: row.building.workers * row.count, max: row.building.workers * row.countCeil,
+        }),
         el('td', { class: 'r' }, row.imported ? '—' : fmt(eco.buildCost(row.building, state.currency) * row.countCeil, 0)),
         el('td', { class: 'r ' + (row.imported ? 'warn' : '') }, row.imported ? fmt(row.importCost, 0) : '—'));
     })));
@@ -920,7 +925,8 @@ function renderCity() {
   const tbl = el('table', { class: 'data wide' },
     el('thead', {}, el('tr', {},
       el('th', {}, 'Typ'), el('th', {}, t('building')), el('th', {}, t('count')),
-      el('th', {}, t('population')), el('th', {}, t('housingQuality')), el('th', {}, t('workers')), el('th', {}, 'kW'),
+      el('th', {}, t('population')), el('th', {}, t('housingQuality')), el('th', {}, t('workers')),
+      el('th', {}, t('workersNeeded')), el('th', {}, 'kW'),
       el('th', {}, t('waterUse')), el('th', {}, t('hotwater')), el('th', {}, t('wasteOut')),
       el('th', {}, `${t('buildCost')} ${cur()}`), el('th', {}))),
     el('tbody', {}, city.rows.map((row, idx) => {
@@ -942,12 +948,19 @@ function renderCity() {
           row.name = DATA.cityBuildings[row.buildingIndex].de;
         });
       const n = row.count || 0;
+      // Per-row breakdown of the type-level utilization (only types with a
+      // demand model — services, secret police, heating — have one).
+      const rowMax = b ? b.workers * n : 0;
+      const rowUtilization = b ? res.utilizationByType.get(b.type.de) : undefined;
+      const rowWorkersNeeded = (rowMax > 0 && rowUtilization != null)
+        ? { optimal: Math.min(rowMax, rowMax * rowUtilization), max: rowMax } : null;
       return el('tr', {},
         el('td', {}, typeSel), el('td', {}, bSel),
         el('td', {}, numInput(row.count, v => row.count = v, { min: 0, step: 1 })),
         el('td', { class: 'r' }, b ? fmt(b.inhabitants * n, 0) : '—'),
         el('td', { class: 'r' }, b?.inhabitants > 0 && b.quality != null ? fmt(b.quality * 100, 0) + ' %' : '—'),
         el('td', { class: 'r' }, b ? fmt(b.workers * n, 0) : '—'),
+        workersNeededCell(rowWorkersNeeded),
         el('td', { class: 'r' }, b ? fmt(b.maxKW * n, 0) : '—'),
         el('td', { class: 'r' }, b ? fmt(b.water * n, 2) : '—'),
         el('td', { class: 'r' }, b ? fmt(b.hotwater * n, 2) : '—'),

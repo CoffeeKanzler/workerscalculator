@@ -183,6 +183,28 @@ test('city: workersNeeded is capped at max when over-utilized (can only scale do
   assert.equal(svc.workersNeeded.optimal, 94);
 });
 
+test('city: utilizationByType exposes per-type utilization, absent for types with no demand model', () => {
+  const residential = {
+    de: 'TestHaus', type: { de: 'Plattenbau', en: 'Prefab' }, inhabitants: 4000, workers: 0,
+    power: 0, maxKW: 0, water: 0, hotwater: 0, waste: 0, workdays: 0,
+    gravel: 0, bricks: 0, steel: 0, concrete: 0, asphalt: 0, boards: 0, panels: 0,
+    ecomponents: 0, mcomponents: 0, special: 0, visitors: 0,
+  };
+  const school = { ...residential, de: 'TestSchule', type: { de: 'Schule', en: 'School' }, inhabitants: 0, workers: 94, visitors: 150 };
+  const city = {
+    productivity: 0.7, cable: 'Untergrund Kabel 1,85 MW', exchanger: 'small', waterDivisor: 3,
+    rows: [
+      { building: residential, count: 1 },
+      { building: school, count: 1 },
+    ],
+  };
+  const r = evaluateCity(city, eco());
+  const svc = r.services.find(s => s.id === 'school');
+  assert.equal(r.utilizationByType.get('Schule'), svc.utilization);
+  // residential ('Plattenbau') has no demand model -> not in the map
+  assert.equal(r.utilizationByType.has('Plattenbau'), false);
+});
+
 test('LowTech example from the sheet = 4 points', () => {
   assert.equal(lowTechPoints({
     population: 4578, cities: 1, currentYear: 1940, startYear: 1920, researched: 1,

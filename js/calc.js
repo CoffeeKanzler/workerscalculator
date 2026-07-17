@@ -382,6 +382,15 @@ export function evaluateCity(city, eco) {
   res.transformers = res.maxKW / 1000 / cable.mw;
   res.heatExchangers = res.hotwater / (city.exchanger === 'large' ? HEAT_EXCHANGERS.large : HEAT_EXCHANGERS.small);
   res.waterConnections = res.water / (city.waterDivisor || 3);
+
+  // Utilization by building type.de, for per-row optimal-staffing breakdowns
+  // in the UI (only types with a demand model — services, secret police,
+  // heating — have one; other amenity types are absent from this map).
+  res.utilizationByType = new Map([
+    ...res.services.map(svc => [svc.typeDe, svc.utilization]),
+    ['Geheimpolizei', secretUtilization],
+    ['Heizwerk', heatUtilization],
+  ]);
   return res;
 }
 
