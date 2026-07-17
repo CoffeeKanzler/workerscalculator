@@ -7,6 +7,7 @@ import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.j
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
 } from './train.js?v=14';
+import { createIndexedDbSnapshotStore, migrateLegacySnapshots } from './storage.js?v=1';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = ['prices', 'production', 'chain', 'analysis', 'vehicleprod', 'city', 'republic',
@@ -15,10 +16,14 @@ const TABS = ['prices', 'production', 'chain', 'analysis', 'vehicleprod', 'city'
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
   'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset',
   'chains', 'activeChain', 'tuning', 'productionScope', 'saveImport', 'tab'];
+const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex'];
 
 // ---------------------------------------------------------------- state
 const LS_KEY = 'wr-planner-v1';
 const LS_KEY_BACKUP = 'wr-planner-v1-backup'; // local plan saved before a shared link overwrote it
+const SAVES_KEY = 'wr-planner-saves-v1';
+const snapshotStore = createIndexedDbSnapshotStore();
+let namedSnapshotNames = [];
 
 function createInitialState() {
   return {
@@ -427,8 +432,7 @@ function renderHeader() {
 // Named save slots (localStorage, separate from the one auto-saved plan):
 // type a name and save, or pick an existing one from the list to load/delete.
 function renderSaveSlots() {
-  const saves = loadSaves();
-  const names = Object.keys(saves).sort();
+  const names = namedSnapshotNames;
   return el('div', { class: 'saveslots' },
     el('input', {
       type: 'text', class: 'saveslotname', placeholder: t('saveSlotName'),
@@ -438,11 +442,11 @@ function renderSaveSlots() {
     el('datalist', { id: 'save-slot-names' }, ...names.map(n => el('option', { value: n }))),
     el('button', {
       title: t('saveSlotSave'),
-      onclick: () => {
+      onclick: async () => {
         const name = state.saveSlotName.trim();
         if (!name) return;
-        if (saves[name] && !confirm(t('saveSlotOverwriteConfirm'))) return;
-        const result = saveNamedState(name);
+        if (names.includes(name) && !confirm(t('saveSlotOverwriteConfirm'))) return;
+        const result = await saveNamedState(name);
         if (!result.ok) return alert(t('saveSlotWriteFailed') + ': ' + result.error.message);
         state.snapshotNotice = t('saveSlotSaved').replace('{name}', name);
         update();
@@ -450,11 +454,11 @@ function renderSaveSlots() {
     }, '💾'),
     el('button', {
       title: t('saveSlotLoad'),
-      onclick: () => {
+      onclick: async () => {
         const name = state.saveSlotName.trim();
-        if (!name || !saves[name]) return;
+        if (!name || !names.includes(name)) return;
         if (confirm(t('saveSlotLoadConfirm'))) {
-          loadNamedState(name);
+          if (!await loadNamedState(name)) return;
           state.snapshotNotice = t('saveSlotLoaded').replace('{name}', name);
           update();
         }
@@ -462,10 +466,10 @@ function renderSaveSlots() {
     }, '📂'),
     names.length ? el('button', {
       class: 'danger', title: t('saveSlotDelete'),
-      onclick: () => {
+      onclick: async () => {
         const name = state.saveSlotName.trim();
-        if (name && saves[name] && confirm(t('saveSlotDeleteConfirm'))) {
-          const result = deleteNamedState(name);
+        if (name && names.includes(name) && confirm(t('saveSlotDeleteConfirm'))) {
+          const result = await deleteNamedState(name);
           if (!result.ok) return alert(t('saveSlotWriteFailed') + ': ' + result.error.message);
           state.snapshotNotice = t('saveSlotDeleted').replace('{name}', name);
           state.saveSlotName = '';
@@ -1270,10 +1274,10 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
 }
 
 function uniqueSnapshotName(base) {
-  const saves = loadSaves();
-  if (!saves[base]) return base;
+  const names = new Set(namedSnapshotNames);
+  if (!names.has(base)) return base;
   let suffix = 2;
-  while (saves[`${base} (${suffix})`]) suffix += 1;
+  while (names.has(`${base} (${suffix})`)) suffix += 1;
   return `${base} (${suffix})`;
 }
 
@@ -1307,7 +1311,7 @@ async function handleSaveDirectory(fileList) {
     imported.metadata.statsRecordCount = statsRecords.length;
 
     const backupName = uniqueSnapshotName(`Before import ${new Date().toLocaleString()}`);
-    const backupResult = saveNamedState(backupName);
+    const backupResult = await saveNamedState(backupName);
     if (!backupResult.ok) throw backupResult.error;
 
     const next = createInitialState();
@@ -1335,9 +1339,9 @@ async function handleSaveDirectory(fileList) {
     state.saveSlotName = importName;
     state.importStatus = t('importComplete');
     state.importStatusError = false;
-    const importResult = saveNamedState(importName);
+    const importResult = await saveNamedState(importName);
     if (!importResult.ok) {
-      loadNamedState(backupName);
+      await loadNamedState(backupName);
       throw importResult.error;
     }
     state.snapshotNotice = t('saveSlotSaved').replace('{name}', importName);
@@ -2063,7 +2067,7 @@ function renderHelp() {
 
 // ---------------------------------------------------------------- share / routing
 function sharedState() {
-  return Object.fromEntries(SHARE_KEYS.map(k => [k, state[k]]));
+  return stateProjection(SHARE_KEYS);
 }
 
 function cloneStateValue(value) {
@@ -2073,10 +2077,18 @@ function cloneStateValue(value) {
 // Full plan loads are replacements, not patches. Restoring absent keys from
 // defaults prevents state created later (notably production chains) leaking
 // into an older snapshot that never contained those keys.
-function replaceSharedState(obj) {
+function stateProjection(keys) {
+  return Object.fromEntries(keys.map(key => [key, cloneStateValue(state[key])]));
+}
+
+function snapshotState() {
+  return stateProjection(SNAPSHOT_KEYS);
+}
+
+function replaceStateProjection(obj, keys) {
   if (!obj || typeof obj !== 'object' || Array.isArray(obj)) throw new Error('Plan state must be an object');
   const defaults = createInitialState();
-  for (const key of SHARE_KEYS) {
+  for (const key of keys) {
     const value = obj[key] !== undefined ? obj[key] : defaults[key];
     if (value === undefined) delete state[key];
     else state[key] = cloneStateValue(value);
@@ -2094,6 +2106,10 @@ function replaceSharedState(obj) {
   if (!IS_BETA && state.tab === 'saveimport') state.tab = 'republic';
 }
 
+function replaceSharedState(obj) {
+  replaceStateProjection(obj, SHARE_KEYS);
+}
+
 function exportPlan() {
   downloadJson(sharedState(), 'wr-plan.json');
 }
@@ -2109,43 +2125,47 @@ function importPlan(file) {
   reader.readAsText(file);
 }
 
-// Named save slots (separate from the single auto-saved LS_KEY state), so a
-// user can keep several distinct plannings in one browser and switch
-// between them, not just the one most-recently-open plan.
-const SAVES_KEY = 'wr-planner-saves-v1';
-
-function loadSaves() {
-  try {
-    const parsed = JSON.parse(localStorage.getItem(SAVES_KEY));
-    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return {};
-    return Object.fromEntries(Object.entries(parsed).filter(([, entry]) =>
-      entry && typeof entry === 'object' && entry.state && typeof entry.state === 'object' && !Array.isArray(entry.state)));
-  } catch (e) { return {}; }
+// Named snapshots include private save history and therefore live in IndexedDB
+// rather than localStorage's small synchronous quota. Share links deliberately
+// continue to use sharedState(), which omits statsRecords.
+async function refreshNamedSnapshotNames() {
+  namedSnapshotNames = await snapshotStore.names();
 }
-function writeSaves(saves) {
+
+async function initializeNamedSnapshots() {
+  const legacy = localStorage.getItem(SAVES_KEY);
+  if (legacy) {
+    await migrateLegacySnapshots(snapshotStore, legacy);
+    localStorage.removeItem(SAVES_KEY);
+  }
+  await refreshNamedSnapshotNames();
+}
+
+async function saveNamedState(name) {
   try {
-    localStorage.setItem(SAVES_KEY, JSON.stringify(saves));
+    await snapshotStore.save(name, snapshotState());
+    await refreshNamedSnapshotNames();
     return { ok: true };
   } catch (error) {
     return { ok: false, error };
   }
 }
-function saveNamedState(name) {
-  if (!name) return { ok: false, error: new Error('Snapshot name is empty') };
-  const saves = loadSaves();
-  saves[name] = { version: 1, savedAt: Date.now(), state: sharedState() };
-  return writeSaves(saves);
-}
-function loadNamedState(name) {
-  const saves = loadSaves();
-  if (!saves[name]) return false;
-  replaceSharedState(saves[name].state);
+
+async function loadNamedState(name) {
+  const saved = await snapshotStore.load(name);
+  if (!saved) return false;
+  replaceStateProjection(saved, SNAPSHOT_KEYS);
   return true;
 }
-function deleteNamedState(name) {
-  const saves = loadSaves();
-  delete saves[name];
-  return writeSaves(saves);
+
+async function deleteNamedState(name) {
+  try {
+    await snapshotStore.remove(name);
+    await refreshNamedSnapshotNames();
+    return { ok: true };
+  } catch (error) {
+    return { ok: false, error };
+  }
 }
 
 async function shareLink() {
@@ -2201,6 +2221,7 @@ loadState();
 if (!IS_BETA && state.tab === 'saveimport') state.tab = 'republic';
 state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.calcOpts || {}) };
 loadData().then(async () => {
+  await initializeNamedSnapshots();
   await applyHash();
   if (!state.cities.length) state.cities.push(defaultCity());
   applyTuning(state.tuning);
