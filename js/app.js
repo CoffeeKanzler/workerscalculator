@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=21';
+import { STRINGS } from './i18n.js?v=22';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=22';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -11,7 +11,8 @@ import {
 const TABS = ['prices', 'production', 'chain', 'analysis', 'vehicleprod', 'city', 'republic', 'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
-  'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset', 'chain', 'tuning', 'tab'];
+  'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset',
+  'chains', 'activeChain', 'tuning', 'tab'];
 
 // ---------------------------------------------------------------- state
 const LS_KEY = 'wr-planner-v1';
@@ -41,7 +42,6 @@ const state = {
   calcOpts: { inputPriceMode: 'sell', includeDelivery: false },
   dataset: 'game',   // 'game' (current game files) | 'sheet' (spreadsheet snapshot)
   tuning: {},        // advanced-mode overrides for community constants
-  chain: { goal: 'steel', amount: 43, imports: [], producerChoice: {}, includeUtilities: true, quality: {} },
   lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0 },
   analysisSort: { col: 'profit', dir: -1 },
   analysisSearch: '',
@@ -51,8 +51,28 @@ const state = {
 function defaultCity() {
   return {
     name: 'Nowa Huta', productivity: 0.7, cable: CABLES[2].de, exchanger: 'small',
-    waterDivisor: 3, rows: [],
+    waterDivisor: 3, rows: [], assignedChain: null,
   };
+}
+
+function defaultChainPlan() {
+  return {
+    name: null, goal: 'steel', amount: 43, imports: [], producerChoice: {},
+    includeUtilities: true, qualityTiers: {},
+  };
+}
+
+// Old saves/share-links have a single `state.chain` object; migrate it into
+// the new `state.chains` array (one plan) the first time it's touched.
+function chainPlans() {
+  if (!state.chains) {
+    state.chains = [state.chain ? { name: null, ...state.chain } : defaultChainPlan()];
+    state.activeChain = 0;
+    delete state.chain;
+  }
+  if (!state.chains.length) state.chains.push(defaultChainPlan());
+  if (state.activeChain >= state.chains.length) state.activeChain = 0;
+  return state.chains;
 }
 
 function saveState() {
@@ -656,7 +676,8 @@ function tierEditor(ch, key) {
 function renderChain() {
   const eco = economy();
   const buildings = prodBuildings();
-  const ch = state.chain;
+  const chains = chainPlans();
+  const ch = chains[state.activeChain];
   ch.qualityTiers ??= {};
   const index = producersByResource(buildings, eco);
   const producible = [...index.keys()];
@@ -678,6 +699,20 @@ function renderChain() {
     return r ? rname(r) : key;
   };
 
+  const chainTabs = el('div', { class: 'citytabs' },
+    ...chains.map((c, i) => el('button', {
+      class: i === state.activeChain ? 'active' : '',
+      onclick: () => { state.activeChain = i; update(); },
+    }, c.name || resLabel(c.goal))),
+    el('button', { onclick: () => { chains.push(defaultChainPlan()); state.activeChain = chains.length - 1; update(); } }, t('addChainPlan')),
+    chains.length > 1 ? el('button', {
+      class: 'danger',
+      onclick: () => { chains.splice(state.activeChain, 1); state.activeChain = 0; update(); },
+    }, t('removeChainPlan')) : null,
+    el('button', {
+      onclick: () => { chains[state.activeChain] = { ...defaultChainPlan(), name: ch.name }; update(); },
+    }, t('resetChainPlan')));
+
   const result = solveChain(ch.goal, ch.amount, buildings, eco, {
     productivity: state.plan.settings.productivity,
     currency: state.currency,
@@ -688,6 +723,9 @@ function renderChain() {
   });
 
   const settings = el('div', { class: 'settingsbar' },
+    el('label', {}, t('chainPlanName') + ' ', el('input', {
+      type: 'text', placeholder: resLabel(ch.goal), value: ch.name ?? '',
+      onchange: e => { ch.name = e.target.value || null; update(); } })),
     el('label', {}, t('chainGoal') + ' ',
       selectInput(producible.map(k => [k, resLabel(k)]).sort((a, b) => a[1].localeCompare(b[1])),
         ch.goal, v => { ch.goal = v; })),
@@ -701,7 +739,7 @@ function renderChain() {
   if (result.diverged) {
     return el('section', {},
       el('p', { class: 'hint' }, t('chainHint')),
-      settings,
+      chainTabs, settings,
       el('p', { class: 'neg' }, t('chainDiverged')));
   }
 
@@ -771,7 +809,7 @@ function renderChain() {
 
   return el('section', {},
     el('p', { class: 'hint' }, t('chainHint')),
-    settings, tbl,
+    chainTabs, settings, tbl,
     el('div', { class: 'columns' }, totals, bypBox));
 }
 
@@ -1143,6 +1181,13 @@ function workersNeededCell(w) {
 function renderRepublic() {
   const eco = economy();
   if (!state.cities.length) state.cities.push(defaultCity());
+  const chains = chainPlans();
+  const buildings = prodBuildings();
+  const chainLabel = c => {
+    if (c.name) return c.name;
+    const r = DATA.resources.find(x => x.key === c.goal);
+    return r ? rname(r) : c.goal;
+  };
 
   const cityResults = state.cities.map(city => {
     const rowsResolved = city.rows.map(r => ({
@@ -1179,14 +1224,69 @@ function renderRepublic() {
   const cityRows = el('table', { class: 'data' },
     el('thead', {}, el('tr', {},
       el('th', {}, t('city')), el('th', {}, t('population')), el('th', {}, t('workerSurplus')),
-      el('th', {}, t('maxWatt')), el('th', {}, t('waterUse')), el('th', {}, t('wasteOut')))),
+      el('th', {}, t('maxWatt')), el('th', {}, t('waterUse')), el('th', {}, t('wasteOut')),
+      el('th', {}, t('assignedChain')))),
     el('tbody', {}, cityResults.map(({ city, res }, i) => el('tr', {},
       el('td', {}, city.name || `${t('city')} ${i + 1}`),
       el('td', { class: 'r' }, fmt(res.population, 0)),
       el('td', { class: 'r ' + (res.workerSurplus < 0 ? 'neg' : 'pos') }, fmt(res.workerSurplus, 1)),
       el('td', { class: 'r' }, fmt(res.maxKW, 0)),
       el('td', { class: 'r' }, fmt(res.water, 1)),
-      el('td', { class: 'r' }, fmt(res.waste, 1))))));
+      el('td', { class: 'r' }, fmt(res.waste, 1)),
+      el('td', {}, selectInput(
+        [['', t('unassigned')], ...chains.map((c, ci) => [String(ci), chainLabel(c)])],
+        Number.isInteger(city.assignedChain) ? String(city.assignedChain) : '',
+        v => { city.assignedChain = v === '' ? null : Number(v); }))))));
+
+  // Solve every chain plan (same seeding renderChain does, so the numbers
+  // shown here match what that tab would show) and pair each with whichever
+  // cities were assigned to it, so you can check e.g. "does City 1 have
+  // enough spare workers for the Steel plan" instead of one grand total.
+  const chainIndex = producersByResource(buildings, eco);
+  const chainResults = chains.map((chp, ci) => {
+    chp.qualityTiers ??= {};
+    for (const [key, producers] of chainIndex) {
+      if (!chp.qualityTiers[key] && producers.some(p => QUALITY_BUILDINGS_DE.has(p.building.de))) {
+        chp.qualityTiers[key] = [{ quality: 0.5, count: 0 }];
+      }
+    }
+    const result = solveChain(chp.goal, chp.amount, buildings, eco, {
+      productivity: state.plan.settings.productivity,
+      currency: state.currency,
+      imports: new Set(chp.imports),
+      producerChoice: new Map(Object.entries(chp.producerChoice)),
+      includeUtilities: chp.includeUtilities,
+      qualityTiers: new Map(Object.entries(chp.qualityTiers)),
+    });
+    const assigned = cityResults.filter(({ city }) => city.assignedChain === ci);
+    const population = assigned.reduce((a, { res }) => a + res.population, 0);
+    const workerSurplus = assigned.reduce((a, { res }) => a + res.workerSurplus, 0);
+    const industryWorkers = result.diverged ? null : result.totals.workers;
+    return { chp, ci, assigned, population, workerSurplus, industryWorkers, result };
+  });
+  const unassignedCities = cityResults.filter(({ city }) => !Number.isInteger(city.assignedChain));
+
+  const pairingRows = el('table', { class: 'data' },
+    el('thead', {}, el('tr', {},
+      el('th', {}, t('chainGoal')), el('th', {}, t('republicCities')), el('th', {}, t('population')),
+      el('th', {}, t('workerSurplus')), el('th', {}, t('republicIndustryWorkers')), el('th', {}, t('republicNetWorkers')))),
+    el('tbody', {},
+      ...chainResults.map(({ chp, assigned, population, workerSurplus, industryWorkers }) => {
+        const net = industryWorkers == null ? null : workerSurplus - industryWorkers;
+        return el('tr', {},
+          el('td', {}, chainLabel(chp)),
+          el('td', {}, assigned.length ? assigned.map(({ city }, i) => (i ? ', ' : '') + (city.name || t('city'))).join('') : '—'),
+          el('td', { class: 'r' }, fmt(population, 0)),
+          el('td', { class: 'r ' + (workerSurplus < 0 ? 'neg' : 'pos') }, fmt(workerSurplus, 1)),
+          el('td', { class: 'r' }, industryWorkers == null ? t('chainDiverged') : fmt(industryWorkers, 0)),
+          el('td', { class: 'r ' + (net != null && net < 0 ? 'neg' : 'pos') }, net == null ? '—' : fmt(net, 1)));
+      }),
+      unassignedCities.length ? el('tr', {},
+        el('td', {}, t('unassigned')),
+        el('td', {}, unassignedCities.map(({ city }, i) => (i ? ', ' : '') + (city.name || t('city'))).join('')),
+        el('td', { class: 'r' }, fmt(unassignedCities.reduce((a, { res }) => a + res.population, 0), 0)),
+        el('td', { class: 'r pos' }, fmt(unassignedCities.reduce((a, { res }) => a + res.workerSurplus, 0), 1)),
+        el('td', { class: 'r' }, '—'), el('td', { class: 'r' }, '—')) : null));
 
   const totals = el('div', { class: 'totalsbox' },
     el('h3', {}, t('republicWorkers')),
@@ -1208,6 +1308,8 @@ function renderRepublic() {
     el('p', { class: 'hint' }, t('republicHint')),
     el('p', { class: 'hint warn' }, t('republicConsumptionBlocked')),
     el('div', { class: 'tablewrap' }, cityRows),
+    el('h3', {}, t('republicPairings')),
+    el('div', { class: 'tablewrap' }, pairingRows),
     el('div', { class: 'columns' }, totals, utilities));
 }
 
