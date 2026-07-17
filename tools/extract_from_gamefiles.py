@@ -360,13 +360,23 @@ def build_dataset(buildings, repo_root, loc):
         sheet_by_norm.setdefault(norm(s['de']), []).append(s)
 
     def sheet_match(g, name):
+        """Returns (sheet_row, scale). scale is 1.0 for an exact worker-count
+        match; otherwise the candidate is a different capacity tier of the
+        same building (e.g. a DLC variant with fewer workers) sharing the
+        sheet's per-instance name, so its construction cost/utility totals
+        are scaled by worker ratio rather than copied as-is (a smaller-tier
+        variant needs proportionally less material/power/water, not the same
+        amount the sheet measured for the bigger one)."""
         alias = GAMEID_ALIASES.get(g['id'])
         cands = (sheet_by_name.get(alias.lower(), []) if alias
                  else sheet_by_name.get(name.lower()) or sheet_by_norm.get(norm(name)) or [])
         for s in cands:
             if s['workers'] == g['workers']:
-                return s
-        return cands[0] if cands else None
+                return s, 1.0
+        if cands:
+            s = cands[0]
+            return s, (g['workers'] / s['workers'] if s['workers'] else 1.0)
+        return None, 1.0
 
     out, seen = [], {}
     for g in buildings:
@@ -386,7 +396,7 @@ def build_dataset(buildings, repo_root, loc):
         name_en = g.get('en') or g.get('nameStr') or name_de
         if g['id'] in NAME_OVERRIDES:
             name_de, name_en = NAME_OVERRIDES[g['id']]
-        s = sheet_match(g, name_de)
+        s, scale = sheet_match(g, name_de)
 
         # dedupe: visual variants (_v2/_v3) share name+stats -> keep first;
         # same name but different stats -> qualify with worker count
@@ -431,14 +441,17 @@ def build_dataset(buildings, repo_root, loc):
             'workers': g['workers'],
             'production': prods,
             'consumption': cons,
-            'measured': bool(s),   # extras below come from the sheet (measured in-game)
+            # exact sheet measurement vs. scaled from a different capacity tier
+            'measured': bool(s) and scale == 1.0,
         }
         if g.get('dlc'):
             entry['dlc'] = g['dlc']
         if s:
             entry['group'] = s['group']
             for f in EXTRA_FIELDS:
-                entry[f] = s.get(f, 0)
+                # wastePerWorker is already a per-worker rate; everything else
+                # is a building total and scales with this variant's capacity.
+                entry[f] = s.get(f, 0) if f == 'wastePerWorker' else round(s.get(f, 0) * scale, 4)
         else:
             main_key = next(iter(g['production']), None) or next(iter(g['consumption']), None)
             gr = GROUP_BY_RESOURCE.get(main_key, MISC)
