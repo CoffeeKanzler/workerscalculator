@@ -141,6 +141,19 @@ migration — read before repeating them:
    from a paired unit not captured by our extraction. Skip these rather
    than inventing a name; don't let a "we should add everything" directive
    turn into fabricated identity for content the game itself doesn't label.
+8. **"Not in the files" doesn't mean "has to be guessed" — check whether
+   it's a formula first.** Vehicle construction-cost fields aren't in any
+   `.ini`/`.bin`, but they aren't arbitrary either: for several vehicle
+   types they're a near-exact linear function of the vehicle's own real
+   stats already on hand. `Lokomotive` Arbeitstage = `45*Leergewicht +
+   0.25*Motorleistung` fits all ~44 measured locomotives to within 0.02% —
+   that's derivation, not estimation. Before falling back to a rough
+   per-category average, fit a regression against the measured rows sharing
+   the new item's category and check the residual; only fall back to
+   averaging where no tight fit exists (`tools/add_missing_vehicles.py`
+   does both, per field). And when re-running such a script, fit only
+   against rows that were never estimated in a previous pass — otherwise a
+   regression can quietly converge on its own earlier guesses.
 
 ### Updating from the game files
 
