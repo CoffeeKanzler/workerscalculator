@@ -32,7 +32,11 @@ both "sell (like the sheet)" and "buy (import view)", default sell.)
 ### 2.1 Production chain solver ⭐ flagship feature ✅ done 2026-07-16
 (Implemented in `js/chain.js` + "Production chain" tab: fixpoint solver,
 per-resource import toggle & producer choice, power/water expansion,
-byproduct surplus report, 5 tests.)
+byproduct surplus report, 5 tests. Extended 2026-07-17: mine deposits are no
+longer one blended quality per resource — `qualityTiers` lets you specify
+several deposits at different qualities, with a trailing auto-fill sentinel
+so the simple case still needs no input. Mine quality inputs across the app
+now default to 50%, shown as a percentage instead of a raw multiplier.)
 - **What:** Inverse planning. User states a goal ("20 t/day clothes"), the app walks the
   production graph backwards and proposes building counts for the whole upstream chain
   (fabric → chemicals/plants → power/water → workers), with totals: workers, build cost,
@@ -46,14 +50,21 @@ byproduct surplus report, 5 tests.)
     (few passes converge) or treat electricity/water as terminal "utility" inputs.
 - **Effort:** medium-large. **Files:** new `js/chain.js`, new tab in `js/app.js`.
 
-### 2.2 Republic overview (link cities ↔ industry)
-- **What:** A dashboard combining all cities + the production plan: total worker surplus
-  vs. workers needed, food/meat/clothes/alcohol demand of the population vs. production,
-  power and heat balance republic-wide.
+### 2.2 Republic overview (link cities ↔ industry) 🚧 in progress 2026-07-17
+- **What:** A dashboard combining the City tab's city plan(s) + the Production plan:
+  total worker surplus vs. workers needed, power/water/heat balance republic-wide.
+  Both inputs are the app's own existing hypothetical plans (no save-file parsing
+  needed - `evaluateCity`/`evaluatePlan` already work from user-entered rows).
 - **Why:** the sheet keeps city and industry planning disconnected; connecting them answers
   "can my republic actually staff and feed this?"
-- **Depends on:** consumption-per-citizen constants (in game files; approximations exist in
-  the sheet's city tabs).
+- **Blocked:** the food/meat/clothes/alcohol demand-vs-production comparison needs
+  per-citizen consumption rates, which are **not available anywhere checked** - not in
+  the game's `.ini` files (grepped `media_soviet` for citizen/consumption tokens, none),
+  not in any `data/*.json`, and not in the accessible spreadsheet tabs either (fetched
+  "Gesamtübersicht"/"Städte/Citys" directly, no per-capita figures present). Shipping
+  worker-surplus + power/water/heat now; the demand panel stays out until this constant
+  turns up (in-game observation, or worth another binary-RE pass if someone wants to
+  spend the effort).
 - **Effort:** medium. **Files:** `js/calc.js`, new tab.
 
 ## Phase 3 – Data quality & freshness
@@ -89,14 +100,20 @@ lengths, heating-plant output semantics.
 - **Effort:** medium (ini dialect is simple, volume is large). **Blocked on:** game files
   on the dev machine.
 
-### 3.2 Versioned data sets
+### 3.2 Versioned data sets 🟡 partially done
+(The "Building data" toggle in the header already switches the whole app
+between game-file-derived and spreadsheet-derived buildings - the main
+case this item cared about. Not done: multiple dated game-version snapshots
+side by side.)
 - **What:** `data/` becomes selectable: ship 2–3 snapshots (e.g. "sheet 2026-07",
   "game 1.0.x") and let the user pick, mirroring how their save may lag behind patches.
 - **Effort:** small once 3.1 exists.
 
 ## Phase 4 – Usability & reach
 
-### 4.1 Plan export / import / share links
+### 4.1 Plan export / import / share links ✅ done
+(Export/import as JSON and gzip-compressed share links are implemented -
+the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
 - **What:** Export current state (plan, cities, price overrides) as JSON download; import
   the same; share-URL with state LZ-compressed into the fragment (`#plan=...`).
 - **Why:** localStorage is fragile; share links spread the tool (Reddit/Steam forums).
@@ -118,7 +135,9 @@ lengths, heating-plant output semantics.
   intermediate step.
 - **Effort:** medium (pure CSS/HTML, no logic).
 
-### 4.5 Per-tab URLs
+### 4.5 Per-tab URLs ✅ done
+(Hash routing is implemented - `location.hash`/`history.replaceState` in
+`js/app.js` keep the URL and the active tab in sync both ways.)
 - **What:** Hash routing (`#/city`, `#/prices`) so links land on the right view;
   back button works.
 - **Effort:** small.
