@@ -197,7 +197,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   keeping an operating vehicle
   is deliberately not assigned an invented cash value. The supplied save yields complete
   comparisons for 125 of 1,294 owned vehicles and exact current quotes for 17 of 75
-  used-market offers; capacity and operating role remain an explicit replacement caveat.
+  used-market offers. Capacity-safe replacement candidates require the same vehicle category
+  and transport subtype, never reduce capacity, and show net cash against the closest-capacity
+  owned target; speed, power, condition, schedules, and fleet count remain explicit caveats.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
   catalog contains 287 packages with 853 building and 63 vehicle definitions as compact
@@ -215,8 +217,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   `$LIFESPAN` fact is present; vanilla/DLC models use verified category defaults. An earlier
   10%/20%/70% assumption was found to apply to container vehicles, not ships, and was never
   shipped as a ship recommendation.
-  - **Next high-value save modules:** add role/capacity-aware used-market replacement ranking;
-  building inventories and production buffers; vehicle lines and schedules; distribution/logistics
+  - **Next high-value save modules:** building inventories and production buffers; vehicle lines
+  and schedules; distribution/logistics
   bottlenecks; and optional live
   follow of a save directory. Cosmetic map/network geometry stays out of scope until a
   planner feature needs it.

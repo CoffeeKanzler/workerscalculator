@@ -14,6 +14,7 @@ import {
   vehicleComponentBaseValue,
   vehicleEconomicOpportunity,
   vehicleUsedMarketQuote,
+  rankUsedVehicleReplacements,
   shipEconomicOpportunity,
   shipUsedMarketQuote,
   ownedVehicleExportValue,
@@ -341,6 +342,53 @@ test('used aircraft quote includes the exact export-market aircraft factor', () 
     introductionYear: 1959, transportSubtype: 7, capacity: 22, electric: null,
   });
   assert.equal(result.baseValue, vehicleComponentBaseValue(recipe, 'RUB', 'RUB', economy) * 2);
+});
+
+test('used replacement ranking requires exact role match and no capacity downgrade', () => {
+  const owned = [
+    { record: { modelFacts: { name: 'Small bus', runtimeCategory: 2,
+      transportSubtype: 7, capacity: 40 } }, cashOutAction: 'export',
+    exportValue: 80, recycleAfterLabor: 70 },
+    { record: { modelFacts: { name: 'Large bus', runtimeCategory: 2,
+      transportSubtype: 7, capacity: 80 } }, cashOutAction: 'recycle',
+    exportValue: 90, recycleAfterLabor: 120 },
+    { record: { modelFacts: { name: 'Oil truck', runtimeCategory: 2,
+      transportSubtype: 3, capacity: 20 } }, cashOutAction: 'export',
+    exportValue: 60, recycleAfterLabor: 40 },
+  ];
+  const quotes = [
+    { offer: { modelFacts: { name: 'Used bus 90', runtimeCategory: 2,
+      transportSubtype: 7, capacity: 90 } }, purchaseValue: 150 },
+    { offer: { modelFacts: { name: 'Used bus 60', runtimeCategory: 2,
+      transportSubtype: 7, capacity: 60 } }, purchaseValue: 100 },
+    { offer: { modelFacts: { name: 'Used oil truck', runtimeCategory: 2,
+      transportSubtype: 3, capacity: 25 } }, purchaseValue: 70 },
+    { offer: { modelFacts: { name: 'Wrong category', runtimeCategory: 1,
+      transportSubtype: 7, capacity: 100 } }, purchaseValue: 1 },
+  ];
+
+  const ranked = rankUsedVehicleReplacements(owned, quotes);
+  assert.deepEqual(ranked.map(item => [
+    item.quote.offer.modelFacts.name,
+    item.targetOpportunity.record.modelFacts.name,
+    item.compatibleOwnedCount,
+    item.capacityGain,
+    item.netCashRequired,
+  ]), [
+    ['Used oil truck', 'Oil truck', 1, 5, 10],
+    ['Used bus 60', 'Small bus', 1, 20, 20],
+    ['Used bus 90', 'Large bus', 2, 10, 30],
+  ]);
+});
+
+test('used replacement ranking excludes missing capacity and non-finite cash routes', () => {
+  assert.deepEqual(rankUsedVehicleReplacements([
+    { record: { modelFacts: { runtimeCategory: 3, transportSubtype: 0, capacity: 0 } },
+      cashOutAction: 'export', exportValue: 10 },
+  ], [
+    { offer: { modelFacts: { runtimeCategory: 3, transportSubtype: 0, capacity: 10 } },
+      purchaseValue: 20 },
+  ]), []);
 });
 
 test('container transport subtype 12/13 doubles work but not recovered materials', () => {

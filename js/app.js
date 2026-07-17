@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=41';
+import { STRINGS } from './i18n.js?v=42';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -16,8 +16,9 @@ import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
-  resolveVehicleModels, shareSafeSaveImport, vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=3';
+  rankUsedVehicleReplacements, resolveVehicleModels, shareSafeSaveImport,
+  vehicleEconomicOpportunity, vehicleUsedMarketQuote,
+} from './fleet.js?v=4';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',
@@ -2632,7 +2633,11 @@ function renderRepublic() {
     ? usedFleetRecords.map(offer => vehicleUsedMarketQuote(offer, {
       year: priceRecord.year, currency: state.currency, economy: eco,
     })).filter(Boolean).sort((a, b) => a.purchaseValue - b.purchaseValue) : [];
+  const replacementCandidates = rankUsedVehicleReplacements(
+    exactFleetOpportunities, exactUsedVehicleQuotes,
+  );
   const fleetActionLabel = action => t(action === 'recycle' ? 'fleetRecycle' : 'fleetExport');
+  const fleetCapacityUnit = facts => facts?.transportSubtype === 7 ? t('fleetPassengers') : 't';
   const materialSummary = opportunity => Object.entries(opportunity.recycling.materials)
     .filter(([, amount]) => amount > 0.01)
     .map(([key, amount]) => {
@@ -2690,9 +2695,25 @@ function renderRepublic() {
           kv(t('fleetUsedPrice'), `${fmt(quote.purchaseValue, 0)} ${cur()}`),
           kv(t('fleetOfferFactor'), `${fmt(quote.factor * 100, 1)} %`),
           kv(t('fleetCapacity'), Number.isFinite(quote.offer.modelFacts.capacity)
-            ? `${fmt(quote.offer.modelFacts.capacity, 0)} t` : '—')))),
+            ? `${fmt(quote.offer.modelFacts.capacity, 0)} ${fleetCapacityUnit(quote.offer.modelFacts)}` : '—')))),
       el('p', { class: 'hint' }, t('fleetUsedCoverage')
         .replace('{exact}', fmt(exactUsedVehicleQuotes.length, 0)).replace('{total}', fmt(usedFleetRecords.length, 0)))) : null,
+    replacementCandidates.length ? el('div', { class: 'used-fleet-offers' },
+      el('h4', {}, t('fleetReplacementHeading')),
+      el('p', { class: 'hint' }, t('fleetReplacementHint')),
+      el('div', { class: 'institution-grid' }, ...replacementCandidates.slice(0, 3).map(candidate => {
+        const offerFacts = candidate.quote.offer.modelFacts;
+        const ownedFacts = candidate.targetOpportunity.record.modelFacts;
+        const releasesCash = candidate.netCashRequired < 0;
+        return el('div', { class: 'totalsbox institution-card' },
+          el('h3', {}, offerFacts.name,
+            el('span', { class: 'evidence-badge derived' }, t('fleetReplacement'))),
+          kv(t('fleetReplacementTarget'), ownedFacts.name),
+          kv(t('fleetCapacityChange'), `${fmt(ownedFacts.capacity, 0)} → ${fmt(offerFacts.capacity, 0)} ${fleetCapacityUnit(offerFacts)}`),
+          kv(t(releasesCash ? 'fleetCashReleased' : 'fleetNetCashRequired'),
+            `${fmt(Math.abs(candidate.netCashRequired), 0)} ${cur()}`),
+          kv(t('fleetCompatibleOwned'), fmt(candidate.compatibleOwnedCount, 0)));
+      }))) : null,
     exactFleetOpportunities.length ? el('details', { class: 'secondary-section' },
       el('summary', {}, `${t('fleetDetails')} (${fmt(exactFleetOpportunities.length, 0)})`),
       el('p', { class: 'hint warn' }, t('fleetKeepCaveat')),

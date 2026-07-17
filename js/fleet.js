@@ -330,6 +330,48 @@ export function shipUsedMarketQuote(offer, options) {
   return vehicleUsedMarketQuote(offer, options);
 }
 
+export function rankUsedVehicleReplacements(ownedOpportunities, usedQuotes) {
+  if (!Array.isArray(ownedOpportunities) || !Array.isArray(usedQuotes)) return [];
+  const results = [];
+  for (const quote of usedQuotes) {
+    const offerFacts = quote?.offer?.modelFacts;
+    if (!Number.isFinite(quote?.purchaseValue)
+        || !Number.isInteger(offerFacts?.runtimeCategory)
+        || !Number.isFinite(offerFacts?.transportSubtype)
+        || !Number.isFinite(offerFacts?.capacity) || !(offerFacts.capacity > 0)) continue;
+    const compatible = ownedOpportunities.flatMap(opportunity => {
+      const ownedFacts = opportunity?.record?.modelFacts;
+      const cashOutValue = opportunity?.cashOutAction === 'recycle'
+        ? opportunity.recycleAfterLabor : opportunity?.exportValue;
+      if (!Number.isFinite(cashOutValue)
+          || ownedFacts?.runtimeCategory !== offerFacts.runtimeCategory
+          || ownedFacts?.transportSubtype !== offerFacts.transportSubtype
+          || !Number.isFinite(ownedFacts?.capacity) || !(ownedFacts.capacity > 0)
+          || offerFacts.capacity < ownedFacts.capacity) return [];
+      return [{
+        opportunity,
+        cashOutValue,
+        capacityGain: offerFacts.capacity - ownedFacts.capacity,
+      }];
+    }).sort((a, b) => a.capacityGain - b.capacityGain
+      || (quote.purchaseValue - a.cashOutValue) - (quote.purchaseValue - b.cashOutValue));
+    if (!compatible.length) continue;
+    const best = compatible[0];
+    results.push({
+      quote,
+      targetOpportunity: best.opportunity,
+      compatibleOwnedCount: compatible.length,
+      capacityGain: best.capacityGain,
+      capacityRatio: offerFacts.capacity / best.opportunity.record.modelFacts.capacity,
+      cashOutValue: best.cashOutValue,
+      netCashRequired: quote.purchaseValue - best.cashOutValue,
+    });
+  }
+  return results.sort((a, b) => a.netCashRequired - b.netCashRequired
+    || a.capacityGain - b.capacityGain
+    || a.quote.purchaseValue - b.quote.purchaseValue);
+}
+
 const NORMAL_RECYCLE_CONVERSIONS = {
   steel: [['waste_steel', 0.9], ['waste_other', 0.1]],
   aluminium: [['waste_aluminium', 0.95], ['waste_other', 0.05]],
