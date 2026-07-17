@@ -131,8 +131,9 @@ test('city: worker surplus (200 pop, 94 workers) = -20.5; service coverage', () 
   assert.ok(Math.abs(svc.utilization - 200 / (150 * 0.7 * 18)) < 1e-9);
   // 10 residential buildings → needs 10/7 secret police vehicles
   assert.ok(Math.abs(r.secretPolice.needed - 10 / 7) < 1e-9);
-  // school is well under capacity (utilization < 1) -> no extra workers needed
-  assert.equal(svc.workersNeeded, 0);
+  // school is well under capacity -> optimal staffing is a fraction of current
+  assert.ok(Math.abs(svc.workersNeeded - 94 * svc.utilization) < 1e-9);
+  assert.ok(svc.workersNeeded < 94);
   // no quality data on this test building -> unrated, not zeroed
   assert.equal(r.avgHousingQuality, null);
 });
@@ -157,7 +158,7 @@ test('city: average housing quality is population-weighted over rated buildings 
   assert.ok(Math.abs(r.avgHousingQuality - 0.8) < 1e-9);
 });
 
-test('city: workersNeeded scales with the utilization overshoot', () => {
+test('city: workersNeeded (optimal staffing) scales with utilization above 100%', () => {
   const residential = {
     de: 'TestHaus', type: { de: 'Plattenbau', en: 'Prefab' }, inhabitants: 4000, workers: 0,
     power: 0, maxKW: 0, water: 0, hotwater: 0, waste: 0, workdays: 0,
@@ -175,8 +176,9 @@ test('city: workersNeeded scales with the utilization overshoot', () => {
   const r = evaluateCity(city, eco());
   const svc = r.services.find(s => s.id === 'school');
   assert.ok(svc.utilization > 1);
-  // workersNeeded = totalWorkers * (utilization - 1)
-  assert.ok(Math.abs(svc.workersNeeded - 94 * (svc.utilization - 1)) < 1e-9);
+  // workersNeeded = totalWorkers * utilization (more than currently staffed)
+  assert.ok(Math.abs(svc.workersNeeded - 94 * svc.utilization) < 1e-9);
+  assert.ok(svc.workersNeeded > 94);
 });
 
 test('LowTech example from the sheet = 4 points', () => {

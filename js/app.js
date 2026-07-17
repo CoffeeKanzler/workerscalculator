@@ -1,6 +1,6 @@
 import { STRINGS } from './i18n.js?v=15';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=18';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=19';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=13';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -1018,11 +1018,12 @@ function utilizationCell(u) {
   return el('td', { class: 'r ' + cls }, fmt(u * 100, 0) + ' %');
 }
 
-// Extra workers of that building type needed to close an over-utilization gap
-// (0 once utilization is at or below 100%, '—' when there's nothing built yet).
+// Total staff of that building type for exactly 100% utilization — below the
+// current headcount if under-utilized, above it if over-utilized ('—' when
+// there's nothing built yet to derive a worker/capacity ratio from).
 function workersNeededCell(w) {
   if (w === null) return el('td', { class: 'r' }, '—');
-  return el('td', { class: 'r' + (w > 0 ? ' warn' : '') }, fmt(w, 0));
+  return el('td', { class: 'r' }, fmt(w, 0));
 }
 
 // ---------------------------------------------------------------- trains tab

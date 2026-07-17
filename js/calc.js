@@ -333,14 +333,15 @@ export function evaluateCity(city, eco) {
   res.buildCostRUB += res.workdays * eco.workday('RUB');
   res.buildCostUSD += res.workdays * eco.workday('USD');
 
-  // Extra workers of a given building type needed to close an over-utilization
-  // gap, assuming the same worker/capacity mix as what's already built (e.g.
-  // utilization 1.2 -> 20% more capacity, hence ~20% more workers of that type).
-  const workersToFillGap = (typeDe, utilization) => {
-    if (utilization == null || utilization <= 1) return utilization == null ? null : 0;
+  // Total workers of a given building type that would exactly hit 100%
+  // utilization, assuming the same worker/capacity mix as what's already
+  // built (workers scale with capacity, so optimal = current * utilization:
+  // below current staffing if under-utilized, above it if over-utilized).
+  const optimalWorkers = (typeDe, utilization) => {
+    if (utilization == null) return null;
     const totalWorkers = rows.filter(r => r.building.type.de === typeDe)
       .reduce((a, r) => a + (r.building.workers ?? 0) * r.count, 0);
-    return totalWorkers * (utilization - 1);
+    return totalWorkers * utilization;
   };
 
   for (const svc of SERVICES) {
@@ -350,7 +351,7 @@ export function evaluateCity(city, eco) {
     const utilization = provided > 0 ? population / provided : null;
     res.services.push({
       ...svc, capacity: cap, provided, utilization,
-      workersNeeded: workersToFillGap(svc.typeDe, utilization),
+      workersNeeded: optimalWorkers(svc.typeDe, utilization),
     });
   }
   // Residential building count & secret police (1 vehicle per 7 residential buildings).
@@ -364,7 +365,7 @@ export function evaluateCity(city, eco) {
     provided: secretCap,
     needed: residential / TUNABLES.secretPolicePerBuildings,
     utilization: secretUtilization,
-    workersNeeded: workersToFillGap('Geheimpolizei', secretUtilization),
+    workersNeeded: optimalWorkers('Geheimpolizei', secretUtilization),
   };
   // Heating plants inside the city (special value → m³ hot water).
   const heatCap = rows.filter(r => r.building.type.de === 'Heizwerk')
@@ -372,7 +373,7 @@ export function evaluateCity(city, eco) {
   const heatUtilization = heatCap > 0 ? res.hotwater / heatCap : null;
   res.heating = {
     provided: heatCap, utilization: heatUtilization,
-    workersNeeded: workersToFillGap('Heizwerk', heatUtilization),
+    workersNeeded: optimalWorkers('Heizwerk', heatUtilization),
   };
   // Infrastructure sizing.
   const cable = CABLES.find(c => c.de === city.cable) || CABLES[2];
