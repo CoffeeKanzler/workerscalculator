@@ -126,6 +126,21 @@ migration — read before repeating them:
    driving the real page (cursor loss on re-render; corrupted decimal entry
    from tearing down the DOM mid-keystroke). Both needed a real browser
    session to catch.
+6. **An exact-string name match against game files will wildly overstate a
+   "missing data" gap if the sheet normalizes names differently.** A vehicle
+   gap count of ~800 came from comparing raw game names straight to sheet
+   names; the sheet strips the parenthetical cargo-type suffix game files
+   include (`"Container Liner (Fahrzeuge/Container)"` vs `"Container
+   Liner"`). Stripping that suffix before matching dropped the real gap to
+   ~583. Always normalize both sides the same way before concluding
+   something is absent, and sanity-check a "nothing matched" category (e.g.
+   ships: 3/21) by hand before trusting it.
+7. **Not every raw game entry has a usable display name.** ~228 of ~1500
+   raw vehicle entries (concentrated in DLC1 and DLC3) have no `de`/`en`
+   name at all — likely unused variants or wagons whose name is inherited
+   from a paired unit not captured by our extraction. Skip these rather
+   than inventing a name; don't let a "we should add everything" directive
+   turn into fabricated identity for content the game itself doesn't label.
 
 ### Updating from the game files
 
