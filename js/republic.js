@@ -118,7 +118,10 @@ export function republicAlerts(model) {
     }
   }
   for (const area of model.plan.areas) {
-    if (Number.isFinite(area.netWorkers) && area.netWorkers < 0) {
+    if ((area.unresolvedBuildingCount ?? 0) > 0) {
+      add('warning', area, 'coverage.workshop', area.unresolvedBuildingCount, 0, 'Workshop catalog');
+    }
+    if (area.workforceLinked !== false && Number.isFinite(area.netWorkers) && area.netWorkers < 0) {
       add('critical', area, 'netWorkers', area.netWorkers, 0, 'editable plan');
     }
   }

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1876960200",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:38:27+00:00",
+  "buildings": [
+    {
+      "id": "1876960200/Cinema",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cinema Sojus",
+      "workshopId": "1876960200",
+      "modPath": "Cinema"
+    }
+  ],
+  "vehicles": []
+}

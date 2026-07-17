@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   citizenProductivity, aggregateCitizensByScope, compactObservedBuildings,
   groupObservedProduction, latestProductivity,
+  inferObservedHousing,
 } from '../js/save_model.js';
 
 test('citizens aggregate through residence buildings without forced assignment', () => {
@@ -23,6 +24,20 @@ test('citizens aggregate through residence buildings without forced assignment',
   assert.equal(result.recordCount, 3);
   assert.ok(Math.abs(result.scopes.get(4).productivity -
     (citizenProductivity(citizens[0]) + citizenProductivity(citizens[1])) / 2) < 1e-12);
+});
+
+test('resident links identify unknown workshop housing without inventing capacity', () => {
+  const buildings = [
+    { index: 1, scopeId: 4, type: '2611814221/block3' },
+    { index: 2, scopeId: 4, type: '2611814221/block3' },
+    { index: 3, scopeId: 4, type: 'known_house' },
+  ];
+  const citizens = [1, 1, 1, 2, 2, 3].map(residenceBuildingIndex => ({ residenceBuildingIndex }));
+  const rows = inferObservedHousing(citizens, buildings, building => building.type === 'known_house');
+  assert.deepEqual(rows, [{
+    scopeId: 4, type: '2611814221/block3', buildingCount: 2, residents: 5,
+    maxObservedOccupancy: 3, buildingIndices: [1, 2],
+  }]);
 });
 
 test('latest productivity walks backward past missing current values', () => {

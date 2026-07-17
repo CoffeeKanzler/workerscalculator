@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1884103014",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:46:34+00:00",
+  "buildings": [
+    {
+      "id": "1884103014/Stadium",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stadium",
+      "workshopId": "1884103014",
+      "modPath": "Stadium"
+    }
+  ],
+  "vehicles": []
+}

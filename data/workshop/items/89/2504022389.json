@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2504022389",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:34:26+00:00",
+  "buildings": [
+    {
+      "id": "2504022389/Hospital_helicopter",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 50.0,
+      "professors": 50.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hospital with helipad",
+      "workshopId": "2504022389",
+      "modPath": "Hospital_helicopter"
+    }
+  ],
+  "vehicles": []
+}

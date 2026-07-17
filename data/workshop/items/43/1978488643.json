@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1978488643",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:07:07+00:00",
+  "buildings": [
+    {
+      "id": "1978488643/i-700A",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 368.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 368.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "I-700A",
+      "workshopId": "1978488643",
+      "modPath": "i-700A"
+    },
+    {
+      "id": "1978488643/i-700H",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 368.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 368.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "I-700H",
+      "workshopId": "1978488643",
+      "modPath": "i-700H"
+    },
+    {
+      "id": "1978488643/i-700Ya",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 552.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 552.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "I-700YA",
+      "workshopId": "1978488643",
+      "modPath": "i-700Ya"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2116699267",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:02:15+00:00",
+  "buildings": [
+    {
+      "id": "2116699267/przychodnia",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 7.0,
+      "professors": 7.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small clinic",
+      "workshopId": "2116699267",
+      "modPath": "przychodnia"
+    }
+  ],
+  "vehicles": []
+}

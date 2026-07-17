@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1858616795",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:47:41+00:00",
+  "buildings": [
+    {
+      "id": "1858616795/panelak_high",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "21 storey prefab flats",
+      "workshopId": "1858616795",
+      "modPath": "panelak_high"
+    }
+  ],
+  "vehicles": []
+}

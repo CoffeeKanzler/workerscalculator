@@ -1,0 +1,620 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2278229891",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:47:58+00:00",
+  "buildings": [
+    {
+      "id": "2278229891/e_100",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 260.0,
+        "gravel": 10.0,
+        "steel": 10.7,
+        "concrete": 100.0,
+        "ecomponents": 0.7
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.0,
+        "living": 0.0
+      },
+      "nameStr": "Embankment 100 m",
+      "workshopId": "2278229891",
+      "modPath": "e_100"
+    },
+    {
+      "id": "2278229891/e_12",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 36.0,
+        "gravel": 1.2,
+        "steel": 1.2,
+        "concrete": 12.0
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.0,
+        "living": 0.0
+      },
+      "nameStr": "Embankment 12 m",
+      "workshopId": "2278229891",
+      "modPath": "e_12"
+    },
+    {
+      "id": "2278229891/e_50",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 130.0,
+        "gravel": 5.0,
+        "steel": 5.4,
+        "concrete": 50.0,
+        "ecomponents": 0.4
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.0,
+        "living": 0.0
+      },
+      "nameStr": "Embankment 50 m",
+      "workshopId": "2278229891",
+      "modPath": "e_50"
+    },
+    {
+      "id": "2278229891/e_bhe",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 600.0,
+        "concrete": 10.0,
+        "bricks": 25.0,
+        "mcomponents": 1.5,
+        "gravel": 6.0,
+        "steel": 9.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embankment heat exchanger",
+      "workshopId": "2278229891",
+      "modPath": "e_bhe"
+    },
+    {
+      "id": "2278229891/e_ic_90",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 66.0,
+        "gravel": 2.2,
+        "steel": 2.3,
+        "concrete": 22.0,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.0,
+        "living": 0.0
+      },
+      "nameStr": "Embankment 90°",
+      "workshopId": "2278229891",
+      "modPath": "e_ic_90"
+    },
+    {
+      "id": "2278229891/e_icr_22",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 57.0,
+        "gravel": 1.9,
+        "steel": 2.0,
+        "concrete": 19.0,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.0,
+        "living": 0.0
+      },
+      "nameStr": "Embankment 22.5° i",
+      "workshopId": "2278229891",
+      "modPath": "e_icr_22"
+    },
+    {
+      "id": "2278229891/e_icrs_22",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT",
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 12.0,
+        "gravel": 0.4,
+        "steel": 0.4,
+        "concrete": 4.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embankment 22.5° is",
+      "workshopId": "2278229891",
+      "modPath": "e_icrs_22"
+    },
+    {
+      "id": "2278229891/e_ocr_22",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 48.0,
+        "gravel": 1.6,
+        "steel": 1.7,
+        "concrete": 16.0,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.0,
+        "living": 0.0
+      },
+      "nameStr": "Embankment 22.5° o",
+      "workshopId": "2278229891",
+      "modPath": "e_ocr_22"
+    },
+    {
+      "id": "2278229891/e_ocrs_22",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT",
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 12.0,
+        "gravel": 0.4,
+        "steel": 0.4,
+        "concrete": 4.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embankment 22.5° os",
+      "workshopId": "2278229891",
+      "modPath": "e_ocrs_22"
+    },
+    {
+      "id": "2278229891/e_od",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 51.0,
+        "gravel": 1.7,
+        "steel": 1.8,
+        "concrete": 17.0,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.0,
+        "living": 0.0
+      },
+      "nameStr": "Embankment observation deck",
+      "workshopId": "2278229891",
+      "modPath": "e_od"
+    },
+    {
+      "id": "2278229891/e_p14",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 150.0,
+        "gravel": 21.0,
+        "asphalt": 18.0,
+        "steel": 5.4,
+        "concrete": 50.0,
+        "ecomponents": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embankment parking 14",
+      "workshopId": "2278229891",
+      "modPath": "e_p14"
+    },
+    {
+      "id": "2278229891/e_p32",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 300.0,
+        "gravel": 26.0,
+        "asphalt": 36.0,
+        "steel": 10.7,
+        "concrete": 100.0,
+        "ecomponents": 0.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embankment parking 32",
+      "workshopId": "2278229891",
+      "modPath": "e_p32"
+    },
+    {
+      "id": "2278229891/e_pb",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {
+        "workers": 475.0,
+        "gravel": 25.0,
+        "asphalt": 10.0,
+        "steel": 13.7,
+        "concrete": 130.0,
+        "ecomponents": 0.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embankment pier big",
+      "workshopId": "2278229891",
+      "modPath": "e_pb"
+    },
+    {
+      "id": "2278229891/e_stairs_r",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 150.0,
+        "gravel": 5.0,
+        "steel": 5.4,
+        "concrete": 50.0,
+        "ecomponents": 0.2
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.0,
+        "living": 0.0
+      },
+      "nameStr": "Embankment stairs",
+      "workshopId": "2278229891",
+      "modPath": "e_stairs_r"
+    },
+    {
+      "id": "2278229891/e_stop_b1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200.0
+      },
+      "constructionResources": {
+        "workers": 235.0,
+        "gravel": 16.0,
+        "asphalt": 10.0,
+        "steel": 4.3,
+        "concrete": 40.0,
+        "ecomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embankment bus stop 1",
+      "workshopId": "2278229891",
+      "modPath": "e_stop_b1"
+    },
+    {
+      "id": "2278229891/e_stop_b2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200.0
+      },
+      "constructionResources": {
+        "workers": 235.0,
+        "gravel": 16.0,
+        "asphalt": 10.0,
+        "steel": 4.3,
+        "concrete": 40.0,
+        "ecomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embankment bus stop 2",
+      "workshopId": "2278229891",
+      "modPath": "e_stop_b2"
+    },
+    {
+      "id": "2278229891/e_stop_bt",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200.0
+      },
+      "constructionResources": {
+        "workers": 275.0,
+        "gravel": 32.0,
+        "asphalt": 10.0,
+        "steel": 4.3,
+        "concrete": 42.0,
+        "prefabpanels": 7.0,
+        "ecomponents": 0.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embankment Bus Tram stop",
+      "workshopId": "2278229891",
+      "modPath": "e_stop_bt"
+    },
+    {
+      "id": "2278229891/e_stop_t1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200.0
+      },
+      "constructionResources": {
+        "workers": 145.0,
+        "gravel": 12.0,
+        "steel": 4.3,
+        "concrete": 40.0,
+        "prefabpanels": 3.5,
+        "ecomponents": 0.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embankment tram stop 1",
+      "workshopId": "2278229891",
+      "modPath": "e_stop_t1"
+    },
+    {
+      "id": "2278229891/e_stop_t2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200.0
+      },
+      "constructionResources": {
+        "workers": 160.0,
+        "gravel": 20.0,
+        "steel": 6.6,
+        "concrete": 42.0,
+        "prefabpanels": 7.0,
+        "ecomponents": 0.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embankment tram stop 2",
+      "workshopId": "2278229891",
+      "modPath": "e_stop_t2"
+    },
+    {
+      "id": "2278229891/e_t_l",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 7.5,
+        "gravel": 2.5,
+        "steel": 0.25,
+        "concrete": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "embankment - the final element L",
+      "workshopId": "2278229891",
+      "modPath": "e_t_l"
+    },
+    {
+      "id": "2278229891/e_t_r",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10.0,
+        "gravel": 2.5,
+        "steel": 0.25,
+        "concrete": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embankment - the final element R",
+      "workshopId": "2278229891",
+      "modPath": "e_t_r"
+    }
+  ],
+  "vehicles": []
+}

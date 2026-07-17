@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2333173978",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:05:07+00:00",
+  "buildings": [
+    {
+      "id": "2333173978/ec_10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 30.0,
+        "gravel": 1.0,
+        "steel": 1.0,
+        "concrete": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment 10 m",
+      "workshopId": "2333173978",
+      "modPath": "ec_10"
+    },
+    {
+      "id": "2333173978/ec_100",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 300.0,
+        "gravel": 10.0,
+        "steel": 10.0,
+        "concrete": 100.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment 100 m",
+      "workshopId": "2333173978",
+      "modPath": "ec_100"
+    },
+    {
+      "id": "2333173978/ec_50",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 150.0,
+        "gravel": 5.0,
+        "steel": 5.0,
+        "concrete": 50.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment 50 m",
+      "workshopId": "2333173978",
+      "modPath": "ec_50"
+    },
+    {
+      "id": "2333173978/ec_beacon",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60.0,
+        "gravel": 0.5,
+        "steel": 1.0,
+        "concrete": 1.0,
+        "ecomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment beacon",
+      "workshopId": "2333173978",
+      "modPath": "ec_beacon"
+    },
+    {
+      "id": "2333173978/ec_i_22",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 15.0,
+        "gravel": 0.5,
+        "steel": 0.5,
+        "concrete": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment 22.5° i",
+      "workshopId": "2333173978",
+      "modPath": "ec_i_22"
+    },
+    {
+      "id": "2333173978/ec_i_90",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60.0,
+        "gravel": 2.0,
+        "steel": 2.0,
+        "concrete": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment 90° i",
+      "workshopId": "2333173978",
+      "modPath": "ec_i_90"
+    },
+    {
+      "id": "2333173978/ec_ib_22",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60.0,
+        "gravel": 2.0,
+        "steel": 2.0,
+        "concrete": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment 22.5° i",
+      "workshopId": "2333173978",
+      "modPath": "ec_ib_22"
+    },
+    {
+      "id": "2333173978/ec_il_45",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 30.0,
+        "gravel": 1.0,
+        "steel": 1.0,
+        "concrete": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment 45° il",
+      "workshopId": "2333173978",
+      "modPath": "ec_il_45"
+    },
+    {
+      "id": "2333173978/ec_ir_45",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 30.0,
+        "gravel": 1.0,
+        "steel": 1.0,
+        "concrete": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment 45° ir",
+      "workshopId": "2333173978",
+      "modPath": "ec_ir_45"
+    },
+    {
+      "id": "2333173978/ec_o_22",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 15.0,
+        "gravel": 0.5,
+        "steel": 0.5,
+        "concrete": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment 22.5° o",
+      "workshopId": "2333173978",
+      "modPath": "ec_o_22"
+    },
+    {
+      "id": "2333173978/ec_ob_22",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60.0,
+        "gravel": 2.0,
+        "steel": 2.0,
+        "concrete": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment 22.5° o",
+      "workshopId": "2333173978",
+      "modPath": "ec_ob_22"
+    },
+    {
+      "id": "2333173978/ec_ol_45",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 30.0,
+        "gravel": 1.0,
+        "steel": 1.0,
+        "concrete": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment 45° ol",
+      "workshopId": "2333173978",
+      "modPath": "ec_ol_45"
+    },
+    {
+      "id": "2333173978/ec_or_45",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 30.0,
+        "gravel": 1.0,
+        "steel": 1.0,
+        "concrete": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment 45° or",
+      "workshopId": "2333173978",
+      "modPath": "ec_or_45"
+    },
+    {
+      "id": "2333173978/ec_u_10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24.0,
+        "gravel": 0.8,
+        "steel": 0.8,
+        "concrete": 8.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment beveled 10 m",
+      "workshopId": "2333173978",
+      "modPath": "ec_u_10"
+    },
+    {
+      "id": "2333173978/ec_u_100",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 240.0,
+        "gravel": 8.0,
+        "steel": 8.0,
+        "concrete": 80.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment beveled 100 m",
+      "workshopId": "2333173978",
+      "modPath": "ec_u_100"
+    },
+    {
+      "id": "2333173978/ec_u_50",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 200.0,
+        "gravel": 4.0,
+        "steel": 4.0,
+        "concrete": 40.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment beveled 50 m",
+      "workshopId": "2333173978",
+      "modPath": "ec_u_50"
+    },
+    {
+      "id": "2333173978/ec_u_i_22",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 12.0,
+        "gravel": 0.4,
+        "steel": 0.4,
+        "concrete": 4.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment beveled 22.5° i",
+      "workshopId": "2333173978",
+      "modPath": "ec_u_i_22"
+    },
+    {
+      "id": "2333173978/ec_u_ib_22",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 48.0,
+        "gravel": 1.6,
+        "steel": 1.6,
+        "concrete": 16.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment beveled 22.5° ib",
+      "workshopId": "2333173978",
+      "modPath": "ec_u_ib_22"
+    },
+    {
+      "id": "2333173978/ec_u_il_45",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24.0,
+        "gravel": 0.8,
+        "steel": 0.8,
+        "concrete": 8.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment beveled 90° il",
+      "workshopId": "2333173978",
+      "modPath": "ec_u_il_45"
+    },
+    {
+      "id": "2333173978/ec_u_ir_45",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24.0,
+        "gravel": 0.8,
+        "steel": 0.8,
+        "concrete": 8.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment beveled 90° ir",
+      "workshopId": "2333173978",
+      "modPath": "ec_u_ir_45"
+    },
+    {
+      "id": "2333173978/ec_u_o_22",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 12.0,
+        "gravel": 0.4,
+        "steel": 0.4,
+        "concrete": 4.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment beveled 22.5° o",
+      "workshopId": "2333173978",
+      "modPath": "ec_u_o_22"
+    },
+    {
+      "id": "2333173978/ec_u_ob_22",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 48.0,
+        "gravel": 1.6,
+        "steel": 1.6,
+        "concrete": 16.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment beveled 22.5° ob",
+      "workshopId": "2333173978",
+      "modPath": "ec_u_ob_22"
+    },
+    {
+      "id": "2333173978/ec_u_ol_45",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24.0,
+        "gravel": 0.8,
+        "steel": 0.8,
+        "concrete": 8.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment beveled 90° ol",
+      "workshopId": "2333173978",
+      "modPath": "ec_u_ol_45"
+    },
+    {
+      "id": "2333173978/ec_u_or_45",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24.0,
+        "gravel": 0.8,
+        "steel": 0.8,
+        "concrete": 8.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial embankment beveled 90° or",
+      "workshopId": "2333173978",
+      "modPath": "ec_u_or_45"
+    }
+  ],
+  "vehicles": []
+}

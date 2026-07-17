@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2715030869",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:35:04+00:00",
+  "buildings": [
+    {
+      "id": "2715030869/sad",
+      "nameId": 6264,
+      "types": [
+        "TYPE_COURT_HOUSE"
+      ],
+      "workers": 25.0,
+      "professors": 15.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2715030869",
+      "modPath": "sad"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1995548766",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:01:06+00:00",
+  "buildings": [
+    {
+      "id": "1995548766/forkliftgarage",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forklift Garage",
+      "workshopId": "1995548766",
+      "modPath": "forkliftgarage"
+    }
+  ],
+  "vehicles": []
+}

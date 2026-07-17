@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2813415377",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:45:03+00:00",
+  "buildings": [
+    {
+      "id": "2813415377/mod",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "FedEx Distribution office",
+      "workshopId": "2813415377",
+      "modPath": "mod"
+    }
+  ],
+  "vehicles": []
+}

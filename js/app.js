@@ -1,18 +1,18 @@
-import { STRINGS } from './i18n.js?v=27';
+import { STRINGS } from './i18n.js?v=32';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=15';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=23';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=24';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
-} from './train.js?v=14';
+} from './train.js?v=15';
 import { createIndexedDbSnapshotStore, migrateLegacySnapshots } from './storage.js?v=1';
 import {
   aggregateCitizensByScope, compactObservedBuildings, groupObservedProduction,
-  latestProductivity, matchObservedBuilding,
-} from './save_model.js?v=2';
-import { buildRepublicModel, republicAlerts } from './republic.js?v=1';
+  inferObservedHousing, latestProductivity, matchObservedBuilding,
+} from './save_model.js?v=3';
+import { buildRepublicModel, republicAlerts } from './republic.js?v=3';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
@@ -74,6 +74,8 @@ function createInitialState() {
     snapshotNotice: '', // transient feedback for named snapshot actions
     importStatus: '',    // transient save-directory parsing status
     importStatusError: false,
+    productionDetails: false,
+    cityDetails: false,
   };
 }
 
@@ -151,31 +153,57 @@ async function loadData() {
     url.searchParams.set('v', DATA_V);
     return fetch(url);
   };
-  const [res, prod, prodGame, city, rawBuildings, veh, rail, dec] = await Promise.all([
+  const [res, prod, prodGame, city, rawBuildings, workshopIndex, veh, rail, rawVehicles, dec] = await Promise.all([
     get('data/resources.json').then(r => r.json()),
     get('data/production_buildings.json').then(r => r.json()),
     get('data/game/production_buildings.json').then(r => r.ok ? r.json() : null).catch(() => null),
     get('data/city_buildings.json').then(r => r.json()),
     IS_BETA ? get('data/game/buildings_raw.json').then(r => r.ok ? r.json() : []).catch(() => []) : [],
+    IS_BETA ? get('data/workshop/index.json').then(r => r.ok ? r.json() : null).catch(() => null) : null,
     get('data/vehicles.json').then(r => r.json()),
     get('data/game/rail_vehicles.json').then(r => r.ok ? r.json() : []).catch(() => []),
+    get('data/game/vehicles_raw.json').then(r => r.ok ? r.json() : []).catch(() => []),
     get('data/decade_prices.json').then(r => r.json()),
   ]);
   DATA = {
     resources: res.resources, defaults: res.defaults,
     prodSets: { sheet: prod, game: prodGame },
     cityBuildings: city,
-    rawBuildings,
+    rawBuildings, workshopIndex, workshopBuildings: [], workshopProduction: [],
     // Game-only rail vehicles join the pool; hard-attached tenders stay nested.
     sheetVehicles: veh.vehicles,
-    vehicles: mergeVehiclePools(veh.vehicles, rail),
+    vehicles: mergeVehiclePools(veh.vehicles, rail, rawVehicles),
     decades: dec,
+  };
+}
+
+async function loadWorkshopCatalogForBuildings(buildings) {
+  const ids = [...new Set(buildings.map(building => /^(\d{6,20})\//.exec(building.type)?.[1]).filter(Boolean))];
+  const available = ids.filter(id => DATA.workshopIndex?.items?.[id]);
+  const loaded = await Promise.all(available.map(async id => {
+    const entry = DATA.workshopIndex.items[id];
+    try {
+      const url = new URL(`../data/workshop/${entry.path}`, import.meta.url);
+      url.searchParams.set('v', DATA_V);
+      const response = await fetch(url);
+      return response.ok ? response.json() : null;
+    } catch {
+      return null;
+    }
+  }));
+  DATA.workshopBuildings = loaded.flatMap(item => item?.buildings ?? []);
+  DATA.workshopProduction = DATA.workshopBuildings.map(workshopProductionBuilding).filter(Boolean);
+  return {
+    referenced: ids.length,
+    resolved: loaded.filter(Boolean).length,
+    buildingDefinitions: DATA.workshopBuildings.length,
   };
 }
 
 // Active production-building dataset ('game' from game files, 'sheet' from the spreadsheet).
 function prodBuildings() {
-  return DATA.prodSets[state.dataset] || DATA.prodSets.sheet;
+  if (state.dataset === 'game') return [...(DATA.prodSets.game ?? []), ...(DATA.workshopProduction ?? [])];
+  return DATA.prodSets.sheet;
 }
 
 // ---------------------------------------------------------------- prices
@@ -709,7 +737,9 @@ function renderProduction() {
       type: 'checkbox', checked: s.seasons, onchange: e => { s.seasons = e.target.checked; update(); } })),
     el('label', {}, t('calendarFlow') + ' ', numInput(s.calendarFlow, v => s.calendarFlow = v || 1, { step: 0.1, min: 0 })),
     el('label', {}, t('fertilizer') + ' ', numInput(s.fertilizer, v => s.fertilizer = v || 1, { step: 0.1, min: 0 })),
-    el('label', {}, t('area') + ' ', selectInput(scopeOptions, String(state.productionScope), v => { state.productionScope = v; })));
+    el('label', {}, t('area') + ' ', selectInput(scopeOptions, String(state.productionScope), v => { state.productionScope = v; })),
+    el('button', { onclick: () => { state.productionDetails = !state.productionDetails; update(); } },
+      t(state.productionDetails ? 'hideEconomicDetails' : 'showEconomicDetails')));
 
   const groups = [...new Set(prodBuildings().map(b => b.group[state.lang]))];
 
@@ -717,9 +747,11 @@ function renderProduction() {
     el('thead', {}, el('tr', {},
       el('th', {}, t('area')), el('th', {}, t('group')), el('th', {}, t('building')), el('th', {}, t('count')),
       el('th', {}, t('quality')), el('th', {}, t('workers')),
-      el('th', {}, `${t('profit')} ${cur()}`), el('th', {}, t('profitPerWorker')),
-      el('th', {}, t('amortDays')), el('th', {}, `${t('income')} ${cur()}`),
-      el('th', {}, `${t('expenses')} ${cur()}`), el('th', {}, `${t('buildCost')} ${cur()}`), el('th', {}))),
+      el('th', {}, `${t('profit')} ${cur()}`),
+      ...(state.productionDetails ? [el('th', {}, t('profitPerWorker')),
+        el('th', {}, t('amortDays')), el('th', {}, `${t('income')} ${cur()}`),
+        el('th', {}, `${t('expenses')} ${cur()}`), el('th', {}, `${t('buildCost')} ${cur()}`)] : []),
+      el('th', {}))),
     el('tbody', {}, visibleRows.map(({ row, index: rowIndex }, visibleIndex) => {
       const b = prodBuildings().find(x => x.de === row.name);
       const res = result.rows[visibleIndex] ?? {};
@@ -730,7 +762,7 @@ function renderProduction() {
       const bSel = selectInput(
         [[', ', t('none')], ...inGroup.map(x => [x.de, bname(x)])],
         row.name ?? ', ', v => { row.name = v === ', ' ? null : v; });
-      const isMine = b && QUALITY_BUILDINGS_DE.has(b.de);
+      const isMine = b && (b.usesQuality || QUALITY_BUILDINGS_DE.has(b.de));
       const areaName = plannerScopeName(row.scopeId);
       const observed = Array.isArray(row.observedBuildingIndices);
       const buildingCell = observed ? el('div', {}, bSel,
@@ -747,10 +779,12 @@ function renderProduction() {
           isMine ? pctInput(row.quality ?? 0.5, v => { row.quality = v; row.qualityEstimated = false; }) : '—'),
         el('td', { class: 'r' }, b ? fmt(res.workers ?? b.workers * row.count, 0) : '—'),
         el('td', { class: 'r ' + ((res.profit ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profit)),
-        el('td', { class: 'r ' + ((res.profitPerWorker ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profitPerWorker)),
-        el('td', { class: 'r' }, fmt(res.amortDays, 1)),
-        el('td', { class: 'r' }, fmt(res.income)), el('td', { class: 'r' }, fmt(res.expenses)),
-        el('td', { class: 'r' }, fmt(res.buildCost, 0)),
+        ...(state.productionDetails ? [
+          el('td', { class: 'r ' + ((res.profitPerWorker ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profitPerWorker)),
+          el('td', { class: 'r' }, fmt(res.amortDays, 1)),
+          el('td', { class: 'r' }, fmt(res.income)), el('td', { class: 'r' }, fmt(res.expenses)),
+          el('td', { class: 'r' }, fmt(res.buildCost, 0)),
+        ] : []),
         el('td', {}, el('button', { class: 'danger', onclick: () => { state.plan.rows.splice(rowIndex, 1); update(); } }, '✕')));
     })));
 
@@ -1174,6 +1208,63 @@ const IMPORTED_CITY_TYPES = new Map([
   ['TYPE_BROADCAST', ['Rundfunk', 'Broadcasting']],
 ]);
 
+const WORKSHOP_PRODUCTION_GROUPS = new Map([
+  ['eletric', ['Strom', 'Electricity']], ['heat', ['Heizwerk', 'Heating plant']],
+  ['water', ['Wasser & Abwasser', 'Water & Wastewater']], ['usagewater', ['Wasser & Abwasser', 'Water & Wastewater']],
+  ['plants', ['Lebensmittel/Alkohol/Pflanzen', 'Food/Alcohol/Plants']],
+  ['food', ['Lebensmittel/Alkohol/Pflanzen', 'Food/Alcohol/Plants']],
+  ['alcohol', ['Lebensmittel/Alkohol/Pflanzen', 'Food/Alcohol/Plants']],
+  ['meat', ['Lebensmittel/Alkohol/Pflanzen', 'Food/Alcohol/Plants']],
+  ['livestock', ['Lebensmittel/Alkohol/Pflanzen', 'Food/Alcohol/Plants']],
+  ['gravel', ['Bauindustrie', 'Construction industry']], ['rawgravel', ['Bauindustrie', 'Construction industry']],
+  ['cement', ['Bauindustrie', 'Construction industry']], ['concrete', ['Bauindustrie', 'Construction industry']],
+  ['asphalt', ['Bauindustrie', 'Construction industry']], ['bricks', ['Bauindustrie', 'Construction industry']],
+  ['boards', ['Bauindustrie', 'Construction industry']], ['wood', ['Bauindustrie', 'Construction industry']],
+  ['prefabpanels', ['Bauindustrie', 'Construction industry']],
+  ['rawcoal', ['Fossile Brennstoffe', 'Fossil fuels']], ['coal', ['Fossile Brennstoffe', 'Fossil fuels']],
+  ['oil', ['Fossile Brennstoffe', 'Fossil fuels']], ['fuel', ['Fossile Brennstoffe', 'Fossil fuels']],
+  ['bitumen', ['Fossile Brennstoffe', 'Fossil fuels']], ['chemicals', ['Fossile Brennstoffe', 'Fossil fuels']],
+  ['plastics', ['Fossile Brennstoffe', 'Fossil fuels']],
+  ['rawiron', ['Metallurgie', 'Metallurgy']], ['iron', ['Metallurgie', 'Metallurgy']],
+  ['steel', ['Metallurgie', 'Metallurgy']], ['rawbauxite', ['Metallurgie', 'Metallurgy']],
+  ['bauxite', ['Metallurgie', 'Metallurgy']], ['alumina', ['Metallurgie', 'Metallurgy']],
+  ['aluminium', ['Metallurgie', 'Metallurgy']],
+]);
+
+function workshopProductionBuilding(raw) {
+  const pseudo = new Set(['vehicles', 'trains']);
+  const productionKeys = Object.keys(raw.production ?? {}).filter(key => !pseudo.has(key));
+  const consumptionKeys = Object.keys(raw.consumption ?? {}).filter(key => !pseudo.has(key));
+  if ((!productionKeys.length && !consumptionKeys.length) || raw.types?.includes('TYPE_FARM')) return null;
+  const resource = key => DATA.resources.find(item => item.key === key);
+  const heatOnly = productionKeys.length === 1 && productionKeys[0] === 'heat';
+  const lines = (keys, values, isProduction) => keys.map(key => {
+    const item = resource(key);
+    if (!item) return null;
+    const base = values[key] ?? 0;
+    const rate = isProduction && heatOnly ? base : base * (raw.workers || 1);
+    return { de: item.de, en: item.en, rate };
+  }).filter(Boolean);
+  const mainKey = productionKeys[0] ?? consumptionKeys[0];
+  const group = WORKSHOP_PRODUCTION_GROUPS.get(mainKey)
+    ?? ['Fortschrittliche Industrie', 'Advanced industry'];
+  const materials = raw.constructionResources ?? {};
+  return {
+    gameId: raw.id, de: raw.nameStr || raw.de || raw.id, en: raw.nameStr || raw.en || raw.de || raw.id,
+    group: { de: group[0], en: group[1] }, workers: raw.workers ?? 0,
+    production: lines(productionKeys, raw.production, true),
+    consumption: lines(consumptionKeys, raw.consumption, false),
+    usesQuality: raw.types?.some(type => type.startsWith('TYPE_MINE_')) ?? false,
+    power: 0, maxKW: 0, water: 0, hotwater: 0, wastePerWorker: 0,
+    workdays: materials.workers ?? 0, gravel: materials.gravel ?? 0,
+    bricks: materials.bricks ?? 0, steel: materials.steel ?? 0,
+    concrete: materials.concrete ?? 0, asphalt: materials.asphalt ?? 0,
+    boards: materials.boards ?? 0, panels: materials.prefabpanels ?? 0,
+    ecomponents: materials.ecomponents ?? 0, mcomponents: materials.mcomponents ?? 0,
+    provenance: { workers: 'workshop-ini', production: 'workshop-ini', consumption: 'workshop-ini' },
+  };
+}
+
 function saveTypeCandidates(type) {
   const clean = type.replace(/^MIRRORZ_/, '');
   const candidates = [type, clean];
@@ -1204,7 +1295,7 @@ function importedCityBuilding(raw, sourceType) {
   const specialTypes = new Set(['Gerichtsgebäude', 'Polizei']);
   const materials = raw.constructionResources ?? {};
   return {
-    de: raw.de || sourceType, en: raw.en || raw.de || sourceType,
+    de: raw.de || raw.nameStr || sourceType, en: raw.en || raw.nameStr || raw.de || sourceType,
     type: { de: mappedType[0], en: mappedType[1] },
     kind: 'Save', gameId: raw.id, sourceType,
     quality: raw.qualityOfLiving ?? null,
@@ -1228,31 +1319,37 @@ function importedCityBuilding(raw, sourceType) {
 
 function buildImportedPlanning(sourceName, settlements, buildings, membershipAudit, {
   citizens = null, citizenFileSummary = null, header = null, research = null,
-  sourceStatus = {}, parserWarnings = [], defaultProductivity = 1,
+  sourceStatus = {}, parserWarnings = [], defaultProductivity = 1, workshopCatalog = null,
 } = {}) {
   const occupiedScopeIds = new Set(buildings.map(building => building.scopeId).filter(Number.isInteger));
   const occupiedSettlements = settlements.filter(settlement => occupiedScopeIds.has(settlement.id));
   const cityRows = new Map(occupiedSettlements.map(s => [s.id, new Map()]));
   const citizenResult = citizens ? aggregateCitizensByScope(citizens, buildings) : null;
   const citizenScopes = citizenResult?.scopes ?? new Map();
+  const rawBuildings = [...(DATA.rawBuildings ?? []), ...(DATA.workshopBuildings ?? [])];
+  const inferredHousing = citizens ? inferObservedHousing(citizens, buildings, building => {
+    const raw = matchSaveBuilding(building.type, rawBuildings, entry => entry.id);
+    return !!(raw && importedCityBuilding(raw, building.type)?.inhabitants > 0);
+  }) : [];
+  const inferredHousingIndices = new Set(inferredHousing.flatMap(group => group.buildingIndices));
   const productionGrouped = groupObservedProduction(
-    buildings.filter(record => record.type !== 'temp'), DATA.prodSets.game ?? []);
+    buildings.filter(record => record.type !== 'temp'), prodBuildings());
   const productionRows = productionGrouped.rows.map(row => ({
     ...row,
     productivity: citizenScopes.get(row.scopeId)?.productivity ?? defaultProductivity,
   }));
   const unmatched = new Map();
-  let cityCount = 0, productionCount = 0, temporaryCount = 0;
+  let cityCount = 0, productionCount = 0, temporaryCount = 0, infrastructureCount = 0;
 
   for (const record of buildings) {
     if (record.type === 'temp') { temporaryCount += 1; continue; }
-    const productionBuilding = matchObservedBuilding(record.type, DATA.prodSets.game ?? []);
+    const productionBuilding = matchObservedBuilding(record.type, prodBuildings());
     if (productionBuilding) {
       productionCount += 1;
       continue;
     }
 
-    const raw = matchSaveBuilding(record.type, DATA.rawBuildings ?? [], b => b.id);
+    const raw = matchSaveBuilding(record.type, rawBuildings, b => b.id);
     const cityBuilding = raw ? importedCityBuilding(raw, record.type) : null;
     if (cityBuilding && cityRows.has(record.scopeId)) {
       const rows = cityRows.get(record.scopeId);
@@ -1267,12 +1364,42 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
       continue;
     }
 
+    if (inferredHousingIndices.has(record.index)) continue;
+    if (raw && !Object.keys(raw.production ?? {}).length && !Object.keys(raw.consumption ?? {}).length) {
+      infrastructureCount += 1;
+      continue;
+    }
+
     const key = `${record.scopeId ?? 'none'}\0${record.type}`;
     const current = unmatched.get(key) ?? { scopeId: record.scopeId, type: record.type, count: 0 };
     current.count += 1;
     unmatched.set(key, current);
   }
 
+  for (const group of inferredHousing) {
+    if (!cityRows.has(group.scopeId)) continue;
+    const importedBuilding = {
+      de: `${group.type} — observed occupancy`, en: `${group.type} — observed occupancy`,
+      type: { de: 'Wohngebäude', en: 'Housing' }, kind: 'Save', gameId: group.type,
+      sourceType: group.type, quality: null, workers: 0, special: 0, visitors: 0,
+      inhabitants: group.residents, power: 0, maxKW: 0, water: 0, hotwater: 0,
+      waste: 0, workdays: 0, gravel: 0, bricks: 0, steel: 0, concrete: 0,
+      asphalt: 0, boards: 0, panels: 0, ecomponents: 0, mcomponents: 0,
+      recommendedFor: 0, observedOccupancy: true, observedBuildingCount: group.buildingCount,
+      maxObservedOccupancy: group.maxObservedOccupancy,
+    };
+    cityRows.get(group.scopeId).set(`observed:${group.type}`, {
+      type: importedBuilding.type.de, name: importedBuilding.de, count: 1,
+      importedBuilding, sourceGameId: group.type,
+    });
+    cityCount += group.buildingCount;
+  }
+
+  const unresolvedByScope = new Map();
+  for (const item of unmatched.values()) {
+    if (!Number.isInteger(item.scopeId)) continue;
+    unresolvedByScope.set(item.scopeId, (unresolvedByScope.get(item.scopeId) ?? 0) + item.count);
+  }
   const productionScopeIds = new Set(productionRows.map(row => row.scopeId).filter(Number.isInteger));
   const cities = occupiedSettlements.filter(settlement =>
     cityRows.get(settlement.id).size || citizenScopes.has(settlement.id)).map(settlement => ({
@@ -1282,6 +1409,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
     source: 'save',
     productivity: citizenScopes.get(settlement.id)?.productivity ?? defaultProductivity,
     observed: citizenScopes.get(settlement.id) ?? null,
+    unresolvedBuildingCount: unresolvedByScope.get(settlement.id) ?? 0,
     sourcePosition: { x: settlement.x, y: settlement.y, z: settlement.z },
     rows: [...cityRows.get(settlement.id).values()],
   }));
@@ -1323,6 +1451,9 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
         citizens: citizenScopes.get(settlement.id) ?? null,
       })),
       cityBuildingCount: cityCount, productionBuildingCount: productionCount,
+      infrastructureCount, workshopCatalog,
+      inferredHousingBuildingCount: inferredHousing.reduce((sum, group) => sum + group.buildingCount, 0),
+      inferredHousingResidents: inferredHousing.reduce((sum, group) => sum + group.residents, 0),
       temporaryCount, unmatchedCount: [...unmatched.values()].reduce((sum, item) => sum + item.count, 0),
       unmatched: [...unmatched.values()].sort((a, b) => b.count - a.count || a.type.localeCompare(b.type)),
       warnings,
@@ -1397,6 +1528,7 @@ async function handleSaveDirectory(fileList) {
       || namepoints.name.replace(/\.bin$/i, '') || 'W&R save';
     const statsRecords = parsed.statsRecords ?? [];
     const productivity = latestProductivity(statsRecords, 1);
+    const workshopCatalog = await loadWorkshopCatalogForBuildings(parsed.buildings);
     const imported = buildImportedPlanning(sourceName, parsed.settlements, parsed.buildings,
       parsed.membershipAudit, {
         citizens: parsed.citizens,
@@ -1406,6 +1538,7 @@ async function handleSaveDirectory(fileList) {
         sourceStatus: parsed.sourceStatus,
         parserWarnings: parsed.warnings,
         defaultProductivity: productivity,
+        workshopCatalog,
       });
     imported.metadata.statsRecordCount = statsRecords.length;
     imported.metadata.latestProductivity = productivity;
@@ -1546,6 +1679,11 @@ function renderSaveImport() {
         info.latestProductivity ? kv(t('productivity'), fmt(info.latestProductivity * 100, 4) + ' %') : null,
         kv(t('importedCityBuildings'), fmt(info.cityBuildingCount, 0)),
         kv(t('importedProductionBuildings'), fmt(info.productionBuildingCount, 0)),
+        info.workshopCatalog ? kv(t('workshopCatalogResolved'),
+          `${fmt(info.workshopCatalog.resolved, 0)} / ${fmt(info.workshopCatalog.referenced, 0)}`) : null,
+        info.infrastructureCount ? kv(t('recognizedInfrastructure'), fmt(info.infrastructureCount, 0)) : null,
+        info.inferredHousingBuildingCount ? kv(t('observedHousingFallback'),
+          `${fmt(info.inferredHousingBuildingCount, 0)} · ${fmt(info.inferredHousingResidents, 0)} ${t('residentsShort')}`) : null,
         kv(t('importedTemporary'), fmt(info.temporaryCount, 0)),
         kv(t('importedUnmatched'), fmt(info.unmatchedCount, 0))),
       info.warnings?.length ? el('div', { class: 'totalsbox' },
@@ -1591,7 +1729,9 @@ function renderCity() {
       selectInput([['small', t('exchangerSmall')], ['large', t('exchangerLarge')]], city.exchanger, v => city.exchanger = v)),
     el('label', {}, t('waterDivisor') + ' ', numInput(city.waterDivisor, v => city.waterDivisor = v || 3, { min: 1, step: 1 })),
     el('label', {}, t('vanillaOnly') + ' ', el('input', {
-      type: 'checkbox', checked: state.vanillaOnly, onchange: e => { state.vanillaOnly = e.target.checked; update(); } })));
+      type: 'checkbox', checked: state.vanillaOnly, onchange: e => { state.vanillaOnly = e.target.checked; update(); } })),
+    el('button', { onclick: () => { state.cityDetails = !state.cityDetails; update(); } },
+      t(state.cityDetails ? 'hideUtilityDetails' : 'showUtilityDetails')));
   const observedCard = city.observed ? el('div', { class: 'totalsbox observed-card' },
     el('h3', {}, t('observedAtSave'), el('span', { class: 'evidence-badge derived' }, t('derived'))),
     kv(t('population'), fmt(city.observed.residents, 0)),
@@ -1602,6 +1742,10 @@ function renderCity() {
     kv(t('food'), fmt(city.observed.food * 100, 1) + ' %'),
     kv(t('health'), fmt(city.observed.health * 100, 1) + ' %'),
     kv(t('loyalty'), fmt(city.observed.loyalty * 100, 1) + ' %')) : null;
+  const coverageCard = city.unresolvedBuildingCount > 0 ? el('div', { class: 'totalsbox' },
+    el('h3', { class: 'warn' }, t('incompleteCoverage')),
+    kv(t('unresolvedCityBuildings'), fmt(city.unresolvedBuildingCount, 0), 'warn'),
+    el('p', { class: 'hint warn' }, t('incompleteServiceCoverage'))) : null;
 
   const allIndexed = DATA.cityBuildings.map((building, index) => ({ building, index }));
   const pool = allIndexed.filter(({ building }) => !state.vanillaOnly || building.kind === 'Vanilla');
@@ -1635,9 +1779,10 @@ function renderCity() {
     el('thead', {}, el('tr', {},
       el('th', {}, 'Typ'), el('th', {}, t('building')), el('th', {}, t('count')),
       el('th', {}, t('population')), el('th', {}, t('housingQuality')), el('th', {}, t('workers')),
-      el('th', {}, t('workersNeeded')), el('th', {}, 'kW'),
-      el('th', {}, t('waterUse')), el('th', {}, t('hotwater')), el('th', {}, t('wasteOut')),
-      el('th', {}, `${t('buildCost')} ${cur()}`), el('th', {}))),
+      el('th', {}, t('workersNeeded')),
+      ...(state.cityDetails ? [el('th', {}, 'kW'), el('th', {}, t('waterUse')),
+        el('th', {}, t('hotwater')), el('th', {}, t('wasteOut')),
+        el('th', {}, `${t('buildCost')} ${cur()}`)] : []), el('th', {}))),
     el('tbody', {}, city.rows.map((row, idx) => {
       const b = resolveRow(row);
       const selectedType = typeMap.has(row.type)
@@ -1668,6 +1813,8 @@ function renderCity() {
         : typeSel;
       const buildingCell = row.importedBuilding
         ? el('div', {}, bname(row.importedBuilding),
+          row.importedBuilding.observedOccupancy
+            ? el('div', { class: 'sourceid' }, t('observedOccupancyBaseline')) : null,
           el('div', { class: 'sourceid' }, `${t('sourceGameId')}: ${row.sourceGameId ?? row.importedBuilding.gameId}`))
         : bSel;
       return el('tr', {},
@@ -1677,11 +1824,13 @@ function renderCity() {
         el('td', { class: 'r' }, b?.inhabitants > 0 && b.quality != null ? fmt(b.quality * 100, 0) + ' %' : '—'),
         el('td', { class: 'r' }, b ? fmt(b.workers * n, 0) : '—'),
         workersNeededCell(rowWorkersNeeded),
-        el('td', { class: 'r' }, b ? fmt(b.maxKW * n, 0) : '—'),
-        el('td', { class: 'r' }, b ? fmt(b.water * n, 2) : '—'),
-        el('td', { class: 'r' }, b ? fmt(b.hotwater * n, 2) : '—'),
-        el('td', { class: 'r' }, b ? fmt(b.waste * n, 1) : '—'),
-        el('td', { class: 'r' }, b ? fmt(eco.buildCost(b, state.currency) * n, 0) : '—'),
+        ...(state.cityDetails ? [
+          el('td', { class: 'r' }, b ? fmt(b.maxKW * n, 0) : '—'),
+          el('td', { class: 'r' }, b ? fmt(b.water * n, 2) : '—'),
+          el('td', { class: 'r' }, b ? fmt(b.hotwater * n, 2) : '—'),
+          el('td', { class: 'r' }, b ? fmt(b.waste * n, 1) : '—'),
+          el('td', { class: 'r' }, b ? fmt(eco.buildCost(b, state.currency) * n, 0) : '—'),
+        ] : []),
         el('td', {}, el('button', { class: 'danger', onclick: () => { city.rows.splice(idx, 1); update(); } }, '✕')));
     })));
 
@@ -1735,7 +1884,7 @@ function renderCity() {
       return kv(r ? rname(r) : m, fmt(amt, 1));
     }));
 
-  return el('section', {}, returnToRepublicButton(), cityTabs, observedCard,
+  return el('section', {}, returnToRepublicButton(), cityTabs, observedCard, coverageCard,
     city.observed ? el('h3', { class: 'plan-heading' }, t('planAssumptions')) : null,
     settings, el('div', { class: 'tablewrap' }, tbl), addBtn,
     el('div', { class: 'columns' },
@@ -1863,16 +2012,21 @@ function renderRepublic() {
   // formula accounts for the city's own 3-shift service staffing), so they
   // compare directly: workers the cities can send out vs. what industry needs.
   const netWorkers = cityTotals.workerSurplus - plan.workersPerShift;
-  const plannedAreas = cityResults.map(({ city, res, industry }) => ({
-    scopeId: Number.isInteger(city.scopeId) ? city.scopeId : null,
-    name: city.name,
-    population: res.population,
-    configuredIndustryWorkers: industry.workersPerShift,
-    netWorkers: res.workerSurplus - industry.workersPerShift,
-    power: res.power + industry.totalPower,
-    water: res.water + industry.totalWater,
-    waste: res.waste + industry.totalWaste,
-  }));
+  const plannedAreas = cityResults.map(({ city, res, industry }) => {
+    const workforceLinked = !city.syntheticArea;
+    return {
+      scopeId: Number.isInteger(city.scopeId) ? city.scopeId : null,
+      name: city.name,
+      population: res.population,
+      configuredIndustryWorkers: industry.workersPerShift,
+      netWorkers: workforceLinked ? res.workerSurplus - industry.workersPerShift : null,
+      workforceLinked,
+      power: res.power + industry.totalPower,
+      water: res.water + industry.totalWater,
+      waste: res.waste + industry.totalWaste,
+      unresolvedBuildingCount: city.unresolvedBuildingCount ?? 0,
+    };
+  });
   const observedImport = state.saveImport?.version >= 2 ? {
     scopes: state.saveImport.scopes,
     productionRows: state.saveImport.observedProductionRows ?? [],
@@ -1897,13 +2051,14 @@ function renderRepublic() {
   const alerts = republicAlerts(republicModel);
 
   const cityBody = cityResults.map(({ city, res, industry }, i) => {
-    const available = res.workerSurplus - industry.workersPerShift;
+    const available = city.syntheticArea ? null : res.workerSurplus - industry.workersPerShift;
     return el('tr', {},
       el('td', {}, city.name || `${t('city')} ${i + 1}`),
       el('td', { class: 'r' }, fmt(res.population, 0)),
       el('td', { class: 'r ' + (res.workerSurplus < 0 ? 'neg' : 'pos') }, fmt(res.workerSurplus, 1)),
       el('td', { class: 'r' }, fmt(industry.workersPerShift, 0)),
-      el('td', { class: 'r ' + (available < 0 ? 'neg' : 'pos') }, fmt(available, 1)),
+      el('td', { class: 'r ' + (available == null ? '' : available < 0 ? 'neg' : 'pos') },
+        available == null ? '—' : fmt(available, 1)),
       el('td', { class: 'r' }, fmt(res.maxKW, 0)),
       el('td', { class: 'r' }, fmt(res.water, 1)),
       el('td', { class: 'r' }, fmt(res.waste, 1)),
@@ -2032,7 +2187,16 @@ function renderRepublic() {
   const scopeInfo = new Map(plannerScopes().map(scope => [scope.id, scope]));
   const severities = new Map();
   for (const alert of alerts) if (alert.scopeId != null && !severities.has(alert.scopeId)) severities.set(alert.scopeId, alert.severity);
-  const areaIds = [...new Set([...actualArea.keys(), ...planArea.keys()])];
+  const areaIds = [...new Set([...actualArea.keys(), ...planArea.keys()])].filter(scopeId => {
+    const actual = actualArea.get(scopeId) ?? {};
+    const planned = planArea.get(scopeId) ?? {};
+    const scope = scopeInfo.get(scopeId) ?? {};
+    return (actual.population ?? 0) > 0
+      || (actual.productionBuildingCount ?? 0) > 0
+      || (planned.population ?? 0) > 0
+      || (planned.configuredIndustryWorkers ?? 0) > 0
+      || scope.city || scope.production;
+  });
   const areaTable = el('table', { class: 'data wide area-health' },
     el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('population')),
       el('th', {}, t('productivity')), el('th', {}, t('health')),
@@ -2044,7 +2208,10 @@ function renderRepublic() {
       const scope = scopeInfo.get(scopeId) ?? {};
       const severity = severities.get(scopeId) ?? 'ok';
       return el('tr', { class: `${severity}${state.republicScope === scopeId ? ' selected-area' : ''}` },
-        el('td', {}, actual.name ?? planned.name ?? `${t('area')} ${scopeId}`),
+        el('td', {}, actual.name ?? planned.name ?? `${t('area')} ${scopeId}`,
+          (planned.unresolvedBuildingCount ?? 0) > 0
+            ? el('small', { class: 'warn' }, ` · ${fmt(planned.unresolvedBuildingCount, 0)} ${t('unresolvedShort')}`)
+            : null),
         el('td', { class: 'r' }, actual.population == null ? '—' : fmt(actual.population, 0)),
         el('td', { class: 'r' }, actual.productivity == null ? '—' : fmt(actual.productivity * 100, 1) + ' %'),
         el('td', { class: 'r' }, actual.health == null ? '—' : fmt(actual.health * 100, 1) + ' %'),
@@ -2473,9 +2640,16 @@ function renderHelp() {
       el('li', {}, de ? 'Preisanalyse: Ranking aller Produktionsgebäude nach Profitabilität bei aktuellen Preisen.' : 'Price analysis: ranking of all production buildings by profitability at current prices.'),
       el('li', {}, de ? 'Stadtplanung: Einwohner, Arbeiterüberschuss, Dienstleistungs-Abdeckung (Einkauf, Schule, Polizei …), Umspannwerke, Wärmetauscher, Baukosten.' : 'City planning: population, worker surplus, service coverage (shopping, school, police …), transformers, heat exchangers, construction cost.'),
       el('li', {}, de ? 'Zugplaner: Wagon-Anzahl und Kapazität je Zuglänge und Ware.' : 'Train planner: wagon count and capacity per train length and cargo.')),
+    el('h2', {}, de ? 'Datenquellen und Genauigkeit' : 'Data sources and accuracy'),
     el('p', {}, de
-      ? 'Basiert auf dem Community-Spreadsheet (Formeln & Spieldaten daraus extrahiert). Hinweis: Die Baukosten-Formel des Sheets bepreiste Ziegel/Asphalt/Plattenbauteile versehentlich mit Arbeitstagskosten; hier werden alle Materialien korrekt bepreist.'
-      : 'Based on the community spreadsheet (formulas & game data extracted from it). Note: the sheet\'s construction cost formula accidentally priced bricks/asphalt/prefab panels at workday cost; here every material uses its own price.'),
+      ? 'Standardmäßig sind Arbeiterzahlen, Produktions- und Verbrauchsraten sowie verfügbare Bauressourcen direkt aus den aktuellen Spieldateien maßgeblich. Workshop-Gebäude werden ebenso aus ihrer building.ini gelesen. Bei Fahrzeugen überschreiben exakte Spieldaten die alten Tabellenwerte.'
+      : 'By default, worker counts, production and consumption rates, and available construction resources come authoritatively from the current game files. Workshop buildings are likewise read from their building.ini. For vehicles, exact game fields override the older sheet values.'),
+    el('p', {}, de
+      ? 'Das Community-Spreadsheet bleibt nur dort eine gekennzeichnete Ergänzung, wo das Spiel keine direkt nutzbare Planungszahl liefert: insbesondere Versorgungs-Richtwerte, einige gemessene Strom-/Wasserwerte, Fahrzeuglängen und fehlende automatische Baukosten. Der Umschalter „Altes Spreadsheet“ dient dem Vergleich; er ist nicht die Standardeinstellung.'
+      : 'The community spreadsheet remains a labeled supplement only where the game exposes no directly usable planning value: notably service ratios, some measured power/water values, vehicle lengths, and missing automatic construction costs. The Legacy spreadsheet switch exists for comparison and is not the default.'),
+    el('p', {}, de
+      ? 'Die ursprüngliche Baukostenformel bepreiste Ziegel, Asphalt und Plattenbauteile versehentlich mit Arbeitstagskosten; hier verwendet jedes Material seinen eigenen Preis.'
+      : 'The original construction-cost formula accidentally priced bricks, asphalt, and prefab panels as workdays; this planner uses each material\'s own price.'),
     el('p', {}, el('a', { href: 'https://docs.google.com/spreadsheets/d/1rq76hTLnW1C5QbiQynHSbIJwOgg-wfOgSfZmsfm9kh0/edit', target: '_blank' },
       de ? 'Original-Spreadsheet' : 'Original spreadsheet')));
 }

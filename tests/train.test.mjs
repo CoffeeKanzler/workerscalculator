@@ -10,6 +10,23 @@ const rail = JSON.parse(readFileSync(new URL('../data/game/rail_vehicles.json', 
 const merged = mergeVehiclePools(sheetVehicles, rail);
 const byName = new Map(merged.map(v => [v.name, v]));
 
+test('matching game vehicle facts override stale sheet dimensions and performance', () => {
+  const [vehicle] = mergeVehiclePools([{
+    name: 'AN-2', attrs: { Typ: 'Flugzeug', 'Länge': 12, Leergewicht: 3, Motorleistung: 900, Stahl: 4 },
+  }], [], [{
+    id: 'plane_an2', de: 'AN-2', length: 12.29, emptyWeight: 3.4,
+    powerKW: 1000, speed: 258, from: 1947, to: 2001,
+  }]);
+  assert.equal(vehicle.attrs['Länge'], 12.29);
+  assert.equal(vehicle.attrs.Leergewicht, 3.4);
+  assert.equal(vehicle.attrs.Motorleistung, 1000);
+  assert.equal(vehicle.attrs['Max. Geschwindigkeit'], 258);
+  assert.equal(vehicle.attrs.Stahl, 4);
+  assert.equal(vehicle.sourceGameId, 'plane_an2');
+  assert.equal(vehicle.provenance.performance, 'game-file');
+  assert.equal(vehicle.provenance.productionCost, 'spreadsheet');
+});
+
 test('game rail data nests hard-attached tenders instead of publishing choices', () => {
   assert.equal(merged.filter(v => v.attrs.Typ === 'Tender').length, 0);
   assert.equal(byName.get('FD-Serie').tender.name, 'FD Tender');

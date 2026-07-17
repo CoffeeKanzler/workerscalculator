@@ -159,7 +159,11 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   fabric factory remains visible as 93 current / 100 configured and coal mine 1157 as
   95 / 120 at about 56.47% quality.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
-  remain unmatched (their IDs/scopes/counts are still reported). Inventory buffers,
+  remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
+  catalog contains only compact parsed INI facts under `data/workshop/`, never mod assets.
+  The browser resolves available packages automatically, imports exact mod housing,
+  service, and production facts, hides recognized infrastructure, and falls back to
+  observed occupancy without inventing capacity. Inventory buffers,
   vehicle/line state, and logistics topology are not decoded yet.
   - **Next high-value save modules:** building inventories and production buffers;
   vehicles, lines, and schedules; distribution/logistics bottlenecks; and optional live

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2337807240",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:41:11+00:00",
+  "buildings": [
+    {
+      "id": "2337807240/lsum",
+      "nameId": 6101,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 90.0,
+      "professors": 0,
+      "production": {
+        "food": 0.12
+      },
+      "consumption": {
+        "plants": 0.25,
+        "water": 0.05
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.5
+      },
+      "workshopId": "2337807240",
+      "modPath": "lsum"
+    }
+  ],
+  "vehicles": []
+}

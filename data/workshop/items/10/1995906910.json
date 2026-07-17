@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1995906910",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:48:32+00:00",
+  "buildings": [
+    {
+      "id": "1995906910/fisher1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {
+        "meat": 0.05
+      },
+      "consumption": {
+        "plants": 0.04,
+        "wood": 0.06
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fish Farm",
+      "workshopId": "1995906910",
+      "modPath": "fisher1"
+    }
+  ],
+  "vehicles": []
+}

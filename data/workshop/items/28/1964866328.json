@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1964866328",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:39:03+00:00",
+  "buildings": [
+    {
+      "id": "1964866328/Kiosk",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kiosk",
+      "workshopId": "1964866328",
+      "modPath": "Kiosk"
+    }
+  ],
+  "vehicles": []
+}

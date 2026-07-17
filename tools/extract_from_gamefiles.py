@@ -64,12 +64,13 @@ ECON_TOKENS = {
 TYPE_RE = re.compile(r'^\$(TYPE_[A-Z_]+|SUBTYPE_[A-Z_]+|CIVIL_BUILDING)\b')
 
 
-def parse_building(path, ident=None):
+def parse_building(path, ident=None, keep_all=False):
     b = {
         'id': ident or os.path.splitext(os.path.basename(path))[0],
         'nameId': None, 'types': [], 'workers': 0, 'professors': 0,
         'production': {}, 'consumption': {}, 'livingSpace': 0,
         'citizenAbleServe': 0, 'qualityOfLiving': None, 'attractiveScore': None,
+        'storages': {},
         'constructionResources': {},
         'electricWorkerFactors': {},  # 'lighting'|'living'|'heating' -> factor
     }
@@ -108,8 +109,10 @@ def parse_building(path, ident=None):
                 b['qualityOfLiving'] = float(args[0])
             elif key == 'ATTRACTIVE_SCORE':
                 b['attractiveScore'] = float(args[0])
-            elif key == 'STORAGE' and len(args) >= 2 and args[0] == 'RESOURCE_TRANSPORT_PASSANGER':
-                b['livingSpace'] = float(args[1])
+            elif key == 'STORAGE' and len(args) >= 2:
+                b['storages'][args[0]] = b['storages'].get(args[0], 0) + float(args[1])
+                if args[0] == 'RESOURCE_TRANSPORT_PASSANGER':
+                    b['livingSpace'] += float(args[1])
             elif key == 'COST_RESOURCE' and len(args) >= 2:
                 b['constructionResources'][args[0]] = \
                     b['constructionResources'].get(args[0], 0) + float(args[1])
@@ -119,7 +122,7 @@ def parse_building(path, ident=None):
         except (ValueError, IndexError):
             pass
     # keep only buildings with economic relevance
-    if not (b['workers'] or b['production'] or b['consumption']
+    if not keep_all and not (b['workers'] or b['production'] or b['consumption']
             or b['livingSpace'] or b['citizenAbleServe']):
         return None
     return b
@@ -481,6 +484,11 @@ def build_dataset(buildings, repo_root, loc):
             'consumption': cons,
             # exact sheet measurement vs. scaled from a different capacity tier
             'measured': bool(s) and scale == 1.0,
+            'provenance': {
+                'workers': 'game-file',
+                'production': 'game-file',
+                'consumption': 'game-file',
+            },
         }
         if g.get('dlc'):
             entry['dlc'] = g['dlc']
@@ -490,6 +498,7 @@ def build_dataset(buildings, repo_root, loc):
                 # wastePerWorker is already a per-worker rate; everything else
                 # is a building total and scales with this variant's capacity.
                 entry[f] = s.get(f, 0) if f == 'wastePerWorker' else round(s.get(f, 0) * scale, 4)
+                entry['provenance'][f] = 'sheet-measured' if scale == 1.0 else 'sheet-scaled'
         else:
             main_key = next(iter(g['production']), None) or next(iter(g['consumption']), None)
             gr = GROUP_BY_RESOURCE.get(main_key, MISC)
@@ -497,9 +506,11 @@ def build_dataset(buildings, repo_root, loc):
             avg = group_avg_per_worker.get(gr[0], {})
             for f in EXTRA_FIELDS:
                 entry[f] = 0
+                entry['provenance'][f] = 'unavailable'
             for ck, field in CONSTRUCTION_MAP.items():
                 if ck in g.get('constructionResources', {}):
                     entry[field] = g['constructionResources'][ck]
+                    entry['provenance'][field] = 'game-file'
             # Fill whatever construction resources didn't cover with a same-
             # group per-worker average — a rough estimate, not a measurement.
             if g['workers'] and avg:
@@ -513,8 +524,17 @@ def build_dataset(buildings, repo_root, loc):
                     # already a rate, not a building total -> don't rescale by workers
                     entry[f] = per_worker if f == 'wastePerWorker' else round(per_worker * g['workers'], 4)
                     estimated[f] = True
+                    entry['provenance'][f] = 'sheet-category-estimate'
                 if estimated:
                     entry['estimated'] = sorted(estimated)
+        # Explicit $COST_RESOURCE values are authoritative regardless of
+        # whether a matching spreadsheet row exists. The spreadsheet is only
+        # a fallback for fields the current game ini does not expose (notably
+        # many utility totals and geometry-derived auto construction costs).
+        for ck, field in CONSTRUCTION_MAP.items():
+            if ck in g.get('constructionResources', {}):
+                entry[field] = g['constructionResources'][ck]
+                entry['provenance'][field] = 'game-file'
         out.append(entry)
 
     out.sort(key=lambda e: (e['group']['de'], e['de']))

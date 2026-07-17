@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3158012690",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:36:53+00:00",
+  "buildings": [
+    {
+      "id": "3158012690/fastcargo",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cargo Station 6",
+      "workshopId": "3158012690",
+      "modPath": "fastcargo"
+    }
+  ],
+  "vehicles": []
+}

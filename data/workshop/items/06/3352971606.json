@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3352971606",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:29:15+00:00",
+  "buildings": [
+    {
+      "id": "3352971606/01",
+      "nameId": null,
+      "types": [
+        "TYPE_TRASH_CONTAINER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Garbage Containers with Paths",
+      "workshopId": "3352971606",
+      "modPath": "01"
+    }
+  ],
+  "vehicles": []
+}

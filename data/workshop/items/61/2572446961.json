@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2572446961",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:44:14+00:00",
+  "buildings": [
+    {
+      "id": "2572446961/221-1-149_gym",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "221-1-149_gym",
+      "workshopId": "2572446961",
+      "modPath": "221-1-149_gym"
+    },
+    {
+      "id": "2572446961/221-1-149_main_building",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 42.0,
+      "professors": 25.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 28.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "221-1-149_main_building",
+      "workshopId": "2572446961",
+      "modPath": "221-1-149_main_building"
+    },
+    {
+      "id": "2572446961/221-1-174_gym",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "221-1-174_gym",
+      "workshopId": "2572446961",
+      "modPath": "221-1-174_gym"
+    },
+    {
+      "id": "2572446961/221-1-174_main_building",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 42.0,
+      "professors": 25.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 28.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "221-1-174_main_building",
+      "workshopId": "2572446961",
+      "modPath": "221-1-174_main_building"
+    }
+  ],
+  "vehicles": []
+}

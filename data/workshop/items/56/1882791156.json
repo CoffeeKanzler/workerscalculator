@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1882791156",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:46:41+00:00",
+  "buildings": [
+    {
+      "id": "1882791156/P3series4_17",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 505.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 505.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "17 storey prefab flats P-3 (red)",
+      "workshopId": "1882791156",
+      "modPath": "P3series4_17"
+    },
+    {
+      "id": "1882791156/P3series4_17_blue",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 505.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 505.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "17 storey prefab flats P-3 (blue)",
+      "workshopId": "1882791156",
+      "modPath": "P3series4_17_blue"
+    },
+    {
+      "id": "1882791156/P3series4_17_yellow",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 505.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 505.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "17 storey prefab flats P-3 (yellow)",
+      "workshopId": "1882791156",
+      "modPath": "P3series4_17_yellow"
+    }
+  ],
+  "vehicles": []
+}

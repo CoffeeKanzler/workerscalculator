@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3370241178",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:18:38+00:00",
+  "buildings": [
+    {
+      "id": "3370241178/I-155B",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 299.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 299.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Series I-155B",
+      "workshopId": "3370241178",
+      "modPath": "I-155B"
+    },
+    {
+      "id": "3370241178/I-155B2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 609.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 609.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Series I-155B2",
+      "workshopId": "3370241178",
+      "modPath": "I-155B2"
+    }
+  ],
+  "vehicles": []
+}

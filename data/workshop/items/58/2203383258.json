@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2203383258",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:05:46+00:00",
+  "buildings": [
+    {
+      "id": "2203383258/Basketball",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Basketball (with a fence)",
+      "workshopId": "2203383258",
+      "modPath": "Basketball"
+    },
+    {
+      "id": "2203383258/Basketball1",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Basketball",
+      "workshopId": "2203383258",
+      "modPath": "Basketball1"
+    },
+    {
+      "id": "2203383258/Football",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Football (with a fence)",
+      "workshopId": "2203383258",
+      "modPath": "Football"
+    },
+    {
+      "id": "2203383258/Football1",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Football",
+      "workshopId": "2203383258",
+      "modPath": "Football1"
+    },
+    {
+      "id": "2203383258/Stadium",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 14.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stadium 2 (with a fence)",
+      "workshopId": "2203383258",
+      "modPath": "Stadium"
+    },
+    {
+      "id": "2203383258/Stadium1",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 14.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stadium 2",
+      "workshopId": "2203383258",
+      "modPath": "Stadium1"
+    },
+    {
+      "id": "2203383258/Stadium2",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stadium 1",
+      "workshopId": "2203383258",
+      "modPath": "Stadium2"
+    },
+    {
+      "id": "2203383258/Turniki",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sports ground",
+      "workshopId": "2203383258",
+      "modPath": "Turniki"
+    },
+    {
+      "id": "2203383258/Voleyball",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Volleyball (with a fence)",
+      "workshopId": "2203383258",
+      "modPath": "Voleyball"
+    },
+    {
+      "id": "2203383258/Voleyball1",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Volleyball",
+      "workshopId": "2203383258",
+      "modPath": "Voleyball1"
+    }
+  ],
+  "vehicles": []
+}

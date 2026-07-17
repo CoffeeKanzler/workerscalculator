@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2498281960",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:24:27+00:00",
+  "buildings": [
+    {
+      "id": "2498281960/dystrybucja1",
+      "nameId": 6210,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2498281960",
+      "modPath": "dystrybucja1"
+    },
+    {
+      "id": "2498281960/dystrybucja2",
+      "nameId": 6211,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2498281960",
+      "modPath": "dystrybucja2"
+    },
+    {
+      "id": "2498281960/dystrybucja3",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big distribution office",
+      "workshopId": "2498281960",
+      "modPath": "dystrybucja3"
+    }
+  ],
+  "vehicles": []
+}

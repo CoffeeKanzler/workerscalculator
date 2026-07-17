@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2198054735",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:40:36+00:00",
+  "buildings": [
+    {
+      "id": "2198054735/SmallSlaughter",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "meat": 1.0
+      },
+      "consumption": {
+        "livestock": 2.0
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.5
+      },
+      "nameStr": "Small Slaughterhouse",
+      "workshopId": "2198054735",
+      "modPath": "SmallSlaughter"
+    }
+  ],
+  "vehicles": []
+}

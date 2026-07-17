@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1876273756",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:06:44+00:00",
+  "buildings": [
+    {
+      "id": "1876273756/School_small",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 5.0,
+      "professors": 7.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small school",
+      "workshopId": "1876273756",
+      "modPath": "School_small"
+    }
+  ],
+  "vehicles": []
+}

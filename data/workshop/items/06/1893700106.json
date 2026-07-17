@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1893700106",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:25:43+00:00",
+  "buildings": [
+    {
+      "id": "1893700106/ConstructionOffice08",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "New - Small construction office (8)",
+      "workshopId": "1893700106",
+      "modPath": "ConstructionOffice08"
+    },
+    {
+      "id": "1893700106/ConstructionOffice16",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "New - Enlarged construction office (16)",
+      "workshopId": "1893700106",
+      "modPath": "ConstructionOffice16"
+    },
+    {
+      "id": "1893700106/ConstructionOffice20",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "New - Large construction office (20)",
+      "workshopId": "1893700106",
+      "modPath": "ConstructionOffice20"
+    },
+    {
+      "id": "1893700106/ConstructionOffice20_new",
+      "nameId": 6151,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "1893700106",
+      "modPath": "ConstructionOffice20_new"
+    },
+    {
+      "id": "1893700106/ConstructionOffice32",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "New - Huge construction office (32)",
+      "workshopId": "1893700106",
+      "modPath": "ConstructionOffice32"
+    }
+  ],
+  "vehicles": []
+}

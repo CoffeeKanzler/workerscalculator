@@ -91,7 +91,7 @@ export class Economy {
 
   // Profit of one production building instance per day (sheet: Einnahmen - Ausgaben).
   buildingProfit(b, currency, productivity = 1, count = 1, quality = 1) {
-    const mult = QUALITY_BUILDINGS_DE.has(b.de) ? count * quality : count;
+    const mult = (b.usesQuality || QUALITY_BUILDINGS_DE.has(b.de)) ? count * quality : count;
     let income = 0, expenses = 0;
     for (const p of b.production) income += this.outputPrice(p.de, currency) * p.rate * mult * productivity;
     for (const c of b.consumption) expenses += this.inputPrice(c.de, currency) * c.rate * count * productivity;
@@ -269,10 +269,10 @@ export function evaluatePlan(rows, fields, settings, eco) {
     const staffing = b.workers > 0 ? Math.max(0, Math.min(1, configuredPerBuilding / b.workers)) : 1;
     const prod = Number.isFinite(row.productivity) ? row.productivity : settings.productivity;
     const activity = staffing * prod;
-    const mult = (QUALITY_BUILDINGS_DE.has(b.de) ? count * quality : count) * activity;
+    const mult = ((b.usesQuality || QUALITY_BUILDINGS_DE.has(b.de)) ? count * quality : count) * activity;
     let income = 0, expenses = 0;
     for (const p of b.production) {
-      const amt = p.rate * mult * tf * prod * flow;
+      const amt = p.rate * mult * tf * flow;
       income += eco.outputPrice(p.de, settings.currency) * amt;
       addBal(p.de, amt, 0);
     }

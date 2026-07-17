@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2062469591",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:37:12+00:00",
+  "buildings": [
+    {
+      "id": "2062469591/Pipe_Rail_1",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 75.0,
+        "gravel": 7.0,
+        "concrete": 3.0,
+        "steel": 7.0,
+        "prefabpanels": 2.0,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipeline overpass Rail 1",
+      "workshopId": "2062469591",
+      "modPath": "Pipe_Rail_1"
+    },
+    {
+      "id": "2062469591/Pipe_Rail_2",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 75.0,
+        "gravel": 7.0,
+        "concrete": 3.0,
+        "steel": 7.0,
+        "prefabpanels": 2.0,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipeline overpass Rail 2",
+      "workshopId": "2062469591",
+      "modPath": "Pipe_Rail_2"
+    },
+    {
+      "id": "2062469591/Pipe_Rail_3",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 75.0,
+        "gravel": 7.0,
+        "concrete": 3.0,
+        "steel": 7.0,
+        "prefabpanels": 2.0,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipeline overpass Rail 3",
+      "workshopId": "2062469591",
+      "modPath": "Pipe_Rail_3"
+    },
+    {
+      "id": "2062469591/Pipe_Rail_4",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 75.0,
+        "gravel": 7.0,
+        "concrete": 3.0,
+        "steel": 7.0,
+        "prefabpanels": 2.0,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipeline overpass Rail 4",
+      "workshopId": "2062469591",
+      "modPath": "Pipe_Rail_4"
+    },
+    {
+      "id": "2062469591/Pipe_Rail_5",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 75.0,
+        "gravel": 7.0,
+        "concrete": 3.0,
+        "steel": 7.0,
+        "prefabpanels": 2.0,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipeline overpass Rail 5",
+      "workshopId": "2062469591",
+      "modPath": "Pipe_Rail_5"
+    },
+    {
+      "id": "2062469591/Pipe_Rail_6",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 75.0,
+        "gravel": 7.0,
+        "concrete": 3.0,
+        "steel": 7.0,
+        "prefabpanels": 2.0,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipeline overpass Rail 6",
+      "workshopId": "2062469591",
+      "modPath": "Pipe_Rail_6"
+    },
+    {
+      "id": "2062469591/Pipe_Road_1",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 60.0,
+        "gravel": 2.0,
+        "concrete": 3.0,
+        "steel": 6.0,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipeline overpass Road 1",
+      "workshopId": "2062469591",
+      "modPath": "Pipe_Road_1"
+    },
+    {
+      "id": "2062469591/Pipe_Road_2",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 60.0,
+        "gravel": 2.0,
+        "concrete": 3.0,
+        "steel": 6.0,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipeline overpass Road 2",
+      "workshopId": "2062469591",
+      "modPath": "Pipe_Road_2"
+    },
+    {
+      "id": "2062469591/Pipe_Road_3",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 60.0,
+        "gravel": 2.0,
+        "concrete": 3.0,
+        "steel": 6.0,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipeline overpass Road 3",
+      "workshopId": "2062469591",
+      "modPath": "Pipe_Road_3"
+    },
+    {
+      "id": "2062469591/Pipe_Road_4",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 60.0,
+        "gravel": 2.0,
+        "concrete": 3.0,
+        "steel": 6.0,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipeline overpass Road 4",
+      "workshopId": "2062469591",
+      "modPath": "Pipe_Road_4"
+    },
+    {
+      "id": "2062469591/Pipe_Road_5",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 60.0,
+        "gravel": 2.0,
+        "concrete": 3.0,
+        "steel": 6.0,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipeline overpass Road 5",
+      "workshopId": "2062469591",
+      "modPath": "Pipe_Road_5"
+    },
+    {
+      "id": "2062469591/Pipe_Road_6",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 60.0,
+        "gravel": 2.0,
+        "concrete": 3.0,
+        "steel": 6.0,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipeline overpass Road 6",
+      "workshopId": "2062469591",
+      "modPath": "Pipe_Road_6"
+    }
+  ],
+  "vehicles": []
+}

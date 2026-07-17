@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2465511393",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:43:20+00:00",
+  "buildings": [
+    {
+      "id": "2465511393/BiuroBudowy_XL_14_H3",
+      "nameId": 26314,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 735.0,
+        "concrete": 15.0,
+        "gravel": 11.0,
+        "asphalt": 9.0,
+        "bricks": 9.4,
+        "boards": 8.3,
+        "steel": 46.1,
+        "ecomponents": 0.15
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2465511393",
+      "modPath": "BiuroBudowy_XL_14_H3"
+    }
+  ],
+  "vehicles": []
+}

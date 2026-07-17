@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2185608803",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:04:55+00:00",
+  "buildings": [
+    {
+      "id": "2185608803/biblioteka",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 40.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Main library",
+      "workshopId": "2185608803",
+      "modPath": "biblioteka"
+    }
+  ],
+  "vehicles": []
+}

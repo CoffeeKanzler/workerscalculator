@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2590828654",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:28:38+00:00",
+  "buildings": [
+    {
+      "id": "2590828654/oil_storage_10K",
+      "nameId": 6052,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 10000.0
+      },
+      "constructionResources": {
+        "workers": 4001.0,
+        "concrete": 289.0,
+        "gravel": 166.2,
+        "asphalt": 130.8,
+        "steel": 78.7,
+        "mcomponents": 16.8
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2590828654",
+      "modPath": "oil_storage_10K"
+    },
+    {
+      "id": "2590828654/oil_storage_5K",
+      "nameId": 6052,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 5000.0
+      },
+      "constructionResources": {
+        "workers": 2384.0,
+        "concrete": 202.0,
+        "gravel": 88.7,
+        "asphalt": 72.3,
+        "steel": 43.2,
+        "mcomponents": 9.3
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2590828654",
+      "modPath": "oil_storage_5K"
+    }
+  ],
+  "vehicles": []
+}

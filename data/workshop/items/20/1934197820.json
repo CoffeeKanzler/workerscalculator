@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1934197820",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:38:45+00:00",
+  "buildings": [
+    {
+      "id": "1934197820/lenin",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 25.0,
+      "professors": 25.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lenin Technical University",
+      "workshopId": "1934197820",
+      "modPath": "lenin"
+    }
+  ],
+  "vehicles": []
+}

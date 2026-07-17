@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1877876022",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:29:52+00:00",
+  "buildings": [
+    {
+      "id": "1877876022/Clinic_50s",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 15.0,
+      "professors": 15.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small clinic (50s)",
+      "workshopId": "1877876022",
+      "modPath": "Clinic_50s"
+    }
+  ],
+  "vehicles": []
+}

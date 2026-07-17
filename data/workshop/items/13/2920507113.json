@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2920507113",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:27:44+00:00",
+  "buildings": [
+    {
+      "id": "2920507113/sklad1",
+      "nameId": 6156,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2920507113",
+      "modPath": "sklad1"
+    },
+    {
+      "id": "2920507113/sklad2",
+      "nameId": 6156,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 2000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2920507113",
+      "modPath": "sklad2"
+    },
+    {
+      "id": "2920507113/sklad3",
+      "nameId": 6157,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 2500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2920507113",
+      "modPath": "sklad3"
+    },
+    {
+      "id": "2920507113/sklad4",
+      "nameId": 6157,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 5000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2920507113",
+      "modPath": "sklad4"
+    }
+  ],
+  "vehicles": []
+}

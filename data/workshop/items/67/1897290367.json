@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1897290367",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:30:28+00:00",
+  "buildings": [
+    {
+      "id": "1897290367/minolgasstation",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Minol Gas Station",
+      "workshopId": "1897290367",
+      "modPath": "minolgasstation"
+    }
+  ],
+  "vehicles": []
+}

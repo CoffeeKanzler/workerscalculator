@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1872544371",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:48:55+00:00",
+  "buildings": [
+    {
+      "id": "1872544371/Vokzal_Med",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 3000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vokzal_medium",
+      "workshopId": "1872544371",
+      "modPath": "Vokzal_Med"
+    }
+  ],
+  "vehicles": []
+}

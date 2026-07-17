@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2749397000",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:44:46+00:00",
+  "buildings": [
+    {
+      "id": "2749397000/Police",
+      "nameId": 9073,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 10.0,
+      "professors": 5.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2749397000",
+      "modPath": "Police"
+    }
+  ],
+  "vehicles": []
+}

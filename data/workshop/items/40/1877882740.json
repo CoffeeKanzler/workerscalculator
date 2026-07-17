@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1877882740",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:47:18+00:00",
+  "buildings": [
+    {
+      "id": "1877882740/KindergartenVI52",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 16.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "KinderGarten VI52",
+      "workshopId": "1877882740",
+      "modPath": "KindergartenVI52"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2085133386",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:30:47+00:00",
+  "buildings": [
+    {
+      "id": "2085133386/rotunda",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rotunda Theatre",
+      "workshopId": "2085133386",
+      "modPath": "rotunda"
+    }
+  ],
+  "vehicles": []
+}

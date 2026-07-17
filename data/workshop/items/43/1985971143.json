@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1985971143",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:29:33+00:00",
+  "buildings": [
+    {
+      "id": "1985971143/conveyorrail1",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Rail Crossing 1 Track",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrail1"
+    },
+    {
+      "id": "1985971143/conveyorrail2",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Rail Crossing 2 Track",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrail2"
+    },
+    {
+      "id": "1985971143/conveyorrar",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Road And Rail Crossing 1 Track",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrar"
+    },
+    {
+      "id": "1985971143/conveyorrar2",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Road and 2 Rails",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrar2"
+    },
+    {
+      "id": "1985971143/conveyorrar2R",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Road and 2 Rails Reversed",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrar2R"
+    },
+    {
+      "id": "1985971143/conveyorrar3",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor 3 Rails",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrar3"
+    },
+    {
+      "id": "1985971143/conveyorrarR",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Road And Rail Crossing 1 Track Reversed",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrarR"
+    },
+    {
+      "id": "1985971143/conveyorroad",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Road Crossing",
+      "workshopId": "1985971143",
+      "modPath": "conveyorroad"
+    },
+    {
+      "id": "1985971143/conveyorroadsingle",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Road 1 In 1 Out",
+      "workshopId": "1985971143",
+      "modPath": "conveyorroadsingle"
+    },
+    {
+      "id": "1985971143/conveyorrs1",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Roadside 1",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrs1"
+    },
+    {
+      "id": "1985971143/conveyorrs2",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Roadside 2",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrs2"
+    },
+    {
+      "id": "1985971143/conveyorrs3",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Roadside 3",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrs3"
+    },
+    {
+      "id": "1985971143/conveyorrs4",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Roadside 4",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrs4"
+    },
+    {
+      "id": "1985971143/conveyorrs5",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Roadside 5",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrs5"
+    },
+    {
+      "id": "1985971143/conveyorrs6",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Roadside 6",
+      "workshopId": "1985971143",
+      "modPath": "conveyorrs6"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1930207214",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:48:24+00:00",
+  "buildings": [
+    {
+      "id": "1930207214/mig21",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mig 21 Monument",
+      "workshopId": "1930207214",
+      "modPath": "mig21"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2193099401",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:31:06+00:00",
+  "buildings": [
+    {
+      "id": "2193099401/kika",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kindergarten",
+      "workshopId": "2193099401",
+      "modPath": "kika"
+    },
+    {
+      "id": "2193099401/kikablank",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kindergarten",
+      "workshopId": "2193099401",
+      "modPath": "kikablank"
+    }
+  ],
+  "vehicles": []
+}

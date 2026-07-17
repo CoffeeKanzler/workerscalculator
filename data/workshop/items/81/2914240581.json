@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2914240581",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:31:59+00:00",
+  "buildings": [
+    {
+      "id": "2914240581/kopalnia_wegiel",
+      "nameId": 6159,
+      "types": [
+        "TYPE_MINE_COAL"
+      ],
+      "workers": 400.0,
+      "professors": 0,
+      "production": {
+        "rawcoal": 4.2
+      },
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3050.0,
+        "boards": 75.0,
+        "concrete": 180.0,
+        "steel": 45.0
+      },
+      "electricWorkerFactors": {
+        "lighting": 1.3,
+        "living": 1.4
+      },
+      "workshopId": "2914240581",
+      "modPath": "kopalnia_wegiel"
+    },
+    {
+      "id": "2914240581/kopalnia_zelazo",
+      "nameId": 6160,
+      "types": [
+        "TYPE_MINE_IRON"
+      ],
+      "workers": 400.0,
+      "professors": 0,
+      "production": {
+        "rawiron": 4.0
+      },
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3050.0,
+        "boards": 75.0,
+        "concrete": 180.0,
+        "steel": 45.0
+      },
+      "electricWorkerFactors": {
+        "lighting": 1.3,
+        "living": 1.5
+      },
+      "workshopId": "2914240581",
+      "modPath": "kopalnia_zelazo"
+    }
+  ],
+  "vehicles": []
+}

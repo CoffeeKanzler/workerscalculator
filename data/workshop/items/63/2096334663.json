@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2096334663",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:25:03+00:00",
+  "buildings": [
+    {
+      "id": "2096334663/coheavy",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 220.0,
+        "concrete": 22.0,
+        "gravel": 30.0,
+        "asphalt": 16.0,
+        "prefabpanels": 35.0,
+        "steel": 11.0,
+        "boards": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Plant Construction Office",
+      "workshopId": "2096334663",
+      "modPath": "coheavy"
+    },
+    {
+      "id": "2096334663/extralongdist",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.0,
+        "concrete": 22.0,
+        "gravel": 30.0,
+        "asphalt": 16.0,
+        "prefabpanels": 20.0,
+        "steel": 6.0,
+        "boards": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Extra-Long Distribution Office",
+      "workshopId": "2096334663",
+      "modPath": "extralongdist"
+    },
+    {
+      "id": "2096334663/extralongvehicledepot",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.0,
+        "concrete": 22.0,
+        "gravel": 30.0,
+        "asphalt": 16.0,
+        "prefabpanels": 20.0,
+        "steel": 6.0,
+        "boards": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Extra-Long Vehicle Depot",
+      "workshopId": "2096334663",
+      "modPath": "extralongvehicledepot"
+    },
+    {
+      "id": "2096334663/vdheavy",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 220.0,
+        "concrete": 22.0,
+        "gravel": 30.0,
+        "asphalt": 16.0,
+        "prefabpanels": 35.0,
+        "steel": 11.0,
+        "boards": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Plant Vehicle Depot",
+      "workshopId": "2096334663",
+      "modPath": "vdheavy"
+    }
+  ],
+  "vehicles": []
+}

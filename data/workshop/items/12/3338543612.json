@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3338543612",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:46:13+00:00",
+  "buildings": [
+    {
+      "id": "3338543612/1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {
+        "explosives": 0.014
+      },
+      "consumption": {
+        "chemicals": 0.01,
+        "gravel": 0.03,
+        "wood": 0.02
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Explosives factory S",
+      "workshopId": "3338543612",
+      "modPath": "1"
+    },
+    {
+      "id": "3338543612/2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 75.0,
+      "professors": 0,
+      "production": {
+        "explosives": 0.015
+      },
+      "consumption": {
+        "chemicals": 0.01,
+        "gravel": 0.03,
+        "wood": 0.02
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Explosives factory M",
+      "workshopId": "3338543612",
+      "modPath": "2"
+    },
+    {
+      "id": "3338543612/3",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200.0,
+      "professors": 0,
+      "production": {
+        "explosives": 0.016
+      },
+      "consumption": {
+        "chemicals": 0.01,
+        "gravel": 0.03,
+        "wood": 0.02
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Explosives factory L",
+      "workshopId": "3338543612",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1873180745",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:26:34+00:00",
+  "buildings": [
+    {
+      "id": "1873180745/Transformer",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Transformer",
+      "workshopId": "1873180745",
+      "modPath": "Transformer"
+    }
+  ],
+  "vehicles": []
+}

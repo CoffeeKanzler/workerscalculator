@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2357386288",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:41:30+00:00",
+  "buildings": [
+    {
+      "id": "2357386288/zakladychemiczne",
+      "nameId": 6054,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200.0,
+      "professors": 0,
+      "production": {
+        "chemicals": 0.0135
+      },
+      "consumption": {
+        "gravel": 0.012,
+        "wood": 0.014,
+        "plants": 0.013,
+        "oil": 0.02,
+        "water": 0.17,
+        "eletric": 0.75
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2357386288",
+      "modPath": "zakladychemiczne"
+    }
+  ],
+  "vehicles": []
+}

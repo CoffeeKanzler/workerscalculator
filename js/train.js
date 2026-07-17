@@ -7,8 +7,33 @@ export const isLocomotive = vehicle =>
 // game's $TRAINSET mechanic that the sheet doesn't know about - those arrive
 // as {tenderOnly: true} patches and get merged onto the existing entry by
 // name instead of appended as a second, duplicate roster entry.
-export function mergeVehiclePools(sheetVehicles, railSupplement) {
-  const merged = sheetVehicles.map(v => ({ ...v }));
+export function mergeVehiclePools(sheetVehicles, railSupplement, rawGameVehicles = []) {
+  const merged = sheetVehicles.map(vehicle => ({
+    ...vehicle,
+    attrs: { ...vehicle.attrs },
+    provenance: { productionCost: 'spreadsheet', cargoCapacities: 'spreadsheet' },
+  }));
+  const rawByName = new Map();
+  for (const vehicle of rawGameVehicles) {
+    for (const name of [vehicle.de, vehicle.en]) {
+      if (name) rawByName.set(name.toLowerCase(), vehicle);
+    }
+  }
+  const fields = {
+    length: 'Länge', emptyWeight: 'Leergewicht', powerKW: 'Motorleistung',
+    speed: 'Max. Geschwindigkeit', from: 'Von', to: 'Bis',
+  };
+  for (const vehicle of merged) {
+    const raw = rawByName.get(vehicle.name.toLowerCase());
+    if (!raw) continue;
+    for (const [source, target] of Object.entries(fields)) {
+      if (Number.isFinite(raw[source])) vehicle.attrs[target] = raw[source];
+    }
+    vehicle.sourceGameId = raw.id;
+    vehicle.provenance.dimensions = 'game-file';
+    vehicle.provenance.performance = 'game-file';
+    vehicle.provenance.availability = 'game-file';
+  }
   const byName = new Map(merged.map(v => [v.name.toLowerCase(), v]));
   for (const r of railSupplement) {
     if (r.tenderOnly) {

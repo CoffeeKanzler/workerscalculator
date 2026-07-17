@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1942268505",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:49:47+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1942268505/Belaz_540",
+      "category": "workshop",
+      "length": 7.24,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 9000.0,
+      "capacity": 27.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "speed": 55.0,
+      "emptyWeight": 20.92,
+      "from": 1967,
+      "to": 1985,
+      "countryId": 39011,
+      "workshopId": "1942268505",
+      "modPath": "Belaz_540"
+    }
+  ]
+}

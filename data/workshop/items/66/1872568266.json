@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1872568266",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:38:08+00:00",
+  "buildings": [
+    {
+      "id": "1872568266/gravel_processing",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {
+        "gravel": 5.5
+      },
+      "consumption": {
+        "rawgravel": 8.0,
+        "eletric": 0.4
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gravel Processing v2",
+      "workshopId": "1872568266",
+      "modPath": "gravel_processing"
+    }
+  ],
+  "vehicles": []
+}

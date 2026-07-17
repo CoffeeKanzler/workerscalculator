@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3351924523",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:28:57+00:00",
+  "buildings": [
+    {
+      "id": "3351924523/blok1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 85.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 85.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick house 19A (5 floors)",
+      "workshopId": "3351924523",
+      "modPath": "blok1"
+    },
+    {
+      "id": "3351924523/blok2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 68.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 68.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick house 19A (4 floors)",
+      "workshopId": "3351924523",
+      "modPath": "blok2"
+    },
+    {
+      "id": "3351924523/blok3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 63.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 63.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick house 19B (5 floors)",
+      "workshopId": "3351924523",
+      "modPath": "blok3"
+    },
+    {
+      "id": "3351924523/blok4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 50.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick house 19B (4 floors)",
+      "workshopId": "3351924523",
+      "modPath": "blok4"
+    }
+  ],
+  "vehicles": []
+}

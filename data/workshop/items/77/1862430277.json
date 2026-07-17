@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1862430277",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:37:49+00:00",
+  "buildings": [
+    {
+      "id": "1862430277/Ruralrefuelingstation",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Farm Refueling Station",
+      "workshopId": "1862430277",
+      "modPath": "Ruralrefuelingstation"
+    },
+    {
+      "id": "1862430277/farmpump_grun",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Farm Refueling Station",
+      "workshopId": "1862430277",
+      "modPath": "farmpump_grun"
+    },
+    {
+      "id": "1862430277/farmpump_red",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Farm Refueling Station",
+      "workshopId": "1862430277",
+      "modPath": "farmpump_red"
+    },
+    {
+      "id": "1862430277/farmpump_rot",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Farm Refueling Station",
+      "workshopId": "1862430277",
+      "modPath": "farmpump_rot"
+    },
+    {
+      "id": "1862430277/farmpump_yel",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Farm Refueling Station",
+      "workshopId": "1862430277",
+      "modPath": "farmpump_yel"
+    }
+  ],
+  "vehicles": []
+}

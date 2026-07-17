@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2235120868",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:06:35+00:00",
+  "buildings": [
+    {
+      "id": "2235120868/uniwersytet",
+      "nameId": 6013,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 20.0,
+      "professors": 20.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2235120868",
+      "modPath": "uniwersytet"
+    }
+  ],
+  "vehicles": []
+}

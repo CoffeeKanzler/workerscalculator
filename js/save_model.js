@@ -152,3 +152,29 @@ export function latestProductivity(records, fallback = 1) {
   }
   return fallback;
 }
+
+export function inferObservedHousing(citizens, buildings, isKnownHousing = () => false) {
+  const residentsByBuilding = new Map();
+  for (const citizen of citizens) {
+    if (citizen.residenceBuildingIndex >= 0) {
+      residentsByBuilding.set(citizen.residenceBuildingIndex,
+        (residentsByBuilding.get(citizen.residenceBuildingIndex) ?? 0) + 1);
+    }
+  }
+  const grouped = new Map();
+  for (const building of buildings) {
+    const residents = residentsByBuilding.get(building.index) ?? 0;
+    if (!residents || isKnownHousing(building)) continue;
+    const key = `${building.scopeId ?? 'none'}\0${building.type}`;
+    const row = grouped.get(key) ?? {
+      scopeId: building.scopeId, type: building.type, buildingCount: 0,
+      residents: 0, maxObservedOccupancy: 0, buildingIndices: [],
+    };
+    row.buildingCount += 1;
+    row.residents += residents;
+    row.maxObservedOccupancy = Math.max(row.maxObservedOccupancy, residents);
+    row.buildingIndices.push(building.index);
+    grouped.set(key, row);
+  }
+  return [...grouped.values()];
+}

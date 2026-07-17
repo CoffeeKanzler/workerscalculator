@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1862255824",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:30:10+00:00",
+  "buildings": [
+    {
+      "id": "1862255824/MainFirestation",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Main Firestation East Germany, 6 fireengines",
+      "workshopId": "1862255824",
+      "modPath": "MainFirestation"
+    }
+  ],
+  "vehicles": []
+}

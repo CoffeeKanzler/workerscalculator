@@ -51,3 +51,28 @@ test('missing citizen source produces coverage warning, not fake health failure'
   const alerts = republicAlerts(model);
   assert.deepEqual(alerts.map(alert => alert.metric), ['coverage.workers']);
 });
+
+test('production-only scope does not invent a local residential workforce deficit', () => {
+  const model = buildRepublicModel({
+    observed: { scopes: [], productionRows: [], sourceStatus: {} },
+    planned: {
+      totals: { netWorkers: 50 },
+      areas: [{ scopeId: 9, name: 'Steel works', netWorkers: -200, workforceLinked: false }],
+    },
+  });
+  assert.ok(!republicAlerts(model).some(alert => alert.metric === 'netWorkers'));
+});
+
+test('unresolved Workshop buildings surface as an area coverage warning', () => {
+  const model = buildRepublicModel({
+    observed: { scopes: [], productionRows: [], sourceStatus: {} },
+    planned: {
+      totals: {},
+      areas: [{ scopeId: 40, name: 'Mühlheim', unresolvedBuildingCount: 48 }],
+    },
+  });
+  const alert = republicAlerts(model).find(item => item.metric === 'coverage.workshop');
+  assert.deepEqual(alert && {
+    severity: alert.severity, scopeId: alert.scopeId, observed: alert.observed,
+  }, { severity: 'warning', scopeId: 40, observed: 48 });
+});

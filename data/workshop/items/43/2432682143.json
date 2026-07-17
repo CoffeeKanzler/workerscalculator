@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2432682143",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:25:24+00:00",
+  "buildings": [
+    {
+      "id": "2432682143/avtopark016",
+      "nameId": 6211,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1100.0,
+        "prefabpanels": 19.0,
+        "bricks": 80.0,
+        "boards": 3.0,
+        "concrete": 13.0,
+        "steel": 10.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "avtopark016"
+    },
+    {
+      "id": "2432682143/avtopark016.1",
+      "nameId": 6211,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 750.0,
+        "prefabpanels": 15.0,
+        "bricks": 40.0,
+        "boards": 2.0,
+        "concrete": 10.0,
+        "steel": 8.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "avtopark016.1"
+    },
+    {
+      "id": "2432682143/avtopark032",
+      "nameId": 6211,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1450.0,
+        "prefabpanels": 23.0,
+        "bricks": 80.0,
+        "boards": 4.0,
+        "concrete": 14.0,
+        "steel": 12.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "avtopark032"
+    },
+    {
+      "id": "2432682143/avtopark032.1",
+      "nameId": 6211,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1300.0,
+        "prefabpanels": 11.0,
+        "bricks": 20.0,
+        "boards": 1.0,
+        "concrete": 9.0,
+        "steel": 6.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "avtopark032.1"
+    },
+    {
+      "id": "2432682143/avtopark04",
+      "nameId": 6210,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 400.0,
+        "prefabpanels": 11.0,
+        "bricks": 20.0,
+        "boards": 1.0,
+        "concrete": 9.0,
+        "steel": 6.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "avtopark04"
+    },
+    {
+      "id": "2432682143/avtopark08",
+      "nameId": 6210,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 750.0,
+        "prefabpanels": 15.0,
+        "bricks": 40.0,
+        "boards": 2.0,
+        "concrete": 10.0,
+        "steel": 8.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "avtopark08"
+    },
+    {
+      "id": "2432682143/avtopark16",
+      "nameId": 6211,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1100.0,
+        "prefabpanels": 19.0,
+        "bricks": 80.0,
+        "boards": 3.0,
+        "concrete": 13.0,
+        "steel": 10.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "avtopark16"
+    },
+    {
+      "id": "2432682143/avtopark16.1",
+      "nameId": 6211,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 750.0,
+        "prefabpanels": 15.0,
+        "bricks": 40.0,
+        "boards": 2.0,
+        "concrete": 10.0,
+        "steel": 8.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "avtopark16.1"
+    },
+    {
+      "id": "2432682143/avtopark32",
+      "nameId": 6211,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1450.0,
+        "prefabpanels": 23.0,
+        "bricks": 80.0,
+        "boards": 4.0,
+        "concrete": 14.0,
+        "steel": 12.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "avtopark32"
+    },
+    {
+      "id": "2432682143/avtopark32.1",
+      "nameId": 6211,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1300.0,
+        "prefabpanels": 11.0,
+        "bricks": 20.0,
+        "boards": 1.0,
+        "concrete": 9.0,
+        "steel": 6.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "avtopark32.1"
+    },
+    {
+      "id": "2432682143/avtopark4",
+      "nameId": 6210,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 400.0,
+        "prefabpanels": 11.0,
+        "bricks": 20.0,
+        "boards": 1.0,
+        "concrete": 9.0,
+        "steel": 6.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "avtopark4"
+    },
+    {
+      "id": "2432682143/avtopark8",
+      "nameId": 6210,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 750.0,
+        "prefabpanels": 15.0,
+        "bricks": 40.0,
+        "boards": 2.0,
+        "concrete": 10.0,
+        "steel": 8.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "avtopark8"
+    },
+    {
+      "id": "2432682143/xozpark10",
+      "nameId": 6218,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 750.0,
+        "prefabpanels": 15.0,
+        "bricks": 40.0,
+        "boards": 2.0,
+        "concrete": 10.0,
+        "steel": 8.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "xozpark10"
+    },
+    {
+      "id": "2432682143/xozpark15",
+      "nameId": 6218,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 750.0,
+        "prefabpanels": 15.0,
+        "bricks": 40.0,
+        "boards": 2.0,
+        "concrete": 10.0,
+        "steel": 8.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "xozpark15"
+    },
+    {
+      "id": "2432682143/xozpark20",
+      "nameId": 6218,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1300.0,
+        "prefabpanels": 11.0,
+        "bricks": 20.0,
+        "boards": 1.0,
+        "concrete": 9.0,
+        "steel": 6.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "xozpark20"
+    },
+    {
+      "id": "2432682143/xozpark30",
+      "nameId": 6218,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1300.0,
+        "prefabpanels": 11.0,
+        "bricks": 20.0,
+        "boards": 1.0,
+        "concrete": 9.0,
+        "steel": 6.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "xozpark30"
+    },
+    {
+      "id": "2432682143/xozpark5",
+      "nameId": 6218,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 400.0,
+        "prefabpanels": 11.0,
+        "bricks": 20.0,
+        "boards": 1.0,
+        "concrete": 9.0,
+        "steel": 6.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2432682143",
+      "modPath": "xozpark5"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3135501848",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:36:34+00:00",
+  "buildings": [
+    {
+      "id": "3135501848/eisenbahnbauamt",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE_RAIL"
+      ],
+      "workers": 45.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 250.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 0.1,
+        "lighting": 0.1
+      },
+      "nameStr": "Eisenbahnbauamt",
+      "workshopId": "3135501848",
+      "modPath": "eisenbahnbauamt"
+    },
+    {
+      "id": "3135501848/eisenbahndepot",
+      "nameId": null,
+      "types": [
+        "TYPE_RAILDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Zugdepot",
+      "workshopId": "3135501848",
+      "modPath": "eisenbahndepot"
+    },
+    {
+      "id": "3135501848/eisenbahndepotlang",
+      "nameId": null,
+      "types": [
+        "TYPE_RAILDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Zugdepot",
+      "workshopId": "3135501848",
+      "modPath": "eisenbahndepotlang"
+    },
+    {
+      "id": "3135501848/eisenbahnendstation",
+      "nameId": null,
+      "types": [
+        "TYPE_WAITING_STATION",
+        "SUBTYPE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Zugendstation",
+      "workshopId": "3135501848",
+      "modPath": "eisenbahnendstation"
+    },
+    {
+      "id": "3135501848/eisenbahnendstationlang",
+      "nameId": null,
+      "types": [
+        "TYPE_WAITING_STATION",
+        "SUBTYPE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Zugendstation",
+      "workshopId": "3135501848",
+      "modPath": "eisenbahnendstationlang"
+    },
+    {
+      "id": "3135501848/eisenbahnlager",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "RAW-Lager",
+      "workshopId": "3135501848",
+      "modPath": "eisenbahnlager"
+    },
+    {
+      "id": "3135501848/eisenbahnverteilzentrum",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Zugverteilzentrum",
+      "workshopId": "3135501848",
+      "modPath": "eisenbahnverteilzentrum"
+    },
+    {
+      "id": "3135501848/eisenbahnvzlang",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 250.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Zugverteilzentrum",
+      "workshopId": "3135501848",
+      "modPath": "eisenbahnvzlang"
+    },
+    {
+      "id": "3135501848/eisenbahnwerkstatt",
+      "nameId": null,
+      "types": [
+        "TYPE_REPAIR_OFFICE"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "RAW",
+      "workshopId": "3135501848",
+      "modPath": "eisenbahnwerkstatt"
+    },
+    {
+      "id": "3135501848/eisenbahnwerkstattlang",
+      "nameId": null,
+      "types": [
+        "TYPE_REPAIR_OFFICE"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "RAW",
+      "workshopId": "3135501848",
+      "modPath": "eisenbahnwerkstattlang"
+    }
+  ],
+  "vehicles": []
+}

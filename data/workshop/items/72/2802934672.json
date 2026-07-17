@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2802934672",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:35:39+00:00",
+  "buildings": [
+    {
+      "id": "2802934672/wiezacisnien",
+      "nameId": 7506,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2802934672",
+      "modPath": "wiezacisnien"
+    }
+  ],
+  "vehicles": []
+}

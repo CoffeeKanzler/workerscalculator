@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2580241622",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:44:23+00:00",
+  "buildings": [
+    {
+      "id": "2580241622/Anchorage",
+      "nameId": null,
+      "types": [
+        "TYPE_SHIP_DOCK"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Anchorage",
+      "workshopId": "2580241622",
+      "modPath": "Anchorage"
+    },
+    {
+      "id": "2580241622/BulkCargoTerminal",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bulk Cargo Terminal",
+      "workshopId": "2580241622",
+      "modPath": "BulkCargoTerminal"
+    },
+    {
+      "id": "2580241622/BulkCargoWarehousePort",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 9450.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bulk Cargo Warehouse (Port)",
+      "workshopId": "2580241622",
+      "modPath": "BulkCargoWarehousePort"
+    },
+    {
+      "id": "2580241622/CargoTerminal",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cargo Terminal",
+      "workshopId": "2580241622",
+      "modPath": "CargoTerminal"
+    },
+    {
+      "id": "2580241622/CargoWarehousePort",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 8350.0,
+        "RESOURCE_TRANSPORT_COVERED": 400.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cargo Warehouse (Port)",
+      "workshopId": "2580241622",
+      "modPath": "CargoWarehousePort"
+    },
+    {
+      "id": "2580241622/ContainerTerminal",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 400.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Container Terminal",
+      "workshopId": "2580241622",
+      "modPath": "ContainerTerminal"
+    },
+    {
+      "id": "2580241622/OilTerminal",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oil Terminal",
+      "workshopId": "2580241622",
+      "modPath": "OilTerminal"
+    }
+  ],
+  "vehicles": []
+}

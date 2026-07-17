@@ -90,7 +90,8 @@ test('mine production scales with quality, consumption does not', () => {
 });
 
 test('imported configured staffing and city productivity scale a production row', () => {
-  const building = buildings.find(b => b.workers > 0 && b.production.length > 0);
+  const building = buildings.find(b => b.workers > 0 && b.production.length > 0
+    && eco().outputPrice(b.production[0].de, 'RUB') > 0);
   const settings = { productivity: 1, timeUnit: 'day', calendarFlow: 1, fertilizer: 1 };
   const full = evaluatePlan([{ building, count: 1 }], {}, settings, eco());
   const configured = evaluatePlan([{
@@ -101,6 +102,17 @@ test('imported configured staffing and city productivity scale a production row'
   assert.equal(configured.rows[0].workers, building.workers / 2);
   assert.ok(Math.abs(configured.rows[0].income - full.rows[0].income * 0.4) < 1e-8);
   assert.ok(Math.abs(configured.rows[0].expenses - full.rows[0].expenses * 0.4) < 1e-8);
+});
+
+test('data-driven mine flag scales Workshop production quality exactly once', () => {
+  const building = {
+    de: 'Workshop mine', workers: 10, usesQuality: true,
+    production: [{ de: 'Kohle', rate: 100 }], consumption: [],
+  };
+  const settings = { productivity: 1, timeUnit: 'day', calendarFlow: 1, currency: 'RUB' };
+  const full = evaluatePlan([{ building, count: 1, quality: 1 }], {}, settings, eco());
+  const half = evaluatePlan([{ building, count: 1, quality: 0.5 }], {}, settings, eco());
+  assert.equal(half.balance.get('coal').produced, full.balance.get('coal').produced / 2);
 });
 
 test('two rows of the same mine at different qualities keep independent results', () => {

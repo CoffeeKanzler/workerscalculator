@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2287883145",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:27:26+00:00",
+  "buildings": [
+    {
+      "id": "2287883145/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 180.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 180.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka 2-18-9-1",
+      "workshopId": "2287883145",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2287883145/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 360.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 360.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka 2-18-9-2",
+      "workshopId": "2287883145",
+      "modPath": "HOUSE2"
+    },
+    {
+      "id": "2287883145/HOUSE3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 540.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 540.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka 2-18-9-3",
+      "workshopId": "2287883145",
+      "modPath": "HOUSE3"
+    },
+    {
+      "id": "2287883145/HOUSE4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 720.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 720.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka 2-18-9-4",
+      "workshopId": "2287883145",
+      "modPath": "HOUSE4"
+    },
+    {
+      "id": "2287883145/HOUSE5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 900.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 900.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka 2-18-9-5",
+      "workshopId": "2287883145",
+      "modPath": "HOUSE5"
+    },
+    {
+      "id": "2287883145/HOUSE6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 100.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka 2-18-5-1",
+      "workshopId": "2287883145",
+      "modPath": "HOUSE6"
+    },
+    {
+      "id": "2287883145/HOUSE7",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka 2-18-5-2",
+      "workshopId": "2287883145",
+      "modPath": "HOUSE7"
+    },
+    {
+      "id": "2287883145/HOUSE8",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 300.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 300.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka 2-18-5-3",
+      "workshopId": "2287883145",
+      "modPath": "HOUSE8"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2923961199",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:45:19+00:00",
+  "buildings": [
+    {
+      "id": "2923961199/chlodnia1",
+      "nameId": 9060,
+      "types": [
+        "TYPE_COOLING_TOWER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2923961199",
+      "modPath": "chlodnia1"
+    },
+    {
+      "id": "2923961199/chlodnia2",
+      "nameId": 9060,
+      "types": [
+        "TYPE_COOLING_TOWER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2923961199",
+      "modPath": "chlodnia2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2617466624",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:02:58+00:00",
+  "buildings": [
+    {
+      "id": "2617466624/kiosk_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kiosk",
+      "workshopId": "2617466624",
+      "modPath": "kiosk_1"
+    },
+    {
+      "id": "2617466624/kiosk_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kiosk",
+      "workshopId": "2617466624",
+      "modPath": "kiosk_2"
+    },
+    {
+      "id": "2617466624/kiosk_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kiosk",
+      "workshopId": "2617466624",
+      "modPath": "kiosk_3"
+    }
+  ],
+  "vehicles": []
+}

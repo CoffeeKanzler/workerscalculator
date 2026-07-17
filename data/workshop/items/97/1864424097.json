@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1864424097",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:01:52+00:00",
+  "buildings": [
+    {
+      "id": "1864424097/SchoolMedium",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 10.0,
+      "professors": 15.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 47.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "School Medium",
+      "workshopId": "1864424097",
+      "modPath": "SchoolMedium"
+    }
+  ],
+  "vehicles": []
+}

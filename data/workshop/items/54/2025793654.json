@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2025793654",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:33:09+00:00",
+  "buildings": [
+    {
+      "id": "2025793654/open_stor",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 330.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vanilla Small 2 Rail Open",
+      "workshopId": "2025793654",
+      "modPath": "open_stor"
+    },
+    {
+      "id": "2025793654/open_stor_22",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1170.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vanilla Medium 2 Rail Open",
+      "workshopId": "2025793654",
+      "modPath": "open_stor_22"
+    }
+  ],
+  "vehicles": []
+}

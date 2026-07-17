@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1981978841",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T17:49:27+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1981978841/1",
+      "category": "workshop",
+      "length": 9.22,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 6300.0,
+      "speed": 55.0,
+      "powerKW": 460.0,
+      "emptyWeight": 35.0,
+      "from": 1959,
+      "to": 1989,
+      "countryId": 39011,
+      "capacity": 105.0,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "workshopId": "1981978841",
+      "modPath": "1"
+    },
+    {
+      "id": "1981978841/2",
+      "category": "workshop",
+      "length": 9.22,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 6300.0,
+      "speed": 55.0,
+      "powerKW": 460.0,
+      "emptyWeight": 35.0,
+      "from": 1959,
+      "to": 1989,
+      "countryId": 39011,
+      "capacity": 50.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "workshopId": "1981978841",
+      "modPath": "2"
+    }
+  ]
+}

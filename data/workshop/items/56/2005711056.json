@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2005711056",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:01:43+00:00",
+  "buildings": [
+    {
+      "id": "2005711056/chicken1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {
+        "meat": 0.01
+      },
+      "consumption": {
+        "plants": 0.025
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Chicken Farm 1",
+      "workshopId": "2005711056",
+      "modPath": "chicken1"
+    },
+    {
+      "id": "2005711056/chicken2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {
+        "meat": 0.01
+      },
+      "consumption": {
+        "plants": 0.025
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Chicken Farm 2",
+      "workshopId": "2005711056",
+      "modPath": "chicken2"
+    }
+  ],
+  "vehicles": []
+}
