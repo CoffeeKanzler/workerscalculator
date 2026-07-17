@@ -8,6 +8,10 @@ import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
 } from './train.js?v=14';
 import { createIndexedDbSnapshotStore, migrateLegacySnapshots } from './storage.js?v=1';
+import {
+  aggregateCitizensByScope, compactObservedBuildings, groupObservedProduction,
+  latestProductivity, matchObservedBuilding,
+} from './save_model.js?v=1';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = ['prices', 'production', 'chain', 'analysis', 'vehicleprod', 'city', 'republic',
@@ -702,12 +706,20 @@ function renderProduction() {
         row.name ?? ', ', v => { row.name = v === ', ' ? null : v; });
       const isMine = b && QUALITY_BUILDINGS_DE.has(b.de);
       const areaName = plannerScopeName(row.scopeId);
+      const observed = Array.isArray(row.observedBuildingIndices);
+      const buildingCell = observed ? el('div', {}, bSel,
+        el('div', { class: 'sourceid' },
+          `${t('currentWorkers')}: ${fmt(row.currentWorkers ?? 0, 0)} · `
+          + `${t('configuredWorkers')}: ${fmt(row.configuredWorkers ?? 0, 0)}`
+          + (row.configuredWorkersHighEducation
+            ? ` + ${fmt(row.configuredWorkersHighEducation, 0)} ${t('highEducationWorkers')}` : ''),
+          el('span', { class: 'evidence-badge exact' }, t('exact')))) : bSel;
       return el('tr', {},
-        el('td', {}, areaName), el('td', {}, groupSel), el('td', {}, bSel),
+        el('td', {}, areaName), el('td', {}, groupSel), el('td', {}, buildingCell),
         el('td', {}, numInput(row.count, v => row.count = v, { min: 0, step: 1 })),
-        el('td', { title: row.qualityEstimated ? 'Mine quality is not stored in this import yet; 50% estimate.' : '' },
+        el('td', { title: row.qualityEstimated ? 'Estimated mine quality.' : observed ? 'Exact saved mine quality.' : '' },
           isMine ? pctInput(row.quality ?? 0.5, v => { row.quality = v; row.qualityEstimated = false; }) : '—'),
-        el('td', { class: 'r' }, b ? fmt(b.workers * row.count, 0) : '—'),
+        el('td', { class: 'r' }, b ? fmt(res.workers ?? b.workers * row.count, 0) : '—'),
         el('td', { class: 'r ' + ((res.profit ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profit)),
         el('td', { class: 'r ' + ((res.profitPerWorker ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profitPerWorker)),
         el('td', { class: 'r' }, fmt(res.amortDays, 1)),
@@ -1188,27 +1200,28 @@ function importedCityBuilding(raw, sourceType) {
   };
 }
 
-function buildImportedPlanning(sourceName, settlements, buildings, membershipAudit) {
+function buildImportedPlanning(sourceName, settlements, buildings, membershipAudit, {
+  citizens = null, citizenFileSummary = null, header = null, research = null,
+  sourceStatus = {}, parserWarnings = [], defaultProductivity = 1,
+} = {}) {
   const occupiedScopeIds = new Set(buildings.map(building => building.scopeId).filter(Number.isInteger));
   const occupiedSettlements = settlements.filter(settlement => occupiedScopeIds.has(settlement.id));
   const cityRows = new Map(occupiedSettlements.map(s => [s.id, new Map()]));
-  const production = new Map();
+  const citizenResult = citizens ? aggregateCitizensByScope(citizens, buildings) : null;
+  const citizenScopes = citizenResult?.scopes ?? new Map();
+  const productionGrouped = groupObservedProduction(
+    buildings.filter(record => record.type !== 'temp'), DATA.prodSets.game ?? []);
+  const productionRows = productionGrouped.rows.map(row => ({
+    ...row,
+    productivity: citizenScopes.get(row.scopeId)?.productivity ?? defaultProductivity,
+  }));
   const unmatched = new Map();
   let cityCount = 0, productionCount = 0, temporaryCount = 0;
 
   for (const record of buildings) {
     if (record.type === 'temp') { temporaryCount += 1; continue; }
-    const productionBuilding = matchSaveBuilding(record.type, DATA.prodSets.game ?? [], b => b.gameId);
+    const productionBuilding = matchObservedBuilding(record.type, DATA.prodSets.game ?? []);
     if (productionBuilding) {
-      const key = `${record.scopeId ?? 'none'}\0${productionBuilding.de}`;
-      const current = production.get(key) ?? {
-        group: productionBuilding.group?.de ?? '', name: productionBuilding.de, count: 0,
-        quality: QUALITY_BUILDINGS_DE.has(productionBuilding.de) ? 0.5 : 1,
-        qualityEstimated: QUALITY_BUILDINGS_DE.has(productionBuilding.de),
-        scopeId: record.scopeId, sourceGameId: record.type,
-      };
-      current.count += 1;
-      production.set(key, current);
       productionCount += 1;
       continue;
     }
@@ -1234,12 +1247,15 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
     unmatched.set(key, current);
   }
 
-  const productionScopeIds = new Set([...production.values()].map(row => row.scopeId).filter(Number.isInteger));
-  const cities = occupiedSettlements.filter(settlement => cityRows.get(settlement.id).size).map(settlement => ({
+  const productionScopeIds = new Set(productionRows.map(row => row.scopeId).filter(Number.isInteger));
+  const cities = occupiedSettlements.filter(settlement =>
+    cityRows.get(settlement.id).size || citizenScopes.has(settlement.id)).map(settlement => ({
     ...defaultCity(),
     name: settlement.name || settlement.extraName || `${t('city')} ${settlement.id + 1}`,
     scopeId: settlement.id,
     source: 'save',
+    productivity: citizenScopes.get(settlement.id)?.productivity ?? defaultProductivity,
+    observed: citizenScopes.get(settlement.id) ?? null,
     sourcePosition: { x: settlement.x, y: settlement.y, z: settlement.z },
     rows: [...cityRows.get(settlement.id).values()],
   }));
@@ -1249,14 +1265,27 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
   if (membershipAudit.invalidMemberRefs.length) warnings.push(`${membershipAudit.invalidMemberRefs.length} invalid member reference(s).`);
   if (membershipAudit.fallbackAssignments) warnings.push(`${membershipAudit.fallbackAssignments} building assignment(s) used the namepoint fallback.`);
   if (membershipAudit.unassigned) warnings.push(`${membershipAudit.unassigned} building(s) have no settlement assignment.`);
+  for (const warning of parserWarnings) warnings.push(`${warning.file}: ${warning.message}`);
+  const researchComplete = research?.filter(item => item.progress >= 1).length ?? 0;
+  const researchPartial = research?.filter(item => item.progress > 0 && item.progress < 1).length ?? 0;
 
   return {
     cities,
-    productionRows: [...production.values()],
+    productionRows,
     metadata: {
-      version: 1, sourceName, importedAt: new Date().toISOString(),
+      version: 2, sourceName, importedAt: new Date().toISOString(), header, sourceStatus,
       settlementCount: occupiedSettlements.length, sourceSettlementCount: settlements.length,
       emptySettlementCount: settlements.length - occupiedSettlements.length, buildingCount: buildings.length,
+      citizenCount: citizenResult?.recordCount ?? 0,
+      citizenSummary: citizenResult ? {
+        ...citizenFileSummary,
+        unassigned: citizenResult.unassigned,
+        invalidResidenceRefs: citizenResult.invalidResidenceRefs,
+        populatedScopeCount: citizenScopes.size,
+      } : null,
+      observedBuildings: compactObservedBuildings(buildings),
+      research: research ?? null,
+      researchComplete, researchPartial,
       cityScopeCount: cities.length, productionScopeCount: productionScopeIds.size,
       scopes: occupiedSettlements.map(settlement => ({
         id: settlement.id,
@@ -1264,6 +1293,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
         position: { x: settlement.x, y: settlement.y, z: settlement.z },
         city: cityRows.get(settlement.id).size > 0,
         production: productionScopeIds.has(settlement.id),
+        citizens: citizenScopes.get(settlement.id) ?? null,
       })),
       cityBuildingCount: cityCount, productionBuildingCount: productionCount,
       temporaryCount, unmatchedCount: [...unmatched.values()].reduce((sum, item) => sum + item.count, 0),
@@ -1281,12 +1311,39 @@ function uniqueSnapshotName(base) {
   return `${base} (${suffix})`;
 }
 
+function parseSaveInWorker(payload) {
+  return new Promise((resolve, reject) => {
+    const worker = new Worker(new URL('./savegame_worker.js?v=1', import.meta.url), { type: 'module' });
+    worker.onerror = event => {
+      worker.terminate();
+      reject(new Error(event.message || 'Save parser worker failed'));
+    };
+    worker.onmessage = ({ data }) => {
+      if (data.type === 'progress') {
+        state.importStatus = `${t('importWorking')} (${data.done}/${data.total})`;
+        update();
+      } else if (data.type === 'error' && data.required) {
+        worker.terminate();
+        reject(new Error(`${data.file}: ${data.message}`));
+      } else if (data.type === 'complete') {
+        worker.terminate();
+        resolve(data.parsed);
+      }
+    };
+    const transfer = Object.values(payload).filter(value => value instanceof ArrayBuffer);
+    worker.postMessage(payload, transfer);
+  });
+}
+
 async function handleSaveDirectory(fileList) {
   const files = [...fileList];
   const byName = new Map(files.map(file => [file.name.toLowerCase(), file]));
   const namepoints = byName.get('namepoints.bin');
   const buildingsFile = byName.get('buildings_game.bin');
   const statsFile = byName.get('stats.ini');
+  const workersFile = byName.get('workers.bin');
+  const headerFile = byName.get('header.bin');
+  const researchFile = byName.get('research.bin');
   if (!namepoints || !buildingsFile) {
     state.importStatus = t('importMissingFiles');
     state.importStatusError = true;
@@ -1299,16 +1356,33 @@ async function handleSaveDirectory(fileList) {
   await new Promise(resolve => setTimeout(resolve, 0));
 
   try {
-    const parser = await import('./savegame.js?v=1');
-    const [namepointBuffer, buildingBuffer] = await Promise.all([namepoints.arrayBuffer(), buildingsFile.arrayBuffer()]);
-    const settlements = parser.parseNamepoints(namepointBuffer);
-    const buildings = parser.parseBuildingsGame(buildingBuffer);
-    const membershipAudit = parser.reconcileSettlementMembership(settlements, buildings);
+    const readOptional = file => file ? file.arrayBuffer() : Promise.resolve(null);
+    const [namepointBuffer, buildingBuffer, workerBuffer, headerBuffer, researchBuffer, statsText] = await Promise.all([
+      namepoints.arrayBuffer(), buildingsFile.arrayBuffer(), readOptional(workersFile),
+      readOptional(headerFile), readOptional(researchFile), statsFile ? statsFile.text() : '',
+    ]);
+    const parsed = await parseSaveInWorker({
+      namepoints: namepointBuffer, buildings: buildingBuffer, workers: workerBuffer,
+      header: headerBuffer, research: researchBuffer,
+    });
     const relative = namepoints.webkitRelativePath || buildingsFile.webkitRelativePath || '';
-    const sourceName = relative.split('/')[0] || namepoints.name.replace(/\.bin$/i, '') || 'W&R save';
-    const imported = buildImportedPlanning(sourceName, settlements, buildings, membershipAudit);
-    const statsRecords = statsFile ? compactStatsRecords(await statsFile.text()) : [];
+    const sourceName = parsed.header?.title || relative.split('/')[0]
+      || namepoints.name.replace(/\.bin$/i, '') || 'W&R save';
+    const statsRecords = statsText ? compactStatsRecords(statsText) : [];
+    const productivity = latestProductivity(statsRecords, 1);
+    const imported = buildImportedPlanning(sourceName, parsed.settlements, parsed.buildings,
+      parsed.membershipAudit, {
+        citizens: parsed.citizens,
+        citizenFileSummary: parsed.citizenFileSummary,
+        header: parsed.header,
+        research: parsed.research,
+        sourceStatus: parsed.sourceStatus,
+        parserWarnings: parsed.warnings,
+        defaultProductivity: productivity,
+      });
     imported.metadata.statsRecordCount = statsRecords.length;
+    imported.metadata.latestProductivity = productivity;
+    imported.metadata.sourceStatus.stats = statsFile ? 'exact' : 'missing';
 
     const backupName = uniqueSnapshotName(`Before import ${new Date().toLocaleString()}`);
     const backupResult = await saveNamedState(backupName);
@@ -1324,6 +1398,7 @@ async function handleSaveDirectory(fileList) {
       next.overrides = {};
     }
     next.plan.settings = { ...cloneStateValue(state.plan.settings), currency: state.currency };
+    next.plan.settings.productivity = productivity;
     next.plan.rows = imported.productionRows;
     next.cities = imported.cities;
     next.saveImport = imported.metadata;
@@ -1363,9 +1438,24 @@ function renderSaveImport() {
       onchange: event => event.target.files.length && handleSaveDirectory(event.target.files) }));
   const status = state.importStatus
     ? el('p', { class: state.importStatusError ? 'neg' : 'pos' }, state.importStatus) : null;
+  const sourceFiles = {
+    namepoints: 'namepoints.bin', buildings: 'buildings_game.bin', workers: 'workers.bin',
+    header: 'header.bin', research: 'research.bin', stats: 'stats.ini',
+  };
+  const coverage = info?.sourceStatus ? el('div', { class: 'coverage-grid' },
+    ...Object.entries(sourceFiles).map(([key, filename]) => {
+      const sourceState = info.sourceStatus[key] ?? 'missing';
+      return el('div', { class: 'coverage-item' }, el('code', {}, filename),
+        el('span', { class: `evidence-badge ${sourceState}` }, t(sourceState)));
+    })) : null;
 
   const audit = info ? el('div', { class: 'importaudit' },
     el('h3', {}, `${t('importedSnapshot')}: ${info.sourceName}`),
+    info.header ? el('div', { class: 'totalsbox save-identity' },
+      kv(t('saveTitle'), info.header.title || info.sourceName),
+      kv(t('saveVersion'), fmt(info.header.saveVersion, 0)),
+      kv(t('savePath'), info.header.savePath || '—')) : null,
+    coverage ? el('div', {}, el('h3', {}, t('sourceCoverage')), coverage) : null,
     el('div', { class: 'columns' },
       el('div', { class: 'totalsbox' },
         kv(t('importedAt'), new Date(info.importedAt).toLocaleString()),
@@ -1375,6 +1465,12 @@ function renderSaveImport() {
         info.emptySettlementCount ? kv(t('importedEmptySettlements'), fmt(info.emptySettlementCount, 0)) : null,
         kv(t('importedBuildings'), fmt(info.buildingCount, 0)),
         kv(t('importedStatsRecords'), info.statsRecordCount ? fmt(info.statsRecordCount, 0) : t('notFound')),
+        kv(t('importedCitizens'), info.citizenSummary ? fmt(info.citizenCount, 0) : t('notFound')),
+        info.citizenSummary ? kv(t('unassignedCitizens'), fmt(info.citizenSummary.unassigned, 0)) : null,
+        info.citizenSummary ? kv(t('populatedScopes'), fmt(info.citizenSummary.populatedScopeCount, 0)) : null,
+        info.research ? kv(t('importedResearch'), `${fmt(info.researchComplete, 0)} / ${fmt(info.research.length, 0)}`) : null,
+        info.researchPartial ? kv(t('partialResearch'), fmt(info.researchPartial, 0)) : null,
+        info.latestProductivity ? kv(t('productivity'), fmt(info.latestProductivity * 100, 4) + ' %') : null,
         kv(t('importedCityBuildings'), fmt(info.cityBuildingCount, 0)),
         kv(t('importedProductionBuildings'), fmt(info.productionBuildingCount, 0)),
         kv(t('importedTemporary'), fmt(info.temporaryCount, 0)),
@@ -1423,6 +1519,16 @@ function renderCity() {
     el('label', {}, t('waterDivisor') + ' ', numInput(city.waterDivisor, v => city.waterDivisor = v || 3, { min: 1, step: 1 })),
     el('label', {}, t('vanillaOnly') + ' ', el('input', {
       type: 'checkbox', checked: state.vanillaOnly, onchange: e => { state.vanillaOnly = e.target.checked; update(); } })));
+  const observedCard = city.observed ? el('div', { class: 'totalsbox observed-card' },
+    el('h3', {}, t('observedAtSave'), el('span', { class: 'evidence-badge derived' }, t('derived'))),
+    kv(t('population'), fmt(city.observed.residents, 0)),
+    kv(t('adults'), fmt(city.observed.adults, 0)),
+    kv(t('highEducation'), fmt(city.observed.highEducation, 0)),
+    kv(t('productivity'), fmt(city.observed.productivity * 100, 2) + ' %'),
+    kv(t('happiness'), fmt(city.observed.happiness * 100, 1) + ' %'),
+    kv(t('food'), fmt(city.observed.food * 100, 1) + ' %'),
+    kv(t('health'), fmt(city.observed.health * 100, 1) + ' %'),
+    kv(t('loyalty'), fmt(city.observed.loyalty * 100, 1) + ' %')) : null;
 
   const allIndexed = DATA.cityBuildings.map((building, index) => ({ building, index }));
   const pool = allIndexed.filter(({ building }) => !state.vanillaOnly || building.kind === 'Vanilla');
@@ -1556,7 +1662,9 @@ function renderCity() {
       return kv(r ? rname(r) : m, fmt(amt, 1));
     }));
 
-  return el('section', {}, cityTabs, settings, el('div', { class: 'tablewrap' }, tbl), addBtn,
+  return el('section', {}, cityTabs, observedCard,
+    city.observed ? el('h3', { class: 'plan-heading' }, t('planAssumptions')) : null,
+    settings, el('div', { class: 'tablewrap' }, tbl), addBtn,
     el('div', { class: 'columns' },
       el('div', {}, el('h3', {}, t('services')), services),
       summary, mats));
