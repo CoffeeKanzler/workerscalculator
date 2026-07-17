@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=16';
+import { STRINGS } from './i18n.js?v=17';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=21';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -45,6 +45,7 @@ const state = {
   lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0 },
   analysisSort: { col: 'profit', dir: -1 },
   analysisSearch: '',
+  priceSort: { col: 'name', dir: 1 },
 };
 
 function defaultCity() {
@@ -390,9 +391,10 @@ function renderCurrentTab() {
 function priceCell(table, key, prices) {
   const val = prices[table]?.[key];
   const isFallback = prices.fallback?.[`${table}.${key}`];
+  const sign = val > 0 ? ' pos' : val < 0 ? ' neg' : '';
   return el('input', {
     type: 'number', step: 'any',
-    class: 'num price' + (state.overrides[`${table}.${key}`] !== undefined ? ' overridden' : '') + (isFallback ? ' fallback' : ''),
+    class: 'num price' + sign + (state.overrides[`${table}.${key}`] !== undefined ? ' overridden' : '') + (isFallback ? ' fallback' : ''),
     ...(isFallback ? { title: state.lang === 'de'
       ? 'Nicht in deiner stats.ini enthalten (ältere Spielversion) – Beispielwert von 1979'
       : 'Not present in your stats.ini (older game version) – sample value from 1979' } : {}),
@@ -408,19 +410,44 @@ function priceCell(table, key, prices) {
 
 function renderPrices() {
   const prices = currentPrices();
-  const rows = DATA.resources.filter(r => r.key !== 'workers')
-    .sort((a, b) => rname(a).localeCompare(rname(b)));
+  // ₽ earned per $ spent buying this good abroad and selling it at home —
+  // the resource-implied exchange rate, for converting currency via trade
+  // instead of just moving cash (higher = better $→₽ conversion vehicle).
+  const conversionRatio = key => {
+    const buyUSD = prices.purchaseUSD?.[key];
+    const sellRUB = prices.sellRUB?.[key];
+    return buyUSD > 0 && sellRUB != null ? sellRUB / buyUSD : null;
+  };
+  const withRatio = DATA.resources.filter(r => r.key !== 'workers')
+    .map(r => ({ r, ratio: conversionRatio(r.key) }));
+
+  const { col, dir } = state.priceSort;
+  withRatio.sort((a, b) => {
+    if (col === 'ratio') {
+      const va = a.ratio ?? -Infinity, vb = b.ratio ?? -Infinity;
+      return (va > vb ? 1 : va < vb ? -1 : 0) * dir;
+    }
+    return rname(a.r).localeCompare(rname(b.r)) * dir;
+  });
+
+  const th = (id, label) => el('th', {
+    class: 'clickable' + (col === id ? ' sorted' : ''),
+    onclick: () => { state.priceSort = { col: id, dir: col === id ? -dir : 1 }; update(); },
+  }, label + (col === id ? (dir > 0 ? ' ↑' : ' ↓') : ''));
+
   const table = el('table', { class: 'data' },
     el('thead', {}, el('tr', {},
-      el('th', {}, t('resource')),
+      th('name', t('resource')),
       el('th', {}, t('sellRUB')), el('th', {}, t('buyRUB')),
-      el('th', {}, t('sellUSD')), el('th', {}, t('buyUSD')))),
-    el('tbody', {}, rows.map(r => el('tr', {},
+      el('th', {}, t('sellUSD')), el('th', {}, t('buyUSD')),
+      th('ratio', t('conversionRatio')))),
+    el('tbody', {}, withRatio.map(({ r, ratio }) => el('tr', {},
       el('td', { class: 'clickable', onclick: () => { state.historyKey = r.key; update(); } }, rname(r)),
       el('td', {}, priceCell('sellRUB', r.key, prices)),
       el('td', {}, priceCell('purchaseRUB', r.key, prices)),
       el('td', {}, priceCell('sellUSD', r.key, prices)),
-      el('td', {}, priceCell('purchaseUSD', r.key, prices))))));
+      el('td', {}, priceCell('purchaseUSD', r.key, prices)),
+      el('td', { class: 'r' }, ratio != null ? fmt(ratio, 2) : '—')))));
 
   const scalars = el('div', { class: 'scalars' },
     ...[['workdayCostRUB', `${t('workday')} ₽`], ['workdayCostUSD', `${t('workday')} $`],
@@ -537,7 +564,7 @@ function renderProduction() {
         el('td', {}, isMine ? numInput(row.quality ?? 1, v => row.quality = v, { step: 0.05, min: 0 }) : '—'),
         el('td', { class: 'r' }, b ? fmt(b.workers * row.count, 0) : '—'),
         el('td', { class: 'r ' + ((res.profit ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profit)),
-        el('td', { class: 'r' }, fmt(res.profitPerWorker)),
+        el('td', { class: 'r ' + ((res.profitPerWorker ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profitPerWorker)),
         el('td', { class: 'r' }, fmt(res.amortDays, 1)),
         el('td', { class: 'r' }, fmt(res.income)), el('td', { class: 'r' }, fmt(res.expenses)),
         el('td', { class: 'r' }, fmt(res.buildCost, 0)),
@@ -751,7 +778,7 @@ function renderAnalysis() {
         el('td', {}, bname(r.b)), el('td', {}, r.b.group[state.lang]),
         el('td', { class: 'r' }, fmt(r.b.workers, 0)),
         el('td', { class: 'r ' + (r.profit < 0 ? 'neg' : 'pos') }, fmt(r.profit)),
-        el('td', { class: 'r' }, fmt(r.profitPerWorker)),
+        el('td', { class: 'r ' + (r.profitPerWorker < 0 ? 'neg' : 'pos') }, fmt(r.profitPerWorker)),
         el('td', { class: 'r' }, fmt(r.amortDays, 1)),
         el('td', { class: 'r' }, fmt(r.income)), el('td', { class: 'r' }, fmt(r.expenses)),
         el('td', { class: 'r' }, fmt(r.buildCost, 0)))))));
@@ -854,7 +881,7 @@ function renderVehicleProduction() {
         el('td', { class: 'r' }, fmt(result.income, 0)),
         el('td', { class: 'r' }, fmt(result.expenses, 0)),
         el('td', { class: `r ${result.profit < 0 ? 'neg' : 'pos'}` }, fmt(result.profit, 0)),
-        el('td', { class: 'r' }, fmt(result.profitPerWorker, 1)),
+        el('td', { class: `r ${result.profitPerWorker < 0 ? 'neg' : 'pos'}` }, fmt(result.profitPerWorker, 1)),
         el('td', {}, el('button', { class: 'danger', onclick: () => { plan.rows.splice(rowIndex, 1); update(); } }, '✕')));
     })));
   const totals = results.reduce((sum, item) => {
