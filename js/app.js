@@ -1,6 +1,6 @@
 import { STRINGS } from './i18n.js?v=17';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=21';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=22';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=14';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -550,7 +550,7 @@ function renderProduction() {
       el('th', {}, `${t('expenses')} ${cur()}`), el('th', {}, `${t('buildCost')} ${cur()}`), el('th', {}))),
     el('tbody', {}, state.plan.rows.map((row, idx) => {
       const b = prodBuildings().find(x => x.de === row.name);
-      const res = result.rows.find(r => r.name === row.name && r.count === row.count) ?? {};
+      const res = result.rows[idx] ?? {};
       const groupSel = selectInput([t('none'), ...groups], row.group ?? t('none'),
         v => { row.group = v; row.name = null; });
       const inGroup = prodBuildings().filter(x => x.group[state.lang] === row.group);

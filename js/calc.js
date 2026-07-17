@@ -253,10 +253,15 @@ export function evaluatePlan(rows, fields, settings, eco) {
 
   for (const row of rows) {
     const b = row.building;
-    if (!b) continue;
     const count = row.count || 0;
+    if (!b || !count) {
+      // Push a placeholder so out.rows stays index-aligned with the input
+      // rows (two rows can share the same building+count with different
+      // quality, so callers must match results by position, not by name).
+      out.rows.push({ ...row, workers: 0, income: 0, expenses: 0, profit: 0, profitPerWorker: 0, amortDays: Infinity, buildCost: 0 });
+      continue;
+    }
     const quality = row.quality ?? 1;
-    if (!count) continue;
     const mult = QUALITY_BUILDINGS_DE.has(b.de) ? count * quality : count;
     let income = 0, expenses = 0;
     for (const p of b.production) {

@@ -89,6 +89,34 @@ test('mine production scales with quality, consumption does not', () => {
   assert.ok(Math.abs(get(half) - get(full) / 2) < 1e-9);
 });
 
+test('two rows of the same mine at different qualities keep independent results', () => {
+  const mine = byDe('Kohlemine');
+  const settings = { productivity: 1, timeUnit: 'day', seasons: false, currency: 'RUB' };
+  const result = evaluatePlan(
+    [
+      { name: mine.de, building: mine, count: 1, quality: 0.6 },
+      { name: mine.de, building: mine, count: 1, quality: 1.5 },
+    ],
+    { small: 0, medium: 0, large: 0, hectares: null }, settings, eco());
+  assert.equal(result.rows.length, 2);
+  assert.ok(Math.abs(result.rows[1].income - result.rows[0].income * (1.5 / 0.6)) < 1e-6);
+  assert.ok(result.rows[0].income !== result.rows[1].income);
+});
+
+test('an incomplete row (no building selected) does not shift later rows out of position', () => {
+  const mine = byDe('Kohlemine');
+  const settings = { productivity: 1, timeUnit: 'day', seasons: false, currency: 'RUB' };
+  const result = evaluatePlan(
+    [
+      { name: null, building: undefined, count: 1, quality: 1 },
+      { name: mine.de, building: mine, count: 1, quality: 1 },
+    ],
+    { small: 0, medium: 0, large: 0, hectares: null }, settings, eco());
+  assert.equal(result.rows.length, 2);
+  assert.equal(result.rows[0].income, 0);
+  assert.ok(result.rows[1].income > 0);
+});
+
 test('time unit month multiplies rates ×30', () => {
   const b = byDe('Brennerei');
   const day = evaluatePlan([{ building: b, count: 1 }], { small: 0, medium: 0, large: 0, hectares: null },
