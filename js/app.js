@@ -1,6 +1,6 @@
-import { STRINGS } from './i18n.js?v=26';
-import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=22';
+import { STRINGS } from './i18n.js?v=27';
+import { parseStatsIni, recordToPrices } from './statsini.js?v=15';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=23';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -11,15 +11,19 @@ import { createIndexedDbSnapshotStore, migrateLegacySnapshots } from './storage.
 import {
   aggregateCitizensByScope, compactObservedBuildings, groupObservedProduction,
   latestProductivity, matchObservedBuilding,
-} from './save_model.js?v=1';
+} from './save_model.js?v=2';
+import { buildRepublicModel, republicAlerts } from './republic.js?v=1';
+import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
-const TABS = ['prices', 'production', 'chain', 'analysis', 'vehicleprod', 'city', 'republic',
-  ...(IS_BETA ? ['saveimport'] : []), 'trains', 'research', 'advanced', 'help'];
+const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',
+  'prices', 'analysis', 'vehicleprod', ...(IS_BETA ? ['saveimport'] : []),
+  'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
   'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset',
-  'chains', 'activeChain', 'tuning', 'productionScope', 'saveImport', 'tab'];
+  'chains', 'activeChain', 'tuning', 'productionScope', 'saveImport', 'republicView',
+  'republicRange', 'republicResource', 'republicScope', 'tab'];
 const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex'];
 
 // ---------------------------------------------------------------- state
@@ -32,7 +36,7 @@ let namedSnapshotNames = [];
 function createInitialState() {
   return {
     lang: 'en',
-    tab: 'prices',
+    tab: IS_BETA ? 'home' : 'prices',
     currency: 'RUB',
     priceSource: 'default',      // default | stats | decade
     decade: 1980,
@@ -58,6 +62,10 @@ function createInitialState() {
     chains: [defaultChainPlan()],
     activeChain: 0,
     productionScope: 'all',
+    republicView: 'actual',
+    republicRange: 'all',
+    republicResource: null,
+    republicScope: null,
     saveImport: null,
     analysisSort: { col: 'profit', dir: -1 },
     analysisSearch: '',
@@ -81,6 +89,12 @@ function plannerScopes(kind = null) {
 
 function plannerScopeName(scopeId) {
   return plannerScopes().find(scope => scope.id === scopeId)?.name ?? t('unassigned');
+}
+
+function returnToRepublicButton() {
+  if (!state.saveImport) return null;
+  return el('button', { class: 'back-republic', onclick: () => { state.tab = 'republic'; update(); } },
+    `← ${t('returnRepublic')}`);
 }
 
 function defaultCity() {
@@ -112,9 +126,7 @@ function chainPlans() {
 
 function saveState() {
   const { statsRecords, viewingSharedLink, snapshotNotice, importStatus, importStatusError, ...rest } = state;
-  const slim = { ...rest };
-  slim.statsRecords = statsRecords;
-  try { localStorage.setItem(LS_KEY, JSON.stringify(slim)); } catch (e) { /* quota */ }
+  try { localStorage.setItem(LS_KEY, JSON.stringify(rest)); } catch (e) { /* quota */ }
 }
 
 function loadState() {
@@ -290,16 +302,8 @@ function selectInput(options, value, onchange, opts = {}) {
 }
 
 // ---------------------------------------------------------------- stats.ini loading
-const MAX_RECORDS = 365;
-
 function compactStatsRecords(text) {
-  let records = parseStatsIni(text);
-  if (records.length > MAX_RECORDS) {
-    const step = Math.ceil(records.length / MAX_RECORDS);
-    records = records.filter((record, index) => index % step === 0 || index === records.length - 1);
-    records.forEach((record, index) => { record.index = index; });
-  }
-  return records;
+  return parseStatsIni(text);
 }
 
 function handleFile(file) {
@@ -377,6 +381,16 @@ function renderSharedLinkBanner() {
 }
 
 function renderHeader() {
+  const languageSwitch = () => el('div', { class: 'langswitch' },
+    ...['de', 'en'].map(language => el('button', {
+      class: state.lang === language ? 'active' : '',
+      onclick: () => { state.lang = language; update(); },
+    }, language.toUpperCase())));
+  if (IS_BETA && state.tab === 'home') {
+    return el('header', { class: 'compact-header' },
+      el('h1', {}, t('appTitle')), languageSwitch());
+  }
+  const showEconomyControls = ['prices', 'production', 'chain', 'analysis', 'vehicleprod'].includes(state.tab);
   const file = el('input', {
     type: 'file', accept: '.ini,.txt', id: 'fileInput', class: 'hidden',
     onchange: e => e.target.files[0] && handleFile(e.target.files[0]),
@@ -398,8 +412,18 @@ function renderHeader() {
 
   const extras = [];
   if (state.priceSource === 'stats' && state.statsRecords?.length) {
+    const maxChoices = 400;
+    const step = Math.max(1, Math.ceil(state.statsRecords.length / maxChoices));
+    const indices = new Set(state.statsRecords.map((_, index) => index % step === 0 ? index : null)
+      .filter(Number.isInteger));
+    indices.add(state.recordIndex);
+    indices.add(state.statsRecords.length - 1);
+    const recordChoices = [...indices].sort((a, b) => a - b).map(index => {
+      const record = state.statsRecords[index];
+      return [index, `${record.year ?? '?'} / ${record.day ?? '?'}${record.current ? ` (${t('current')})` : ''}`];
+    });
     extras.push(el('label', {}, t('record') + ' ',
-      selectInput(state.statsRecords.map((r, i) => [i, `${r.year ?? '?'} / ${r.day ?? '?'}${r.current ? ` (${t('current')})` : ''}`]),
+      selectInput(recordChoices,
         state.recordIndex, v => { state.recordIndex = parseInt(v); })));
   }
   if (state.priceSource === 'decade') {
@@ -410,13 +434,11 @@ function renderHeader() {
   return el('header', {},
     el('h1', {}, t('appTitle')),
     el('div', { class: 'controls' },
-      drop,
-      el('label', {}, t('priceSource') + ' ', sourceSel),
-      ...extras,
+      ...(showEconomyControls ? [drop, el('label', {}, t('priceSource') + ' ', sourceSel), ...extras] : []),
       el('label', {}, t('currency') + ' ',
         selectInput([['RUB', '₽ Rubel'], ['USD', '$ Dollar']], state.currency,
           v => { state.currency = v; state.plan.settings.currency = v; })),
-      DATA.prodSets.game ? el('label', {}, t('dataset') + ' ',
+      showEconomyControls && DATA.prodSets.game ? el('label', {}, t('dataset') + ' ',
         selectInput([['game', t('datasetGame')], ['sheet', t('datasetSheet')]],
           state.dataset, v => { state.dataset = v; })) : null,
       el('div', { class: 'sharebtns' },
@@ -426,11 +448,7 @@ function renderHeader() {
             onchange: e => e.target.files[0] && importPlan(e.target.files[0]) })),
         el('button', { title: t('shareLink'), onclick: shareLink }, '🔗')),
       renderSaveSlots(),
-      el('div', { class: 'langswitch' },
-        ...['de', 'en'].map(l => el('button', {
-          class: state.lang === l ? 'active' : '',
-          onclick: () => { state.lang = l; update(); },
-        }, l.toUpperCase())))));
+      languageSwitch()));
 }
 
 // Named save slots (localStorage, separate from the one auto-saved plan):
@@ -485,17 +503,25 @@ function renderSaveSlots() {
 }
 
 function renderTabs() {
-  const labels = { prices: 'tabPrices', production: 'tabProduction', chain: 'tabChain',
+  const labels = { home: 'tabHome', prices: 'tabPrices', production: 'tabProduction', chain: 'tabChain',
     analysis: 'tabAnalysis', vehicleprod: 'tabVehicleProd', city: 'tabCity', republic: 'tabRepublic',
     saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
-  return el('nav', {}, ...TABS.map(id => el('button', {
+  const button = id => el('button', {
     class: state.tab === id ? 'active' : '',
     onclick: () => { state.tab = id; update(); },
-  }, t(labels[id]))));
+  }, t(labels[id]));
+  const primary = TABS.filter(id => ['home', 'republic', 'production', 'city'].includes(id));
+  const secondary = TABS.filter(id => !primary.includes(id));
+  const activeSecondary = secondary.includes(state.tab);
+  return el('nav', {}, ...primary.map(button),
+    el('details', { class: 'more-nav' },
+      el('summary', { class: activeSecondary ? 'active' : '' }, activeSecondary ? t(labels[state.tab]) : t('moreTools')),
+      el('div', { class: 'more-nav-menu' }, ...secondary.map(button))));
 }
 
 function renderCurrentTab() {
   switch (state.tab) {
+    case 'home': return renderHome();
     case 'prices': return renderPrices();
     case 'production': return renderProduction();
     case 'chain': return renderChain();
@@ -772,7 +798,7 @@ function renderProduction() {
     kv(t('wasteOut'), fmt(result.totalWaste, 1)),
     kv(t('buildCost') + ` ${cur()}`, fmt(result.totalBuildCost, 0)));
 
-  return el('section', {}, settings, renderCalcOpts(), fieldsBox, tbl, addBtn,
+  return el('section', {}, returnToRepublicButton(), settings, renderCalcOpts(), fieldsBox, tbl, addBtn,
     el('div', { class: 'columns' }, el('div', {}, el('h3', {}, t('balance')), balance), totals));
 }
 
@@ -1284,6 +1310,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
         populatedScopeCount: citizenScopes.size,
       } : null,
       observedBuildings: compactObservedBuildings(buildings),
+      observedProductionRows: cloneStateValue(productionRows),
       research: research ?? null,
       researchComplete, researchPartial,
       cityScopeCount: cities.length, productionScopeCount: productionScopeIds.size,
@@ -1291,7 +1318,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
         id: settlement.id,
         name: settlement.name || settlement.extraName || `${t('area')} ${settlement.id + 1}`,
         position: { x: settlement.x, y: settlement.y, z: settlement.z },
-        city: cityRows.get(settlement.id).size > 0,
+        city: cityRows.get(settlement.id).size > 0 || citizenScopes.has(settlement.id),
         production: productionScopeIds.has(settlement.id),
         citizens: citizenScopes.get(settlement.id) ?? null,
       })),
@@ -1313,7 +1340,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=1', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=2', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -1363,12 +1390,12 @@ async function handleSaveDirectory(fileList) {
     ]);
     const parsed = await parseSaveInWorker({
       namepoints: namepointBuffer, buildings: buildingBuffer, workers: workerBuffer,
-      header: headerBuffer, research: researchBuffer,
+      header: headerBuffer, research: researchBuffer, stats: statsText,
     });
     const relative = namepoints.webkitRelativePath || buildingsFile.webkitRelativePath || '';
     const sourceName = parsed.header?.title || relative.split('/')[0]
       || namepoints.name.replace(/\.bin$/i, '') || 'W&R save';
-    const statsRecords = statsText ? compactStatsRecords(statsText) : [];
+    const statsRecords = parsed.statsRecords ?? [];
     const productivity = latestProductivity(statsRecords, 1);
     const imported = buildImportedPlanning(sourceName, parsed.settlements, parsed.buildings,
       parsed.membershipAudit, {
@@ -1382,7 +1409,6 @@ async function handleSaveDirectory(fileList) {
       });
     imported.metadata.statsRecordCount = statsRecords.length;
     imported.metadata.latestProductivity = productivity;
-    imported.metadata.sourceStatus.stats = statsFile ? 'exact' : 'missing';
 
     const backupName = uniqueSnapshotName(`Before import ${new Date().toLocaleString()}`);
     const backupResult = await saveNamedState(backupName);
@@ -1402,7 +1428,7 @@ async function handleSaveDirectory(fileList) {
     next.plan.rows = imported.productionRows;
     next.cities = imported.cities;
     next.saveImport = imported.metadata;
-    next.tab = 'saveimport';
+    next.tab = 'republic';
 
     const importName = uniqueSnapshotName(sourceName);
     replaceSharedState(next);
@@ -1426,6 +1452,53 @@ async function handleSaveDirectory(fileList) {
     state.importStatusError = true;
     update();
   }
+}
+
+function renderHome() {
+  if (!IS_BETA) return el('section');
+  const picker = el('label', { class: 'start-card primary-start importpicker' },
+    el('span', { class: 'start-icon' }, '📂'),
+    el('strong', {}, t('openRepublicSave')),
+    el('span', { class: 'hint' }, t('openRepublicSaveHint')),
+    el('input', { type: 'file', class: 'hidden', webkitdirectory: '', multiple: '',
+      onchange: event => event.target.files.length && handleSaveDirectory(event.target.files) }));
+  const startManual = tab => {
+    if (state.saveImport && !confirm(t('startManualConfirm'))) return;
+    const preserved = Object.fromEntries(['lang', 'currency', 'calcOpts', 'tuning']
+      .map(key => [key, cloneStateValue(state[key])]));
+    replaceSharedState({ ...createInitialState(), ...preserved, tab });
+    state.statsRecords = null;
+    state.statsName = null;
+    update();
+  };
+  const manual = el('div', { class: 'start-card' },
+    el('span', { class: 'start-icon' }, '✏️'),
+    el('strong', {}, t('startManualPlan')),
+    el('span', { class: 'hint' }, t('startManualPlanHint')),
+    el('div', { class: 'start-actions' },
+      el('button', { onclick: () => startManual('city') }, t('tabCity')),
+      el('button', { onclick: () => startManual('production') }, t('tabProduction'))));
+  const current = state.saveImport ? el('div', { class: 'start-card current-republic' },
+    el('span', { class: 'start-icon' }, '🏛️'),
+    el('strong', {}, state.saveImport.header?.title || state.saveImport.sourceName),
+    el('span', { class: 'hint' }, `${fmt(state.saveImport.citizenCount ?? 0, 0)} ${t('importedCitizens')} · `
+      + `${fmt(state.saveImport.buildingCount ?? 0, 0)} ${t('importedBuildings')}`),
+    el('button', { class: 'primary', onclick: () => { state.tab = 'republic'; update(); } }, t('continueRepublic'))) : null;
+  const saved = namedSnapshotNames.length ? el('div', { class: 'recent-republics' },
+    el('h3', {}, t('savedSnapshots')),
+    el('div', { class: 'snapshot-grid' }, ...namedSnapshotNames.map(name => el('button', {
+      onclick: async () => {
+        if (await loadNamedState(name)) {
+          state.tab = state.saveImport ? 'republic' : 'production';
+          state.saveSlotName = name;
+          update();
+        }
+      },
+    }, '📁 ', name)))) : null;
+  return el('section', { class: 'start-page' },
+    el('div', { class: 'start-hero' }, el('h2', {}, t('startTitle')), el('p', {}, t('startHint'))),
+    state.importStatus ? el('p', { class: state.importStatusError ? 'neg' : 'pos' }, state.importStatus) : null,
+    el('div', { class: 'start-grid' }, current, picker, manual), saved);
 }
 
 function renderSaveImport() {
@@ -1662,7 +1735,7 @@ function renderCity() {
       return kv(r ? rname(r) : m, fmt(amt, 1));
     }));
 
-  return el('section', {}, cityTabs, observedCard,
+  return el('section', {}, returnToRepublicButton(), cityTabs, observedCard,
     city.observed ? el('h3', { class: 'plan-heading' }, t('planAssumptions')) : null,
     settings, el('div', { class: 'tablewrap' }, tbl), addBtn,
     el('div', { class: 'columns' },
@@ -1682,6 +1755,53 @@ function utilizationCell(u) {
 function workersNeededCell(w) {
   if (w === null) return el('td', { class: 'r' }, '—');
   return el('td', { class: 'r' }, `${fmt(w.optimal, 0)} / ${fmt(w.max, 0)}`);
+}
+
+function renderRepublicLineChart(title, series, evidence = 'stats.ini') {
+  const box = el('div', { class: 'history republic-chart' },
+    el('h3', {}, title, el('span', { class: 'evidence-badge exact' }, evidence)));
+  const nonEmpty = series.filter(item => item.points.length);
+  if (!nonEmpty.length) return el('div', { class: 'history republic-chart' },
+    el('h3', {}, title), el('p', { class: 'hint' }, t('unavailable')));
+  const points = nonEmpty.flatMap(item => item.points);
+  const minX = Math.min(...points.map(point => point.x));
+  const maxX = Math.max(...points.map(point => point.x));
+  const minY = Math.min(0, ...points.map(point => point.y));
+  const maxY = Math.max(...points.map(point => point.y));
+  const W = 640, H = 180, P = 26;
+  const x = value => P + (W - 2 * P) * ((value - minX) / ((maxX - minX) || 1));
+  const y = value => H - P - (H - 2 * P) * ((value - minY) / ((maxY - minY) || 1));
+  const ns = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('class', 'chart');
+  for (const item of nonEmpty) {
+    const sampled = downsampleMinMax(item.points, 160);
+    const polyline = document.createElementNS(ns, 'polyline');
+    polyline.setAttribute('points', sampled.map(point => `${x(point.x)},${y(point.y)}`).join(' '));
+    polyline.setAttribute('fill', 'none');
+    polyline.setAttribute('stroke', item.color);
+    polyline.setAttribute('stroke-width', '1.8');
+    polyline.setAttribute('vector-effect', 'non-scaling-stroke');
+    const tooltip = document.createElementNS(ns, 'title');
+    tooltip.textContent = `${item.label}: ${sampled.at(-1)?.label ?? ''} = ${fmt(sampled.at(-1)?.y ?? 0, 2)}`;
+    polyline.append(tooltip);
+    svg.append(polyline);
+  }
+  const label = (value, xPos, yPos) => {
+    const node = document.createElementNS(ns, 'text');
+    node.setAttribute('x', xPos); node.setAttribute('y', yPos); node.setAttribute('class', 'axislabel');
+    node.textContent = value; svg.append(node);
+  };
+  label(fmt(maxY, 2), 3, 12);
+  label(fmt(minY, 2), 3, H - 4);
+  box.append(svg, el('div', { class: 'legend' }, ...nonEmpty.map(item =>
+    el('span', {}, el('i', { style: `background:${item.color}` }), item.label))));
+  return box;
+}
+
+function totalMapValues(map) {
+  return Object.values(map ?? {}).reduce((total, value) => total + (Number.isFinite(value) ? value : 0), 0);
 }
 
 // ---------------------------------------------------------------- republic overview tab
@@ -1743,6 +1863,38 @@ function renderRepublic() {
   // formula accounts for the city's own 3-shift service staffing), so they
   // compare directly: workers the cities can send out vs. what industry needs.
   const netWorkers = cityTotals.workerSurplus - plan.workersPerShift;
+  const plannedAreas = cityResults.map(({ city, res, industry }) => ({
+    scopeId: Number.isInteger(city.scopeId) ? city.scopeId : null,
+    name: city.name,
+    population: res.population,
+    configuredIndustryWorkers: industry.workersPerShift,
+    netWorkers: res.workerSurplus - industry.workersPerShift,
+    power: res.power + industry.totalPower,
+    water: res.water + industry.totalWater,
+    waste: res.waste + industry.totalWaste,
+  }));
+  const observedImport = state.saveImport?.version >= 2 ? {
+    scopes: state.saveImport.scopes,
+    productionRows: state.saveImport.observedProductionRows ?? [],
+    liveBuildingCount: state.saveImport.observedBuildings?.length ?? state.saveImport.buildingCount,
+    sourceStatus: state.saveImport.sourceStatus,
+  } : null;
+  const republicModel = buildRepublicModel({
+    observed: observedImport ?? { scopes: [], productionRows: [], sourceStatus: {} },
+    planned: {
+      totals: {
+        population: cityTotals.population,
+        configuredIndustryWorkers: plan.workersPerShift,
+        netWorkers,
+        power: cityTotals.power + plan.totalPower,
+        water: cityTotals.water + plan.totalWater,
+        waste: cityTotals.waste + plan.totalWaste,
+      },
+      areas: plannedAreas,
+    },
+  });
+  if (!observedImport && state.republicView !== 'plan') state.republicView = 'plan';
+  const alerts = republicAlerts(republicModel);
 
   const cityBody = cityResults.map(({ city, res, industry }, i) => {
     const available = res.workerSurplus - industry.workersPerShift;
@@ -1834,13 +1986,168 @@ function renderRepublic() {
     kv(t('wasteOut'), fmt(cityTotals.waste + plan.totalWaste, 1)),
     kv(`${t('buildCost')} ${cur()}`, fmt(cityBuildCost + plan.totalBuildCost, 0)));
 
+  const view = republicModel[state.republicView];
+  const metricCard = (label, value, evidence, cls = '') => el('div', { class: `metric-card ${cls}` },
+    el('span', { class: 'metric-label' }, label),
+    el('strong', {}, value == null || Number.isNaN(value) ? '—' : value),
+    el('span', { class: `evidence-badge ${evidence === t('exact') ? 'exact' : 'derived'}` }, evidence));
+  const staffingRatio = republicModel.actual.totals.configuredIndustryWorkers
+    ? republicModel.actual.totals.currentIndustryWorkers
+      / republicModel.actual.totals.configuredIndustryWorkers : null;
+  const cards = state.republicView === 'actual' ? [
+    metricCard(t('population'), fmt(view.totals.population, 0), t('derived')),
+    metricCard(t('importedSettlements'), fmt(view.totals.occupiedNamedAreas, 0), t('exact')),
+    metricCard(t('importedBuildings'), fmt(view.totals.liveBuildingCount, 0), t('exact')),
+    metricCard(t('configuredWorkers'), fmt(view.totals.configuredIndustryWorkers, 0), t('exact')),
+    metricCard(t('currentStaffing'), staffingRatio == null ? null : fmt(staffingRatio * 100, 1) + ' %', t('exact'), staffingRatio < 0.7 ? 'warn' : ''),
+    metricCard(t('productivity'), Number.isFinite(state.saveImport?.latestProductivity)
+      ? fmt(state.saveImport.latestProductivity * 100, 4) + ' %'
+      : view.totals.productivity == null ? null : fmt(view.totals.productivity * 100, 2) + ' %',
+    Number.isFinite(state.saveImport?.latestProductivity) ? 'stats.ini' : t('derived')),
+    metricCard(t('importedResearch'), state.saveImport?.research
+      ? `${fmt(state.saveImport.researchComplete, 0)} / ${fmt(state.saveImport.research.length, 0)}` : null, t('exact')),
+  ] : [
+    metricCard(t('population'), Number.isFinite(view.totals.population) ? fmt(view.totals.population, 0) : null, t('editablePlan')),
+    metricCard(t('configuredWorkers'), Number.isFinite(view.totals.configuredIndustryWorkers)
+      ? fmt(view.totals.configuredIndustryWorkers, 0) : null, t('editablePlan')),
+    metricCard(t('republicNetWorkers'), Number.isFinite(view.totals.netWorkers) ? fmt(view.totals.netWorkers, 1) : null,
+      state.republicView === 'plan' ? t('editablePlan') : t('derived'), view.totals.netWorkers < 0 ? 'negative' : ''),
+    metricCard(t('powerUse'), Number.isFinite(view.totals.power) ? fmt(view.totals.power, 1) : null, t('derived')),
+    metricCard(t('waterUse'), Number.isFinite(view.totals.water) ? fmt(view.totals.water, 1) : null, t('derived')),
+    metricCard(t('wasteOut'), Number.isFinite(view.totals.waste) ? fmt(view.totals.waste, 1) : null, t('derived')),
+  ];
+
+  const openArea = (scopeId, tab) => {
+    state.republicScope = scopeId;
+    if (tab === 'production') state.productionScope = String(scopeId);
+    if (tab === 'city') {
+      const index = state.cities.findIndex(city => city.scopeId === scopeId);
+      if (index >= 0) state.activeCity = index;
+    }
+    state.tab = tab;
+    update();
+  };
+  const actualArea = new Map(republicModel.actual.areas.map(area => [area.scopeId, area]));
+  const planArea = new Map(republicModel.plan.areas.map(area => [area.scopeId, area]));
+  const scopeInfo = new Map(plannerScopes().map(scope => [scope.id, scope]));
+  const severities = new Map();
+  for (const alert of alerts) if (alert.scopeId != null && !severities.has(alert.scopeId)) severities.set(alert.scopeId, alert.severity);
+  const areaIds = [...new Set([...actualArea.keys(), ...planArea.keys()])];
+  const areaTable = el('table', { class: 'data wide area-health' },
+    el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('population')),
+      el('th', {}, t('productivity')), el('th', {}, t('health')),
+      el('th', {}, t('configuredWorkers')), el('th', {}, t('currentWorkers')),
+      el('th', {}, t('plannedWorkers')), el('th', {}, t('netAvailableWorkers')), el('th', {}, t('status')), el('th', {}))),
+    el('tbody', {}, ...areaIds.map(scopeId => {
+      const actual = actualArea.get(scopeId) ?? {};
+      const planned = planArea.get(scopeId) ?? {};
+      const scope = scopeInfo.get(scopeId) ?? {};
+      const severity = severities.get(scopeId) ?? 'ok';
+      return el('tr', { class: `${severity}${state.republicScope === scopeId ? ' selected-area' : ''}` },
+        el('td', {}, actual.name ?? planned.name ?? `${t('area')} ${scopeId}`),
+        el('td', { class: 'r' }, actual.population == null ? '—' : fmt(actual.population, 0)),
+        el('td', { class: 'r' }, actual.productivity == null ? '—' : fmt(actual.productivity * 100, 1) + ' %'),
+        el('td', { class: 'r' }, actual.health == null ? '—' : fmt(actual.health * 100, 1) + ' %'),
+        el('td', { class: 'r' }, fmt(actual.configuredIndustryWorkers ?? 0, 0)),
+        el('td', { class: 'r' }, fmt(actual.currentIndustryWorkers ?? 0, 0)),
+        el('td', { class: 'r' }, fmt(planned.configuredIndustryWorkers ?? 0, 0)),
+        el('td', { class: `r ${(planned.netWorkers ?? 0) < 0 ? 'neg' : ''}` },
+          Number.isFinite(planned.netWorkers) ? fmt(planned.netWorkers, 1) : '—'),
+        el('td', { class: severity === 'ok' ? 'pos' : severity === 'critical' ? 'neg' : 'warn' }, t(severity)),
+        el('td', { class: 'area-actions' },
+          scope.city ? el('button', { onclick: () => openArea(scopeId, 'city') }, t('openCity')) : null,
+          scope.production ? el('button', { onclick: () => openArea(scopeId, 'production') }, t('openProduction')) : null));
+    })));
+
+  const alertItems = alerts.length ? alerts.slice(0, 8).map(alert => el('div', { class: `alert ${alert.severity}` },
+      el('strong', {}, alert.scopeName || t('republicOverview')),
+      el('span', {}, t(`alert.${alert.metric}`)),
+      Number.isFinite(alert.observed) ? el('span', { class: 'alert-value' },
+        alert.metric === 'staffing' || alert.metric === 'health' || alert.metric === 'food'
+          ? fmt(alert.observed * 100, 1) + ' %' : fmt(alert.observed, 1)) : null))
+    : [el('p', { class: 'hint pos' }, t('noAlerts'))];
+  const alertList = el('div', { class: 'alert-list' },
+    el('h3', {}, t('attention')), ...alertItems);
+
+  const historyRecords = filterRange(state.statsRecords ?? [], state.republicRange);
+  const series = (label, color, valueOf) => ({ label, color, points: seriesFromRecords(historyRecords, valueOf) });
+  const resourceKeys = [...new Set((state.statsRecords ?? []).flatMap(record =>
+    Object.keys(record.resourcesProduced ?? {})))];
+  if (!resourceKeys.includes(state.republicResource)) {
+    const latest = state.statsRecords?.at(-1);
+    state.republicResource = resourceKeys.sort((a, b) =>
+      (latest?.resourcesProduced?.[b] ?? 0) - (latest?.resourcesProduced?.[a] ?? 0))[0] ?? null;
+  }
+  const resourceOptions = resourceKeys.map(key => {
+    const resource = DATA.resources.find(item => item.key === key);
+    return [key, resource ? rname(resource) : key];
+  });
+  const charts = state.statsRecords?.length ? el('div', { class: 'history-section' },
+    el('div', { class: 'chart-controls settingsbar' },
+      el('strong', {}, t('republicHistory')),
+      ...['month', 'year', 'all'].map(range => el('button', {
+        class: state.republicRange === range ? 'active' : '',
+        onclick: () => { state.republicRange = range; update(); },
+      }, t(`range.${range}`))),
+      resourceOptions.length ? selectInput(resourceOptions, state.republicResource,
+        value => { state.republicResource = value; }) : null),
+    el('div', { class: 'chart-grid' },
+      renderRepublicLineChart(t('citizenHistory'), [
+        series(t('adults'), '#d35400', record => record.adults),
+        series(t('children'), '#2980b9', record => (record.childrenSmall ?? 0) + (record.childrenMedium ?? 0)),
+        series(t('unemployed'), '#c0392b', record => record.unemployed),
+      ]),
+      renderRepublicLineChart(t('productivityHistory'), [
+        series(t('productivity'), '#27ae60', record => Number.isFinite(record.averageProductivity)
+          ? record.averageProductivity * 100 : null),
+      ]),
+      renderRepublicLineChart(t('tradeHistory'), [
+        series(t('imports'), '#c0392b', record => totalMapValues(record.resourcesImportRUB)),
+        series(t('exports'), '#27ae60', record => totalMapValues(record.resourcesExportRUB)),
+      ]),
+      state.republicResource ? renderRepublicLineChart(
+        resourceOptions.find(([key]) => key === state.republicResource)?.[1] ?? state.republicResource, [
+          series(t('produced'), '#2980b9', record => record.resourcesProduced?.[state.republicResource]),
+          series(t('imports'), '#c0392b', record => record.resourcesImportRUB?.[state.republicResource]),
+          series(t('exports'), '#27ae60', record => record.resourcesExportRUB?.[state.republicResource]),
+        ]) : null)) : null;
+
+  const incompleteResearch = state.saveImport?.research?.filter(item => item.progress < 1)
+    .sort((a, b) => b.progress - a.progress) ?? [];
+  const researchTable = state.saveImport?.research ? el('table', { class: 'data' },
+    el('thead', {}, el('tr', {},
+      el('th', {}, t('researchKey')), el('th', {}, t('progress')), el('th', {}, t('building')))),
+    el('tbody', {}, ...incompleteResearch.map(item => el('tr', {},
+      el('td', {}, item.key),
+      el('td', { class: 'r' }, fmt(item.progress * 100, 1) + ' %'),
+      el('td', { class: 'r' }, item.buildingIndex >= 0 ? fmt(item.buildingIndex, 0) : '—'))))) : null;
+  const researchDetails = state.saveImport?.research ? el('details', { class: 'planning-details' },
+    el('summary', {}, `${t('researchProgress')}: ${state.saveImport.researchComplete} / ${state.saveImport.research.length}`),
+    el('div', { class: 'tablewrap' }, researchTable)) : null;
+
   return el('section', {},
-    el('p', { class: 'hint' }, t('republicHint')),
-    el('p', { class: 'hint warn' }, t('republicConsumptionBlocked')),
-    el('div', { class: 'tablewrap' }, cityRows),
-    el('h3', {}, t('republicPairings')),
-    el('div', { class: 'tablewrap' }, pairingRows),
-    el('div', { class: 'columns' }, totals, utilities));
+    el('div', { class: 'command-center' },
+      el('div', { class: 'command-header' },
+        el('div', {}, el('h2', {}, state.saveImport?.header?.title || t('republicOverview')),
+          state.saveImport ? el('p', { class: 'hint' },
+            `${new Date(state.saveImport.importedAt).toLocaleString()} · ${state.saveImport.sourceName}`) : null),
+        el('div', { class: 'view-toggle' }, ...['actual', 'plan', 'difference'].map(name => el('button', {
+          class: state.republicView === name ? 'active' : '',
+          ...(!observedImport && name !== 'plan' ? { disabled: '' } : {}),
+          onclick: () => { state.republicView = name; update(); },
+        }, t(`view.${name}`))))),
+      el('div', { class: 'metric-grid' }, ...cards),
+      alertList,
+      el('div', { class: 'tablewrap' }, areaTable),
+      charts,
+      researchDetails,
+      el('details', { class: 'planning-details' }, el('summary', {}, t('planningDetails')),
+        el('p', { class: 'hint' }, t('republicHint')),
+        el('p', { class: 'hint warn' }, t('republicConsumptionBlocked')),
+        el('div', { class: 'tablewrap' }, cityRows),
+        el('h3', {}, t('republicPairings')),
+        el('div', { class: 'tablewrap' }, pairingRows),
+        el('div', { class: 'columns' }, totals, utilities))));
 }
 
 // ---------------------------------------------------------------- trains tab

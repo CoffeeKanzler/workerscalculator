@@ -1,10 +1,11 @@
 import {
   parseNamepoints, parseBuildingsGame, parseWorkers, parseHeader, parseResearch,
   reconcileSettlementMembership,
-} from './savegame.js';
+} from './savegame.js?v=2';
+import { parseStatsIni } from './statsini.js?v=15';
 
 const sourceStatus = (payload) => Object.fromEntries(
-  ['namepoints', 'buildings', 'workers', 'header', 'research']
+  ['namepoints', 'buildings', 'workers', 'header', 'research', 'stats']
     .map((key) => [key, payload[key] ? 'pending' : 'missing']),
 );
 
@@ -47,12 +48,13 @@ self.onmessage = ({ data }) => {
       saveVersion: header?.saveVersion ?? 124,
     }));
     const research = optional('research', parseResearch);
+    const statsRecords = optional('stats', parseStatsIni);
     self.postMessage({
       type: 'complete',
       parsed: {
         settlements, buildings, citizens: workers?.citizens ?? null,
         citizenFileSummary: workers?.summary ?? null, header, research,
-        membershipAudit, sourceStatus: status, warnings,
+        statsRecords, membershipAudit, sourceStatus: status, warnings,
       },
     });
   } catch {

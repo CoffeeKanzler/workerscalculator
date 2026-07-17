@@ -50,14 +50,18 @@ now default to 50%, shown as a percentage instead of a raw multiplier.)
     (few passes converge) or treat electricity/water as terminal "utility" inputs.
 - **Effort:** medium-large. **Files:** new `js/chain.js`, new tab in `js/app.js`.
 
-### 2.2 Republic overview (link cities ↔ industry) 🚧 in progress 2026-07-17
-- **What:** A dashboard combining the City tab's city plan(s) + the Production plan:
-  total worker surplus vs. workers needed, power/water/heat balance republic-wide.
-  Both inputs are the app's own existing hypothetical plans (no save-file parsing
-  needed - `evaluateCity`/`evaluatePlan` already work from user-entered rows).
+### 2.2 Republic command center (Actual ↔ Plan) ✅ beta 2026-07-17
+- **Delivered:** The Republic Overview now combines an imported observed republic and
+  editable planning projections through explicit **Actual / Plan / Difference** views.
+  It uses saved residents rather than theoretical housing capacity, separates current
+  staffing from configured worker caps, preserves production-only areas, reports source
+  evidence, surfaces area alerts, and drills into the existing City and Production planners.
+- **History:** Full republic-wide `stats.ini` history remains available (3,002 records in
+  the supplied save). Charts cover population/employment, productivity, RUB trade, and a
+  selected resource. `$STAT_CITY` blocks are deliberately not presented as republic history.
 - **Why:** the sheet keeps city and industry planning disconnected; connecting them answers
   "can my republic actually staff and feed this?"
-- **Blocked:** the food/meat/clothes/alcohol demand-vs-production comparison needs
+- **Still blocked:** the food/meat/clothes/alcohol demand-vs-production comparison needs
   per-citizen consumption rates, which are **not available anywhere checked** - not in
   the game's `.ini` files (grepped `media_soviet` for citizen/consumption tokens, none),
   not in any `data/*.json`, and not in the accessible spreadsheet tabs either (fetched
@@ -127,8 +131,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
 - **Why:** game-save import needs a safe isolation boundary: every imported save
   will create a new snapshot rather than overwrite the currently open plan.
 
-### 4.1b Game-save import into the planners 🧪 beta 2026-07-17
-- **What:** A local-only `/beta/` importer for a W&R save directory. It preserves the
+### 4.1b Full observed game-save snapshots 🧪 beta 2026-07-17
+- **What:** A local-only `/beta/` importer for a W&R save directory. The beta now starts
+  with two explicit workflows: open a real republic or start a manual plan. It preserves the
   game's own named settlements and building membership, aggregate recognized
   city/service buildings into City Planner rows, tag recognized factories by
   settlement in Production Planner, and combine both in Republic Overview.
@@ -136,23 +141,30 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   `buildings_game.bin` are decoded. The supplied 160,226,939-byte sample walks all
   1,812 declared building records and lands on the exact final byte; all 43 named
   scopes and every primary building→scope assignment validate.
-  - **Safety:** imported saves become new editable named snapshots; unknown building
+  `workers.bin`, `header.bin`, and `research.bin` are also decoded, while `stats.ini`
+  supplies complete semantic history and live economy values. Parsing runs off the UI
+  thread. The supplied save validates at 20,302 citizens, 107 research records, and zero
+  invalid residence references.
+  - **Safety:** imported saves become complete IndexedDB-backed named snapshots; unknown building
     types stay visible in an unmatched report instead of being silently discarded.
   Empty auto-generated named areas with no building records are omitted. Occupied
   scopes are kept independently: only scopes with recognized residential/service
   buildings become City Planner cities, while recognized industrial scopes remain
   available in Production Planner and Republic Overview under their game names.
-  When present, `stats.ini` is imported and downsampled to at most 365 snapshots,
-  making the save's latest real prices/costs the active economics source.
+  `stats.ini` remains complete in named snapshots and makes the latest real prices/costs
+  the active economics source. Share links still omit private history.
+  - **Exact operating facts:** `buildings_game.bin` (not `buildings.bin`) supplies live
+  current staffing, configured ordinary/higher-education caps, and per-instance mine
+  quality. Production rows aggregate only identical saved configurations, so the sample's
+  fabric factory remains visible as 93 current / 100 configured and coal mine 1157 as
+  95 / 120 at about 56.47% quality.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
-  remain unmatched (their IDs/scopes/counts are still reported), and per-instance
-  mine richness is not identified yet, so imported mines start with a clearly
-  editable 50% estimate.
-  - **Next high-value save files to investigate:** `buildings.bin` for live staffing,
-  residents, inventories and production state; `research.bin` for completed research;
-  `header.bin` for save/version/date metadata; and `resourcemap*.dds` plus building
-  coordinates for evidence-based mine richness. Network geometry and cosmetic map
-  files are intentionally out of scope until a planner feature needs them.
+  remain unmatched (their IDs/scopes/counts are still reported). Inventory buffers,
+  vehicle/line state, and logistics topology are not decoded yet.
+  - **Next high-value save modules:** building inventories and production buffers;
+  vehicles, lines, and schedules; distribution/logistics bottlenecks; and optional live
+  follow of a save directory. Cosmetic map/network geometry stays out of scope until a
+  planner feature needs it.
 
 ### 4.2 Live-follow stats.ini
 - **What:** "Watch file" button using the File System Access API (Chromium): re-read the
@@ -234,11 +246,10 @@ per-cargo capacities with game data.)
   game-effect researches from DasBreitschwert's guide.
 - **Effort:** small (needs the list transcribed).
 
-## Suggested order
+## Suggested next order
 
-1. 1.1 tests → 1.2 delivery cost (quick wins, protect everything after)
-2. 2.1 chain solver (flagship)
-3. 4.1 share links → 4.2 watch file
-4. 3.1 game-file extractor (once files are available) → 3.2 versioned data
-5. 2.2 republic overview
-6. Phase 4 polish + Phase 5 as demand dictates
+1. Building inventories, storage fill levels, and production-buffer bottlenecks.
+2. Vehicles, lines, schedules, and distribution-office coverage.
+3. Live-follow a selected save directory and append comparable snapshots over time.
+4. Complete game-version datasets and remaining train capacities.
+5. Mobile card views and chart interaction polish.

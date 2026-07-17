@@ -123,36 +123,25 @@ export function groupObservedProduction(buildings, catalog) {
       continue;
     }
 
-    const key = `${record.scopeId ?? 'none'}\0${building.de}`;
+    const key = [record.scopeId ?? 'none', building.de, record.configuredWorkers,
+      record.configuredWorkersHighEducation, record.currentWorkers, record.mineQuality].join('\0');
     const row = grouped.get(key) ?? {
       group: building.group?.de ?? '', name: building.de, count: 0,
-      quality: 0, qualityEstimated: false, scopeId: record.scopeId,
+      quality: Number.isFinite(record.mineQuality) && record.mineQuality > 0 ? record.mineQuality : 1,
+      qualityEstimated: !(Number.isFinite(record.mineQuality) && record.mineQuality > 0), scopeId: record.scopeId,
       sourceGameId: record.type, observedBuildingIndices: [], currentWorkers: 0,
       configuredWorkers: 0, configuredWorkersHighEducation: 0, nominalWorkers: 0,
-      qualitySamples: 0,
     };
     row.count += 1;
     row.observedBuildingIndices.push(record.index);
-    row.currentWorkers += record.currentWorkers ?? 0;
-    row.configuredWorkers += record.configuredWorkers ?? building.workers ?? 0;
-    row.configuredWorkersHighEducation += record.configuredWorkersHighEducation ?? 0;
-    row.nominalWorkers += building.workers ?? 0;
-    if (Number.isFinite(record.mineQuality) && record.mineQuality > 0) {
-      row.quality += record.mineQuality;
-      row.qualitySamples += 1;
-    }
+    row.currentWorkers = record.currentWorkers ?? 0;
+    row.configuredWorkers = record.configuredWorkers ?? building.workers ?? 0;
+    row.configuredWorkersHighEducation = record.configuredWorkersHighEducation ?? 0;
+    row.nominalWorkers = building.workers ?? 0;
     grouped.set(key, row);
   }
 
-  const rows = [...grouped.values()].map((row) => {
-    const { qualitySamples, ...result } = row;
-    if (qualitySamples) result.quality /= qualitySamples;
-    else {
-      result.quality = 1;
-      result.qualityEstimated = true;
-    }
-    return result;
-  });
+  const rows = [...grouped.values()];
   return { rows, unmatched: [...unmatched.values()] };
 }
 

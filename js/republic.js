@@ -8,9 +8,9 @@ function productionByScope(rows = []) {
       configuredIndustryWorkers: 0, currentIndustryWorkers: 0,
       productionBuildingCount: 0,
     };
-    item.configuredIndustryWorkers += (row.configuredWorkers ?? 0)
-      + (row.configuredWorkersHighEducation ?? 0);
-    item.currentIndustryWorkers += row.currentWorkers ?? 0;
+    item.configuredIndustryWorkers += ((row.configuredWorkers ?? 0)
+      + (row.configuredWorkersHighEducation ?? 0)) * (row.count ?? 0);
+    item.currentIndustryWorkers += (row.currentWorkers ?? 0) * (row.count ?? 0);
     item.productionBuildingCount += row.count ?? 0;
     scopes.set(key, item);
   }

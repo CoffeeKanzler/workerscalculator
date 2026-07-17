@@ -66,14 +66,28 @@ test('production grouping preserves configured staffing and exact mine quality',
       configuredWorkers: 90, configuredWorkersHighEducation: 1, mineQuality: 0.4 },
   ], catalog);
 
-  assert.equal(result.rows.length, 1);
+  assert.equal(result.rows.length, 2);
   assert.deepEqual(result.rows[0], {
-    group: 'Mining', name: 'Coal mine', count: 2, quality: 0.5,
+    group: 'Mining', name: 'Coal mine', count: 1, quality: 0.6,
     qualityEstimated: false, scopeId: 7, sourceGameId: 'industry/coal_mine',
-    observedBuildingIndices: [2, 3], currentWorkers: 175, configuredWorkers: 190,
-    configuredWorkersHighEducation: 3, nominalWorkers: 240,
+    observedBuildingIndices: [2], currentWorkers: 95, configuredWorkers: 100,
+    configuredWorkersHighEducation: 2, nominalWorkers: 120,
   });
   assert.deepEqual(result.unmatched, []);
+});
+
+test('production grouping combines only identical saved configurations', () => {
+  const catalog = [{ de: 'Fabric', gameId: 'fabric', workers: 100, group: { de: 'Other' } }];
+  const result = groupObservedProduction([
+    { index: 1, type: 'fabric', scopeId: 2, currentWorkers: 93, configuredWorkers: 100,
+      configuredWorkersHighEducation: 0, mineQuality: 0 },
+    { index: 2, type: 'fabric', scopeId: 2, currentWorkers: 93, configuredWorkers: 100,
+      configuredWorkersHighEducation: 0, mineQuality: 0 },
+  ], catalog);
+  assert.equal(result.rows.length, 1);
+  assert.equal(result.rows[0].count, 2);
+  assert.equal(result.rows[0].configuredWorkers, 100);
+  assert.deepEqual(result.rows[0].observedBuildingIndices, [1, 2]);
 });
 
 test('production grouping returns every unmatched record', () => {

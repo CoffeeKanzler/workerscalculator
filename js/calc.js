@@ -262,10 +262,11 @@ export function evaluatePlan(rows, fields, settings, eco) {
     }
     const quality = row.quality ?? 1;
     const nominalWorkers = b.workers * count;
-    const workers = Number.isFinite(row.configuredWorkers)
+    const configuredPerBuilding = Number.isFinite(row.configuredWorkers)
       ? row.configuredWorkers + (row.configuredWorkersHighEducation ?? 0)
-      : nominalWorkers;
-    const staffing = nominalWorkers > 0 ? Math.max(0, Math.min(1, workers / nominalWorkers)) : 1;
+      : b.workers;
+    const workers = configuredPerBuilding * count;
+    const staffing = b.workers > 0 ? Math.max(0, Math.min(1, configuredPerBuilding / b.workers)) : 1;
     const prod = Number.isFinite(row.productivity) ? row.productivity : settings.productivity;
     const activity = staffing * prod;
     const mult = (QUALITY_BUILDINGS_DE.has(b.de) ? count * quality : count) * activity;
