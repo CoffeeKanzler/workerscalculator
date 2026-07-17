@@ -81,3 +81,85 @@ export function compactObservedBuildings(buildings) {
     keys.map((key) => [key, building[key]]),
   ));
 }
+
+function saveTypeCandidates(type) {
+  const clean = String(type).replace(/^MIRRORZ_/, '');
+  const candidates = [type, clean];
+  if (clean.startsWith('CWC_')) candidates.push(`cwc/${clean.slice(4)}`);
+  const aliases = {
+    concrete_plant_v2: 'concrete_plant',
+    brick_factory_v2: 'brick_factory',
+    oil_rafinery_v2: 'oil_rafinery',
+  };
+  if (aliases[clean]) candidates.push(aliases[clean]);
+  return [...new Set(candidates.map((value) => String(value).toLowerCase()))];
+}
+
+export function matchObservedBuilding(type, catalog, idOf = (entry) => entry.gameId) {
+  const candidates = saveTypeCandidates(type);
+  const exact = new Map(catalog.map((entry) => [String(idOf(entry) ?? '').toLowerCase(), entry]));
+  for (const candidate of candidates) if (exact.has(candidate)) return exact.get(candidate);
+
+  const basename = candidates.at(-1).split('/').at(-1);
+  const matches = catalog.filter((entry) =>
+    String(idOf(entry) ?? '').toLowerCase().split('/').at(-1) === basename);
+  return matches.length === 1 ? matches[0] : null;
+}
+
+export function groupObservedProduction(buildings, catalog) {
+  const grouped = new Map();
+  const unmatched = new Map();
+
+  for (const record of buildings) {
+    const building = matchObservedBuilding(record.type, catalog);
+    if (!building) {
+      const key = `${record.scopeId ?? 'none'}\0${record.type}`;
+      const item = unmatched.get(key) ?? {
+        scopeId: record.scopeId, type: record.type, count: 0, buildingIndices: [],
+      };
+      item.count += 1;
+      item.buildingIndices.push(record.index);
+      unmatched.set(key, item);
+      continue;
+    }
+
+    const key = `${record.scopeId ?? 'none'}\0${building.de}`;
+    const row = grouped.get(key) ?? {
+      group: building.group?.de ?? '', name: building.de, count: 0,
+      quality: 0, qualityEstimated: false, scopeId: record.scopeId,
+      sourceGameId: record.type, observedBuildingIndices: [], currentWorkers: 0,
+      configuredWorkers: 0, configuredWorkersHighEducation: 0, nominalWorkers: 0,
+      qualitySamples: 0,
+    };
+    row.count += 1;
+    row.observedBuildingIndices.push(record.index);
+    row.currentWorkers += record.currentWorkers ?? 0;
+    row.configuredWorkers += record.configuredWorkers ?? building.workers ?? 0;
+    row.configuredWorkersHighEducation += record.configuredWorkersHighEducation ?? 0;
+    row.nominalWorkers += building.workers ?? 0;
+    if (Number.isFinite(record.mineQuality) && record.mineQuality > 0) {
+      row.quality += record.mineQuality;
+      row.qualitySamples += 1;
+    }
+    grouped.set(key, row);
+  }
+
+  const rows = [...grouped.values()].map((row) => {
+    const { qualitySamples, ...result } = row;
+    if (qualitySamples) result.quality /= qualitySamples;
+    else {
+      result.quality = 1;
+      result.qualityEstimated = true;
+    }
+    return result;
+  });
+  return { rows, unmatched: [...unmatched.values()] };
+}
+
+export function latestProductivity(records, fallback = 1) {
+  for (let index = records.length - 1; index >= 0; index -= 1) {
+    const value = records[index]?.averageProductivity;
+    if (Number.isFinite(value) && value > 0) return value;
+  }
+  return fallback;
+}

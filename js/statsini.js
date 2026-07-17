@@ -4,13 +4,22 @@
 // sections contain lines:
 //   <resourceKey> <value> <growthFactor>
 
-const PRICE_SECTIONS = {
+const MAP_SECTIONS = {
   Economy_PurchaseCostUSD: 'purchaseUSD',
   Economy_PurchaseCostRUB: 'purchaseRUB',
   Economy_SellCostUSD: 'sellUSD',
   Economy_SellCostRUB: 'sellRUB',
   Economy_BaseUSD: 'baseUSD',
   Economy_BaseRUB: 'baseRUB',
+  Resources_Produced: 'resourcesProduced',
+  Resources_ImportUSD: 'resourcesImportUSD',
+  Resources_ImportRUB: 'resourcesImportRUB',
+  Resources_ExportUSD: 'resourcesExportUSD',
+  Resources_ExportRUB: 'resourcesExportRUB',
+  Resources_SpendFactories: 'resourcesSpendFactories',
+  Resources_SpendShops: 'resourcesSpendShops',
+  Waste_ProductionFactories: 'wasteProductionFactories',
+  Waste_ProductionPeople: 'wasteProductionPeople',
 };
 
 const SCALAR_KEYS = {
@@ -22,6 +31,19 @@ const SCALAR_KEYS = {
   Economy_ImigrantCostUSD: 'imigrantCostUSD',
   DATE_DAY: 'day',
   DATE_YEAR: 'year',
+  Citizens_Adults: 'adults',
+  Citizens_Unemployed: 'unemployed',
+  Citizens_Born: 'born',
+  Citizens_Dead: 'dead',
+  Citizens_Escaped: 'escaped',
+  Citizens_ChildrenSmall: 'childrenSmall',
+  Citizens_ChildrenMedium: 'childrenMedium',
+  Citizens_AdultsParent: 'adultsParent',
+  Citizens_EducationBasic: 'educationBasic',
+  Citizens_EducationHigh: 'educationHigh',
+  Citizens_AverageProductivity: 'averageProductivity',
+  Citizens_AverageAge: 'averageAge',
+  Citizens_AverageLifespan: 'averageLifespan',
 };
 
 export function parseStatsIni(text) {
@@ -36,7 +58,7 @@ export function parseStatsIni(text) {
       const name = parts[0].slice(1);
       if (name === 'STAT_RECORD' || name === 'STAT_CURRENT') {
         rec = { index: records.length, day: null, year: null, current: name === 'STAT_CURRENT' };
-        for (const s of Object.values(PRICE_SECTIONS)) rec[s] = {};
+        for (const s of Object.values(MAP_SECTIONS)) rec[s] = {};
         records.push(rec);
         section = null;
       } else if (name === 'STAT_CITY') {
@@ -49,8 +71,8 @@ export function parseStatsIni(text) {
       } else if (rec && name in SCALAR_KEYS && parts.length > 1) {
         rec[SCALAR_KEYS[name]] = parseFloat(parts[1]);
         section = null;
-      } else if (rec && name in PRICE_SECTIONS) {
-        section = PRICE_SECTIONS[name];
+      } else if (rec && name in MAP_SECTIONS) {
+        section = MAP_SECTIONS[name];
       } else {
         section = null; // section we don't track (tourism, citizens, ...)
       }
@@ -61,7 +83,7 @@ export function parseStatsIni(text) {
       if (m) rec[section][m[1]] = parseFloat(m[2]);
     }
   }
-  const out = records.filter(r => Object.keys(r.purchaseUSD).length > 0);
+  const out = records.filter(r => r.year !== null || r.current);
   out.forEach((r, i) => { r.index = i; });
   return out;
 }

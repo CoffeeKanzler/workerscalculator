@@ -89,6 +89,20 @@ test('mine production scales with quality, consumption does not', () => {
   assert.ok(Math.abs(get(half) - get(full) / 2) < 1e-9);
 });
 
+test('imported configured staffing and city productivity scale a production row', () => {
+  const building = buildings.find(b => b.workers > 0 && b.production.length > 0);
+  const settings = { productivity: 1, timeUnit: 'day', calendarFlow: 1, fertilizer: 1 };
+  const full = evaluatePlan([{ building, count: 2 }], {}, settings, eco());
+  const configured = evaluatePlan([{
+    building, count: 2, configuredWorkers: building.workers,
+    productivity: 0.8,
+  }], {}, settings, eco());
+
+  assert.equal(configured.rows[0].workers, building.workers);
+  assert.ok(Math.abs(configured.rows[0].income - full.rows[0].income * 0.4) < 1e-8);
+  assert.ok(Math.abs(configured.rows[0].expenses - full.rows[0].expenses * 0.4) < 1e-8);
+});
+
 test('two rows of the same mine at different qualities keep independent results', () => {
   const mine = byDe('Kohlemine');
   const settings = { productivity: 1, timeUnit: 'day', seasons: false, currency: 'RUB' };

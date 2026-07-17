@@ -57,15 +57,17 @@ test('zeroed scalars fall back to nearest earlier non-zero record', () => {
   assert.equal(p.purchaseUSD.steel, 410);
 });
 
-test('records without price data are dropped', () => {
+test('semantic records without price data remain available for analytics', () => {
   const recs = parseStatsIni('$STAT_RECORD 0\n$DATE_YEAR 1980\n$Citizens_Born 5\n');
-  assert.equal(recs.length, 0);
+  assert.equal(recs.length, 1);
+  assert.equal(recs[0].born, 5);
 });
 
 test('city statistics after global records do not overwrite global prices or date', () => {
   const text = `$STAT_RECORD 0
 $DATE_DAY 113
 $DATE_YEAR 2001
+$Citizens_AverageProductivity 0.939362
 $Economy_PurchaseCostUSD
   steel 100 1.05
 $end
@@ -96,6 +98,7 @@ $end
 $STAT_CURRENT
 $DATE_DAY 103
 $DATE_YEAR 2001
+$Citizens_AverageProductivity 0.939362
 $Economy_PurchaseCostUSD
   steel 110 1.05
 $end
@@ -106,4 +109,40 @@ $end
   assert.equal(recs[1].purchaseUSD.steel, 110);
   assert.equal(recs[1].day, 103);
   assert.equal(recs[1].current, true);
+  assert.equal(recs[1].averageProductivity, 0.939362);
+});
+
+test('parses republic resource and citizen history but excludes city blocks', () => {
+  const text = `$STAT_RECORD 0
+$DATE_DAY 100
+$DATE_YEAR 2000
+$Resources_Produced
+  steel 12.5 0
+$end
+$Resources_ImportRUB
+  fuel 8 0
+$end
+$Resources_ExportRUB
+  clothes 3 0
+$end
+$Citizens_Adults 1200
+$Citizens_Unemployed 40
+$Citizens_Born 8
+$Citizens_Dead 2
+$Citizens_AverageProductivity 0.91
+$STAT_CITY 4
+$DATE_YEAR 1965
+$Resources_Produced
+  steel 999 0
+$end`;
+  const [record] = parseStatsIni(text);
+  assert.equal(record.resourcesProduced.steel, 12.5);
+  assert.equal(record.resourcesImportRUB.fuel, 8);
+  assert.equal(record.resourcesExportRUB.clothes, 3);
+  assert.equal(record.adults, 1200);
+  assert.equal(record.unemployed, 40);
+  assert.equal(record.born, 8);
+  assert.equal(record.dead, 2);
+  assert.equal(record.averageProductivity, 0.91);
+  assert.equal(record.year, 2000);
 });

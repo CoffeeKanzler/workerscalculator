@@ -237,7 +237,6 @@ export function recommendVehicleProduction(vehicles, settings, eco, limit = 5) {
 // rows: [{building, count, quality}], settings: {productivity, timeUnit, seasons, fertilizer, calendarFlow, currency}
 export function evaluatePlan(rows, fields, settings, eco) {
   const tf = settings.timeUnit === 'year' ? 365 : settings.timeUnit === 'month' ? 30 : 1;
-  const prod = settings.productivity;
   const flow = settings.calendarFlow || 1;
   const out = {
     rows: [], balance: new Map(), workersPerShift: 0, totalPower: 0, totalMaxKW: 0,
@@ -262,7 +261,14 @@ export function evaluatePlan(rows, fields, settings, eco) {
       continue;
     }
     const quality = row.quality ?? 1;
-    const mult = QUALITY_BUILDINGS_DE.has(b.de) ? count * quality : count;
+    const nominalWorkers = b.workers * count;
+    const workers = Number.isFinite(row.configuredWorkers)
+      ? row.configuredWorkers + (row.configuredWorkersHighEducation ?? 0)
+      : nominalWorkers;
+    const staffing = nominalWorkers > 0 ? Math.max(0, Math.min(1, workers / nominalWorkers)) : 1;
+    const prod = Number.isFinite(row.productivity) ? row.productivity : settings.productivity;
+    const activity = staffing * prod;
+    const mult = (QUALITY_BUILDINGS_DE.has(b.de) ? count * quality : count) * activity;
     let income = 0, expenses = 0;
     for (const p of b.production) {
       const amt = p.rate * mult * tf * prod * flow;
@@ -270,11 +276,10 @@ export function evaluatePlan(rows, fields, settings, eco) {
       addBal(p.de, amt, 0);
     }
     for (const c of b.consumption) {
-      const amt = c.rate * count * tf * prod * flow;
+      const amt = c.rate * count * tf * activity * flow;
       expenses += eco.inputPrice(c.de, settings.currency) * amt;
       addBal(c.de, 0, amt);
     }
-    const workers = b.workers * count;
     const buildCost = eco.buildCost(b, settings.currency) * count;
     const profit = income - expenses;
     const profitPerWorker = workers ? profit / (workers / 2) : 0; // sheet formula
@@ -284,7 +289,7 @@ export function evaluatePlan(rows, fields, settings, eco) {
     out.totalPower += b.power * count * tf;
     out.totalMaxKW += b.maxKW * count;
     out.totalWater += b.water * count * tf;
-    out.totalWaste += b.wastePerWorker * b.workers * count * tf;
+    out.totalWaste += b.wastePerWorker * workers * tf;
     out.totalBuildCost += buildCost;
     out.totalProfit += profit;
   }
