@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=23';
+import { STRINGS } from './i18n.js?v=24';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=22';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -18,36 +18,43 @@ const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'p
 const LS_KEY = 'wr-planner-v1';
 const LS_KEY_BACKUP = 'wr-planner-v1-backup'; // local plan saved before a shared link overwrote it
 
-const state = {
-  lang: 'en',
-  tab: 'prices',
-  currency: 'RUB',
-  priceSource: 'default',      // default | stats | decade
-  decade: 1980,
-  recordIndex: 0,
-  statsRecords: null,          // parsed stats.ini records
-  statsName: null,
-  overrides: {},               // {"sellRUB.steel": 123}
-  historyKey: 'steel',
-  plan: {
-    settings: { productivity: 1, timeUnit: 'day', seasons: true, calendarFlow: 1, fertilizer: 1, currency: 'RUB' },
-    fields: { small: 0, medium: 0, large: 0, hectares: null },
-    rows: [],                  // {group, name, count, quality}
-  },
-  cities: [],
-  activeCity: 0,
-  vanillaOnly: false,
-  vehicleProduction: { productivity: 1, timeUnit: 'year', rows: [] },
-  train: { cargo: 'Kohle', length: 450, locoName: null, locoCount: 1 },
-  calcOpts: { inputPriceMode: 'sell', includeDelivery: false },
-  dataset: 'game',   // 'game' (current game files) | 'sheet' (spreadsheet snapshot)
-  tuning: {},        // advanced-mode overrides for community constants
-  lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0 },
-  analysisSort: { col: 'profit', dir: -1 },
-  analysisSearch: '',
-  priceSort: { col: 'name', dir: 1 },
-  saveSlotName: '',   // transient UI field for the named-save-slot input, not shared/exported
-};
+function createInitialState() {
+  return {
+    lang: 'en',
+    tab: 'prices',
+    currency: 'RUB',
+    priceSource: 'default',      // default | stats | decade
+    decade: 1980,
+    recordIndex: 0,
+    statsRecords: null,          // parsed stats.ini records
+    statsName: null,
+    overrides: {},               // {"sellRUB.steel": 123}
+    historyKey: 'steel',
+    plan: {
+      settings: { productivity: 1, timeUnit: 'day', seasons: true, calendarFlow: 1, fertilizer: 1, currency: 'RUB' },
+      fields: { small: 0, medium: 0, large: 0, hectares: null },
+      rows: [],                  // {group, name, count, quality}
+    },
+    cities: [],
+    activeCity: 0,
+    vanillaOnly: false,
+    vehicleProduction: { productivity: 1, timeUnit: 'year', rows: [] },
+    train: { cargo: 'Kohle', length: 450, locoName: null, locoCount: 1 },
+    calcOpts: { inputPriceMode: 'sell', includeDelivery: false },
+    dataset: 'game',   // 'game' (current game files) | 'sheet' (spreadsheet snapshot)
+    tuning: {},        // advanced-mode overrides for community constants
+    lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0 },
+    chains: [defaultChainPlan()],
+    activeChain: 0,
+    analysisSort: { col: 'profit', dir: -1 },
+    analysisSearch: '',
+    priceSort: { col: 'name', dir: 1 },
+    saveSlotName: '',   // transient UI field for the named-save-slot input, not shared/exported
+    snapshotNotice: '', // transient feedback for named snapshot actions
+  };
+}
+
+const state = createInitialState();
 
 function defaultCity() {
   return {
@@ -77,7 +84,7 @@ function chainPlans() {
 }
 
 function saveState() {
-  const { statsRecords, viewingSharedLink, ...rest } = state;
+  const { statsRecords, viewingSharedLink, snapshotNotice, ...rest } = state;
   const slim = { ...rest };
   slim.statsRecords = statsRecords;
   try { localStorage.setItem(LS_KEY, JSON.stringify(slim)); } catch (e) { /* quota */ }
@@ -401,7 +408,9 @@ function renderSaveSlots() {
         const name = state.saveSlotName.trim();
         if (!name) return;
         if (saves[name] && !confirm(t('saveSlotOverwriteConfirm'))) return;
-        saveNamedState(name);
+        const result = saveNamedState(name);
+        if (!result.ok) return alert(t('saveSlotWriteFailed') + ': ' + result.error.message);
+        state.snapshotNotice = t('saveSlotSaved').replace('{name}', name);
         update();
       },
     }, '💾'),
@@ -410,16 +419,27 @@ function renderSaveSlots() {
       onclick: () => {
         const name = state.saveSlotName.trim();
         if (!name || !saves[name]) return;
-        if (confirm(t('saveSlotLoadConfirm'))) loadNamedState(name);
+        if (confirm(t('saveSlotLoadConfirm'))) {
+          loadNamedState(name);
+          state.snapshotNotice = t('saveSlotLoaded').replace('{name}', name);
+          update();
+        }
       },
     }, '📂'),
     names.length ? el('button', {
       class: 'danger', title: t('saveSlotDelete'),
       onclick: () => {
         const name = state.saveSlotName.trim();
-        if (name && saves[name] && confirm(t('saveSlotDeleteConfirm'))) { deleteNamedState(name); update(); }
+        if (name && saves[name] && confirm(t('saveSlotDeleteConfirm'))) {
+          const result = deleteNamedState(name);
+          if (!result.ok) return alert(t('saveSlotWriteFailed') + ': ' + result.error.message);
+          state.snapshotNotice = t('saveSlotDeleted').replace('{name}', name);
+          state.saveSlotName = '';
+          update();
+        }
       },
-    }, '🗑') : null);
+    }, '🗑') : null,
+    state.snapshotNotice ? el('span', { class: 'saveslotnotice' }, state.snapshotNotice) : null);
 }
 
 function renderTabs() {
@@ -1689,8 +1709,31 @@ function sharedState() {
   return Object.fromEntries(SHARE_KEYS.map(k => [k, state[k]]));
 }
 
-function applySharedState(obj) {
-  for (const k of SHARE_KEYS) if (obj[k] !== undefined) state[k] = obj[k];
+function cloneStateValue(value) {
+  return value === undefined ? undefined : JSON.parse(JSON.stringify(value));
+}
+
+// Full plan loads are replacements, not patches. Restoring absent keys from
+// defaults prevents state created later (notably production chains) leaking
+// into an older snapshot that never contained those keys.
+function replaceSharedState(obj) {
+  if (!obj || typeof obj !== 'object' || Array.isArray(obj)) throw new Error('Plan state must be an object');
+  const defaults = createInitialState();
+  for (const key of SHARE_KEYS) {
+    const value = obj[key] !== undefined ? obj[key] : defaults[key];
+    if (value === undefined) delete state[key];
+    else state[key] = cloneStateValue(value);
+  }
+
+  // Pre-multi-chain exports stored one `chain` object rather than `chains`.
+  if (obj.chains === undefined && obj.chain && typeof obj.chain === 'object') {
+    state.chains = [{ name: null, ...cloneStateValue(obj.chain) }];
+  }
+  if (!Array.isArray(state.cities)) state.cities = [];
+  if (!state.cities.length) state.cities.push(defaultCity());
+  if (!Array.isArray(state.chains) || !state.chains.length) state.chains = [defaultChainPlan()];
+  state.activeCity = Math.max(0, Math.min(Number(state.activeCity) || 0, state.cities.length - 1));
+  state.activeChain = Math.max(0, Math.min(Number(state.activeChain) || 0, state.chains.length - 1));
 }
 
 function exportPlan() {
@@ -1701,7 +1744,7 @@ function importPlan(file) {
   const reader = new FileReader();
   reader.onload = () => {
     try {
-      applySharedState(JSON.parse(reader.result));
+      replaceSharedState(JSON.parse(reader.result));
       update();
     } catch (e) { alert('Invalid plan file: ' + e.message); }
   };
@@ -1714,25 +1757,37 @@ function importPlan(file) {
 const SAVES_KEY = 'wr-planner-saves-v1';
 
 function loadSaves() {
-  try { return JSON.parse(localStorage.getItem(SAVES_KEY)) || {}; } catch (e) { return {}; }
+  try {
+    const parsed = JSON.parse(localStorage.getItem(SAVES_KEY));
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return {};
+    return Object.fromEntries(Object.entries(parsed).filter(([, entry]) =>
+      entry && typeof entry === 'object' && entry.state && typeof entry.state === 'object' && !Array.isArray(entry.state)));
+  } catch (e) { return {}; }
 }
 function writeSaves(saves) {
-  try { localStorage.setItem(SAVES_KEY, JSON.stringify(saves)); } catch (e) { /* quota */ }
+  try {
+    localStorage.setItem(SAVES_KEY, JSON.stringify(saves));
+    return { ok: true };
+  } catch (error) {
+    return { ok: false, error };
+  }
 }
 function saveNamedState(name) {
-  if (!name) return;
+  if (!name) return { ok: false, error: new Error('Snapshot name is empty') };
   const saves = loadSaves();
-  saves[name] = { savedAt: Date.now(), state: sharedState() };
-  writeSaves(saves);
+  saves[name] = { version: 1, savedAt: Date.now(), state: sharedState() };
+  return writeSaves(saves);
 }
 function loadNamedState(name) {
   const saves = loadSaves();
-  if (saves[name]) { applySharedState(saves[name].state); update(); }
+  if (!saves[name]) return false;
+  replaceSharedState(saves[name].state);
+  return true;
 }
 function deleteNamedState(name) {
   const saves = loadSaves();
   delete saves[name];
-  writeSaves(saves);
+  return writeSaves(saves);
 }
 
 async function shareLink() {
@@ -1759,7 +1814,7 @@ async function applyHash() {
       // banner's "restore my plan" is a real, working promise
       const before = localStorage.getItem(LS_KEY);
       if (before) localStorage.setItem(LS_KEY_BACKUP, before);
-      applySharedState(await fragmentToState(h.slice(3)));
+      replaceSharedState(await fragmentToState(h.slice(3)));
       state.viewingSharedLink = true; // transient — not in SHARE_KEYS, not persisted
     } catch (e) { console.warn('bad share link', e); }
     history.replaceState(null, '', '#/' + state.tab);

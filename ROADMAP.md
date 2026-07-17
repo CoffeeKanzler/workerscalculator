@@ -119,6 +119,25 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
 - **Why:** localStorage is fragile; share links spread the tool (Reddit/Steam forums).
 - **Effort:** small-medium. **Files:** `js/app.js`, small `js/share.js`.
 
+### 4.1a Reliable named planning snapshots ✅ done 2026-07-17
+- **What:** Several named plans can live in one browser. Loading a snapshot is a
+  complete state replacement with schema defaults, not a partial overlay, so
+  cities/chains created in another plan cannot leak into it. Save/load/delete
+  actions now show feedback and browser storage failures are reported.
+- **Why:** game-save import needs a safe isolation boundary: every imported save
+  will create a new snapshot rather than overwrite the currently open plan.
+
+### 4.1b Game-save import into the planners 🚧 in progress 2026-07-17
+- **What:** A local-only `/beta/` importer for a W&R save directory. Preserve the
+  game's own named settlements and building membership, aggregate recognized
+  city/service buildings into City Planner rows, tag recognized factories by
+  settlement in Production Planner, and combine both in Republic Overview.
+- **Known format status:** `namepoints.bin` is fully decoded and validated. Exact
+  traversal of the variable-length `buildings_game.bin` records is the remaining
+  reverse-engineering gate before building types can be imported reliably.
+- **Safety:** imported saves become new editable named snapshots; unknown building
+  types stay visible in an unmatched report instead of being silently discarded.
+
 ### 4.2 Live-follow stats.ini
 - **What:** "Watch file" button using the File System Access API (Chromium): re-read the
   stats.ini on a timer/visibility change so prices stay current while the game runs.
