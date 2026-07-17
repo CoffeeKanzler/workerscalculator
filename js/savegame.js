@@ -92,6 +92,72 @@ export function parseNamepoints(buffer) {
   return settlements;
 }
 
+export function parseHeader(buffer) {
+  const c = new BinaryCursor(buffer);
+  c.require(0x204, 'header fixed metadata');
+  return {
+    saveVersion: c.view.getUint32(0, true),
+    title: c.utf16Z(4, 0x100),
+    savePath: c.asciiZ(0x104, Math.min(0x100, c.bytes.length - 0x104)),
+  };
+}
+
+export function parseResearch(buffer) {
+  const c = new BinaryCursor(buffer);
+  const count = c.u32('research count');
+  if (count > 100_000) throw new Error(`implausible research count ${count}`);
+  const expected = 4 + count * 0x58;
+  if (c.bytes.length !== expected) {
+    throw new Error(`research.bin expected ${expected} bytes for ${count} records, got ${c.bytes.length}`);
+  }
+  const records = [];
+  for (let index = 0; index < count; index += 1) {
+    const start = 4 + index * 0x58;
+    records.push({
+      key: c.asciiZ(start, 0x40),
+      progress: c.view.getFloat32(start + 0x40, true),
+      buildingIndex: c.view.getInt32(start + 0x44, true),
+      flags: c.view.getUint16(start + 0x48, true),
+    });
+  }
+  return records;
+}
+
+export function parseWorkers(buffer, { saveVersion = 124 } = {}) {
+  const c = new BinaryCursor(buffer);
+  const count = c.u32('citizen count');
+  if (count > 10_000_000) throw new Error(`implausible citizen count ${count}`);
+  const citizens = [];
+
+  for (let index = 0; index < count; index += 1) {
+    const start = c.offset;
+    c.require(0x718, `citizen ${index} fixed block`);
+    citizens.push({
+      index,
+      id: c.view.getInt32(start, true),
+      residenceBuildingIndex: c.view.getInt32(start + 0x10, true),
+      education: c.view.getFloat32(start + 0x74, true),
+      age: c.view.getFloat32(start + 0x84, true),
+      happiness: c.view.getFloat32(start + 0x88, true),
+      food: c.view.getFloat32(start + 0x8c, true),
+      health: c.view.getFloat32(start + 0x90, true),
+      loyalty: c.view.getFloat32(start + 0x94, true),
+    });
+    const citizenType = c.view.getInt8(start + 0x700);
+    const hasExtraName = c.view.getUint8(start + 0x70c) !== 0;
+    c.offset = start + 0x718;
+    if (saveVersion > 0x71) c.skip(0x10, `citizen ${index} version extension`);
+    if (citizenType > 0 && saveVersion > 0x71) c.skip(9, `citizen ${index} type extension`);
+    if (hasExtraName) c.skip(0x80, `citizen ${index} extra name`);
+  }
+
+  if (c.offset !== c.bytes.length) throw new Error(`workers.bin has ${c.bytes.length - c.offset} trailing bytes`);
+  return {
+    citizens,
+    summary: { recordCount: count, byteLength: c.bytes.length, trailingBytes: 0 },
+  };
+}
+
 const first = stackOffset => 0x728 - stackOffset;
 const second = stackOffset => 0x548 + 0x8b8 - stackOffset;
 
