@@ -333,15 +333,17 @@ export function evaluateCity(city, eco) {
   res.buildCostRUB += res.workdays * eco.workday('RUB');
   res.buildCostUSD += res.workdays * eco.workday('USD');
 
-  // Total workers of a given building type that would exactly hit 100%
-  // utilization, assuming the same worker/capacity mix as what's already
-  // built (workers scale with capacity, so optimal = current * utilization:
-  // below current staffing if under-utilized, above it if over-utilized).
+  // Workers of a given building type for 100% utilization, assuming the same
+  // worker/capacity mix as what's already built: optimal = current * utilization,
+  // below current staffing if under-utilized. A building's worker count can't
+  // be scaled past its own max slots (`max`, its current total) — you can only
+  // staff down, never up, so over-utilization needs more buildings, not more
+  // workers per building; `optimal` is capped at `max` to reflect that ceiling.
   const optimalWorkers = (typeDe, utilization) => {
     if (utilization == null) return null;
-    const totalWorkers = rows.filter(r => r.building.type.de === typeDe)
+    const max = rows.filter(r => r.building.type.de === typeDe)
       .reduce((a, r) => a + (r.building.workers ?? 0) * r.count, 0);
-    return totalWorkers * utilization;
+    return { optimal: Math.min(max, max * utilization), max };
   };
 
   for (const svc of SERVICES) {

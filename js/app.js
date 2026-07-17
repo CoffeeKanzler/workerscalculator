@@ -1,6 +1,6 @@
 import { STRINGS } from './i18n.js?v=15';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=19';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=20';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=13';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -1018,12 +1018,12 @@ function utilizationCell(u) {
   return el('td', { class: 'r ' + cls }, fmt(u * 100, 0) + ' %');
 }
 
-// Total staff of that building type for exactly 100% utilization — below the
-// current headcount if under-utilized, above it if over-utilized ('—' when
-// there's nothing built yet to derive a worker/capacity ratio from).
+// Recommended staff for exactly 100% utilization, shown against the current
+// max (a building's worker count can only be scaled down, never past its own
+// slots — over-utilization means build more, not overstaff what's there).
 function workersNeededCell(w) {
   if (w === null) return el('td', { class: 'r' }, '—');
-  return el('td', { class: 'r' }, fmt(w, 0));
+  return el('td', { class: 'r' }, `${fmt(w.optimal, 0)} / ${fmt(w.max, 0)}`);
 }
 
 // ---------------------------------------------------------------- trains tab
