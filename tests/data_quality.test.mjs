@@ -33,3 +33,15 @@ test('explicit game construction resources override stale sheet measurements', (
   assert.equal(coal.provenance.workdays, 'game-file');
   assert.equal(coal.provenance.power, 'sheet-measured');
 });
+
+test('per-second electricity stays a utility field, not a per-worker material input', () => {
+  for (const source of rawBuildings) {
+    if (source.consumptionPerSecond?.eletric != null) {
+      assert.equal(source.consumption.eletric, undefined, `${source.id} mixed electricity units`);
+    }
+  }
+  for (const building of production) {
+    assert.equal(building.consumption.some(item => item.de === 'Strom' || item.en === 'Electricity'), false,
+      `${building.gameId} exposes utility electricity as economic consumption`);
+  }
+});

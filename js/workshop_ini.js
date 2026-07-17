@@ -22,7 +22,7 @@ export function workshopBuildingIdentity(relativePath) {
 export function parseWorkshopBuildingIni(text, id, identity = workshopBuildingIdentity(`${id}/building.ini`)) {
   const building = {
     id, nameId: null, types: [], workers: 0, professors: 0,
-    production: {}, consumption: {}, livingSpace: 0, citizenAbleServe: 0,
+    production: {}, consumption: {}, consumptionPerSecond: {}, livingSpace: 0, citizenAbleServe: 0,
     qualityOfLiving: null, attractiveScore: null, storages: {},
     constructionResources: {}, electricWorkerFactors: {},
   };
@@ -43,8 +43,11 @@ export function parseWorkshopBuildingIni(text, id, identity = workshopBuildingId
     else if (key === 'WORKERS_NEEDED' && Number.isFinite(number(0))) building.workers = number(0);
     else if (key === 'PROFESORS_NEEDED' && Number.isFinite(number(0))) building.professors = number(0);
     else if (key === 'PRODUCTION' && args[0] && Number.isFinite(number(1))) building.production[args[0]] = number(1);
-    else if ((key === 'CONSUMPTION' || key === 'CONSUMPTION_PER_SECOND')
-      && args[0] && Number.isFinite(number(1))) building.consumption[args[0]] = number(1);
+    else if (key === 'CONSUMPTION' && args[0] && Number.isFinite(number(1))) {
+      building.consumption[args[0]] = number(1);
+    } else if (key === 'CONSUMPTION_PER_SECOND' && args[0] && Number.isFinite(number(1))) {
+      building.consumptionPerSecond[args[0]] = number(1);
+    }
     else if (key === 'CITIZEN_ABLE_SERVE' && Number.isFinite(number(0))) building.citizenAbleServe = number(0);
     else if (key === 'QUALITY_OF_LIVING' && Number.isFinite(number(0))) building.qualityOfLiving = number(0);
     else if (key === 'ATTRACTIVE_SCORE' && Number.isFinite(number(0))) building.attractiveScore = number(0);

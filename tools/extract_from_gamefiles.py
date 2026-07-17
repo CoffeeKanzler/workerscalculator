@@ -68,7 +68,7 @@ def parse_building(path, ident=None, keep_all=False):
     b = {
         'id': ident or os.path.splitext(os.path.basename(path))[0],
         'nameId': None, 'types': [], 'workers': 0, 'professors': 0,
-        'production': {}, 'consumption': {}, 'livingSpace': 0,
+        'production': {}, 'consumption': {}, 'consumptionPerSecond': {}, 'livingSpace': 0,
         'citizenAbleServe': 0, 'qualityOfLiving': None, 'attractiveScore': None,
         'storages': {},
         'constructionResources': {},
@@ -101,8 +101,10 @@ def parse_building(path, ident=None, keep_all=False):
                 b['professors'] = float(args[0])
             elif key == 'PRODUCTION':
                 b['production'][args[0]] = float(args[1])
-            elif key in ('CONSUMPTION', 'CONSUMPTION_PER_SECOND'):
+            elif key == 'CONSUMPTION':
                 b['consumption'][args[0]] = float(args[1])
+            elif key == 'CONSUMPTION_PER_SECOND':
+                b['consumptionPerSecond'][args[0]] = float(args[1])
             elif key == 'CITIZEN_ABLE_SERVE':
                 b['citizenAbleServe'] = float(args[0])
             elif key == 'QUALITY_OF_LIVING':
@@ -470,7 +472,10 @@ def build_dataset(buildings, repo_root, loc):
             prods.append({'de': r['de'], 'en': r['en'], 'rate': round(tday, 4)})
         for key, rate in g['consumption'].items():
             r = bykey.get(key)
-            if not r or key in PSEUDO:
+            # Electricity is a building utility, represented by power/maxKW in
+            # the planner. Treating it as a priced t/day material input would
+            # mix units and double-count it.
+            if not r or key in PSEUDO or key == 'eletric':
                 continue
             tday = rate * g['workers'] if g['workers'] else rate
             cons.append({'de': r['de'], 'en': r['en'], 'rate': round(tday, 4)})

@@ -11,12 +11,13 @@ $STORAGE RESOURCE_TRANSPORT_PASSANGER 96
 $QUALITY_OF_LIVING 0.87
 $PRODUCTION food 0.25
 $CONSUMPTION eletric 0.1
+$CONSUMPTION_PER_SECOND eletric 0.025
 $COST_RESOURCE steel 7.5
 `;
   assert.deepEqual(parseWorkshopBuildingIni(text, '1234567890/house'), {
     id: '1234567890/house', nameId: null, nameStr: 'Compact housing',
     types: ['TYPE_LIVING'], workers: 12, professors: 0,
-    production: { food: 0.25 }, consumption: { eletric: 0.1 },
+    production: { food: 0.25 }, consumption: { eletric: 0.1 }, consumptionPerSecond: { eletric: 0.025 },
     livingSpace: 96, citizenAbleServe: 0, qualityOfLiving: 0.87,
     attractiveScore: null, storages: { RESOURCE_TRANSPORT_PASSANGER: 96 },
     constructionResources: { steel: 7.5 }, electricWorkerFactors: {},

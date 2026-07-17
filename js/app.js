@@ -1245,7 +1245,8 @@ const WORKSHOP_PRODUCTION_GROUPS = new Map([
 function workshopProductionBuilding(raw) {
   const pseudo = new Set(['vehicles', 'trains']);
   const productionKeys = Object.keys(raw.production ?? {}).filter(key => !pseudo.has(key));
-  const consumptionKeys = Object.keys(raw.consumption ?? {}).filter(key => !pseudo.has(key));
+  const consumptionKeys = Object.keys(raw.consumption ?? {})
+    .filter(key => !pseudo.has(key) && key !== 'eletric');
   if ((!productionKeys.length && !consumptionKeys.length) || raw.types?.includes('TYPE_FARM')) return null;
   const resource = key => DATA.resources.find(item => item.key === key);
   const heatOnly = productionKeys.length === 1 && productionKeys[0] === 'heat';

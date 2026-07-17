@@ -25,11 +25,6 @@
     "de": "Bitumen",
     "en": "bitumen",
     "rate": 20.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 15.0
    }
   ],
   "measured": true,
@@ -95,11 +90,6 @@
     "de": "Bitumen",
     "en": "bitumen",
     "rate": 10.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 7.5
    }
   ],
   "measured": true,
@@ -171,11 +161,6 @@
     "de": "Wasser",
     "en": "Water",
     "rate": 85.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 1.0
    }
   ],
   "measured": true,
@@ -246,11 +231,6 @@
     "de": "Wasser",
     "en": "Water",
     "rate": 30.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 0.35
    }
   ],
   "measured": true,
@@ -317,11 +297,6 @@
     "de": "Kies",
     "en": "Gravel",
     "rate": 65.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 6.5
    }
   ],
   "measured": true,
@@ -387,11 +362,6 @@
     "de": "Kies",
     "en": "Gravel",
     "rate": 50.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 3.75
    }
   ],
   "measured": true,
@@ -670,11 +640,6 @@
     "de": "Bruchstein",
     "en": "Broken stone",
     "rate": 120.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 6.0
    }
   ],
   "measured": true,
@@ -735,11 +700,6 @@
     "de": "Bruchstein",
     "en": "Broken stone",
     "rate": 40.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 0.75
    }
   ],
   "measured": false,
@@ -870,11 +830,6 @@
     "de": "Holz",
     "en": "Wood",
     "rate": 180.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 0.54
    }
   ],
   "measured": true,
@@ -940,11 +895,6 @@
     "de": "Kies",
     "en": "Gravel",
     "rate": 210.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 3.0
    }
   ],
   "measured": true,
@@ -1010,11 +960,6 @@
     "de": "Kies",
     "en": "Gravel",
     "rate": 105.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 1.2
    }
   ],
   "measured": true,
@@ -1081,11 +1026,6 @@
     "de": "Kies",
     "en": "Gravel",
     "rate": 240.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 3.4
    }
   ],
   "measured": true,
@@ -2316,11 +2256,6 @@
     "de": "Chemikalien",
     "en": "chemicals",
     "rate": 0.75
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 35.0
    }
   ],
   "measured": false,
@@ -2553,11 +2488,6 @@
     "de": "Uranerz",
     "en": "Uranium ore",
     "rate": 36.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 36.0
    }
   ],
   "measured": false,
@@ -2732,11 +2662,6 @@
     "de": "Chemikalien",
     "en": "chemicals",
     "rate": 0.208
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 64.0
    }
   ],
   "measured": false,
@@ -2817,11 +2742,6 @@
     "de": "Wasser",
     "en": "Water",
     "rate": 10.2
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 14.4
    }
   ],
   "measured": true,
@@ -2902,11 +2822,6 @@
     "de": "Wasser",
     "en": "Water",
     "rate": 34.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 150.0
    }
   ],
   "measured": true,
@@ -2988,11 +2903,6 @@
     "de": "Wasser",
     "en": "Water",
     "rate": 119.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 1960.0
    }
   ],
   "measured": true,
@@ -3168,11 +3078,6 @@
     "de": "Öl",
     "en": "oil",
     "rate": 27.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 15.6
    }
   ],
   "measured": true,
@@ -3233,11 +3138,6 @@
     "de": "Kohlenerz",
     "en": "coal ore",
     "rate": 420.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 7.5
    }
   ],
   "measured": false,
@@ -3298,11 +3198,6 @@
     "de": "Kohlenerz",
     "en": "coal ore",
     "rate": 280.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 3.32
    }
   ],
   "measured": false,
@@ -3359,13 +3254,7 @@
     "rate": 7.0
    }
   ],
-  "consumption": [
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 0.065
-   }
-  ],
+  "consumption": [],
   "measured": true,
   "provenance": {
    "workers": "game-file",
@@ -3429,11 +3318,6 @@
     "de": "Öl",
     "en": "oil",
     "rate": 250.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 105.0
    }
   ],
   "measured": true,
@@ -3870,11 +3754,6 @@
     "de": "Wasser",
     "en": "Water",
     "rate": 13.5
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 17.0
    }
   ],
   "measured": true,
@@ -3940,11 +3819,6 @@
     "de": "Wasser",
     "en": "Water",
     "rate": 4.725
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 2.8
    }
   ],
   "measured": false,
@@ -4665,11 +4539,6 @@
     "de": "Chemikalien",
     "en": "chemicals",
     "rate": 2.52
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 822.5
    }
   ],
   "measured": true,
@@ -4958,81 +4827,6 @@
     "de": "Eisen",
     "en": "iron",
     "rate": 200.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 95.0
-   }
-  ],
-  "measured": true,
-  "provenance": {
-   "workers": "game-file",
-   "production": "game-file",
-   "consumption": "game-file",
-   "power": "sheet-measured",
-   "maxKW": "sheet-measured",
-   "water": "sheet-measured",
-   "hotwater": "sheet-measured",
-   "wastePerWorker": "sheet-measured",
-   "workdays": "sheet-measured",
-   "gravel": "sheet-measured",
-   "bricks": "sheet-measured",
-   "steel": "sheet-measured",
-   "concrete": "sheet-measured",
-   "asphalt": "sheet-measured",
-   "boards": "sheet-measured",
-   "panels": "sheet-measured",
-   "ecomponents": "sheet-measured",
-   "mcomponents": "sheet-measured"
-  },
-  "power": 48.0,
-  "maxKW": 800.0,
-  "water": 10.0,
-  "hotwater": 0.0,
-  "wastePerWorker": 0.6,
-  "workdays": 9549.0,
-  "gravel": 142.0,
-  "bricks": 141.0,
-  "steel": 241.0,
-  "concrete": 484.0,
-  "asphalt": 113.0,
-  "boards": 47.0,
-  "panels": 0.0,
-  "ecomponents": 0.0,
-  "mcomponents": 32.0
- },
- {
-  "gameId": "steel_mill_v2",
-  "group": {
-   "de": "Metallurgie",
-   "en": "metallurgy"
-  },
-  "de": "Stahlwerk (500 👷)",
-  "en": "Steel mill (500 👷)",
-  "workers": 500.0,
-  "production": [
-   {
-    "de": "Stahl",
-    "en": "Steel",
-    "rate": 43.0
-   }
-  ],
-  "consumption": [
-   {
-    "de": "Kohle",
-    "en": "Coal",
-    "rate": 375.0
-   },
-   {
-    "de": "Eisen",
-    "en": "iron",
-    "rate": 200.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 275.0
    }
   ],
   "measured": true,
@@ -5093,11 +4887,6 @@
     "de": "Eisenerz",
     "en": "iron ore",
     "rate": 225.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 4.2
    }
   ],
   "measured": true,
@@ -5158,11 +4947,6 @@
     "de": "Eisenerz",
     "en": "iron ore",
     "rate": 120.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 1.28
    }
   ],
   "measured": true,
@@ -5405,11 +5189,6 @@
     "de": "Bauschutt",
     "en": "Construction debris",
     "rate": 90.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 4.5
    }
   ],
   "measured": true,
@@ -5470,11 +5249,6 @@
     "de": "Bauschutt",
     "en": "Construction debris",
     "rate": 30.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 0.5
    }
   ],
   "measured": false,
@@ -5594,11 +5368,6 @@
     "de": "Sondermüll",
     "en": "hazardous waste",
     "rate": 37.5
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 1.5
    }
   ],
   "measured": false,
@@ -5648,13 +5417,7 @@
   "en": "Aluminum separation",
   "workers": 20.0,
   "production": [],
-  "consumption": [
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 2.0
-   }
-  ],
+  "consumption": [],
   "measured": false,
   "provenance": {
    "workers": "game-file",
@@ -5716,13 +5479,7 @@
   "en": "Scrap separation",
   "workers": 15.0,
   "production": [],
-  "consumption": [
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 1.5
-   }
-  ],
+  "consumption": [],
   "measured": false,
   "provenance": {
    "workers": "game-file",
@@ -5784,13 +5541,7 @@
   "en": "General separation",
   "workers": 50.0,
   "production": [],
-  "consumption": [
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 1.5
-   }
-  ],
+  "consumption": [],
   "measured": false,
   "provenance": {
    "workers": "game-file",
@@ -6008,11 +5759,6 @@
     "de": "Plastikmüll",
     "en": "Plastic waste",
     "rate": 10.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 1.4
    }
   ],
   "measured": true,
@@ -6143,11 +5889,6 @@
     "de": "Wasser",
     "en": "Water",
     "rate": 11.0
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 18.0
    }
   ],
   "measured": true,
@@ -6892,11 +6633,6 @@
     "de": "Chemikalien",
     "en": "chemicals",
     "rate": 0.6
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 3.08
    }
   ],
   "measured": true,
@@ -6962,11 +6698,6 @@
     "de": "Chemikalien",
     "en": "chemicals",
     "rate": 0.32
-   },
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 0.85
    }
   ],
   "measured": true,
@@ -7078,11 +6809,6 @@
   ],
   "consumption": [
    {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 1.27
-   },
-   {
     "de": "Abwasser",
     "en": "Sewage",
     "rate": 30.0
@@ -7147,11 +6873,6 @@
    }
   ],
   "consumption": [
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 0.325
-   },
    {
     "de": "Abwasser",
     "en": "Sewage",
@@ -7218,11 +6939,6 @@
   ],
   "consumption": [
    {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 1.35
-   },
-   {
     "de": "Abwasser",
     "en": "Sewage",
     "rate": 26.0
@@ -7272,77 +6988,6 @@
   "mcomponents": 3.2
  },
  {
-  "gameId": "dlc3/water_treatment_small",
-  "group": {
-   "de": "Wasser & Abwasser",
-   "en": "Water & Wastewater"
-  },
-  "de": "Wasseraufbereitung (klein) (5 👷)",
-  "en": "Water treatment (small) (5 👷)",
-  "workers": 5.0,
-  "production": [
-   {
-    "de": "Wasser",
-    "en": "Water",
-    "rate": 120.0
-   }
-  ],
-  "consumption": [
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 0.35
-   },
-   {
-    "de": "Abwasser",
-    "en": "Sewage",
-    "rate": 13.0
-   },
-   {
-    "de": "Chemikalien",
-    "en": "chemicals",
-    "rate": 0.25
-   }
-  ],
-  "measured": true,
-  "provenance": {
-   "workers": "game-file",
-   "production": "game-file",
-   "consumption": "game-file",
-   "power": "sheet-measured",
-   "maxKW": "sheet-measured",
-   "water": "sheet-measured",
-   "hotwater": "sheet-measured",
-   "wastePerWorker": "sheet-measured",
-   "workdays": "sheet-measured",
-   "gravel": "sheet-measured",
-   "bricks": "sheet-measured",
-   "steel": "sheet-measured",
-   "concrete": "sheet-measured",
-   "asphalt": "sheet-measured",
-   "boards": "sheet-measured",
-   "panels": "sheet-measured",
-   "ecomponents": "sheet-measured",
-   "mcomponents": "sheet-measured"
-  },
-  "dlc": "dlc3",
-  "power": 3.9,
-  "maxKW": 167.0,
-  "water": 0.1,
-  "hotwater": 0.0,
-  "wastePerWorker": 0.6,
-  "workdays": 609.0,
-  "gravel": 8.3,
-  "bricks": 23.0,
-  "steel": 10.0,
-  "concrete": 10.0,
-  "asphalt": 6.7,
-  "boards": 7.8,
-  "panels": 0.0,
-  "ecomponents": 0.0,
-  "mcomponents": 1.6
- },
- {
   "gameId": "water_well_big",
   "group": {
    "de": "Wasser & Abwasser",
@@ -7358,13 +7003,7 @@
     "rate": 1505.0
    }
   ],
-  "consumption": [
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 0.665
-   }
-  ],
+  "consumption": [],
   "measured": false,
   "provenance": {
    "workers": "game-file",
@@ -7432,13 +7071,7 @@
     "rate": 1920.0
    }
   ],
-  "consumption": [
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 0.84
-   }
-  ],
+  "consumption": [],
   "measured": false,
   "provenance": {
    "workers": "game-file",
@@ -7507,13 +7140,7 @@
     "rate": 70.0
    }
   ],
-  "consumption": [
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 0.035
-   }
-  ],
+  "consumption": [],
   "measured": false,
   "provenance": {
    "workers": "game-file",
@@ -7567,13 +7194,7 @@
     "rate": 250.0
    }
   ],
-  "consumption": [
-   {
-    "de": "Strom",
-    "en": "Electricity",
-    "rate": 0.175
-   }
-  ],
+  "consumption": [],
   "measured": false,
   "provenance": {
    "workers": "game-file",
