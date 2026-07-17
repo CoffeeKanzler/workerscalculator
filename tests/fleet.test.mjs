@@ -177,10 +177,50 @@ test('aircraft recipe keeps aluminium and electronics in executable row order', 
   assert.equal(targets.materials.waste_plastic, 0.04979200288653374);
 });
 
-test('ordinary road category stays unavailable without the two branch facts', () => {
+test('road category stays unavailable without an exact recipe branch', () => {
   assert.equal(normalVehicleProductionRecipe({
     runtimeCategory: 1, emptyWeight: 6, powerKW: 118, introductionYear: 1958,
     transportSubtype: 3, capacity: 7, electric: null,
+  }), null);
+});
+
+test('category-1 road recipes follow ordinary, horse-team, and single-horse branches', () => {
+  const ordinary = normalVehicleProductionRecipe({
+    runtimeCategory: 1, emptyWeight: 6, powerKW: 118, introductionYear: 1958,
+    transportSubtype: 3, capacity: 7, electric: null, roadRecipeBranch: 'ordinary',
+  });
+  assert.deepEqual(ordinary.map(([resource]) => resource), [
+    'workers', 'steel', 'plastics', 'fabric', 'mcomponents', 'ecomponents',
+    'workers', 'steel', 'mcomponents', 'ecomponents',
+  ]);
+
+  const horseTeam = normalVehicleProductionRecipe({
+    runtimeCategory: 1, emptyWeight: 4, powerKW: 0, introductionYear: 1900,
+    transportSubtype: 7, capacity: 10, electric: null, roadRecipeBranch: 'horse-team',
+  });
+  assert.deepEqual(horseTeam.map(([resource]) => resource), [
+    'workers', 'steel', 'boards', 'fabric',
+  ]);
+  assert.equal(horseTeam[0][1], Math.fround(Math.fround(4) * Math.fround(30)));
+  assert.equal(horseTeam[3][1], Math.fround(Math.fround(10) * Math.fround(0.0025)));
+
+  const singleHorse = normalVehicleProductionRecipe({
+    runtimeCategory: 1, emptyWeight: 1, powerKW: 0, introductionYear: 1900,
+    transportSubtype: 0, capacity: 0, electric: null,
+    roadRecipeBranch: 'single-horse', singleHorsePower: 2,
+  });
+  assert.deepEqual(singleHorse, [['workers', 15], ['plants', 20]]);
+  const recycledSingle = normalVehicleRecyclingTargets({
+    runtimeCategory: 1, emptyWeight: 1, powerKW: 0, introductionYear: 1900,
+    roadRecipeBranch: 'single-horse', singleHorsePower: 2,
+  });
+  assert.equal(recycledSingle.workdays, 1);
+  assert.equal(recycledSingle.materials.waste_bio, 6);
+  assert.equal(recycledSingle.materials.waste_burnable, 10);
+  assert.equal(recycledSingle.materials.waste_other, 4);
+  assert.equal(normalVehicleProductionRecipe({
+    runtimeCategory: 1, emptyWeight: 1, powerKW: 0, introductionYear: 1900,
+    roadRecipeBranch: 'single-horse', singleHorsePower: null,
   }), null);
 });
 
@@ -483,7 +523,7 @@ test('fleet model resolution prefers exact authoritative game IDs', () => {
   const game = [{ id: 'tanker', en: 'The Pride', type: 'VEHICLETYPE_SHIP', emptyWeight: 8780.2,
     powerKW: 18000, capacity: 19250, transportType: 'RESOURCE_TRANSPORT_OIL', from: 1979, costRUB: 4300 }];
   const workshop = [{ id: '1945481818/UAZ_452', type: 'VEHICLETYPE_ROAD', emptyWeight: 1.85,
-    lifespanYears: 12 }];
+    lifespanYears: 12, roadRecipeBranch: 'ordinary' }];
   const resolved = resolveVehicleModels(records, { game, workshop });
 
   assert.deepEqual(resolved.records.map(record => record.modelFacts), [
@@ -496,7 +536,8 @@ test('fleet model resolution prefers exact authoritative game IDs', () => {
       category: null, runtimeCategory: 1, emptyWeight: 1.85, powerKW: null, capacity: null,
       transportType: null, transportSubtype: 0, availableFrom: null,
       originCurrency: null, lifespanDays: 4383,
-      electric: null, hasHardAttachments: false, source: 'workshop-catalog' },
+      electric: null, roadRecipeBranch: 'ordinary', singleHorsePower: null,
+      hasHardAttachments: false, source: 'workshop-catalog' },
     null,
   ]);
   assert.deepEqual(resolved.summary, {

@@ -18,7 +18,7 @@ import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_i
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, resolveVehicleModels,
   shareSafeSaveImport, vehicleCategoryGroup, vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=6';
+} from './fleet.js?v=7';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',

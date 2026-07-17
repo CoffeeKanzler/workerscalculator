@@ -17,6 +17,7 @@
   "from": 1968,
   "to": 1983,
   "countryId": 39008,
+  "roadRecipeBranch": "ordinary",
   "de": "Chav 11M3 (Bus)",
   "en": "Chav 11M3 bus"
  },
@@ -38,6 +39,7 @@
   "from": 1980,
   "to": 1995,
   "countryId": 39008,
+  "roadRecipeBranch": "ordinary",
   "de": "Chav B13 (Bus)",
   "en": "Chav B13 bus"
  },
@@ -59,6 +61,7 @@
   "from": 1980,
   "to": 1995,
   "countryId": 39008,
+  "roadRecipeBranch": "ordinary",
   "de": "Chav B14 (Bus)",
   "en": "Chav B14 bus"
  },
@@ -80,6 +83,7 @@
   "from": 1961,
   "to": 1982,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "MM 5201",
   "en": "MM-5201 bus"
  },
@@ -101,6 +105,7 @@
   "from": 1981,
   "to": 1999,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "MM RTS",
   "en": "MM-RTS bus"
  },
@@ -122,6 +127,7 @@
   "from": 1974,
   "to": 2002,
   "countryId": 39007,
+  "roadRecipeBranch": "ordinary",
   "de": "Ikr 256 (Bus)",
   "en": "Ikr-256 bus"
  },
@@ -143,6 +149,7 @@
   "from": 1972,
   "to": 2002,
   "countryId": 39007,
+  "roadRecipeBranch": "ordinary",
   "de": "Ikr 260 (Bus)",
   "en": "Ikr-260 bus"
  },
@@ -164,6 +171,7 @@
   "from": 1972,
   "to": 2002,
   "countryId": 39007,
+  "roadRecipeBranch": "ordinary",
   "de": "Ikr 280 (Bus)",
   "en": "Ikr-280 bus"
  },
@@ -182,7 +190,8 @@
   "transportType": "RESOURCE_TRANSPORT_PASSANGER",
   "from": 1953,
   "to": 1972,
-  "countryId": 39007
+  "countryId": 39007,
+  "roadRecipeBranch": "ordinary"
  },
  {
   "id": "bus_ikr_620",
@@ -199,7 +208,8 @@
   "transportType": "RESOURCE_TRANSPORT_PASSANGER",
   "from": 1958,
   "to": 1972,
-  "countryId": 39007
+  "countryId": 39007,
+  "roadRecipeBranch": "ordinary"
  },
  {
   "id": "bus_ikr_66",
@@ -216,7 +226,8 @@
   "transportType": "RESOURCE_TRANSPORT_PASSANGER",
   "from": 1955,
   "to": 1972,
-  "countryId": 39007
+  "countryId": 39007,
+  "roadRecipeBranch": "ordinary"
  },
  {
   "id": "bus_krs_b732",
@@ -235,6 +246,7 @@
   "from": 1983,
   "to": 1997,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "K- B732 (Bus)",
   "en": "K-B732 bus"
  },
@@ -253,7 +265,8 @@
   "transportType": "RESOURCE_TRANSPORT_PASSANGER",
   "from": 1962,
   "to": 1981,
-  "countryId": 39000
+  "countryId": 39000,
+  "roadRecipeBranch": "ordinary"
  },
  {
   "id": "bus_krs_sm11",
@@ -272,6 +285,7 @@
   "from": 1961,
   "to": 1981,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "K- SM11 (Bus)",
   "en": "K-SM11 bus"
  },
@@ -293,6 +307,7 @@
   "from": 1968,
   "to": 1994,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Lz 677 (Bus)",
   "en": "LZ677 bus"
  },
@@ -313,6 +328,7 @@
   "from": 1958,
   "to": 1975,
   "countryId": 39015,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ 695B",
   "en": "LZ-695B bus"
  },
@@ -333,6 +349,7 @@
   "from": 1975,
   "to": 2005,
   "countryId": 39015,
+  "roadRecipeBranch": "ordinary",
   "de": "Lz 965N (Bus)",
   "en": "LZ-965N bus"
  },
@@ -354,6 +371,7 @@
   "from": 1970,
   "to": 1975,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "SG192",
   "en": "SG192 bus"
  },
@@ -375,6 +393,7 @@
   "from": 1973,
   "to": 1986,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "SG192",
   "en": "SG192 bus"
  },
@@ -396,6 +415,7 @@
   "from": 1969,
   "to": 1975,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "SL192",
   "en": "SL192 bus"
  },
@@ -417,6 +437,7 @@
   "from": 1973,
   "to": 1986,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "SL200",
   "en": "SL200 bus"
  },
@@ -437,6 +458,7 @@
   "from": 1965,
   "to": 1974,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "Mars 302 (Bus)",
   "en": "Mars 302 bus"
  },
@@ -457,6 +479,7 @@
   "from": 1969,
   "to": 1987,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "Mars 305",
   "en": "Mars 305 bus"
  },
@@ -477,6 +500,7 @@
   "from": 1967,
   "to": 1986,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "Mars 309 (Bus)",
   "en": "Mars 309 bus"
  },
@@ -497,6 +521,7 @@
   "from": 1994,
   "to": 2007,
   "countryId": 39019,
+  "roadRecipeBranch": "ordinary",
   "de": "MZ 104",
   "en": "MZ-04 bus"
  },
@@ -517,6 +542,7 @@
   "from": 1989,
   "to": 3000,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "de": "Pz 3205 (Bus)",
   "en": "PZ-3205 bus"
  },
@@ -537,6 +563,7 @@
   "from": 1967,
   "to": 1990,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "PZ 672",
   "en": "PZ-672 bus"
  },
@@ -558,6 +585,7 @@
   "from": 1956,
   "to": 1972,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 RTO LUX (Bus)",
   "en": "Skd-706 RTO LUX bus"
  },
@@ -579,6 +607,7 @@
   "from": 1956,
   "to": 1972,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 RTO MTZ (Bus)",
   "en": "Skd-706 RTO MTZ bus"
  },
@@ -600,6 +629,7 @@
   "from": 1956,
   "to": 1972,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd-706 RTO-Anhänger-Bus",
   "en": "Skd-706 RTO trailer bus"
  },
@@ -621,6 +651,7 @@
   "from": 1961,
   "to": 1991,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "B1000 (Kleinbus)",
   "en": "B1000 microbus"
  },
@@ -642,6 +673,7 @@
   "from": 1962,
   "to": 1982,
   "countryId": 39010,
+  "roadRecipeBranch": "ordinary",
   "de": "IMV 1600 (Kleinbus)",
   "en": "IMV-1600 microbus"
  },
@@ -663,6 +695,7 @@
   "from": 1974,
   "to": 1985,
   "countryId": 39010,
+  "roadRecipeBranch": "ordinary",
   "de": "IMV 2200 (Kleinbus)",
   "en": "IMV-2200 microbus"
  },
@@ -684,6 +717,7 @@
   "from": 1975,
   "to": 1997,
   "countryId": 39013,
+  "roadRecipeBranch": "ordinary",
   "de": "R-2203 (Kleinbus)",
   "en": "R2203 microbus"
  },
@@ -705,6 +739,7 @@
   "from": 1958,
   "to": 1976,
   "countryId": 39013,
+  "roadRecipeBranch": "ordinary",
   "de": "RF-977 (Kleinbus)",
   "en": "RF-977 microbus"
  },
@@ -726,6 +761,7 @@
   "from": 1968,
   "to": 1997,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S1203 (Kleinbus)",
   "en": "S1203 bus"
  },
@@ -747,6 +783,7 @@
   "from": 1959,
   "to": 1990,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "FZK A07 (Kleinbus)",
   "en": "FZK-A07 microbus"
  },
@@ -767,6 +804,7 @@
   "from": 1957,
   "to": 1970,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil 158",
   "en": "Zil-158 bus"
  },
@@ -787,6 +825,7 @@
   "from": 1949,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zis 155 (Bus)",
   "en": "Zis-155 bus"
  },
@@ -807,6 +846,7 @@
   "from": 1958,
   "to": 1972,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "de": "Fi 2472",
   "en": "Fi 2472"
  },
@@ -827,6 +867,7 @@
   "from": 1979,
   "to": 1991,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "Mrc O305T",
   "en": "Mrc-O305T"
  },
@@ -847,6 +888,7 @@
   "from": 1981,
   "to": 1998,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 14T",
   "en": "Skd-14T"
  },
@@ -867,6 +909,7 @@
   "from": 1988,
   "to": 1995,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 15T",
   "en": "Skd-15T"
  },
@@ -887,6 +930,7 @@
   "from": 1958,
   "to": 1981,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 9T",
   "en": "Skd 9T"
  },
@@ -907,6 +951,7 @@
   "from": 1986,
   "to": 2008,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "ZiU-10",
   "en": "ZiU-10"
  },
@@ -927,6 +972,7 @@
   "from": 1959,
   "to": 1972,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "ZiU-5",
   "en": "ZiU-5"
  },
@@ -947,6 +993,7 @@
   "from": 1991,
   "to": 2000,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "ZiU 682G",
   "en": "ZiU-682G"
  },
@@ -967,6 +1014,7 @@
   "from": 1971,
   "to": 1984,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "ZiU-682",
   "en": "ZiU-682"
  },
@@ -987,6 +1035,7 @@
   "from": 1983,
   "to": 1990,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "ZiU-682-83",
   "en": "ZiU-682-83"
  },
@@ -1007,6 +1056,7 @@
   "from": 1989,
   "to": 1998,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "ZiU-682-89",
   "en": "ZiU-682-89"
  },
@@ -1026,6 +1076,7 @@
   "from": 1962,
   "to": 1980,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Zementauflieger)",
   "en": "Mark P dry-bulk tank"
  },
@@ -1046,6 +1097,7 @@
   "from": 1966,
   "to": 1996,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "MZ-504 (Trockengut)",
   "en": "MZ-504 dry-bulk tank"
  },
@@ -1065,6 +1117,7 @@
   "from": 1977,
   "to": 1995,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmd 19-256 (Trockengut)",
   "en": "Rmd 19-256 dry-bulk tank"
  },
@@ -1085,6 +1138,7 @@
   "from": 1958,
   "to": 1996,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 RT (Trockengut)",
   "en": "Skd-706 RT dry-bulk tank"
  },
@@ -1103,6 +1157,7 @@
   "from": 1959,
   "to": 1974,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "СК-4 Mähdrescher",
   "en": "СК-4 combine"
  },
@@ -1121,6 +1176,7 @@
   "from": 1970,
   "to": 2000,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "СК-5 Mähdrescher",
   "en": "СК-5 combine"
  },
@@ -1139,6 +1195,7 @@
   "from": 1970,
   "to": 2000,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "CL - Dom85",
   "en": "CL-Dom85 combine"
  },
@@ -1157,6 +1214,7 @@
   "from": 1959,
   "to": 1969,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "CL - Matador",
   "en": "CL-Matador combine"
  },
@@ -1175,6 +1233,7 @@
   "from": 1967,
   "to": 1988,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "E512 Mähdrescher",
   "en": "E512 combine"
  },
@@ -1195,6 +1254,7 @@
   "from": 1968,
   "to": 1996,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "A30N (Abgedeckt)",
   "en": "A30N covered"
  },
@@ -1215,6 +1275,7 @@
   "from": 1983,
   "to": 1997,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "A21 Furgon",
   "en": "A21F covered"
  },
@@ -1236,6 +1297,7 @@
   "from": 1961,
   "to": 1991,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "B1000 (Abgedeckt)",
   "en": "B1000 covered"
  },
@@ -1253,6 +1315,7 @@
   "capacity": 3.5,
   "transportType": "RESOURCE_TRANSPORT_COVERED",
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "GZ-66 LKW (abgedeckt)",
   "en": "GZ66 covered"
  },
@@ -1273,6 +1336,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "IFA W50 (Abgedeckt)",
   "en": "Ifa-W50 covered"
  },
@@ -1293,6 +1357,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "IFA W50 (Abgedeckter Auflieger)",
   "en": "W50 covered"
  },
@@ -1312,6 +1377,7 @@
   "from": 1974,
   "to": 1985,
   "countryId": 39010,
+  "roadRecipeBranch": "ordinary",
   "de": "IMV 2200 (Abgedeckt)",
   "en": "IMV-2200 covered"
  },
@@ -1332,6 +1398,7 @@
   "from": 1968,
   "to": 1992,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "Je300 (Abgedeckt)",
   "en": "Je300 covered"
  },
@@ -1352,6 +1419,7 @@
   "from": 1966,
   "to": 1994,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kaz 256B (Abgedeckt)",
   "en": "Kaz-256B covered"
  },
@@ -1372,6 +1440,7 @@
   "from": 1976,
   "to": 2001,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kmz 5320 (Abgedeckt)",
   "en": "Kmz-5320 covered"
  },
@@ -1392,6 +1461,7 @@
   "from": 1976,
   "to": 2006,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kmz 5410 (Abgedeckt Auflieger)",
   "en": "Kmz-5410 covered"
  },
@@ -1412,6 +1482,7 @@
   "to": 1995,
   "countryId": 39000,
   "transportType": "RESOURCE_TRANSPORT_COVERED",
+  "roadRecipeBranch": "ordinary",
   "de": "LZ 100 (Abgedeckt)",
   "en": "LZ100 covered"
  },
@@ -1432,6 +1503,7 @@
   "speed": 92.0,
   "powerKW": 165.0,
   "emptyWeight": 10.2,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ100 (Abgedeckter Auflieger)",
   "en": "LZ100 covered"
  },
@@ -1452,6 +1524,7 @@
   "to": 1995,
   "countryId": 39000,
   "transportType": "RESOURCE_TRANSPORT_COVERED",
+  "roadRecipeBranch": "ordinary",
   "de": "LZ100 (Abgedeckt, Anhänger)",
   "en": "LZ100 covered"
  },
@@ -1472,6 +1545,7 @@
   "capacity": 16.7,
   "transportType": "RESOURCE_TRANSPORT_COVERED",
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark E (Abgedeckter Auflieger)",
   "en": "Mark E covered"
  },
@@ -1492,6 +1566,7 @@
   "from": 1965,
   "to": 1977,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "MZ-503 (Abgedeckt)",
   "en": "MZ-503 covered"
  },
@@ -1512,6 +1587,7 @@
   "from": 1966,
   "to": 1977,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "MZ-504 (Abgedeckt)",
   "en": "MZ-504 covered"
  },
@@ -1531,6 +1607,7 @@
   "from": 1968,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 135 (Abgedeckt)",
   "en": "Rmn-135 covered"
  },
@@ -1551,6 +1628,7 @@
   "from": 1937,
   "to": 1962,
   "countryId": 39016,
+  "roadRecipeBranch": "ordinary",
   "de": "Rnt AGK (Abgedeckt)",
   "en": "Rnt AGK covered"
  },
@@ -1571,6 +1649,7 @@
   "from": 1958,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 RT (Abgedeckt)",
   "en": "Skd-706 RT covered"
  },
@@ -1591,6 +1670,7 @@
   "from": 1958,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 RTTN (Abgedeckt)",
   "en": "Skd-706 RTTN covered"
  },
@@ -1611,6 +1691,7 @@
   "from": 1959,
   "to": 1971,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T 138 (Abgedeckt)",
   "en": "T138 covered"
  },
@@ -1631,6 +1712,7 @@
   "from": 1972,
   "to": 1982,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T 148 (Abgedeckt)",
   "en": "T148 covered"
  },
@@ -1651,6 +1733,7 @@
   "from": 1982,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 (Abgedeckt)",
   "en": "T815 covered"
  },
@@ -1671,6 +1754,7 @@
   "from": 1965,
   "to": 1983,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "U377 (Abgedeckt)",
   "en": "U377 covered"
  },
@@ -1691,6 +1775,7 @@
   "from": 1953,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "V3S (Abgedeckt)",
   "en": "V3S covered"
  },
@@ -1712,6 +1797,7 @@
   "from": 1968,
   "to": 1999,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 1203 (Abgedeckt)",
   "en": "Skd-1203 covered"
  },
@@ -1733,6 +1819,7 @@
   "from": 1959,
   "to": 1997,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "FZK A07 (Abgedeckt)",
   "en": "FZK-A07 covered"
  },
@@ -1752,6 +1839,7 @@
   "from": 1983,
   "to": 1997,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "A21 (Feuerwehr)",
   "en": "A21F fire truck"
  },
@@ -1771,6 +1859,7 @@
   "from": 1961,
   "to": 1993,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "GZ-53 (Feuerwehr)",
   "en": "GZ53 fire truck"
  },
@@ -1791,6 +1880,7 @@
   "from": 1974,
   "to": 1985,
   "countryId": 39010,
+  "roadRecipeBranch": "ordinary",
   "de": "IMV 2200 (Feuerwehr)",
   "en": "IMV-2200 fire truck"
  },
@@ -1810,6 +1900,7 @@
   "from": 1968,
   "to": 1992,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "Je300 (Feuerwehr)",
   "en": "Je300 fire truck"
  },
@@ -1829,6 +1920,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "IFA W50 (Feuerleiter)",
   "en": "W50 fire ladder"
  },
@@ -1846,6 +1938,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Feuerwehr)",
   "en": "Mark P fire truck"
  },
@@ -1863,6 +1956,7 @@
   "from": 1962,
   "to": 1980,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Feuerwehrauflieger)",
   "en": "Mark P fire truck"
  },
@@ -1882,6 +1976,7 @@
   "from": 1958,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 RTHP (Feuerwehr)",
   "en": "Skd-706 RTHP fire truck"
  },
@@ -1899,6 +1994,7 @@
   "from": 1983,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 (Feuerwehr)",
   "en": "T815 fire truck"
  },
@@ -1918,6 +2014,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "IFA W50 (Feuerwehr)",
   "en": "W50 fire truck"
  },
@@ -1938,6 +2035,7 @@
   "from": 1968,
   "to": 1997,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S1203 (Feuerwehr)",
   "en": "S1203 fire truck"
  },
@@ -1958,6 +2056,7 @@
   "from": 1959,
   "to": 1998,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "FZK A07 (Feuerwehr)",
   "en": "FZK-A07 fire truck"
  },
@@ -1977,6 +2076,7 @@
   "from": 1960,
   "to": 1985,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "His H87C",
   "en": "His-H87C"
  },
@@ -1996,6 +2096,7 @@
   "from": 1959,
   "to": 2005,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "LZA 4045",
   "en": "LZA-4045"
  },
@@ -2015,6 +2116,7 @@
   "from": 1979,
   "to": 2005,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "YL 78",
   "en": "YL 78"
  },
@@ -2034,6 +2136,7 @@
   "from": 1976,
   "to": 2001,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "KMZ 5320 (Absetzcontainer für Müll)",
   "en": "Kmz-5320 big garbage container"
  },
@@ -2053,6 +2156,7 @@
   "from": 1966,
   "to": 1990,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Absetzcontainer für Müll)",
   "en": "Mark P big garbage container"
  },
@@ -2072,6 +2176,7 @@
   "countryId": 39000,
   "capacity": 6.5,
   "transportType": "RESOURCE_TRANSPORT_WASTE",
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706RT (Absetzcontainer für Müll)",
   "en": "Skd-706RT (big garbage container)"
  },
@@ -2091,6 +2196,7 @@
   "from": 1982,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 (Absetzcontainer für Müll)",
   "en": "T815 big garbage container"
  },
@@ -2110,6 +2216,7 @@
   "from": 1961,
   "to": 1993,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "GZ-53m (Müllfahrzeug; kleine Container)",
   "en": "GZ53-m garbage truck"
  },
@@ -2129,6 +2236,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "IFA W50 (Müllfahrzeug; kleine Container)",
   "en": "Ifa-W50 garbage truck"
  },
@@ -2148,6 +2256,7 @@
   "from": 1974,
   "to": 1995,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ100 (Müllfahrzeug; kleine Container)",
   "en": "LZ100 garbage truck"
  },
@@ -2167,6 +2276,7 @@
   "from": 1973,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 12-215 (Müllfahrzeug; kleine Container)",
   "en": "Rmn 12-215 garbage truck"
  },
@@ -2186,6 +2296,7 @@
   "from": 1958,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 RTK (Müllfahrzeug; kleine Container)",
   "en": "Skd-706 RTK garbage truck"
  },
@@ -2205,6 +2316,7 @@
   "from": 1966,
   "to": 1990,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Müllfahrzeug; kleine Container)",
   "en": "Mark P garbage"
  },
@@ -2224,6 +2336,7 @@
   "from": 1978,
   "to": 1999,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "Str 19S24 (Müllfahrzeug; kleine Container)",
   "en": "Str 19-S24 garbage truck"
  },
@@ -2244,6 +2357,7 @@
   "from": 1968,
   "to": 1996,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "A30N (Kipper)",
   "en": "A30N dumper"
  },
@@ -2263,6 +2377,7 @@
   "from": 1950,
   "to": 1975,
   "countryId": 39014,
+  "roadRecipeBranch": "ordinary",
   "de": "BZ 252 (Kipper)",
   "en": "BZ-252 dumper"
  },
@@ -2283,6 +2398,7 @@
   "from": 1961,
   "to": 1993,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "GZ-53 (Kipper)",
   "en": "GZ53 dumper"
  },
@@ -2303,6 +2419,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "IFA W50 (Kipper)",
   "en": "W50 dumper"
  },
@@ -2323,6 +2440,7 @@
   "from": 1968,
   "to": 1992,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "Je300 (Kipper)",
   "en": "Je300 dumper"
  },
@@ -2343,6 +2461,7 @@
   "from": 1966,
   "to": 1994,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kaz 256B (Kipper)",
   "en": "Kaz-256B dumper"
  },
@@ -2362,6 +2481,7 @@
   "from": 1972,
   "to": 1988,
   "countryId": 39022,
+  "roadRecipeBranch": "ordinary",
   "de": "Kokum 442",
   "en": "Kokum-442 dumper"
  },
@@ -2382,6 +2502,7 @@
   "from": 1976,
   "to": 2001,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kmz 5320 (Kipper)",
   "en": "Kmz-5320 dumper"
  },
@@ -2402,6 +2523,7 @@
   "from": 1976,
   "to": 2006,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kmz 5410 (Kipperauflieger)",
   "en": "Kmz-5410 dumper"
  },
@@ -2422,6 +2544,7 @@
   "from": 1974,
   "to": 1995,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ 100 (Kipper)",
   "en": "LZ100 dumper"
  },
@@ -2442,6 +2565,7 @@
   "speed": 92.0,
   "powerKW": 165.0,
   "emptyWeight": 9.8,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ100 (Kipper Auflieger)",
   "en": "LZ100 dumper"
  },
@@ -2462,6 +2586,7 @@
   "from": 1974,
   "to": 1995,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ100 (Kipper, Anhänger)",
   "en": "LZ100 dumper"
  },
@@ -2482,6 +2607,7 @@
   "from": 1978,
   "to": 1992,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "Mcar 25 (Kipper)",
   "en": "Mcar-25 dumper"
  },
@@ -2502,6 +2628,7 @@
   "from": 2003,
   "to": 3000,
   "countryId": 39003,
+  "roadRecipeBranch": "ordinary",
   "de": "M TGS (Kipper)",
   "en": "M-TGS dumper"
  },
@@ -2521,6 +2648,7 @@
   "from": 1966,
   "to": 1990,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Kipper)",
   "en": "Mark P dumper"
  },
@@ -2541,6 +2669,7 @@
   "from": 1965,
   "to": 1977,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "MZ-503 (Kipper)",
   "en": "MZ-503 dumper"
  },
@@ -2560,6 +2689,7 @@
   "from": 1973,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 19-215DFK (Kipper)",
   "en": "Rmn 19-215DFK dumper"
  },
@@ -2579,6 +2709,7 @@
   "from": 1968,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 135FK (Kipper)",
   "en": "Rmn-135FK dumper"
  },
@@ -2599,6 +2730,7 @@
   "from": 1958,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 RTS (Kipper)",
   "en": "Skd-706 RTS dumper"
  },
@@ -2619,6 +2751,7 @@
   "from": 1959,
   "to": 1971,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T 138 (Kipper)",
   "en": "T138 dumper"
  },
@@ -2639,6 +2772,7 @@
   "from": 1972,
   "to": 1982,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T 148 (Kipper)",
   "en": "T148 dumper"
  },
@@ -2659,6 +2793,7 @@
   "from": 1982,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 (Kipper)",
   "en": "T815 dumper"
  },
@@ -2679,6 +2814,7 @@
   "from": 1985,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 S1 Kipper",
   "en": "T815-S1 dumper"
  },
@@ -2699,6 +2835,7 @@
   "from": 1965,
   "to": 1983,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "U377 (Kipper)",
   "en": "U377 dumper"
  },
@@ -2719,6 +2856,7 @@
   "from": 1953,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "V3S (Kipper)",
   "en": "V3S dumper"
  },
@@ -2739,6 +2877,7 @@
   "from": 1962,
   "to": 1994,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil-130 (Kipper)",
   "en": "Zil-130 dumper"
  },
@@ -2759,6 +2898,7 @@
   "from": 1966,
   "to": 1999,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil-133 (Kipper)",
   "en": "Zil-133 dumper"
  },
@@ -2779,6 +2919,7 @@
   "from": 1961,
   "to": 1993,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "GZ-53 (Tank)",
   "en": "GZ53 cistern"
  },
@@ -2799,6 +2940,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "IFA W50 (Tank)",
   "en": "W50 cistern"
  },
@@ -2819,6 +2961,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "IFA W50 (Tankauflieger)",
   "en": "W50 cistern"
  },
@@ -2839,6 +2982,7 @@
   "from": 1966,
   "to": 1994,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kaz 256B (Tank)",
   "en": "Kaz-256B cistern"
  },
@@ -2859,6 +3003,7 @@
   "from": 1976,
   "to": 2001,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kmz 5320 (Tank)",
   "en": "Kmz-5320 cistern"
  },
@@ -2879,6 +3024,7 @@
   "from": 1976,
   "to": 2006,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kmz 5410 (Tankauflieger)",
   "en": "Kmz-5410 cistern"
  },
@@ -2899,6 +3045,7 @@
   "speed": 92.0,
   "powerKW": 165.0,
   "emptyWeight": 7.5,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ-100 (Abwassertransporter)",
   "en": "LZ100 sewage truck"
  },
@@ -2919,6 +3066,7 @@
   "speed": 92.0,
   "powerKW": 165.0,
   "emptyWeight": 9.85,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ100 (Tankauflieger)",
   "en": "LZ100 cistern"
  },
@@ -2939,6 +3087,7 @@
   "speed": 92.0,
   "powerKW": 165.0,
   "emptyWeight": 7.5,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ-100 (Wassertransporter)",
   "en": "LZ100 water truck"
  },
@@ -2959,6 +3108,7 @@
   "capacity": 17.0,
   "transportType": "RESOURCE_TRANSPORT_OIL",
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark E (Tank)",
   "en": "Mark E cistern"
  },
@@ -2978,6 +3128,7 @@
   "capacity": 16.0,
   "transportType": "RESOURCE_TRANSPORT_OIL",
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Tankauflieger)",
   "en": "Mark P cistern"
  },
@@ -2997,6 +3148,7 @@
   "from": 1966,
   "to": 1990,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Tank)",
   "en": "Mark P cistern"
  },
@@ -3016,6 +3168,7 @@
   "from": 1966,
   "to": 1990,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Abwassertank)",
   "en": "Mark P sewage\r\n"
  },
@@ -3035,6 +3188,7 @@
   "from": 1966,
   "to": 1990,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Wassertank)",
   "en": "Mark P water truck\r\n"
  },
@@ -3055,6 +3209,7 @@
   "from": 1965,
   "to": 1977,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "MZ-503 (Tank)",
   "en": "MZ-503 cistern"
  },
@@ -3074,6 +3229,7 @@
   "from": 1973,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 19-215 (Tank)",
   "en": "Rmn 19-215 cistern"
  },
@@ -3093,6 +3249,7 @@
   "from": 1977,
   "to": 1995,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmd 19-256 (Tank)",
   "en": "Rmd 19-256 cistern"
  },
@@ -3112,6 +3269,7 @@
   "from": 1968,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 135 (Tank)",
   "en": "Rmn-135 cistern"
  },
@@ -3131,6 +3289,7 @@
   "from": 1968,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 135 (Abwassertransporter)",
   "en": "Rmn-135 sewage truck"
  },
@@ -3150,6 +3309,7 @@
   "from": 1968,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 135 (Wassertransporter)",
   "en": "Rmn-135 water truck"
  },
@@ -3170,6 +3330,7 @@
   "from": 1937,
   "to": 1962,
   "countryId": 39016,
+  "roadRecipeBranch": "ordinary",
   "de": "Rnt AGK (Tank)",
   "en": "Rnt AGK cistern"
  },
@@ -3190,6 +3351,7 @@
   "from": 1958,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 RTH (Tank)",
   "en": "Skd-706 RTH cistern"
  },
@@ -3210,6 +3372,7 @@
   "from": 1959,
   "to": 1971,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T 138 (Tank)",
   "en": "T138 cistern"
  },
@@ -3230,6 +3393,7 @@
   "from": 1959,
   "to": 1971,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T138 (Abwassertransporter)",
   "en": "T138 sewage truck"
  },
@@ -3250,6 +3414,7 @@
   "from": 1959,
   "to": 1971,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T138 (Wassertransporter)",
   "en": "T138 water truck"
  },
@@ -3270,6 +3435,7 @@
   "from": 1972,
   "to": 1982,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T 148 (Tank)",
   "en": "T148 cistern"
  },
@@ -3290,6 +3456,7 @@
   "from": 1972,
   "to": 1982,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T148 (Abwassertransporter)",
   "en": "T148 sewage truck"
  },
@@ -3310,6 +3477,7 @@
   "from": 1972,
   "to": 1982,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T148 (Wassertransporter)",
   "en": "T148 water truck"
  },
@@ -3329,6 +3497,7 @@
   "from": 1982,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 (Abwassertransporter)",
   "en": "T815 sewage truck"
  },
@@ -3348,6 +3517,7 @@
   "from": 1983,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 (Tankanhänger)",
   "en": "T815 cistern"
  },
@@ -3367,6 +3537,7 @@
   "from": 1982,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 (Wassertransporter)",
   "en": "T815 water truck"
  },
@@ -3387,6 +3558,7 @@
   "from": 1965,
   "to": 1983,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "U377 (Tank)",
   "en": "U377 cistern"
  },
@@ -3407,6 +3579,7 @@
   "from": 1953,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "V3S (Tank)",
   "en": "V3S cistern"
  },
@@ -3427,6 +3600,7 @@
   "from": 1953,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "V3S (Abwassertransporter)",
   "en": "V3S sewage truck"
  },
@@ -3447,6 +3621,7 @@
   "from": 1953,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "V3S (Wassertransporter)",
   "en": "V3S water truck"
  },
@@ -3468,6 +3643,7 @@
   "from": 1962,
   "to": 1994,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil 130 (Tank)",
   "en": "Zil-130 cistern"
  },
@@ -3489,6 +3665,7 @@
   "from": 1962,
   "to": 1994,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil-130 (Abwassertransporter)",
   "en": "Zil-130 sewage"
  },
@@ -3510,6 +3687,7 @@
   "from": 1962,
   "to": 1994,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil-130 (Wassertransporter)",
   "en": "Zil-130 water truck"
  },
@@ -3530,6 +3708,7 @@
   "from": 1966,
   "to": 1999,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil-133 (Tank)",
   "en": "Zil-133 cistern"
  },
@@ -3550,6 +3729,7 @@
   "from": 1968,
   "to": 1996,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "A30N (Offen)",
   "en": "A30N open"
  },
@@ -3571,6 +3751,7 @@
   "from": 1961,
   "to": 1991,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "B1000 (Offen)",
   "en": "B1000 open"
  },
@@ -3591,6 +3772,7 @@
   "from": 1961,
   "to": 1993,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "GZ-53 (Offen)",
   "en": "GZ53 open"
  },
@@ -3611,6 +3793,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "IFA W50 (Offen)",
   "en": "W50 open "
  },
@@ -3631,6 +3814,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "IFA W50 (Offener Auflieger)",
   "en": "W50 open"
  },
@@ -3650,6 +3834,7 @@
   "from": 1974,
   "to": 1985,
   "countryId": 39010,
+  "roadRecipeBranch": "ordinary",
   "de": "IMV 2200 (Offen)",
   "en": "IMV-2200 flatbed"
  },
@@ -3670,6 +3855,7 @@
   "from": 1968,
   "to": 1992,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "Je300 (Offen)",
   "en": "Je300 open"
  },
@@ -3690,6 +3876,7 @@
   "from": 1966,
   "to": 1994,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kaz 256B (Offen)",
   "en": "Kaz-256B open"
  },
@@ -3710,6 +3897,7 @@
   "from": 1976,
   "to": 2001,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kmz 5320 (Offen mit Kran)",
   "en": "Kmz-5320 with crane"
  },
@@ -3730,6 +3918,7 @@
   "from": 1976,
   "to": 2006,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kmz 5410 (Offener Auflieger)",
   "en": "Kmz-5410 open"
  },
@@ -3750,6 +3939,7 @@
   "speed": 92.0,
   "powerKW": 165.0,
   "emptyWeight": 7.8,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ 100 (Offen)",
   "en": "LZ100 open"
  },
@@ -3770,6 +3960,7 @@
   "speed": 92.0,
   "powerKW": 165.0,
   "emptyWeight": 9.1,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ100 (Offen, Anhänger)",
   "en": "LZ100 open"
  },
@@ -3790,6 +3981,7 @@
   "from": 1978,
   "to": 1992,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "Mcar 25 (Offen)",
   "en": "Mcar-25 open"
  },
@@ -3809,6 +4001,7 @@
   "capacity": 30.0,
   "transportType": "RESOURCE_TRANSPORT_OPEN",
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark E (Tiefladeauflieger lang)",
   "en": "Mark E flatbed"
  },
@@ -3828,6 +4021,7 @@
   "capacity": 17.0,
   "transportType": "RESOURCE_TRANSPORT_OPEN",
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Offener Auflieger)",
   "en": "Mark P flatbed"
  },
@@ -3847,6 +4041,7 @@
   "capacity": 16.0,
   "transportType": "RESOURCE_TRANSPORT_OPEN",
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark E (Offener Auflieger)",
   "en": "Mark E flatbed"
  },
@@ -3867,6 +4062,7 @@
   "from": 1965,
   "to": 1977,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "MZ-503 (Offen)",
   "en": "MZ-503 open"
  },
@@ -3887,6 +4083,7 @@
   "from": 1966,
   "to": 1977,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "MZ-504 (Offen)",
   "en": "MZ-504 open"
  },
@@ -3906,6 +4103,7 @@
   "from": 1973,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 19-215DF (Pritsche)",
   "en": "Rmn 19-215DF flatbed"
  },
@@ -3925,6 +4123,7 @@
   "from": 1977,
   "to": 1995,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmd 19-256 (Pritsche)",
   "en": "Rmd 19-256 flatbed"
  },
@@ -3944,6 +4143,7 @@
   "from": 1968,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 135F (Pritsche)",
   "en": "Rmn-135F flatbed"
  },
@@ -3964,6 +4164,7 @@
   "from": 1958,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 RT (Offen)",
   "en": "Skd-706 RT open"
  },
@@ -3984,6 +4185,7 @@
   "from": 1958,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 RTTN (Offen)",
   "en": "Skd-706 RTTN open"
  },
@@ -4004,6 +4206,7 @@
   "from": 1959,
   "to": 1971,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T 138 (Offen)",
   "en": "T138 open"
  },
@@ -4024,6 +4227,7 @@
   "from": 1972,
   "to": 1982,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T 148 (Offen)",
   "en": "T148 open"
  },
@@ -4043,6 +4247,7 @@
   "capacity": 27.0,
   "transportType": "RESOURCE_TRANSPORT_OPEN",
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T813 6x6 (Offen)",
   "en": "T813 flatbed 6x6"
  },
@@ -4063,6 +4268,7 @@
   "from": 1982,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 (Offen)",
   "en": "T815 open"
  },
@@ -4083,6 +4289,7 @@
   "from": 1965,
   "to": 1983,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "U377 (Offen)",
   "en": "U377 open "
  },
@@ -4103,6 +4310,7 @@
   "from": 1953,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "V3S (Offen)",
   "en": "V3S open"
  },
@@ -4124,6 +4332,7 @@
   "from": 1968,
   "to": 1997,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 1203 (Offen)",
   "en": "Skd-1203 open"
  },
@@ -4144,6 +4353,7 @@
   "from": 1962,
   "to": 1994,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil-130 (Offen)",
   "en": "Zil-130 open"
  },
@@ -4164,6 +4374,7 @@
   "from": 1966,
   "to": 1999,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil-133 (Offen)",
   "en": "Zill-133 open"
  },
@@ -4185,6 +4396,7 @@
   "from": 1959,
   "to": 1997,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "FZK A07 (Offen)",
   "en": "FZK-A07 open"
  },
@@ -4205,6 +4417,7 @@
   "from": 1966,
   "to": 1999,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil-133 (Offen mit Kran)",
   "en": "Zil-133 with crane"
  },
@@ -4224,6 +4437,7 @@
   "from": 1962,
   "to": 1980,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Holzauflieger)",
   "en": "Mark P logger"
  },
@@ -4243,6 +4457,7 @@
   "from": 1975,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 12-215 (Holz mit Kran)",
   "en": "Rmn 12-215 logger with crane"
  },
@@ -4262,6 +4477,7 @@
   "from": 1975,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 12-215 (Holz)",
   "en": "Rmn 12-215 logger"
  },
@@ -4282,6 +4498,7 @@
   "from": 1982,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 Z22 (Holztransport)",
   "en": "T815-Z22 logger"
  },
@@ -4302,6 +4519,7 @@
   "from": 1965,
   "to": 1983,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "U377 (Holz)",
   "en": "U377 logger"
  },
@@ -4323,6 +4541,7 @@
   "from": 1958,
   "to": 1988,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "Beat 1200",
   "en": "Beat 1200"
  },
@@ -4344,6 +4563,7 @@
   "from": 1969,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "D1300",
   "en": "D1300"
  },
@@ -4365,6 +4585,7 @@
   "from": 1967,
   "to": 1991,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "F 125p",
   "en": "F 125p"
  },
@@ -4386,6 +4607,7 @@
   "from": 1972,
   "to": 2000,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "F 126p",
   "en": "F 126p"
  },
@@ -4407,6 +4629,7 @@
   "from": 1981,
   "to": 1983,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S Garde",
   "en": "S-Garde"
  },
@@ -4428,6 +4651,7 @@
   "from": 1956,
   "to": 1970,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "GZ M21",
   "en": "GZ M21"
  },
@@ -4449,6 +4673,7 @@
   "from": 1969,
   "to": 1977,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S 100",
   "en": "S100"
  },
@@ -4470,6 +4695,7 @@
   "from": 1964,
   "to": 1969,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S 1000",
   "en": "S1000"
  },
@@ -4491,6 +4717,7 @@
   "from": 1970,
   "to": 1980,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S110R Coupe",
   "en": "S110R coupe"
  },
@@ -4512,6 +4739,7 @@
   "from": 1976,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S120L",
   "en": "S120L"
  },
@@ -4533,6 +4761,7 @@
   "from": 1959,
   "to": 1973,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S 1202",
   "en": "S1202"
  },
@@ -4554,6 +4783,7 @@
   "from": 1976,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S120M",
   "en": "S120M"
  },
@@ -4575,6 +4805,7 @@
   "from": 1984,
   "to": 1990,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S130R",
   "en": "S130R"
  },
@@ -4596,6 +4827,7 @@
   "from": 1955,
   "to": 1975,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T603",
   "en": "T603"
  },
@@ -4617,6 +4849,7 @@
   "from": 1969,
   "to": 1995,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T613",
   "en": "T613"
  },
@@ -4638,6 +4871,7 @@
   "from": 1964,
   "to": 1991,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "Trabi 601",
   "en": "Trabi 601"
  },
@@ -4659,6 +4893,7 @@
   "from": 1957,
   "to": 1965,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": null,
   "en": "Trabi 500"
  },
@@ -4680,6 +4915,7 @@
   "from": 1964,
   "to": 1991,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "Trabi 601 Kombi",
   "en": "Trabi 601 combi"
  },
@@ -4701,6 +4937,7 @@
   "from": 1957,
   "to": 1965,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": null,
   "en": "Trabi 500 Combi"
  },
@@ -4722,6 +4959,7 @@
   "from": 1967,
   "to": 1992,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "V24",
   "en": "V24"
  },
@@ -4743,6 +4981,7 @@
   "from": 1970,
   "to": 1983,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "VZ 2101",
   "en": "VZ 2101"
  },
@@ -4764,6 +5003,7 @@
   "from": 1980,
   "to": 1999,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "VZ 2105",
   "en": "VZ 2105"
  },
@@ -4785,6 +5025,7 @@
   "from": 1973,
   "to": 1984,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "VZ 2106",
   "en": "VZ 2106"
  },
@@ -4806,6 +5047,7 @@
   "from": 1985,
   "to": 2013,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "VZ 2109",
   "en": "VZ 2109"
  },
@@ -4827,6 +5069,7 @@
   "from": 1988,
   "to": 1991,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "WBurg 1.3",
   "en": "Wburg 1.3"
  },
@@ -4848,6 +5091,7 @@
   "from": 1965,
   "to": 1988,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "WBurg 353",
   "en": "Wburg 353"
  },
@@ -4868,6 +5112,7 @@
   "from": 1968,
   "to": 1996,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "A30N (Kühlung)",
   "en": "A30N refrigerated"
  },
@@ -4888,6 +5133,7 @@
   "from": 1961,
   "to": 1993,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "GZ-53 (Kühlung)",
   "en": "GZ53 refrigerated"
  },
@@ -4908,6 +5154,7 @@
   "from": 1976,
   "to": 2006,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kmz 5410 (Kühlung Auflieger)",
   "en": "Kmz-5410 refrigerated"
  },
@@ -4927,6 +5174,7 @@
   "capacity": 16.8,
   "transportType": "RESOURCE_TRANSPORT_COOLER",
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark E (Kühlauflieger)",
   "en": "Mark E refrigerated"
  },
@@ -4946,6 +5194,7 @@
   "capacity": 16.0,
   "transportType": "RESOURCE_TRANSPORT_COOLER",
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Kühlauflieger)",
   "en": "Mark P refrigerated"
  },
@@ -4965,6 +5214,7 @@
   "from": 1977,
   "to": 1995,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmd 19-256 (Kühlung)",
   "en": "Rmd 19-256 refrigerated"
  },
@@ -4984,6 +5234,7 @@
   "from": 1968,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 135 (Kühlung)",
   "en": "Rmn-135 refrigerated"
  },
@@ -5004,6 +5255,7 @@
   "from": 1958,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 RTTN (Kühlung)",
   "en": "Skd-706 RTTN refrigerated"
  },
@@ -5024,6 +5276,7 @@
   "from": 1962,
   "to": 1994,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil-130 (Kühlung)",
   "en": "Zil-130 refrigerated"
  },
@@ -5042,6 +5295,7 @@
   "from": 1987,
   "to": 3000,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Kleiner Zubringer",
   "en": "Small feeder (dozer/excavator)"
  },
@@ -5060,6 +5314,7 @@
   "from": 1970,
   "to": 1990,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "HMac K12",
   "en": "Hmac-K12 bulldozer"
  },
@@ -5077,6 +5332,7 @@
   "from": 1956,
   "to": 3000,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "KT50 (Planierraupe)",
   "en": "KT50 bulldozer"
  },
@@ -5095,6 +5351,7 @@
   "from": 1983,
   "to": 3000,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Planierraupe groß",
   "en": "Bulldozer (big)"
  },
@@ -5113,6 +5370,7 @@
   "from": 1958,
   "to": 3000,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Stalinec S-100 (Planierraupe)",
   "en": "S100 Stalinec"
  },
@@ -5131,6 +5389,7 @@
   "from": 1992,
   "to": 3000,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "E7.2 (Bagger)",
   "en": "E7.2 excavator"
  },
@@ -5150,6 +5409,7 @@
   "from": 1968,
   "to": 1992,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "Je300 (Kran)",
   "en": "Je300 crane"
  },
@@ -5168,6 +5428,7 @@
   "from": 1976,
   "to": 2001,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kmz 5320 (Kran)",
   "en": "Kmz-5320 crane"
  },
@@ -5185,6 +5446,7 @@
   "from": 1968,
   "to": 1992,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "LG 4866",
   "en": "LG-4866 road crane"
  },
@@ -5203,6 +5465,7 @@
   "from": 1974,
   "to": 1995,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ100 (Straßenkran)",
   "en": "LZ100 road crane"
  },
@@ -5222,6 +5485,7 @@
   "from": 1965,
   "to": 1977,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "MZ-503 (Kran)",
   "en": "MZ-503 crane"
  },
@@ -5239,6 +5503,7 @@
   "from": 1970,
   "to": 1990,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "PH MT-250",
   "en": "PH MT-250 road crane"
  },
@@ -5256,6 +5521,7 @@
   "from": 1974,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 12-215 (Straßenkran)",
   "en": "Rmn 12-215 road crane"
  },
@@ -5274,6 +5540,7 @@
   "from": 1959,
   "to": 1971,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T 138 (Kran)",
   "en": "T138 crane"
  },
@@ -5292,6 +5559,7 @@
   "from": 1972,
   "to": 1982,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T 148 (Kran)",
   "en": "T148 crane"
  },
@@ -5309,6 +5577,7 @@
   "from": 1982,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 (Straßenkran)",
   "en": "T815 road crane"
  },
@@ -5326,6 +5595,7 @@
   "from": 1982,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 AD28 (Straßenkran)",
   "en": "T815-AD28 road crane"
  },
@@ -5344,6 +5614,7 @@
   "from": 1965,
   "to": 1983,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "U377 (Kran)",
   "en": "U377 crane"
  },
@@ -5362,6 +5633,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "IFA W50 (Kran)",
   "en": "W50 crane"
  },
@@ -5380,6 +5652,7 @@
   "from": 1966,
   "to": 1999,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil-133 (Kran)",
   "en": "Zil-133 crane"
  },
@@ -5398,6 +5671,7 @@
   "from": 1959,
   "to": 1982,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Э-10011Д (Bagger)",
   "en": "Э-10011Д excavator"
  },
@@ -5416,6 +5690,7 @@
   "from": 1957,
   "to": 1973,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "E-302B (Bagger)",
   "en": "E-302B excavator"
  },
@@ -5434,6 +5709,7 @@
   "from": 1960,
   "to": 1972,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "LH A360",
   "en": "LH-A360 excavator"
  },
@@ -5451,6 +5727,7 @@
   "from": 1976,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 19-215 (Bagger)",
   "en": "Rmn 19-215 excavator"
  },
@@ -5469,6 +5746,7 @@
   "from": 1984,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 UDS (Bagger)",
   "en": "T815-UDS excavator"
  },
@@ -5487,6 +5765,7 @@
   "from": 1965,
   "to": 1992,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "T 174 (Bagger)",
   "en": "T174 excavator"
  },
@@ -5507,6 +5786,7 @@
   "from": 1968,
   "to": 1992,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "Je300 (Mischer)",
   "en": "Je300 mixer"
  },
@@ -5527,6 +5807,7 @@
   "from": 1976,
   "to": 2001,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kmz 5320 (Mischer)",
   "en": "Kmz-5320 mixer"
  },
@@ -5546,6 +5827,7 @@
   "from": 1966,
   "to": 1990,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Mischer)",
   "en": "Mark P mixer"
  },
@@ -5565,6 +5847,7 @@
   "from": 1974,
   "to": 1985,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn 12-215 (Mischer)",
   "en": "Rmn 12-215 mixer"
  },
@@ -5585,6 +5868,7 @@
   "from": 1996,
   "to": 3000,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Star Truck 9500 (Mischer)",
   "en": "Star-9500 mixer"
  },
@@ -5605,6 +5889,7 @@
   "from": 1959,
   "to": 1971,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T 138 (Mischer)",
   "en": "T138 mixer"
  },
@@ -5625,6 +5910,7 @@
   "from": 1972,
   "to": 1982,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T 148 (Mischer)",
   "en": "T148 mixer"
  },
@@ -5645,6 +5931,7 @@
   "from": 1982,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 (Mischer)",
   "en": "T815 mixer"
  },
@@ -5665,6 +5952,7 @@
   "from": 1966,
   "to": 1999,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil-133 (Mischer)",
   "en": "Zil-133 mixer"
  },
@@ -5684,6 +5972,7 @@
   "from": 1975,
   "to": 3000,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Asphaltfertiger",
   "en": "Asphalt paver"
  },
@@ -5703,6 +5992,7 @@
   "to": 1995,
   "countryId": 39011,
   "speed": 15.0,
+  "roadRecipeBranch": "ordinary",
   "de": "D-150 (Asphaltfertiger)",
   "en": "D150 asphalt paver"
  },
@@ -5721,6 +6011,7 @@
   "from": 1955,
   "to": 1997,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "D211 (Straßenwalze)",
   "en": "D211 roller"
  },
@@ -5739,6 +6030,7 @@
   "from": 1994,
   "to": 3000,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Straßenwalze klein",
   "en": "Asphalt roller (small)"
  },
@@ -5756,6 +6048,7 @@
   "from": 1982,
   "to": 1997,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "VV-110 Straßenwalze",
   "en": "VV-110 roller"
  },
@@ -5774,6 +6067,7 @@
   "from": 1959,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Turmdrehkran A1 (30m)",
   "en": "A1 tower crane (30m)"
  },
@@ -5792,6 +6086,7 @@
   "from": 1972,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Turmdrehkran A2 (45m)",
   "en": "A2 tower crane (45m)"
  },
@@ -5810,6 +6105,7 @@
   "from": 1976,
   "to": 3000,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "Turmdrehkran B2 (75m)",
   "en": "B2 tower crane (75m)"
  },
@@ -5828,6 +6124,7 @@
   "from": 1959,
   "to": 1982,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "de": "Turmdrehkran C2",
   "en": "Type-C2 tower crane"
  },
@@ -5846,6 +6143,7 @@
   "from": 1959,
   "to": 3000,
   "countryId": 39019,
+  "roadRecipeBranch": "ordinary",
   "de": "Turmdrehkran C3",
   "en": "Type-C3 tower crane"
  },
@@ -5864,6 +6162,7 @@
   "from": 1959,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Turmdrehkran C1",
   "en": "Type-C1 tower cane"
  },
@@ -5882,6 +6181,7 @@
   "from": 1962,
   "to": 3000,
   "countryId": 39022,
+  "roadRecipeBranch": "ordinary",
   "de": "Turmdrehkran TC1",
   "en": "TC1 tower crane"
  },
@@ -5900,6 +6200,7 @@
   "from": 1962,
   "to": 3000,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "de": "Turmdrehkran TC2",
   "en": "TC2 tower crane"
  },
@@ -5917,6 +6218,7 @@
   "from": 1955,
   "to": 1985,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "AGMu (Bauzug)",
   "en": "AGMu track builder"
  },
@@ -5934,6 +6236,7 @@
   "from": 1968,
   "to": 1997,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "MUV 69 (Bauzug)",
   "en": "MUV-69 track builder"
  },
@@ -5952,6 +6255,7 @@
   "from": 1953,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "V3S (Kran)",
   "en": "V3S crane"
  },
@@ -5969,6 +6273,7 @@
   "from": 1961,
   "to": 1993,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "GZ-53 (Schneepflug)",
   "en": "GZ53 snowplow"
  },
@@ -5987,6 +6292,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "W-50 (Schneepflug)",
   "en": "W50 snowplow"
  },
@@ -6005,6 +6311,7 @@
   "from": 1966,
   "to": 1994,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kaz 256 (Schneepflug)",
   "en": "Kaz-256 snowplow"
  },
@@ -6022,6 +6329,7 @@
   "from": 1976,
   "to": 2001,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Kmz 5320 (Schneepflug)",
   "en": "Kmz-5320 snowplow"
  },
@@ -6039,6 +6347,7 @@
   "from": 1974,
   "to": 1995,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "LZ-100 (Schneepflug)",
   "en": "LZ100 snowplow"
  },
@@ -6056,6 +6365,7 @@
   "from": 1966,
   "to": 1990,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "Mark P (Schneepflug)",
   "en": "Mark P snowplow\r\n"
  },
@@ -6073,6 +6383,7 @@
   "from": 1967,
   "to": 1982,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Rmn (Schneepflug)",
   "en": "Rmn snowplow"
  },
@@ -6091,6 +6402,7 @@
   "from": 1958,
   "to": 1999,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Skd 706 (Schneepflug)",
   "en": "Skd-706 snowplow"
  },
@@ -6108,6 +6420,7 @@
   "from": 1974,
   "to": 1996,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T813 (Schneepflug)",
   "en": "T813 snowplow"
  },
@@ -6125,6 +6438,7 @@
   "from": 1982,
   "to": 3000,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "T815 (Schneepflug)",
   "en": "T815 snowplow"
  },
@@ -6142,6 +6456,7 @@
   "from": 1958,
   "to": 1961,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Traktor 50",
   "en": "1950 tractor"
  },
@@ -6160,6 +6475,7 @@
   "from": 1971,
   "to": 1990,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "de": "CS 1370",
   "en": "CS-1370 tractor"
  },
@@ -6178,6 +6494,7 @@
   "from": 1969,
   "to": 3000,
   "countryId": 39019,
+  "roadRecipeBranch": "ordinary",
   "de": "Traktor MTZ-82",
   "en": "MTZ-82 tractor"
  },
@@ -6196,6 +6513,7 @@
   "from": 1958,
   "to": 1970,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Traktor T-28",
   "en": "T28 tractor"
  },
@@ -6214,6 +6532,7 @@
   "from": 1963,
   "to": 1990,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "de": "Tractor U650",
   "en": "U650 tractor"
  },
@@ -6232,6 +6551,7 @@
   "from": 1975,
   "to": 1986,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Traktor ZT 6911",
   "en": "ZT-6911 tractor"
  },
@@ -6250,6 +6570,7 @@
   "from": 1985,
   "to": 1995,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "Traktor ZT 7245",
   "en": "ZT-7245 tractor"
  },
@@ -6271,6 +6592,7 @@
   "from": 1961,
   "to": 1991,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "B1000 (Krankenwagen)",
   "en": "B1000 ambulance"
  },
@@ -6291,6 +6613,7 @@
   "from": 1968,
   "to": 1982,
   "countryId": 39010,
+  "roadRecipeBranch": "ordinary",
   "de": "IMV 1600 (Krankenwagen)",
   "en": "IMV-1600 ambulance"
  },
@@ -6312,6 +6635,7 @@
   "from": 1968,
   "to": 1990,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "Nya 522 (Krankenwagen)",
   "en": "Nysa 522 ambulance"
  },
@@ -6333,6 +6657,7 @@
   "from": 1976,
   "to": 1997,
   "countryId": 39013,
+  "roadRecipeBranch": "ordinary",
   "de": "R-2203 (Krankenwagen)",
   "en": "R2203 ambulance"
  },
@@ -6354,6 +6679,7 @@
   "from": 1958,
   "to": 1976,
   "countryId": 39013,
+  "roadRecipeBranch": "ordinary",
   "de": "RF-977 (Krankenwagen)",
   "en": "RF-977 ambulance"
  },
@@ -6375,6 +6701,7 @@
   "from": 1959,
   "to": 1973,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S1202 (Krankenwagen)",
   "en": "S1202 ambulance"
  },
@@ -6396,6 +6723,7 @@
   "from": 1968,
   "to": 1997,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S1203 (Krankenwagen)",
   "en": "S1203 ambulance"
  },
@@ -6417,6 +6745,7 @@
   "from": 1959,
   "to": 1998,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "FZK A07 (Krankenwagen)",
   "en": "FZK-A07 ambulance"
  },
@@ -6437,6 +6766,7 @@
   "from": 1968,
   "to": 1996,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "A30 (Gefangenen-Transport)",
   "en": "A30 prison transport"
  },
@@ -6457,6 +6787,7 @@
   "from": 1983,
   "to": 1997,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "A21 Furgon (Gefangenen-Transport)",
   "en": "A21F prison transport"
  },
@@ -6478,6 +6809,7 @@
   "from": 1961,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "B1000 (Gefangenen-Transport)",
   "en": "B1000 prison bus"
  },
@@ -6498,6 +6830,7 @@
   "from": 1957,
   "to": 1995,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "Zil 158",
   "en": "Zil-158 bus"
  },
@@ -6519,6 +6852,7 @@
   "from": 1967,
   "to": 1991,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "F 125 (Polizei)",
   "en": "F 125 police"
  },
@@ -6539,6 +6873,7 @@
   "from": 1962,
   "to": 1990,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "IFA W50 (Gefangenen-Transport)",
   "en": "Ifa-W50 prison bus"
  },
@@ -6559,6 +6894,7 @@
   "from": 1968,
   "to": 1982,
   "countryId": 39010,
+  "roadRecipeBranch": "ordinary",
   "de": "IMV 1600 (Gefangenen-Transport)",
   "en": "IMV-1600 prison bus"
  },
@@ -6580,6 +6916,7 @@
   "from": 1958,
   "to": 1970,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "GZ M21 (Polizei)",
   "en": "GZ M21 (police)"
  },
@@ -6601,6 +6938,7 @@
   "from": 1968,
   "to": 1990,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "Nysa (Gefangenen-Transport)",
   "en": "Nysa prison bus"
  },
@@ -6622,6 +6960,7 @@
   "from": 1969,
   "to": 1977,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S 100 (Polizei)",
   "en": "S100 (police)"
  },
@@ -6643,6 +6982,7 @@
   "from": 1976,
   "to": 1985,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S120 (Polizei)",
   "en": "S120 police"
  },
@@ -6664,6 +7004,7 @@
   "from": 1959,
   "to": 1973,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S1202 (Polizei)",
   "en": "S1202 police"
  },
@@ -6685,6 +7026,7 @@
   "from": 1968,
   "to": 1997,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "de": "S1203 (Gefangenen-Transport)",
   "en": "S1203 prison bus"
  },
@@ -6706,6 +7048,7 @@
   "from": 1964,
   "to": 1991,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": "Trabi 601 (Polizei)",
   "en": "Trabi 601 (police)"
  },
@@ -6727,6 +7070,7 @@
   "from": 1957,
   "to": 1965,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "de": null,
   "en": "Trabi 500"
  },
@@ -6748,6 +7092,7 @@
   "from": 1967,
   "to": 1992,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "V24 (Polizei)",
   "en": "V24 (police)"
  },
@@ -6769,6 +7114,7 @@
   "from": 1985,
   "to": 2013,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "de": "VAZ 2109 (Polizei)",
   "en": "VAZ-2109 police"
  },
@@ -6790,6 +7136,7 @@
   "from": 1959,
   "to": 1998,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "de": "FZK A07 (Gefangenen-Transport)",
   "en": "FZK-A07 prison bus"
  },
@@ -10701,6 +11048,7 @@
   "from": 1974,
   "to": 1981,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "Wagen Schirac",
   "en": "Wagen Schirac"
@@ -10742,6 +11090,7 @@
   "from": 1967,
   "to": 1973,
   "countryId": 39030,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "DSun 511",
   "en": "DSun 511"
@@ -10763,6 +11112,7 @@
   "from": 1983,
   "to": 1990,
   "countryId": 39030,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "E80 DX",
   "en": "E80 DX"
@@ -10784,6 +11134,7 @@
   "from": 1983,
   "to": 1990,
   "countryId": 39030,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "E80 DX (Polizei)",
   "en": "E80 DX (police)"
@@ -10806,6 +11157,7 @@
   "from": 1979,
   "to": 1989,
   "countryId": 39030,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "Lander Boxtype",
   "en": "Lander Boxtype"
@@ -10828,6 +11180,7 @@
   "from": 1979,
   "to": 1989,
   "countryId": 39030,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "Lander Boxtype (Polizei)",
   "en": "Lander Boxtype (police)"
@@ -10849,6 +11202,7 @@
   "from": 1987,
   "to": 1996,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "Mars C124",
   "en": "Mars C124"
@@ -10871,6 +11225,7 @@
   "from": 1975,
   "to": 1988,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "Oiler Mantra",
   "en": "Oiler Mantra"
@@ -10893,6 +11248,7 @@
   "from": 1991,
   "to": 2001,
   "countryId": 39024,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "DW picolo",
   "en": "DW Piccolo"
@@ -10914,9 +11270,33 @@
   "from": 1966,
   "to": 1974,
   "countryId": 39022,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "V145",
   "en": "V145"
+ },
+ {
+  "id": "ds_V144P",
+  "category": "cwc/vehicles",
+  "lifespanYears": 0.0,
+  "length": 4.65,
+  "type": "VEHICLETYPE_ROAD",
+  "nameId": 5936,
+  "descriptionId": 5374,
+  "costUSD": 4300.0,
+  "consumption": 0.0,
+  "speed": 160.0,
+  "powerKW": 63.0,
+  "emptyWeight": 1.24,
+  "capacity": 2.0,
+  "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+  "from": 1966,
+  "to": 1974,
+  "countryId": 39022,
+  "roadRecipeBranch": "ordinary",
+  "dlc": "cwc",
+  "de": "V145 (police car)",
+  "en": "V145 (police)"
  },
  {
   "id": "ds_Vega",
@@ -10935,6 +11315,7 @@
   "from": 1970,
   "to": 1977,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "Chev 2300",
   "en": "Chev 2300"
@@ -10956,6 +11337,7 @@
   "from": 1953,
   "to": 1962,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "Mars Ponton",
   "en": "Mars Proton"
@@ -10977,6 +11359,7 @@
   "from": 1953,
   "to": 1962,
   "countryId": 39005,
+  "roadRecipeBranch": "ordinary",
   "dlc": "cwc",
   "de": "Mars Ponton - Polizei",
   "en": "Mars Proton Police"
@@ -11766,6 +12149,7 @@
   "from": 1997,
   "to": 2017,
   "countryId": 39020,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc1"
  },
  {
@@ -11785,6 +12169,7 @@
   "from": 1997,
   "to": 2017,
   "countryId": 39020,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc1"
  },
  {
@@ -11802,6 +12187,7 @@
   "transportType": "RESOURCE_TRANSPORT_PASSANGER",
   "capacity": 4.0,
   "countryId": 39015,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc1"
  },
  {
@@ -11819,6 +12205,7 @@
   "transportType": "RESOURCE_TRANSPORT_PASSANGER",
   "capacity": 4.0,
   "countryId": 39015,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc1"
  },
  {
@@ -12622,6 +13009,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Krankenwagen",
   "en": "AMO-15 Ambulance"
@@ -12643,6 +13031,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Überdacht",
   "en": "AMO-15 Covered"
@@ -12664,6 +13053,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Öltankwagen",
   "en": "AMO-15 Oil"
@@ -12685,6 +13075,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Abwasserwagen",
   "en": "AMO-15 Sewage"
@@ -12706,6 +13097,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Wasserwagen",
   "en": "AMO-15 Water"
@@ -12727,6 +13119,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Bus",
   "en": "AMO-15 Bus"
@@ -12748,6 +13141,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Trockengut",
   "en": "AMO-15  Dry Bulk"
@@ -12768,6 +13162,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Feuerwehrauto",
   "en": "AMO-15 Firetruck"
@@ -12789,6 +13184,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Industrie-Transporter",
   "en": "AMO-15 Industrial Carrier"
@@ -12810,6 +13206,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Müllwagen",
   "en": "AMO-15 Garbage"
@@ -12831,6 +13228,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Kieswagen",
   "en": "AMO-15 Gravel"
@@ -12851,6 +13249,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -12870,6 +13269,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Offener Laderaum",
   "en": "AMO-15 Open Hull"
@@ -12891,6 +13291,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Polizeibus",
   "en": "AMO-15 Police Bus"
@@ -12912,6 +13313,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Kühlwagen",
   "en": "AMO-15 Refrigerator"
@@ -12933,6 +13335,7 @@
   "from": 1924,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Mischer",
   "en": "AMO-15 Mixer"
@@ -12952,6 +13355,7 @@
   "from": 1924,
   "to": 1938,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "AMO-15 Schneepflug",
   "en": "AMO-15 Snowplow"
@@ -12993,6 +13397,7 @@
   "from": 1934,
   "to": 1957,
   "countryId": 39016,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13012,6 +13417,7 @@
   "from": 1935,
   "to": 1943,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "GAZ M1 Krankenwagen",
   "en": "GAZ M1 Ambulance"
@@ -13032,6 +13438,7 @@
   "from": 1949,
   "to": 1955,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13050,6 +13457,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13068,6 +13476,7 @@
   "from": 1908,
   "to": 1927,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13086,6 +13495,7 @@
   "from": 1948,
   "to": 1955,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13105,6 +13515,7 @@
   "from": 1946,
   "to": 1956,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Moskvich 400 Arztwagen",
   "en": "Moskvich 400 Doctor"
@@ -13126,6 +13537,7 @@
   "from": 1946,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "GAZ M20 Krankenwagen",
   "en": "GAZ M20 Ambulance"
@@ -13145,6 +13557,7 @@
   "transportType": "RESOURCE_TRANSPORT_PASSANGER",
   "capacity": 4.0,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13162,6 +13575,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13181,6 +13595,7 @@
   "from": 1952,
   "to": 1961,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13200,6 +13615,7 @@
   "from": 1946,
   "to": 1952,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13218,6 +13634,7 @@
   "from": 1955,
   "to": 1966,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13237,6 +13654,7 @@
   "from": 1951,
   "to": 1964,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "FSO Warszawa M20",
   "en": "FSO Warszawa M20"
@@ -13398,6 +13816,7 @@
   "from": 1913,
   "to": 1924,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13414,6 +13833,7 @@
   "from": 1929,
   "to": 1938,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Stalinets S-60",
   "en": "Stalinets S-60"
@@ -13432,6 +13852,7 @@
   "from": 1937,
   "to": 1959,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Stalinets S-65",
   "en": "Stalinets S-65"
@@ -13450,6 +13871,7 @@
   "from": 1937,
   "to": 1952,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "SKhTZ NATI",
   "en": "SKhTZ NATI"
@@ -13470,6 +13892,7 @@
   "from": 1934,
   "to": 1957,
   "countryId": 39016,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13490,6 +13913,7 @@
   "from": 1916,
   "to": 1937,
   "countryId": 39003,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaggenau c40",
   "en": "Gaggenau c40"
@@ -13510,6 +13934,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13528,6 +13953,7 @@
   "from": 1947,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13548,6 +13974,7 @@
   "from": 1933,
   "to": 1953,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz Bus 03-30",
   "en": "Gaz Bus 03-30"
@@ -13569,6 +13996,7 @@
   "from": 1951,
   "to": 1957,
   "countryId": 39007,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Ik 30",
   "en": "Ik 30"
@@ -13590,6 +14018,7 @@
   "from": 1951,
   "to": 1959,
   "countryId": 39007,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Ik 60",
   "en": "Ik 60"
@@ -13611,6 +14040,7 @@
   "from": 1948,
   "to": 1951,
   "countryId": 39007,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Mag Tr5",
   "en": "Mag Tr5"
@@ -13631,6 +14061,7 @@
   "from": 1955,
   "to": 1958,
   "countryId": 39009,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13648,6 +14079,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13667,6 +14099,7 @@
   "from": 1947,
   "to": 1959,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Skd 706 RO",
   "en": "Skd 706 RO"
@@ -13687,6 +14120,7 @@
   "from": 1929,
   "to": 1944,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "Ya-6"
@@ -13707,6 +14141,7 @@
   "from": 1936,
   "to": 1944,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "PZInż Zawrat",
   "en": "PZInż Zawrat"
@@ -13726,6 +14161,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13745,6 +14181,7 @@
   "from": 1946,
   "to": 1950,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "ZiS 154",
   "en": "ZiS 154"
@@ -13766,6 +14203,7 @@
   "from": 1951,
   "to": 1959,
   "countryId": 39007,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Ik 60T",
   "en": "Ik 60T"
@@ -13787,6 +14225,7 @@
   "from": 1929,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "LK"
@@ -13808,6 +14247,7 @@
   "from": 1941,
   "to": 1949,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Skd 3T",
   "en": "Skd 3T"
@@ -13829,6 +14269,7 @@
   "from": 1948,
   "to": 1951,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Skd 6T",
   "en": "Skd 6T"
@@ -13850,6 +14291,7 @@
   "from": 1950,
   "to": 1956,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Skd 7T",
   "en": "Skd 7T"
@@ -13871,6 +14313,7 @@
   "from": 1956,
   "to": 1961,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Skd 8T",
   "en": "Skd 8T"
@@ -13891,6 +14334,7 @@
   "from": 1932,
   "to": 1940,
   "countryId": 39016,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13909,6 +14353,7 @@
   "from": 1939,
   "to": 1947,
   "countryId": 39016,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13928,6 +14373,7 @@
   "from": 1947,
   "to": 1958,
   "countryId": 39016,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Vet VA3",
   "en": "Vet VA3"
@@ -13949,6 +14395,7 @@
   "from": 1946,
   "to": 1954,
   "countryId": 39016,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Vet VBRh",
   "en": "Vet VBRh"
@@ -13969,6 +14416,7 @@
   "from": 1936,
   "to": 1953,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -13986,6 +14434,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14003,6 +14452,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14020,6 +14470,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14037,6 +14488,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14055,6 +14507,7 @@
   "from": 1913,
   "to": 1925,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Russo-Balt T40/65 Trockengut",
   "en": "Russo-Balt T40/65 Dry Bulk"
@@ -14075,6 +14528,7 @@
   "speed": 62.0,
   "powerKW": 132.0,
   "emptyWeight": 9.9,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14115,6 +14569,7 @@
   "from": 1953,
   "to": 1960,
   "countryId": 39016,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Chausson APH521",
   "en": "Chausson APH521"
@@ -14133,6 +14588,7 @@
   "from": 1929,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Kommunar Mähdrescher",
   "en": "Kommunar Combine"
@@ -14151,6 +14607,7 @@
   "from": 1947,
   "to": 1960,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "S-4",
   "en": "S-4"
@@ -14169,6 +14626,7 @@
   "from": 1931,
   "to": 1954,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Stalinets-1 Mähdrescher",
   "en": "S-4"
@@ -14187,6 +14645,7 @@
   "from": 1947,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Stalinets-6 Mähdrescher",
   "en": "Stalinets-6 Combine"
@@ -14206,6 +14665,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14223,6 +14683,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14240,6 +14701,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14257,6 +14719,7 @@
   "from": 1946,
   "to": 1962,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14274,6 +14737,7 @@
   "from": 1946,
   "to": 1962,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14294,6 +14758,7 @@
   "from": 1932,
   "to": 1955,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA",
   "en": "Gaz AA"
@@ -14316,6 +14781,7 @@
   "from": 1932,
   "to": 1955,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA Хлеб",
   "en": "Gaz AA Хлеб"
@@ -14335,6 +14801,7 @@
   "transportType": "RESOURCE_TRANSPORT_COVERED",
   "capacity": 2.5,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14352,6 +14819,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14369,6 +14837,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14387,6 +14856,7 @@
   "from": 1913,
   "to": 1925,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Russo-Balt T40/65 Überdacht",
   "en": "RuBalt T40/65 Covered"
@@ -14406,6 +14876,7 @@
   "from": 1928,
   "to": 1940,
   "countryId": 39044,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14423,6 +14894,7 @@
   "from": 1945,
   "to": 1955,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14440,6 +14912,7 @@
   "from": 1954,
   "to": 1959,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14457,6 +14930,7 @@
   "from": 1947,
   "to": 1959,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14475,6 +14949,7 @@
   "from": 1947,
   "to": 1962,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14493,6 +14968,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "ZIS-5 Überdacht",
   "en": "ZIS-5 Covered"
@@ -14511,6 +14987,7 @@
   "from": 1940,
   "to": 1956,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "D-83 Walze",
   "en": "D-83 roller"
@@ -14550,6 +15027,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14566,6 +15044,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14584,6 +15063,7 @@
   "from": 1932,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "Gaz AA Firetruck"
@@ -14601,6 +15081,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14617,6 +15098,7 @@
   "from": 1945,
   "to": 1955,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14633,6 +15115,7 @@
   "from": 1954,
   "to": 1959,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14650,6 +15133,7 @@
   "speed": 62.0,
   "powerKW": 132.0,
   "emptyWeight": 11.1,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14667,6 +15151,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "Zis-5 Firetruck"
@@ -14688,6 +15173,7 @@
   "from": 1930,
   "to": 1955,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "GAZ 905",
   "en": "GAZ 905"
@@ -14708,6 +15194,7 @@
   "from": 1956,
   "to": 1964,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Multicar M21",
   "en": "Multicar M21"
@@ -14727,6 +15214,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14744,6 +15232,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14762,6 +15251,7 @@
   "from": 1913,
   "to": 1925,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Russo-Balt T40/65 Abfall",
   "en": "RuBalt T40/65 Waste"
@@ -14781,6 +15271,7 @@
   "from": 1945,
   "to": 1955,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14798,6 +15289,7 @@
   "from": 1954,
   "to": 1959,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14816,6 +15308,7 @@
   "speed": 62.0,
   "powerKW": 132.0,
   "emptyWeight": 12.0,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14834,6 +15327,7 @@
   "from": 1932,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA Müllwagen",
   "en": "Gaz AA musorovoz"
@@ -14853,6 +15347,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14871,6 +15366,7 @@
   "from": 1913,
   "to": 1925,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Russo-Balt T40/65 Müll",
   "en": "RuBalt T40/65 Garbage"
@@ -14890,6 +15386,7 @@
   "from": 1947,
   "to": 1959,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14908,6 +15405,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "ZIS-5 Müll",
   "en": "ZIS-5 Garbage"
@@ -14927,6 +15425,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14944,6 +15443,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14961,6 +15461,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -14981,6 +15482,7 @@
   "from": 1932,
   "to": 1955,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA 410",
   "en": "Gaz AA 410"
@@ -15000,6 +15502,7 @@
   "transportType": "RESOURCE_TRANSPORT_GRAVEL",
   "capacity": 2.5,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -15017,6 +15520,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -15034,6 +15538,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -15052,6 +15557,7 @@
   "from": 1913,
   "to": 1925,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Russo-Balt T40/65 Kipper",
   "en": "RuBalt T40/65 Dumper"
@@ -15071,6 +15577,7 @@
   "from": 1928,
   "to": 1940,
   "countryId": 39044,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -15088,6 +15595,7 @@
   "from": 1945,
   "to": 1955,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -15105,6 +15613,7 @@
   "from": 1954,
   "to": 1959,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -15123,6 +15632,7 @@
   "from": 1947,
   "to": 1962,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -15141,6 +15651,7 @@
   "from": 1957,
   "to": 1964,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -15158,6 +15669,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -15175,6 +15687,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferdeambulanz",
   "en": "Horse ambulance"
@@ -15194,6 +15707,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferdepersonenwagen",
   "en": "Horse passenger wagon"
@@ -15213,6 +15727,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Großer Pferdepersonenwagen",
   "en": "Large horse passenger wagon"
@@ -15232,6 +15747,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferdewagen für Trockengüter",
   "en": "Horse dry bulk wagon"
@@ -15251,6 +15767,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferdewagen mit Zisterne",
   "en": "Horse cistern wagon"
@@ -15270,6 +15787,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": null,
   "en": "Sewage Tank Carriage"
@@ -15289,6 +15807,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": null,
   "en": "Water Tank Carriage"
@@ -15304,6 +15823,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3"
  },
  {
@@ -15321,6 +15841,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferdebetonmischer",
   "en": "Horse concrete mixer"
@@ -15340,6 +15861,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferdewagen mit Plane",
   "en": "Horse Covered wagon"
@@ -15357,6 +15879,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferdekran",
   "en": "Horse Crane"
@@ -15374,6 +15897,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferdefeuerwehrwagen",
   "en": "Horse fire wagon"
@@ -15393,6 +15917,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferdemuldenkipper",
   "en": "Horse dumper wagon"
@@ -15412,6 +15937,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferdeplattformwagen",
   "en": "Horse flatbed wagon"
@@ -15429,6 +15955,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3"
  },
  {
@@ -15446,6 +15973,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": null,
   "en": "Horse logging wagon"
@@ -15463,6 +15991,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": null,
   "en": "Horse police carriage"
@@ -15482,6 +16011,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferde-Eiswagen",
   "en": "Horse ice wagon"
@@ -15501,6 +16031,8 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "single-horse",
+  "singleHorsePower": 2.0,
   "dlc": "dlc3",
   "de": "Dunkelbraunes Pferd",
   "en": "Dark brown horse"
@@ -15520,6 +16052,8 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "single-horse",
+  "singleHorsePower": 1.8,
   "dlc": "dlc3",
   "de": "Braunes Pferd",
   "en": "Brown horse"
@@ -15539,6 +16073,8 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "single-horse",
+  "singleHorsePower": 2.3,
   "dlc": "dlc3",
   "de": "Weißes Pferd",
   "en": "White horse"
@@ -15558,6 +16094,8 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "single-horse",
+  "singleHorsePower": 3.0,
   "dlc": "dlc3",
   "de": "Schwarzes Pferd",
   "en": "Black horse"
@@ -15575,6 +16113,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferdepflug",
   "en": "Horse plow"
@@ -15594,6 +16133,7 @@
   "from": 1850,
   "to": 1937,
   "countryId": 39011,
+  "roadRecipeBranch": "horse-team",
   "dlc": "dlc3",
   "de": "Pferdemüllwagen",
   "en": "Horse waste wagon"
@@ -15697,6 +16237,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -15714,6 +16255,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -15732,6 +16274,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "ZIS-5 Viehtransport",
   "en": "ZIS-5 Livestock"
@@ -15752,6 +16295,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200",
   "en": "MZ-200"
@@ -15770,6 +16314,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200 Feuerwehrwagen",
   "en": "MZ-200 Firetruck"
@@ -15790,6 +16335,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200 Müllwagen",
   "en": "MZ-200 Garbage"
@@ -15810,6 +16356,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-205",
   "en": "MZ-205"
@@ -15830,6 +16377,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200 Ölwagen",
   "en": "MZ-200 Oil"
@@ -15850,6 +16398,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200 Abwasserwagen",
   "en": "MZ-200 Sewage"
@@ -15870,6 +16419,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200 Zisternenwagen",
   "en": "MZ-200 Cistern"
@@ -15890,6 +16440,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200 Offener Wagen",
   "en": "MZ-200 Open Hull"
@@ -15910,6 +16461,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200 Kühlwagen",
   "en": "MZ-200 Refrigerator"
@@ -15928,6 +16480,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200 K-51",
   "en": "MZ-200 K-51"
@@ -15948,6 +16501,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200 Mischer",
   "en": "MZ-200 Mixer"
@@ -15968,6 +16522,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200V",
   "en": "MZ-200V"
@@ -15988,6 +16543,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200V Überdacht",
   "en": "MZ-200V Covered"
@@ -16008,6 +16564,7 @@
   "from": 1947,
   "to": 1965,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "MAZ-200V Überdacht",
   "en": "MZ-200V Open"
@@ -16027,6 +16584,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16044,6 +16602,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16061,6 +16620,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16078,6 +16638,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16095,6 +16656,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16114,6 +16676,7 @@
   "speed": 70.0,
   "powerKW": 36.8,
   "emptyWeight": 2.0,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA Öl",
   "en": "Gaz AA Oil"
@@ -16135,6 +16698,7 @@
   "speed": 70.0,
   "powerKW": 36.8,
   "emptyWeight": 2.0,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA Abwasser",
   "en": "Gaz AA Sewage"
@@ -16156,6 +16720,7 @@
   "speed": 65.0,
   "powerKW": 36.8,
   "emptyWeight": 2.5,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA Öltank",
   "en": "Gaz AA Oil trail"
@@ -16177,6 +16742,7 @@
   "speed": 70.0,
   "powerKW": 36.8,
   "emptyWeight": 2.0,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA Wasser",
   "en": "Gaz AA Water"
@@ -16196,6 +16762,7 @@
   "transportType": "RESOURCE_TRANSPORT_OIL",
   "capacity": 2.5,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16213,6 +16780,7 @@
   "transportType": "RESOURCE_TRANSPORT_SEWAGE",
   "capacity": 2.5,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16230,6 +16798,7 @@
   "transportType": "RESOURCE_TRANSPORT_WATER",
   "capacity": 2.5,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16247,6 +16816,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16264,6 +16834,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16281,6 +16852,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16298,6 +16870,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16316,6 +16889,7 @@
   "from": 1913,
   "to": 1925,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Russo-Balt T40/65 Öl",
   "en": "RuBalt T40/65 Oil"
@@ -16336,6 +16910,7 @@
   "from": 1913,
   "to": 1925,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Russo-Balt T40/65 Abwasser",
   "en": "RuBalt T40/65 Sewage"
@@ -16356,6 +16931,7 @@
   "from": 1913,
   "to": 1925,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Russo-Balt T40/65 Wasser",
   "en": "RuBalt T40/65 Water"
@@ -16375,6 +16951,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16392,6 +16969,7 @@
   "from": 1945,
   "to": 1955,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16409,6 +16987,7 @@
   "from": 1954,
   "to": 1959,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16427,6 +17006,7 @@
   "speed": 62.0,
   "powerKW": 132.0,
   "emptyWeight": 11.1,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16445,6 +17025,7 @@
   "speed": 62.0,
   "powerKW": 132.0,
   "emptyWeight": 9.9,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16463,6 +17044,7 @@
   "speed": 62.0,
   "powerKW": 132.0,
   "emptyWeight": 11.1,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16480,6 +17062,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16498,6 +17081,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "ZIS-5 Kraftstoff/Öl",
   "en": "ZIS-5 Fuel/Oil"
@@ -16518,6 +17102,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "ZIS-5 Abwasser",
   "en": "ZIS-5 Sewage"
@@ -16538,6 +17123,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "ZIS-5 Wasser",
   "en": "ZIS-5 Water"
@@ -16580,6 +17166,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16597,6 +17184,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16614,6 +17202,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16631,6 +17220,7 @@
   "from": 1946,
   "to": 1962,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16650,6 +17240,7 @@
   "from": 1930,
   "to": 1955,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA Offener Aufbau",
   "en": "Gaz AA Open Hull"
@@ -16669,6 +17260,7 @@
   "transportType": "RESOURCE_TRANSPORT_OPEN",
   "capacity": 2.5,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16686,6 +17278,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16703,6 +17296,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16721,6 +17315,7 @@
   "from": 1913,
   "to": 1925,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Russo-Balt T40/65 Offen",
   "en": "RuBalt T40/65 Open"
@@ -16740,6 +17335,7 @@
   "from": 1928,
   "to": 1940,
   "countryId": 39044,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16757,6 +17353,7 @@
   "from": 1945,
   "to": 1955,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16774,6 +17371,7 @@
   "from": 1954,
   "to": 1959,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16792,6 +17390,7 @@
   "from": 1947,
   "to": 1962,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16810,6 +17409,7 @@
   "speed": 45.0,
   "powerKW": 132.0,
   "emptyWeight": 18.2,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16828,6 +17428,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "ZIS-5 Offen",
   "en": "ZIS-5 Open"
@@ -16849,6 +17450,7 @@
   "speed": 65.0,
   "powerKW": 36.8,
   "emptyWeight": 2.0,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA Holz",
   "en": "Gaz AA wood"
@@ -16868,6 +17470,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16886,6 +17489,7 @@
   "speed": 62.0,
   "powerKW": 132.0,
   "emptyWeight": 9.9,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16923,6 +17527,7 @@
   "from": 1940,
   "to": 1956,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16941,6 +17546,7 @@
   "from": 1934,
   "to": 1957,
   "countryId": 39016,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16960,6 +17566,7 @@
   "from": 1939,
   "to": 1942,
   "countryId": 39003,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "DKW F8",
   "en": "DKW F8"
@@ -16980,6 +17587,7 @@
   "from": 1934,
   "to": 1939,
   "countryId": 39003,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -16997,6 +17605,7 @@
   "transportType": "RESOURCE_TRANSPORT_PASSANGER",
   "capacity": 4.0,
   "countryId": 39003,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17016,6 +17625,7 @@
   "from": 1935,
   "to": 1943,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "GAZ M1",
   "en": "GAZ M1"
@@ -17037,6 +17647,7 @@
   "from": 1941,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "GAZ 11-73",
   "en": "GAZ 11-73"
@@ -17057,6 +17668,7 @@
   "from": 1938,
   "to": 1950,
   "countryId": 39003,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17075,6 +17687,7 @@
   "from": 1949,
   "to": 1955,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17092,6 +17705,7 @@
   "from": 1936,
   "to": 1955,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17110,6 +17724,7 @@
   "from": 1908,
   "to": 1927,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17128,6 +17743,7 @@
   "from": 1941,
   "to": 1953,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17147,6 +17763,7 @@
   "from": 1931,
   "to": 1936,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "GAZ A",
   "en": "GAZ A"
@@ -17168,6 +17785,7 @@
   "from": 1948,
   "to": 1955,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "IFA F8",
   "en": "IFA F8"
@@ -17189,6 +17807,7 @@
   "from": 1949,
   "to": 1956,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "IFA F9",
   "en": "IFA F9"
@@ -17210,6 +17829,7 @@
   "from": 1940,
   "to": 1943,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "KIM-10",
   "en": "KIM-10"
@@ -17230,6 +17850,7 @@
   "from": 1936,
   "to": 1955,
   "countryId": 39003,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17249,6 +17870,7 @@
   "from": 1946,
   "to": 1956,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Moskvich 400",
   "en": "Moskvich 400"
@@ -17270,6 +17892,7 @@
   "from": 1956,
   "to": 1964,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Moskvich 407",
   "en": "Moskvich 407"
@@ -17291,6 +17914,7 @@
   "from": 1927,
   "to": 1932,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "NAMI-1",
   "en": "NAMI-1"
@@ -17312,6 +17936,7 @@
   "from": 1955,
   "to": 1971,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17331,6 +17956,7 @@
   "from": 1955,
   "to": 1971,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17350,6 +17976,7 @@
   "from": 1955,
   "to": 1971,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17369,6 +17996,7 @@
   "from": 1955,
   "to": 1959,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "P70 Zwickau",
   "en": "P70 Zwickau"
@@ -17390,6 +18018,7 @@
   "from": 1946,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "GAZ M20",
   "en": "GAZ M20"
@@ -17409,6 +18038,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17428,6 +18058,7 @@
   "from": 1952,
   "to": 1961,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17447,6 +18078,7 @@
   "from": 1952,
   "to": 1961,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17466,6 +18098,7 @@
   "from": 1948,
   "to": 1952,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17486,6 +18119,7 @@
   "from": 1936,
   "to": 1950,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Tatra T87",
   "en": "Tatra T87"
@@ -17507,6 +18141,7 @@
   "from": 1946,
   "to": 1952,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17525,6 +18160,7 @@
   "from": 1955,
   "to": 1966,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17543,6 +18179,7 @@
   "from": 1955,
   "to": 1966,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17561,6 +18198,7 @@
   "from": 1955,
   "to": 1966,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17579,6 +18217,7 @@
   "from": 1955,
   "to": 1966,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17598,6 +18237,7 @@
   "from": 1957,
   "to": 1964,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "FSO Warszawa M20",
   "en": "FSO Warszawa M20"
@@ -17618,6 +18258,7 @@
   "from": 1955,
   "to": 1968,
   "countryId": 39010,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17681,6 +18322,7 @@
   "from": 1940,
   "to": 1956,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17699,6 +18341,7 @@
   "from": 1934,
   "to": 1957,
   "countryId": 39016,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17716,6 +18359,7 @@
   "transportType": "RESOURCE_TRANSPORT_PASSANGER",
   "capacity": 4.0,
   "countryId": 39003,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17735,6 +18379,7 @@
   "from": 1935,
   "to": 1943,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "GAZ M1",
   "en": "GAZ M1"
@@ -17756,6 +18401,7 @@
   "from": 1941,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "GAZ 11-73",
   "en": "GAZ 11-73"
@@ -17776,6 +18422,7 @@
   "from": 1938,
   "to": 1950,
   "countryId": 39003,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17794,6 +18441,7 @@
   "from": 1949,
   "to": 1955,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17811,6 +18459,7 @@
   "from": 1936,
   "to": 1955,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17828,6 +18477,7 @@
   "from": 1908,
   "to": 1927,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17846,6 +18496,7 @@
   "from": 1941,
   "to": 1953,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17865,6 +18516,7 @@
   "from": 1931,
   "to": 1936,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "GAZ A",
   "en": "GAZ A"
@@ -17886,6 +18538,7 @@
   "from": 1948,
   "to": 1955,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "IFA F8 MO",
   "en": "IFA F8 MO"
@@ -17907,6 +18560,7 @@
   "from": 1949,
   "to": 1956,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "IFA F9 Kübelwagen",
   "en": "IFA F9 Kuebelwagen"
@@ -17927,6 +18581,7 @@
   "from": 1936,
   "to": 1955,
   "countryId": 39003,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -17946,6 +18601,7 @@
   "from": 1946,
   "to": 1956,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Moskvich 400",
   "en": "Moskvich 400"
@@ -17967,6 +18623,7 @@
   "from": 1956,
   "to": 1964,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Moskvich 407",
   "en": "Moskvich 407"
@@ -17988,6 +18645,7 @@
   "from": 1927,
   "to": 1932,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "NAMI-1",
   "en": "NAMI-1"
@@ -18009,6 +18667,7 @@
   "from": 1946,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "GAZ M20",
   "en": "GAZ M20"
@@ -18028,6 +18687,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18047,6 +18707,7 @@
   "from": 1952,
   "to": 1961,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18066,6 +18727,7 @@
   "from": 1946,
   "to": 1952,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18084,6 +18746,7 @@
   "from": 1955,
   "to": 1966,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18103,6 +18766,7 @@
   "from": 1957,
   "to": 1964,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "FSO Warszawa M20",
   "en": "FSO Warszawa M20"
@@ -18123,6 +18787,7 @@
   "from": 1955,
   "to": 1968,
   "countryId": 39010,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18141,6 +18806,7 @@
   "from": 1908,
   "to": 1927,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18158,6 +18824,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18175,6 +18842,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18192,6 +18860,7 @@
   "from": 1946,
   "to": 1962,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18211,6 +18880,7 @@
   "from": 1932,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA Vnichi",
   "en": "Gaz AA Vnichi"
@@ -18232,6 +18902,7 @@
   "from": 1946,
   "to": 1956,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Moskvich 400-420K",
   "en": "Moskvich 400-420K"
@@ -18251,6 +18922,7 @@
   "from": 1947,
   "to": 1959,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18269,6 +18941,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "ZIS-5 Kühlschrank",
   "en": "ZIS-5 Refrigerator"
@@ -18288,6 +18961,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18305,6 +18979,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18323,6 +18998,7 @@
   "from": 1913,
   "to": 1925,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Russo-Balt T40/65 Kühlschrank",
   "en": "RuBalt T40/65 Refrigerator"
@@ -18470,6 +19146,7 @@
   "from": 1932,
   "to": 1950,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -18603,6 +19280,7 @@
   "from": 1919,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "LTC",
   "en": "LTC"
@@ -19081,6 +19759,7 @@
   "from": 1932,
   "to": 1955,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA Kran KS-1",
   "en": "Gaz AA Cran KS-1"
@@ -19099,6 +19778,7 @@
   "speed": 62.0,
   "powerKW": 132.0,
   "emptyWeight": 9.9,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19116,6 +19796,7 @@
   "from": 1929,
   "to": 1960,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "M-III P 1.5",
   "en": "M-III P 1.5"
@@ -19135,6 +19816,7 @@
   "from": 1929,
   "to": 1958,
   "countryId": 39041,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Ruston Bucyrus RB10",
   "en": "Ruston Bucyrus RB10"
@@ -19153,6 +19835,7 @@
   "from": 1919,
   "to": 1935,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19169,6 +19852,7 @@
   "speed": 62.0,
   "powerKW": 132.0,
   "emptyWeight": 18.5,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19186,6 +19870,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19204,6 +19889,7 @@
   "from": 1932,
   "to": 1959,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA Mischer",
   "en": "Gaz AA mixer"
@@ -19223,6 +19909,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19240,6 +19927,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19258,6 +19946,7 @@
   "from": 1913,
   "to": 1925,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Russo-Balt T40/65 Flüssigbeton",
   "en": "RuBalt T40/65 Liquid Concrete"
@@ -19277,6 +19966,7 @@
   "from": 1945,
   "to": 1955,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19294,6 +19984,7 @@
   "from": 1954,
   "to": 1959,
   "countryId": 39000,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19311,6 +20002,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19347,6 +20039,7 @@
   "from": 1939,
   "to": 1953,
   "countryId": 39017,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19363,6 +20056,7 @@
   "from": 1932,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA Schnee",
   "en": "Gaz AA Snow"
@@ -19381,6 +20075,7 @@
   "speed": 62.0,
   "powerKW": 132.0,
   "emptyWeight": 11.0,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19397,6 +20092,7 @@
   "from": 1933,
   "to": 1958,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "ZIS-5 Schnee",
   "en": "ZIS-5 Snow"
@@ -19414,6 +20110,7 @@
   "from": 1928,
   "to": 1935,
   "countryId": 39006,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19429,6 +20126,7 @@
   "from": 1912,
   "to": 1924,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19486,6 +20184,7 @@
   "from": 1946,
   "to": 1976,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "SBK-1",
   "en": "SBK-1"
@@ -19505,6 +20204,7 @@
   "from": 1945,
   "to": 1972,
   "countryId": 39004,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "VEB Kranbau Baumeister",
   "en": "VEB Kranbau Baumeister"
@@ -19523,6 +20223,7 @@
   "from": 1928,
   "to": 1955,
   "countryId": 38998,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "20-Meter-Serviceturmkran",
   "en": "20-Meter Service Tower Crane"
@@ -19540,6 +20241,7 @@
   "from": 1913,
   "to": 1924,
   "countryId": 39018,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19555,6 +20257,7 @@
   "from": 1924,
   "to": 1930,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19571,6 +20274,7 @@
   "from": 1929,
   "to": 1959,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "SKhTZ 15/30",
   "en": "SKhTZ 15/30"
@@ -19589,6 +20293,7 @@
   "from": 1929,
   "to": 1938,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Stalinets S-60",
   "en": "Stalinets S-60"
@@ -19607,6 +20312,7 @@
   "from": 1937,
   "to": 1953,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Stalinets S-65",
   "en": "Stalinets S-65"
@@ -19625,6 +20331,7 @@
   "from": 1937,
   "to": 1957,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "SKhTZ NATI",
   "en": "SKhTZ NATI"
@@ -19761,6 +20468,7 @@
   "from": 1913,
   "to": 1925,
   "countryId": 39021,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Russo-Balt T40/65 Holzfäller",
   "en": "RuBalt T40/65 Logging"
@@ -19781,6 +20489,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "Ya-12D covered"
@@ -19801,6 +20510,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "Ya-12D open"
@@ -19821,6 +20531,7 @@
   "from": 1928,
   "to": 1934,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "Ya-4 covered"
@@ -19840,6 +20551,7 @@
   "from": 1928,
   "to": 1934,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19857,6 +20569,7 @@
   "from": 1928,
   "to": 1934,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19874,6 +20587,7 @@
   "from": 1928,
   "to": 1934,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -19892,6 +20606,7 @@
   "from": 1928,
   "to": 1934,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "Ya-4 cistern"
@@ -19912,6 +20627,7 @@
   "from": 1928,
   "to": 1934,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "Ya-4 sewage truck"
@@ -19932,6 +20648,7 @@
   "from": 1928,
   "to": 1934,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "Ya-4 water truck"
@@ -19952,6 +20669,7 @@
   "from": 1928,
   "to": 1934,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "Ya-4 open"
@@ -19972,6 +20690,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG-10 covered"
@@ -19992,6 +20711,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG-10 covered (trailer)"
@@ -20012,6 +20732,7 @@
   "from": 1929,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG-10 (garbage container)"
@@ -20032,6 +20753,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG-10 open"
@@ -20052,6 +20774,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG-10 open (trailer)"
@@ -20072,6 +20795,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG dry bulk tank"
@@ -20092,6 +20816,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG covered"
@@ -20112,6 +20837,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaS"
@@ -20130,6 +20856,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG DA-0.25 excavator"
@@ -20148,6 +20875,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG firetruck"
@@ -20168,6 +20896,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG mixer"
@@ -20188,6 +20917,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG cistern"
@@ -20208,6 +20938,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG sewage truck"
@@ -20228,6 +20959,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG water truck"
@@ -20248,6 +20980,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG open"
@@ -20268,6 +21001,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG logger"
@@ -20286,6 +21020,7 @@
   "from": 1932,
   "to": 1948,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG ATP-1 crane"
@@ -20304,6 +21039,7 @@
   "from": 1932,
   "to": 1959,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": null,
   "en": "YaG snowplow"
@@ -20323,6 +21059,7 @@
   "from": 1946,
   "to": 1962,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20343,6 +21080,7 @@
   "from": 1933,
   "to": 1955,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz AA 55 Krankenwagen",
   "en": "Gaz AA 55 Ambulance"
@@ -20362,6 +21100,7 @@
   "from": 1946,
   "to": 1962,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20379,6 +21118,7 @@
   "from": 1946,
   "to": 1962,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20398,6 +21138,7 @@
   "from": 1929,
   "to": 1950,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz Policija",
   "en": "Gaz Policija"
@@ -20419,6 +21160,7 @@
   "from": 1929,
   "to": 1955,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3",
   "de": "Gaz Gefängnisbus",
   "en": "Gaz Prison bus"
@@ -20438,6 +21180,7 @@
   "from": 1947,
   "to": 1963,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20455,6 +21198,7 @@
   "from": 1947,
   "to": 1963,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20472,6 +21216,7 @@
   "from": 1947,
   "to": 1963,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20489,6 +21234,7 @@
   "from": 1947,
   "to": 1963,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20506,6 +21252,7 @@
   "from": 1947,
   "to": 1963,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20523,6 +21270,7 @@
   "from": 1947,
   "to": 1963,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20540,6 +21288,7 @@
   "from": 1948,
   "to": 1964,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20557,6 +21306,7 @@
   "from": 1948,
   "to": 1964,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20572,6 +21322,7 @@
   "from": 1948,
   "to": 1964,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20589,6 +21340,7 @@
   "from": 1948,
   "to": 1964,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  },
  {
@@ -20606,6 +21358,7 @@
   "from": 1948,
   "to": 1964,
   "countryId": 39011,
+  "roadRecipeBranch": "ordinary",
   "dlc": "dlc3"
  }
 ]

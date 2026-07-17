@@ -221,6 +221,9 @@ def parse_vehicle(path, category):
     v = {'id': os.path.basename(os.path.dirname(path)), 'category': category,
          'trainSet': [], 'lifespanYears': 0.0}
     electric_trigger = False
+    horse_rows = []
+    single_horse_power = 0.0
+    road_recipe_malformed = False
     length = bbox_length(os.path.dirname(path))
     if length:
         v['length'] = length
@@ -229,7 +232,9 @@ def parse_vehicle(path, category):
     except OSError:
         return None
     for raw in text.splitlines():
-        line = raw.strip()
+        line = raw.split('//', 1)[0].strip().lstrip('\ufeff')
+        if line.startswith('--'):
+            continue
         if not line.startswith('$'):
             continue
         parts = line[1:].split()
@@ -240,6 +245,29 @@ def parse_vehicle(path, category):
                 v[field] = conv(float(args[0])) if conv is int else conv(args[0])
             elif key == 'TYPE' and args:
                 v['type'] = args[0]
+            elif key == 'HORSE':
+                if len(args) < 4:
+                    road_recipe_malformed = True
+                else:
+                    try:
+                        coordinates = [float(value) for value in args[:3]]
+                        if not all(value == value and abs(value) != float('inf')
+                                   for value in coordinates):
+                            raise ValueError
+                        horse_rows.append(args[3])
+                    except ValueError:
+                        road_recipe_malformed = True
+            elif key == 'SINGLE_HORSE_POWER':
+                if not args:
+                    road_recipe_malformed = True
+                else:
+                    try:
+                        value = float(args[0])
+                        if not (value == value and abs(value) != float('inf')):
+                            raise ValueError
+                        single_horse_power = value
+                    except ValueError:
+                        road_recipe_malformed = True
             elif key == 'RESOURCE_TRANSPORT_TYPE' and args:
                 v['transportType'] = args[0]
             elif key == 'AVAILABLE' and len(args) >= 2:
@@ -260,6 +288,14 @@ def parse_vehicle(path, category):
             'VEHICLETYPE_RAIL_LOCOMOTIVE', 'VEHICLETYPE_RAIL_SERVICE',
             'VEHICLETYPE_SHIP'}:
         v['electric'] = electric_trigger
+    if v.get('type') == 'VEHICLETYPE_ROAD' and not road_recipe_malformed:
+        if any(model_key != 'single' for model_key in horse_rows):
+            v['roadRecipeBranch'] = 'horse-team'
+        elif single_horse_power > 0:
+            v['roadRecipeBranch'] = 'single-horse'
+            v['singleHorsePower'] = single_horse_power
+        else:
+            v['roadRecipeBranch'] = 'ordinary'
     return v if 'type' in v else None
 
 

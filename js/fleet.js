@@ -142,7 +142,7 @@ export function shipProductionRecipe({
 
 export function normalVehicleProductionRecipe({
   runtimeCategory, emptyWeight, powerKW, introductionYear,
-  transportSubtype = 0, capacity = 0, electric, roadOrdinaryBranch = false,
+  transportSubtype = 0, capacity = 0, electric, roadRecipeBranch, singleHorsePower,
 }) {
   if (!Number.isInteger(runtimeCategory)
       || !Number.isFinite(emptyWeight) || emptyWeight < 0
@@ -155,20 +155,33 @@ export function normalVehicleProductionRecipe({
     });
   }
   if (![1, 2, 3, 4, 5, 8, 10].includes(runtimeCategory)) return null;
-  // Category 1 has two earlier executable branches whose source fields are not
-  // yet present in the public catalog. Never assume the ordinary branch.
-  if (runtimeCategory === 1 && roadOrdinaryBranch !== true) return null;
-  if (runtimeCategory !== 3 && (!Number.isFinite(powerKW) || powerKW < 0)) return null;
-  if ((runtimeCategory === 4 || runtimeCategory === 5) && typeof electric !== 'boolean') return null;
 
   const f32 = Math.fround;
   const mul = (a, b) => f32(f32(a) * f32(b));
+  const add = (a, b) => f32(f32(a) + f32(b));
   const div = (a, b) => f32(f32(a) / f32(b));
   const weight = f32(emptyWeight);
   const passengerFabric = () => transportSubtype === 7
     ? mul(capacity, 0.0035) : f32(0.005);
 
   if (runtimeCategory === 1 || runtimeCategory === 2) {
+    if (runtimeCategory === 1) {
+      if (!['ordinary', 'horse-team', 'single-horse'].includes(roadRecipeBranch)) return null;
+      if (roadRecipeBranch === 'horse-team') {
+        return [
+          ['workers', mul(weight, 30)],
+          ['steel', mul(weight, 0.15)],
+          ['boards', mul(weight, 0.85)],
+          ['fabric', transportSubtype === 7 ? mul(capacity, 0.0025) : f32(0.004)],
+        ];
+      }
+      if (roadRecipeBranch === 'single-horse') {
+        if (!Number.isFinite(singleHorsePower) || !(singleHorsePower > 0)) return null;
+        const quantity = add(mul(weight, 0.5), mul(singleHorsePower, 0.25));
+        return [['workers', mul(quantity, 15)], ['plants', mul(quantity, 20)]];
+      }
+    }
+    if (!Number.isFinite(powerKW) || powerKW < 0) return null;
     const p100 = div(powerKW, 100);
     return [
       ['workers', mul(weight, 55)],
@@ -183,6 +196,9 @@ export function normalVehicleProductionRecipe({
       ['ecomponents', mul(p100, 0.05)],
     ];
   }
+
+  if (runtimeCategory !== 3 && (!Number.isFinite(powerKW) || powerKW < 0)) return null;
+  if ((runtimeCategory === 4 || runtimeCategory === 5) && typeof electric !== 'boolean') return null;
 
   if (runtimeCategory === 3 || runtimeCategory === 4 || runtimeCategory === 5) {
     const body = [
@@ -262,6 +278,8 @@ export function vehicleEconomicOpportunity(record, {
     transportSubtype: facts.transportSubtype,
     capacity: facts.capacity ?? 0,
     electric: facts.electric,
+    roadRecipeBranch: facts.roadRecipeBranch,
+    singleHorsePower: facts.singleHorsePower,
   });
   if (!recipe) return null;
   const componentValue = vehicleComponentBaseValue(recipe, facts.originCurrency, currency, economy);
@@ -281,6 +299,8 @@ export function vehicleEconomicOpportunity(record, {
     transportSubtype: facts.transportSubtype,
     capacity: facts.capacity ?? 0,
     electric: facts.electric,
+    roadRecipeBranch: facts.roadRecipeBranch,
+    singleHorsePower: facts.singleHorsePower,
     cargo: record.cargo,
   });
   if (!Number.isFinite(baseExportValue) || !exportMultiplier || !recycling) return null;
@@ -324,6 +344,8 @@ export function vehicleUsedMarketQuote(offer, { currency, economy }) {
     transportSubtype: facts.transportSubtype,
     capacity: facts.capacity ?? 0,
     electric: facts.electric,
+    roadRecipeBranch: facts.roadRecipeBranch,
+    singleHorsePower: facts.singleHorsePower,
   });
   const componentValue = vehicleComponentBaseValue(recipe, facts.originCurrency, currency, economy);
   const baseValue = Number.isFinite(componentValue)
@@ -405,15 +427,17 @@ const NORMAL_RECYCLE_CONVERSIONS = {
   mcomponents: [['waste_steel', 0.7], ['waste_other', 0.3]],
   ecomponents: [['waste_steel', 0.2], ['waste_plastic', 0.2], ['waste_other', 0.6]],
   eletronics: [['waste_steel', 0.2], ['waste_plastic', 0.4], ['waste_other', 0.4]],
+  boards: [['waste_burnable', 0.95], ['waste_other', 0.05]],
+  plants: [['waste_bio', 0.3], ['waste_burnable', 0.5], ['waste_other', 0.2]],
 };
 
 export function normalVehicleRecyclingTargets({
   runtimeCategory, emptyWeight, powerKW, introductionYear, transportSubtype = 0,
-  capacity = 0, electric, cargo = [], roadOrdinaryBranch = false,
+  capacity = 0, electric, cargo = [], roadRecipeBranch, singleHorsePower,
 }) {
   const rows = normalVehicleProductionRecipe({
     runtimeCategory, emptyWeight, powerKW, introductionYear, transportSubtype,
-    capacity, electric, roadOrdinaryBranch,
+    capacity, electric, roadRecipeBranch, singleHorsePower,
   });
   if (!rows) return null;
   const f32 = Math.fround;
@@ -535,6 +559,7 @@ export function resolveVehicleModels(records, { game = [], workshop = [] } = {})
     if (!entry) return { ...record, modelFacts: null };
     resolvedCount += 1;
     resolvedModelIds.add(key);
+    const runtimeCategory = entry.type ? vehicleRuntimeCategory(entry.type) : null;
     return {
       ...record,
       modelFacts: {
@@ -542,7 +567,7 @@ export function resolveVehicleModels(records, { game = [], workshop = [] } = {})
         name: entry.en ?? entry.de ?? entry.nameStr ?? entry.id,
         type: entry.type ?? null,
         category: entry.category ?? null,
-        runtimeCategory: entry.type ? vehicleRuntimeCategory(entry.type) : null,
+        runtimeCategory,
         emptyWeight: Number.isFinite(entry.emptyWeight) ? entry.emptyWeight : null,
         powerKW: Number.isFinite(entry.powerKW) ? entry.powerKW : null,
         capacity: Number.isFinite(entry.capacity) ? entry.capacity : null,
@@ -557,6 +582,11 @@ export function resolveVehicleModels(records, { game = [], workshop = [] } = {})
             ? defaultVehicleLifespan(vehicleRuntimeCategory(entry.type)) : null,
         electric: typeof entry.electric === 'boolean' ? entry.electric
           : gameEntry && entry.type === 'VEHICLETYPE_SHIP' ? false : null,
+        ...(runtimeCategory === 1 ? {
+          roadRecipeBranch: ['ordinary', 'horse-team', 'single-horse'].includes(entry.roadRecipeBranch)
+            ? entry.roadRecipeBranch : null,
+          singleHorsePower: Number.isFinite(entry.singleHorsePower) ? entry.singleHorsePower : null,
+        } : {}),
         hasHardAttachments: Array.isArray(entry.trainSet) && entry.trainSet.length > 0,
         source: gameEntry ? 'game-file' : 'workshop-catalog',
       },

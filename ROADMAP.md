@@ -191,7 +191,7 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   cumulative minor/medium/serious crime counts, trade, and selected-resource production.
   Crime history remains explicitly separate from the live `events.bin` case queue.
   - **Vehicle economics:** the Republic overview ranks exactly resolved owned ships, rail
-  vehicles, airplanes, helicopters, and road-service vehicles by their two cash-out routes.
+  vehicles, airplanes, helicopters, and road vehicles by their two cash-out routes.
   Current export payout uses live save prices, the saved sale adjustment, verified
   depreciation gates, and the aircraft-only export multiplier. Normal scrapyard targets use
   category-specific component recipes and exact float32 conversion/row rounding; loaded cargo
@@ -200,7 +200,7 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   work target, and the separately labelled labor-opportunity-cost view remain distinct, while
   keeping an operating vehicle
   is deliberately not assigned an invented cash value. The supplied save yields complete
-  comparisons for 125 of 1,294 owned vehicles and exact current quotes for 17 of 75
+  comparisons for 1,201 of 1,294 owned vehicles and exact current quotes for 53 of 75
   used-market offers. Capacity-safe replacement candidates require the same vehicle category
   and transport subtype, never reduce capacity, and show net cash against the closest-capacity
   owned target; speed, power, condition, schedules, and fleet count remain explicit caveats.
