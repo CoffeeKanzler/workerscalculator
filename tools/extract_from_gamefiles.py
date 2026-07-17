@@ -220,6 +220,7 @@ def bbox_length(vdir):
 def parse_vehicle(path, category):
     v = {'id': os.path.basename(os.path.dirname(path)), 'category': category,
          'trainSet': [], 'lifespanYears': 0.0}
+    electric_trigger = False
     length = bbox_length(os.path.dirname(path))
     if length:
         v['length'] = length
@@ -244,14 +245,19 @@ def parse_vehicle(path, category):
             elif key == 'AVAILABLE' and len(args) >= 2:
                 v['from'] = int(float(args[0]))
                 v['to'] = int(float(args[1]))
+            elif key in ('PARTICLE_MOVEMENT', 'PARTICLE_MOVEMENT_JOINT') and args:
+                electric_trigger = electric_trigger or args[0] == 'train_eletric'
             elif key == 'TRAINSET' and args:
                 v['trainSet'].append(args[0])
             elif key.startswith('TRAINGROUP_'):
                 v['trainGroup'] = key[len('TRAINGROUP_'):].lower()
+                electric_trigger = electric_trigger or key == 'TRAINGROUP_METRO'
         except (ValueError, IndexError):
             pass
     if not v['trainSet']:
         del v['trainSet']
+    if v.get('type') == 'VEHICLETYPE_SHIP':
+        v['electric'] = electric_trigger
     return v if 'type' in v else None
 
 

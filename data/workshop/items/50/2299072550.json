@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2299072550",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T21:29:39+00:00",
+  "buildings": [
+    {
+      "id": "2299072550/cool",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 27000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Modern Coolstore",
+      "workshopId": "2299072550",
+      "modPath": "cool"
+    },
+    {
+      "id": "2299072550/general",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 9000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Modern Warehouse",
+      "workshopId": "2299072550",
+      "modPath": "general"
+    },
+    {
+      "id": "2299072550/open",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 35000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Open Storage",
+      "workshopId": "2299072550",
+      "modPath": "open"
+    },
+    {
+      "id": "2299072550/vehicle",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Vehicle Storage",
+      "workshopId": "2299072550",
+      "modPath": "vehicle"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2815639232",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T21:34:26+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2815639232/kamion",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.09,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "capacity": 30.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 90.0,
+      "powerKW": 298.0,
+      "emptyWeight": 9.0,
+      "from": 1968,
+      "to": 3000,
+      "workshopId": "2815639232",
+      "modPath": "kamion"
+    }
+  ]
+}

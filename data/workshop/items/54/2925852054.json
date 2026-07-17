@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2925852054",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T21:35:52+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2925852054/SU25TM",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 23.07,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 200000.0,
+      "consumption": 0.0,
+      "speed": 950.0,
+      "powerKW": 4500.0,
+      "emptyWeight": 9.5,
+      "capacity": 10.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1981,
+      "to": 3000,
+      "countryId": 39011,
+      "workshopId": "2925852054",
+      "modPath": "SU25TM"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2997991014",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T21:30:45+00:00",
+  "buildings": [
+    {
+      "id": "2997991014/1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {
+        "bricks": 18.6,
+        "boards": 14.8,
+        "concrete": 5.9,
+        "workers": 479.0,
+        "steel": 2.3,
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1 track station, building 16/H (Czech Rep, 1890)",
+      "workshopId": "2997991014",
+      "modPath": "1"
+    },
+    {
+      "id": "2997991014/2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {
+        "bricks": 18.6,
+        "boards": 14.8,
+        "concrete": 5.9,
+        "workers": 479.0,
+        "steel": 2.3,
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "2 track station, building 16/H (Czech Rep, 1890)",
+      "workshopId": "2997991014",
+      "modPath": "2"
+    },
+    {
+      "id": "2997991014/bus",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 500.0
+      },
+      "constructionResources": {
+        "bricks": 18.6,
+        "boards": 14.8,
+        "concrete": 5.9,
+        "workers": 479.0,
+        "steel": 2.3,
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bus station project 16/H (Czech Rep, 1890)",
+      "workshopId": "2997991014",
+      "modPath": "bus"
+    },
+    {
+      "id": "2997991014/of",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 18.6,
+        "boards": 14.8,
+        "concrete": 5.9,
+        "workers": 479.0,
+        "steel": 2.3,
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Office building for modular station, project 16/H (Czech Rep, 1890)",
+      "workshopId": "2997991014",
+      "modPath": "of"
+    }
+  ],
+  "vehicles": []
+}

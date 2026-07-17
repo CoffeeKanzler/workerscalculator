@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3262353675",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T21:31:23+00:00",
+  "buildings": [
+    {
+      "id": "3262353675/browar",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 85.0,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.06
+      },
+      "consumption": {
+        "plants": 0.3,
+        "water": 0.135
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.14
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small brewery",
+      "workshopId": "3262353675",
+      "modPath": "browar"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3217693711",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T21:36:34+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3217693711/hopper_waste",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 55.22,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 4300.0,
+      "speed": 45.0,
+      "powerKW": 1020.0,
+      "emptyWeight": 643.1,
+      "capacity": 1750.0,
+      "transportType": "RESOURCE_TRANSPORT_WASTE",
+      "from": 1959,
+      "to": 1997,
+      "countryId": 39009,
+      "workshopId": "3217693711",
+      "modPath": "hopper_waste"
+    }
+  ]
+}

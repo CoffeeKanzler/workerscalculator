@@ -193,11 +193,13 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   it contributes no ship-recycling output. Gross recovery, work target, and the separately
   labelled labor-opportunity-cost view remain distinct, while keeping an operating vehicle
   is deliberately not assigned an invented cash value. The supplied save yields complete
-  comparisons for all three owned ships and an exact current quote for the one ship among
-  its 75 used-market offers; capacity and operating role remain an explicit replacement caveat.
+  comparisons for four owned ships and exact current quotes for two ships among its 75
+  used-market offers; capacity and operating role remain an explicit replacement caveat.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
-  catalog contains only compact parsed INI facts under `data/workshop/`, never mod assets.
+  catalog contains 287 packages with 853 building and 63 vehicle definitions as compact
+  parsed INI facts under `data/workshop/`, never mod assets. Save seeding prioritizes exact
+  Workshop identities found in owned and used-market vehicles as well as buildings.
   The browser resolves available packages automatically, imports exact mod housing,
   service, and production facts, hides recognized infrastructure, and falls back to
   observed occupancy without inventing capacity. For packages Steam does not expose

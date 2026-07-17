@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2226534541",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T21:31:55+00:00",
+  "buildings": [
+    {
+      "id": "2226534541/Stodola1",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stodola",
+      "workshopId": "2226534541",
+      "modPath": "Stodola1"
+    },
+    {
+      "id": "2226534541/Stodola2",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stodola",
+      "workshopId": "2226534541",
+      "modPath": "Stodola2"
+    },
+    {
+      "id": "2226534541/Stodola3",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stodola",
+      "workshopId": "2226534541",
+      "modPath": "Stodola3"
+    }
+  ],
+  "vehicles": []
+}
