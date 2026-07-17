@@ -44,7 +44,9 @@ export function defaultProducer(producers, eco, currency) {
  * @param buildings dataset (rates in t/day at productivity 1)
  * @param eco       Economy (prices + name→key mapping)
  * @param opts      { productivity, currency, imports:Set<key>,
- *                    producerChoice: Map<key, buildingDe>, includeUtilities }
+ *                    producerChoice: Map<key, buildingDe>, includeUtilities,
+ *                    qualityByKey: Map<key, quality> — mine deposit richness
+ *                    (QUALITY_BUILDINGS_DE only; defaults to 1 per key) }
  */
 export function solveChain(goalKey, amount, buildings, eco, opts = {}) {
   const productivity = opts.productivity ?? 1;
@@ -65,10 +67,11 @@ export function solveChain(goalKey, amount, buildings, eco, opts = {}) {
     return defaultProducer(producers, eco, currency);
   };
 
+  const qualityByKey = opts.qualityByKey ?? new Map();
   const outputOf = (b, key) => {
     for (const p of b.production) {
       if (eco.keyForName(p.de) === key) {
-        const qual = QUALITY_BUILDINGS_DE.has(b.de) ? (opts.quality ?? 1) : 1;
+        const qual = QUALITY_BUILDINGS_DE.has(b.de) ? (qualityByKey.get(key) ?? 1) : 1;
         return p.rate * productivity * qual;
       }
     }

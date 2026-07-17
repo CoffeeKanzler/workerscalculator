@@ -64,6 +64,17 @@ test('demand scales linearly with the goal amount', () => {
   assert.ok(Math.abs(fb - 2 * fa) < 1e-6);
 });
 
+test('qualityByKey scales a mine\'s output, halving the buildings needed at double richness', () => {
+  const base = solveChain('rawiron', 1000, gameBuildings, eco,
+    { producerChoice: new Map([['rawiron', 'Eisenmine']]), includeUtilities: false });
+  const richer = solveChain('rawiron', 1000, gameBuildings, eco,
+    { producerChoice: new Map([['rawiron', 'Eisenmine']]), includeUtilities: false,
+      qualityByKey: new Map([['rawiron', 2]]) });
+  const baseCount = base.rows.find(x => x.key === 'rawiron').count;
+  const richerCount = richer.rows.find(x => x.key === 'rawiron').count;
+  assert.ok(Math.abs(richerCount - baseCount / 2) < 1e-6);
+});
+
 test('cyclic chains converge (power plants need coal, mining needs power)', () => {
   const r = solveChain('eletric', 5000, gameBuildings, eco,
     { producerChoice: new Map([['eletric', 'Kohlekraftwerk']]) });

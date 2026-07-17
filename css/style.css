@@ -60,6 +60,18 @@ header h1 {
 }
 .langswitch button.active, nav button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
+.sharedlinkbanner {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(217, 164, 65, 0.12); border: 1px solid var(--warn);
+  border-radius: 6px; padding: 8px 12px; margin-bottom: 12px;
+}
+.sharedlinkbanner span { flex: 1 1 auto; color: var(--text); }
+.sharedlinkbanner button {
+  background: var(--panel2); border: 1px solid var(--border); border-radius: 5px;
+  padding: 4px 10px; cursor: pointer; color: var(--text); font-size: 13px;
+}
+.sharedlinkbanner button:hover { border-color: var(--accent); }
+
 nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
 
 section { animation: fade 0.15s ease-in; }

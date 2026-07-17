@@ -1,8 +1,8 @@
-import { STRINGS } from './i18n.js?v=15';
+import { STRINGS } from './i18n.js?v=16';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=21';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
-import { solveChain, producersByResource, defaultProducer } from './chain.js?v=13';
+import { solveChain, producersByResource, defaultProducer } from './chain.js?v=14';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain,
@@ -11,10 +11,11 @@ import {
 const TABS = ['prices', 'production', 'chain', 'analysis', 'vehicleprod', 'city', 'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
-  'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset', 'chain', 'tuning'];
+  'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset', 'chain', 'tuning', 'tab'];
 
 // ---------------------------------------------------------------- state
 const LS_KEY = 'wr-planner-v1';
+const LS_KEY_BACKUP = 'wr-planner-v1-backup'; // local plan saved before a shared link overwrote it
 
 const state = {
   lang: 'en',
@@ -40,7 +41,7 @@ const state = {
   calcOpts: { inputPriceMode: 'sell', includeDelivery: false },
   dataset: 'game',   // 'game' (current game files) | 'sheet' (spreadsheet snapshot)
   tuning: {},        // advanced-mode overrides for community constants
-  chain: { goal: 'steel', amount: 43, imports: [], producerChoice: {}, includeUtilities: true },
+  chain: { goal: 'steel', amount: 43, imports: [], producerChoice: {}, includeUtilities: true, quality: {} },
   lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0 },
   analysisSort: { col: 'profit', dir: -1 },
   analysisSearch: '',
@@ -54,7 +55,7 @@ function defaultCity() {
 }
 
 function saveState() {
-  const { statsRecords, ...rest } = state;
+  const { statsRecords, viewingSharedLink, ...rest } = state;
   const slim = { ...rest };
   slim.statsRecords = statsRecords;
   try { localStorage.setItem(LS_KEY, JSON.stringify(slim)); } catch (e) { /* quota */ }
@@ -273,7 +274,7 @@ function render() {
     try { selStart = focused.selectionStart; selEnd = focused.selectionEnd; } catch { /* not a text-selectable input */ }
   }
 
-  root.replaceChildren(renderHeader(), renderTabs(), renderCurrentTab());
+  root.replaceChildren(renderHeader(), ...(state.viewingSharedLink ? [renderSharedLinkBanner()] : []), renderTabs(), renderCurrentTab());
 
   if (focusPath) {
     let node = root;
@@ -286,6 +287,21 @@ function render() {
       }
     }
   }
+}
+
+function renderSharedLinkBanner() {
+  const hasBackup = !!localStorage.getItem(LS_KEY_BACKUP);
+  return el('div', { class: 'sharedlinkbanner' },
+    el('span', {}, '🔗 ' + t('viewingSharedLink')),
+    hasBackup ? el('button', {
+      onclick: () => {
+        const backup = localStorage.getItem(LS_KEY_BACKUP);
+        if (backup) { localStorage.setItem(LS_KEY, backup); localStorage.removeItem(LS_KEY_BACKUP); }
+        location.hash = '';
+        location.reload();
+      },
+    }, t('restoreMyPlan')) : null,
+    el('button', { onclick: () => { state.viewingSharedLink = false; update(); } }, '✕'));
 }
 
 function renderHeader() {
@@ -581,6 +597,7 @@ function renderChain() {
   const eco = economy();
   const buildings = prodBuildings();
   const ch = state.chain;
+  ch.quality ??= {};
   const index = producersByResource(buildings, eco);
   const producible = [...index.keys()];
   if (!producible.includes(ch.goal)) ch.goal = producible.includes('steel') ? 'steel' : producible[0];
@@ -596,6 +613,7 @@ function renderChain() {
     imports: new Set(ch.imports),
     producerChoice: new Map(Object.entries(ch.producerChoice)),
     includeUtilities: ch.includeUtilities,
+    qualityByKey: new Map(Object.entries(ch.quality)),
   });
 
   const settings = el('div', { class: 'settingsbar' },
@@ -620,7 +638,7 @@ function renderChain() {
   const tbl = el('table', { class: 'data wide' },
     el('thead', {}, el('tr', {},
       el('th', {}, t('resource')), el('th', {}, 't / ' + t('day')),
-      el('th', {}, t('chainSource')), el('th', {}, t('building')),
+      el('th', {}, t('chainSource')), el('th', {}, t('building')), el('th', {}, t('quality')),
       el('th', {}, t('count')), el('th', {}, t('workers')),
       el('th', {}, `${t('buildCost')} ${cur()}`), el('th', {}, `${t('chainImportCost')} ${cur()}`))),
     el('tbody', {}, rows.map(row => {
@@ -640,11 +658,15 @@ function renderChain() {
             return [de, b ? bname(b) : de];
           }), row.building.de, v => { ch.producerChoice[row.key] = v; })
         : el('span', {}, row.imported ? '—' : bname(row.building));
+      const isMine = !row.imported && QUALITY_BUILDINGS_DE.has(row.building.de);
       return el('tr', {},
         el('td', {}, resLabel(row.key)),
         el('td', { class: 'r' }, fmt(row.demand, 1)),
         el('td', {}, srcToggle),
         el('td', {}, producerSel),
+        el('td', {}, isMine
+          ? numInput(ch.quality[row.key] ?? 1, v => ch.quality[row.key] = v, { step: 0.05, min: 0 })
+          : '—'),
         el('td', { class: 'r' }, row.imported ? '—' : `${fmt(row.countCeil, 0)} (${fmt(row.count, 2)})`),
         // Actual workers the target demand needs vs. the full capacity of the
         // buildings you'll actually construct (count is fractional, but you
@@ -1413,7 +1435,12 @@ async function applyHash() {
   const h = location.hash;
   if (h.startsWith('#s=')) {
     try {
+      // back up the local plan before overwriting it, so the shared-link
+      // banner's "restore my plan" is a real, working promise
+      const before = localStorage.getItem(LS_KEY);
+      if (before) localStorage.setItem(LS_KEY_BACKUP, before);
       applySharedState(await fragmentToState(h.slice(3)));
+      state.viewingSharedLink = true; // transient — not in SHARE_KEYS, not persisted
     } catch (e) { console.warn('bad share link', e); }
     history.replaceState(null, '', '#/' + state.tab);
   } else if (h.startsWith('#/') && TABS.includes(h.slice(2))) {
