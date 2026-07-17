@@ -96,6 +96,31 @@ test('production grouping aggregates only equivalent storage roles', () => {
   ]);
 });
 
+test('production grouping exposes first-output throughput only behind the exact factory gate', () => {
+  const catalog = [{ de: 'Fabric', gameId: 'fabric_factory', workers: 100, group: { de: 'Other' } }];
+  const assets = [{ id: 'fabric_factory', types: ['TYPE_FACTORY'], production: { fabric: 5 } }];
+  const base = { type: 'fabric_factory', scopeId: 2, currentWorkers: 100, configuredWorkers: 100,
+    configuredWorkersHighEducation: 0, mineQuality: 0,
+    polymorphicRolling: { currentRate: 0, previousQuantity: 0.75, partialQuantity: 0.25, dayProgress: 0.5 } };
+  const safe = groupObservedProduction([
+    { ...base, index: 1, savedTypePlusOne: 7 },
+    { ...base, index: 2, savedTypePlusOne: 7 },
+  ], catalog, assets);
+  assert.deepEqual(safe.rows[0].firstOutputThroughput, {
+    resource: 'fabric', instanceCount: 2, currentRate: 0,
+    previousQuantity: 1.5, partialQuantity: 0.5, dayProgressMin: 0.5, dayProgressMax: 0.5,
+  });
+
+  const wrongType = groupObservedProduction([
+    { ...base, index: 3, savedTypePlusOne: 8 },
+  ], catalog, assets);
+  assert.equal(wrongType.rows[0].firstOutputThroughput, undefined);
+  const unresolved = groupObservedProduction([
+    { ...base, index: 4, savedTypePlusOne: 7 },
+  ], catalog, []);
+  assert.equal(unresolved.rows[0].firstOutputThroughput, undefined);
+});
+
 test('production buffers distinguish exact fill from configured-rate estimates', () => {
   const row = {
     count: 1, configuredWorkers: 100, configuredWorkersHighEducation: 0,

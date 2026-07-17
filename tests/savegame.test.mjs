@@ -137,6 +137,10 @@ test('live building exposes configured caps, current workers and mine quality', 
   view.setInt32(4 + 0x478, 95, true);
   view.setInt32(4 + 0x47c, 9, true);
   view.setFloat32(4 + 0x490, 21.75, true);
+  view.setFloat32(4 + 0x494, 0.7818065881729126, true);
+  view.setFloat32(4 + 0x498, 0.25, true);
+  view.setFloat32(4 + 0x49c, 0.75, true);
+  view.setInt32(4 + 0x564, 7, true);
   view.setFloat32(4 + 0x4b8, 2, true);
   view.setFloat32(4 + 0x4bc, 3.5, true);
   view.setInt32(4 + 0x594, 3, true);
@@ -152,6 +156,11 @@ test('live building exposes configured caps, current workers and mine quality', 
   assert.equal(building.currentWorkers, 95);
   assert.equal(building.currentVisitors, 9);
   assert.equal(building.effectiveServiceCapacity, 21.75);
+  assert.equal(building.savedTypePlusOne, 7);
+  assert.deepEqual(building.polymorphicRolling, {
+    currentRate: 21.75, previousQuantity: 0.7818065881729126,
+    partialQuantity: 0.25, dayProgress: 0.75,
+  });
   assert.equal(building.incompleteCaseCount, 2);
   assert.equal(building.currentWorkPerActiveCase, 3.5);
   assert.equal(building.savedAssignedEventCount, 3);

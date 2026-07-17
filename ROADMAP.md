@@ -213,8 +213,12 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   and imported productivity; unlike water, waste, and production stores remain separate, and
   transient over-capacity amounts are not clamped. Sub-day input and output constraints also
   surface in the Republic attention list and link back to the affected production area.
-  These are buffer projections, not claimed
-  actual throughput; rolling throughput fields remain gated until each production type is safe.
+  These buffer projections remain distinct from actual throughput. A strict serialized
+  `$TYPE_FACTORY` plus resolved-production gate now exposes exact rolling first-output telemetry
+  for 32 supplied-save factories, including previous normalized-day quantity, current partial
+  quantity, day progress, and current rate. Multi-output factories label only their first declared
+  output; mines, farms, utilities, services, special lines, and unresolved factories remain hidden
+  because the same offsets have incompatible meanings there.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
   catalog contains 288 packages with 854 building and 63 vehicle definitions as compact

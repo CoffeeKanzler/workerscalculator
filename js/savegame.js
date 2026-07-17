@@ -507,6 +507,15 @@ export function parseBuildingsGame(buffer, { onProgress } = {}) {
       currentWorkers: c.view.getInt32(start + first(0x2b0), true),
       currentVisitors: c.view.getInt32(start + 0x47c, true),
       effectiveServiceCapacity: c.view.getFloat32(start + 0x490, true),
+      savedTypePlusOne: c.view.getInt32(start + 0x564, true),
+      // These four offsets are polymorphic. They acquire production semantics
+      // only after the asset type and declared outputs pass the strict model gate.
+      polymorphicRolling: {
+        currentRate: c.view.getFloat32(start + 0x490, true),
+        previousQuantity: c.view.getFloat32(start + 0x494, true),
+        partialQuantity: c.view.getFloat32(start + 0x498, true),
+        dayProgress: c.view.getFloat32(start + 0x49c, true),
+      },
       incompleteCaseCount: c.view.getFloat32(start + 0x4b8, true),
       currentWorkPerActiveCase: c.view.getFloat32(start + 0x4bc, true),
       savedAssignedEventCount: c.view.getInt32(start + 0x594, true),
@@ -534,7 +543,7 @@ export function parseBuildingsGame(buffer, { onProgress } = {}) {
     for (let i = 0; i < n310; i += 1) {
       record.storages.push(readEbc70(c, `building ${index}.310a[${i}]`, i));
     }
-    const typePlusOne = c.view.getInt32(start + second(0x89c), true);
+    const typePlusOne = record.savedTypePlusOne;
     if (typePlusOne === 0x20 || typePlusOne === 0x21) c.skip(n310 * 4, `building ${index}.310extra`);
     for (let i = 0; i < n310; i += 1) skipEc470(c, `building ${index}.310b[${i}]`);
     c.skip(c.view.getUint8(start + second(0x821)), `building ${index}.821`);

@@ -121,7 +121,7 @@ export function matchObservedBuilding(type, catalog, idOf = (entry) => entry.gam
   return matches.length === 1 ? matches[0] : null;
 }
 
-export function groupObservedProduction(buildings, catalog) {
+export function groupObservedProduction(buildings, catalog, assetCatalog = []) {
   const grouped = new Map();
   const unmatched = new Map();
 
@@ -150,6 +150,7 @@ export function groupObservedProduction(buildings, catalog) {
       configuredWorkers: 0, configuredWorkersHighEducation: 0, nominalWorkers: 0,
       constructionProgress,
       _storageBuildings: [],
+      _throughputRecords: [],
     };
     row.count += 1;
     row.observedBuildingIndices.push(record.index);
@@ -160,16 +161,45 @@ export function groupObservedProduction(buildings, catalog) {
     if (record.storages?.length) {
       row._storageBuildings.push({ index: record.index, storages: record.storages });
     }
+    const asset = matchObservedBuilding(record.type, assetCatalog, entry => entry.id);
+    const firstOutput = Object.entries(asset?.production ?? {})[0] ?? null;
+    const rollingValues = ['currentRate', 'previousQuantity', 'partialQuantity', 'dayProgress']
+      .map(key => record.polymorphicRolling?.[key]);
+    if (record.savedTypePlusOne === 7 && asset?.types?.includes('TYPE_FACTORY')
+        && firstOutput && rollingValues.every(Number.isFinite)
+        && record.polymorphicRolling.dayProgress >= 0 && record.polymorphicRolling.dayProgress <= 1) {
+      row._throughputRecords.push({ resource: firstOutput[0], ...record.polymorphicRolling });
+    }
     grouped.set(key, row);
   }
 
   const rows = [...grouped.values()].map(row => {
     const inventoryStores = aggregateObservedStorages(row._storageBuildings);
-    const { _storageBuildings, ...clean } = row;
-    void _storageBuildings;
-    return inventoryStores.length ? { ...clean, inventoryStores } : clean;
+    const throughput = aggregateFirstOutputThroughput(row._throughputRecords);
+    const { _storageBuildings, _throughputRecords, ...clean } = row;
+    void _storageBuildings; void _throughputRecords;
+    return {
+      ...clean,
+      ...(inventoryStores.length ? { inventoryStores } : {}),
+      ...(throughput ? { firstOutputThroughput: throughput } : {}),
+    };
   });
   return { rows, unmatched: [...unmatched.values()] };
+}
+
+function aggregateFirstOutputThroughput(records) {
+  if (!records?.length) return null;
+  const resource = records[0].resource;
+  if (records.some(record => record.resource !== resource)) return null;
+  return {
+    resource,
+    instanceCount: records.length,
+    currentRate: records.reduce((sum, record) => sum + record.currentRate, 0),
+    previousQuantity: records.reduce((sum, record) => sum + record.previousQuantity, 0),
+    partialQuantity: records.reduce((sum, record) => sum + record.partialQuantity, 0),
+    dayProgressMin: Math.min(...records.map(record => record.dayProgress)),
+    dayProgressMax: Math.max(...records.map(record => record.dayProgress)),
+  };
 }
 
 export function aggregateObservedStorages(buildings) {

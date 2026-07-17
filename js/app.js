@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=48';
+import { STRINGS } from './i18n.js?v=49';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -776,11 +776,12 @@ function renderProduction() {
   const groups = [...new Set(prodBuildings().map(b => b.group[state.lang]))];
 
   const bufferDetails = (row, building) => {
-    if (!building || !Array.isArray(row.inventoryStores)) return null;
+    if (!building) return null;
     const stores = productionBufferStatus(row, building, s, name => eco.keyForName(name))
       .map(store => ({ ...store, resources: store.resources.filter(item => Number.isFinite(item.dailyRate)) }))
       .filter(store => store.resources.length);
-    if (!stores.length) return null;
+    const throughput = row.firstOutputThroughput;
+    if (!stores.length && !throughput) return null;
     const bottleneckCount = stores.reduce((sum, store) => sum
       + store.resources.filter(item => store.inputFlag
         && Number.isFinite(item.daysRemaining) && item.daysRemaining < 1).length
@@ -790,7 +791,7 @@ function renderProduction() {
       return resource ? rname(resource) : key;
     };
     return el('details', { class: 'sourceid buffer-details' },
-      el('summary', {}, `${t('liveProductionBuffers')} (${stores.length})`,
+      el('summary', {}, stores.length ? `${t('liveProductionBuffers')} (${stores.length})` : t('liveFactoryThroughput'),
         bottleneckCount ? el('span', { class: 'evidence-badge missing' },
           `${bottleneckCount} ${t('nearBufferLimit')}`) : null),
       el('p', { class: 'subline' }, `${t('exactSavedInventory')} · ${t('configuredRateEstimate')}`),
@@ -804,7 +805,15 @@ function renderProduction() {
           store.inputFlag && Number.isFinite(item.daysRemaining)
             ? ` · ${fmt(item.daysRemaining, 2)} ${t('daysRemaining')}` : '',
           store.outputFlag && Number.isFinite(store.daysUntilFull)
-            ? ` · ${fmt(store.daysUntilFull, 2)} ${t('daysUntilFull')}` : ''))))));
+            ? ` · ${fmt(store.daysUntilFull, 2)} ${t('daysUntilFull')}` : ''))))),
+      throughput ? el('div', { class: 'buffer-store' },
+        el('div', {}, t('liveFactoryThroughput'), el('span', { class: 'evidence-badge exact' }, t('exact'))),
+        el('ul', {},
+          el('li', {}, `${t('firstDeclaredOutput')}: ${resourceLabel(throughput.resource)}`),
+          el('li', {}, `${t('previousNormalizedDay')}: ${fmt(throughput.previousQuantity, 4)}`),
+          el('li', {}, `${t('currentPartialDay')}: ${fmt(throughput.partialQuantity, 4)}`),
+          el('li', {}, `${t('normalizedDayProgress')}: ${fmt(throughput.dayProgressMin * 100, 1)}–${fmt(throughput.dayProgressMax * 100, 1)} %`),
+          el('li', {}, `${t('currentFirstOutputRate')}: ${fmt(throughput.currentRate, 4)}`))) : null);
   };
 
   const tbl = el('table', { class: 'data wide' },
@@ -1550,7 +1559,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
   }) : [];
   const inferredHousingIndices = new Set(inferredHousing.flatMap(group => group.buildingIndices));
   const productionGrouped = groupObservedProduction(
-    buildings.filter(record => record.type !== 'temp'), prodBuildings());
+    buildings.filter(record => record.type !== 'temp'), prodBuildings(), rawBuildings);
   const productionRows = productionGrouped.rows.map(row => ({
     ...row,
     productivity: citizenScopes.get(row.scopeId)?.productivity ?? defaultProductivity,
@@ -1663,6 +1672,8 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
     building.storages?.some(storage => storage.resources?.length));
   const inventoryStorageCount = inventoryBuildings.reduce((sum, building) =>
     sum + building.storages.filter(storage => storage.resources?.length).length, 0);
+  const throughputBuildingCount = productionRows.reduce((sum, row) =>
+    sum + (row.firstOutputThroughput?.instanceCount ?? 0), 0);
 
   return {
     cities,
@@ -1692,6 +1703,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
       operationalServices,
       researchComplete, researchPartial,
       inventoryBuildingCount: inventoryBuildings.length, inventoryStorageCount,
+      throughputBuildingCount,
       cityScopeCount: cities.length, productionScopeCount: productionScopeIds.size,
       scopes: occupiedSettlements.map(settlement => ({
         id: settlement.id,
@@ -1722,7 +1734,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=8', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=9', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -1993,6 +2005,8 @@ function renderSaveImport() {
         Number.isFinite(info.inventoryBuildingCount)
           ? kv(t('importedInventoryBuildings'), `${fmt(info.inventoryBuildingCount, 0)} · `
             + `${fmt(info.inventoryStorageCount, 0)} ${t('storageRecords')}`) : null,
+        Number.isFinite(info.throughputBuildingCount)
+          ? kv(t('importedFactoryThroughput'), fmt(info.throughputBuildingCount, 0)) : null,
         info.workshopCatalog ? kv(t('workshopCatalogResolved'),
           `${fmt(info.workshopCatalog.resolved, 0)} / ${fmt(info.workshopCatalog.referenced, 0)}`) : null,
         info.workshopCatalog?.localDefinitions ? kv(t('localWorkshopDefinitions'),
