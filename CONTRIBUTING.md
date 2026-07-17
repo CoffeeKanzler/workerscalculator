@@ -27,22 +27,42 @@ Every push to `main` deploys automatically to GitHub Pages.
 | `css/style.css` | styling |
 | `data/*.json` | game data extracted from the spreadsheet (see below) |
 | `tools/extract_from_xlsx.py` | regenerates `data/*.json` from the spreadsheet |
+| `tools/rename_city_buildings_from_game.py` | backfills vanilla residential names + housing quality in `data/city_buildings.json` from game files |
 
 Rule of thumb: **numbers and formulas belong in `js/calc.js` or `data/`, never
 in `js/app.js`.** The UI only displays what the calc layer computes.
 
 ## The three data sources
 
+**Rule: game files beat the spreadsheet wherever both exist.** The
+spreadsheet was our only source before we had access to the game's own media
+files; now that we do, treat it as a fallback for whatever the `.ini` files
+don't expose (see below), not as the default.
+
 | Source | Where | How to update |
 |---|---|---|
-| **Game files** (authoritative: production/consumption rates, workers, names in 20 languages, vehicles) | `data/game/*.json` | run `tools/extract_from_gamefiles.py <path-to-media_soviet>` against the current game version |
+| **Game files** (authoritative: production/consumption rates, workers, names in 20 languages, vehicles, housing quality) | `data/game/*.json` | run `tools/extract_from_gamefiles.py <path-to-media_soviet>` against the current game version |
 | **Community constants** (measured/derived: service ratios, field yields, heat-exchanger sizes, …) | [`js/community_constants.js`](js/community_constants.js) | edit directly — every value is commented; small PRs welcome |
-| **Spreadsheet** (city buildings incl. mods, vehicle lengths, measured per-building power/water/waste/construction, decade prices) | `data/*.json` | see below |
+| **Spreadsheet** (mod buildings, vehicle lengths, measured per-building power/water/waste/construction, decade prices) | `data/*.json` | see below |
 
 The app ships both production datasets — "Game files (current)" and
 "Spreadsheet" — switchable in the header. The game dataset merges game rates
 with the sheet's measured extras (power, water, construction bill) by building
 name; buildings without a sheet match carry `"measured": false`.
+
+`data/city_buildings.json` (city planning tab) is spreadsheet-sourced end to
+end — the game's `.ini` files don't expose per-building power/water/waste/
+workdays at all (those are runtime-computed from global factors, hence
+"measured in-game" rather than parsed), so the spreadsheet stays the only
+source for those fields. But identity — building name and housing quality
+(`QUALITY_OF_LIVING`) — *is* in the game files, and the sheet's vanilla
+residential rows only ever had generic placeholder names ("Einwohner A -").
+`tools/rename_city_buildings_from_game.py` backfills both from
+`data/game/buildings_raw.json`, matched by nearest capacity
+(`inhabitants` ↔ `livingSpace`) within each residential type; re-run it after
+regenerating `buildings_raw.json` from a newer game version. Mod buildings
+(`"kind": "Mod"`) have no game-file counterpart and keep their spreadsheet
+name and quality as-is.
 
 ### Updating from the game files
 
@@ -56,6 +76,14 @@ Regenerates `data/game/`: `buildings_raw.json`, `vehicles_raw.json`,
 string tables) and `production_buildings.json` (the merged app dataset).
 Unit rule verified against the sheet: ini values are t per worker per day,
 so t/day = value × workers (factories and mines; heating plants are special-cased).
+
+Then refresh the city dataset's game-sourced fields (names, housing quality)
+against the new `buildings_raw.json`:
+
+```bash
+python3 tools/rename_city_buildings_from_game.py
+npm test
+```
 
 ## Updating the spreadsheet-derived data (when the sheet changes)
 

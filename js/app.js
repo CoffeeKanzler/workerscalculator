@@ -1,6 +1,6 @@
-import { STRINGS } from './i18n.js?v=13';
+import { STRINGS } from './i18n.js?v=15';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=16';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=18';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=13';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -193,7 +193,11 @@ function numInput(value, onchange, opts = {}) {
   return el('input', {
     type: 'number', value: value ?? '', step: opts.step ?? 'any',
     min: opts.min ?? '', class: opts.class ?? 'num',
-    onchange: e => { onchange(parseFloat(e.target.value) || 0); update(); },
+    // Deferred so the browser finishes applying the keystroke (caret position,
+    // in-progress text like "1.") to this input before update() tears down
+    // and rebuilds the whole tab; doing that synchronously inside the event
+    // handler corrupts multi-character typing (e.g. decimals) mid-edit.
+    oninput: e => { onchange(parseFloat(e.target.value) || 0); setTimeout(update, 0); },
   });
 }
 
@@ -254,7 +258,34 @@ function handleFile(file) {
 function render() {
   document.title = t('appTitle');
   const root = $('#app');
+
+  // Preserve focus/cursor/typed-but-unparsed text across the full re-render
+  // triggered by every keystroke (see numInput's 'input' listener) — without
+  // this, the input a user is typing into loses focus after each character.
+  const focused = document.activeElement;
+  let focusPath = null, rawValue = null, selStart = null, selEnd = null;
+  if (focused && root.contains(focused) && focused !== root) {
+    focusPath = [];
+    for (let node = focused; node && node !== root; node = node.parentNode) {
+      focusPath.unshift(Array.prototype.indexOf.call(node.parentNode.children, node));
+    }
+    if ('value' in focused) rawValue = focused.value;
+    try { selStart = focused.selectionStart; selEnd = focused.selectionEnd; } catch { /* not a text-selectable input */ }
+  }
+
   root.replaceChildren(renderHeader(), renderTabs(), renderCurrentTab());
+
+  if (focusPath) {
+    let node = root;
+    for (const i of focusPath) node = node?.children[i];
+    if (node && typeof node.focus === 'function') {
+      if (rawValue !== null && 'value' in node) node.value = rawValue;
+      node.focus();
+      if (selStart != null) {
+        try { node.setSelectionRange(selStart, selEnd); } catch { /* not a text-selectable input */ }
+      }
+    }
+  }
 }
 
 function renderHeader() {
@@ -874,6 +905,11 @@ function renderCity() {
     const capacity = Math.max(building.visitors ?? 0, building.special ?? 0);
     if (capacity > 0) details.push(`${fmt(capacity, 0)} ${t('capacityShort')}`);
     details.push(`${fmt(building.workdays, 0)} ${t('workdaysShort')}`);
+    // 'quality' is overloaded in the data: a 0-1 housing-quality fraction for
+    // residential buildings, but an unrelated 0-5 amenity rating otherwise.
+    if (building.inhabitants > 0 && building.quality != null) {
+      details.push(`${fmt(building.quality * 100, 0)}% ${t('qualityShort')}`);
+    }
     details.push(building.kind === 'Vanilla' ? 'Vanilla' : 'Mod');
     return `${building[state.lang]} — ${details.join(' · ')}`;
   };
@@ -884,7 +920,7 @@ function renderCity() {
   const tbl = el('table', { class: 'data wide' },
     el('thead', {}, el('tr', {},
       el('th', {}, 'Typ'), el('th', {}, t('building')), el('th', {}, t('count')),
-      el('th', {}, t('population')), el('th', {}, t('workers')), el('th', {}, 'kW'),
+      el('th', {}, t('population')), el('th', {}, t('housingQuality')), el('th', {}, t('workers')), el('th', {}, 'kW'),
       el('th', {}, t('waterUse')), el('th', {}, t('hotwater')), el('th', {}, t('wasteOut')),
       el('th', {}, `${t('buildCost')} ${cur()}`), el('th', {}))),
     el('tbody', {}, city.rows.map((row, idx) => {
@@ -910,6 +946,7 @@ function renderCity() {
         el('td', {}, typeSel), el('td', {}, bSel),
         el('td', {}, numInput(row.count, v => row.count = v, { min: 0, step: 1 })),
         el('td', { class: 'r' }, b ? fmt(b.inhabitants * n, 0) : '—'),
+        el('td', { class: 'r' }, b?.inhabitants > 0 && b.quality != null ? fmt(b.quality * 100, 0) + ' %' : '—'),
         el('td', { class: 'r' }, b ? fmt(b.workers * n, 0) : '—'),
         el('td', { class: 'r' }, b ? fmt(b.maxKW * n, 0) : '—'),
         el('td', { class: 'r' }, b ? fmt(b.water * n, 2) : '—'),
@@ -925,24 +962,29 @@ function renderCity() {
 
   const services = el('table', { class: 'data' },
     el('thead', {}, el('tr', {},
-      el('th', {}, t('services')), el('th', {}, t('provided')), el('th', {}, t('utilization')))),
+      el('th', {}, t('services')), el('th', {}, t('provided')), el('th', {}, t('utilization')),
+      el('th', {}, t('workersNeeded')))),
     el('tbody', {},
       res.services.map(s => el('tr', {},
         el('td', {}, t(s.id)),
         el('td', { class: 'r' }, fmt(s.provided, 0)),
-        utilizationCell(s.utilization))),
+        utilizationCell(s.utilization),
+        workersNeededCell(s.workersNeeded))),
       el('tr', {},
         el('td', {}, t('secretPolice') + ` (${fmt(res.residentialBuildings, 0)} ${t('residential')})`),
         el('td', { class: 'r' }, fmt(res.secretPolice.provided, 1)),
-        utilizationCell(res.secretPolice.utilization)),
+        utilizationCell(res.secretPolice.utilization),
+        workersNeededCell(res.secretPolice.workersNeeded)),
       el('tr', {},
         el('td', {}, t('heating')),
         el('td', { class: 'r' }, fmt(res.heating.provided, 0)),
-        utilizationCell(res.heating.utilization))));
+        utilizationCell(res.heating.utilization),
+        workersNeededCell(res.heating.workersNeeded))));
 
   const summary = el('div', { class: 'totalsbox' },
     el('h3', {}, city.name || t('city')),
     kv(t('population'), fmt(res.population, 0)),
+    kv(t('housingQuality'), res.avgHousingQuality != null ? fmt(res.avgHousingQuality * 100, 0) + ' %' : '—'),
     kv(t('workers'), fmt(res.workersNeeded, 0)),
     kv(t('workerSurplus'), fmt(res.workerSurplus, 1), res.workerSurplus < 0 ? 'neg' : 'pos'),
     kv(t('maxWatt'), fmt(res.maxKW, 0)),
@@ -974,6 +1016,13 @@ function utilizationCell(u) {
   if (u === null) return el('td', { class: 'r' }, '—');
   const cls = u > 1 ? 'neg' : u > 0.85 ? 'warn' : 'pos';
   return el('td', { class: 'r ' + cls }, fmt(u * 100, 0) + ' %');
+}
+
+// Extra workers of that building type needed to close an over-utilization gap
+// (0 once utilization is at or below 100%, '—' when there's nothing built yet).
+function workersNeededCell(w) {
+  if (w === null) return el('td', { class: 'r' }, '—');
+  return el('td', { class: 'r' + (w > 0 ? ' warn' : '') }, fmt(w, 0));
 }
 
 // ---------------------------------------------------------------- trains tab

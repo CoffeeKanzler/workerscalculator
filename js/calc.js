@@ -305,9 +305,15 @@ export function evaluateCity(city, eco) {
 
   const population = sum(b => b.inhabitants);
   const workersNeeded = sum(b => b.workers);
+  // Population-weighted average, over only the residents whose building has a
+  // known housing quality (unrated mod buildings are excluded, not zeroed).
+  const ratedRows = rows.filter(r => r.building.quality != null);
+  const ratedPopulation = ratedRows.reduce((a, r) => a + r.building.inhabitants * r.count, 0);
+  const qualityWeighted = ratedRows.reduce((a, r) => a + r.building.quality * r.building.inhabitants * r.count, 0);
   const res = {
     population,
     workersNeeded,
+    avgHousingQuality: ratedPopulation > 0 ? qualityWeighted / ratedPopulation : null,
     workerSurplus: (population - workersNeeded * 3) / 4, // sheet formula
     power: sum(b => b.power),
     maxKW: sum(b => b.maxKW),
@@ -327,13 +333,24 @@ export function evaluateCity(city, eco) {
   res.buildCostRUB += res.workdays * eco.workday('RUB');
   res.buildCostUSD += res.workdays * eco.workday('USD');
 
+  // Extra workers of a given building type needed to close an over-utilization
+  // gap, assuming the same worker/capacity mix as what's already built (e.g.
+  // utilization 1.2 -> 20% more capacity, hence ~20% more workers of that type).
+  const workersToFillGap = (typeDe, utilization) => {
+    if (utilization == null || utilization <= 1) return utilization == null ? null : 0;
+    const totalWorkers = rows.filter(r => r.building.type.de === typeDe)
+      .reduce((a, r) => a + (r.building.workers ?? 0) * r.count, 0);
+    return totalWorkers * (utilization - 1);
+  };
+
   for (const svc of SERVICES) {
     const cap = rows.filter(r => r.building.type.de === svc.typeDe)
       .reduce((a, r) => a + (r.building[svc.src] ?? 0) * r.count, 0);
     const provided = cap * prod * svc.ratio;
+    const utilization = provided > 0 ? population / provided : null;
     res.services.push({
-      ...svc, capacity: cap, provided,
-      utilization: provided > 0 ? population / provided : null,
+      ...svc, capacity: cap, provided, utilization,
+      workersNeeded: workersToFillGap(svc.typeDe, utilization),
     });
   }
   // Residential building count & secret police (1 vehicle per 7 residential buildings).
@@ -342,15 +359,21 @@ export function evaluateCity(city, eco) {
   const secretCap = rows.filter(r => r.building.type.de === 'Geheimpolizei')
     .reduce((a, r) => a + (r.building.special ?? 0) * r.count, 0) * prod * TUNABLES.secretPolicePerBuildings;
   res.residentialBuildings = residential;
+  const secretUtilization = secretCap > 0 ? residential / secretCap : null;
   res.secretPolice = {
     provided: secretCap,
     needed: residential / TUNABLES.secretPolicePerBuildings,
-    utilization: secretCap > 0 ? residential / secretCap : null,
+    utilization: secretUtilization,
+    workersNeeded: workersToFillGap('Geheimpolizei', secretUtilization),
   };
   // Heating plants inside the city (special value → m³ hot water).
   const heatCap = rows.filter(r => r.building.type.de === 'Heizwerk')
     .reduce((a, r) => a + (r.building.special ?? 0) * r.count, 0) * TUNABLES.heatPerSpecial;
-  res.heating = { provided: heatCap, utilization: heatCap > 0 ? res.hotwater / heatCap : null };
+  const heatUtilization = heatCap > 0 ? res.hotwater / heatCap : null;
+  res.heating = {
+    provided: heatCap, utilization: heatUtilization,
+    workersNeeded: workersToFillGap('Heizwerk', heatUtilization),
+  };
   // Infrastructure sizing.
   const cable = CABLES.find(c => c.de === city.cable) || CABLES[2];
   res.transformers = res.maxKW / 1000 / cable.mw;
