@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=22';
+import { STRINGS } from './i18n.js?v=23';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=22';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -46,6 +46,7 @@ const state = {
   analysisSort: { col: 'profit', dir: -1 },
   analysisSearch: '',
   priceSort: { col: 'name', dir: 1 },
+  saveSlotName: '',   // transient UI field for the named-save-slot input, not shared/exported
 };
 
 function defaultCity() {
@@ -374,11 +375,51 @@ function renderHeader() {
           el('input', { type: 'file', accept: '.json', class: 'hidden',
             onchange: e => e.target.files[0] && importPlan(e.target.files[0]) })),
         el('button', { title: t('shareLink'), onclick: shareLink }, '🔗')),
+      renderSaveSlots(),
       el('div', { class: 'langswitch' },
         ...['de', 'en'].map(l => el('button', {
           class: state.lang === l ? 'active' : '',
           onclick: () => { state.lang = l; update(); },
         }, l.toUpperCase())))));
+}
+
+// Named save slots (localStorage, separate from the one auto-saved plan):
+// type a name and save, or pick an existing one from the list to load/delete.
+function renderSaveSlots() {
+  const saves = loadSaves();
+  const names = Object.keys(saves).sort();
+  return el('div', { class: 'saveslots' },
+    el('input', {
+      type: 'text', class: 'saveslotname', placeholder: t('saveSlotName'),
+      value: state.saveSlotName, list: 'save-slot-names',
+      onchange: e => { state.saveSlotName = e.target.value; },
+    }),
+    el('datalist', { id: 'save-slot-names' }, ...names.map(n => el('option', { value: n }))),
+    el('button', {
+      title: t('saveSlotSave'),
+      onclick: () => {
+        const name = state.saveSlotName.trim();
+        if (!name) return;
+        if (saves[name] && !confirm(t('saveSlotOverwriteConfirm'))) return;
+        saveNamedState(name);
+        update();
+      },
+    }, '💾'),
+    el('button', {
+      title: t('saveSlotLoad'),
+      onclick: () => {
+        const name = state.saveSlotName.trim();
+        if (!name || !saves[name]) return;
+        if (confirm(t('saveSlotLoadConfirm'))) loadNamedState(name);
+      },
+    }, '📂'),
+    names.length ? el('button', {
+      class: 'danger', title: t('saveSlotDelete'),
+      onclick: () => {
+        const name = state.saveSlotName.trim();
+        if (name && saves[name] && confirm(t('saveSlotDeleteConfirm'))) { deleteNamedState(name); update(); }
+      },
+    }, '🗑') : null);
 }
 
 function renderTabs() {
@@ -1665,6 +1706,33 @@ function importPlan(file) {
     } catch (e) { alert('Invalid plan file: ' + e.message); }
   };
   reader.readAsText(file);
+}
+
+// Named save slots (separate from the single auto-saved LS_KEY state), so a
+// user can keep several distinct plannings in one browser and switch
+// between them, not just the one most-recently-open plan.
+const SAVES_KEY = 'wr-planner-saves-v1';
+
+function loadSaves() {
+  try { return JSON.parse(localStorage.getItem(SAVES_KEY)) || {}; } catch (e) { return {}; }
+}
+function writeSaves(saves) {
+  try { localStorage.setItem(SAVES_KEY, JSON.stringify(saves)); } catch (e) { /* quota */ }
+}
+function saveNamedState(name) {
+  if (!name) return;
+  const saves = loadSaves();
+  saves[name] = { savedAt: Date.now(), state: sharedState() };
+  writeSaves(saves);
+}
+function loadNamedState(name) {
+  const saves = loadSaves();
+  if (saves[name]) { applySharedState(saves[name].state); update(); }
+}
+function deleteNamedState(name) {
+  const saves = loadSaves();
+  delete saves[name];
+  writeSaves(saves);
 }
 
 async function shareLink() {

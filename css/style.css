@@ -53,6 +53,13 @@ header h1 {
   padding: 5px 10px; cursor: pointer; font-size: 14px; color: var(--text);
 }
 .sharebtns button:hover, .iconbtn:hover { border-color: var(--accent); }
+.saveslots { display: flex; gap: 4px; align-items: center; }
+.saveslots button {
+  background: var(--panel2); border: 1px solid var(--border); border-radius: 5px;
+  padding: 5px 10px; cursor: pointer; font-size: 14px; color: var(--text);
+}
+.saveslots button:hover { border-color: var(--accent); }
+.saveslotname { width: 8em; }
 .langswitch { display: flex; gap: 2px; }
 .langswitch button, nav button {
   background: var(--panel2); color: var(--muted); border: 1px solid var(--border);
