@@ -142,10 +142,17 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   scopes are kept independently: only scopes with recognized residential/service
   buildings become City Planner cities, while recognized industrial scopes remain
   available in Production Planner and Republic Overview under their game names.
-- **Current beta limitations:** workshop buildings without their mod `building.ini`
+  When present, `stats.ini` is imported and downsampled to at most 365 snapshots,
+  making the save's latest real prices/costs the active economics source.
+  - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported), and per-instance
   mine richness is not identified yet, so imported mines start with a clearly
   editable 50% estimate.
+  - **Next high-value save files to investigate:** `buildings.bin` for live staffing,
+  residents, inventories and production state; `research.bin` for completed research;
+  `header.bin` for save/version/date metadata; and `resourcemap*.dds` plus building
+  coordinates for evidence-based mine richness. Network geometry and cosmetic map
+  files are intentionally out of scope until a planner feature needs them.
 
 ### 4.2 Live-follow stats.ini
 - **What:** "Watch file" button using the File System Access API (Chromium): re-read the
