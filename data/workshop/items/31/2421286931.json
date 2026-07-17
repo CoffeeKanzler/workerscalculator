@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2421286931",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:19:50+00:00",
+  "buildings": [
+    {
+      "id": "2421286931/telewizja",
+      "nameId": 2700,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 60.0,
+      "professors": 35.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2421286931",
+      "modPath": "telewizja"
+    }
+  ],
+  "vehicles": []
+}

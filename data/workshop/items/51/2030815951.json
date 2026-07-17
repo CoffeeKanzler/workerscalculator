@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2030815951",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:15:26+00:00",
+  "buildings": [
+    {
+      "id": "2030815951/Khovrino_Hospital",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 300.0,
+      "professors": 220.0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Khovrino Hospital",
+      "workshopId": "2030815951",
+      "modPath": "Khovrino_Hospital"
+    }
+  ],
+  "vehicles": []
+}

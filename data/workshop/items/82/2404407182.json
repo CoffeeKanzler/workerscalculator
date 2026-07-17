@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2404407182",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:21:12+00:00",
+  "buildings": [
+    {
+      "id": "2404407182/agromet",
+      "nameId": 2020,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 1200.0,
+      "professors": 300.0,
+      "production": {
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "steel": 1.0,
+        "plastics": 1.0,
+        "mcomponents": 1.0,
+        "ecomponents": 1.0,
+        "fabric": 1.0,
+        "eletronics": 1.0
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 6.0
+      },
+      "workshopId": "2404407182",
+      "modPath": "agromet"
+    }
+  ],
+  "vehicles": []
+}

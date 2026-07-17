@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=32';
+import { STRINGS } from './i18n.js?v=34';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=15';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=24';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -14,6 +14,7 @@ import {
 } from './save_model.js?v=3';
 import { buildRepublicModel, republicAlerts } from './republic.js?v=3';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
+import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',
@@ -74,6 +75,7 @@ function createInitialState() {
     snapshotNotice: '', // transient feedback for named snapshot actions
     importStatus: '',    // transient save-directory parsing status
     importStatusError: false,
+    localWorkshopStatus: '',
     productionDetails: false,
     cityDetails: false,
   };
@@ -127,7 +129,10 @@ function chainPlans() {
 }
 
 function saveState() {
-  const { statsRecords, viewingSharedLink, snapshotNotice, importStatus, importStatusError, ...rest } = state;
+  const {
+    statsRecords, viewingSharedLink, snapshotNotice, importStatus, importStatusError,
+    localWorkshopStatus, ...rest
+  } = state;
   try { localStorage.setItem(LS_KEY, JSON.stringify(rest)); } catch (e) { /* quota */ }
 }
 
@@ -137,6 +142,7 @@ function loadState() {
     if (!raw) return;
     const s = JSON.parse(raw);
     Object.assign(state, s);
+    state.localWorkshopStatus = '';
   } catch (e) { /* ignore */ }
 }
 
@@ -169,7 +175,7 @@ async function loadData() {
     resources: res.resources, defaults: res.defaults,
     prodSets: { sheet: prod, game: prodGame },
     cityBuildings: city,
-    rawBuildings, workshopIndex, workshopBuildings: [], workshopProduction: [],
+    rawBuildings, workshopIndex, workshopBuildings: [], localWorkshopBuildings: [], workshopProduction: [],
     // Game-only rail vehicles join the pool; hard-attached tenders stay nested.
     sheetVehicles: veh.vehicles,
     vehicles: mergeVehiclePools(veh.vehicles, rail, rawVehicles),
@@ -191,12 +197,17 @@ async function loadWorkshopCatalogForBuildings(buildings) {
       return null;
     }
   }));
-  DATA.workshopBuildings = loaded.flatMap(item => item?.buildings ?? []);
+  const combined = new Map();
+  for (const building of loaded.flatMap(item => item?.buildings ?? [])) combined.set(building.id, building);
+  for (const building of DATA.localWorkshopBuildings ?? []) combined.set(building.id, building);
+  DATA.workshopBuildings = [...combined.values()];
   DATA.workshopProduction = DATA.workshopBuildings.map(workshopProductionBuilding).filter(Boolean);
+  const resolvedIds = new Set(DATA.workshopBuildings.map(building => building.workshopId).filter(Boolean));
   return {
     referenced: ids.length,
-    resolved: loaded.filter(Boolean).length,
+    resolved: ids.filter(id => resolvedIds.has(id)).length,
     buildingDefinitions: DATA.workshopBuildings.length,
+    localDefinitions: DATA.localWorkshopBuildings?.length ?? 0,
   };
 }
 
@@ -1493,6 +1504,38 @@ function parseSaveInWorker(payload) {
   });
 }
 
+async function handleLocalWorkshopDirectory(fileList) {
+  const candidates = [...fileList].filter(file => file.name.toLowerCase() === 'building.ini'
+    && file.size <= 2 * 1024 * 1024);
+  state.localWorkshopStatus = t('workshopFolderReading').replace('{count}', fmt(candidates.length, 0));
+  state.importStatusError = false;
+  update();
+  await new Promise(resolve => setTimeout(resolve, 0));
+  const buildings = [];
+  for (let index = 0; index < candidates.length; index += 1) {
+    const file = candidates[index];
+    const identity = workshopBuildingIdentity(file.webkitRelativePath || file.name);
+    if (!identity) continue;
+    buildings.push(parseWorkshopBuildingIni(await file.text(), identity.id, identity));
+    if (index && index % 100 === 0) await new Promise(resolve => setTimeout(resolve, 0));
+  }
+  DATA.localWorkshopBuildings = buildings;
+  state.localWorkshopStatus = buildings.length
+    ? t('workshopFolderReady').replace('{count}', fmt(buildings.length, 0))
+    : t('workshopFolderEmpty');
+  update();
+}
+
+function renderLocalWorkshopPicker() {
+  return el('details', { class: 'workshop-local-picker' },
+    el('summary', {}, t('localWorkshopTitle')),
+    el('p', { class: 'hint' }, t('localWorkshopHint')),
+    el('label', { class: 'importpicker' }, '🧩 ', t('chooseWorkshopFolder'),
+      el('input', { type: 'file', class: 'hidden', webkitdirectory: '', multiple: '',
+        onchange: event => event.target.files.length && handleLocalWorkshopDirectory(event.target.files) })),
+    state.localWorkshopStatus ? el('p', { class: 'pos' }, state.localWorkshopStatus) : null);
+}
+
 async function handleSaveDirectory(fileList) {
   const files = [...fileList];
   const byName = new Map(files.map(file => [file.name.toLowerCase(), file]));
@@ -1543,7 +1586,7 @@ async function handleSaveDirectory(fileList) {
     imported.metadata.statsRecordCount = statsRecords.length;
     imported.metadata.latestProductivity = productivity;
 
-    const backupName = uniqueSnapshotName(`Before import ${new Date().toLocaleString()}`);
+    const backupName = t('beforeLatestImport');
     const backupResult = await saveNamedState(backupName);
     if (!backupResult.ok) throw backupResult.error;
 
@@ -1631,7 +1674,7 @@ function renderHome() {
   return el('section', { class: 'start-page' },
     el('div', { class: 'start-hero' }, el('h2', {}, t('startTitle')), el('p', {}, t('startHint'))),
     state.importStatus ? el('p', { class: state.importStatusError ? 'neg' : 'pos' }, state.importStatus) : null,
-    el('div', { class: 'start-grid' }, current, picker, manual), saved);
+    el('div', { class: 'start-grid' }, current, picker, manual), renderLocalWorkshopPicker(), saved);
 }
 
 function renderSaveImport() {
@@ -1681,6 +1724,8 @@ function renderSaveImport() {
         kv(t('importedProductionBuildings'), fmt(info.productionBuildingCount, 0)),
         info.workshopCatalog ? kv(t('workshopCatalogResolved'),
           `${fmt(info.workshopCatalog.resolved, 0)} / ${fmt(info.workshopCatalog.referenced, 0)}`) : null,
+        info.workshopCatalog?.localDefinitions ? kv(t('localWorkshopDefinitions'),
+          fmt(info.workshopCatalog.localDefinitions, 0)) : null,
         info.infrastructureCount ? kv(t('recognizedInfrastructure'), fmt(info.infrastructureCount, 0)) : null,
         info.inferredHousingBuildingCount ? kv(t('observedHousingFallback'),
           `${fmt(info.inferredHousingBuildingCount, 0)} · ${fmt(info.inferredHousingResidents, 0)} ${t('residentsShort')}`) : null,
@@ -1698,7 +1743,7 @@ function renderSaveImport() {
           el('td', {}, item.type), el('td', { class: 'r' }, fmt(item.count, 0))))))) : null) : null;
 
   return el('section', {}, el('h2', {}, t('saveImportTitle')), el('p', { class: 'hint' }, t('saveImportHint')),
-    picker, status, audit);
+    renderLocalWorkshopPicker(), picker, status, audit);
 }
 
 // ---------------------------------------------------------------- city tab

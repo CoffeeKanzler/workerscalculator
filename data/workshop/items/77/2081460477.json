@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2081460477",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:19:42+00:00",
+  "buildings": [
+    {
+      "id": "2081460477/mall",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 45.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ЦУМ / Shopping Mall",
+      "workshopId": "2081460477",
+      "modPath": "mall"
+    }
+  ],
+  "vehicles": []
+}

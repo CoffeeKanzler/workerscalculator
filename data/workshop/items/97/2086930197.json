@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2086930197",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:18:07+00:00",
+  "buildings": [
+    {
+      "id": "2086930197/smallbrickfactory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {
+        "bricks": 0.5
+      },
+      "consumption": {
+        "coal": 0.3
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Brick Factory",
+      "workshopId": "2086930197",
+      "modPath": "smallbrickfactory"
+    }
+  ],
+  "vehicles": []
+}

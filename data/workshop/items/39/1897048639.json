@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1897048639",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:15:35+00:00",
+  "buildings": [
+    {
+      "id": "1897048639/Mediumbakery",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {
+        "food": 0.12
+      },
+      "consumption": {
+        "plants": 0.25,
+        "water": 0.05
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.5
+      },
+      "nameStr": "Bread factory (khlebozavod)",
+      "workshopId": "1897048639",
+      "modPath": "Mediumbakery"
+    }
+  ],
+  "vehicles": []
+}

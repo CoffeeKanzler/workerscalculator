@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1900102939",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:19:02+00:00",
+  "buildings": [
+    {
+      "id": "1900102939/storehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 650.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Storehouse",
+      "workshopId": "1900102939",
+      "modPath": "storehouse"
+    }
+  ],
+  "vehicles": []
+}

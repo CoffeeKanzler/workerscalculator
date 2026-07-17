@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2388118913",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:19:32+00:00",
+  "buildings": [
+    {
+      "id": "2388118913/clock_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "steel": 0.1,
+        "ecomponents": 0.05
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Clock",
+      "workshopId": "2388118913",
+      "modPath": "clock_1"
+    },
+    {
+      "id": "2388118913/flag_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "steel": 0.01,
+        "boards": 0.05
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Flag 1",
+      "workshopId": "2388118913",
+      "modPath": "flag_1"
+    },
+    {
+      "id": "2388118913/flag_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 5.0,
+        "steel": 0.2,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Flag 2",
+      "workshopId": "2388118913",
+      "modPath": "flag_2"
+    },
+    {
+      "id": "2388118913/flag_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 33.0,
+        "steel": 1.0,
+        "concrete": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Flag 3",
+      "workshopId": "2388118913",
+      "modPath": "flag_3"
+    },
+    {
+      "id": "2388118913/poster_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 35.0,
+        "steel": 1.0,
+        "concrete": 1.5,
+        "boards": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Poster 1",
+      "workshopId": "2388118913",
+      "modPath": "poster_1"
+    },
+    {
+      "id": "2388118913/poster_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 35.0,
+        "steel": 1.0,
+        "concrete": 2.0,
+        "boards": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Poster 2",
+      "workshopId": "2388118913",
+      "modPath": "poster_2"
+    },
+    {
+      "id": "2388118913/poster_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.0,
+        "steel": 0.8,
+        "concrete": 1.5,
+        "boards": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Poster 3",
+      "workshopId": "2388118913",
+      "modPath": "poster_3"
+    }
+  ],
+  "vehicles": []
+}

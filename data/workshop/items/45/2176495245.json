@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2176495245",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:18:54+00:00",
+  "buildings": [
+    {
+      "id": "2176495245/stadium1",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stadium Green/Gold",
+      "workshopId": "2176495245",
+      "modPath": "stadium1"
+    },
+    {
+      "id": "2176495245/stadium2",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stadium Red/White",
+      "workshopId": "2176495245",
+      "modPath": "stadium2"
+    },
+    {
+      "id": "2176495245/stadium3",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stadium Blue/White",
+      "workshopId": "2176495245",
+      "modPath": "stadium3"
+    },
+    {
+      "id": "2176495245/stadium4",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stadium Black/Orange",
+      "workshopId": "2176495245",
+      "modPath": "stadium4"
+    }
+  ],
+  "vehicles": []
+}

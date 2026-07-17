@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2038192305",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:17:07+00:00",
+  "buildings": [
+    {
+      "id": "2038192305/bagger_bauxite",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_BAUXITE"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "rawbauxite": 100.0
+      },
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.3,
+        "living": 1.4
+      },
+      "nameStr": "Bagger 288 Bauxite Mine",
+      "workshopId": "2038192305",
+      "modPath": "bagger_bauxite"
+    },
+    {
+      "id": "2038192305/bagger_coal",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_COAL"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "rawcoal": 100.0
+      },
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.3,
+        "living": 1.4
+      },
+      "nameStr": "Bagger 288 Coal Mine",
+      "workshopId": "2038192305",
+      "modPath": "bagger_coal"
+    },
+    {
+      "id": "2038192305/bagger_iron",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_IRON"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "rawiron": 100.0
+      },
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.3,
+        "living": 1.4
+      },
+      "nameStr": "Bagger 288 Iron Mine",
+      "workshopId": "2038192305",
+      "modPath": "bagger_iron"
+    },
+    {
+      "id": "2038192305/bagger_uranium",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_URANIUM"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "uranium": 100.0
+      },
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.3,
+        "living": 1.4
+      },
+      "nameStr": "Bagger 288 Uranium Mine",
+      "workshopId": "2038192305",
+      "modPath": "bagger_uranium"
+    }
+  ],
+  "vehicles": []
+}

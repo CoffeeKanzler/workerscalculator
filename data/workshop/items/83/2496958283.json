@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2496958283",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T18:18:39+00:00",
+  "buildings": [
+    {
+      "id": "2496958283/Buoy",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 100.0
+      },
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Buoy",
+      "workshopId": "2496958283",
+      "modPath": "Buoy"
+    },
+    {
+      "id": "2496958283/OffshoreDock",
+      "nameId": null,
+      "types": [
+        "TYPE_SHIP_DOCK"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Offshore Anchor",
+      "workshopId": "2496958283",
+      "modPath": "OffshoreDock"
+    },
+    {
+      "id": "2496958283/OffshoreLoad",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Offshore Transfer Station",
+      "workshopId": "2496958283",
+      "modPath": "OffshoreLoad"
+    },
+    {
+      "id": "2496958283/OilRig",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_POWERPLANT",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 400.0,
+      "professors": 0,
+      "production": {
+        "oil": 0.5
+      },
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oil Rig [Obsolete]",
+      "workshopId": "2496958283",
+      "modPath": "OilRig"
+    },
+    {
+      "id": "2496958283/OilRig2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_FACTORY",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 400.0,
+      "professors": 0,
+      "production": {
+        "oil": 0.5
+      },
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oil Rig [Obsolete]",
+      "workshopId": "2496958283",
+      "modPath": "OilRig2"
+    },
+    {
+      "id": "2496958283/OilRig3",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_OIL",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 400.0,
+      "professors": 0,
+      "production": {
+        "oil": 0.5
+      },
+      "consumption": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oil Rig",
+      "workshopId": "2496958283",
+      "modPath": "OilRig3"
+    }
+  ],
+  "vehicles": []
+}
