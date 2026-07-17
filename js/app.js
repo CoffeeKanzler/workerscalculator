@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=19';
+import { STRINGS } from './i18n.js?v=20';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=22';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -410,21 +410,27 @@ function priceCell(table, key, prices) {
 
 function renderPrices() {
   const prices = currentPrices();
-  // ₽ earned per $ spent buying this good abroad and selling it at home —
-  // the resource-implied exchange rate, for converting currency via trade
-  // instead of just moving cash (higher = better $→₽ conversion vehicle).
-  const conversionRatio = key => {
+  // Resource-implied exchange rates, for converting currency via trade
+  // instead of just moving cash - each is a different trade direction:
+  // ratioToRUB: buy abroad with $, sell at home for ₽ (higher = better $→₽).
+  // ratioToUSD: buy at home with ₽, sell abroad for $ (higher = better ₽→$).
+  const ratioToRUB = key => {
     const buyUSD = prices.purchaseUSD?.[key];
     const sellRUB = prices.sellRUB?.[key];
     return buyUSD > 0 && sellRUB != null ? sellRUB / buyUSD : null;
   };
+  const ratioToUSD = key => {
+    const buyRUB = prices.purchaseRUB?.[key];
+    const sellUSD = prices.sellUSD?.[key];
+    return buyRUB > 0 && sellUSD != null ? sellUSD / buyRUB : null;
+  };
   const withRatio = DATA.resources.filter(r => r.key !== 'workers')
-    .map(r => ({ r, ratio: conversionRatio(r.key) }));
+    .map(r => ({ r, ratioRUB: ratioToRUB(r.key), ratioUSD: ratioToUSD(r.key) }));
 
   const { col, dir } = state.priceSort;
   withRatio.sort((a, b) => {
-    if (col === 'ratio') {
-      const va = a.ratio ?? -Infinity, vb = b.ratio ?? -Infinity;
+    if (col === 'ratioRUB' || col === 'ratioUSD') {
+      const va = a[col] ?? -Infinity, vb = b[col] ?? -Infinity;
       return (va > vb ? 1 : va < vb ? -1 : 0) * dir;
     }
     return rname(a.r).localeCompare(rname(b.r)) * dir;
@@ -441,14 +447,16 @@ function renderPrices() {
       th('name', t('resource')),
       el('th', {}, t('sellRUB')), el('th', {}, t('buyRUB')),
       el('th', {}, t('sellUSD')), el('th', {}, t('buyUSD')),
-      th('ratio', t('conversionRatio'), t('conversionRatioHint')))),
-    el('tbody', {}, withRatio.map(({ r, ratio }) => el('tr', {},
+      th('ratioRUB', t('conversionRatioToRUB'), t('conversionRatioToRUBHint')),
+      th('ratioUSD', t('conversionRatioToUSD'), t('conversionRatioToUSDHint')))),
+    el('tbody', {}, withRatio.map(({ r, ratioRUB, ratioUSD }) => el('tr', {},
       el('td', { class: 'clickable', onclick: () => { state.historyKey = r.key; update(); } }, rname(r)),
       el('td', {}, priceCell('sellRUB', r.key, prices)),
       el('td', {}, priceCell('purchaseRUB', r.key, prices)),
       el('td', {}, priceCell('sellUSD', r.key, prices)),
       el('td', {}, priceCell('purchaseUSD', r.key, prices)),
-      el('td', { class: 'r' }, ratio != null ? fmt(ratio, 2) : '—')))));
+      el('td', { class: 'r' }, ratioRUB != null ? fmt(ratioRUB, 2) : '—'),
+      el('td', { class: 'r' }, ratioUSD != null ? fmt(ratioUSD, 2) : '—')))));
 
   const scalars = el('div', { class: 'scalars' },
     ...[['workdayCostRUB', `${t('workday')} ₽`], ['workdayCostUSD', `${t('workday')} $`],
