@@ -1,8 +1,8 @@
-import { STRINGS } from './i18n.js?v=17';
+import { STRINGS } from './i18n.js?v=18';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=22';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
-import { solveChain, producersByResource, defaultProducer } from './chain.js?v=14';
+import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain,
@@ -622,12 +622,32 @@ function kv(k, v, cls = '') {
   return el('div', { class: 'kv' }, el('span', {}, k), el('strong', { class: cls }, v));
 }
 
+// Editor for a resource's mine-deposit quality tiers. Every tier but the
+// last is a fixed building count at that quality; the last tier's count is
+// 0 for "auto-fill whatever demand the earlier tiers left over" or a real
+// number to say the deposit list is exhaustive (see solveChain's opts doc).
+function tierEditor(ch, key) {
+  const tiers = ch.qualityTiers[key] ?? (ch.qualityTiers[key] = [{ quality: 1, count: 0 }]);
+  return el('div', { class: 'tierlist' },
+    ...tiers.map((tier, i) => {
+      const isLast = i === tiers.length - 1;
+      return el('div', { class: 'tier' },
+        pctInput(tier.quality ?? 1, v => { tier.quality = v; }),
+        numInput(tier.count ?? 0, v => { tier.count = v; }, { min: 0, step: 1 }),
+        isLast ? el('span', { class: 'hint' }, '(' + t('chainAutoFill') + ')') : null,
+        tiers.length > 1
+          ? el('button', { class: 'danger', onclick: () => { tiers.splice(i, 1); update(); } }, '✕')
+          : null);
+    }),
+    el('button', { onclick: () => { tiers.push({ quality: 1, count: 0 }); update(); } }, t('addTier')));
+}
+
 // ---------------------------------------------------------------- chain tab
 function renderChain() {
   const eco = economy();
   const buildings = prodBuildings();
   const ch = state.chain;
-  ch.quality ??= {};
+  ch.qualityTiers ??= {};
   const index = producersByResource(buildings, eco);
   const producible = [...index.keys()];
   if (!producible.includes(ch.goal)) ch.goal = producible.includes('steel') ? 'steel' : producible[0];
@@ -643,7 +663,7 @@ function renderChain() {
     imports: new Set(ch.imports),
     producerChoice: new Map(Object.entries(ch.producerChoice)),
     includeUtilities: ch.includeUtilities,
-    qualityByKey: new Map(Object.entries(ch.quality)),
+    qualityTiers: new Map(Object.entries(ch.qualityTiers)),
   });
 
   const settings = el('div', { class: 'settingsbar' },
@@ -694,10 +714,12 @@ function renderChain() {
         el('td', { class: 'r' }, fmt(row.demand, 1)),
         el('td', {}, srcToggle),
         el('td', {}, producerSel),
-        el('td', {}, isMine
-          ? pctInput(ch.quality[row.key] ?? 1, v => ch.quality[row.key] = v)
-          : '—'),
-        el('td', { class: 'r' }, row.imported ? '—' : `${fmt(row.countCeil, 0)} (${fmt(row.count, 2)})`),
+        el('td', {}, isMine ? tierEditor(ch, row.key) : '—'),
+        el('td', { class: 'r' },
+          row.imported ? '—' : `${fmt(row.countCeil, 0)} (${fmt(row.count, 2)})`,
+          isMine && row.output < row.demand - 1e-6
+            ? el('div', { class: 'hint neg' }, `${fmt(row.output, 1)} / ${fmt(row.demand, 1)}`)
+            : null),
         // Actual workers the target demand needs vs. the full capacity of the
         // buildings you'll actually construct (count is fractional, but you
         // can only build whole buildings, so countCeil is the real headcount).

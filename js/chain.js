@@ -45,8 +45,16 @@ export function defaultProducer(producers, eco, currency) {
  * @param eco       Economy (prices + name→key mapping)
  * @param opts      { productivity, currency, imports:Set<key>,
  *                    producerChoice: Map<key, buildingDe>, includeUtilities,
- *                    qualityByKey: Map<key, quality> — mine deposit richness
- *                    (QUALITY_BUILDINGS_DE only; defaults to 1 per key) }
+ *                    qualityTiers: Map<key, [{quality, count}]> — explicit
+ *                    mine deposits (QUALITY_BUILDINGS_DE only). Every tier
+ *                    except the last is a fixed number of buildings at that
+ *                    quality; the *last* tier's count is a sentinel: 0 means
+ *                    "however many buildings at this quality are needed to
+ *                    cover whatever demand the earlier tiers didn't", while
+ *                    a positive count means the deposit list is exhaustive
+ *                    (leftover demand becomes a real shortfall, not auto-
+ *                    filled). No tiers for a key is the same as one implicit
+ *                    {quality: 1, count: 0} tier - today's default behavior. }
  */
 export function solveChain(goalKey, amount, buildings, eco, opts = {}) {
   const productivity = opts.productivity ?? 1;
@@ -67,16 +75,38 @@ export function solveChain(goalKey, amount, buildings, eco, opts = {}) {
     return defaultProducer(producers, eco, currency);
   };
 
-  const qualityByKey = opts.qualityByKey ?? new Map();
-  const outputOf = (b, key) => {
+  const tiersByKey = opts.qualityTiers ?? new Map();
+  // Per-unit output at a given quality (quality only applies to mine-like
+  // buildings; everything else ignores it).
+  const rateOf = (b, key, quality = 1) => {
     for (const p of b.production) {
       if (eco.keyForName(p.de) === key) {
-        const qual = QUALITY_BUILDINGS_DE.has(b.de) ? (qualityByKey.get(key) ?? 1) : 1;
+        const qual = QUALITY_BUILDINGS_DE.has(b.de) ? quality : 1;
         return p.rate * productivity * qual;
       }
     }
     return 0;
   };
+  // Total building count and output for a key, honoring any explicit
+  // quality tiers (see qualityTiers above for the trailing-zero sentinel).
+  const outputFor = (b, key, dem) => {
+    const tiers = tiersByKey.get(key) ?? [{ quality: 1, count: 0 }];
+    let n = 0, out = 0;
+    for (let i = 0; i < tiers.length; i++) {
+      const t = tiers[i];
+      const c = t.count || 0;
+      if (i === tiers.length - 1 && c <= 0) {
+        const remaining = Math.max(dem - out, 0);
+        const fillRate = rateOf(b, key, t.quality ?? 1);
+        if (remaining > 1e-9 && fillRate > 0) { n += remaining / fillRate; out += remaining; }
+        continue;
+      }
+      n += c;
+      out += c * rateOf(b, key, t.quality ?? 1);
+    }
+    return { count: n, output: out };
+  };
+  const outputOf = (b, key) => rateOf(b, key, 1);
 
   // fixpoint: demands -> building counts -> induced demands
   let demands = new Map([[goalKey, amount]]);
@@ -89,10 +119,10 @@ export function solveChain(goalKey, amount, buildings, eco, opts = {}) {
       if (imports.has(key)) continue;
       const b = producerFor(key);
       if (!b) continue;
-      const out = outputOf(b, key);
-      if (!out) continue;
-      const n = dem / out;
-      counts.set(key, { building: b, count: Math.max(n, counts.get(key)?.count ?? 0) });
+      const { count: n, output: out } = outputFor(b, key, dem);
+      if (!n) continue;
+      const prev = counts.get(key);
+      counts.set(key, prev && prev.count > n ? prev : { building: b, count: n, output: out });
     }
     // one building may satisfy several demands; use the max count per building
     const perBuilding = new Map();
@@ -146,7 +176,7 @@ export function solveChain(goalKey, amount, buildings, eco, opts = {}) {
     const n = perBuilding.get(b);
     rows.push({
       key, demand: dem, imported: false, building: b,
-      count: n, countCeil: Math.ceil(n - 1e-9),
+      count: n, countCeil: Math.ceil(n - 1e-9), output: entry.output,
       producers: index.get(key).map(p => p.building.de),
     });
   }

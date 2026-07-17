@@ -130,6 +130,10 @@ button.danger:hover { border-color: var(--neg); }
 .settingsbar.column { flex-direction: column; align-items: flex-start; }
 .settingsbar label { display: flex; align-items: center; gap: 6px; color: var(--muted); }
 
+.tierlist { display: flex; flex-direction: column; gap: 4px; }
+.tier { display: flex; align-items: center; gap: 4px; }
+.tier .num { width: 4.5em; }
+
 .columns { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; margin-top: 10px; }
 .columns > div { flex: 1 1 380px; min-width: 0; overflow-x: auto; }
 .columns > .totalsbox { flex: 0 1 340px; min-width: 280px; overflow-x: visible; }

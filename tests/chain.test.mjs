@@ -64,15 +64,38 @@ test('demand scales linearly with the goal amount', () => {
   assert.ok(Math.abs(fb - 2 * fa) < 1e-6);
 });
 
-test('qualityByKey scales a mine\'s output, halving the buildings needed at double richness', () => {
+test('qualityTiers scales a mine\'s output, halving the buildings needed at double richness', () => {
   const base = solveChain('rawiron', 1000, gameBuildings, eco,
     { producerChoice: new Map([['rawiron', 'Eisenmine']]), includeUtilities: false });
   const richer = solveChain('rawiron', 1000, gameBuildings, eco,
     { producerChoice: new Map([['rawiron', 'Eisenmine']]), includeUtilities: false,
-      qualityByKey: new Map([['rawiron', 2]]) });
+      qualityTiers: new Map([['rawiron', [{ quality: 2, count: 0 }]]]) });
   const baseCount = base.rows.find(x => x.key === 'rawiron').count;
   const richerCount = richer.rows.find(x => x.key === 'rawiron').count;
   assert.ok(Math.abs(richerCount - baseCount / 2) < 1e-6);
+});
+
+test('qualityTiers: fixed-count tiers contribute their own output, remainder auto-fills at the last tier\'s quality', () => {
+  const goal = 5000;
+  const result = solveChain('rawiron', goal, gameBuildings, eco,
+    { producerChoice: new Map([['rawiron', 'Eisenmine']]), includeUtilities: false,
+      qualityTiers: new Map([['rawiron', [{ quality: 1.5, count: 2 }, { quality: 0.5, count: 0 }]]]) });
+  const row = result.rows.find(x => x.key === 'rawiron');
+  const baseRate = row.building.production.find(p => eco.keyForName(p.de) === 'rawiron').rate;
+  const richTierOutput = 2 * 1.5 * baseRate;
+  const remaining = goal - richTierOutput;
+  const expectedCount = 2 + remaining / (0.5 * baseRate);
+  assert.ok(Math.abs(row.count - expectedCount) < 1e-6);
+  assert.ok(Math.abs(row.output - goal) < 1e-6);
+});
+
+test('qualityTiers: a fully-specified (non-zero last count) tier list can leave a real shortfall', () => {
+  const result = solveChain('rawiron', 2500, gameBuildings, eco,
+    { producerChoice: new Map([['rawiron', 'Eisenmine']]), includeUtilities: false,
+      qualityTiers: new Map([['rawiron', [{ quality: 1, count: 1 }]]]) });
+  const row = result.rows.find(x => x.key === 'rawiron');
+  assert.equal(row.count, 1);
+  assert.ok(row.output < row.demand);
 });
 
 test('cyclic chains converge (power plants need coal, mining needs power)', () => {
