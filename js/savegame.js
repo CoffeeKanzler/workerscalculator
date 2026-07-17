@@ -163,6 +163,10 @@ export function parseBuildingsGame(buffer, { onProgress } = {}) {
       x: c.view.getFloat32(start + 0x39c, true),
       y: c.view.getFloat32(start + 0x3a0, true),
       z: c.view.getFloat32(start + 0x3a4, true),
+      currentWorkers: c.view.getInt32(start + first(0x2b0), true),
+      configuredWorkers: c.view.getInt32(start + first(0x288), true),
+      configuredWorkersHighEducation: c.view.getInt32(start + first(0x284), true),
+      mineQuality: c.view.getFloat32(start + first(0x280), true),
     };
     c.offset = start + 0x6d8;
 
