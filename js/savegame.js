@@ -417,13 +417,32 @@ export function parseUsedVehicles(buffer) {
 const first = stackOffset => 0x728 - stackOffset;
 const second = stackOffset => 0x548 + 0x8b8 - stackOffset;
 
-function skipEbc70(c, context) {
+function readEbc70(c, context, storageIndex) {
+  const start = c.offset;
   c.require(0x20, context);
-  const n48 = c.countAt(c.offset, `${context}.n48`);
-  const n188 = c.countAt(c.offset + 0x14, `${context}.n188`);
-  const n12a = c.countAt(c.offset + 0x18, `${context}.n12a`);
-  const n12b = c.countAt(c.offset + 0x1c, `${context}.n12b`);
+  const n48 = c.countAt(start, `${context}.n48`);
+  const n188 = c.countAt(start + 0x14, `${context}.n188`);
+  const n12a = c.countAt(start + 0x18, `${context}.n12a`);
+  const n12b = c.countAt(start + 0x1c, `${context}.n12b`);
+  const resources = [];
+  for (let index = 0; index < n48; index += 1) {
+    const offset = start + 0x20 + index * 0x48;
+    resources.push({
+      resource: c.asciiZStrict(offset, 0x40, `${context}.resource[${index}]`),
+      amount: c.view.getFloat32(offset + 0x40, true),
+      secondary: c.view.getFloat32(offset + 0x44, true),
+    });
+  }
   c.skip(0x20 + n48 * 0x48 + n188 * 0xbc + (n12a + n12b) * 0xc, context);
+  return {
+    storageIndex,
+    inputFlag: c.view.getUint8(start + 4),
+    outputFlag: c.view.getUint8(start + 5),
+    selector: c.view.getInt32(start + 8, true),
+    capacity: c.view.getFloat32(start + 0x0c, true),
+    mode: c.view.getInt32(start + 0x10, true),
+    resources,
+  };
 }
 
 function skipEc470(c, context) {
@@ -511,7 +530,10 @@ export function parseBuildingsGame(buffer, { onProgress } = {}) {
     c.skip(fixedCount(start, 0x320) * 4, `building ${index}.320`);
 
     const n310 = fixedCount(start, 0x310);
-    for (let i = 0; i < n310; i += 1) skipEbc70(c, `building ${index}.310a[${i}]`);
+    record.storages = [];
+    for (let i = 0; i < n310; i += 1) {
+      record.storages.push(readEbc70(c, `building ${index}.310a[${i}]`, i));
+    }
     const typePlusOne = c.view.getInt32(start + second(0x89c), true);
     if (typePlusOne === 0x20 || typePlusOne === 0x21) c.skip(n310 * 4, `building ${index}.310extra`);
     for (let i = 0; i < n310; i += 1) skipEc470(c, `building ${index}.310b[${i}]`);

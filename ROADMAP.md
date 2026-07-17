@@ -206,6 +206,13 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   owned target; speed, power, condition, schedules, and fleet count remain explicit caveats.
   The collapsed full-fleet drill-down filters by ship/road/rail/air and cash-out action and
   sorts by advantage, either route value, or name.
+  - **Live production buffers:** `buildings_game.bin` now imports exact first-pass storage
+  identities, input/output roles, resources, saved amounts, and nominal capacities. The
+  supplied save has live inventory rows in 1,328 of 1,812 buildings. Matching production
+  rows show exact fill levels plus clearly derived days-to-empty/full at configured staffing
+  and imported productivity; unlike water, waste, and production stores remain separate, and
+  transient over-capacity amounts are not clamped. These are buffer projections, not claimed
+  actual throughput; rolling throughput fields remain gated until each production type is safe.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
   catalog contains 287 packages with 853 building and 63 vehicle definitions as compact
@@ -216,15 +223,13 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   observed occupancy without inventing capacity. For packages Steam does not expose
   anonymously, users can optionally select their installed
   `steamapps/workshop/content/784150` folder; its `building.ini` facts are read locally
-  and never uploaded. Inventory buffers, vehicle lines/schedules and logistics topology are
-  not decoded yet. Ordinary category-1 road recycling remains unavailable until its two
-  earlier recipe-branch fields are exposed; model-defined hard attachments are never inferred
-  from save consist children. Workshop vehicle lifespans are used only when their exact
+  and never uploaded. Vehicle lines/schedules and logistics topology are not decoded yet.
+  Model-defined hard attachments are never inferred from save consist children. Workshop vehicle
+  lifespans are used only when their exact
   `$LIFESPAN` fact is present; vanilla/DLC models use verified category defaults. An earlier
   10%/20%/70% assumption was found to apply to container vehicles, not ships, and was never
   shipped as a ship recommendation.
-  - **Next high-value save modules:** building inventories and production buffers; vehicle lines
-  and schedules; distribution/logistics
+  - **Next high-value save modules:** vehicle lines and schedules; distribution/logistics
   bottlenecks; and optional live
   follow of a save directory. Cosmetic map/network geometry stays out of scope until a
   planner feature needs it.
@@ -311,8 +316,7 @@ per-cargo capacities with game data.)
 
 ## Suggested next order
 
-1. Building inventories, storage fill levels, and production-buffer bottlenecks.
-2. Vehicles, lines, schedules, and distribution-office coverage.
-3. Live-follow a selected save directory and append comparable snapshots over time.
-4. Complete game-version datasets and remaining train capacities.
-5. Mobile card views and chart interaction polish.
+1. Vehicles, lines, schedules, and distribution-office coverage.
+2. Live-follow a selected save directory and append comparable snapshots over time.
+3. Complete game-version datasets and remaining train capacities.
+4. Mobile card views and chart interaction polish.

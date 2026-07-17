@@ -161,6 +161,40 @@ test('live building exposes configured caps, current workers and mine quality', 
   assert.ok(Math.abs(building.mineQuality - 0.56467056) < 1e-6);
 });
 
+test('live building preserves exact first-pass storage inventories', () => {
+  const rows = [
+    { resource: 'plants', amount: 3.430112838745117, secondary: 0 },
+    { resource: 'oil', amount: 21.581411361694336, secondary: 0 },
+  ];
+  const firstPassSize = 0x20 + rows.length * 0x48;
+  const buffer = new ArrayBuffer(4 + 0x6d8 + firstPassSize + 0x10 + 0x80);
+  const view = new DataView(buffer);
+  const bytes = new Uint8Array(buffer);
+  const start = 4;
+  view.setUint32(0, 1, true);
+  bytes.set(new TextEncoder().encode('chemical_plant\0'), start);
+  view.setUint32(start + 0x418, 1, true); // n310
+  const storage = start + 0x6d8;
+  view.setUint32(storage, rows.length, true);
+  view.setUint8(storage + 4, 1);
+  view.setUint8(storage + 5, 0);
+  view.setInt32(storage + 8, -1, true);
+  view.setFloat32(storage + 0x0c, 20, true);
+  view.setInt32(storage + 0x10, 3, true);
+  rows.forEach((row, index) => {
+    const offset = storage + 0x20 + index * 0x48;
+    bytes.set(new TextEncoder().encode(`${row.resource}\0`), offset);
+    view.setFloat32(offset + 0x40, row.amount, true);
+    view.setFloat32(offset + 0x44, row.secondary, true);
+  });
+
+  const [building] = parseBuildingsGame(buffer);
+  assert.deepEqual(building.storages, [{
+    storageIndex: 0, inputFlag: 1, outputFlag: 0, selector: -1,
+    capacity: 20, mode: 3, resources: rows,
+  }]);
+});
+
 test('worker records expose residence and citizen status fields', () => {
   const buffer = new ArrayBuffer(4 + 0x728);
   const view = new DataView(buffer);

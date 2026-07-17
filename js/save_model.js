@@ -79,10 +79,17 @@ export function compactObservedBuildings(buildings) {
   const keys = [
     'index', 'type', 'name', 'scopeId', 'x', 'y', 'z', 'currentWorkers',
     'configuredWorkers', 'configuredWorkersHighEducation', 'mineQuality',
-    'constructionProgress',
+    'constructionProgress', 'storages',
   ];
   return buildings.map((building) => Object.fromEntries(
-    keys.filter((key) => building[key] !== undefined).map((key) => [key, building[key]]),
+    keys.filter((key) => building[key] !== undefined && (key !== 'storages' || building[key].some(
+      storage => storage.resources?.length,
+    ))).map((key) => [key, key === 'storages'
+      ? building[key].filter(storage => storage.resources?.length).map(storage => ({
+        storageIndex: storage.storageIndex, inputFlag: storage.inputFlag, outputFlag: storage.outputFlag,
+        selector: storage.selector, capacity: storage.capacity, mode: storage.mode,
+        resources: storage.resources.map(item => ({ resource: item.resource, amount: item.amount })),
+      })) : building[key]]),
   ));
 }
 
@@ -142,6 +149,7 @@ export function groupObservedProduction(buildings, catalog) {
       sourceGameId: record.type, observedBuildingIndices: [], currentWorkers: 0,
       configuredWorkers: 0, configuredWorkersHighEducation: 0, nominalWorkers: 0,
       constructionProgress,
+      _storageBuildings: [],
     };
     row.count += 1;
     row.observedBuildingIndices.push(record.index);
@@ -149,11 +157,85 @@ export function groupObservedProduction(buildings, catalog) {
     row.configuredWorkers = record.configuredWorkers ?? building.workers ?? 0;
     row.configuredWorkersHighEducation = record.configuredWorkersHighEducation ?? 0;
     row.nominalWorkers = building.workers ?? 0;
+    if (record.storages?.length) {
+      row._storageBuildings.push({ index: record.index, storages: record.storages });
+    }
     grouped.set(key, row);
   }
 
-  const rows = [...grouped.values()];
+  const rows = [...grouped.values()].map(row => {
+    const inventoryStores = aggregateObservedStorages(row._storageBuildings);
+    const { _storageBuildings, ...clean } = row;
+    void _storageBuildings;
+    return inventoryStores.length ? { ...clean, inventoryStores } : clean;
+  });
   return { rows, unmatched: [...unmatched.values()] };
+}
+
+export function aggregateObservedStorages(buildings) {
+  const grouped = new Map();
+  for (const building of buildings ?? []) for (const storage of building.storages ?? []) {
+    const resourceKeys = (storage.resources ?? []).map(row => row.resource).sort();
+    const key = [storage.inputFlag, storage.outputFlag, storage.selector, storage.mode,
+      ...resourceKeys].join('\0');
+    const aggregate = grouped.get(key) ?? {
+      inputFlag: storage.inputFlag, outputFlag: storage.outputFlag,
+      selector: storage.selector, mode: storage.mode, capacity: 0,
+      storageCount: 0, buildingIndices: [], resources: new Map(),
+    };
+    aggregate.capacity += Number.isFinite(storage.capacity) ? storage.capacity : 0;
+    aggregate.storageCount += 1;
+    if (!aggregate.buildingIndices.includes(building.index)) aggregate.buildingIndices.push(building.index);
+    for (const row of storage.resources ?? []) {
+      aggregate.resources.set(row.resource,
+        (aggregate.resources.get(row.resource) ?? 0) + (Number.isFinite(row.amount) ? row.amount : 0));
+    }
+    grouped.set(key, aggregate);
+  }
+  return [...grouped.values()].map(store => ({
+    ...store,
+    resources: [...store.resources].map(([resource, amount]) => ({ resource, amount })),
+  })).sort((a, b) => b.inputFlag - a.inputFlag || b.outputFlag - a.outputFlag
+    || a.mode - b.mode || a.selector - b.selector);
+}
+
+export function productionBufferStatus(row, building, settings, keyForName) {
+  if (!building || !Array.isArray(row?.inventoryStores) || typeof keyForName !== 'function') return [];
+  const count = row.count ?? 0;
+  const configured = Number.isFinite(row.configuredWorkers)
+    ? row.configuredWorkers + (row.configuredWorkersHighEducation ?? 0) : building.workers;
+  const staffing = building.workers > 0 ? Math.max(0, Math.min(1, configured / building.workers)) : 1;
+  const productivity = Number.isFinite(row.productivity) ? row.productivity : 1;
+  const activity = staffing * productivity * (settings?.calendarFlow || 1);
+  const inputRates = new Map((building.consumption ?? []).map(item => [
+    keyForName(item.de ?? item.en), item.rate * count * activity,
+  ]));
+  const quality = row.quality ?? 1;
+  const outputScale = building.usesQuality ? quality : 1;
+  const outputRates = new Map((building.production ?? []).map(item => [
+    keyForName(item.de ?? item.en), item.rate * count * activity * outputScale,
+  ]));
+  return row.inventoryStores.map(store => {
+    const amount = (store.resources ?? []).reduce((sum, item) => sum + (item.amount ?? 0), 0);
+    const resources = (store.resources ?? []).map(item => {
+      const dailyRate = store.selector === -1
+        ? (store.inputFlag ? inputRates.get(item.resource) : outputRates.get(item.resource)) : null;
+      return {
+        ...item,
+        dailyRate: Number.isFinite(dailyRate) ? dailyRate : null,
+        daysRemaining: store.inputFlag && dailyRate > 0 ? item.amount / dailyRate : null,
+      };
+    });
+    const outputRate = store.outputFlag ? resources.reduce((sum, item) => sum + (item.dailyRate ?? 0), 0) : 0;
+    return {
+      ...store,
+      resources,
+      amount,
+      fillRatio: store.capacity > 0 ? amount / store.capacity : null,
+      daysUntilFull: outputRate > 0 && Number.isFinite(store.capacity)
+        ? Math.max(0, store.capacity - amount) / outputRate : null,
+    };
+  });
 }
 
 export function latestProductivity(records, fallback = 1) {

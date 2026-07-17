@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   citizenProductivity, aggregateCitizensByScope, compactObservedBuildings,
-  groupObservedProduction, latestProductivity,
+  groupObservedProduction, latestProductivity, productionBufferStatus,
   inferObservedHousing,
 } from '../js/save_model.js';
 
@@ -60,13 +60,64 @@ test('observed building compaction retains unknown and temporary records', () =>
   const observed = compactObservedBuildings([{
     index: 9, type: 'temp', name: 'Building 9', scopeId: null,
     x: 1, y: 2, z: 3, currentWorkers: 4, configuredWorkers: 5,
-    configuredWorkersHighEducation: 6, mineQuality: 0.7, ignored: 'large nested data',
+    configuredWorkersHighEducation: 6, mineQuality: 0.7,
+    storages: [{ storageIndex: 0, inputFlag: 1, outputFlag: 0, selector: -1,
+      capacity: 20, mode: 3, resources: [{ resource: 'oil', amount: 21 }] }],
+    ignored: 'large nested data',
   }]);
   assert.deepEqual(observed, [{
     index: 9, type: 'temp', name: 'Building 9', scopeId: null,
     x: 1, y: 2, z: 3, currentWorkers: 4, configuredWorkers: 5,
     configuredWorkersHighEducation: 6, mineQuality: 0.7,
+    storages: [{ storageIndex: 0, inputFlag: 1, outputFlag: 0, selector: -1,
+      capacity: 20, mode: 3, resources: [{ resource: 'oil', amount: 21 }] }],
   }]);
+});
+
+test('production grouping aggregates only equivalent storage roles', () => {
+  const catalog = [{ de: 'Fabric', gameId: 'fabric', workers: 100, group: { de: 'Other' } }];
+  const storage = (inputFlag, outputFlag, resource, amount, capacity) => ({
+    storageIndex: 0, inputFlag, outputFlag, selector: -1, mode: 3, capacity,
+    resources: [{ resource, amount, secondary: 0 }],
+  });
+  const result = groupObservedProduction([
+    { index: 1, type: 'fabric', scopeId: 2, currentWorkers: 100, configuredWorkers: 100,
+      configuredWorkersHighEducation: 0, mineQuality: 0,
+      storages: [storage(1, 0, 'plants', 3, 10), storage(0, 1, 'fabric', 4, 15)] },
+    { index: 2, type: 'fabric', scopeId: 2, currentWorkers: 100, configuredWorkers: 100,
+      configuredWorkersHighEducation: 0, mineQuality: 0,
+      storages: [storage(1, 0, 'plants', 5, 10), storage(0, 1, 'fabric', 6, 15)] },
+  ], catalog);
+  assert.deepEqual(result.rows[0].inventoryStores, [
+    { inputFlag: 1, outputFlag: 0, selector: -1, mode: 3, capacity: 20,
+      storageCount: 2, buildingIndices: [1, 2], resources: [{ resource: 'plants', amount: 8 }] },
+    { inputFlag: 0, outputFlag: 1, selector: -1, mode: 3, capacity: 30,
+      storageCount: 2, buildingIndices: [1, 2], resources: [{ resource: 'fabric', amount: 10 }] },
+  ]);
+});
+
+test('production buffers distinguish exact fill from configured-rate estimates', () => {
+  const row = {
+    count: 1, configuredWorkers: 100, configuredWorkersHighEducation: 0,
+    productivity: 1, quality: 1,
+    inventoryStores: [
+      { inputFlag: 1, outputFlag: 0, selector: -1, mode: 3, capacity: 40,
+        resources: [{ resource: 'plants', amount: 10 }, { resource: 'chemicals', amount: 0 }] },
+      { inputFlag: 0, outputFlag: 1, selector: -1, mode: 3, capacity: 15,
+        resources: [{ resource: 'fabric', amount: 10.5 }] },
+    ],
+  };
+  const building = {
+    workers: 100, production: [{ de: 'Fabric', rate: 5 }],
+    consumption: [{ de: 'Plants', rate: 20 }, { de: 'Chemicals', rate: 0.5 }],
+  };
+  const keyForName = name => ({ Fabric: 'fabric', Plants: 'plants', Chemicals: 'chemicals' })[name];
+  const status = productionBufferStatus(row, building, { calendarFlow: 1 }, keyForName);
+  assert.equal(status[0].fillRatio, 0.25);
+  assert.equal(status[0].resources[0].daysRemaining, 0.5);
+  assert.equal(status[0].resources[1].daysRemaining, 0);
+  assert.equal(status[1].fillRatio, 0.7);
+  assert.equal(status[1].daysUntilFull, 0.9);
 });
 
 test('production grouping preserves configured staffing and exact mine quality', () => {

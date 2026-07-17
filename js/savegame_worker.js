@@ -1,7 +1,7 @@
 import {
   parseNamepoints, parseBuildingsGame, parseWorkers, parseHeader, parseResearch, parseEvents,
   parseMapClimate, parseVehicles, parseUsedVehicles, reconcileSettlementMembership,
-} from './savegame.js?v=7';
+} from './savegame.js?v=8';
 import { parseCityStatsIni, parseStatsIni } from './statsini.js?v=16';
 
 const sourceStatus = (payload) => Object.fromEntries(
