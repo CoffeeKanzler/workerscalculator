@@ -373,6 +373,14 @@ def build_dataset(buildings, repo_root, loc):
         for s in cands:
             if s['workers'] == g['workers']:
                 return s, 1.0
+        # The sheet tags lower-tier/DLC variants "X Early" (e.g. "Kohlemine
+        # Early"), but the game's own localized name usually has no such
+        # suffix — try that convention for an exact-worker real measurement
+        # before falling back to scaling a different tier's numbers.
+        early_cands = sheet_by_norm.get(norm(name) | {'early'}, [])
+        for s in early_cands:
+            if s['workers'] == g['workers']:
+                return s, 1.0
         if cands:
             s = cands[0]
             return s, (g['workers'] / s['workers'] if s['workers'] else 1.0)
