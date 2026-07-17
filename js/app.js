@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=43';
+import { STRINGS } from './i18n.js?v=44';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -2776,6 +2776,11 @@ function renderRepublic() {
       renderRepublicLineChart(t('productivityHistory'), [
         series(t('productivity'), '#27ae60', record => Number.isFinite(record.averageProductivity)
           ? record.averageProductivity * 100 : null),
+      ]),
+      renderRepublicLineChart(t('crimeHistory'), [
+        series(t('minorCrimes'), '#f1c40f', record => record.minorCrimes),
+        series(t('mediumCrimes'), '#e67e22', record => record.mediumCrimes),
+        series(t('seriousCrimes'), '#c0392b', record => record.seriousCrimes),
       ]),
       renderRepublicLineChart(t('tradeHistory'), [
         series(t('imports'), '#c0392b', record => totalMapValues(record.resourcesImportRUB)),

@@ -186,6 +186,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   `material.mtl` now control whether heating applies. A Misc section exposes verified
   settings. Continue mapping the remaining header settings with controlled save diffs;
   unknown values must not enter calculations.
+  - **History:** Republic-wide `stats.ini` charts cover population/employment, productivity,
+  cumulative minor/medium/serious crime counts, trade, and selected-resource production.
+  Crime history remains explicitly separate from the live `events.bin` case queue.
   - **Vehicle economics:** the Republic overview ranks exactly resolved owned ships, rail
   vehicles, airplanes, helicopters, and road-service vehicles by their two cash-out routes.
   Current export payout uses live save prices, the saved sale adjustment, verified
