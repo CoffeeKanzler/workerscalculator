@@ -479,10 +479,13 @@ function renderHistory() {
   }
   const r = DATA.resources.find(x => x.key === state.historyKey) || DATA.resources[0];
   box.append(el('p', {}, rname(r)));
-  const series = [
-    ['sellRUB', '#c0392b'], ['purchaseRUB', '#e67e22'],
-    ['sellUSD', '#27ae60'], ['purchaseUSD', '#2980b9'],
-  ];
+  // Only plot the currently selected currency's sell/buy - RUB and USD
+  // values live on incomparable scales, so mixing all four on one shared
+  // axis produced a meaningless min/max and a mislabeled (single-currency)
+  // axis.
+  const series = state.currency === 'USD'
+    ? [['sellUSD', '#27ae60'], ['purchaseUSD', '#2980b9']]
+    : [['sellRUB', '#c0392b'], ['purchaseRUB', '#e67e22']];
   const recs = state.statsRecords;
   const W = 460, H = 220, P = 30;
   const all = [];
