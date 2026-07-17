@@ -200,6 +200,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   used-market offers. Capacity-safe replacement candidates require the same vehicle category
   and transport subtype, never reduce capacity, and show net cash against the closest-capacity
   owned target; speed, power, condition, schedules, and fleet count remain explicit caveats.
+  The collapsed full-fleet drill-down filters by ship/road/rail/air and cash-out action and
+  sorts by advantage, either route value, or name.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
   catalog contains 287 packages with 853 building and 63 vehicle definitions as compact

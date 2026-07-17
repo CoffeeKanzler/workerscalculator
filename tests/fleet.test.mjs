@@ -15,6 +15,7 @@ import {
   vehicleEconomicOpportunity,
   vehicleUsedMarketQuote,
   rankUsedVehicleReplacements,
+  filterAndSortVehicleOpportunities,
   shipEconomicOpportunity,
   shipUsedMarketQuote,
   ownedVehicleExportValue,
@@ -389,6 +390,29 @@ test('used replacement ranking excludes missing capacity and non-finite cash rou
     { offer: { modelFacts: { runtimeCategory: 3, transportSubtype: 0, capacity: 10 } },
       purchaseValue: 20 },
   ]), []);
+});
+
+test('fleet opportunity drill-down filters category and action with stable sorting', () => {
+  const opportunities = [
+    { record: { modelFacts: { name: 'Ship', runtimeCategory: 6 } },
+      cashOutAction: 'export', advantage: 50, exportValue: 500, recycleAfterLabor: 100 },
+    { record: { modelFacts: { name: 'Wagon', runtimeCategory: 3 } },
+      cashOutAction: 'recycle', advantage: 20, exportValue: 100, recycleAfterLabor: 120 },
+    { record: { modelFacts: { name: 'Helicopter', runtimeCategory: 10 } },
+      cashOutAction: 'export', advantage: 30, exportValue: 300, recycleAfterLabor: 80 },
+    { record: { modelFacts: { name: 'Service truck', runtimeCategory: 2 } },
+      cashOutAction: 'recycle', advantage: 10, exportValue: 50, recycleAfterLabor: 60 },
+  ];
+
+  assert.deepEqual(filterAndSortVehicleOpportunities(opportunities, {
+    category: 'rail', action: 'recycle', sort: 'advantage',
+  }).map(item => item.record.modelFacts.name), ['Wagon']);
+  assert.deepEqual(filterAndSortVehicleOpportunities(opportunities, {
+    category: 'all', action: 'export', sort: 'name',
+  }).map(item => item.record.modelFacts.name), ['Helicopter', 'Ship']);
+  assert.deepEqual(filterAndSortVehicleOpportunities(opportunities, {
+    category: 'all', action: 'all', sort: 'export',
+  }).map(item => item.record.modelFacts.name), ['Ship', 'Helicopter', 'Wagon', 'Service truck']);
 });
 
 test('container transport subtype 12/13 doubles work but not recovered materials', () => {

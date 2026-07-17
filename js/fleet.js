@@ -372,6 +372,29 @@ export function rankUsedVehicleReplacements(ownedOpportunities, usedQuotes) {
     || a.quote.purchaseValue - b.quote.purchaseValue);
 }
 
+export function filterAndSortVehicleOpportunities(opportunities, {
+  category = 'all', action = 'all', sort = 'advantage',
+} = {}) {
+  const group = runtimeCategory => {
+    if (runtimeCategory === 6) return 'ship';
+    if (runtimeCategory === 1 || runtimeCategory === 2) return 'road';
+    if ([3, 4, 5].includes(runtimeCategory)) return 'rail';
+    if (runtimeCategory === 8 || runtimeCategory === 10) return 'air';
+    return 'other';
+  };
+  const rows = (Array.isArray(opportunities) ? opportunities : []).filter(opportunity =>
+    (category === 'all' || group(opportunity?.record?.modelFacts?.runtimeCategory) === category)
+    && (action === 'all' || opportunity?.cashOutAction === action));
+  const numeric = key => (a, b) => (b?.[key] ?? -Infinity) - (a?.[key] ?? -Infinity);
+  const compare = sort === 'name'
+    ? (a, b) => String(a?.record?.modelFacts?.name ?? '')
+      .localeCompare(String(b?.record?.modelFacts?.name ?? ''))
+    : numeric(sort === 'export' ? 'exportValue'
+      : sort === 'recycle' ? 'recycleAfterLabor' : 'advantage');
+  return [...rows].sort((a, b) => compare(a, b)
+    || String(a?.record?.modelFacts?.name ?? '').localeCompare(String(b?.record?.modelFacts?.name ?? '')));
+}
+
 const NORMAL_RECYCLE_CONVERSIONS = {
   steel: [['waste_steel', 0.9], ['waste_other', 0.1]],
   aluminium: [['waste_aluminium', 0.95], ['waste_other', 0.05]],

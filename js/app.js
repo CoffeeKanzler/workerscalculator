@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=42';
+import { STRINGS } from './i18n.js?v=43';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -16,9 +16,9 @@ import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
-  rankUsedVehicleReplacements, resolveVehicleModels, shareSafeSaveImport,
-  vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=4';
+  filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, resolveVehicleModels,
+  shareSafeSaveImport, vehicleEconomicOpportunity, vehicleUsedMarketQuote,
+} from './fleet.js?v=5';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',
@@ -82,6 +82,8 @@ function createInitialState() {
     localWorkshopStatus: '',
     productionDetails: false,
     cityDetails: false,
+    fleetFilter: { category: 'all', action: 'all', sort: 'advantage' },
+    fleetDetails: false,
   };
 }
 
@@ -2636,6 +2638,12 @@ function renderRepublic() {
   const replacementCandidates = rankUsedVehicleReplacements(
     exactFleetOpportunities, exactUsedVehicleQuotes,
   );
+  const fleetFilterDefaults = { category: 'all', action: 'all', sort: 'advantage' };
+  const fleetFilter = { ...fleetFilterDefaults, ...(state.fleetFilter ?? {}) };
+  state.fleetFilter = fleetFilter;
+  const filteredFleetOpportunities = filterAndSortVehicleOpportunities(
+    exactFleetOpportunities, fleetFilter,
+  );
   const fleetActionLabel = action => t(action === 'recycle' ? 'fleetRecycle' : 'fleetExport');
   const fleetCapacityUnit = facts => facts?.transportSubtype === 7 ? t('fleetPassengers') : 't';
   const materialSummary = opportunity => Object.entries(opportunity.recycling.materials)
@@ -2654,13 +2662,13 @@ function renderRepublic() {
       ? `${fmt(opportunity.advantage, 0)} ${cur()}` : '—'),
     opportunity.recycling.ignoredCargo.length
       ? el('p', { class: 'hint warn' }, t('fleetCargoExcluded')) : null);
-  const fleetDetailsTable = exactFleetOpportunities.length ? el('table', { class: 'data wide' },
+  const fleetDetailsTable = filteredFleetOpportunities.length ? el('table', { class: 'data wide' },
     el('thead', {}, el('tr', {},
       el('th', {}, t('vehicle')), el('th', {}, t('fleetCashOutAction')),
       el('th', {}, t('fleetExportPayout')), el('th', {}, t('fleetRecycleGross')),
       el('th', {}, t('fleetLaborCost')), el('th', {}, t('fleetRecycleAfterLabor')),
       el('th', {}, t('fleetAdvantage')), el('th', {}, t('fleetWorkdays')))),
-    el('tbody', {}, ...exactFleetOpportunities.map(opportunity => el('tr', {},
+    el('tbody', {}, ...filteredFleetOpportunities.map(opportunity => el('tr', {},
       el('td', {}, opportunity.record.modelFacts.name,
         el('div', { class: 'subline' }, `${t('fleetSavedMultiplier')}: ${fmt(opportunity.exportMultiplier.multiplier * 100, 1)} %`),
         el('div', { class: 'subline' }, materialSummary(opportunity)),
@@ -2676,7 +2684,8 @@ function renderRepublic() {
         ? fmt(opportunity.recycleAfterLabor, 0) : '—'),
       el('td', { class: 'r' }, Number.isFinite(opportunity.advantage)
         ? fmt(opportunity.advantage, 0) : '—'),
-      el('td', { class: 'r' }, fmt(opportunity.recycling.workdays, 0)))))) : null;
+      el('td', { class: 'r' }, fmt(opportunity.recycling.workdays, 0))))))
+    : el('p', { class: 'hint warn' }, t('fleetNoFilterResults'));
   const fleetOpportunities = fleetRecords.length ? el('section', { class: 'institution-overview' },
     el('h3', {}, t('fleetEconomicOpportunities'), el('span', { class: 'evidence-badge exact' }, t('exact'))),
     el('p', { class: 'hint' }, t('fleetEconomicHint')),
@@ -2714,9 +2723,26 @@ function renderRepublic() {
             `${fmt(Math.abs(candidate.netCashRequired), 0)} ${cur()}`),
           kv(t('fleetCompatibleOwned'), fmt(candidate.compatibleOwnedCount, 0)));
       }))) : null,
-    exactFleetOpportunities.length ? el('details', { class: 'secondary-section' },
-      el('summary', {}, `${t('fleetDetails')} (${fmt(exactFleetOpportunities.length, 0)})`),
+    exactFleetOpportunities.length ? el('details', {
+      class: 'secondary-section',
+      ...(state.fleetDetails ? { open: '' } : {}),
+      ontoggle: event => { state.fleetDetails = event.currentTarget.open; },
+    },
+      el('summary', {}, `${t('fleetDetails')} (${fmt(filteredFleetOpportunities.length, 0)} / ${fmt(exactFleetOpportunities.length, 0)})`),
       el('p', { class: 'hint warn' }, t('fleetKeepCaveat')),
+      el('div', { class: 'settingsbar' },
+        el('label', {}, t('fleetCategoryFilter'), selectInput([
+          ['all', t('fleetAllCategories')], ['ship', t('fleetShips')],
+          ['road', t('fleetRoad')], ['rail', t('fleetRail')], ['air', t('fleetAir')],
+        ], fleetFilter.category, value => { state.fleetFilter.category = value; })),
+        el('label', {}, t('fleetActionFilter'), selectInput([
+          ['all', t('fleetAllActions')], ['export', t('fleetExport')],
+          ['recycle', t('fleetRecycle')],
+        ], fleetFilter.action, value => { state.fleetFilter.action = value; })),
+        el('label', {}, t('sortBy'), selectInput([
+          ['advantage', t('fleetAdvantage')], ['export', t('fleetExportPayout')],
+          ['recycle', t('fleetRecycleAfterLabor')], ['name', t('vehicle')],
+        ], fleetFilter.sort, value => { state.fleetFilter.sort = value; }))),
       el('div', { class: 'tablewrap' }, fleetDetailsTable)) : null) : null;
 
   const historyRecords = filterRange(state.statsRecords ?? [], state.republicRange);
