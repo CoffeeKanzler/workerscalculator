@@ -104,8 +104,17 @@ def classify(r):
             return 'Straßenbahn', TT_FRACHTART.get(tt, 'Passagiere')
         if tg == 'metro':
             return 'U-Bahn', 'Passagiere'
-        if tg in ('locomotive', 'locomotive_steam'):
+        if tg in ('locomotive', 'locomotive_steam') and t == 'VEHICLETYPE_RAIL_LOCOMOTIVE':
             return 'Lokomotive', '-'
+        if tg == 'locomotive' and t == 'VEHICLETYPE_RAIL_VAGON':
+            # A steam tender: grouped with its locomotive but physically a
+            # wagon, not an engine. It's already represented via the
+            # locomotive's nested `tender` attachment (see
+            # tools/extract_from_gamefiles.py build_rail_vehicles) - it must
+            # never get its own standalone "Lokomotive" entry here, or it
+            # doubles as both a real (auto-attached) tender and a fake,
+            # independently-purchasable locomotive.
+            return None, None
         if tg in ('trackbuilder', 'trackbuilder_steam'):
             return 'Gleisbau', '-'
         if tg == 'motorvagon':
@@ -213,6 +222,7 @@ def main():
 
     added = []
     skipped_unnamed = 0
+    skipped_tenders = 0
     seen_dup_keys = set()
     for r in raw:
         de = (r.get('de') or '').strip()
@@ -233,6 +243,9 @@ def main():
         seen_dup_keys.add(dup_key)
 
         typ, frachtart = classify(r)
+        if typ is None:
+            skipped_tenders += 1
+            continue
         weight = r.get('emptyWeight') or 0
         attrs = {'Typ': typ, 'Frachtart': frachtart}
 
@@ -281,7 +294,8 @@ def main():
 
         added.append({'name': de or en, 'attrs': attrs})
 
-    print(f'Adding {len(added)} vehicles, skipped {skipped_unnamed} unnamed raw entries')
+    print(f'Adding {len(added)} vehicles, skipped {skipped_unnamed} unnamed raw entries, '
+          f'{skipped_tenders} tenders already represented via their locomotive')
     sheet.extend(added)
     with open(VEH_PATH, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=1)

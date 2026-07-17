@@ -13404,84 +13404,6 @@
    }
   },
   {
-   "name": "25D49 (Ol49) Tender",
-   "attrs": {
-    "Typ": "Lokomotive",
-    "Frachtart": "-",
-    "Bauland": "Poland",
-    "Von": 1951.0,
-    "Bis": 1985.0,
-    "Max. Geschwindigkeit": 100.0,
-    "Leergewicht": 15.0,
-    "Länge": 6.77,
-    "Ladefläche": 37.0,
-    "Arbeitstage": 674.693,
-    "Stahl": 12.99,
-    "Kunststoffe": 0.6,
-    "Stoff": 0.003,
-    "Mechanik-Bauteile": 2.868,
-    "estimated": [
-     "Arbeitstage",
-     "Stahl",
-     "Kunststoffe",
-     "Stoff",
-     "Mechanik-Bauteile"
-    ]
-   }
-  },
-  {
-   "name": "32D43 (Ty45) Tender",
-   "attrs": {
-    "Typ": "Lokomotive",
-    "Frachtart": "-",
-    "Bauland": "Poland",
-    "Von": 1946.0,
-    "Bis": 1951.0,
-    "Max. Geschwindigkeit": 75.0,
-    "Leergewicht": 21.0,
-    "Länge": 8.48,
-    "Ladefläche": 68.0,
-    "Arbeitstage": 944.715,
-    "Stahl": 18.079,
-    "Kunststoffe": 0.84,
-    "Stoff": 0.004,
-    "Mechanik-Bauteile": 3.398,
-    "estimated": [
-     "Arbeitstage",
-     "Stahl",
-     "Kunststoffe",
-     "Stoff",
-     "Mechanik-Bauteile"
-    ]
-   }
-  },
-  {
-   "name": "34D44 (Pm2) Tender",
-   "attrs": {
-    "Typ": "Lokomotive",
-    "Frachtart": "-",
-    "Bauland": "Poland",
-    "Von": 1930.0,
-    "Bis": 1982.0,
-    "Max. Geschwindigkeit": 130.0,
-    "Leergewicht": 40.0,
-    "Länge": 8.22,
-    "Ladefläche": 58.0,
-    "Arbeitstage": 1799.642,
-    "Stahl": 34.591,
-    "Kunststoffe": 1.6,
-    "Stoff": 0.003,
-    "Mechanik-Bauteile": 5.242,
-    "estimated": [
-     "Arbeitstage",
-     "Stahl",
-     "Kunststoffe",
-     "Stoff",
-     "Mechanik-Bauteile"
-    ]
-   }
-  },
-  {
    "name": "Ci-28",
    "attrs": {
     "Typ": "Passagierwagen",
@@ -13552,32 +13474,6 @@
    }
   },
   {
-   "name": "E late Tender",
-   "attrs": {
-    "Typ": "Lokomotive",
-    "Frachtart": "-",
-    "Bauland": "Soviet Union",
-    "Von": 1912.0,
-    "Bis": 1978.0,
-    "Max. Geschwindigkeit": 65.0,
-    "Leergewicht": 24.0,
-    "Länge": 9.09,
-    "Ladefläche": 49.0,
-    "Arbeitstage": 1079.722,
-    "Stahl": 20.617,
-    "Kunststoffe": 0.96,
-    "Stoff": 0.004,
-    "Mechanik-Bauteile": 3.624,
-    "estimated": [
-     "Arbeitstage",
-     "Stahl",
-     "Kunststoffe",
-     "Stoff",
-     "Mechanik-Bauteile"
-    ]
-   }
-  },
-  {
    "name": "FD-Serie",
    "attrs": {
     "Typ": "Lokomotive",
@@ -13602,32 +13498,6 @@
      "Stoff",
      "Mechanik-Bauteile",
      "Elektronik-Bauteile"
-    ]
-   }
-  },
-  {
-   "name": "FD Tender",
-   "attrs": {
-    "Typ": "Lokomotive",
-    "Frachtart": "-",
-    "Bauland": "Soviet Union",
-    "Von": 1931.0,
-    "Bis": 1978.0,
-    "Max. Geschwindigkeit": 85.0,
-    "Leergewicht": 34.0,
-    "Länge": 12.86,
-    "Ladefläche": 64.0,
-    "Arbeitstage": 1529.712,
-    "Stahl": 29.632,
-    "Kunststoffe": 1.36,
-    "Stoff": 0.005,
-    "Mechanik-Bauteile": 5.648,
-    "estimated": [
-     "Arbeitstage",
-     "Stahl",
-     "Kunststoffe",
-     "Stoff",
-     "Mechanik-Bauteile"
     ]
    }
   },
@@ -13684,32 +13554,6 @@
      "Stoff",
      "Mechanik-Bauteile",
      "Elektronik-Bauteile"
-    ]
-   }
-  },
-  {
-   "name": "IS Tender",
-   "attrs": {
-    "Typ": "Lokomotive",
-    "Frachtart": "-",
-    "Bauland": "Soviet Union",
-    "Von": 1931.0,
-    "Bis": 1972.0,
-    "Max. Geschwindigkeit": 115.0,
-    "Leergewicht": 34.0,
-    "Länge": 12.93,
-    "Ladefläche": 64.0,
-    "Arbeitstage": 1529.689,
-    "Stahl": 29.854,
-    "Kunststoffe": 1.36,
-    "Stoff": 0.005,
-    "Mechanik-Bauteile": 6.089,
-    "estimated": [
-     "Arbeitstage",
-     "Stahl",
-     "Kunststoffe",
-     "Stoff",
-     "Mechanik-Bauteile"
     ]
    }
   },
@@ -13990,32 +13834,6 @@
      "Stoff",
      "Mechanik-Bauteile",
      "Elektronik-Bauteile"
-    ]
-   }
-  },
-  {
-   "name": "SO-Tender",
-   "attrs": {
-    "Typ": "Lokomotive",
-    "Frachtart": "-",
-    "Bauland": "Soviet Union",
-    "Von": 1924.0,
-    "Bis": 1978.0,
-    "Max. Geschwindigkeit": 70.0,
-    "Leergewicht": 24.0,
-    "Länge": 7.55,
-    "Ladefläche": 49.0,
-    "Arbeitstage": 1079.709,
-    "Stahl": 20.499,
-    "Kunststoffe": 0.96,
-    "Stoff": 0.004,
-    "Mechanik-Bauteile": 3.229,
-    "estimated": [
-     "Arbeitstage",
-     "Stahl",
-     "Kunststoffe",
-     "Stoff",
-     "Mechanik-Bauteile"
     ]
    }
   },
@@ -14837,31 +14655,6 @@
      "Stoff",
      "Mechanik-Bauteile",
      "Elektronik-Bauteile"
-    ]
-   }
-  },
-  {
-   "name": "BBO214 Tender",
-   "attrs": {
-    "Typ": "Lokomotive",
-    "Frachtart": "-",
-    "Von": 1928.0,
-    "Bis": 1962.0,
-    "Max. Geschwindigkeit": 120.0,
-    "Leergewicht": 20.0,
-    "Länge": 7.11,
-    "Ladefläche": 44.0,
-    "Arbeitstage": 899.672,
-    "Stahl": 17.416,
-    "Kunststoffe": 0.8,
-    "Stoff": 0.003,
-    "Mechanik-Bauteile": 3.554,
-    "estimated": [
-     "Arbeitstage",
-     "Stahl",
-     "Kunststoffe",
-     "Stoff",
-     "Mechanik-Bauteile"
     ]
    }
   },
@@ -17252,32 +17045,6 @@
      "Stoff",
      "Mechanik-Bauteile",
      "Elektronik-Bauteile"
-    ]
-   }
-  },
-  {
-   "name": "Pm3 Tender",
-   "attrs": {
-    "Typ": "Lokomotive",
-    "Frachtart": "-",
-    "Bauland": "Poland",
-    "Von": 1930.0,
-    "Bis": 1978.0,
-    "Max. Geschwindigkeit": 155.0,
-    "Leergewicht": 25.0,
-    "Länge": 7.51,
-    "Ladefläche": 56.0,
-    "Arbeitstage": 1124.639,
-    "Stahl": 21.955,
-    "Kunststoffe": 1.0,
-    "Stoff": 0.003,
-    "Mechanik-Bauteile": 4.468,
-    "estimated": [
-     "Arbeitstage",
-     "Stahl",
-     "Kunststoffe",
-     "Stoff",
-     "Mechanik-Bauteile"
     ]
    }
   },

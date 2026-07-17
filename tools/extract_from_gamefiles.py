@@ -567,20 +567,8 @@ def build_rail_vehicles(vehicles, repo_root):
         if not is_loco:
             continue
         name = v.get('de') or v.get('en') or v['id']
-        if name.lower() in sheet_names:
-            continue
-        attrs = {
-            'Typ': 'Lokomotive',
-            'Länge': v.get('length'),
-            'Leergewicht': v.get('emptyWeight'),
-            'Von': v.get('from'), 'Bis': v.get('to'),
-            'Motorleistung': v.get('powerKW'),
-            'Max. Geschwindigkeit': v.get('speed'),
-            'Antriebsart': 'S' if group == 'locomotive_steam' else '?',
-        }
-        entry = {'name': name, 'attrs': {k: x for k, x in attrs.items() if x is not None}}
-        if v.get('dlc'):
-            entry['dlc'] = v['dlc']
+
+        tender = None
         if group == 'locomotive_steam':
             targets = [resolve(ref) for ref in v.get('trainSet', [])]
             unresolved = [ref for ref, target in zip(v.get('trainSet', []), targets) if not target]
@@ -593,15 +581,42 @@ def build_rail_vehicles(vehicles, repo_root):
             if len(tenders) > 1:
                 raise ValueError(f'{v["id"]}: multiple tender targets')
             if tenders:
-                entry['tender'] = tender_entry(tenders[0])
+                tender = tender_entry(tenders[0])
+
+        in_sheet = name.lower() in sheet_names
+        if in_sheet and not tender:
+            # Already covered by data/vehicles.json with nothing extra to add.
+            continue
+        if in_sheet:
+            # The roster entry is redundant, but the sheet doesn't know about
+            # the tender - emit a tender-only patch instead of a full
+            # duplicate (the app merges this onto the existing entry by name).
+            out.append({'name': name, 'tenderOnly': True, 'tender': tender})
+            continue
+
+        attrs = {
+            'Typ': 'Lokomotive',
+            'Länge': v.get('length'),
+            'Leergewicht': v.get('emptyWeight'),
+            'Von': v.get('from'), 'Bis': v.get('to'),
+            'Motorleistung': v.get('powerKW'),
+            'Max. Geschwindigkeit': v.get('speed'),
+            'Antriebsart': 'S' if group == 'locomotive_steam' else '?',
+        }
+        entry = {'name': name, 'attrs': {k: x for k, x in attrs.items() if x is not None}}
+        if v.get('dlc'):
+            entry['dlc'] = v['dlc']
+        if tender:
+            entry['tender'] = tender
         out.append(entry)
     path = os.path.join(repo_root, 'data', 'game', 'rail_vehicles.json')
     with open(path, 'w') as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
-    n_steam = sum(1 for e in out if e['attrs'].get('Antriebsart') == 'S')
+    n_steam = sum(1 for e in out if e.get('attrs', {}).get('Antriebsart') == 'S')
     n_paired = sum(1 for e in out if e.get('tender'))
-    print(f'game-only rail vehicles: {len(out)} ({n_steam} steam, {n_paired} paired) '
-          '-> data/game/rail_vehicles.json')
+    n_patch = sum(1 for e in out if e.get('tenderOnly'))
+    print(f'game-only rail vehicles: {len(out)} ({n_steam} steam, {n_paired} paired, '
+          f'{n_patch} tender-only patches for sheet locomotives) -> data/game/rail_vehicles.json')
 
 
 def main():

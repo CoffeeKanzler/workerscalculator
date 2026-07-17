@@ -5,8 +5,8 @@ import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13'
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
 import {
-  isLocomotive, evaluateConsist, eraOk, recommendTrain,
-} from './train.js?v=13';
+  isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
+} from './train.js?v=14';
 
 const TABS = ['prices', 'production', 'chain', 'analysis', 'vehicleprod', 'city', 'republic', 'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
@@ -115,7 +115,7 @@ async function loadData() {
     cityBuildings: city,
     // Game-only rail vehicles join the pool; hard-attached tenders stay nested.
     sheetVehicles: veh.vehicles,
-    vehicles: veh.vehicles.concat(rail),
+    vehicles: mergeVehiclePools(veh.vehicles, rail),
     decades: dec,
   };
 }

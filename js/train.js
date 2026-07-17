@@ -1,6 +1,26 @@
 export const isLocomotive = vehicle =>
   ['Lokomotive', 'Triebwagen'].includes(vehicle?.attrs?.Typ);
 
+// Combine the sheet-derived vehicle pool with the game-only rail supplement.
+// Most supplement entries are locomotives absent from the sheet and get
+// added outright, but some sheet locomotives got a tender attached via the
+// game's $TRAINSET mechanic that the sheet doesn't know about - those arrive
+// as {tenderOnly: true} patches and get merged onto the existing entry by
+// name instead of appended as a second, duplicate roster entry.
+export function mergeVehiclePools(sheetVehicles, railSupplement) {
+  const merged = sheetVehicles.map(v => ({ ...v }));
+  const byName = new Map(merged.map(v => [v.name.toLowerCase(), v]));
+  for (const r of railSupplement) {
+    if (r.tenderOnly) {
+      const match = byName.get(r.name.toLowerCase());
+      if (match) match.tender = r.tender;
+      continue;
+    }
+    merged.push(r);
+  }
+  return merged;
+}
+
 function vehicleMap(vehicles) {
   return vehicles instanceof Map
     ? vehicles
