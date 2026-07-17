@@ -183,9 +183,10 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   models resolve against current game-file data and numeric Workshop identities remain exact.
   Missing or unsupported optional files remain visibly unavailable instead of becoming zero.
   - **Map/game settings:** verified season state from `header.bin` and climate family from
-  `material.mtl` now control whether heating applies. A Misc section exposes verified
-  settings. Continue mapping the remaining header settings with controlled save diffs;
-  unknown values must not enter calculations.
+  `material.mtl` now control whether heating applies. The same exact serializer/UI chain
+  exposes Global events, Research, Waste management, and Maintenance in Misc; waste and
+  maintenance retain their verified vehicle-economic effects. Continue mapping the remaining
+  header settings with controlled save diffs; unknown values must not enter calculations.
   - **History:** Republic-wide `stats.ini` charts cover population/employment, productivity,
   cumulative minor/medium/serious crime counts, trade, and selected-resource production.
   Crime history remains explicitly separate from the live `events.bin` case queue.

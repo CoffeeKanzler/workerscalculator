@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=45';
+import { STRINGS } from './i18n.js?v=46';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -1683,7 +1683,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=6', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=7', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -2812,10 +2812,20 @@ function renderRepublic() {
     el('div', { class: 'tablewrap' }, researchTable)) : null;
   const importedSettings = state.saveImport?.header?.settings;
   const mapClimate = state.saveImport?.mapClimate;
+  const settingLevel = (prefix, value, legal) => legal.includes(value)
+    ? t(`${prefix}.${value}`) : `${t('unknownSettingValue')} (${value})`;
   const settingsDetails = importedSettings ? el('details', { class: 'planning-details secondary-section' },
     el('summary', {}, t('gameSettings')),
     el('div', { class: 'totalsbox' },
       kv(t('seasons'), t(importedSettings.seasonsEnabled ? 'enabled' : 'disabled')),
+      Number.isInteger(importedSettings.globalEventsLevel)
+        ? kv(t('globalEvents'), settingLevel('globalEvents', importedSettings.globalEventsLevel, [0, 1, 2])) : null,
+      typeof importedSettings.researchEnabled === 'boolean'
+        ? kv(t('researchSetting'), t(importedSettings.researchEnabled ? 'enabled' : 'disabled')) : null,
+      Number.isInteger(importedSettings.wasteManagementLevel)
+        ? kv(t('wasteManagement'), settingLevel('wasteManagement', importedSettings.wasteManagementLevel, [0, 1, 2])) : null,
+      typeof importedSettings.maintenanceEnabled === 'boolean'
+        ? kv(t('maintenanceSetting'), t(importedSettings.maintenanceEnabled ? 'enabled' : 'disabled')) : null,
       Number.isFinite(importedSettings.vehicleSaleAdjustmentLevel)
         ? kv(t('fleetStateAdjustmentSetting'), `${importedSettings.vehicleSaleAdjustmentLevel < 2 ? 80 : 20} %`) : null,
       Number.isFinite(importedSettings.depreciationLevel)

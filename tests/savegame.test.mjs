@@ -195,7 +195,9 @@ test('header exposes save version title and source path', () => {
   const view = new DataView(buffer);
   const bytes = new Uint8Array(buffer);
   view.setUint32(0, 124, true);
-  view.setInt32(0x1c4, 1, true);
+  view.setInt32(0x1c0, 1, true);
+  view.setInt32(0x1c4, 2, true);
+  view.setUint32(0x1f8, 1, true);
   view.setInt32(0x1fc, 2, true);
   view.setInt32(0x200, 1, true);
   writeUtf16(bytes, 4, 'Republic 2001\0');
@@ -207,6 +209,10 @@ test('header exposes save version title and source path', () => {
     savePath: 'save/453 - Republic 2001',
     settings: {
       seasonsEnabled: true,
+      globalEventsLevel: 2,
+      researchEnabled: true,
+      wasteManagementLevel: 2,
+      maintenanceEnabled: true,
       vehicleSaleAdjustmentLevel: 2,
       depreciationLevel: 1,
     },

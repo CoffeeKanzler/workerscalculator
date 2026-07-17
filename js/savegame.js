@@ -121,7 +121,12 @@ export function parseHeader(buffer) {
     title: c.utf16Z(4, 0x100),
     savePath: c.asciiZ(0x104, Math.min(0x100, c.bytes.length - 0x104)),
     settings: {
-      seasonsEnabled: c.view.getInt32(0x1c4, true) !== 0,
+      seasonsEnabled: c.view.getInt32(0x1c0, true) !== 0,
+      globalEventsLevel: c.view.getInt32(0x1c4, true),
+      researchEnabled: c.view.getUint32(0x1f8, true) !== 0,
+      wasteManagementLevel: c.view.getInt32(0x1fc, true),
+      maintenanceEnabled: c.view.getInt32(0x200, true) !== 0,
+      // These aliases name independently verified downstream economic effects.
       vehicleSaleAdjustmentLevel: c.view.getInt32(0x1fc, true),
       depreciationLevel: c.view.getInt32(0x200, true),
     },
