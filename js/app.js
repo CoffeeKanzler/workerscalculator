@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=24';
+import { STRINGS } from './i18n.js?v=25';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=22';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -8,11 +8,13 @@ import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
 } from './train.js?v=14';
 
-const TABS = ['prices', 'production', 'chain', 'analysis', 'vehicleprod', 'city', 'republic', 'trains', 'research', 'advanced', 'help'];
+const IS_BETA = location.pathname.split('/').includes('beta');
+const TABS = ['prices', 'production', 'chain', 'analysis', 'vehicleprod', 'city', 'republic',
+  ...(IS_BETA ? ['saveimport'] : []), 'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
   'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset',
-  'chains', 'activeChain', 'tuning', 'tab'];
+  'chains', 'activeChain', 'tuning', 'productionScope', 'saveImport', 'tab'];
 
 // ---------------------------------------------------------------- state
 const LS_KEY = 'wr-planner-v1';
@@ -46,11 +48,15 @@ function createInitialState() {
     lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0 },
     chains: [defaultChainPlan()],
     activeChain: 0,
+    productionScope: 'all',
+    saveImport: null,
     analysisSort: { col: 'profit', dir: -1 },
     analysisSearch: '',
     priceSort: { col: 'name', dir: 1 },
     saveSlotName: '',   // transient UI field for the named-save-slot input, not shared/exported
     snapshotNotice: '', // transient feedback for named snapshot actions
+    importStatus: '',    // transient save-directory parsing status
+    importStatusError: false,
   };
 }
 
@@ -84,7 +90,7 @@ function chainPlans() {
 }
 
 function saveState() {
-  const { statsRecords, viewingSharedLink, snapshotNotice, ...rest } = state;
+  const { statsRecords, viewingSharedLink, snapshotNotice, importStatus, importStatusError, ...rest } = state;
   const slim = { ...rest };
   slim.statsRecords = statsRecords;
   try { localStorage.setItem(LS_KEY, JSON.stringify(slim)); } catch (e) { /* quota */ }
@@ -107,12 +113,17 @@ let DATA = null; // {resources, defaults, prodBuildings, cityBuildings, vehicles
 const DATA_V = new URL(import.meta.url).searchParams.get('v') ?? '0';
 
 async function loadData() {
-  const get = path => fetch(`${path}?v=${DATA_V}`);
-  const [res, prod, prodGame, city, veh, rail, dec] = await Promise.all([
+  const get = path => {
+    const url = new URL(`../${path}`, import.meta.url);
+    url.searchParams.set('v', DATA_V);
+    return fetch(url);
+  };
+  const [res, prod, prodGame, city, rawBuildings, veh, rail, dec] = await Promise.all([
     get('data/resources.json').then(r => r.json()),
     get('data/production_buildings.json').then(r => r.json()),
     get('data/game/production_buildings.json').then(r => r.ok ? r.json() : null).catch(() => null),
     get('data/city_buildings.json').then(r => r.json()),
+    IS_BETA ? get('data/game/buildings_raw.json').then(r => r.ok ? r.json() : []).catch(() => []) : [],
     get('data/vehicles.json').then(r => r.json()),
     get('data/game/rail_vehicles.json').then(r => r.ok ? r.json() : []).catch(() => []),
     get('data/decade_prices.json').then(r => r.json()),
@@ -121,6 +132,7 @@ async function loadData() {
     resources: res.resources, defaults: res.defaults,
     prodSets: { sheet: prod, game: prodGame },
     cityBuildings: city,
+    rawBuildings,
     // Game-only rail vehicles join the pool; hard-attached tenders stay nested.
     sheetVehicles: veh.vehicles,
     vehicles: mergeVehiclePools(veh.vehicles, rail),
@@ -303,7 +315,8 @@ function render() {
     try { selStart = focused.selectionStart; selEnd = focused.selectionEnd; } catch { /* not a text-selectable input */ }
   }
 
-  root.replaceChildren(renderHeader(), ...(state.viewingSharedLink ? [renderSharedLinkBanner()] : []), renderTabs(), renderCurrentTab());
+  root.replaceChildren(renderHeader(), ...(IS_BETA ? [renderBetaBanner()] : []),
+    ...(state.viewingSharedLink ? [renderSharedLinkBanner()] : []), renderTabs(), renderCurrentTab());
 
   if (focusPath) {
     let node = root;
@@ -316,6 +329,12 @@ function render() {
       }
     }
   }
+}
+
+function renderBetaBanner() {
+  return el('div', { class: 'betabanner' },
+    el('strong', {}, 'β ' + t('betaTitle')), ' ', t('betaHint'),
+    el('a', { href: '../' }, t('stableVersion')));
 }
 
 function renderSharedLinkBanner() {
@@ -445,7 +464,7 @@ function renderSaveSlots() {
 function renderTabs() {
   const labels = { prices: 'tabPrices', production: 'tabProduction', chain: 'tabChain',
     analysis: 'tabAnalysis', vehicleprod: 'tabVehicleProd', city: 'tabCity', republic: 'tabRepublic',
-    trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
+    saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
   return el('nav', {}, ...TABS.map(id => el('button', {
     class: state.tab === id ? 'active' : '',
     onclick: () => { state.tab = id; update(); },
@@ -461,6 +480,7 @@ function renderCurrentTab() {
     case 'vehicleprod': return renderVehicleProduction();
     case 'city': return renderCity();
     case 'republic': return renderRepublic();
+    case 'saveimport': return renderSaveImport();
     case 'trains': return renderTrains();
     case 'research': return renderResearch();
     case 'advanced': return renderAdvanced();
@@ -620,8 +640,14 @@ function renderProduction() {
   const eco = economy();
   const s = state.plan.settings;
   s.currency = state.currency;
+  const scopeOptions = [['all', t('allAreas')], ['unassigned', t('unassigned')],
+    ...state.cities.filter(city => Number.isInteger(city.scopeId)).map(city => [String(city.scopeId), city.name])];
+  if (!scopeOptions.some(([value]) => value === String(state.productionScope))) state.productionScope = 'all';
+  const visibleRows = state.plan.rows.map((row, index) => ({ row, index })).filter(({ row }) =>
+    state.productionScope === 'all'
+      || (state.productionScope === 'unassigned' ? row.scopeId == null : String(row.scopeId) === String(state.productionScope)));
   const result = evaluatePlan(
-    state.plan.rows.map(r => ({ ...r, building: prodBuildings().find(b => b.de === r.name) })),
+    visibleRows.map(({ row }) => ({ ...row, building: prodBuildings().find(b => b.de === row.name) })),
     state.plan.fields, s, eco);
 
   const settings = el('div', { class: 'settingsbar' },
@@ -631,42 +657,50 @@ function renderProduction() {
     el('label', {}, t('seasons') + ' ', el('input', {
       type: 'checkbox', checked: s.seasons, onchange: e => { s.seasons = e.target.checked; update(); } })),
     el('label', {}, t('calendarFlow') + ' ', numInput(s.calendarFlow, v => s.calendarFlow = v || 1, { step: 0.1, min: 0 })),
-    el('label', {}, t('fertilizer') + ' ', numInput(s.fertilizer, v => s.fertilizer = v || 1, { step: 0.1, min: 0 })));
+    el('label', {}, t('fertilizer') + ' ', numInput(s.fertilizer, v => s.fertilizer = v || 1, { step: 0.1, min: 0 })),
+    el('label', {}, t('area') + ' ', selectInput(scopeOptions, String(state.productionScope), v => { state.productionScope = v; })));
 
   const groups = [...new Set(prodBuildings().map(b => b.group[state.lang]))];
 
   const tbl = el('table', { class: 'data wide' },
     el('thead', {}, el('tr', {},
-      el('th', {}, t('group')), el('th', {}, t('building')), el('th', {}, t('count')),
+      el('th', {}, t('area')), el('th', {}, t('group')), el('th', {}, t('building')), el('th', {}, t('count')),
       el('th', {}, t('quality')), el('th', {}, t('workers')),
       el('th', {}, `${t('profit')} ${cur()}`), el('th', {}, t('profitPerWorker')),
       el('th', {}, t('amortDays')), el('th', {}, `${t('income')} ${cur()}`),
       el('th', {}, `${t('expenses')} ${cur()}`), el('th', {}, `${t('buildCost')} ${cur()}`), el('th', {}))),
-    el('tbody', {}, state.plan.rows.map((row, idx) => {
+    el('tbody', {}, visibleRows.map(({ row, index: rowIndex }, visibleIndex) => {
       const b = prodBuildings().find(x => x.de === row.name);
-      const res = result.rows[idx] ?? {};
-      const groupSel = selectInput([t('none'), ...groups], row.group ?? t('none'),
+      const res = result.rows[visibleIndex] ?? {};
+      const selectedGroup = groups.includes(row.group) ? row.group : (b?.group?.[state.lang] ?? row.group);
+      const groupSel = selectInput([t('none'), ...groups], selectedGroup ?? t('none'),
         v => { row.group = v; row.name = null; });
-      const inGroup = prodBuildings().filter(x => x.group[state.lang] === row.group);
+      const inGroup = prodBuildings().filter(x => x.group[state.lang] === selectedGroup);
       const bSel = selectInput(
         [[', ', t('none')], ...inGroup.map(x => [x.de, bname(x)])],
         row.name ?? ', ', v => { row.name = v === ', ' ? null : v; });
       const isMine = b && QUALITY_BUILDINGS_DE.has(b.de);
+      const areaName = state.cities.find(city => city.scopeId === row.scopeId)?.name ?? t('unassigned');
       return el('tr', {},
-        el('td', {}, groupSel), el('td', {}, bSel),
+        el('td', {}, areaName), el('td', {}, groupSel), el('td', {}, bSel),
         el('td', {}, numInput(row.count, v => row.count = v, { min: 0, step: 1 })),
-        el('td', {}, isMine ? pctInput(row.quality ?? 0.5, v => row.quality = v) : '—'),
+        el('td', { title: row.qualityEstimated ? 'Mine quality is not stored in this import yet; 50% estimate.' : '' },
+          isMine ? pctInput(row.quality ?? 0.5, v => { row.quality = v; row.qualityEstimated = false; }) : '—'),
         el('td', { class: 'r' }, b ? fmt(b.workers * row.count, 0) : '—'),
         el('td', { class: 'r ' + ((res.profit ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profit)),
         el('td', { class: 'r ' + ((res.profitPerWorker ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profitPerWorker)),
         el('td', { class: 'r' }, fmt(res.amortDays, 1)),
         el('td', { class: 'r' }, fmt(res.income)), el('td', { class: 'r' }, fmt(res.expenses)),
         el('td', { class: 'r' }, fmt(res.buildCost, 0)),
-        el('td', {}, el('button', { class: 'danger', onclick: () => { state.plan.rows.splice(idx, 1); update(); } }, '✕')));
+        el('td', {}, el('button', { class: 'danger', onclick: () => { state.plan.rows.splice(rowIndex, 1); update(); } }, '✕')));
     })));
 
   const addBtn = el('button', {
-    onclick: () => { state.plan.rows.push({ group: groups[0], name: null, count: 1, quality: 0.5 }); update(); },
+    onclick: () => {
+      const scopeId = /^\d+$/.test(String(state.productionScope)) ? Number(state.productionScope) : null;
+      state.plan.rows.push({ group: groups[0], name: null, count: 1, quality: 0.5, scopeId });
+      update();
+    },
   }, t('addRow'));
 
   const f = state.plan.fields;
@@ -1059,6 +1093,258 @@ function renderVehicleProduction() {
       kv(`${t('profit')} ${cur()}`, fmt(totals.profit, 0), totals.profit < 0 ? 'neg' : 'pos')));
 }
 
+// ---------------------------------------------------------------- save import beta
+const IMPORTED_CITY_TYPES = new Map([
+  ['TYPE_LIVING', ['Wohngebäude', 'Housing']],
+  ['TYPE_SHOP', ['Einkaufzentrum', 'Shopping center']],
+  ['TYPE_KINDERGARTEN', ['Kindergarten', 'Kindergarten']],
+  ['TYPE_SCHOOL', ['Schule', 'School']],
+  ['TYPE_UNIVERSITY', ['Universität', 'University']],
+  ['TYPE_HOSPITAL', ['Krankenhaus', 'Hospital']],
+  ['TYPE_COURT_HOUSE', ['Gerichtsgebäude', 'Courthouse']],
+  ['TYPE_POLICE_STATION', ['Polizei', 'Police']],
+  ['TYPE_ATTRACTION', ['Attraktionen', 'Attractions']],
+  ['TYPE_KINO', ['Kultur', 'Culture']],
+  ['TYPE_SPORT', ['Sport', 'Sport']],
+  ['TYPE_PUB', ['Alkohol', 'Alcohol']],
+  ['TYPE_FIRESTATION', ['Feuerwehr', 'Fire station']],
+  ['TYPE_CITYHALL', ['Rathaus', 'City hall']],
+  ['TYPE_PRISON', ['Gefängnis', 'Prison']],
+  ['TYPE_ORPHANAGE', ['Waisenhaus', 'Orphanage']],
+  ['TYPE_CHURCH', ['Religion', 'Religion']],
+  ['TYPE_BROADCAST', ['Rundfunk', 'Broadcasting']],
+]);
+
+function saveTypeCandidates(type) {
+  const clean = type.replace(/^MIRRORZ_/, '');
+  const candidates = [type, clean];
+  if (clean.startsWith('CWC_')) candidates.push(`cwc/${clean.slice(4)}`);
+  const aliases = {
+    concrete_plant_v2: 'concrete_plant',
+    brick_factory_v2: 'brick_factory',
+    oil_rafinery_v2: 'oil_rafinery',
+  };
+  if (aliases[clean]) candidates.push(aliases[clean]);
+  return [...new Set(candidates.map(value => value.toLowerCase()))];
+}
+
+function matchSaveBuilding(type, entries, idOf) {
+  const candidates = saveTypeCandidates(type);
+  const exact = new Map(entries.map(entry => [String(idOf(entry) ?? '').toLowerCase(), entry]));
+  for (const candidate of candidates) if (exact.has(candidate)) return exact.get(candidate);
+
+  const basename = candidates.at(-1).split('/').at(-1);
+  const matches = entries.filter(entry => String(idOf(entry) ?? '').toLowerCase().split('/').at(-1) === basename);
+  return matches.length === 1 ? matches[0] : null;
+}
+
+function importedCityBuilding(raw, sourceType) {
+  const mappedType = raw.types.map(type => IMPORTED_CITY_TYPES.get(type)).find(Boolean);
+  if (!mappedType) return null;
+  const capacity = (raw.workers ?? 0) * (raw.citizenAbleServe ?? 0);
+  const specialTypes = new Set(['Gerichtsgebäude', 'Polizei']);
+  const materials = raw.constructionResources ?? {};
+  return {
+    de: raw.de || sourceType, en: raw.en || raw.de || sourceType,
+    type: { de: mappedType[0], en: mappedType[1] },
+    kind: 'Save', gameId: raw.id, sourceType,
+    quality: raw.qualityOfLiving ?? null,
+    workers: raw.workers ?? 0,
+    special: specialTypes.has(mappedType[0]) ? capacity : 0,
+    visitors: specialTypes.has(mappedType[0]) ? 0 : capacity,
+    inhabitants: raw.livingSpace ?? 0,
+    power: 0, maxKW: 0, water: 0, hotwater: 0, waste: 0, workdays: 0,
+    gravel: materials.gravel ?? 0,
+    bricks: materials.bricks ?? 0,
+    steel: materials.steel ?? 0,
+    concrete: materials.concrete ?? 0,
+    asphalt: materials.asphalt ?? 0,
+    boards: materials.boards ?? 0,
+    panels: materials.prefabpanels ?? 0,
+    ecomponents: materials.ecomponents ?? 0,
+    mcomponents: materials.mcomponents ?? 0,
+    recommendedFor: 0,
+  };
+}
+
+function buildImportedPlanning(sourceName, settlements, buildings, membershipAudit) {
+  const cityRows = new Map(settlements.map(s => [s.id, new Map()]));
+  const production = new Map();
+  const unmatched = new Map();
+  let cityCount = 0, productionCount = 0, temporaryCount = 0;
+
+  for (const record of buildings) {
+    if (record.type === 'temp') { temporaryCount += 1; continue; }
+    const productionBuilding = matchSaveBuilding(record.type, DATA.prodSets.game ?? [], b => b.gameId);
+    if (productionBuilding) {
+      const key = `${record.scopeId ?? 'none'}\0${productionBuilding.de}`;
+      const current = production.get(key) ?? {
+        group: productionBuilding.group?.de ?? '', name: productionBuilding.de, count: 0,
+        quality: QUALITY_BUILDINGS_DE.has(productionBuilding.de) ? 0.5 : 1,
+        qualityEstimated: QUALITY_BUILDINGS_DE.has(productionBuilding.de),
+        scopeId: record.scopeId, sourceGameId: record.type,
+      };
+      current.count += 1;
+      production.set(key, current);
+      productionCount += 1;
+      continue;
+    }
+
+    const raw = matchSaveBuilding(record.type, DATA.rawBuildings ?? [], b => b.id);
+    const cityBuilding = raw ? importedCityBuilding(raw, record.type) : null;
+    if (cityBuilding && cityRows.has(record.scopeId)) {
+      const rows = cityRows.get(record.scopeId);
+      const key = cityBuilding.gameId;
+      const current = rows.get(key) ?? {
+        type: cityBuilding.type.de, name: cityBuilding.de, count: 0,
+        importedBuilding: cityBuilding, sourceGameId: record.type,
+      };
+      current.count += 1;
+      rows.set(key, current);
+      cityCount += 1;
+      continue;
+    }
+
+    const key = `${record.scopeId ?? 'none'}\0${record.type}`;
+    const current = unmatched.get(key) ?? { scopeId: record.scopeId, type: record.type, count: 0 };
+    current.count += 1;
+    unmatched.set(key, current);
+  }
+
+  const cities = settlements.map(settlement => ({
+    ...defaultCity(),
+    name: settlement.name || settlement.extraName || `${t('city')} ${settlement.id + 1}`,
+    scopeId: settlement.id,
+    source: 'save',
+    sourcePosition: { x: settlement.x, y: settlement.y, z: settlement.z },
+    rows: [...cityRows.get(settlement.id).values()],
+  }));
+  const warnings = [];
+  if (membershipAudit.duplicateMembers.length) warnings.push(
+    `${membershipAudit.duplicateMembers.length} duplicate member reference(s); primary building ownership was used.`);
+  if (membershipAudit.invalidMemberRefs.length) warnings.push(`${membershipAudit.invalidMemberRefs.length} invalid member reference(s).`);
+  if (membershipAudit.fallbackAssignments) warnings.push(`${membershipAudit.fallbackAssignments} building assignment(s) used the namepoint fallback.`);
+  if (membershipAudit.unassigned) warnings.push(`${membershipAudit.unassigned} building(s) have no settlement assignment.`);
+
+  return {
+    cities,
+    productionRows: [...production.values()],
+    metadata: {
+      version: 1, sourceName, importedAt: new Date().toISOString(),
+      settlementCount: settlements.length, buildingCount: buildings.length,
+      cityBuildingCount: cityCount, productionBuildingCount: productionCount,
+      temporaryCount, unmatchedCount: [...unmatched.values()].reduce((sum, item) => sum + item.count, 0),
+      unmatched: [...unmatched.values()].sort((a, b) => b.count - a.count || a.type.localeCompare(b.type)),
+      warnings,
+    },
+  };
+}
+
+function uniqueSnapshotName(base) {
+  const saves = loadSaves();
+  if (!saves[base]) return base;
+  let suffix = 2;
+  while (saves[`${base} (${suffix})`]) suffix += 1;
+  return `${base} (${suffix})`;
+}
+
+async function handleSaveDirectory(fileList) {
+  const files = [...fileList];
+  const byName = new Map(files.map(file => [file.name.toLowerCase(), file]));
+  const namepoints = byName.get('namepoints.bin');
+  const buildingsFile = byName.get('buildings_game.bin');
+  if (!namepoints || !buildingsFile) {
+    state.importStatus = t('importMissingFiles');
+    state.importStatusError = true;
+    return update();
+  }
+
+  state.importStatus = t('importWorking');
+  state.importStatusError = false;
+  update();
+  await new Promise(resolve => setTimeout(resolve, 0));
+
+  try {
+    const parser = await import('./savegame.js?v=1');
+    const [namepointBuffer, buildingBuffer] = await Promise.all([namepoints.arrayBuffer(), buildingsFile.arrayBuffer()]);
+    const settlements = parser.parseNamepoints(namepointBuffer);
+    const buildings = parser.parseBuildingsGame(buildingBuffer);
+    const membershipAudit = parser.reconcileSettlementMembership(settlements, buildings);
+    const relative = namepoints.webkitRelativePath || buildingsFile.webkitRelativePath || '';
+    const sourceName = relative.split('/')[0] || namepoints.name.replace(/\.bin$/i, '') || 'W&R save';
+    const imported = buildImportedPlanning(sourceName, settlements, buildings, membershipAudit);
+
+    const backupName = uniqueSnapshotName(`Before import ${new Date().toLocaleString()}`);
+    const backupResult = saveNamedState(backupName);
+    if (!backupResult.ok) throw backupResult.error;
+
+    const next = createInitialState();
+    for (const key of ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'calcOpts', 'tuning']) {
+      next[key] = cloneStateValue(state[key]);
+    }
+    next.dataset = 'game';
+    next.plan.settings = { ...cloneStateValue(state.plan.settings), currency: state.currency };
+    next.plan.rows = imported.productionRows;
+    next.cities = imported.cities;
+    next.saveImport = imported.metadata;
+    next.tab = 'saveimport';
+
+    const importName = uniqueSnapshotName(sourceName);
+    replaceSharedState(next);
+    state.saveSlotName = importName;
+    state.importStatus = t('importComplete');
+    state.importStatusError = false;
+    const importResult = saveNamedState(importName);
+    if (!importResult.ok) {
+      loadNamedState(backupName);
+      throw importResult.error;
+    }
+    state.snapshotNotice = t('saveSlotSaved').replace('{name}', importName);
+    update();
+  } catch (error) {
+    state.importStatus = `${t('importFailed')}: ${error.message}`;
+    state.importStatusError = true;
+    update();
+  }
+}
+
+function renderSaveImport() {
+  if (!IS_BETA) return el('section');
+  const info = state.saveImport;
+  const areaNames = new Map(state.cities.map(city => [city.scopeId, city.name]));
+  const picker = el('label', { class: 'importpicker' },
+    '📂 ', t('chooseSaveFolder'),
+    el('input', { type: 'file', class: 'hidden', webkitdirectory: '', multiple: '',
+      onchange: event => event.target.files.length && handleSaveDirectory(event.target.files) }));
+  const status = state.importStatus
+    ? el('p', { class: state.importStatusError ? 'neg' : 'pos' }, state.importStatus) : null;
+
+  const audit = info ? el('div', { class: 'importaudit' },
+    el('h3', {}, `${t('importedSnapshot')}: ${info.sourceName}`),
+    el('div', { class: 'columns' },
+      el('div', { class: 'totalsbox' },
+        kv(t('importedAt'), new Date(info.importedAt).toLocaleString()),
+        kv(t('importedSettlements'), fmt(info.settlementCount, 0)),
+        kv(t('importedBuildings'), fmt(info.buildingCount, 0)),
+        kv(t('importedCityBuildings'), fmt(info.cityBuildingCount, 0)),
+        kv(t('importedProductionBuildings'), fmt(info.productionBuildingCount, 0)),
+        kv(t('importedTemporary'), fmt(info.temporaryCount, 0)),
+        kv(t('importedUnmatched'), fmt(info.unmatchedCount, 0))),
+      info.warnings?.length ? el('div', { class: 'totalsbox' },
+        el('h3', {}, t('importedWarnings')),
+        el('ul', {}, ...info.warnings.map(warning => el('li', {}, warning)))) : null),
+    info.unmatched?.length ? el('details', { class: 'tablewrap' },
+      el('summary', {}, `${t('unmatchedTypes')} (${fmt(info.unmatched.length, 0)})`),
+      el('table', { class: 'data' },
+        el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('sourceGameId')), el('th', {}, t('count')))),
+        el('tbody', {}, ...info.unmatched.map(item => el('tr', {},
+          el('td', {}, areaNames.get(item.scopeId) ?? t('unassigned')),
+          el('td', {}, item.type), el('td', { class: 'r' }, fmt(item.count, 0))))))) : null) : null;
+
+  return el('section', {}, el('h2', {}, t('saveImportTitle')), el('p', { class: 'hint' }, t('saveImportHint')),
+    picker, status, audit);
+}
+
 // ---------------------------------------------------------------- city tab
 function renderCity() {
   if (!state.cities.length) state.cities.push(defaultCity());
@@ -1094,6 +1380,7 @@ function renderCity() {
   const typeMap = new Map(pool.map(({ building }) => [building.type.de, building.type]));
   const types = [...typeMap.entries()].sort((a, b) => a[1][state.lang].localeCompare(b[1][state.lang]));
   const resolveRow = row => {
+    if (row.importedBuilding) return row.importedBuilding;
     if (Number.isInteger(row.buildingIndex)) return DATA.cityBuildings[row.buildingIndex];
     return DATA.cityBuildings.find(building => building.de === row.name);
   };
@@ -1148,8 +1435,15 @@ function renderCity() {
       const rowUtilization = b ? res.utilizationByType.get(b.type.de) : undefined;
       const rowWorkersNeeded = (rowMax > 0 && rowUtilization != null)
         ? { optimal: Math.min(rowMax, rowMax * rowUtilization), max: rowMax } : null;
+      const typeCell = row.importedBuilding
+        ? el('span', {}, row.importedBuilding.type[state.lang] ?? row.importedBuilding.type.de)
+        : typeSel;
+      const buildingCell = row.importedBuilding
+        ? el('div', {}, bname(row.importedBuilding),
+          el('div', { class: 'sourceid' }, `${t('sourceGameId')}: ${row.sourceGameId ?? row.importedBuilding.gameId}`))
+        : bSel;
       return el('tr', {},
-        el('td', {}, typeSel), el('td', {}, bSel),
+        el('td', {}, typeCell), el('td', {}, buildingCell),
         el('td', {}, numInput(row.count, v => row.count = v, { min: 0, step: 1 })),
         el('td', { class: 'r' }, b ? fmt(b.inhabitants * n, 0) : '—'),
         el('td', { class: 'r' }, b?.inhabitants > 0 && b.quality != null ? fmt(b.quality * 100, 0) + ' %' : '—'),
@@ -1242,6 +1536,7 @@ function workersNeededCell(w) {
 function renderRepublic() {
   const eco = economy();
   if (!state.cities.length) state.cities.push(defaultCity());
+  state.plan.settings.currency = state.currency;
   const chains = chainPlans();
   const buildings = prodBuildings();
   const chainLabel = c => {
@@ -1253,11 +1548,16 @@ function renderRepublic() {
   const cityResults = state.cities.map(city => {
     const rowsResolved = city.rows.map(r => ({
       ...r,
-      building: Number.isInteger(r.buildingIndex)
+      building: r.importedBuilding ?? (Number.isInteger(r.buildingIndex)
         ? DATA.cityBuildings[r.buildingIndex]
-        : DATA.cityBuildings.find(b => b.de === r.name),
+        : DATA.cityBuildings.find(b => b.de === r.name)),
     }));
-    return { city, res: evaluateCity({ ...city, rows: rowsResolved }, eco) };
+    const industryRows = Number.isInteger(city.scopeId)
+      ? state.plan.rows.filter(row => row.scopeId === city.scopeId).map(row => ({
+        ...row, building: prodBuildings().find(building => building.de === row.name),
+      })) : [];
+    const industry = evaluatePlan(industryRows, { small: 0, medium: 0, large: 0, hectares: 0 }, state.plan.settings, eco);
+    return { city, res: evaluateCity({ ...city, rows: rowsResolved }, eco), industry };
   });
   const sumCities = fn => cityResults.reduce((a, { res }) => a + (fn(res) || 0), 0);
   const cityTotals = {
@@ -1273,7 +1573,6 @@ function renderRepublic() {
   };
   const cityBuildCost = state.currency === 'USD' ? cityTotals.buildCostUSD : cityTotals.buildCostRUB;
 
-  state.plan.settings.currency = state.currency;
   const planRows = state.plan.rows.map(r => ({ ...r, building: prodBuildings().find(b => b.de === r.name) }));
   const plan = evaluatePlan(planRows, state.plan.fields, state.plan.settings, eco);
 
@@ -1282,22 +1581,29 @@ function renderRepublic() {
   // compare directly: workers the cities can send out vs. what industry needs.
   const netWorkers = cityTotals.workerSurplus - plan.workersPerShift;
 
-  const cityRows = el('table', { class: 'data' },
-    el('thead', {}, el('tr', {},
-      el('th', {}, t('city')), el('th', {}, t('population')), el('th', {}, t('workerSurplus')),
-      el('th', {}, t('maxWatt')), el('th', {}, t('waterUse')), el('th', {}, t('wasteOut')),
-      el('th', {}, t('assignedChain')))),
-    el('tbody', {}, cityResults.map(({ city, res }, i) => el('tr', {},
+  const cityBody = cityResults.map(({ city, res, industry }, i) => {
+    const available = res.workerSurplus - industry.workersPerShift;
+    return el('tr', {},
       el('td', {}, city.name || `${t('city')} ${i + 1}`),
       el('td', { class: 'r' }, fmt(res.population, 0)),
       el('td', { class: 'r ' + (res.workerSurplus < 0 ? 'neg' : 'pos') }, fmt(res.workerSurplus, 1)),
+      el('td', { class: 'r' }, fmt(industry.workersPerShift, 0)),
+      el('td', { class: 'r ' + (available < 0 ? 'neg' : 'pos') }, fmt(available, 1)),
       el('td', { class: 'r' }, fmt(res.maxKW, 0)),
       el('td', { class: 'r' }, fmt(res.water, 1)),
       el('td', { class: 'r' }, fmt(res.waste, 1)),
       el('td', {}, selectInput(
         [['', t('unassigned')], ...chains.map((c, ci) => [String(ci), chainLabel(c)])],
         Number.isInteger(city.assignedChain) ? String(city.assignedChain) : '',
-        v => { city.assignedChain = v === '' ? null : Number(v); }))))));
+        value => { city.assignedChain = value === '' ? null : Number(value); })));
+  });
+  const cityRows = el('table', { class: 'data' },
+    el('thead', {}, el('tr', {},
+      el('th', {}, t('city')), el('th', {}, t('population')), el('th', {}, t('workerSurplus')),
+      el('th', {}, t('industryWorkers')), el('th', {}, t('netAvailableWorkers')),
+      el('th', {}, t('maxWatt')), el('th', {}, t('waterUse')), el('th', {}, t('wasteOut')),
+      el('th', {}, t('assignedChain')))),
+    el('tbody', {}, cityBody));
 
   // Solve every chain plan (same seeding renderChain does, so the numbers
   // shown here match what that tab would show) and pair each with whichever
@@ -1734,6 +2040,7 @@ function replaceSharedState(obj) {
   if (!Array.isArray(state.chains) || !state.chains.length) state.chains = [defaultChainPlan()];
   state.activeCity = Math.max(0, Math.min(Number(state.activeCity) || 0, state.cities.length - 1));
   state.activeChain = Math.max(0, Math.min(Number(state.activeChain) || 0, state.chains.length - 1));
+  if (!IS_BETA && state.tab === 'saveimport') state.tab = 'republic';
 }
 
 function exportPlan() {
@@ -1840,6 +2147,7 @@ function update() {
 }
 
 loadState();
+if (!IS_BETA && state.tab === 'saveimport') state.tab = 'republic';
 state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.calcOpts || {}) };
 loadData().then(async () => {
   await applyHash();

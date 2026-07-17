@@ -70,6 +70,6 @@ Add a roadmap item explaining reliable named snapshots and that game-save import
 
 Run `npm test` and the headless Chromium snapshot reproduction. Expected: all existing checks pass and the leak reproduction reports no current-plan fields after load.
 
-- [ ] **Step 3: Commit and deploy**
+- [x] **Step 3: Commit and deploy**
 
 Commit the snapshot foundation, integrate it into `main`, and push `main` so GitHub Pages deploys this stable prerequisite before the `/beta/` importer.

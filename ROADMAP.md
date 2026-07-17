@@ -127,16 +127,21 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
 - **Why:** game-save import needs a safe isolation boundary: every imported save
   will create a new snapshot rather than overwrite the currently open plan.
 
-### 4.1b Game-save import into the planners 🚧 in progress 2026-07-17
-- **What:** A local-only `/beta/` importer for a W&R save directory. Preserve the
+### 4.1b Game-save import into the planners 🧪 beta 2026-07-17
+- **What:** A local-only `/beta/` importer for a W&R save directory. It preserves the
   game's own named settlements and building membership, aggregate recognized
   city/service buildings into City Planner rows, tag recognized factories by
   settlement in Production Planner, and combine both in Republic Overview.
-- **Known format status:** `namepoints.bin` is fully decoded and validated. Exact
-  traversal of the variable-length `buildings_game.bin` records is the remaining
-  reverse-engineering gate before building types can be imported reliably.
+- **Known format status:** both `namepoints.bin` and variable-length
+  `buildings_game.bin` are decoded. The supplied 160,226,939-byte sample walks all
+  1,812 declared building records and lands on the exact final byte; all 43 named
+  scopes and every primary building→scope assignment validate.
 - **Safety:** imported saves become new editable named snapshots; unknown building
   types stay visible in an unmatched report instead of being silently discarded.
+- **Current beta limitations:** workshop buildings without their mod `building.ini`
+  remain unmatched (their IDs/scopes/counts are still reported), and per-instance
+  mine richness is not identified yet, so imported mines start with a clearly
+  editable 50% estimate.
 
 ### 4.2 Live-follow stats.ini
 - **What:** "Watch file" button using the File System Access API (Chromium): re-read the
