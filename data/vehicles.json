@@ -11056,6 +11056,8994 @@
     "Mechanik-Bauteile": 0.64,
     "Elektronik-Bauteile": 0.089
    }
+  },
+  {
+   "name": "Ikr 256 (Bus)",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Ungarn",
+    "Von": 1974.0,
+    "Bis": 2002.0,
+    "Max. Geschwindigkeit": 100.0,
+    "Motorleistung": 141.0,
+    "Leergewicht": 7.5,
+    "Länge": 10.82,
+    "Passagiere": 45.0,
+    "Arbeitstage": 494.231,
+    "Stahl": 7.019,
+    "Kunststoffe": 0.3,
+    "Stoff": 0.225,
+    "Mechanik-Bauteile": 0.975,
+    "Elektronik-Bauteile": 0.139,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Ikr 260 (Bus)",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Ungarn",
+    "Von": 1972.0,
+    "Bis": 2002.0,
+    "Max. Geschwindigkeit": 66.0,
+    "Motorleistung": 141.0,
+    "Leergewicht": 7.5,
+    "Länge": 10.81,
+    "Passagiere": 98.0,
+    "Arbeitstage": 494.231,
+    "Stahl": 7.019,
+    "Kunststoffe": 0.3,
+    "Stoff": 0.225,
+    "Mechanik-Bauteile": 0.975,
+    "Elektronik-Bauteile": 0.139,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Ikr 280 (Bus)",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Ungarn",
+    "Von": 1972.0,
+    "Bis": 2002.0,
+    "Max. Geschwindigkeit": 63.0,
+    "Motorleistung": 141.0,
+    "Leergewicht": 12.0,
+    "Länge": 10.01,
+    "Passagiere": 135.0,
+    "Arbeitstage": 790.769,
+    "Stahl": 11.231,
+    "Kunststoffe": 0.48,
+    "Stoff": 0.36,
+    "Mechanik-Bauteile": 1.56,
+    "Elektronik-Bauteile": 0.223,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "LZ 695B",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Von": 1958.0,
+    "Bis": 1975.0,
+    "Max. Geschwindigkeit": 75.0,
+    "Motorleistung": 80.0,
+    "Leergewicht": 6.5,
+    "Länge": 9.11,
+    "Passagiere": 52.0,
+    "Arbeitstage": 428.333,
+    "Stahl": 6.083,
+    "Kunststoffe": 0.26,
+    "Stoff": 0.195,
+    "Mechanik-Bauteile": 0.845,
+    "Elektronik-Bauteile": 0.121,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Lz 965N (Bus)",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Von": 1975.0,
+    "Bis": 2005.0,
+    "Max. Geschwindigkeit": 75.0,
+    "Motorleistung": 110.0,
+    "Leergewicht": 7.0,
+    "Länge": 9.01,
+    "Passagiere": 57.0,
+    "Arbeitstage": 461.282,
+    "Stahl": 6.551,
+    "Kunststoffe": 0.28,
+    "Stoff": 0.21,
+    "Mechanik-Bauteile": 0.91,
+    "Elektronik-Bauteile": 0.13,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Skd-706 RTO-Anhänger-Bus",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Czechoslovakia",
+    "Von": 1956.0,
+    "Bis": 1972.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 117.0,
+    "Leergewicht": 12.1,
+    "Länge": 10.8,
+    "Passagiere": 123.0,
+    "Arbeitstage": 797.359,
+    "Stahl": 11.324,
+    "Kunststoffe": 0.484,
+    "Stoff": 0.363,
+    "Mechanik-Bauteile": 1.573,
+    "Elektronik-Bauteile": 0.225,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Skd 9T",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Czechoslovakia",
+    "Von": 1958.0,
+    "Bis": 1981.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 110.0,
+    "Leergewicht": 8.9,
+    "Länge": 11.4,
+    "Passagiere": 70.0,
+    "Arbeitstage": 586.487,
+    "Stahl": 8.329,
+    "Kunststoffe": 0.356,
+    "Stoff": 0.267,
+    "Mechanik-Bauteile": 1.157,
+    "Elektronik-Bauteile": 0.165,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "СК-4 Mähdrescher",
+   "attrs": {
+    "Typ": "Mähdrescher",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1959.0,
+    "Bis": 1974.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 72.0,
+    "Leergewicht": 6.1,
+    "Länge": 7.63
+   }
+  },
+  {
+   "name": "СК-5 Mähdrescher",
+   "attrs": {
+    "Typ": "Mähdrescher",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1970.0,
+    "Bis": 2000.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 87.0,
+    "Leergewicht": 6.8,
+    "Länge": 8.38
+   }
+  },
+  {
+   "name": "E512 Mähdrescher",
+   "attrs": {
+    "Typ": "Mähdrescher",
+    "Frachtart": "-",
+    "Bauland": "East Germany",
+    "Von": 1967.0,
+    "Bis": 1988.0,
+    "Max. Geschwindigkeit": 24.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 7.3,
+    "Länge": 8.94
+   }
+  },
+  {
+   "name": "GZ-66 LKW (abgedeckt)",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Max. Geschwindigkeit": 60.0,
+    "Länge": 6.1,
+    "Ladefläche": 3.5
+   }
+  },
+  {
+   "name": "Skd 706 RTHP (Feuerwehr)",
+   "attrs": {
+    "Typ": "Feuerwerhfahrzeug",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1958.0,
+    "Bis": 1985.0,
+    "Max. Geschwindigkeit": 62.0,
+    "Motorleistung": 118.0,
+    "Leergewicht": 7.0,
+    "Länge": 7.3,
+    "Ladefläche": 7.0
+   }
+  },
+  {
+   "name": "Skd 706 RTH (Tank)",
+   "attrs": {
+    "Typ": "Tanklaster",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Czechoslovakia",
+    "Von": 1958.0,
+    "Bis": 1985.0,
+    "Max. Geschwindigkeit": 62.0,
+    "Motorleistung": 118.0,
+    "Leergewicht": 6.0,
+    "Länge": 7.71,
+    "Ladefläche": 7.0,
+    "Arbeitstage": 384.737,
+    "Stahl": 5.5,
+    "Kunststoffe": 0.24,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.766,
+    "Elektronik-Bauteile": 0.102,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Zil 130 (Tank)",
+   "attrs": {
+    "Typ": "Tanklaster",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1962.0,
+    "Bis": 1994.0,
+    "Max. Geschwindigkeit": 90.0,
+    "Motorleistung": 110.0,
+    "Leergewicht": 4.3,
+    "Länge": 6.94,
+    "Ladefläche": 5.0,
+    "Arbeitstage": 275.728,
+    "Stahl": 3.942,
+    "Kunststoffe": 0.172,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.549,
+    "Elektronik-Bauteile": 0.073,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Rmn 19-215DF (Pritsche)",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Romania",
+    "Von": 1973.0,
+    "Bis": 1985.0,
+    "Max. Geschwindigkeit": 95.0,
+    "Motorleistung": 158.0,
+    "Leergewicht": 9.7,
+    "Länge": 8.44,
+    "Ladefläche": 11.0,
+    "Arbeitstage": 626.458,
+    "Stahl": 8.892,
+    "Aluminium": 9.571,
+    "Kunststoffe": 0.388,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.212,
+    "Elektronik-Bauteile": 0.168,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Rmn 135F (Pritsche)",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Romania",
+    "Von": 1968.0,
+    "Bis": 1985.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 101.0,
+    "Leergewicht": 6.9,
+    "Länge": 7.81,
+    "Ladefläche": 6.8,
+    "Arbeitstage": 445.625,
+    "Stahl": 6.325,
+    "Aluminium": 6.808,
+    "Kunststoffe": 0.276,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.863,
+    "Elektronik-Bauteile": 0.119,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "T813 6x6 (Offen)",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Czechoslovakia",
+    "Von": 1974.0,
+    "Bis": 1996.0,
+    "Max. Geschwindigkeit": 92.0,
+    "Motorleistung": 198.6,
+    "Leergewicht": 21.05,
+    "Länge": 7.86,
+    "Ladefläche": 27.0,
+    "Arbeitstage": 1359.479,
+    "Stahl": 19.296,
+    "Aluminium": 20.771,
+    "Kunststoffe": 0.842,
+    "Stoff": 0.01,
+    "Mechanik-Bauteile": 2.631,
+    "Elektronik-Bauteile": 0.364,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Trabi 500",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "East Germany",
+    "Von": 1957.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 17.0,
+    "Leergewicht": 0.6,
+    "Länge": 3.38,
+    "Passagiere": 4.0,
+    "Arbeitstage": 50.224,
+    "Stahl": 0.638,
+    "Kunststoffe": 0.024,
+    "Stoff": 0.008,
+    "Mechanik-Bauteile": 0.157,
+    "Elektronik-Bauteile": 0.02,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Trabi 500 Combi",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "East Germany",
+    "Von": 1957.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 17.0,
+    "Leergewicht": 0.65,
+    "Länge": 3.38,
+    "Passagiere": 4.0,
+    "Arbeitstage": 54.409,
+    "Stahl": 0.691,
+    "Kunststoffe": 0.026,
+    "Stoff": 0.008,
+    "Mechanik-Bauteile": 0.17,
+    "Elektronik-Bauteile": 0.021,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "HMac K12",
+   "attrs": {
+    "Typ": "Planierraupe",
+    "Frachtart": "-",
+    "Bauland": "West Germany",
+    "Von": 1970.0,
+    "Bis": 1990.0,
+    "Max. Geschwindigkeit": 22.0,
+    "Motorleistung": 75.0,
+    "Leergewicht": 9.5,
+    "Länge": 4.66,
+    "Arbeitstage": 579.854,
+    "Stahl": 8.504,
+    "Kunststoffe": 0.38,
+    "Stoff": 0.006,
+    "Mechanik-Bauteile": 0.955,
+    "Elektronik-Bauteile": 0.138,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "LG 4866",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "USA",
+    "Von": 1968.0,
+    "Bis": 1992.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 148.0,
+    "Leergewicht": 8.0,
+    "Länge": 8.37,
+    "Arbeitstage": 516.667,
+    "Stahl": 7.333,
+    "Aluminium": 7.894,
+    "Kunststoffe": 0.32,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 1.0,
+    "Elektronik-Bauteile": 0.138,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "PH MT-250",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "USA",
+    "Von": 1970.0,
+    "Bis": 1990.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 172.0,
+    "Leergewicht": 20.0,
+    "Länge": 11.48,
+    "Arbeitstage": 1291.667,
+    "Stahl": 18.333,
+    "Aluminium": 19.735,
+    "Kunststoffe": 0.8,
+    "Stoff": 0.01,
+    "Mechanik-Bauteile": 2.5,
+    "Elektronik-Bauteile": 0.346,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "T815 AD28 (Straßenkran)",
+   "attrs": {
+    "Typ": "Straßenkran",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1982.0,
+    "Bis": 3000.0,
+    "Max. Geschwindigkeit": 90.0,
+    "Motorleistung": 172.0,
+    "Leergewicht": 18.0,
+    "Länge": 10.81
+   }
+  },
+  {
+   "name": "LH A360",
+   "attrs": {
+    "Typ": "Bagger",
+    "Frachtart": "-",
+    "Bauland": "West Germany",
+    "Von": 1960.0,
+    "Bis": 1972.0,
+    "Max. Geschwindigkeit": 24.0,
+    "Motorleistung": 34.0,
+    "Leergewicht": 7.8,
+    "Länge": 6.26,
+    "Arbeitstage": 513.24,
+    "Stahl": 7.28,
+    "Kunststoffe": 0.312,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 1.04,
+    "Elektronik-Bauteile": 0.14,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "T815 UDS (Bagger)",
+   "attrs": {
+    "Typ": "Bagger",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1984.0,
+    "Bis": 3000.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 230.0,
+    "Leergewicht": 14.2,
+    "Länge": 8.69,
+    "Arbeitstage": 934.36,
+    "Stahl": 13.253,
+    "Kunststoffe": 0.568,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.893,
+    "Elektronik-Bauteile": 0.256,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "D-150 (Asphaltfertiger)",
+   "attrs": {
+    "Typ": "Asphaltleger",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1949.0,
+    "Bis": 1995.0,
+    "Max. Geschwindigkeit": 15.0,
+    "Motorleistung": 50.0,
+    "Leergewicht": 12.0,
+    "Länge": 4.75
+   }
+  },
+  {
+   "name": "VV-110 Straßenwalze",
+   "attrs": {
+    "Typ": "Walze",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1982.0,
+    "Bis": 1997.0,
+    "Max. Geschwindigkeit": 24.0,
+    "Motorleistung": 88.3,
+    "Leergewicht": 11.5,
+    "Länge": 5.27
+   }
+  },
+  {
+   "name": "Turmdrehkran A1 (30m)",
+   "attrs": {
+    "Typ": "Turmdrehkran",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1959.0,
+    "Bis": 3000.0,
+    "Motorleistung": 250.0,
+    "Leergewicht": 7.0,
+    "Länge": 9.53
+   }
+  },
+  {
+   "name": "Turmdrehkran A2 (45m)",
+   "attrs": {
+    "Typ": "Turmdrehkran",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1972.0,
+    "Bis": 3000.0,
+    "Motorleistung": 300.0,
+    "Leergewicht": 9.0,
+    "Länge": 10.42
+   }
+  },
+  {
+   "name": "Turmdrehkran B2 (75m)",
+   "attrs": {
+    "Typ": "Turmdrehkran",
+    "Frachtart": "-",
+    "Bauland": "East Germany",
+    "Von": 1976.0,
+    "Bis": 3000.0,
+    "Motorleistung": 400.0,
+    "Leergewicht": 11.5,
+    "Länge": 13.24
+   }
+  },
+  {
+   "name": "Turmdrehkran C2",
+   "attrs": {
+    "Typ": "Turmdrehkran",
+    "Frachtart": "-",
+    "Bauland": "Russia",
+    "Von": 1959.0,
+    "Bis": 1982.0,
+    "Motorleistung": 180.0,
+    "Leergewicht": 5.5,
+    "Länge": 9.96
+   }
+  },
+  {
+   "name": "Turmdrehkran C3",
+   "attrs": {
+    "Typ": "Turmdrehkran",
+    "Frachtart": "-",
+    "Bauland": "Belarus",
+    "Von": 1959.0,
+    "Bis": 3000.0,
+    "Motorleistung": 200.0,
+    "Leergewicht": 6.0,
+    "Länge": 10.93
+   }
+  },
+  {
+   "name": "Turmdrehkran C1",
+   "attrs": {
+    "Typ": "Turmdrehkran",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1959.0,
+    "Bis": 3000.0,
+    "Motorleistung": 150.0,
+    "Leergewicht": 5.0,
+    "Länge": 8.17
+   }
+  },
+  {
+   "name": "Turmdrehkran TC1",
+   "attrs": {
+    "Typ": "Turmdrehkran",
+    "Frachtart": "-",
+    "Bauland": "Schweden",
+    "Von": 1962.0,
+    "Bis": 3000.0,
+    "Motorleistung": 350.0,
+    "Leergewicht": 9.0,
+    "Länge": 16.73
+   }
+  },
+  {
+   "name": "Turmdrehkran TC2",
+   "attrs": {
+    "Typ": "Turmdrehkran",
+    "Frachtart": "-",
+    "Bauland": "West Germany",
+    "Von": 1962.0,
+    "Bis": 3000.0,
+    "Motorleistung": 500.0,
+    "Leergewicht": 14.0,
+    "Länge": 15.86
+   }
+  },
+  {
+   "name": "Traktor 50",
+   "attrs": {
+    "Typ": "Traktor",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1958.0,
+    "Bis": 1961.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Länge": 5.61
+   }
+  },
+  {
+   "name": "CS 1370",
+   "attrs": {
+    "Typ": "Traktor",
+    "Frachtart": "-",
+    "Bauland": "USA",
+    "Von": 1971.0,
+    "Bis": 1990.0,
+    "Max. Geschwindigkeit": 35.0,
+    "Motorleistung": 117.0,
+    "Leergewicht": 3.9,
+    "Länge": 4.78
+   }
+  },
+  {
+   "name": "Traktor MTZ-82",
+   "attrs": {
+    "Typ": "Traktor",
+    "Frachtart": "-",
+    "Bauland": "Belarus",
+    "Von": 1969.0,
+    "Bis": 3000.0,
+    "Max. Geschwindigkeit": 34.0,
+    "Motorleistung": 60.0,
+    "Leergewicht": 3.7,
+    "Länge": 3.88
+   }
+  },
+  {
+   "name": "Traktor T-28",
+   "attrs": {
+    "Typ": "Traktor",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1958.0,
+    "Bis": 1970.0,
+    "Max. Geschwindigkeit": 15.0,
+    "Motorleistung": 20.0,
+    "Leergewicht": 1.6,
+    "Länge": 3.84
+   }
+  },
+  {
+   "name": "Traktor ZT 6911",
+   "attrs": {
+    "Typ": "Traktor",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1975.0,
+    "Bis": 1986.0,
+    "Max. Geschwindigkeit": 25.0,
+    "Motorleistung": 35.0,
+    "Leergewicht": 2.6,
+    "Länge": 3.75
+   }
+  },
+  {
+   "name": "Traktor ZT 7245",
+   "attrs": {
+    "Typ": "Traktor",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1985.0,
+    "Bis": 1995.0,
+    "Max. Geschwindigkeit": 30.0,
+    "Motorleistung": 38.0,
+    "Leergewicht": 2.7,
+    "Länge": 3.81
+   }
+  },
+  {
+   "name": "A21 Furgon (Gefangenen-Transport)",
+   "attrs": {
+    "Typ": "Gefangenen Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Czechoslovakia",
+    "Von": 1983.0,
+    "Bis": 1997.0,
+    "Max. Geschwindigkeit": 95.0,
+    "Motorleistung": 61.0,
+    "Leergewicht": 2.2,
+    "Länge": 4.49,
+    "Passagiere": 10.0
+   }
+  },
+  {
+   "name": "GZ-66 LKW (abgedeckt)",
+   "attrs": {
+    "Typ": "Gleisbau",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Leergewicht": 6.0,
+    "Länge": 16.32,
+    "Arbeitstage": 275.362,
+    "Stahl": 5.176,
+    "Kunststoffe": 0.24,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.491,
+    "Elektronik-Bauteile": 0.073,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "060 DA",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Romania",
+    "Von": 1970.0,
+    "Bis": 1976.0,
+    "Max. Geschwindigkeit": 115.0,
+    "Motorleistung": 1250.0,
+    "Leergewicht": 118.0,
+    "Länge": 16.99,
+    "Arbeitstage": 5839.907,
+    "Stahl": 111.141,
+    "Kunststoffe": 4.72,
+    "Stoff": 0.006,
+    "Mechanik-Bauteile": 17.069,
+    "Elektronik-Bauteile": 2.523,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Elec. Lokomotive Typ 163",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1984.0,
+    "Bis": 1992.0,
+    "Max. Geschwindigkeit": 120.0,
+    "Motorleistung": 3480.0,
+    "Leergewicht": 85.0,
+    "Länge": 18.36,
+    "Arbeitstage": 4206.713,
+    "Stahl": 80.06,
+    "Kunststoffe": 3.4,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 12.295,
+    "Elektronik-Bauteile": 1.818,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "ChS2 (25E)",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1958.0,
+    "Bis": 1976.0,
+    "Max. Geschwindigkeit": 75.0,
+    "Motorleistung": 3190.0,
+    "Leergewicht": 120.0,
+    "Länge": 18.94,
+    "Arbeitstage": 5938.889,
+    "Stahl": 113.025,
+    "Kunststoffe": 4.8,
+    "Stoff": 0.006,
+    "Mechanik-Bauteile": 17.358,
+    "Elektronik-Bauteile": 2.566,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "DR Baureihe V 100",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "East Germany",
+    "Von": 1966.0,
+    "Bis": 1985.0,
+    "Max. Geschwindigkeit": 100.0,
+    "Motorleistung": 736.0,
+    "Leergewicht": 64.0,
+    "Länge": 13.95,
+    "Arbeitstage": 3167.407,
+    "Stahl": 60.28,
+    "Kunststoffe": 2.56,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 9.258,
+    "Elektronik-Bauteile": 1.369,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "SU45",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Poland",
+    "Von": 1959.0,
+    "Bis": 1993.0,
+    "Max. Geschwindigkeit": 97.0,
+    "Motorleistung": 1544.0,
+    "Leergewicht": 118.0,
+    "Länge": 18.94,
+    "Arbeitstage": 5839.907,
+    "Stahl": 111.141,
+    "Kunststoffe": 4.72,
+    "Stoff": 0.006,
+    "Mechanik-Bauteile": 17.069,
+    "Elektronik-Bauteile": 2.523,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "U-Bahn 81-717",
+   "attrs": {
+    "Typ": "U-Bahn",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1972.0,
+    "Bis": 1997.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 288.0,
+    "Länge": 19.44,
+    "Passagiere": 175.0
+   }
+  },
+  {
+   "name": "U-Bahn 81-717.5",
+   "attrs": {
+    "Typ": "U-Bahn",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1972.0,
+    "Bis": 1997.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 288.0,
+    "Länge": 19.44,
+    "Passagiere": 175.0
+   }
+  },
+  {
+   "name": "U-Bahn 81-720 Yauza",
+   "attrs": {
+    "Typ": "U-Bahn",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1988.0,
+    "Bis": 1999.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 288.0,
+    "Länge": 20.17,
+    "Passagiere": 175.0
+   }
+  },
+  {
+   "name": "U-Bahn Ecs",
+   "attrs": {
+    "Typ": "U-Bahn",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1968.0,
+    "Bis": 1997.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 288.0,
+    "Länge": 19.44,
+    "Passagiere": 175.0
+   }
+  },
+  {
+   "name": "U-Bahn Astra IVA",
+   "attrs": {
+    "Typ": "U-Bahn",
+    "Frachtart": "Passagiere",
+    "Bauland": "Romania",
+    "Von": 1979.0,
+    "Bis": 1999.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 430.0,
+    "Leergewicht": 72.0,
+    "Länge": 19.43,
+    "Passagiere": 166.0,
+    "Arbeitstage": 3348.0,
+    "Stahl": 63.0,
+    "Kunststoffe": 2.867,
+    "Stoff": 1.35,
+    "Mechanik-Bauteile": 5.85,
+    "Elektronik-Bauteile": 1.8,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "U-Bahn Ganz MFAV",
+   "attrs": {
+    "Typ": "U-Bahn",
+    "Frachtart": "Passagiere",
+    "Bauland": "Ungarn",
+    "Von": 1973.0,
+    "Bis": 1999.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 266.0,
+    "Leergewicht": 37.0,
+    "Länge": 10.35,
+    "Passagiere": 189.0,
+    "Arbeitstage": 1720.5,
+    "Stahl": 32.375,
+    "Kunststoffe": 1.473,
+    "Stoff": 0.694,
+    "Mechanik-Bauteile": 3.006,
+    "Elektronik-Bauteile": 0.925,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "ER2 Waggon",
+   "attrs": {
+    "Typ": "Passagierwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Max. Geschwindigkeit": 120.0,
+    "Motorleistung": 300.0,
+    "Leergewicht": 72.0,
+    "Länge": 20.22,
+    "Passagiere": 130.0,
+    "Arbeitstage": 3240.0,
+    "Stahl": 60.0,
+    "Kunststoffe": 2.88,
+    "Stoff": 0.72,
+    "Mechanik-Bauteile": 4.32,
+    "Elektronik-Bauteile": 0.72,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Tram Tim2",
+   "attrs": {
+    "Typ": "Straßenbahn",
+    "Frachtart": "Passagiere",
+    "Bauland": "Romania",
+    "Von": 1969.0,
+    "Bis": 1990.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 240.0,
+    "Leergewicht": 21.0,
+    "Länge": 14.63,
+    "Passagiere": 92.0,
+    "Arbeitstage": 1005.0,
+    "Stahl": 18.529,
+    "Kunststoffe": 0.84,
+    "Stoff": 0.383,
+    "Mechanik-Bauteile": 1.986,
+    "Elektronik-Bauteile": 0.735,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Trockengut-Wagen 11-715",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Staubgut-Behälter",
+    "Bauland": "Soviet Union",
+    "Von": 1970.0,
+    "Bis": 1999.0,
+    "Leergewicht": 18.0,
+    "Länge": 11.87,
+    "Ladefläche": 55.0,
+    "Arbeitstage": 810.0,
+    "Stahl": 14.87,
+    "Aluminium": 59.143,
+    "Kunststoffe": 0.72,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 1.08,
+    "Elektronik-Bauteile": 0.18,
+    "Elektronik": 18.409,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "GZ-66 LKW (abgedeckt)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Kühlung",
+    "Bauland": "Soviet Union",
+    "Leergewicht": 25.0,
+    "Länge": 22.06,
+    "Ladefläche": 45.0,
+    "Arbeitstage": 1125.0,
+    "Stahl": 20.652,
+    "Aluminium": 82.143,
+    "Kunststoffe": 1.0,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.5,
+    "Elektronik-Bauteile": 0.25,
+    "Elektronik": 25.568,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Güterwagen",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Leergewicht": 18.0,
+    "Länge": 14.95,
+    "Ladefläche": 50.0,
+    "Arbeitstage": 810.0,
+    "Stahl": 14.87,
+    "Aluminium": 59.143,
+    "Kunststoffe": 0.72,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 1.08,
+    "Elektronik-Bauteile": 0.18,
+    "Elektronik": 18.409,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Flachwagen",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1942.0,
+    "Bis": 3000.0,
+    "Leergewicht": 18.0,
+    "Länge": 19.83,
+    "Ladefläche": 75.0,
+    "Arbeitstage": 810.0,
+    "Stahl": 14.87,
+    "Aluminium": 59.143,
+    "Kunststoffe": 0.72,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 1.08,
+    "Elektronik-Bauteile": 0.18,
+    "Elektronik": 18.409,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Offener Wagen 13-401",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1959.0,
+    "Bis": 1993.0,
+    "Leergewicht": 20.3,
+    "Länge": 14.78,
+    "Ladefläche": 67.0,
+    "Arbeitstage": 913.5,
+    "Stahl": 16.77,
+    "Aluminium": 66.7,
+    "Kunststoffe": 0.812,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 1.218,
+    "Elektronik-Bauteile": 0.203,
+    "Elektronik": 20.761,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Offener Wagen 13-4012",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1978.0,
+    "Bis": 3000.0,
+    "Leergewicht": 18.3,
+    "Länge": 14.78,
+    "Ladefläche": 70.0,
+    "Arbeitstage": 823.5,
+    "Stahl": 15.117,
+    "Aluminium": 60.129,
+    "Kunststoffe": 0.732,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 1.098,
+    "Elektronik-Bauteile": 0.183,
+    "Elektronik": 18.716,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Offener Wagen 13-926",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1971.0,
+    "Bis": 3000.0,
+    "Leergewicht": 22.3,
+    "Länge": 19.87,
+    "Ladefläche": 79.0,
+    "Arbeitstage": 1003.5,
+    "Stahl": 18.422,
+    "Aluminium": 73.271,
+    "Kunststoffe": 0.892,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.338,
+    "Elektronik-Bauteile": 0.223,
+    "Elektronik": 22.807,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Passagierwagen",
+   "attrs": {
+    "Typ": "Passagierwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Leergewicht": 25.0,
+    "Länge": 25.96,
+    "Passagiere": 105.0,
+    "Arbeitstage": 1125.0,
+    "Stahl": 20.833,
+    "Kunststoffe": 1.0,
+    "Stoff": 0.25,
+    "Mechanik-Bauteile": 1.5,
+    "Elektronik-Bauteile": 0.25,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Tankwagen",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Leergewicht": 19.0,
+    "Länge": 11.77,
+    "Ladefläche": 57.0,
+    "Arbeitstage": 855.0,
+    "Stahl": 15.696,
+    "Aluminium": 62.429,
+    "Kunststoffe": 0.76,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 1.14,
+    "Elektronik-Bauteile": 0.19,
+    "Elektronik": 19.432,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "U-Bahn Paris MA-51",
+   "attrs": {
+    "Typ": "U-Bahn",
+    "Frachtart": "Passagiere",
+    "Bauland": "France",
+    "Von": 1951.0,
+    "Bis": 1988.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 265.0,
+    "Leergewicht": 75.0,
+    "Länge": 13.31,
+    "Passagiere": 150.0,
+    "Arbeitstage": 3487.5,
+    "Stahl": 65.625,
+    "Kunststoffe": 2.986,
+    "Stoff": 1.406,
+    "Mechanik-Bauteile": 6.094,
+    "Elektronik-Bauteile": 1.875,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "U-Bahn London Tube stock 1938",
+   "attrs": {
+    "Typ": "U-Bahn",
+    "Frachtart": "Passagiere",
+    "Von": 1938.0,
+    "Bis": 1988.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 180.0,
+    "Leergewicht": 28.0,
+    "Länge": 15.97,
+    "Passagiere": 82.0,
+    "Arbeitstage": 1302.0,
+    "Stahl": 24.5,
+    "Kunststoffe": 1.115,
+    "Stoff": 0.525,
+    "Mechanik-Bauteile": 2.275,
+    "Elektronik-Bauteile": 0.7,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "L-200",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1957.0,
+    "Bis": 1990.0,
+    "Max. Geschwindigkeit": 285.0,
+    "Motorleistung": 308.0,
+    "Leergewicht": 1.6,
+    "Länge": 8.65,
+    "Ladefläche": 4.0,
+    "Arbeitstage": 389.346,
+    "Stahl": 0.08,
+    "Aluminium": 1.192,
+    "Kunststoffe": 0.024,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.78,
+    "Elektronik-Bauteile": 0.114,
+    "Elektronik": 0.039,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "L-410 UPV",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1976.0,
+    "Bis": 2001.0,
+    "Max. Geschwindigkeit": 365.0,
+    "Motorleistung": 1080.0,
+    "Leergewicht": 3.8,
+    "Länge": 14.4,
+    "Ladefläche": 15.0,
+    "Arbeitstage": 924.698,
+    "Stahl": 0.19,
+    "Aluminium": 2.831,
+    "Kunststoffe": 0.058,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 1.854,
+    "Elektronik-Bauteile": 0.271,
+    "Elektronik": 0.092,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "L-410 UPV-e",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1986.0,
+    "Bis": 2001.0,
+    "Max. Geschwindigkeit": 380.0,
+    "Motorleistung": 1120.0,
+    "Leergewicht": 4.5,
+    "Länge": 14.4,
+    "Ladefläche": 19.0,
+    "Arbeitstage": 1095.037,
+    "Stahl": 0.225,
+    "Aluminium": 3.352,
+    "Kunststoffe": 0.069,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 2.195,
+    "Elektronik-Bauteile": 0.321,
+    "Elektronik": 0.109,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "An-14",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1965.0,
+    "Bis": 2001.0,
+    "Max. Geschwindigkeit": 190.0,
+    "Motorleistung": 440.0,
+    "Leergewicht": 2.6,
+    "Länge": 11.36,
+    "Ladefläche": 7.0,
+    "Arbeitstage": 632.688,
+    "Stahl": 0.13,
+    "Aluminium": 1.937,
+    "Kunststoffe": 0.04,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 1.268,
+    "Elektronik-Bauteile": 0.186,
+    "Elektronik": 0.063,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "An-28",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "Poland",
+    "Von": 1974.0,
+    "Bis": 1990.0,
+    "Max. Geschwindigkeit": 335.0,
+    "Motorleistung": 1412.0,
+    "Leergewicht": 3.5,
+    "Länge": 13.03,
+    "Ladefläche": 18.0,
+    "Arbeitstage": 851.695,
+    "Stahl": 0.175,
+    "Aluminium": 2.607,
+    "Kunststoffe": 0.054,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 1.707,
+    "Elektronik-Bauteile": 0.25,
+    "Elektronik": 0.085,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "C 626 – 200",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "USA",
+    "Von": 1968.0,
+    "Bis": 1989.0,
+    "Max. Geschwindigkeit": 830.0,
+    "Motorleistung": 12500.0,
+    "Leergewicht": 29.2,
+    "Länge": 30.37,
+    "Ladefläche": 135.0,
+    "Arbeitstage": 7105.571,
+    "Stahl": 1.46,
+    "Aluminium": 21.751,
+    "Kunststoffe": 0.447,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 14.244,
+    "Elektronik-Bauteile": 2.086,
+    "Elektronik": 0.705,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "C 626 – 400",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "USA",
+    "Von": 1988.0,
+    "Bis": 2001.0,
+    "Max. Geschwindigkeit": 890.0,
+    "Motorleistung": 22500.0,
+    "Leergewicht": 35.9,
+    "Länge": 36.24,
+    "Ladefläche": 170.0,
+    "Arbeitstage": 8735.959,
+    "Stahl": 1.795,
+    "Aluminium": 26.742,
+    "Kunststoffe": 0.549,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 17.512,
+    "Elektronik-Bauteile": 2.564,
+    "Elektronik": 0.867,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "C-172",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "USA",
+    "Von": 1960.0,
+    "Bis": 2001.0,
+    "Max. Geschwindigkeit": 230.0,
+    "Motorleistung": 133.0,
+    "Leergewicht": 1.2,
+    "Länge": 7.87,
+    "Ladefläche": 4.0,
+    "Arbeitstage": 292.01,
+    "Stahl": 0.06,
+    "Aluminium": 0.894,
+    "Kunststoffe": 0.018,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.585,
+    "Elektronik-Bauteile": 0.086,
+    "Elektronik": 0.029,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Dunay-class motorship (Passagiere)",
+   "attrs": {
+    "Typ": "Passagierschiff",
+    "Frachtart": "Passagiere",
+    "Bauland": "Ungarn",
+    "Von": 1959.0,
+    "Bis": 1997.0,
+    "Max. Geschwindigkeit": 31.0,
+    "Motorleistung": 1197.0,
+    "Leergewicht": 620.1,
+    "Länge": 79.05,
+    "Passagiere": 295.0,
+    "Arbeitstage": 15613.601,
+    "Stahl": 316.079,
+    "Kunststoffe": 6.201,
+    "Stoff": 1.292,
+    "Mechanik-Bauteile": 43.924,
+    "Elektronik-Bauteile": 3.201,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Frieda (Frachtschiff)",
+   "attrs": {
+    "Typ": "Frachtschiff",
+    "Frachtart": "Ladung",
+    "Bauland": "Bulgaria",
+    "Von": 1982.0,
+    "Bis": 1997.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 1020.0,
+    "Leergewicht": 1150.1,
+    "Länge": 74.09,
+    "Ladefläche": 1750.0,
+    "Arbeitstage": 28849.231,
+    "Stahl": 580.606,
+    "Aluminium": 1911.145,
+    "Kunststoffe": 11.394,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 74.562,
+    "Elektronik-Bauteile": 5.862,
+    "Elektronik": 612.053,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Sofia class (Tanker)",
+   "attrs": {
+    "Typ": "Frachtschiff",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1959.0,
+    "Bis": 1985.0,
+    "Max. Geschwindigkeit": 38.0,
+    "Motorleistung": 12000.0,
+    "Leergewicht": 6980.2,
+    "Länge": 230.71,
+    "Ladefläche": 14250.0,
+    "Arbeitstage": 175092.079,
+    "Stahl": 3523.821,
+    "Aluminium": 11599.145,
+    "Kunststoffe": 69.155,
+    "Stoff": 0.01,
+    "Mechanik-Bauteile": 452.533,
+    "Elektronik-Bauteile": 35.577,
+    "Elektronik": 3714.68,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Moskvich motor ship (Passagiere)",
+   "attrs": {
+    "Typ": "Passagierschiff",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1959.0,
+    "Bis": 1997.0,
+    "Max. Geschwindigkeit": 33.0,
+    "Motorleistung": 110.0,
+    "Leergewicht": 180.1,
+    "Länge": 27.28,
+    "Passagiere": 147.0,
+    "Arbeitstage": 4534.768,
+    "Stahl": 91.801,
+    "Kunststoffe": 1.801,
+    "Stoff": 0.375,
+    "Mechanik-Bauteile": 12.757,
+    "Elektronik-Bauteile": 0.93,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Type 587 Los (Tanker)",
+   "attrs": {
+    "Typ": "Frachtschiff",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1959.0,
+    "Bis": 1997.0,
+    "Max. Geschwindigkeit": 25.0,
+    "Motorleistung": 736.0,
+    "Leergewicht": 1170.1,
+    "Länge": 109.73,
+    "Ladefläche": 2770.0,
+    "Arbeitstage": 29350.913,
+    "Stahl": 590.703,
+    "Aluminium": 1944.38,
+    "Kunststoffe": 11.592,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 75.859,
+    "Elektronik-Bauteile": 5.964,
+    "Elektronik": 622.697,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Class 350 Lokomotive",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1973.0,
+    "Bis": 1978.0,
+    "Max. Geschwindigkeit": 160.0,
+    "Motorleistung": 4000.0,
+    "Leergewicht": 90.0,
+    "Länge": 16.87,
+    "Arbeitstage": 4454.167,
+    "Stahl": 84.769,
+    "Kunststoffe": 3.6,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 13.019,
+    "Elektronik-Bauteile": 1.925,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Class 749 \"Bardotka\"",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1964.0,
+    "Bis": 1971.0,
+    "Max. Geschwindigkeit": 100.0,
+    "Motorleistung": 1103.0,
+    "Leergewicht": 75.0,
+    "Länge": 16.5,
+    "Arbeitstage": 3711.805,
+    "Stahl": 70.641,
+    "Kunststoffe": 3.0,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 10.849,
+    "Elektronik-Bauteile": 1.604,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Mars Ponton - Polizei",
+   "attrs": {
+    "Typ": "Polizeiwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "West Germany",
+    "Von": 1953.0,
+    "Bis": 1962.0,
+    "Max. Geschwindigkeit": 120.0,
+    "Motorleistung": 78.0,
+    "Leergewicht": 1.15,
+    "Länge": 4.55,
+    "Passagiere": 4.0
+   }
+  },
+  {
+   "name": "M61 Lokomotive",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Schweden",
+    "Von": 1954.0,
+    "Bis": 1969.0,
+    "Max. Geschwindigkeit": 105.0,
+    "Motorleistung": 1435.0,
+    "Leergewicht": 102.0,
+    "Länge": 18.93,
+    "Arbeitstage": 5048.055,
+    "Stahl": 96.071,
+    "Kunststoffe": 4.08,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 14.755,
+    "Elektronik-Bauteile": 2.181,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Class 700 \"Pig\" Lokomotive",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1957.0,
+    "Bis": 1962.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 121.0,
+    "Leergewicht": 22.0,
+    "Länge": 7.26,
+    "Arbeitstage": 1088.796,
+    "Stahl": 20.721,
+    "Kunststoffe": 0.88,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 3.182,
+    "Elektronik-Bauteile": 0.47,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Class 700A \"Pig\" Lokomotive",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1957.0,
+    "Bis": 1962.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 121.0,
+    "Leergewicht": 22.0,
+    "Länge": 7.26,
+    "Arbeitstage": 1088.796,
+    "Stahl": 20.721,
+    "Kunststoffe": 0.88,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 3.182,
+    "Elektronik-Bauteile": 0.47,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Class 701 \"Pig\" Lokomotive",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1977.0,
+    "Bis": 1991.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 169.0,
+    "Leergewicht": 22.0,
+    "Länge": 7.26,
+    "Arbeitstage": 1088.796,
+    "Stahl": 20.721,
+    "Kunststoffe": 0.88,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 3.182,
+    "Elektronik-Bauteile": 0.47,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Class 702 \"Pig\" Lokomotive",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Czechoslovakia",
+    "Von": 1967.0,
+    "Bis": 1971.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 157.0,
+    "Leergewicht": 24.0,
+    "Länge": 7.18,
+    "Arbeitstage": 1187.778,
+    "Stahl": 22.605,
+    "Kunststoffe": 0.96,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 3.472,
+    "Elektronik-Bauteile": 0.513,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Güterwagen Eas (Schüttgut)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Kipper",
+    "Bauland": "Czechoslovakia",
+    "Von": 1979.0,
+    "Bis": 3000.0,
+    "Leergewicht": 23.0,
+    "Länge": 14.08,
+    "Ladefläche": 56.0,
+    "Arbeitstage": 1035.0,
+    "Stahl": 19.0,
+    "Aluminium": 75.571,
+    "Kunststoffe": 0.92,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.38,
+    "Elektronik-Bauteile": 0.23,
+    "Elektronik": 23.523,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Güterwagen Es (Schüttgut)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Kipper",
+    "Bauland": "Czechoslovakia",
+    "Von": 1966.0,
+    "Bis": 1990.0,
+    "Leergewicht": 13.0,
+    "Länge": 9.98,
+    "Ladefläche": 29.0,
+    "Arbeitstage": 585.0,
+    "Stahl": 10.739,
+    "Aluminium": 42.714,
+    "Kunststoffe": 0.52,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.78,
+    "Elektronik-Bauteile": 0.13,
+    "Elektronik": 13.295,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "ET 40PL",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Ladung",
+    "Bauland": "Czechoslovakia",
+    "Max. Geschwindigkeit": 100.0,
+    "Motorleistung": 2040.0,
+    "Leergewicht": 85.0,
+    "Länge": 17.32,
+    "Arbeitstage": 3825.0,
+    "Stahl": 70.217,
+    "Aluminium": 279.286,
+    "Kunststoffe": 3.4,
+    "Stoff": 0.018,
+    "Mechanik-Bauteile": 5.1,
+    "Elektronik-Bauteile": 0.85,
+    "Elektronik": 86.932,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Güterwagen 4900",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "USA",
+    "Von": 1947.0,
+    "Bis": 1962.0,
+    "Leergewicht": 19.8,
+    "Länge": 13.55,
+    "Ladefläche": 55.0,
+    "Arbeitstage": 891.0,
+    "Stahl": 16.357,
+    "Aluminium": 65.057,
+    "Kunststoffe": 0.792,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 1.188,
+    "Elektronik-Bauteile": 0.198,
+    "Elektronik": 20.25,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Güterwagen 5077",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "USA",
+    "Von": 1949.0,
+    "Bis": 1968.0,
+    "Leergewicht": 27.0,
+    "Länge": 16.61,
+    "Ladefläche": 78.0,
+    "Arbeitstage": 1215.0,
+    "Stahl": 22.304,
+    "Aluminium": 88.714,
+    "Kunststoffe": 1.08,
+    "Stoff": 0.006,
+    "Mechanik-Bauteile": 1.62,
+    "Elektronik-Bauteile": 0.27,
+    "Elektronik": 27.614,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Schüttgutwagen (Abgedeckt) 4180",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "USA",
+    "Von": 1963.0,
+    "Bis": 1980.0,
+    "Leergewicht": 30.0,
+    "Länge": 16.61,
+    "Ladefläche": 102.0,
+    "Arbeitstage": 1350.0,
+    "Stahl": 24.783,
+    "Aluminium": 98.571,
+    "Kunststoffe": 1.2,
+    "Stoff": 0.007,
+    "Mechanik-Bauteile": 1.8,
+    "Elektronik-Bauteile": 0.3,
+    "Elektronik": 30.682,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Güterwagen 5300",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "USA",
+    "Von": 1969.0,
+    "Bis": 1983.0,
+    "Leergewicht": 28.0,
+    "Länge": 16.7,
+    "Ladefläche": 89.4,
+    "Arbeitstage": 1260.0,
+    "Stahl": 23.13,
+    "Aluminium": 92.0,
+    "Kunststoffe": 1.12,
+    "Stoff": 0.006,
+    "Mechanik-Bauteile": 1.68,
+    "Elektronik-Bauteile": 0.28,
+    "Elektronik": 28.636,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Containerwagen F-70-81 (40ft)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "USA",
+    "Von": 1977.0,
+    "Bis": 1985.0,
+    "Leergewicht": 16.0,
+    "Länge": 17.34,
+    "Ladefläche": 62.0,
+    "Arbeitstage": 720.0,
+    "Stahl": 13.217,
+    "Aluminium": 52.571,
+    "Kunststoffe": 0.64,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.96,
+    "Elektronik-Bauteile": 0.16,
+    "Elektronik": 16.364,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Containerwagen (40ft)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "USA",
+    "Von": 1986.0,
+    "Bis": 2002.0,
+    "Leergewicht": 15.0,
+    "Länge": 17.48,
+    "Ladefläche": 72.0,
+    "Arbeitstage": 675.0,
+    "Stahl": 12.391,
+    "Aluminium": 49.286,
+    "Kunststoffe": 0.6,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.9,
+    "Elektronik-Bauteile": 0.15,
+    "Elektronik": 15.341,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Schüttgutwagen (Abgedeckt) 4550",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Von": 1970.0,
+    "Bis": 1990.0,
+    "Leergewicht": 32.0,
+    "Länge": 17.75,
+    "Ladefläche": 115.0,
+    "Arbeitstage": 1440.0,
+    "Stahl": 26.435,
+    "Aluminium": 105.143,
+    "Kunststoffe": 1.28,
+    "Stoff": 0.007,
+    "Mechanik-Bauteile": 1.92,
+    "Elektronik-Bauteile": 0.32,
+    "Elektronik": 32.727,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Containerwagen (53ft)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "USA",
+    "Von": 2000.0,
+    "Bis": 3000.0,
+    "Leergewicht": 17.0,
+    "Länge": 20.02,
+    "Ladefläche": 82.0,
+    "Arbeitstage": 765.0,
+    "Stahl": 14.043,
+    "Aluminium": 55.857,
+    "Kunststoffe": 0.68,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 1.02,
+    "Elektronik-Bauteile": 0.17,
+    "Elektronik": 17.386,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "25D49 (Ol49) Tender",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Poland",
+    "Von": 1951.0,
+    "Bis": 1985.0,
+    "Max. Geschwindigkeit": 100.0,
+    "Leergewicht": 15.0,
+    "Länge": 6.77,
+    "Ladefläche": 37.0,
+    "Arbeitstage": 742.361,
+    "Stahl": 14.128,
+    "Kunststoffe": 0.6,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 2.17,
+    "Elektronik-Bauteile": 0.321,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "32D43 (Ty45) Tender",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Poland",
+    "Von": 1946.0,
+    "Bis": 1951.0,
+    "Max. Geschwindigkeit": 75.0,
+    "Leergewicht": 21.0,
+    "Länge": 8.48,
+    "Ladefläche": 68.0,
+    "Arbeitstage": 1039.306,
+    "Stahl": 19.779,
+    "Kunststoffe": 0.84,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 3.038,
+    "Elektronik-Bauteile": 0.449,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "34D44 (Pm2) Tender",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Poland",
+    "Von": 1930.0,
+    "Bis": 1982.0,
+    "Max. Geschwindigkeit": 130.0,
+    "Leergewicht": 40.0,
+    "Länge": 8.22,
+    "Ladefläche": 58.0,
+    "Arbeitstage": 1979.63,
+    "Stahl": 37.675,
+    "Kunststoffe": 1.6,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 5.786,
+    "Elektronik-Bauteile": 0.855,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Ci-28",
+   "attrs": {
+    "Typ": "Passagierwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Deutschland",
+    "Von": 1928.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 90.0,
+    "Leergewicht": 21.0,
+    "Länge": 13.91,
+    "Passagiere": 58.0,
+    "Arbeitstage": 945.0,
+    "Stahl": 17.5,
+    "Kunststoffe": 0.84,
+    "Stoff": 0.21,
+    "Mechanik-Bauteile": 1.26,
+    "Elektronik-Bauteile": 0.21,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Dresden Gl",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Deutschland",
+    "Von": 1914.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 12.5,
+    "Länge": 12.06,
+    "Ladefläche": 22.0,
+    "Arbeitstage": 562.5,
+    "Stahl": 10.326,
+    "Aluminium": 41.071,
+    "Kunststoffe": 0.5,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.75,
+    "Elektronik-Bauteile": 0.125,
+    "Elektronik": 12.784,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Э-Serie 1912/1926/1931",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1912.0,
+    "Bis": 1967.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 750.0,
+    "Leergewicht": 78.0,
+    "Länge": 12.88,
+    "Arbeitstage": 3860.278,
+    "Stahl": 73.466,
+    "Kunststoffe": 3.12,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 11.283,
+    "Elektronik-Bauteile": 1.668,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "E late Tender",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1912.0,
+    "Bis": 1978.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 24.0,
+    "Länge": 9.09,
+    "Ladefläche": 49.0,
+    "Arbeitstage": 1187.778,
+    "Stahl": 22.605,
+    "Kunststoffe": 0.96,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 3.472,
+    "Elektronik-Bauteile": 0.513,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "FD-Serie",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1931.0,
+    "Bis": 1978.0,
+    "Max. Geschwindigkeit": 85.0,
+    "Motorleistung": 2205.0,
+    "Leergewicht": 134.0,
+    "Länge": 17.14,
+    "Arbeitstage": 6631.759,
+    "Stahl": 126.212,
+    "Kunststoffe": 5.36,
+    "Stoff": 0.007,
+    "Mechanik-Bauteile": 19.383,
+    "Elektronik-Bauteile": 2.866,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "FD Tender",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1931.0,
+    "Bis": 1978.0,
+    "Max. Geschwindigkeit": 85.0,
+    "Leergewicht": 34.0,
+    "Länge": 12.86,
+    "Ladefläche": 64.0,
+    "Arbeitstage": 1682.685,
+    "Stahl": 32.024,
+    "Kunststoffe": 1.36,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 4.918,
+    "Elektronik-Bauteile": 0.727,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Hannover Gk",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Kühlung",
+    "Bauland": "Deutschland",
+    "Von": 1919.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 9.8,
+    "Länge": 9.1,
+    "Ladefläche": 35.0,
+    "Arbeitstage": 441.0,
+    "Stahl": 8.096,
+    "Aluminium": 32.2,
+    "Kunststoffe": 0.392,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.588,
+    "Elektronik-Bauteile": 0.098,
+    "Elektronik": 10.023,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "IS-Serie",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1931.0,
+    "Bis": 1972.0,
+    "Max. Geschwindigkeit": 115.0,
+    "Motorleistung": 2135.0,
+    "Leergewicht": 118.0,
+    "Länge": 16.62,
+    "Arbeitstage": 5839.907,
+    "Stahl": 111.141,
+    "Kunststoffe": 4.72,
+    "Stoff": 0.006,
+    "Mechanik-Bauteile": 17.069,
+    "Elektronik-Bauteile": 2.523,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "IS Tender",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1931.0,
+    "Bis": 1972.0,
+    "Max. Geschwindigkeit": 115.0,
+    "Leergewicht": 34.0,
+    "Länge": 12.93,
+    "Ladefläche": 64.0,
+    "Arbeitstage": 1682.685,
+    "Stahl": 32.024,
+    "Kunststoffe": 1.36,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 4.918,
+    "Elektronik-Bauteile": 0.727,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Kassel G",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Deutschland",
+    "Von": 1910.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 9.8,
+    "Länge": 9.1,
+    "Ladefläche": 22.0,
+    "Arbeitstage": 441.0,
+    "Stahl": 8.096,
+    "Aluminium": 32.2,
+    "Kunststoffe": 0.392,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.588,
+    "Elektronik-Bauteile": 0.098,
+    "Elektronik": 10.023,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Kassel G (für Pferde)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Vieh",
+    "Bauland": "Deutschland",
+    "Von": 1910.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 9.8,
+    "Länge": 9.1,
+    "Ladefläche": 17.5,
+    "Arbeitstage": 441.0,
+    "Stahl": 8.096,
+    "Aluminium": 32.2,
+    "Kunststoffe": 0.392,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.588,
+    "Elektronik-Bauteile": 0.098,
+    "Elektronik": 10.023,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Klagenfurt Ommu",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Kipper",
+    "Bauland": "Deutschland",
+    "Von": 1942.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 8.3,
+    "Länge": 10.04,
+    "Ladefläche": 27.5,
+    "Arbeitstage": 373.5,
+    "Stahl": 6.857,
+    "Aluminium": 27.271,
+    "Kunststoffe": 0.332,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.498,
+    "Elektronik-Bauteile": 0.083,
+    "Elektronik": 8.489,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Klagenfurt Ommu (offen)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Deutschland",
+    "Von": 1942.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 8.3,
+    "Länge": 10.04,
+    "Ladefläche": 27.5,
+    "Arbeitstage": 373.5,
+    "Stahl": 6.857,
+    "Aluminium": 27.271,
+    "Kunststoffe": 0.332,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.498,
+    "Elektronik-Bauteile": 0.083,
+    "Elektronik": 8.489,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Klagenfurt Ommu (Abfall)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Müll",
+    "Bauland": "Deutschland",
+    "Von": 1942.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 8.3,
+    "Länge": 10.04,
+    "Ladefläche": 27.5,
+    "Arbeitstage": 373.5,
+    "Stahl": 6.857,
+    "Aluminium": 27.271,
+    "Kunststoffe": 0.332,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.498,
+    "Elektronik-Bauteile": 0.083,
+    "Elektronik": 8.489,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Königsberg Om",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Kipper",
+    "Bauland": "Deutschland",
+    "Von": 1919.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 10.4,
+    "Länge": 9.1,
+    "Ladefläche": 21.0,
+    "Arbeitstage": 468.0,
+    "Stahl": 8.591,
+    "Aluminium": 34.171,
+    "Kunststoffe": 0.416,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.624,
+    "Elektronik-Bauteile": 0.104,
+    "Elektronik": 10.636,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Königsberg Om (offen)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Deutschland",
+    "Von": 1919.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 10.4,
+    "Länge": 9.1,
+    "Ladefläche": 21.0,
+    "Arbeitstage": 468.0,
+    "Stahl": 8.591,
+    "Aluminium": 34.171,
+    "Kunststoffe": 0.416,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.624,
+    "Elektronik-Bauteile": 0.104,
+    "Elektronik": 10.636,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Königsberg Om (Abfall)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Müll",
+    "Bauland": "Deutschland",
+    "Von": 1919.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 10.4,
+    "Länge": 9.1,
+    "Ladefläche": 21.0,
+    "Arbeitstage": 468.0,
+    "Stahl": 8.591,
+    "Aluminium": 34.171,
+    "Kunststoffe": 0.416,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.624,
+    "Elektronik-Bauteile": 0.104,
+    "Elektronik": 10.636,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Preußische T18 (Oko1)",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Deutschland",
+    "Von": 1912.0,
+    "Bis": 1972.0,
+    "Max. Geschwindigkeit": 100.0,
+    "Motorleistung": 838.0,
+    "Leergewicht": 105.0,
+    "Länge": 14.39,
+    "Arbeitstage": 5196.528,
+    "Stahl": 98.897,
+    "Kunststoffe": 4.2,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 15.189,
+    "Elektronik-Bauteile": 2.245,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Oppeln Gs",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Deutschland",
+    "Von": 1937.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 90.0,
+    "Leergewicht": 10.5,
+    "Länge": 9.11,
+    "Ladefläche": 22.0,
+    "Arbeitstage": 472.5,
+    "Stahl": 8.674,
+    "Aluminium": 34.5,
+    "Kunststoffe": 0.42,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.63,
+    "Elektronik-Bauteile": 0.105,
+    "Elektronik": 10.739,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "SO-Tender",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1978.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Leergewicht": 24.0,
+    "Länge": 7.55,
+    "Ladefläche": 49.0,
+    "Arbeitstage": 1187.778,
+    "Stahl": 22.605,
+    "Kunststoffe": 0.96,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 3.472,
+    "Elektronik-Bauteile": 0.513,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Köln SSyms",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Deutschland",
+    "Von": 1942.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 90.0,
+    "Leergewicht": 23.5,
+    "Länge": 13.1,
+    "Ladefläche": 82.0,
+    "Arbeitstage": 1057.5,
+    "Stahl": 19.413,
+    "Aluminium": 77.214,
+    "Kunststoffe": 0.94,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.41,
+    "Elektronik-Bauteile": 0.235,
+    "Elektronik": 24.034,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Köln SSys",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Deutschland",
+    "Von": 1942.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 90.0,
+    "Leergewicht": 16.0,
+    "Länge": 10.7,
+    "Ladefläche": 52.0,
+    "Arbeitstage": 720.0,
+    "Stahl": 13.217,
+    "Aluminium": 52.571,
+    "Kunststoffe": 0.64,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.96,
+    "Elektronik-Bauteile": 0.16,
+    "Elektronik": 16.364,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "SO-Serie Mod. 1928",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1934.0,
+    "Bis": 1978.0,
+    "Max. Geschwindigkeit": 75.0,
+    "Motorleistung": 1430.0,
+    "Leergewicht": 93.0,
+    "Länge": 12.83,
+    "Arbeitstage": 4602.639,
+    "Stahl": 87.595,
+    "Kunststoffe": 3.72,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 13.453,
+    "Elektronik-Bauteile": 1.989,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Stuttgart R",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Deutschland",
+    "Von": 1913.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 9.2,
+    "Länge": 11.5,
+    "Ladefläche": 17.5,
+    "Arbeitstage": 414.0,
+    "Stahl": 7.6,
+    "Aluminium": 30.229,
+    "Kunststoffe": 0.368,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.552,
+    "Elektronik-Bauteile": 0.092,
+    "Elektronik": 9.409,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Villach Ommru",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Kipper",
+    "Bauland": "Deutschland",
+    "Von": 1941.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 75.0,
+    "Leergewicht": 10.8,
+    "Länge": 10.1,
+    "Ladefläche": 24.5,
+    "Arbeitstage": 486.0,
+    "Stahl": 8.922,
+    "Aluminium": 35.486,
+    "Kunststoffe": 0.432,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.648,
+    "Elektronik-Bauteile": 0.108,
+    "Elektronik": 11.045,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Villach Ommru (offen)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Deutschland",
+    "Von": 1941.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 75.0,
+    "Leergewicht": 10.8,
+    "Länge": 10.1,
+    "Ladefläche": 24.5,
+    "Arbeitstage": 486.0,
+    "Stahl": 8.922,
+    "Aluminium": 35.486,
+    "Kunststoffe": 0.432,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.648,
+    "Elektronik-Bauteile": 0.108,
+    "Elektronik": 11.045,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Villach Ommru (Abfall)",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Müll",
+    "Bauland": "Deutschland",
+    "Von": 1941.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 75.0,
+    "Leergewicht": 10.8,
+    "Länge": 10.1,
+    "Ladefläche": 24.5,
+    "Arbeitstage": 486.0,
+    "Stahl": 8.922,
+    "Aluminium": 35.486,
+    "Kunststoffe": 0.432,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.648,
+    "Elektronik-Bauteile": 0.108,
+    "Elektronik": 11.045,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "WR-360 C12",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Deutschland",
+    "Von": 1937.0,
+    "Bis": 1981.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 265.0,
+    "Leergewicht": 40.0,
+    "Länge": 9.91,
+    "Arbeitstage": 1979.63,
+    "Stahl": 37.675,
+    "Kunststoffe": 1.6,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 5.786,
+    "Elektronik-Bauteile": 0.855,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Wismar Z",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Deutschland",
+    "Von": 1919.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 12.1,
+    "Länge": 8.86,
+    "Ladefläche": 17.5,
+    "Arbeitstage": 544.5,
+    "Stahl": 9.996,
+    "Aluminium": 39.757,
+    "Kunststoffe": 0.484,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.726,
+    "Elektronik-Bauteile": 0.121,
+    "Elektronik": 12.375,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Wuppertal K",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Staubgut-Behälter",
+    "Bauland": "Deutschland",
+    "Von": 1919.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 11.0,
+    "Länge": 8.1,
+    "Ladefläche": 17.5,
+    "Arbeitstage": 495.0,
+    "Stahl": 9.087,
+    "Aluminium": 36.143,
+    "Kunststoffe": 0.44,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.66,
+    "Elektronik-Bauteile": 0.11,
+    "Elektronik": 11.25,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "AMO-15 Krankenwagen",
+   "attrs": {
+    "Typ": "Krankenwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 46.0,
+    "Motorleistung": 26.0,
+    "Leergewicht": 1.92,
+    "Länge": 5.01,
+    "Passagiere": 6.0
+   }
+  },
+  {
+   "name": "AMO-15 Überdacht",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 2.0,
+    "Länge": 4.98,
+    "Ladefläche": 1.5,
+    "Arbeitstage": 130.98,
+    "Stahl": 1.855,
+    "Kunststoffe": 0.08,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.275,
+    "Elektronik-Bauteile": 0.036,
+    "Elektronik": 0.767,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "AMO-15 Öltankwagen",
+   "attrs": {
+    "Typ": "Tanklaster",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 2.0,
+    "Länge": 4.95,
+    "Ladefläche": 1.5,
+    "Arbeitstage": 128.246,
+    "Stahl": 1.833,
+    "Kunststoffe": 0.08,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.255,
+    "Elektronik-Bauteile": 0.034,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "AMO-15 Abwasserwagen",
+   "attrs": {
+    "Typ": "Abwassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 2.0,
+    "Länge": 4.95,
+    "Ladefläche": 1.5
+   }
+  },
+  {
+   "name": "AMO-15 Wasserwagen",
+   "attrs": {
+    "Typ": "Wassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 2.0,
+    "Länge": 4.95,
+    "Ladefläche": 1.5
+   }
+  },
+  {
+   "name": "AMO-15 Bus",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 1.92,
+    "Länge": 5.01,
+    "Passagiere": 14.0,
+    "Arbeitstage": 126.523,
+    "Stahl": 1.797,
+    "Kunststoffe": 0.077,
+    "Stoff": 0.058,
+    "Mechanik-Bauteile": 0.25,
+    "Elektronik-Bauteile": 0.036,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "AMO-15 Trockengut",
+   "attrs": {
+    "Typ": "Trockenschüttguttank",
+    "Frachtart": "Staubgut-Behälter",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 2.0,
+    "Länge": 5.23,
+    "Ladefläche": 1.5,
+    "Arbeitstage": 127.436,
+    "Stahl": 1.815,
+    "Kunststoffe": 0.08,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.239,
+    "Elektronik-Bauteile": 0.033,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "AMO-15 Feuerwehrauto",
+   "attrs": {
+    "Typ": "Feuerwerhfahrzeug",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 46.0,
+    "Motorleistung": 26.0,
+    "Leergewicht": 1.92,
+    "Länge": 5.53,
+    "Ladefläche": 2.2
+   }
+  },
+  {
+   "name": "AMO-15 Industrie-Transporter",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Ladung",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 21.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 2.0,
+    "Länge": 5.07,
+    "Ladefläche": 1.5,
+    "Arbeitstage": 129.167,
+    "Stahl": 1.833,
+    "Aluminium": 1.973,
+    "Kunststoffe": 0.08,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.25,
+    "Elektronik-Bauteile": 0.035,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "AMO-15 Müllwagen",
+   "attrs": {
+    "Typ": "Müllfahrzeug",
+    "Frachtart": "Müll",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 2.0,
+    "Länge": 4.98,
+    "Ladefläche": 1.5
+   }
+  },
+  {
+   "name": "AMO-15 Kieswagen",
+   "attrs": {
+    "Typ": "Kipper",
+    "Frachtart": "Kipper",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 2.0,
+    "Länge": 4.59,
+    "Ladefläche": 1.5,
+    "Arbeitstage": 131.134,
+    "Stahl": 1.856,
+    "Kunststoffe": 0.08,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.268,
+    "Elektronik-Bauteile": 0.037,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "AMO-15 Offener Laderaum",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 2.0,
+    "Länge": 5.07,
+    "Ladefläche": 1.5,
+    "Arbeitstage": 129.167,
+    "Stahl": 1.833,
+    "Aluminium": 1.973,
+    "Kunststoffe": 0.08,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.25,
+    "Elektronik-Bauteile": 0.035,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "AMO-15 Polizeibus",
+   "attrs": {
+    "Typ": "Polizeiwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 1.92,
+    "Länge": 5.01,
+    "Passagiere": 8.0
+   }
+  },
+  {
+   "name": "AMO-15 Kühlwagen",
+   "attrs": {
+    "Typ": "Kühllaster",
+    "Frachtart": "Kühlung",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 2.0,
+    "Länge": 4.98,
+    "Ladefläche": 1.5,
+    "Arbeitstage": 134.0,
+    "Stahl": 1.95,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.24,
+    "Elektronik-Bauteile": 0.034,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "AMO-15 Mischer",
+   "attrs": {
+    "Typ": "Betonmischer",
+    "Frachtart": "Beton",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 2.0,
+    "Länge": 4.64,
+    "Ladefläche": 1.5
+   }
+  },
+  {
+   "name": "AMO-15 Schneepflug",
+   "attrs": {
+    "Typ": "Schneepflug",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1938.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 25.0,
+    "Leergewicht": 2.0,
+    "Länge": 5.92
+   }
+  },
+  {
+   "name": "GAZ M1 Krankenwagen",
+   "attrs": {
+    "Typ": "Krankenwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1935.0,
+    "Bis": 1943.0,
+    "Max. Geschwindigkeit": 90.0,
+    "Motorleistung": 37.0,
+    "Leergewicht": 1.37,
+    "Länge": 4.74,
+    "Passagiere": 4.0
+   }
+  },
+  {
+   "name": "Moskvich 400 Arztwagen",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1946.0,
+    "Bis": 1956.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 19.0,
+    "Leergewicht": 0.86,
+    "Länge": 3.93,
+    "Passagiere": 4.0,
+    "Arbeitstage": 71.987,
+    "Stahl": 0.915,
+    "Kunststoffe": 0.034,
+    "Stoff": 0.011,
+    "Mechanik-Bauteile": 0.225,
+    "Elektronik-Bauteile": 0.028,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "GAZ M20 Krankenwagen",
+   "attrs": {
+    "Typ": "Krankenwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1946.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 100.0,
+    "Motorleistung": 38.0,
+    "Leergewicht": 1.46,
+    "Länge": 4.69,
+    "Passagiere": 4.0
+   }
+  },
+  {
+   "name": "FSO Warszawa M20",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Poland",
+    "Von": 1951.0,
+    "Bis": 1964.0,
+    "Max. Geschwindigkeit": 100.0,
+    "Motorleistung": 38.0,
+    "Leergewicht": 1.46,
+    "Länge": 4.69,
+    "Passagiere": 4.0,
+    "Arbeitstage": 122.211,
+    "Stahl": 1.553,
+    "Kunststoffe": 0.058,
+    "Stoff": 0.019,
+    "Mechanik-Bauteile": 0.381,
+    "Elektronik-Bauteile": 0.048,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Ant-9 Tupolev",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1930.0,
+    "Bis": 1961.0,
+    "Max. Geschwindigkeit": 190.0,
+    "Motorleistung": 440.0,
+    "Leergewicht": 3.65,
+    "Länge": 17.01,
+    "Ladefläche": 9.0,
+    "Arbeitstage": 888.196,
+    "Stahl": 0.182,
+    "Aluminium": 2.719,
+    "Kunststoffe": 0.056,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 1.78,
+    "Elektronik-Bauteile": 0.261,
+    "Elektronik": 0.088,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "B-247",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "USA",
+    "Von": 1933.0,
+    "Bis": 1945.0,
+    "Max. Geschwindigkeit": 305.0,
+    "Motorleistung": 810.0,
+    "Leergewicht": 4.06,
+    "Länge": 15.66,
+    "Ladefläche": 10.0,
+    "Arbeitstage": 987.966,
+    "Stahl": 0.203,
+    "Aluminium": 3.024,
+    "Kunststoffe": 0.062,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 1.98,
+    "Elektronik-Bauteile": 0.29,
+    "Elektronik": 0.098,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Boeing 307",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "USA",
+    "Von": 1933.0,
+    "Bis": 1945.0,
+    "Max. Geschwindigkeit": 305.0,
+    "Motorleistung": 810.0,
+    "Leergewicht": 4.06,
+    "Länge": 22.58,
+    "Ladefläche": 33.0,
+    "Arbeitstage": 987.966,
+    "Stahl": 0.203,
+    "Aluminium": 3.024,
+    "Kunststoffe": 0.062,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 1.98,
+    "Elektronik-Bauteile": 0.29,
+    "Elektronik": 0.098,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "BBÖ 214",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Von": 1928.0,
+    "Bis": 1962.0,
+    "Max. Geschwindigkeit": 120.0,
+    "Motorleistung": 2160.0,
+    "Leergewicht": 118.0,
+    "Länge": 16.11,
+    "Arbeitstage": 5839.907,
+    "Stahl": 111.141,
+    "Kunststoffe": 4.72,
+    "Stoff": 0.006,
+    "Mechanik-Bauteile": 17.069,
+    "Elektronik-Bauteile": 2.523,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "BBO214 Tender",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Von": 1928.0,
+    "Bis": 1962.0,
+    "Max. Geschwindigkeit": 120.0,
+    "Leergewicht": 20.0,
+    "Länge": 7.11,
+    "Ladefläche": 44.0,
+    "Arbeitstage": 989.815,
+    "Stahl": 18.838,
+    "Kunststoffe": 0.8,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 2.893,
+    "Elektronik-Bauteile": 0.428,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Br80",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Deutschland",
+    "Von": 1927.0,
+    "Bis": 1977.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 423.0,
+    "Leergewicht": 44.0,
+    "Länge": 8.61,
+    "Arbeitstage": 2177.593,
+    "Stahl": 41.443,
+    "Kunststoffe": 1.76,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 6.365,
+    "Elektronik-Bauteile": 0.941,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Br81",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Deutschland",
+    "Von": 1928.0,
+    "Bis": 1963.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 633.0,
+    "Leergewicht": 52.0,
+    "Länge": 10.11,
+    "Arbeitstage": 2573.518,
+    "Stahl": 48.978,
+    "Kunststoffe": 2.08,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 7.522,
+    "Elektronik-Bauteile": 1.112,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Stalinets S-60",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1929.0,
+    "Bis": 1938.0,
+    "Max. Geschwindigkeit": 8.0,
+    "Motorleistung": 44.2,
+    "Leergewicht": 10.0,
+    "Länge": 5.83,
+    "Arbeitstage": 645.833,
+    "Stahl": 9.167,
+    "Aluminium": 9.867,
+    "Kunststoffe": 0.4,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.25,
+    "Elektronik-Bauteile": 0.173,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Stalinets S-65",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1937.0,
+    "Bis": 1959.0,
+    "Max. Geschwindigkeit": 12.0,
+    "Motorleistung": 47.8,
+    "Leergewicht": 10.5,
+    "Länge": 5.2,
+    "Arbeitstage": 678.125,
+    "Stahl": 9.625,
+    "Aluminium": 10.361,
+    "Kunststoffe": 0.42,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.312,
+    "Elektronik-Bauteile": 0.182,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "SKhTZ NATI",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1937.0,
+    "Bis": 1952.0,
+    "Max. Geschwindigkeit": 15.0,
+    "Motorleistung": 38.0,
+    "Leergewicht": 5.0,
+    "Länge": 4.71,
+    "Arbeitstage": 322.917,
+    "Stahl": 4.583,
+    "Aluminium": 4.934,
+    "Kunststoffe": 0.2,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.625,
+    "Elektronik-Bauteile": 0.087,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Gaggenau c40",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Deutschland",
+    "Von": 1916.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 40.0,
+    "Leergewicht": 3.5,
+    "Länge": 7.32,
+    "Passagiere": 30.0,
+    "Arbeitstage": 230.641,
+    "Stahl": 3.276,
+    "Kunststoffe": 0.14,
+    "Stoff": 0.105,
+    "Mechanik-Bauteile": 0.455,
+    "Elektronik-Bauteile": 0.065,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Gaz Bus 03-30",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1933.0,
+    "Bis": 1953.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 1.8,
+    "Länge": 5.37,
+    "Passagiere": 17.0,
+    "Arbeitstage": 118.615,
+    "Stahl": 1.685,
+    "Kunststoffe": 0.072,
+    "Stoff": 0.054,
+    "Mechanik-Bauteile": 0.234,
+    "Elektronik-Bauteile": 0.033,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Ik 30",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Ungarn",
+    "Von": 1951.0,
+    "Bis": 1957.0,
+    "Max. Geschwindigkeit": 78.0,
+    "Motorleistung": 62.0,
+    "Leergewicht": 5.35,
+    "Länge": 8.41,
+    "Passagiere": 39.0,
+    "Arbeitstage": 352.551,
+    "Stahl": 5.007,
+    "Kunststoffe": 0.214,
+    "Stoff": 0.16,
+    "Mechanik-Bauteile": 0.696,
+    "Elektronik-Bauteile": 0.099,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Ik 60",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Ungarn",
+    "Von": 1951.0,
+    "Bis": 1959.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 93.0,
+    "Leergewicht": 7.93,
+    "Länge": 9.46,
+    "Passagiere": 55.0,
+    "Arbeitstage": 522.567,
+    "Stahl": 7.422,
+    "Kunststoffe": 0.317,
+    "Stoff": 0.238,
+    "Mechanik-Bauteile": 1.031,
+    "Elektronik-Bauteile": 0.147,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Mag Tr5",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Ungarn",
+    "Von": 1948.0,
+    "Bis": 1951.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 80.0,
+    "Leergewicht": 7.5,
+    "Länge": 9.29,
+    "Passagiere": 55.0,
+    "Arbeitstage": 494.231,
+    "Stahl": 7.019,
+    "Kunststoffe": 0.3,
+    "Stoff": 0.225,
+    "Mechanik-Bauteile": 0.975,
+    "Elektronik-Bauteile": 0.139,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Skd 706 RO",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Czechoslovakia",
+    "Von": 1947.0,
+    "Bis": 1959.0,
+    "Max. Geschwindigkeit": 68.0,
+    "Motorleistung": 107.0,
+    "Leergewicht": 8.5,
+    "Länge": 10.64,
+    "Passagiere": 61.0,
+    "Arbeitstage": 560.128,
+    "Stahl": 7.955,
+    "Kunststoffe": 0.34,
+    "Stoff": 0.255,
+    "Mechanik-Bauteile": 1.105,
+    "Elektronik-Bauteile": 0.158,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "PZInż Zawrat",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Poland",
+    "Von": 1936.0,
+    "Bis": 1944.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 81.0,
+    "Leergewicht": 7.6,
+    "Länge": 9.41,
+    "Passagiere": 50.0,
+    "Arbeitstage": 500.821,
+    "Stahl": 7.113,
+    "Kunststoffe": 0.304,
+    "Stoff": 0.228,
+    "Mechanik-Bauteile": 0.988,
+    "Elektronik-Bauteile": 0.141,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "ZiS 154",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1946.0,
+    "Bis": 1950.0,
+    "Max. Geschwindigkeit": 55.0,
+    "Motorleistung": 81.0,
+    "Leergewicht": 7.94,
+    "Länge": 9.54,
+    "Passagiere": 60.0,
+    "Arbeitstage": 523.226,
+    "Stahl": 7.431,
+    "Kunststoffe": 0.318,
+    "Stoff": 0.238,
+    "Mechanik-Bauteile": 1.032,
+    "Elektronik-Bauteile": 0.147,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Ik 60T",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Ungarn",
+    "Von": 1951.0,
+    "Bis": 1959.0,
+    "Max. Geschwindigkeit": 55.0,
+    "Motorleistung": 86.0,
+    "Leergewicht": 8.15,
+    "Länge": 9.46,
+    "Passagiere": 55.0,
+    "Arbeitstage": 537.064,
+    "Stahl": 7.628,
+    "Kunststoffe": 0.326,
+    "Stoff": 0.244,
+    "Mechanik-Bauteile": 1.06,
+    "Elektronik-Bauteile": 0.151,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "LK",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1929.0,
+    "Bis": 1937.0,
+    "Max. Geschwindigkeit": 50.0,
+    "Motorleistung": 60.0,
+    "Leergewicht": 8.75,
+    "Länge": 8.97,
+    "Passagiere": 45.0,
+    "Arbeitstage": 576.603,
+    "Stahl": 8.189,
+    "Kunststoffe": 0.35,
+    "Stoff": 0.263,
+    "Mechanik-Bauteile": 1.137,
+    "Elektronik-Bauteile": 0.163,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Skd 3T",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Czechoslovakia",
+    "Von": 1941.0,
+    "Bis": 1949.0,
+    "Max. Geschwindigkeit": 46.0,
+    "Motorleistung": 96.0,
+    "Leergewicht": 10.5,
+    "Länge": 10.79,
+    "Passagiere": 63.0,
+    "Arbeitstage": 691.923,
+    "Stahl": 9.827,
+    "Kunststoffe": 0.42,
+    "Stoff": 0.315,
+    "Mechanik-Bauteile": 1.365,
+    "Elektronik-Bauteile": 0.195,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Skd 6T",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Czechoslovakia",
+    "Von": 1948.0,
+    "Bis": 1951.0,
+    "Max. Geschwindigkeit": 46.0,
+    "Motorleistung": 96.0,
+    "Leergewicht": 9.6,
+    "Länge": 10.95,
+    "Passagiere": 64.0,
+    "Arbeitstage": 632.615,
+    "Stahl": 8.985,
+    "Kunststoffe": 0.384,
+    "Stoff": 0.288,
+    "Mechanik-Bauteile": 1.248,
+    "Elektronik-Bauteile": 0.178,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Skd 7T",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Czechoslovakia",
+    "Von": 1950.0,
+    "Bis": 1956.0,
+    "Max. Geschwindigkeit": 50.0,
+    "Motorleistung": 96.0,
+    "Leergewicht": 9.9,
+    "Länge": 10.99,
+    "Passagiere": 65.0,
+    "Arbeitstage": 652.385,
+    "Stahl": 9.265,
+    "Kunststoffe": 0.396,
+    "Stoff": 0.297,
+    "Mechanik-Bauteile": 1.287,
+    "Elektronik-Bauteile": 0.184,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Skd 8T",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Czechoslovakia",
+    "Von": 1956.0,
+    "Bis": 1961.0,
+    "Max. Geschwindigkeit": 50.0,
+    "Motorleistung": 110.0,
+    "Leergewicht": 9.9,
+    "Länge": 10.99,
+    "Passagiere": 65.0,
+    "Arbeitstage": 652.385,
+    "Stahl": 9.265,
+    "Kunststoffe": 0.396,
+    "Stoff": 0.297,
+    "Mechanik-Bauteile": 1.287,
+    "Elektronik-Bauteile": 0.184,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Vet VA3",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "France",
+    "Von": 1947.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 103.0,
+    "Leergewicht": 12.4,
+    "Länge": 11.7,
+    "Passagiere": 95.0,
+    "Arbeitstage": 817.128,
+    "Stahl": 11.605,
+    "Kunststoffe": 0.496,
+    "Stoff": 0.372,
+    "Mechanik-Bauteile": 1.612,
+    "Elektronik-Bauteile": 0.23,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Vet VBRh",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "France",
+    "Von": 1946.0,
+    "Bis": 1954.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 96.0,
+    "Leergewicht": 9.4,
+    "Länge": 10.29,
+    "Passagiere": 75.0,
+    "Arbeitstage": 619.436,
+    "Stahl": 8.797,
+    "Kunststoffe": 0.376,
+    "Stoff": 0.282,
+    "Mechanik-Bauteile": 1.222,
+    "Elektronik-Bauteile": 0.175,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Russo-Balt T40/65 Trockengut",
+   "attrs": {
+    "Typ": "Trockenschüttguttank",
+    "Frachtart": "Staubgut-Behälter",
+    "Bauland": "Russia",
+    "Von": 1913.0,
+    "Bis": 1925.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 48.5,
+    "Leergewicht": 4.3,
+    "Länge": 5.96,
+    "Ladefläche": 3.5,
+    "Arbeitstage": 273.987,
+    "Stahl": 3.902,
+    "Kunststoffe": 0.172,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.514,
+    "Elektronik-Bauteile": 0.072,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Chai-1",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1931.0,
+    "Bis": 1952.0,
+    "Max. Geschwindigkeit": 324.0,
+    "Motorleistung": 358.0,
+    "Leergewicht": 1.63,
+    "Länge": 10.44,
+    "Ladefläche": 6.0,
+    "Arbeitstage": 396.647,
+    "Stahl": 0.082,
+    "Aluminium": 1.214,
+    "Kunststoffe": 0.025,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.795,
+    "Elektronik-Bauteile": 0.116,
+    "Elektronik": 0.039,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Chausson APH521",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "France",
+    "Von": 1953.0,
+    "Bis": 1960.0,
+    "Max. Geschwindigkeit": 78.0,
+    "Motorleistung": 60.0,
+    "Leergewicht": 6.65,
+    "Länge": 10.2,
+    "Passagiere": 70.0,
+    "Arbeitstage": 438.218,
+    "Stahl": 6.224,
+    "Kunststoffe": 0.266,
+    "Stoff": 0.2,
+    "Mechanik-Bauteile": 0.865,
+    "Elektronik-Bauteile": 0.124,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Kommunar Mähdrescher",
+   "attrs": {
+    "Typ": "Mähdrescher",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1929.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 12.0,
+    "Motorleistung": 23.0,
+    "Leergewicht": 10.0,
+    "Länge": 12.72
+   }
+  },
+  {
+   "name": "S-4",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1960.0,
+    "Max. Geschwindigkeit": 14.6,
+    "Motorleistung": 44.2,
+    "Leergewicht": 4.5,
+    "Länge": 6.62,
+    "Arbeitstage": 290.625,
+    "Stahl": 4.125,
+    "Aluminium": 4.44,
+    "Kunststoffe": 0.18,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.562,
+    "Elektronik-Bauteile": 0.078,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Stalinets-1 Mähdrescher",
+   "attrs": {
+    "Typ": "Mähdrescher",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1931.0,
+    "Bis": 1954.0,
+    "Max. Geschwindigkeit": 9.0,
+    "Motorleistung": 44.2,
+    "Leergewicht": 17.0,
+    "Länge": 13.36
+   }
+  },
+  {
+   "name": "Stalinets-6 Mähdrescher",
+   "attrs": {
+    "Typ": "Mähdrescher",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 15.0,
+    "Motorleistung": 38.0,
+    "Leergewicht": 12.0,
+    "Länge": 13.24
+   }
+  },
+  {
+   "name": "Gaz AA",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 1.8,
+    "Länge": 5.31,
+    "Ladefläche": 1.5,
+    "Arbeitstage": 117.882,
+    "Stahl": 1.67,
+    "Kunststoffe": 0.072,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.247,
+    "Elektronik-Bauteile": 0.032,
+    "Elektronik": 0.69,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Gaz AA Хлеб",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 1.8,
+    "Länge": 5.31,
+    "Ladefläche": 3.0,
+    "Arbeitstage": 117.882,
+    "Stahl": 1.67,
+    "Kunststoffe": 0.072,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.247,
+    "Elektronik-Bauteile": 0.032,
+    "Elektronik": 0.69,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Russo-Balt T40/65 Überdacht",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Russia",
+    "Von": 1913.0,
+    "Bis": 1925.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 48.5,
+    "Leergewicht": 4.3,
+    "Länge": 5.96,
+    "Ladefläche": 5.0,
+    "Arbeitstage": 281.608,
+    "Stahl": 3.989,
+    "Kunststoffe": 0.172,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.59,
+    "Elektronik-Bauteile": 0.077,
+    "Elektronik": 1.649,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "ZIS-5 Überdacht",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1933.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 56.3,
+    "Leergewicht": 3.1,
+    "Länge": 6.07,
+    "Ladefläche": 3.0,
+    "Arbeitstage": 203.02,
+    "Stahl": 2.876,
+    "Kunststoffe": 0.124,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.425,
+    "Elektronik-Bauteile": 0.056,
+    "Elektronik": 1.189,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "D-83 Walze",
+   "attrs": {
+    "Typ": "Walze",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1940.0,
+    "Bis": 1956.0,
+    "Max. Geschwindigkeit": 6.0,
+    "Motorleistung": 22.0,
+    "Leergewicht": 5.0,
+    "Länge": 4.12
+   }
+  },
+  {
+   "name": "EC-2",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "USA",
+    "Von": 1933.0,
+    "Bis": 1957.0,
+    "Max. Geschwindigkeit": 330.0,
+    "Motorleistung": 1080.0,
+    "Leergewicht": 5.65,
+    "Länge": 18.67,
+    "Ladefläche": 14.0,
+    "Arbeitstage": 1374.879,
+    "Stahl": 0.283,
+    "Aluminium": 4.209,
+    "Kunststoffe": 0.086,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 2.756,
+    "Elektronik-Bauteile": 0.404,
+    "Elektronik": 0.136,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Gaz AA Firetruck",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 2.5,
+    "Länge": 6.1,
+    "Ladefläche": 3.5,
+    "Arbeitstage": 161.458,
+    "Stahl": 2.292,
+    "Aluminium": 2.467,
+    "Kunststoffe": 0.1,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.312,
+    "Elektronik-Bauteile": 0.043,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Zis-5 Firetruck",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1933.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 56.3,
+    "Leergewicht": 3.6,
+    "Länge": 6.93,
+    "Ladefläche": 3.0,
+    "Arbeitstage": 232.5,
+    "Stahl": 3.3,
+    "Aluminium": 3.552,
+    "Kunststoffe": 0.144,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.45,
+    "Elektronik-Bauteile": 0.062,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "GAZ 905",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Ladung",
+    "Bauland": "Soviet Union",
+    "Von": 1930.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 23.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 1.8,
+    "Länge": 3.47,
+    "Ladefläche": 1.8,
+    "Arbeitstage": 116.25,
+    "Stahl": 1.65,
+    "Aluminium": 1.776,
+    "Kunststoffe": 0.072,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.225,
+    "Elektronik-Bauteile": 0.031,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Multicar M21",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Ladung",
+    "Bauland": "East Germany",
+    "Von": 1956.0,
+    "Bis": 1964.0,
+    "Max. Geschwindigkeit": 25.0,
+    "Motorleistung": 5.0,
+    "Leergewicht": 0.93,
+    "Länge": 3.14,
+    "Ladefläche": 2.0,
+    "Arbeitstage": 60.062,
+    "Stahl": 0.853,
+    "Aluminium": 0.918,
+    "Kunststoffe": 0.037,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.116,
+    "Elektronik-Bauteile": 0.016,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Russo-Balt T40/65 Abfall",
+   "attrs": {
+    "Typ": "Müllfahrzeug",
+    "Frachtart": "Müll",
+    "Bauland": "Russia",
+    "Von": 1913.0,
+    "Bis": 1925.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 48.5,
+    "Leergewicht": 4.3,
+    "Länge": 5.96,
+    "Ladefläche": 5.0
+   }
+  },
+  {
+   "name": "Gaz AA Müllwagen",
+   "attrs": {
+    "Typ": "Müllfahrzeug",
+    "Frachtart": "Müll",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 1.8,
+    "Länge": 5.59,
+    "Ladefläche": 1.5
+   }
+  },
+  {
+   "name": "Russo-Balt T40/65 Müll",
+   "attrs": {
+    "Typ": "Müllfahrzeug",
+    "Frachtart": "Müll",
+    "Bauland": "Russia",
+    "Von": 1913.0,
+    "Bis": 1925.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 48.5,
+    "Leergewicht": 4.3,
+    "Länge": 5.96,
+    "Ladefläche": 2.0
+   }
+  },
+  {
+   "name": "ZIS-5 Müll",
+   "attrs": {
+    "Typ": "Müllfahrzeug",
+    "Frachtart": "Müll",
+    "Bauland": "Soviet Union",
+    "Von": 1933.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 56.3,
+    "Leergewicht": 4.1,
+    "Länge": 6.88,
+    "Ladefläche": 3.0
+   }
+  },
+  {
+   "name": "Gaz AA 410",
+   "attrs": {
+    "Typ": "Kipper",
+    "Frachtart": "Kipper",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 1.8,
+    "Länge": 4.78,
+    "Ladefläche": 1.2,
+    "Arbeitstage": 118.021,
+    "Stahl": 1.67,
+    "Kunststoffe": 0.072,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.241,
+    "Elektronik-Bauteile": 0.033,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Russo-Balt T40/65 Kipper",
+   "attrs": {
+    "Typ": "Kipper",
+    "Frachtart": "Kipper",
+    "Bauland": "Russia",
+    "Von": 1913.0,
+    "Bis": 1925.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 48.5,
+    "Leergewicht": 4.3,
+    "Länge": 5.96,
+    "Ladefläche": 4.0,
+    "Arbeitstage": 281.938,
+    "Stahl": 3.99,
+    "Kunststoffe": 0.172,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.576,
+    "Elektronik-Bauteile": 0.079,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Pferdeambulanz",
+   "attrs": {
+    "Typ": "Krankenwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.45,
+    "Länge": 4.24,
+    "Passagiere": 1.0
+   }
+  },
+  {
+   "name": "Pferdepersonenwagen",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.65,
+    "Länge": 4.43,
+    "Passagiere": 20.0,
+    "Arbeitstage": 42.833,
+    "Stahl": 0.608,
+    "Kunststoffe": 0.026,
+    "Stoff": 0.019,
+    "Mechanik-Bauteile": 0.085,
+    "Elektronik-Bauteile": 0.012,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Großer Pferdepersonenwagen",
+   "attrs": {
+    "Typ": "Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.85,
+    "Länge": 4.32,
+    "Passagiere": 28.0,
+    "Arbeitstage": 56.013,
+    "Stahl": 0.796,
+    "Kunststoffe": 0.034,
+    "Stoff": 0.025,
+    "Mechanik-Bauteile": 0.111,
+    "Elektronik-Bauteile": 0.016,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Pferdewagen für Trockengüter",
+   "attrs": {
+    "Typ": "Trockenschüttguttank",
+    "Frachtart": "Staubgut-Behälter",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.65,
+    "Länge": 3.62,
+    "Ladefläche": 1.8,
+    "Arbeitstage": 41.417,
+    "Stahl": 0.59,
+    "Kunststoffe": 0.026,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.078,
+    "Elektronik-Bauteile": 0.011,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Pferdewagen mit Zisterne",
+   "attrs": {
+    "Typ": "Tanklaster",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.75,
+    "Länge": 4.24,
+    "Ladefläche": 1.7,
+    "Arbeitstage": 48.092,
+    "Stahl": 0.688,
+    "Kunststoffe": 0.03,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.096,
+    "Elektronik-Bauteile": 0.013,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Sewage Tank Carriage",
+   "attrs": {
+    "Typ": "Abwassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.75,
+    "Länge": 4.24,
+    "Ladefläche": 1.7
+   }
+  },
+  {
+   "name": "Water Tank Carriage",
+   "attrs": {
+    "Typ": "Wassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.75,
+    "Länge": 4.24,
+    "Ladefläche": 1.75
+   }
+  },
+  {
+   "name": "Pferdebetonmischer",
+   "attrs": {
+    "Typ": "Betonmischer",
+    "Frachtart": "Beton",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.65,
+    "Länge": 3.64,
+    "Ladefläche": 1.65
+   }
+  },
+  {
+   "name": "Pferdewagen mit Plane",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.55,
+    "Länge": 3.62,
+    "Ladefläche": 2.1,
+    "Arbeitstage": 36.02,
+    "Stahl": 0.51,
+    "Kunststoffe": 0.022,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.075,
+    "Elektronik-Bauteile": 0.01,
+    "Elektronik": 0.211,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Pferdekran",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.82,
+    "Länge": 4.43,
+    "Arbeitstage": 52.958,
+    "Stahl": 0.752,
+    "Aluminium": 0.809,
+    "Kunststoffe": 0.033,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.102,
+    "Elektronik-Bauteile": 0.014,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Pferdefeuerwehrwagen",
+   "attrs": {
+    "Typ": "Feuerwerhfahrzeug",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.75,
+    "Länge": 4.23
+   }
+  },
+  {
+   "name": "Pferdemuldenkipper",
+   "attrs": {
+    "Typ": "Kipper",
+    "Frachtart": "Kipper",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.8,
+    "Länge": 3.13,
+    "Ladefläche": 1.9,
+    "Arbeitstage": 52.454,
+    "Stahl": 0.742,
+    "Kunststoffe": 0.032,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.107,
+    "Elektronik-Bauteile": 0.015,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Pferdeplattformwagen",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.47,
+    "Länge": 4.39,
+    "Ladefläche": 2.2,
+    "Arbeitstage": 30.354,
+    "Stahl": 0.431,
+    "Aluminium": 0.464,
+    "Kunststoffe": 0.019,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.059,
+    "Elektronik-Bauteile": 0.008,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Horse logging wagon",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.45,
+    "Länge": 3.62,
+    "Ladefläche": 2.5,
+    "Arbeitstage": 29.062,
+    "Stahl": 0.412,
+    "Aluminium": 0.444,
+    "Kunststoffe": 0.018,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.056,
+    "Elektronik-Bauteile": 0.008,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Horse police carriage",
+   "attrs": {
+    "Typ": "Polizeiwagen",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.45,
+    "Länge": 4.24
+   }
+  },
+  {
+   "name": "Pferde-Eiswagen",
+   "attrs": {
+    "Typ": "Kühllaster",
+    "Frachtart": "Kühlung",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.69,
+    "Länge": 3.67,
+    "Ladefläche": 1.7,
+    "Arbeitstage": 46.23,
+    "Stahl": 0.673,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.083,
+    "Elektronik-Bauteile": 0.012,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Dunkelbraunes Pferd",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.5,
+    "Länge": 2.19,
+    "Passagiere": 1.0,
+    "Arbeitstage": 41.853,
+    "Stahl": 0.532,
+    "Kunststoffe": 0.02,
+    "Stoff": 0.007,
+    "Mechanik-Bauteile": 0.131,
+    "Elektronik-Bauteile": 0.016,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Braunes Pferd",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.5,
+    "Länge": 2.19,
+    "Passagiere": 1.0,
+    "Arbeitstage": 41.853,
+    "Stahl": 0.532,
+    "Kunststoffe": 0.02,
+    "Stoff": 0.007,
+    "Mechanik-Bauteile": 0.131,
+    "Elektronik-Bauteile": 0.016,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Weißes Pferd",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.5,
+    "Länge": 2.19,
+    "Passagiere": 1.0,
+    "Arbeitstage": 41.853,
+    "Stahl": 0.532,
+    "Kunststoffe": 0.02,
+    "Stoff": 0.007,
+    "Mechanik-Bauteile": 0.131,
+    "Elektronik-Bauteile": 0.016,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Schwarzes Pferd",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.5,
+    "Länge": 2.19,
+    "Passagiere": 1.0,
+    "Arbeitstage": 41.853,
+    "Stahl": 0.532,
+    "Kunststoffe": 0.02,
+    "Stoff": 0.007,
+    "Mechanik-Bauteile": 0.131,
+    "Elektronik-Bauteile": 0.016,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Pferdepflug",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.35,
+    "Länge": 3.25,
+    "Arbeitstage": 22.604,
+    "Stahl": 0.321,
+    "Aluminium": 0.345,
+    "Kunststoffe": 0.014,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.044,
+    "Elektronik-Bauteile": 0.006,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Pferdemüllwagen",
+   "attrs": {
+    "Typ": "Müllfahrzeug",
+    "Frachtart": "Müll",
+    "Bauland": "Soviet Union",
+    "Von": 1850.0,
+    "Bis": 1937.0,
+    "Leergewicht": 0.57,
+    "Länge": 4.42,
+    "Ladefläche": 2.0
+   }
+  },
+  {
+   "name": "Kalinin K-5",
+   "attrs": {
+    "Typ": "Flugzeug",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1929.0,
+    "Bis": 1952.0,
+    "Max. Geschwindigkeit": 180.0,
+    "Motorleistung": 330.0,
+    "Leergewicht": 3.06,
+    "Länge": 15.42,
+    "Ladefläche": 8.0,
+    "Arbeitstage": 744.625,
+    "Stahl": 0.153,
+    "Aluminium": 2.279,
+    "Kunststoffe": 0.047,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 1.493,
+    "Elektronik-Bauteile": 0.219,
+    "Elektronik": 0.074,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "ZIS-5 Viehtransport",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Vieh",
+    "Bauland": "Soviet Union",
+    "Von": 1933.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 56.3,
+    "Leergewicht": 3.2,
+    "Länge": 6.07,
+    "Ladefläche": 3.0,
+    "Arbeitstage": 206.667,
+    "Stahl": 2.933,
+    "Aluminium": 3.158,
+    "Kunststoffe": 0.128,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.4,
+    "Elektronik-Bauteile": 0.055,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "MAZ-200",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 6.4,
+    "Länge": 7.7,
+    "Ladefläche": 7.0,
+    "Arbeitstage": 419.137,
+    "Stahl": 5.937,
+    "Kunststoffe": 0.256,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 0.878,
+    "Elektronik-Bauteile": 0.115,
+    "Elektronik": 2.455,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "MAZ-200 Feuerwehrwagen",
+   "attrs": {
+    "Typ": "Feuerwerhfahrzeug",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 8.4,
+    "Länge": 7.63
+   }
+  },
+  {
+   "name": "MAZ-200 Müllwagen",
+   "attrs": {
+    "Typ": "Müllfahrzeug",
+    "Frachtart": "Müll",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 6.4,
+    "Länge": 7.69,
+    "Ladefläche": 6.5
+   }
+  },
+  {
+   "name": "MAZ-205",
+   "attrs": {
+    "Typ": "Kipper",
+    "Frachtart": "Kipper",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 6.6,
+    "Länge": 6.08,
+    "Ladefläche": 6.0,
+    "Arbeitstage": 432.742,
+    "Stahl": 6.124,
+    "Kunststoffe": 0.264,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.885,
+    "Elektronik-Bauteile": 0.121,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "MAZ-200 Ölwagen",
+   "attrs": {
+    "Typ": "Tanklaster",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 7.325,
+    "Länge": 7.23,
+    "Ladefläche": 6.4,
+    "Arbeitstage": 469.7,
+    "Stahl": 6.715,
+    "Kunststoffe": 0.293,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 0.935,
+    "Elektronik-Bauteile": 0.125,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "MAZ-200 Abwasserwagen",
+   "attrs": {
+    "Typ": "Abwassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 7.325,
+    "Länge": 7.23,
+    "Ladefläche": 6.4
+   }
+  },
+  {
+   "name": "MAZ-200 Zisternenwagen",
+   "attrs": {
+    "Typ": "Tanklaster",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 7.325,
+    "Länge": 7.23,
+    "Ladefläche": 6.4,
+    "Arbeitstage": 469.7,
+    "Stahl": 6.715,
+    "Kunststoffe": 0.293,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 0.935,
+    "Elektronik-Bauteile": 0.125,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "MAZ-200 Offener Wagen",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 6.4,
+    "Länge": 7.69,
+    "Ladefläche": 7.0,
+    "Arbeitstage": 413.333,
+    "Stahl": 5.867,
+    "Aluminium": 6.315,
+    "Kunststoffe": 0.256,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.8,
+    "Elektronik-Bauteile": 0.111,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "MAZ-200 Kühlwagen",
+   "attrs": {
+    "Typ": "Kühllaster",
+    "Frachtart": "Kühlung",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 8.68,
+    "Länge": 7.81,
+    "Ladefläche": 6.0,
+    "Arbeitstage": 581.56,
+    "Stahl": 8.463,
+    "Stoff": 0.011,
+    "Mechanik-Bauteile": 1.042,
+    "Elektronik-Bauteile": 0.145,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "MAZ-200 K-51",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 12.0,
+    "Länge": 10.0,
+    "Arbeitstage": 775.0,
+    "Stahl": 11.0,
+    "Aluminium": 11.841,
+    "Kunststoffe": 0.48,
+    "Stoff": 0.006,
+    "Mechanik-Bauteile": 1.5,
+    "Elektronik-Bauteile": 0.208,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "MAZ-200 Mischer",
+   "attrs": {
+    "Typ": "Betonmischer",
+    "Frachtart": "Beton",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 50.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 9.1,
+    "Länge": 7.36,
+    "Ladefläche": 6.0
+   }
+  },
+  {
+   "name": "MAZ-200V",
+   "attrs": {
+    "Typ": "Trockenschüttguttank",
+    "Frachtart": "Staubgut-Behälter",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 10.56,
+    "Länge": 6.82,
+    "Ladefläche": 12.0,
+    "Arbeitstage": 672.862,
+    "Stahl": 9.582,
+    "Kunststoffe": 0.422,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.262,
+    "Elektronik-Bauteile": 0.176,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "MAZ-200V Überdacht",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 10.56,
+    "Länge": 6.82,
+    "Ladefläche": 12.5,
+    "Arbeitstage": 691.576,
+    "Stahl": 9.797,
+    "Kunststoffe": 0.422,
+    "Stoff": 0.007,
+    "Mechanik-Bauteile": 1.449,
+    "Elektronik-Bauteile": 0.19,
+    "Elektronik": 4.05,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "MAZ-200V Überdacht",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1947.0,
+    "Bis": 1965.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 89.0,
+    "Leergewicht": 10.56,
+    "Länge": 6.82,
+    "Ladefläche": 12.5,
+    "Arbeitstage": 682.0,
+    "Stahl": 9.68,
+    "Aluminium": 10.42,
+    "Kunststoffe": 0.422,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.32,
+    "Elektronik-Bauteile": 0.183,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Gaz AA Öl",
+   "attrs": {
+    "Typ": "Tanklaster",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1935.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 2.0,
+    "Länge": 4.96,
+    "Ladefläche": 2.0,
+    "Arbeitstage": 128.246,
+    "Stahl": 1.833,
+    "Kunststoffe": 0.08,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.255,
+    "Elektronik-Bauteile": 0.034,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Gaz AA Abwasser",
+   "attrs": {
+    "Typ": "Abwassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 2.0,
+    "Länge": 5.26,
+    "Ladefläche": 2.0
+   }
+  },
+  {
+   "name": "Gaz AA Öltank",
+   "attrs": {
+    "Typ": "Tanklaster",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1935.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 2.5,
+    "Länge": 4.96,
+    "Ladefläche": 4.0,
+    "Arbeitstage": 160.307,
+    "Stahl": 2.292,
+    "Kunststoffe": 0.1,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.319,
+    "Elektronik-Bauteile": 0.043,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Gaz AA Wasser",
+   "attrs": {
+    "Typ": "Wassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 2.0,
+    "Länge": 5.39,
+    "Ladefläche": 2.0
+   }
+  },
+  {
+   "name": "Russo-Balt T40/65 Öl",
+   "attrs": {
+    "Typ": "Tanklaster",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Russia",
+    "Von": 1913.0,
+    "Bis": 1925.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 48.5,
+    "Leergewicht": 4.3,
+    "Länge": 5.96,
+    "Ladefläche": 5.0,
+    "Arbeitstage": 275.728,
+    "Stahl": 3.942,
+    "Kunststoffe": 0.172,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.549,
+    "Elektronik-Bauteile": 0.073,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Russo-Balt T40/65 Abwasser",
+   "attrs": {
+    "Typ": "Abwassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Russia",
+    "Von": 1913.0,
+    "Bis": 1925.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 48.5,
+    "Leergewicht": 4.3,
+    "Länge": 5.96,
+    "Ladefläche": 5.0
+   }
+  },
+  {
+   "name": "Russo-Balt T40/65 Wasser",
+   "attrs": {
+    "Typ": "Wassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Russia",
+    "Von": 1913.0,
+    "Bis": 1925.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 48.5,
+    "Leergewicht": 4.3,
+    "Länge": 5.96,
+    "Ladefläche": 5.0
+   }
+  },
+  {
+   "name": "ZIS-5 Kraftstoff/Öl",
+   "attrs": {
+    "Typ": "Tanklaster",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1933.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 56.3,
+    "Leergewicht": 3.6,
+    "Länge": 6.15,
+    "Ladefläche": 3.0,
+    "Arbeitstage": 230.842,
+    "Stahl": 3.3,
+    "Kunststoffe": 0.144,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.46,
+    "Elektronik-Bauteile": 0.061,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "ZIS-5 Abwasser",
+   "attrs": {
+    "Typ": "Abwassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1933.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 56.3,
+    "Leergewicht": 3.6,
+    "Länge": 6.45,
+    "Ladefläche": 3.0
+   }
+  },
+  {
+   "name": "ZIS-5 Wasser",
+   "attrs": {
+    "Typ": "Wassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1933.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 56.3,
+    "Leergewicht": 3.6,
+    "Länge": 6.24,
+    "Ladefläche": 3.0
+   }
+  },
+  {
+   "name": "Ol49",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Poland",
+    "Von": 1951.0,
+    "Bis": 1985.0,
+    "Max. Geschwindigkeit": 100.0,
+    "Motorleistung": 949.0,
+    "Leergewicht": 125.0,
+    "Länge": 13.09,
+    "Arbeitstage": 6186.342,
+    "Stahl": 117.735,
+    "Kunststoffe": 5.0,
+    "Stoff": 0.006,
+    "Mechanik-Bauteile": 18.082,
+    "Elektronik-Bauteile": 2.673,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Gaz AA Offener Aufbau",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1930.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 1.8,
+    "Länge": 5.31,
+    "Ladefläche": 1.5,
+    "Arbeitstage": 116.25,
+    "Stahl": 1.65,
+    "Aluminium": 1.776,
+    "Kunststoffe": 0.072,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.225,
+    "Elektronik-Bauteile": 0.031,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Russo-Balt T40/65 Offen",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Russia",
+    "Von": 1913.0,
+    "Bis": 1925.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 48.5,
+    "Leergewicht": 4.3,
+    "Länge": 5.96,
+    "Ladefläche": 5.0,
+    "Arbeitstage": 277.708,
+    "Stahl": 3.942,
+    "Aluminium": 4.243,
+    "Kunststoffe": 0.172,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.537,
+    "Elektronik-Bauteile": 0.074,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "ZIS-5 Offen",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1933.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 56.3,
+    "Leergewicht": 3.0,
+    "Länge": 6.07,
+    "Ladefläche": 3.0,
+    "Arbeitstage": 193.75,
+    "Stahl": 2.75,
+    "Aluminium": 2.96,
+    "Kunststoffe": 0.12,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.375,
+    "Elektronik-Bauteile": 0.052,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Gaz AA Holz",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 2.0,
+    "Länge": 5.05,
+    "Ladefläche": 2.0,
+    "Arbeitstage": 129.167,
+    "Stahl": 1.833,
+    "Aluminium": 1.973,
+    "Kunststoffe": 0.08,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.25,
+    "Elektronik-Bauteile": 0.035,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Pm3 Tender",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Poland",
+    "Von": 1930.0,
+    "Bis": 1978.0,
+    "Max. Geschwindigkeit": 155.0,
+    "Leergewicht": 25.0,
+    "Länge": 7.51,
+    "Ladefläche": 56.0,
+    "Arbeitstage": 1237.268,
+    "Stahl": 23.547,
+    "Kunststoffe": 1.0,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 3.616,
+    "Elektronik-Bauteile": 0.535,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "GAZ M1",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1935.0,
+    "Bis": 1943.0,
+    "Max. Geschwindigkeit": 90.0,
+    "Motorleistung": 37.0,
+    "Leergewicht": 1.37,
+    "Länge": 4.58,
+    "Passagiere": 4.0,
+    "Arbeitstage": 114.677,
+    "Stahl": 1.457,
+    "Kunststoffe": 0.055,
+    "Stoff": 0.018,
+    "Mechanik-Bauteile": 0.358,
+    "Elektronik-Bauteile": 0.045,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "GAZ 11-73",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1941.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 110.0,
+    "Motorleistung": 56.0,
+    "Leergewicht": 1.46,
+    "Länge": 4.62,
+    "Passagiere": 4.0,
+    "Arbeitstage": 122.211,
+    "Stahl": 1.553,
+    "Kunststoffe": 0.058,
+    "Stoff": 0.019,
+    "Mechanik-Bauteile": 0.381,
+    "Elektronik-Bauteile": 0.048,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "GAZ A",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1931.0,
+    "Bis": 1936.0,
+    "Max. Geschwindigkeit": 75.0,
+    "Motorleistung": 30.0,
+    "Leergewicht": 1.1,
+    "Länge": 3.77,
+    "Passagiere": 4.0,
+    "Arbeitstage": 92.077,
+    "Stahl": 1.17,
+    "Kunststoffe": 0.044,
+    "Stoff": 0.014,
+    "Mechanik-Bauteile": 0.287,
+    "Elektronik-Bauteile": 0.036,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "IFA F8",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "East Germany",
+    "Von": 1948.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 67.0,
+    "Motorleistung": 16.0,
+    "Leergewicht": 0.8,
+    "Länge": 3.92,
+    "Passagiere": 4.0,
+    "Arbeitstage": 66.965,
+    "Stahl": 0.851,
+    "Kunststoffe": 0.032,
+    "Stoff": 0.01,
+    "Mechanik-Bauteile": 0.209,
+    "Elektronik-Bauteile": 0.026,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "IFA F9",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "East Germany",
+    "Von": 1949.0,
+    "Bis": 1956.0,
+    "Max. Geschwindigkeit": 90.0,
+    "Motorleistung": 22.0,
+    "Leergewicht": 0.85,
+    "Länge": 4.1,
+    "Passagiere": 4.0,
+    "Arbeitstage": 71.15,
+    "Stahl": 0.904,
+    "Kunststoffe": 0.034,
+    "Stoff": 0.011,
+    "Mechanik-Bauteile": 0.222,
+    "Elektronik-Bauteile": 0.028,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "KIM-10",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1940.0,
+    "Bis": 1943.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 19.0,
+    "Leergewicht": 0.84,
+    "Länge": 4.01,
+    "Passagiere": 4.0,
+    "Arbeitstage": 70.313,
+    "Stahl": 0.893,
+    "Kunststoffe": 0.034,
+    "Stoff": 0.011,
+    "Mechanik-Bauteile": 0.219,
+    "Elektronik-Bauteile": 0.028,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Moskvich 400",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1946.0,
+    "Bis": 1956.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 19.0,
+    "Leergewicht": 0.86,
+    "Länge": 3.93,
+    "Passagiere": 4.0,
+    "Arbeitstage": 71.987,
+    "Stahl": 0.915,
+    "Kunststoffe": 0.034,
+    "Stoff": 0.011,
+    "Mechanik-Bauteile": 0.225,
+    "Elektronik-Bauteile": 0.028,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Moskvich 407",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1956.0,
+    "Bis": 1964.0,
+    "Max. Geschwindigkeit": 110.0,
+    "Motorleistung": 33.0,
+    "Leergewicht": 0.9,
+    "Länge": 4.07,
+    "Passagiere": 4.0,
+    "Arbeitstage": 75.336,
+    "Stahl": 0.957,
+    "Kunststoffe": 0.036,
+    "Stoff": 0.012,
+    "Mechanik-Bauteile": 0.235,
+    "Elektronik-Bauteile": 0.03,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "NAMI-1",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1927.0,
+    "Bis": 1932.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 16.0,
+    "Leergewicht": 0.7,
+    "Länge": 3.8,
+    "Passagiere": 4.0,
+    "Arbeitstage": 58.594,
+    "Stahl": 0.744,
+    "Kunststoffe": 0.028,
+    "Stoff": 0.009,
+    "Mechanik-Bauteile": 0.183,
+    "Elektronik-Bauteile": 0.023,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "P70 Zwickau",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "East Germany",
+    "Von": 1955.0,
+    "Bis": 1959.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 16.0,
+    "Leergewicht": 0.8,
+    "Länge": 3.77,
+    "Passagiere": 4.0,
+    "Arbeitstage": 66.965,
+    "Stahl": 0.851,
+    "Kunststoffe": 0.032,
+    "Stoff": 0.01,
+    "Mechanik-Bauteile": 0.209,
+    "Elektronik-Bauteile": 0.026,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "GAZ M20",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1946.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 100.0,
+    "Motorleistung": 38.0,
+    "Leergewicht": 1.46,
+    "Länge": 4.69,
+    "Passagiere": 4.0,
+    "Arbeitstage": 122.211,
+    "Stahl": 1.553,
+    "Kunststoffe": 0.058,
+    "Stoff": 0.019,
+    "Mechanik-Bauteile": 0.381,
+    "Elektronik-Bauteile": 0.048,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Tatra T87",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Czechoslovakia",
+    "Von": 1936.0,
+    "Bis": 1950.0,
+    "Max. Geschwindigkeit": 140.0,
+    "Motorleistung": 70.0,
+    "Leergewicht": 1.4,
+    "Länge": 4.78,
+    "Passagiere": 4.0,
+    "Arbeitstage": 117.189,
+    "Stahl": 1.489,
+    "Kunststoffe": 0.056,
+    "Stoff": 0.018,
+    "Mechanik-Bauteile": 0.366,
+    "Elektronik-Bauteile": 0.046,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "FSO Warszawa M20",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Poland",
+    "Von": 1957.0,
+    "Bis": 1964.0,
+    "Max. Geschwindigkeit": 100.0,
+    "Motorleistung": 38.0,
+    "Leergewicht": 1.46,
+    "Länge": 4.69,
+    "Passagiere": 4.0,
+    "Arbeitstage": 122.211,
+    "Stahl": 1.553,
+    "Kunststoffe": 0.058,
+    "Stoff": 0.019,
+    "Mechanik-Bauteile": 0.381,
+    "Elektronik-Bauteile": 0.048,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Pm2",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Poland",
+    "Von": 1930.0,
+    "Bis": 1982.0,
+    "Max. Geschwindigkeit": 130.0,
+    "Motorleistung": 1433.0,
+    "Leergewicht": 91.0,
+    "Länge": 14.24,
+    "Arbeitstage": 4503.657,
+    "Stahl": 85.711,
+    "Kunststoffe": 3.64,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 13.163,
+    "Elektronik-Bauteile": 1.946,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Pm3",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Poland",
+    "Von": 1939.0,
+    "Bis": 1978.0,
+    "Max. Geschwindigkeit": 155.0,
+    "Motorleistung": 1544.0,
+    "Leergewicht": 101.0,
+    "Länge": 14.15,
+    "Arbeitstage": 4998.565,
+    "Stahl": 95.13,
+    "Kunststoffe": 4.04,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 14.61,
+    "Elektronik-Bauteile": 2.16,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "IFA F8 MO",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "East Germany",
+    "Von": 1948.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 67.0,
+    "Motorleistung": 16.0,
+    "Leergewicht": 0.8,
+    "Länge": 3.92,
+    "Passagiere": 4.0,
+    "Arbeitstage": 66.965,
+    "Stahl": 0.851,
+    "Kunststoffe": 0.032,
+    "Stoff": 0.01,
+    "Mechanik-Bauteile": 0.209,
+    "Elektronik-Bauteile": 0.026,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "IFA F9 Kübelwagen",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "East Germany",
+    "Von": 1949.0,
+    "Bis": 1956.0,
+    "Max. Geschwindigkeit": 90.0,
+    "Motorleistung": 22.0,
+    "Leergewicht": 0.85,
+    "Länge": 4.0,
+    "Passagiere": 4.0,
+    "Arbeitstage": 71.15,
+    "Stahl": 0.904,
+    "Kunststoffe": 0.034,
+    "Stoff": 0.011,
+    "Mechanik-Bauteile": 0.222,
+    "Elektronik-Bauteile": 0.028,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Gaz AA Vnichi",
+   "attrs": {
+    "Typ": "Kühllaster",
+    "Frachtart": "Kühlung",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 1.8,
+    "Länge": 5.46,
+    "Ladefläche": 1.5,
+    "Arbeitstage": 120.6,
+    "Stahl": 1.755,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.216,
+    "Elektronik-Bauteile": 0.03,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Moskvich 400-420K",
+   "attrs": {
+    "Typ": "Kühllaster",
+    "Frachtart": "Kühlung",
+    "Bauland": "Soviet Union",
+    "Von": 1946.0,
+    "Bis": 1956.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 19.0,
+    "Leergewicht": 0.86,
+    "Länge": 4.02,
+    "Ladefläche": 0.5,
+    "Arbeitstage": 57.62,
+    "Stahl": 0.839,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.103,
+    "Elektronik-Bauteile": 0.014,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "ZIS-5 Kühlschrank",
+   "attrs": {
+    "Typ": "Kühllaster",
+    "Frachtart": "Kühlung",
+    "Bauland": "Soviet Union",
+    "Von": 1933.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 56.3,
+    "Leergewicht": 3.6,
+    "Länge": 6.11,
+    "Ladefläche": 3.0,
+    "Arbeitstage": 241.2,
+    "Stahl": 3.51,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 0.432,
+    "Elektronik-Bauteile": 0.06,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Russo-Balt T40/65 Kühlschrank",
+   "attrs": {
+    "Typ": "Kühllaster",
+    "Frachtart": "Kühlung",
+    "Bauland": "Russia",
+    "Von": 1913.0,
+    "Bis": 1925.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 48.5,
+    "Leergewicht": 4.3,
+    "Länge": 5.69,
+    "Ladefläche": 5.0,
+    "Arbeitstage": 288.1,
+    "Stahl": 4.192,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 0.516,
+    "Elektronik-Bauteile": 0.072,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Metro AB",
+   "attrs": {
+    "Typ": "U-Bahn",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1925.0,
+    "Bis": 1997.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 288.0,
+    "Länge": 19.0,
+    "Passagiere": 175.0
+   }
+  },
+  {
+   "name": "O&K Dampfdrehkran",
+   "attrs": {
+    "Typ": "Gleisbau",
+    "Frachtart": "-",
+    "Bauland": "Deutschland",
+    "Von": 1939.0,
+    "Bis": 1957.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 370.0,
+    "Leergewicht": 23.0,
+    "Länge": 5.46,
+    "Arbeitstage": 1055.553,
+    "Stahl": 19.843,
+    "Kunststoffe": 0.92,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.882,
+    "Elektronik-Bauteile": 0.279,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Weimar Dampfkran",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Ladung",
+    "Bauland": "East Germany",
+    "Von": 1928.0,
+    "Bis": 1950.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Leergewicht": 10.0,
+    "Länge": 8.08,
+    "Arbeitstage": 450.0,
+    "Stahl": 8.261,
+    "Aluminium": 32.857,
+    "Kunststoffe": 0.4,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.6,
+    "Elektronik-Bauteile": 0.1,
+    "Elektronik": 10.227,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "LTC",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1919.0,
+    "Bis": 1958.0,
+    "Motorleistung": 10.0,
+    "Leergewicht": 2.4,
+    "Länge": 3.36,
+    "Arbeitstage": 155.0,
+    "Stahl": 2.2,
+    "Aluminium": 2.368,
+    "Kunststoffe": 0.096,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.3,
+    "Elektronik-Bauteile": 0.042,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "LTC",
+   "attrs": {
+    "Typ": "Gleisbau",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1919.0,
+    "Bis": 1954.0,
+    "Max. Geschwindigkeit": 25.0,
+    "Motorleistung": 10.0,
+    "Leergewicht": 2.2,
+    "Länge": 3.36,
+    "Arbeitstage": 100.966,
+    "Stahl": 1.898,
+    "Kunststoffe": 0.088,
+    "Stoff": 0.0,
+    "Mechanik-Bauteile": 0.18,
+    "Elektronik-Bauteile": 0.027,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Manueller Gleisbauer",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Ladung",
+    "Bauland": "East Germany",
+    "Von": 1919.0,
+    "Bis": 1950.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Leergewicht": 3.0,
+    "Länge": 3.93,
+    "Arbeitstage": 135.0,
+    "Stahl": 2.478,
+    "Aluminium": 9.857,
+    "Kunststoffe": 0.12,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.18,
+    "Elektronik-Bauteile": 0.03,
+    "Elektronik": 3.068,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Weimar Dampfkran",
+   "attrs": {
+    "Typ": "Gleisbau",
+    "Frachtart": "-",
+    "Bauland": "Deutschland",
+    "Von": 1927.0,
+    "Bis": 1950.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 280.0,
+    "Leergewicht": 18.0,
+    "Länge": 5.26,
+    "Arbeitstage": 826.085,
+    "Stahl": 15.529,
+    "Kunststoffe": 0.72,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 1.473,
+    "Elektronik-Bauteile": 0.218,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Weimar Dampfkran",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Ladung",
+    "Bauland": "East Germany",
+    "Von": 1927.0,
+    "Bis": 1950.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Leergewicht": 10.0,
+    "Länge": 8.63,
+    "Arbeitstage": 450.0,
+    "Stahl": 8.261,
+    "Aluminium": 32.857,
+    "Kunststoffe": 0.4,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.6,
+    "Elektronik-Bauteile": 0.1,
+    "Elektronik": 10.227,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Weimar Dampfkran",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Ladung",
+    "Bauland": "East Germany",
+    "Von": 1927.0,
+    "Bis": 1950.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Leergewicht": 13.0,
+    "Länge": 8.08,
+    "Arbeitstage": 585.0,
+    "Stahl": 10.739,
+    "Aluminium": 42.714,
+    "Kunststoffe": 0.52,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.78,
+    "Elektronik-Bauteile": 0.13,
+    "Elektronik": 13.295,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Baku-Surakhany EMU",
+   "attrs": {
+    "Typ": "Zugverband",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1926.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 280.0,
+    "Leergewicht": 38.0,
+    "Länge": 18.72,
+    "Passagiere": 31.0,
+    "Arbeitstage": 1764.877,
+    "Stahl": 33.523,
+    "Kunststoffe": 1.518,
+    "Stoff": 0.21,
+    "Mechanik-Bauteile": 3.56,
+    "Elektronik-Bauteile": 0.534,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "M 124.0 Komarek",
+   "attrs": {
+    "Typ": "Triebwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Czechoslovakia",
+    "Von": 1903.0,
+    "Bis": 1946.0,
+    "Max. Geschwindigkeit": 50.0,
+    "Motorleistung": 36.0,
+    "Leergewicht": 28.0,
+    "Länge": 11.2,
+    "Passagiere": 42.0,
+    "Arbeitstage": 1313.2,
+    "Stahl": 24.5,
+    "Kunststoffe": 1.12,
+    "Stoff": 0.395,
+    "Mechanik-Bauteile": 3.08,
+    "Elektronik-Bauteile": 0.406,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Dampf P36",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1952.0,
+    "Bis": 1974.0,
+    "Max. Geschwindigkeit": 125.0,
+    "Motorleistung": 2089.0,
+    "Leergewicht": 133.0,
+    "Länge": 17.35,
+    "Arbeitstage": 6582.268,
+    "Stahl": 125.27,
+    "Kunststoffe": 5.32,
+    "Stoff": 0.007,
+    "Mechanik-Bauteile": 19.239,
+    "Elektronik-Bauteile": 2.844,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Dampf P36",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Ladung",
+    "Bauland": "Poland",
+    "Von": 1930.0,
+    "Bis": 1993.0,
+    "Länge": 13.93
+   }
+  },
+  {
+   "name": "Dampf Su 250",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1924.0,
+    "Bis": 1978.0,
+    "Max. Geschwindigkeit": 97.0,
+    "Motorleistung": 1360.0,
+    "Leergewicht": 88.0,
+    "Länge": 14.34,
+    "Arbeitstage": 4355.185,
+    "Stahl": 82.885,
+    "Kunststoffe": 3.52,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 12.729,
+    "Elektronik-Bauteile": 1.882,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Dampf Su 250",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Ladung",
+    "Bauland": "Poland",
+    "Von": 1930.0,
+    "Bis": 1993.0,
+    "Länge": 10.04
+   }
+  },
+  {
+   "name": "Bakuemu Straßenbahn",
+   "attrs": {
+    "Typ": "Straßenbahn",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1930.0,
+    "Bis": 1931.0,
+    "Max. Geschwindigkeit": 55.0,
+    "Motorleistung": 180.0,
+    "Leergewicht": 22.4,
+    "Länge": 18.72,
+    "Passagiere": 50.0,
+    "Arbeitstage": 1072.0,
+    "Stahl": 19.765,
+    "Kunststoffe": 0.896,
+    "Stoff": 0.408,
+    "Mechanik-Bauteile": 2.119,
+    "Elektronik-Bauteile": 0.784,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Baku-Sur. Eisenbahnwagen",
+   "attrs": {
+    "Typ": "Zugverband",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1926.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Leergewicht": 38.0,
+    "Länge": 18.72,
+    "Passagiere": 31.0,
+    "Arbeitstage": 1764.877,
+    "Stahl": 33.523,
+    "Kunststoffe": 1.518,
+    "Stoff": 0.21,
+    "Mechanik-Bauteile": 3.56,
+    "Elektronik-Bauteile": 0.534,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Godarville Straßenbahn",
+   "attrs": {
+    "Typ": "Straßenbahn",
+    "Frachtart": "Passagiere",
+    "Von": 1910.0,
+    "Bis": 1942.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 8.5,
+    "Länge": 10.21,
+    "Passagiere": 30.0,
+    "Arbeitstage": 406.786,
+    "Stahl": 7.5,
+    "Kunststoffe": 0.34,
+    "Stoff": 0.155,
+    "Mechanik-Bauteile": 0.804,
+    "Elektronik-Bauteile": 0.298,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "KM",
+   "attrs": {
+    "Typ": "Straßenbahn",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1926.0,
+    "Bis": 1960.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 220.0,
+    "Leergewicht": 15.3,
+    "Länge": 13.3,
+    "Passagiere": 86.0,
+    "Arbeitstage": 732.214,
+    "Stahl": 13.5,
+    "Kunststoffe": 0.612,
+    "Stoff": 0.279,
+    "Mechanik-Bauteile": 1.447,
+    "Elektronik-Bauteile": 0.536,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Frühe 2-Achser",
+   "attrs": {
+    "Typ": "Passagierwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "East Germany",
+    "Von": 1910.0,
+    "Bis": 1929.0,
+    "Leergewicht": 27.0,
+    "Länge": 16.02,
+    "Passagiere": 65.0,
+    "Arbeitstage": 1215.0,
+    "Stahl": 22.5,
+    "Kunststoffe": 1.08,
+    "Stoff": 0.27,
+    "Mechanik-Bauteile": 1.62,
+    "Elektronik-Bauteile": 0.27,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Frühe 4-Achser",
+   "attrs": {
+    "Typ": "Passagierwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "East Germany",
+    "Von": 1929.0,
+    "Bis": 1954.0,
+    "Leergewicht": 42.0,
+    "Länge": 21.89,
+    "Passagiere": 95.0,
+    "Arbeitstage": 1890.0,
+    "Stahl": 35.0,
+    "Kunststoffe": 1.68,
+    "Stoff": 0.42,
+    "Mechanik-Bauteile": 2.52,
+    "Elektronik-Bauteile": 0.42,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Gaz AA Kran KS-1",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 2.0,
+    "Länge": 5.31,
+    "Ladefläche": 1.0,
+    "Arbeitstage": 129.167,
+    "Stahl": 1.833,
+    "Aluminium": 1.973,
+    "Kunststoffe": 0.08,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.25,
+    "Elektronik-Bauteile": 0.035,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "M-III P 1.5",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1929.0,
+    "Bis": 1960.0,
+    "Max. Geschwindigkeit": 13.0,
+    "Motorleistung": 60.0,
+    "Leergewicht": 14.2,
+    "Länge": 10.18,
+    "Arbeitstage": 917.083,
+    "Stahl": 13.017,
+    "Aluminium": 14.012,
+    "Kunststoffe": 0.568,
+    "Stoff": 0.007,
+    "Mechanik-Bauteile": 1.775,
+    "Elektronik-Bauteile": 0.246,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Ruston Bucyrus RB10",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Von": 1929.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 14.0,
+    "Motorleistung": 60.0,
+    "Leergewicht": 14.2,
+    "Länge": 6.71,
+    "Arbeitstage": 917.083,
+    "Stahl": 13.017,
+    "Aluminium": 14.012,
+    "Kunststoffe": 0.568,
+    "Stoff": 0.007,
+    "Mechanik-Bauteile": 1.775,
+    "Elektronik-Bauteile": 0.246,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Gaz AA Mischer",
+   "attrs": {
+    "Typ": "Betonmischer",
+    "Frachtart": "Beton",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1959.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 2.5,
+    "Länge": 4.96,
+    "Ladefläche": 1.0
+   }
+  },
+  {
+   "name": "Russo-Balt T40/65 Flüssigbeton",
+   "attrs": {
+    "Typ": "Betonmischer",
+    "Frachtart": "Beton",
+    "Bauland": "Russia",
+    "Von": 1913.0,
+    "Bis": 1925.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 48.5,
+    "Leergewicht": 4.3,
+    "Länge": 5.96,
+    "Ladefläche": 3.0
+   }
+  },
+  {
+   "name": "Gaz AA Schnee",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 2.0,
+    "Länge": 6.58,
+    "Arbeitstage": 129.167,
+    "Stahl": 1.833,
+    "Aluminium": 1.973,
+    "Kunststoffe": 0.08,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.25,
+    "Elektronik-Bauteile": 0.035,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "ZIS-5 Schnee",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1933.0,
+    "Bis": 1958.0,
+    "Max. Geschwindigkeit": 60.0,
+    "Motorleistung": 56.3,
+    "Leergewicht": 3.4,
+    "Länge": 7.81,
+    "Arbeitstage": 219.583,
+    "Stahl": 3.117,
+    "Aluminium": 3.355,
+    "Kunststoffe": 0.136,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.425,
+    "Elektronik-Bauteile": 0.059,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "TKh48",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Poland",
+    "Von": 1948.0,
+    "Bis": 1961.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 296.0,
+    "Leergewicht": 34.0,
+    "Länge": 10.35,
+    "Arbeitstage": 1682.685,
+    "Stahl": 32.024,
+    "Kunststoffe": 1.36,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 4.918,
+    "Elektronik-Bauteile": 0.727,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "TKt48",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Poland",
+    "Von": 1950.0,
+    "Bis": 1992.0,
+    "Max. Geschwindigkeit": 80.0,
+    "Motorleistung": 1060.0,
+    "Leergewicht": 78.0,
+    "Länge": 14.43,
+    "Arbeitstage": 3860.278,
+    "Stahl": 73.466,
+    "Kunststoffe": 3.12,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 11.283,
+    "Elektronik-Bauteile": 1.668,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "SBK-1",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1946.0,
+    "Bis": 1976.0,
+    "Motorleistung": 165.0,
+    "Leergewicht": 6.0,
+    "Länge": 5.37,
+    "Arbeitstage": 387.5,
+    "Stahl": 5.5,
+    "Aluminium": 5.92,
+    "Kunststoffe": 0.24,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.75,
+    "Elektronik-Bauteile": 0.104,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "VEB Kranbau Baumeister",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "East Germany",
+    "Von": 1945.0,
+    "Bis": 1972.0,
+    "Motorleistung": 135.0,
+    "Leergewicht": 4.0,
+    "Länge": 5.26,
+    "Arbeitstage": 258.333,
+    "Stahl": 3.667,
+    "Aluminium": 3.947,
+    "Kunststoffe": 0.16,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.5,
+    "Elektronik-Bauteile": 0.069,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "20-Meter-Serviceturmkran",
+   "attrs": {
+    "Typ": "Turmdrehkran",
+    "Frachtart": "-",
+    "Von": 1928.0,
+    "Bis": 1955.0,
+    "Motorleistung": 105.0,
+    "Leergewicht": 3.5,
+    "Länge": 3.91
+   }
+  },
+  {
+   "name": "SKhTZ 15/30",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1929.0,
+    "Bis": 1959.0,
+    "Max. Geschwindigkeit": 12.0,
+    "Motorleistung": 23.0,
+    "Leergewicht": 3.0,
+    "Länge": 3.49,
+    "Arbeitstage": 193.75,
+    "Stahl": 2.75,
+    "Aluminium": 2.96,
+    "Kunststoffe": 0.12,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.375,
+    "Elektronik-Bauteile": 0.052,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Stalinets S-60",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1929.0,
+    "Bis": 1938.0,
+    "Max. Geschwindigkeit": 9.0,
+    "Motorleistung": 44.2,
+    "Leergewicht": 10.0,
+    "Länge": 4.12,
+    "Arbeitstage": 645.833,
+    "Stahl": 9.167,
+    "Aluminium": 9.867,
+    "Kunststoffe": 0.4,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.25,
+    "Elektronik-Bauteile": 0.173,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Stalinets S-65",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1937.0,
+    "Bis": 1953.0,
+    "Max. Geschwindigkeit": 12.0,
+    "Motorleistung": 47.8,
+    "Leergewicht": 10.5,
+    "Länge": 4.12,
+    "Arbeitstage": 678.125,
+    "Stahl": 9.625,
+    "Aluminium": 10.361,
+    "Kunststoffe": 0.42,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.312,
+    "Elektronik-Bauteile": 0.182,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "SKhTZ NATI",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1937.0,
+    "Bis": 1957.0,
+    "Max. Geschwindigkeit": 15.0,
+    "Motorleistung": 38.0,
+    "Leergewicht": 5.0,
+    "Länge": 3.98,
+    "Arbeitstage": 322.917,
+    "Stahl": 4.583,
+    "Aluminium": 4.934,
+    "Kunststoffe": 0.2,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.625,
+    "Elektronik-Bauteile": 0.087,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Ty45",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "Poland",
+    "Von": 1946.0,
+    "Bis": 1951.0,
+    "Max. Geschwindigkeit": 75.0,
+    "Motorleistung": 1264.0,
+    "Leergewicht": 90.0,
+    "Länge": 13.43,
+    "Arbeitstage": 4454.167,
+    "Stahl": 84.769,
+    "Kunststoffe": 3.6,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 13.019,
+    "Elektronik-Bauteile": 1.925,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Dampfkran Industrieanlagen Bay City",
+   "attrs": {
+    "Typ": "Lokomotive",
+    "Frachtart": "-",
+    "Bauland": "USA",
+    "Von": 1913.0,
+    "Bis": 1950.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 680.0,
+    "Leergewicht": 22.0,
+    "Länge": 8.46,
+    "Arbeitstage": 1088.796,
+    "Stahl": 20.721,
+    "Kunststoffe": 0.88,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 3.182,
+    "Elektronik-Bauteile": 0.47,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Vagon",
+   "attrs": {
+    "Typ": "Güterwagon",
+    "Frachtart": "Ladung",
+    "Bauland": "East Germany",
+    "Von": 1928.0,
+    "Bis": 1950.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Leergewicht": 6.0,
+    "Länge": 12.67,
+    "Arbeitstage": 270.0,
+    "Stahl": 4.957,
+    "Aluminium": 19.714,
+    "Kunststoffe": 0.24,
+    "Stoff": 0.001,
+    "Mechanik-Bauteile": 0.36,
+    "Elektronik-Bauteile": 0.06,
+    "Elektronik": 6.136,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Russo-Balt T40/65 Holzfäller",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Russia",
+    "Von": 1913.0,
+    "Bis": 1925.0,
+    "Max. Geschwindigkeit": 20.0,
+    "Motorleistung": 48.5,
+    "Leergewicht": 4.7,
+    "Länge": 5.5,
+    "Ladefläche": 8.0,
+    "Arbeitstage": 303.542,
+    "Stahl": 4.308,
+    "Aluminium": 4.638,
+    "Kunststoffe": 0.188,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.588,
+    "Elektronik-Bauteile": 0.081,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Ya-12D covered",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 77.0,
+    "Leergewicht": 7.9,
+    "Länge": 5.23,
+    "Ladefläche": 11.0,
+    "Arbeitstage": 517.373,
+    "Stahl": 7.329,
+    "Kunststoffe": 0.316,
+    "Stoff": 0.005,
+    "Mechanik-Bauteile": 1.084,
+    "Elektronik-Bauteile": 0.142,
+    "Elektronik": 3.03,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Ya-12D open",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 77.0,
+    "Leergewicht": 7.9,
+    "Länge": 5.23,
+    "Ladefläche": 11.0,
+    "Arbeitstage": 510.208,
+    "Stahl": 7.242,
+    "Aluminium": 7.795,
+    "Kunststoffe": 0.316,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 0.988,
+    "Elektronik-Bauteile": 0.137,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Ya-4 covered",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1928.0,
+    "Bis": 1934.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 40.0,
+    "Leergewicht": 4.7,
+    "Länge": 6.62,
+    "Ladefläche": 4.0,
+    "Arbeitstage": 307.804,
+    "Stahl": 4.36,
+    "Kunststoffe": 0.188,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.645,
+    "Elektronik-Bauteile": 0.085,
+    "Elektronik": 1.803,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "Ya-4 cistern",
+   "attrs": {
+    "Typ": "Tanklaster",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1928.0,
+    "Bis": 1934.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 40.0,
+    "Leergewicht": 4.7,
+    "Länge": 6.51,
+    "Ladefläche": 4.0,
+    "Arbeitstage": 301.377,
+    "Stahl": 4.308,
+    "Kunststoffe": 0.188,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.6,
+    "Elektronik-Bauteile": 0.08,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Ya-4 sewage truck",
+   "attrs": {
+    "Typ": "Abwassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1928.0,
+    "Bis": 1934.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 40.0,
+    "Leergewicht": 4.7,
+    "Länge": 6.51,
+    "Ladefläche": 4.0
+   }
+  },
+  {
+   "name": "Ya-4 water truck",
+   "attrs": {
+    "Typ": "Wassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1928.0,
+    "Bis": 1934.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 40.0,
+    "Leergewicht": 4.7,
+    "Länge": 6.51,
+    "Ladefläche": 4.0
+   }
+  },
+  {
+   "name": "Ya-4 open",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1928.0,
+    "Bis": 1934.0,
+    "Max. Geschwindigkeit": 45.0,
+    "Motorleistung": 40.0,
+    "Leergewicht": 4.7,
+    "Länge": 6.62,
+    "Ladefläche": 4.0,
+    "Arbeitstage": 303.542,
+    "Stahl": 4.308,
+    "Aluminium": 4.638,
+    "Kunststoffe": 0.188,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.588,
+    "Elektronik-Bauteile": 0.081,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "YaG-10 covered",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 75.0,
+    "Leergewicht": 6.8,
+    "Länge": 6.96,
+    "Ladefläche": 8.0,
+    "Arbeitstage": 445.333,
+    "Stahl": 6.308,
+    "Kunststoffe": 0.272,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 0.933,
+    "Elektronik-Bauteile": 0.122,
+    "Elektronik": 2.608,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "YaG-10 covered (trailer)",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 35.0,
+    "Motorleistung": 75.0,
+    "Leergewicht": 8.8,
+    "Länge": 6.96,
+    "Ladefläche": 13.0,
+    "Arbeitstage": 576.314,
+    "Stahl": 8.164,
+    "Kunststoffe": 0.352,
+    "Stoff": 0.006,
+    "Mechanik-Bauteile": 1.208,
+    "Elektronik-Bauteile": 0.158,
+    "Elektronik": 3.375,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "YaG-10 (garbage container)",
+   "attrs": {
+    "Typ": "Müllfahrzeug",
+    "Frachtart": "Müll",
+    "Bauland": "Soviet Union",
+    "Von": 1929.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 75.0,
+    "Leergewicht": 7.3,
+    "Länge": 6.96,
+    "Ladefläche": 6.5
+   }
+  },
+  {
+   "name": "YaG-10 open",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 40.0,
+    "Motorleistung": 75.0,
+    "Leergewicht": 6.8,
+    "Länge": 6.96,
+    "Ladefläche": 8.0,
+    "Arbeitstage": 439.167,
+    "Stahl": 6.233,
+    "Aluminium": 6.71,
+    "Kunststoffe": 0.272,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.85,
+    "Elektronik-Bauteile": 0.118,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "YaG-10 open (trailer)",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 35.0,
+    "Motorleistung": 75.0,
+    "Leergewicht": 8.8,
+    "Länge": 6.96,
+    "Ladefläche": 13.0,
+    "Arbeitstage": 568.333,
+    "Stahl": 8.067,
+    "Aluminium": 8.683,
+    "Kunststoffe": 0.352,
+    "Stoff": 0.004,
+    "Mechanik-Bauteile": 1.1,
+    "Elektronik-Bauteile": 0.152,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "YaG dry bulk tank",
+   "attrs": {
+    "Typ": "Trockenschüttguttank",
+    "Frachtart": "Staubgut-Behälter",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 4.93,
+    "Länge": 6.43,
+    "Ladefläche": 5.0,
+    "Arbeitstage": 314.129,
+    "Stahl": 4.473,
+    "Kunststoffe": 0.197,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.589,
+    "Elektronik-Bauteile": 0.082,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "YaG covered",
+   "attrs": {
+    "Typ": "Abgedeckter LKW",
+    "Frachtart": "Abgedeckte Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 4.93,
+    "Länge": 6.62,
+    "Ladefläche": 5.0,
+    "Arbeitstage": 322.867,
+    "Stahl": 4.574,
+    "Kunststoffe": 0.197,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.677,
+    "Elektronik-Bauteile": 0.089,
+    "Elektronik": 1.891,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile",
+     "Elektronik"
+    ]
+   }
+  },
+  {
+   "name": "YaS",
+   "attrs": {
+    "Typ": "Kipper",
+    "Frachtart": "Kipper",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 4.93,
+    "Länge": 6.27,
+    "Ladefläche": 4.0,
+    "Arbeitstage": 323.245,
+    "Stahl": 4.574,
+    "Kunststoffe": 0.197,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.661,
+    "Elektronik-Bauteile": 0.09,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "YaG DA-0.25 excavator",
+   "attrs": {
+    "Typ": "Bagger",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 6.43,
+    "Länge": 7.81,
+    "Arbeitstage": 423.094,
+    "Stahl": 6.001,
+    "Kunststoffe": 0.257,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.857,
+    "Elektronik-Bauteile": 0.116,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "YaG firetruck",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 4.93,
+    "Länge": 6.81,
+    "Arbeitstage": 318.396,
+    "Stahl": 4.519,
+    "Aluminium": 4.865,
+    "Kunststoffe": 0.197,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.616,
+    "Elektronik-Bauteile": 0.085,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "YaG mixer",
+   "attrs": {
+    "Typ": "Betonmischer",
+    "Frachtart": "Beton",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 4.93,
+    "Länge": 6.43,
+    "Ladefläche": 5.0
+   }
+  },
+  {
+   "name": "YaG cistern",
+   "attrs": {
+    "Typ": "Tanklaster",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 4.93,
+    "Länge": 6.53,
+    "Ladefläche": 5.0,
+    "Arbeitstage": 316.125,
+    "Stahl": 4.519,
+    "Kunststoffe": 0.197,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.629,
+    "Elektronik-Bauteile": 0.084,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "YaG sewage truck",
+   "attrs": {
+    "Typ": "Abwassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 4.93,
+    "Länge": 6.53,
+    "Ladefläche": 5.0
+   }
+  },
+  {
+   "name": "YaG water truck",
+   "attrs": {
+    "Typ": "Wassertank",
+    "Frachtart": "Flüssigkeitstank",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 4.93,
+    "Länge": 6.53,
+    "Ladefläche": 5.0
+   }
+  },
+  {
+   "name": "YaG open",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 4.93,
+    "Länge": 6.62,
+    "Ladefläche": 5.0,
+    "Arbeitstage": 318.396,
+    "Stahl": 4.519,
+    "Aluminium": 4.865,
+    "Kunststoffe": 0.197,
+    "Stoff": 0.002,
+    "Mechanik-Bauteile": 0.616,
+    "Elektronik-Bauteile": 0.085,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "YaG logger",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "Offene Ladefläche",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 5.93,
+    "Länge": 6.52,
+    "Ladefläche": 8.0,
+    "Arbeitstage": 382.979,
+    "Stahl": 5.436,
+    "Aluminium": 5.851,
+    "Kunststoffe": 0.237,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.741,
+    "Elektronik-Bauteile": 0.103,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "YaG ATP-1 crane",
+   "attrs": {
+    "Typ": "Offene Ladefläche",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1948.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 6.43,
+    "Länge": 9.12,
+    "Arbeitstage": 415.271,
+    "Stahl": 5.894,
+    "Aluminium": 6.345,
+    "Kunststoffe": 0.257,
+    "Stoff": 0.003,
+    "Mechanik-Bauteile": 0.804,
+    "Elektronik-Bauteile": 0.111,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Aluminium",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "YaG snowplow",
+   "attrs": {
+    "Typ": "Schneepflug",
+    "Frachtart": "-",
+    "Bauland": "Soviet Union",
+    "Von": 1932.0,
+    "Bis": 1959.0,
+    "Max. Geschwindigkeit": 42.0,
+    "Motorleistung": 54.0,
+    "Leergewicht": 4.93,
+    "Länge": 8.61
+   }
+  },
+  {
+   "name": "Gaz AA 55 Krankenwagen",
+   "attrs": {
+    "Typ": "Krankenwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1933.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 2.0,
+    "Länge": 5.45,
+    "Passagiere": 4.0
+   }
+  },
+  {
+   "name": "Gaz Policija",
+   "attrs": {
+    "Typ": "Personenkraftwagen",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1929.0,
+    "Bis": 1950.0,
+    "Max. Geschwindigkeit": 65.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 1.8,
+    "Länge": 5.37,
+    "Passagiere": 8.0,
+    "Arbeitstage": 150.671,
+    "Stahl": 1.914,
+    "Kunststoffe": 0.072,
+    "Stoff": 0.023,
+    "Mechanik-Bauteile": 0.47,
+    "Elektronik-Bauteile": 0.059,
+    "estimated": [
+     "Arbeitstage",
+     "Stahl",
+     "Kunststoffe",
+     "Stoff",
+     "Mechanik-Bauteile",
+     "Elektronik-Bauteile"
+    ]
+   }
+  },
+  {
+   "name": "Gaz Gefängnisbus",
+   "attrs": {
+    "Typ": "Gefangenen Bus",
+    "Frachtart": "Passagiere",
+    "Bauland": "Soviet Union",
+    "Von": 1929.0,
+    "Bis": 1955.0,
+    "Max. Geschwindigkeit": 70.0,
+    "Motorleistung": 36.8,
+    "Leergewicht": 1.8,
+    "Länge": 5.22,
+    "Passagiere": 10.0
+   }
   }
  ]
 }
