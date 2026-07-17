@@ -83,6 +83,50 @@ regenerating `buildings_raw.json` from a newer game version. Mod buildings
 (`"kind": "Mod"`) have no game-file counterpart and keep their spreadsheet
 name and quality as-is.
 
+### Lessons learned the hard way (data pipeline)
+
+These are mistakes made and caught during this project's game-files
+migration — read before repeating them:
+
+1. **"Not in the game files" is a claim, not an assumption — verify it by
+   grepping every `.ini`, not one example.** An early pass concluded
+   power/water/waste weren't in building files at all, checked only a
+   residential building. A later, more thorough grep (base game + every DLC +
+   CWC content) found real per-worker electricity factors that had been
+   missed — the water/waste conclusion held up on re-check, but the
+   electricity one didn't. Both times the fix was the same: search
+   exhaustively before writing "the game doesn't expose this" anywhere.
+2. **A same-named building at a different capacity tier is not the same
+   measurement.** Matching game buildings to sheet rows by name alone let a
+   100-worker DLC variant silently inherit a 220-worker variant's full
+   construction cost — construction cost didn't change when switching
+   producers in the Production Chain tab. Fix order that held up: (a) prefer
+   an exact worker-count match under the sheet's own tier-naming convention
+   ("X Early") over the base row; (b) only when no exact match exists at all,
+   scale by worker ratio instead of copying verbatim.
+3. **A "fix" that changes matching logic can zero out data elsewhere —
+   check the diff size, not just the one case you're fixing.** Tightening
+   the matcher to reject any non-exact worker-count match (instead of
+   scaling) silently zeroed construction data for ~20 other buildings that
+   had relied on the old fallback. Caught by noticing the regenerated
+   dataset's diff was unexpectedly large, not by the original bug report.
+   Always regenerate and diff-check after a matcher change, independent of
+   whether the one reported case looks fixed.
+4. **A regression with too few, collinear data points produces a
+   plausible-looking but wrong constant.** Fitting per-worker electricity
+   consumption factors (lighting/living/heating) against ~14 sheet-measured
+   buildings gave a *negative* coefficient for one factor — a physically
+   impossible result revealing the sample was too collinear to identify the
+   parameters. Don't ship a calibrated constant without checking the fit is
+   physically sane and the error against held-out points is small; "it kind
+   of correlates" isn't calibrated.
+5. **Test in the actual browser, not just the unit suite, before claiming a
+   UI fix works.** The count-input live-update fix passed `node --test`
+   immediately but was actually broken in two different ways only visible by
+   driving the real page (cursor loss on re-render; corrupted decimal entry
+   from tearing down the DOM mid-keystroke). Both needed a real browser
+   session to catch.
+
 ### Updating from the game files
 
 ```bash
