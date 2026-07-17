@@ -186,14 +186,17 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   `material.mtl` now control whether heating applies. A Misc section exposes verified
   settings. Continue mapping the remaining header settings with controlled save diffs;
   unknown values must not enter calculations.
-  - **Vehicle economics:** the Republic overview ranks exactly resolved owned ships by
-  their two cash-out routes. Current export payout uses live save prices, the saved sale
-  adjustment, and verified depreciation gates. Normal scrapyard targets use the category-6
-  component recipe and exact float32 conversion/rounding; loaded cargo is excluded because
-  it contributes no ship-recycling output. Gross recovery, work target, and the separately
-  labelled labor-opportunity-cost view remain distinct, while keeping an operating vehicle
+  - **Vehicle economics:** the Republic overview ranks exactly resolved owned ships, rail
+  vehicles, airplanes, helicopters, and road-service vehicles by their two cash-out routes.
+  Current export payout uses live save prices, the saved sale adjustment, verified
+  depreciation gates, and the aircraft-only export multiplier. Normal scrapyard targets use
+  category-specific component recipes and exact float32 conversion/row rounding; loaded cargo
+  is excluded because it contributes no normal vehicle-recycling output. Models with hard
+  attachments remain unavailable until every attached recipe is composed. Gross recovery,
+  work target, and the separately labelled labor-opportunity-cost view remain distinct, while
+  keeping an operating vehicle
   is deliberately not assigned an invented cash value. The supplied save yields complete
-  comparisons for four owned ships and exact current quotes for two ships among its 75
+  comparisons for 125 of 1,294 owned vehicles and exact current quotes for 17 of 75
   used-market offers; capacity and operating role remain an explicit replacement caveat.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
@@ -206,12 +209,13 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   anonymously, users can optionally select their installed
   `steamapps/workshop/content/784150` folder; its `building.ini` facts are read locally
   and never uploaded. Inventory buffers, vehicle lines/schedules and logistics topology are
-  not decoded yet. Road/rail/air recycling remains unavailable until each category conversion
-  is independently verified. Workshop vehicle lifespans are used only when their exact
+  not decoded yet. Ordinary category-1 road recycling remains unavailable until its two
+  earlier recipe-branch fields are exposed; model-defined hard attachments are never inferred
+  from save consist children. Workshop vehicle lifespans are used only when their exact
   `$LIFESPAN` fact is present; vanilla/DLC models use verified category defaults. An earlier
   10%/20%/70% assumption was found to apply to container vehicles, not ships, and was never
   shipped as a ship recommendation.
-  - **Next high-value save modules:** broaden exact recycling beyond ships and add used-market replacement ranking;
+  - **Next high-value save modules:** add role/capacity-aware used-market replacement ranking;
   building inventories and production buffers; vehicle lines and schedules; distribution/logistics
   bottlenecks; and optional live
   follow of a save directory. Cosmetic map/network geometry stays out of scope until a

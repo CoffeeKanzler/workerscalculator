@@ -256,7 +256,9 @@ def parse_vehicle(path, category):
             pass
     if not v['trainSet']:
         del v['trainSet']
-    if v.get('type') == 'VEHICLETYPE_SHIP':
+    if v.get('type') in {
+            'VEHICLETYPE_RAIL_LOCOMOTIVE', 'VEHICLETYPE_RAIL_SERVICE',
+            'VEHICLETYPE_SHIP'}:
         v['electric'] = electric_trigger
     return v if 'type' in v else None
 

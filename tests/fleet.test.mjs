@@ -9,7 +9,11 @@ import {
   containerRecyclingTargets,
   shipRecyclingTargets,
   shipProductionRecipe,
+  normalVehicleProductionRecipe,
+  normalVehicleRecyclingTargets,
   vehicleComponentBaseValue,
+  vehicleEconomicOpportunity,
+  vehicleUsedMarketQuote,
   shipEconomicOpportunity,
   shipUsedMarketQuote,
   ownedVehicleExportValue,
@@ -127,6 +131,51 @@ test('normal ship recycling reproduces exact float32 targets for owned ships', (
   }
 });
 
+test('normal vehicle recycling reproduces rail and aircraft float32 oracles', () => {
+  const cases = [
+    [{ runtimeCategory: 3, emptyWeight: 22, powerKW: 0, introductionYear: 1971,
+      transportSubtype: 0, capacity: 68, electric: null },
+    { workdays: 100, steel: 17.79800033569336, other: 2.4870002269744873 }],
+    [{ runtimeCategory: 4, emptyWeight: 64, powerKW: 736, introductionYear: 1966,
+      transportSubtype: 0, capacity: 0, electric: false },
+    { workdays: 308, steel: 59.18751907348633, other: 9.374759674072266 }],
+    [{ runtimeCategory: 10, emptyWeight: 7.2, powerKW: 1120, introductionYear: 1959,
+      transportSubtype: 7, capacity: 22, electric: null },
+    { workdays: 144, steel: 1.8240000009536743, other: 1.1770200729370117 }],
+  ];
+  for (const [facts, expected] of cases) {
+    const result = normalVehicleRecyclingTargets(facts);
+    assert.equal(result.workdays, expected.workdays);
+    assert.equal(result.materials.waste_steel, expected.steel);
+    assert.equal(result.materials.waste_other, expected.other);
+  }
+});
+
+test('aircraft recipe keeps aluminium and electronics in executable row order', () => {
+  const recipe = normalVehicleProductionRecipe({
+    runtimeCategory: 8, emptyWeight: 1.6, powerKW: 308, introductionYear: 1957,
+    transportSubtype: 7, capacity: 4, electric: null,
+  });
+  assert.deepEqual(recipe.map(([resource]) => resource), [
+    'workers', 'steel', 'aluminium', 'plastics', 'fabric', 'mcomponents',
+    'ecomponents', 'eletronics', 'workers', 'mcomponents', 'ecomponents', 'eletronics',
+  ]);
+  const targets = normalVehicleRecyclingTargets({
+    runtimeCategory: 8, emptyWeight: 1.6, powerKW: 308, introductionYear: 1957,
+    transportSubtype: 7, capacity: 4, electric: null,
+  });
+  assert.equal(targets.workdays, 34);
+  assert.equal(targets.materials.waste_aluminium, 1.1399999856948853);
+  assert.equal(targets.materials.waste_plastic, 0.04979200288653374);
+});
+
+test('ordinary road category stays unavailable without the two branch facts', () => {
+  assert.equal(normalVehicleProductionRecipe({
+    runtimeCategory: 1, emptyWeight: 6, powerKW: 118, introductionYear: 1958,
+    transportSubtype: 3, capacity: 7, electric: null,
+  }), null);
+});
+
 test('ship cargo is reported but never added to recycling targets', () => {
   const base = { emptyWeight: 8780.2, powerKW: 18000, year: 2001,
     transportSubtype: 3, capacity: 19250, electric: false };
@@ -179,7 +228,7 @@ test('ship opportunity compares exact export with derived recycling labor view',
     modelFacts: {
       runtimeCategory: 6, emptyWeight: 8780.2, powerKW: 18000,
       transportSubtype: 3, capacity: 19250, electric: false,
-      originCurrency: 'RUB', lifespanDays: 21915,
+      availableFrom: 1979, originCurrency: 'RUB', lifespanDays: 21915,
     },
   };
   const result = shipEconomicOpportunity(record, {
@@ -192,6 +241,59 @@ test('ship opportunity compares exact export with derived recycling labor view',
   assert.equal(result.laborOpportunityCost, 331970);
   assert.equal(result.cashOutAction, result.recycleAfterLabor > result.exportValue ? 'recycle' : 'export');
   assert.equal(result.advantage, Math.abs(result.exportValue - result.recycleAfterLabor));
+});
+
+test('vehicle opportunity applies aircraft export doubling only to payout', () => {
+  const economy = {
+    workday: () => 10,
+    sell: () => 20,
+    buy: () => 30,
+  };
+  const record = {
+    age: 100, accumulatedUsage: 50, state: 1, ownershipField: -1,
+    modelFacts: {
+      runtimeCategory: 10, emptyWeight: 7.2, powerKW: 1120,
+      transportSubtype: 7, capacity: 22, electric: null, availableFrom: 1959,
+      originCurrency: 'RUB', lifespanDays: 5478.75, hasHardAttachments: false,
+    },
+  };
+  const recipe = normalVehicleProductionRecipe({
+    runtimeCategory: 10, emptyWeight: 7.2, powerKW: 1120,
+    introductionYear: 1959, transportSubtype: 7, capacity: 22, electric: null,
+  });
+  const componentValue = vehicleComponentBaseValue(recipe, 'RUB', 'RUB', economy);
+  const result = vehicleEconomicOpportunity(record, {
+    currency: 'RUB', saleAdjustmentLevel: 2, depreciationLevel: 0, economy,
+  });
+
+  assert.equal(result.baseExportValue, componentValue * 2);
+  assert.equal(result.exportValue, Math.fround(componentValue * 2));
+  assert.equal(result.recycling.workdays, 144);
+  assert.equal(result.recycling.materials.waste_aluminium, 5.12999963760376);
+});
+
+test('vehicle opportunities use model introduction year and reject hard attachments', () => {
+  const economy = { workday: () => 1, sell: () => 1, buy: () => 1 };
+  const record = {
+    age: 1, accumulatedUsage: 1, state: 1, ownershipField: -1,
+    modelFacts: {
+      runtimeCategory: 6, emptyWeight: 100, powerKW: 1000, transportSubtype: 0,
+      capacity: 0, electric: false, availableFrom: 1930, originCurrency: 'RUB',
+      lifespanDays: 21915, hasHardAttachments: false,
+    },
+  };
+  const result = vehicleEconomicOpportunity(record, {
+    year: 2001, currency: 'RUB', saleAdjustmentLevel: 2, depreciationLevel: 1, economy,
+  });
+  const { waste_aluminium, ...materials } = result.recycling.materials;
+  void waste_aluminium;
+  assert.deepEqual(materials, shipRecyclingTargets({
+    emptyWeight: 100, powerKW: 1000, year: 1930,
+    transportSubtype: 0, capacity: 0, electric: false,
+  }).materials);
+  assert.equal(vehicleEconomicOpportunity({
+    ...record, modelFacts: { ...record.modelFacts, hasHardAttachments: true },
+  }, { currency: 'RUB', saleAdjustmentLevel: 2, depreciationLevel: 1, economy }), null);
 });
 
 test('owned payout preserves float32 adjustment order', () => {
@@ -214,13 +316,31 @@ test('used ship quote applies age usage and offer modifier to current component 
     modelFacts: {
       runtimeCategory: 6, emptyWeight: 100, powerKW: 1000,
       transportSubtype: 11, capacity: 200, electric: false,
-      originCurrency: 'RUB', lifespanDays: 1000,
+      availableFrom: 1979, originCurrency: 'RUB', lifespanDays: 1000,
     },
   };
   const result = shipUsedMarketQuote(offer, { year: 2001, currency: 'RUB', economy });
   assert.ok(result.baseValue > 0);
   assert.ok(Math.abs(result.factor - 0.64625) < 1e-12);
   assert.equal(result.purchaseValue, Math.fround(result.baseValue * result.factor));
+});
+
+test('used aircraft quote includes the exact export-market aircraft factor', () => {
+  const economy = { workday: () => 10, sell: () => 20 };
+  const offer = {
+    age: 250, accumulatedUsage: 100, modifier: 0,
+    modelFacts: {
+      runtimeCategory: 10, emptyWeight: 7.2, powerKW: 1120,
+      transportSubtype: 7, capacity: 22, electric: null, availableFrom: 1959,
+      originCurrency: 'RUB', lifespanDays: 1000, hasHardAttachments: false,
+    },
+  };
+  const result = vehicleUsedMarketQuote(offer, { currency: 'RUB', economy });
+  const recipe = normalVehicleProductionRecipe({
+    runtimeCategory: 10, emptyWeight: 7.2, powerKW: 1120,
+    introductionYear: 1959, transportSubtype: 7, capacity: 22, electric: null,
+  });
+  assert.equal(result.baseValue, vehicleComponentBaseValue(recipe, 'RUB', 'RUB', economy) * 2);
 });
 
 test('container transport subtype 12/13 doubles work but not recovered materials', () => {
@@ -292,12 +412,13 @@ test('fleet model resolution prefers exact authoritative game IDs', () => {
     { id: 'tanker', name: 'The Pride', type: 'VEHICLETYPE_SHIP', category: null,
       runtimeCategory: 6, emptyWeight: 8780.2, powerKW: 18000, capacity: 19250,
       transportType: 'RESOURCE_TRANSPORT_OIL', transportSubtype: 3, availableFrom: 1979,
-      originCurrency: 'RUB', lifespanDays: 21915, electric: false, source: 'game-file' },
+      originCurrency: 'RUB', lifespanDays: 21915, electric: false,
+      hasHardAttachments: false, source: 'game-file' },
     { id: '1945481818/UAZ_452', name: '1945481818/UAZ_452', type: 'VEHICLETYPE_ROAD',
       category: null, runtimeCategory: 1, emptyWeight: 1.85, powerKW: null, capacity: null,
-      transportType: null, transportSubtype: null, availableFrom: null,
+      transportType: null, transportSubtype: 0, availableFrom: null,
       originCurrency: null, lifespanDays: 4383,
-      electric: null, source: 'workshop-catalog' },
+      electric: null, hasHardAttachments: false, source: 'workshop-catalog' },
     null,
   ]);
   assert.deepEqual(resolved.summary, {

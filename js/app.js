@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=40';
+import { STRINGS } from './i18n.js?v=41';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -15,7 +15,9 @@ import {
 import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
-import { resolveVehicleModels, shareSafeSaveImport, shipEconomicOpportunity, shipUsedMarketQuote } from './fleet.js?v=2';
+import {
+  resolveVehicleModels, shareSafeSaveImport, vehicleEconomicOpportunity, vehicleUsedMarketQuote,
+} from './fleet.js?v=3';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',
@@ -2617,8 +2619,8 @@ function renderRepublic() {
   const fleetRecords = state.saveImport?.ownedVehicles ?? [];
   const fleetSettings = state.saveImport?.header?.settings;
   const priceRecord = state.statsRecords?.[Math.min(state.recordIndex, (state.statsRecords?.length ?? 1) - 1)];
-  const shipOpportunities = fleetSettings && Number.isFinite(priceRecord?.year)
-    ? fleetRecords.map(record => shipEconomicOpportunity(record, {
+  const exactFleetOpportunities = fleetSettings && Number.isFinite(priceRecord?.year)
+    ? fleetRecords.map(record => vehicleEconomicOpportunity(record, {
       year: priceRecord.year,
       currency: state.currency,
       saleAdjustmentLevel: fleetSettings.vehicleSaleAdjustmentLevel,
@@ -2626,8 +2628,8 @@ function renderRepublic() {
       economy: eco,
     })).filter(Boolean).sort((a, b) => (b.advantage ?? -Infinity) - (a.advantage ?? -Infinity)) : [];
   const usedFleetRecords = state.saveImport?.usedVehicleOffers ?? [];
-  const usedShipQuotes = Number.isFinite(priceRecord?.year)
-    ? usedFleetRecords.map(offer => shipUsedMarketQuote(offer, {
+  const exactUsedVehicleQuotes = Number.isFinite(priceRecord?.year)
+    ? usedFleetRecords.map(offer => vehicleUsedMarketQuote(offer, {
       year: priceRecord.year, currency: state.currency, economy: eco,
     })).filter(Boolean).sort((a, b) => a.purchaseValue - b.purchaseValue) : [];
   const fleetActionLabel = action => t(action === 'recycle' ? 'fleetRecycle' : 'fleetExport');
@@ -2647,13 +2649,13 @@ function renderRepublic() {
       ? `${fmt(opportunity.advantage, 0)} ${cur()}` : '—'),
     opportunity.recycling.ignoredCargo.length
       ? el('p', { class: 'hint warn' }, t('fleetCargoExcluded')) : null);
-  const fleetDetailsTable = shipOpportunities.length ? el('table', { class: 'data wide' },
+  const fleetDetailsTable = exactFleetOpportunities.length ? el('table', { class: 'data wide' },
     el('thead', {}, el('tr', {},
       el('th', {}, t('vehicle')), el('th', {}, t('fleetCashOutAction')),
       el('th', {}, t('fleetExportPayout')), el('th', {}, t('fleetRecycleGross')),
       el('th', {}, t('fleetLaborCost')), el('th', {}, t('fleetRecycleAfterLabor')),
       el('th', {}, t('fleetAdvantage')), el('th', {}, t('fleetWorkdays')))),
-    el('tbody', {}, ...shipOpportunities.map(opportunity => el('tr', {},
+    el('tbody', {}, ...exactFleetOpportunities.map(opportunity => el('tr', {},
       el('td', {}, opportunity.record.modelFacts.name,
         el('div', { class: 'subline' }, `${t('fleetSavedMultiplier')}: ${fmt(opportunity.exportMultiplier.multiplier * 100, 1)} %`),
         el('div', { class: 'subline' }, materialSummary(opportunity)),
@@ -2673,15 +2675,15 @@ function renderRepublic() {
   const fleetOpportunities = fleetRecords.length ? el('section', { class: 'institution-overview' },
     el('h3', {}, t('fleetEconomicOpportunities'), el('span', { class: 'evidence-badge exact' }, t('exact'))),
     el('p', { class: 'hint' }, t('fleetEconomicHint')),
-    shipOpportunities.length
-      ? el('div', { class: 'institution-grid' }, ...shipOpportunities.slice(0, 3).map(opportunityCard))
+    exactFleetOpportunities.length
+      ? el('div', { class: 'institution-grid' }, ...exactFleetOpportunities.slice(0, 3).map(opportunityCard))
       : el('p', { class: 'hint warn' }, t('fleetNoExactOpportunities')),
     el('p', { class: 'hint' }, t('fleetCoverageHint')
-      .replace('{exact}', fmt(shipOpportunities.length, 0)).replace('{total}', fmt(fleetRecords.length, 0))),
-    usedShipQuotes.length ? el('div', { class: 'used-fleet-offers' },
+      .replace('{exact}', fmt(exactFleetOpportunities.length, 0)).replace('{total}', fmt(fleetRecords.length, 0))),
+    exactUsedVehicleQuotes.length ? el('div', { class: 'used-fleet-offers' },
       el('h4', {}, t('fleetUsedHeading')),
       el('p', { class: 'hint' }, t('fleetUsedHint')),
-      el('div', { class: 'institution-grid' }, ...usedShipQuotes.slice(0, 3).map(quote =>
+      el('div', { class: 'institution-grid' }, ...exactUsedVehicleQuotes.slice(0, 3).map(quote =>
         el('div', { class: 'totalsbox institution-card' },
           el('h3', {}, quote.offer.modelFacts.name,
             el('span', { class: 'evidence-badge exact' }, t('exact'))),
@@ -2690,9 +2692,9 @@ function renderRepublic() {
           kv(t('fleetCapacity'), Number.isFinite(quote.offer.modelFacts.capacity)
             ? `${fmt(quote.offer.modelFacts.capacity, 0)} t` : '—')))),
       el('p', { class: 'hint' }, t('fleetUsedCoverage')
-        .replace('{exact}', fmt(usedShipQuotes.length, 0)).replace('{total}', fmt(usedFleetRecords.length, 0)))) : null,
-    shipOpportunities.length ? el('details', { class: 'secondary-section' },
-      el('summary', {}, `${t('fleetDetails')} (${fmt(shipOpportunities.length, 0)})`),
+        .replace('{exact}', fmt(exactUsedVehicleQuotes.length, 0)).replace('{total}', fmt(usedFleetRecords.length, 0)))) : null,
+    exactFleetOpportunities.length ? el('details', { class: 'secondary-section' },
+      el('summary', {}, `${t('fleetDetails')} (${fmt(exactFleetOpportunities.length, 0)})`),
       el('p', { class: 'hint warn' }, t('fleetKeepCaveat')),
       el('div', { class: 'tablewrap' }, fleetDetailsTable)) : null) : null;
 

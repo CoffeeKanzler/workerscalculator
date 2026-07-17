@@ -132,6 +132,87 @@ export function shipProductionRecipe({
   ];
 }
 
+export function normalVehicleProductionRecipe({
+  runtimeCategory, emptyWeight, powerKW, introductionYear,
+  transportSubtype = 0, capacity = 0, electric, roadOrdinaryBranch = false,
+}) {
+  if (!Number.isInteger(runtimeCategory)
+      || !Number.isFinite(emptyWeight) || emptyWeight < 0
+      || !Number.isFinite(introductionYear)
+      || !Number.isFinite(transportSubtype)
+      || !Number.isFinite(capacity) || capacity < 0) return null;
+  if (runtimeCategory === 6) {
+    return shipProductionRecipe({
+      emptyWeight, powerKW, year: introductionYear, transportSubtype, capacity, electric,
+    });
+  }
+  if (![1, 2, 3, 4, 5, 8, 10].includes(runtimeCategory)) return null;
+  // Category 1 has two earlier executable branches whose source fields are not
+  // yet present in the public catalog. Never assume the ordinary branch.
+  if (runtimeCategory === 1 && roadOrdinaryBranch !== true) return null;
+  if (runtimeCategory !== 3 && (!Number.isFinite(powerKW) || powerKW < 0)) return null;
+  if ((runtimeCategory === 4 || runtimeCategory === 5) && typeof electric !== 'boolean') return null;
+
+  const f32 = Math.fround;
+  const mul = (a, b) => f32(f32(a) * f32(b));
+  const div = (a, b) => f32(f32(a) / f32(b));
+  const weight = f32(emptyWeight);
+  const passengerFabric = () => transportSubtype === 7
+    ? mul(capacity, 0.0035) : f32(0.005);
+
+  if (runtimeCategory === 1 || runtimeCategory === 2) {
+    const p100 = div(powerKW, 100);
+    return [
+      ['workers', mul(weight, 55)],
+      ['steel', mul(weight, 0.85)],
+      ...(introductionYear > 1944 ? [['plastics', mul(weight, 0.04)]] : []),
+      ['fabric', passengerFabric()],
+      ['mcomponents', mul(weight, 0.06)],
+      ['ecomponents', mul(weight, 0.01)],
+      ['workers', mul(p100, 65)],
+      ['steel', mul(p100, 0.5)],
+      ['mcomponents', mul(p100, 0.45)],
+      ['ecomponents', mul(p100, 0.05)],
+    ];
+  }
+
+  if (runtimeCategory === 3 || runtimeCategory === 4 || runtimeCategory === 5) {
+    const body = [
+      ['workers', mul(weight, 45)],
+      ['steel', mul(weight, 0.85)],
+      ...(introductionYear > 1944 ? [['plastics', mul(weight, 0.04)]] : []),
+      ['fabric', passengerFabric()],
+      ['mcomponents', mul(weight, 0.06)],
+      ['ecomponents', mul(weight, 0.01)],
+    ];
+    if (runtimeCategory === 3) return body;
+    const p100 = div(powerKW, 100);
+    return [
+      ...body,
+      ['workers', mul(p100, 25)],
+      ['steel', mul(p100, electric ? 0.5 : 0.6)],
+      ['mcomponents', mul(p100, electric ? 0.35 : 0.65)],
+      ['ecomponents', mul(p100, electric ? 0.25 : 0.06)],
+    ];
+  }
+
+  const p1000 = div(powerKW, 1000);
+  return [
+    ['workers', mul(weight, 175)],
+    ['steel', mul(weight, 0.05)],
+    ['aluminium', mul(weight, 0.75)],
+    ...(introductionYear > 1944 ? [['plastics', mul(weight, 0.015)]] : []),
+    ['fabric', f32(0.0035)],
+    ['mcomponents', mul(weight, 0.17)],
+    ['ecomponents', mul(weight, 0.035)],
+    ...(introductionYear > 1937 ? [['eletronics', mul(weight, 0.015)]] : []),
+    ['workers', mul(p1000, 150)],
+    ['mcomponents', mul(p1000, 0.7)],
+    ['ecomponents', mul(p1000, 0.08)],
+    ...(introductionYear > 1937 ? [['eletronics', mul(p1000, 0.02)]] : []),
+  ];
+}
+
 export function vehicleComponentBaseValue(recipe, originCurrency, currency, economy) {
   if (!Array.isArray(recipe) || !['RUB', 'USD'].includes(originCurrency)
       || !['RUB', 'USD'].includes(currency)) return null;
@@ -160,31 +241,35 @@ export function ownedVehicleExportValue(baseValue, multiplier) {
   return value;
 }
 
-export function shipEconomicOpportunity(record, {
-  year, currency, saleAdjustmentLevel, depreciationLevel, economy,
+export function vehicleEconomicOpportunity(record, {
+  currency, saleAdjustmentLevel, depreciationLevel, economy,
 }) {
   const facts = record?.modelFacts;
-  if (facts?.runtimeCategory !== 6 || !Number.isFinite(year)) return null;
-  const recipe = shipProductionRecipe({
+  if (!facts || facts.hasHardAttachments) return null;
+  const recipe = normalVehicleProductionRecipe({
+    runtimeCategory: facts.runtimeCategory,
     emptyWeight: facts.emptyWeight,
     powerKW: facts.powerKW,
-    year,
+    introductionYear: facts.availableFrom,
     transportSubtype: facts.transportSubtype,
     capacity: facts.capacity ?? 0,
     electric: facts.electric,
   });
   if (!recipe) return null;
-  const baseExportValue = vehicleComponentBaseValue(recipe, facts.originCurrency, currency, economy);
+  const componentValue = vehicleComponentBaseValue(recipe, facts.originCurrency, currency, economy);
+  const baseExportValue = Number.isFinite(componentValue)
+    ? componentValue * ([8, 10].includes(facts.runtimeCategory) ? 2 : 1) : null;
   const exportMultiplier = ownedVehicleExportMultiplier(record, {
     category: facts.runtimeCategory,
     lifespan: facts.lifespanDays,
     saleAdjustmentLevel,
     depreciationLevel,
   });
-  const recycling = shipRecyclingTargets({
+  const recycling = normalVehicleRecyclingTargets({
+    runtimeCategory: facts.runtimeCategory,
     emptyWeight: facts.emptyWeight,
     powerKW: facts.powerKW,
-    year,
+    introductionYear: facts.availableFrom,
     transportSubtype: facts.transportSubtype,
     capacity: facts.capacity ?? 0,
     electric: facts.electric,
@@ -215,50 +300,69 @@ export function shipEconomicOpportunity(record, {
   };
 }
 
-export function shipUsedMarketQuote(offer, { year, currency, economy }) {
+export function shipEconomicOpportunity(record, options) {
+  if (record?.modelFacts?.runtimeCategory !== 6) return null;
+  return vehicleEconomicOpportunity(record, options);
+}
+
+export function vehicleUsedMarketQuote(offer, { currency, economy }) {
   const facts = offer?.modelFacts;
-  if (facts?.runtimeCategory !== 6 || !Number.isFinite(year)) return null;
-  const recipe = shipProductionRecipe({
+  if (!facts || facts.hasHardAttachments) return null;
+  const recipe = normalVehicleProductionRecipe({
+    runtimeCategory: facts.runtimeCategory,
     emptyWeight: facts.emptyWeight,
     powerKW: facts.powerKW,
-    year,
+    introductionYear: facts.availableFrom,
     transportSubtype: facts.transportSubtype,
     capacity: facts.capacity ?? 0,
     electric: facts.electric,
   });
-  const baseValue = vehicleComponentBaseValue(recipe, facts.originCurrency, currency, economy);
+  const componentValue = vehicleComponentBaseValue(recipe, facts.originCurrency, currency, economy);
+  const baseValue = Number.isFinite(componentValue)
+    ? componentValue * ([8, 10].includes(facts.runtimeCategory) ? 2 : 1) : null;
   const factor = usedVehicleOfferFactor({ ...offer, lifespan: facts.lifespanDays });
   if (!Number.isFinite(baseValue) || !Number.isFinite(factor)) return null;
   return { offer, baseValue, factor, purchaseValue: Math.fround(baseValue * factor) };
 }
 
+export function shipUsedMarketQuote(offer, options) {
+  if (offer?.modelFacts?.runtimeCategory !== 6) return null;
+  return vehicleUsedMarketQuote(offer, options);
+}
+
 const NORMAL_RECYCLE_CONVERSIONS = {
   steel: [['waste_steel', 0.9], ['waste_other', 0.1]],
+  aluminium: [['waste_aluminium', 0.95], ['waste_other', 0.05]],
   plastics: [['waste_plastic', 0.9], ['waste_other', 0.1]],
   fabric: [['waste_bio', 0.2], ['waste_burnable', 0.6], ['waste_other', 0.2]],
   mcomponents: [['waste_steel', 0.7], ['waste_other', 0.3]],
   ecomponents: [['waste_steel', 0.2], ['waste_plastic', 0.2], ['waste_other', 0.6]],
+  eletronics: [['waste_steel', 0.2], ['waste_plastic', 0.4], ['waste_other', 0.4]],
 };
 
-export function shipRecyclingTargets({
-  emptyWeight, powerKW, year, transportSubtype, capacity = 0, electric, cargo = [],
+export function normalVehicleRecyclingTargets({
+  runtimeCategory, emptyWeight, powerKW, introductionYear, transportSubtype = 0,
+  capacity = 0, electric, cargo = [], roadOrdinaryBranch = false,
 }) {
-  if (![emptyWeight, powerKW, year, transportSubtype, capacity].every(Number.isFinite)
-      || emptyWeight < 0 || powerKW < 0 || capacity < 0 || typeof electric !== 'boolean') return null;
+  const rows = normalVehicleProductionRecipe({
+    runtimeCategory, emptyWeight, powerKW, introductionYear, transportSubtype,
+    capacity, electric, roadOrdinaryBranch,
+  });
+  if (!rows) return null;
   const f32 = Math.fround;
-  const rows = shipProductionRecipe({ emptyWeight, powerKW, year, transportSubtype, capacity, electric });
   const materials = {
-    waste_steel: f32(0), waste_plastic: f32(0), waste_bio: f32(0),
-    waste_burnable: f32(0), waste_other: f32(0),
+    waste_steel: f32(0), waste_aluminium: f32(0), waste_plastic: f32(0),
+    waste_bio: f32(0), waste_burnable: f32(0), waste_other: f32(0),
   };
+  const workFactor = runtimeCategory === 1 ? 0.05 : runtimeCategory === 6 ? 0.15 : 0.1;
   let workdays = f32(0);
   for (const [resource, amount] of rows) {
     if (resource === 'workers') {
-      const rowTarget = Math.trunc(f32(f32(f32(0.15) * amount) + f32(1)));
+      const rowTarget = Math.trunc(f32(f32(f32(workFactor) * amount) + f32(1)));
       workdays = f32(workdays + f32(rowTarget));
       continue;
     }
-    for (const [target, ratio] of NORMAL_RECYCLE_CONVERSIONS[resource]) {
+    for (const [target, ratio] of NORMAL_RECYCLE_CONVERSIONS[resource] ?? []) {
       materials[target] = f32(materials[target] + f32(amount * f32(ratio)));
     }
   }
@@ -268,6 +372,19 @@ export function shipRecyclingTargets({
     ignoredCargo: cargo.filter(item => Number.isFinite(item?.amount) && item.amount > 0)
       .map(item => ({ resource: item.resource, amount: item.amount })),
   };
+}
+
+export function shipRecyclingTargets({
+  emptyWeight, powerKW, year, transportSubtype, capacity = 0, electric, cargo = [],
+}) {
+  const result = normalVehicleRecyclingTargets({
+    runtimeCategory: 6, emptyWeight, powerKW, introductionYear: year,
+    transportSubtype, capacity, electric, cargo,
+  });
+  if (!result) return null;
+  const { waste_aluminium, ...materials } = result.materials;
+  void waste_aluminium;
+  return { ...result, materials };
 }
 
 // Exact only for the VEHICLETYPE_CONTAINER path (runtime category 9).
@@ -363,7 +480,7 @@ export function resolveVehicleModels(records, { game = [], workshop = [] } = {})
         powerKW: Number.isFinite(entry.powerKW) ? entry.powerKW : null,
         capacity: Number.isFinite(entry.capacity) ? entry.capacity : null,
         transportType: entry.transportType ?? null,
-        transportSubtype: resourceTransportSubtype(entry.transportType),
+        transportSubtype: entry.transportType ? resourceTransportSubtype(entry.transportType) : 0,
         availableFrom: Number.isFinite(entry.from) ? entry.from : null,
         originCurrency: Number.isFinite(entry.costUSD) ? 'USD'
           : Number.isFinite(entry.costRUB) ? 'RUB' : null,
@@ -373,6 +490,7 @@ export function resolveVehicleModels(records, { game = [], workshop = [] } = {})
             ? defaultVehicleLifespan(vehicleRuntimeCategory(entry.type)) : null,
         electric: typeof entry.electric === 'boolean' ? entry.electric
           : gameEntry && entry.type === 'VEHICLETYPE_SHIP' ? false : null,
+        hasHardAttachments: Array.isArray(entry.trainSet) && entry.trainSet.length > 0,
         source: gameEntry ? 'game-file' : 'workshop-catalog',
       },
     };
