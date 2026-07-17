@@ -15,6 +15,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Passagierterminal",
   "en": "Airport terminal"
  },
@@ -34,6 +35,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Passagierterminal",
   "en": "Airport terminal"
  },
@@ -59,6 +61,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Aluminiumoxid-Fabrik",
   "en": "Alumina plant"
  },
@@ -83,6 +86,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Aluminiumwerk",
   "en": "Aluminum plant"
  },
@@ -106,6 +110,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "lighting": 1.3,
+   "heating": 2.0
+  },
   "de": "Viehzucht",
   "en": "Livestock farm"
  },
@@ -130,6 +138,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Asphaltanlage",
   "en": "Asphalt plant"
  },
@@ -150,6 +159,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Bauxit-Mine",
   "en": "Bauxite mine"
  },
@@ -172,6 +182,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Bauxit-Verarbeitungsanlage",
   "en": "Bauxite processing plant"
  },
@@ -194,6 +205,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Ziegelfabrik",
   "en": "Brick factory"
  },
@@ -216,6 +228,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Ziegelfabrik",
   "en": "Brick factory"
  },
@@ -234,6 +247,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Bushaltestelle",
   "en": "Bus stop"
  },
@@ -252,6 +266,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Trolleybus Haltestelle",
   "en": "Trolleybus stop"
  },
@@ -271,6 +286,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Seilbahnstation (groß)",
   "en": "Big cableway station"
  },
@@ -290,6 +306,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Seilbahnstation (klein)",
   "en": "Small cableway station"
  },
@@ -308,6 +325,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Autohändler",
   "en": "Car dealer"
  },
@@ -332,6 +350,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Zementwerk",
   "en": "Cement plant"
  },
@@ -356,6 +375,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Zementwerk",
   "en": "Cement plant"
  },
@@ -380,6 +400,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Zementwerk",
   "en": "Cement plant"
  },
@@ -407,6 +428,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Chemieanlage",
   "en": "Chemical plant"
  },
@@ -425,6 +447,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Rathaus / Buchhaltungsbüro",
   "en": "City accounting office"
  },
@@ -444,6 +467,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -463,6 +487,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -482,6 +507,7 @@
   "qualityOfLiving": 1.02,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -501,6 +527,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -520,6 +547,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -539,6 +567,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -558,6 +587,7 @@
   "qualityOfLiving": 0.97,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -577,6 +607,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -596,6 +627,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kleine Kirche",
   "en": "Small church"
  },
@@ -615,6 +647,7 @@
   "qualityOfLiving": 0.65,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -634,6 +667,7 @@
   "qualityOfLiving": 0.65,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -653,6 +687,7 @@
   "qualityOfLiving": 0.63,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -672,6 +707,7 @@
   "qualityOfLiving": 0.65,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -691,6 +727,7 @@
   "qualityOfLiving": 0.65,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -710,6 +747,7 @@
   "qualityOfLiving": 0.65,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -729,6 +767,7 @@
   "qualityOfLiving": 0.65,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -748,6 +787,7 @@
   "qualityOfLiving": 0.65,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Dorfhaus",
   "en": "Village house"
  },
@@ -767,6 +807,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kleine Kathedrale",
   "en": "Small cathedral"
  },
@@ -786,6 +827,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Mittlere Kathedrale",
   "en": "Medium cathedral"
  },
@@ -805,6 +847,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Große Kathedrale",
   "en": "Large cathedral"
  },
@@ -824,6 +867,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kirche",
   "en": "Church"
  },
@@ -843,6 +887,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -862,6 +907,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -881,6 +927,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -900,6 +947,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -919,6 +967,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -938,6 +987,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -957,6 +1007,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -976,6 +1027,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -995,6 +1047,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -1014,6 +1067,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -1033,6 +1087,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -1052,6 +1107,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -1071,6 +1127,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -1090,6 +1147,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -1109,6 +1167,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
  },
@@ -1131,6 +1190,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "lighting": 1.25,
+   "living": 1.5
+  },
   "de": "Bekleidungsfabrik",
   "en": "Clothing factory"
  },
@@ -1149,6 +1212,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 0.75,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Galerie der Kunst",
   "en": "Gallery of art"
  },
@@ -1167,6 +1231,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 4.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Strand",
   "en": "Beach"
  },
@@ -1185,6 +1250,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.4,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Strandcafé",
   "en": "Beach cafe/bar"
  },
@@ -1203,6 +1269,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.6,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Café - Der Ausblick",
   "en": "“The View” (cafe/bar)"
  },
@@ -1221,6 +1288,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.8,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Teetassen Karussell",
   "en": "“Chamomile” (carousel)"
  },
@@ -1239,6 +1307,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.6,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Riesenrad",
   "en": "Ferris wheel (carousel)"
  },
@@ -1258,6 +1327,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 4.8,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Panorama-Restaurant",
   "en": "\"Panorama\" (restaurant)"
  },
@@ -1276,6 +1346,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.2,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Museum der Republik",
   "en": "Museum of the Republic"
  },
@@ -1295,6 +1366,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.8,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Pyramidenmuseum",
   "en": "Pyramid museum"
  },
@@ -1313,6 +1385,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.4,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Museum des Nationalen Aufstands",
   "en": "National uprising museum"
  },
@@ -1331,6 +1404,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.8,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Palast des Kommunismus",
   "en": "“The Palace of Communism” (museum)"
  },
@@ -1349,6 +1423,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 4.1,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Aussichtsturm",
   "en": "Sight tower"
  },
@@ -1367,6 +1442,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.8,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Aussichtsturm 2",
   "en": "Sight tower 2"
  },
@@ -1385,6 +1461,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Karussell - Die Überraschung",
   "en": "“Surprise” (carousel)"
  },
@@ -1403,6 +1480,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 1.8,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Hallenbad",
   "en": "Indoor pool"
  },
@@ -1421,6 +1499,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.1,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Autoscooter",
   "en": "“Autodrome” (carousel)"
  },
@@ -1439,6 +1518,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.4,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Theater der Republik",
   "en": "Republic theater"
  },
@@ -1457,6 +1537,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.7,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Zoo",
   "en": "Zoo"
  },
@@ -1482,6 +1563,10 @@
    "concrete": 180.0,
    "steel": 45.0
   },
+  "electricWorkerFactors": {
+   "lighting": 1.3,
+   "living": 1.4
+  },
   "de": "Kohlemine",
   "en": "Coal mine"
  },
@@ -1505,6 +1590,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Verarbeitungsanlage für Kohleerz",
   "en": "Coal processing plant"
  },
@@ -1530,6 +1616,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Betonwerk",
   "en": "Concrete plant"
  },
@@ -1555,6 +1642,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Betonwerk",
   "en": "Concrete plant"
  },
@@ -1573,6 +1661,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Containerverladeanlage",
   "en": "Container-loading facility"
  },
@@ -1591,6 +1680,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Containerentladeanlage",
   "en": "Container-unloading facility"
  },
@@ -1609,6 +1699,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Gerichtsgebäude",
   "en": "Court house"
  },
@@ -1627,6 +1718,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Gerichtsgebäude (klein)",
   "en": "Court house (small)"
  },
@@ -1651,6 +1743,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Brennerei",
   "en": "Distillery"
  },
@@ -1679,6 +1772,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 6.0
+  },
   "de": "Trockendock (groß)",
   "en": "Dry dock (big)"
  },
@@ -1703,6 +1799,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 1.4
+  },
   "de": "Fabrik für elektronische Bauteile",
   "en": "Electrical components factory"
  },
@@ -1727,6 +1826,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 1.2
+  },
   "de": "Elektronikmontagehalle",
   "en": "Electronics assembly hall"
  },
@@ -1751,6 +1853,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Sprengstoff-Fabrik",
   "en": "Explosives factory"
  },
@@ -1776,6 +1879,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Stoff-Fabrik",
   "en": "Fabric factory"
  },
@@ -1796,6 +1900,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Bauernhof",
   "en": "Agro-farm"
  },
@@ -1816,6 +1921,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Bauernhof (groß)",
   "en": "Large farm"
  },
@@ -1836,6 +1942,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Bauernhof (mittel)",
   "en": "Medium farm"
  },
@@ -1856,6 +1963,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Bauernhof (klein)",
   "en": "Small farm"
  },
@@ -1879,6 +1987,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kompostieranlage",
   "en": "Composting plant"
  },
@@ -1902,6 +2011,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kunstdüngerfabrik",
   "en": "Synthetic fertilizer factory"
  },
@@ -1925,6 +2035,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kunstdüngerfabrik",
   "en": "Synthetic fertilizer factory"
  },
@@ -1943,6 +2054,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Feld (groß)",
   "en": "Big field"
  },
@@ -1961,6 +2073,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Feld (mittel)",
   "en": "Medium field"
  },
@@ -1979,6 +2092,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Feld (klein)",
   "en": "Small field"
  },
@@ -1997,6 +2111,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Feuerwache",
   "en": "Fire station"
  },
@@ -2020,6 +2135,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 1.5
+  },
   "de": "Nahrungsmittelfabrik",
   "en": "Food factory"
  },
@@ -2038,6 +2156,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Werkstatt (groß)",
   "en": "Vehicle repair station (large)"
  },
@@ -2056,6 +2175,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Werkstatt (mittel)",
   "en": "Vehicle repair station (medium)"
  },
@@ -2074,6 +2194,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Werkstatt (klein)",
   "en": "Vehicle repair station (small)"
  },
@@ -2094,6 +2215,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 0.2,
+   "heating": 0.2
+  },
   "de": "Kiesgrube",
   "en": "Gravel quarry"
  },
@@ -2117,6 +2242,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kieswerk",
   "en": "Gravel processing plant"
  },
@@ -2140,6 +2266,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kieswerk",
   "en": "Gravel processing plant"
  },
@@ -2160,6 +2287,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 0.2,
+   "heating": 0.2
+  },
   "de": "Kiesgrube",
   "en": "Gravel quarry"
  },
@@ -2179,6 +2310,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Passagierhafen (mittel)",
   "en": "Passenger harbor (medium)"
  },
@@ -2198,6 +2330,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Passagierhafen (klein)",
   "en": "Passenger harbor (small)"
  },
@@ -2220,6 +2353,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Heizwerk",
   "en": "Heating plant"
  },
@@ -2242,6 +2376,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Heizwerk (klein)",
   "en": "Small heating plant"
  },
@@ -2260,6 +2395,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Krankenhaus",
   "en": "Hospital"
  },
@@ -2278,6 +2414,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Krankenhaus",
   "en": "Hospital"
  },
@@ -2296,6 +2433,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.7,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Berghotel ***",
   "en": "Mountain hotel***"
  },
@@ -2314,6 +2452,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.5,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Berghotel ***",
   "en": "Mountain hotel***"
  },
@@ -2332,6 +2471,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 4.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Stadthotel ****",
   "en": "City hotel****"
  },
@@ -2350,6 +2490,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.1,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kleines Hotel**",
   "en": "Small Hotel**"
  },
@@ -2368,6 +2509,7 @@
   "qualityOfLiving": 0.6,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Plattenbau (Typ 464)",
   "en": "Flats - prefab (type 464)"
  },
@@ -2388,6 +2530,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Müllverbrennung (groß)",
   "en": "Incinerator (large)"
  },
@@ -2410,6 +2553,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Müllverbrennung (Heizwerk)",
   "en": "Incinerator - heating plant"
  },
@@ -2432,6 +2576,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Müllverbrennung (Kraftwerk)",
   "en": "Incinerator - power plant"
  },
@@ -2452,6 +2597,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Müllverbrennung (klein)",
   "en": "Incinerator (small)"
  },
@@ -2471,6 +2617,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Studentenwohnheim",
   "en": "University halls of residence"
  },
@@ -2490,6 +2637,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Studentenwohnheim",
   "en": "University halls of residence"
  },
@@ -2515,6 +2663,10 @@
    "concrete": 180.0,
    "steel": 45.0
   },
+  "electricWorkerFactors": {
+   "lighting": 1.3,
+   "living": 1.5
+  },
   "de": "Eisenmine",
   "en": "Iron mine"
  },
@@ -2538,6 +2690,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Verarbeitungsanlage für Eisenerz",
   "en": "Iron processing plant"
  },
@@ -2556,6 +2709,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kindergarten",
   "en": "Kindergarten"
  },
@@ -2574,6 +2728,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kino",
   "en": "Cinema"
  },
@@ -2592,6 +2747,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kino",
   "en": "Cinema"
  },
@@ -2610,6 +2766,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kiosk (Alkohol)",
   "en": "Alcohol kiosk"
  },
@@ -2628,6 +2785,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kiosk (Lebensmittel)",
   "en": "Grocery kiosk"
  },
@@ -2650,6 +2808,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "lighting": 1.2,
+   "living": 1.8
+  },
   "de": "Fabrik für mechanische Bauteile",
   "en": "Mechanical components factory"
  },
@@ -2669,6 +2831,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "U-Bahn-Station mit Eingang",
   "en": "Metro station with entrance"
  },
@@ -2688,6 +2851,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "U-Bahnsteig ohne Eingang",
   "en": "Metro platform without entrance"
  },
@@ -2707,6 +2871,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "U-Bahnsteig ohne Eingang",
   "en": "Metro platform without entrance"
  },
@@ -2726,6 +2891,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "U-Bahnsteig ohne Eingang",
   "en": "Metro platform without entrance"
  },
@@ -2744,6 +2910,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Bushaltestelle (kostenlos)",
   "en": "Bus stop (free)"
  },
@@ -2770,6 +2937,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kernbrennstofffabrik",
   "en": "Nuclear fuel fabrication"
  },
@@ -2792,6 +2960,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Ölförderpumpe",
   "en": "Pumpjack"
  },
@@ -2816,6 +2985,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Ölraffinerie",
   "en": "Oil refinery"
  },
@@ -2840,6 +3010,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Ölraffinerie",
   "en": "Oil refinery"
  },
@@ -2858,6 +3029,7 @@
   "qualityOfLiving": 0.78,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Waisenhaus",
   "en": "Orphanage"
  },
@@ -2876,6 +3048,7 @@
   "qualityOfLiving": 0.85,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
  },
@@ -2894,6 +3067,7 @@
   "qualityOfLiving": 0.85,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
  },
@@ -2912,6 +3086,7 @@
   "qualityOfLiving": 0.91,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
  },
@@ -2930,6 +3105,7 @@
   "qualityOfLiving": 0.96,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
  },
@@ -2948,6 +3124,7 @@
   "qualityOfLiving": 0.93,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
  },
@@ -2966,6 +3143,7 @@
   "qualityOfLiving": 0.91,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
  },
@@ -2984,6 +3162,7 @@
   "qualityOfLiving": 0.94,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
  },
@@ -3008,6 +3187,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 1.0
+  },
   "de": "Fabrik für Plattenbauteile",
   "en": "Prefab panels factory"
  },
@@ -3032,6 +3214,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 1.0
+  },
   "de": "Fabrik für Plattenbauteile",
   "en": "Prefab panels factory"
  },
@@ -3056,6 +3241,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 1.0
+  },
   "de": "Fabrik für Plattenbauteile",
   "en": "Prefab panels factory"
  },
@@ -3075,6 +3263,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Passagier-Hubschrauberlandeplatz",
   "en": "Heliport passenger platform"
  },
@@ -3099,6 +3288,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kunststofffabrik",
   "en": "Plastics factory"
  },
@@ -3117,6 +3307,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Fußballplatz",
   "en": "Football field"
  },
@@ -3135,6 +3326,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Tennisplatz",
   "en": "Tennis court"
  },
@@ -3153,6 +3345,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Tennisplatz",
   "en": "Tennis court"
  },
@@ -3171,6 +3364,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Polizeirevier",
   "en": "Police station"
  },
@@ -3189,6 +3383,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Polizeirevier (klein)",
   "en": "Police station (small)"
  },
@@ -3211,6 +3406,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kohlekraftwerk",
   "en": "Coal power plant"
  },
@@ -3233,6 +3429,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kohlekraftwerk",
   "en": "Coal power plant"
  },
@@ -3255,6 +3452,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Gaskraftwerk",
   "en": "Gas power plant"
  },
@@ -3281,6 +3479,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kernkraftwerk mit zwei Reaktoren",
   "en": "Twin-reactor nuclear power plant"
  },
@@ -3307,6 +3506,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kernkraftwerk mit einem Reaktor",
   "en": "Single-reactor nuclear power plant"
  },
@@ -3327,6 +3527,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Solarkraftwerk",
   "en": "Solar power plant"
  },
@@ -3347,6 +3548,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Windkraftanlage (klein)",
   "en": "Small wind power plant"
  },
@@ -3367,6 +3569,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Windkraftanlage (groß)",
   "en": "Big wind power plant"
  },
@@ -3385,6 +3588,7 @@
   "qualityOfLiving": 0.5,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Gefängnis",
   "en": "Prison"
  },
@@ -3414,6 +3618,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 7.0
+  },
   "de": "Flugzeugproduktionslinie",
   "en": "Airplane production line"
  },
@@ -3442,6 +3649,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 6.0
+  },
   "de": "Eisenbahn-Fertigungslinie",
   "en": "Railway production line"
  },
@@ -3470,6 +3680,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 6.0
+  },
   "de": "Eisenbahn-Fertigungslinie",
   "en": "Railway production line"
  },
@@ -3498,6 +3711,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 6.0
+  },
   "de": "Fahrzeug-Fertigungslinie",
   "en": "Vehicle production line"
  },
@@ -3516,6 +3732,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kneipe",
   "en": "Pub"
  },
@@ -3534,6 +3751,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 0.2,
+   "lighting": 0.2
+  },
   "de": "Eisenbahnbauamt",
   "en": "Rail construction office"
  },
@@ -3552,6 +3773,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 0.2,
+   "lighting": 0.2
+  },
   "de": "Eisenbahnbauamt",
   "en": "Rail construction office"
  },
@@ -3570,6 +3795,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Bahnhof",
   "en": "Train platform"
  },
@@ -3588,6 +3814,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Bahnsteig klein",
   "en": "Train platform small"
  },
@@ -3607,6 +3834,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "U-Bahn-Station (oberirdisch, klein)",
   "en": "Metro above-ground station (small)"
  },
@@ -3626,6 +3854,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "U-Bahn-Station (oberirdisch, groß)",
   "en": "Metro above-ground station (large)"
  },
@@ -3645,6 +3874,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "U-Bahn-Station (ebenerdig, klein)",
   "en": "Metro ground-level station (small)"
  },
@@ -3664,6 +3894,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "U-Bahn-Station (ebenerdig, groß)",
   "en": "Metro ground-level station (large)"
  },
@@ -3682,6 +3913,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Bauamt",
   "en": "Construction office"
  },
@@ -3700,6 +3932,7 @@
   "qualityOfLiving": 0.87,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
  },
@@ -3718,6 +3951,7 @@
   "qualityOfLiving": 0.78,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
  },
@@ -3736,6 +3970,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
  },
@@ -3754,6 +3989,7 @@
   "qualityOfLiving": 0.75,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
  },
@@ -3772,6 +4008,7 @@
   "qualityOfLiving": 0.82,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
  },
@@ -3790,6 +4027,7 @@
   "qualityOfLiving": 0.82,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
  },
@@ -3808,6 +4046,7 @@
   "qualityOfLiving": 0.89,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
  },
@@ -3826,6 +4065,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Busbahnhof",
   "en": "Bus platform"
  },
@@ -3844,6 +4084,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Busbahnhof (klein)",
   "en": "Bus platform small"
  },
@@ -3862,6 +4103,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Busbahnhof",
   "en": "Bus platform"
  },
@@ -3881,6 +4123,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Rundfunkhaus",
   "en": "Radio station"
  },
@@ -3900,6 +4143,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Rundfunkhaus",
   "en": "Radio station"
  },
@@ -3923,6 +4167,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Sägewerk",
   "en": "Sawmill"
  },
@@ -3941,6 +4186,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Schule",
   "en": "School"
  },
@@ -3960,6 +4206,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Uranumwandlungsanlage",
   "en": "Uranium conversion plant"
  },
@@ -3979,6 +4226,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Uranumwandlungsanlage",
   "en": "Uranium conversion plant"
  },
@@ -4003,6 +4251,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Klärwerk (groß)",
   "en": "Sewage treatment (big)"
  },
@@ -4027,6 +4276,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Klärwerk (klein)",
   "en": "Sewage treatment (small)"
  },
@@ -4045,6 +4295,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kleines Einkaufszentrum",
   "en": "Small shopping center"
  },
@@ -4063,6 +4314,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kleines Geschäft",
   "en": "Small store"
  },
@@ -4081,6 +4333,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Lebensmittelmarkt",
   "en": "Grocery store"
  },
@@ -4099,6 +4352,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kleines Einkaufszentrum",
   "en": "Small shopping center"
  },
@@ -4117,6 +4371,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kleines Einkaufszentrum",
   "en": "Small shopping center"
  },
@@ -4135,6 +4390,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 1.5,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Einkaufszentrum",
   "en": "Shopping center"
  },
@@ -4157,6 +4413,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 1.5
+  },
   "de": "Schlachthof",
   "en": "Slaughterhouse"
  },
@@ -4181,6 +4440,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Stahlwerk",
   "en": "Steel mill"
  },
@@ -4205,6 +4465,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Stahlwerk",
   "en": "Steel mill"
  },
@@ -4224,6 +4485,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Fernsehsenderhaus",
   "en": "Television station"
  },
@@ -4243,6 +4505,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Fernsehsenderhaus",
   "en": "Television station"
  },
@@ -4262,6 +4525,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Straßenbahnhaltestelle (größer)",
   "en": "Tram stop (larger)"
  },
@@ -4281,6 +4545,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Straßenbahnhaltestelle (klein)",
   "en": "Tram stop (small)"
  },
@@ -4300,6 +4565,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Medizinische Universität",
   "en": "Medical university"
  },
@@ -4319,6 +4585,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Medizinische Universität",
   "en": "Medical university"
  },
@@ -4338,6 +4605,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Zentrale der kommunistischen Partei",
   "en": "Headquarters of the Communist Party "
  },
@@ -4357,6 +4625,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Zentrale der kommunistischen Partei",
   "en": "Headquarters of the Communist Party "
  },
@@ -4376,6 +4645,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Technische Universität",
   "en": "Technical university"
  },
@@ -4395,6 +4665,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Technische Universität",
   "en": "Technical university"
  },
@@ -4420,6 +4691,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Uranumwandlungsanlage",
   "en": "Uranium conversion plant"
  },
@@ -4445,6 +4717,10 @@
    "concrete": 220.0,
    "steel": 65.0
   },
+  "electricWorkerFactors": {
+   "lighting": 1.3,
+   "living": 1.5
+  },
   "de": "Uranmine",
   "en": "Uranium mine"
  },
@@ -4468,6 +4744,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Uranaufbereitungsanlage",
   "en": "Uranium processing plant"
  },
@@ -4490,6 +4767,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Aluminium-Recycling Anlage",
   "en": "Aluminum recycling plant"
  },
@@ -4511,6 +4789,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Mülltrennung (Aluminium)",
   "en": "Aluminum separation"
  },
@@ -4532,6 +4811,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Mülltrennung (generell)",
   "en": "General separation"
  },
@@ -4555,6 +4835,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Kies-Recycling Anlage",
   "en": "Gravel recycling plant"
  },
@@ -4578,6 +4859,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Plastik-Recycling Anlage",
   "en": "Plastic recycling plant"
  },
@@ -4600,6 +4882,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Stahl-Recycling Anlage",
   "en": "Steel recycling plant"
  },
@@ -4621,6 +4904,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Mülltrennung (Schrott)",
   "en": "Scrap separation"
  },
@@ -4642,6 +4926,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Müllbehandlungsanlage",
   "en": "Waste treatment plant"
  },
@@ -4664,6 +4949,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Müllbehandlungsanlage",
   "en": "Waste treatment plant"
  },
@@ -4684,6 +4970,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Oberflächenwasserabfluss",
   "en": "Surface water intake"
  },
@@ -4708,6 +4995,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wasseraufbereitung (groß)",
   "en": "Water treatment (big)"
  },
@@ -4732,6 +5020,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wasseraufbereitung (klein)",
   "en": "Water treatment (small)"
  },
@@ -4754,6 +5043,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wasserbrunnen (groß)",
   "en": "Big water well"
  },
@@ -4776,6 +5066,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "de": "Wasserbrunnen (klein)",
   "en": "Small water well"
  },
@@ -4796,6 +5087,11 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "lighting": 0.6,
+   "living": 0.2,
+   "heating": 0.2
+  },
   "de": "Holzfällerposten",
   "en": "Woodcutting post"
  },
@@ -4814,6 +5110,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -4833,6 +5130,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -4852,6 +5150,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -4871,6 +5170,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -4890,6 +5190,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -4909,6 +5210,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -4928,6 +5230,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -4947,6 +5250,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -4966,6 +5270,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -4985,6 +5290,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -5004,6 +5310,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -5023,6 +5330,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -5042,6 +5350,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -5061,6 +5370,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -5080,6 +5390,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -5099,6 +5410,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -5118,6 +5430,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -5137,6 +5450,7 @@
   "qualityOfLiving": 0.84,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -5156,6 +5470,7 @@
   "qualityOfLiving": 0.86,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -5175,6 +5490,7 @@
   "qualityOfLiving": 0.87,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -5194,6 +5510,7 @@
   "qualityOfLiving": 0.87,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (Typ 75)",
   "en": "Flats - prefab (type 75)"
@@ -5213,6 +5530,7 @@
   "qualityOfLiving": 0.7,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5232,6 +5550,7 @@
   "qualityOfLiving": 0.7,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5251,6 +5570,7 @@
   "qualityOfLiving": 0.7,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5270,6 +5590,7 @@
   "qualityOfLiving": 0.7,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5289,6 +5610,7 @@
   "qualityOfLiving": 0.7,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5308,6 +5630,7 @@
   "qualityOfLiving": 0.7,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5327,6 +5650,7 @@
   "qualityOfLiving": 0.7,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5346,6 +5670,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Busbahnhof",
   "en": "Bus platform"
@@ -5365,6 +5690,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Busbahnhof",
   "en": "Bus platform"
@@ -5384,6 +5710,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Busbahnhof",
   "en": "Bus platform"
@@ -5403,6 +5730,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Busbahnhof",
   "en": "Bus platform"
@@ -5422,6 +5750,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.5,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Café Delikat",
   "en": "“Delicije” (café/bar)"
@@ -5447,6 +5776,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Zementwerk",
   "en": "Cement plant"
@@ -5466,6 +5796,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Feuerwache",
   "en": "Fire station"
@@ -5485,6 +5816,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Feuerwache",
   "en": "Fire station"
@@ -5504,6 +5836,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Klinik (klein)",
   "en": "Small clinic"
@@ -5523,6 +5856,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 1.8,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Kleines Hotel**",
   "en": "Small Hotel**"
@@ -5542,6 +5876,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Hotel (3 Sterne)",
   "en": "Hotel (3 stars)"
@@ -5561,6 +5896,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.8,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Hotel (4 Sterne)",
   "en": "Hotel (4 stars)"
@@ -5580,6 +5916,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Kindergarten",
   "en": "Kindergarten"
@@ -5599,6 +5936,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Kindergarten",
   "en": "Kindergarten"
@@ -5618,6 +5956,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Kindergarten",
   "en": "Kindergarten"
@@ -5637,6 +5976,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Schwimmbad",
   "en": "Outdoor swimming pool"
@@ -5656,6 +5996,7 @@
   "qualityOfLiving": 0.83,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5675,6 +6016,7 @@
   "qualityOfLiving": 0.83,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5694,6 +6036,7 @@
   "qualityOfLiving": 0.83,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5713,6 +6056,7 @@
   "qualityOfLiving": 0.86,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5732,6 +6076,7 @@
   "qualityOfLiving": 0.86,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5751,6 +6096,7 @@
   "qualityOfLiving": 0.76,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5770,6 +6116,7 @@
   "qualityOfLiving": 0.72,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5789,6 +6136,7 @@
   "qualityOfLiving": 0.82,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5808,6 +6156,7 @@
   "qualityOfLiving": 0.87,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5827,6 +6176,7 @@
   "qualityOfLiving": 0.87,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5846,6 +6196,7 @@
   "qualityOfLiving": 0.87,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5865,6 +6216,7 @@
   "qualityOfLiving": 0.75,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5884,6 +6236,7 @@
   "qualityOfLiving": 0.78,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -5904,6 +6257,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Parteizentrale (klein)",
   "en": "Small headquarters of the Party "
@@ -5923,6 +6277,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Basket- und Volleyballplatz",
   "en": "Basketball and volleyball court"
@@ -5942,6 +6297,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Basket- und Volleyballplatz",
   "en": "Basketball and volleyball court"
@@ -5961,6 +6317,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Fußballplatz",
   "en": "Football field"
@@ -5980,6 +6337,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Volleyballplatz",
   "en": "Volleyball court"
@@ -5999,6 +6357,7 @@
   "qualityOfLiving": 0.55,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Landhäuser (geringe Wohnqualität)",
   "en": "Low-quality rural flats"
@@ -6018,6 +6377,7 @@
   "qualityOfLiving": 0.55,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Landhäuser (geringe Wohnqualität)",
   "en": "Low-quality rural flats"
@@ -6037,6 +6397,7 @@
   "qualityOfLiving": 0.63,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Landhäuser (geringe Wohnqualität)",
   "en": "Low-quality rural flats"
@@ -6056,6 +6417,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Schule",
   "en": "School"
@@ -6075,6 +6437,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Schule",
   "en": "School"
@@ -6094,6 +6457,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Schule",
   "en": "School"
@@ -6113,6 +6477,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Waisenhaus",
   "en": "Orphanage"
@@ -6132,6 +6497,7 @@
   "qualityOfLiving": 0.48,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Gefängnis",
   "en": "Prison"
@@ -6151,6 +6517,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.5,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Sporthalle",
   "en": "Sport hall"
@@ -6170,6 +6537,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Sporthalle",
   "en": "Sport hall"
@@ -6197,6 +6565,7 @@
    "bricks": 0.1,
    "boards": 13.0
   },
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (1Lg-600A)",
   "en": "Flats - prefab (1Lg-600A)"
@@ -6224,6 +6593,7 @@
    "bricks": 0.2,
    "boards": 23.0
   },
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (1Lg-600A)",
   "en": "Flats - prefab (1Lg-600A)"
@@ -6251,6 +6621,7 @@
    "bricks": 0.2,
    "boards": 22.0
   },
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (1Lg-600A)",
   "en": "Flats - prefab (1Lg-600A)"
@@ -6278,6 +6649,7 @@
    "bricks": 0.3,
    "boards": 46.0
   },
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (1Lg-600A)",
   "en": "Flats - prefab (1Lg-600A)"
@@ -6307,6 +6679,7 @@
    "mcomponents": 0.15,
    "boards": 40.0
   },
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (1Lg-600A)",
   "en": "Flats - prefab (1Lg-600A)"
@@ -6336,6 +6709,7 @@
    "mcomponents": 0.45,
    "boards": 85.0
   },
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (1Lg-600A)",
   "en": "Flats - prefab (1Lg-600A)"
@@ -6365,6 +6739,7 @@
    "mcomponents": 0.15,
    "boards": 35.0
   },
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (1Lg-600A)",
   "en": "Flats - prefab (1Lg-600A)"
@@ -6394,6 +6769,7 @@
    "mcomponents": 0.75,
    "boards": 114.0
   },
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (1Lg-600A)",
   "en": "Flats - prefab (1Lg-600A)"
@@ -6423,6 +6799,7 @@
    "mcomponents": 0.25,
    "boards": 58.0
   },
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (1Lg-600A)",
   "en": "Flats - prefab (1Lg-600A)"
@@ -6452,6 +6829,7 @@
    "mcomponents": 0.75,
    "boards": 131.0
   },
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Wohnungen (1Lg-600A)",
   "en": "Flats - prefab (1Lg-600A)"
@@ -6471,6 +6849,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Amphitheater",
   "en": "Amphitheatre"
@@ -6499,6 +6878,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Chemieanlage",
   "en": "Chemical plant"
@@ -6519,6 +6899,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Passagierhafen (klein)",
   "en": "Passenger harbor (small)"
@@ -6538,6 +6919,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Krankenhaus",
   "en": "Hospital"
@@ -6557,6 +6939,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Kulturzentrum",
   "en": "House of culture"
@@ -6576,6 +6959,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Arbeitszentrum",
   "en": "Labour pickup hall"
@@ -6595,6 +6979,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 0.2,
+   "lighting": 0.2
+  },
   "dlc": "cwc",
   "de": "Eisenbahnbauamt",
   "en": "Rail construction office"
@@ -6614,6 +7002,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 0.2,
+   "lighting": 0.2
+  },
   "dlc": "cwc",
   "de": "Eisenbahnbauamt",
   "en": "Rail construction office"
@@ -6634,6 +7026,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
@@ -6654,6 +7047,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
@@ -6674,6 +7068,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
@@ -6694,6 +7089,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
@@ -6714,6 +7110,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
@@ -6734,6 +7131,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
@@ -6754,6 +7152,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Alte Stadthäuser",
   "en": "Old city houses"
@@ -6773,6 +7172,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Kneipe",
   "en": "Pub"
@@ -6792,6 +7192,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -6811,6 +7212,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -6830,6 +7232,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -6849,6 +7252,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -6868,6 +7272,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -6887,6 +7292,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Bahnsteig klein",
   "en": "Train platform small"
@@ -6906,6 +7312,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Bahnsteig klein",
   "en": "Train platform small"
@@ -6926,6 +7333,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Verschrottungsanlage (klein)",
   "en": "Scrapping facility (small)"
@@ -6946,6 +7354,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Verschrottungsanlage (groß)",
   "en": "Scrapping facility (large)"
@@ -6966,6 +7375,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Verschrottungsanlage (für Schiffe; klein)",
   "en": "Ship-scrapping facility (small)"
@@ -6986,6 +7396,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Verschrottungsanlage (für Schiffe; groß)",
   "en": "Ship-scrapping facility (large)"
@@ -7005,6 +7416,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Stadtstadion",
   "en": "City stadium"
@@ -7024,6 +7436,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Großer Bahnhof",
   "en": "Large train station"
@@ -7044,6 +7457,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Technische Universität",
   "en": "Technical university"
@@ -7063,6 +7477,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "cwc",
   "de": "Schule",
   "en": "School"
@@ -7091,6 +7506,7 @@
    "steel": 10.0,
    "ecomponents": 1.0
   },
+  "electricWorkerFactors": {},
   "nameStr": "Ekspres bistro",
   "dlc": "dlc1"
  },
@@ -7109,6 +7525,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.5,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "nameStr": "Concert Hall «Ukraina»",
   "dlc": "dlc1"
  },
@@ -7135,6 +7552,7 @@
    "steel": 30.0,
    "ecomponents": 2.0
   },
+  "electricWorkerFactors": {},
   "nameStr": "Palace of sports Dynamo",
   "dlc": "dlc1"
  },
@@ -7153,6 +7571,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 4.5,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "nameStr": "Hotel Ukraine",
   "dlc": "dlc1"
  },
@@ -7171,6 +7590,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 4.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "nameStr": "Lviv Circus",
   "dlc": "dlc1"
  },
@@ -7195,6 +7615,7 @@
    "steel": 4.0,
    "workers": 100.0
   },
+  "electricWorkerFactors": {},
   "nameStr": "Okean supermarket",
   "dlc": "dlc1"
  },
@@ -7222,6 +7643,7 @@
    "prefabpanels": 16.0,
    "ecomponents": 2.0
   },
+  "electricWorkerFactors": {},
   "nameStr": "Dance hall Romantyk",
   "dlc": "dlc1"
  },
@@ -7248,6 +7670,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "nameStr": "Zaporozie Reactor",
   "dlc": "dlc1"
  },
@@ -7267,6 +7690,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes arabisches Haus",
   "en": "Old Arab house"
@@ -7287,6 +7711,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes arabisches Haus",
   "en": "Old Arab house"
@@ -7307,6 +7732,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes arabisches Haus",
   "en": "Old Arab house"
@@ -7327,6 +7753,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes arabisches Haus",
   "en": "Old Arab house"
@@ -7347,6 +7774,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes arabisches Haus",
   "en": "Old Arab house"
@@ -7367,6 +7795,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes arabisches Haus",
   "en": "Old Arab house"
@@ -7387,6 +7816,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes arabisches Haus",
   "en": "Old Arab house"
@@ -7407,6 +7837,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes arabisches Haus",
   "en": "Old Arab house"
@@ -7427,6 +7858,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes arabisches Haus",
   "en": "Old Arab house"
@@ -7447,6 +7879,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes arabisches Haus",
   "en": "Old Arab house"
@@ -7467,6 +7900,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes arabisches Haus",
   "en": "Old Arab house"
@@ -7487,6 +7921,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Asiatisches Stadthaus",
   "en": "Asian city house"
@@ -7507,6 +7942,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Asiatisches Stadthaus",
   "en": "Asian city house"
@@ -7527,6 +7963,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Asiatisches Stadthaus",
   "en": "Asian city house"
@@ -7547,6 +7984,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Asiatisches Stadthaus",
   "en": "Asian city house"
@@ -7567,6 +8005,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Asiatisches Stadthaus",
   "en": "Asian city house"
@@ -7587,6 +8026,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Kleines Dorfhaus",
   "en": "Poor house"
@@ -7607,6 +8047,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Kleines Dorfhaus",
   "en": "Poor house"
@@ -7627,6 +8068,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Kleines Dorfhaus",
   "en": "Poor house"
@@ -7647,6 +8089,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Moschee",
   "en": "Mosque"
@@ -7667,6 +8110,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Moschee",
   "en": "Mosque"
@@ -7687,6 +8131,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Kleines Dorfhaus",
   "en": "Poor house"
@@ -7707,6 +8152,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Kleines Dorfhaus",
   "en": "Poor house"
@@ -7727,6 +8173,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Kleines Dorfhaus",
   "en": "Poor house"
@@ -7747,6 +8194,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Kleines Dorfhaus",
   "en": "Poor house"
@@ -7767,6 +8215,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -7787,6 +8236,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -7807,6 +8257,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -7827,6 +8278,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -7847,6 +8299,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -7867,6 +8320,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -7887,6 +8341,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -7907,6 +8362,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -7927,6 +8383,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -7947,6 +8404,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -7967,6 +8425,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -7987,6 +8446,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8007,6 +8467,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8027,6 +8488,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8047,6 +8509,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8067,6 +8530,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8087,6 +8551,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8107,6 +8572,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8127,6 +8593,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8147,6 +8614,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8167,6 +8635,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8187,6 +8656,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8207,6 +8677,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8227,6 +8698,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Altes sibirisches Haus",
   "en": "Old Siberian house"
@@ -8247,6 +8719,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Tempel",
   "en": "Temple"
@@ -8267,6 +8740,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Tempel",
   "en": "Temple"
@@ -8287,6 +8761,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc2",
   "de": "Tempel",
   "en": "Temple"
@@ -8307,6 +8782,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Passagierterminal",
   "en": "Airport terminal"
@@ -8326,6 +8802,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 0.75,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Galerie der Kunst",
   "en": "Gallery of art"
@@ -8351,6 +8828,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Asphaltanlage",
   "en": "Asphalt plant"
@@ -8370,6 +8848,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kiosk (Alkohol)",
   "en": "Alcohol kiosk"
@@ -8393,6 +8872,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Ziegelfabrik",
   "en": "Brick factory"
@@ -8412,6 +8892,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Busbahnhof",
   "en": "Bus platform"
@@ -8431,6 +8912,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Spa-Café",
   "en": "Spa Cafe"
@@ -8450,6 +8932,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Autohändler",
   "en": "Car dealer"
@@ -8475,6 +8958,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Zementwerk",
   "en": "Cement plant"
@@ -8503,6 +8987,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Chemieanlage",
   "en": "Chemical plant"
@@ -8522,6 +9007,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kirche St. Petersburg",
   "en": "St. Petersburg Church"
@@ -8541,6 +9027,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kirche St. Petersburg",
   "en": "St. Petersburg Church"
@@ -8560,6 +9047,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kino",
   "en": "Cinema"
@@ -8579,6 +9067,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Klinik (klein)",
   "en": "Small clinic"
@@ -8602,6 +9091,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "lighting": 1.25,
+   "living": 1.5
+  },
   "dlc": "dlc3",
   "de": "Bekleidungsfabrik",
   "en": "Clothing factory"
@@ -8626,6 +9119,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Verarbeitungsanlage für Kohleerz",
   "en": "Coal processing plant"
@@ -8652,6 +9146,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Betonwerk",
   "en": "Concrete plant"
@@ -8671,6 +9166,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Gerichtsgebäude",
   "en": "Court house"
@@ -8690,6 +9186,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kleines Einkaufszentrum",
   "en": "Small shopping center"
@@ -8709,6 +9206,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kleines Einkaufszentrum",
   "en": "Small shopping center"
@@ -8728,6 +9226,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kleines Einkaufszentrum",
   "en": "Small shopping center"
@@ -8747,6 +9246,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kleines Einkaufszentrum",
   "en": "Small shopping center"
@@ -8772,6 +9272,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Brennerei",
   "en": "Distillery"
@@ -8797,6 +9298,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Brennerei",
   "en": "Distillery"
@@ -8817,6 +9319,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Studentenwohnheim",
   "en": "University halls of residence"
@@ -8842,6 +9345,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 1.4
+  },
   "dlc": "dlc3",
   "de": "Fabrik für elektronische Bauteile",
   "en": "Electrical components factory"
@@ -8867,6 +9373,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 1.2
+  },
   "dlc": "dlc3",
   "de": "Elektronikmontagehalle",
   "en": "Electronics assembly hall"
@@ -8892,6 +9401,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Sprengstoff-Fabrik",
   "en": "Explosives factory"
@@ -8911,6 +9421,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.5,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Ausstellungshalle",
   "en": "Expo hall"
@@ -8932,6 +9443,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bauernhof (klein)",
   "en": "Small farm"
@@ -8953,6 +9465,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bauernhof (mittel)",
   "en": "Medium farm"
@@ -8974,6 +9487,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bauernhof (groß)",
   "en": "Large farm"
@@ -8993,6 +9507,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Feuerwache",
   "en": "Fire station"
@@ -9012,6 +9527,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Feuerwache",
   "en": "Fire station"
@@ -9036,6 +9552,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 1.8
+  },
   "dlc": "dlc3",
   "de": "Nahrungsmittelfabrik",
   "en": "Food factory"
@@ -9060,6 +9579,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 0.4
+  },
   "dlc": "dlc3",
   "de": "Nahrungsmittelfabrik",
   "en": "Food factory"
@@ -9079,6 +9601,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kiosk (Lebensmittel)",
   "en": "Grocery kiosk"
@@ -9098,6 +9621,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Lebensmittelmarkt",
   "en": "Grocery store"
@@ -9124,6 +9648,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Tischlerwerkstatt",
   "en": "Carpenter's workshop"
@@ -9143,6 +9668,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Klinik (klein)",
   "en": "Small clinic"
@@ -9162,6 +9688,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Klinik (klein)",
   "en": "Small clinic"
@@ -9181,6 +9708,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Pferdehändler",
   "en": "Horse dealer"
@@ -9202,6 +9730,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bauernhof (klein)",
   "en": "Small farm"
@@ -9221,6 +9750,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Feuerwache",
   "en": "Fire station"
@@ -9240,6 +9770,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Feuerwache",
   "en": "Fire station"
@@ -9259,6 +9790,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Polizeirevier (klein)",
   "en": "Police station (small)"
@@ -9278,6 +9810,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Polizeirevier (klein)",
   "en": "Police station (small)"
@@ -9298,6 +9831,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Pferdearzt und Tischlerei",
   "en": "Horse veterinary & carpenter's shop"
@@ -9317,6 +9851,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Schlachthof",
   "en": "Knacker’s yard"
@@ -9341,6 +9876,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Gestüt",
   "en": "Stud farm"
@@ -9362,6 +9898,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Holzfällerposten",
   "en": "Woodcutting post"
@@ -9385,6 +9922,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Heizwerk",
   "en": "Heating plant"
@@ -9408,6 +9946,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Heizwerk (klein)",
   "en": "Small heating plant"
@@ -9431,6 +9970,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Heizwerk (klein)",
   "en": "Small heating plant"
@@ -9450,6 +9990,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -9469,6 +10010,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -9488,6 +10030,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Krankenhaus",
   "en": "Hospital"
@@ -9507,6 +10050,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Krankenhaus",
   "en": "Hospital"
@@ -9526,6 +10070,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.8,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Berghotel ***",
   "en": "Mountain hotel***"
@@ -9545,6 +10090,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Hotel ***",
   "en": "Hotel***"
@@ -9564,6 +10110,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.3,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Hotel **",
   "en": "Hotel**"
@@ -9583,6 +10130,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Hotel ***",
   "en": "Hotel***"
@@ -9602,6 +10150,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 4.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Stadthotel ****",
   "en": "City hotel****"
@@ -9621,6 +10170,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kulturzentrum",
   "en": "House of culture"
@@ -9642,6 +10192,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Müllverbrennung (klein)",
   "en": "Incinerator (small)"
@@ -9666,6 +10217,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Verarbeitungsanlage für Eisenerz",
   "en": "Iron processing plant"
@@ -9685,6 +10237,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kindergarten",
   "en": "Kindergarten"
@@ -9704,6 +10257,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kindergarten",
   "en": "Kindergarten"
@@ -9723,6 +10277,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Arbeitszentrum",
   "en": "Labour pickup hall"
@@ -9747,6 +10302,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "lighting": 1.3
+  },
   "dlc": "dlc3",
   "de": "Viehzucht",
   "en": "Livestock farm"
@@ -9766,6 +10324,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Markthalle",
   "en": "Market hall"
@@ -9789,6 +10348,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "lighting": 1.2,
+   "living": 1.8
+  },
   "dlc": "dlc3",
   "de": "Fabrik für mechanische Bauteile",
   "en": "Mechanical components factory"
@@ -9809,6 +10372,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "U-Bahn-Station mit Eingang",
   "en": "Metro station with entrance"
@@ -9834,6 +10398,10 @@
    "boards": 37.5,
    "concrete": 90.0,
    "steel": 22.5
+  },
+  "electricWorkerFactors": {
+   "lighting": 0.65,
+   "living": 0.7
   },
   "dlc": "dlc3",
   "de": "Kohlemine",
@@ -9861,6 +10429,10 @@
    "concrete": 90.0,
    "steel": 22.5
   },
+  "electricWorkerFactors": {
+   "lighting": 0.65,
+   "living": 0.75
+  },
   "dlc": "dlc3",
   "de": "Eisenmine",
   "en": "Iron mine"
@@ -9882,6 +10454,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "lighting": 1.3,
+   "living": 1.5
+  },
   "dlc": "dlc3",
   "de": "Uranmine",
   "en": "Uranium mine"
@@ -9901,6 +10477,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.2,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Museum der Republik",
   "en": "Museum of the Republic"
@@ -9920,6 +10497,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.5,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Museum der Republik",
   "en": "Museum of the Republic"
@@ -9939,6 +10517,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 4.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Theater der Republik",
   "en": "Republic theater"
@@ -9966,6 +10545,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kernbrennstofffabrik",
   "en": "Nuclear fuel fabrication"
@@ -9985,6 +10565,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Waisenhaus",
   "en": "Orphanage"
@@ -10004,6 +10585,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Waisenhaus",
   "en": "Orphanage"
@@ -10023,6 +10605,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Polizeirevier",
   "en": "Police station"
@@ -10042,6 +10625,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Polizeirevier",
   "en": "Police station"
@@ -10065,6 +10649,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kohlekraftwerk",
   "en": "Coal power plant"
@@ -10092,6 +10677,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kernkraftwerk mit einem Reaktor",
   "en": "Single-reactor nuclear power plant"
@@ -10111,6 +10697,7 @@
   "qualityOfLiving": 0.85,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -10130,6 +10717,7 @@
   "qualityOfLiving": 0.85,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -10149,6 +10737,7 @@
   "qualityOfLiving": 0.75,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Plattenbau",
   "en": "Flats - prefab "
@@ -10174,6 +10763,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 1.0
+  },
   "dlc": "dlc3",
   "de": "Fabrik für Plattenbauteile",
   "en": "Prefab panels factory"
@@ -10193,6 +10785,7 @@
   "qualityOfLiving": 0.5,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Gefängnis",
   "en": "Prison"
@@ -10212,6 +10805,7 @@
   "qualityOfLiving": 0.5,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Gefängnis",
   "en": "Prison"
@@ -10242,6 +10836,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 3.0
+  },
   "dlc": "dlc3",
   "de": "Flugzeugproduktionslinie",
   "en": "Airplane production line"
@@ -10271,6 +10868,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 6.0
+  },
   "dlc": "dlc3",
   "de": "Eisenbahn-Fertigungslinie",
   "en": "Railway production line"
@@ -10300,6 +10900,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 6.0
+  },
   "dlc": "dlc3",
   "de": "Fahrzeug-Fertigungslinie",
   "en": "Vehicle production line"
@@ -10319,6 +10922,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kneipe",
   "en": "Pub"
@@ -10338,6 +10942,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kneipe",
   "en": "Pub"
@@ -10358,6 +10963,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Rundfunkhaus",
   "en": "Radio station"
@@ -10377,6 +10983,10 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 0.2,
+   "lighting": 0.2
+  },
   "dlc": "dlc3",
   "de": "Eisenbahnbauamt",
   "en": "Rail construction office"
@@ -10396,6 +11006,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -10415,6 +11026,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -10434,6 +11046,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -10453,6 +11066,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -10472,6 +11086,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -10491,6 +11106,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bahnhof",
   "en": "Train platform"
@@ -10510,6 +11126,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bahnsteig klein",
   "en": "Train platform small"
@@ -10529,6 +11146,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bahnsteig klein",
   "en": "Train platform small"
@@ -10548,6 +11166,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Bahnsteig klein",
   "en": "Train platform small"
@@ -10567,6 +11186,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Werkstatt (klein)",
   "en": "Vehicle repair station (small)"
@@ -10586,6 +11206,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Werkstatt (mittel)",
   "en": "Vehicle repair station (medium)"
@@ -10605,6 +11226,7 @@
   "qualityOfLiving": 0.6,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Landhäuser (geringe Wohnqualität)",
   "en": "Low-quality rural flats"
@@ -10624,6 +11246,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10643,6 +11266,7 @@
   "qualityOfLiving": 0.85,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10662,6 +11286,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10681,6 +11306,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10700,6 +11326,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10719,6 +11346,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10738,6 +11366,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10757,6 +11386,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10776,6 +11406,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10795,6 +11426,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10814,6 +11446,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10833,6 +11466,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10852,6 +11486,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10871,6 +11506,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10890,6 +11526,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10909,6 +11546,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10928,6 +11566,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10947,6 +11586,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10966,6 +11606,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -10985,6 +11626,7 @@
   "qualityOfLiving": 0.75,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -11004,6 +11646,7 @@
   "qualityOfLiving": 0.75,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -11023,6 +11666,7 @@
   "qualityOfLiving": 0.85,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -11042,6 +11686,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -11061,6 +11706,7 @@
   "qualityOfLiving": 0.85,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -11080,6 +11726,7 @@
   "qualityOfLiving": 0.85,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -11099,6 +11746,7 @@
   "qualityOfLiving": 0.85,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -11118,6 +11766,7 @@
   "qualityOfLiving": 0.85,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -11137,6 +11786,7 @@
   "qualityOfLiving": 0.85,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -11156,6 +11806,7 @@
   "qualityOfLiving": 0.8,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wohnungen - Ziegel",
   "en": "Flats - brick"
@@ -11175,6 +11826,7 @@
   "qualityOfLiving": 0.6,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Landhäuser (geringe Wohnqualität)",
   "en": "Low-quality rural flats"
@@ -11194,6 +11846,7 @@
   "qualityOfLiving": 0.85,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "nameStr": "Wooden house",
   "dlc": "dlc3"
  },
@@ -11213,6 +11866,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.5,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Restaurant",
   "en": "Restaurant"
@@ -11233,6 +11887,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "nameStr": "Restaurant",
   "dlc": "dlc3"
  },
@@ -11251,6 +11906,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Schule",
   "en": "School"
@@ -11270,6 +11926,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Schule",
   "en": "School"
@@ -11289,6 +11946,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Schule",
   "en": "School"
@@ -11309,6 +11967,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Verschrottungsanlage (klein)",
   "en": "Scrapping facility (small)"
@@ -11329,6 +11988,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Verschrottungsanlage (groß)",
   "en": "Scrapping facility (large)"
@@ -11352,6 +12012,9 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {
+   "living": 1.5
+  },
   "dlc": "dlc3",
   "de": "Schlachthof",
   "en": "Slaughterhouse"
@@ -11371,6 +12034,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kleines Geschäft",
   "en": "Small store"
@@ -11390,6 +12054,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 2.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Sporthalle",
   "en": "Sport hall"
@@ -11409,6 +12074,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 3.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Sporthalle",
   "en": "Sport hall"
@@ -11428,6 +12094,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 4.0,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Sporthalle",
   "en": "Sport hall"
@@ -11447,6 +12114,7 @@
   "qualityOfLiving": null,
   "attractiveScore": 1.8,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Hallenbad",
   "en": "Indoor pool"
@@ -11466,6 +12134,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "nameStr": "Theatre",
   "dlc": "dlc3"
  },
@@ -11484,6 +12153,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Rathaus / Buchhaltungsbüro",
   "en": "City accounting office"
@@ -11504,6 +12174,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Fernsehsenderhaus",
   "en": "Television station"
@@ -11524,6 +12195,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Medizinische Universität",
   "en": "Medical university"
@@ -11544,6 +12216,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Zentrale der kommunistischen Partei",
   "en": "Headquarters of the Communist Party "
@@ -11564,6 +12237,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Parteizentrale (klein)",
   "en": "Small headquarters of the Party "
@@ -11584,6 +12258,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Technische Universität",
   "en": "Technical university"
@@ -11604,6 +12279,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Technische Universität",
   "en": "Technical university"
@@ -11630,6 +12306,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Uranumwandlungsanlage",
   "en": "Uranium conversion plant"
@@ -11654,6 +12331,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Uranaufbereitungsanlage",
   "en": "Uranium processing plant"
@@ -11678,6 +12356,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Kies-Recycling Anlage",
   "en": "Gravel recycling plant"
@@ -11703,6 +12382,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wasseraufbereitung (klein)",
   "en": "Water treatment (small)"
@@ -11728,6 +12408,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wasseraufbereitung (klein)",
   "en": "Water treatment (small)"
@@ -11751,6 +12432,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wasserbrunnen (groß)",
   "en": "Big water well"
@@ -11774,6 +12456,7 @@
   "qualityOfLiving": null,
   "attractiveScore": null,
   "constructionResources": {},
+  "electricWorkerFactors": {},
   "dlc": "dlc3",
   "de": "Wasserbrunnen (klein)",
   "en": "Small water well"

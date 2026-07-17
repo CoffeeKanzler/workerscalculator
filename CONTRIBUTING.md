@@ -48,12 +48,31 @@ don't expose (see below), not as the default.
 The app ships both production datasets — "Game files (current)" and
 "Spreadsheet" — switchable in the header. The game dataset merges game rates
 with the sheet's measured extras (power, water, construction bill) by building
-name; buildings without a sheet match carry `"measured": false`.
+name; buildings without a sheet match carry `"measured": false`, and where
+even a same-group average could be computed (see below) also carry
+`"estimated": [field, …]` naming which fields are a rough guess, not a
+measurement.
+
+Note on that gap: buildings' `.ini` files *do* declare real per-worker
+electricity factors (`$ELETRIC_CONSUMPTION_LIGHTING_WORKER_FACTOR` etc. —
+captured in `buildings_raw.json` as `electricWorkerFactors`), but the base
+kWh-per-worker rate they multiply is hardcoded in the game engine, not in
+any file. A regression against sheet-measured buildings to back out that
+constant didn't hold up (lighting/living factors are too collinear in the
+available sample, single-predictor fits are off by 20–60%) — so this data
+is captured but *not* used to compute power; don't be tempted to wire it up
+without a much larger, less collinear calibration set. Water and per-worker
+waste output have no per-building token anywhere (checked base game, every
+DLC, and the CWC workshop content — only incinerators declare
+`$WASTE_CONSUMPTION`, and that's an input mix ratio, a different mechanic).
+For buildings with no sheet match at all, `build_dataset()` now fills these
+extras from the average per-worker rate of sheet-measured buildings in the
+same group, flagged via `"estimated"` — better than silently showing 0, but
+still a rough estimate, not a measurement.
 
 `data/city_buildings.json` (city planning tab) is spreadsheet-sourced end to
-end — the game's `.ini` files don't expose per-building power/water/waste/
-workdays at all (those are runtime-computed from global factors, hence
-"measured in-game" rather than parsed), so the spreadsheet stays the only
+end — the same per-building power/water/waste/workdays gap applies, so the
+sheet stays the only
 source for those fields. But identity — building name and housing quality
 (`QUALITY_OF_LIVING`) — *is* in the game files, and the sheet's vanilla
 residential rows only ever had generic placeholder names ("Einwohner A -").

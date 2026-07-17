@@ -58,6 +58,7 @@ ECON_TOKENS = {
     'ATTRACTIVE_SCORE', 'STORAGE', 'COST_RESOURCE', 'WASTE_CONSUMPTION',
     'ELETRIC_CONSUMPTION_LIGHTING_WORKER_FACTOR',
     'ELETRIC_CONSUMPTION_LIVING_WORKER_FACTOR',
+    'ELETRIC_CONSUMPTION_HEATING_WORKER_FACTOR',
 }
 
 TYPE_RE = re.compile(r'^\$(TYPE_[A-Z_]+|SUBTYPE_[A-Z_]+|CIVIL_BUILDING)\b')
@@ -70,6 +71,7 @@ def parse_building(path, ident=None):
         'production': {}, 'consumption': {}, 'livingSpace': 0,
         'citizenAbleServe': 0, 'qualityOfLiving': None, 'attractiveScore': None,
         'constructionResources': {},
+        'electricWorkerFactors': {},  # 'lighting'|'living'|'heating' -> factor
     }
     try:
         text = open(path, encoding='utf-8', errors='replace').read()
@@ -111,6 +113,9 @@ def parse_building(path, ident=None):
             elif key == 'COST_RESOURCE' and len(args) >= 2:
                 b['constructionResources'][args[0]] = \
                     b['constructionResources'].get(args[0], 0) + float(args[1])
+            elif key.startswith('ELETRIC_CONSUMPTION_') and key.endswith('_WORKER_FACTOR') and args:
+                kind = key[len('ELETRIC_CONSUMPTION_'):-len('_WORKER_FACTOR')].lower()
+                b['electricWorkerFactors'][kind] = float(args[0])
         except (ValueError, IndexError):
             pass
     # keep only buildings with economic relevance
@@ -359,6 +364,31 @@ def build_dataset(buildings, repo_root, loc):
         sheet_by_name.setdefault(s['de'].lower(), []).append(s)
         sheet_by_norm.setdefault(norm(s['de']), []).append(s)
 
+    # Per-group average per-worker rate (from sheet-measured buildings only),
+    # for estimating extras on buildings with no sheet match at all: no game
+    # file exposes water/waste for ordinary production buildings (checked —
+    # only incinerators declare $WASTE_CONSUMPTION, and that's an input mix
+    # ratio, not per-worker output), so a same-category average is the best
+    # available fallback, clearly flagged as an estimate rather than measured.
+    PER_WORKER_FIELDS = ['power', 'maxKW', 'water', 'hotwater', 'workdays',
+                         'gravel', 'bricks', 'steel', 'concrete', 'asphalt',
+                         'boards', 'panels', 'ecomponents', 'mcomponents']
+    group_totals = {}
+    for s in sheet:
+        if not s.get('workers'):
+            continue
+        gname = s['group']['de']
+        acc = group_totals.setdefault(gname, {f: [0.0, 0] for f in PER_WORKER_FIELDS + ['wastePerWorker']})
+        for f in PER_WORKER_FIELDS:
+            acc[f][0] += (s.get(f, 0) or 0) / s['workers']
+            acc[f][1] += 1
+        acc['wastePerWorker'][0] += s.get('wastePerWorker', 0) or 0
+        acc['wastePerWorker'][1] += 1
+    group_avg_per_worker = {
+        gname: {f: (total / n if n else 0) for f, (total, n) in fields.items()}
+        for gname, fields in group_totals.items()
+    }
+
     def sheet_match(g, name):
         """Returns (sheet_row, scale). scale is 1.0 for an exact worker-count
         match; otherwise the candidate is a different capacity tier of the
@@ -464,11 +494,27 @@ def build_dataset(buildings, repo_root, loc):
             main_key = next(iter(g['production']), None) or next(iter(g['consumption']), None)
             gr = GROUP_BY_RESOURCE.get(main_key, MISC)
             entry['group'] = {'de': gr[0], 'en': gr[1]}
+            avg = group_avg_per_worker.get(gr[0], {})
             for f in EXTRA_FIELDS:
                 entry[f] = 0
             for ck, field in CONSTRUCTION_MAP.items():
                 if ck in g.get('constructionResources', {}):
                     entry[field] = g['constructionResources'][ck]
+            # Fill whatever construction resources didn't cover with a same-
+            # group per-worker average — a rough estimate, not a measurement.
+            if g['workers'] and avg:
+                estimated = {}
+                for f in EXTRA_FIELDS:
+                    if entry[f]:
+                        continue
+                    per_worker = avg.get(f, 0)
+                    if not per_worker:
+                        continue
+                    # already a rate, not a building total -> don't rescale by workers
+                    entry[f] = per_worker if f == 'wastePerWorker' else round(per_worker * g['workers'], 4)
+                    estimated[f] = True
+                if estimated:
+                    entry['estimated'] = sorted(estimated)
         out.append(entry)
 
     out.sort(key=lambda e: (e['group']['de'], e['de']))
