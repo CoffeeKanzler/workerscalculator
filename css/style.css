@@ -137,6 +137,11 @@ button.danger:hover { border-color: var(--neg); }
 .columns { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; margin-top: 10px; }
 .columns > div { flex: 1 1 380px; min-width: 0; overflow-x: auto; }
 .columns > .totalsbox { flex: 0 1 340px; min-width: 280px; overflow-x: visible; }
+/* The price table has 6 columns and needs more room than the history chart
+   beside it - without this the ratio column was pushed off and needed an
+   internal horizontal scroll to see at all. */
+.columns > .pricetablecol { flex: 3 1 560px; }
+.columns > .pricehistorycol { flex: 1 1 320px; }
 
 .totalsbox {
   flex: 0 1 340px; background: var(--panel); border: 1px solid var(--border);

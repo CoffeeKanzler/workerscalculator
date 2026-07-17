@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=18';
+import { STRINGS } from './i18n.js?v=19';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=22';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -430,9 +430,10 @@ function renderPrices() {
     return rname(a.r).localeCompare(rname(b.r)) * dir;
   });
 
-  const th = (id, label) => el('th', {
+  const th = (id, label, title) => el('th', {
     class: 'clickable' + (col === id ? ' sorted' : ''),
     onclick: () => { state.priceSort = { col: id, dir: col === id ? -dir : 1 }; update(); },
+    ...(title ? { title } : {}),
   }, label + (col === id ? (dir > 0 ? ' ↑' : ' ↓') : ''));
 
   const table = el('table', { class: 'data' },
@@ -440,7 +441,7 @@ function renderPrices() {
       th('name', t('resource')),
       el('th', {}, t('sellRUB')), el('th', {}, t('buyRUB')),
       el('th', {}, t('sellUSD')), el('th', {}, t('buyUSD')),
-      th('ratio', t('conversionRatio')))),
+      th('ratio', t('conversionRatio'), t('conversionRatioHint')))),
     el('tbody', {}, withRatio.map(({ r, ratio }) => el('tr', {},
       el('td', { class: 'clickable', onclick: () => { state.historyKey = r.key; update(); } }, rname(r)),
       el('td', {}, priceCell('sellRUB', r.key, prices)),
@@ -467,8 +468,8 @@ function renderPrices() {
     el('p', { class: 'hint' }, t('editHint'), ' ', resetBtn),
     scalars,
     el('div', { class: 'columns' },
-      el('div', {}, table),
-      el('div', {}, renderHistory())));
+      el('div', { class: 'pricetablecol' }, table),
+      el('div', { class: 'pricehistorycol' }, renderHistory())));
 }
 
 function renderHistory() {
