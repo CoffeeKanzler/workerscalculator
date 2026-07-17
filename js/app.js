@@ -573,7 +573,7 @@ function renderProduction() {
       return el('tr', {},
         el('td', {}, groupSel), el('td', {}, bSel),
         el('td', {}, numInput(row.count, v => row.count = v, { min: 0, step: 1 })),
-        el('td', {}, isMine ? pctInput(row.quality ?? 1, v => row.quality = v) : '—'),
+        el('td', {}, isMine ? pctInput(row.quality ?? 0.5, v => row.quality = v) : '—'),
         el('td', { class: 'r' }, b ? fmt(b.workers * row.count, 0) : '—'),
         el('td', { class: 'r ' + ((res.profit ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profit)),
         el('td', { class: 'r ' + ((res.profitPerWorker ?? 0) < 0 ? 'neg' : 'pos') }, fmt(res.profitPerWorker)),
@@ -584,7 +584,7 @@ function renderProduction() {
     })));
 
   const addBtn = el('button', {
-    onclick: () => { state.plan.rows.push({ group: groups[0], name: null, count: 1, quality: 1 }); update(); },
+    onclick: () => { state.plan.rows.push({ group: groups[0], name: null, count: 1, quality: 0.5 }); update(); },
   }, t('addRow'));
 
   const f = state.plan.fields;
@@ -636,19 +636,19 @@ function kv(k, v, cls = '') {
 // 0 for "auto-fill whatever demand the earlier tiers left over" or a real
 // number to say the deposit list is exhaustive (see solveChain's opts doc).
 function tierEditor(ch, key) {
-  const tiers = ch.qualityTiers[key] ?? (ch.qualityTiers[key] = [{ quality: 1, count: 0 }]);
+  const tiers = ch.qualityTiers[key] ?? (ch.qualityTiers[key] = [{ quality: 0.5, count: 0 }]);
   return el('div', { class: 'tierlist' },
     ...tiers.map((tier, i) => {
       const isLast = i === tiers.length - 1;
       return el('div', { class: 'tier' },
-        pctInput(tier.quality ?? 1, v => { tier.quality = v; }),
+        pctInput(tier.quality ?? 0.5, v => { tier.quality = v; }),
         numInput(tier.count ?? 0, v => { tier.count = v; }, { min: 0, step: 1 }),
         isLast ? el('span', { class: 'hint' }, '(' + t('chainAutoFill') + ')') : null,
         tiers.length > 1
           ? el('button', { class: 'danger', onclick: () => { tiers.splice(i, 1); update(); } }, '✕')
           : null);
     }),
-    el('button', { onclick: () => { tiers.push({ quality: 1, count: 0 }); update(); } }, t('addTier')));
+    el('button', { onclick: () => { tiers.push({ quality: 0.5, count: 0 }); update(); } }, t('addTier')));
 }
 
 // ---------------------------------------------------------------- chain tab
@@ -660,6 +660,17 @@ function renderChain() {
   const index = producersByResource(buildings, eco);
   const producible = [...index.keys()];
   if (!producible.includes(ch.goal)) ch.goal = producible.includes('steel') ? 'steel' : producible[0];
+
+  // Seed a default tier for every mine-producible resource before solving,
+  // so the first render already reflects the 50% default instead of
+  // solveChain's own quality-1 fallback (which only applies when a key has
+  // no tier at all) - otherwise the shown count would briefly assume 100%
+  // while the tier input already shows 50%, until the next interaction.
+  for (const [key, producers] of index) {
+    if (!ch.qualityTiers[key] && producers.some(p => QUALITY_BUILDINGS_DE.has(p.building.de))) {
+      ch.qualityTiers[key] = [{ quality: 0.5, count: 0 }];
+    }
+  }
 
   const resLabel = key => {
     const r = DATA.resources.find(x => x.key === key);
