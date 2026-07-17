@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1875340968",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:54:12+00:00",
+  "buildings": [
+    {
+      "id": "1875340968/Vulykh_brick",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vulykh tower block",
+      "workshopId": "1875340968",
+      "modPath": "Vulykh_brick"
+    },
+    {
+      "id": "1875340968/Vulykh_white",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 196.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 196.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Series II-67 (white)",
+      "workshopId": "1875340968",
+      "modPath": "Vulykh_white"
+    }
+  ],
+  "vehicles": []
+}

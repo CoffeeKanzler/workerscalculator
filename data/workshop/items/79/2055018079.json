@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2055018079",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:52:22+00:00",
+  "buildings": [
+    {
+      "id": "2055018079/Centipede3P",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 720.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 720.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Centipede Full",
+      "workshopId": "2055018079",
+      "modPath": "Centipede3P"
+    },
+    {
+      "id": "2055018079/CentipedeSingle",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 210.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 210.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Centipede Single",
+      "workshopId": "2055018079",
+      "modPath": "CentipedeSingle"
+    }
+  ],
+  "vehicles": []
+}

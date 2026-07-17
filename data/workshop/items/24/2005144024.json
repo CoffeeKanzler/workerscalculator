@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2005144024",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:55:45+00:00",
+  "buildings": [
+    {
+      "id": "2005144024/jetty",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Jetty",
+      "workshopId": "2005144024",
+      "modPath": "jetty"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2800130281",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:04:09+00:00",
+  "buildings": [
+    {
+      "id": "2800130281/house1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 95.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 95.0
+      },
+      "constructionResources": {
+        "bricks": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Old Town House 1",
+      "workshopId": "2800130281",
+      "modPath": "house1"
+    },
+    {
+      "id": "2800130281/house1parking",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "housetest parking",
+      "workshopId": "2800130281",
+      "modPath": "house1parking"
+    },
+    {
+      "id": "2800130281/house2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 110.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 110.0
+      },
+      "constructionResources": {
+        "bricks": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Old Town House 2",
+      "workshopId": "2800130281",
+      "modPath": "house2"
+    },
+    {
+      "id": "2800130281/house3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 95.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 95.0
+      },
+      "constructionResources": {
+        "bricks": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Old Town House 3",
+      "workshopId": "2800130281",
+      "modPath": "house3"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2161501692",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:53:12+00:00",
+  "buildings": [
+    {
+      "id": "2161501692/Post_office",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 2.0,
+        "bricks": 30.0,
+        "steel": 10.0,
+        "workers": 150.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Почта | Post office",
+      "workshopId": "2161501692",
+      "modPath": "Post_office"
+    },
+    {
+      "id": "2161501692/Press_kiosk",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 0.5,
+        "steel": 0.3,
+        "workers": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Союзпечать | Press kiosk",
+      "workshopId": "2161501692",
+      "modPath": "Press_kiosk"
+    }
+  ],
+  "vehicles": []
+}

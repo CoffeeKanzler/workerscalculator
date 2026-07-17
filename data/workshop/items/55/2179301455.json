@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2179301455",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:05:57+00:00",
+  "buildings": [
+    {
+      "id": "2179301455/1-201-12",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.74,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-201-12",
+      "workshopId": "2179301455",
+      "modPath": "1-201-12"
+    },
+    {
+      "id": "2179301455/1-201-13L",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.78,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-201-13L",
+      "workshopId": "2179301455",
+      "modPath": "1-201-13L"
+    },
+    {
+      "id": "2179301455/1-201-13R",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.78,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-201-13R",
+      "workshopId": "2179301455",
+      "modPath": "1-201-13R"
+    },
+    {
+      "id": "2179301455/1-201-18L",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 64.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.72,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 64.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-201-18L",
+      "workshopId": "2179301455",
+      "modPath": "1-201-18L"
+    },
+    {
+      "id": "2179301455/1-201-18R",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 64.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.72,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 64.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-201-18R",
+      "workshopId": "2179301455",
+      "modPath": "1-201-18R"
+    },
+    {
+      "id": "2179301455/1-201-2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.72,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-201-2",
+      "workshopId": "2179301455",
+      "modPath": "1-201-2"
+    },
+    {
+      "id": "2179301455/1-201-9",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.72,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-201-9",
+      "workshopId": "2179301455",
+      "modPath": "1-201-9"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2362313705",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:00:46+00:00",
+  "buildings": [
+    {
+      "id": "2362313705/parking_1",
+      "nameId": 6017,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 68.0,
+        "concrete": 5.9,
+        "gravel": 5.1,
+        "asphalt": 4.2,
+        "steel": 0.45,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2362313705",
+      "modPath": "parking_1"
+    },
+    {
+      "id": "2362313705/parking_2",
+      "nameId": 6018,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 98.0,
+        "concrete": 7.8,
+        "gravel": 6.2,
+        "asphalt": 5.4,
+        "steel": 0.45,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2362313705",
+      "modPath": "parking_2"
+    },
+    {
+      "id": "2362313705/parking_3",
+      "nameId": 6019,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 118.0,
+        "concrete": 8.4,
+        "gravel": 7.1,
+        "asphalt": 6.4,
+        "steel": 0.7,
+        "ecomponents": 0.13
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2362313705",
+      "modPath": "parking_3"
+    },
+    {
+      "id": "2362313705/parking_4",
+      "nameId": 6047,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 125.0,
+        "concrete": 8.9,
+        "gravel": 7.8,
+        "asphalt": 8.3,
+        "steel": 0.6,
+        "ecomponents": 0.11
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2362313705",
+      "modPath": "parking_4"
+    },
+    {
+      "id": "2362313705/parking_5",
+      "nameId": 6019,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 125.0,
+        "concrete": 8.9,
+        "gravel": 7.8,
+        "asphalt": 8.3,
+        "steel": 0.6,
+        "ecomponents": 0.11
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2362313705",
+      "modPath": "parking_5"
+    }
+  ],
+  "vehicles": []
+}

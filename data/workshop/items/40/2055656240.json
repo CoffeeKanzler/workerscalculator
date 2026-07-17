@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2055656240",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:09:33+00:00",
+  "buildings": [
+    {
+      "id": "2055656240/Fridge_01",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fridge Coca-Cola",
+      "workshopId": "2055656240",
+      "modPath": "Fridge_01"
+    },
+    {
+      "id": "2055656240/House_01",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4.0
+      },
+      "constructionResources": {
+        "bricks": 8.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "House01",
+      "workshopId": "2055656240",
+      "modPath": "House_01"
+    },
+    {
+      "id": "2055656240/House_02",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4.0
+      },
+      "constructionResources": {
+        "bricks": 8.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "House02",
+      "workshopId": "2055656240",
+      "modPath": "House_02"
+    },
+    {
+      "id": "2055656240/Ice_fridge_01",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ice fridge Nestle",
+      "workshopId": "2055656240",
+      "modPath": "Ice_fridge_01"
+    },
+    {
+      "id": "2055656240/Kebab_diner_01",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 1.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.0,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 8.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kebab Diner",
+      "workshopId": "2055656240",
+      "modPath": "Kebab_diner_01"
+    },
+    {
+      "id": "2055656240/Pharmacy_01",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 4.0,
+      "professors": 2.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 8.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pharmacy 01",
+      "workshopId": "2055656240",
+      "modPath": "Pharmacy_01"
+    },
+    {
+      "id": "2055656240/Umbrella_01",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Umbrella Nestle",
+      "workshopId": "2055656240",
+      "modPath": "Umbrella_01"
+    }
+  ],
+  "vehicles": []
+}

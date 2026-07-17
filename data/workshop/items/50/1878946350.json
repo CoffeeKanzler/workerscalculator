@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1878946350",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:54:04+00:00",
+  "buildings": [
+    {
+      "id": "1878946350/Stalinist235",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Series 1-235-1",
+      "workshopId": "1878946350",
+      "modPath": "Stalinist235"
+    }
+  ],
+  "vehicles": []
+}

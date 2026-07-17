@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "appId": "784150",
-  "generatedAt": "2026-07-17T19:49:30+00:00",
-  "itemCount": 175,
+  "generatedAt": "2026-07-17T20:10:17+00:00",
+  "itemCount": 220,
   "items": {
     "1858616795": {
       "path": "items/95/1858616795.json",
@@ -21,6 +21,11 @@
     },
     "1864424097": {
       "path": "items/97/1864424097.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "1871628616": {
+      "path": "items/16/1871628616.json",
       "buildingCount": 1,
       "vehicleCount": 0
     },
@@ -44,8 +49,23 @@
       "buildingCount": 0,
       "vehicleCount": 0
     },
+    "1875340968": {
+      "path": "items/68/1875340968.json",
+      "buildingCount": 2,
+      "vehicleCount": 0
+    },
+    "1876190222": {
+      "path": "items/22/1876190222.json",
+      "buildingCount": 2,
+      "vehicleCount": 0
+    },
     "1876273756": {
       "path": "items/56/1876273756.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "1876330647": {
+      "path": "items/47/1876330647.json",
       "buildingCount": 1,
       "vehicleCount": 0
     },
@@ -64,6 +84,11 @@
       "buildingCount": 1,
       "vehicleCount": 0
     },
+    "1878658458": {
+      "path": "items/58/1878658458.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
     "1878758975": {
       "path": "items/75/1878758975.json",
       "buildingCount": 1,
@@ -71,6 +96,16 @@
     },
     "1878911664": {
       "path": "items/64/1878911664.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "1878946350": {
+      "path": "items/50/1878946350.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "1879669928": {
+      "path": "items/28/1879669928.json",
       "buildingCount": 1,
       "vehicleCount": 0
     },
@@ -189,8 +224,28 @@
       "buildingCount": 0,
       "vehicleCount": 4
     },
+    "1951815211": {
+      "path": "items/11/1951815211.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
     "1957102277": {
       "path": "items/77/1957102277.json",
+      "buildingCount": 2,
+      "vehicleCount": 0
+    },
+    "1959453841": {
+      "path": "items/41/1959453841.json",
+      "buildingCount": 3,
+      "vehicleCount": 0
+    },
+    "1960832462": {
+      "path": "items/62/1960832462.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "1961962659": {
+      "path": "items/59/1961962659.json",
       "buildingCount": 2,
       "vehicleCount": 0
     },
@@ -224,6 +279,11 @@
       "buildingCount": 15,
       "vehicleCount": 0
     },
+    "1989269309": {
+      "path": "items/09/1989269309.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
     "1991294854": {
       "path": "items/54/1991294854.json",
       "buildingCount": 3,
@@ -249,6 +309,16 @@
       "buildingCount": 4,
       "vehicleCount": 0
     },
+    "2005144024": {
+      "path": "items/24/2005144024.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "2005247113": {
+      "path": "items/13/2005247113.json",
+      "buildingCount": 26,
+      "vehicleCount": 0
+    },
     "2005711056": {
       "path": "items/56/2005711056.json",
       "buildingCount": 2,
@@ -264,6 +334,16 @@
       "buildingCount": 8,
       "vehicleCount": 0
     },
+    "2012757197": {
+      "path": "items/97/2012757197.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "2017353634": {
+      "path": "items/34/2017353634.json",
+      "buildingCount": 0,
+      "vehicleCount": 0
+    },
     "2018931196": {
       "path": "items/96/2018931196.json",
       "buildingCount": 1,
@@ -272,6 +352,11 @@
     "2020592858": {
       "path": "items/58/2020592858.json",
       "buildingCount": 18,
+      "vehicleCount": 0
+    },
+    "2021215376": {
+      "path": "items/76/2021215376.json",
+      "buildingCount": 3,
       "vehicleCount": 0
     },
     "2023919107": {
@@ -304,6 +389,11 @@
       "buildingCount": 4,
       "vehicleCount": 0
     },
+    "2038539901": {
+      "path": "items/01/2038539901.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
     "2043521950": {
       "path": "items/50/2043521950.json",
       "buildingCount": 1,
@@ -314,14 +404,44 @@
       "buildingCount": 1,
       "vehicleCount": 0
     },
+    "2054350407": {
+      "path": "items/07/2054350407.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "2055018079": {
+      "path": "items/79/2055018079.json",
+      "buildingCount": 2,
+      "vehicleCount": 0
+    },
+    "2055336745": {
+      "path": "items/45/2055336745.json",
+      "buildingCount": 7,
+      "vehicleCount": 0
+    },
+    "2055656240": {
+      "path": "items/40/2055656240.json",
+      "buildingCount": 7,
+      "vehicleCount": 0
+    },
     "2062469591": {
       "path": "items/91/2062469591.json",
       "buildingCount": 12,
       "vehicleCount": 0
     },
+    "2063069587": {
+      "path": "items/87/2063069587.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
     "2063696518": {
       "path": "items/18/2063696518.json",
       "buildingCount": 3,
+      "vehicleCount": 0
+    },
+    "2064259771": {
+      "path": "items/71/2064259771.json",
+      "buildingCount": 2,
       "vehicleCount": 0
     },
     "2067209720": {
@@ -369,6 +489,11 @@
       "buildingCount": 4,
       "vehicleCount": 0
     },
+    "2109728653": {
+      "path": "items/53/2109728653.json",
+      "buildingCount": 13,
+      "vehicleCount": 0
+    },
     "2111463429": {
       "path": "items/29/2111463429.json",
       "buildingCount": 2,
@@ -376,6 +501,16 @@
     },
     "2116699267": {
       "path": "items/67/2116699267.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "2116728335": {
+      "path": "items/35/2116728335.json",
+      "buildingCount": 2,
+      "vehicleCount": 0
+    },
+    "2123160723": {
+      "path": "items/23/2123160723.json",
       "buildingCount": 1,
       "vehicleCount": 0
     },
@@ -414,6 +549,16 @@
       "buildingCount": 1,
       "vehicleCount": 0
     },
+    "2161501692": {
+      "path": "items/92/2161501692.json",
+      "buildingCount": 2,
+      "vehicleCount": 0
+    },
+    "2162818489": {
+      "path": "items/89/2162818489.json",
+      "buildingCount": 4,
+      "vehicleCount": 0
+    },
     "2165583713": {
       "path": "items/13/2165583713.json",
       "buildingCount": 1,
@@ -444,6 +589,16 @@
       "buildingCount": 4,
       "vehicleCount": 0
     },
+    "2178438731": {
+      "path": "items/31/2178438731.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "2179301455": {
+      "path": "items/55/2179301455.json",
+      "buildingCount": 7,
+      "vehicleCount": 0
+    },
     "2179477839": {
       "path": "items/39/2179477839.json",
       "buildingCount": 32,
@@ -451,6 +606,11 @@
     },
     "2185608803": {
       "path": "items/03/2185608803.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "2190018292": {
+      "path": "items/92/2190018292.json",
       "buildingCount": 1,
       "vehicleCount": 0
     },
@@ -481,6 +641,11 @@
     },
     "2235120868": {
       "path": "items/68/2235120868.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "2248453979": {
+      "path": "items/79/2248453979.json",
       "buildingCount": 1,
       "vehicleCount": 0
     },
@@ -549,9 +714,19 @@
       "buildingCount": 1,
       "vehicleCount": 0
     },
+    "2362313705": {
+      "path": "items/05/2362313705.json",
+      "buildingCount": 5,
+      "vehicleCount": 0
+    },
     "2362632473": {
       "path": "items/73/2362632473.json",
       "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "2372791591": {
+      "path": "items/91/2372791591.json",
+      "buildingCount": 17,
       "vehicleCount": 0
     },
     "2373791718": {
@@ -567,6 +742,11 @@
     "2392641939": {
       "path": "items/39/2392641939.json",
       "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "2392810038": {
+      "path": "items/38/2392810038.json",
+      "buildingCount": 5,
       "vehicleCount": 0
     },
     "2404407182": {
@@ -594,6 +774,11 @@
       "buildingCount": 17,
       "vehicleCount": 0
     },
+    "2462379884": {
+      "path": "items/84/2462379884.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
     "2462915964": {
       "path": "items/64/2462915964.json",
       "buildingCount": 1,
@@ -601,6 +786,11 @@
     },
     "2465511393": {
       "path": "items/93/2465511393.json",
+      "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "2496726922": {
+      "path": "items/22/2496726922.json",
       "buildingCount": 1,
       "vehicleCount": 0
     },
@@ -637,6 +827,11 @@
     "2515996023": {
       "path": "items/23/2515996023.json",
       "buildingCount": 2,
+      "vehicleCount": 0
+    },
+    "2563979444": {
+      "path": "items/44/2563979444.json",
+      "buildingCount": 1,
       "vehicleCount": 0
     },
     "2564751585": {
@@ -704,6 +899,11 @@
       "buildingCount": 1,
       "vehicleCount": 0
     },
+    "2648537162": {
+      "path": "items/62/2648537162.json",
+      "buildingCount": 2,
+      "vehicleCount": 0
+    },
     "2661606204": {
       "path": "items/04/2661606204.json",
       "buildingCount": 1,
@@ -759,6 +959,16 @@
       "buildingCount": 4,
       "vehicleCount": 0
     },
+    "2800130281": {
+      "path": "items/81/2800130281.json",
+      "buildingCount": 4,
+      "vehicleCount": 0
+    },
+    "2802743946": {
+      "path": "items/46/2802743946.json",
+      "buildingCount": 13,
+      "vehicleCount": 0
+    },
     "2802934672": {
       "path": "items/72/2802934672.json",
       "buildingCount": 1,
@@ -772,6 +982,16 @@
     "2807104839": {
       "path": "items/39/2807104839.json",
       "buildingCount": 21,
+      "vehicleCount": 0
+    },
+    "2807389872": {
+      "path": "items/72/2807389872.json",
+      "buildingCount": 10,
+      "vehicleCount": 0
+    },
+    "2809909580": {
+      "path": "items/80/2809909580.json",
+      "buildingCount": 1,
       "vehicleCount": 0
     },
     "2813415377": {
@@ -842,6 +1062,11 @@
     "2955323228": {
       "path": "items/28/2955323228.json",
       "buildingCount": 1,
+      "vehicleCount": 0
+    },
+    "2977004392": {
+      "path": "items/92/2977004392.json",
+      "buildingCount": 4,
       "vehicleCount": 0
     },
     "3033710102": {

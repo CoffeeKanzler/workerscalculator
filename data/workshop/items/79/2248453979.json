@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2248453979",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:02:09+00:00",
+  "buildings": [
+    {
+      "id": "2248453979/Universam",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Универсам | Universam (grocery supermarket) ",
+      "workshopId": "2248453979",
+      "modPath": "Universam"
+    }
+  ],
+  "vehicles": []
+}

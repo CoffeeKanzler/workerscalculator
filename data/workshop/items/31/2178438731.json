@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2178438731",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:08:36+00:00",
+  "buildings": [
+    {
+      "id": "2178438731/Rail_Station",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rail station",
+      "workshopId": "2178438731",
+      "modPath": "Rail_Station"
+    }
+  ],
+  "vehicles": []
+}

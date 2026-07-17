@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2012757197",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:04:58+00:00",
+  "buildings": [
+    {
+      "id": "2012757197/szklarska",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Toprus Szklarska Poreba Srednia",
+      "workshopId": "2012757197",
+      "modPath": "szklarska"
+    }
+  ],
+  "vehicles": []
+}

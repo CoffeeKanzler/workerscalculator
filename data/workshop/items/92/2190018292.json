@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2190018292",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:09:56+00:00",
+  "buildings": [
+    {
+      "id": "2190018292/DoctorOffice",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 10.0,
+      "professors": 5.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Doctor's Office",
+      "workshopId": "2190018292",
+      "modPath": "DoctorOffice"
+    }
+  ],
+  "vehicles": []
+}

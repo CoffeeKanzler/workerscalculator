@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2162818489",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:03:56+00:00",
+  "buildings": [
+    {
+      "id": "2162818489/switch",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "HEATING_Undergraund_SWITCH 100m",
+      "workshopId": "2162818489",
+      "modPath": "switch"
+    },
+    {
+      "id": "2162818489/switch2",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "HEATING_Undergraund_SWITCH 200m",
+      "workshopId": "2162818489",
+      "modPath": "switch2"
+    },
+    {
+      "id": "2162818489/switch3",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "HEATING_Undergraund_SWITCH 300m",
+      "workshopId": "2162818489",
+      "modPath": "switch3"
+    },
+    {
+      "id": "2162818489/switch4",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "HEATING_Undergraund_SWITCH Ogolovok",
+      "workshopId": "2162818489",
+      "modPath": "switch4"
+    }
+  ],
+  "vehicles": []
+}

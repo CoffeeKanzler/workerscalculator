@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2064259771",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:50:58+00:00",
+  "buildings": [
+    {
+      "id": "2064259771/church",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 10.0,
+      "professors": 10.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 80.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1670.0,
+        "gravel": 41.0,
+        "concrete": 72.0,
+        "boards": 75.0,
+        "bricks": 120.0,
+        "steel": 12.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "St. Barbarian Church",
+      "workshopId": "2064259771",
+      "modPath": "church"
+    },
+    {
+      "id": "2064259771/church_museum",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.4,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1670.0,
+        "gravel": 41.0,
+        "concrete": 72.0,
+        "boards": 75.0,
+        "bricks": 120.0,
+        "steel": 12.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Museum of St. Barbarian Church",
+      "workshopId": "2064259771",
+      "modPath": "church_museum"
+    }
+  ],
+  "vehicles": []
+}

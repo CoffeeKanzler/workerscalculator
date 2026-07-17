@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2496726922",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:01:41+00:00",
+  "buildings": [
+    {
+      "id": "2496726922/POTEZNY_Zaklad_Przerobki_Mechanicznej_Wegla",
+      "nameId": 6162,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {
+        "coal": 8.0
+      },
+      "consumption": {
+        "rawcoal": 14.0
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.45
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2496726922",
+      "modPath": "POTEZNY_Zaklad_Przerobki_Mechanicznej_Wegla"
+    }
+  ],
+  "vehicles": []
+}

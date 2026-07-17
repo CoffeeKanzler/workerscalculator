@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1951815211",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:04:33+00:00",
+  "buildings": [
+    {
+      "id": "1951815211/theatre2",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Theatre 2",
+      "workshopId": "1951815211",
+      "modPath": "theatre2"
+    }
+  ],
+  "vehicles": []
+}

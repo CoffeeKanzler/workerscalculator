@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2648537162",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:51:07+00:00",
+  "buildings": [
+    {
+      "id": "2648537162/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Decor_for_PCS",
+      "workshopId": "2648537162",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2648537162/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fonar_PCS",
+      "workshopId": "2648537162",
+      "modPath": "HOUSE2"
+    }
+  ],
+  "vehicles": []
+}

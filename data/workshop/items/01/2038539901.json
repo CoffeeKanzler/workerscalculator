@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2038539901",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:58:12+00:00",
+  "buildings": [
+    {
+      "id": "2038539901/Checkpoint_gate",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Gatehouse",
+      "workshopId": "2038539901",
+      "modPath": "Checkpoint_gate"
+    }
+  ],
+  "vehicles": []
+}

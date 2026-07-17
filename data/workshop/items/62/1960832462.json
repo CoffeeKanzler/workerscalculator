@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1960832462",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:51:39+00:00",
+  "buildings": [
+    {
+      "id": "1960832462/tiny_university",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 8.0,
+      "professors": 4.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny University",
+      "workshopId": "1960832462",
+      "modPath": "tiny_university"
+    }
+  ],
+  "vehicles": []
+}

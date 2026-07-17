@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1961962659",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:07:48+00:00",
+  "buildings": [
+    {
+      "id": "1961962659/school1",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 4.0,
+      "professors": 4.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "School 1",
+      "workshopId": "1961962659",
+      "modPath": "school1"
+    },
+    {
+      "id": "1961962659/school2",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 4.0,
+      "professors": 4.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "School 2",
+      "workshopId": "1961962659",
+      "modPath": "school2"
+    }
+  ],
+  "vehicles": []
+}

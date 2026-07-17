@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2123160723",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:01:33+00:00",
+  "buildings": [
+    {
+      "id": "2123160723/logisticTerminal",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "prefabpanels": 120.0,
+        "concrete": 35.0,
+        "workers": 700.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "LOGISTIC TERMINAL",
+      "workshopId": "2123160723",
+      "modPath": "logisticTerminal"
+    }
+  ],
+  "vehicles": []
+}

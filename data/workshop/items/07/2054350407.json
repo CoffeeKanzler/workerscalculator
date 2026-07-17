@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2054350407",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:06:54+00:00",
+  "buildings": [
+    {
+      "id": "2054350407/chlodnia",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 31130.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Toprus Gdynia Harbour Refridgerated Warehouse",
+      "workshopId": "2054350407",
+      "modPath": "chlodnia"
+    }
+  ],
+  "vehicles": []
+}

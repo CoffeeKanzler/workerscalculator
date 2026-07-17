@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2977004392",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:49:39+00:00",
+  "buildings": [
+    {
+      "id": "2977004392/wysypisko1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 8000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "100x100 garbage dump",
+      "workshopId": "2977004392",
+      "modPath": "wysypisko1"
+    },
+    {
+      "id": "2977004392/wysypisko2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 16000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "100x200 garbage dump",
+      "workshopId": "2977004392",
+      "modPath": "wysypisko2"
+    },
+    {
+      "id": "2977004392/wysypisko3",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 4000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "50x100 garbage dump",
+      "workshopId": "2977004392",
+      "modPath": "wysypisko3"
+    },
+    {
+      "id": "2977004392/wysypisko4",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 2000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "50x50 garbage dump",
+      "workshopId": "2977004392",
+      "modPath": "wysypisko4"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1876190222",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:08:19+00:00",
+  "buildings": [
+    {
+      "id": "1876190222/substation",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Substation x3 input",
+      "workshopId": "1876190222",
+      "modPath": "substation"
+    },
+    {
+      "id": "1876190222/substation-path",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Substation x3 input with path",
+      "workshopId": "1876190222",
+      "modPath": "substation-path"
+    }
+  ],
+  "vehicles": []
+}

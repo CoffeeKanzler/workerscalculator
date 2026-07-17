@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2109728653",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:06:23+00:00",
+  "buildings": [
+    {
+      "id": "2109728653/ampi",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "prefabpanels": 15.1,
+        "boards": 8.9
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ampitheater",
+      "workshopId": "2109728653",
+      "modPath": "ampi"
+    },
+    {
+      "id": "2109728653/benchA",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3.0,
+        "boards": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bench A",
+      "workshopId": "2109728653",
+      "modPath": "benchA"
+    },
+    {
+      "id": "2109728653/benchB",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3.0,
+        "boards": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bench B",
+      "workshopId": "2109728653",
+      "modPath": "benchB"
+    },
+    {
+      "id": "2109728653/benchC",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3.0,
+        "boards": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bench C",
+      "workshopId": "2109728653",
+      "modPath": "benchC"
+    },
+    {
+      "id": "2109728653/benchD",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3.0,
+        "boards": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bench D",
+      "workshopId": "2109728653",
+      "modPath": "benchD"
+    },
+    {
+      "id": "2109728653/benchE",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3.0,
+        "prefabpanels": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bench E",
+      "workshopId": "2109728653",
+      "modPath": "benchE"
+    },
+    {
+      "id": "2109728653/gazeboA",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 49.0,
+        "concrete": 0.8,
+        "gravel": 1.1,
+        "boards": 6.9,
+        "bricks": 2.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Gazebo A",
+      "workshopId": "2109728653",
+      "modPath": "gazeboA"
+    },
+    {
+      "id": "2109728653/gazeboC",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 39.0,
+        "concrete": 0.7,
+        "gravel": 1.0,
+        "boards": 5.1,
+        "bricks": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Gazebo C",
+      "workshopId": "2109728653",
+      "modPath": "gazeboC"
+    },
+    {
+      "id": "2109728653/signA",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 19.0,
+        "concrete": 0.4,
+        "boards": 1.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sign A",
+      "workshopId": "2109728653",
+      "modPath": "signA"
+    },
+    {
+      "id": "2109728653/signB",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 11.0,
+        "concrete": 0.4,
+        "boards": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sign B",
+      "workshopId": "2109728653",
+      "modPath": "signB"
+    },
+    {
+      "id": "2109728653/tableA",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3.0,
+        "boards": 1.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Table A",
+      "workshopId": "2109728653",
+      "modPath": "tableA"
+    },
+    {
+      "id": "2109728653/tableB",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3.0,
+        "prefabpanels": 1.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Table B",
+      "workshopId": "2109728653",
+      "modPath": "tableB"
+    },
+    {
+      "id": "2109728653/trashcan",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3.0,
+        "prefabpanels": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Trash can",
+      "workshopId": "2109728653",
+      "modPath": "trashcan"
+    }
+  ],
+  "vehicles": []
+}

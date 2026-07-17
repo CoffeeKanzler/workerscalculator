@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2116728335",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:58:03+00:00",
+  "buildings": [
+    {
+      "id": "2116728335/playground_football",
+      "nameId": 6258,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2116728335",
+      "modPath": "playground_football"
+    },
+    {
+      "id": "2116728335/playground_tenis",
+      "nameId": 6255,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2116728335",
+      "modPath": "playground_tenis"
+    }
+  ],
+  "vehicles": []
+}

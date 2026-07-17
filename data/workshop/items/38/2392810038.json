@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2392810038",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:52:39+00:00",
+  "buildings": [
+    {
+      "id": "2392810038/gasstation",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Farm Gas Station",
+      "workshopId": "2392810038",
+      "modPath": "gasstation"
+    },
+    {
+      "id": "2392810038/grain_elevator",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Grain Elevator",
+      "workshopId": "2392810038",
+      "modPath": "grain_elevator"
+    },
+    {
+      "id": "2392810038/large_depot",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 10.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Farm Vehicle Depot",
+      "workshopId": "2392810038",
+      "modPath": "large_depot"
+    },
+    {
+      "id": "2392810038/large_grain_elevator",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Extended Grain Elevator",
+      "workshopId": "2392810038",
+      "modPath": "large_grain_elevator"
+    },
+    {
+      "id": "2392810038/medium_depot",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 10.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Farm Vehicle Depot",
+      "workshopId": "2392810038",
+      "modPath": "medium_depot"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2063069587",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:55:29+00:00",
+  "buildings": [
+    {
+      "id": "2063069587/Turb_large",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 100.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Offshore Wind Turbine (2005)",
+      "workshopId": "2063069587",
+      "modPath": "Turb_large"
+    }
+  ],
+  "vehicles": []
+}

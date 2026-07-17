@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2005247113",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:01:58+00:00",
+  "buildings": [
+    {
+      "id": "2005247113/BAZAR",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 12.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Basar",
+      "workshopId": "2005247113",
+      "modPath": "BAZAR"
+    },
+    {
+      "id": "2005247113/CAMP_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2.0
+      },
+      "constructionResources": {
+        "workers": 10.0,
+        "steel": 0.43
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Army kung",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_1"
+    },
+    {
+      "id": "2005247113/CAMP_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2.0
+      },
+      "constructionResources": {
+        "workers": 10.0,
+        "steel": 1.15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "vagon 1",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_2"
+    },
+    {
+      "id": "2005247113/CAMP_2_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2.0
+      },
+      "constructionResources": {
+        "workers": 11.0,
+        "boards": 0.1,
+        "steel": 1.15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "vagon 1.1",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_2_1"
+    },
+    {
+      "id": "2005247113/CAMP_3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8.0
+      },
+      "constructionResources": {
+        "workers": 12.0,
+        "boards": 0.5,
+        "steel": 2.15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "VAGON 2",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_3"
+    },
+    {
+      "id": "2005247113/CAMP_3_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8.0
+      },
+      "constructionResources": {
+        "workers": 12.0,
+        "boards": 0.5,
+        "steel": 2.15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "VAGON 2",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_3_1"
+    },
+    {
+      "id": "2005247113/CAMP_3_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8.0
+      },
+      "constructionResources": {
+        "workers": 12.0,
+        "boards": 0.5,
+        "steel": 2.15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "VAGON 2",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_3_2"
+    },
+    {
+      "id": "2005247113/CAMP_3_3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8.0
+      },
+      "constructionResources": {
+        "workers": 12.0,
+        "boards": 0.5,
+        "steel": 2.15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "VAGON 2",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_3_3"
+    },
+    {
+      "id": "2005247113/CAMP_4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3.0
+      },
+      "constructionResources": {
+        "workers": 14.0,
+        "steel": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Travel Trailer",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_4"
+    },
+    {
+      "id": "2005247113/CAMP_4_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3.0
+      },
+      "constructionResources": {
+        "workers": 14.0,
+        "steel": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Travel Trailer",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_4_2"
+    },
+    {
+      "id": "2005247113/CAMP_4_3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3.0
+      },
+      "constructionResources": {
+        "workers": 14.0,
+        "steel": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Travel Trailer",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_4_3"
+    },
+    {
+      "id": "2005247113/CAMP_5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3.0
+      },
+      "constructionResources": {
+        "workers": 14.0,
+        "steel": 1.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Travel Trailer",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_5"
+    },
+    {
+      "id": "2005247113/CAMP_5_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3.0
+      },
+      "constructionResources": {
+        "workers": 14.0,
+        "steel": 1.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Travel Trailer",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_5_1"
+    },
+    {
+      "id": "2005247113/CAMP_5_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.22,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6.0
+      },
+      "constructionResources": {
+        "workers": 26.0,
+        "steel": 3.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Travel Trailer",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_5_2"
+    },
+    {
+      "id": "2005247113/CAMP_6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.28,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4.0
+      },
+      "constructionResources": {
+        "workers": 17.0,
+        "steel": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Travel Trailer 6",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_6"
+    },
+    {
+      "id": "2005247113/CAMP_6_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.28,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4.0
+      },
+      "constructionResources": {
+        "workers": 17.0,
+        "steel": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Travel Trailer 6.2",
+      "workshopId": "2005247113",
+      "modPath": "CAMP_6_1"
+    },
+    {
+      "id": "2005247113/ELECTRO",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {
+        "eletric": 1.01
+      },
+      "consumption": {
+        "fuel": 0.15
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 23.0,
+        "steel": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Electric generator",
+      "workshopId": "2005247113",
+      "modPath": "ELECTRO"
+    },
+    {
+      "id": "2005247113/HARBOR",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP",
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 37.0,
+        "boards": 11.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wood harbor",
+      "workshopId": "2005247113",
+      "modPath": "HARBOR"
+    },
+    {
+      "id": "2005247113/HARBOR_2",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP",
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 210.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 210.0
+      },
+      "constructionResources": {
+        "workers": 37.0,
+        "boards": 11.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wood harbor passanger",
+      "workshopId": "2005247113",
+      "modPath": "HARBOR_2"
+    },
+    {
+      "id": "2005247113/HOSPITAL",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 4.0,
+      "professors": 2.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20.0,
+        "boards": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Hospital tent",
+      "workshopId": "2005247113",
+      "modPath": "HOSPITAL"
+    },
+    {
+      "id": "2005247113/KINO_1",
+      "nameId": 6253,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 17.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 28.0,
+        "steel": 2.4,
+        "boards": 3.9
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2005247113",
+      "modPath": "KINO_1"
+    },
+    {
+      "id": "2005247113/Pole",
+      "nameId": 6258,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 22.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 18.0,
+        "steel": 0.4
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2005247113",
+      "modPath": "Pole"
+    },
+    {
+      "id": "2005247113/SAD",
+      "nameId": 6251,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24.0,
+        "boards": 4.5
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2005247113",
+      "modPath": "SAD"
+    },
+    {
+      "id": "2005247113/SHOL",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 3.0,
+      "professors": 2.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 34.0,
+        "boards": 8.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "School tent",
+      "workshopId": "2005247113",
+      "modPath": "SHOL"
+    },
+    {
+      "id": "2005247113/SKLAD",
+      "nameId": 6203,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 120.0
+      },
+      "constructionResources": {
+        "workers": 12.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2005247113",
+      "modPath": "SKLAD"
+    },
+    {
+      "id": "2005247113/STO",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Parking",
+      "workshopId": "2005247113",
+      "modPath": "STO"
+    }
+  ],
+  "vehicles": []
+}

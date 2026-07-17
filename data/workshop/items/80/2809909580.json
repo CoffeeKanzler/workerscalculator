@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2809909580",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T19:55:06+00:00",
+  "buildings": [
+    {
+      "id": "2809909580/tow3",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 530.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Steel Water Tower",
+      "workshopId": "2809909580",
+      "modPath": "tow3"
+    }
+  ],
+  "vehicles": []
+}

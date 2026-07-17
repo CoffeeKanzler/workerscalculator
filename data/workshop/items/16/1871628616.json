@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1871628616",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T20:01:02+00:00",
+  "buildings": [
+    {
+      "id": "1871628616/domek",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 30.0,
+      "professors": 25.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinismus UVKS",
+      "workshopId": "1871628616",
+      "modPath": "domek"
+    }
+  ],
+  "vehicles": []
+}
