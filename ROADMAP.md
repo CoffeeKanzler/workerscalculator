@@ -136,8 +136,12 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   `buildings_game.bin` are decoded. The supplied 160,226,939-byte sample walks all
   1,812 declared building records and lands on the exact final byte; all 43 named
   scopes and every primary building→scope assignment validate.
-- **Safety:** imported saves become new editable named snapshots; unknown building
-  types stay visible in an unmatched report instead of being silently discarded.
+  - **Safety:** imported saves become new editable named snapshots; unknown building
+    types stay visible in an unmatched report instead of being silently discarded.
+  Empty auto-generated named areas with no building records are omitted. Occupied
+  scopes are kept independently: only scopes with recognized residential/service
+  buildings become City Planner cities, while recognized industrial scopes remain
+  available in Production Planner and Republic Overview under their game names.
 - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported), and per-instance
   mine richness is not identified yet, so imported mines start with a clearly

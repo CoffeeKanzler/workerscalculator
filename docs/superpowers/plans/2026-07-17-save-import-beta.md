@@ -118,6 +118,6 @@ Run `node --check`, `npm test`, and headless Chromium against `/` and `/beta/`. 
 
 Mark exact building traversal and beta availability complete, and leave mod/workshop economic mapping or per-mine richness listed as explicit limitations if still unmatched.
 
-- [ ] **Step 4: Commit, integrate, and push**
+- [x] **Step 4: Commit, integrate, and push**
 
 Commit coherent parser/UI/integration checkpoints, fast-forward `main` after each verified checkpoint, and push `main` so GitHub Pages exposes `https://coffeekanzler.github.io/workerscalculator/beta/`.

@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=25';
+import { STRINGS } from './i18n.js?v=26';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=14';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=22';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -61,6 +61,18 @@ function createInitialState() {
 }
 
 const state = createInitialState();
+
+function plannerScopes(kind = null) {
+  const imported = state.saveImport?.scopes;
+  if (Array.isArray(imported)) return kind ? imported.filter(scope => scope[kind]) : imported;
+  return state.cities.filter(city => Number.isInteger(city.scopeId)).map(city => ({
+    id: city.scopeId, name: city.name, city: true, production: true,
+  }));
+}
+
+function plannerScopeName(scopeId) {
+  return plannerScopes().find(scope => scope.id === scopeId)?.name ?? t('unassigned');
+}
 
 function defaultCity() {
   return {
@@ -271,20 +283,23 @@ function selectInput(options, value, onchange, opts = {}) {
 // ---------------------------------------------------------------- stats.ini loading
 const MAX_RECORDS = 365;
 
+function compactStatsRecords(text) {
+  let records = parseStatsIni(text);
+  if (records.length > MAX_RECORDS) {
+    const step = Math.ceil(records.length / MAX_RECORDS);
+    records = records.filter((record, index) => index % step === 0 || index === records.length - 1);
+    records.forEach((record, index) => { record.index = index; });
+  }
+  return records;
+}
+
 function handleFile(file) {
   const reader = new FileReader();
   reader.onload = () => {
-    let records = parseStatsIni(reader.result);
+    const records = compactStatsRecords(reader.result);
     if (!records.length) {
       alert('No $STAT_RECORD price data found in this file.');
       return;
-    }
-    // Very long games export thousands of snapshots (53 MB files exist);
-    // downsample evenly, always keeping the newest record.
-    if (records.length > MAX_RECORDS) {
-      const step = Math.ceil(records.length / MAX_RECORDS);
-      records = records.filter((r, i) => i % step === 0 || i === records.length - 1);
-      records.forEach((r, i) => { r.index = i; });
     }
     state.statsRecords = records;
     state.statsName = file.name;
@@ -640,8 +655,10 @@ function renderProduction() {
   const eco = economy();
   const s = state.plan.settings;
   s.currency = state.currency;
+  const productionScopeIds = new Set(state.plan.rows.map(row => row.scopeId).filter(Number.isInteger));
   const scopeOptions = [['all', t('allAreas')], ['unassigned', t('unassigned')],
-    ...state.cities.filter(city => Number.isInteger(city.scopeId)).map(city => [String(city.scopeId), city.name])];
+    ...plannerScopes().filter(scope => scope.production || productionScopeIds.has(scope.id))
+      .map(scope => [String(scope.id), scope.name])];
   if (!scopeOptions.some(([value]) => value === String(state.productionScope))) state.productionScope = 'all';
   const visibleRows = state.plan.rows.map((row, index) => ({ row, index })).filter(({ row }) =>
     state.productionScope === 'all'
@@ -680,7 +697,7 @@ function renderProduction() {
         [[', ', t('none')], ...inGroup.map(x => [x.de, bname(x)])],
         row.name ?? ', ', v => { row.name = v === ', ' ? null : v; });
       const isMine = b && QUALITY_BUILDINGS_DE.has(b.de);
-      const areaName = state.cities.find(city => city.scopeId === row.scopeId)?.name ?? t('unassigned');
+      const areaName = plannerScopeName(row.scopeId);
       return el('tr', {},
         el('td', {}, areaName), el('td', {}, groupSel), el('td', {}, bSel),
         el('td', {}, numInput(row.count, v => row.count = v, { min: 0, step: 1 })),
@@ -1168,7 +1185,9 @@ function importedCityBuilding(raw, sourceType) {
 }
 
 function buildImportedPlanning(sourceName, settlements, buildings, membershipAudit) {
-  const cityRows = new Map(settlements.map(s => [s.id, new Map()]));
+  const occupiedScopeIds = new Set(buildings.map(building => building.scopeId).filter(Number.isInteger));
+  const occupiedSettlements = settlements.filter(settlement => occupiedScopeIds.has(settlement.id));
+  const cityRows = new Map(occupiedSettlements.map(s => [s.id, new Map()]));
   const production = new Map();
   const unmatched = new Map();
   let cityCount = 0, productionCount = 0, temporaryCount = 0;
@@ -1211,7 +1230,8 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
     unmatched.set(key, current);
   }
 
-  const cities = settlements.map(settlement => ({
+  const productionScopeIds = new Set([...production.values()].map(row => row.scopeId).filter(Number.isInteger));
+  const cities = occupiedSettlements.filter(settlement => cityRows.get(settlement.id).size).map(settlement => ({
     ...defaultCity(),
     name: settlement.name || settlement.extraName || `${t('city')} ${settlement.id + 1}`,
     scopeId: settlement.id,
@@ -1231,7 +1251,16 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
     productionRows: [...production.values()],
     metadata: {
       version: 1, sourceName, importedAt: new Date().toISOString(),
-      settlementCount: settlements.length, buildingCount: buildings.length,
+      settlementCount: occupiedSettlements.length, sourceSettlementCount: settlements.length,
+      emptySettlementCount: settlements.length - occupiedSettlements.length, buildingCount: buildings.length,
+      cityScopeCount: cities.length, productionScopeCount: productionScopeIds.size,
+      scopes: occupiedSettlements.map(settlement => ({
+        id: settlement.id,
+        name: settlement.name || settlement.extraName || `${t('area')} ${settlement.id + 1}`,
+        position: { x: settlement.x, y: settlement.y, z: settlement.z },
+        city: cityRows.get(settlement.id).size > 0,
+        production: productionScopeIds.has(settlement.id),
+      })),
       cityBuildingCount: cityCount, productionBuildingCount: productionCount,
       temporaryCount, unmatchedCount: [...unmatched.values()].reduce((sum, item) => sum + item.count, 0),
       unmatched: [...unmatched.values()].sort((a, b) => b.count - a.count || a.type.localeCompare(b.type)),
@@ -1253,6 +1282,7 @@ async function handleSaveDirectory(fileList) {
   const byName = new Map(files.map(file => [file.name.toLowerCase(), file]));
   const namepoints = byName.get('namepoints.bin');
   const buildingsFile = byName.get('buildings_game.bin');
+  const statsFile = byName.get('stats.ini');
   if (!namepoints || !buildingsFile) {
     state.importStatus = t('importMissingFiles');
     state.importStatusError = true;
@@ -1273,6 +1303,8 @@ async function handleSaveDirectory(fileList) {
     const relative = namepoints.webkitRelativePath || buildingsFile.webkitRelativePath || '';
     const sourceName = relative.split('/')[0] || namepoints.name.replace(/\.bin$/i, '') || 'W&R save';
     const imported = buildImportedPlanning(sourceName, settlements, buildings, membershipAudit);
+    const statsRecords = statsFile ? compactStatsRecords(await statsFile.text()) : [];
+    imported.metadata.statsRecordCount = statsRecords.length;
 
     const backupName = uniqueSnapshotName(`Before import ${new Date().toLocaleString()}`);
     const backupResult = saveNamedState(backupName);
@@ -1283,6 +1315,10 @@ async function handleSaveDirectory(fileList) {
       next[key] = cloneStateValue(state[key]);
     }
     next.dataset = 'game';
+    if (statsRecords.length) {
+      next.priceSource = 'stats';
+      next.overrides = {};
+    }
     next.plan.settings = { ...cloneStateValue(state.plan.settings), currency: state.currency };
     next.plan.rows = imported.productionRows;
     next.cities = imported.cities;
@@ -1291,6 +1327,11 @@ async function handleSaveDirectory(fileList) {
 
     const importName = uniqueSnapshotName(sourceName);
     replaceSharedState(next);
+    if (statsRecords.length) {
+      state.statsRecords = statsRecords;
+      state.statsName = statsFile.name;
+      state.recordIndex = statsRecords.length - 1;
+    }
     state.saveSlotName = importName;
     state.importStatus = t('importComplete');
     state.importStatusError = false;
@@ -1311,7 +1352,7 @@ async function handleSaveDirectory(fileList) {
 function renderSaveImport() {
   if (!IS_BETA) return el('section');
   const info = state.saveImport;
-  const areaNames = new Map(state.cities.map(city => [city.scopeId, city.name]));
+  const areaNames = new Map(plannerScopes().map(scope => [scope.id, scope.name]));
   const picker = el('label', { class: 'importpicker' },
     '📂 ', t('chooseSaveFolder'),
     el('input', { type: 'file', class: 'hidden', webkitdirectory: '', multiple: '',
@@ -1325,7 +1366,11 @@ function renderSaveImport() {
       el('div', { class: 'totalsbox' },
         kv(t('importedAt'), new Date(info.importedAt).toLocaleString()),
         kv(t('importedSettlements'), fmt(info.settlementCount, 0)),
+        kv(t('importedCityAreas'), fmt(info.cityScopeCount ?? state.cities.length, 0)),
+        kv(t('importedProductionAreas'), fmt(info.productionScopeCount ?? 0, 0)),
+        info.emptySettlementCount ? kv(t('importedEmptySettlements'), fmt(info.emptySettlementCount, 0)) : null,
         kv(t('importedBuildings'), fmt(info.buildingCount, 0)),
+        kv(t('importedStatsRecords'), info.statsRecordCount ? fmt(info.statsRecordCount, 0) : t('notFound')),
         kv(t('importedCityBuildings'), fmt(info.cityBuildingCount, 0)),
         kv(t('importedProductionBuildings'), fmt(info.productionBuildingCount, 0)),
         kv(t('importedTemporary'), fmt(info.temporaryCount, 0)),
@@ -1535,7 +1580,7 @@ function workersNeededCell(w) {
 // or the accessible spreadsheet (see ROADMAP.md 2.2).
 function renderRepublic() {
   const eco = economy();
-  if (!state.cities.length) state.cities.push(defaultCity());
+  if (!state.cities.length && !Array.isArray(state.saveImport?.scopes)) state.cities.push(defaultCity());
   state.plan.settings.currency = state.currency;
   const chains = chainPlans();
   const buildings = prodBuildings();
@@ -1545,7 +1590,13 @@ function renderRepublic() {
     return r ? rname(r) : c.goal;
   };
 
-  const cityResults = state.cities.map(city => {
+  const cityByScope = new Map(state.cities.filter(city => Number.isInteger(city.scopeId)).map(city => [city.scopeId, city]));
+  const overviewCities = Array.isArray(state.saveImport?.scopes)
+    ? plannerScopes().filter(scope => scope.city || scope.production).map(scope => cityByScope.get(scope.id) ?? {
+      ...defaultCity(), name: scope.name, scopeId: scope.id, rows: [], syntheticArea: true,
+    })
+    : state.cities;
+  const cityResults = overviewCities.map(city => {
     const rowsResolved = city.rows.map(r => ({
       ...r,
       building: r.importedBuilding ?? (Number.isInteger(r.buildingIndex)
@@ -1592,14 +1643,14 @@ function renderRepublic() {
       el('td', { class: 'r' }, fmt(res.maxKW, 0)),
       el('td', { class: 'r' }, fmt(res.water, 1)),
       el('td', { class: 'r' }, fmt(res.waste, 1)),
-      el('td', {}, selectInput(
+      el('td', {}, city.syntheticArea ? '—' : selectInput(
         [['', t('unassigned')], ...chains.map((c, ci) => [String(ci), chainLabel(c)])],
         Number.isInteger(city.assignedChain) ? String(city.assignedChain) : '',
         value => { city.assignedChain = value === '' ? null : Number(value); })));
   });
   const cityRows = el('table', { class: 'data' },
     el('thead', {}, el('tr', {},
-      el('th', {}, t('city')), el('th', {}, t('population')), el('th', {}, t('workerSurplus')),
+      el('th', {}, Array.isArray(state.saveImport?.scopes) ? t('area') : t('city')), el('th', {}, t('population')), el('th', {}, t('workerSurplus')),
       el('th', {}, t('industryWorkers')), el('th', {}, t('netAvailableWorkers')),
       el('th', {}, t('maxWatt')), el('th', {}, t('waterUse')), el('th', {}, t('wasteOut')),
       el('th', {}, t('assignedChain')))),
@@ -1631,7 +1682,7 @@ function renderRepublic() {
     const industryWorkers = result.diverged ? null : result.totals.workers;
     return { chp, ci, assigned, population, workerSurplus, industryWorkers, result };
   });
-  const unassignedCities = cityResults.filter(({ city }) => !Number.isInteger(city.assignedChain));
+  const unassignedCities = cityResults.filter(({ city }) => !city.syntheticArea && !Number.isInteger(city.assignedChain));
 
   const pairingRows = el('table', { class: 'data' },
     el('thead', {}, el('tr', {},
