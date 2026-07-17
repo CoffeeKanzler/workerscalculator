@@ -41,6 +41,7 @@ switch between **Actual**, **Plan**, and **Difference**.
 | `header.bin` | save title/path, format version, building/vehicle type inventory | snapshot identity and compatibility |
 | `namepoints.bin` | names, types, coordinates, member references | the game's own city and production scopes |
 | `buildings_game.bin` | live building type, name, coordinates, primary scope, configured ordinary/high-education worker caps, current occupants, saved production state, exact mine quality | current republic structure and configuration |
+| `workers.bin` | citizen ID, residence reference, age, education, happiness, food, health, loyalty, and other validated citizen state | current population and derived city demographics/productivity |
 | `stats.ini` | dated republic economy, resource flows, population, average citizen productivity, prices, costs, and event totals | authoritative global history and latest stable productivity baseline |
 | `research.bin` | research keys, completion/progress, assigned building reference | current research state |
 
@@ -48,10 +49,15 @@ switch between **Actual**, **Plan**, and **Difference**.
 it as the rendering/engine building export, so it must not be described or used
 as the source of staffing, inventory, or production facts.
 
+The supplied `workers.bin` contains 20,302 records of exactly `0x728` bytes
+after its count, consumes all 37,193,268 bytes, and has no invalid residence
+references. Its high-value fields are fixed offsets proven against the game's
+writer/reader pair and population formulas. Citizens without a residence remain
+in the republic total and are explicitly unassigned rather than forced into a
+city.
+
 ### Later parser modules
 
-- `workers.bin`: citizen-level and worker-assignment diagnostics, enabling
-  current per-city productivity and demographics when fully validated.
 - `vehicles.bin` and `lines.bin`: fleet, route, and logistics diagnostics.
 - inventories and connections already embedded in the variable live-building
   records: production bottlenecks after their semantics are proven.
@@ -79,9 +85,12 @@ Scopes are classified by their recognized contents:
   totals rather than disappearing.
 
 City productivity is not treated as a saved city setting. Individual citizens
-have productivity; building and city values are aggregates. Until citizen-level
-data is validated, the imported republic-wide `$Citizens_AverageProductivity`
-is the stable planning default and any city productivity is labelled derived.
+have productivity; building and city values are aggregates. When `workers.bin`
+is present, current city productivity and citizen-status metrics are derived
+from residents whose saved residence building belongs to that scope. The
+imported republic-wide `$Citizens_AverageProductivity` remains the stable
+planning default because city residency is not evidence of which factory a
+citizen will reach on a particular shift.
 
 ## Production and Staffing Model
 
@@ -136,6 +145,7 @@ snapshot
 ├── observed
 │   ├── areas
 │   ├── buildings
+│   ├── citizens and city demographic aggregates
 │   ├── research
 │   ├── latest republic metrics
 │   └── exact/derived provenance metadata
@@ -173,7 +183,8 @@ to all cards and tables where comparison is meaningful.
 - real economy, resource, population, and average-productivity charts from
   `stats.ini`, with month/year/all ranges;
 - area health table combining city services, configured industrial workforce,
-  current staffing diagnostics, and recognized production;
+  current staffing diagnostics, resident demographics/status, and recognized
+  production;
 - production/resource mix and import-dependency warnings;
 - research progress and import audit warnings;
 - drill-down from an area into the existing City and Production planners.
@@ -266,15 +277,18 @@ versioned modules with the root app to avoid a divergent beta codebase.
 1. Correct the existing importer and roadmap truth: live state comes from
    `buildings_game.bin`; import exact configured caps and mine quality; use latest
    `stats.ini` average productivity as the plan default.
-2. Preserve per-instance observed buildings and seed lossless scoped planner
+2. Import fixed `workers.bin` records, resolve residence buildings to saved
+   scopes, and derive current city population, education, status, and
+   productivity diagnostics.
+3. Preserve per-instance observed buildings and seed lossless scoped planner
    rows; add source/confidence metadata.
-3. Implement the command-center Actual/Plan/Difference shell and area drill-down.
-4. Expand `stats.ini` parsing and add the first real historical charts.
-5. Import `header.bin` and `research.bin`, expose identity/version and research
+4. Implement the command-center Actual/Plan/Difference shell and area drill-down.
+5. Expand `stats.ini` parsing and add the first real historical charts.
+6. Import `header.bin` and `research.bin`, expose identity/version and research
    progress.
-6. Move large parsing to a worker, harden partial/version handling, verify the
+7. Move large parsing to a worker, harden partial/version handling, verify the
    complete supplied save in a real browser, and deploy `/beta/`.
-7. Add citizen, inventory, vehicle, route, and logistics modules only as their
+8. Add inventory, vehicle, route, and logistics modules only as their
    exact semantics are validated, keeping each independently useful.
 
 ## Acceptance Criteria
@@ -285,6 +299,10 @@ versioned modules with the root app to avoid a divergent beta codebase.
   for with exact file consumption; empty generated scopes do not become cities.
 - Recognized production buildings retain scope, per-instance configured worker
   caps, current occupant count, and exact mine quality.
+- All 20,302 supplied citizen records consume the exact `workers.bin` length;
+  residence-linked citizens produce current per-city population, education,
+  status, and derived productivity metrics, while unassigned citizens remain
+  accounted for republic-wide.
 - Latest republic average productivity seeds imported planning calculations;
   temporary current staffing does not silently become the plan baseline.
 - Actual historical production and economic charts use real dated `stats.ini`
