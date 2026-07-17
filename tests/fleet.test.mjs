@@ -5,6 +5,7 @@ import {
   ownedVehicleExportMultiplier,
   usedVehicleOfferFactor,
   vehicleRuntimeCategory,
+  vehicleCategoryGroup,
   defaultVehicleLifespan,
   containerRecyclingTargets,
   shipRecyclingTargets,
@@ -29,6 +30,11 @@ test('runtime vehicle categories and default lifespans follow the executable typ
   assert.equal(vehicleRuntimeCategory('VEHICLETYPE_CONTAINER'), 9);
   assert.equal(vehicleRuntimeCategory('VEHICLETYPE_HELICOPTER'), 10);
   assert.equal(vehicleRuntimeCategory('unrecognized'), 11);
+  assert.equal(vehicleCategoryGroup(6), 'ship');
+  assert.equal(vehicleCategoryGroup(2), 'road');
+  assert.equal(vehicleCategoryGroup(4), 'rail');
+  assert.equal(vehicleCategoryGroup(10), 'air');
+  assert.equal(vehicleCategoryGroup(9), 'other');
   assert.equal(defaultVehicleLifespan(6), 21915);
   assert.equal(defaultVehicleLifespan(4), 18262.5);
   assert.equal(defaultVehicleLifespan(3), 0);

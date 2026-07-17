@@ -40,6 +40,14 @@ export function vehicleRuntimeCategory(type) {
   return VEHICLE_RUNTIME_CATEGORIES.get(type) ?? 11;
 }
 
+export function vehicleCategoryGroup(runtimeCategory) {
+  if (runtimeCategory === 6) return 'ship';
+  if (runtimeCategory === 1 || runtimeCategory === 2) return 'road';
+  if ([3, 4, 5].includes(runtimeCategory)) return 'rail';
+  if (runtimeCategory === 8 || runtimeCategory === 10) return 'air';
+  return 'other';
+}
+
 export function defaultVehicleLifespan(category) {
   if (category === 4 || category === 5) return 18262.5;
   if (category === 3) return 0;
@@ -375,15 +383,9 @@ export function rankUsedVehicleReplacements(ownedOpportunities, usedQuotes) {
 export function filterAndSortVehicleOpportunities(opportunities, {
   category = 'all', action = 'all', sort = 'advantage',
 } = {}) {
-  const group = runtimeCategory => {
-    if (runtimeCategory === 6) return 'ship';
-    if (runtimeCategory === 1 || runtimeCategory === 2) return 'road';
-    if ([3, 4, 5].includes(runtimeCategory)) return 'rail';
-    if (runtimeCategory === 8 || runtimeCategory === 10) return 'air';
-    return 'other';
-  };
   const rows = (Array.isArray(opportunities) ? opportunities : []).filter(opportunity =>
-    (category === 'all' || group(opportunity?.record?.modelFacts?.runtimeCategory) === category)
+    (category === 'all'
+      || vehicleCategoryGroup(opportunity?.record?.modelFacts?.runtimeCategory) === category)
     && (action === 'all' || opportunity?.cashOutAction === action));
   const numeric = key => (a, b) => (b?.[key] ?? -Infinity) - (a?.[key] ?? -Infinity);
   const compare = sort === 'name'

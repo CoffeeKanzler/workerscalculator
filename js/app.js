@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=44';
+import { STRINGS } from './i18n.js?v=45';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -17,8 +17,8 @@ import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.j
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, resolveVehicleModels,
-  shareSafeSaveImport, vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=5';
+  shareSafeSaveImport, vehicleCategoryGroup, vehicleEconomicOpportunity, vehicleUsedMarketQuote,
+} from './fleet.js?v=6';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',
@@ -2645,6 +2645,7 @@ function renderRepublic() {
     exactFleetOpportunities, fleetFilter,
   );
   const fleetActionLabel = action => t(action === 'recycle' ? 'fleetRecycle' : 'fleetExport');
+  const fleetCategoryLabel = facts => t(`fleetCategory.${vehicleCategoryGroup(facts?.runtimeCategory)}`);
   const fleetCapacityUnit = facts => facts?.transportSubtype === 7 ? t('fleetPassengers') : 't';
   const materialSummary = opportunity => Object.entries(opportunity.recycling.materials)
     .filter(([, amount]) => amount > 0.01)
@@ -2655,6 +2656,7 @@ function renderRepublic() {
   const opportunityCard = opportunity => el('div', { class: 'totalsbox institution-card' },
     el('h3', {}, opportunity.record.modelFacts.name,
       el('span', { class: 'evidence-badge derived' }, fleetActionLabel(opportunity.cashOutAction))),
+    el('p', { class: 'subline' }, fleetCategoryLabel(opportunity.record.modelFacts)),
     kv(t('fleetExportPayout'), `${fmt(opportunity.exportValue, 0)} ${cur()}`),
     kv(t('fleetRecycleAfterLabor'), Number.isFinite(opportunity.recycleAfterLabor)
       ? `${fmt(opportunity.recycleAfterLabor, 0)} ${cur()}` : '—'),
@@ -2670,6 +2672,7 @@ function renderRepublic() {
       el('th', {}, t('fleetAdvantage')), el('th', {}, t('fleetWorkdays')))),
     el('tbody', {}, ...filteredFleetOpportunities.map(opportunity => el('tr', {},
       el('td', {}, opportunity.record.modelFacts.name,
+        el('div', { class: 'subline' }, fleetCategoryLabel(opportunity.record.modelFacts)),
         el('div', { class: 'subline' }, `${t('fleetSavedMultiplier')}: ${fmt(opportunity.exportMultiplier.multiplier * 100, 1)} %`),
         el('div', { class: 'subline' }, materialSummary(opportunity)),
         opportunity.recycling.ignoredCargo.length
@@ -2701,6 +2704,7 @@ function renderRepublic() {
         el('div', { class: 'totalsbox institution-card' },
           el('h3', {}, quote.offer.modelFacts.name,
             el('span', { class: 'evidence-badge exact' }, t('exact'))),
+          el('p', { class: 'subline' }, fleetCategoryLabel(quote.offer.modelFacts)),
           kv(t('fleetUsedPrice'), `${fmt(quote.purchaseValue, 0)} ${cur()}`),
           kv(t('fleetOfferFactor'), `${fmt(quote.factor * 100, 1)} %`),
           kv(t('fleetCapacity'), Number.isFinite(quote.offer.modelFacts.capacity)
@@ -2717,6 +2721,7 @@ function renderRepublic() {
         return el('div', { class: 'totalsbox institution-card' },
           el('h3', {}, offerFacts.name,
             el('span', { class: 'evidence-badge derived' }, t('fleetReplacement'))),
+          el('p', { class: 'subline' }, fleetCategoryLabel(offerFacts)),
           kv(t('fleetReplacementTarget'), ownedFacts.name),
           kv(t('fleetCapacityChange'), `${fmt(ownedFacts.capacity, 0)} → ${fmt(offerFacts.capacity, 0)} ${fleetCapacityUnit(offerFacts)}`),
           kv(t(releasesCash ? 'fleetCashReleased' : 'fleetNetCashRequired'),
