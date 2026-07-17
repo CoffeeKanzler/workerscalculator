@@ -7,11 +7,11 @@ bbox.bin is only a 24-byte 3D bounding box, and there is no other per-vehicle
 binary). But several cost fields turn out to be near-exact linear functions
 of a vehicle's own stats within a Typ group - e.g. Lokomotive Arbeitstage =
 45*Leergewicht + 0.25*Motorleistung fits the ~44 measured locomotives to
-within 0.01%. For each Typ+field we fit weight/power/speed/length against the
-measured sheet rows and use the regression when it fits tightly; otherwise we
-fall back to the median cost-per-tonne ratio. Every non-literal field is
-flagged via attrs['estimated'] regardless of which method produced it, since
-neither is a value read from a game file. Real per-vehicle stats (speed,
+within 0.01%. For each Typ+field we fit both that regression and a flat
+cost-per-tonne ratio against the measured sheet rows and keep whichever fits
+tighter. Every non-literal field is flagged via attrs['estimated'] regardless
+of which method produced it, since neither is a value read from a game file
+directly. Real per-vehicle stats (speed,
 power, weight, capacity, years, origin) come straight from the game files.
 
 Vehicles with no in-game display name at all (~230 raw entries, mostly
@@ -24,8 +24,7 @@ from collections import defaultdict
 
 import numpy as np
 
-REGRESSION_MIN_ROWS = 8
-REGRESSION_MAX_RELERR = 0.15  # use the fitted formula only if it's reasonably tight
+REGRESSION_MIN_ROWS = 8  # minimum measured rows before we trust either method
 
 VEH_PATH = 'data/vehicles.json'
 RAW_PATH = 'data/game/vehicles_raw.json'
@@ -178,34 +177,39 @@ def main():
             continue
         by_typ[a.get('Typ')].append((a, capacity_for(v['name'])))
 
-    # cost-per-empty-weight-tonne ratios, grouped by Typ (fallback method)
-    ratios = defaultdict(lambda: defaultdict(list))
+    # For each Typ+field, fit both a per-Typ linear regression against
+    # weight/power/speed/length/capacity and a flat cost-per-tonne-weight
+    # ratio, then keep whichever fits the measured rows tighter (by median
+    # relative error). The regression is near-exact for several Typ groups -
+    # e.g. Lokomotive Arbeitstage = 45*Leergewicht + 0.25*Motorleistung fits
+    # to <0.02% - while a handful of Typ groups spanning many design eras
+    # (Personenkraftwagen, Kipper, Flugzeug) fit the ratio better on some
+    # fields because a 1913 and a 1980s vehicle of similar weight just have
+    # different material complexity that these stats alone don't explain.
+    # Many vehicles (service/utility types, and even some cargo types) have
+    # no cost data at all in the sheet - that's a missing field, not a zero
+    # measurement, so each field is fit only on the rows that actually have it.
+    chosen = defaultdict(dict)
     for typ, rows in by_typ.items():
-        for a, cap in rows:
-            w = a.get('Leergewicht')
-            for f in COST_FIELDS:
-                val = a.get(f)
-                if isinstance(val, (int, float)) and val > 0:
-                    ratios[typ][f].append(val / w)
-
-    # per-Typ linear regression against weight/power/speed/length/capacity
-    # (primary method - near-exact for several Typ groups, e.g. Lokomotive
-    # Arbeitstage = 45*Leergewicht + 0.25*Motorleistung fits to <0.02%)
-    regressions = defaultdict(dict)
-    for typ, rows in by_typ.items():
-        if len(rows) < REGRESSION_MIN_ROWS:
-            continue
-        X = np.array([predictor_row(a, cap) for a, cap in rows], dtype=float)
         for f in COST_FIELDS:
-            vals = np.array([a.get(f) or 0 for a, cap in rows], dtype=float)
-            if np.max(vals) <= 0:
+            present = [(a, cap) for a, cap in rows if isinstance(a.get(f), (int, float)) and a.get(f) > 0]
+            if len(present) < REGRESSION_MIN_ROWS:
                 continue
+            vals = np.array([a[f] for a, cap in present], dtype=float)
+
+            ratio_med = statistics.median(a[f] / a['Leergewicht'] for a, cap in present)
+            ratio_pred = np.array([ratio_med * a['Leergewicht'] for a, cap in present])
+            ratio_relerr = np.median(np.abs((vals - ratio_pred) / vals))
+
+            X = np.array([predictor_row(a, cap) for a, cap in present], dtype=float)
             coef, _, _, _ = np.linalg.lstsq(X, vals, rcond=None)
             pred = X @ coef
-            denom = np.where(np.abs(vals) < 1e-9, 1, vals)
-            relerr = np.max(np.abs((vals - pred) / denom))
-            if relerr <= REGRESSION_MAX_RELERR:
-                regressions[typ][f] = coef
+            reg_relerr = np.median(np.abs((vals - pred) / vals))
+
+            if reg_relerr <= ratio_relerr:
+                chosen[typ][f] = ('regression', coef)
+            else:
+                chosen[typ][f] = ('ratio', ratio_med)
 
     added = []
     skipped_unnamed = 0
@@ -257,18 +261,16 @@ def main():
                 attrs['Ladefläche'] = float(cap)
 
         estimated = []
-        typ_ratios = ratios.get(typ, {})
-        typ_regressions = regressions.get(typ, {})
+        typ_chosen = chosen.get(typ, {})
         x_row = np.array(predictor_row(attrs, r.get('capacity') or 0), dtype=float)
         for f in COST_FIELDS:
             if f in attrs:
                 continue  # never overwrite a real cargo-capacity value
-            coef = typ_regressions.get(f)
-            if coef is not None:
-                est = float(x_row @ coef)
-            else:
-                vals = typ_ratios.get(f)
-                est = statistics.median(vals) * weight if vals and weight else 0
+            method = typ_chosen.get(f)
+            if method is None:
+                continue
+            kind, param = method
+            est = float(x_row @ param) if kind == 'regression' else param * weight
             if est <= 0:
                 continue
             attrs[f] = round(est, 3)
