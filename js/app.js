@@ -3052,6 +3052,17 @@ function renderRepublic() {
   const actualArea = new Map(republicModel.actual.areas.map(area => [area.scopeId, area]));
   const planArea = new Map(republicModel.plan.areas.map(area => [area.scopeId, area]));
   const scopeInfo = new Map(plannerScopes().map(scope => [scope.id, scope]));
+  const mappableScopeIds = new Set((state.saveImport?.observedBuildings ?? [])
+    .map(building => building.scopeId).filter(Number.isInteger));
+  const locateAreaOnMap = scopeId => {
+    mapFocusBuildingIndex = null;
+    mapFocusScopeId = scopeId;
+    state.republicScope = scopeId;
+    update();
+    setTimeout(() => document.querySelector('.map-section')?.scrollIntoView({
+      behavior: 'smooth', block: 'center',
+    }), 0);
+  };
   const severities = new Map();
   for (const alert of alerts) if (alert.scopeId != null && !severities.has(alert.scopeId)) severities.set(alert.scopeId, alert.severity);
   const areaIds = [...new Set([...actualArea.keys(), ...planArea.keys()])].filter(scopeId => {
@@ -3094,6 +3105,8 @@ function renderRepublic() {
           Number.isFinite(planned.netWorkers) ? fmt(planned.netWorkers, 1) : '—'),
         el('td', { class: severity === 'ok' ? 'pos' : severity === 'critical' ? 'neg' : 'warn' }, t(severity)),
         el('td', { class: 'area-actions' },
+          mappableScopeIds.has(scopeId)
+            ? el('button', { onclick: () => locateAreaOnMap(scopeId) }, t('locateOnMap')) : null,
           scope.city ? el('button', { onclick: () => openArea(scopeId, 'city') }, t('openCity')) : null,
           scope.production ? el('button', { onclick: () => openArea(scopeId, 'production') }, t('openProduction')) : null));
     })));
