@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=56';
+import { STRINGS } from './i18n.js?v=57';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, vehicleProductionRecipe, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=26';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -843,6 +843,9 @@ function renderProduction() {
       const isMine = b && (b.usesQuality || QUALITY_BUILDINGS_DE.has(b.de));
       const areaName = plannerScopeName(row.scopeId);
       const observed = Array.isArray(row.observedBuildingIndices);
+      const productionFallback = b?.provenance?.production !== 'game-file'
+        ? el('div', { class: 'sourceid' }, t('heatingOutputFallback'),
+          el('span', { class: 'evidence-badge derived' }, t('spreadsheetFallback'))) : null;
       const buildingCell = observed ? el('div', {}, bSel,
         el('div', { class: 'sourceid' },
           `${t('currentWorkers')}: ${fmt(row.currentWorkers ?? 0, 0)} · `
@@ -852,7 +855,7 @@ function renderProduction() {
           el('span', { class: `evidence-badge ${(row.constructionProgress ?? 1) < 1 ? 'missing' : 'exact'}` },
             (row.constructionProgress ?? 1) < 1
               ? `${t('underConstruction')} ${fmt(row.constructionProgress * 100, 0)} %` : t('exact'))),
-        bufferDetails(row, b)) : bSel;
+        productionFallback, bufferDetails(row, b)) : el('div', {}, bSel, productionFallback);
       return el('tr', {},
         el('td', {}, areaName), el('td', {}, groupSel), el('td', {}, buildingCell),
         el('td', {}, numInput(row.count, v => row.count = v, { min: 0, step: 1 })),
@@ -3467,8 +3470,8 @@ function renderHelp() {
       el('li', {}, de ? 'Zugplaner: Wagon-Anzahl und Kapazität je Zuglänge und Ware.' : 'Train planner: wagon count and capacity per train length and cargo.')),
     el('h2', {}, de ? 'Datenquellen und Genauigkeit' : 'Data sources and accuracy'),
     el('p', {}, de
-      ? 'Standardmäßig sind Arbeiterzahlen, Produktions- und Verbrauchsraten sowie verfügbare Bauressourcen direkt aus den aktuellen Spieldateien maßgeblich. Workshop-Gebäude werden ebenso aus ihrer building.ini gelesen. Bei Fahrzeugen überschreiben exakte Spieldaten die alten Tabellenwerte.'
-      : 'By default, worker counts, production and consumption rates, and available construction resources come authoritatively from the current game files. Workshop buildings are likewise read from their building.ini. For vehicles, exact game fields override the older sheet values.'),
+      ? 'Standardmäßig sind Arbeiterzahlen, Produktions- und Verbrauchsraten sowie verfügbare Bauressourcen direkt aus den aktuellen Spieldateien maßgeblich. Die Heißwasser-Ausgabe von Heizwerken bleibt wegen ungeklärter Roh-Einheiten als Spreadsheet-Planungswert gekennzeichnet. Workshop-Gebäude werden ebenso aus ihrer building.ini gelesen. Bei Fahrzeugen überschreiben exakte Spieldaten die alten Tabellenwerte.'
+      : 'By default, worker counts, production and consumption rates, and available construction resources come authoritatively from the current game files. Heating-plant hot-water output remains labelled as a spreadsheet planning value because its raw units are not yet proven. Workshop buildings are likewise read from their building.ini. For vehicles, exact game fields override the older sheet values.'),
     el('p', {}, de
       ? 'Das Community-Spreadsheet bleibt nur dort eine gekennzeichnete Ergänzung, wo das Spiel keine direkt nutzbare Planungszahl liefert: insbesondere Versorgungs-Richtwerte, einige gemessene Strom-/Wasserwerte, Fahrzeuglängen und fehlende automatische Baukosten. Der Umschalter „Altes Spreadsheet“ dient dem Vergleich; er ist nicht die Standardeinstellung.'
       : 'The community spreadsheet remains a labeled supplement only where the game exposes no directly usable planning value: notably service ratios, some measured power/water values, vehicle lengths, and missing automatic construction costs. The Legacy spreadsheet switch exists for comparison and is not the default.'),

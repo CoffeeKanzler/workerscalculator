@@ -3383,7 +3383,7 @@
   "measured": true,
   "provenance": {
    "workers": "game-file",
-   "production": "game-file",
+   "production": "sheet-measured",
    "consumption": "game-file",
    "power": "sheet-measured",
    "maxKW": "sheet-measured",
@@ -3518,7 +3518,7 @@
   "measured": true,
   "provenance": {
    "workers": "game-file",
-   "production": "game-file",
+   "production": "sheet-measured",
    "consumption": "game-file",
    "power": "sheet-measured",
    "maxKW": "sheet-measured",
@@ -3578,7 +3578,7 @@
   "measured": false,
   "provenance": {
    "workers": "game-file",
-   "production": "game-file",
+   "production": "sheet-measured",
    "consumption": "game-file",
    "power": "sheet-scaled",
    "maxKW": "sheet-scaled",
@@ -3639,7 +3639,7 @@
   "measured": false,
   "provenance": {
    "workers": "game-file",
-   "production": "game-file",
+   "production": "sheet-measured",
    "consumption": "game-file",
    "power": "sheet-scaled",
    "maxKW": "sheet-scaled",
@@ -3694,7 +3694,7 @@
   "measured": true,
   "provenance": {
    "workers": "game-file",
-   "production": "game-file",
+   "production": "sheet-measured",
    "consumption": "game-file",
    "power": "sheet-measured",
    "maxKW": "sheet-measured",

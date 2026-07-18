@@ -34,6 +34,17 @@ test('explicit game construction resources override stale sheet measurements', (
   assert.equal(coal.provenance.power, 'sheet-measured');
 });
 
+test('sheet-unit heating output is not labelled as exact game production', () => {
+  const heating = production.find(building => building.gameId === 'heating_plant_big');
+  assert.equal(heating.production[0].de, 'Heißwasser');
+  assert.equal(heating.production[0].rate, 1050);
+  assert.equal(heating.provenance.production, 'sheet-measured');
+  assert.equal(heating.provenance.consumption, 'game-file');
+
+  const steel = production.find(building => building.gameId === 'steel_mill');
+  assert.equal(steel.provenance.production, 'game-file');
+});
+
 test('per-second electricity stays a utility field, not a per-worker material input', () => {
   for (const source of rawBuildings) {
     if (source.consumptionPerSecond?.eletric != null) {

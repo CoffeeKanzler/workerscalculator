@@ -536,7 +536,10 @@ def build_dataset(buildings, repo_root, loc):
             'measured': bool(s) and scale == 1.0,
             'provenance': {
                 'workers': 'game-file',
-                'production': 'game-file',
+                # Heat-only output uses the sheet's planning-unit value when a
+                # match exists because the raw game unit conversion is not yet
+                # proven. Do not label that substituted number game-exact.
+                'production': 'sheet-measured' if heat_only and s else 'game-file',
                 'consumption': 'game-file',
             },
         }
