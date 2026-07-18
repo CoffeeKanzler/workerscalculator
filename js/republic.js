@@ -32,11 +32,13 @@ function productionByScope(rows = []) {
 function actualProjection(observed = {}) {
   const production = productionByScope(observed.productionRows);
   const scopes = new Map((observed.scopes ?? []).map(scope => [scope.id, scope]));
-  const ids = new Set([...scopes.keys(), ...production.keys()]);
+  const regionalCrime = new Map((observed.regionalCrime ?? []).map(scope => [scope.scopeId, scope.crime]));
+  const ids = new Set([...scopes.keys(), ...production.keys(), ...regionalCrime.keys()]);
   const areas = [...ids].map(scopeId => {
     const scope = scopes.get(scopeId);
     const citizens = scope?.citizens ?? null;
     const industry = production.get(scopeId) ?? {};
+    const crime = regionalCrime.get(scopeId);
     return {
       scopeId,
       name: scope?.name ?? (scopeId === null ? 'Unassigned' : `Area ${scopeId}`),
@@ -45,6 +47,9 @@ function actualProjection(observed = {}) {
       productivity: citizens?.productivity ?? null,
       health: citizens?.health ?? null,
       criminality: citizens?.criminality ?? null,
+      minorCrimes: crime?.minorCrimes ?? null,
+      mediumCrimes: crime?.mediumCrimes ?? null,
+      seriousCrimes: crime?.seriousCrimes ?? null,
       food: citizens?.food ?? null,
       happiness: citizens?.happiness ?? null,
       loyalty: citizens?.loyalty ?? null,
@@ -81,6 +86,7 @@ function observedMetadata(info = {}) {
     productionRows: info.observedProductionRows ?? [],
     liveBuildingCount: info.observedBuildings?.length ?? info.buildingCount ?? null,
     sourceStatus: info.sourceStatus ?? {},
+    regionalCrime: info.operationalServices?.regional ?? [],
   };
 }
 
@@ -115,7 +121,7 @@ export function compareObservedSnapshots(currentInfo, baselineInfo, currentStats
   const currentAreas = new Map(current.areas.map(area => [area.scopeId, area]));
   const baselineAreas = new Map(baseline.areas.map(area => [area.scopeId, area]));
   const areaKeys = ['population', 'configuredIndustryWorkers', 'currentIndustryWorkers',
-    'productivity', 'health', 'criminality'];
+    'productivity', 'health', 'criminality', ...CRIME_HISTORY_KEYS];
   const areas = [...new Set([...currentAreas.keys(), ...baselineAreas.keys()])].map(scopeId => {
     const currentArea = currentAreas.get(scopeId) ?? null;
     const baselineArea = baselineAreas.get(scopeId) ?? null;

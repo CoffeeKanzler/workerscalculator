@@ -17,7 +17,7 @@ import {
   summarizeCriminalityOutliers,
   buildSchematicMap,
 } from './save_model.js?v=12';
-import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=6';
+import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=7';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
@@ -3365,7 +3365,8 @@ function renderRepublic() {
       || String(a.name).localeCompare(String(b.name))) : [];
   const comparisonAreaRow = area => el('tr', {},
     el('td', {}, area.name),
-    ...['population', 'currentIndustryWorkers', 'productivity', 'health', 'criminality']
+    ...['population', 'currentIndustryWorkers', 'productivity', 'health', 'criminality',
+      'minorCrimes', 'mediumCrimes', 'seriousCrimes']
       .map(key => el('td', { class: 'r' }, comparisonDelta(key, area.deltas[key]))));
   const snapshotComparison = state.saveImport ? el('details', {
     class: 'history-section secondary-section snapshot-comparison',
@@ -3394,7 +3395,9 @@ function renderRepublic() {
           el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
             el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('population')),
               el('th', {}, t('currentWorkers')), el('th', {}, t('productivity')),
-              el('th', {}, t('health')), el('th', {}, t('criminality')))),
+              el('th', {}, t('health')), el('th', {}, t('criminality')),
+              el('th', {}, t('minorCrimes')), el('th', {}, t('mediumCrimes')),
+              el('th', {}, t('seriousCrimes')))),
             el('tbody', {}, ...comparisonAreaRows.map(comparisonAreaRow)))))
           : el('p', { class: 'hint' }, t('noObservedChanges'))) : null) : null;
 
