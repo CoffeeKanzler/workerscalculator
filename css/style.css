@@ -214,6 +214,10 @@ button.danger:hover { border-color: var(--neg); }
 .advanced-building { max-width: none; margin-top: 16px; }
 .advanced-building-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .advanced-building-grid table { align-self: start; }
+.research-checklist { margin-top: 12px; }
+.research-check-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px; }
+.research-check-grid label { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px; align-items: start; padding: 7px 9px; background: var(--panel2); border-radius: 5px; }
+.research-check-grid small { display: block; margin-top: 2px; color: var(--muted); font-size: 10px; }
 button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
 button.primary:hover { filter: brightness(1.15); }
 

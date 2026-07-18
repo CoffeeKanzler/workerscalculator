@@ -1,0 +1,1055 @@
+[
+ {
+  "key": "phone_tapping",
+  "nameId": 11115,
+  "de": "Telefon abhören",
+  "en": "Phone Tapping",
+  "cost": 500.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "chemistry_init",
+  "nameId": 11104,
+  "de": "Chemie",
+  "en": "Chemistry",
+  "cost": 1200.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "electronics_init",
+  "nameId": 11106,
+  "de": "Halbleiter",
+  "en": "Semiconductors",
+  "cost": 1100.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "plastic_factory",
+  "nameId": 11403,
+  "de": "Kunststoffe",
+  "en": "Plastics",
+  "cost": 1700.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "electronics_1",
+  "nameId": 11108,
+  "de": "Elektronische Schaltkreise",
+  "en": "Electronic Circuits",
+  "cost": 1800.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "pollution_basic",
+  "nameId": 11111,
+  "de": "Umwelt: Basisforschung",
+  "en": "Pollution: Basic Research",
+  "cost": 800.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "pollution_detector",
+  "nameId": 11113,
+  "de": "Umweltüberwachung",
+  "en": "Pollution Detector",
+  "cost": 900.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "pollution_filters",
+  "nameId": 11117,
+  "de": "Luftfilter",
+  "en": "Pollution Filters",
+  "cost": 1300.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "pollution_filters_prototype",
+  "nameId": 11119,
+  "de": "Luftfilter-Prototyp",
+  "en": "Pollution Filter Prototype",
+  "cost": 1500.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "pollution_filters_installation",
+  "nameId": 11121,
+  "de": "Luftfilter-Installation",
+  "en": "Pollution Filter Installation",
+  "cost": 2500.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "engineering_1",
+  "nameId": 11102,
+  "de": "Fortgeschrittenes Ingenieurwesen",
+  "en": "Advanced Engineering",
+  "cost": 2000.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "forest_study",
+  "nameId": 11123,
+  "de": "Forststudie",
+  "en": "Forest Study",
+  "cost": 500.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "woodcutting_planting",
+  "nameId": 11125,
+  "de": "Pflanzrichtlinie",
+  "en": "Woodcutting Planting Policy",
+  "cost": 400.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "party_members_ranking",
+  "nameId": 11135,
+  "de": "Rangliste für Parteimitglieder",
+  "en": "Party Member Ranking",
+  "cost": 700.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "secret_police",
+  "nameId": 11137,
+  "de": "Geheimpolizei",
+  "en": "Secret Police",
+  "cost": 900.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "radio_broadcast_influence",
+  "nameId": 11139,
+  "de": "Rundfunk-Einfluss",
+  "en": "Influence of Radio Broadcast",
+  "cost": 1200.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "tv_broadcast_influence",
+  "nameId": 11141,
+  "de": "TV-Einfluss",
+  "en": "Influence of Television Broadcast",
+  "cost": 1600.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "fire_prevetion_basic",
+  "nameId": 11127,
+  "de": "Brandschutz: Basisforschung",
+  "en": "Fire Prevention: Basic Research",
+  "cost": 800.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "fire_prevention_industry",
+  "nameId": 11129,
+  "de": "Brandschutz: Industrie",
+  "en": "Fire Prevention for Industry",
+  "cost": 600.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "fire_prevention_civil",
+  "nameId": 11131,
+  "de": "Brandschutz: Zivile Infrastruktur",
+  "en": "Fire Prevention for Civil Infrastructure",
+  "cost": 700.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "fire_prevention_residential",
+  "nameId": 11133,
+  "de": "Brandschutz: Wohngebäude",
+  "en": "Fire Prevention for Residential Buildings",
+  "cost": 700.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "big_monuments",
+  "nameId": 11143,
+  "de": "Große Monumente",
+  "en": "Grand Monuments",
+  "cost": 600.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "party_members_ranking_2",
+  "nameId": 11145,
+  "de": "Parkplätze für Parteimitglieder",
+  "en": "Prioritizing High-Ranked Members",
+  "cost": 1500.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "party_member_car",
+  "nameId": 11147,
+  "de": "Autos für loyale Bürger",
+  "en": "Cars for Loyal Citizens",
+  "cost": 800.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "party_member_education",
+  "nameId": 11149,
+  "de": "Bildung für loyale Bürger",
+  "en": "Education for Loyal Citizens",
+  "cost": 700.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "air_traffic_study",
+  "nameId": 11151,
+  "de": "Luftverkehrsstudie",
+  "en": "Air Traffic Study",
+  "cost": 700.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "international_air_traffic",
+  "nameId": 11153,
+  "de": "Internationale Luftfahrtregeln",
+  "en": "International Air Traffic Regulations",
+  "cost": 1700.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "tourism_study",
+  "nameId": 11155,
+  "de": "Tourismusstudie",
+  "en": "Tourism Analysis",
+  "cost": 900.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "advanced_hotel_standards",
+  "nameId": 11157,
+  "de": "Fortgeschrittene Hotelstandards",
+  "en": "Advanced Hotel Standards",
+  "cost": 700.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "tourist_visa_west",
+  "nameId": 11159,
+  "de": "Visa für westliche Touristen",
+  "en": "Tourist Visa (Western Countries)",
+  "cost": 2000.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "tourist_visa_east",
+  "nameId": 11161,
+  "de": "Visa für Sowjet-Touristen",
+  "en": "Tourist Visa (Soviet Countries)",
+  "cost": 1000.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "adverstiment_campaign_west",
+  "nameId": 11163,
+  "de": "Werbekampagne in westlichen Ländern",
+  "en": "Advertising in Western Countries",
+  "cost": 2000.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "adverstiment_campaign_east",
+  "nameId": 11165,
+  "de": "Werbekampagne im sowjetischen Block",
+  "en": "Advertising in Soviet Countries",
+  "cost": 1200.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "logistic_optimization",
+  "nameId": 11167,
+  "de": "Logistische Optimierung",
+  "en": "Logistics Optimization",
+  "cost": 700.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "distribution_office",
+  "nameId": 11169,
+  "de": "Verteilungsbüro",
+  "en": "Distribution Office",
+  "cost": 600.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "railway_distribution_office",
+  "nameId": 11171,
+  "de": "Zugverteilungsbüro",
+  "en": "Railway Distribution Office",
+  "cost": 1000.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "virology",
+  "nameId": 11173,
+  "de": "Virologie",
+  "en": "Virology",
+  "cost": 1500.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "vaccine_development",
+  "nameId": 11175,
+  "de": "Entwicklung von Impfung",
+  "en": "Vaccine Development",
+  "cost": 2200.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "vaccination_citizen",
+  "nameId": 11177,
+  "de": "Impfung der Einwohner",
+  "en": "Citizen Vaccination",
+  "cost": 2700.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "preventive_medicine",
+  "nameId": 11179,
+  "de": "Präventivmedizin",
+  "en": "Preventive Medicine",
+  "cost": 1300.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "hearth_attack_prevention",
+  "nameId": 11181,
+  "de": "Vorbeugung von Herzinfarkten",
+  "en": "Heart Attack Prevention",
+  "cost": 1500.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "stroke_prevention",
+  "nameId": 11183,
+  "de": "Vorbeugung von Schlaganfällen",
+  "en": "Stroke Prevention",
+  "cost": 1700.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "fuel_study",
+  "nameId": 11195,
+  "de": "Treibstoffherstellung",
+  "en": "Fuel Processing Study",
+  "cost": 1300.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "bitumen_study",
+  "nameId": 11197,
+  "de": "Bitumenherstellung",
+  "en": "Bitumen Production Study",
+  "cost": 1300.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "refinery_project",
+  "nameId": 11199,
+  "de": "Raffinerie",
+  "en": "Refinery Design and Construction",
+  "cost": 1900.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "engineering_init",
+  "nameId": 11100,
+  "de": "Ingenieurwesen",
+  "en": "Engineering",
+  "cost": 1500.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "metallurgy_study",
+  "nameId": 11201,
+  "de": "Metallurgie",
+  "en": "Introduction to Metallurgy",
+  "cost": 1300.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "newpylons",
+  "nameId": 11438,
+  "de": "Moderne Strommasten",
+  "en": "Modern Electric Pylons",
+  "cost": 1800.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "steel_production",
+  "nameId": 11203,
+  "de": "Stahl",
+  "en": "Steel Production Design",
+  "cost": 2100.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "faculty_geology",
+  "nameId": 11205,
+  "de": "Geologie",
+  "en": "Establishment of Geology Faculty",
+  "cost": 1500.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "nuclear_faculty",
+  "nameId": 11235,
+  "de": "Nuklearwissenschaft",
+  "en": "Establishment of Nuclear Science Faculty",
+  "cost": 1700.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "airport_study",
+  "nameId": 11231,
+  "de": "Flughäfen",
+  "en": "Airport Infrastructure",
+  "cost": 1200.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "geological_map",
+  "nameId": 11207,
+  "de": "Geologische Karte",
+  "en": "Geological Mapping",
+  "cost": 1800.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "bauxite_study",
+  "nameId": 11209,
+  "de": "Bauxit",
+  "en": "Bauxite Exploration Study",
+  "cost": 1300.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "bauxite_purification",
+  "nameId": 11211,
+  "de": "Bauxit-Aufbereitung",
+  "en": "Bauxite Purification Methods",
+  "cost": 1900.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "aluminium_oxide",
+  "nameId": 11213,
+  "de": "Aluminiumoxid",
+  "en": "Conversion to Aluminum Oxide",
+  "cost": 2000.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "manufacturing_aluminium",
+  "nameId": 11215,
+  "de": "Aluminiumherstellung",
+  "en": "Aluminum Production",
+  "cost": 2200.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "fatique_of_materials",
+  "nameId": 11217,
+  "de": "Stahlermüdung",
+  "en": "Steel Material Fatigue Study",
+  "cost": 1100.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "advanced_engineering",
+  "nameId": 11221,
+  "de": "Fortgeschrittene Technik",
+  "en": "Advanced Engineering Study",
+  "cost": 2100.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "belt_production",
+  "nameId": 11223,
+  "de": "Fließbänder",
+  "en": "Conveyor Belt Production",
+  "cost": 2300.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "road_production_line",
+  "nameId": 11225,
+  "de": "Fahrzeugproduktion",
+  "en": "Road Vehicle Production Facility",
+  "cost": 2500.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "train_production_line",
+  "nameId": 11227,
+  "de": "Eisenbahnproduktion",
+  "en": "Train Production Design",
+  "cost": 2700.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "airplane_production_line",
+  "nameId": 11229,
+  "de": "Flugzeugproduktion",
+  "en": "Airplane Manufacturing Line",
+  "cost": 3100.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "ship_production_line",
+  "nameId": 11233,
+  "de": "Trockendock",
+  "en": "Dry Dock Designs",
+  "cost": 2700.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "uranium_study",
+  "nameId": 11237,
+  "de": "Uranminen",
+  "en": "Uranium Mining Techniques",
+  "cost": 1900.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "nuclear_processing",
+  "nameId": 11239,
+  "de": "Uranabscheidung",
+  "en": "Uranium Separation Techniques",
+  "cost": 2000.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "nuclear_uf6",
+  "nameId": 11241,
+  "de": "Urananreicherung",
+  "en": "Uranium Enrichment",
+  "cost": 2500.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "nuclear_fuel",
+  "nameId": 11243,
+  "de": "Kernbrennstoff",
+  "en": "Nuclear Fuel",
+  "cost": 3700.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "nuclear_reactor",
+  "nameId": 11245,
+  "de": "RBMK-Reaktor",
+  "en": "RBMK Reactor",
+  "cost": 3000.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "nuclear_powerplant",
+  "nameId": 11247,
+  "de": "Atomkraftwerk",
+  "en": "Nuclear Power Plant Project",
+  "cost": 3200.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "power_greensource",
+  "nameId": 11249,
+  "de": "Erneuerbare Energien",
+  "en": "Study on Renewable Energy Sources",
+  "cost": 2000.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "power_solar",
+  "nameId": 11251,
+  "de": "Solarkraftwerk",
+  "en": "Solar Power Plant Project",
+  "cost": 2100.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "power_wind",
+  "nameId": 11253,
+  "de": "Windkraftanlage",
+  "en": "Wind Power Plant Project",
+  "cost": 1300.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "waste_study",
+  "nameId": 11255,
+  "de": "Müllverarbeitung",
+  "en": "Waste Processing and Disposal",
+  "cost": 1000.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "waste_separation_1",
+  "nameId": 11257,
+  "de": "Mülltrennung",
+  "en": "Waste Separation",
+  "cost": 1200.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "waste_separation_2",
+  "nameId": 11259,
+  "de": "Mülltrennungskampagne",
+  "en": "Waste Separation Education",
+  "cost": 1500.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "metalic_separation",
+  "nameId": 11261,
+  "de": "Trennung von Metallschrott",
+  "en": "Metallic Scraps Separation",
+  "cost": 1200.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "steel_recycle",
+  "nameId": 11263,
+  "de": "Wiederverwendung von Stahl",
+  "en": "Steel Recycling",
+  "cost": 1600.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "aluminium_recycle",
+  "nameId": 11265,
+  "de": "Wiederverwendung von Aluminium",
+  "en": "Aluminum Recycling",
+  "cost": 1700.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "plastic_recycle",
+  "nameId": 11267,
+  "de": "Recycling von Plastik",
+  "en": "Plastic Recycling",
+  "cost": 1600.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "waste_to_energy",
+  "nameId": 11269,
+  "de": "Müllverbrennung (Kraftwerk)",
+  "en": "Energy from Waste",
+  "cost": 1800.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "18mw_pole",
+  "nameId": 11271,
+  "de": "Starkstrom-Kabel",
+  "en": "High-Capacity Electric Wiring",
+  "cost": 700.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "container_standards",
+  "nameId": 11273,
+  "de": "Containernormen",
+  "en": "Container Standards",
+  "cost": 800.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "hardening",
+  "nameId": 11275,
+  "de": "Kampagne zur Abhärtung",
+  "en": "Weatherproofing Education",
+  "cost": 1200.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "vitanims",
+  "nameId": 11277,
+  "de": "Vitamine",
+  "en": "Vitamins",
+  "cost": 1500.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "increase_natality",
+  "nameId": 11279,
+  "de": "Erhöhung der Geburtenrate",
+  "en": "Increased Birth Rate",
+  "cost": 900.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "decrease_natality",
+  "nameId": 11281,
+  "de": "Verringerung der Geburtenrate",
+  "en": "Decreased Birth Rate",
+  "cost": 900.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "pipeline_pressure",
+  "nameId": 11283,
+  "de": "Druckanpassung für Pipelines",
+  "en": "Pipeline Pressure",
+  "cost": 1100.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "pipeline_to_west",
+  "nameId": 11287,
+  "de": "Pipelineverbindung zu westlichen Ländern",
+  "en": "Pipeline Connection with Western Countries",
+  "cost": 2100.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "pipeline_to_east",
+  "nameId": 11285,
+  "de": "Pipelineverbindung zum sowjetischen Block",
+  "en": "Pipeline Connection with Soviet Countries",
+  "cost": 1400.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "opec",
+  "nameId": 11291,
+  "de": "OPEC-Mitgliedschaft",
+  "en": "OPEC Membership",
+  "cost": 2800.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "gas_power_plant",
+  "nameId": 11289,
+  "de": "Gaskraftwerk",
+  "en": "Gas Power Plant",
+  "cost": 1500.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "hospital_helicopters",
+  "nameId": 11293,
+  "de": "Rettungshubschrauber",
+  "en": "Hospital Helicopters",
+  "cost": 900.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "fire_helicopters",
+  "nameId": 11295,
+  "de": "Feuerlöschhubschrauber",
+  "en": "Firefighting Helicopters",
+  "cost": 900.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "alcohol_standards",
+  "nameId": 11297,
+  "de": "Alkoholstandards",
+  "en": "Alcohol Standards",
+  "cost": 800.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "fertilizing",
+  "nameId": 11299,
+  "de": "Düngen",
+  "en": "Fertilization",
+  "cost": 900.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "concrete_study",
+  "nameId": 11193,
+  "de": "Studie zu Beton",
+  "en": "Concrete Utilization Study",
+  "cost": 800.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "syntetic_fertilizing",
+  "nameId": 11401,
+  "de": "Kunstdünger",
+  "en": "Synthetic Fertilizers",
+  "cost": 1500.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "steel_ropes",
+  "nameId": 11219,
+  "de": "Stahlseile",
+  "en": "Design of Steel Cables",
+  "cost": 900.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "eletric_east",
+  "nameId": 11405,
+  "de": "Stromverbindung zum sowjetischen Block",
+  "en": "Power Grid Connection with Soviet Countries",
+  "cost": 1100.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "eletric_west",
+  "nameId": 11407,
+  "de": "Stromverbindung zu westlichen Ländern",
+  "en": "Power Grid Connection with Western Countries",
+  "cost": 1800.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "functionalism",
+  "nameId": 11440,
+  "de": "Sowjetischer Funktionalismus",
+  "en": "Soviet Functionalism",
+  "cost": 1100.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "brutalism",
+  "nameId": 11444,
+  "de": "Brutalismus",
+  "en": "Brutalism",
+  "cost": 1200.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "modernism",
+  "nameId": 11442,
+  "de": "Sowjetischer Modernismus",
+  "en": "Soviet Modernism",
+  "cost": 1300.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "modern_industry",
+  "nameId": 11446,
+  "de": "Moderne Industrie",
+  "en": "Modern industry",
+  "cost": 1600.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "panels_constructions",
+  "nameId": 11415,
+  "de": "Plattenbau",
+  "en": "Prefab Panel Construction",
+  "cost": 1200.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "durable_panels_constructions",
+  "nameId": 11417,
+  "de": "Stabile Plattenbauteile",
+  "en": "Durable Prefab Panels",
+  "cost": 1200.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "high_quality_living",
+  "nameId": 11419,
+  "de": "Hochwertiges und effektives Wohnen",
+  "en": "High-Quality Living",
+  "cost": 1200.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "rail_eletric",
+  "nameId": 11432,
+  "de": "Elektrifizierte Eisenbahn",
+  "en": "Electrified Railway",
+  "cost": 1800.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "newrailtrack",
+  "nameId": 11430,
+  "de": "Betongleis",
+  "en": "Concrete Railtrack",
+  "cost": 1800.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "rail_metro",
+  "nameId": 11436,
+  "de": "U-Bahn",
+  "en": "Underground Metro",
+  "cost": 1800.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "modernrailco",
+  "nameId": 11434,
+  "de": "Modernes Eisenbahnbauamt",
+  "en": "Modern Railway Construction Office",
+  "cost": 1800.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "first_aid",
+  "nameId": 11421,
+  "de": "Erste-Hilfe-Kampagne",
+  "en": "First Aid Education",
+  "cost": 1200.0,
+  "pointCost": 1,
+  "classification": "terminal-effect"
+ },
+ {
+  "key": "broadcasting_intro",
+  "nameId": 11185,
+  "de": "Nutzung von Rundfunk",
+  "en": "Introduction to Broadcasting",
+  "cost": 1000.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "broadcasting_radio",
+  "nameId": 11187,
+  "de": "Radioübertragung",
+  "en": "Radio Signal Broadcasting",
+  "cost": 1700.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ },
+ {
+  "key": "television_study",
+  "nameId": 11189,
+  "de": "TV-Übertragung",
+  "en": "Television Signal Study",
+  "cost": 1900.0,
+  "pointCost": 0,
+  "classification": "prerequisite-only"
+ },
+ {
+  "key": "television_station",
+  "nameId": 11191,
+  "de": "TV-Station",
+  "en": "Television Station Setup",
+  "cost": 2200.0,
+  "pointCost": 1,
+  "classification": "gameplay-unlock"
+ }
+]

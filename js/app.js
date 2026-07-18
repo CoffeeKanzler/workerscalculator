@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=74';
+import { STRINGS } from './i18n.js?v=75';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -6,6 +6,7 @@ import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13'
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
 import { applyBuildingOverrides, buildingOverrideKey, BUILDING_OVERRIDE_FIELDS, duplicateCustomBuilding } from './building_overrides.js?v=2';
+import { completedPaidResearchKeys } from './research.js?v=1';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
@@ -79,7 +80,7 @@ function createInitialState() {
     buildingOverrides: {}, // dataset-scoped advanced production-building overrides
     customBuildings: [],
     advancedBuildingKey: null,
-    lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0 },
+    lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0, researchKeys: null },
     chains: [defaultChainPlan()],
     activeChain: 0,
     productionScope: 'all',
@@ -186,7 +187,7 @@ async function loadData() {
     url.searchParams.set('v', DATA_V);
     return fetch(url);
   };
-  const [res, prod, prodGame, city, rawBuildings, workshopIndex, veh, rail, rawVehicles, dec] = await Promise.all([
+  const [res, prod, prodGame, city, rawBuildings, workshopIndex, veh, rail, rawVehicles, dec, research] = await Promise.all([
     get('data/resources.json').then(r => r.json()),
     get('data/production_buildings.json').then(r => r.json()),
     get('data/game/production_buildings.json').then(r => r.ok ? r.json() : null).catch(() => null),
@@ -197,6 +198,7 @@ async function loadData() {
     get('data/game/rail_vehicles.json').then(r => r.ok ? r.json() : []).catch(() => []),
     get('data/game/vehicles_raw.json').then(r => r.ok ? r.json() : []).catch(() => []),
     get('data/decade_prices.json').then(r => r.json()),
+    get('data/game/research.json').then(r => r.ok ? r.json() : []).catch(() => []),
   ]);
   DATA = {
     resources: res.resources, defaults: res.defaults,
@@ -207,7 +209,7 @@ async function loadData() {
     // Game-only rail vehicles join the pool; hard-attached tenders stay nested.
     sheetVehicles: veh.vehicles,
     vehicles: mergeVehiclePools(veh.vehicles, rail, rawVehicles),
-    decades: dec,
+    decades: dec, research,
   };
 }
 
@@ -3861,7 +3863,19 @@ function renderTrains() {
 // ---------------------------------------------------------------- research tab
 function renderResearch() {
   const lt = state.lowtech;
-  const pts = lowTechPoints(lt);
+  const paidResearch = DATA.research.filter(item => item.pointCost === 1)
+    .sort((a, b) => (a[state.lang] || a.en).localeCompare(b[state.lang] || b.en, state.lang));
+  const checkedKeys = Array.isArray(lt.researchKeys) ? new Set(lt.researchKeys) : null;
+  const researched = checkedKeys ? checkedKeys.size : lt.researched;
+  const pts = lowTechPoints({ ...lt, researched });
+  const setResearchChecked = (key, checked) => {
+    const keys = new Set(lt.researchKeys ?? []);
+    if (checked) keys.add(key); else keys.delete(key);
+    lt.researchKeys = [...keys].sort();
+    lt.researched = lt.researchKeys.length;
+    update();
+  };
+  const importedPaidKeys = completedPaidResearchKeys(DATA.research, state.saveImport?.research);
   return el('section', {},
     el('p', { class: 'hint' }, t('ltHint'), ' ',
       el('a', { href: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3046902889', target: '_blank' }, 'Steam Guide')),
@@ -3870,9 +3884,23 @@ function renderResearch() {
       el('label', {}, t('ltCities') + ' ', numInput(lt.cities, v => lt.cities = v, { min: 0, step: 1 })),
       el('label', {}, t('ltStart') + ' ', numInput(lt.startYear, v => lt.startYear = v, { min: 1900, step: 1 })),
       el('label', {}, t('ltYear') + ' ', numInput(lt.currentYear, v => lt.currentYear = v, { min: 1900, step: 1 })),
-      el('label', {}, t('ltDone') + ' ', numInput(lt.researched, v => lt.researched = v, { min: 0, step: 1 }))),
+      checkedKeys
+        ? el('span', {}, `${t('ltDone')}: `, el('strong', {}, fmt(researched, 0)), ' / ', fmt(paidResearch.length, 0))
+        : el('label', {}, t('ltDone') + ' ', numInput(lt.researched, v => lt.researched = v, { min: 0, step: 1 })),
+      checkedKeys ? el('button', { onclick: () => { lt.researched = researched; lt.researchKeys = null; update(); } },
+        t('ltUseManual')) : el('button', { onclick: () => { lt.researchKeys = []; update(); } }, t('ltUseChecklist')),
+      importedPaidKeys.length ? el('button', { class: 'primary', onclick: () => {
+        lt.researchKeys = importedPaidKeys; lt.researched = importedPaidKeys.length; update();
+      } }, t('ltUseImported').replace('{count}', fmt(importedPaidKeys.length, 0))) : null),
     el('div', { class: 'totalsbox big' },
-      kv(t('ltAvail'), fmt(pts, 0), pts < 0 ? 'neg' : 'pos')));
+      kv(t('ltAvail'), fmt(pts, 0), pts < 0 ? 'neg' : 'pos')),
+    checkedKeys ? el('details', { class: 'secondary-section research-checklist', open: '' },
+      el('summary', {}, `${t('ltChecklist')} (${fmt(researched, 0)} / ${fmt(paidResearch.length, 0)})`),
+      el('p', { class: 'hint' }, t('ltChecklistHint').replace('{free}', fmt(DATA.research.length - paidResearch.length, 0))),
+      el('div', { class: 'research-check-grid' }, ...paidResearch.map(item => el('label', {},
+        el('input', { type: 'checkbox', checked: checkedKeys.has(item.key),
+          onchange: event => setResearchChecked(item.key, event.target.checked) }),
+        el('span', {}, item[state.lang] || item.en, el('small', {}, item.key)))))) : null);
 }
 
 // ---------------------------------------------------------------- advanced tab

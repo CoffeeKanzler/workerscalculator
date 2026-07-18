@@ -368,10 +368,14 @@ cargo.)
   would need per-language additions — community-contributable.
 - **Effort:** small per language once data exists.
 
-### 5.3 LowTech research list
-- **What:** Replace the "number of researched techs" input with the actual checklist of
-  game-effect researches from DasBreitschwert's guide.
-- **Effort:** small (needs the list transcribed).
+### 5.3 LowTech research list ✅ done 2026-07-18
+- **Delivered:** The checklist is generated from the current game's 117
+  `research.ini` entries and localized game strings instead of being transcribed.
+  It charges one point for 84 gameplay/terminal-effect researches and omits 33
+  prerequisite-only entries under DasBreitschwert's published rule. Existing
+  manual counts remain backward compatible, while imported saves can populate
+  the checklist from exact completed research keys without charging partial or
+  free prerequisite research.
 
 ## Suggested next order
 
