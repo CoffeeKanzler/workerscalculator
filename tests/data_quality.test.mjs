@@ -61,7 +61,7 @@ test('per-second electricity stays a utility field, not a per-worker material in
 test('stable city-building IDs expose only exact raw game facts', () => {
   const raw = new Map(rawBuildings.map(building => [building.id, building]));
   const identified = cityBuildings.filter(building => building.gameId);
-  assert.equal(identified.length, 20);
+  assert.equal(identified.length, 41);
   for (const building of identified) {
     const source = raw.get(building.gameId);
     assert.ok(source, `missing city source ${building.gameId}`);

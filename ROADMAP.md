@@ -257,8 +257,11 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   `$LIFESPAN` fact is present; vanilla/DLC models use verified category defaults. An earlier
   10%/20%/70% assumption was found to apply to container vehicles, not ships, and was never
   shipped as a ship recommendation.
-  - **Next high-value save modules:** expand the first 20 uniquely matched stable city-building
-  game IDs through careful curation, and optionally follow a live save directory. A first
+  - **Next high-value save modules:** 41 manual city-planner rows now carry stable game IDs.
+  The original 20 unique exact-name matches were expanded only where normalized localized
+  names, worker count, nominal service capacity, and one-to-one identity all agree; generic
+  housing remains excluded because its display names were previously assigned heuristically.
+  Continue careful curation of ambiguous rows, and optionally follow more live save files. A first
   schematic Republic map now plots exact saved building X/Z positions, area centers, and
   highlighted criminality-outlier residences; each outlier row can zoom directly to its
   residence and return to the full-republic view. Roads, water, and terrain remain future layers.

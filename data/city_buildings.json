@@ -27,7 +27,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "kiosk_alcohol",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Kneipe klein",
@@ -207,7 +213,13 @@
   "panels": 3.5,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_beach_restaurant",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Cafe - Der Ausblick",
@@ -237,7 +249,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_cafe_pearl",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Cafe Delikat",
@@ -267,7 +285,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "cwc/Cafe",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Cafe Zdrojowa",
@@ -951,7 +975,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 1996.296296
+  "recommendedFor": 1996.296296,
+  "gameId": "shop_clothes",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Kleines Geschäft early",
@@ -1041,7 +1071,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 190.123457
+  "recommendedFor": 190.123457,
+  "gameId": "kiosk_food",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Kiosk (Lebensmittel) early",
@@ -2379,7 +2415,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "prison",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Gefängnis early",
@@ -2979,7 +3021,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "kino",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Kino early",
@@ -4125,7 +4173,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "dlc1/concert_hall",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Palast der Republik",
@@ -4245,7 +4299,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_theatre",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Theater der Republik early",
@@ -4305,7 +4365,13 @@
   "panels": 82.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_museum_of_republic",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Museum der Republik early",
@@ -5313,7 +5379,12 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "garage_small",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file"
+  }
  },
  {
   "de": "Werkstatt groß",
@@ -5343,7 +5414,12 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "garage_big",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file"
+  }
  },
  {
   "de": "Hallenbad",
@@ -5373,7 +5449,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_swimmingpool",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Hallenbad early",
@@ -9273,7 +9355,12 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 4.5,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "sewage_treatment_small",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file"
+  }
  },
  {
   "de": "Klärwerk",
@@ -9573,7 +9660,13 @@
   "panels": 50.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "hotel_hutnik_small",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Kleines Hotel",
@@ -9603,7 +9696,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "cwc/Hotel2star",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Berg Hotel",
@@ -9633,7 +9732,13 @@
   "panels": 32.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "hotel_horsky",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Hotel 3 Sterne",
@@ -9663,7 +9768,13 @@
   "panels": 21.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "cwc/Hotel3star",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Stadthotel",
@@ -9693,7 +9804,13 @@
   "panels": 172.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "hotel_hutnik_big",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Hotel Ukraine",
@@ -9759,7 +9876,13 @@
   "panels": 27.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "cwc/Hotel4star",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Hotel  early",
