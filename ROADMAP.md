@@ -287,10 +287,11 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   commodities with very different price magnitudes readable and excludes
   non-positive observations because they have no logarithmic value.
 
-### 4.4 Mobile layout
-- **What:** Wide tables collapse to cards below ~700 px; sticky first column as
-  intermediate step.
-- **Effort:** medium (pure CSS/HTML, no logic).
+### 4.4 Mobile layout ✅ done 2026-07-18
+- **Delivered:** Simple read-only tables collapse into labelled row cards below
+  700 px, keeping each value visibly paired with its column heading. Editable and
+  structurally complex planner tables remain horizontally scrollable so their
+  controls and grouped headings retain their intended layout.
 
 ### 4.5 Per-tab URLs ✅ done
 (Hash routing is implemented - `location.hash`/`history.replaceState` in

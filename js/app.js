@@ -504,6 +504,26 @@ document.addEventListener('visibilitychange', () => {
 });
 
 // ---------------------------------------------------------------- rendering
+function decorateResponsiveTables(root) {
+  for (const table of root.querySelectorAll('table.data')) {
+    if (table.querySelector('input, select, textarea')) continue;
+    if (table.querySelector('th[colspan], th[rowspan], td[colspan], td[rowspan]')) continue;
+
+    const headers = [...table.querySelectorAll(':scope > thead > tr:last-child > th')];
+    const rows = [...table.querySelectorAll(':scope > tbody > tr')];
+    if (!headers.length || !rows.length) continue;
+    if (rows.some(row => row.querySelectorAll(':scope > td').length !== headers.length)) continue;
+
+    table.classList.add('mobile-cards');
+    const labels = headers.map(header => header.textContent.trim());
+    for (const row of rows) {
+      [...row.querySelectorAll(':scope > td')].forEach((cell, index) => {
+        cell.dataset.label = labels[index];
+      });
+    }
+  }
+}
+
 function render() {
   document.title = t('appTitle');
   const root = $('#app');
@@ -524,6 +544,7 @@ function render() {
 
   root.replaceChildren(renderHeader(), ...(IS_BETA ? [renderBetaBanner()] : []),
     ...(state.viewingSharedLink ? [renderSharedLinkBanner()] : []), renderTabs(), renderCurrentTab());
+  decorateResponsiveTables(root);
 
   if (focusPath) {
     let node = root;
