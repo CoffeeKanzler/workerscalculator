@@ -236,7 +236,7 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   compatible vehicles, or delivery throughput.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
-  catalog contains 1,843 packages with 3,307 building and 1,918 vehicle definitions as compact
+  catalog contains 1,909 packages with 3,307 building and 2,083 vehicle definitions as compact
   parsed INI facts under `data/workshop/`, never mod assets. Save seeding prioritizes exact
   Workshop identities found in owned and used-market vehicles as well as buildings.
   The browser resolves available packages automatically, imports exact mod housing,
@@ -258,11 +258,13 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   schematic Republic map now plots exact saved building X/Z positions, area centers, and
   highlighted criminality-outlier residences; roads, water, and terrain remain future layers.
 
-### 4.2 Live-follow stats.ini
-- **What:** "Watch file" button using the File System Access API (Chromium): re-read the
-  stats.ini on a timer/visibility change so prices stay current while the game runs.
-  Firefox/Safari keep manual drop.
-- **Effort:** small-medium.
+### 4.2 Live-follow stats.ini ✅ done 2026-07-18
+- **Delivered:** The Save Import page can watch a user-approved save directory through
+  Chromium's File System Access API. It re-reads only `stats.ini` every 15 seconds and
+  when the tab becomes visible, updates prices/history/republic productivity only when
+  content changes, and refreshes the active named snapshot. Invalid or partially written
+  files leave the previous good data intact and visibly retry; Stop releases the app's live
+  directory reference. Firefox/Safari retain the manual file workflow.
 
 ### 4.3 Price history polish
 - **What:** Hover tooltips with values, x-axis year/day labels, multi-resource compare,
@@ -346,6 +348,6 @@ cargo.)
 ## Suggested next order
 
 1. Vehicles, lines, schedules, and distribution-office coverage.
-2. Live-follow a selected save directory and append comparable snapshots over time.
+2. Append comparable named-snapshot changes over time beyond the live `stats.ini` history.
 3. Complete game-version datasets and remaining train capacities.
 4. Mobile card views and chart interaction polish.

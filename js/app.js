@@ -1,5 +1,6 @@
 import { STRINGS } from './i18n.js?v=58';
-import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
+import { recordToPrices } from './statsini.js?v=16';
+import { parseLiveStatsFile } from './live_stats.js?v=1';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, vehicleProductionRecipe, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=26';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
@@ -83,6 +84,8 @@ function createInitialState() {
     snapshotNotice: '', // transient feedback for named snapshot actions
     importStatus: '',    // transient save-directory parsing status
     importStatusError: false,
+    liveStatsStatus: '', // transient File System Access API watcher feedback
+    liveStatsStatusError: false,
     localWorkshopStatus: '',
     productionDetails: false,
     cityDetails: false,
@@ -141,7 +144,7 @@ function chainPlans() {
 function saveState() {
   const {
     statsRecords, viewingSharedLink, snapshotNotice, importStatus, importStatusError,
-    localWorkshopStatus, ...rest
+    localWorkshopStatus, liveStatsStatus, liveStatsStatusError, ...rest
   } = state;
   try { localStorage.setItem(LS_KEY, JSON.stringify(rest)); } catch (e) { /* quota */ }
 }
@@ -363,18 +366,12 @@ function selectInput(options, value, onchange, opts = {}) {
 }
 
 // ---------------------------------------------------------------- stats.ini loading
-function compactStatsRecords(text) {
-  return parseStatsIni(text);
-}
-
 function handleFile(file) {
   const reader = new FileReader();
   reader.onload = () => {
-    const records = compactStatsRecords(reader.result);
-    if (!records.length) {
-      alert('No $STAT_RECORD price data found in this file.');
-      return;
-    }
+    let records;
+    try { ({ records } = parseLiveStatsFile(reader.result, file)); }
+    catch (error) { return alert(error.message); }
     state.statsRecords = records;
     state.statsName = file.name;
     state.recordIndex = records.length - 1; // newest snapshot
@@ -384,6 +381,95 @@ function handleFile(file) {
   };
   reader.readAsText(file);
 }
+
+let liveStatsDirectory = null;
+let liveStatsTimer = null;
+let liveStatsRevision = null;
+let liveStatsRefreshing = false;
+
+function liveStatsSupported() {
+  return typeof window.showDirectoryPicker === 'function';
+}
+
+function stopLiveStatsFollow(showStatus = true) {
+  if (liveStatsTimer) clearInterval(liveStatsTimer);
+  liveStatsTimer = null;
+  liveStatsDirectory = null;
+  liveStatsRevision = null;
+  if (showStatus) {
+    state.liveStatsStatus = t('liveStatsStopped');
+    state.liveStatsStatusError = false;
+    update();
+  }
+}
+
+async function refreshLiveStats() {
+  if (!liveStatsDirectory || liveStatsRefreshing) return;
+  liveStatsRefreshing = true;
+  try {
+    const handle = await liveStatsDirectory.getFileHandle('stats.ini');
+    const file = await handle.getFile();
+    const parsed = parseLiveStatsFile(await file.text(), file);
+    if (parsed.revision === liveStatsRevision) return;
+
+    liveStatsRevision = parsed.revision;
+    state.statsRecords = parsed.records;
+    state.statsName = parsed.name;
+    state.recordIndex = parsed.records.length - 1;
+    state.priceSource = 'stats';
+    state.overrides = {};
+    const productivity = latestProductivity(parsed.records, state.plan.settings.productivity || 1);
+    state.plan.settings.productivity = productivity;
+    if (state.saveImport) {
+      state.saveImport.statsRecordCount = parsed.records.length;
+      state.saveImport.latestProductivity = productivity;
+      state.saveImport.liveStatsUpdatedAt = new Date().toISOString();
+    }
+    state.liveStatsStatus = t('liveStatsUpdated')
+      .replace('{count}', fmt(parsed.records.length, 0))
+      .replace('{time}', new Date().toLocaleTimeString());
+    state.liveStatsStatusError = false;
+    update();
+
+    if (state.saveSlotName) {
+      const result = await saveNamedState(state.saveSlotName);
+      if (!result.ok) {
+        state.liveStatsStatus = `${t('liveStatsSnapshotFailed')}: ${result.error.message}`;
+        state.liveStatsStatusError = true;
+        update();
+      }
+    }
+  } catch (error) {
+    state.liveStatsStatus = `${t('liveStatsReadFailed')}: ${error.message}`;
+    state.liveStatsStatusError = true;
+    update();
+  } finally {
+    liveStatsRefreshing = false;
+  }
+}
+
+async function startLiveStatsFollow() {
+  if (!liveStatsSupported()) return;
+  try {
+    const directory = await window.showDirectoryPicker({ id: 'workers-live-stats', mode: 'read' });
+    stopLiveStatsFollow(false);
+    liveStatsDirectory = directory;
+    state.liveStatsStatus = t('liveStatsWatching').replace('{name}', directory.name);
+    state.liveStatsStatusError = false;
+    update();
+    await refreshLiveStats();
+    liveStatsTimer = setInterval(refreshLiveStats, 15_000);
+  } catch (error) {
+    if (error.name === 'AbortError') return;
+    state.liveStatsStatus = `${t('liveStatsReadFailed')}: ${error.message}`;
+    state.liveStatsStatusError = true;
+    update();
+  }
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') refreshLiveStats();
+});
 
 // ---------------------------------------------------------------- rendering
 function render() {
@@ -1992,6 +2078,15 @@ function renderSaveImport() {
       onchange: event => event.target.files.length && handleSaveDirectory(event.target.files) }));
   const status = state.importStatus
     ? el('p', { class: state.importStatusError ? 'neg' : 'pos' }, state.importStatus) : null;
+  const liveStats = el('details', { class: 'secondary-section', open: !!liveStatsDirectory },
+    el('summary', {}, t('liveStatsTitle')),
+    el('p', { class: 'hint' }, t(liveStatsSupported() ? 'liveStatsHint' : 'liveStatsUnsupported')),
+    liveStatsSupported() ? el('div', { class: 'start-actions' },
+      el('button', { onclick: startLiveStatsFollow }, liveStatsDirectory
+        ? t('liveStatsChooseAnother') : t('liveStatsStart')),
+      liveStatsDirectory ? el('button', { onclick: () => stopLiveStatsFollow() }, t('liveStatsStop')) : null) : null,
+    state.liveStatsStatus ? el('p', { class: state.liveStatsStatusError ? 'neg' : 'pos' },
+      state.liveStatsStatus) : null);
   const sourceFiles = {
     namepoints: 'namepoints.bin', buildings: 'buildings_game.bin', workers: 'workers.bin',
     vehicles: 'vehicles.bin', usedVehicles: 'usedveh.bin', lines: 'lines.bin',
@@ -2064,7 +2159,7 @@ function renderSaveImport() {
           el('td', {}, item.type), el('td', { class: 'r' }, fmt(item.count, 0))))))) : null) : null;
 
   return el('section', {}, el('h2', {}, t('saveImportTitle')), el('p', { class: 'hint' }, t('saveImportHint')),
-    renderLocalWorkshopPicker(), picker, status, audit);
+    renderLocalWorkshopPicker(), picker, status, liveStats, audit);
 }
 
 // ---------------------------------------------------------------- city tab
