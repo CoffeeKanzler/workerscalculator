@@ -27,7 +27,7 @@ export function buildingPlanningAuthority(building, scopes = ['economy', 'utilit
     const source = building?.provenance?.[field] ?? 'unknown';
     (groups[source] ??= []).push(field);
   }
-  const priority = ['unavailable', 'unknown', 'sheet-category-estimate', 'sheet-scaled', 'sheet-measured'];
+  const priority = ['user-override', 'unavailable', 'unknown', 'sheet-category-estimate', 'sheet-scaled', 'sheet-measured'];
   const strongest = priority.find(source => groups[source]?.length) ?? 'game-file';
   return {
     strongest,

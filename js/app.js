@@ -1,10 +1,11 @@
-import { STRINGS } from './i18n.js?v=72';
+import { STRINGS } from './i18n.js?v=73';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=28';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
+import { applyBuildingOverrides, buildingOverrideKey, BUILDING_OVERRIDE_FIELDS } from './building_overrides.js?v=1';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
@@ -33,6 +34,7 @@ const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'c
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
   'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset',
   'chains', 'activeChain', 'tuning', 'productionScope', 'saveImport', 'republicView',
+  'buildingOverrides',
   'republicRange', 'republicResource', 'republicScope', 'tab'];
 const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex'];
 
@@ -74,6 +76,8 @@ function createInitialState() {
     calcOpts: { inputPriceMode: 'sell', includeDelivery: false },
     dataset: 'game',   // 'game' (current game files) | 'sheet' (spreadsheet snapshot)
     tuning: {},        // advanced-mode overrides for community constants
+    buildingOverrides: {}, // dataset-scoped advanced production-building overrides
+    advancedBuildingKey: null,
     lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0 },
     chains: [defaultChainPlan()],
     activeChain: 0,
@@ -242,10 +246,14 @@ async function loadWorkshopCatalogForSave(buildings, vehicles = []) {
   };
 }
 
-// Active production-building dataset ('game' from game files, 'sheet' from the spreadsheet).
-function prodBuildings() {
+function baseProdBuildings() {
   if (state.dataset === 'game') return [...(DATA.prodSets.game ?? []), ...(DATA.workshopProduction ?? [])];
   return DATA.prodSets.sheet;
+}
+
+// Active production-building dataset ('game' from game files, 'sheet' from the spreadsheet).
+function prodBuildings() {
+  return applyBuildingOverrides(baseProdBuildings(), state.buildingOverrides, state.dataset);
 }
 
 // ---------------------------------------------------------------- prices
@@ -367,11 +375,13 @@ function planningAuthorityBadge(building, scopes = ['economy', 'utilities', 'con
   const authority = buildingPlanningAuthority(building, scopes);
   if (authority.exact) return null;
   const sourceLabels = {
+    'user-override': 'authorityUserOverride',
     unavailable: 'authorityUnavailable', unknown: 'authorityUnknown',
     'sheet-category-estimate': 'authorityCategoryEstimate',
     'sheet-scaled': 'authorityScaled', 'sheet-measured': 'authorityMeasured',
   };
   const sourceClasses = {
+    'user-override': 'derived',
     unavailable: 'missing', unknown: 'missing', 'sheet-category-estimate': 'missing',
     'sheet-scaled': 'derived', 'sheet-measured': 'derived',
   };
@@ -3873,6 +3883,67 @@ const TUNABLE_GROUPS = [
 
 function renderAdvanced() {
   const overridden = Object.keys(state.tuning).length;
+  const sourceBuildings = baseProdBuildings();
+  const buildingOptions = sourceBuildings
+    .map(building => [buildingOverrideKey(state.dataset, building),
+      `${building[state.lang] || building.en || building.de} — ${building.group?.[state.lang] || building.group?.en || building.group?.de}`])
+    .sort((a, b) => a[1].localeCompare(b[1], state.lang));
+  if (!buildingOptions.some(([key]) => key === state.advancedBuildingKey)) {
+    state.advancedBuildingKey = buildingOptions[0]?.[0] ?? null;
+  }
+  const selectedBuilding = sourceBuildings.find(building =>
+    buildingOverrideKey(state.dataset, building) === state.advancedBuildingKey);
+  const selectedOverride = state.buildingOverrides[state.advancedBuildingKey] ?? {};
+  const storeBuildingOverride = next => {
+    const all = { ...state.buildingOverrides };
+    if (Object.keys(next).length) all[state.advancedBuildingKey] = next;
+    else delete all[state.advancedBuildingKey];
+    state.buildingOverrides = all;
+    update();
+  };
+  const setScalarOverride = (field, raw) => {
+    const value = parseFloat(raw);
+    const next = { ...selectedOverride };
+    if (!Number.isFinite(value) || value < 0 || value === selectedBuilding[field]) delete next[field];
+    else next[field] = value;
+    storeBuildingOverride(next);
+  };
+  const setRateOverride = (kind, item, raw) => {
+    const value = parseFloat(raw);
+    const rateKey = item.en || item.de;
+    const rates = { ...(selectedOverride[kind] ?? {}) };
+    if (!Number.isFinite(value) || value < 0 || value === item.rate) delete rates[rateKey];
+    else rates[rateKey] = value;
+    const next = { ...selectedOverride };
+    if (Object.keys(rates).length) next[kind] = rates;
+    else delete next[kind];
+    storeBuildingOverride(next);
+  };
+  const overrideInput = (value, changed, onchange) => el('input', {
+    type: 'number', min: 0, step: 'any', class: `num price${changed ? ' overridden' : ''}`,
+    value, onchange: event => onchange(event.target.value),
+  });
+  const resourceField = {
+    gravel: 'gravel', bricks: 'bricks', steel: 'steel', concrete: 'concrete', asphalt: 'asphalt',
+    boards: 'boards', panels: 'prefabpanels', ecomponents: 'ecomponents', mcomponents: 'mcomponents',
+  };
+  const scalarLabel = field => ({
+    workers: t('advBuildingWorkers'), power: t('advBuildingPower'), maxKW: t('maxWatt'),
+    water: t('waterUse'), hotwater: t('hotwater'), wastePerWorker: t('advBuildingWaste'),
+    workdays: t('advBuildingWorkdays'),
+  })[field] ?? DATA.resources.find(resource => resource.key === resourceField[field])?.[state.lang] ?? field;
+  const scalarRows = fields => fields.map(field => el('tr', {},
+    el('td', {}, scalarLabel(field)),
+    el('td', { class: 'r' }, overrideInput(selectedOverride[field] ?? selectedBuilding?.[field] ?? 0,
+      selectedOverride[field] !== undefined, value => setScalarOverride(field, value)))));
+  const rateRows = kind => (selectedBuilding?.[kind] ?? []).map(item => {
+    const key = item.en || item.de;
+    return el('tr', {}, el('td', {}, kind === 'production' ? t('advOutput') : t('advInput')),
+      el('td', {}, item[state.lang] || item.en || item.de),
+      el('td', { class: 'r' }, overrideInput(selectedOverride[kind]?.[key] ?? item.rate,
+        selectedOverride[kind]?.[key] !== undefined, value => setRateOverride(kind, item, value))));
+  });
+  const buildingOverrideCount = Object.keys(state.buildingOverrides).length;
   return el('section', {},
     el('p', { class: 'hint' }, t('advHint')),
     ...TUNABLE_GROUPS.map(g => el('div', { class: 'totalsbox advgroup' },
@@ -3891,7 +3962,26 @@ function renderAdvanced() {
         }))))),
     overridden ? el('button', { class: 'danger', onclick: () => { state.tuning = {}; update(); } },
       `${t('reset')} (${overridden})`) : null,
-    el('p', { class: 'hint' }, t('advShareHint')));
+    el('p', { class: 'hint' }, t('advShareHint')),
+    el('div', { class: 'totalsbox advanced-building' },
+      el('h3', {}, t('advBuildingOverrides')),
+      el('p', { class: 'hint' }, t('advBuildingHint')),
+      el('div', { class: 'settingsbar' },
+        el('label', {}, t('dataset') + ' ', el('strong', {}, state.dataset === 'game' ? t('datasetGame') : t('datasetSheet'))),
+        el('label', {}, t('advBuilding') + ' ', selectInput(buildingOptions, state.advancedBuildingKey,
+          value => { state.advancedBuildingKey = value; })),
+        Object.keys(selectedOverride).length ? el('button', { class: 'danger', onclick: () => storeBuildingOverride({}) },
+          t('advResetBuilding')) : null,
+        buildingOverrideCount ? el('button', { class: 'danger', onclick: () => { state.buildingOverrides = {}; update(); } },
+          `${t('advResetAllBuildings')} (${buildingOverrideCount})`) : null),
+      selectedBuilding ? el('div', { class: 'advanced-building-grid' },
+        el('table', { class: 'data' }, el('thead', {}, el('tr', {}, el('th', {}, t('advOperations')), el('th', {}, t('advValue')))),
+          el('tbody', {}, ...scalarRows(BUILDING_OVERRIDE_FIELDS.slice(0, 6)))),
+        el('table', { class: 'data' }, el('thead', {}, el('tr', {}, el('th', {}, t('advDirection')),
+          el('th', {}, t('advResource')), el('th', {}, t('advRate')))),
+          el('tbody', {}, ...rateRows('production'), ...rateRows('consumption'))),
+        el('table', { class: 'data' }, el('thead', {}, el('tr', {}, el('th', {}, t('advConstruction')), el('th', {}, t('advValue')))),
+          el('tbody', {}, ...scalarRows(BUILDING_OVERRIDE_FIELDS.slice(6))))) : null));
 }
 
 // ---------------------------------------------------------------- help tab

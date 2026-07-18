@@ -348,11 +348,15 @@ cargo.)
   `RESOURCE_CAPACITY` and transport type rather than stale sheet columns.
 - **Effort:** medium.
 
-### 5.4 Full advanced mode (edit all data)
+### 5.4 Full advanced mode (edit all data) 🟡 partially done 2026-07-18
+- **Delivered:** Advanced mode can override each game, spreadsheet, or loaded
+  Workshop production building's workers, input/output rates, utility use, waste,
+  construction workdays, and material bill. Overrides are dataset-scoped, feed
+  both production and chain calculations, retain user-override provenance, and
+  travel with saved/exported/shared plans.
 - **What:** Extend the Advanced tab (community constants are editable since
-  2026-07-16, session-scoped + in share links) to building data: override
-  production rates, workers, extras per building; a "custom building" row;
-  possibly user-defined formulas for profit metrics.
+  2026-07-16, session-scoped + in share links) with a "custom building" row and,
+  potentially, user-defined formulas for profit metrics.
 - **Effort:** medium-large. Data overrides are straightforward (same pattern as
   `state.tuning`); formula editing needs a safe expression evaluator.
 

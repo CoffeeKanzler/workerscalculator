@@ -36,6 +36,12 @@ test('planning authority reports only calculator inputs and preserves source sev
   assert.deepEqual(utilities.groups['sheet-scaled'], ['maxKW']);
   assert.deepEqual(utilities.groups['sheet-measured'], ['water']);
   assert.deepEqual(utilities.groups.unavailable, ['wastePerWorker']);
+
+  const tuned = buildingPlanningAuthority({ provenance: {
+    workers: 'user-override', production: 'game-file', consumption: 'game-file',
+  } }, ['economy']);
+  assert.equal(tuned.exact, false);
+  assert.equal(tuned.strongest, 'user-override');
 });
 
 test('price lookup: sell/buy by German and English name and key', () => {
