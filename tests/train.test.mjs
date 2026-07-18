@@ -10,12 +10,14 @@ const rail = JSON.parse(readFileSync(new URL('../data/game/rail_vehicles.json', 
 const merged = mergeVehiclePools(sheetVehicles, rail);
 const byName = new Map(merged.map(v => [v.name, v]));
 
-test('matching game vehicle facts override stale sheet dimensions and performance', () => {
+test('matching game vehicle facts override stale sheet dimensions, performance, and production bill', () => {
   const [vehicle] = mergeVehiclePools([{
     name: 'AN-2', attrs: { Typ: 'Flugzeug', 'Länge': 12, Leergewicht: 3, Motorleistung: 900, Stahl: 4 },
   }], [], [{
     id: 'plane_an2', de: 'AN-2', length: 12.29, emptyWeight: 3.4,
     powerKW: 1000, speed: 258, from: 1947, to: 2001,
+    type: 'VEHICLETYPE_AIRPLANE', capacity: 12,
+    transportType: 'RESOURCE_TRANSPORT_PASSANGER', electric: false,
   }]);
   assert.equal(vehicle.attrs['Länge'], 12.29);
   assert.equal(vehicle.attrs.Leergewicht, 3.4);
@@ -23,7 +25,24 @@ test('matching game vehicle facts override stale sheet dimensions and performanc
   assert.equal(vehicle.attrs['Max. Geschwindigkeit'], 258);
   assert.equal(vehicle.attrs.Stahl, 4);
   assert.equal(vehicle.sourceGameId, 'plane_an2');
+  assert.deepEqual(vehicle.gameRecipe.slice(0, 3), [
+    ['workers', 595], ['steel', 0.17000000178813934], ['aluminium', 2.5500001907348633],
+  ]);
   assert.equal(vehicle.provenance.performance, 'game-file');
+  assert.equal(vehicle.provenance.productionCost, 'game-file');
+});
+
+test('ambiguous raw names retain the labeled spreadsheet production fallback', () => {
+  const [vehicle] = mergeVehiclePools([
+    { name: 'Duplicate', attrs: { Typ: 'Bus', Arbeitstage: 100, Stahl: 2 } },
+  ], [], [
+    { id: 'a', de: 'Duplicate', type: 'VEHICLETYPE_ROAD', emptyWeight: 2, powerKW: 50,
+      from: 1960, capacity: 20, transportType: 'RESOURCE_TRANSPORT_PASSANGER', roadRecipeBranch: 'ordinary' },
+    { id: 'b', en: 'Duplicate', type: 'VEHICLETYPE_ROAD', emptyWeight: 3, powerKW: 60,
+      from: 1960, capacity: 30, transportType: 'RESOURCE_TRANSPORT_PASSANGER', roadRecipeBranch: 'ordinary' },
+  ]);
+  assert.equal(vehicle.gameRecipe, undefined);
+  assert.equal(vehicle.sourceGameId, undefined);
   assert.equal(vehicle.provenance.productionCost, 'spreadsheet');
 });
 

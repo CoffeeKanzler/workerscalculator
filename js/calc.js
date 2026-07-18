@@ -182,6 +182,23 @@ function orderedVehicleComponents(attrs) {
   ].filter(([, amount]) => amount > 0);
 }
 
+export function vehicleProductionRecipe(vehicle) {
+  return Array.isArray(vehicle?.gameRecipe)
+    ? vehicle.gameRecipe
+    : orderedVehicleComponents(vehicle?.attrs ?? {});
+}
+
+function summarizeVehicleRecipe(recipe) {
+  let workdays = 0;
+  const materials = new Map();
+  for (const [resource, amount] of recipe) {
+    if (!Number.isFinite(amount) || !(amount > 0)) continue;
+    if (resource === 'workers') workdays += amount;
+    else materials.set(resource, (materials.get(resource) ?? 0) + amount);
+  }
+  return { workdays, materials: [...materials] };
+}
+
 // The executable settles exports from the production-component bill. Its
 // origin adjustment is inside the loop, so component order is significant.
 export function vehicleSaleValue(vehicle, currency, eco) {
@@ -190,7 +207,7 @@ export function vehicleSaleValue(vehicle, currency, eco) {
   const crossMarketFactor = currency === 'USD'
     ? (western ? 1 : 0.65)
     : (western ? 1.27 : 1);
-  const components = orderedVehicleComponents(attrs);
+  const components = vehicleProductionRecipe(vehicle);
 
   let value = 0;
   for (const [key, amount] of components) {
@@ -206,29 +223,30 @@ export function vehicleSaleValue(vehicle, currency, eco) {
 // Fahrzeugproduktion sheet: material expense per vehicle, then scale output by
 // assigned workers, productivity, required workdays, and the selected period.
 export function evaluateVehicleProduction(vehicle, settings, eco) {
-  const attrs = vehicle?.attrs ?? {};
   const days = settings.timeUnit === 'year' ? 365 : settings.timeUnit === 'month' ? 30 : 1;
-  const workdays = attrs.Arbeitstage ?? 0;
+  const recipe = vehicleProductionRecipe(vehicle);
+  const { workdays, materials } = summarizeVehicleRecipe(recipe);
   const workers = settings.workers ?? 0;
   const productivity = settings.productivity ?? 1;
-  const materialCostPerUnit = VEHICLE_PRODUCTION_MATERIALS.reduce((sum, material) =>
-    sum + (attrs[material] ?? 0) * eco.inputPrice(material, settings.currency), 0);
+  const materialCostPerUnit = materials.reduce((sum, [resource, amount]) =>
+    sum + amount * eco.inputPrice(resource, settings.currency), 0);
   const units = workdays > 0 ? workers * productivity * days / workdays : 0;
   const salePrice = settings.salePrice ?? vehicleSaleValue(vehicle, settings.currency, eco);
   const income = units * salePrice;
   const expenses = units * materialCostPerUnit;
   const profit = income - expenses;
   return {
-    salePrice, materialCostPerUnit, units, income, expenses, profit,
+    salePrice, materialCostPerUnit, units, income, expenses, profit, workdays, materials,
+    recipeSource: Array.isArray(vehicle?.gameRecipe) ? 'game-file' : 'spreadsheet',
     profitPerWorker: workers > 0 ? profit / workers : 0,
   };
 }
 
 export function recommendVehicleProduction(vehicles, settings, eco, limit = 5) {
   return vehicles
-    .filter(vehicle => (vehicle?.attrs?.Arbeitstage ?? 0) > 0)
     .map((vehicle, index) => ({ vehicle, index, result: evaluateVehicleProduction(vehicle, settings, eco) }))
-    .filter(row => Number.isFinite(row.result.profitPerWorker) && row.result.profit > 0)
+    .filter(row => row.result.workdays > 0
+      && Number.isFinite(row.result.profitPerWorker) && row.result.profit > 0)
     .sort((a, b) => b.result.profitPerWorker - a.result.profitPerWorker)
     .slice(0, limit);
 }

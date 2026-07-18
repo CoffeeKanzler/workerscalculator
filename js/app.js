@@ -1,12 +1,12 @@
-import { STRINGS } from './i18n.js?v=52';
+import { STRINGS } from './i18n.js?v=53';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, vehicleProductionRecipe, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=26';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
-} from './train.js?v=15';
+} from './train.js?v=16';
 import { createIndexedDbSnapshotStore, migrateLegacySnapshots } from './storage.js?v=1';
 import {
   aggregateCitizensByScope, compactObservedBuildings, groupObservedProduction,
@@ -1148,9 +1148,11 @@ function renderVehicleProduction() {
   const plan = state.vehicleProduction ??= { productivity: 1, timeUnit: 'year', rows: [] };
   plan.recommendationGroup ??= 'road';
   const eco = economy();
-  const available = DATA.sheetVehicles
+  const recipeWorkdays = vehicle => vehicleProductionRecipe(vehicle)
+    .reduce((sum, [resource, amount]) => resource === 'workers' ? sum + amount : sum, 0);
+  const available = DATA.vehicles
     .map((vehicle, index) => ({ vehicle, index }))
-    .filter(({ vehicle }) => (vehicle.attrs.Arbeitstage ?? 0) > 0);
+    .filter(({ vehicle }) => recipeWorkdays(vehicle) > 0);
   const types = [...new Set(available.map(({ vehicle }) => vehicle.attrs.Typ))]
     .sort((a, b) => a.localeCompare(b));
   if (!plan.rows.length && available.length) {
@@ -1161,7 +1163,7 @@ function renderVehicleProduction() {
   const vehicleLabel = vehicle => {
     const attrs = vehicle.attrs;
     const era = `${attrs.Von ?? '?'}–${typeof attrs.Bis === 'number' ? attrs.Bis : '∞'}`;
-    return `${vehicle.name} — ${era} · ${fmt(attrs.Arbeitstage, 0)} ${t('workdaysShort')}`;
+    return `${vehicle.name} — ${era} · ${fmt(recipeWorkdays(vehicle), 0)} ${t('workdaysShort')}`;
   };
   const settings = el('div', { class: 'settingsbar' },
     el('label', {}, t('productivity') + ' ', pctInput(plan.productivity, v => plan.productivity = v)),
@@ -1219,10 +1221,13 @@ function renderVehicleProduction() {
         currency: state.currency,
       }, eco);
       results.push({ row, result });
-      const materialLine = vehicle
-        ? VEHICLE_PRODUCTION_MATERIALS.filter(name => (vehicle.attrs[name] ?? 0) > 0)
-          .map(name => `${name}: ${fmt(vehicle.attrs[name], 2)} t`).join(' · ')
-        : '';
+      const materialLine = result.materials.map(([key, amount]) => {
+        const resource = DATA.resources.find(item => item.key === key);
+        return `${resource ? rname(resource) : key}: ${fmt(amount, 2)} t`;
+      }).join(' · ');
+      const recipeBadge = vehicle ? el('span', {
+        class: `evidence-badge ${result.recipeSource === 'game-file' ? 'exact' : 'derived'}`,
+      }, result.recipeSource === 'game-file' ? t('exactVehicleRecipe') : t('spreadsheetFallback')) : null;
       return el('tr', {},
         el('td', {}, selectInput(types.map(type => [type, type]), row.type, v => {
           row.type = v;
@@ -1231,10 +1236,10 @@ function renderVehicleProduction() {
         el('td', {}, selectInput(
           inType.map(({ vehicle: item, index }) => [String(index), vehicleLabel(item)]),
           String(selected?.index ?? ''), v => { row.vehicleIndex = Number(v); }),
-          materialLine ? el('div', { class: 'subline' }, materialLine) : null),
+          (materialLine || recipeBadge) ? el('div', { class: 'subline' }, materialLine, recipeBadge) : null),
         el('td', {}, numInput(row.workers, v => row.workers = v, { min: 0, step: 10 })),
         el('td', { class: 'r' }, fmt(result.salePrice, 0)),
-        el('td', { class: 'r' }, vehicle ? fmt(vehicle.attrs.Arbeitstage, 0) : '—'),
+        el('td', { class: 'r' }, vehicle ? fmt(result.workdays, 0) : '—'),
         el('td', { class: 'r' }, fmt(result.units, 2)),
         el('td', { class: 'r' }, fmt(result.materialCostPerUnit, 0)),
         el('td', { class: 'r' }, fmt(result.income, 0)),

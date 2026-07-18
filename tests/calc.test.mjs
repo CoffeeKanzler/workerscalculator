@@ -274,8 +274,8 @@ test('vehicle production follows sheet material and workday throughput formula',
     },
   };
   const prices = {
-    Stahl: 2, Aluminium: 3, Kunststoffe: 4, Stoff: 5,
-    'Mechanik-Bauteile': 6, 'Elektronik-Bauteile': 7, Elektronik: 8,
+    steel: 2, aluminium: 3, plastics: 4, fabric: 5,
+    mcomponents: 6, ecomponents: 7, eletronics: 8,
   };
   const fakeEco = { inputPrice: name => prices[name] ?? 0 };
   const result = evaluateVehicleProduction(vehicle, {
@@ -288,6 +288,32 @@ test('vehicle production follows sheet material and workday throughput formula',
   assert.equal(result.expenses, 5431.2);
   assert.equal(result.profit, 9168.8);
   assert.ok(Math.abs(result.profitPerWorker - 91.688) < 1e-9);
+  assert.equal(result.recipeSource, 'spreadsheet');
+});
+
+test('vehicle production uses the exact ordered game recipe when available', () => {
+  const vehicle = {
+    attrs: { Typ: 'Bus', Bauland: 'Sowjetunion', Arbeitstage: 9999, Stahl: 9999 },
+    gameRecipe: [
+      ['workers', 100], ['steel', 2], ['boards', 3],
+      ['workers', 50], ['mcomponents', 4],
+    ],
+    provenance: { productionCost: 'game-file' },
+  };
+  const fakeEco = {
+    inputPrice: key => ({ steel: 10, boards: 20, mcomponents: 30 })[key] ?? 0,
+    workday: () => 10,
+    sell: key => ({ steel: 10, boards: 20, mcomponents: 30 })[key] ?? 0,
+  };
+  const result = evaluateVehicleProduction(vehicle, {
+    workers: 150, productivity: 1, timeUnit: 'day', currency: 'RUB',
+  }, fakeEco);
+  assert.equal(result.workdays, 150);
+  assert.equal(result.units, 1);
+  assert.equal(result.materialCostPerUnit, 200);
+  assert.deepEqual(result.materials, [['steel', 2], ['boards', 3], ['mcomponents', 4]]);
+  assert.equal(result.recipeSource, 'game-file');
+  assert.equal(result.salePrice, 150 * 10 * 0.45 + 2 * 10 + 3 * 20 + 4 * 30);
 });
 
 test('vehicle sale value uses save prices and game export adjustments', () => {
@@ -336,6 +362,19 @@ test('cross-market formula restores separate body and engine component order', (
     expected = (expected + amount) * 1.27;
   }
   assert.ok(Math.abs(vehicleSaleValue(vehicle, 'RUB', fakeEco) - expected * 2) < 1e-9);
+});
+
+test('exact recipe sale value preserves saved component order', () => {
+  const vehicle = {
+    attrs: { Typ: 'Bus', Bauland: 'West Germany' },
+    gameRecipe: [['workers', 10], ['steel', 2], ['workers', 5], ['boards', 3]],
+  };
+  const fakeEco = { workday: () => 10, sell: () => 20 };
+  let expected = 0;
+  for (const amount of [10 * 10 * 0.45, 2 * 20, 5 * 10 * 0.45, 3 * 20]) {
+    expected = (expected + amount) * 1.27;
+  }
+  assert.ok(Math.abs(vehicleSaleValue(vehicle, 'RUB', fakeEco) - expected) < 1e-9);
 });
 
 function splitByRatio(total, first, second) {

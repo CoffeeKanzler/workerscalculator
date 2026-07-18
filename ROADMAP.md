@@ -276,10 +276,11 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
 ## Phase 5 – Feature completeness vs. the sheet
 
 ### 5.1 Vehicle production tab ✅ done 2026-07-16
-(Implemented from the original sheet: exact vehicle selection, material cost,
-workday throughput, period totals, and profit per worker. Vehicle export values
-are now reconstructed from the executable's ordered component formula and the
-selected save's live RUB/USD resource prices.)
+(Implemented: uniquely matched vehicles now use the executable-derived ordered
+production recipe for workdays, every material, sale value, throughput, and
+profit. This includes horse recipes with boards or plants. Unmatched or ambiguous
+models retain a visibly labelled spreadsheet fallback. Values use the selected
+save's live RUB/USD resource prices.)
 - **What:** Port the sheet's `Fahrzeugproduktion`: pick producible vehicles, material cost
   (steel, plastics, fabric, m/e-components, electronics) vs. sale value, profit per year.
   Data already in `data/vehicles.json` (Arbeitstage, material columns).
@@ -290,6 +291,8 @@ selected save's live RUB/USD resource prices.)
   excluding `$STAT_CITY` histories.
 - Vehicle sale values use current save prices, recovered component order, native
   east/west currency behavior, cross-market multipliers, and aircraft doubling.
+- Production rows and recommendations use exact game recipes for 543 uniquely
+  matched models; 297 remaining sheet models are explicitly labelled fallbacks.
 - Recommendations rank profit per worker within road vehicles, trains, boats, or
   aircraft and can be added directly to the production plan.
 - **Next:** map blueprint purchase cost and owned `$BLUEPRINT_OWNED` entries so the

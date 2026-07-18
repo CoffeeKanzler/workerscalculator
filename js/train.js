@@ -1,3 +1,7 @@
+import {
+  normalVehicleProductionRecipe, resourceTransportSubtype, vehicleRuntimeCategory,
+} from './fleet.js?v=7';
+
 export const isLocomotive = vehicle =>
   ['Lokomotive', 'Triebwagen'].includes(vehicle?.attrs?.Typ);
 
@@ -14,9 +18,13 @@ export function mergeVehiclePools(sheetVehicles, railSupplement, rawGameVehicles
     provenance: { productionCost: 'spreadsheet', cargoCapacities: 'spreadsheet' },
   }));
   const rawByName = new Map();
-  for (const vehicle of rawGameVehicles) {
-    for (const name of [vehicle.de, vehicle.en]) {
-      if (name) rawByName.set(name.toLowerCase(), vehicle);
+  for (const raw of rawGameVehicles) {
+    for (const name of [raw.de, raw.en]) {
+      if (!name) continue;
+      const key = name.toLowerCase();
+      const matches = rawByName.get(key) ?? [];
+      if (!matches.includes(raw)) matches.push(raw);
+      rawByName.set(key, matches);
     }
   }
   const fields = {
@@ -24,12 +32,28 @@ export function mergeVehiclePools(sheetVehicles, railSupplement, rawGameVehicles
     speed: 'Max. Geschwindigkeit', from: 'Von', to: 'Bis',
   };
   for (const vehicle of merged) {
-    const raw = rawByName.get(vehicle.name.toLowerCase());
-    if (!raw) continue;
+    const matches = rawByName.get(vehicle.name.toLowerCase()) ?? [];
+    if (matches.length !== 1) continue;
+    const [raw] = matches;
     for (const [source, target] of Object.entries(fields)) {
       if (Number.isFinite(raw[source])) vehicle.attrs[target] = raw[source];
     }
+    const recipe = normalVehicleProductionRecipe({
+      runtimeCategory: vehicleRuntimeCategory(raw.type),
+      emptyWeight: raw.emptyWeight,
+      powerKW: raw.powerKW ?? 0,
+      introductionYear: raw.from ?? 0,
+      transportSubtype: resourceTransportSubtype(raw.transportType) ?? 0,
+      capacity: raw.capacity ?? 0,
+      electric: raw.electric,
+      roadRecipeBranch: raw.roadRecipeBranch,
+      singleHorsePower: raw.singleHorsePower,
+    });
     vehicle.sourceGameId = raw.id;
+    if (recipe) {
+      vehicle.gameRecipe = recipe;
+      vehicle.provenance.productionCost = 'game-file';
+    }
     vehicle.provenance.dimensions = 'game-file';
     vehicle.provenance.performance = 'game-file';
     vehicle.provenance.availability = 'game-file';
