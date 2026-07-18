@@ -820,45 +820,76 @@ function renderHistory() {
   // values live on incomparable scales, so mixing all four on one shared
   // axis produced a meaningless min/max and a mislabeled (single-currency)
   // axis.
-  const series = state.currency === 'USD'
+  const definitions = state.currency === 'USD'
     ? [['sellUSD', '#27ae60'], ['purchaseUSD', '#2980b9']]
     : [['sellRUB', '#c0392b'], ['purchaseRUB', '#e67e22']];
   const recs = state.statsRecords;
-  const W = 460, H = 220, P = 30;
-  const all = [];
-  for (const [tab] of series) for (const rec of recs) {
-    const v = rec[tab]?.[r.key]; if (v !== undefined) all.push(v);
-  }
+  const labelFor = tab => t(tab === 'sellRUB' ? 'sellRUB'
+    : tab === 'purchaseRUB' ? 'buyRUB' : tab === 'sellUSD' ? 'sellUSD' : 'buyUSD');
+  const series = definitions.map(([tab, color]) => ({
+    tab, color, label: labelFor(tab),
+    points: seriesFromRecords(recs, record => record[tab]?.[r.key]),
+  })).filter(item => item.points.length);
+  const all = series.flatMap(item => item.points);
   if (!all.length) { box.append(el('p', {}, '—')); return box; }
-  const min = Math.min(...all, 0), max = Math.max(...all);
-  const x = i => P + (W - 2 * P) * (recs.length === 1 ? 0 : i / (recs.length - 1));
+  const W = 460, H = 220, P = 34;
+  const min = Math.min(0, ...all.map(point => point.y));
+  const max = Math.max(...all.map(point => point.y));
+  const minX = Math.min(...all.map(point => point.x));
+  const maxX = Math.max(...all.map(point => point.x));
+  const x = value => P + (W - 2 * P) * ((value - minX) / ((maxX - minX) || 1));
   const y = v => H - P - (H - 2 * P) * ((v - min) / ((max - min) || 1));
   const svgNS = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(svgNS, 'svg');
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   svg.setAttribute('class', 'chart');
-  for (const [tab, color] of series) {
-    const pts = recs.map((rec, i) => `${x(i)},${y(rec[tab]?.[r.key] ?? 0)}`).join(' ');
+  svg.setAttribute('role', 'img');
+  svg.setAttribute('aria-label', `${t('history')}: ${rname(r)}`);
+  for (const item of series) {
+    const sampled = downsampleMinMax(item.points, 160);
     const pl = document.createElementNS(svgNS, 'polyline');
-    pl.setAttribute('points', pts);
+    pl.setAttribute('points', sampled.map(point => `${x(point.x)},${y(point.y)}`).join(' '));
     pl.setAttribute('fill', 'none');
-    pl.setAttribute('stroke', color);
+    pl.setAttribute('stroke', item.color);
     pl.setAttribute('stroke-width', '1.6');
+    pl.setAttribute('vector-effect', 'non-scaling-stroke');
     svg.append(pl);
+    appendChartPointMarkers(svg, item, sampled, x, y, svgNS, ` ${cur()}`);
   }
-  const axis = document.createElementNS(svgNS, 'text');
-  axis.setAttribute('x', 4); axis.setAttribute('y', 12); axis.setAttribute('class', 'axislabel');
-  axis.textContent = `${fmt(max)} ${cur()}`;
-  const axis2 = document.createElementNS(svgNS, 'text');
-  axis2.setAttribute('x', 4); axis2.setAttribute('y', H - 4); axis2.setAttribute('class', 'axislabel');
-  axis2.textContent = fmt(min);
-  svg.append(axis, axis2);
+  appendChartAxisLabel(svg, `${fmt(max)} ${cur()}`, 3, 12, svgNS);
+  appendChartAxisLabel(svg, fmt(min), 3, H - 4, svgNS);
+  appendChartAxisLabel(svg, all.reduce((a, b) => a.x <= b.x ? a : b).label, P, H - 5, svgNS);
+  appendChartAxisLabel(svg, all.reduce((a, b) => a.x >= b.x ? a : b).label,
+    W - P, H - 5, svgNS, 'end');
   box.append(svg,
-    el('div', { class: 'legend' }, ...series.map(([tab, color]) =>
-      el('span', {}, el('i', { style: `background:${color}` }), t(
-        tab === 'sellRUB' ? 'sellRUB' : tab === 'purchaseRUB' ? 'buyRUB' : tab === 'sellUSD' ? 'sellUSD' : 'buyUSD')))),
-    el('p', { class: 'hint' }, `${recs[0].year ?? '?'} → ${recs[recs.length - 1].year ?? '?'}`));
+    el('div', { class: 'legend' }, ...series.map(item =>
+      el('span', {}, el('i', { style: `background:${item.color}` }), item.label))));
   return box;
+}
+
+function appendChartAxisLabel(svg, value, x, y, ns, anchor = null) {
+  const node = document.createElementNS(ns, 'text');
+  node.setAttribute('x', x);
+  node.setAttribute('y', y);
+  node.setAttribute('class', 'axislabel');
+  if (anchor) node.setAttribute('text-anchor', anchor);
+  node.textContent = value;
+  svg.append(node);
+}
+
+function appendChartPointMarkers(svg, item, points, x, y, ns, suffix = '') {
+  for (const point of points) {
+    const marker = document.createElementNS(ns, 'circle');
+    marker.setAttribute('class', 'chart-point');
+    marker.setAttribute('cx', x(point.x));
+    marker.setAttribute('cy', y(point.y));
+    marker.setAttribute('r', 2.6);
+    marker.setAttribute('fill', item.color);
+    const tooltip = document.createElementNS(ns, 'title');
+    tooltip.textContent = `${item.label}: ${point.label} = ${fmt(point.y, 2)}${suffix}`;
+    marker.append(tooltip);
+    svg.append(marker);
+  }
 }
 
 // ---------------------------------------------------------------- production tab
@@ -2486,13 +2517,15 @@ function renderRepublicLineChart(title, series, evidence = 'stats.ini') {
   const maxX = Math.max(...points.map(point => point.x));
   const minY = Math.min(0, ...points.map(point => point.y));
   const maxY = Math.max(...points.map(point => point.y));
-  const W = 640, H = 180, P = 26;
+  const W = 640, H = 190, P = 32;
   const x = value => P + (W - 2 * P) * ((value - minX) / ((maxX - minX) || 1));
   const y = value => H - P - (H - 2 * P) * ((value - minY) / ((maxY - minY) || 1));
   const ns = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(ns, 'svg');
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   svg.setAttribute('class', 'chart');
+  svg.setAttribute('role', 'img');
+  svg.setAttribute('aria-label', title);
   for (const item of nonEmpty) {
     const sampled = downsampleMinMax(item.points, 160);
     const polyline = document.createElementNS(ns, 'polyline');
@@ -2501,18 +2534,15 @@ function renderRepublicLineChart(title, series, evidence = 'stats.ini') {
     polyline.setAttribute('stroke', item.color);
     polyline.setAttribute('stroke-width', '1.8');
     polyline.setAttribute('vector-effect', 'non-scaling-stroke');
-    const tooltip = document.createElementNS(ns, 'title');
-    tooltip.textContent = `${item.label}: ${sampled.at(-1)?.label ?? ''} = ${fmt(sampled.at(-1)?.y ?? 0, 2)}`;
-    polyline.append(tooltip);
     svg.append(polyline);
+    appendChartPointMarkers(svg, item, sampled, x, y, ns);
   }
-  const label = (value, xPos, yPos) => {
-    const node = document.createElementNS(ns, 'text');
-    node.setAttribute('x', xPos); node.setAttribute('y', yPos); node.setAttribute('class', 'axislabel');
-    node.textContent = value; svg.append(node);
-  };
-  label(fmt(maxY, 2), 3, 12);
-  label(fmt(minY, 2), 3, H - 4);
+  const first = points.reduce((a, b) => a.x <= b.x ? a : b);
+  const last = points.reduce((a, b) => a.x >= b.x ? a : b);
+  appendChartAxisLabel(svg, fmt(maxY, 2), 3, 12, ns);
+  appendChartAxisLabel(svg, fmt(minY, 2), 3, H - P + 3, ns);
+  appendChartAxisLabel(svg, first.label, P, H - 5, ns);
+  appendChartAxisLabel(svg, last.label, W - P, H - 5, ns, 'end');
   box.append(svg, el('div', { class: 'legend' }, ...nonEmpty.map(item =>
     el('span', {}, el('i', { style: `background:${item.color}` }), item.label))));
   return box;

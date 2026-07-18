@@ -192,6 +192,8 @@ button.danger:hover { border-color: var(--neg); }
 .history h3 { margin: 0 0 6px; color: var(--accent2); }
 .chart { width: 100%; height: auto; background: var(--panel2); border-radius: 6px; }
 .chart .axislabel { fill: var(--muted); font-size: 10px; }
+.chart .chart-point { opacity: .25; stroke: var(--panel2); stroke-width: 1.2; cursor: crosshair; vector-effect: non-scaling-stroke; }
+.chart .chart-point:hover { opacity: 1; stroke: currentColor; stroke-width: 2; }
 .legend { display: flex; gap: 14px; margin-top: 6px; flex-wrap: wrap; }
 .legend i { display: inline-block; width: 12px; height: 3px; margin-right: 4px; vertical-align: middle; }
 

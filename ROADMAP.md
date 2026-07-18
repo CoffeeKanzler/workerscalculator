@@ -277,10 +277,13 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   files leave the previous good data intact and visibly retry; Stop releases the app's live
   directory reference. Firefox/Safari retain the manual file workflow.
 
-### 4.3 Price history polish
-- **What:** Hover tooltips with values, x-axis year/day labels, multi-resource compare,
-  optional log scale (nuclear fuel dwarfs everything).
-- **Effort:** small-medium.
+### 4.3 Price and Republic history polish 🧪 partial 2026-07-18
+- **Delivered:** Both price and Republic history charts show exact first/last game
+  year/day labels and sampled point-value hover tooltips. Missing price observations
+  are omitted instead of becoming false zeroes, while min/max-preserving sampling
+  bounds each rendered series to 160 points for the supplied 3,002-record history.
+- **Remaining:** Multi-resource comparison and an optional log scale (nuclear fuel
+  dwarfs most resources).
 
 ### 4.4 Mobile layout
 - **What:** Wide tables collapse to cards below ~700 px; sticky first column as
