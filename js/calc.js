@@ -11,6 +11,32 @@ export {
   SERVICES, CABLES, NON_DELIVERABLE,
 };
 
+const PLANNING_AUTHORITY_FIELDS = {
+  economy: ['workers', 'production', 'consumption'],
+  utilities: ['power', 'maxKW', 'water', 'wastePerWorker'],
+  construction: ['workdays', 'gravel', 'bricks', 'steel', 'concrete', 'asphalt',
+    'boards', 'panels', 'ecomponents', 'mcomponents'],
+};
+
+// Summarize only the fields consumed by the calculators. This keeps the UI
+// warning tied to numbers that can actually affect the displayed result.
+export function buildingPlanningAuthority(building, scopes = ['economy', 'utilities', 'construction']) {
+  const fields = [...new Set(scopes.flatMap(scope => PLANNING_AUTHORITY_FIELDS[scope] ?? []))];
+  const groups = {};
+  for (const field of fields) {
+    const source = building?.provenance?.[field] ?? 'unknown';
+    (groups[source] ??= []).push(field);
+  }
+  const priority = ['unavailable', 'unknown', 'sheet-category-estimate', 'sheet-scaled', 'sheet-measured'];
+  const strongest = priority.find(source => groups[source]?.length) ?? 'game-file';
+  return {
+    strongest,
+    exact: strongest === 'game-file',
+    groups,
+    nonExactCount: fields.filter(field => building?.provenance?.[field] !== 'game-file').length,
+  };
+}
+
 export class Economy {
   // opts.inputPriceMode: 'sell' (like the sheet: inputs valued at what you could
   //   have sold them for) or 'buy' (import view: inputs valued at purchase price).

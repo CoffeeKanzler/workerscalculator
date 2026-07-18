@@ -1,7 +1,7 @@
-import { STRINGS } from './i18n.js?v=61';
+import { STRINGS } from './i18n.js?v=62';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=27';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=28';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -358,6 +358,29 @@ function pctInput(factor, onchange) {
 // buildings are only placeable when the DLC is owned).
 function bname(b) {
   return b[state.lang] + (b.dlc ? ' [DLC]' : '');
+}
+
+function planningAuthorityBadge(building, scopes = ['economy', 'utilities', 'construction']) {
+  if (!building) return null;
+  const authority = buildingPlanningAuthority(building, scopes);
+  if (authority.exact) return null;
+  const sourceLabels = {
+    unavailable: 'authorityUnavailable', unknown: 'authorityUnknown',
+    'sheet-category-estimate': 'authorityCategoryEstimate',
+    'sheet-scaled': 'authorityScaled', 'sheet-measured': 'authorityMeasured',
+  };
+  const sourceClasses = {
+    unavailable: 'missing', unknown: 'missing', 'sheet-category-estimate': 'missing',
+    'sheet-scaled': 'derived', 'sheet-measured': 'derived',
+  };
+  const details = Object.entries(authority.groups)
+    .filter(([source]) => source !== 'game-file')
+    .map(([source, fields]) => `${t(sourceLabels[source] ?? 'authorityUnknown')}: ${fields.join(', ')}`)
+    .join('\n');
+  return el('div', { class: 'sourceid', title: details },
+    `${t('planningInputs')}: `,
+    el('span', { class: `evidence-badge ${sourceClasses[authority.strongest] ?? 'missing'}` },
+      `${t(sourceLabels[authority.strongest] ?? 'authorityUnknown')} · ${authority.nonExactCount}`));
 }
 
 function selectInput(options, value, onchange, opts = {}) {
@@ -937,9 +960,6 @@ function renderProduction() {
       const isMine = b && (b.usesQuality || QUALITY_BUILDINGS_DE.has(b.de));
       const areaName = plannerScopeName(row.scopeId);
       const observed = Array.isArray(row.observedBuildingIndices);
-      const productionFallback = b?.provenance?.production !== 'game-file'
-        ? el('div', { class: 'sourceid' }, t('heatingOutputFallback'),
-          el('span', { class: 'evidence-badge derived' }, t('spreadsheetFallback'))) : null;
       const buildingCell = observed ? el('div', {}, bSel,
         el('div', { class: 'sourceid' },
           `${t('currentWorkers')}: ${fmt(row.currentWorkers ?? 0, 0)} · `
@@ -949,7 +969,7 @@ function renderProduction() {
           el('span', { class: `evidence-badge ${(row.constructionProgress ?? 1) < 1 ? 'missing' : 'exact'}` },
             (row.constructionProgress ?? 1) < 1
               ? `${t('underConstruction')} ${fmt(row.constructionProgress * 100, 0)} %` : t('exact'))),
-        productionFallback, bufferDetails(row, b)) : el('div', {}, bSel, productionFallback);
+        planningAuthorityBadge(b), bufferDetails(row, b)) : el('div', {}, bSel, planningAuthorityBadge(b));
       return el('tr', {},
         el('td', {}, areaName), el('td', {}, groupSel), el('td', {}, buildingCell),
         el('td', {}, numInput(row.count, v => row.count = v, { min: 0, step: 1 })),
@@ -1145,7 +1165,9 @@ function renderChain() {
         el('td', {}, resLabel(row.key)),
         el('td', { class: 'r' }, fmt(row.demand, 1)),
         el('td', {}, srcToggle),
-        el('td', {}, producerSel),
+        el('td', {}, row.imported ? producerSel : el('div', {}, producerSel,
+          planningAuthorityBadge(row.building,
+            ch.includeUtilities ? ['economy', 'utilities', 'construction'] : ['economy', 'construction']))),
         el('td', {}, isMine ? tierEditor(ch, row.key) : '—'),
         el('td', { class: 'r' },
           row.imported ? '—' : `${fmt(row.countCeil, 0)} (${fmt(row.count, 2)})`,
@@ -1232,7 +1254,8 @@ function renderAnalysis() {
         th('amortDays', t('amortDays')), th('income', `${t('income')} ${cur()}`),
         th('expenses', `${t('expenses')} ${cur()}`), th('buildCost', `${t('buildCost')} ${cur()}`))),
       el('tbody', {}, rows.map(r => el('tr', {},
-        el('td', {}, bname(r.b)), el('td', {}, r.b.group[state.lang]),
+        el('td', {}, bname(r.b), planningAuthorityBadge(r.b, ['economy', 'construction'])),
+        el('td', {}, r.b.group[state.lang]),
         el('td', { class: 'r' }, fmt(r.b.workers, 0)),
         el('td', { class: 'r ' + (r.profit < 0 ? 'neg' : 'pos') }, fmt(r.profit)),
         el('td', { class: 'r ' + (r.profitPerWorker < 0 ? 'neg' : 'pos') }, fmt(r.profitPerWorker)),

@@ -8,6 +8,7 @@ import {
   Economy, evaluatePlan, evaluateCity, lowTechPoints,
   evaluateVehicleProduction, recommendVehicleProduction, vehicleSaleValue,
   vehicleBlueprintQuote, vehicleProductionGroup, SEASON_FACTOR, NO_SEASON_FACTOR,
+  buildingPlanningAuthority,
 } from '../js/calc.js';
 
 const res = JSON.parse(readFileSync(new URL('../data/resources.json', import.meta.url)));
@@ -16,6 +17,26 @@ const { resources, defaults } = res;
 
 const byDe = name => buildings.find(b => b.de === name);
 const eco = opts => new Economy(resources, defaults, opts);
+
+test('planning authority reports only calculator inputs and preserves source severity', () => {
+  const building = {
+    provenance: {
+      workers: 'game-file', production: 'game-file', consumption: 'game-file',
+      power: 'sheet-category-estimate', maxKW: 'sheet-scaled', water: 'sheet-measured',
+      wastePerWorker: 'unavailable', workdays: 'game-file',
+    },
+  };
+  const economy = buildingPlanningAuthority(building, ['economy']);
+  assert.equal(economy.exact, true);
+  assert.equal(economy.nonExactCount, 0);
+
+  const utilities = buildingPlanningAuthority(building, ['utilities']);
+  assert.equal(utilities.strongest, 'unavailable');
+  assert.deepEqual(utilities.groups['sheet-category-estimate'], ['power']);
+  assert.deepEqual(utilities.groups['sheet-scaled'], ['maxKW']);
+  assert.deepEqual(utilities.groups['sheet-measured'], ['water']);
+  assert.deepEqual(utilities.groups.unavailable, ['wastePerWorker']);
+});
 
 test('price lookup: sell/buy by German and English name and key', () => {
   const e = eco();
