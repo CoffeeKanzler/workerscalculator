@@ -399,9 +399,13 @@ test('header exposes save version title and source path', () => {
   const view = new DataView(buffer);
   const bytes = new Uint8Array(buffer);
   view.setUint32(0, 124, true);
+  view.setInt32(0x190, 2, true);
+  view.setInt32(0x1bc, 1, true);
   view.setInt32(0x1c0, 1, true);
   view.setInt32(0x1c4, 2, true);
+  view.setInt32(0x1c8, 0, true);
   view.setUint32(0x1cc, 1, true);
+  view.setInt32(0x1d0, 1, true);
   view.setUint32(0x1e8, 1, true);
   view.setUint32(0x1ec, 0, true);
   view.setUint32(0x1f0, 1, true);
@@ -417,9 +421,13 @@ test('header exposes save version title and source path', () => {
     title: 'Republic 2001',
     savePath: 'save/453 - Republic 2001',
     settings: {
+      energyManagementLevel: 2,
+      dayNightCycleLevel: 1,
       seasonsEnabled: true,
       globalEventsLevel: 2,
+      buildingFiresLevel: 0,
       pollutionEnabled: true,
+      vehicleAvailabilityLevel: 1,
       crimeJusticeEnabled: true,
       waterManagementEnabled: false,
       trafficSimulationEnabled: true,

@@ -130,9 +130,13 @@ export function parseHeader(buffer) {
     title: c.utf16Z(4, 0x100),
     savePath: c.asciiZ(0x104, Math.min(0x100, c.bytes.length - 0x104)),
     settings: {
+      energyManagementLevel: c.view.getInt32(0x190, true),
+      dayNightCycleLevel: c.view.getInt32(0x1bc, true),
       seasonsEnabled: c.view.getInt32(0x1c0, true) !== 0,
       globalEventsLevel: c.view.getInt32(0x1c4, true),
+      buildingFiresLevel: c.view.getInt32(0x1c8, true),
       pollutionEnabled: c.view.getUint32(0x1cc, true) !== 0,
+      vehicleAvailabilityLevel: c.view.getInt32(0x1d0, true),
       crimeJusticeEnabled: c.view.getUint32(0x1e8, true) !== 0,
       waterManagementEnabled: c.view.getUint32(0x1ec, true) !== 0,
       trafficSimulationEnabled: c.view.getUint32(0x1f0, true) !== 0,

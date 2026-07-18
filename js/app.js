@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=68';
+import { STRINGS } from './i18n.js?v=69';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=28';
@@ -1903,7 +1903,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=18', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=19', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -3420,11 +3420,19 @@ function renderRepublic() {
   const settingsDetails = importedSettings ? el('details', { class: 'planning-details secondary-section' },
     el('summary', {}, t('gameSettings')),
     el('div', { class: 'totalsbox' },
+      Number.isInteger(importedSettings.energyManagementLevel)
+        ? kv(t('energyManagement'), settingLevel('energyManagement', importedSettings.energyManagementLevel, [0, 1, 2])) : null,
+      Number.isInteger(importedSettings.dayNightCycleLevel)
+        ? kv(t('dayNightCycle'), settingLevel('dayNightCycle', importedSettings.dayNightCycleLevel, [0, 1, 2])) : null,
       kv(t('seasons'), t(importedSettings.seasonsEnabled ? 'enabled' : 'disabled')),
       Number.isInteger(importedSettings.globalEventsLevel)
         ? kv(t('globalEvents'), settingLevel('globalEvents', importedSettings.globalEventsLevel, [0, 1, 2])) : null,
+      Number.isInteger(importedSettings.buildingFiresLevel)
+        ? kv(t('buildingFires'), settingLevel('buildingFires', importedSettings.buildingFiresLevel, [0, 1, 2])) : null,
       typeof importedSettings.pollutionEnabled === 'boolean'
         ? kv(t('pollution'), t(importedSettings.pollutionEnabled ? 'enabled' : 'disabled')) : null,
+      Number.isInteger(importedSettings.vehicleAvailabilityLevel)
+        ? kv(t('vehicleAvailability'), settingLevel('vehicleAvailability', importedSettings.vehicleAvailabilityLevel, [0, 1, 2])) : null,
       typeof importedSettings.crimeJusticeEnabled === 'boolean'
         ? kv(t('crimeJustice'), t(importedSettings.crimeJusticeEnabled ? 'enabled' : 'disabled')) : null,
       typeof importedSettings.waterManagementEnabled === 'boolean'
