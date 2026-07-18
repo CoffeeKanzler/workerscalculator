@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=49';
+import { STRINGS } from './i18n.js?v=50';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -11,8 +11,8 @@ import { createIndexedDbSnapshotStore, migrateLegacySnapshots } from './storage.
 import {
   aggregateCitizensByScope, compactObservedBuildings, groupObservedProduction,
   inferObservedHousing, latestProductivity, matchObservedBuilding, productionBufferStatus,
-  productionBufferAlerts,
-} from './save_model.js?v=6';
+  productionBufferAlerts, summarizeDistributionOffices, summarizeVehicleLines,
+} from './save_model.js?v=7';
 import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
@@ -1542,6 +1542,7 @@ function buildOperationalServices(buildings, citizens, rawBuildings, cityStats, 
 function buildImportedPlanning(sourceName, settlements, buildings, membershipAudit, {
   citizens = null, citizenFileSummary = null, header = null, research = null,
   vehicles = null, vehicleFileSummary = null,
+  vehicleLines = null, lineFileSummary = null,
   usedVehicleOffers = null, usedVehicleFileSummary = null,
   vehicleModelCoverage = null, usedVehicleModelCoverage = null,
   sourceStatus = {}, parserWarnings = [], defaultProductivity = 1, workshopCatalog = null,
@@ -1668,6 +1669,9 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
   const researchComplete = research?.filter(item => item.progress >= 1).length ?? 0;
   const researchPartial = research?.filter(item => item.progress > 0 && item.progress < 1).length ?? 0;
   const operationalServices = buildOperationalServices(buildings, citizens, rawBuildings, cityStats, events);
+  const distributionOperations = summarizeDistributionOffices(buildings, vehicles ?? []);
+  const lineOperations = vehicleLines
+    ? summarizeVehicleLines(vehicleLines, vehicles ?? [], buildings) : null;
   const inventoryBuildings = buildings.filter(building =>
     building.storages?.some(storage => storage.resources?.length));
   const inventoryStorageCount = inventoryBuildings.reduce((sum, building) =>
@@ -1692,6 +1696,9 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
       } : null,
       ownedVehicles: vehicles,
       vehicleFileSummary,
+      lineFileSummary,
+      vehicleLines: lineOperations,
+      distributionOffices: distributionOperations,
       vehicleModelCoverage,
       usedVehicleOffers,
       usedVehicleFileSummary,
@@ -1734,7 +1741,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=9', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=10', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -1797,6 +1804,7 @@ async function handleSaveDirectory(fileList) {
   const workersFile = byName.get('workers.bin');
   const vehiclesFile = byName.get('vehicles.bin');
   const usedVehiclesFile = byName.get('usedveh.bin');
+  const linesFile = byName.get('lines.bin');
   const headerFile = byName.get('header.bin');
   const researchFile = byName.get('research.bin');
   const eventsFile = byName.get('events.bin');
@@ -1814,16 +1822,18 @@ async function handleSaveDirectory(fileList) {
 
   try {
     const readOptional = file => file ? file.arrayBuffer() : Promise.resolve(null);
-    const [namepointBuffer, buildingBuffer, workerBuffer, vehicleBuffer, usedVehicleBuffer,
+    const [namepointBuffer, buildingBuffer, workerBuffer, vehicleBuffer, usedVehicleBuffer, lineBuffer,
       headerBuffer, researchBuffer, eventsBuffer, statsText, materialText] = await Promise.all([
       namepoints.arrayBuffer(), buildingsFile.arrayBuffer(), readOptional(workersFile),
       readOptional(vehiclesFile), readOptional(usedVehiclesFile),
+      readOptional(linesFile),
       readOptional(headerFile), readOptional(researchFile), readOptional(eventsFile), statsFile ? statsFile.text() : '',
       materialFile ? materialFile.text() : '',
     ]);
     const parsed = await parseSaveInWorker({
       namepoints: namepointBuffer, buildings: buildingBuffer, workers: workerBuffer,
       vehicles: vehicleBuffer, usedVehicles: usedVehicleBuffer,
+      lines: lineBuffer,
       header: headerBuffer, research: researchBuffer, events: eventsBuffer, stats: statsText, material: materialText,
     });
     const relative = namepoints.webkitRelativePath || buildingsFile.webkitRelativePath || '';
@@ -1842,6 +1852,8 @@ async function handleSaveDirectory(fileList) {
         citizenFileSummary: parsed.citizenFileSummary,
         vehicles: ownedFleet?.records ?? null,
         vehicleFileSummary: parsed.vehicleFileSummary,
+        vehicleLines: parsed.vehicleLines,
+        lineFileSummary: parsed.lineFileSummary,
         vehicleModelCoverage: ownedFleet?.summary ?? null,
         usedVehicleOffers: usedMarket?.records ?? null,
         usedVehicleFileSummary: parsed.usedVehicleFileSummary,
@@ -1965,7 +1977,7 @@ function renderSaveImport() {
     ? el('p', { class: state.importStatusError ? 'neg' : 'pos' }, state.importStatus) : null;
   const sourceFiles = {
     namepoints: 'namepoints.bin', buildings: 'buildings_game.bin', workers: 'workers.bin',
-    vehicles: 'vehicles.bin', usedVehicles: 'usedveh.bin',
+    vehicles: 'vehicles.bin', usedVehicles: 'usedveh.bin', lines: 'lines.bin',
     header: 'header.bin', research: 'research.bin', events: 'events.bin', stats: 'stats.ini',
     material: 'material.mtl',
   };
@@ -1995,6 +2007,13 @@ function renderSaveImport() {
         kv(t('importedCitizens'), info.citizenSummary ? fmt(info.citizenCount, 0) : t('notFound')),
         kv(t('importedVehicles'), info.vehicleFileSummary ? fmt(info.vehicleFileSummary.recordCount, 0) : t('notFound')),
         kv(t('importedUsedVehicles'), info.usedVehicleFileSummary ? fmt(info.usedVehicleFileSummary.recordCount, 0) : t('notFound')),
+        kv(t('importedVehicleLines'), info.lineFileSummary
+          ? `${fmt(info.vehicleLines?.summary.lineCount ?? 0, 0)} · `
+            + `${fmt(info.vehicleLines?.summary.vehicleReferenceCount ?? 0, 0)} ${t('assignedVehicleReferences')}`
+          : t('notFound')),
+        kv(t('importedDistributionOffices'),
+          `${fmt(info.distributionOffices?.summary.officeCount ?? 0, 0)} · `
+          + `${fmt(info.distributionOffices?.summary.targetCount ?? 0, 0)} ${t('configuredTargets')}`),
         info.citizenSummary ? kv(t('unassignedCitizens'), fmt(info.citizenSummary.unassigned, 0)) : null,
         info.citizenSummary ? kv(t('populatedScopes'), fmt(info.citizenSummary.populatedScopeCount, 0)) : null,
         info.research ? kv(t('importedResearch'), `${fmt(info.researchComplete, 0)} / ${fmt(info.research.length, 0)}`) : null,
@@ -2815,6 +2834,75 @@ function renderRepublic() {
         ], fleetFilter.sort, value => { state.fleetFilter.sort = value; }))),
       el('div', { class: 'tablewrap' }, fleetDetailsTable)) : null) : null;
 
+  const lineOperations = state.saveImport?.vehicleLines;
+  const distributionOperations = state.saveImport?.distributionOffices;
+  const lineSummary = lineOperations?.summary;
+  const distributionSummary = distributionOperations?.summary;
+  const scheduleKeys = block => [...new Set((block?.entries ?? []).map(entry => entry.key || '∅'))].join(', ') || '—';
+  const logisticsOperations = lineOperations || distributionSummary?.officeCount ? el('section', {
+    class: 'institution-overview',
+  },
+    el('h3', {}, t('savedLogisticsOperations'),
+      el('span', { class: 'evidence-badge exact' }, t('exact'))),
+    el('p', { class: 'hint' }, t('savedLogisticsHint')),
+    el('div', { class: 'columns' },
+      lineSummary ? el('div', { class: 'totalsbox' },
+        el('h4', {}, t('vehicleLines')),
+        kv(t('vehicleLines'), fmt(lineSummary.lineCount, 0)),
+        kv(t('linesWithAssignedVehicles'), fmt(lineSummary.assignedLineCount, 0)),
+        kv(t('assignedVehicleReferences'), fmt(lineSummary.vehicleReferenceCount, 0)),
+        kv(t('orderedStopReferences'), fmt(lineSummary.stopReferenceCount, 0)),
+        kv(t('completeObservedCycles'), fmt(lineSummary.completeObservedCycleCount, 0))) : null,
+      distributionSummary?.officeCount ? el('div', { class: 'totalsbox' },
+        el('h4', {}, t('distributionOffices')),
+        kv(t('distributionOffices'), `${fmt(distributionSummary.officeCount, 0)} · `
+          + `${fmt(distributionSummary.roadCount, 0)} ${t('fleetRoad')} / `
+          + `${fmt(distributionSummary.railCount, 0)} ${t('fleetRail')}`),
+        kv(t('configuredTargets'), fmt(distributionSummary.targetCount, 0)),
+        kv(t('associatedVehicleReferences'), fmt(distributionSummary.associatedVehicleReferenceCount, 0)),
+        kv(t('officesWithoutTargets'), fmt(distributionSummary.officesWithoutTargets, 0),
+          distributionSummary.officesWithoutTargets ? 'warn' : ''),
+        kv(t('officesWithoutAssociatedVehicles'), fmt(distributionSummary.officesWithoutAssociatedVehicles, 0),
+          distributionSummary.officesWithoutAssociatedVehicles ? 'warn' : '')) : null),
+    lineOperations ? el('details', { class: 'secondary-section' },
+      el('summary', {}, `${t('vehicleLineDetails')} (${fmt(lineSummary.lineCount, 0)})`),
+      el('p', { class: 'hint warn' }, t('observedIntervalCaveat')),
+      el('div', { class: 'tablewrap' }, el('table', { class: 'data wide' },
+        el('thead', {}, el('tr', {},
+          el('th', {}, t('vehicleLine')), el('th', {}, t('assignedVehicles')),
+          el('th', {}, t('orderedStops')), el('th', {}, t('scheduleRules')),
+          el('th', {}, t('completeObservedCycle')), el('th', {}, t('largestObservedInterval')))),
+        el('tbody', {}, ...lineOperations.lines.map(line => el('tr', {},
+          el('td', {}, line.name || `#${line.slot}`),
+          el('td', {}, line.assignedVehicles.length
+            ? line.assignedVehicles.map(vehicle => vehicle.name || vehicle.model || `#${vehicle.id}`).join(', ') : '—'),
+          el('td', {}, line.stops.length ? line.stops.map(stop =>
+            stop.building?.name || stop.building?.type || (stop.buildingIndex < 0 ? '—' : `#${stop.buildingIndex}`)).join(' → ') : '—'),
+          el('td', {}, line.stops.map((stop, index) =>
+            `${index + 1}: P[${scheduleKeys(stop.primary)}] · S[${scheduleKeys(stop.secondary)}]`).join(' | ') || '—'),
+          el('td', { class: 'r' }, Number.isFinite(line.completeObservedCycle)
+            ? fmt(line.completeObservedCycle, 2) : '—'),
+          el('td', { class: 'r' }, Number.isFinite(line.largestObservedInterval)
+            ? fmt(line.largestObservedInterval, 2) : '—'))))))) : null,
+    distributionSummary?.officeCount ? el('details', { class: 'secondary-section' },
+      el('summary', {}, `${t('distributionOfficeDetails')} (${fmt(distributionSummary.officeCount, 0)})`),
+      el('p', { class: 'hint warn' }, t('distributionCoverageCaveat')),
+      el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+        el('thead', {}, el('tr', {},
+          el('th', {}, t('distributionOffice')), el('th', {}, t('kind')),
+          el('th', {}, t('configuredTargets')), el('th', {}, t('associatedVehicles')),
+          el('th', {}, t('configuredActions')))),
+        el('tbody', {}, ...distributionOperations.offices.map(office => {
+          const loads = office.assignments.filter(assignment => assignment.load.enabled).length;
+          const unloads = office.assignments.filter(assignment => assignment.unload.enabled).length;
+          return el('tr', {},
+            el('td', {}, office.name || office.type || `#${office.buildingIndex}`),
+            el('td', {}, t(office.kind === 'rail' ? 'fleetRail' : 'fleetRoad')),
+            el('td', { class: `r ${office.assignments.length ? '' : 'warn'}` }, fmt(office.assignments.length, 0)),
+            el('td', { class: `r ${office.associatedVehicles.length ? '' : 'warn'}` }, fmt(office.associatedVehicles.length, 0)),
+            el('td', {}, `${t('loadAction')}: ${fmt(loads, 0)} · ${t('unloadAction')}: ${fmt(unloads, 0)}`));
+        }))))) : null) : null;
+
   const historyRecords = filterRange(state.statsRecords ?? [], state.republicRange);
   const series = (label, color, valueOf) => ({ label, color, points: seriesFromRecords(historyRecords, valueOf) });
   const resourceKeys = [...new Set((state.statsRecords ?? []).flatMap(record =>
@@ -2919,6 +3007,7 @@ function renderRepublic() {
       alertList,
       institutionOverview,
       fleetOpportunities,
+      logisticsOperations,
       el('div', { class: 'tablewrap' }, areaTable),
       charts,
       researchDetails,

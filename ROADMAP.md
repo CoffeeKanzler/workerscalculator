@@ -219,6 +219,13 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   quantity, day progress, and current rate. Multi-output factories label only their first declared
   output; mines, farms, utilities, services, special lines, and unresolved factories remain hidden
   because the same offsets have incompatible meanings there.
+  - **Saved logistics operations:** `lines.bin` now imports exact ordered stops, assigned vehicle
+  references, neutral primary/secondary schedule blocks, and version-gated observed intervals.
+  Complete observed cycles are shown only when every saved interval is positive; the raw game-time
+  values are explicitly not labeled as seconds or pure travel time. Exact saved runtime types also
+  gate 36 road and 3 rail distribution offices in the supplied save, exposing 337 configured target
+  actions and 276 associated vehicle references. Cached network paths are excluded: assignments do
+  not claim current reachability, exclusive vehicle ownership, or delivery throughput.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
   catalog contains 299 packages with 867 building and 63 vehicle definitions as compact
@@ -229,15 +236,14 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   observed occupancy without inventing capacity. For packages Steam does not expose
   anonymously, users can optionally select their installed
   `steamapps/workshop/content/784150` folder; its `building.ini` facts are read locally
-  and never uploaded. Vehicle lines/schedules and logistics topology are not decoded yet.
+  and never uploaded. Live vehicle task state and proven network reachability are not decoded yet.
   Model-defined hard attachments are never inferred from save consist children. Workshop vehicle
   lifespans are used only when their exact
   `$LIFESPAN` fact is present; vanilla/DLC models use verified category defaults. An earlier
   10%/20%/70% assumption was found to apply to container vehicles, not ships, and was never
   shipped as a ship recommendation.
-  - **Next high-value save modules:** vehicle lines and schedules; distribution/logistics
-  bottlenecks; and optional live
-  follow of a save directory. Cosmetic map/network geometry stays out of scope until a
+  - **Next high-value save modules:** current vehicle task/busy state, evidence-safe logistics
+  bottlenecks, and optional live follow of a save directory. Cosmetic map/network geometry stays out of scope until a
   planner feature needs it.
 
 ### 4.2 Live-follow stats.ini

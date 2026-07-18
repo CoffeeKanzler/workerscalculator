@@ -79,6 +79,15 @@ class BinaryCursor {
     while (end + 1 < limit && this.view.getUint16(end, true) !== 0) end += 2;
     return utf16.decode(this.bytes.subarray(offset, end));
   }
+
+  utf16ZStrict(offset, size, context) {
+    if (offset < 0 || offset + size > this.bytes.length) throw new Error(`${context}: string is outside the file`);
+    let end = offset;
+    const limit = offset + size;
+    while (end + 1 < limit && this.view.getUint16(end, true) !== 0) end += 2;
+    if (end + 1 >= limit) throw new Error(`${context}: missing NUL terminator`);
+    return utf16.decode(this.bytes.subarray(offset, end));
+  }
 }
 
 export function parseNamepoints(buffer) {
@@ -333,6 +342,71 @@ export function parseVehicles(buffer, { onProgress } = {}) {
   };
 }
 
+function readLineScheduleBlock(c, context) {
+  const start = c.offset;
+  c.require(0x18, `${context} header`);
+  const count = c.countAt(start + 8, `${context} entry count`);
+  c.skip(0x18, `${context} header`);
+  const entries = [];
+  for (let index = 0; index < count; index += 1) {
+    const row = c.offset;
+    c.require(0x48, `${context} entry ${index}`);
+    entries.push({
+      key: c.asciiZStrict(row, 0x40, `${context} entry ${index} key`),
+      valueA: c.view.getFloat32(row + 0x40, true),
+      valueB: c.view.getFloat32(row + 0x44, true),
+    });
+    c.skip(0x48, `${context} entry ${index}`);
+  }
+  return {
+    rawByte00: c.view.getUint8(start),
+    rawField04: c.view.getInt32(start + 4, true),
+    flags: [...c.bytes.subarray(start + 0x0c, start + 0x15)],
+    entries,
+  };
+}
+
+export function parseLines(buffer, { saveVersion = 124 } = {}) {
+  const c = new BinaryCursor(buffer);
+  const total = c.u32('line count');
+  if (total > 100_000) throw new Error(`implausible line count ${total}`);
+  const lines = [];
+  for (let slot = 0; slot < total; slot += 1) {
+    const header = c.offset;
+    c.require(0x18, `line ${slot} header`);
+    const stopCount = c.countAt(header + 0x0c, `line ${slot} stop count`);
+    const scheduleCount = c.countAt(header + 0x10, `line ${slot} schedule count`);
+    const vehicleCount = c.countAt(header + 0x14, `line ${slot} vehicle count`);
+    const rawField00 = c.view.getInt32(header, true);
+    const rawField04 = c.view.getInt32(header + 4, true);
+    const rawField08 = c.view.getInt32(header + 8, true);
+    c.skip(0x18, `line ${slot} header`);
+    const nameOffset = c.offset;
+    c.require(0x200, `line ${slot} name`);
+    const name = c.utf16ZStrict(nameOffset, 0x200, `line ${slot} name`);
+    c.skip(0x200, `line ${slot} name`);
+    const stopIds = Array.from({ length: stopCount }, (_, index) => c.i32(`line ${slot} stop ${index}`));
+    const schedules = Array.from({ length: scheduleCount }, (_, index) => ({
+      primary: readLineScheduleBlock(c, `line ${slot} schedule ${index} primary`),
+      secondary: readLineScheduleBlock(c, `line ${slot} schedule ${index} secondary`),
+    }));
+    const vehicleIds = Array.from({ length: vehicleCount }, (_, index) =>
+      c.i32(`line ${slot} vehicle ${index}`));
+    const observedIntervals = saveVersion > 0x77
+      ? Array.from({ length: stopCount }, (_, index) => c.f32(`line ${slot} observed interval ${index}`))
+      : [];
+    lines.push({
+      slot, name, rawField00, rawField04, rawField08,
+      stopIds, schedules, vehicleIds, observedIntervals,
+    });
+  }
+  if (c.offset !== c.bytes.length) throw new Error(`lines.bin has ${c.bytes.length - c.offset} trailing bytes`);
+  return {
+    lines,
+    summary: { recordCount: total, byteLength: c.bytes.length, trailingBytes: 0 },
+  };
+}
+
 export function parseUsedVehicles(buffer) {
   const c = new BinaryCursor(buffer);
   c.require(0x48, 'usedveh.bin header');
@@ -478,6 +552,21 @@ function skipCompound(c, context) {
   c.skip(0x18 + count * 0x48, context);
 }
 
+function readDistributionCompound(c, context) {
+  const start = c.offset;
+  c.require(0x18, context);
+  const count = c.countAt(start + 8, `${context}.count`);
+  const enabled = c.view.getUint8(start) !== 0;
+  const threshold = c.view.getFloat32(start + 4, true);
+  c.skip(0x18, `${context}.header`);
+  const resources = [];
+  for (let index = 0; index < count; index += 1) {
+    resources.push(c.asciiZStrict(c.offset, 0x40, `${context}.resource[${index}]`));
+    c.skip(0x48, `${context}.resource[${index}]`);
+  }
+  return { enabled, threshold, resources };
+}
+
 function skipEd810(c, context) {
   c.require(0x28, context);
   const count = c.countAt(c.offset + 0x24, `${context}.count`);
@@ -554,7 +643,9 @@ export function parseBuildingsGame(buffer, { onProgress } = {}) {
     c.skip(fixedCount(start, 0x2d8) * 0x20, `building ${index}.2d8`);
     for (const stack of [0x2b0, 0x2ac, 0x2a8, 0x2a4]) c.skip(fixedCount(start, stack) * 4, `building ${index}.${stack.toString(16)}`);
     c.skip(fixedCount(start, 0x7d0, true) * 4, `building ${index}.7d0`);
-    c.skip(fixedCount(start, 0x2a0) * 4, `building ${index}.2a0`);
+    const associatedVehicleCount = fixedCount(start, 0x2a0);
+    const associatedVehicleIds = Array.from({ length: associatedVehicleCount }, (_, item) =>
+      c.i32(`building ${index}.2a0[${item}]`));
     for (let i = 0, n = fixedCount(start, 0x29c); i < n; i += 1) skipEc730(c, `building ${index}.29c[${i}]`);
     for (let i = 0, n = fixedCount(start, 0x21c); i < n; i += 1) skipEd0c0(c, `building ${index}.21c[${i}]`);
 
@@ -578,10 +669,12 @@ export function parseBuildingsGame(buffer, { onProgress } = {}) {
     c.skip(fixedCount(start, 0x204) * 4, `building ${index}.204`);
     if (fixedCount(start, 0x1fc) === 1) c.skip(0x100, `building ${index}.1fc`);
     if (fixedCount(start, 0x1f8) === 1) for (let i = 0; i < 4; i += 1) skipCompound(c, `building ${index}.1f8[${i}]`);
+    const distributionAssignments = [];
     for (let i = 0, n = fixedCount(start, 0x1f4); i < n; i += 1) {
-      c.skip(4, `building ${index}.1f4[${i}].id`);
-      skipCompound(c, `building ${index}.1f4[${i}].a`);
-      skipCompound(c, `building ${index}.1f4[${i}].b`);
+      const targetBuildingIndex = c.i32(`building ${index}.1f4[${i}].id`);
+      const load = readDistributionCompound(c, `building ${index}.1f4[${i}].load`);
+      const unload = readDistributionCompound(c, `building ${index}.1f4[${i}].unload`);
+      distributionAssignments.push({ targetBuildingIndex, load, unload });
     }
     c.skip(fixedCount(start, 0x1e8) * 4, `building ${index}.1e8`);
     c.skip(0x80, `building ${index}.fixed32`);
@@ -599,6 +692,11 @@ export function parseBuildingsGame(buffer, { onProgress } = {}) {
     c.skip(fixedCount(start, 0x7c8, true) * 4, `building ${index}.7c8`);
     c.skip(fixedCount(start, 0x7b0, true) * 0x10, `building ${index}.7b0`);
 
+    if (typePlusOne === 0x2c || typePlusOne === 0x35) {
+      record.distributionKind = typePlusOne === 0x2c ? 'road' : 'rail';
+      record.associatedVehicleIds = associatedVehicleIds;
+      record.distributionAssignments = distributionAssignments;
+    }
     record.end = c.offset;
     records.push(record);
     if (onProgress && (index % 50 === 0 || index + 1 === total)) onProgress(index + 1, total);

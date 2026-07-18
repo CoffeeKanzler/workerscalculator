@@ -93,6 +93,130 @@ export function compactObservedBuildings(buildings) {
   ));
 }
 
+function savedVehicleMap(vehicles) {
+  const map = new Map();
+  for (const vehicle of vehicles ?? []) {
+    if (Number.isInteger(vehicle.id)) map.set(vehicle.id, vehicle);
+    else if (Number.isInteger(vehicle.index)) map.set(vehicle.index, vehicle);
+  }
+  return map;
+}
+
+function compactResolvedVehicle(id, vehicle) {
+  if (!vehicle) return null;
+  return {
+    id,
+    model: vehicle.model ?? null,
+    name: vehicle.modelFacts?.name ?? vehicle.modelFacts?.nameStr ?? vehicle.model ?? null,
+    cargo: vehicle.cargo ?? [],
+  };
+}
+
+export function summarizeDistributionOffices(buildings, vehicles = []) {
+  const buildingMap = new Map((buildings ?? []).map(building => [building.index, building]));
+  const vehicleMap = savedVehicleMap(vehicles);
+  let invalidTargetReferenceCount = 0;
+  let invalidVehicleReferenceCount = 0;
+  const offices = (buildings ?? []).filter(building => building.distributionKind).map(building => {
+    const associatedVehicles = (building.associatedVehicleIds ?? []).map(id => {
+      const resolved = compactResolvedVehicle(id, vehicleMap.get(id));
+      if (!resolved) invalidVehicleReferenceCount += 1;
+      return resolved ?? { id, model: null, name: null, cargo: [] };
+    });
+    const assignments = (building.distributionAssignments ?? []).map(assignment => {
+      const targetBuilding = buildingMap.get(assignment.targetBuildingIndex);
+      if (!targetBuilding) invalidTargetReferenceCount += 1;
+      return {
+        targetBuildingIndex: assignment.targetBuildingIndex,
+        target: targetBuilding ? {
+          index: targetBuilding.index, type: targetBuilding.type,
+          name: targetBuilding.name, scopeId: targetBuilding.scopeId ?? null,
+        } : null,
+        load: assignment.load,
+        unload: assignment.unload,
+      };
+    });
+    return {
+      buildingIndex: building.index, name: building.name, type: building.type,
+      scopeId: building.scopeId ?? null, kind: building.distributionKind,
+      associatedVehicleIds: building.associatedVehicleIds ?? [], associatedVehicles, assignments,
+    };
+  });
+  const assignments = offices.flatMap(office => office.assignments);
+  return {
+    offices,
+    summary: {
+      officeCount: offices.length,
+      roadCount: offices.filter(office => office.kind === 'road').length,
+      railCount: offices.filter(office => office.kind === 'rail').length,
+      targetCount: assignments.length,
+      associatedVehicleReferenceCount: offices.reduce((sum, office) =>
+        sum + office.associatedVehicleIds.length, 0),
+      officesWithoutTargets: offices.filter(office => !office.assignments.length).length,
+      officesWithoutAssociatedVehicles: offices.filter(office => !office.associatedVehicleIds.length).length,
+      neitherActionCount: assignments.filter(assignment =>
+        !assignment.load.enabled && !assignment.unload.enabled).length,
+      invalidTargetReferenceCount,
+      invalidVehicleReferenceCount,
+    },
+  };
+}
+
+export function summarizeVehicleLines(lines, vehicles = [], buildings = []) {
+  const vehicleMap = savedVehicleMap(vehicles);
+  const buildingMap = new Map((buildings ?? []).map(building => [building.index, building]));
+  let invalidVehicleReferenceCount = 0;
+  let invalidStopReferenceCount = 0;
+  const resolvedLines = (lines ?? []).map(line => {
+    const assignedVehicles = (line.vehicleIds ?? []).map(id => {
+      const resolved = compactResolvedVehicle(id, vehicleMap.get(id));
+      if (!resolved) invalidVehicleReferenceCount += 1;
+      return resolved ?? { id, model: null, name: null, cargo: [] };
+    });
+    const stops = (line.stopIds ?? []).map((buildingIndex, index) => {
+      const resolved = buildingIndex >= 0 ? buildingMap.get(buildingIndex) : null;
+      if (buildingIndex >= 0 && !resolved) invalidStopReferenceCount += 1;
+      return {
+        buildingIndex,
+        building: resolved ? {
+          index: resolved.index, type: resolved.type, name: resolved.name,
+          scopeId: resolved.scopeId ?? null,
+        } : null,
+        observedInterval: line.observedIntervals?.[index] ?? null,
+        primary: line.schedules?.[index]?.primary ?? null,
+        secondary: line.schedules?.[index]?.secondary ?? null,
+      };
+    });
+    const intervals = line.observedIntervals ?? [];
+    const completeObservedCycle = line.stopIds?.length > 0
+      && intervals.length === line.stopIds.length
+      && intervals.every(value => Number.isFinite(value) && value > 0)
+      ? intervals.reduce((sum, value) => sum + value, 0) : null;
+    const finiteIntervals = intervals.filter(Number.isFinite);
+    return {
+      ...line,
+      assignedVehicles,
+      stops,
+      completeObservedCycle,
+      largestObservedInterval: finiteIntervals.length ? Math.max(...finiteIntervals) : null,
+    };
+  });
+  return {
+    lines: resolvedLines,
+    summary: {
+      lineCount: resolvedLines.length,
+      assignedLineCount: resolvedLines.filter(line => line.vehicleIds?.length).length,
+      vehicleReferenceCount: resolvedLines.reduce((sum, line) => sum + (line.vehicleIds?.length ?? 0), 0),
+      stopReferenceCount: resolvedLines.reduce((sum, line) => sum + (line.stopIds?.length ?? 0), 0),
+      nullStopReferenceCount: resolvedLines.reduce((sum, line) =>
+        sum + (line.stopIds ?? []).filter(id => id < 0).length, 0),
+      completeObservedCycleCount: resolvedLines.filter(line => line.completeObservedCycle != null).length,
+      invalidVehicleReferenceCount,
+      invalidStopReferenceCount,
+    },
+  };
+}
+
 function saveTypeCandidates(type) {
   const clean = String(type).replace(/^MIRRORZ_/, '');
   const candidates = [type, clean];

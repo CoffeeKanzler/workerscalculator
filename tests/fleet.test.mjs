@@ -566,6 +566,8 @@ test('shared plans retain fleet coverage but omit per-vehicle save facts', () =>
     vehicleModelCoverage: { resolvedCount: 1241 },
     ownedVehicles: [{ id: 1, model: 'tanker' }],
     usedVehicleOffers: [{ model: 'c401' }],
+    vehicleLines: { lines: [{ name: 'Secret route' }] },
+    distributionOffices: { offices: [{ name: 'Secret office' }] },
   };
   const shared = shareSafeSaveImport(source);
 
@@ -573,6 +575,8 @@ test('shared plans retain fleet coverage but omit per-vehicle save facts', () =>
   assert.equal(shared.vehicleFileSummary.recordCount, 1294);
   assert.equal(shared.vehicleModelCoverage.resolvedCount, 1241);
   assert.equal('ownedVehicles' in shared, false);
+  assert.equal('vehicleLines' in shared, false);
+  assert.equal('distributionOffices' in shared, false);
   assert.equal('usedVehicleOffers' in shared, false);
   assert.equal(source.ownedVehicles.length, 1);
 });

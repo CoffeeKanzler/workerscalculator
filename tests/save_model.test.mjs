@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   citizenProductivity, aggregateCitizensByScope, compactObservedBuildings,
   groupObservedProduction, latestProductivity, productionBufferStatus, productionBufferAlerts,
-  inferObservedHousing,
+  inferObservedHousing, summarizeDistributionOffices, summarizeVehicleLines,
 } from '../js/save_model.js';
 
 test('citizens aggregate through residence buildings without forced assignment', () => {
@@ -211,4 +211,59 @@ test('production grouping returns every unmatched record', () => {
   assert.deepEqual(result.unmatched, [
     { scopeId: null, type: 'unknown/a', count: 2, buildingIndices: [4, 5] },
   ]);
+});
+
+test('distribution office summary resolves exact targets and associated fleets without claiming ownership', () => {
+  const buildings = [
+    { index: 0, type: 'office', name: 'Road DO', distributionKind: 'road',
+      associatedVehicleIds: [2], distributionAssignments: [
+        { targetBuildingIndex: 1,
+          load: { enabled: true, threshold: 0.2, resources: ['wood'] },
+          unload: { enabled: false, threshold: 0.8, resources: [] } },
+        { targetBuildingIndex: 99,
+          load: { enabled: false, threshold: 0, resources: [] },
+          unload: { enabled: false, threshold: 1, resources: ['boards'] } },
+      ] },
+    { index: 1, type: 'sawmill', name: 'Sawmill' },
+    { index: 2, type: 'rail_office', name: 'Rail DO', distributionKind: 'rail',
+      associatedVehicleIds: [], distributionAssignments: [] },
+  ];
+  const result = summarizeDistributionOffices(buildings, [
+    { id: 2, model: 'truck', modelFacts: { name: 'Truck T' } },
+  ]);
+  assert.deepEqual(result.summary, {
+    officeCount: 2, roadCount: 1, railCount: 1, targetCount: 2,
+    associatedVehicleReferenceCount: 1, officesWithoutTargets: 1,
+    officesWithoutAssociatedVehicles: 1, neitherActionCount: 1,
+    invalidTargetReferenceCount: 1, invalidVehicleReferenceCount: 0,
+  });
+  assert.equal(result.offices[0].associatedVehicles[0].name, 'Truck T');
+  assert.equal(result.offices[0].assignments[0].target.name, 'Sawmill');
+  assert.equal(result.offices[0].assignments[1].target, null);
+});
+
+test('vehicle line summary resolves references and labels only complete raw observed cycles', () => {
+  const lines = [{
+    slot: 3, name: 'Oil', rawField00: -2, rawField04: 3, rawField08: 0,
+    stopIds: [1, -1], schedules: [
+      { primary: { entries: [{ key: 'oil', valueA: 1, valueB: 2 }] }, secondary: { entries: [] } },
+      { primary: { entries: [] }, secondary: { entries: [] } },
+    ], vehicleIds: [4], observedIntervals: [10, 20],
+  }, {
+    slot: 4, name: 'Incomplete', rawField00: 1, rawField04: 0, rawField08: 0,
+    stopIds: [99], schedules: [], vehicleIds: [88], observedIntervals: [0],
+  }];
+  const result = summarizeVehicleLines(lines,
+    [{ id: 4, model: 'tanker', modelFacts: { name: 'Tanker' } }],
+    [{ index: 1, type: 'harbor', name: 'Oil Harbor' }]);
+  assert.deepEqual(result.summary, {
+    lineCount: 2, assignedLineCount: 2, vehicleReferenceCount: 2,
+    stopReferenceCount: 3, nullStopReferenceCount: 1, completeObservedCycleCount: 1,
+    invalidVehicleReferenceCount: 1, invalidStopReferenceCount: 1,
+  });
+  assert.equal(result.lines[0].completeObservedCycle, 30);
+  assert.equal(result.lines[0].largestObservedInterval, 20);
+  assert.equal(result.lines[0].assignedVehicles[0].name, 'Tanker');
+  assert.equal(result.lines[0].stops[0].building.name, 'Oil Harbor');
+  assert.equal(result.lines[1].completeObservedCycle, null);
 });

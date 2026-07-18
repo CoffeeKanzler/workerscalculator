@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   parseBuildingsGame, parseWorkers, parseHeader, parseMapClimate, parseResearch,
-  parseVehicles, parseUsedVehicles,
+  parseVehicles, parseUsedVehicles, parseLines,
 } from '../js/savegame.js';
 import * as savegame from '../js/savegame.js';
 
@@ -12,6 +12,44 @@ function writeUtf16(bytes, offset, text) {
     bytes[offset + index * 2] = byte;
     bytes[offset + index * 2 + 1] = 0;
   });
+}
+
+function lineFixture({ saveVersion = 124 } = {}) {
+  const scheduleSizes = (0x18 + 0x48) + 0x18 + 0x18 + 0x18;
+  const elapsedSize = saveVersion > 0x77 ? 8 : 0;
+  const buffer = new ArrayBuffer(4 + 0x18 + 0x200 + 8 + scheduleSizes + 8 + elapsedSize);
+  const view = new DataView(buffer);
+  const bytes = new Uint8Array(buffer);
+  let offset = 0;
+  const i32 = value => { view.setInt32(offset, value, true); offset += 4; };
+  const f32 = value => { view.setFloat32(offset, value, true); offset += 4; };
+  const block = ({ enabled = 0, field04 = 0, flags = [], rows = [] } = {}) => {
+    bytes[offset] = enabled;
+    view.setInt32(offset + 4, field04, true);
+    view.setInt32(offset + 8, rows.length, true);
+    flags.forEach((value, index) => { bytes[offset + 0x0c + index] = value; });
+    offset += 0x18;
+    for (const row of rows) {
+      bytes.set(new TextEncoder().encode(`${row.key}\0`), offset);
+      view.setFloat32(offset + 0x40, row.valueA, true);
+      view.setFloat32(offset + 0x44, row.valueB, true);
+      offset += 0x48;
+    }
+  };
+  i32(1);
+  i32(-7); i32(3); i32(9); i32(2); i32(2); i32(2);
+  writeUtf16(bytes, offset, 'Oil route\0');
+  offset += 0x200;
+  i32(4); i32(-1);
+  block({ enabled: 1, field04: 6, flags: [1, 2, 3],
+    rows: [{ key: 'oil', valueA: 0.25, valueB: -11 }] });
+  block();
+  block();
+  block({ enabled: 1, flags: [9] });
+  i32(12); i32(13);
+  if (saveVersion > 0x77) { f32(10.5); f32(20.25); }
+  assert.equal(offset, buffer.byteLength);
+  return buffer;
 }
 
 function vehicleFixture({ cargo = [], optionalBranches = false } = {}) {
@@ -80,6 +118,39 @@ test('vehicle traversal consumes writer-proven optional blocks', () => {
   const parsed = parseVehicles(buffer);
   assert.equal(parsed.vehicles.length, 1);
   assert.equal(parsed.summary.byteLength, buffer.byteLength);
+});
+
+test('vehicle lines preserve exact stops schedules assignments and observed intervals', () => {
+  const buffer = lineFixture();
+  const parsed = parseLines(buffer, { saveVersion: 124 });
+
+  assert.deepEqual(parsed.summary, { recordCount: 1, byteLength: buffer.byteLength, trailingBytes: 0 });
+  assert.deepEqual(parsed.lines, [{
+    slot: 0, name: 'Oil route', rawField00: -7, rawField04: 3, rawField08: 9,
+    stopIds: [4, -1],
+    schedules: [
+      {
+        primary: { rawByte00: 1, rawField04: 6, flags: [1, 2, 3, 0, 0, 0, 0, 0, 0],
+          entries: [{ key: 'oil', valueA: 0.25, valueB: -11 }] },
+        secondary: { rawByte00: 0, rawField04: 0, flags: [0, 0, 0, 0, 0, 0, 0, 0, 0], entries: [] },
+      },
+      {
+        primary: { rawByte00: 0, rawField04: 0, flags: [0, 0, 0, 0, 0, 0, 0, 0, 0], entries: [] },
+        secondary: { rawByte00: 1, rawField04: 0, flags: [9, 0, 0, 0, 0, 0, 0, 0, 0], entries: [] },
+      },
+    ],
+    vehicleIds: [12, 13], observedIntervals: [10.5, 20.25],
+  }]);
+  const appended = new Uint8Array(buffer.byteLength + 1);
+  appended.set(new Uint8Array(buffer));
+  assert.throws(() => parseLines(appended.buffer, { saveVersion: 124 }), /trailing bytes/);
+  assert.throws(() => parseLines(buffer.slice(0, -1), { saveVersion: 124 }), /observed interval/);
+});
+
+test('vehicle line observed intervals follow the save-version gate', () => {
+  const buffer = lineFixture({ saveVersion: 0x77 });
+  const parsed = parseLines(buffer, { saveVersion: 0x77 });
+  assert.deepEqual(parsed.lines[0].observedIntervals, []);
 });
 
 function usedVehicleFixture() {
@@ -201,6 +272,44 @@ test('live building preserves exact first-pass storage inventories', () => {
   assert.deepEqual(building.storages, [{
     storageIndex: 0, inputFlag: 1, outputFlag: 0, selector: -1,
     capacity: 20, mode: 3, resources: rows,
+  }]);
+});
+
+test('distribution offices expose exact associated vehicles and configured target rules', () => {
+  const dynamicSize = 8 + 4 + 0x18 + 0x48 + 0x18;
+  const buffer = new ArrayBuffer(4 + 0x6d8 + dynamicSize + 0x80);
+  const view = new DataView(buffer);
+  const bytes = new Uint8Array(buffer);
+  const start = 4;
+  view.setUint32(0, 1, true);
+  bytes.set(new TextEncoder().encode('road_office\0'), start);
+  view.setInt32(start + 0x564, 0x2c, true);
+  view.setInt32(start + 0x488, 2, true); // n2a0 associated vehicle vector
+  view.setInt32(start + 0x534, 1, true); // n1f4 configured targets
+  let offset = start + 0x6d8;
+  view.setInt32(offset, 12, true); offset += 4;
+  view.setInt32(offset, 13, true); offset += 4;
+  view.setInt32(offset, 7, true); offset += 4;
+  bytes[offset] = 1;
+  view.setFloat32(offset + 4, 0.8, true);
+  view.setInt32(offset + 8, 1, true);
+  bytes.set([1, 2, 3, 4, 5, 6, 7, 8, 9], offset + 0x0c);
+  offset += 0x18;
+  bytes.set(new TextEncoder().encode('coal\0'), offset);
+  view.setFloat32(offset + 0x40, 0, true);
+  view.setFloat32(offset + 0x44, 0, true);
+  offset += 0x48;
+  bytes[offset] = 0;
+  view.setFloat32(offset + 4, 0.2, true);
+  view.setInt32(offset + 8, 0, true);
+
+  const [building] = parseBuildingsGame(buffer);
+  assert.equal(building.distributionKind, 'road');
+  assert.deepEqual(building.associatedVehicleIds, [12, 13]);
+  assert.deepEqual(building.distributionAssignments, [{
+    targetBuildingIndex: 7,
+    load: { enabled: true, threshold: 0.800000011920929, resources: ['coal'] },
+    unload: { enabled: false, threshold: 0.20000000298023224, resources: [] },
   }]);
 });
 
