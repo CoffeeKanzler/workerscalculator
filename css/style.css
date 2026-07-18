@@ -275,6 +275,7 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .republic-map .map-selected circle { fill: var(--accent); opacity: .9; }
 .republic-map .map-scopes circle { fill: var(--panel); stroke: var(--accent2); stroke-width: 2; cursor: pointer; }
 .republic-map .map-outliers circle { fill: var(--neg); stroke: var(--panel); stroke-width: 1.8; }
+.republic-map circle.focused { fill: var(--neg); stroke: #ffd54a; stroke-width: 3.5; }
 .map-legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 8px; color: var(--muted); font-size: 12px; }
 .map-legend span { display: inline-flex; align-items: center; gap: 5px; }
 .map-legend i { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }

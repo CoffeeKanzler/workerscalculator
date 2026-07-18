@@ -395,12 +395,14 @@ test('schematic map projects exact x/z positions and marks outlier residences', 
     { index: 5, scopeId: 8, x: 30, y: 3, z: 20 },
   ], [{ id: 7, name: 'A', position: { x: 0, y: 2, z: 0 } }], {
     residents: [{ citizenIndex: 2, residenceBuildingIndex: 4, criminality: 0.3 }],
-  }, { width: 100, height: 60, padding: 10 });
+  }, { width: 100, height: 60, padding: 10, focusBuildingIndex: 4 });
   assert.deepEqual(result.bounds, { minX: -10, maxX: 30, minZ: -20, maxZ: 20 });
   assert.equal(result.buildings[0].mapX, 10);
   assert.equal(result.buildings[0].mapY, 50);
   assert.equal(result.buildings[0].criminalityOutlier.citizenIndex, 2);
+  assert.equal(result.buildings[0].focused, true);
   assert.equal(result.buildings[1].criminalityOutlier, null);
+  assert.equal(result.buildings[1].focused, false);
   assert.equal(result.scopes[0].mapX, 30);
   assert.equal(result.scopes[0].mapY, 30);
 });

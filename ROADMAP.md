@@ -260,7 +260,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   - **Next high-value save modules:** expand the first 20 uniquely matched stable city-building
   game IDs through careful curation, and optionally follow a live save directory. A first
   schematic Republic map now plots exact saved building X/Z positions, area centers, and
-  highlighted criminality-outlier residences; roads, water, and terrain remain future layers.
+  highlighted criminality-outlier residences; each outlier row can zoom directly to its
+  residence and return to the full-republic view. Roads, water, and terrain remain future layers.
 
 ### 4.2 Live-follow stats.ini ✅ done 2026-07-18
 - **Delivered:** The Save Import page can watch a user-approved save directory through

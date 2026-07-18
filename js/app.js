@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=60';
+import { STRINGS } from './i18n.js?v=61';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=27';
@@ -16,7 +16,7 @@ import {
   productionBufferAlerts, summarizeDistributionOffices, summarizeVehicleLines,
   summarizeCriminalityOutliers,
   buildSchematicMap,
-} from './save_model.js?v=11';
+} from './save_model.js?v=12';
 import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=5';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
@@ -45,6 +45,7 @@ let namedSnapshotNames = [];
 let comparisonSnapshotName = '';
 let comparisonSnapshot = null;
 let comparisonSnapshotError = '';
+let mapFocusBuildingIndex = null;
 
 function createInitialState() {
   return {
@@ -2493,7 +2494,9 @@ function totalMapValues(map) {
 }
 
 function renderSchematicRepublicMap(buildings, scopes, outliers) {
-  const model = buildSchematicMap(buildings, scopes, outliers);
+  const model = buildSchematicMap(buildings, scopes, outliers, {
+    focusBuildingIndex: mapFocusBuildingIndex,
+  });
   if (!model) return null;
   const ns = 'http://www.w3.org/2000/svg';
   const node = (tag, attrs = {}) => {
@@ -2501,8 +2504,16 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     for (const [key, value] of Object.entries(attrs)) item.setAttribute(key, value);
     return item;
   };
+  const focusedBuilding = model.buildings.find(building => building.focused);
+  const zoomWidth = model.width / 4;
+  const zoomHeight = model.height / 4;
+  const zoomX = focusedBuilding
+    ? Math.max(0, Math.min(model.width - zoomWidth, focusedBuilding.mapX - zoomWidth / 2)) : 0;
+  const zoomY = focusedBuilding
+    ? Math.max(0, Math.min(model.height - zoomHeight, focusedBuilding.mapY - zoomHeight / 2)) : 0;
   const svg = node('svg', {
-    viewBox: `0 0 ${model.width} ${model.height}`,
+    viewBox: focusedBuilding
+      ? `${zoomX} ${zoomY} ${zoomWidth} ${zoomHeight}` : `0 0 ${model.width} ${model.height}`,
     class: 'republic-map', role: 'img', 'aria-label': t('schematicRepublicMap'),
   });
   const scopeNames = new Map(model.scopes.map(scope => [scope.id, scope.name]));
@@ -2514,7 +2525,8 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     const outlier = building.criminalityOutlier;
     const circle = node('circle', {
       cx: building.mapX.toFixed(2), cy: building.mapY.toFixed(2),
-      r: outlier ? 5.5 : selected ? 2.4 : 1.35,
+      r: building.focused ? 7.5 : outlier ? 5.5 : selected ? 2.4 : 1.35,
+      ...(building.focused ? { class: 'focused' } : {}),
     });
     const title = node('title');
     title.textContent = outlier
@@ -2530,20 +2542,30 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
       cx: scope.mapX.toFixed(2), cy: scope.mapY.toFixed(2), r: scope.id === state.republicScope ? 6 : 4,
       tabindex: '0', role: 'button', 'aria-label': scope.name,
     });
-    marker.addEventListener('click', () => { state.republicScope = scope.id; update(); });
+    marker.addEventListener('click', () => {
+      mapFocusBuildingIndex = null;
+      state.republicScope = scope.id;
+      update();
+    });
     const title = node('title');
     title.textContent = scope.name;
     marker.append(title);
     scopeLayer.append(marker);
   }
   svg.append(normalLayer, selectedLayer, scopeLayer, outlierLayer);
-  return el('details', { class: 'secondary-section map-section' },
+  return el('details', {
+    class: 'secondary-section map-section',
+    ...(focusedBuilding ? { open: '' } : {}),
+  },
     el('summary', {}, `${t('schematicRepublicMap')} (${fmt(model.buildings.length, 0)})`),
     el('p', { class: 'hint' }, t('schematicMapHint')),
     el('div', { class: 'map-legend' },
       el('span', {}, el('i', { class: 'building' }), t('buildings')),
       el('span', {}, el('i', { class: 'scope' }), t('areaCenters')),
       el('span', {}, el('i', { class: 'outlier' }), t('highCriminalityResidents'))),
+    focusedBuilding ? el('button', {
+      onclick: () => { mapFocusBuildingIndex = null; update(); },
+    }, t('showWholeRepublic')) : null,
     svg);
 }
 
@@ -2873,6 +2895,14 @@ function renderRepublic() {
       })))),
     el('p', { class: 'hint' }, t('currentCrimeRankingNote'))) : null;
   const criminalityOutliers = state.saveImport?.criminalityOutliers;
+  const locateOutlierResidence = resident => {
+    mapFocusBuildingIndex = resident.residenceBuildingIndex;
+    state.republicScope = resident.residence?.scopeId ?? state.republicScope;
+    update();
+    setTimeout(() => document.querySelector('.map-section')?.scrollIntoView({
+      behavior: 'smooth', block: 'center',
+    }), 0);
+  };
   const schematicMap = renderSchematicRepublicMap(
     state.saveImport?.observedBuildings, state.saveImport?.scopes, criminalityOutliers);
   const criminalityOutlierDetails = criminalityOutliers?.residents?.length ? el('details', {
@@ -2888,14 +2918,17 @@ function renderRepublic() {
     el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
       el('thead', {}, el('tr', {},
         el('th', {}, t('citizen')), el('th', {}, t('criminality')),
-        el('th', {}, t('area')), el('th', {}, t('residence')), el('th', {}, t('building')))),
+        el('th', {}, t('area')), el('th', {}, t('residence')), el('th', {}, t('building')), el('th', {}))),
       el('tbody', {}, ...criminalityOutliers.residents.map(resident => el('tr', {},
         el('td', {}, `#${resident.citizenIndex}`),
         el('td', { class: 'r warn' }, fmt(resident.criminality * 100, 2) + ' %'),
         el('td', {}, plannerScopeName(resident.residence?.scopeId)),
         el('td', {}, resident.residence?.name || resident.residence?.type || '—'),
         el('td', { class: 'r' }, Number.isInteger(resident.residenceBuildingIndex)
-          ? `#${resident.residenceBuildingIndex}` : '—'))))))) : null;
+          ? `#${resident.residenceBuildingIndex}` : '—'),
+        el('td', {}, Number.isInteger(resident.residenceBuildingIndex) ? el('button', {
+          onclick: () => locateOutlierResidence(resident),
+        }, t('locateOnMap')) : null))))))) : null;
   const institutionOverview = republicOperations ? el('section', { class: 'institution-overview' },
     el('h3', {}, t('republicInstitutions')),
     el('div', { class: 'institution-grid' },
