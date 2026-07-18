@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=76';
+import { STRINGS } from './i18n.js?v=77';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -18,14 +18,14 @@ import {
   productionBufferAlerts, summarizeDistributionOffices, summarizeVehicleLines,
   summarizeCriminalityOutliers,
   buildSchematicMap,
-} from './save_model.js?v=12';
+} from './save_model.js?v=13';
 import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=8';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, resolveVehicleModels,
   shareSafeSaveImport, vehicleCategoryGroup, vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=8';
+} from './fleet.js?v=9';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',
@@ -158,7 +158,13 @@ function saveState() {
     statsRecords, viewingSharedLink, snapshotNotice, importStatus, importStatusError,
     localWorkshopStatus, liveStatsStatus, liveStatsStatusError, ...rest
   } = state;
-  try { localStorage.setItem(LS_KEY, JSON.stringify(rest)); } catch (e) { /* quota */ }
+  // Exact road samples belong in the IndexedDB named snapshot. Keeping the
+  // multi-megabyte geometry out of the small synchronous localStorage slot
+  // prevents unrelated settings changes from silently hitting browser quota.
+  const persistent = rest.saveImport?.roadNetwork
+    ? { ...rest, saveImport: (({ roadNetwork, ...summary }) => summary)(rest.saveImport) }
+    : rest;
+  try { localStorage.setItem(LS_KEY, JSON.stringify(persistent)); } catch (e) { /* quota */ }
 }
 
 function loadState() {
@@ -1816,6 +1822,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
   vehicleModelCoverage = null, usedVehicleModelCoverage = null,
   sourceStatus = {}, parserWarnings = [], defaultProductivity = 1, workshopCatalog = null,
   cityStats = [], mapClimate = null, events = null,
+  roadNetwork = null,
 } = {}) {
   const occupiedScopeIds = new Set(buildings.map(building => building.scopeId).filter(Number.isInteger));
   const occupiedSettlements = settlements.filter(settlement => occupiedScopeIds.has(settlement.id));
@@ -1956,6 +1963,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
     metadata: {
       version: 5, sourceName, importedAt: new Date().toISOString(), header, sourceStatus,
       mapClimate,
+      roadNetwork,
       settlementCount: occupiedSettlements.length, sourceSettlementCount: settlements.length,
       emptySettlementCount: settlements.length - occupiedSettlements.length, buildingCount: buildings.length,
       citizenCount: citizenResult?.recordCount ?? 0,
@@ -2013,7 +2021,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=20', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=21', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -2077,6 +2085,7 @@ async function handleSaveDirectory(fileList) {
   const vehiclesFile = byName.get('vehicles.bin');
   const usedVehiclesFile = byName.get('usedveh.bin');
   const linesFile = byName.get('lines.bin');
+  const roadFile = byName.get('road.bin');
   const headerFile = byName.get('header.bin');
   const researchFile = byName.get('research.bin');
   const eventsFile = byName.get('events.bin');
@@ -2095,17 +2104,17 @@ async function handleSaveDirectory(fileList) {
   try {
     const readOptional = file => file ? file.arrayBuffer() : Promise.resolve(null);
     const [namepointBuffer, buildingBuffer, workerBuffer, vehicleBuffer, usedVehicleBuffer, lineBuffer,
-      headerBuffer, researchBuffer, eventsBuffer, statsText, materialText] = await Promise.all([
+      roadBuffer, headerBuffer, researchBuffer, eventsBuffer, statsText, materialText] = await Promise.all([
       namepoints.arrayBuffer(), buildingsFile.arrayBuffer(), readOptional(workersFile),
       readOptional(vehiclesFile), readOptional(usedVehiclesFile),
-      readOptional(linesFile),
+      readOptional(linesFile), readOptional(roadFile),
       readOptional(headerFile), readOptional(researchFile), readOptional(eventsFile), statsFile ? statsFile.text() : '',
       materialFile ? materialFile.text() : '',
     ]);
     const parsed = await parseSaveInWorker({
       namepoints: namepointBuffer, buildings: buildingBuffer, workers: workerBuffer,
       vehicles: vehicleBuffer, usedVehicles: usedVehicleBuffer,
-      lines: lineBuffer,
+      lines: lineBuffer, road: roadBuffer,
       header: headerBuffer, research: researchBuffer, events: eventsBuffer, stats: statsText, material: materialText,
     });
     const relative = namepoints.webkitRelativePath || buildingsFile.webkitRelativePath || '';
@@ -2139,6 +2148,7 @@ async function handleSaveDirectory(fileList) {
         workshopCatalog,
         cityStats: parsed.cityStats ?? [],
         mapClimate: parsed.mapClimate,
+        roadNetwork: parsed.roadNetwork,
       });
     imported.metadata.statsRecordCount = statsRecords.length;
     imported.metadata.latestProductivity = productivity;
@@ -2260,6 +2270,7 @@ function renderSaveImport() {
   const sourceFiles = {
     namepoints: 'namepoints.bin', buildings: 'buildings_game.bin', workers: 'workers.bin',
     vehicles: 'vehicles.bin', usedVehicles: 'usedveh.bin', lines: 'lines.bin',
+    road: 'road.bin',
     header: 'header.bin', research: 'research.bin', events: 'events.bin', stats: 'stats.ini',
     material: 'material.mtl',
   };
@@ -2634,6 +2645,7 @@ function totalMapValues(map) {
 function renderSchematicRepublicMap(buildings, scopes, outliers) {
   const model = buildSchematicMap(buildings, scopes, outliers, {
     focusBuildingIndex: mapFocusBuildingIndex,
+    roadNetwork: state.saveImport?.roadNetwork,
   });
   if (!model) return null;
   const ns = 'http://www.w3.org/2000/svg';
@@ -2655,6 +2667,14 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     class: 'republic-map', role: 'img', 'aria-label': t('schematicRepublicMap'),
   });
   const scopeNames = new Map(model.scopes.map(scope => [scope.id, scope.name]));
+  const roadLayer = node('g', { class: 'map-roads' });
+  if (model.roads.length) {
+    roadLayer.append(node('path', {
+      d: model.roads.map(road => road.points.map((point, index) =>
+        `${index ? 'L' : 'M'}${point.mapX.toFixed(2)} ${point.mapY.toFixed(2)}`).join(' ')).join(' '),
+      'data-road-count': model.roads.length,
+    }));
+  }
   const normalLayer = node('g', { class: 'map-buildings' });
   const selectedLayer = node('g', { class: 'map-selected' });
   const outlierLayer = node('g', { class: 'map-outliers' });
@@ -2676,6 +2696,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
   }
   const scopeLayer = node('g', { class: 'map-scopes' });
   for (const scope of model.scopes) {
+    if (focusedBuilding && scope.id !== focusedBuilding.scopeId) continue;
     const marker = node('circle', {
       cx: scope.mapX.toFixed(2), cy: scope.mapY.toFixed(2), r: scope.id === state.republicScope ? 6 : 4,
       tabindex: '0', role: 'button', 'aria-label': scope.name,
@@ -2690,19 +2711,24 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     marker.append(title);
     scopeLayer.append(marker);
   }
-  svg.append(normalLayer, selectedLayer, scopeLayer, outlierLayer);
+  svg.append(roadLayer, normalLayer, selectedLayer, scopeLayer, outlierLayer);
   return el('details', {
     class: 'secondary-section map-section',
     ...(focusedBuilding ? { open: '' } : {}),
   },
     el('summary', {}, `${t('schematicRepublicMap')} (${fmt(model.buildings.length, 0)})`),
-    el('p', { class: 'hint' }, t('schematicMapHint')),
+    el('p', { class: 'hint' }, t(model.roads.length ? 'schematicMapRoadHint' : 'schematicMapHint')),
     el('div', { class: 'map-legend' },
+      model.roads.length ? el('span', {}, el('i', { class: 'road' }), t('roads')) : null,
       el('span', {}, el('i', { class: 'building' }), t('buildings')),
       el('span', {}, el('i', { class: 'scope' }), t('areaCenters')),
       el('span', {}, el('i', { class: 'outlier' }), t('highCriminalityResidents'))),
     focusedBuilding ? el('button', {
-      onclick: () => { mapFocusBuildingIndex = null; update(); },
+      onclick: () => {
+        mapFocusBuildingIndex = null;
+        update();
+        document.querySelector('details.map-section')?.setAttribute('open', '');
+      },
     }, t('showWholeRepublic')) : null,
     svg);
 }
@@ -4175,6 +4201,18 @@ async function initializeNamedSnapshots() {
   await refreshNamedSnapshotNames();
 }
 
+async function restoreNamedRoadNetwork() {
+  if (state.saveImport?.roadNetwork || !state.saveImport || !state.saveSlotName
+    || !namedSnapshotNames.includes(state.saveSlotName)) return;
+  const saved = await snapshotStore.load(state.saveSlotName);
+  const candidate = saved?.saveImport;
+  if (!candidate?.roadNetwork || candidate.sourceName !== state.saveImport.sourceName) return;
+  const currentPath = state.saveImport.header?.savePath;
+  const candidatePath = candidate.header?.savePath;
+  if (currentPath && candidatePath && currentPath !== candidatePath) return;
+  state.saveImport.roadNetwork = candidate.roadNetwork;
+}
+
 async function saveNamedState(name) {
   try {
     await snapshotStore.save(name, snapshotState());
@@ -4271,6 +4309,7 @@ if (!IS_BETA && state.tab === 'saveimport') state.tab = 'republic';
 state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.calcOpts || {}) };
 loadData().then(async () => {
   await initializeNamedSnapshots();
+  await restoreNamedRoadNetwork();
   await applyHash();
   if (!state.cities.length) state.cities.push(defaultCity());
   applyTuning(state.tuning);

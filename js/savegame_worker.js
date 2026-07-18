@@ -1,11 +1,12 @@
 import {
   parseNamepoints, parseBuildingsGame, parseWorkers, parseHeader, parseResearch, parseEvents,
   parseMapClimate, parseVehicles, parseUsedVehicles, parseLines, reconcileSettlementMembership,
-} from './savegame.js?v=19';
+  parseRoadNetwork,
+} from './savegame.js?v=20';
 import { parseBlueprintOwned, parseCityStatsIni, parseStatsIni } from './statsini.js?v=17';
 
 const sourceStatus = (payload) => Object.fromEntries(
-  ['namepoints', 'buildings', 'workers', 'vehicles', 'usedVehicles', 'lines', 'header', 'research', 'events', 'stats', 'material']
+  ['namepoints', 'buildings', 'workers', 'vehicles', 'usedVehicles', 'lines', 'road', 'header', 'research', 'events', 'stats', 'material']
     .map((key) => [key, payload[key] ? 'pending' : 'missing']),
 );
 
@@ -54,6 +55,7 @@ self.onmessage = ({ data }) => {
     const lines = optional('lines', (buffer) => parseLines(buffer, {
       saveVersion: header?.saveVersion ?? 124,
     }));
+    const roadNetwork = optional('road', parseRoadNetwork);
     const research = optional('research', parseResearch);
     const events = optional('events', parseEvents);
     const statsRecords = optional('stats', parseStatsIni);
@@ -69,6 +71,7 @@ self.onmessage = ({ data }) => {
         usedVehicleOffers: usedVehicles?.offers ?? null,
         usedVehicleFileSummary: usedVehicles?.summary ?? null,
         vehicleLines: lines?.lines ?? null, lineFileSummary: lines?.summary ?? null,
+        roadNetwork,
         statsRecords, cityStats, blueprintOwned, membershipAudit, sourceStatus: status, warnings,
       },
     });

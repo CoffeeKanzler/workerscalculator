@@ -122,6 +122,108 @@ export function parseNamepoints(buffer) {
   return settlements;
 }
 
+// The game's shared network writer serializes roads, rails, pipes, wires, and
+// footpaths with the same size-described layout.  This parser intentionally
+// exposes only topology and the saved 3D samples; all simulation-only blocks
+// are skipped by their exact serialized counts.
+export function parseRoadNetwork(buffer) {
+  const c = new BinaryCursor(buffer);
+  const nodeCount = c.u32('road node count');
+  const edgeCount = c.u32('road edge count');
+  const groupCount = c.u32('road group count');
+  if (nodeCount > 1_000_000 || edgeCount > 1_000_000 || groupCount > 1_000_000) {
+    throw new Error(`implausible road network counts ${nodeCount}/${edgeCount}/${groupCount}`);
+  }
+  const countInBlock = (start, relative, context) => c.countAt(start + relative, context);
+  const skipItems = (count, size, context) => c.skip(count * size, context);
+  const nodes = [];
+  for (let index = 0; index < nodeCount; index += 1) {
+    const start = c.offset;
+    c.require(0x48, `road node ${index} header`);
+    const x = c.view.getFloat32(start, true);
+    const y = c.view.getFloat32(start + 4, true);
+    const z = c.view.getFloat32(start + 8, true);
+    const referenceA = countInBlock(start, 0x0c, `road node ${index} reference A count`);
+    const referenceB = countInBlock(start, 0x10, `road node ${index} reference B count`);
+    const valuesA = countInBlock(start, 0x14, `road node ${index} value A count`);
+    const valuesB = countInBlock(start, 0x18, `road node ${index} value B count`);
+    const lanes = countInBlock(start, 0x1c, `road node ${index} lane count`);
+    c.offset += 0x48;
+    skipItems(lanes, 12, `road node ${index} lane arrays`);
+    skipItems(referenceA + referenceB + valuesA + valuesB, 4, `road node ${index} arrays`);
+    if (![x, y, z].every(Number.isFinite)) throw new Error(`road node ${index}: invalid coordinates`);
+    nodes.push({ id: index, x, y, z });
+  }
+
+  const edges = [];
+  let pointCount = 0;
+  for (let index = 0; index < edgeCount; index += 1) {
+    const start = c.offset;
+    c.require(0x88, `road edge ${index} header`);
+    const samples = countInBlock(start, 0x00, `road edge ${index} sample count`);
+    const from = c.view.getInt32(start + 0x04, true);
+    const to = c.view.getInt32(start + 0x08, true);
+    if (from < 0 || from >= nodeCount || to < 0 || to >= nodeCount) {
+      throw new Error(`road edge ${index}: invalid endpoints ${from}/${to}`);
+    }
+    const references = countInBlock(start, 0x0c, `road edge ${index} reference count`);
+    const blocks30A = countInBlock(start, 0x10, `road edge ${index} block A count`);
+    const blocks30D = countInBlock(start, 0x14, `road edge ${index} block D count`);
+    const blocks30E = countInBlock(start, 0x18, `road edge ${index} block E count`);
+    const blocks30B = countInBlock(start, 0x1c, `road edge ${index} block B count`);
+    const blocks30C = countInBlock(start, 0x20, `road edge ${index} block C count`);
+    const nodeBlocksA = countInBlock(start, 0x24, `road edge ${index} node block A count`);
+    const nodeBlocksB = countInBlock(start, 0x28, `road edge ${index} node block B count`);
+    const nodeBlocksC = countInBlock(start, 0x2c, `road edge ${index} node block C count`);
+    const compactBlocks = countInBlock(start, 0x30, `road edge ${index} compact block count`);
+    const nestedBlocks = countInBlock(start, 0x34, `road edge ${index} nested block count`);
+    const scalarValues = countInBlock(start, 0x70, `road edge ${index} scalar count`);
+    const objectReferences = countInBlock(start, 0x74, `road edge ${index} object reference count`);
+    const blocks30F = countInBlock(start, 0x80, `road edge ${index} block F count`);
+    const byteValues = countInBlock(start, 0x7c, `road edge ${index} byte count`);
+    const pairedReferences = c.view.getUint8(start + 0x85);
+    c.offset += 0x88;
+    skipItems(references, 4, `road edge ${index} references`);
+    skipItems(nodeBlocksA + nodeBlocksB + nodeBlocksC, 0x2c0, `road edge ${index} node blocks`);
+    skipItems(compactBlocks, 0x14, `road edge ${index} compact blocks`);
+    for (let item = 0; item < nestedBlocks; item += 1) {
+      const nestedStart = c.offset;
+      c.require(0xcc, `road edge ${index} nested block ${item}`);
+      const nestedReferences = countInBlock(nestedStart, 0xc4,
+        `road edge ${index} nested block ${item} reference count`);
+      c.offset += 0xcc;
+      skipItems(nestedReferences, 12, `road edge ${index} nested block ${item} arrays`);
+    }
+    pointCount += samples;
+    if (pointCount > 5_000_000) throw new Error(`implausible road sample count ${pointCount}`);
+    const points = [];
+    for (let item = 0; item < samples; item += 1) {
+      c.require(0x18, `road edge ${index} sample ${item}`);
+      const x = c.view.getFloat32(c.offset, true);
+      const y = c.view.getFloat32(c.offset + 4, true);
+      const z = c.view.getFloat32(c.offset + 8, true);
+      if (![x, y, z].every(Number.isFinite)) throw new Error(`road edge ${index} sample ${item}: invalid coordinates`);
+      points.push({ x, y, z });
+      c.offset += 0x18;
+    }
+    skipItems(blocks30A + blocks30B + blocks30C + blocks30D + blocks30E + blocks30F,
+      0x30, `road edge ${index} 48-byte blocks`);
+    skipItems(scalarValues + objectReferences, 4, `road edge ${index} scalar arrays`);
+    skipItems(byteValues, 1, `road edge ${index} byte array`);
+    skipItems(pairedReferences, 8, `road edge ${index} paired references`);
+    c.skip(0x18, `road edge ${index} tail vectors`);
+    edges.push({ id: index, from, to, points });
+  }
+  for (let index = 0; index < groupCount; index += 1) {
+    c.i32(`road group ${index} id`);
+    const members = c.i32(`road group ${index} member count`);
+    if (members < 0 || members > MAX_COUNT) throw new Error(`road group ${index}: invalid member count ${members}`);
+    skipItems(members, 4, `road group ${index} members`);
+  }
+  if (c.offset !== c.bytes.length) throw new Error(`road.bin has ${c.bytes.length - c.offset} trailing bytes`);
+  return { nodes, edges, summary: { nodeCount, edgeCount, groupCount, pointCount, byteLength: c.bytes.length } };
+}
+
 export function parseHeader(buffer) {
   const c = new BinaryCursor(buffer);
   c.require(0x204, 'header fixed metadata');

@@ -406,3 +406,18 @@ test('schematic map projects exact x/z positions and marks outlier residences', 
   assert.equal(result.scopes[0].mapX, 30);
   assert.equal(result.scopes[0].mapY, 30);
 });
+
+test('schematic map projects exact saved road centerlines with shared bounds', () => {
+  const result = buildSchematicMap([
+    { index: 1, x: 0, y: 0, z: 0 },
+  ], [], null, { width: 100, height: 100, padding: 10, roadNetwork: {
+    nodes: [{ id: 0, x: -10, y: 1, z: -20 }, { id: 1, x: 30, y: 2, z: 20 }],
+    edges: [{ id: 7, from: 0, to: 1, points: [{ x: 10, y: 1.5, z: 0 }] }],
+  } });
+  assert.deepEqual(result.bounds, { minX: -10, maxX: 30, minZ: -20, maxZ: 20 });
+  assert.deepEqual(result.roads, [{ id: 7, points: [
+    { mapX: 10, mapY: 90 }, { mapX: 50, mapY: 50 }, { mapX: 90, mapY: 10 },
+  ] }]);
+  assert.equal(result.buildings[0].mapX, 30);
+  assert.equal(result.buildings[0].mapY, 50);
+});

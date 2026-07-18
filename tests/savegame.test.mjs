@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   parseBuildingsGame, parseWorkers, parseHeader, parseMapClimate, parseResearch,
-  parseVehicles, parseUsedVehicles, parseLines,
+  parseVehicles, parseUsedVehicles, parseLines, parseRoadNetwork,
 } from '../js/savegame.js';
 import * as savegame from '../js/savegame.js';
 
@@ -13,6 +13,44 @@ function writeUtf16(bytes, offset, text) {
     bytes[offset + index * 2 + 1] = 0;
   });
 }
+
+function roadFixture() {
+  const nodeSize = 0x48;
+  const edgeSize = 0x88 + 0x18 + 0x18;
+  const buffer = new ArrayBuffer(12 + nodeSize * 2 + edgeSize);
+  const view = new DataView(buffer);
+  view.setUint32(0, 2, true);
+  view.setUint32(4, 1, true);
+  view.setUint32(8, 0, true);
+  view.setFloat32(12, 10, true);
+  view.setFloat32(16, 2, true);
+  view.setFloat32(20, 30, true);
+  view.setFloat32(12 + nodeSize, 40, true);
+  view.setFloat32(16 + nodeSize, 5, true);
+  view.setFloat32(20 + nodeSize, 60, true);
+  const edge = 12 + nodeSize * 2;
+  view.setUint32(edge, 1, true);
+  view.setInt32(edge + 4, 0, true);
+  view.setInt32(edge + 8, 1, true);
+  const sample = edge + 0x88;
+  view.setFloat32(sample, 25, true);
+  view.setFloat32(sample + 4, 3.5, true);
+  view.setFloat32(sample + 8, 45, true);
+  return buffer;
+}
+
+test('road network parser exposes exact node topology and saved polyline samples', () => {
+  const buffer = roadFixture();
+  assert.deepEqual(parseRoadNetwork(buffer), {
+    nodes: [
+      { id: 0, x: 10, y: 2, z: 30 },
+      { id: 1, x: 40, y: 5, z: 60 },
+    ],
+    edges: [{ id: 0, from: 0, to: 1, points: [{ x: 25, y: 3.5, z: 45 }] }],
+    summary: { nodeCount: 2, edgeCount: 1, groupCount: 0, pointCount: 1, byteLength: buffer.byteLength },
+  });
+  assert.throws(() => parseRoadNetwork(buffer.slice(0, -1)), /tail vectors/);
+});
 
 function lineFixture({ saveVersion = 124 } = {}) {
   const scheduleSizes = (0x18 + 0x48) + 0x18 + 0x18 + 0x18;

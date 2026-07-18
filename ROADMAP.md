@@ -268,9 +268,11 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   names, worker count, nominal service capacity, and one-to-one identity all agree; generic
   housing remains excluded because its display names were previously assigned heuristically.
   Continue careful curation of ambiguous rows, and optionally follow more live save files. A first
-  schematic Republic map now plots exact saved building X/Z positions, area centers, and
+  schematic Republic map now plots exact saved building X/Z positions, exact `road.bin`
+  centerlines when available, area centers, and
   highlighted criminality-outlier residences; each outlier row can zoom directly to its
-  residence and return to the full-republic view. Roads, water, and terrain remain future layers.
+  residence and return to the full-republic view. Road geometry is read locally from
+  `road.bin` and omitted from share links; water and terrain remain future layers.
 
 ### 4.2 Live-follow stats.ini ✅ done 2026-07-18
 - **Delivered:** The Save Import page can watch a user-approved save directory through

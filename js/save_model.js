@@ -131,15 +131,25 @@ export function compactObservedBuildings(buildings) {
 }
 
 export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
-  width = 760, height = 480, padding = 18, focusBuildingIndex = null,
+  width = 760, height = 480, padding = 18, focusBuildingIndex = null, roadNetwork = null,
 } = {}) {
   const located = (buildings ?? []).filter(building =>
     Number.isFinite(building.x) && Number.isFinite(building.z));
   if (!located.length) return null;
-  const minX = Math.min(...located.map(building => building.x));
-  const maxX = Math.max(...located.map(building => building.x));
-  const minZ = Math.min(...located.map(building => building.z));
-  const maxZ = Math.max(...located.map(building => building.z));
+  let minX = Infinity, maxX = -Infinity, minZ = Infinity, maxZ = -Infinity;
+  const includeExtent = point => {
+    if (!Number.isFinite(point?.x) || !Number.isFinite(point?.z)) return;
+    minX = Math.min(minX, point.x);
+    maxX = Math.max(maxX, point.x);
+    minZ = Math.min(minZ, point.z);
+    maxZ = Math.max(maxZ, point.z);
+  };
+  located.forEach(includeExtent);
+  for (const edge of roadNetwork?.edges ?? []) {
+    includeExtent(roadNetwork.nodes?.[edge.from]);
+    edge.points?.forEach(includeExtent);
+    includeExtent(roadNetwork.nodes?.[edge.to]);
+  }
   const projectX = value => padding + (width - 2 * padding) * ((value - minX) / ((maxX - minX) || 1));
   const projectY = value => height - padding
     - (height - 2 * padding) * ((value - minZ) / ((maxZ - minZ) || 1));
@@ -147,6 +157,17 @@ export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
     .map(resident => [resident.residenceBuildingIndex, resident]));
   return {
     width, height, bounds: { minX, maxX, minZ, maxZ },
+    roads: (roadNetwork?.edges ?? []).map(edge => {
+      const from = roadNetwork.nodes?.[edge.from];
+      const to = roadNetwork.nodes?.[edge.to];
+      return {
+        id: edge.id,
+        points: [from, ...(edge.points ?? []), to].filter(point =>
+          Number.isFinite(point?.x) && Number.isFinite(point?.z)).map(point => ({
+          mapX: projectX(point.x), mapY: projectY(point.z),
+        })),
+      };
+    }).filter(edge => edge.points.length > 1),
     buildings: located.map(building => ({
       ...building, mapX: projectX(building.x), mapY: projectY(building.z),
       criminalityOutlier: outliers.get(building.index) ?? null,
