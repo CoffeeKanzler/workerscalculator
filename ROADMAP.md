@@ -143,7 +143,7 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   will create a new snapshot rather than overwrite the currently open plan.
 - **Comparison:** Republic Overview can load another named snapshot read-only and
   show current-minus-baseline population, buildings, staffing, productivity, health,
-  and criminality. Area deltas use stable scope IDs only when both snapshots report
+  criminality, and cumulative minor/medium/serious crime counts. Area deltas use stable scope IDs only when both snapshots report
   the same saved-game path; unrelated republics retain totals without false city matches.
 
 ### 4.1b Full observed game-save snapshots 🧪 beta 2026-07-17

@@ -107,14 +107,33 @@ test('compares observed totals and stable areas current minus baseline', () => {
     } }],
     observedProductionRows: [{ scopeId: 4, count: 1, configuredWorkers: 120, currentWorkers: 90 }],
   };
-  const comparison = compareObservedSnapshots(current, baseline);
+  const currentStats = [
+    { year: 1980, minorCrimes: 22, mediumCrimes: 7, seriousCrimes: 3 },
+    { current: true },
+  ];
+  const baselineStats = [{ year: 1979, minorCrimes: 18, mediumCrimes: 4, seriousCrimes: 2 }];
+  const comparison = compareObservedSnapshots(current, baseline, currentStats, baselineStats);
   assert.equal(comparison.sameRepublic, true);
   assert.equal(comparison.deltas.population, 120);
   assert.equal(comparison.deltas.liveBuildingCount, 5);
   assert.equal(comparison.deltas.currentIndustryWorkers, 30);
+  assert.equal(comparison.deltas.minorCrimes, 4);
+  assert.equal(comparison.deltas.mediumCrimes, 3);
+  assert.equal(comparison.deltas.seriousCrimes, 1);
+  assert.equal(comparison.current.totals.minorCrimes, 22);
   assert.ok(Math.abs(comparison.deltas.productivity - 0.1) < 1e-9);
   assert.equal(comparison.areas[0].deltas.population, 120);
   assert.ok(Math.abs(comparison.areas[0].deltas.criminality - 0.005) < 1e-9);
+});
+
+test('leaves unavailable cumulative crime snapshot changes unknown', () => {
+  const current = { sourceName: 'Republic', header: { savePath: 'save/republic' } };
+  const baseline = { ...current };
+  const comparison = compareObservedSnapshots(current, baseline,
+    [{ current: true, minorCrimes: 9 }], []);
+  assert.equal(comparison.current.totals.minorCrimes, 9);
+  assert.equal(comparison.baseline.totals.minorCrimes, null);
+  assert.equal(comparison.deltas.minorCrimes, null);
 });
 
 test('does not match area IDs across different republics', () => {

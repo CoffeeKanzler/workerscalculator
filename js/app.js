@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=64';
+import { STRINGS } from './i18n.js?v=65';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=28';
@@ -17,7 +17,7 @@ import {
   summarizeCriminalityOutliers,
   buildSchematicMap,
 } from './save_model.js?v=12';
-import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=5';
+import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=6';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
@@ -3337,7 +3337,8 @@ function renderRepublic() {
     comparisonSnapshotError = '';
   }
   const comparison = comparisonSnapshot?.saveImport && state.saveImport
-    ? compareObservedSnapshots(state.saveImport, comparisonSnapshot.saveImport) : null;
+    ? compareObservedSnapshots(state.saveImport, comparisonSnapshot.saveImport,
+      state.statsRecords, comparisonSnapshot.statsRecords) : null;
   const comparisonValue = (key, value) => {
     if (!Number.isFinite(value)) return '—';
     return ['productivity', 'health', 'criminality'].includes(key)
@@ -3355,6 +3356,8 @@ function renderRepublic() {
     ['configuredIndustryWorkers', t('configuredWorkers')],
     ['currentIndustryWorkers', t('currentWorkers')], ['productivity', t('productivity')],
     ['health', t('health')], ['criminality', t('criminality')],
+    ['minorCrimes', t('minorCrimes')], ['mediumCrimes', t('mediumCrimes')],
+    ['seriousCrimes', t('seriousCrimes')],
   ];
   const comparisonAreaRows = comparison?.sameRepublic ? comparison.areas.filter(area =>
     Object.values(area.deltas).some(value => Number.isFinite(value) && Math.abs(value) > 1e-9))

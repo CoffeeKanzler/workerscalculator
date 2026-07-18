@@ -91,11 +91,22 @@ function sameRepublicSource(current = {}, baseline = {}) {
   return !!current.sourceName && current.sourceName === baseline.sourceName;
 }
 
-export function compareObservedSnapshots(currentInfo, baselineInfo) {
+const CRIME_HISTORY_KEYS = ['minorCrimes', 'mediumCrimes', 'seriousCrimes'];
+
+function latestCrimeHistory(records = []) {
+  const record = records.findLast?.(item => CRIME_HISTORY_KEYS.some(key => Number.isFinite(item?.[key])))
+    ?? [...records].reverse().find(item => CRIME_HISTORY_KEYS.some(key => Number.isFinite(item?.[key])));
+  return Object.fromEntries(CRIME_HISTORY_KEYS.map(key => [key,
+    Number.isFinite(record?.[key]) ? record[key] : null]));
+}
+
+export function compareObservedSnapshots(currentInfo, baselineInfo, currentStats = [], baselineStats = []) {
   const current = actualProjection(observedMetadata(currentInfo));
   const baseline = actualProjection(observedMetadata(baselineInfo));
+  Object.assign(current.totals, latestCrimeHistory(currentStats));
+  Object.assign(baseline.totals, latestCrimeHistory(baselineStats));
   const keys = ['population', 'liveBuildingCount', 'configuredIndustryWorkers',
-    'currentIndustryWorkers', 'productivity', 'health', 'criminality'];
+    'currentIndustryWorkers', 'productivity', 'health', 'criminality', ...CRIME_HISTORY_KEYS];
   const deltas = Object.fromEntries(keys.map(key => [key,
     differenceValue(current.totals, baseline.totals, key)]));
   const sameRepublic = sameRepublicSource(currentInfo, baselineInfo);
