@@ -132,6 +132,7 @@ export function parseHeader(buffer) {
     settings: {
       seasonsEnabled: c.view.getInt32(0x1c0, true) !== 0,
       globalEventsLevel: c.view.getInt32(0x1c4, true),
+      crimeJusticeEnabled: c.view.getUint32(0x1e8, true) !== 0,
       trafficSimulationEnabled: c.view.getUint32(0x1f0, true) !== 0,
       realisticModeEnabled: c.view.getUint32(0x1f4, true) !== 0,
       researchEnabled: c.view.getUint32(0x1f8, true) !== 0,
