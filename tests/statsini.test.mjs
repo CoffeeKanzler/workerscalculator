@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseCityStatsIni, parseStatsIni, recordToPrices } from '../js/statsini.js';
+import { parseBlueprintOwned, parseCityStatsIni, parseStatsIni, recordToPrices } from '../js/statsini.js';
 
 const SAMPLE = `$STAT_RECORD 0
 ====
@@ -36,6 +36,12 @@ $Economy_DeliveryCostRUB 0.000000
 
 $Tourism_SpendUSD 12.5
 `;
+
+test('parses exact owned blueprint identities before statistics records', () => {
+  const text = `$BLUEPRINT_OWNED bus_cav11m3\n$BLUEPRINT_OWNED loco_t478\n`
+    + `$BLUEPRINT_OWNED bus_cav11m3\n${SAMPLE}`;
+  assert.deepEqual(parseBlueprintOwned(text), ['bus_cav11m3', 'loco_t478']);
+});
 
 test('parses records with prices, dates and scalars', () => {
   const recs = parseStatsIni(SAMPLE);

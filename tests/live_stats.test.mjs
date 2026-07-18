@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { parseLiveStatsFile } from '../js/live_stats.js';
 
-const valid = `$STAT_RECORD 0\n$DATE_YEAR 2001\n$DATE_DAY 116\n$Economy_SellCostRUB\n  steel 42 1\n$end\n`;
+const valid = `$BLUEPRINT_OWNED bus_cav11m3\n$STAT_RECORD 0\n$DATE_YEAR 2001\n$DATE_DAY 116\n`
+  + `$Economy_SellCostRUB\n  steel 42 1\n$end\n`;
 
 test('live stats parsing returns a stable revision and the newest record', () => {
   const first = parseLiveStatsFile(valid, { name: 'stats.ini', size: 91, lastModified: 1234 });
@@ -12,6 +13,7 @@ test('live stats parsing returns a stable revision and the newest record', () =>
   assert.equal(first.records.length, 1);
   assert.equal(first.records[0].year, 2001);
   assert.equal(first.records[0].day, 116);
+  assert.deepEqual(first.blueprintOwned, ['bus_cav11m3']);
 });
 
 test('live stats revision changes when content changes despite identical file metadata', () => {

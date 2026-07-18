@@ -572,6 +572,7 @@ test('shared plans retain fleet coverage but omit per-vehicle save facts', () =>
     vehicleLines: { lines: [{ name: 'Secret route' }] },
     distributionOffices: { offices: [{ name: 'Secret office' }] },
     criminalityOutliers: { residents: [{ citizenIndex: 2, residenceBuildingIndex: 4 }] },
+    blueprintOwned: ['bus_cav11m3'],
   };
   const shared = shareSafeSaveImport(source);
 
@@ -583,5 +584,6 @@ test('shared plans retain fleet coverage but omit per-vehicle save facts', () =>
   assert.equal('distributionOffices' in shared, false);
   assert.equal('criminalityOutliers' in shared, false);
   assert.equal('usedVehicleOffers' in shared, false);
+  assert.equal('blueprintOwned' in shared, false);
   assert.equal(source.ownedVehicles.length, 1);
 });

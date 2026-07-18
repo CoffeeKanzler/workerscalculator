@@ -7,7 +7,7 @@ import { readFileSync } from 'node:fs';
 import {
   Economy, evaluatePlan, evaluateCity, lowTechPoints,
   evaluateVehicleProduction, recommendVehicleProduction, vehicleSaleValue,
-  vehicleProductionGroup, SEASON_FACTOR, NO_SEASON_FACTOR,
+  vehicleBlueprintQuote, vehicleProductionGroup, SEASON_FACTOR, NO_SEASON_FACTOR,
 } from '../js/calc.js';
 
 const res = JSON.parse(readFileSync(new URL('../data/resources.json', import.meta.url)));
@@ -403,4 +403,39 @@ test('vehicle production groups match factory categories', () => {
   assert.equal(vehicleProductionGroup(vehicle('Lokomotive')), 'trains');
   assert.equal(vehicleProductionGroup(vehicle('Frachtschiff')), 'boats');
   assert.equal(vehicleProductionGroup(vehicle('Hubschrauber')), 'aircraft');
+});
+
+test('standard blueprint quote follows native-currency road and ship branches', () => {
+  const eastern = {
+    sourceGameId: 'east_bus', attrs: { Typ: 'Bus', Bauland: 'Soviet Union' },
+    gameRecipe: [['workers', 10], ['steel', 2]],
+  };
+  const road = vehicleBlueprintQuote(eastern, eco(), []);
+  assert.equal(road.currency, 'RUB');
+  assert.equal(road.status, 'standard');
+  assert.ok(Math.abs(road.cost - vehicleSaleValue(eastern, 'RUB', eco()) * 13) < 1e-9);
+
+  const westernShip = {
+    sourceGameId: 'west_ship', attrs: { Typ: 'Frachtschiff', Bauland: 'West Germany' },
+    gameRecipe: [['workers', 20], ['steel', 5]],
+  };
+  const ship = vehicleBlueprintQuote(westernShip, eco(), []);
+  assert.equal(ship.currency, 'USD');
+  assert.ok(Math.abs(ship.cost
+    - vehicleSaleValue(westernShip, 'USD', eco()) * 13 / 12 * 2.3) < 1e-9);
+});
+
+test('blueprint quote distinguishes owned, ambiguous-family and explicit related discounts', () => {
+  const vehicle = {
+    sourceGameId: 'bus_a', attrs: { Typ: 'Bus', Bauland: 'Soviet Union' },
+    gameRecipe: [['workers', 10], ['steel', 2]],
+  };
+  assert.deepEqual(vehicleBlueprintQuote(vehicle, eco(), ['bus_a']), {
+    status: 'owned', currency: 'RUB', cost: 0, factor: 0,
+  });
+  assert.equal(vehicleBlueprintQuote(vehicle, eco(), ['other_bus']).status, 'family-unknown');
+  assert.equal(vehicleBlueprintQuote(vehicle, eco(), ['other_bus']).cost, null);
+  const related = vehicleBlueprintQuote(vehicle, eco(), ['other_bus'], { relatedOwned: true });
+  assert.equal(related.factor, 1.75);
+  assert.ok(Math.abs(related.cost - vehicleSaleValue(vehicle, 'RUB', eco()) * 1.75) < 1e-9);
 });

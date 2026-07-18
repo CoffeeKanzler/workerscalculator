@@ -305,8 +305,13 @@ save's live RUB/USD resource prices.)
   matched models; 297 remaining sheet models are explicitly labelled fallbacks.
 - Recommendations rank profit per worker within road vehicles, trains, boats, or
   aircraft and can be added directly to the production plan.
-- **Next:** map blueprint purchase cost and owned `$BLUEPRINT_OWNED` entries so the
-  ranking can show license payback time.
+- `stats.ini` `$BLUEPRINT_OWNED` identities now supply exact save ownership. The
+  recommendation table shows the verified standard 1× blueprint quote in its native
+  currency and vehicles-to-payback using same-currency unit profit. The reference save
+  owns zero blueprints, so its full-price branch is unambiguous. If another save owns a
+  different blueprint, the related-family 1.75× discount remains unavailable until the
+  executable's family relation is mapped; scenario permission multipliers are likewise
+  kept as an explicit 1× assumption rather than invented from the save.
 
 ### 5.1b Train planner on game vehicle data ✅
 (Implemented 2026-07-18: game-only locomotives and DLC vehicles are merged into

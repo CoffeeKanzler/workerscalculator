@@ -2,7 +2,7 @@ import {
   parseNamepoints, parseBuildingsGame, parseWorkers, parseHeader, parseResearch, parseEvents,
   parseMapClimate, parseVehicles, parseUsedVehicles, parseLines, reconcileSettlementMembership,
 } from './savegame.js?v=13';
-import { parseCityStatsIni, parseStatsIni } from './statsini.js?v=16';
+import { parseBlueprintOwned, parseCityStatsIni, parseStatsIni } from './statsini.js?v=17';
 
 const sourceStatus = (payload) => Object.fromEntries(
   ['namepoints', 'buildings', 'workers', 'vehicles', 'usedVehicles', 'lines', 'header', 'research', 'events', 'stats', 'material']
@@ -58,6 +58,7 @@ self.onmessage = ({ data }) => {
     const events = optional('events', parseEvents);
     const statsRecords = optional('stats', parseStatsIni);
     const cityStats = data.stats ? parseCityStatsIni(data.stats) : [];
+    const blueprintOwned = data.stats ? parseBlueprintOwned(data.stats) : null;
     const mapClimate = optional('material', parseMapClimate);
     self.postMessage({
       type: 'complete',
@@ -68,7 +69,7 @@ self.onmessage = ({ data }) => {
         usedVehicleOffers: usedVehicles?.offers ?? null,
         usedVehicleFileSummary: usedVehicles?.summary ?? null,
         vehicleLines: lines?.lines ?? null, lineFileSummary: lines?.summary ?? null,
-        statsRecords, cityStats, membershipAudit, sourceStatus: status, warnings,
+        statsRecords, cityStats, blueprintOwned, membershipAudit, sourceStatus: status, warnings,
       },
     });
   } catch {

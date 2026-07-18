@@ -1,4 +1,4 @@
-import { parseStatsIni } from './statsini.js?v=16';
+import { parseBlueprintOwned, parseStatsIni } from './statsini.js?v=17';
 
 const PRICE_MAPS = ['purchaseUSD', 'purchaseRUB', 'sellUSD', 'sellRUB'];
 
@@ -25,6 +25,7 @@ export function parseLiveStatsFile(text, file = {}) {
   const latest = records.at(-1);
   return {
     records,
+    blueprintOwned: parseBlueprintOwned(text),
     name: file.name || 'stats.ini',
     revision: [file.size ?? text.length, file.lastModified ?? 0, records.length,
       latest.year ?? '', latest.day ?? '', contentHash(text)].join(':'),

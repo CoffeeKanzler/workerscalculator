@@ -66,6 +66,18 @@ function parseCrimeLine(line, target) {
   return true;
 }
 
+export function parseBlueprintOwned(text) {
+  const ids = [];
+  const seen = new Set();
+  for (const rawLine of text.split(/\r?\n/)) {
+    const match = rawLine.trim().match(/^\$BLUEPRINT_OWNED\s+(\S+)/);
+    if (!match || seen.has(match[1])) continue;
+    seen.add(match[1]);
+    ids.push(match[1]);
+  }
+  return ids;
+}
+
 export function parseStatsIni(text) {
   const records = [];
   let rec = null;

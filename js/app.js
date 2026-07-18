@@ -1,7 +1,7 @@
-import { STRINGS } from './i18n.js?v=58';
-import { recordToPrices } from './statsini.js?v=16';
-import { parseLiveStatsFile } from './live_stats.js?v=1';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, vehicleProductionRecipe, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=26';
+import { STRINGS } from './i18n.js?v=59';
+import { recordToPrices } from './statsini.js?v=17';
+import { parseLiveStatsFile } from './live_stats.js?v=2';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=27';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -23,7 +23,7 @@ import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_i
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, resolveVehicleModels,
   shareSafeSaveImport, vehicleCategoryGroup, vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=7';
+} from './fleet.js?v=8';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',
@@ -369,14 +369,16 @@ function selectInput(options, value, onchange, opts = {}) {
 function handleFile(file) {
   const reader = new FileReader();
   reader.onload = () => {
-    let records;
-    try { ({ records } = parseLiveStatsFile(reader.result, file)); }
+    let parsed;
+    try { parsed = parseLiveStatsFile(reader.result, file); }
     catch (error) { return alert(error.message); }
+    const { records } = parsed;
     state.statsRecords = records;
     state.statsName = file.name;
     state.recordIndex = records.length - 1; // newest snapshot
     state.priceSource = 'stats';
     state.overrides = {};
+    if (state.saveImport) state.saveImport.blueprintOwned = parsed.blueprintOwned;
     update();
   };
   reader.readAsText(file);
@@ -421,6 +423,7 @@ async function refreshLiveStats() {
     const productivity = latestProductivity(parsed.records, state.plan.settings.productivity || 1);
     state.plan.settings.productivity = productivity;
     if (state.saveImport) {
+      state.saveImport.blueprintOwned = parsed.blueprintOwned;
       state.saveImport.statsRecordCount = parsed.records.length;
       state.saveImport.latestProductivity = productivity;
       state.saveImport.liveStatsUpdatedAt = new Date().toISOString();
@@ -1267,13 +1270,38 @@ function renderVehicleProduction() {
     { workers: 100, productivity: plan.productivity, timeUnit: plan.timeUnit, currency: state.currency },
     eco,
   );
+  const blueprintOwned = Array.isArray(state.saveImport?.blueprintOwned)
+    ? state.saveImport.blueprintOwned : null;
+  const blueprintCell = vehicle => {
+    const quote = vehicleBlueprintQuote(vehicle, eco, blueprintOwned);
+    if (quote.status === 'owned') {
+      return el('span', {}, t('blueprintOwned'), ' ',
+        el('span', { class: 'evidence-badge exact' }, 'stats.ini'));
+    }
+    if (quote.status === 'family-unknown') {
+      return el('span', { class: 'hint warn', title: t('blueprintFamilyUnknownHint') },
+        t('blueprintFamilyUnknown'));
+    }
+    if (quote.status !== 'standard' || !Number.isFinite(quote.cost)) return el('span', {}, '—');
+    const native = evaluateVehicleProduction(vehicle, {
+      workers: 1, productivity: 1, timeUnit: 'day', currency: quote.currency,
+    }, eco);
+    const profitPerUnit = native.salePrice - native.materialCostPerUnit;
+    const paybackUnits = profitPerUnit > 0 ? quote.cost / profitPerUnit : null;
+    return el('span', {},
+      `${fmt(quote.cost, 0)} ${quote.currency === 'USD' ? '$' : '₽'}`,
+      paybackUnits != null ? el('span', { class: 'subline' },
+        `${fmt(paybackUnits, 1)} ${t('unitsToRepay')}`) : null,
+      el('span', { class: 'evidence-badge derived' }, t('standardBlueprint')));
+  };
   const recommendationTable = el('div', { class: 'tablewrap recommendations' },
     el('table', { class: 'data wide' },
       el('thead', {}, el('tr', {},
         el('th', {}, '#'), el('th', {}, t('vehicle')), el('th', {}, t('vehicleType')),
         el('th', {}, t('origin')), el('th', {}, `${t('saleValue')} ${cur()}`),
         el('th', {}, `${t('materialPerUnit')} ${cur()}`),
-        el('th', {}, `${t('profitPerWorker')} / ${t(plan.timeUnit)}`), el('th', {}))),
+        el('th', {}, `${t('profitPerWorker')} / ${t(plan.timeUnit)}`),
+        el('th', {}, t('blueprintAndPayback')), el('th', {}))),
       el('tbody', {}, recommendations.map((item, rank) => {
         const source = available.find(candidate => candidate.vehicle === item.vehicle);
         return el('tr', {},
@@ -1284,6 +1312,7 @@ function renderVehicleProduction() {
           el('td', { class: 'r' }, fmt(item.result.salePrice, 0)),
           el('td', { class: 'r' }, fmt(item.result.materialCostPerUnit, 0)),
           el('td', { class: 'r pos' }, fmt(item.result.profitPerWorker, 1)),
+          el('td', { class: 'r' }, blueprintCell(item.vehicle)),
           el('td', {}, el('button', {
             title: t('addVehicle'),
             onclick: () => {
@@ -1351,11 +1380,14 @@ function renderVehicleProduction() {
     el('p', { class: 'hint' }, t('vehicleProdHint')),
     settings, renderCalcOpts(),
     el('h3', {}, t('bestVehicles')),
+    Array.isArray(blueprintOwned) ? el('p', { class: 'hint' },
+      `${t('blueprintsOwnedInSave')}: ${fmt(blueprintOwned.length, 0)} · stats.ini`) : null,
     el('div', { class: 'settingsbar' },
       el('label', {}, t('vehicleGroup') + ' ', selectInput(
         [['road', t('roadVehicles')], ['trains', t('trains')], ['boats', t('boats')], ['aircraft', t('aircraft')]],
         plan.recommendationGroup, value => { plan.recommendationGroup = value; }))),
     recommendationTable,
+    el('p', { class: 'hint' }, t('blueprintStandardHint')),
     el('div', { class: 'tablewrap' }, table),
     el('button', { onclick: () => {
       const initial = available[0];
@@ -1844,7 +1876,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=13', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=14', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -1973,6 +2005,7 @@ async function handleSaveDirectory(fileList) {
       });
     imported.metadata.statsRecordCount = statsRecords.length;
     imported.metadata.latestProductivity = productivity;
+    imported.metadata.blueprintOwned = parsed.blueprintOwned;
 
     const backupName = t('beforeLatestImport');
     const backupResult = await saveNamedState(backupName);
@@ -2116,6 +2149,8 @@ function renderSaveImport() {
         info.emptySettlementCount ? kv(t('importedEmptySettlements'), fmt(info.emptySettlementCount, 0)) : null,
         kv(t('importedBuildings'), fmt(info.buildingCount, 0)),
         kv(t('importedStatsRecords'), info.statsRecordCount ? fmt(info.statsRecordCount, 0) : t('notFound')),
+        Array.isArray(info.blueprintOwned)
+          ? kv(t('importedBlueprints'), fmt(info.blueprintOwned.length, 0)) : null,
         kv(t('importedCitizens'), info.citizenSummary ? fmt(info.citizenCount, 0) : t('notFound')),
         kv(t('importedVehicles'), info.vehicleFileSummary ? fmt(info.vehicleFileSummary.recordCount, 0) : t('notFound')),
         kv(t('importedUsedVehicles'), info.usedVehicleFileSummary ? fmt(info.usedVehicleFileSummary.recordCount, 0) : t('notFound')),

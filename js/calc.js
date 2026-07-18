@@ -220,6 +220,33 @@ export function vehicleSaleValue(vehicle, currency, eco) {
   return value;
 }
 
+// The executable prices a blueprint from the same ordered component value as
+// the vehicle itself, followed by category/native-market multipliers. Scenario
+// scripts can alter the final native-currency multiplier, so callers should
+// label the default 1x result as a standard-rule quote rather than a saved fee.
+export function vehicleBlueprintQuote(vehicle, eco, ownedIds = null, options = {}) {
+  const attrs = vehicle?.attrs ?? {};
+  const currency = WESTERN_VEHICLE_ORIGINS.has(attrs.Bauland) ? 'USD' : 'RUB';
+  if (!vehicle?.sourceGameId || !Array.isArray(vehicle.gameRecipe)) {
+    return { status: 'unavailable', currency, cost: null, factor: null };
+  }
+  const owned = new Set(ownedIds ?? []);
+  if (owned.has(vehicle.sourceGameId)) {
+    return { status: 'owned', currency, cost: 0, factor: 0 };
+  }
+  let relatedOwned = options.relatedOwned;
+  if (relatedOwned == null && ownedIds != null && owned.size === 0) relatedOwned = false;
+  if (relatedOwned == null && owned.size > 0) {
+    return { status: 'family-unknown', currency, cost: null, factor: null };
+  }
+  const factor = relatedOwned ? 1.75 : 13;
+  let cost = vehicleSaleValue(vehicle, currency, eco) * factor;
+  if (vehicleProductionGroup(vehicle) === 'boats') cost /= 12;
+  if (currency === 'USD') cost *= 2.3;
+  cost *= options.scenarioMultiplier ?? 1;
+  return { status: 'standard', currency, cost, factor };
+}
+
 // Fahrzeugproduktion sheet: material expense per vehicle, then scale output by
 // assigned workers, productivity, required workdays, and the selected period.
 export function evaluateVehicleProduction(vehicle, settings, eco) {
