@@ -401,6 +401,8 @@ test('header exposes save version title and source path', () => {
   view.setUint32(0, 124, true);
   view.setInt32(0x1c0, 1, true);
   view.setInt32(0x1c4, 2, true);
+  view.setUint32(0x1f0, 1, true);
+  view.setUint32(0x1f4, 0, true);
   view.setUint32(0x1f8, 1, true);
   view.setInt32(0x1fc, 2, true);
   view.setInt32(0x200, 1, true);
@@ -414,6 +416,8 @@ test('header exposes save version title and source path', () => {
     settings: {
       seasonsEnabled: true,
       globalEventsLevel: 2,
+      trafficSimulationEnabled: true,
+      realisticModeEnabled: false,
       researchEnabled: true,
       wasteManagementLevel: 2,
       maintenanceEnabled: true,
