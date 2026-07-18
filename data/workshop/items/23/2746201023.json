@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2746201023",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:41:59+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2746201023/Pacifica",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.14,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5394,
+      "costUSD": 4500.0,
+      "speed": 239.0,
+      "powerKW": 279.0,
+      "emptyWeight": 1.055,
+      "capacity": 7.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2017,
+      "to": 3000,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2746201023",
+      "modPath": "Pacifica"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3616015073",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:49:27+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3616015073/ac40",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.44,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 110.0,
+      "emptyWeight": 4.3,
+      "from": 1962,
+      "to": 1994,
+      "capacity": 4.5,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3616015073",
+      "modPath": "ac40"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3033562291",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:33:38+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3033562291/Ov387",
+      "category": "workshop",
+      "trainSet": [
+        "3033562291/Ov387Tender"
+      ],
+      "lifespanYears": 0.0,
+      "length": 9.34,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "trainGroup": "locomotive_steam",
+      "costRUB": 4300.0,
+      "speed": 50.0,
+      "emptyWeight": 52.0,
+      "powerKW": 445.0,
+      "from": 1890,
+      "to": 1928,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "3033562291",
+      "modPath": "Ov387"
+    },
+    {
+      "id": "3033562291/Ov387Tender",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.88,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4300.0,
+      "emptyWeight": 17.0,
+      "consumption": 0.0,
+      "speed": 30.0,
+      "capacity": 68.0,
+      "from": 1959,
+      "to": 1969,
+      "countryId": 39011,
+      "workshopId": "3033562291",
+      "modPath": "Ov387Tender"
+    }
+  ]
+}

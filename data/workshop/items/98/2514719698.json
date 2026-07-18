@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2514719698",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:52:49+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2514719698/RAF-2203",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.89,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5298,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 72.0,
+      "emptyWeight": 1.7,
+      "capacity": 11.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1976,
+      "to": 1997,
+      "countryId": 39013,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2514719698",
+      "modPath": "RAF-2203"
+    }
+  ]
+}

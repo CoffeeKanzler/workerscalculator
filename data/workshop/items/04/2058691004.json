@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2058691004",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:51:38+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2058691004/personal_mos403",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.11,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 115.0,
+      "powerKW": 35.0,
+      "emptyWeight": 0.9,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1962,
+      "to": 1965,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2058691004",
+      "modPath": "personal_mos403"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3694354701",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:46:41+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3694354701/carriag",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 21.92,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 9000.0,
+      "consumption": 0.0,
+      "speed": 120.0,
+      "capacity": 120.0,
+      "emptyWeight": 27.5,
+      "from": 1970,
+      "to": 1981,
+      "countryId": 39011,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "trainGroup": "vagon",
+      "workshopId": "3694354701",
+      "modPath": "carriag"
+    }
+  ]
+}

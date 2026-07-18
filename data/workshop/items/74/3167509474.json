@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3167509474",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:48:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3167509474/bulldozer_holt75",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.53,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "speed": 24.0,
+      "powerKW": 56.0,
+      "emptyWeight": 11.0,
+      "from": 1913,
+      "to": 1924,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3167509474",
+      "modPath": "bulldozer_holt75"
+    },
+    {
+      "id": "3167509474/tractor_holt75",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.18,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "speed": 24.0,
+      "powerKW": 56.0,
+      "emptyWeight": 10.0,
+      "from": 1913,
+      "to": 1924,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3167509474",
+      "modPath": "tractor_holt75"
+    }
+  ]
+}

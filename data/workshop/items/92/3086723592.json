@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3086723592",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:40:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3086723592/R1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.81,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5080,
+      "costRUB": 7300.0,
+      "speed": 80.0,
+      "powerKW": 288.0,
+      "from": 1970,
+      "to": 1971,
+      "countryId": 39001,
+      "capacity": 188.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "metro",
+      "electric": true,
+      "workshopId": "3086723592",
+      "modPath": "R1"
+    },
+    {
+      "id": "3086723592/R2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.81,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5080,
+      "costRUB": 7300.0,
+      "speed": 80.0,
+      "powerKW": 288.0,
+      "from": 1970,
+      "to": 1971,
+      "countryId": 39001,
+      "capacity": 188.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "trainset",
+      "electric": true,
+      "workshopId": "3086723592",
+      "modPath": "R2"
+    }
+  ]
+}

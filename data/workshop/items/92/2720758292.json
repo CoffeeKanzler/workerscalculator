@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2720758292",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:30:27+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2720758292/morrisminor",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.7,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 2000.0,
+      "consumption": 0.0,
+      "speed": 110.0,
+      "powerKW": 36.0,
+      "emptyWeight": 0.76,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1948,
+      "to": 1991,
+      "countryId": 39041,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2720758292",
+      "modPath": "morrisminor"
+    },
+    {
+      "id": "2720758292/morrisminor_police",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.7,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 2000.0,
+      "consumption": 0.0,
+      "speed": 110.0,
+      "powerKW": 36.0,
+      "emptyWeight": 0.76,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1956,
+      "to": 1978,
+      "countryId": 39041,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2720758292",
+      "modPath": "morrisminor_police"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3263644978",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:40:12+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3263644978/111N",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.24,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "powerKW": 166.0,
+      "emptyWeight": 17.0,
+      "trainGroup": "tram",
+      "speed": 72.0,
+      "capacity": 120.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1993,
+      "to": 1994,
+      "countryId": 39006,
+      "electric": true,
+      "workshopId": "3263644978",
+      "modPath": "111N"
+    },
+    {
+      "id": "3263644978/111Ndouble",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.24,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "powerKW": 166.0,
+      "emptyWeight": 17.0,
+      "trainGroup": "tram",
+      "speed": 72.0,
+      "capacity": 120.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1993,
+      "to": 1994,
+      "countryId": 39006,
+      "electric": true,
+      "workshopId": "3263644978",
+      "modPath": "111Ndouble"
+    }
+  ]
+}

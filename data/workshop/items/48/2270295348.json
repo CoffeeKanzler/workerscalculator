@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2270295348",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:40:41+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2270295348/openwood_kamaz",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.65,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5166,
+      "descriptionId": 5167,
+      "costRUB": 4300.0,
+      "capacity": 20.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "speed": 95.0,
+      "powerKW": 154.0,
+      "emptyWeight": 10.0,
+      "from": 1976,
+      "to": 2001,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2270295348",
+      "modPath": "openwood_kamaz"
+    }
+  ]
+}

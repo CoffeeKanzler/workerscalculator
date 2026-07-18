@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3366067001",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:42:10+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3366067001/ERJ-145",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 29.73,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 876.0,
+      "powerKW": 4410.0,
+      "emptyWeight": 12.1,
+      "capacity": 50.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1995,
+      "to": 2007,
+      "workshopId": "3366067001",
+      "modPath": "ERJ-145"
+    }
+  ]
+}

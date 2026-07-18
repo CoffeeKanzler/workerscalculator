@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3216239035",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:32:49+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3216239035/ikr_256_prison",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.82,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5239,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 100.0,
+      "powerKW": 141.0,
+      "emptyWeight": 7.5,
+      "capacity": 45.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1974,
+      "to": 2005,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3216239035",
+      "modPath": "ikr_256_prison"
+    }
+  ]
+}

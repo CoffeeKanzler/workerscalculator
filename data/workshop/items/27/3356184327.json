@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3356184327",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:43:46+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3356184327/S25B_YZ_168",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 25.72,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4300.0,
+      "emptyWeight": 53.0,
+      "capacity": 168.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 120.0,
+      "from": 1988,
+      "to": 1993,
+      "countryId": 39042,
+      "trainGroup": "vagon",
+      "workshopId": "3356184327",
+      "modPath": "S25B_YZ_168"
+    },
+    {
+      "id": "3356184327/S25K_YZ_148",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 25.72,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4300.0,
+      "emptyWeight": 53.0,
+      "capacity": 148.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 140.0,
+      "from": 1996,
+      "to": 2002,
+      "countryId": 39042,
+      "trainGroup": "vagon",
+      "workshopId": "3356184327",
+      "modPath": "S25K_YZ_148"
+    },
+    {
+      "id": "3356184327/S25Z_RZ2_124",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 25.72,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4300.0,
+      "emptyWeight": 53.0,
+      "capacity": 124.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 140.0,
+      "from": 1993,
+      "to": 1996,
+      "countryId": 39042,
+      "trainGroup": "vagon",
+      "workshopId": "3356184327",
+      "modPath": "S25Z_RZ2_124"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2023718951",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:50:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2023718951/yugobustam",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.86,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 115.0,
+      "powerKW": 125.0,
+      "emptyWeight": 10.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 85.0,
+      "from": 1970,
+      "to": 1975,
+      "countryId": 39010,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2023718951",
+      "modPath": "yugobustam"
+    }
+  ]
+}

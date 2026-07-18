@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2958498280",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:49:38+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2958498280/SM16",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.79,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5441,
+      "costRUB": 5500.0,
+      "speed": 65.0,
+      "powerKW": 100.0,
+      "emptyWeight": 10.0,
+      "capacity": 130.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1966,
+      "to": 1969,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2958498280",
+      "modPath": "SM16"
+    },
+    {
+      "id": "2958498280/T16",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.79,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5441,
+      "costRUB": 5500.0,
+      "speed": 65.0,
+      "powerKW": 100.0,
+      "emptyWeight": 10.0,
+      "capacity": 130.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1966,
+      "to": 1969,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2958498280",
+      "modPath": "T16"
+    }
+  ]
+}

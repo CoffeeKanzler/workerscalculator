@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2814711965",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:55:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2814711965/skd_120_fire",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.12,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5384,
+      "costRUB": 4400.0,
+      "consumption": 0.0,
+      "speed": 140.0,
+      "powerKW": 40.0,
+      "emptyWeight": 0.885,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1982,
+      "to": 1990,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2814711965",
+      "modPath": "skd_120_fire"
+    }
+  ]
+}

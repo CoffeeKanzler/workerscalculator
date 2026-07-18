@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2035888069",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:40:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2035888069/bus_baz2215",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.5,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5011,
+      "costRUB": 3500.0,
+      "speed": 90.0,
+      "powerKW": 130.0,
+      "emptyWeight": 2.6,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 20.0,
+      "from": 1997,
+      "to": 2020,
+      "countryId": 39015,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2035888069",
+      "modPath": "bus_baz2215"
+    }
+  ]
+}

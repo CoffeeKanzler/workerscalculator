@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3489096425",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:47:54+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3489096425/russian_set_er1",
+      "category": "workshop",
+      "trainSet": [
+        "3489096425/russian_set_er1_e"
+      ],
+      "lifespanYears": 0.0,
+      "length": 19.72,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "nameId": 5085,
+      "descriptionId": 5086,
+      "costRUB": 4300.0,
+      "trainGroup": "trainset",
+      "speed": 110.0,
+      "powerKW": 0.0,
+      "emptyWeight": 38.5,
+      "capacity": 110.0,
+      "from": 1957,
+      "to": 1974,
+      "countryId": 39011,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "electric": false,
+      "workshopId": "3489096425",
+      "modPath": "russian_set_er1"
+    },
+    {
+      "id": "3489096425/russian_set_er1_e",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 20.6,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "nameId": 5085,
+      "descriptionId": 5086,
+      "costRUB": 4300.0,
+      "speed": 110.0,
+      "emptyWeight": 52.5,
+      "powerKW": 800.0,
+      "capacity": 140.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "countryId": 39011,
+      "electric": true,
+      "workshopId": "3489096425",
+      "modPath": "russian_set_er1_e"
+    }
+  ]
+}

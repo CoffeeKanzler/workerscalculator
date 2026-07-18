@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2900054816",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:44:34+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2900054816/Brena442",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.73,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 6900.0,
+      "speed": 160.0,
+      "powerKW": 4400.0,
+      "emptyWeight": 82.0,
+      "from": 1980,
+      "to": 3000,
+      "countryId": 39010,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2900054816",
+      "modPath": "Brena442"
+    }
+  ]
+}

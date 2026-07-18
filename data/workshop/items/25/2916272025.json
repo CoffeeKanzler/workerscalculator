@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2916272025",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:34:07+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2916272025/service_crane_kr_500",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.04,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 53.0,
+      "powerKW": 199.0,
+      "emptyWeight": 37.0,
+      "from": 1986,
+      "to": 1995,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2916272025",
+      "modPath": "service_crane_kr_500"
+    }
+  ]
+}

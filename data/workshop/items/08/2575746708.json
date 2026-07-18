@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2575746708",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:48:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2575746708/skoda_fabia",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.98,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costRUB": 3500.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 130.0,
+      "powerKW": 44.0,
+      "emptyWeight": 1.3,
+      "from": 2000,
+      "to": 2008,
+      "countryId": 39001,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2575746708",
+      "modPath": "skoda_fabia"
+    }
+  ]
+}

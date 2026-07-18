@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1934503188",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:45:49+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1934503188/deltic",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 21.57,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 4300.0,
+      "from": 1961,
+      "to": 2000,
+      "speed": 160.0,
+      "powerKW": 2460.0,
+      "emptyWeight": 101.0,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "1934503188",
+      "modPath": "deltic"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2142425268",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:46:22+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2142425268/tatra",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.93,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5229,
+      "costRUB": 4300.0,
+      "capacity": 9.1,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "speed": 100.0,
+      "powerKW": 85.0,
+      "emptyWeight": 3.2,
+      "from": 2011,
+      "to": 2015,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2142425268",
+      "modPath": "tatra"
+    }
+  ]
+}

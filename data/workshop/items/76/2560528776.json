@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2560528776",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:36:26+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2560528776/cywil",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.61,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5451,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 145.0,
+      "powerKW": 81.0,
+      "emptyWeight": 1.108,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1996,
+      "to": 1999,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2560528776",
+      "modPath": "cywil"
+    },
+    {
+      "id": "2560528776/kredka",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.61,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5295,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 145.0,
+      "powerKW": 81.0,
+      "emptyWeight": 1.108,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1996,
+      "to": 1999,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2560528776",
+      "modPath": "kredka"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1994234240",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:35:55+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1994234240/brmk1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 21.62,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costUSD": 4000.0,
+      "emptyWeight": 28.0,
+      "capacity": 64.0,
+      "from": 1951,
+      "to": 2000,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "vagon",
+      "workshopId": "1994234240",
+      "modPath": "brmk1"
+    }
+  ]
+}

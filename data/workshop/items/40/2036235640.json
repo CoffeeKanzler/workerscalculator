@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2036235640",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:33:19+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2036235640/covered_zil130v1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.88,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5153,
+      "costRUB": 4300.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 90.0,
+      "powerKW": 110.0,
+      "emptyWeight": 4.3,
+      "from": 1962,
+      "to": 1994,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2036235640",
+      "modPath": "covered_zil130v1"
+    },
+    {
+      "id": "2036235640/covered_zil130v2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.75,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5153,
+      "costRUB": 4400.0,
+      "capacity": 5.5,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 90.0,
+      "powerKW": 110.0,
+      "emptyWeight": 4.3,
+      "from": 1962,
+      "to": 1994,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2036235640",
+      "modPath": "covered_zil130v2"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2815527883",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:47:11+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2815527883/ural4320fire",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.0,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5273,
+      "costRUB": 4500.0,
+      "capacity": 8.5,
+      "speed": 85.0,
+      "powerKW": 132.0,
+      "emptyWeight": 8.8,
+      "from": 1976,
+      "to": 1999,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2815527883",
+      "modPath": "ural4320fire"
+    }
+  ]
+}

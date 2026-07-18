@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2868401256",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:45:38+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2868401256/N1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5411,
+      "costRUB": 2785.0,
+      "capacity": 75.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "tram",
+      "speed": 55.0,
+      "powerKW": 120.0,
+      "emptyWeight": 13.0,
+      "from": 1948,
+      "to": 1956,
+      "countryId": 39006,
+      "electric": true,
+      "workshopId": "2868401256",
+      "modPath": "N1"
+    },
+    {
+      "id": "2868401256/ND1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.43,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "descriptionId": 5411,
+      "costRUB": 2200.0,
+      "capacity": 83.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "tram",
+      "speed": 55.0,
+      "powerKW": 0.0,
+      "emptyWeight": 8.0,
+      "from": 1948,
+      "to": 1956,
+      "countryId": 39006,
+      "workshopId": "2868401256",
+      "modPath": "ND1"
+    }
+  ]
+}

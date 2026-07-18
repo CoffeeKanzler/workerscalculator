@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2079465120",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:50:03+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2079465120/gravel_truck",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.93,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5027,
+      "costUSD": 4300.0,
+      "capacity": 22.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "speed": 100.0,
+      "powerKW": 162.0,
+      "emptyWeight": 12.0,
+      "countryId": 39003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2079465120",
+      "modPath": "gravel_truck"
+    }
+  ]
+}

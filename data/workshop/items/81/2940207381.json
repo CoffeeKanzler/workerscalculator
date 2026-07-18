@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2940207381",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:51:12+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2940207381/bus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.54,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 39082,
+      "costUSD": 2500.0,
+      "capacity": 7.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 120.0,
+      "powerKW": 58.0,
+      "emptyWeight": 1.24,
+      "from": 1978,
+      "to": 1986,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2940207381",
+      "modPath": "bus"
+    },
+    {
+      "id": "2940207381/van",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.54,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 39082,
+      "costUSD": 2500.0,
+      "capacity": 1.16,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "consumption": 0.0,
+      "speed": 120.0,
+      "powerKW": 58.0,
+      "emptyWeight": 1.24,
+      "from": 1978,
+      "to": 1986,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2940207381",
+      "modPath": "van"
+    }
+  ]
+}

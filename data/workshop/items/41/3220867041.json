@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3220867041",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:44:05+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3220867041/P13",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.44,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "capacity": 76.0,
+      "emptyWeight": 22.6,
+      "from": 1963,
+      "to": 1974,
+      "countryId": 39042,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "trainGroup": "vagon",
+      "workshopId": "3220867041",
+      "modPath": "P13"
+    }
+  ]
+}

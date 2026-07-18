@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2597410785",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:49:16+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2597410785/Csepel_D_705_open_old",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.77,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 12.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "speed": 78.0,
+      "powerKW": 107.0,
+      "emptyWeight": 10.2,
+      "from": 1958,
+      "to": 1975,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2597410785",
+      "modPath": "Csepel_D_705_open_old"
+    }
+  ]
+}

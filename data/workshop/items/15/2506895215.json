@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2506895215",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:33:57+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2506895215/firetruck_kamaz43253",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.59,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5273,
+      "costRUB": 9300.0,
+      "capacity": 8.0,
+      "speed": 85.0,
+      "powerKW": 132.0,
+      "emptyWeight": 7.1,
+      "from": 2006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2506895215",
+      "modPath": "firetruck_kamaz43253"
+    }
+  ]
+}

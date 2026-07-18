@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2894668363",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:41:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2894668363/carryall",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 30.19,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costUSD": 4500.0,
+      "consumption": 0.0,
+      "speed": 250.0,
+      "powerKW": 40000.0,
+      "emptyWeight": 27.1,
+      "capacity": 100.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "from": 2030,
+      "to": 2047,
+      "countryId": 39041,
+      "workshopId": "2894668363",
+      "modPath": "carryall"
+    }
+  ]
+}
