@@ -99,8 +99,11 @@ lengths, heating-plant output semantics.
 - **Why:** ends version drift (sheet snapshot vs. game version vs. player's save) and covers
   ALL buildings. The spreadsheet remains the source for *derived planning constants*
   (service ratios, field yields) unless those are also found in game files.
-- **Output:** same JSON shape as today → app code untouched. Add `data/VERSION.json`
-  (game version + extraction date, shown in the app footer).
+- **Output:** same JSON shape as today → app code untouched. `data/VERSION.json`
+  records the extraction and bundle dates, which are shown beside the dataset
+  selector and in Help. The source tree did not contain an authoritative game
+  build number, so the UI now says so explicitly instead of implying an exact
+  current version.
 - **Effort:** medium (ini dialect is simple, volume is large). **Blocked on:** game files
   on the dev machine.
 

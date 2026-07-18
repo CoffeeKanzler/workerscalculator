@@ -19,7 +19,7 @@ GitHub Pages web app from the community planning spreadsheet
   whole upstream chain is computed backwards: buildings, counts, workers,
   power, construction cost. Any intermediate can be switched to import
   (priced at current buy + delivery cost) and producers are swappable.
-- **Two building datasets** – extracted from the current game files
+- **Two building datasets** – extracted from bundled game files
   (77 buildings, 20 languages, via `tools/extract_from_gamefiles.py`) or the
   spreadsheet snapshot, switchable in the header.
 - **Production planner** – add production buildings, set count/quality,

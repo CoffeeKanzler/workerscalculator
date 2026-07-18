@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=75';
+import { STRINGS } from './i18n.js?v=76';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -187,7 +187,7 @@ async function loadData() {
     url.searchParams.set('v', DATA_V);
     return fetch(url);
   };
-  const [res, prod, prodGame, city, rawBuildings, workshopIndex, veh, rail, rawVehicles, dec, research] = await Promise.all([
+  const [res, prod, prodGame, city, rawBuildings, workshopIndex, veh, rail, rawVehicles, dec, research, dataVersion] = await Promise.all([
     get('data/resources.json').then(r => r.json()),
     get('data/production_buildings.json').then(r => r.json()),
     get('data/game/production_buildings.json').then(r => r.ok ? r.json() : null).catch(() => null),
@@ -199,6 +199,7 @@ async function loadData() {
     get('data/game/vehicles_raw.json').then(r => r.ok ? r.json() : []).catch(() => []),
     get('data/decade_prices.json').then(r => r.json()),
     get('data/game/research.json').then(r => r.ok ? r.json() : []).catch(() => []),
+    get('data/VERSION.json').then(r => r.ok ? r.json() : null).catch(() => null),
   ]);
   DATA = {
     resources: res.resources, defaults: res.defaults,
@@ -209,7 +210,7 @@ async function loadData() {
     // Game-only rail vehicles join the pool; hard-attached tenders stay nested.
     sheetVehicles: veh.vehicles,
     vehicles: mergeVehiclePools(veh.vehicles, rail, rawVehicles),
-    decades: dec, research,
+    decades: dec, research, dataVersion,
   };
 }
 
@@ -652,9 +653,12 @@ function renderHeader() {
       el('label', {}, t('currency') + ' ',
         selectInput([['RUB', '₽ Rubel'], ['USD', '$ Dollar']], state.currency,
           v => { state.currency = v; state.plan.settings.currency = v; })),
-      showEconomyControls && DATA.prodSets.game ? el('label', {}, t('dataset') + ' ',
+      showEconomyControls && DATA.prodSets.game ? el('label', {
+        title: DATA.dataVersion ? `${t('datasetRelease')}: ${DATA.dataVersion.datasetRelease}. ${t('datasetBuildUnknown')}` : '',
+      }, t('dataset') + ' ',
         selectInput([['game', t('datasetGame')], ['sheet', t('datasetSheet')]],
-          state.dataset, v => { state.dataset = v; })) : null,
+          state.dataset, v => { state.dataset = v; }),
+        DATA.dataVersion ? el('small', { class: 'dataset-version' }, DATA.dataVersion.datasetRelease) : null) : null,
       el('div', { class: 'sharebtns' },
         el('button', { title: t('exportPlan'), onclick: exportPlan }, '⬇'),
         el('label', { title: t('importPlan'), class: 'iconbtn' }, '⬆',
@@ -4080,8 +4084,9 @@ function renderHelp() {
       el('li', {}, de ? 'Zugplaner: Wagon-Anzahl und Kapazität je Zuglänge und Ware.' : 'Train planner: wagon count and capacity per train length and cargo.')),
     el('h2', {}, de ? 'Datenquellen und Genauigkeit' : 'Data sources and accuracy'),
     el('p', {}, de
-      ? 'Standardmäßig sind Arbeiterzahlen, Produktions- und Verbrauchsraten sowie verfügbare Bauressourcen direkt aus den aktuellen Spieldateien maßgeblich. Die Heißwasser-Ausgabe von Heizwerken bleibt wegen ungeklärter Roh-Einheiten als Spreadsheet-Planungswert gekennzeichnet. Workshop-Gebäude werden ebenso aus ihrer building.ini gelesen. Bei Fahrzeugen überschreiben exakte Spieldaten die alten Tabellenwerte.'
-      : 'By default, worker counts, production and consumption rates, and available construction resources come authoritatively from the current game files. Heating-plant hot-water output remains labelled as a spreadsheet planning value because its raw units are not yet proven. Workshop buildings are likewise read from their building.ini. For vehicles, exact game fields override the older sheet values.'),
+      ? 'Standardmäßig sind Arbeiterzahlen, Produktions- und Verbrauchsraten sowie verfügbare Bauressourcen direkt aus den gebündelten Spieldateien maßgeblich. Die Heißwasser-Ausgabe von Heizwerken bleibt wegen ungeklärter Roh-Einheiten als Spreadsheet-Planungswert gekennzeichnet. Workshop-Gebäude werden ebenso aus ihrer building.ini gelesen. Bei Fahrzeugen überschreiben exakte Spieldaten die alten Tabellenwerte.'
+      : 'By default, worker counts, production and consumption rates, and available construction resources come authoritatively from the bundled game files. Heating-plant hot-water output remains labelled as a spreadsheet planning value because its raw units are not yet proven. Workshop buildings are likewise read from their building.ini. For vehicles, exact game fields override the older sheet values.'),
+    DATA.dataVersion ? el('p', { class: 'hint' }, `${t('datasetRelease')}: ${DATA.dataVersion.datasetRelease}. ${t('datasetBuildUnknown')}`) : null,
     el('p', {}, de
       ? 'Das Community-Spreadsheet bleibt nur dort eine gekennzeichnete Ergänzung, wo das Spiel keine direkt nutzbare Planungszahl liefert: insbesondere Versorgungs-Richtwerte, einige gemessene Strom-/Wasserwerte, Fahrzeuglängen und fehlende automatische Baukosten. Der Umschalter „Altes Spreadsheet“ dient dem Vergleich; er ist nicht die Standardeinstellung.'
       : 'The community spreadsheet remains a labeled supplement only where the game exposes no directly usable planning value: notably service ratios, some measured power/water values, vehicle lengths, and missing automatic construction costs. The Legacy spreadsheet switch exists for comparison and is not the default.'),

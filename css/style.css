@@ -39,6 +39,7 @@ header h1 {
 }
 
 .controls label { display: flex; align-items: center; gap: 6px; color: var(--muted); }
+.dataset-version { color: var(--muted); font-size: 10px; }
 
 .dropzone {
   border: 1.5px dashed var(--accent);

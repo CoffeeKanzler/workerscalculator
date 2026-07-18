@@ -6,6 +6,14 @@ const rawBuildings = JSON.parse(readFileSync(new URL('../data/game/buildings_raw
 const production = JSON.parse(readFileSync(new URL('../data/game/production_buildings.json', import.meta.url)));
 const cityBuildings = JSON.parse(readFileSync(new URL('../data/city_buildings.json', import.meta.url)));
 const resources = JSON.parse(readFileSync(new URL('../data/resources.json', import.meta.url))).resources;
+const dataVersion = JSON.parse(readFileSync(new URL('../data/VERSION.json', import.meta.url)));
+
+test('dataset metadata never invents an unrecorded upstream game build', () => {
+  assert.match(dataVersion.datasetRelease, /^\d{4}-\d{2}-\d{2}$/);
+  assert.match(dataVersion.gameFileExtraction, /^\d{4}-\d{2}-\d{2}$/);
+  assert.equal(dataVersion.gameBuild, null);
+  assert.equal(dataVersion.gameBuildStatus, 'not-recorded');
+});
 
 test('game production dataset keeps game workers and economic rates authoritative', () => {
   const raw = new Map(rawBuildings.map(building => [building.id, building]));
