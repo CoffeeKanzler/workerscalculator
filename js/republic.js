@@ -61,6 +61,7 @@ function actualProjection(observed = {}) {
   });
   const populated = areas.filter(area => Number.isFinite(area.population));
   const population = sum(populated.map(area => area.population));
+  const liveQueue = observed.liveQueue?.available ? observed.liveQueue : null;
   return {
     totals: {
       population,
@@ -74,6 +75,11 @@ function actualProjection(observed = {}) {
       happiness: weightedAverage(populated, 'happiness'),
       loyalty: weightedAverage(populated, 'loyalty'),
       realizedProduction: observed.realizedProduction ?? null,
+      medicalEmergencies: liveQueue?.medicalEmergencies ?? null,
+      activeCrimes: liveQueue?.crimes ?? null,
+      awaitingPolice: liveQueue?.awaitingPolice ?? null,
+      underInvestigation: liveQueue?.underInvestigation ?? null,
+      atCourt: liveQueue?.atCourt ?? null,
     },
     areas,
     evidence: { sourceStatus: observed.sourceStatus ?? {} },
@@ -87,6 +93,7 @@ function observedMetadata(info = {}) {
     liveBuildingCount: info.observedBuildings?.length ?? info.buildingCount ?? null,
     sourceStatus: info.sourceStatus ?? {},
     regionalCrime: info.operationalServices?.regional ?? [],
+    liveQueue: info.operationalServices?.republic?.liveQueue ?? null,
   };
 }
 
@@ -98,6 +105,8 @@ function sameRepublicSource(current = {}, baseline = {}) {
 }
 
 const CRIME_HISTORY_KEYS = ['minorCrimes', 'mediumCrimes', 'seriousCrimes'];
+const LIVE_QUEUE_KEYS = ['medicalEmergencies', 'activeCrimes', 'awaitingPolice',
+  'underInvestigation', 'atCourt'];
 
 function latestCrimeHistory(records = []) {
   const record = records.findLast?.(item => CRIME_HISTORY_KEYS.some(key => Number.isFinite(item?.[key])))
@@ -112,7 +121,8 @@ export function compareObservedSnapshots(currentInfo, baselineInfo, currentStats
   Object.assign(current.totals, latestCrimeHistory(currentStats));
   Object.assign(baseline.totals, latestCrimeHistory(baselineStats));
   const keys = ['population', 'liveBuildingCount', 'configuredIndustryWorkers',
-    'currentIndustryWorkers', 'productivity', 'health', 'criminality', ...CRIME_HISTORY_KEYS];
+    'currentIndustryWorkers', 'productivity', 'health', 'criminality',
+    ...CRIME_HISTORY_KEYS, ...LIVE_QUEUE_KEYS];
   const deltas = Object.fromEntries(keys.map(key => [key,
     differenceValue(current.totals, baseline.totals, key)]));
   const sameRepublic = sameRepublicSource(currentInfo, baselineInfo);

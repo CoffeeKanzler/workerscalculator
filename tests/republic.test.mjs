@@ -98,9 +98,15 @@ test('compares observed totals and stable areas current minus baseline', () => {
     scopes: [{ id: 4, name: 'Kohleburg', citizens: {
       residents: 1000, productivity: 0.8, health: 0.75, criminality: 0.01,
     } }],
-    operationalServices: { regional: [{ scopeId: 4, crime: {
-      minorCrimes: 10, mediumCrimes: 3, seriousCrimes: 1,
-    } }] },
+    operationalServices: {
+      regional: [{ scopeId: 4, crime: {
+        minorCrimes: 10, mediumCrimes: 3, seriousCrimes: 1,
+      } }],
+      republic: { liveQueue: {
+        available: true, medicalEmergencies: 1, crimes: 4,
+        awaitingPolice: 2, underInvestigation: 1, atCourt: 1,
+      } },
+    },
     observedProductionRows: [{ scopeId: 4, count: 1, configuredWorkers: 100, currentWorkers: 60 }],
   };
   const current = {
@@ -108,9 +114,15 @@ test('compares observed totals and stable areas current minus baseline', () => {
     scopes: [{ id: 4, name: 'Kohleburg', citizens: {
       residents: 1120, productivity: 0.9, health: 0.8, criminality: 0.015,
     } }],
-    operationalServices: { regional: [{ scopeId: 4, crime: {
-      minorCrimes: 13, mediumCrimes: 5, seriousCrimes: 1,
-    } }] },
+    operationalServices: {
+      regional: [{ scopeId: 4, crime: {
+        minorCrimes: 13, mediumCrimes: 5, seriousCrimes: 1,
+      } }],
+      republic: { liveQueue: {
+        available: true, medicalEmergencies: 3, crimes: 7,
+        awaitingPolice: 4, underInvestigation: 2, atCourt: 1,
+      } },
+    },
     observedProductionRows: [{ scopeId: 4, count: 1, configuredWorkers: 120, currentWorkers: 90 }],
   };
   const currentStats = [
@@ -126,6 +138,11 @@ test('compares observed totals and stable areas current minus baseline', () => {
   assert.equal(comparison.deltas.minorCrimes, 4);
   assert.equal(comparison.deltas.mediumCrimes, 3);
   assert.equal(comparison.deltas.seriousCrimes, 1);
+  assert.equal(comparison.deltas.medicalEmergencies, 2);
+  assert.equal(comparison.deltas.activeCrimes, 3);
+  assert.equal(comparison.deltas.awaitingPolice, 2);
+  assert.equal(comparison.deltas.underInvestigation, 1);
+  assert.equal(comparison.deltas.atCourt, 0);
   assert.equal(comparison.current.totals.minorCrimes, 22);
   assert.ok(Math.abs(comparison.deltas.productivity - 0.1) < 1e-9);
   assert.equal(comparison.areas[0].deltas.population, 120);
@@ -143,6 +160,7 @@ test('leaves unavailable cumulative crime snapshot changes unknown', () => {
   assert.equal(comparison.current.totals.minorCrimes, 9);
   assert.equal(comparison.baseline.totals.minorCrimes, null);
   assert.equal(comparison.deltas.minorCrimes, null);
+  assert.equal(comparison.current.totals.activeCrimes, null);
 });
 
 test('does not match area IDs across different republics', () => {

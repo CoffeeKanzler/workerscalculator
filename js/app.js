@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=69';
+import { STRINGS } from './i18n.js?v=70';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=28';
@@ -17,7 +17,7 @@ import {
   summarizeCriminalityOutliers,
   buildSchematicMap,
 } from './save_model.js?v=12';
-import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=7';
+import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=8';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
@@ -3358,6 +3358,9 @@ function renderRepublic() {
     ['health', t('health')], ['criminality', t('criminality')],
     ['minorCrimes', t('minorCrimes')], ['mediumCrimes', t('mediumCrimes')],
     ['seriousCrimes', t('seriousCrimes')],
+    ['medicalEmergencies', t('activeMedicalEmergencies')],
+    ['activeCrimes', t('activeCriminalCases')], ['awaitingPolice', t('awaitingPolice')],
+    ['underInvestigation', t('underInvestigation')], ['atCourt', t('liveCourtCases')],
   ];
   const comparisonAreaRows = comparison?.sameRepublic ? comparison.areas.filter(area =>
     Object.values(area.deltas).some(value => Number.isFinite(value) && Math.abs(value) > 1e-9))
