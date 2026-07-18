@@ -192,11 +192,11 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   Missing or unsupported optional files remain visibly unavailable instead of becoming zero.
   - **Map/game settings:** verified season state from `header.bin` and climate family from
   `material.mtl` now control whether heating applies. The same exact serializer/UI chain
-  exposes Energy management, Day/night cycle, Global events, Building fires, Pollution,
-  Vehicle availability, Crime & justice, Water management, Traffic simulation, Realistic mode, Research, Waste management,
-  and Maintenance in Misc; waste and
-  maintenance retain their verified vehicle-economic effects. Continue mapping the remaining
-  header settings with controlled save diffs; unknown values must not enter calculations.
+  exposes the complete 16-row in-game map-settings group in Misc: citizen reaction,
+  energy, water, waste, maintenance, day/night, seasons, fires, global events,
+  vehicle availability, pollution, education, crime/justice, traffic, realistic mode,
+  and research. Waste and maintenance retain their verified vehicle-economic effects;
+  unknown header fields outside this proven group remain hidden from calculations.
   - **History:** Republic-wide `stats.ini` charts cover population/employment, productivity,
   cumulative minor/medium/serious crime counts, trade, and selected-resource production.
   Crime history remains explicitly separate from the live `events.bin` case queue.

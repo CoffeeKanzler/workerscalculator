@@ -400,14 +400,16 @@ test('header exposes save version title and source path', () => {
   const bytes = new Uint8Array(buffer);
   view.setUint32(0, 124, true);
   view.setInt32(0x190, 2, true);
+  view.setInt32(0x194, 1, true);
   view.setInt32(0x1bc, 1, true);
   view.setInt32(0x1c0, 1, true);
   view.setInt32(0x1c4, 2, true);
   view.setInt32(0x1c8, 0, true);
   view.setUint32(0x1cc, 1, true);
   view.setInt32(0x1d0, 1, true);
-  view.setUint32(0x1e8, 1, true);
-  view.setUint32(0x1ec, 0, true);
+  view.setInt32(0x1d4, 0, true);
+  view.setUint32(0x1e8, 0, true);
+  view.setUint32(0x1ec, 1, true);
   view.setUint32(0x1f0, 1, true);
   view.setUint32(0x1f4, 0, true);
   view.setUint32(0x1f8, 1, true);
@@ -422,14 +424,16 @@ test('header exposes save version title and source path', () => {
     savePath: 'save/453 - Republic 2001',
     settings: {
       energyManagementLevel: 2,
+      unsatisfiedCitizensReactionLevel: 1,
       dayNightCycleLevel: 1,
       seasonsEnabled: true,
       globalEventsLevel: 2,
       buildingFiresLevel: 0,
       pollutionEnabled: true,
       vehicleAvailabilityLevel: 1,
-      crimeJusticeEnabled: true,
+      educationSimulationLevel: 1,
       waterManagementEnabled: false,
+      crimeJusticeEnabled: true,
       trafficSimulationEnabled: true,
       realisticModeEnabled: false,
       researchEnabled: true,
