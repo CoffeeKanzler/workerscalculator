@@ -244,15 +244,17 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   observed occupancy without inventing capacity. For packages Steam does not expose
   anonymously, users can optionally select their installed
   `steamapps/workshop/content/784150` folder; its `building.ini` facts are read locally
-  and never uploaded. Exact route cursors and building relationships are available for a future
-  operational view, but no universal busy/idle state or proven network reachability is established.
+  and never uploaded. The line drill-down now resolves exact route cursors, current targets,
+  building relationships, and raw current line-interval accumulators for all 69 assigned vehicles;
+  all 69 route vectors match their line stops. These are neutral saved facts: no universal busy/idle
+  state or proven network reachability is established.
   Model-defined hard attachments are never inferred from save consist children. Workshop vehicle
   lifespans are used only when their exact
   `$LIFESPAN` fact is present; vanilla/DLC models use verified category defaults. An earlier
   10%/20%/70% assumption was found to apply to container vehicles, not ships, and was never
   shipped as a ship recommendation.
-  - **Next high-value save modules:** exact current route cursor/target facts, catalog-authoritative
-  train capacities, and optional live follow of a save directory. Cosmetic map/network geometry stays out of scope until a
+  - **Next high-value save modules:** catalog-authoritative train capacities, stable city-building
+  game IDs, and optional live follow of a save directory. Cosmetic map/network geometry stays out of scope until a
   planner feature needs it.
 
 ### 4.2 Live-follow stats.ini

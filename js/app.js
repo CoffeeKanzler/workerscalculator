@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=54';
+import { STRINGS } from './i18n.js?v=55';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, vehicleProductionRecipe, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=26';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -13,7 +13,7 @@ import {
   inferObservedHousing, latestProductivity, matchObservedBuilding, productionBufferStatus,
   productionBufferAlerts, summarizeDistributionOffices, summarizeVehicleLines,
   summarizeCriminalityOutliers,
-} from './save_model.js?v=9';
+} from './save_model.js?v=10';
 import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
@@ -1694,7 +1694,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
     cities,
     productionRows,
     metadata: {
-      version: 4, sourceName, importedAt: new Date().toISOString(), header, sourceStatus,
+      version: 5, sourceName, importedAt: new Date().toISOString(), header, sourceStatus,
       mapClimate,
       settlementCount: occupiedSettlements.length, sourceSettlementCount: settlements.length,
       emptySettlementCount: settlements.length - occupiedSettlements.length, buildingCount: buildings.length,
@@ -1753,7 +1753,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=12', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=13', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -2874,6 +2874,26 @@ function renderRepublic() {
   const lineSummary = lineOperations?.summary;
   const distributionSummary = distributionOperations?.summary;
   const scheduleKeys = block => [...new Set((block?.entries ?? []).map(entry => entry.key || '∅'))].join(', ') || '—';
+  const operationalBuildingLabel = ref => ref?.building?.name || ref?.building?.type
+    || (Number.isInteger(ref?.buildingIndex) ? `#${ref.buildingIndex}` : '—');
+  const lineVehiclePosition = vehicle => {
+    const op = vehicle.operational;
+    if (!op) return el('li', {}, vehicle.name || vehicle.model || `#${vehicle.id}`);
+    const routeCount = op.routeTargets?.length ?? 0;
+    const cursor = op.hasValidScheduleCursor ? `${op.currentScheduleCursor}/${routeCount}` : '—';
+    const relationships = [
+      op.currentBuilding ? `${t('currentBuilding')}: ${operationalBuildingLabel(op.currentBuilding)}` : null,
+      op.homeWorkplace ? `${t('homeWorkplace')}: ${operationalBuildingLabel(op.homeWorkplace)}` : null,
+      op.stationBuilding ? `${t('stationBuilding')}: ${operationalBuildingLabel(op.stationBuilding)}` : null,
+      op.movingInsideBuilding ? `${t('insideBuilding')}: ${operationalBuildingLabel(op.movingInsideBuilding)}` : null,
+    ].filter(Boolean).join(' · ');
+    return el('li', {},
+      `${vehicle.name || vehicle.model || `#${vehicle.id}`} · ${t('savedRouteCursor')} ${cursor}`
+        + ` · ${t('currentTarget')}: ${operationalBuildingLabel(op.currentScheduleTarget)}`
+        + (Number.isFinite(op.currentLineIntervalRaw)
+          ? ` · ${t('currentLineIntervalRaw')}: ${fmt(op.currentLineIntervalRaw, 2)}` : ''),
+      relationships ? el('div', { class: 'subline' }, relationships) : null);
+  };
   const distributionResourceLabel = key => {
     const resource = DATA.resources.find(item => item.key === key);
     return resource ? rname(resource) : key;
@@ -2910,7 +2930,9 @@ function renderRepublic() {
         kv(t('linesWithAssignedVehicles'), fmt(lineSummary.assignedLineCount, 0)),
         kv(t('assignedVehicleReferences'), fmt(lineSummary.vehicleReferenceCount, 0)),
         kv(t('orderedStopReferences'), fmt(lineSummary.stopReferenceCount, 0)),
-        kv(t('completeObservedCycles'), fmt(lineSummary.completeObservedCycleCount, 0))) : null,
+        kv(t('completeObservedCycles'), fmt(lineSummary.completeObservedCycleCount, 0)),
+        kv(t('validRouteCursors'), fmt(lineSummary.validScheduleCursorVehicleCount ?? 0, 0)),
+        kv(t('positiveCurrentIntervals'), fmt(lineSummary.positiveCurrentIntervalVehicleCount ?? 0, 0))) : null,
       distributionSummary?.officeCount ? el('div', { class: 'totalsbox' },
         el('h4', {}, t('distributionOffices')),
         kv(t('distributionOffices'), `${fmt(distributionSummary.officeCount, 0)} · `
@@ -2941,7 +2963,10 @@ function renderRepublic() {
         el('tbody', {}, ...lineOperations.lines.map(line => el('tr', {},
           el('td', {}, line.name || `#${line.slot}`),
           el('td', {}, line.assignedVehicles.length
-            ? line.assignedVehicles.map(vehicle => vehicle.name || vehicle.model || `#${vehicle.id}`).join(', ') : '—'),
+            ? el('details', {},
+              el('summary', {}, `${fmt(line.assignedVehicles.length, 0)} · `
+                + line.assignedVehicles.map(vehicle => vehicle.name || vehicle.model || `#${vehicle.id}`).join(', ')),
+              el('ul', {}, ...line.assignedVehicles.map(lineVehiclePosition))) : '—'),
           el('td', {}, line.stops.length ? line.stops.map(stop =>
             stop.building?.name || stop.building?.type || (stop.buildingIndex < 0 ? '—' : `#${stop.buildingIndex}`)).join(' → ') : '—'),
           el('td', {}, line.stops.map((stop, index) =>

@@ -313,11 +313,60 @@ export function summarizeVehicleLines(lines, vehicles = [], buildings = []) {
   const buildingMap = new Map((buildings ?? []).map(building => [building.index, building]));
   let invalidVehicleReferenceCount = 0;
   let invalidStopReferenceCount = 0;
+  let invalidOperationalBuildingReferenceCount = 0;
+  const lineAssignmentCounts = new Map();
+  for (const line of lines ?? []) for (const id of line.vehicleIds ?? []) {
+    lineAssignmentCounts.set(id, (lineAssignmentCounts.get(id) ?? 0) + 1);
+  }
+  const buildingRef = index => {
+    if (!Number.isInteger(index) || index < 0) return null;
+    const building = buildingMap.get(index);
+    if (!building) {
+      invalidOperationalBuildingReferenceCount += 1;
+      return { buildingIndex: index, building: null };
+    }
+    return {
+      buildingIndex: index,
+      building: { index, type: building.type, name: building.name, scopeId: building.scopeId ?? null },
+    };
+  };
+  let routeSequenceMatchCount = 0;
+  let routeSequenceMismatchCount = 0;
   const resolvedLines = (lines ?? []).map(line => {
     const assignedVehicles = (line.vehicleIds ?? []).map(id => {
-      const resolved = compactResolvedVehicle(id, vehicleMap.get(id));
+      const record = vehicleMap.get(id);
+      const resolved = compactResolvedVehicle(id, record);
       if (!resolved) invalidVehicleReferenceCount += 1;
-      return resolved ?? { id, model: null, name: null, cargo: [] };
+      if (!resolved) return { id, model: null, name: null, cargo: [], operational: null };
+      const routeTargets = (record.routeTargetBuildingIndices ?? []).map(buildingRef);
+      const routeMatchesLine = Array.isArray(record.routeTargetBuildingIndices)
+        && record.routeTargetBuildingIndices.length === (line.stopIds ?? []).length
+        && record.routeTargetBuildingIndices.every((target, index) => target === line.stopIds[index]);
+      if (routeMatchesLine) routeSequenceMatchCount += 1;
+      else routeSequenceMismatchCount += 1;
+      const cursor = record.currentScheduleCursor;
+      const validCursor = record.hasValidScheduleCursor === true
+        || (Number.isInteger(cursor) && cursor >= 0 && cursor < routeTargets.length);
+      return {
+        ...resolved,
+        operational: {
+          parentVehicleId: record.parentVehicleId ?? -1,
+          schedulePairCount: record.schedulePairCount ?? 0,
+          routeTargets,
+          currentScheduleCursor: cursor ?? -1,
+          hasValidScheduleCursor: validCursor,
+          currentScheduleTarget: validCursor ? routeTargets[cursor] : null,
+          routeMatchesLine,
+          currentLineIntervalRaw: Number.isFinite(record.currentLineIntervalRaw)
+            ? record.currentLineIntervalRaw : null,
+          currentBuilding: buildingRef(record.currentBuildingIndex),
+          homeWorkplace: buildingRef(record.homeWorkplaceBuildingIndex),
+          stationBuilding: buildingRef(record.stationBuildingIndex),
+          stationEnteringBuilding: buildingRef(record.stationEnteringBuildingIndex),
+          shouldExitStationTarget: buildingRef(record.shouldExitStationTargetBuildingIndex),
+          movingInsideBuilding: buildingRef(record.movingInsideBuildingIndex),
+        },
+      };
     });
     const stops = (line.stopIds ?? []).map((buildingIndex, index) => {
       const resolved = buildingIndex >= 0 ? buildingMap.get(buildingIndex) : null;
@@ -357,8 +406,16 @@ export function summarizeVehicleLines(lines, vehicles = [], buildings = []) {
       nullStopReferenceCount: resolvedLines.reduce((sum, line) =>
         sum + (line.stopIds ?? []).filter(id => id < 0).length, 0),
       completeObservedCycleCount: resolvedLines.filter(line => line.completeObservedCycle != null).length,
+      validScheduleCursorVehicleCount: resolvedLines.reduce((sum, line) => sum
+        + line.assignedVehicles.filter(vehicle => vehicle.operational?.hasValidScheduleCursor).length, 0),
+      positiveCurrentIntervalVehicleCount: resolvedLines.reduce((sum, line) => sum
+        + line.assignedVehicles.filter(vehicle => vehicle.operational?.currentLineIntervalRaw > 0).length, 0),
+      routeSequenceMatchCount,
+      routeSequenceMismatchCount,
+      duplicateVehicleAssignmentCount: [...lineAssignmentCounts.values()].filter(count => count > 1).length,
       invalidVehicleReferenceCount,
       invalidStopReferenceCount,
+      invalidOperationalBuildingReferenceCount,
     },
   };
 }

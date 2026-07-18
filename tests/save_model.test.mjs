@@ -337,16 +337,30 @@ test('vehicle line summary resolves references and labels only complete raw obse
     stopIds: [99], schedules: [], vehicleIds: [88], observedIntervals: [0],
   }];
   const result = summarizeVehicleLines(lines,
-    [{ id: 4, model: 'tanker', modelFacts: { name: 'Tanker' } }],
+    [{ id: 4, model: 'tanker', modelFacts: { name: 'Tanker' },
+      routeTargetBuildingIndices: [1, -1], currentScheduleCursor: 0,
+      hasValidScheduleCursor: true, currentLineIntervalRaw: 75.5,
+      currentBuildingIndex: 1, homeWorkplaceBuildingIndex: 1,
+      stationBuildingIndex: 1, stationEnteringBuildingIndex: -1,
+      shouldExitStationTargetBuildingIndex: -1, movingInsideBuildingIndex: -1,
+      parentVehicleId: -1, schedulePairCount: 2 }],
     [{ index: 1, type: 'harbor', name: 'Oil Harbor' }]);
   assert.deepEqual(result.summary, {
     lineCount: 2, assignedLineCount: 2, vehicleReferenceCount: 2,
     stopReferenceCount: 3, nullStopReferenceCount: 1, completeObservedCycleCount: 1,
+    validScheduleCursorVehicleCount: 1, positiveCurrentIntervalVehicleCount: 1,
+    routeSequenceMatchCount: 1, routeSequenceMismatchCount: 0,
+    duplicateVehicleAssignmentCount: 0,
     invalidVehicleReferenceCount: 1, invalidStopReferenceCount: 1,
+    invalidOperationalBuildingReferenceCount: 0,
   });
   assert.equal(result.lines[0].completeObservedCycle, 30);
   assert.equal(result.lines[0].largestObservedInterval, 20);
   assert.equal(result.lines[0].assignedVehicles[0].name, 'Tanker');
+  assert.equal(result.lines[0].assignedVehicles[0].operational.currentScheduleCursor, 0);
+  assert.equal(result.lines[0].assignedVehicles[0].operational.currentScheduleTarget.building.name, 'Oil Harbor');
+  assert.equal(result.lines[0].assignedVehicles[0].operational.currentLineIntervalRaw, 75.5);
+  assert.equal(result.lines[0].assignedVehicles[0].operational.routeMatchesLine, true);
   assert.equal(result.lines[0].stops[0].building.name, 'Oil Harbor');
   assert.equal(result.lines[1].completeObservedCycle, null);
 });

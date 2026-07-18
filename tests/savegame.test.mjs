@@ -52,11 +52,14 @@ function lineFixture({ saveVersion = 124 } = {}) {
   return buffer;
 }
 
-function vehicleFixture({ cargo = [], optionalBranches = false } = {}) {
+function vehicleFixture({ cargo = [], optionalBranches = false, routeTargetIds = [],
+  currentCursor = -1, schedulePairCount = routeTargetIds.length, refs = {},
+  currentLineIntervalRaw = 0 } = {}) {
   const fixed = 0x7e8;
   const header = 0x40;
   const blobSize = 16;
   const dynamicSize = cargo.length * 0x48
+    + schedulePairCount * 0x30 + routeTargetIds.length * 4
     + (optionalBranches ? 0x200 + 0x0c + 0x0c + 0x10 + 0x80 + 0x80 : 0)
     + blobSize;
   const buffer = new ArrayBuffer(4 + fixed + header + dynamicSize);
@@ -66,18 +69,34 @@ function vehicleFixture({ cargo = [], optionalBranches = false } = {}) {
   const h = start + fixed;
   view.setUint32(0, 1, true);
   view.setInt32(start, 0, true);
+  view.setInt32(start + 0x04, refs.parentVehicleId ?? -1, true);
   view.setUint32(start + 0x0c, cargo.length, true);
+  view.setInt32(start + 0x1c, refs.currentBuildingIndex ?? -1, true);
+  view.setInt32(start + 0x20, refs.homeWorkplaceBuildingIndex ?? -1, true);
+  view.setInt32(start + 0x30, refs.stationBuildingIndex ?? -1, true);
+  view.setInt32(start + 0x34, refs.stationEnteringBuildingIndex ?? -1, true);
+  view.setInt32(start + 0xa4, refs.shouldExitStationTargetBuildingIndex ?? -1, true);
+  view.setUint32(start + 0xb0, schedulePairCount, true);
+  view.setUint32(start + 0xb4, routeTargetIds.length, true);
+  view.setInt32(start + 0xb8, currentCursor, true);
+  view.setInt32(start + 0x1b8, refs.movingInsideBuildingIndex ?? -1, true);
   bytes.set(new TextEncoder().encode('tanker\0'), start + 0x728);
   view.setFloat32(start + 0x7b8, 93.6, true);
   view.setInt32(start + 0x7cc, -1, true);
   view.setFloat32(start + 0x7d0, 0.75, true);
   view.setUint32(h + 0x24, blobSize, true);
+  view.setFloat32(h + 0x18, currentLineIntervalRaw, true);
   let cursor = h + header;
   for (const item of cargo) {
     bytes.set(new TextEncoder().encode(`${item.resource}\0`), cursor);
     view.setFloat32(cursor + 0x40, item.amount, true);
     view.setUint32(cursor + 0x44, item.flags ?? 0, true);
     cursor += 0x48;
+  }
+  for (let index = 0; index < schedulePairCount; index += 1) cursor += 0x30;
+  for (const targetId of routeTargetIds) {
+    view.setInt32(cursor, targetId, true);
+    cursor += 4;
   }
   if (optionalBranches) {
     view.setUint32(start + 0x7dc, 1, true);
@@ -93,8 +112,14 @@ function vehicleFixture({ cargo = [], optionalBranches = false } = {}) {
   return buffer;
 }
 
-test('vehicle records expose decision fields and require exact EOF', () => {
-  const buffer = vehicleFixture({ cargo: [{ resource: 'oil', amount: 4338.07470703125, flags: 3 }] });
+test('vehicle records expose decision and exact route-position fields and require exact EOF', () => {
+  const buffer = vehicleFixture({
+    cargo: [{ resource: 'oil', amount: 4338.07470703125, flags: 3 }],
+    routeTargetIds: [7, 9], currentCursor: 1, currentLineIntervalRaw: 75.77782440185547,
+    refs: { parentVehicleId: 4, currentBuildingIndex: 7, homeWorkplaceBuildingIndex: 8,
+      stationBuildingIndex: 9, stationEnteringBuildingIndex: -1,
+      shouldExitStationTargetBuildingIndex: 10, movingInsideBuildingIndex: 11 },
+  });
   const parsed = parseVehicles(buffer);
 
   assert.deepEqual(parsed.summary, { recordCount: 1, byteLength: buffer.byteLength, trailingBytes: 0 });
@@ -106,12 +131,31 @@ test('vehicle records expose decision fields and require exact EOF', () => {
   assert.ok(Math.abs(parsed.vehicles[0].fuel - 93.6) < 1e-4);
   assert.equal(parsed.vehicles[0].accumulatedUsage, 21772.365181054876);
   assert.equal(parsed.vehicles[0].age, 630.9812399897511);
+  assert.equal(parsed.vehicles[0].parentVehicleId, 4);
+  assert.equal(parsed.vehicles[0].currentBuildingIndex, 7);
+  assert.equal(parsed.vehicles[0].homeWorkplaceBuildingIndex, 8);
+  assert.equal(parsed.vehicles[0].stationBuildingIndex, 9);
+  assert.equal(parsed.vehicles[0].stationEnteringBuildingIndex, -1);
+  assert.equal(parsed.vehicles[0].shouldExitStationTargetBuildingIndex, 10);
+  assert.equal(parsed.vehicles[0].movingInsideBuildingIndex, 11);
+  assert.equal(parsed.vehicles[0].schedulePairCount, 2);
+  assert.deepEqual(parsed.vehicles[0].routeTargetBuildingIndices, [7, 9]);
+  assert.equal(parsed.vehicles[0].currentScheduleCursor, 1);
+  assert.equal(parsed.vehicles[0].hasValidScheduleCursor, true);
+  assert.equal(parsed.vehicles[0].currentScheduleTargetBuildingIndex, 9);
+  assert.ok(Math.abs(parsed.vehicles[0].currentLineIntervalRaw - 75.77782440185547) < 1e-5);
   assert.deepEqual(parsed.vehicles[0].cargo, [{ resource: 'oil', amount: 4338.07470703125, flags: 3 }]);
 
   const appended = new Uint8Array(buffer.byteLength + 1);
   appended.set(new Uint8Array(buffer));
   assert.throws(() => parseVehicles(appended.buffer), /trailing bytes/);
   assert.throws(() => parseVehicles(buffer.slice(0, -1)), /state blob/);
+});
+
+test('a raw vehicle cursor outside its route vector is not a current target', () => {
+  const [vehicle] = parseVehicles(vehicleFixture({ routeTargetIds: [7], currentCursor: 2 })).vehicles;
+  assert.equal(vehicle.hasValidScheduleCursor, false);
+  assert.equal(vehicle.currentScheduleTargetBuildingIndex, null);
 });
 
 test('vehicle traversal consumes writer-proven optional blocks', () => {

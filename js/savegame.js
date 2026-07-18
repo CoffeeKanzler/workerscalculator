@@ -278,6 +278,8 @@ export function parseVehicles(buffer, { onProgress } = {}) {
     const childCount = count(0x008, 'child count');
     const cargoCount = count(0x00c, 'cargo count');
     const nestedCount = count(0x0b0, 'nested-pair count');
+    const routeTargetCount = count(0x0b4, 'route target count');
+    const currentScheduleCursor = c.view.getInt32(start + 0x0b8, true);
     const blobSize = headerCount(0x24, 'state blob size');
     const trailingNameCount = headerCount(0x34, 'trailing-name count');
 
@@ -291,7 +293,8 @@ export function parseVehicles(buffer, { onProgress } = {}) {
       skipVehicleNested(c, `vehicle ${index} nested ${item}.0`);
       skipVehicleNested(c, `vehicle ${index} nested ${item}.1`);
     }
-    c.skip(count(0x0b4, 'ID count') * 4, `vehicle ${index} IDs`);
+    const routeTargetBuildingIndices = Array.from({ length: routeTargetCount }, (_, item) =>
+      c.i32(`vehicle ${index} route target ${item}`));
     c.skip(count(0x0c0, 'paired A count') * 8, `vehicle ${index} paired A`);
     c.skip(count(0x0c4, 'paired B count') * 8, `vehicle ${index} paired B`);
     c.skip(count(0x0d0, 'triples A count') * 0x0c, `vehicle ${index} triples A`);
@@ -319,9 +322,25 @@ export function parseVehicles(buffer, { onProgress } = {}) {
       };
       if (entry.amount > 0) cargo.push(entry);
     }
+    const hasValidScheduleCursor = currentScheduleCursor >= 0
+      && currentScheduleCursor < routeTargetBuildingIndices.length;
     vehicles.push({
       index,
       id: c.view.getInt32(start, true),
+      parentVehicleId: c.view.getInt32(start + 0x04, true),
+      currentBuildingIndex: c.view.getInt32(start + 0x1c, true),
+      homeWorkplaceBuildingIndex: c.view.getInt32(start + 0x20, true),
+      stationBuildingIndex: c.view.getInt32(start + 0x30, true),
+      stationEnteringBuildingIndex: c.view.getInt32(start + 0x34, true),
+      shouldExitStationTargetBuildingIndex: c.view.getInt32(start + 0xa4, true),
+      movingInsideBuildingIndex: c.view.getInt32(start + 0x1b8, true),
+      schedulePairCount: nestedCount,
+      routeTargetBuildingIndices,
+      currentScheduleCursor,
+      hasValidScheduleCursor,
+      currentScheduleTargetBuildingIndex: hasValidScheduleCursor
+        ? routeTargetBuildingIndices[currentScheduleCursor] : null,
+      currentLineIntervalRaw: c.view.getFloat32(h + 0x18, true),
       model: c.asciiZStrict(start + 0x728, 0x80, `vehicle ${index} model`),
       ownershipField: c.view.getInt32(start + 0x10, true),
       fuel: c.view.getFloat32(start + 0x7b8, true),
