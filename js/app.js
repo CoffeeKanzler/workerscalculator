@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=62';
+import { STRINGS } from './i18n.js?v=63';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=28';
@@ -2328,7 +2328,13 @@ function renderCity() {
       details.push(`${fmt(building.quality * 100, 0)}% ${t('qualityShort')}`);
     }
     details.push(building.kind === 'Vanilla' ? 'Vanilla' : 'Mod');
-    if (building.gameId) details.push(`✓ ${t('exact')}`);
+    if (building.gameId) {
+      const exactFields = [];
+      if (building.provenance?.workers === 'game-file') exactFields.push(t('workers'));
+      if (building.provenance?.housing === 'game-file') exactFields.push(t('housingCapacity'));
+      if (building.provenance?.serviceCapacity === 'game-file') exactFields.push(t('serviceCapacity'));
+      details.push(`${t('gameFacts')}: ${exactFields.join(', ') || t('identity')}`);
+    }
     return `${building[state.lang]} — ${details.join(' · ')}`;
   };
 
