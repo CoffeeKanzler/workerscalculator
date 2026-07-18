@@ -305,11 +305,13 @@ save's live RUB/USD resource prices.)
 - **Next:** map blueprint purchase cost and owned `$BLUEPRINT_OWNED` entries so the
   ranking can show license payback time.
 
-### 5.1b Train planner on game vehicle data
-(Partially implemented 2026-07-16: game-only locomotives and DLC vehicles are
-merged into the planner; steam tenders are read from `$TRAINSET` and attached
-automatically, matching the game. Still open: replace sheet wagons and their
-per-cargo capacities with game data.)
+### 5.1b Train planner on game vehicle data ✅
+(Implemented 2026-07-18: game-only locomotives and DLC vehicles are merged into
+the planner; steam tenders are read from `$TRAINSET` and attached automatically,
+matching the game. Exact game-file capacity and transport class now drive 70 of
+98 train wagons. The 28 unmatched spreadsheet vehicles remain visibly labelled
+fallbacks, and ambiguous construction-material columns are not presented as
+cargo.)
 - **What:** Move the train planner from the sheet's 95 rail vehicles to the game
   files. Vehicle lengths come from `bbox.bin` next to each model (24 bytes,
   6 little-endian floats = min/max XYZ; z-extent = length — validated:
@@ -317,8 +319,8 @@ per-cargo capacities with game data.)
   (`cwc/vehicles`, `dlc1/vehicles`, …).
 - **Why:** covers game-only vehicles (CWC electrics; steam locos for owners of
   Early Start — their files only ship when the DLC is owned) and stays current
-  with patches. Open question: per-cargo tonnage (sheet has per-resource
-  capacities; game files have one `RESOURCE_CAPACITY` + transport type).
+  with patches. Per-cargo compatibility is resolved from the game's single
+  `RESOURCE_CAPACITY` and transport type rather than stale sheet columns.
 - **Effort:** medium.
 
 ### 5.4 Full advanced mode (edit all data)

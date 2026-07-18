@@ -5,6 +5,108 @@ import {
 export const isLocomotive = vehicle =>
   ['Lokomotive', 'Triebwagen'].includes(vehicle?.attrs?.Typ);
 
+const cargoNames = (...names) => new Set(names.map(name => name.toLowerCase()));
+const COVERED_CARGO = cargoNames(
+  'plants', 'Pflanzen', 'Plant', 'chemicals', 'Chemikalien', 'Chemicals',
+  'food', 'Essen', 'Food', 'clothes', 'Kleidung', 'Clothes',
+  'alcohol', 'Alkohol', 'Alcohol', 'fabric', 'Stoff', 'Fabric',
+  'mcomponents', 'Mechanik-Bauteile', 'Mechanical components',
+  'ecomponents', 'Elektronik-Bauteile', 'Electronic components',
+  'plastics', 'Kunststoffe', 'Plastic', 'eletronics', 'Elektronik', 'Electronics',
+  'explosives', 'Sprengstoff', 'Explosives');
+const OPEN_CARGO = cargoNames(
+  'steel', 'Stahl', 'Steel', 'aluminium', 'Aluminium', 'aluminum',
+  'prefabpanels', 'Plattenbauteile', 'Plate components', 'bricks', 'Ziegel', 'Brick',
+  'wood', 'Holz', 'Wood', 'boards', 'Bretter', 'Boards',
+  'yellowcake', 'Uranoxid', 'Uranium oxide');
+const TRANSPORT_CARGO = new Map([
+  ['RESOURCE_TRANSPORT_COVERED', COVERED_CARGO],
+  ['RESOURCE_TRANSPORT_OPEN', OPEN_CARGO],
+  ['RESOURCE_TRANSPORT_GRAVEL', cargoNames(
+    'gravel', 'Kies', 'Gravel', 'rawgravel', 'Bruchstein', 'Broken stone',
+    'coal', 'Kohle', 'Coal', 'rawcoal', 'Kohlenerz', 'Raw coal',
+    'iron', 'Eisen', 'Iron', 'rawiron', 'Eisenerz', 'Iron ore',
+    'bauxite', 'Bauxit', 'Bauxite', 'rawbauxite', 'Rohes Bauxit', 'Raw bauxite',
+    'uranium', 'Uranerz', 'Uranium ore', 'asphalt', 'Asphalt',
+    'waste_gravel', 'Bauschutt', 'Construction waste',
+    'waste_steel', 'Metallschrott', 'Scrap metal',
+    'waste_aluminium', 'Aluminiumschrott', 'Aluminum scrap')],
+  ['RESOURCE_TRANSPORT_OIL', cargoNames(
+    'oil', 'Öl', 'fuel', 'Treibstoff', 'Fuel', 'bitumen', 'Bitumen',
+    'fertiliser_liquid', 'Flüssigdünger', 'Liquid fertilizer')],
+  ['RESOURCE_TRANSPORT_CEMENT', cargoNames(
+    'cement', 'Zement', 'Cement', 'alumina', 'Aluminiumoxid', 'Aluminum oxide')],
+  ['RESOURCE_TRANSPORT_COOLER', cargoNames('meat', 'Fleisch', 'Meat')],
+  ['RESOURCE_TRANSPORT_LIVESTOCK', cargoNames('livestock', 'Vieh', 'Livestock')],
+  ['RESOURCE_TRANSPORT_PASSANGER', cargoNames('Passagiere', 'Passengers')],
+  ['RESOURCE_TRANSPORT_CONCRETE', cargoNames('concrete', 'Beton', 'Concrete')],
+  ['RESOURCE_TRANSPORT_WATER', cargoNames('water', 'Wasser', 'Water')],
+  ['RESOURCE_TRANSPORT_SEWAGE', cargoNames('usagewater', 'Abwasser', 'Sewage')],
+  ['RESOURCE_TRANSPORT_WASTE', cargoNames(
+    'waste_gravel', 'Bauschutt', 'Construction waste',
+    'waste_steel', 'Metallschrott', 'Scrap metal',
+    'waste_aluminium', 'Aluminiumschrott', 'Aluminum scrap',
+    'waste_plastic', 'Plastikmüll', 'Plastic waste',
+    'waste_bio', 'Biomüll', 'Biological waste',
+    'fertiliser', 'Dünger', 'Fertilizer',
+    'waste_burnable', 'Brennbarer Müll', 'Burnable waste',
+    'waste_toxic', 'Sondermüll', 'Hazardous waste',
+    'waste_other', 'Sonstigermüll', 'Mixed waste', 'waste_ash', 'Asche', 'Ash')],
+  ['RESOURCE_TRANSPORT_GENERAL', new Set([...COVERED_CARGO, ...OPEN_CARGO])],
+]);
+const SHEET_FREIGHT_TRANSPORT = new Map([
+  ['Abgedeckte Ladefläche', 'RESOURCE_TRANSPORT_COVERED'],
+  ['Offene Ladefläche', 'RESOURCE_TRANSPORT_OPEN'],
+  ['Kipper', 'RESOURCE_TRANSPORT_GRAVEL'],
+  ['Flüssigkeitstank', 'RESOURCE_TRANSPORT_OIL'],
+  ['Staubgut-Behälter', 'RESOURCE_TRANSPORT_CEMENT'],
+  ['Kühlung', 'RESOURCE_TRANSPORT_COOLER'],
+  ['Vieh', 'RESOURCE_TRANSPORT_LIVESTOCK'],
+  ['Passagiere', 'RESOURCE_TRANSPORT_PASSANGER'],
+  ['Beton', 'RESOURCE_TRANSPORT_CONCRETE'],
+  ['Müll', 'RESOURCE_TRANSPORT_WASTE'],
+  ['Ladung', 'RESOURCE_TRANSPORT_GENERAL'],
+]);
+// The sheet uses the same columns for wagon cargo and vehicle-production
+// materials. On unmatched wagons these values cannot be distinguished safely:
+// e.g. "Stahl: 17" on a 67 t open wagon is its construction bill, not cargo.
+// Exact game-file matches do not have this ambiguity and take the branch above.
+const AMBIGUOUS_SHEET_CARGO = cargoNames(
+  'steel', 'Stahl', 'Steel', 'aluminium', 'Aluminium', 'aluminum',
+  'plastics', 'Kunststoffe', 'Plastic', 'fabric', 'Stoff', 'Fabric',
+  'mcomponents', 'Mechanik-Bauteile', 'Mechanical components',
+  'ecomponents', 'Elektronik-Bauteile', 'Electronic components',
+  'eletronics', 'Elektronik', 'Electronics');
+
+export function vehicleSupportsCargo(vehicle, cargo) {
+  if (Number.isFinite(vehicle?.gameCapacity) && vehicle?.gameTransportType) {
+    return vehicle.gameCapacity > 0
+      && (TRANSPORT_CARGO.get(vehicle.gameTransportType)?.has(String(cargo).toLowerCase()) ?? false);
+  }
+  const fallbackType = SHEET_FREIGHT_TRANSPORT.get(vehicle?.attrs?.Frachtart);
+  if (fallbackType
+      && !(TRANSPORT_CARGO.get(fallbackType)?.has(String(cargo).toLowerCase()) ?? false)) return false;
+  if (AMBIGUOUS_SHEET_CARGO.has(String(cargo).toLowerCase())) return false;
+  if (fallbackType === 'RESOURCE_TRANSPORT_GENERAL') return (vehicle?.attrs?.Ladefläche ?? 0) > 0;
+  return (vehicle?.attrs?.[cargo] ?? 0) > 0;
+}
+
+export function vehicleCargoCapacity(vehicle, cargo) {
+  if (Number.isFinite(vehicle?.gameCapacity) && vehicle?.gameTransportType) {
+    return vehicleSupportsCargo(vehicle, cargo) ? vehicle.gameCapacity : 0;
+  }
+  if (SHEET_FREIGHT_TRANSPORT.get(vehicle?.attrs?.Frachtart) === 'RESOURCE_TRANSPORT_GENERAL') {
+    return vehicleSupportsCargo(vehicle, cargo) ? (vehicle.attrs.Ladefläche ?? 0) : 0;
+  }
+  return vehicleSupportsCargo(vehicle, cargo) ? (vehicle?.attrs?.[cargo] ?? 0) : 0;
+}
+
+export function vehicleDrive(vehicle) {
+  if (vehicle?.gameElectric === true) return 'E';
+  if (vehicle?.gameElectric === false && vehicle?.attrs?.Antriebsart === 'E') return '?';
+  return vehicle?.attrs?.Antriebsart ?? '?';
+}
+
 // Combine the sheet-derived vehicle pool with the game-only rail supplement.
 // Most supplement entries are locomotives absent from the sheet and get
 // added outright, but some sheet locomotives got a tender attached via the
@@ -17,6 +119,18 @@ export function mergeVehiclePools(sheetVehicles, railSupplement, rawGameVehicles
     attrs: { ...vehicle.attrs },
     provenance: { productionCost: 'spreadsheet', cargoCapacities: 'spreadsheet' },
   }));
+  const byName = new Map(merged.map(v => [v.name.toLowerCase(), v]));
+  for (const r of railSupplement) {
+    if (r.tenderOnly) {
+      const match = byName.get(r.name.toLowerCase());
+      if (match) match.tender = r.tender;
+      continue;
+    }
+    merged.push({
+      ...r, attrs: { ...r.attrs },
+      provenance: { productionCost: 'unavailable', cargoCapacities: 'unavailable' },
+    });
+  }
   const rawByName = new Map();
   for (const raw of rawGameVehicles) {
     for (const name of [raw.de, raw.en]) {
@@ -50,6 +164,15 @@ export function mergeVehiclePools(sheetVehicles, railSupplement, rawGameVehicles
       singleHorsePower: raw.singleHorsePower,
     });
     vehicle.sourceGameId = raw.id;
+    if (Number.isFinite(raw.capacity) && raw.transportType) {
+      vehicle.gameCapacity = raw.capacity;
+      vehicle.gameTransportType = raw.transportType;
+      vehicle.provenance.cargoCapacities = 'game-file';
+    }
+    if (typeof raw.electric === 'boolean') {
+      vehicle.gameElectric = raw.electric;
+      vehicle.provenance.electric = 'game-file';
+    }
     if (recipe) {
       vehicle.gameRecipe = recipe;
       vehicle.provenance.productionCost = 'game-file';
@@ -57,15 +180,6 @@ export function mergeVehiclePools(sheetVehicles, railSupplement, rawGameVehicles
     vehicle.provenance.dimensions = 'game-file';
     vehicle.provenance.performance = 'game-file';
     vehicle.provenance.availability = 'game-file';
-  }
-  const byName = new Map(merged.map(v => [v.name.toLowerCase(), v]));
-  for (const r of railSupplement) {
-    if (r.tenderOnly) {
-      const match = byName.get(r.name.toLowerCase());
-      if (match) match.tender = r.tender;
-      continue;
-    }
-    merged.push(r);
   }
   return merged;
 }
@@ -127,11 +241,11 @@ export function evaluateConsist(consist, vehicles, cargoNames = new Set()) {
 
     if (isLocomotive(vehicle)) {
       powerKW += (attrs.Motorleistung ?? 0) * count;
-      isElectric ||= attrs.Antriebsart === 'E';
+      isElectric ||= vehicleDrive(vehicle) === 'E';
       continue;
     }
     if (segment.locked || !segment.cargo || !cargoNames.has(segment.cargo)) continue;
-    const capacity = attrs[segment.cargo];
+    const capacity = vehicleCargoCapacity(vehicle, segment.cargo);
     if (capacity > 0) {
       capacities.set(segment.cargo,
         (capacities.get(segment.cargo) ?? 0) + capacity * count);
@@ -174,16 +288,18 @@ export function recommendTrain(train, locomotives, wagons) {
 
   for (const want of wants) {
     const candidates = wagons.filter(wagon =>
-      (wagon.attrs[want.cargo] ?? 0) > 0
+      vehicleSupportsCargo(wagon, want.cargo)
       && eraOk(wagon, year)
       && (wagon.attrs['Länge'] ?? 0) > 0);
     if (!candidates.length) continue;
     const best = candidates.reduce((a, b) =>
-      b.attrs[want.cargo] / b.attrs['Länge'] > a.attrs[want.cargo] / a.attrs['Länge']
+      vehicleCargoCapacity(b, want.cargo) / b.attrs['Länge']
+        > vehicleCargoCapacity(a, want.cargo) / a.attrs['Länge']
         ? b : a);
-    const count = Math.ceil(want.tons / best.attrs[want.cargo]);
+    const bestCapacity = vehicleCargoCapacity(best, want.cargo);
+    const count = Math.ceil(want.tons / bestCapacity);
     consist.push({ name: best.name, count, cargo: want.cargo });
-    wagonWeight += count * ((best.attrs.Leergewicht ?? 0) + best.attrs[want.cargo]);
+    wagonWeight += count * ((best.attrs.Leergewicht ?? 0) + bestCapacity);
     wagonLength += count * best.attrs['Länge'];
   }
 
@@ -194,7 +310,7 @@ export function recommendTrain(train, locomotives, wagons) {
   for (const locomotive of locomotives) {
     if (!eraOk(locomotive, year)) continue;
     if (train.reco.drive !== 'all'
-        && locomotive.attrs.Antriebsart !== train.reco.drive) continue;
+        && vehicleDrive(locomotive) !== train.reco.drive) continue;
 
     const power = locomotive.attrs.Motorleistung ?? 0;
     const attachedWeight = locomotive.tender?.attrs?.Leergewicht ?? 0;

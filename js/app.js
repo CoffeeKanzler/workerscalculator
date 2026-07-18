@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=55';
+import { STRINGS } from './i18n.js?v=56';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, vehicleProductionRecipe, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=26';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -6,7 +6,8 @@ import { solveChain, producersByResource, defaultProducer } from './chain.js?v=1
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
-} from './train.js?v=16';
+  vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
+} from './train.js?v=17';
 import { createIndexedDbSnapshotStore, migrateLegacySnapshots } from './storage.js?v=1';
 import {
   aggregateCitizensByScope, compactObservedBuildings, groupObservedProduction,
@@ -3161,13 +3162,9 @@ function trainConsist() {
   return tr.consist;
 }
 
-// Production cost of a vehicle from its material bill (the game computes real
-// purchase prices the same way; the ini COST_RUB fields are placeholders).
-const VEHICLE_MATERIALS = ['Stahl', 'Aluminium', 'Kunststoffe', 'Stoff', 'Mechanik-Bauteile', 'Elektronik-Bauteile', 'Elektronik'];
 function vehicleCost(v, eco, currency) {
-  let cost = (v.attrs['Arbeitstage'] ?? 0) * eco.workday(currency);
-  for (const m of VEHICLE_MATERIALS) cost += (v.attrs[m] ?? 0) * eco.buy(m, currency);
-  return cost;
+  return vehicleProductionRecipe(v).reduce((cost, [resource, amount]) => cost
+    + amount * (resource === 'workers' ? eco.workday(currency) : eco.buy(resource, currency)), 0);
 }
 
 function renderTrains() {
@@ -3181,8 +3178,8 @@ function renderTrains() {
   const resDeNames = new Set(DATA.resources.map(r => r.de));
   resDeNames.add('Passagiere');
   const cargoSet = new Set();
-  for (const w of wagons) for (const k of Object.keys(w.attrs)) {
-    if (resDeNames.has(k) && typeof w.attrs[k] === 'number' && w.attrs[k] > 0) cargoSet.add(k);
+  for (const w of wagons) for (const cargo of resDeNames) {
+    if (vehicleSupportsCargo(w, cargo)) cargoSet.add(cargo);
   }
   const cargos = [...cargoSet].sort((a, b) => a.localeCompare(b));
   if (!cargos.includes(tr.cargo)) tr.cargo = cargos[0];
@@ -3194,7 +3191,7 @@ function renderTrains() {
   const locoLabel = l => {
     const a = l.attrs;
     return `${l.name} — ${fmt(a['Motorleistung'] ?? 0, 0)} kW, ${fmt(a['Max. Geschwindigkeit'] ?? 0, 0)} km/h, `
-      + `${a['Länge'] ?? '?'} m, ${a['Antriebsart'] ?? '?'} (${a['Von'] ?? '?'}–${a['Bis'] ?? '?'})`;
+      + `${a['Länge'] ?? '?'} m, ${vehicleDrive(l)} (${a['Von'] ?? '?'}–${a['Bis'] ?? '?'})`;
   };
 
   // Each wagon segment is assigned the cargo it was added under — a wagon
@@ -3249,9 +3246,9 @@ function renderTrains() {
   // ---- wagon table (click = add)
   const usedLen = evaluateConsist(consist, byName, resDeNames).totalLength;
   const rows = wagons
-    .filter(w => (w.attrs[tr.cargo] ?? 0) > 0 && eraOk(w, tr.year))
+    .filter(w => vehicleSupportsCargo(w, tr.cargo) && eraOk(w, tr.year))
     .map(w => ({
-      w, len: w.attrs['Länge'] ?? 0, cap: w.attrs[tr.cargo] ?? 0,
+      w, len: w.attrs['Länge'] ?? 0, cap: vehicleCargoCapacity(w, tr.cargo),
       cost: vehicleCost(w, eco, state.currency), from: w.attrs['Von'],
       fit: w.attrs['Länge'] > 0 ? Math.floor(Math.max(0, tr.length - usedLen) / w.attrs['Länge']) : 0,
     }))
@@ -3266,7 +3263,10 @@ function renderTrains() {
       class: consist.some(s => s.name === r.w.name) ? 'selected' : '',
       onclick: () => addToConsist(r.w.name, false, tr.cargo),
     },
-      el('td', {}, r.w.name), el('td', { class: 'r' }, fmt(r.len, 1)),
+      el('td', {}, r.w.name,
+        el('span', { class: `evidence-badge ${r.w.provenance?.cargoCapacities === 'game-file' ? 'exact' : 'derived'}` },
+          r.w.provenance?.cargoCapacities === 'game-file' ? t('exact') : t('spreadsheetFallback'))),
+      el('td', { class: 'r' }, fmt(r.len, 1)),
       el('td', { class: 'r' }, fmt(r.cap, 1)),
       el('td', { class: 'r' }, fmt(r.len ? r.cap / r.len : 0, 2)),
       el('td', { class: 'r' }, r.from ?? '—'),
@@ -3281,7 +3281,7 @@ function renderTrains() {
   for (const s of editableSegs) {
     // migrated/legacy segments: assign the first cargo the wagon can carry
     if (!s.cargo && !isLocomotive(s.v)) {
-      s.cargo = Object.keys(s.v.attrs).find(k => resDeNames.has(k) && s.v.attrs[k] > 0) ?? null;
+      s.cargo = cargos.find(cargo => vehicleSupportsCargo(s.v, cargo)) ?? null;
       const orig = consist.find(c => c.name === s.name && !c.cargo);
       if (orig) orig.cargo = s.cargo;
     }
