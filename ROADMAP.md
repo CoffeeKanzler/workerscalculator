@@ -353,10 +353,12 @@ cargo.)
   Workshop production building's workers, input/output rates, utility use, waste,
   construction workdays, and material bill. Overrides are dataset-scoped, feed
   both production and chain calculations, retain user-override provenance, and
-  travel with saved/exported/shared plans.
+  travel with saved/exported/shared plans. Any existing recipe can also be
+  duplicated as a renamed custom building, then tuned independently without
+  changing its authoritative source row.
 - **What:** Extend the Advanced tab (community constants are editable since
-  2026-07-16, session-scoped + in share links) with a "custom building" row and,
-  potentially, user-defined formulas for profit metrics.
+  2026-07-16, session-scoped + in share links) with, potentially, user-defined
+  formulas for profit metrics.
 - **Effort:** medium-large. Data overrides are straightforward (same pattern as
   `state.tuning`); formula editing needs a safe expression evaluator.
 

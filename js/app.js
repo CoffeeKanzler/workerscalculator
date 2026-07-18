@@ -1,11 +1,11 @@
-import { STRINGS } from './i18n.js?v=73';
+import { STRINGS } from './i18n.js?v=74';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
-import { applyBuildingOverrides, buildingOverrideKey, BUILDING_OVERRIDE_FIELDS } from './building_overrides.js?v=1';
+import { applyBuildingOverrides, buildingOverrideKey, BUILDING_OVERRIDE_FIELDS, duplicateCustomBuilding } from './building_overrides.js?v=2';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
@@ -34,7 +34,7 @@ const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'c
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
   'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset',
   'chains', 'activeChain', 'tuning', 'productionScope', 'saveImport', 'republicView',
-  'buildingOverrides',
+  'buildingOverrides', 'customBuildings',
   'republicRange', 'republicResource', 'republicScope', 'tab'];
 const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex'];
 
@@ -77,6 +77,7 @@ function createInitialState() {
     dataset: 'game',   // 'game' (current game files) | 'sheet' (spreadsheet snapshot)
     tuning: {},        // advanced-mode overrides for community constants
     buildingOverrides: {}, // dataset-scoped advanced production-building overrides
+    customBuildings: [],
     advancedBuildingKey: null,
     lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0 },
     chains: [defaultChainPlan()],
@@ -247,8 +248,9 @@ async function loadWorkshopCatalogForSave(buildings, vehicles = []) {
 }
 
 function baseProdBuildings() {
-  if (state.dataset === 'game') return [...(DATA.prodSets.game ?? []), ...(DATA.workshopProduction ?? [])];
-  return DATA.prodSets.sheet;
+  const custom = state.customBuildings.filter(building => building.customDataset === state.dataset);
+  if (state.dataset === 'game') return [...(DATA.prodSets.game ?? []), ...(DATA.workshopProduction ?? []), ...custom];
+  return [...DATA.prodSets.sheet, ...custom];
 }
 
 // Active production-building dataset ('game' from game files, 'sheet' from the spreadsheet).
@@ -3944,6 +3946,46 @@ function renderAdvanced() {
         selectedOverride[kind]?.[key] !== undefined, value => setRateOverride(kind, item, value))));
   });
   const buildingOverrideCount = Object.keys(state.buildingOverrides).length;
+  const uniqueCustomName = (desired, excludeId = null) => {
+    const names = new Set(sourceBuildings.filter(building => building.gameId !== excludeId)
+      .flatMap(building => [building.de, building.en]));
+    if (!names.has(desired)) return desired;
+    let suffix = 2;
+    while (names.has(`${desired} ${suffix}`)) suffix += 1;
+    return `${desired} ${suffix}`;
+  };
+  const duplicateSelectedBuilding = () => {
+    const id = globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${state.customBuildings.length}`;
+    const effective = applyBuildingOverrides([selectedBuilding], state.buildingOverrides, state.dataset)[0];
+    const custom = duplicateCustomBuilding(effective, state.dataset, id);
+    custom.de = custom.en = uniqueCustomName(custom.en);
+    state.customBuildings = [...state.customBuildings, custom];
+    state.advancedBuildingKey = buildingOverrideKey(state.dataset, custom);
+    update();
+  };
+  const renameCustomBuilding = name => {
+    const clean = uniqueCustomName(name.trim(), selectedBuilding?.gameId);
+    if (!clean || !selectedBuilding?.customBuilding) return update();
+    const oldName = selectedBuilding.de;
+    state.customBuildings = state.customBuildings.map(building => building.gameId === selectedBuilding.gameId
+      ? { ...building, de: clean, en: clean } : building);
+    state.plan.rows = state.plan.rows.map(row => row.name === oldName ? { ...row, name: clean } : row);
+    for (const chain of state.chains ?? []) {
+      for (const [resource, producer] of Object.entries(chain.producerChoice ?? {})) {
+        if (producer === oldName) chain.producerChoice[resource] = clean;
+      }
+    }
+    update();
+  };
+  const deleteCustomBuilding = () => {
+    if (!selectedBuilding?.customBuilding) return;
+    state.customBuildings = state.customBuildings.filter(building => building.gameId !== selectedBuilding.gameId);
+    const all = { ...state.buildingOverrides };
+    delete all[state.advancedBuildingKey];
+    state.buildingOverrides = all;
+    state.advancedBuildingKey = null;
+    update();
+  };
   return el('section', {},
     el('p', { class: 'hint' }, t('advHint')),
     ...TUNABLE_GROUPS.map(g => el('div', { class: 'totalsbox advgroup' },
@@ -3970,6 +4012,11 @@ function renderAdvanced() {
         el('label', {}, t('dataset') + ' ', el('strong', {}, state.dataset === 'game' ? t('datasetGame') : t('datasetSheet'))),
         el('label', {}, t('advBuilding') + ' ', selectInput(buildingOptions, state.advancedBuildingKey,
           value => { state.advancedBuildingKey = value; })),
+        selectedBuilding?.customBuilding ? el('label', {}, t('advCustomName') + ' ', el('input', {
+          type: 'text', value: selectedBuilding.en, onchange: event => renameCustomBuilding(event.target.value),
+        })) : el('button', { onclick: duplicateSelectedBuilding }, `+ ${t('advDuplicateCustom')}`),
+        selectedBuilding?.customBuilding ? el('button', { class: 'danger', onclick: deleteCustomBuilding },
+          t('advDeleteCustom')) : null,
         Object.keys(selectedOverride).length ? el('button', { class: 'danger', onclick: () => storeBuildingOverride({}) },
           t('advResetBuilding')) : null,
         buildingOverrideCount ? el('button', { class: 'danger', onclick: () => { state.buildingOverrides = {}; update(); } },

@@ -38,4 +38,20 @@ export function applyBuildingOverrides(buildings, overrides = {}, dataset = 'gam
   });
 }
 
+export function duplicateCustomBuilding(building, dataset, id) {
+  const provenance = Object.fromEntries([
+    ...SCALAR_FIELDS, 'production', 'consumption',
+  ].map(field => [field, 'user-override']));
+  const name = `${building.en || building.de} (custom)`;
+  return {
+    ...structuredClone(building),
+    gameId: `custom:${id}`,
+    en: name,
+    de: name,
+    customBuilding: true,
+    customDataset: dataset,
+    provenance: { ...provenance, userOverride: true },
+  };
+}
+
 export { SCALAR_FIELDS as BUILDING_OVERRIDE_FIELDS };

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { applyBuildingOverrides, buildingOverrideKey } from '../js/building_overrides.js';
+import { applyBuildingOverrides, buildingOverrideKey, duplicateCustomBuilding } from '../js/building_overrides.js';
 
 const building = {
   gameId: 'steel_mill', en: 'Steel mill', de: 'Stahlwerk', workers: 500,
@@ -30,4 +30,14 @@ test('building override identity falls back to a stable localized name', () => {
   assert.equal(buildingOverrideKey('sheet', {
     en: 'Steel mill', de: 'Stahlwerk', group: { en: 'Metallurgy', de: 'Metallurgie' },
   }), 'sheet:Metallurgy:Steel mill');
+});
+
+test('custom building duplication is independent and explicitly user-authored', () => {
+  const custom = duplicateCustomBuilding(building, 'game', 'fixture');
+  assert.equal(custom.gameId, 'custom:fixture');
+  assert.equal(custom.customDataset, 'game');
+  assert.equal(custom.en, 'Steel mill (custom)');
+  assert.equal(custom.provenance.production, 'user-override');
+  custom.production[0].rate = 99;
+  assert.equal(building.production[0].rate, 40);
 });
