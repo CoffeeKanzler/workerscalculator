@@ -272,7 +272,10 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   centerlines when available, a compact water footprint derived from the optional saved
   `heightmap.dds` and water plane, area centers, and
   highlighted criminality-outlier residences; each outlier row can zoom directly to its
-  residence and return to the full-republic view. Road geometry is read locally from
+  residence and return to the full-republic view. Clicking or keyboard-activating an area
+  center now opens the first city-detail view by fitting that area's exact saved buildings
+  while retaining surrounding roads and water; the same control returns to the whole map.
+  Road geometry is read locally from
   `road.bin`; both optional map layers are omitted from share links and restored from the
   local named snapshot. Full terrain shading remains a future layer.
 

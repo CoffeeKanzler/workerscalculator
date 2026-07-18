@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=78';
+import { STRINGS } from './i18n.js?v=79';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -49,6 +49,7 @@ let comparisonSnapshotName = '';
 let comparisonSnapshot = null;
 let comparisonSnapshotError = '';
 let mapFocusBuildingIndex = null;
+let mapFocusScopeId = null;
 const terrainWaterImageCache = new Map();
 
 function createInitialState() {
@@ -2185,6 +2186,8 @@ async function handleSaveDirectory(fileList) {
 
     const importName = uniqueSnapshotName(sourceName);
     replaceSharedState(next);
+    mapFocusBuildingIndex = null;
+    mapFocusScopeId = null;
     if (statsRecords.length) {
       state.statsRecords = statsRecords;
       state.statsName = statsFile.name;
@@ -2669,9 +2672,34 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     ? Math.max(0, Math.min(model.width - zoomWidth, focusedBuilding.mapX - zoomWidth / 2)) : 0;
   const zoomY = focusedBuilding
     ? Math.max(0, Math.min(model.height - zoomHeight, focusedBuilding.mapY - zoomHeight / 2)) : 0;
+  const scopeBuildings = Number.isInteger(mapFocusScopeId)
+    ? model.buildings.filter(building => building.scopeId === mapFocusScopeId) : [];
+  let scopeZoomScale = 1;
+  const scopeViewBox = scopeBuildings.length ? (() => {
+    const xs = scopeBuildings.map(building => building.mapX);
+    const ys = scopeBuildings.map(building => building.mapY);
+    const spanX = Math.max(...xs) - Math.min(...xs);
+    const spanY = Math.max(...ys) - Math.min(...ys);
+    const margin = Math.max(10, Math.max(spanX, spanY) * 0.12);
+    let width = Math.max(80, spanX + margin * 2);
+    let height = Math.max(60, spanY + margin * 2);
+    const aspect = model.width / model.height;
+    if (width / height > aspect) height = width / aspect;
+    else width = height * aspect;
+    width = Math.min(model.width, width);
+    height = Math.min(model.height, height);
+    scopeZoomScale = width / model.width;
+    const centerX = (Math.min(...xs) + Math.max(...xs)) / 2;
+    const centerY = (Math.min(...ys) + Math.max(...ys)) / 2;
+    const x = Math.max(0, Math.min(model.width - width, centerX - width / 2));
+    const y = Math.max(0, Math.min(model.height - height, centerY - height / 2));
+    return `${x} ${y} ${width} ${height}`;
+  })() : null;
+  const mapPointScale = focusedBuilding ? zoomWidth / model.width : scopeZoomScale;
   const svg = node('svg', {
     viewBox: focusedBuilding
-      ? `${zoomX} ${zoomY} ${zoomWidth} ${zoomHeight}` : `0 0 ${model.width} ${model.height}`,
+      ? `${zoomX} ${zoomY} ${zoomWidth} ${zoomHeight}`
+      : scopeViewBox ?? `0 0 ${model.width} ${model.height}`,
     class: 'republic-map', role: 'img', 'aria-label': t('schematicRepublicMap'),
   });
   const waterImageHref = water => {
@@ -2723,7 +2751,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     const outlier = building.criminalityOutlier;
     const circle = node('circle', {
       cx: building.mapX.toFixed(2), cy: building.mapY.toFixed(2),
-      r: building.focused ? 7.5 : outlier ? 5.5 : selected ? 2.4 : 1.35,
+      r: (building.focused ? 7.5 : outlier ? 5.5 : selected ? 2.4 : 1.35) * mapPointScale,
       ...(building.focused ? { class: 'focused' } : {}),
     });
     const title = node('title');
@@ -2736,15 +2764,24 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
   }
   const scopeLayer = node('g', { class: 'map-scopes' });
   for (const scope of model.scopes) {
-    if (focusedBuilding && scope.id !== focusedBuilding.scopeId) continue;
+    const focusedScopeId = focusedBuilding?.scopeId ?? (scopeViewBox ? mapFocusScopeId : null);
+    if (Number.isInteger(focusedScopeId) && scope.id !== focusedScopeId) continue;
     const marker = node('circle', {
-      cx: scope.mapX.toFixed(2), cy: scope.mapY.toFixed(2), r: scope.id === state.republicScope ? 6 : 4,
+      cx: scope.mapX.toFixed(2), cy: scope.mapY.toFixed(2),
+      r: (scope.id === state.republicScope ? 6 : 4) * mapPointScale,
       tabindex: '0', role: 'button', 'aria-label': scope.name,
     });
-    marker.addEventListener('click', () => {
+    const focusScope = () => {
       mapFocusBuildingIndex = null;
+      mapFocusScopeId = scope.id;
       state.republicScope = scope.id;
       update();
+    };
+    marker.addEventListener('click', focusScope);
+    marker.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      focusScope();
     });
     const title = node('title');
     title.textContent = scope.name;
@@ -2757,7 +2794,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     : (model.roads.length ? 'schematicMapRoadHint' : 'schematicMapHint');
   return el('details', {
     class: 'secondary-section map-section',
-    ...(focusedBuilding ? { open: '' } : {}),
+    ...(focusedBuilding || scopeViewBox ? { open: '' } : {}),
   },
     el('summary', {}, `${t('schematicRepublicMap')} (${fmt(model.buildings.length, 0)})`),
     el('p', { class: 'hint' }, t(mapHintKey)),
@@ -2765,11 +2802,14 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
       model.water ? el('span', {}, el('i', { class: 'water' }), t('waterFootprint')) : null,
       model.roads.length ? el('span', {}, el('i', { class: 'road' }), t('roads')) : null,
       el('span', {}, el('i', { class: 'building' }), t('buildings')),
+      Number.isInteger(state.republicScope)
+        ? el('span', {}, el('i', { class: 'selected' }), t('selectedAreaBuildings')) : null,
       el('span', {}, el('i', { class: 'scope' }), t('areaCenters')),
       el('span', {}, el('i', { class: 'outlier' }), t('highCriminalityResidents'))),
-    focusedBuilding ? el('button', {
+    focusedBuilding || scopeViewBox ? el('button', {
       onclick: () => {
         mapFocusBuildingIndex = null;
+        mapFocusScopeId = null;
         update();
         document.querySelector('details.map-section')?.setAttribute('open', '');
       },
@@ -3105,6 +3145,7 @@ function renderRepublic() {
   const criminalityOutliers = state.saveImport?.criminalityOutliers;
   const locateOutlierResidence = resident => {
     mapFocusBuildingIndex = resident.residenceBuildingIndex;
+    mapFocusScopeId = null;
     state.republicScope = resident.residence?.scopeId ?? state.republicScope;
     update();
     setTimeout(() => document.querySelector('.map-section')?.scrollIntoView({
@@ -4273,6 +4314,8 @@ async function loadNamedState(name) {
   const saved = await snapshotStore.load(name);
   if (!saved) return false;
   replaceStateProjection(saved, SNAPSHOT_KEYS);
+  mapFocusBuildingIndex = null;
+  mapFocusScopeId = null;
   return true;
 }
 
