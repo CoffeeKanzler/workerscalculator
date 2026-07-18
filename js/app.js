@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=59';
+import { STRINGS } from './i18n.js?v=60';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=27';
@@ -17,7 +17,7 @@ import {
   summarizeCriminalityOutliers,
   buildSchematicMap,
 } from './save_model.js?v=11';
-import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
+import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=5';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
@@ -42,6 +42,9 @@ const LS_KEY_BACKUP = 'wr-planner-v1-backup'; // local plan saved before a share
 const SAVES_KEY = 'wr-planner-saves-v1';
 const snapshotStore = createIndexedDbSnapshotStore();
 let namedSnapshotNames = [];
+let comparisonSnapshotName = '';
+let comparisonSnapshot = null;
+let comparisonSnapshotError = '';
 
 function createInitialState() {
   return {
@@ -3265,6 +3268,71 @@ function renderRepublic() {
           series(t('exports'), '#27ae60', record => record.resourcesExportRUB?.[state.republicResource]),
         ]) : null)) : null;
 
+  const comparisonNames = namedSnapshotNames.filter(name => name !== state.saveSlotName);
+  if (comparisonSnapshotName && !comparisonNames.includes(comparisonSnapshotName)) {
+    comparisonSnapshotName = '';
+    comparisonSnapshot = null;
+    comparisonSnapshotError = '';
+  }
+  const comparison = comparisonSnapshot?.saveImport && state.saveImport
+    ? compareObservedSnapshots(state.saveImport, comparisonSnapshot.saveImport) : null;
+  const comparisonValue = (key, value) => {
+    if (!Number.isFinite(value)) return '—';
+    return ['productivity', 'health', 'criminality'].includes(key)
+      ? `${fmt(value * 100, key === 'criminality' ? 2 : 1)} %`
+      : fmt(value, 0);
+  };
+  const comparisonDelta = (key, value) => {
+    if (!Number.isFinite(value)) return '—';
+    const scaled = ['productivity', 'health', 'criminality'].includes(key) ? value * 100 : value;
+    const suffix = ['productivity', 'health', 'criminality'].includes(key) ? ' pp' : '';
+    return `${scaled > 0 ? '+' : ''}${fmt(scaled, key === 'criminality' ? 2 : 1)}${suffix}`;
+  };
+  const comparisonMetrics = [
+    ['population', t('population')], ['liveBuildingCount', t('importedBuildings')],
+    ['configuredIndustryWorkers', t('configuredWorkers')],
+    ['currentIndustryWorkers', t('currentWorkers')], ['productivity', t('productivity')],
+    ['health', t('health')], ['criminality', t('criminality')],
+  ];
+  const comparisonAreaRows = comparison?.sameRepublic ? comparison.areas.filter(area =>
+    Object.values(area.deltas).some(value => Number.isFinite(value) && Math.abs(value) > 1e-9))
+    .sort((a, b) => Math.abs(b.deltas.population ?? 0) - Math.abs(a.deltas.population ?? 0)
+      || String(a.name).localeCompare(String(b.name))) : [];
+  const comparisonAreaRow = area => el('tr', {},
+    el('td', {}, area.name),
+    ...['population', 'currentIndustryWorkers', 'productivity', 'health', 'criminality']
+      .map(key => el('td', { class: 'r' }, comparisonDelta(key, area.deltas[key]))));
+  const snapshotComparison = state.saveImport ? el('details', {
+    class: 'history-section secondary-section snapshot-comparison',
+    ...(comparisonSnapshotName || comparisonSnapshotError ? { open: '' } : {}),
+  },
+    el('summary', {}, t('compareSnapshots')),
+    el('p', { class: 'hint' }, t('compareSnapshotsHint')),
+    comparisonNames.length ? el('label', {}, t('baselineSnapshot'), ' ', selectInput(
+      [['', t('chooseSnapshot')], ...comparisonNames.map(name => [name, name])],
+      comparisonSnapshotName, value => { loadComparisonSnapshot(value); }))
+      : el('p', { class: 'hint' }, t('noComparisonSnapshots')),
+    comparisonSnapshotError ? el('p', { class: 'warn' }, comparisonSnapshotError) : null,
+    comparison ? el('div', { class: 'snapshot-comparison-results' },
+      el('p', { class: 'hint' }, `${state.saveSlotName || state.saveImport.sourceName} − ${comparisonSnapshotName}`),
+      el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+        el('thead', {}, el('tr', {}, el('th', {}, t('metric')), el('th', {}, t('baseline')),
+          el('th', {}, t('current')), el('th', {}, t('change')))),
+        el('tbody', {}, ...comparisonMetrics.map(([key, label]) => el('tr', {},
+          el('td', {}, label),
+          el('td', { class: 'r' }, comparisonValue(key, comparison.baseline.totals[key])),
+          el('td', { class: 'r' }, comparisonValue(key, comparison.current.totals[key])),
+          el('td', { class: 'r' }, comparisonDelta(key, comparison.deltas[key]))))))),
+      !comparison.sameRepublic ? el('p', { class: 'warn' }, t('differentRepublicComparison'))
+        : comparisonAreaRows.length ? el('details', { class: 'secondary-section' },
+          el('summary', {}, `${t('areaChanges')} (${fmt(comparisonAreaRows.length, 0)})`),
+          el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+            el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('population')),
+              el('th', {}, t('currentWorkers')), el('th', {}, t('productivity')),
+              el('th', {}, t('health')), el('th', {}, t('criminality')))),
+            el('tbody', {}, ...comparisonAreaRows.map(comparisonAreaRow)))))
+          : el('p', { class: 'hint' }, t('noObservedChanges'))) : null) : null;
+
   const incompleteResearch = state.saveImport?.research?.filter(item => item.progress < 1)
     .sort((a, b) => b.progress - a.progress) ?? [];
   const researchTable = state.saveImport?.research ? el('table', { class: 'data' },
@@ -3325,6 +3393,7 @@ function renderRepublic() {
       schematicMap,
       el('div', { class: 'tablewrap' }, areaTable),
       charts,
+      snapshotComparison,
       researchDetails,
       settingsDetails,
       el('details', { class: 'planning-details' }, el('summary', {}, t('planningDetails')),
@@ -3765,6 +3834,21 @@ async function loadNamedState(name) {
   if (!saved) return false;
   replaceStateProjection(saved, SNAPSHOT_KEYS);
   return true;
+}
+
+async function loadComparisonSnapshot(name) {
+  comparisonSnapshotName = name;
+  comparisonSnapshot = null;
+  comparisonSnapshotError = '';
+  if (!name) return update();
+  try {
+    const saved = await snapshotStore.load(name);
+    if (!saved?.saveImport) comparisonSnapshotError = t('comparisonNotImported');
+    else comparisonSnapshot = saved;
+  } catch (error) {
+    comparisonSnapshotError = `${t('comparisonLoadFailed')}: ${error.message}`;
+  }
+  update();
 }
 
 async function deleteNamedState(name) {

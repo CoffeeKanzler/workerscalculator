@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { buildRepublicModel, republicAlerts } from '../js/republic.js';
+import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from '../js/republic.js';
 
 const observed = {
   scopes: [{
@@ -90,4 +90,37 @@ test('buildings under construction are not reported as critically understaffed',
   assert.equal(model.actual.areas[0].constructionBuildingCount, 2);
   assert.equal(model.actual.areas[0].configuredIndustryWorkers, 0);
   assert.ok(!republicAlerts(model).some(alert => alert.metric === 'staffing'));
+});
+
+test('compares observed totals and stable areas current minus baseline', () => {
+  const baseline = {
+    sourceName: 'Republic', header: { savePath: 'save/republic' }, buildingCount: 30,
+    scopes: [{ id: 4, name: 'Kohleburg', citizens: {
+      residents: 1000, productivity: 0.8, health: 0.75, criminality: 0.01,
+    } }],
+    observedProductionRows: [{ scopeId: 4, count: 1, configuredWorkers: 100, currentWorkers: 60 }],
+  };
+  const current = {
+    ...baseline, buildingCount: 35,
+    scopes: [{ id: 4, name: 'Kohleburg', citizens: {
+      residents: 1120, productivity: 0.9, health: 0.8, criminality: 0.015,
+    } }],
+    observedProductionRows: [{ scopeId: 4, count: 1, configuredWorkers: 120, currentWorkers: 90 }],
+  };
+  const comparison = compareObservedSnapshots(current, baseline);
+  assert.equal(comparison.sameRepublic, true);
+  assert.equal(comparison.deltas.population, 120);
+  assert.equal(comparison.deltas.liveBuildingCount, 5);
+  assert.equal(comparison.deltas.currentIndustryWorkers, 30);
+  assert.ok(Math.abs(comparison.deltas.productivity - 0.1) < 1e-9);
+  assert.equal(comparison.areas[0].deltas.population, 120);
+  assert.ok(Math.abs(comparison.areas[0].deltas.criminality - 0.005) < 1e-9);
+});
+
+test('does not match area IDs across different republics', () => {
+  const current = { sourceName: 'A', header: { savePath: 'save/a' }, scopes: [{ id: 1, name: 'Same ID' }] };
+  const baseline = { sourceName: 'B', header: { savePath: 'save/b' }, scopes: [{ id: 1, name: 'Same ID' }] };
+  const comparison = compareObservedSnapshots(current, baseline);
+  assert.equal(comparison.sameRepublic, false);
+  assert.deepEqual(comparison.areas, []);
 });

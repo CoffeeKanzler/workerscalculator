@@ -1,5 +1,12 @@
 const sum = (values) => values.reduce((total, value) => total + (Number.isFinite(value) ? value : 0), 0);
 
+function weightedAverage(areas, key) {
+  const eligible = areas.filter(area => Number.isFinite(area.population)
+    && area.population > 0 && Number.isFinite(area[key]));
+  const population = sum(eligible.map(area => area.population));
+  return population ? sum(eligible.map(area => area[key] * area.population)) / population : null;
+}
+
 function productionByScope(rows = []) {
   const scopes = new Map();
   for (const row of rows) {
@@ -49,7 +56,6 @@ function actualProjection(observed = {}) {
   });
   const populated = areas.filter(area => Number.isFinite(area.population));
   const population = sum(populated.map(area => area.population));
-  const weightedProductivity = sum(populated.map(area => area.productivity * area.population));
   return {
     totals: {
       population,
@@ -57,12 +63,61 @@ function actualProjection(observed = {}) {
       liveBuildingCount: observed.liveBuildingCount ?? null,
       configuredIndustryWorkers: sum(areas.map(area => area.configuredIndustryWorkers)),
       currentIndustryWorkers: sum(areas.map(area => area.currentIndustryWorkers)),
-      productivity: population ? weightedProductivity / population : null,
+      productivity: weightedAverage(populated, 'productivity'),
+      health: weightedAverage(populated, 'health'),
+      criminality: weightedAverage(populated, 'criminality'),
+      happiness: weightedAverage(populated, 'happiness'),
+      loyalty: weightedAverage(populated, 'loyalty'),
       realizedProduction: observed.realizedProduction ?? null,
     },
     areas,
     evidence: { sourceStatus: observed.sourceStatus ?? {} },
   };
+}
+
+function observedMetadata(info = {}) {
+  return {
+    scopes: info.scopes ?? [],
+    productionRows: info.observedProductionRows ?? [],
+    liveBuildingCount: info.observedBuildings?.length ?? info.buildingCount ?? null,
+    sourceStatus: info.sourceStatus ?? {},
+  };
+}
+
+function sameRepublicSource(current = {}, baseline = {}) {
+  const currentPath = current.header?.savePath;
+  const baselinePath = baseline.header?.savePath;
+  if (currentPath && baselinePath) return currentPath === baselinePath;
+  return !!current.sourceName && current.sourceName === baseline.sourceName;
+}
+
+export function compareObservedSnapshots(currentInfo, baselineInfo) {
+  const current = actualProjection(observedMetadata(currentInfo));
+  const baseline = actualProjection(observedMetadata(baselineInfo));
+  const keys = ['population', 'liveBuildingCount', 'configuredIndustryWorkers',
+    'currentIndustryWorkers', 'productivity', 'health', 'criminality'];
+  const deltas = Object.fromEntries(keys.map(key => [key,
+    differenceValue(current.totals, baseline.totals, key)]));
+  const sameRepublic = sameRepublicSource(currentInfo, baselineInfo);
+  if (!sameRepublic) return { sameRepublic, current, baseline, deltas, areas: [] };
+
+  const currentAreas = new Map(current.areas.map(area => [area.scopeId, area]));
+  const baselineAreas = new Map(baseline.areas.map(area => [area.scopeId, area]));
+  const areaKeys = ['population', 'configuredIndustryWorkers', 'currentIndustryWorkers',
+    'productivity', 'health', 'criminality'];
+  const areas = [...new Set([...currentAreas.keys(), ...baselineAreas.keys()])].map(scopeId => {
+    const currentArea = currentAreas.get(scopeId) ?? null;
+    const baselineArea = baselineAreas.get(scopeId) ?? null;
+    return {
+      scopeId,
+      name: currentArea?.name ?? baselineArea?.name,
+      current: currentArea,
+      baseline: baselineArea,
+      deltas: Object.fromEntries(areaKeys.map(key => [key,
+        differenceValue(currentArea, baselineArea, key)])),
+    };
+  });
+  return { sameRepublic, current, baseline, deltas, areas };
 }
 
 function differenceValue(plan, actual, key) {

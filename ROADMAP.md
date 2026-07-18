@@ -141,6 +141,10 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   actions now show feedback and browser storage failures are reported.
 - **Why:** game-save import needs a safe isolation boundary: every imported save
   will create a new snapshot rather than overwrite the currently open plan.
+- **Comparison:** Republic Overview can load another named snapshot read-only and
+  show current-minus-baseline population, buildings, staffing, productivity, health,
+  and criminality. Area deltas use stable scope IDs only when both snapshots report
+  the same saved-game path; unrelated republics retain totals without false city matches.
 
 ### 4.1b Full observed game-save snapshots 🧪 beta 2026-07-17
 - **What:** A local-only `/beta/` importer for a W&R save directory. The beta now starts
