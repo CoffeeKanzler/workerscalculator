@@ -269,6 +269,17 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .crime-ranking { margin-top: 10px; }
 .crime-ranking h4 { margin: 0 0 6px; }
 .crime-ranking table { max-width: 760px; }
+.map-section { overflow: hidden; }
+.republic-map { display: block; width: 100%; max-height: 560px; background: var(--panel2); border: 1px solid var(--border); border-radius: 8px; }
+.republic-map .map-buildings circle { fill: var(--muted); opacity: .52; }
+.republic-map .map-selected circle { fill: var(--accent); opacity: .9; }
+.republic-map .map-scopes circle { fill: var(--panel); stroke: var(--accent2); stroke-width: 2; cursor: pointer; }
+.republic-map .map-outliers circle { fill: var(--neg); stroke: var(--panel); stroke-width: 1.8; }
+.map-legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 8px; color: var(--muted); font-size: 12px; }
+.map-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.map-legend i { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }
+.map-legend i.scope { background: var(--panel); border: 2px solid var(--accent2); }
+.map-legend i.outlier { background: var(--neg); }
 .planner-main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, 290px); align-items: start; gap: 12px; }
 .planner-main .totalsbox { position: sticky; top: 10px; margin: 0; }
 .planner-table { min-width: 0; }

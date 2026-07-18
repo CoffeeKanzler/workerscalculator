@@ -130,6 +130,34 @@ export function compactObservedBuildings(buildings) {
   ));
 }
 
+export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
+  width = 760, height = 480, padding = 18,
+} = {}) {
+  const located = (buildings ?? []).filter(building =>
+    Number.isFinite(building.x) && Number.isFinite(building.z));
+  if (!located.length) return null;
+  const minX = Math.min(...located.map(building => building.x));
+  const maxX = Math.max(...located.map(building => building.x));
+  const minZ = Math.min(...located.map(building => building.z));
+  const maxZ = Math.max(...located.map(building => building.z));
+  const projectX = value => padding + (width - 2 * padding) * ((value - minX) / ((maxX - minX) || 1));
+  const projectY = value => height - padding
+    - (height - 2 * padding) * ((value - minZ) / ((maxZ - minZ) || 1));
+  const outliers = new Map((criminalityOutliers?.residents ?? [])
+    .map(resident => [resident.residenceBuildingIndex, resident]));
+  return {
+    width, height, bounds: { minX, maxX, minZ, maxZ },
+    buildings: located.map(building => ({
+      ...building, mapX: projectX(building.x), mapY: projectY(building.z),
+      criminalityOutlier: outliers.get(building.index) ?? null,
+    })),
+    scopes: (scopes ?? []).filter(scope =>
+      Number.isFinite(scope.position?.x) && Number.isFinite(scope.position?.z)).map(scope => ({
+      ...scope, mapX: projectX(scope.position.x), mapY: projectY(scope.position.z),
+    })),
+  };
+}
+
 function savedVehicleMap(vehicles) {
   const map = new Map();
   for (const vehicle of vehicles ?? []) {

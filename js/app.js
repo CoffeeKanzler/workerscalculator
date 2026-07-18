@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=57';
+import { STRINGS } from './i18n.js?v=58';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, vehicleProductionRecipe, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=26';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -14,7 +14,8 @@ import {
   inferObservedHousing, latestProductivity, matchObservedBuilding, productionBufferStatus,
   productionBufferAlerts, summarizeDistributionOffices, summarizeVehicleLines,
   summarizeCriminalityOutliers,
-} from './save_model.js?v=10';
+  buildSchematicMap,
+} from './save_model.js?v=11';
 import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
@@ -2358,6 +2359,61 @@ function totalMapValues(map) {
   return Object.values(map ?? {}).reduce((total, value) => total + (Number.isFinite(value) ? value : 0), 0);
 }
 
+function renderSchematicRepublicMap(buildings, scopes, outliers) {
+  const model = buildSchematicMap(buildings, scopes, outliers);
+  if (!model) return null;
+  const ns = 'http://www.w3.org/2000/svg';
+  const node = (tag, attrs = {}) => {
+    const item = document.createElementNS(ns, tag);
+    for (const [key, value] of Object.entries(attrs)) item.setAttribute(key, value);
+    return item;
+  };
+  const svg = node('svg', {
+    viewBox: `0 0 ${model.width} ${model.height}`,
+    class: 'republic-map', role: 'img', 'aria-label': t('schematicRepublicMap'),
+  });
+  const scopeNames = new Map(model.scopes.map(scope => [scope.id, scope.name]));
+  const normalLayer = node('g', { class: 'map-buildings' });
+  const selectedLayer = node('g', { class: 'map-selected' });
+  const outlierLayer = node('g', { class: 'map-outliers' });
+  for (const building of model.buildings) {
+    const selected = building.scopeId === state.republicScope;
+    const outlier = building.criminalityOutlier;
+    const circle = node('circle', {
+      cx: building.mapX.toFixed(2), cy: building.mapY.toFixed(2),
+      r: outlier ? 5.5 : selected ? 2.4 : 1.35,
+    });
+    const title = node('title');
+    title.textContent = outlier
+      ? `${t('citizen')} #${outlier.citizenIndex} · ${fmt(outlier.criminality * 100, 2)} % · `
+        + `${building.name || building.type || t('building')} #${building.index} · ${scopeNames.get(building.scopeId) ?? t('unassigned')}`
+      : `${building.name || building.type || t('building')} #${building.index} · ${scopeNames.get(building.scopeId) ?? t('unassigned')}`;
+    circle.append(title);
+    (outlier ? outlierLayer : selected ? selectedLayer : normalLayer).append(circle);
+  }
+  const scopeLayer = node('g', { class: 'map-scopes' });
+  for (const scope of model.scopes) {
+    const marker = node('circle', {
+      cx: scope.mapX.toFixed(2), cy: scope.mapY.toFixed(2), r: scope.id === state.republicScope ? 6 : 4,
+      tabindex: '0', role: 'button', 'aria-label': scope.name,
+    });
+    marker.addEventListener('click', () => { state.republicScope = scope.id; update(); });
+    const title = node('title');
+    title.textContent = scope.name;
+    marker.append(title);
+    scopeLayer.append(marker);
+  }
+  svg.append(normalLayer, selectedLayer, scopeLayer, outlierLayer);
+  return el('details', { class: 'secondary-section map-section' },
+    el('summary', {}, `${t('schematicRepublicMap')} (${fmt(model.buildings.length, 0)})`),
+    el('p', { class: 'hint' }, t('schematicMapHint')),
+    el('div', { class: 'map-legend' },
+      el('span', {}, el('i', { class: 'building' }), t('buildings')),
+      el('span', {}, el('i', { class: 'scope' }), t('areaCenters')),
+      el('span', {}, el('i', { class: 'outlier' }), t('highCriminalityResidents'))),
+    svg);
+}
+
 // ---------------------------------------------------------------- republic overview tab
 // Combines the City tab's plan(s) and the Production tab's plan - both are
 // the app's own hypothetical-plan state already, so no save-file parsing is
@@ -2684,6 +2740,8 @@ function renderRepublic() {
       })))),
     el('p', { class: 'hint' }, t('currentCrimeRankingNote'))) : null;
   const criminalityOutliers = state.saveImport?.criminalityOutliers;
+  const schematicMap = renderSchematicRepublicMap(
+    state.saveImport?.observedBuildings, state.saveImport?.scopes, criminalityOutliers);
   const criminalityOutlierDetails = criminalityOutliers?.residents?.length ? el('details', {
     class: 'secondary-section',
   },
@@ -3134,6 +3192,7 @@ function renderRepublic() {
       institutionOverview,
       fleetOpportunities,
       logisticsOperations,
+      schematicMap,
       el('div', { class: 'tablewrap' }, areaTable),
       charts,
       researchDetails,

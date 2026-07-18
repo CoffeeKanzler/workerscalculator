@@ -254,8 +254,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   10%/20%/70% assumption was found to apply to container vehicles, not ships, and was never
   shipped as a ship recommendation.
   - **Next high-value save modules:** expand the first 20 uniquely matched stable city-building
-  game IDs through careful curation, and optionally follow a live save directory. Cosmetic map/network geometry stays out of scope until a
-  planner feature needs it.
+  game IDs through careful curation, and optionally follow a live save directory. A first
+  schematic Republic map now plots exact saved building X/Z positions, area centers, and
+  highlighted criminality-outlier residences; roads, water, and terrain remain future layers.
 
 ### 4.2 Live-follow stats.ini
 - **What:** "Watch file" button using the File System Access API (Chromium): re-read the

@@ -6,6 +6,7 @@ import {
   inferObservedHousing, summarizeDistributionOffices, summarizeVehicleLines,
   evaluateDistributionResourceRule,
   summarizeCriminalityOutliers,
+  buildSchematicMap,
 } from '../js/save_model.js';
 
 test('citizens aggregate through residence buildings without forced assignment', () => {
@@ -386,4 +387,20 @@ test('criminality outliers resolve exact residence and scope locations', () => {
     residenceBuildingIndex: 4,
     residence: { index: 4, scopeId: 7, type: 'panelak', name: 'House A' },
   }]);
+});
+
+test('schematic map projects exact x/z positions and marks outlier residences', () => {
+  const result = buildSchematicMap([
+    { index: 4, scopeId: 7, x: -10, y: 2, z: -20 },
+    { index: 5, scopeId: 8, x: 30, y: 3, z: 20 },
+  ], [{ id: 7, name: 'A', position: { x: 0, y: 2, z: 0 } }], {
+    residents: [{ citizenIndex: 2, residenceBuildingIndex: 4, criminality: 0.3 }],
+  }, { width: 100, height: 60, padding: 10 });
+  assert.deepEqual(result.bounds, { minX: -10, maxX: 30, minZ: -20, maxZ: 20 });
+  assert.equal(result.buildings[0].mapX, 10);
+  assert.equal(result.buildings[0].mapY, 50);
+  assert.equal(result.buildings[0].criminalityOutlier.citizenIndex, 2);
+  assert.equal(result.buildings[1].criminalityOutlier, null);
+  assert.equal(result.scopes[0].mapX, 30);
+  assert.equal(result.scopes[0].mapY, 30);
 });
