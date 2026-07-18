@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2305686836",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:32:44+00:00",
+  "buildings": [
+    {
+      "id": "2305686836/Billboard",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Billboard",
+      "workshopId": "2305686836",
+      "modPath": "Billboard"
+    }
+  ],
+  "vehicles": []
+}

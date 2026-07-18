@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2812326345",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:02:43+00:00",
+  "buildings": [
+    {
+      "id": "2812326345/mod",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 2.0,
+        "gravel": 53.0,
+        "concrete": 125.0,
+        "bricks": 100.0,
+        "steel": 35.0,
+        "prefabpanels": 150.0,
+        "boards": 30.0,
+        "workers": 2500.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Theatre",
+      "workshopId": "2812326345",
+      "modPath": "mod"
+    }
+  ],
+  "vehicles": []
+}

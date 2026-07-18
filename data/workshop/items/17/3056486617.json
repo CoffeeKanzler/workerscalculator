@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3056486617",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:43:10+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3056486617/deutz_fahr_4090hts_harvester",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.6,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 8000.0,
+      "speed": 30.0,
+      "powerKW": 180.0,
+      "emptyWeight": 11.8,
+      "from": 1991,
+      "to": 2001,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3056486617",
+      "modPath": "deutz_fahr_4090hts_harvester"
+    }
+  ]
+}

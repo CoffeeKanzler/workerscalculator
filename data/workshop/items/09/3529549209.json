@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3529549209",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:49:26+00:00",
+  "buildings": [
+    {
+      "id": "3529549209/panorama",
+      "nameId": 6035,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.8,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3529549209",
+      "modPath": "panorama"
+    }
+  ],
+  "vehicles": []
+}

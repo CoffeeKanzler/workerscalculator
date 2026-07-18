@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3147715062",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:42:05+00:00",
+  "buildings": [
+    {
+      "id": "3147715062/LargeContainerYard",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 10000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Extra Large Container Yard",
+      "workshopId": "3147715062",
+      "modPath": "LargeContainerYard"
+    }
+  ],
+  "vehicles": []
+}

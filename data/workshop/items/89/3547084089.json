@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3547084089",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:52:53+00:00",
+  "buildings": [
+    {
+      "id": "3547084089/FMG",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 35.0,
+      "professors": 35.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Faculty of Marxist geography",
+      "workshopId": "3547084089",
+      "modPath": "FMG"
+    },
+    {
+      "id": "3547084089/FPH",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_MEDICAL"
+      ],
+      "workers": 35.0,
+      "professors": 35.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Faculty of Public healthcare",
+      "workshopId": "3547084089",
+      "modPath": "FPH"
+    },
+    {
+      "id": "3547084089/FSS",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 35.0,
+      "professors": 35.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Faculty of Socialistic studies",
+      "workshopId": "3547084089",
+      "modPath": "FSS"
+    }
+  ],
+  "vehicles": []
+}

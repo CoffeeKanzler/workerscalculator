@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3638276135",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:12:09+00:00",
+  "buildings": [
+    {
+      "id": "3638276135/akademik",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "SUBTYPE_HOSTEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 75.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 75.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dormitory",
+      "workshopId": "3638276135",
+      "modPath": "akademik"
+    },
+    {
+      "id": "3638276135/blok",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 54.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 54.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Block of flats",
+      "workshopId": "3638276135",
+      "modPath": "blok"
+    }
+  ],
+  "vehicles": []
+}

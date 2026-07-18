@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3122409632",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:58:29+00:00",
+  "buildings": [
+    {
+      "id": "3122409632/20_str_prefab",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 280.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 280.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "20 Storey Prefab",
+      "workshopId": "3122409632",
+      "modPath": "20_str_prefab"
+    }
+  ],
+  "vehicles": []
+}

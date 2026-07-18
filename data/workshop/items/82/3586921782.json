@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3586921782",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:24:07+00:00",
+  "buildings": [
+    {
+      "id": "3586921782/coal_powered",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {
+        "bricks": 0.65
+      },
+      "consumption": {
+        "coal": 0.15,
+        "gravel": 0.65,
+        "water": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mudbrick Factory",
+      "workshopId": "3586921782",
+      "modPath": "coal_powered"
+    },
+    {
+      "id": "3586921782/wood_powered",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {
+        "bricks": 0.65
+      },
+      "consumption": {
+        "wood": 0.3,
+        "gravel": 0.65,
+        "water": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mudbrick Factory",
+      "workshopId": "3586921782",
+      "modPath": "wood_powered"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2358126376",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:04:35+00:00",
+  "buildings": [
+    {
+      "id": "2358126376/.",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 84.0,
+      "professors": 237.0,
+      "production": {
+        "steel": 10.0,
+        "mcomponents": 4.0,
+        "ecomponents": 4.0,
+        "plastics": 15.0,
+        "eletronics": 15.0,
+        "aluminium": 10.0,
+        "chemicals": 10.0
+      },
+      "consumption": {
+        "oil": 7.0,
+        "livestock": 20.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "�Mega-Fabrik22",
+      "workshopId": "2358126376",
+      "modPath": "."
+    }
+  ],
+  "vehicles": []
+}

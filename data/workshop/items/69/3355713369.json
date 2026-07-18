@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3355713369",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:19:15+00:00",
+  "buildings": [
+    {
+      "id": "3355713369/apartment_1_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "SCNTH_APT_1_1",
+      "workshopId": "3355713369",
+      "modPath": "apartment_1_1"
+    },
+    {
+      "id": "3355713369/apartment_1_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "SCNTH_APT_1_2",
+      "workshopId": "3355713369",
+      "modPath": "apartment_1_2"
+    },
+    {
+      "id": "3355713369/apartment_1_3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "SCNTH_APT_1_3",
+      "workshopId": "3355713369",
+      "modPath": "apartment_1_3"
+    }
+  ],
+  "vehicles": []
+}

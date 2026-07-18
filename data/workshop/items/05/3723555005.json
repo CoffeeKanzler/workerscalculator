@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3723555005",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:18:08+00:00",
+  "buildings": [
+    {
+      "id": "3723555005/1",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 180.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat giant hotel",
+      "workshopId": "3723555005",
+      "modPath": "1"
+    },
+    {
+      "id": "3723555005/2",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 14.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat hotel pool",
+      "workshopId": "3723555005",
+      "modPath": "2"
+    },
+    {
+      "id": "3723555005/3",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat hotel cinema",
+      "workshopId": "3723555005",
+      "modPath": "3"
+    },
+    {
+      "id": "3723555005/4",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat hotel salon",
+      "workshopId": "3723555005",
+      "modPath": "4"
+    }
+  ],
+  "vehicles": []
+}

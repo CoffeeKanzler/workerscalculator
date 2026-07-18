@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2826949514",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:24:09+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2826949514/ASF_K",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.79,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "powerKW": 60.0,
+      "emptyWeight": 13.0,
+      "from": 2007,
+      "to": 3000,
+      "countryId": 39011,
+      "speed": 16.0,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2826949514",
+      "modPath": "ASF_K"
+    }
+  ]
+}

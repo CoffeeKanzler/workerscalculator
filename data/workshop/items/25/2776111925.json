@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2776111925",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:15:25+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2776111925/karosa_b741",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.86,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costRUB": 5100.0,
+      "capacity": 150.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 100.0,
+      "powerKW": 150.0,
+      "emptyWeight": 13.0,
+      "from": 1987,
+      "to": 1999,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2776111925",
+      "modPath": "karosa_b741"
+    }
+  ]
+}

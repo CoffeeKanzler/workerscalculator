@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2346348733",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:35:08+00:00",
+  "buildings": [
+    {
+      "id": "2346348733/s_tank",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 120.0
+      },
+      "constructionResources": {
+        "prefabpanels": 0.6,
+        "workers": 180.0,
+        "steel": 3.2,
+        "mcomponents": 0.9
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small tank",
+      "workshopId": "2346348733",
+      "modPath": "s_tank"
+    },
+    {
+      "id": "2346348733/s_tank_duo",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 240.0
+      },
+      "constructionResources": {
+        "workers": 400.0,
+        "prefabpanels": 0.8,
+        "steel": 7.0,
+        "mcomponents": 1.4,
+        "ecomponents": 0.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small tank duo",
+      "workshopId": "2346348733",
+      "modPath": "s_tank_duo"
+    },
+    {
+      "id": "2346348733/s_tank_farm",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 480.0
+      },
+      "constructionResources": {
+        "workers": 750.0,
+        "prefabpanels": 1.2,
+        "steel": 15.5,
+        "mcomponents": 3.2,
+        "ecomponents": 0.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small tank farm",
+      "workshopId": "2346348733",
+      "modPath": "s_tank_farm"
+    }
+  ],
+  "vehicles": []
+}

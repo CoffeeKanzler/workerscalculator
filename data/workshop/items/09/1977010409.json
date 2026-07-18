@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1977010409",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:50:51+00:00",
+  "buildings": [
+    {
+      "id": "1977010409/firestation",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ortachala Firestation",
+      "workshopId": "1977010409",
+      "modPath": "firestation"
+    }
+  ],
+  "vehicles": []
+}

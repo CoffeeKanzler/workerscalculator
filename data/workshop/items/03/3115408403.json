@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3115408403",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:27:37+00:00",
+  "buildings": [
+    {
+      "id": "3115408403/kino",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 18.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cinema Wschowa",
+      "workshopId": "3115408403",
+      "modPath": "kino"
+    }
+  ],
+  "vehicles": []
+}

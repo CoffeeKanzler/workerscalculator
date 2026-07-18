@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2103127915",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:49:39+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2103127915/mtb_82",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.43,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5441,
+      "costRUB": 4300.0,
+      "speed": 55.0,
+      "powerKW": 80.0,
+      "emptyWeight": 9.25,
+      "capacity": 56.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1946,
+      "to": 1961,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2103127915",
+      "modPath": "mtb_82"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2777661950",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:41:24+00:00",
+  "buildings": [
+    {
+      "id": "2777661950/NIK",
+      "nameId": 6264,
+      "types": [
+        "TYPE_COURT_HOUSE"
+      ],
+      "workers": 100.0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2777661950",
+      "modPath": "NIK"
+    }
+  ],
+  "vehicles": []
+}

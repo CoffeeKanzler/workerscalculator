@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2824531409",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:49:59+00:00",
+  "buildings": [
+    {
+      "id": "2824531409/post",
+      "nameId": null,
+      "types": [
+        "TYPE_SECRET_POLICE"
+      ],
+      "workers": 0,
+      "professors": 200.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Post office",
+      "workshopId": "2824531409",
+      "modPath": "post"
+    }
+  ],
+  "vehicles": []
+}

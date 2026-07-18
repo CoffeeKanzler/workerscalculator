@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2941315244",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:29:52+00:00",
+  "buildings": [
+    {
+      "id": "2941315244/youth",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 80.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.2,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Youth palace",
+      "workshopId": "2941315244",
+      "modPath": "youth"
+    }
+  ],
+  "vehicles": []
+}

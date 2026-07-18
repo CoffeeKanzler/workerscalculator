@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2312515373",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:49:53+00:00",
+  "buildings": [
+    {
+      "id": "2312515373/republicflats1/4184_Republic Flats",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 395.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 395.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Republic Flats",
+      "workshopId": "2312515373",
+      "modPath": "republicflats1/4184_Republic Flats"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2805179411",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:26:49+00:00",
+  "buildings": [
+    {
+      "id": "2805179411/KPD-4570-81_45",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 89.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 89.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Series KPD-4570-81_45",
+      "workshopId": "2805179411",
+      "modPath": "KPD-4570-81_45"
+    },
+    {
+      "id": "2805179411/KPD-4570-81_75",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 148.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 148.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Series KPD-4570-81_75",
+      "workshopId": "2805179411",
+      "modPath": "KPD-4570-81_75"
+    }
+  ],
+  "vehicles": []
+}

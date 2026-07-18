@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2177376045",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:10:41+00:00",
+  "buildings": [
+    {
+      "id": "2177376045/Monument",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "I love 'Vologda' ",
+      "workshopId": "2177376045",
+      "modPath": "Monument"
+    }
+  ],
+  "vehicles": []
+}

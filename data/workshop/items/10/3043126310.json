@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3043126310",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:17:41+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3043126310/DongFeng",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.68,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "speed": 100.0,
+      "powerKW": 1342.0,
+      "emptyWeight": 126.0,
+      "trainGroup": "locomotive",
+      "from": 1963,
+      "to": 1974,
+      "countryId": 39042,
+      "electric": false,
+      "workshopId": "3043126310",
+      "modPath": "DongFeng"
+    },
+    {
+      "id": "3043126310/DongFeng3",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.65,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "speed": 120.0,
+      "powerKW": 1342.0,
+      "emptyWeight": 126.0,
+      "trainGroup": "locomotive",
+      "from": 1972,
+      "to": 1981,
+      "countryId": 39042,
+      "electric": false,
+      "workshopId": "3043126310",
+      "modPath": "DongFeng3"
+    }
+  ]
+}

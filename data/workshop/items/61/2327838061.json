@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2327838061",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:51:26+00:00",
+  "buildings": [
+    {
+      "id": "2327838061/test1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 240.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 240.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5 storey building 4 entrance 515 series",
+      "workshopId": "2327838061",
+      "modPath": "test1"
+    }
+  ],
+  "vehicles": []
+}

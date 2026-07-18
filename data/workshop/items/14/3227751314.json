@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3227751314",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:41:28+00:00",
+  "buildings": [
+    {
+      "id": "3227751314/STORAGE1",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "GD stanciya",
+      "workshopId": "3227751314",
+      "modPath": "STORAGE1"
+    }
+  ],
+  "vehicles": []
+}

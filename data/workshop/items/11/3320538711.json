@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3320538711",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:49:24+00:00",
+  "buildings": [
+    {
+      "id": "3320538711/FerrisWheel",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ferris Wheel",
+      "workshopId": "3320538711",
+      "modPath": "FerrisWheel"
+    },
+    {
+      "id": "3320538711/Rollercoaster",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rollercoaster",
+      "workshopId": "3320538711",
+      "modPath": "Rollercoaster"
+    }
+  ],
+  "vehicles": []
+}

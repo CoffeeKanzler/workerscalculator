@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2417113009",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:29:47+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2417113009/No704",
+      "category": "workshop",
+      "trainSet": [
+        "2417113009/No704tender"
+      ],
+      "lifespanYears": 0.0,
+      "length": 14.48,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "speed": 95.0,
+      "emptyWeight": 115.0,
+      "powerKW": 980.0,
+      "from": 1923,
+      "to": 1984,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2417113009",
+      "modPath": "No704"
+    },
+    {
+      "id": "2417113009/No704tender",
+      "category": "workshop",
+      "trainSet": [
+        "2417113009/No704tender"
+      ],
+      "lifespanYears": 0.0,
+      "length": 5.62,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4300.0,
+      "emptyWeight": 80.0,
+      "consumption": 0.0,
+      "speed": 30.0,
+      "capacity": 68.0,
+      "from": 1959,
+      "to": 1969,
+      "countryId": 39011,
+      "workshopId": "2417113009",
+      "modPath": "No704tender"
+    }
+  ]
+}

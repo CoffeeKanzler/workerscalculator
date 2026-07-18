@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2491850324",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:44:07+00:00",
+  "buildings": [
+    {
+      "id": "2491850324/data",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 165.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 165.0
+      },
+      "constructionResources": {
+        "bricks": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1930s Worker Apartments",
+      "workshopId": "2491850324",
+      "modPath": "data"
+    },
+    {
+      "id": "2491850324/short",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 82.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 82.0
+      },
+      "constructionResources": {
+        "bricks": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1930s Worker Apartments - short version",
+      "workshopId": "2491850324",
+      "modPath": "short"
+    }
+  ],
+  "vehicles": []
+}

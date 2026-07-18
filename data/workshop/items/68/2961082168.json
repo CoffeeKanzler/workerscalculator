@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2961082168",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:40:24+00:00",
+  "buildings": [
+    {
+      "id": "2961082168/teplichnoe_xo3jaystvo",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 197.0,
+      "professors": 8.0,
+      "production": {
+        "plants": 0.1
+      },
+      "consumption": {
+        "water": 0.2,
+        "coal": 0.03,
+        "fertiliser_liquid": 0.001
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Тепличное хозяйство",
+      "workshopId": "2961082168",
+      "modPath": "teplichnoe_xo3jaystvo"
+    }
+  ],
+  "vehicles": []
+}

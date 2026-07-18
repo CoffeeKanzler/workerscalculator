@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3110340872",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:49:03+00:00",
+  "buildings": [
+    {
+      "id": "3110340872/c-o",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 34.2,
+        "concrete": 12.9,
+        "boards": 29.5,
+        "steel": 3.4,
+        "workers": 861.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Construction office from Branišovice (Czech Rep, early XX)",
+      "workshopId": "3110340872",
+      "modPath": "c-o"
+    },
+    {
+      "id": "3110340872/cows",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {
+        "livestock": 0.15
+      },
+      "consumption": {
+        "plants": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 34.2,
+        "concrete": 12.9,
+        "boards": 29.5,
+        "steel": 3.4,
+        "workers": 861.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cow farm from Branišovice (Czech Rep, early XX)",
+      "workshopId": "3110340872",
+      "modPath": "cows"
+    },
+    {
+      "id": "3110340872/crops",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 10.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 34.2,
+        "concrete": 12.9,
+        "boards": 29.5,
+        "steel": 3.4,
+        "workers": 861.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Crops farm from Branišovice (Czech Rep, early XX)",
+      "workshopId": "3110340872",
+      "modPath": "crops"
+    },
+    {
+      "id": "3110340872/d-o",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 34.2,
+        "concrete": 12.9,
+        "boards": 29.5,
+        "steel": 3.4,
+        "workers": 861.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Distribution office from Branišovice (Czech Rep, early XX)",
+      "workshopId": "3110340872",
+      "modPath": "d-o"
+    },
+    {
+      "id": "3110340872/depo",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 34.2,
+        "concrete": 12.9,
+        "boards": 29.5,
+        "steel": 3.4,
+        "workers": 861.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Road depo from Branišovice (Czech Rep, early XX)",
+      "workshopId": "3110340872",
+      "modPath": "depo"
+    }
+  ],
+  "vehicles": []
+}

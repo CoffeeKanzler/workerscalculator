@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2282491972",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:06:19+00:00",
+  "buildings": [
+    {
+      "id": "2282491972/kino",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 150.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 20.0,
+        "asphalt": 25.0,
+        "concrete": 10.0,
+        "steel": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "State Opera and Ballet Theater of the ChASSR",
+      "workshopId": "2282491972",
+      "modPath": "kino"
+    },
+    {
+      "id": "2282491972/radio",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 120.0,
+      "professors": 50.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 20.0,
+        "asphalt": 25.0,
+        "concrete": 10.0,
+        "steel": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "State Opera and Ballet Theater of the ChASSR",
+      "workshopId": "2282491972",
+      "modPath": "radio"
+    },
+    {
+      "id": "2282491972/tourist",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 150.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 20.0,
+        "asphalt": 25.0,
+        "concrete": 10.0,
+        "steel": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "State Opera and Ballet Theater of the ChASSR - Attraction version",
+      "workshopId": "2282491972",
+      "modPath": "tourist"
+    }
+  ],
+  "vehicles": []
+}

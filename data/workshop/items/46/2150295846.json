@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2150295846",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:08:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2150295846/scania113_tanque",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.06,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "capacity": 30.0,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "speed": 100.0,
+      "emptyWeight": 9.0,
+      "from": 1991,
+      "to": 1998,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2150295846",
+      "modPath": "scania113_tanque"
+    }
+  ]
+}

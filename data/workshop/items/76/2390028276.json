@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2390028276",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:02:58+00:00",
+  "buildings": [
+    {
+      "id": "2390028276/Corrugated_Steel_Fence_01_c1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 0.74,
+        "workers": 2.25,
+        "steel": 0.21
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Corrugated Steel Fence 01 (Corner 1)",
+      "workshopId": "2390028276",
+      "modPath": "Corrugated_Steel_Fence_01_c1"
+    },
+    {
+      "id": "2390028276/Corrugated_Steel_Fence_01_c2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 0.74,
+        "workers": 2.25,
+        "steel": 0.21
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Corrugated Steel Fence 01 (Corner 2)",
+      "workshopId": "2390028276",
+      "modPath": "Corrugated_Steel_Fence_01_c2"
+    },
+    {
+      "id": "2390028276/Corrugated_Steel_Fence_01_x10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 1.32,
+        "workers": 3.75,
+        "steel": 0.375
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Corrugated Steel Fence 01 (x10)",
+      "workshopId": "2390028276",
+      "modPath": "Corrugated_Steel_Fence_01_x10"
+    },
+    {
+      "id": "2390028276/Corrugated_Steel_Fence_01_x3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 0.44,
+        "workers": 1.25,
+        "steel": 0.125
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Corrugated Steel Fence 01 (x3)",
+      "workshopId": "2390028276",
+      "modPath": "Corrugated_Steel_Fence_01_x3"
+    },
+    {
+      "id": "2390028276/Corrugated_Steel_Fence_01_x6",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 0.88,
+        "workers": 2.25,
+        "steel": 0.25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Corrugated Steel Fence 01 (x6)",
+      "workshopId": "2390028276",
+      "modPath": "Corrugated_Steel_Fence_01_x6"
+    },
+    {
+      "id": "2390028276/Corrugated_Steel_Fence_02_x1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 0.25,
+        "workers": 1.25,
+        "steel": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Corrugated Steel Fence 02 (x1)",
+      "workshopId": "2390028276",
+      "modPath": "Corrugated_Steel_Fence_02_x1"
+    },
+    {
+      "id": "2390028276/Corrugated_Steel_Fence_02_x10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 2.0,
+        "workers": 4.0,
+        "steel": 3.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Corrugated Steel Fence 02 (x10)",
+      "workshopId": "2390028276",
+      "modPath": "Corrugated_Steel_Fence_02_x10"
+    },
+    {
+      "id": "2390028276/Corrugated_Steel_Fence_02_x3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 0.44,
+        "workers": 1.25,
+        "steel": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Corrugated Steel Fence 02 (x3)",
+      "workshopId": "2390028276",
+      "modPath": "Corrugated_Steel_Fence_02_x3"
+    },
+    {
+      "id": "2390028276/Corrugated_Steel_Fence_02_x5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 1.0,
+        "workers": 2.25,
+        "steel": 1.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Corrugated Steel Fence 02 (x5)",
+      "workshopId": "2390028276",
+      "modPath": "Corrugated_Steel_Fence_02_x5"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2812291965",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:11:34+00:00",
+  "buildings": [
+    {
+      "id": "2812291965/.",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_MEDICAL"
+      ],
+      "workers": 200.0,
+      "professors": 75.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 20.0,
+        "ecomponents": 15.0,
+        "asphalt": 30.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medical University URSR",
+      "workshopId": "2812291965",
+      "modPath": "."
+    }
+  ],
+  "vehicles": []
+}

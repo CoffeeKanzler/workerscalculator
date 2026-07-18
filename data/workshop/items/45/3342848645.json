@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3342848645",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:12:10+00:00",
+  "buildings": [
+    {
+      "id": "3342848645/1-LG-504D-10_3P",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 252.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 252.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-LG-540D-10_3P",
+      "workshopId": "3342848645",
+      "modPath": "1-LG-504D-10_3P"
+    },
+    {
+      "id": "3342848645/1-LG-504D-10_5P",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 432.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 432.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-LG-540D-10_5P",
+      "workshopId": "3342848645",
+      "modPath": "1-LG-504D-10_5P"
+    },
+    {
+      "id": "3342848645/1-LG-504D-10_Central_Corner45",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 252.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 252.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-LG-504D-10_Central_Corner45",
+      "workshopId": "3342848645",
+      "modPath": "1-LG-504D-10_Central_Corner45"
+    },
+    {
+      "id": "3342848645/1-LG-504D-10_Left_Corner45",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 252.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 252.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-LG-504D-10_Left_Corner45",
+      "workshopId": "3342848645",
+      "modPath": "1-LG-504D-10_Left_Corner45"
+    },
+    {
+      "id": "3342848645/1-LG-504D-10_Left_Сorner_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 432.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 432.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-LG-504D-10_Left_�orner_1",
+      "workshopId": "3342848645",
+      "modPath": "1-LG-504D-10_Left_Сorner_1"
+    },
+    {
+      "id": "3342848645/1-LG-504D-10_Left_Сorner_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 432.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 432.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-LG-504D-10_Left_�orner_2",
+      "workshopId": "3342848645",
+      "modPath": "1-LG-504D-10_Left_Сorner_2"
+    },
+    {
+      "id": "3342848645/1-LG-504D-10_Left_Сorner_3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 432.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 432.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-LG-504D-10_Left_�orner_3",
+      "workshopId": "3342848645",
+      "modPath": "1-LG-504D-10_Left_Сorner_3"
+    },
+    {
+      "id": "3342848645/1-LG-504D-10_Left_Сorner_4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 432.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 432.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-LG-504D-10_Left_�orner_4",
+      "workshopId": "3342848645",
+      "modPath": "1-LG-504D-10_Left_Сorner_4"
+    },
+    {
+      "id": "3342848645/1-LG-504D-10_Right_Corner45",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 288.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 288.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-LG-504D-10_Right_Corner45",
+      "workshopId": "3342848645",
+      "modPath": "1-LG-504D-10_Right_Corner45"
+    },
+    {
+      "id": "3342848645/1-LG-504D-10_Right_Сorner_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 432.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 432.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-LG-504D-10_Right_�orner_1",
+      "workshopId": "3342848645",
+      "modPath": "1-LG-504D-10_Right_Сorner_1"
+    },
+    {
+      "id": "3342848645/1-LG-504D-10_Right_Сorner_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 432.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 432.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-LG-504D-10_Right_�orner_2",
+      "workshopId": "3342848645",
+      "modPath": "1-LG-504D-10_Right_Сorner_2"
+    },
+    {
+      "id": "3342848645/1-LG-504D-10_Right_Сorner_3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 432.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 432.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-LG-504D-10_Right_�orner_3",
+      "workshopId": "3342848645",
+      "modPath": "1-LG-504D-10_Right_Сorner_3"
+    }
+  ],
+  "vehicles": []
+}

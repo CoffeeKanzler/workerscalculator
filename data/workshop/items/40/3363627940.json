@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3363627940",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:58:55+00:00",
+  "buildings": [
+    {
+      "id": "3363627940/store",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 32.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.9,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Store With Warehouse",
+      "workshopId": "3363627940",
+      "modPath": "store"
+    }
+  ],
+  "vehicles": []
+}

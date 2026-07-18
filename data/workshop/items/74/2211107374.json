@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2211107374",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:40:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2211107374/TGK2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.5,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "speed": 60.0,
+      "emptyWeight": 28.0,
+      "powerKW": 162.0,
+      "from": 1960,
+      "to": 3000,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2211107374",
+      "modPath": "TGK2"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2872584667",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:54:20+00:00",
+  "buildings": [
+    {
+      "id": "2872584667/Citadel",
+      "nameId": null,
+      "types": [
+        "TYPE_RESIDENTIAL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 90.0,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100000.0
+      },
+      "constructionResources": {
+        "gravel": 2000.0,
+        "concrete": 50000.0,
+        "workers": 25000.0,
+        "boards": 80.0,
+        "steel": 40000.0,
+        "bricks": 0.0,
+        "mcomponents": 0.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Citadel",
+      "workshopId": "2872584667",
+      "modPath": "Citadel"
+    }
+  ],
+  "vehicles": []
+}

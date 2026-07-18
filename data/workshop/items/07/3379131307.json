@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3379131307",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:47:34+00:00",
+  "buildings": [
+    {
+      "id": "3379131307/custom",
+      "nameId": null,
+      "types": [
+        "TYPE_CUSTOMHOUSE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0,
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_WATER": 1.0,
+        "RESOURCE_TRANSPORT_SEWAGE": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hinomoto Border Customs",
+      "workshopId": "3379131307",
+      "modPath": "custom"
+    },
+    {
+      "id": "3379131307/custom_rail",
+      "nameId": null,
+      "types": [
+        "TYPE_CUSTOMHOUSE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0,
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_WATER": 1.0,
+        "RESOURCE_TRANSPORT_SEWAGE": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hinomoto Border Customs -rails",
+      "workshopId": "3379131307",
+      "modPath": "custom_rail"
+    }
+  ],
+  "vehicles": []
+}

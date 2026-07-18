@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2387869370",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:44:48+00:00",
+  "buildings": [
+    {
+      "id": "2387869370/coalloader",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1316.0,
+        "concrete": 116.5,
+        "bricks": 28.0,
+        "boards": 33.0,
+        "steel": 10.8,
+        "mcomponents": 0.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Steam train fueling & water stop",
+      "workshopId": "2387869370",
+      "modPath": "coalloader"
+    }
+  ],
+  "vehicles": []
+}

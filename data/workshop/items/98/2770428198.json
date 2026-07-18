@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2770428198",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:25:54+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2770428198/service_tower_crane_skg_63",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.13,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 100.0,
+      "speed": 0.0,
+      "powerKW": 110.0,
+      "emptyWeight": 15.0,
+      "from": 1976,
+      "to": 1991,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2770428198",
+      "modPath": "service_tower_crane_skg_63"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3070671759",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:54:47+00:00",
+  "buildings": [
+    {
+      "id": "3070671759/1",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ZSE",
+      "workshopId": "3070671759",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

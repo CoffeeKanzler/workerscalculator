@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2755279119",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:45:38+00:00",
+  "buildings": [
+    {
+      "id": "2755279119/Circus",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 550.0,
+        "gravel": 100.0,
+        "asphalt": 50.0,
+        "bricks": 50.0,
+        "workers": 3290.0,
+        "prefabpanels": 300.0,
+        "steel": 250.0,
+        "boards": 100.0,
+        "mcomponents": 5.0,
+        "ecomponents": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Цирк | Circus",
+      "workshopId": "2755279119",
+      "modPath": "Circus"
+    }
+  ],
+  "vehicles": []
+}

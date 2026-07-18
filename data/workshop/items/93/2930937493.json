@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2930937493",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:29:08+00:00",
+  "buildings": [
+    {
+      "id": "2930937493/ani",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 130.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel Ani",
+      "workshopId": "2930937493",
+      "modPath": "ani"
+    }
+  ],
+  "vehicles": []
+}

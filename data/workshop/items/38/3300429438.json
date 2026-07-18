@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3300429438",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:24:23+00:00",
+  "buildings": [
+    {
+      "id": "3300429438/Fabrics",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {
+        "fabric": 0.09
+      },
+      "consumption": {
+        "oil": 0.1,
+        "chemicals": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Synthetic Fabrics Factory",
+      "workshopId": "3300429438",
+      "modPath": "Fabrics"
+    }
+  ],
+  "vehicles": []
+}

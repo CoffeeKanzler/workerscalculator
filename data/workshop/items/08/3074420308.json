@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3074420308",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:42:41+00:00",
+  "buildings": [
+    {
+      "id": "3074420308/House1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Panel house 1-9-2",
+      "workshopId": "3074420308",
+      "modPath": "House1"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3739306462",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:57:58+00:00",
+  "buildings": [
+    {
+      "id": "3739306462/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "One World Trade Center",
+      "workshopId": "3739306462",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

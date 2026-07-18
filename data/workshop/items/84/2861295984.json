@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2861295984",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:29:10+00:00",
+  "buildings": [
+    {
+      "id": "2861295984/oprokid",
+      "nameId": 1800,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {
+        "workers": 50.0,
+        "gravel": 10.0,
+        "concrete": 4.0,
+        "steel": 4.5
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2861295984",
+      "modPath": "oprokid"
+    }
+  ],
+  "vehicles": []
+}

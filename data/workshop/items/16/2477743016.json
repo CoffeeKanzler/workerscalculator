@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2477743016",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:47:27+00:00",
+  "buildings": [
+    {
+      "id": "2477743016/hos",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 300.0,
+      "professors": 100.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House of Soviets",
+      "workshopId": "2477743016",
+      "modPath": "hos"
+    }
+  ],
+  "vehicles": []
+}

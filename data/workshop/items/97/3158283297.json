@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3158283297",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:42:18+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3158283297/707-120",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 45.31,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 871.0,
+      "powerKW": 26000.0,
+      "emptyWeight": 50.0,
+      "capacity": 204.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1957,
+      "to": 9999,
+      "countryId": 39018,
+      "workshopId": "3158283297",
+      "modPath": "707-120"
+    },
+    {
+      "id": "3158283297/707-320C",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 47.7,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 885.0,
+      "powerKW": 32000.0,
+      "emptyWeight": 67.3,
+      "capacity": 141.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1960,
+      "to": 1979,
+      "countryId": 39018,
+      "workshopId": "3158283297",
+      "modPath": "707-320C"
+    }
+  ]
+}

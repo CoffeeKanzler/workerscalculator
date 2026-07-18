@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2914126388",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:27:46+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2914126388/KA50",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.86,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costRUB": 45000.0,
+      "consumption": 0.0,
+      "speed": 310.0,
+      "powerKW": 3236.0,
+      "emptyWeight": 9.8,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1981,
+      "to": 2010,
+      "countryId": 39018,
+      "workshopId": "2914126388",
+      "modPath": "KA50"
+    }
+  ]
+}

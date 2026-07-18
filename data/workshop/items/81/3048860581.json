@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3048860581",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:51:45+00:00",
+  "buildings": [
+    {
+      "id": "3048860581/oceandump200",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 10000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ocean Dump",
+      "workshopId": "3048860581",
+      "modPath": "oceandump200"
+    },
+    {
+      "id": "3048860581/oceandump600",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 100000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ocean Dump (big)",
+      "workshopId": "3048860581",
+      "modPath": "oceandump600"
+    }
+  ],
+  "vehicles": []
+}

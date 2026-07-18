@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2924723033",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:43:59+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2924723033/C50",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.66,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "capacity": 50.0,
+      "emptyWeight": 17.0,
+      "from": 1955,
+      "to": 1975,
+      "countryId": 39042,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "trainGroup": "vagon",
+      "workshopId": "2924723033",
+      "modPath": "C50"
+    }
+  ]
+}

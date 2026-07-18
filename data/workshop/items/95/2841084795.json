@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2841084795",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:00:44+00:00",
+  "buildings": [
+    {
+      "id": "2841084795/Eden",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.8,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 12.0,
+        "workers": 830.0,
+        "bricks": 90.0,
+        "asphalt": 22.0,
+        "concrete": 84.0,
+        "steel": 38.0,
+        "boards": 26.0,
+        "ecomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "House of Culture EDEN",
+      "workshopId": "2841084795",
+      "modPath": "Eden"
+    }
+  ],
+  "vehicles": []
+}

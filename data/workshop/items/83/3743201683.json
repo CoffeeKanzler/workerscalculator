@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3743201683",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:20:55+00:00",
+  "buildings": [
+    {
+      "id": "3743201683/1",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_HORSE_STUD"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "plants": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small horse stud farm",
+      "workshopId": "3743201683",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

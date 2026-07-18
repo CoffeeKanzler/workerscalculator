@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2811670949",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:48:38+00:00",
+  "buildings": [
+    {
+      "id": "2811670949/Toll",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Toll Booth Wide",
+      "workshopId": "2811670949",
+      "modPath": "Toll"
+    },
+    {
+      "id": "2811670949/Toll2",
+      "nameId": null,
+      "types": [
+        "TYPE_CUSTOMHOUSE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0,
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_WATER": 1.0,
+        "RESOURCE_TRANSPORT_WASTE": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Toll Booth",
+      "workshopId": "2811670949",
+      "modPath": "Toll2"
+    }
+  ],
+  "vehicles": []
+}

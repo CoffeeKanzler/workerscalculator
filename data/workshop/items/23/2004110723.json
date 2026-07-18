@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2004110723",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:22:06+00:00",
+  "buildings": [
+    {
+      "id": "2004110723/RTG_Shed",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {
+        "eletric": 6.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "RTG Shed",
+      "workshopId": "2004110723",
+      "modPath": "RTG_Shed"
+    }
+  ],
+  "vehicles": []
+}

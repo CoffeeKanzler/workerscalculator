@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2848204903",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:20:52+00:00",
+  "buildings": [
+    {
+      "id": "2848204903/tec",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {
+        "heat": 450.0
+      },
+      "consumption": {
+        "bitumen": 0.12
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ТЭЦ",
+      "workshopId": "2848204903",
+      "modPath": "tec"
+    }
+  ],
+  "vehicles": []
+}

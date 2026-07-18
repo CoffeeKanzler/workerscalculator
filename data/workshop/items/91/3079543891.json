@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3079543891",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:32:29+00:00",
+  "buildings": [
+    {
+      "id": "3079543891/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Meilich House",
+      "workshopId": "3079543891",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

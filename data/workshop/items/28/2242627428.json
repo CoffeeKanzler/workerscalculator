@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2242627428",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:20:26+00:00",
+  "buildings": [
+    {
+      "id": "2242627428/sky4",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 240.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Siljat Tower",
+      "workshopId": "2242627428",
+      "modPath": "sky4"
+    }
+  ],
+  "vehicles": []
+}

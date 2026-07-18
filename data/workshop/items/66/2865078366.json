@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2865078366",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:47:44+00:00",
+  "buildings": [
+    {
+      "id": "2865078366/Elevated1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated Metro Station",
+      "workshopId": "2865078366",
+      "modPath": "Elevated1"
+    },
+    {
+      "id": "2865078366/Elevated2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated Metro Station",
+      "workshopId": "2865078366",
+      "modPath": "Elevated2"
+    },
+    {
+      "id": "2865078366/Pillar",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated Metro Rails Support",
+      "workshopId": "2865078366",
+      "modPath": "Pillar"
+    }
+  ],
+  "vehicles": []
+}

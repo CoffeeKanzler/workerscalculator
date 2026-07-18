@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2144599162",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:32:53+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2144599162/bus_ikr211",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.74,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5239,
+      "costRUB": 4400.0,
+      "consumption": 0.0,
+      "speed": 103.0,
+      "powerKW": 101.0,
+      "emptyWeight": 6.5,
+      "capacity": 32.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1972,
+      "to": 1993,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2144599162",
+      "modPath": "bus_ikr211"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2171120218",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:26:09+00:00",
+  "buildings": [
+    {
+      "id": "2171120218/Medium_Trolley_Road_Cargo_Station",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_TROLLEYBUS"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0
+      },
+      "constructionResources": {
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Road Trolley Cargo Station",
+      "workshopId": "2171120218",
+      "modPath": "Medium_Trolley_Road_Cargo_Station"
+    }
+  ],
+  "vehicles": []
+}

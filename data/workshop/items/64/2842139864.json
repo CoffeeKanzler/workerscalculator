@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2842139864",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:20:42+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2842139864/HAMM",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.32,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 2842139864,
+      "costUSD": 4300.0,
+      "powerKW": 35.0,
+      "emptyWeight": 9.5,
+      "speed": 20.0,
+      "from": 1958,
+      "to": 1980,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2842139864",
+      "modPath": "HAMM"
+    }
+  ]
+}

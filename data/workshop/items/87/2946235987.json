@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2946235987",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:00:28+00:00",
+  "buildings": [
+    {
+      "id": "2946235987/CDT",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 45.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CDT",
+      "workshopId": "2946235987",
+      "modPath": "CDT"
+    },
+    {
+      "id": "2946235987/CDTwindowless",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 45.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 11.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Centrum",
+      "workshopId": "2946235987",
+      "modPath": "CDTwindowless"
+    }
+  ],
+  "vehicles": []
+}

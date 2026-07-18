@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2896999450",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:58:58+00:00",
+  "buildings": [
+    {
+      "id": "2896999450/data",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 100.0,
+      "professors": 50.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1930s Technical University",
+      "workshopId": "2896999450",
+      "modPath": "data"
+    }
+  ],
+  "vehicles": []
+}

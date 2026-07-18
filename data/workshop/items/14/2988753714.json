@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2988753714",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:50:36+00:00",
+  "buildings": [
+    {
+      "id": "2988753714/homefield",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {
+        "food": 0.05,
+        "plants": 0.1
+      },
+      "consumption": {
+        "fertiliser_liquid": 0.05
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 1.0,
+        "gravel": 3.0,
+        "workers": 12.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Home Field",
+      "workshopId": "2988753714",
+      "modPath": "homefield"
+    }
+  ],
+  "vehicles": []
+}

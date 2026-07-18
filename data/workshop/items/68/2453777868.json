@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2453777868",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:24:24+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2453777868/kyklop",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 17.74,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "speed": 140.0,
+      "powerKW": 1760.0,
+      "emptyWeight": 85.0,
+      "from": 1975,
+      "to": 1980,
+      "countryId": 39000,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2453777868",
+      "modPath": "kyklop"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2144844005",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:03:58+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2144844005/snow_zl130",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.09,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5153,
+      "costRUB": 4300.0,
+      "speed": 90.0,
+      "powerKW": 110.0,
+      "emptyWeight": 5.0,
+      "from": 1962,
+      "to": 1994,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2144844005",
+      "modPath": "snow_zl130"
+    }
+  ]
+}

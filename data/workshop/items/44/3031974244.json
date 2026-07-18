@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3031974244",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:36:05+00:00",
+  "buildings": [
+    {
+      "id": "3031974244/Crossings/factory_to_factory",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.6,
+        "gravel": 12.8,
+        "asphalt": 12.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Crossing (factory_to_factory)",
+      "workshopId": "3031974244",
+      "modPath": "Crossings/factory_to_factory"
+    },
+    {
+      "id": "3031974244/Crossings/factory_to_rail",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.6,
+        "gravel": 12.8,
+        "asphalt": 12.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Crossing (factory_to_rail)",
+      "workshopId": "3031974244",
+      "modPath": "Crossings/factory_to_rail"
+    },
+    {
+      "id": "3031974244/Crossings/factory_to_road",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.6,
+        "gravel": 12.8,
+        "asphalt": 12.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Crossing (factory_to_road)",
+      "workshopId": "3031974244",
+      "modPath": "Crossings/factory_to_road"
+    },
+    {
+      "id": "3031974244/Crossings/factory_to_tram",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.6,
+        "gravel": 12.8,
+        "asphalt": 12.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Crossing (factory_to_tram)",
+      "workshopId": "3031974244",
+      "modPath": "Crossings/factory_to_tram"
+    },
+    {
+      "id": "3031974244/Crossings/factory_to_trolley",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.6,
+        "gravel": 12.8,
+        "asphalt": 12.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Crossing (factory_to_trolley)",
+      "workshopId": "3031974244",
+      "modPath": "Crossings/factory_to_trolley"
+    }
+  ],
+  "vehicles": []
+}

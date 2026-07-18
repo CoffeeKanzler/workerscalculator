@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2628594957",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:04:27+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2628594957/Kolkhoznik",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.45,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 95.0,
+      "powerKW": 154.0,
+      "emptyWeight": 12.0,
+      "capacity": 25.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1976,
+      "to": 2001,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2628594957",
+      "modPath": "Kolkhoznik"
+    }
+  ]
+}

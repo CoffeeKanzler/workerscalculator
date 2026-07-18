@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1894302243",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:15:17+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1894302243/bust_skd_9Tr_cargo",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.4,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5469,
+      "descriptionId": 5441,
+      "costRUB": 4300.0,
+      "speed": 60.0,
+      "powerKW": 110.0,
+      "emptyWeight": 8.9,
+      "capacity": 11.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1958,
+      "to": 1981,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1894302243",
+      "modPath": "bust_skd_9Tr_cargo"
+    }
+  ]
+}

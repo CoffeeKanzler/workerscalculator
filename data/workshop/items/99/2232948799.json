@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2232948799",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:00:15+00:00",
+  "buildings": [
+    {
+      "id": "2232948799/ep_bitumen",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 18.0,
+      "professors": 0,
+      "production": {
+        "eletric": 56.0
+      },
+      "consumption": {
+        "bitumen": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 470.0,
+        "asphalt": 120.0,
+        "concrete": 300.0,
+        "boards": 50.0,
+        "bricks": 160.0,
+        "steel": 20.0,
+        "mcomponents": 14.6,
+        "ecomponents": 5.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "БТЭС-ЗТМ",
+      "workshopId": "2232948799",
+      "modPath": "ep_bitumen"
+    },
+    {
+      "id": "2232948799/ep_coal",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 22.0,
+      "professors": 0,
+      "production": {
+        "eletric": 32.0
+      },
+      "consumption": {
+        "coal": 0.44
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 470.0,
+        "asphalt": 90.0,
+        "concrete": 150.0,
+        "boards": 50.0,
+        "bricks": 120.0,
+        "steel": 18.0,
+        "mcomponents": 4.6,
+        "ecomponents": 5.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "УТЭС-ЗТМ",
+      "workshopId": "2232948799",
+      "modPath": "ep_coal"
+    },
+    {
+      "id": "2232948799/hp_bitumen",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 22.0,
+      "professors": 0,
+      "production": {
+        "heat": 990.0
+      },
+      "consumption": {
+        "bitumen": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 520.0,
+        "asphalt": 10.0,
+        "concrete": 230.0,
+        "boards": 60.0,
+        "bricks": 60.0,
+        "steel": 15.0,
+        "mcomponents": 11.0,
+        "ecomponents": 1.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "БСТ-ЗТМ",
+      "workshopId": "2232948799",
+      "modPath": "hp_bitumen"
+    },
+    {
+      "id": "2232948799/hp_coal",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 17.0,
+      "professors": 0,
+      "production": {
+        "heat": 775.0
+      },
+      "consumption": {
+        "coal": 0.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 460.0,
+        "asphalt": 10.0,
+        "concrete": 193.0,
+        "boards": 40.0,
+        "bricks": 50.0,
+        "steel": 12.0,
+        "mcomponents": 9.0,
+        "ecomponents": 1.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "УСТ-ЗТМ",
+      "workshopId": "2232948799",
+      "modPath": "hp_coal"
+    },
+    {
+      "id": "2232948799/hp_wood",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {
+        "heat": 630.0
+      },
+      "consumption": {
+        "wood": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 510.0,
+        "asphalt": 10.0,
+        "concrete": 270.0,
+        "boards": 60.0,
+        "bricks": 50.0,
+        "steel": 14.0,
+        "mcomponents": 12.0,
+        "ecomponents": 2.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "БТСТ-ЗТМ",
+      "workshopId": "2232948799",
+      "modPath": "hp_wood"
+    }
+  ],
+  "vehicles": []
+}

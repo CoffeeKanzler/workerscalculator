@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3561035589",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:26:13+00:00",
+  "buildings": [
+    {
+      "id": "3561035589/Building_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.87,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48.0
+      },
+      "constructionResources": {
+        "workers": 175.0,
+        "boards": 20.0,
+        "concrete": 8.0,
+        "bricks": 55.0,
+        "steel": 6.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Low-rise 4-storey stalinka",
+      "workshopId": "3561035589",
+      "modPath": "Building_1"
+    },
+    {
+      "id": "3561035589/Building_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 90.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 90.0
+      },
+      "constructionResources": {
+        "workers": 280.0,
+        "boards": 34.0,
+        "concrete": 11.5,
+        "bricks": 55.0,
+        "steel": 9.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Low-rise 6-storey combined residential tower",
+      "workshopId": "3561035589",
+      "modPath": "Building_2"
+    },
+    {
+      "id": "3561035589/Building_3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 85.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 85.0
+      },
+      "constructionResources": {
+        "workers": 280.0,
+        "boards": 45.0,
+        "concrete": 13.5,
+        "bricks": 57.0,
+        "steel": 6.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Low-rise 5-storey corner stalinka",
+      "workshopId": "3561035589",
+      "modPath": "Building_3"
+    },
+    {
+      "id": "3561035589/Building_4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 126.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 126.0
+      },
+      "constructionResources": {
+        "workers": 380.0,
+        "boards": 65.0,
+        "concrete": 39.5,
+        "bricks": 118.0,
+        "steel": 27.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High-rise 10-storey tower stalinka",
+      "workshopId": "3561035589",
+      "modPath": "Building_4"
+    },
+    {
+      "id": "3561035589/Building_5",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 35.0,
+      "professors": 20.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 355.0,
+        "boards": 92.0,
+        "concrete": 48.0,
+        "bricks": 116.0,
+        "steel": 54.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Institute of Technology 9-storey tower",
+      "workshopId": "3561035589",
+      "modPath": "Building_5"
+    },
+    {
+      "id": "3561035589/Building_6",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 200.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 545.0,
+        "boards": 135.0,
+        "concrete": 48.5,
+        "bricks": 170.0,
+        "steel": 95.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "City hall 9-storey tower",
+      "workshopId": "3561035589",
+      "modPath": "Building_6"
+    }
+  ],
+  "vehicles": []
+}

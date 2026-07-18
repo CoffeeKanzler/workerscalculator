@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2752705437",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:37:57+00:00",
+  "buildings": [
+    {
+      "id": "2752705437/Bench2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 4.0,
+        "concrete": 0.5,
+        "boards": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bench2",
+      "workshopId": "2752705437",
+      "modPath": "Bench2"
+    }
+  ],
+  "vehicles": []
+}

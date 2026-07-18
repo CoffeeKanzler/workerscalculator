@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2954827298",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:18:24+00:00",
+  "buildings": [
+    {
+      "id": "2954827298/House10",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 300.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.5,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 300.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1MG-300-10",
+      "workshopId": "2954827298",
+      "modPath": "House10"
+    },
+    {
+      "id": "2954827298/House6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 180.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.5,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 180.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1MG-300-6",
+      "workshopId": "2954827298",
+      "modPath": "House6"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3126918301",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:33:02+00:00",
+  "buildings": [
+    {
+      "id": "3126918301/heater",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 16.0,
+      "professors": 0,
+      "production": {
+        "heat": 182.0
+      },
+      "consumption": {
+        "coal": 0.08
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heating plant Nowa Huta 50s",
+      "workshopId": "3126918301",
+      "modPath": "heater"
+    }
+  ],
+  "vehicles": []
+}

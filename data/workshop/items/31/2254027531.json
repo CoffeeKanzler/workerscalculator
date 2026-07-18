@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2254027531",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:25:27+00:00",
+  "buildings": [
+    {
+      "id": "2254027531/loading",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 60.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Liquid Container loading facility",
+      "workshopId": "2254027531",
+      "modPath": "loading"
+    },
+    {
+      "id": "2254027531/unloading",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 60.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Liquid Container unloading facility",
+      "workshopId": "2254027531",
+      "modPath": "unloading"
+    }
+  ],
+  "vehicles": []
+}

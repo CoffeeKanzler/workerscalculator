@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2115962965",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:03:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2115962965/bust_mtb82",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.43,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5441,
+      "costRUB": 4300.0,
+      "speed": 55.0,
+      "powerKW": 80.0,
+      "emptyWeight": 9.2,
+      "capacity": 56.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1946,
+      "to": 1961,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2115962965",
+      "modPath": "bust_mtb82"
+    },
+    {
+      "id": "2115962965/russian_tram_mtv82",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.66,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5088,
+      "costRUB": 4300.0,
+      "speed": 55.0,
+      "powerKW": 200.0,
+      "emptyWeight": 17.5,
+      "from": 1947,
+      "to": 1961,
+      "countryId": 39011,
+      "trainGroup": "tram",
+      "capacity": 90.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "electric": true,
+      "workshopId": "2115962965",
+      "modPath": "russian_tram_mtv82"
+    }
+  ]
+}

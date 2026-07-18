@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2065675374",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:05:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2065675374/personal_azlk2141",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.3,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costRUB": 4800.0,
+      "consumption": 0.0,
+      "speed": 160.0,
+      "powerKW": 76.0,
+      "emptyWeight": 1.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1986,
+      "to": 1997,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2065675374",
+      "modPath": "personal_azlk2141"
+    }
+  ]
+}

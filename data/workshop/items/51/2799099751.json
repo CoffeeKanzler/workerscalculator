@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2799099751",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:59:14+00:00",
+  "buildings": [
+    {
+      "id": "2799099751/head_building",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 5.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "head_building",
+      "workshopId": "2799099751",
+      "modPath": "head_building"
+    },
+    {
+      "id": "2799099751/rsudor",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 180.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Uprdor",
+      "workshopId": "2799099751",
+      "modPath": "rsudor"
+    },
+    {
+      "id": "2799099751/spektr_avtobaza",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 420.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Avtobaza Spektr",
+      "workshopId": "2799099751",
+      "modPath": "spektr_avtobaza"
+    },
+    {
+      "id": "2799099751/spektr_umiat",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 880.0,
+        "RESOURCE_TRANSPORT_COVERED": 420.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "spektr_umiat",
+      "workshopId": "2799099751",
+      "modPath": "spektr_umiat"
+    },
+    {
+      "id": "2799099751/umiat",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "UMIAT_part_1",
+      "workshopId": "2799099751",
+      "modPath": "umiat"
+    },
+    {
+      "id": "2799099751/vitebskiy_3",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 20.0,
+        "RESOURCE_TRANSPORT_COVERED": 120.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vitebskiy_3",
+      "workshopId": "2799099751",
+      "modPath": "vitebskiy_3"
+    },
+    {
+      "id": "2799099751/warehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 880.0,
+        "RESOURCE_TRANSPORT_COVERED": 420.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "warehouse",
+      "workshopId": "2799099751",
+      "modPath": "warehouse"
+    }
+  ],
+  "vehicles": []
+}

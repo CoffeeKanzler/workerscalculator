@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2217679126",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:24:46+00:00",
+  "buildings": [
+    {
+      "id": "2217679126/garaz",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Single car garage",
+      "workshopId": "2217679126",
+      "modPath": "garaz"
+    }
+  ],
+  "vehicles": []
+}

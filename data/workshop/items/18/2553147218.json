@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2553147218",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:48:01+00:00",
+  "buildings": [
+    {
+      "id": "2553147218/baths",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 35.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Public Baths",
+      "workshopId": "2553147218",
+      "modPath": "baths"
+    }
+  ],
+  "vehicles": []
+}

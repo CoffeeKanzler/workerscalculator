@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2065314094",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:14:01+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2065314094/personal_gz3102",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.65,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costRUB": 6000.0,
+      "consumption": 0.0,
+      "speed": 170.0,
+      "powerKW": 100.0,
+      "emptyWeight": 1.4,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1981,
+      "to": 2008,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2065314094",
+      "modPath": "personal_gz3102"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3339760849",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:59:28+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3339760849/t_130",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.02,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 100.0,
+      "powerKW": 117.7,
+      "emptyWeight": 15.0,
+      "speed": 13.0,
+      "from": 1969,
+      "to": 1988,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3339760849",
+      "modPath": "t_130"
+    }
+  ]
+}

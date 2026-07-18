@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2934275948",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:47:08+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2934275948/SH760",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.65,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 105.0,
+      "powerKW": 66.0,
+      "emptyWeight": 1.44,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1958,
+      "to": 1970,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2934275948",
+      "modPath": "SH760"
+    }
+  ]
+}

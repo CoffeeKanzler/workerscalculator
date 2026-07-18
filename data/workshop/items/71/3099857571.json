@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3099857571",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:07:10+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3099857571/yk24",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 21.34,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costRUB": 8500.0,
+      "consumption": 0.0,
+      "speed": 193.0,
+      "powerKW": 2540.0,
+      "emptyWeight": 10.6,
+      "capacity": 30.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1955,
+      "to": 1999,
+      "countryId": 39011,
+      "workshopId": "3099857571",
+      "modPath": "yk24"
+    }
+  ]
+}

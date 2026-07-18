@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2421515140",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:52:44+00:00",
+  "buildings": [
+    {
+      "id": "2421515140/real_powerplant",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {
+        "eletric": 70.0
+      },
+      "consumption": {
+        "coal": 30.24
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Realistic Coal Power Plant",
+      "workshopId": "2421515140",
+      "modPath": "real_powerplant"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2850766912",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:05:46+00:00",
+  "buildings": [
+    {
+      "id": "2850766912/ZilinaResident1968",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 195.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 195.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Panelak 13s LM dokonceny uplne",
+      "workshopId": "2850766912",
+      "modPath": "ZilinaResident1968"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2793332936",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:07:36+00:00",
+  "buildings": [
+    {
+      "id": "2793332936/.",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {
+        "fuel": 1.0
+      },
+      "consumption": {
+        "chemicals": 0.1,
+        "plants": 0.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bio fuel plant",
+      "workshopId": "2793332936",
+      "modPath": "."
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2292957248",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:49:06+00:00",
+  "buildings": [
+    {
+      "id": "2292957248/kiosk_food",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 150.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 250.0,
+        "steel": 150.0,
+        "prefabpanels": 250.0,
+        "bricks": 100.0,
+        "workers": 1150.0,
+        "ecomponents": 30.0,
+        "mcomponents": 200.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Auto Vending Food Store",
+      "workshopId": "2292957248",
+      "modPath": "kiosk_food"
+    },
+    {
+      "id": "2292957248/kiosk_goods",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 150.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 250.0,
+        "steel": 150.0,
+        "prefabpanels": 250.0,
+        "bricks": 100.0,
+        "workers": 1150.0,
+        "ecomponents": 30.0,
+        "mcomponents": 200.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Auto Vending Goods Store",
+      "workshopId": "2292957248",
+      "modPath": "kiosk_goods"
+    }
+  ],
+  "vehicles": []
+}

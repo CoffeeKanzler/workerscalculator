@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2312290844",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:51:31+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2312290844/C130",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 29.14,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 1.0,
+      "from": 1964,
+      "to": 3000,
+      "countryId": 39018,
+      "consumption": 0.0,
+      "speed": 700.0,
+      "powerKW": 13692.0,
+      "emptyWeight": 34.0,
+      "capacity": 22.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "workshopId": "2312290844",
+      "modPath": "C130"
+    }
+  ]
+}

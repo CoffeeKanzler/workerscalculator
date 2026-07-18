@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2307349351",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:15:12+00:00",
+  "buildings": [
+    {
+      "id": "2307349351/test21",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "cbs",
+      "workshopId": "2307349351",
+      "modPath": "test21"
+    }
+  ],
+  "vehicles": []
+}

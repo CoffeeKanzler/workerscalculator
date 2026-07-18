@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2017820629",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:58:33+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2017820629/refrig_pz_672",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.36,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5363,
+      "descriptionId": 5364,
+      "costRUB": 4300.0,
+      "speed": 85.0,
+      "powerKW": 85.0,
+      "emptyWeight": 4.5,
+      "transportType": "RESOURCE_TRANSPORT_COOLER",
+      "capacity": 10.0,
+      "from": 1967,
+      "to": 1990,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2017820629",
+      "modPath": "refrig_pz_672"
+    }
+  ]
+}

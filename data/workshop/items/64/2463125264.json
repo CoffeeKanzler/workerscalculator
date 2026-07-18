@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2463125264",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:08:48+00:00",
+  "buildings": [
+    {
+      "id": "2463125264/silo2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 100.0
+      },
+      "constructionResources": {
+        "gravel": 3.0,
+        "concrete": 2.0,
+        "asphalt": 1.0,
+        "workers": 130.0,
+        "steel": 8.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Silo",
+      "workshopId": "2463125264",
+      "modPath": "silo2"
+    },
+    {
+      "id": "2463125264/silo3",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 100.0
+      },
+      "constructionResources": {
+        "gravel": 3.0,
+        "concrete": 2.0,
+        "asphalt": 1.0,
+        "workers": 140.0,
+        "steel": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Silo",
+      "workshopId": "2463125264",
+      "modPath": "silo3"
+    },
+    {
+      "id": "2463125264/silo4",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 200.0
+      },
+      "constructionResources": {
+        "gravel": 6.0,
+        "concrete": 4.0,
+        "asphalt": 2.0,
+        "workers": 190.0,
+        "steel": 18.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Silo",
+      "workshopId": "2463125264",
+      "modPath": "silo4"
+    }
+  ],
+  "vehicles": []
+}

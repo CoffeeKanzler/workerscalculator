@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2837932145",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:29:53+00:00",
+  "buildings": [
+    {
+      "id": "2837932145/ksht",
+      "nameId": 6351,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 370.0,
+      "professors": 0,
+      "production": {
+        "fabric": 1.2
+      },
+      "consumption": {
+        "plants": 1.6,
+        "chemicals": 0.007
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.18
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1260.0,
+        "asphalt": 54.0,
+        "gravel": 86.0,
+        "concrete": 92.0,
+        "steel": 75.0,
+        "prefabpanels": 395.0,
+        "ecomponents": 7.0,
+        "mcomponents": 94.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2837932145",
+      "modPath": "ksht"
+    },
+    {
+      "id": "2837932145/shveynaja_fabrika",
+      "nameId": 6352,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 350.0,
+      "professors": 0,
+      "production": {
+        "clothes": 0.5
+      },
+      "consumption": {
+        "fabric": 0.6
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3700.0,
+        "asphalt": 134.0,
+        "gravel": 367.0,
+        "concrete": 960.0,
+        "steel": 107.0,
+        "prefabpanels": 1195.0,
+        "bricks": 63.0,
+        "mcomponents": 84.0,
+        "ecomponents": 16.0
+      },
+      "electricWorkerFactors": {
+        "lighting": 1.0,
+        "living": 1.25
+      },
+      "workshopId": "2837932145",
+      "modPath": "shveynaja_fabrika"
+    },
+    {
+      "id": "2837932145/ware_ksht",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 12750.0
+      },
+      "constructionResources": {
+        "workers": 3700.0,
+        "asphalt": 649.0,
+        "gravel": 967.0,
+        "concrete": 1340.0,
+        "steel": 115.0,
+        "prefabpanels": 4195.0,
+        "bricks": 78.0,
+        "mcomponents": 96.0,
+        "ecomponents": 64.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2837932145",
+      "modPath": "ware_ksht"
+    }
+  ],
+  "vehicles": []
+}

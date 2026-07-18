@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3475793053",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:05:25+00:00",
+  "buildings": [
+    {
+      "id": "3475793053/Copan",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1120.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1120.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Copan",
+      "workshopId": "3475793053",
+      "modPath": "Copan"
+    }
+  ],
+  "vehicles": []
+}

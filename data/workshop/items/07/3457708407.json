@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3457708407",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:02:28+00:00",
+  "buildings": [
+    {
+      "id": "3457708407/agrochem",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 500.0,
+      "professors": 0,
+      "production": {
+        "fertiliser_liquid": 0.91
+      },
+      "consumption": {
+        "chemicals": 0.01625,
+        "water": 0.78
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Agrochemical Plant",
+      "workshopId": "3457708407",
+      "modPath": "agrochem"
+    }
+  ],
+  "vehicles": []
+}

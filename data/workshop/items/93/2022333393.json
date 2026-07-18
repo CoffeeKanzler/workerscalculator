@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2022333393",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:28:21+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2022333393/personal_BMW",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.12,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 195.0,
+      "powerKW": 85.0,
+      "emptyWeight": 1.36,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1988,
+      "to": 1996,
+      "countryId": 39003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2022333393",
+      "modPath": "personal_BMW"
+    }
+  ]
+}

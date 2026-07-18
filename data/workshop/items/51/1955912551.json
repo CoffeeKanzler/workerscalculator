@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1955912551",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:13:24+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1955912551/kraz_219",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.74,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 55.0,
+      "powerKW": 132.0,
+      "emptyWeight": 11.0,
+      "capacity": 12.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "from": 1959,
+      "to": 1966,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1955912551",
+      "modPath": "kraz_219"
+    }
+  ]
+}

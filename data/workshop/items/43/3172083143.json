@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3172083143",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:53:34+00:00",
+  "buildings": [
+    {
+      "id": "3172083143/pollena",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 400.0,
+      "professors": 0,
+      "production": {
+        "chemicals": 0.0135
+      },
+      "consumption": {
+        "meat": 0.0025,
+        "plants": 0.0845,
+        "water": 0.17,
+        "coal": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pollena-Uroda Cosmetics Plant",
+      "workshopId": "3172083143",
+      "modPath": "pollena"
+    }
+  ],
+  "vehicles": []
+}

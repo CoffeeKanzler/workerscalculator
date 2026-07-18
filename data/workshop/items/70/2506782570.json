@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2506782570",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:36:47+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2506782570/MiG-31",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 22.14,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 10000.0,
+      "consumption": 0.0,
+      "speed": 3000.0,
+      "powerKW": 6958.0,
+      "emptyWeight": 21.5,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1979,
+      "to": 1994,
+      "countryId": 39011,
+      "workshopId": "2506782570",
+      "modPath": "MiG-31"
+    }
+  ]
+}

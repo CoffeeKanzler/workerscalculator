@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2671708967",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:16:33+00:00",
+  "buildings": [
+    {
+      "id": "2671708967/dorm",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING",
+        "SUBTYPE_HOSTEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 228.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.7,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 228.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1930s Student Dormitory",
+      "workshopId": "2671708967",
+      "modPath": "dorm"
+    }
+  ],
+  "vehicles": []
+}

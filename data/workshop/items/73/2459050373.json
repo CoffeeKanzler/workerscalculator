@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2459050373",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:06:44+00:00",
+  "buildings": [
+    {
+      "id": "2459050373/cheburek",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 6.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 2.0,
+        "concrete": 4.0,
+        "workers": 100.0,
+        "steel": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cheburek cafe",
+      "workshopId": "2459050373",
+      "modPath": "cheburek"
+    }
+  ],
+  "vehicles": []
+}

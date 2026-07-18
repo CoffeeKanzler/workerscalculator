@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3262778784",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:01:58+00:00",
+  "buildings": [
+    {
+      "id": "3262778784/Bio_waste_recovery_plant",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {
+        "water": 80.0,
+        "fertiliser": 60.0,
+        "waste_toxic": 2.0
+      },
+      "consumption": {
+        "water": 0.01,
+        "eletric": 0.001,
+        "usagewater": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 10.0,
+        "RESOURCE_TRANSPORT_SEWAGE": 10.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bio waste recovery plant",
+      "workshopId": "3262778784",
+      "modPath": "Bio_waste_recovery_plant"
+    },
+    {
+      "id": "3262778784/Electric_substation",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electric substation",
+      "workshopId": "3262778784",
+      "modPath": "Electric_substation"
+    },
+    {
+      "id": "3262778784/Electric_substation_building",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electric substation building",
+      "workshopId": "3262778784",
+      "modPath": "Electric_substation_building"
+    },
+    {
+      "id": "3262778784/Garbage_container_1",
+      "nameId": null,
+      "types": [
+        "TYPE_TRASH_CONTAINER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Garbage container 1",
+      "workshopId": "3262778784",
+      "modPath": "Garbage_container_1"
+    },
+    {
+      "id": "3262778784/Garbage_container_2",
+      "nameId": null,
+      "types": [
+        "TYPE_TRASH_CONTAINER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Garbage container 2",
+      "workshopId": "3262778784",
+      "modPath": "Garbage_container_2"
+    },
+    {
+      "id": "3262778784/Heating_pumping_station",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heating pumping station",
+      "workshopId": "3262778784",
+      "modPath": "Heating_pumping_station"
+    },
+    {
+      "id": "3262778784/Heating_substation",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heating substation",
+      "workshopId": "3262778784",
+      "modPath": "Heating_substation"
+    },
+    {
+      "id": "3262778784/Heating_substation_building",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heating substation building",
+      "workshopId": "3262778784",
+      "modPath": "Heating_substation_building"
+    },
+    {
+      "id": "3262778784/Medium_heating_plant",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {
+        "heat": 2000.0
+      },
+      "consumption": {
+        "water": 1.0,
+        "eletric": 2.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 120.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium heating plant",
+      "workshopId": "3262778784",
+      "modPath": "Medium_heating_plant"
+    },
+    {
+      "id": "3262778784/Sawage_pumping_station",
+      "nameId": null,
+      "types": [
+        "TYPE_SEWAGE_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_SEWAGE": 40.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sawage pumping station",
+      "workshopId": "3262778784",
+      "modPath": "Sawage_pumping_station"
+    },
+    {
+      "id": "3262778784/Sawage_substation",
+      "nameId": null,
+      "types": [
+        "TYPE_SEWAGE_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_SEWAGE": 50.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sawage substation",
+      "workshopId": "3262778784",
+      "modPath": "Sawage_substation"
+    },
+    {
+      "id": "3262778784/Sawage_substation_building",
+      "nameId": null,
+      "types": [
+        "TYPE_SEWAGE_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_SEWAGE": 50.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sawage substation building",
+      "workshopId": "3262778784",
+      "modPath": "Sawage_substation_building"
+    },
+    {
+      "id": "3262778784/Voltage_swith_high",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Voltage swith high",
+      "workshopId": "3262778784",
+      "modPath": "Voltage_swith_high"
+    },
+    {
+      "id": "3262778784/Voltage_swith_medium",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Voltage swith medium",
+      "workshopId": "3262778784",
+      "modPath": "Voltage_swith_medium"
+    },
+    {
+      "id": "3262778784/Water_pumping_station",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 40.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Water pumping station",
+      "workshopId": "3262778784",
+      "modPath": "Water_pumping_station"
+    },
+    {
+      "id": "3262778784/Water_substation",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 50.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Water substation",
+      "workshopId": "3262778784",
+      "modPath": "Water_substation"
+    },
+    {
+      "id": "3262778784/Water_substation_building",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 50.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Water substation building",
+      "workshopId": "3262778784",
+      "modPath": "Water_substation_building"
+    }
+  ],
+  "vehicles": []
+}

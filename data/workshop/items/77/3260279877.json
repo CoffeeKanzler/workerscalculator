@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3260279877",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:35:03+00:00",
+  "buildings": [
+    {
+      "id": "3260279877/1",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium railway traction substation",
+      "workshopId": "3260279877",
+      "modPath": "1"
+    },
+    {
+      "id": "3260279877/2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_TRAM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium tram traction substation",
+      "workshopId": "3260279877",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

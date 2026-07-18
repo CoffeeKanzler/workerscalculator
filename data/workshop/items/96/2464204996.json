@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2464204996",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:51:05+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2464204996/v12",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 36.89,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costRUB": 10000.0,
+      "consumption": 0.0,
+      "speed": 260.0,
+      "powerKW": 19200.0,
+      "emptyWeight": 69.1,
+      "capacity": 40.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1970,
+      "to": 1998,
+      "countryId": 39011,
+      "workshopId": "2464204996",
+      "modPath": "v12"
+    },
+    {
+      "id": "2464204996/v12_p",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 36.89,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costRUB": 10000.0,
+      "consumption": 0.0,
+      "speed": 260.0,
+      "powerKW": 19200.0,
+      "emptyWeight": 69.1,
+      "capacity": 196.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1972,
+      "to": 1998,
+      "countryId": 39011,
+      "workshopId": "2464204996",
+      "modPath": "v12_p"
+    }
+  ]
+}

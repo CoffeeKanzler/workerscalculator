@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2538934217",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:18:18+00:00",
+  "buildings": [
+    {
+      "id": "2538934217/TechSchoolDT",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 35.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Students Dormitory",
+      "workshopId": "2538934217",
+      "modPath": "TechSchoolDT"
+    }
+  ],
+  "vehicles": []
+}

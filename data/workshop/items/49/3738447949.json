@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3738447949",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:03:28+00:00",
+  "buildings": [
+    {
+      "id": "3738447949/Cafedral",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 52.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.7,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Normkafd",
+      "workshopId": "3738447949",
+      "modPath": "Cafedral"
+    }
+  ],
+  "vehicles": []
+}

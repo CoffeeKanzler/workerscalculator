@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2871169564",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:23:06+00:00",
+  "buildings": [
+    {
+      "id": "2871169564/pko",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 65.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rotunda PKO",
+      "workshopId": "2871169564",
+      "modPath": "pko"
+    }
+  ],
+  "vehicles": []
+}

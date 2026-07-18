@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3407073714",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:46:31+00:00",
+  "buildings": [
+    {
+      "id": "3407073714/garages",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Iron Garages (5 places)",
+      "workshopId": "3407073714",
+      "modPath": "garages"
+    },
+    {
+      "id": "3407073714/rusty_garage",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Iron Garage (1 place)",
+      "workshopId": "3407073714",
+      "modPath": "rusty_garage"
+    }
+  ],
+  "vehicles": []
+}

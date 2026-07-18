@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3018693078",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:13:18+00:00",
+  "buildings": [
+    {
+      "id": "3018693078/fuel",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural fuel pump",
+      "workshopId": "3018693078",
+      "modPath": "fuel"
+    },
+    {
+      "id": "3018693078/pub",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Pub",
+      "workshopId": "3018693078",
+      "modPath": "pub"
+    },
+    {
+      "id": "3018693078/shop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Market",
+      "workshopId": "3018693078",
+      "modPath": "shop"
+    }
+  ],
+  "vehicles": []
+}

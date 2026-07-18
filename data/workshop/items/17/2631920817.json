@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2631920817",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:06:03+00:00",
+  "buildings": [
+    {
+      "id": "2631920817/barracks",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 448.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.4,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 448.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Wooden barracks",
+      "workshopId": "2631920817",
+      "modPath": "barracks"
+    },
+    {
+      "id": "2631920817/barrackssingle",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 112.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.4,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 112.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Wooden barracks single",
+      "workshopId": "2631920817",
+      "modPath": "barrackssingle"
+    },
+    {
+      "id": "2631920817/orphanage",
+      "nameId": null,
+      "types": [
+        "TYPE_ORPHANAGE"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Wooden orphanage barracks",
+      "workshopId": "2631920817",
+      "modPath": "orphanage"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2906464786",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:44:16+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2906464786/An-72",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 27.93,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 705.0,
+      "powerKW": 12750.0,
+      "emptyWeight": 19.05,
+      "capacity": 10.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1977,
+      "to": 9999,
+      "countryId": 39015,
+      "workshopId": "2906464786",
+      "modPath": "An-72"
+    }
+  ]
+}

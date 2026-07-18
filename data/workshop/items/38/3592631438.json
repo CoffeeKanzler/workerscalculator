@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3592631438",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:59:05+00:00",
+  "buildings": [
+    {
+      "id": "3592631438/bar_liquorstore",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 12.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Liquorstore and Bar",
+      "workshopId": "3592631438",
+      "modPath": "bar_liquorstore"
+    },
+    {
+      "id": "3592631438/food_stores",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Restaurant and Foodstore",
+      "workshopId": "3592631438",
+      "modPath": "food_stores"
+    },
+    {
+      "id": "3592631438/small_stores",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 18.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Roadside Stores",
+      "workshopId": "3592631438",
+      "modPath": "small_stores"
+    }
+  ],
+  "vehicles": []
+}

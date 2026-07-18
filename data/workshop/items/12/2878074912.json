@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2878074912",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:22:51+00:00",
+  "buildings": [
+    {
+      "id": "2878074912/lighttower1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 1.7,
+        "ecomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High-mast lighting 1-sides",
+      "workshopId": "2878074912",
+      "modPath": "lighttower1"
+    },
+    {
+      "id": "2878074912/lighttower2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 1.7,
+        "ecomponents": 0.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High-mast lighting 2-sides",
+      "workshopId": "2878074912",
+      "modPath": "lighttower2"
+    },
+    {
+      "id": "2878074912/lighttower4",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 1.7,
+        "ecomponents": 1.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High-mast lighting 4-sides",
+      "workshopId": "2878074912",
+      "modPath": "lighttower4"
+    },
+    {
+      "id": "2878074912/projector0",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lamp 0-angle",
+      "workshopId": "2878074912",
+      "modPath": "projector0"
+    },
+    {
+      "id": "2878074912/projector45",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lamp 45-angle",
+      "workshopId": "2878074912",
+      "modPath": "projector45"
+    }
+  ],
+  "vehicles": []
+}

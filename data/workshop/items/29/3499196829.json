@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3499196829",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:34:27+00:00",
+  "buildings": [
+    {
+      "id": "3499196829/down",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "fabric": 0.03
+      },
+      "consumption": {
+        "plants": 0.2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Down Farm",
+      "workshopId": "3499196829",
+      "modPath": "down"
+    }
+  ],
+  "vehicles": []
+}

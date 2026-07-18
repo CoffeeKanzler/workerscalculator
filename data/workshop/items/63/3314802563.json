@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3314802563",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:53:44+00:00",
+  "buildings": [
+    {
+      "id": "3314802563/DG300",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 18.0
+      },
+      "consumption": {
+        "fuel": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 1.6,
+        "workers": 18.0,
+        "steel": 1.2,
+        "ecomponents": 0.06,
+        "mcomponents": 1.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "DG300",
+      "workshopId": "3314802563",
+      "modPath": "DG300"
+    }
+  ],
+  "vehicles": []
+}

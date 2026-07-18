@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2372697542",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:23:13+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2372697542/lux_torpeda",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 25.4,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 50.0,
+      "costRUB": 25000.0,
+      "speed": 140.0,
+      "powerKW": 184.0,
+      "emptyWeight": 22.0,
+      "from": 1950,
+      "to": 1970,
+      "trainGroup": "motorvagon",
+      "electric": false,
+      "workshopId": "2372697542",
+      "modPath": "lux_torpeda"
+    }
+  ]
+}

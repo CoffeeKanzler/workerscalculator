@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2815540252",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:06:21+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2815540252/DF4",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 21.12,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4200.0,
+      "speed": 100.0,
+      "powerKW": 2400.0,
+      "emptyWeight": 138.0,
+      "from": 1969,
+      "to": 2008,
+      "countryId": 39042,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2815540252",
+      "modPath": "DF4"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2022032043",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:08:11+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2022032043/poloneztruk",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.02,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5451,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 125.0,
+      "powerKW": 51.0,
+      "emptyWeight": 1.5,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1992,
+      "to": 2003,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2022032043",
+      "modPath": "poloneztruk"
+    }
+  ]
+}

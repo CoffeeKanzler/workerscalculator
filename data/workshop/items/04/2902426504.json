@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2902426504",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:40:55+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2902426504/ARJ21",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 33.45,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 870.0,
+      "powerKW": 15174.0,
+      "emptyWeight": 23.3,
+      "capacity": 78.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2008,
+      "to": 9999,
+      "countryId": 39042,
+      "workshopId": "2902426504",
+      "modPath": "ARJ21"
+    }
+  ]
+}

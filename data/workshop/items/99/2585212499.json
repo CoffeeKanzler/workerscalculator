@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2585212499",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:52:56+00:00",
+  "buildings": [
+    {
+      "id": "2585212499/CzechoslovakRes1966",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.0,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "resident czechoslovakia",
+      "workshopId": "2585212499",
+      "modPath": "CzechoslovakRes1966"
+    }
+  ],
+  "vehicles": []
+}

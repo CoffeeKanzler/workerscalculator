@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1947829545",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:40:21+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1947829545/russian_loco_361",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.8,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5280,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 160.0,
+      "powerKW": 3600.0,
+      "emptyWeight": 86.0,
+      "from": 1990,
+      "to": 3000,
+      "countryId": 39000,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "1947829545",
+      "modPath": "russian_loco_361"
+    }
+  ]
+}

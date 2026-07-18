@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2033449506",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:52:55+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2033449506/covered_gz51pu",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.92,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 70.0,
+      "powerKW": 75.0,
+      "emptyWeight": 3.2,
+      "from": 1946,
+      "to": 1975,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2033449506",
+      "modPath": "covered_gz51pu"
+    }
+  ]
+}

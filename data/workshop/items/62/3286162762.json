@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3286162762",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:56:39+00:00",
+  "buildings": [
+    {
+      "id": "3286162762/Biofuel",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {
+        "fuel": 0.3
+      },
+      "consumption": {
+        "plants": 0.6,
+        "chemicals": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Biogas Plant",
+      "workshopId": "3286162762",
+      "modPath": "Biofuel"
+    }
+  ],
+  "vehicles": []
+}

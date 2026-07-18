@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2434669225",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:55:42+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2434669225/ZIL111",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.14,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 147.0,
+      "emptyWeight": 2.605,
+      "capacity": 7.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1958,
+      "to": 1962,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2434669225",
+      "modPath": "ZIL111"
+    }
+  ]
+}

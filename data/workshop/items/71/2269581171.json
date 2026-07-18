@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2269581171",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:35:40+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2269581171/ewa",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 36.68,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 4300.0,
+      "speed": 50.0,
+      "powerKW": 380.0,
+      "emptyWeight": 152.0,
+      "capacity": 120.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1961,
+      "to": 1981,
+      "countryId": 39006,
+      "electric": false,
+      "workshopId": "2269581171",
+      "modPath": "ewa"
+    }
+  ]
+}

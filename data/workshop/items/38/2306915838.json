@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2306915838",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:19:38+00:00",
+  "buildings": [
+    {
+      "id": "2306915838/getower",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 600.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 600.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Tower 1",
+      "workshopId": "2306915838",
+      "modPath": "getower"
+    }
+  ],
+  "vehicles": []
+}

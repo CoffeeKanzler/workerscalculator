@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3321360808",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:57:44+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3321360808/ltm_1250",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 75.0,
+      "powerKW": 450.0,
+      "emptyWeight": 72.0,
+      "from": 2006,
+      "to": 2015,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3321360808",
+      "modPath": "ltm_1250"
+    }
+  ]
+}

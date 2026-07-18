@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2867454164",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:25:03+00:00",
+  "buildings": [
+    {
+      "id": "2867454164/P1",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1 Car Parking",
+      "workshopId": "2867454164",
+      "modPath": "P1"
+    },
+    {
+      "id": "2867454164/P2",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "2 Car Parking",
+      "workshopId": "2867454164",
+      "modPath": "P2"
+    },
+    {
+      "id": "2867454164/P3",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 Car Parking",
+      "workshopId": "2867454164",
+      "modPath": "P3"
+    },
+    {
+      "id": "2867454164/P4",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 Car Parking Angled",
+      "workshopId": "2867454164",
+      "modPath": "P4"
+    }
+  ],
+  "vehicles": []
+}

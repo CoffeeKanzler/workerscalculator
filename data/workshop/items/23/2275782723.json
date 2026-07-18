@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2275782723",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:09:12+00:00",
+  "buildings": [
+    {
+      "id": "2275782723/futureflats",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 2.0,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 880.0,
+        "steel": 900.0,
+        "prefabpanels": 750.0,
+        "bricks": 450.0,
+        "workers": 4396.0,
+        "ecomponents": 180.0,
+        "mcomponents": 225.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fluture Flats",
+      "workshopId": "2275782723",
+      "modPath": "futureflats"
+    }
+  ],
+  "vehicles": []
+}

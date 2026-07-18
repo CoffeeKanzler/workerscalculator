@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2206909565",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:47:09+00:00",
+  "buildings": [
+    {
+      "id": "2206909565/pivnaya",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 2.0,
+        "concrete": 2.0,
+        "workers": 20.0,
+        "boards": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pivnaya",
+      "workshopId": "2206909565",
+      "modPath": "pivnaya"
+    },
+    {
+      "id": "2206909565/pivnaya2",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 2.0,
+        "concrete": 2.0,
+        "workers": 20.0,
+        "bricks": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pivnaya 2",
+      "workshopId": "2206909565",
+      "modPath": "pivnaya2"
+    }
+  ],
+  "vehicles": []
+}

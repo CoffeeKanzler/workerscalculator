@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2956478321",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:45:15+00:00",
+  "buildings": [
+    {
+      "id": "2956478321/turm_trier",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 55.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.7,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tower of Dreams and Longings Trier",
+      "workshopId": "2956478321",
+      "modPath": "turm_trier"
+    }
+  ],
+  "vehicles": []
+}

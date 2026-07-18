@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2271881490",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:19:23+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2271881490/EM3",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 20.33,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 7600.0,
+      "speed": 105.0,
+      "powerKW": 2000.0,
+      "emptyWeight": 127.0,
+      "from": 1950,
+      "to": 1981,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2271881490",
+      "modPath": "EM3"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2392537540",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:17:28+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2392537540/luxtorpeda",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 22.24,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 50000.0,
+      "speed": 100.0,
+      "powerKW": 118.0,
+      "emptyWeight": 19.0,
+      "capacity": 74.0,
+      "from": 1930,
+      "to": 1940,
+      "countryId": 39006,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "motorvagon",
+      "electric": false,
+      "workshopId": "2392537540",
+      "modPath": "luxtorpeda"
+    }
+  ]
+}

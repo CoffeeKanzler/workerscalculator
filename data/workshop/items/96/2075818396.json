@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2075818396",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:24:25+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2075818396/bus_ikr250",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.36,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5239,
+      "costRUB": 4400.0,
+      "consumption": 0.0,
+      "speed": 120.0,
+      "powerKW": 141.0,
+      "emptyWeight": 11.0,
+      "capacity": 60.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1968,
+      "to": 1996,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2075818396",
+      "modPath": "bus_ikr250"
+    }
+  ]
+}

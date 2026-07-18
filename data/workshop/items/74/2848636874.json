@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2848636874",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:51:35+00:00",
+  "buildings": [
+    {
+      "id": "2848636874/inota",
+      "nameId": 6339,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {
+        "eletric": 80.0
+      },
+      "consumption": {
+        "oil": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2848636874",
+      "modPath": "inota"
+    },
+    {
+      "id": "2848636874/oilpump",
+      "nameId": 6073,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2848636874",
+      "modPath": "oilpump"
+    }
+  ],
+  "vehicles": []
+}

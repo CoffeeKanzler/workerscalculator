@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3022149372",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:45:42+00:00",
+  "buildings": [
+    {
+      "id": "3022149372/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 45.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 45.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Corner Building",
+      "workshopId": "3022149372",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

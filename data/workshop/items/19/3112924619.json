@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3112924619",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:03:08+00:00",
+  "buildings": [
+    {
+      "id": "3112924619/Stacja",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nojewo Station",
+      "workshopId": "3112924619",
+      "modPath": "Stacja"
+    }
+  ],
+  "vehicles": []
+}

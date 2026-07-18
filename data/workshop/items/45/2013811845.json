@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2013811845",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:07:50+00:00",
+  "buildings": [
+    {
+      "id": "2013811845/dorphuis1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6.0
+      },
+      "constructionResources": {
+        "workers": 40.0,
+        "gravel": 1.0,
+        "bricks": 4.0,
+        "boards": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "dorphuis1",
+      "workshopId": "2013811845",
+      "modPath": "dorphuis1"
+    }
+  ],
+  "vehicles": []
+}

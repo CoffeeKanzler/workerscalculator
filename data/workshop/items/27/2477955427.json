@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2477955427",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:25:37+00:00",
+  "buildings": [
+    {
+      "id": "2477955427/Kindergarten",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 75.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gvarderia",
+      "workshopId": "2477955427",
+      "modPath": "Kindergarten"
+    }
+  ],
+  "vehicles": []
+}

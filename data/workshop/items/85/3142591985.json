@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3142591985",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:16:41+00:00",
+  "buildings": [
+    {
+      "id": "3142591985/1",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forest Playground",
+      "workshopId": "3142591985",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

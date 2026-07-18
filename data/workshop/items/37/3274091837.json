@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3274091837",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:46:47+00:00",
+  "buildings": [
+    {
+      "id": "3274091837/P-4412corner",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 89.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 89.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-44 12 corner",
+      "workshopId": "3274091837",
+      "modPath": "P-4412corner"
+    },
+    {
+      "id": "3274091837/P-4412floors",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 157.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 157.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-44 12 floors",
+      "workshopId": "3274091837",
+      "modPath": "P-4412floors"
+    },
+    {
+      "id": "3274091837/P-445corner",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 52.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 52.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-44 5 corner",
+      "workshopId": "3274091837",
+      "modPath": "P-445corner"
+    },
+    {
+      "id": "3274091837/P-445floors",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 98.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 98.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-44 5 floors",
+      "workshopId": "3274091837",
+      "modPath": "P-445floors"
+    },
+    {
+      "id": "3274091837/P-44corner",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 102.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 102.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-44 corner",
+      "workshopId": "3274091837",
+      "modPath": "P-44corner"
+    },
+    {
+      "id": "3274091837/P-44double",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 218.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 218.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-44 double",
+      "workshopId": "3274091837",
+      "modPath": "P-44double"
+    },
+    {
+      "id": "3274091837/P-44one",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 107.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 107.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-44 one",
+      "workshopId": "3274091837",
+      "modPath": "P-44one"
+    }
+  ],
+  "vehicles": []
+}

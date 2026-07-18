@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2950304655",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:23:22+00:00",
+  "buildings": [
+    {
+      "id": "2950304655/Border_post",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Border post. Пограничный столб",
+      "workshopId": "2950304655",
+      "modPath": "Border_post"
+    }
+  ],
+  "vehicles": []
+}

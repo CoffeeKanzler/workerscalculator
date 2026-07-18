@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2982129256",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:19:05+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2982129256/Borealis",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 144.34,
+      "type": "VEHICLETYPE_SHIP",
+      "costUSD": 1.0,
+      "from": 1977,
+      "to": 3000,
+      "countryId": 39018,
+      "speed": 33.0,
+      "powerKW": 13238.0,
+      "emptyWeight": 11037.0,
+      "capacity": 2805.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "electric": false,
+      "workshopId": "2982129256",
+      "modPath": "Borealis"
+    },
+    {
+      "id": "2982129256/Borealis2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 144.34,
+      "type": "VEHICLETYPE_SHIP",
+      "costUSD": 1.0,
+      "from": 1977,
+      "to": 3000,
+      "countryId": 39018,
+      "speed": 33.0,
+      "powerKW": 13238.0,
+      "emptyWeight": 11037.0,
+      "capacity": 500.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "electric": false,
+      "workshopId": "2982129256",
+      "modPath": "Borealis2"
+    }
+  ]
+}

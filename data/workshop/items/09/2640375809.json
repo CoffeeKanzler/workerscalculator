@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2640375809",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:51:02+00:00",
+  "buildings": [
+    {
+      "id": "2640375809/building",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 8.0,
+      "professors": 6.0,
+      "production": {
+        "heat": 12000.0,
+        "nuclearfuelburned": 0.001,
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "vehicles": 1.0
+      },
+      "consumptionPerSecond": {
+        "nuclearfuel": 8.3e-05
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 5.0,
+        "concrete": 50.0,
+        "gravel": 12.5,
+        "workers": 260.0,
+        "bricks": 30.0,
+        "steel": 24.0,
+        "ecomponents": 2.0,
+        "mcomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Nuclear Heating Plant",
+      "workshopId": "2640375809",
+      "modPath": "building"
+    }
+  ],
+  "vehicles": []
+}

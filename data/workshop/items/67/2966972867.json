@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2966972867",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:35:31+00:00",
+  "buildings": [
+    {
+      "id": "2966972867/CountryClub",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forest Green Golf & Country Club",
+      "workshopId": "2966972867",
+      "modPath": "CountryClub"
+    },
+    {
+      "id": "2966972867/CountrySign",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forest Green Golf & Country Club Sign",
+      "workshopId": "2966972867",
+      "modPath": "CountrySign"
+    },
+    {
+      "id": "2966972867/GolfMan",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Man playing golf",
+      "workshopId": "2966972867",
+      "modPath": "GolfMan"
+    }
+  ],
+  "vehicles": []
+}

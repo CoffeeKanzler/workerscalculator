@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2502503024",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:55:44+00:00",
+  "buildings": [
+    {
+      "id": "2502503024/BIG",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24.0,
+        "gravel": 0.3,
+        "steel": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "BIG",
+      "workshopId": "2502503024",
+      "modPath": "BIG"
+    }
+  ],
+  "vehicles": []
+}

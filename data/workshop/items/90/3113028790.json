@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3113028790",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:38:47+00:00",
+  "buildings": [
+    {
+      "id": "3113028790/eco3x6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36.0
+      },
+      "constructionResources": {
+        "ecomponents": 0.07,
+        "mcomponents": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 7 3x6",
+      "workshopId": "3113028790",
+      "modPath": "eco3x6"
+    },
+    {
+      "id": "3113028790/eco5x6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60.0
+      },
+      "constructionResources": {
+        "ecomponents": 0.1,
+        "mcomponents": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 7 5x6",
+      "workshopId": "3113028790",
+      "modPath": "eco5x6"
+    },
+    {
+      "id": "3113028790/ecot710f",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 320.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 320.0
+      },
+      "constructionResources": {
+        "ecomponents": 1.0,
+        "mcomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 7 U-Type 10",
+      "workshopId": "3113028790",
+      "modPath": "ecot710f"
+    },
+    {
+      "id": "3113028790/ecot720f",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 560.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 560.0
+      },
+      "constructionResources": {
+        "ecomponents": 2.0,
+        "mcomponents": 4.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 7 Atrium 20",
+      "workshopId": "3113028790",
+      "modPath": "ecot720f"
+    },
+    {
+      "id": "3113028790/ecot73f",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120.0
+      },
+      "constructionResources": {
+        "ecomponents": 0.4,
+        "mcomponents": 0.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 7 Atrium 3",
+      "workshopId": "3113028790",
+      "modPath": "ecot73f"
+    },
+    {
+      "id": "3113028790/ecot75f",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200.0
+      },
+      "constructionResources": {
+        "ecomponents": 0.5,
+        "mcomponents": 0.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 7 Atrium 5",
+      "workshopId": "3113028790",
+      "modPath": "ecot75f"
+    }
+  ],
+  "vehicles": []
+}

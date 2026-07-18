@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1904164967",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:01:10+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1904164967/personal_moskvich_412",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.71,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 145.0,
+      "powerKW": 55.0,
+      "emptyWeight": 1.04,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1967,
+      "to": 1999,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1904164967",
+      "modPath": "personal_moskvich_412"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2330267448",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:10:55+00:00",
+  "buildings": [
+    {
+      "id": "2330267448/Pec",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {
+        "cement": 0.6
+      },
+      "consumption": {
+        "coal": 0.4,
+        "gravel": 0.9
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 80.0,
+        "asphalt": 6.0,
+        "gravel": 8.0,
+        "bricks": 14.0,
+        "steel": 0.2,
+        "concrete": 8.0,
+        "boards": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Calcium furnance",
+      "workshopId": "2330267448",
+      "modPath": "Pec"
+    }
+  ],
+  "vehicles": []
+}

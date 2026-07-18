@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2166923643",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:54:09+00:00",
+  "buildings": [
+    {
+      "id": "2166923643/Vehicle_Production_Line_(Small)",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 200.0,
+      "professors": 50.0,
+      "production": {
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "steel": 1.0,
+        "plastics": 1.0,
+        "mcomponents": 1.0,
+        "ecomponents": 1.0,
+        "fabric": 1.0,
+        "eletronics": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 3.0
+      },
+      "nameStr": "Vehicle Production Line(Small)",
+      "workshopId": "2166923643",
+      "modPath": "Vehicle_Production_Line_(Small)"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2712662697",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:20:21+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2712662697/slx",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.11,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5394,
+      "costRUB": 1.0,
+      "speed": 190.0,
+      "powerKW": 230.0,
+      "emptyWeight": 0.9,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2050,
+      "to": 3000,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2712662697",
+      "modPath": "slx"
+    },
+    {
+      "id": "2712662697/sport",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.11,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5394,
+      "costRUB": 1.0,
+      "speed": 240.0,
+      "powerKW": 300.0,
+      "emptyWeight": 0.95,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2050,
+      "to": 3000,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2712662697",
+      "modPath": "sport"
+    }
+  ]
+}

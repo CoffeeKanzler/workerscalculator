@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2479689258",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:53:53+00:00",
+  "buildings": [
+    {
+      "id": "2479689258/Katyusha",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 35.0,
+        "concrete": 2.3,
+        "gravel": 0.43
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "monument Katyusha",
+      "workshopId": "2479689258",
+      "modPath": "Katyusha"
+    },
+    {
+      "id": "2479689258/ZIS5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 32.0,
+        "concrete": 2.3,
+        "gravel": 0.43
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "monument ZIS-5",
+      "workshopId": "2479689258",
+      "modPath": "ZIS5"
+    }
+  ],
+  "vehicles": []
+}

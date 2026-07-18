@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2499469161",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:37:09+00:00",
+  "buildings": [
+    {
+      "id": "2499469161/Lenin",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24.0,
+        "gravel": 0.3,
+        "steel": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Lenin",
+      "workshopId": "2499469161",
+      "modPath": "Lenin"
+    }
+  ],
+  "vehicles": []
+}

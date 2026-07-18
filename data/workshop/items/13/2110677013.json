@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2110677013",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:11:33+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2110677013/Ikarus180",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.65,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 65.0,
+      "powerKW": 160.0,
+      "emptyWeight": 12.0,
+      "capacity": 140.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1966,
+      "to": 1973,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2110677013",
+      "modPath": "Ikarus180"
+    },
+    {
+      "id": "2110677013/Ikarus556",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.34,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5239,
+      "costRUB": 4400.0,
+      "consumption": 0.0,
+      "speed": 80.0,
+      "powerKW": 141.0,
+      "emptyWeight": 10.0,
+      "capacity": 100.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1962,
+      "to": 1973,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2110677013",
+      "modPath": "Ikarus556"
+    }
+  ]
+}

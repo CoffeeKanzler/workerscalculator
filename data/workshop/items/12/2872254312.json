@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2872254312",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:28:01+00:00",
+  "buildings": [
+    {
+      "id": "2872254312/Gothic",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 12.0,
+      "professors": 12.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gothic Cathedral",
+      "workshopId": "2872254312",
+      "modPath": "Gothic"
+    }
+  ],
+  "vehicles": []
+}

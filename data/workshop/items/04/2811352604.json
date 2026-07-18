@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2811352604",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:27:41+00:00",
+  "buildings": [
+    {
+      "id": "2811352604/Rail1",
+      "nameId": 1601,
+      "types": [
+        "TYPE_RAILDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2811352604",
+      "modPath": "Rail1"
+    }
+  ],
+  "vehicles": []
+}

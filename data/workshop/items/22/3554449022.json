@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3554449022",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:09:39+00:00",
+  "buildings": [
+    {
+      "id": "3554449022/watchtower",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 12.0,
+      "professors": 0.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 190.0,
+        "gravel": 60.0,
+        "workers": 1600.0,
+        "steel": 36.0,
+        "boards": 8.0,
+        "ecomponents": 8.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "3554449022",
+      "modPath": "watchtower"
+    }
+  ],
+  "vehicles": []
+}

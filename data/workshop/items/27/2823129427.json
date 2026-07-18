@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2823129427",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:56:20+00:00",
+  "buildings": [
+    {
+      "id": "2823129427/Plakat12x6_5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60.0,
+        "wood": 4.0,
+        "plastics": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Plakat propagandowy święta 10x5m",
+      "workshopId": "2823129427",
+      "modPath": "Plakat12x6_5"
+    }
+  ],
+  "vehicles": []
+}

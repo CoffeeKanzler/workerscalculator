@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3129185295",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:26:21+00:00",
+  "buildings": [
+    {
+      "id": "3129185295/rf",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 465.0,
+      "professors": 0,
+      "production": {
+        "fuel": 0.185,
+        "bitumen": 0.095
+      },
+      "consumption": {
+        "oil": 0.525,
+        "coal": 0.055
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.16
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oil Refinery 30s",
+      "workshopId": "3129185295",
+      "modPath": "rf"
+    }
+  ],
+  "vehicles": []
+}

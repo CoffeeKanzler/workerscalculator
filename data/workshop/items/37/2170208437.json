@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2170208437",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:44:59+00:00",
+  "buildings": [
+    {
+      "id": "2170208437/DPRK_Stadium",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 1500.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rungrado Stadium",
+      "workshopId": "2170208437",
+      "modPath": "DPRK_Stadium"
+    }
+  ],
+  "vehicles": []
+}

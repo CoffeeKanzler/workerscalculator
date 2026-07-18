@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2739166202",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:27:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2739166202/vw_t1_samba",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.15,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costUSD": 4900.0,
+      "capacity": 12.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 80.0,
+      "powerKW": 30.0,
+      "emptyWeight": 1.0,
+      "from": 1951,
+      "to": 1968,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2739166202",
+      "modPath": "vw_t1_samba"
+    },
+    {
+      "id": "2739166202/vw_t1_samba_bus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.15,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costUSD": 4900.0,
+      "capacity": 12.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 80.0,
+      "powerKW": 30.0,
+      "emptyWeight": 1.0,
+      "from": 1951,
+      "to": 1968,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2739166202",
+      "modPath": "vw_t1_samba_bus"
+    }
+  ]
+}

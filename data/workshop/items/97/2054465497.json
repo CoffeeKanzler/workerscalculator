@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2054465497",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:57:34+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2054465497/VL-60k",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 20.23,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 2054465497,
+      "costRUB": 4500.0,
+      "speed": 100.0,
+      "powerKW": 3600.0,
+      "emptyWeight": 138.0,
+      "from": 1957,
+      "to": 1971,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2054465497",
+      "modPath": "VL-60k"
+    }
+  ]
+}

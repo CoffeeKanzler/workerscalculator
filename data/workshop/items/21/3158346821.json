@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3158346821",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:41:51+00:00",
+  "buildings": [
+    {
+      "id": "3158346821/gorkom",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "gorkom",
+      "workshopId": "3158346821",
+      "modPath": "gorkom"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3374962662",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:55:04+00:00",
+  "buildings": [
+    {
+      "id": "3374962662/HG166",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "heat": 500.0
+      },
+      "consumption": {
+        "fuel": 0.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 1.6,
+        "workers": 18.0,
+        "steel": 1.2,
+        "ecomponents": 0.06,
+        "mcomponents": 1.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "HG166",
+      "workshopId": "3374962662",
+      "modPath": "HG166"
+    }
+  ],
+  "vehicles": []
+}

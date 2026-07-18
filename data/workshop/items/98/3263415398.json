@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3263415398",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:54:00+00:00",
+  "buildings": [
+    {
+      "id": "3263415398/SQS308A",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 90.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 90.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "SQS308A",
+      "workshopId": "3263415398",
+      "modPath": "SQS308A"
+    },
+    {
+      "id": "3263415398/SQS308B",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 180.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 180.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "SQS308B",
+      "workshopId": "3263415398",
+      "modPath": "SQS308B"
+    }
+  ],
+  "vehicles": []
+}

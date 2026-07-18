@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2590912966",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:36:25+00:00",
+  "buildings": [
+    {
+      "id": "2590912966/museum",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 18.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.2,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Museum of manuscripts",
+      "workshopId": "2590912966",
+      "modPath": "museum"
+    }
+  ],
+  "vehicles": []
+}

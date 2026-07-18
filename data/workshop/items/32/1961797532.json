@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1961797532",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:16:46+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1961797532/Zil135",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.77,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5278908908903,
+      "costRUB": 10530.0,
+      "capacity": 15.5,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "speed": 75.0,
+      "powerKW": 360.0,
+      "emptyWeight": 12.5,
+      "from": 1963,
+      "to": 1995,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1961797532",
+      "modPath": "Zil135"
+    }
+  ]
+}

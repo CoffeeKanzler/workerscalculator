@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2716320428",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:15:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2716320428/W13Police",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.17,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 140.0,
+      "powerKW": 43.0,
+      "emptyWeight": 0.9,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1988,
+      "to": 1991,
+      "countryId": 39004,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2716320428",
+      "modPath": "W13Police"
+    },
+    {
+      "id": "2716320428/W353Police",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.18,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 120.0,
+      "powerKW": 37.0,
+      "emptyWeight": 0.9,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1967,
+      "to": 1988,
+      "countryId": 39004,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2716320428",
+      "modPath": "W353Police"
+    }
+  ]
+}

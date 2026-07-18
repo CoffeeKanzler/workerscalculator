@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1853369768",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:24:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1853369768/S_1000",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.26,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 4300.0,
+      "powerKW": 160.0,
+      "emptyWeight": 15.0,
+      "trainGroup": "tram",
+      "speed": 65.0,
+      "capacity": 78.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1922,
+      "to": 1965,
+      "countryId": 39018,
+      "electric": true,
+      "workshopId": "1853369768",
+      "modPath": "S_1000"
+    }
+  ]
+}

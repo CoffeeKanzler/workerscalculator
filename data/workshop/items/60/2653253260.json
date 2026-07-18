@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2653253260",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:26:00+00:00",
+  "buildings": [
+    {
+      "id": "2653253260/building",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {
+        "eletric": 720.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 75.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Free Power Plant",
+      "workshopId": "2653253260",
+      "modPath": "building"
+    }
+  ],
+  "vehicles": []
+}

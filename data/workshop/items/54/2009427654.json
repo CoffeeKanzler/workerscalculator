@@ -1,0 +1,440 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2009427654",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:05:30+00:00",
+  "buildings": [
+    {
+      "id": "2009427654/Watertower",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 650.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Watertower",
+      "workshopId": "2009427654",
+      "modPath": "Watertower"
+    },
+    {
+      "id": "2009427654/Watertower_1",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Водонапор",
+      "workshopId": "2009427654",
+      "modPath": "Watertower_1"
+    },
+    {
+      "id": "2009427654/Watertower_2",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Водонапор",
+      "workshopId": "2009427654",
+      "modPath": "Watertower_2"
+    },
+    {
+      "id": "2009427654/Watertower_3",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 700.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Зулус",
+      "workshopId": "2009427654",
+      "modPath": "Watertower_3"
+    },
+    {
+      "id": "2009427654/XOJAT",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ХОЯТ",
+      "workshopId": "2009427654",
+      "modPath": "XOJAT"
+    },
+    {
+      "id": "2009427654/XZHTO",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 750.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Хранилище ЖТО",
+      "workshopId": "2009427654",
+      "modPath": "XZHTO"
+    },
+    {
+      "id": "2009427654/oil_storage",
+      "nameId": 6052,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 3000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2009427654",
+      "modPath": "oil_storage"
+    },
+    {
+      "id": "2009427654/oil_storage_2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 3200.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "oil storage rail",
+      "workshopId": "2009427654",
+      "modPath": "oil_storage_2"
+    },
+    {
+      "id": "2009427654/warehouse_1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 780.0,
+        "RESOURCE_TRANSPORT_OPEN": 780.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Склад",
+      "workshopId": "2009427654",
+      "modPath": "warehouse_1"
+    },
+    {
+      "id": "2009427654/warehouse_2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 780.0,
+        "RESOURCE_TRANSPORT_OPEN": 780.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Склад ГС",
+      "workshopId": "2009427654",
+      "modPath": "warehouse_2"
+    },
+    {
+      "id": "2009427654/warehouse_2_1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 780.0,
+        "RESOURCE_TRANSPORT_OPEN": 780.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Склад ГС Ж\\Д",
+      "workshopId": "2009427654",
+      "modPath": "warehouse_2_1"
+    },
+    {
+      "id": "2009427654/warehouse_2_2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 780.0,
+        "RESOURCE_TRANSPORT_OPEN": 780.0,
+        "RESOURCE_TRANSPORT_COOLER": 180.0,
+        "RESOURCE_TRANSPORT_CEMENT": 530.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Склад с ЖД",
+      "workshopId": "2009427654",
+      "modPath": "warehouse_2_2"
+    },
+    {
+      "id": "2009427654/warehouse_3",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Зернохранилище",
+      "workshopId": "2009427654",
+      "modPath": "warehouse_3"
+    },
+    {
+      "id": "2009427654/warehouse_3.1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Элеватор",
+      "workshopId": "2009427654",
+      "modPath": "warehouse_3.1"
+    },
+    {
+      "id": "2009427654/warehouse_cooler",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 550.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Рефрижератор",
+      "workshopId": "2009427654",
+      "modPath": "warehouse_cooler"
+    },
+    {
+      "id": "2009427654/warehouse_cooler_2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 550.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Рефрижератор-2",
+      "workshopId": "2009427654",
+      "modPath": "warehouse_cooler_2"
+    },
+    {
+      "id": "2009427654/warehouse_cooler_3",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 550.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Реф-ЖД",
+      "workshopId": "2009427654",
+      "modPath": "warehouse_cooler_3"
+    },
+    {
+      "id": "2009427654/wareopenempty",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 330.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "открытая площадка",
+      "workshopId": "2009427654",
+      "modPath": "wareopenempty"
+    }
+  ],
+  "vehicles": []
+}

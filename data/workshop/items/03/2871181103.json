@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2871181103",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:42:17+00:00",
+  "buildings": [
+    {
+      "id": "2871181103/l",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Šumarice Spomenik L",
+      "workshopId": "2871181103",
+      "modPath": "l"
+    },
+    {
+      "id": "2871181103/normal",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Šumarice Spomenik",
+      "workshopId": "2871181103",
+      "modPath": "normal"
+    },
+    {
+      "id": "2871181103/xl",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Šumarice Spomenik XL",
+      "workshopId": "2871181103",
+      "modPath": "xl"
+    }
+  ],
+  "vehicles": []
+}

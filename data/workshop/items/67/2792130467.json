@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2792130467",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:35:17+00:00",
+  "buildings": [
+    {
+      "id": "2792130467/HOUSE",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 120.0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House_of_the_Communist_Party",
+      "workshopId": "2792130467",
+      "modPath": "HOUSE"
+    }
+  ],
+  "vehicles": []
+}

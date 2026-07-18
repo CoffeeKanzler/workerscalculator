@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1992034666",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:36:28+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1992034666/slag",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.5,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 3900.0,
+      "consumption": 0.0,
+      "speed": 30.0,
+      "capacity": 16.0,
+      "emptyWeight": 17.0,
+      "from": 1930,
+      "to": 1984,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "trainGroup": "vagon",
+      "countryId": 39011,
+      "workshopId": "1992034666",
+      "modPath": "slag"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2353044671",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:50:31+00:00",
+  "buildings": [
+    {
+      "id": "2353044671/test",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 729.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 729.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "II-49 (8 storey)",
+      "workshopId": "2353044671",
+      "modPath": "test"
+    },
+    {
+      "id": "2353044671/test1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 729.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 729.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "II-49 (9 storey)",
+      "workshopId": "2353044671",
+      "modPath": "test1"
+    }
+  ],
+  "vehicles": []
+}

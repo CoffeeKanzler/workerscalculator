@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2913255288",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:08:30+00:00",
+  "buildings": [
+    {
+      "id": "2913255288/station1_1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 770.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 770.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "metro Vorontsovskaya (with an upper transition)/Ст. метро Воронцовская (с верхним переходом) (12 м)",
+      "workshopId": "2913255288",
+      "modPath": "station1_1"
+    },
+    {
+      "id": "2913255288/station1_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 770.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 770.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "metro Vorontsovskaya (with an upper transition)/Ст. метро Воронцовская (с верхним переходом) (24 м)",
+      "workshopId": "2913255288",
+      "modPath": "station1_2"
+    },
+    {
+      "id": "2913255288/station1_3",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 770.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 770.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "metro Vorontsovskaya (with an upper transition)/Ст. метро Воронцовская (с верхним переходом) (36 м)",
+      "workshopId": "2913255288",
+      "modPath": "station1_3"
+    },
+    {
+      "id": "2913255288/station2_1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 770.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 770.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "metro Vorontsovskaya (with bottom transition)/Ст. метро Воронцовская (с нижним переходом) (12 м)",
+      "workshopId": "2913255288",
+      "modPath": "station2_1"
+    },
+    {
+      "id": "2913255288/station2_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 770.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 770.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "metro Vorontsovskaya (with bottom transition)/Ст. метро Воронцовская (с нижним переходом) (24 м)",
+      "workshopId": "2913255288",
+      "modPath": "station2_2"
+    },
+    {
+      "id": "2913255288/station2_3",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 770.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 770.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "metro Vorontsovskaya (with bottom transition)/Ст. метро Воронцовская (с нижним переходом) (36 м)",
+      "workshopId": "2913255288",
+      "modPath": "station2_3"
+    },
+    {
+      "id": "2913255288/station_1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 900.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 900.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "metro Vorontsovskaya/Ст. метро Воронцовская (12 м)",
+      "workshopId": "2913255288",
+      "modPath": "station_1"
+    },
+    {
+      "id": "2913255288/station_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 900.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 900.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "metro Vorontsovskaya/Ст. метро Воронцовская (24 м)",
+      "workshopId": "2913255288",
+      "modPath": "station_2"
+    },
+    {
+      "id": "2913255288/station_3",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 900.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 900.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "metro Vorontsovskaya/Ст. метро Воронцовская (36 м)",
+      "workshopId": "2913255288",
+      "modPath": "station_3"
+    }
+  ],
+  "vehicles": []
+}

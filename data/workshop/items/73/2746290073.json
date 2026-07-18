@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2746290073",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:30:57+00:00",
+  "buildings": [
+    {
+      "id": "2746290073/LongL",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 325.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 325.0
+      },
+      "constructionResources": {
+        "mcomponents": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1950s Moscow 10-storey residential Long L",
+      "workshopId": "2746290073",
+      "modPath": "LongL"
+    },
+    {
+      "id": "2746290073/Main",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150.0
+      },
+      "constructionResources": {
+        "mcomponents": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1950s Moscow 10-storey residential with offices",
+      "workshopId": "2746290073",
+      "modPath": "Main"
+    },
+    {
+      "id": "2746290073/ShortL",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 220.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 220.0
+      },
+      "constructionResources": {
+        "mcomponents": 12.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1950s Moscow 10-storey residential Short L",
+      "workshopId": "2746290073",
+      "modPath": "ShortL"
+    },
+    {
+      "id": "2746290073/Straight",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 185.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 185.0
+      },
+      "constructionResources": {
+        "mcomponents": 12.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1950s Moscow 10-storey residential Straight",
+      "workshopId": "2746290073",
+      "modPath": "Straight"
+    },
+    {
+      "id": "2746290073/offices",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 75.0,
+      "professors": 25.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1950s Moscow Residential-Office Uni",
+      "workshopId": "2746290073",
+      "modPath": "offices"
+    },
+    {
+      "id": "2746290073/offices2",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 75.0,
+      "professors": 25.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1950s Moscow Residential-Office City Hall",
+      "workshopId": "2746290073",
+      "modPath": "offices2"
+    }
+  ],
+  "vehicles": []
+}

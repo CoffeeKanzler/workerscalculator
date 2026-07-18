@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2159956304",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:02:45+00:00",
+  "buildings": [
+    {
+      "id": "2159956304/nuclear_heating_plant",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 120.0,
+      "professors": 80.0,
+      "production": {
+        "heat": 850.0,
+        "nuclearfuelburned": 0.00025,
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "nuclearfuel": 0.0005,
+        "vehicles": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Double Unit Nuclear Heating Plant",
+      "workshopId": "2159956304",
+      "modPath": "nuclear_heating_plant"
+    }
+  ],
+  "vehicles": []
+}

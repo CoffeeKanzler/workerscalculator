@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3242069999",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:04:07+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3242069999/SM426D",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.41,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 588.0,
+      "emptyWeight": 72.0,
+      "from": 1964,
+      "to": 1972,
+      "countryId": 39006,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "3242069999",
+      "modPath": "SM426D"
+    },
+    {
+      "id": "3242069999/SM426Da",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.41,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 588.0,
+      "emptyWeight": 69.0,
+      "from": 1972,
+      "to": 1992,
+      "countryId": 39006,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "3242069999",
+      "modPath": "SM426Da"
+    }
+  ]
+}

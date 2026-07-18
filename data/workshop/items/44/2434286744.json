@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2434286744",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:08:53+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2434286744/shchel",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 22.83,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 2650.0,
+      "speed": 75.0,
+      "emptyWeight": 172.0,
+      "powerKW": 588.0,
+      "from": 1924,
+      "to": 1961,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2434286744",
+      "modPath": "shchel"
+    }
+  ]
+}

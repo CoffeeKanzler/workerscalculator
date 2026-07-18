@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3344740057",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:00:14+00:00",
+  "buildings": [
+    {
+      "id": "3344740057/MecklbTrafoSubstation",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mecklenb. Trafo Substation",
+      "workshopId": "3344740057",
+      "modPath": "MecklbTrafoSubstation"
+    },
+    {
+      "id": "3344740057/MecklbTrafoSwitch",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mecklenb. Trafo Switch",
+      "workshopId": "3344740057",
+      "modPath": "MecklbTrafoSwitch"
+    }
+  ],
+  "vehicles": []
+}

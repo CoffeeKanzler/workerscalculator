@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2925244241",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:25:31+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2925244241/vagon_tank_cem",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.08,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "emptyWeight": 25.0,
+      "capacity": 58.0,
+      "from": 1961,
+      "to": 1976,
+      "countryId": 39011,
+      "transportType": "RESOURCE_TRANSPORT_CEMENT",
+      "trainGroup": "vagon",
+      "workshopId": "2925244241",
+      "modPath": "vagon_tank_cem"
+    }
+  ]
+}

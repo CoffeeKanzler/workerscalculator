@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2449434594",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:49:33+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2449434594/firetruck_aa_12",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.05,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5236,
+      "costRUB": 9300.0,
+      "speed": 95.0,
+      "powerKW": 360.0,
+      "emptyWeight": 14.0,
+      "capacity": 11.3,
+      "from": 2004,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2449434594",
+      "modPath": "firetruck_aa_12"
+    }
+  ]
+}

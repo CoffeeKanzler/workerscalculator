@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3201809264",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:08:05+00:00",
+  "buildings": [
+    {
+      "id": "3201809264/Kineshma",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 23.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Дом культуры",
+      "workshopId": "3201809264",
+      "modPath": "Kineshma"
+    }
+  ],
+  "vehicles": []
+}

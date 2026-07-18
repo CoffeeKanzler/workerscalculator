@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2572176641",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:40:01+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2572176641/Tri",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.89,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 2000.0,
+      "consumption": 0.0,
+      "speed": 241.0,
+      "powerKW": 660.0,
+      "emptyWeight": 2.9,
+      "capacity": 11.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1926,
+      "to": 1933,
+      "workshopId": "2572176641",
+      "modPath": "Tri"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2097648935",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:43:50+00:00",
+  "buildings": [
+    {
+      "id": "2097648935/fusionplant",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 100.0,
+      "professors": 50.0,
+      "production": {
+        "eletric": 117.0,
+        "nuclearfuelburned": 5e-16
+      },
+      "consumption": {
+        "nuclearfuel": 0.0001,
+        "chemicals": 0.05
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 100.0,
+        "mcomponents": 10.0,
+        "ecomponents": 6.0,
+        "workers": 600.0,
+        "steel": 195.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Experimental Nuclear Fusion Plant",
+      "workshopId": "2097648935",
+      "modPath": "fusionplant"
+    }
+  ],
+  "vehicles": []
+}

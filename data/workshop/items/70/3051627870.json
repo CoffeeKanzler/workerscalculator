@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3051627870",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:22:41+00:00",
+  "buildings": [
+    {
+      "id": "3051627870/NowySwiat16",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 12.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 12.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nowy Świat 15",
+      "workshopId": "3051627870",
+      "modPath": "NowySwiat16"
+    },
+    {
+      "id": "3051627870/NowySwiat16Addition",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nowy Świat 15 Addition",
+      "workshopId": "3051627870",
+      "modPath": "NowySwiat16Addition"
+    },
+    {
+      "id": "3051627870/NowySwiat16Neon",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nowy Świat 15 Neon",
+      "workshopId": "3051627870",
+      "modPath": "NowySwiat16Neon"
+    }
+  ],
+  "vehicles": []
+}

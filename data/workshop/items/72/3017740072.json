@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3017740072",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:28:45+00:00",
+  "buildings": [
+    {
+      "id": "3017740072/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1800.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1800.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kudrinskaya Square Building",
+      "workshopId": "3017740072",
+      "modPath": "HOUSE1"
+    }
+  ],
+  "vehicles": []
+}

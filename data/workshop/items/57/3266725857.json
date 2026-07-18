@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3266725857",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:59:07+00:00",
+  "buildings": [
+    {
+      "id": "3266725857/nehu",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste": 6.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "BIG-waste-incinerator",
+      "workshopId": "3266725857",
+      "modPath": "nehu"
+    }
+  ],
+  "vehicles": []
+}

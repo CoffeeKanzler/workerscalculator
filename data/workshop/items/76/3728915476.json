@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3728915476",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:22:18+00:00",
+  "buildings": [
+    {
+      "id": "3728915476/PoverWood",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {
+        "eletric": 10.0
+      },
+      "consumption": {
+        "wood": 0.3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PoverWood",
+      "workshopId": "3728915476",
+      "modPath": "PoverWood"
+    }
+  ],
+  "vehicles": []
+}

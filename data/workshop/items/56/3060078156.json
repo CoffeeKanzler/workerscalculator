@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3060078156",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:33:25+00:00",
+  "buildings": [
+    {
+      "id": "3060078156/wasteharborsmall",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Waste Harbor",
+      "workshopId": "3060078156",
+      "modPath": "wasteharborsmall"
+    }
+  ],
+  "vehicles": []
+}

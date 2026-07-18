@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2842317004",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:01:40+00:00",
+  "buildings": [
+    {
+      "id": "2842317004/t1p1",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pump_type1_4m",
+      "workshopId": "2842317004",
+      "modPath": "t1p1"
+    },
+    {
+      "id": "2842317004/t1p1f",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pump_type1_4m_v2",
+      "workshopId": "2842317004",
+      "modPath": "t1p1f"
+    },
+    {
+      "id": "2842317004/t1p2",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pump_type1_8m",
+      "workshopId": "2842317004",
+      "modPath": "t1p2"
+    },
+    {
+      "id": "2842317004/t1p2f",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pump_type1_8m_v2",
+      "workshopId": "2842317004",
+      "modPath": "t1p2f"
+    },
+    {
+      "id": "2842317004/t1s",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_WATER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 20.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "water_well_type1_2m",
+      "workshopId": "2842317004",
+      "modPath": "t1s"
+    },
+    {
+      "id": "2842317004/t1w",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 20.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 5.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "well_type1_10m",
+      "workshopId": "2842317004",
+      "modPath": "t1w"
+    },
+    {
+      "id": "2842317004/t1wt",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 20.0
+      },
+      "consumption": {
+        "usagewater": 20.0,
+        "coal": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "water_clean_type1_6m",
+      "workshopId": "2842317004",
+      "modPath": "t1wt"
+    },
+    {
+      "id": "2842317004/t1wtf",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 20.0
+      },
+      "consumption": {
+        "usagewater": 20.0,
+        "coal": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "water_clean_type1_6m_v2",
+      "workshopId": "2842317004",
+      "modPath": "t1wtf"
+    },
+    {
+      "id": "2842317004/t2p1",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pump_type2_4m",
+      "workshopId": "2842317004",
+      "modPath": "t2p1"
+    },
+    {
+      "id": "2842317004/t2p1f",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pump_type2_4m_v2",
+      "workshopId": "2842317004",
+      "modPath": "t2p1f"
+    },
+    {
+      "id": "2842317004/t2p2",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pump_type2_8m",
+      "workshopId": "2842317004",
+      "modPath": "t2p2"
+    },
+    {
+      "id": "2842317004/t2p2f",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pump_type2_8m_v2",
+      "workshopId": "2842317004",
+      "modPath": "t2p2f"
+    },
+    {
+      "id": "2842317004/t2s",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_WATER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 20.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "water_well_type2_2m",
+      "workshopId": "2842317004",
+      "modPath": "t2s"
+    },
+    {
+      "id": "2842317004/t2w",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 20.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 5.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "well_type2_10m",
+      "workshopId": "2842317004",
+      "modPath": "t2w"
+    },
+    {
+      "id": "2842317004/t2wt",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 20.0
+      },
+      "consumption": {
+        "usagewater": 20.0,
+        "coal": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "water_clean_type2_6m",
+      "workshopId": "2842317004",
+      "modPath": "t2wt"
+    },
+    {
+      "id": "2842317004/t2wtf",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 20.0
+      },
+      "consumption": {
+        "usagewater": 20.0,
+        "coal": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "water_clean_type2_6m_v2",
+      "workshopId": "2842317004",
+      "modPath": "t2wtf"
+    },
+    {
+      "id": "2842317004/t3p1",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pump_type3_4m",
+      "workshopId": "2842317004",
+      "modPath": "t3p1"
+    },
+    {
+      "id": "2842317004/t3p1f",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pump_type3_4m_v2",
+      "workshopId": "2842317004",
+      "modPath": "t3p1f"
+    },
+    {
+      "id": "2842317004/t3p2",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pump_type3_8m",
+      "workshopId": "2842317004",
+      "modPath": "t3p2"
+    },
+    {
+      "id": "2842317004/t3p2f",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pump_type3_8m_v2",
+      "workshopId": "2842317004",
+      "modPath": "t3p2f"
+    },
+    {
+      "id": "2842317004/t3s",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_WATER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 20.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "water_well_type3_2m",
+      "workshopId": "2842317004",
+      "modPath": "t3s"
+    },
+    {
+      "id": "2842317004/t3w",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 20.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 5.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "well_type3_10m",
+      "workshopId": "2842317004",
+      "modPath": "t3w"
+    },
+    {
+      "id": "2842317004/t3wt",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 20.0
+      },
+      "consumption": {
+        "usagewater": 20.0,
+        "coal": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "water_clean_type3_6m",
+      "workshopId": "2842317004",
+      "modPath": "t3wt"
+    },
+    {
+      "id": "2842317004/t3wtf",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 20.0
+      },
+      "consumption": {
+        "usagewater": 20.0,
+        "coal": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "water_clean_type3_6m_v2",
+      "workshopId": "2842317004",
+      "modPath": "t3wtf"
+    },
+    {
+      "id": "2842317004/well",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_WATER_SURFACE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 4.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "river_platform",
+      "workshopId": "2842317004",
+      "modPath": "well"
+    }
+  ],
+  "vehicles": []
+}

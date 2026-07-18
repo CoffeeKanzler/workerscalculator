@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2879623922",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:10:21+00:00",
+  "buildings": [
+    {
+      "id": "2879623922/economato",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Company Store",
+      "workshopId": "2879623922",
+      "modPath": "economato"
+    }
+  ],
+  "vehicles": []
+}

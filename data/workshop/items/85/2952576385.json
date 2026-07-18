@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2952576385",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:04:34+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2952576385/Tu-204-100",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 46.08,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 900.0,
+      "powerKW": 31400.0,
+      "emptyWeight": 60.5,
+      "capacity": 172.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1989,
+      "to": 9999,
+      "countryId": 39011,
+      "workshopId": "2952576385",
+      "modPath": "Tu-204-100"
+    },
+    {
+      "id": "2952576385/Tu-204-100S",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 46.08,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 900.0,
+      "powerKW": 31400.0,
+      "emptyWeight": 59.0,
+      "capacity": 48.1,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1995,
+      "to": 9999,
+      "countryId": 39011,
+      "workshopId": "2952576385",
+      "modPath": "Tu-204-100S"
+    }
+  ]
+}

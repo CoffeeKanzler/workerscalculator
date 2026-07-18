@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2692705292",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:43:01+00:00",
+  "buildings": [
+    {
+      "id": "2692705292/ferma16",
+      "nameId": 6116,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 10.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2850.0,
+        "prefabpanels": 13.0,
+        "bricks": 125.0,
+        "boards": 4.0,
+        "concrete": 127.0,
+        "steel": 22.0,
+        "mcomponents": 2.5,
+        "ecomponents": 0.15
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2692705292",
+      "modPath": "ferma16"
+    },
+    {
+      "id": "2692705292/ferma32",
+      "nameId": 6117,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 10.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3700.0,
+        "prefabpanels": 19.0,
+        "bricks": 150.0,
+        "boards": 5.0,
+        "concrete": 192.0,
+        "steel": 32.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2692705292",
+      "modPath": "ferma32"
+    },
+    {
+      "id": "2692705292/ferma32a",
+      "nameId": 6117,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 10.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3700.0,
+        "prefabpanels": 19.0,
+        "bricks": 150.0,
+        "boards": 5.0,
+        "concrete": 192.0,
+        "steel": 32.0,
+        "mcomponents": 3.0,
+        "ecomponents": 0.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2692705292",
+      "modPath": "ferma32a"
+    },
+    {
+      "id": "2692705292/ferma8",
+      "nameId": 6115,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 10.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1725.0,
+        "prefabpanels": 6.0,
+        "bricks": 80.0,
+        "boards": 2.0,
+        "concrete": 63.5,
+        "steel": 10.0,
+        "mcomponents": 1.0,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2692705292",
+      "modPath": "ferma8"
+    }
+  ],
+  "vehicles": []
+}

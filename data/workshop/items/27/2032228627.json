@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2032228627",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:07:09+00:00",
+  "buildings": [
+    {
+      "id": "2032228627/9_etazhnyy_zhiloy_dom_150_zhiteley",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2032228627",
+      "modPath": "9_etazhnyy_zhiloy_dom_150_zhiteley"
+    }
+  ],
+  "vehicles": []
+}

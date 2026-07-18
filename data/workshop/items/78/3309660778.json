@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3309660778",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:20:16+00:00",
+  "buildings": [
+    {
+      "id": "3309660778/HOH",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.45,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3200.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "High Occupancy Housing",
+      "workshopId": "3309660778",
+      "modPath": "HOH"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2456988615",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:25:11+00:00",
+  "buildings": [
+    {
+      "id": "2456988615/Seagull_Landmark",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 52.0,
+        "gravel": 25.0,
+        "concrete": 100.0,
+        "steel": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Seagull Landmark",
+      "workshopId": "2456988615",
+      "modPath": "Seagull_Landmark"
+    }
+  ],
+  "vehicles": []
+}

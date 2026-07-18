@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3014725536",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:10:00+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3014725536/DFH-54",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.56,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 15.0,
+      "powerKW": 39.0,
+      "emptyWeight": 4.9,
+      "from": 1951,
+      "to": 1965,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3014725536",
+      "modPath": "DFH-54"
+    },
+    {
+      "id": "3014725536/DFH54_B",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.37,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 15.0,
+      "powerKW": 39.0,
+      "emptyWeight": 4.9,
+      "from": 1951,
+      "to": 1965,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3014725536",
+      "modPath": "DFH54_B"
+    }
+  ]
+}

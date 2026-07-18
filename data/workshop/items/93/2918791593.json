@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2918791593",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:26:54+00:00",
+  "buildings": [
+    {
+      "id": "2918791593/LexArena",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 225.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lex Industries Arena",
+      "workshopId": "2918791593",
+      "modPath": "LexArena"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2097257132",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:51:17+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2097257132/gravel_tatra",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.71,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5229,
+      "costRUB": 4300.0,
+      "speed": 72.0,
+      "powerKW": 149.0,
+      "emptyWeight": 10.8,
+      "capacity": 12.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "from": 1972,
+      "to": 1983,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2097257132",
+      "modPath": "gravel_tatra"
+    },
+    {
+      "id": "2097257132/gravel_tatra138",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.71,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5229,
+      "costRUB": 4300.0,
+      "speed": 72.0,
+      "powerKW": 149.0,
+      "emptyWeight": 10.8,
+      "capacity": 12.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "from": 1970,
+      "to": 1988,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2097257132",
+      "modPath": "gravel_tatra138"
+    }
+  ]
+}

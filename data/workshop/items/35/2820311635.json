@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2820311635",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:36:40+00:00",
+  "buildings": [
+    {
+      "id": "2820311635/28160_Tropico Party HQ",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 400.0,
+      "professors": 40.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tropico Party HQ",
+      "workshopId": "2820311635",
+      "modPath": "28160_Tropico Party HQ"
+    }
+  ],
+  "vehicles": []
+}

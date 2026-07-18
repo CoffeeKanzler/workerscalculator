@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2929953806",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:13:14+00:00",
+  "buildings": [
+    {
+      "id": "2929953806/aspu",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 65.0,
+      "professors": 65.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pedagogical institute",
+      "workshopId": "2929953806",
+      "modPath": "aspu"
+    }
+  ],
+  "vehicles": []
+}

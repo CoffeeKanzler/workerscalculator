@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3042250328",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:21:53+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3042250328/service_poopy_crane",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.51,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 0.0,
+      "powerKW": 20.0,
+      "emptyWeight": 2.5,
+      "from": 1900,
+      "to": 1930,
+      "countryId": 38998,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3042250328",
+      "modPath": "service_poopy_crane"
+    }
+  ]
+}

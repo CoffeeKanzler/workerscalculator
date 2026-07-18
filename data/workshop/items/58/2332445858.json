@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2332445858",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:58:10+00:00",
+  "buildings": [
+    {
+      "id": "2332445858/hotel",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel Commissar**",
+      "workshopId": "2332445858",
+      "modPath": "hotel"
+    }
+  ],
+  "vehicles": []
+}

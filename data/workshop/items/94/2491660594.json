@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2491660594",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:07:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2491660594/LNER_A4",
+      "category": "workshop",
+      "trainSet": [
+        "2491660594/LNER_A4_TENDER"
+      ],
+      "lifespanYears": 0.0,
+      "length": 14.37,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 8.0,
+      "consumption": 0.0,
+      "speed": 145.0,
+      "powerKW": 2000.0,
+      "emptyWeight": 169.8,
+      "from": 1935,
+      "to": 1966,
+      "countryId": 39041,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2491660594",
+      "modPath": "LNER_A4"
+    },
+    {
+      "id": "2491660594/LNER_A4_TENDER",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.07,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costUSD": 8.0,
+      "consumption": 0.0,
+      "speed": 200.0,
+      "emptyWeight": 10.0,
+      "from": 1952,
+      "to": 1972,
+      "countryId": 39041,
+      "capacity": 0.0,
+      "workshopId": "2491660594",
+      "modPath": "LNER_A4_TENDER"
+    }
+  ]
+}

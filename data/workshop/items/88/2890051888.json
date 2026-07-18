@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2890051888",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:30:19+00:00",
+  "buildings": [
+    {
+      "id": "2890051888/19899_Target Center",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 45.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Target Center",
+      "workshopId": "2890051888",
+      "modPath": "19899_Target Center"
+    }
+  ],
+  "vehicles": []
+}

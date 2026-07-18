@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2791184930",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:50:59+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2791184930/9-10",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 32.15,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 1.0,
+      "from": 1965,
+      "to": 1982,
+      "countryId": 39018,
+      "speed": 903.0,
+      "powerKW": 10900.0,
+      "emptyWeight": 22.3,
+      "capacity": 75.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "workshopId": "2791184930",
+      "modPath": "9-10"
+    },
+    {
+      "id": "2791184930/9-30",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 36.65,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 1.0,
+      "from": 1967,
+      "to": 1985,
+      "countryId": 39018,
+      "speed": 917.0,
+      "powerKW": 12900.0,
+      "emptyWeight": 25.789,
+      "capacity": 95.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "workshopId": "2791184930",
+      "modPath": "9-30"
+    },
+    {
+      "id": "2791184930/9-50",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 40.75,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 1.0,
+      "from": 1974,
+      "to": 1992,
+      "countryId": 39018,
+      "speed": 898.0,
+      "powerKW": 14240.0,
+      "emptyWeight": 29.336,
+      "capacity": 120.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "workshopId": "2791184930",
+      "modPath": "9-50"
+    }
+  ]
+}

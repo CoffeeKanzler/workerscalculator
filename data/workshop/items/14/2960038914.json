@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2960038914",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:49:52+00:00",
+  "buildings": [
+    {
+      "id": "2960038914/28331_City_warehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 100.0,
+        "RESOURCE_TRANSPORT_COVERED": 800.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "City_warehouse",
+      "workshopId": "2960038914",
+      "modPath": "28331_City_warehouse"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3299098106",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:00:03+00:00",
+  "buildings": [
+    {
+      "id": "3299098106/A",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 116.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {
+        "workers": 427.0,
+        "ecomponents": 4.9,
+        "mcomponents": 8.5,
+        "steel": 12.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel «Sovetskaya» (Leningrad, 1967)",
+      "workshopId": "3299098106",
+      "modPath": "A"
+    }
+  ],
+  "vehicles": []
+}

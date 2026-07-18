@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2906438354",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:07:16+00:00",
+  "buildings": [
+    {
+      "id": "2906438354/graves",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Cemetery",
+      "workshopId": "2906438354",
+      "modPath": "graves"
+    },
+    {
+      "id": "2906438354/graves2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Graveyard Block",
+      "workshopId": "2906438354",
+      "modPath": "graves2"
+    },
+    {
+      "id": "2906438354/graves3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Graveyard Blk1",
+      "workshopId": "2906438354",
+      "modPath": "graves3"
+    },
+    {
+      "id": "2906438354/graves4",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Graveyard Blk2",
+      "workshopId": "2906438354",
+      "modPath": "graves4"
+    }
+  ],
+  "vehicles": []
+}

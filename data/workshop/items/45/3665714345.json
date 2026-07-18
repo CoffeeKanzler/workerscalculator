@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3665714345",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:36:16+00:00",
+  "buildings": [
+    {
+      "id": "3665714345/cieplownia",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {
+        "heat": 140.0
+      },
+      "consumption": {
+        "coal": 0.08
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mała ciepłownia",
+      "workshopId": "3665714345",
+      "modPath": "cieplownia"
+    }
+  ],
+  "vehicles": []
+}

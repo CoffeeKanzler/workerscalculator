@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2811855979",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:29:08+00:00",
+  "buildings": [
+    {
+      "id": "2811855979/partyhq",
+      "nameId": 6020,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 125.0,
+      "professors": 125.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2811855979",
+      "modPath": "partyhq"
+    }
+  ],
+  "vehicles": []
+}

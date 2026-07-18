@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2417988399",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:01:16+00:00",
+  "buildings": [
+    {
+      "id": "2417988399/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "9 storey Skomorohova Gora",
+      "workshopId": "2417988399",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

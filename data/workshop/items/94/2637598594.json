@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2637598594",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:04:20+00:00",
+  "buildings": [
+    {
+      "id": "2637598594/bistro",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Restaurant",
+      "workshopId": "2637598594",
+      "modPath": "bistro"
+    }
+  ],
+  "vehicles": []
+}

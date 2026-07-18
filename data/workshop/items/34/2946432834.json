@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2946432834",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:25:02+00:00",
+  "buildings": [
+    {
+      "id": "2946432834/FH-Alexandra",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "DDR-FH Alexandra",
+      "workshopId": "2946432834",
+      "modPath": "FH-Alexandra"
+    }
+  ],
+  "vehicles": []
+}

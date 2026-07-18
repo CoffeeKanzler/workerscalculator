@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2449228807",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:48:46+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2449228807/K954",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.16,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 105.0,
+      "capacity": 88.0,
+      "powerKW": 228.0,
+      "emptyWeight": 10.8,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2001,
+      "to": 2006,
+      "countryId": 39001,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2449228807",
+      "modPath": "K954"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3437437556",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:29:43+00:00",
+  "buildings": [
+    {
+      "id": "3437437556/kusti",
+      "nameId": null,
+      "types": [
+        "TYPE_SECRET_POLICE"
+      ],
+      "workers": 0,
+      "professors": 48.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Post Office",
+      "workshopId": "3437437556",
+      "modPath": "kusti"
+    }
+  ],
+  "vehicles": []
+}

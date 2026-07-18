@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2933440799",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:13:57+00:00",
+  "buildings": [
+    {
+      "id": "2933440799/EW58D42",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 14.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 14.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "DDR-EW58/D42 A",
+      "workshopId": "2933440799",
+      "modPath": "EW58D42"
+    }
+  ],
+  "vehicles": []
+}

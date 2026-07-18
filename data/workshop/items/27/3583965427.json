@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3583965427",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:26:58+00:00",
+  "buildings": [
+    {
+      "id": "3583965427/overpass_1",
+      "nameId": 6310,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_ELETRIC": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3583965427",
+      "modPath": "overpass_1"
+    },
+    {
+      "id": "3583965427/overpass_2",
+      "nameId": 6310,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_ELETRIC": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3583965427",
+      "modPath": "overpass_2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2711176367",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:17:15+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2711176367/V144",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.65,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5935,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 160.0,
+      "powerKW": 63.0,
+      "emptyWeight": 1.24,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1966,
+      "to": 1974,
+      "countryId": 39022,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2711176367",
+      "modPath": "V144"
+    },
+    {
+      "id": "2711176367/V144P",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.65,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5936,
+      "descriptionId": 5374,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 160.0,
+      "powerKW": 63.0,
+      "emptyWeight": 1.24,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1966,
+      "to": 1974,
+      "countryId": 39022,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2711176367",
+      "modPath": "V144P"
+    }
+  ]
+}

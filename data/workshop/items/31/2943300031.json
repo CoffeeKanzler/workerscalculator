@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2943300031",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:12:42+00:00",
+  "buildings": [
+    {
+      "id": "2943300031/fictional",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 36.0,
+      "professors": 36.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Central Institute",
+      "workshopId": "2943300031",
+      "modPath": "fictional"
+    }
+  ],
+  "vehicles": []
+}

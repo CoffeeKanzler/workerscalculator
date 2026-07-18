@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3302255165",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:39:49+00:00",
+  "buildings": [
+    {
+      "id": "3302255165/GravelBusEndStation",
+      "nameId": null,
+      "types": [
+        "TYPE_WAITING_STATION",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 28.0,
+        "workers": 100.0,
+        "concrete": 30.0,
+        "steel": 5.5,
+        "boards": 2.0,
+        "ecomponents": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Gravel Bus End Station",
+      "workshopId": "3302255165",
+      "modPath": "GravelBusEndStation"
+    }
+  ],
+  "vehicles": []
+}

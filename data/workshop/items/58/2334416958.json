@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2334416958",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:32:30+00:00",
+  "buildings": [
+    {
+      "id": "2334416958/13223_91-3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 240.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 240.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "91-3",
+      "workshopId": "2334416958",
+      "modPath": "13223_91-3"
+    },
+    {
+      "id": "2334416958/21319_91",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 400.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 400.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "91 Ugol",
+      "workshopId": "2334416958",
+      "modPath": "21319_91"
+    },
+    {
+      "id": "2334416958/22986_91",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 160.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 160.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "91",
+      "workshopId": "2334416958",
+      "modPath": "22986_91"
+    }
+  ],
+  "vehicles": []
+}

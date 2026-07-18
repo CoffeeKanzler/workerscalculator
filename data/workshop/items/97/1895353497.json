@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1895353497",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:53:38+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1895353497/bust_zui682_cargo",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.13,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5441,
+      "costRUB": 4300.0,
+      "speed": 75.0,
+      "powerKW": 110.0,
+      "emptyWeight": 10.3,
+      "capacity": 13.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1971,
+      "to": 1998,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1895353497",
+      "modPath": "bust_zui682_cargo"
+    }
+  ]
+}

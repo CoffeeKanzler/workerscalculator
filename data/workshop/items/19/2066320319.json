@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2066320319",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:42:03+00:00",
+  "buildings": [
+    {
+      "id": "2066320319/TV_Tow_AD2",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 80.0,
+      "professors": 27.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "BROADCAST STATION AD2",
+      "workshopId": "2066320319",
+      "modPath": "TV_Tow_AD2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3514992849",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:27:27+00:00",
+  "buildings": [
+    {
+      "id": "3514992849/Sewage_Collect",
+      "nameId": null,
+      "types": [
+        "TYPE_SEWAGE_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_SEWAGE": 100.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sewage Collector",
+      "workshopId": "3514992849",
+      "modPath": "Sewage_Collect"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2841183945",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:51:44+00:00",
+  "buildings": [
+    {
+      "id": "2841183945/Satellite",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 1.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Satellite Ground Station",
+      "workshopId": "2841183945",
+      "modPath": "Satellite"
+    }
+  ],
+  "vehicles": []
+}

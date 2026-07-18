@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2848675182",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:36:40+00:00",
+  "buildings": [
+    {
+      "id": "2848675182/powerplant",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {
+        "eletric": 20.0
+      },
+      "consumption": {
+        "oil": 0.33
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Oil Powerplant",
+      "workshopId": "2848675182",
+      "modPath": "powerplant"
+    }
+  ],
+  "vehicles": []
+}

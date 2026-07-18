@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2892139631",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:22:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2892139631/BK640",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.54,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 65.0,
+      "powerKW": 70.0,
+      "emptyWeight": 6.5,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 65.0,
+      "from": 1959,
+      "to": 1989,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2892139631",
+      "modPath": "BK640"
+    }
+  ]
+}

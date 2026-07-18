@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2933937327",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:48:10+00:00",
+  "buildings": [
+    {
+      "id": "2933937327/prefab_12",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 264.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 264.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "12 floor winged prefab",
+      "workshopId": "2933937327",
+      "modPath": "prefab_12"
+    }
+  ],
+  "vehicles": []
+}

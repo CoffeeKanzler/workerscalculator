@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2895140526",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:52:02+00:00",
+  "buildings": [
+    {
+      "id": "2895140526/KockaHouse",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.7,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10.0
+      },
+      "constructionResources": {
+        "concrete": 25.5,
+        "prefabpanels": 9.1,
+        "workers": 31.0,
+        "steel": 0.5,
+        "bricks": 1.3,
+        "ecomponents": 0.05,
+        "mcomponents": 0.05,
+        "boards": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kocka House",
+      "workshopId": "2895140526",
+      "modPath": "KockaHouse"
+    }
+  ],
+  "vehicles": []
+}

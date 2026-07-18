@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1991572370",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:33:01+00:00",
+  "buildings": [
+    {
+      "id": "1991572370/Stockyard",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_LIVESTOCK": 2000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stockyard",
+      "workshopId": "1991572370",
+      "modPath": "Stockyard"
+    },
+    {
+      "id": "1991572370/barn_1",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 30.0,
+        "bricks": 12.0,
+        "workers": 205.0,
+        "steel": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Farm",
+      "workshopId": "1991572370",
+      "modPath": "barn_1"
+    }
+  ],
+  "vehicles": []
+}

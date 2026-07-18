@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2306929254",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:22:42+00:00",
+  "buildings": [
+    {
+      "id": "2306929254/test8",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small uneven bldg",
+      "workshopId": "2306929254",
+      "modPath": "test8"
+    }
+  ],
+  "vehicles": []
+}

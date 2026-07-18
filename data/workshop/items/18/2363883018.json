@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2363883018",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:09:37+00:00",
+  "buildings": [
+    {
+      "id": "2363883018/K_100",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 300.0,
+        "gravel": 10.0,
+        "steel": 10.7,
+        "concrete": 15.0,
+        "bricks": 100.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kremlin Walls 24 m",
+      "workshopId": "2363883018",
+      "modPath": "K_100"
+    },
+    {
+      "id": "2363883018/K_12",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 36.0,
+        "gravel": 1.2,
+        "steel": 1.2,
+        "concrete": 6.0,
+        "bricks": 6.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kremlin Walls 6 m",
+      "workshopId": "2363883018",
+      "modPath": "K_12"
+    },
+    {
+      "id": "2363883018/K_50",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 150.0,
+        "gravel": 5.0,
+        "steel": 5.4,
+        "concrete": 12.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kremlin Walls 12 m",
+      "workshopId": "2363883018",
+      "modPath": "K_50"
+    },
+    {
+      "id": "2363883018/K_Corner",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.8,
+      "storages": {},
+      "constructionResources": {
+        "workers": 300.0,
+        "gravel": 10.0,
+        "steel": 10.7,
+        "concrete": 6.0,
+        "bricks": 100.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kremlin Observation Tower",
+      "workshopId": "2363883018",
+      "modPath": "K_Corner"
+    },
+    {
+      "id": "2363883018/K_Gate",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4000.0
+      },
+      "constructionResources": {
+        "workers": 210.0,
+        "gravel": 10.0,
+        "steel": 10.7,
+        "concrete": 6.0,
+        "bricks": 100.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kremlin Gateway",
+      "workshopId": "2363883018",
+      "modPath": "K_Gate"
+    },
+    {
+      "id": "2363883018/K_Tower",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 6.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.4,
+      "storages": {},
+      "constructionResources": {
+        "workers": 300.0,
+        "gravel": 10.0,
+        "steel": 10.7,
+        "concrete": 7.0,
+        "bricks": 100.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kremlin Tower Restaurant",
+      "workshopId": "2363883018",
+      "modPath": "K_Tower"
+    }
+  ],
+  "vehicles": []
+}

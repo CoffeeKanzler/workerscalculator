@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2143901492",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:14:21+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2143901492/covered_kmz_6350",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.91,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5167,
+      "costRUB": 10000.0,
+      "capacity": 16.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 95.0,
+      "powerKW": 265.0,
+      "emptyWeight": 12.4,
+      "from": 1989,
+      "to": 2006,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2143901492",
+      "modPath": "covered_kmz_6350"
+    }
+  ]
+}

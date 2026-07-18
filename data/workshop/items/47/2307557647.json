@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2307557647",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:13:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2307557647/liberty",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 133.58,
+      "type": "VEHICLETYPE_SHIP",
+      "costUSD": 4300.0,
+      "speed": 35.0,
+      "powerKW": 1900.0,
+      "emptyWeight": 4257.0,
+      "capacity": 10856.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1941,
+      "to": 1980,
+      "countryId": 39018,
+      "electric": false,
+      "workshopId": "2307557647",
+      "modPath": "liberty"
+    }
+  ]
+}

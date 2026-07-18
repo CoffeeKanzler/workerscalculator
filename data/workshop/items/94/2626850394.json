@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2626850394",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:53:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2626850394/forklift_cara",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.84,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "speed": 20.0,
+      "powerKW": 9.4,
+      "emptyWeight": 1.3,
+      "from": 1970,
+      "to": 3000,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2626850394",
+      "modPath": "forklift_cara"
+    },
+    {
+      "id": "2626850394/forklift_cara_1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.21,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "speed": 22.0,
+      "powerKW": 3.6,
+      "emptyWeight": 1.4,
+      "from": 1978,
+      "to": 3000,
+      "countryId": 39008,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2626850394",
+      "modPath": "forklift_cara_1"
+    }
+  ]
+}

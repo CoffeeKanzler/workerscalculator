@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2528884084",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:44:40+00:00",
+  "buildings": [
+    {
+      "id": "2528884084/triumphalarch",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Triumphal Arch",
+      "workshopId": "2528884084",
+      "modPath": "triumphalarch"
+    },
+    {
+      "id": "2528884084/victoryarch",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Victory Arch",
+      "workshopId": "2528884084",
+      "modPath": "victoryarch"
+    }
+  ],
+  "vehicles": []
+}

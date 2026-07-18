@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2513359292",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:35:21+00:00",
+  "buildings": [
+    {
+      "id": "2513359292/palace",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Palace of Culture",
+      "workshopId": "2513359292",
+      "modPath": "palace"
+    }
+  ],
+  "vehicles": []
+}

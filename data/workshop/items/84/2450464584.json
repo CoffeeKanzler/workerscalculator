@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2450464584",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:35:13+00:00",
+  "buildings": [
+    {
+      "id": "2450464584/kontajner",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "kontajner",
+      "workshopId": "2450464584",
+      "modPath": "kontajner"
+    }
+  ],
+  "vehicles": []
+}

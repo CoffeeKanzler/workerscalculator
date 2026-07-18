@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2022532785",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:49:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2022532785/VZ2121",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.12,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5396,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 132.0,
+      "powerKW": 59.0,
+      "emptyWeight": 1.15,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1977,
+      "to": 3000,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2022532785",
+      "modPath": "VZ2121"
+    }
+  ]
+}

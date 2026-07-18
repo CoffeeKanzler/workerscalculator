@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2479718962",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:55:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2479718962/TU114",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 51.64,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 870.0,
+      "powerKW": 44132.0,
+      "emptyWeight": 91.0,
+      "capacity": 220.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1958,
+      "to": 1964,
+      "countryId": 39011,
+      "workshopId": "2479718962",
+      "modPath": "TU114"
+    }
+  ]
+}

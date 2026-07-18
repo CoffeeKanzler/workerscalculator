@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2042805206",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:35:25+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2042805206/MB_1513_tanque",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.34,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "capacity": 11.0,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "speed": 80.0,
+      "powerKW": 112.0,
+      "emptyWeight": 15.0,
+      "from": 1964,
+      "to": 1987,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2042805206",
+      "modPath": "MB_1513_tanque"
+    },
+    {
+      "id": "2042805206/MB_1513_tanque_toco",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.29,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "speed": 85.0,
+      "powerKW": 97.0,
+      "emptyWeight": 11.0,
+      "from": 1964,
+      "to": 1987,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2042805206",
+      "modPath": "MB_1513_tanque_toco"
+    }
+  ]
+}

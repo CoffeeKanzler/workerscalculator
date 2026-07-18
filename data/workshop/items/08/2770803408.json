@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2770803408",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:18:47+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2770803408/saab900gle",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.35,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 175.0,
+      "powerKW": 87.0,
+      "emptyWeight": 1.175,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1978,
+      "to": 1981,
+      "countryId": 39022,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2770803408",
+      "modPath": "saab900gle"
+    }
+  ]
+}

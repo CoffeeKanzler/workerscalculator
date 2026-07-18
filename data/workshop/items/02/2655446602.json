@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2655446602",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:45:19+00:00",
+  "buildings": [
+    {
+      "id": "2655446602/flag",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "concrete": 0.05
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ingsoc flag",
+      "workshopId": "2655446602",
+      "modPath": "flag"
+    },
+    {
+      "id": "2655446602/poster",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "concrete": 0.05
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ingsoc poster",
+      "workshopId": "2655446602",
+      "modPath": "poster"
+    }
+  ],
+  "vehicles": []
+}

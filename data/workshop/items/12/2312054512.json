@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2312054512",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:51:45+00:00",
+  "buildings": [
+    {
+      "id": "2312054512/test1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Central Station",
+      "workshopId": "2312054512",
+      "modPath": "test1"
+    }
+  ],
+  "vehicles": []
+}

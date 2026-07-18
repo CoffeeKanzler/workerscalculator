@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2806029490",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:20:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2806029490/BELAZ_78250",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.4,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 2046003574,
+      "costRUB": 10000.0,
+      "speed": 24.0,
+      "powerKW": 783.0,
+      "emptyWeight": 108.0,
+      "from": 2015,
+      "to": 3000,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2806029490",
+      "modPath": "BELAZ_78250"
+    }
+  ]
+}

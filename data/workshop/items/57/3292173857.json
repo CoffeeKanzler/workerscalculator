@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3292173857",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:32:46+00:00",
+  "buildings": [
+    {
+      "id": "3292173857/VPK",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "VPK",
+      "workshopId": "3292173857",
+      "modPath": "VPK"
+    }
+  ],
+  "vehicles": []
+}

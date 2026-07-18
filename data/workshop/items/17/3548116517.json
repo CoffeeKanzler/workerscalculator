@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3548116517",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:14:30+00:00",
+  "buildings": [
+    {
+      "id": "3548116517/Radnice",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nogova city hall",
+      "workshopId": "3548116517",
+      "modPath": "Radnice"
+    }
+  ],
+  "vehicles": []
+}

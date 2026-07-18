@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3022640024",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:14:57+00:00",
+  "buildings": [
+    {
+      "id": "3022640024/mine",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_IRON"
+      ],
+      "workers": 180.0,
+      "professors": 0,
+      "production": {
+        "rawiron": 24.0,
+        "gravel": 4.0
+      },
+      "consumption": {
+        "explosives": 0.06
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.3,
+        "living": 1.5
+      },
+      "nameStr": "Big Mine",
+      "workshopId": "3022640024",
+      "modPath": "mine"
+    }
+  ],
+  "vehicles": []
+}

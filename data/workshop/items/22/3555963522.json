@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3555963522",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:49:29+00:00",
+  "buildings": [
+    {
+      "id": "3555963522/1",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 60.0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinist school",
+      "workshopId": "3555963522",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

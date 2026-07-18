@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3490602961",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:13:28+00:00",
+  "buildings": [
+    {
+      "id": "3490602961/0",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Aquarium",
+      "workshopId": "3490602961",
+      "modPath": "0"
+    }
+  ],
+  "vehicles": []
+}

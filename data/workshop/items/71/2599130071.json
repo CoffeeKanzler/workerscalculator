@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2599130071",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:51:21+00:00",
+  "buildings": [
+    {
+      "id": "2599130071/Mourning",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 10.0,
+        "concrete": 58.0,
+        "asphalt": 10.0,
+        "workers": 750.0,
+        "bricks": 120.0,
+        "steel": 24.0,
+        "ecomponents": 1.0,
+        "mcomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Mourning hall",
+      "workshopId": "2599130071",
+      "modPath": "Mourning"
+    }
+  ],
+  "vehicles": []
+}

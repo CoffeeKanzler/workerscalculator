@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2243223379",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:53:36+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2243223379/OBCtypeIII",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 176.41,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 4300.0,
+      "speed": 50.0,
+      "powerKW": 8240.0,
+      "emptyWeight": 8817.0,
+      "capacity": 23308.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "from": 1977,
+      "to": 1995,
+      "countryId": 39004,
+      "electric": false,
+      "workshopId": "2243223379",
+      "modPath": "OBCtypeIII"
+    },
+    {
+      "id": "2243223379/OBCtypeV",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 176.41,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 4300.0,
+      "speed": 50.0,
+      "powerKW": 8240.0,
+      "emptyWeight": 8821.0,
+      "capacity": 24126.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "from": 1983,
+      "to": 1995,
+      "countryId": 39004,
+      "electric": false,
+      "workshopId": "2243223379",
+      "modPath": "OBCtypeV"
+    }
+  ]
+}

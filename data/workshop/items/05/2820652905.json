@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2820652905",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:16:03+00:00",
+  "buildings": [
+    {
+      "id": "2820652905/Anchor",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 8.0,
+        "concrete": 34.0,
+        "workers": 200.0,
+        "steel": 4.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Anchor monument",
+      "workshopId": "2820652905",
+      "modPath": "Anchor"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2432969236",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:52:24+00:00",
+  "buildings": [
+    {
+      "id": "2432969236/Small_Chemical_Factory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30.0,
+      "professors": 5.0,
+      "production": {
+        "chemicals": 0.05
+      },
+      "consumption": {
+        "plants": 0.03,
+        "oil": 0.06,
+        "coal": 0.04
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Chemical Factory",
+      "workshopId": "2432969236",
+      "modPath": "Small_Chemical_Factory"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3703954956",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:37:18+00:00",
+  "buildings": [
+    {
+      "id": "3703954956/stalinka_2",
+      "nameId": 6001,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.7,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3703954956",
+      "modPath": "stalinka_2"
+    }
+  ],
+  "vehicles": []
+}

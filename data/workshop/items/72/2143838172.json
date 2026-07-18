@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2143838172",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:36:09+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2143838172/bus_lz42021",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.18,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5007,
+      "costRUB": 4400.0,
+      "consumption": 0.0,
+      "speed": 77.0,
+      "powerKW": 132.0,
+      "emptyWeight": 8.9,
+      "capacity": 95.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1978,
+      "to": 1993,
+      "countryId": 39015,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2143838172",
+      "modPath": "bus_lz42021"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2974489838",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:30:34+00:00",
+  "buildings": [
+    {
+      "id": "2974489838/mon_60_CCCP",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 11.0,
+        "boards": 0.01,
+        "concrete": 0.3,
+        "steel": 0.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "60 лет СССР",
+      "workshopId": "2974489838",
+      "modPath": "mon_60_CCCP"
+    }
+  ],
+  "vehicles": []
+}

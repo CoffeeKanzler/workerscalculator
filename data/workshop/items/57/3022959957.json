@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3022959957",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:29:58+00:00",
+  "buildings": [
+    {
+      "id": "3022959957/1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200.0,
+      "professors": 300.0,
+      "production": {
+        "ecomponents": 0.07
+      },
+      "consumption": {
+        "steel": 0.01,
+        "gravel": 0.03,
+        "chemicals": 0.03,
+        "plastics": 0.03,
+        "mcomponents": 0.001,
+        "water": 0.5
+      },
+      "consumptionPerSecond": {
+        "eletric": 2.0
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Silicon transistor production line",
+      "workshopId": "3022959957",
+      "modPath": "1"
+    },
+    {
+      "id": "3022959957/2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200.0,
+      "professors": 300.0,
+      "production": {
+        "eletronics": 0.065
+      },
+      "consumption": {
+        "mcomponents": 0.022,
+        "ecomponents": 0.022,
+        "plastics": 0.035,
+        "steel": 0.001
+      },
+      "consumptionPerSecond": {
+        "eletric": 10.0
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electronics production line",
+      "workshopId": "3022959957",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

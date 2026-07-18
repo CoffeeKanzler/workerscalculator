@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2336317735",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:28:27+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2336317735/service_roller",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.09,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5131,
+      "costUSD": 4300.0,
+      "powerKW": 70.0,
+      "emptyWeight": 4.0,
+      "speed": 20.0,
+      "from": 1990,
+      "to": 2010,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2336317735",
+      "modPath": "service_roller"
+    }
+  ]
+}

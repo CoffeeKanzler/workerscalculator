@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2387219542",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:57:54+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2387219542/Kolomna60",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.36,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 3900.0,
+      "speed": 150.0,
+      "emptyWeight": 126.0,
+      "powerKW": 2237.0,
+      "from": 1960,
+      "to": 1985,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2387219542",
+      "modPath": "Kolomna60"
+    }
+  ]
+}

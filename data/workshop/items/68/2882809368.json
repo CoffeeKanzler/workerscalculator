@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2882809368",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:39:50+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2882809368/harvester",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.83,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 65.0,
+      "powerKW": 810.0,
+      "emptyWeight": 24.0,
+      "from": 2050,
+      "to": 3000,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2882809368",
+      "modPath": "harvester"
+    }
+  ]
+}

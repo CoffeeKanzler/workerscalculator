@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2472432489",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:54:10+00:00",
+  "buildings": [
+    {
+      "id": "2472432489/blok16pv1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 240.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 240.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "blok 16p v1",
+      "workshopId": "2472432489",
+      "modPath": "blok16pv1"
+    }
+  ],
+  "vehicles": []
+}

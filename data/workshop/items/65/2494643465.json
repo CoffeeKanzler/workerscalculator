@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2494643465",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:56:31+00:00",
+  "buildings": [
+    {
+      "id": "2494643465/DPRK_StoreN1",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 45.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Department Store 1",
+      "workshopId": "2494643465",
+      "modPath": "DPRK_StoreN1"
+    }
+  ],
+  "vehicles": []
+}

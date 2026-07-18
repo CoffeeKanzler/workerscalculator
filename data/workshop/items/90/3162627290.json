@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3162627290",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:38:22+00:00",
+  "buildings": [
+    {
+      "id": "3162627290/mis",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT",
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2.0,
+        "wood": 0.5,
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Miś",
+      "workshopId": "3162627290",
+      "modPath": "mis"
+    }
+  ],
+  "vehicles": []
+}

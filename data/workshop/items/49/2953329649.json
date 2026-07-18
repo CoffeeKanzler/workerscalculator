@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2953329649",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:52:03+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2953329649/Fa223",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.2,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costUSD": 4500.0,
+      "consumption": 0.0,
+      "speed": 178.0,
+      "powerKW": 735.0,
+      "emptyWeight": 3.18,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1940,
+      "to": 1961,
+      "countryId": 39005,
+      "workshopId": "2953329649",
+      "modPath": "Fa223"
+    }
+  ]
+}

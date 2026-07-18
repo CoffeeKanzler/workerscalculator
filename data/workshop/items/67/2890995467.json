@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2890995467",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:23:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2890995467/Yak-40",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.97,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 857.0,
+      "powerKW": 4410.0,
+      "emptyWeight": 9.4,
+      "capacity": 32.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1967,
+      "to": 1981,
+      "countryId": 39011,
+      "workshopId": "2890995467",
+      "modPath": "Yak-40"
+    }
+  ]
+}

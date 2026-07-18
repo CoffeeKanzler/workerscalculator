@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3624512278",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:03:36+00:00",
+  "buildings": [
+    {
+      "id": "3624512278/familok_4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 65.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.7,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 65.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Familok 4 duzy",
+      "workshopId": "3624512278",
+      "modPath": "familok_4"
+    }
+  ],
+  "vehicles": []
+}

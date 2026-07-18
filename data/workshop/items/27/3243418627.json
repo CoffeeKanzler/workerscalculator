@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3243418627",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:43:43+00:00",
+  "buildings": [
+    {
+      "id": "3243418627/cnstrkt",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {
+        "bricks": 9.0,
+        "concrete": 5.0,
+        "asphalt": 5.0,
+        "boards": 3.0
+      },
+      "consumption": {
+        "coal": 1.0,
+        "cement": 1.0,
+        "bitumen": 1.0,
+        "wood": 1.0,
+        "gravel": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stroitel No.1",
+      "workshopId": "3243418627",
+      "modPath": "cnstrkt"
+    }
+  ],
+  "vehicles": []
+}

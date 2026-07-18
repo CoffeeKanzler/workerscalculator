@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2407632580",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:27:46+00:00",
+  "buildings": [
+    {
+      "id": "2407632580/BVVg",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 25.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 30.0,
+        "gravel": 40.0,
+        "concrete": 230.0,
+        "workers": 1900.0,
+        "bricks": 320.0,
+        "boards": 220.0,
+        "steel": 80.0,
+        "ecomponents": 15.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Expo Centre Pavilion G",
+      "workshopId": "2407632580",
+      "modPath": "BVVg"
+    }
+  ],
+  "vehicles": []
+}

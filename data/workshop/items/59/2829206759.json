@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2829206759",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:16:29+00:00",
+  "buildings": [
+    {
+      "id": "2829206759/brda",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brda Small Cabin",
+      "workshopId": "2829206759",
+      "modPath": "brda"
+    }
+  ],
+  "vehicles": []
+}

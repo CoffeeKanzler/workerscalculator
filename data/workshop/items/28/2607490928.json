@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2607490928",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:28:33+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2607490928/ExpYak38",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 17.45,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "speed": 10.0,
+      "powerKW": 6700.0,
+      "emptyWeight": 7.485,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1970,
+      "to": 2000,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2607490928",
+      "modPath": "ExpYak38"
+    },
+    {
+      "id": "2607490928/FlatWagon",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.67,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "speed": 20.0,
+      "capacity": 10.0,
+      "emptyWeight": 20.3,
+      "from": 1970,
+      "to": 2000,
+      "countryId": 39011,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "trainGroup": "vagon",
+      "workshopId": "2607490928",
+      "modPath": "FlatWagon"
+    }
+  ]
+}

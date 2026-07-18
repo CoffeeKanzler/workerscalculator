@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3350788877",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:32:43+00:00",
+  "buildings": [
+    {
+      "id": "3350788877/marx_engels",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Marx and Engels monument",
+      "workshopId": "3350788877",
+      "modPath": "marx_engels"
+    }
+  ],
+  "vehicles": []
+}

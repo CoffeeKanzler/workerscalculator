@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3316350173",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:39:08+00:00",
+  "buildings": [
+    {
+      "id": "3316350173/kirjasto",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 16.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Library",
+      "workshopId": "3316350173",
+      "modPath": "kirjasto"
+    },
+    {
+      "id": "3316350173/kunta",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 56.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Municipal Administration",
+      "workshopId": "3316350173",
+      "modPath": "kunta"
+    },
+    {
+      "id": "3316350173/oikeus",
+      "nameId": null,
+      "types": [
+        "TYPE_COURT_HOUSE"
+      ],
+      "workers": 10.0,
+      "professors": 6.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Municipal Courthouse",
+      "workshopId": "3316350173",
+      "modPath": "oikeus"
+    },
+    {
+      "id": "3316350173/vero",
+      "nameId": null,
+      "types": [
+        "TYPE_SECRET_POLICE"
+      ],
+      "workers": 0,
+      "professors": 28.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tax Administration",
+      "workshopId": "3316350173",
+      "modPath": "vero"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3736560572",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:25:08+00:00",
+  "buildings": [
+    {
+      "id": "3736560572/bath",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 3.0,
+      "professors": 3.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bath",
+      "workshopId": "3736560572",
+      "modPath": "bath"
+    },
+    {
+      "id": "3736560572/bazar",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 64.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bazar",
+      "workshopId": "3736560572",
+      "modPath": "bazar"
+    },
+    {
+      "id": "3736560572/book",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Book store",
+      "workshopId": "3736560572",
+      "modPath": "book"
+    },
+    {
+      "id": "3736560572/hospital",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 5.0,
+      "professors": 5.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hospital",
+      "workshopId": "3736560572",
+      "modPath": "hospital"
+    }
+  ],
+  "vehicles": []
+}

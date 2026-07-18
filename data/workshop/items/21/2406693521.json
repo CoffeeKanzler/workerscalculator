@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2406693521",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:58:58+00:00",
+  "buildings": [
+    {
+      "id": "2406693521/Clinic",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 20.0,
+      "professors": 4.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "UnityPoint Clinic",
+      "workshopId": "2406693521",
+      "modPath": "Clinic"
+    }
+  ],
+  "vehicles": []
+}

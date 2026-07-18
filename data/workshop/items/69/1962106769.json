@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1962106769",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:37:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1962106769/kraz_258_c_652",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.18,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 22.0,
+      "transportType": "RESOURCE_TRANSPORT_CEMENT",
+      "speed": 60.0,
+      "powerKW": 160.0,
+      "emptyWeight": 19.0,
+      "from": 1967,
+      "to": 1969,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1962106769",
+      "modPath": "kraz_258_c_652"
+    },
+    {
+      "id": "1962106769/kraz_258b_c_652",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.18,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 22.0,
+      "transportType": "RESOURCE_TRANSPORT_CEMENT",
+      "speed": 68.0,
+      "powerKW": 176.0,
+      "emptyWeight": 19.0,
+      "from": 1969,
+      "to": 1989,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1962106769",
+      "modPath": "kraz_258b_c_652"
+    }
+  ]
+}

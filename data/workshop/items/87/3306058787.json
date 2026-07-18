@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3306058787",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:26:01+00:00",
+  "buildings": [
+    {
+      "id": "3306058787/valdomiro",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.0,
+        "boards": 20.0,
+        "bricks": 120.0,
+        "steel": 6.0,
+        "concrete": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "IMPD Church",
+      "workshopId": "3306058787",
+      "modPath": "valdomiro"
+    }
+  ],
+  "vehicles": []
+}

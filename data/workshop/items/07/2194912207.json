@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2194912207",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:11:49+00:00",
+  "buildings": [
+    {
+      "id": "2194912207/Kindergarten",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kindergarten (150 kids)",
+      "workshopId": "2194912207",
+      "modPath": "Kindergarten"
+    }
+  ],
+  "vehicles": []
+}

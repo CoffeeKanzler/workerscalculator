@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3019370041",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:22:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3019370041/CR400AF_T_e0",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 25.55,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4300.0,
+      "emptyWeight": 46.456,
+      "capacity": 90.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "countryId": 39042,
+      "workshopId": "3019370041",
+      "modPath": "CR400AF_T_e0"
+    },
+    {
+      "id": "3019370041/CR400AF_T_e1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 25.55,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4300.0,
+      "trainGroup": "vagon",
+      "emptyWeight": 46.456,
+      "capacity": 90.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "countryId": 39042,
+      "workshopId": "3019370041",
+      "modPath": "CR400AF_T_e1"
+    },
+    {
+      "id": "3019370041/CR400AF_Tc",
+      "category": "workshop",
+      "trainSet": [
+        "3019370041/CR400AF_m1",
+        "3019370041/CR400AF_T_e1",
+        "3019370041/CR400AF_m1"
+      ],
+      "lifespanYears": 0.0,
+      "length": 27.81,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "trainGroup": "trainset",
+      "speed": 350.0,
+      "powerKW": 0.0,
+      "emptyWeight": 50.549,
+      "capacity": 19.0,
+      "from": 2015,
+      "to": 9999,
+      "countryId": 39042,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "electric": false,
+      "workshopId": "3019370041",
+      "modPath": "CR400AF_Tc"
+    },
+    {
+      "id": "3019370041/CR400AF_m1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 25.55,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "trainGroup": "locomotive",
+      "speed": 350.0,
+      "emptyWeight": 46.456,
+      "powerKW": 2500.0,
+      "capacity": 90.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "countryId": 39042,
+      "electric": true,
+      "workshopId": "3019370041",
+      "modPath": "CR400AF_m1"
+    }
+  ]
+}

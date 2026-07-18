@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3042195126",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:27:11+00:00",
+  "buildings": [
+    {
+      "id": "3042195126/Telecom",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 70.0,
+      "professors": 30.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 20.0,
+        "asphalt": 10.0,
+        "concrete": 76.0,
+        "steel": 166.0,
+        "boards": 96.0,
+        "workers": 1440.0,
+        "prefabpanels": 220.0,
+        "bricks": 30.0,
+        "ecomponents": 8.0,
+        "mcomponents": 4.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Telecom",
+      "workshopId": "3042195126",
+      "modPath": "Telecom"
+    }
+  ],
+  "vehicles": []
+}

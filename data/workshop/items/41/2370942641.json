@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2370942641",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:52:48+00:00",
+  "buildings": [
+    {
+      "id": "2370942641/4_rail_gas_station",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4-track Railway Gas Station",
+      "workshopId": "2370942641",
+      "modPath": "4_rail_gas_station"
+    },
+    {
+      "id": "2370942641/6_rail_gas_station",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "6-track Railway Gas Station",
+      "workshopId": "2370942641",
+      "modPath": "6_rail_gas_station"
+    },
+    {
+      "id": "2370942641/8_rail_gas_station",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "8-track Railway Gas Station",
+      "workshopId": "2370942641",
+      "modPath": "8_rail_gas_station"
+    }
+  ],
+  "vehicles": []
+}

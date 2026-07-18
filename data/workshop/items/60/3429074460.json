@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3429074460",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:54:00+00:00",
+  "buildings": [
+    {
+      "id": "3429074460/forklift(big)",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forklift",
+      "workshopId": "3429074460",
+      "modPath": "forklift(big)"
+    },
+    {
+      "id": "3429074460/forklift(small)",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forklift",
+      "workshopId": "3429074460",
+      "modPath": "forklift(small)"
+    }
+  ],
+  "vehicles": []
+}

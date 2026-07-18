@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2720072807",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:19:51+00:00",
+  "buildings": [
+    {
+      "id": "2720072807/airport",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3600.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3600.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Central airport",
+      "workshopId": "2720072807",
+      "modPath": "airport"
+    }
+  ],
+  "vehicles": []
+}

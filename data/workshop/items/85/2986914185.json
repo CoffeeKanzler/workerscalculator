@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2986914185",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:56:53+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2986914185/115N",
+      "category": "workshop",
+      "trainSet": [
+        "2986914185/115N_v",
+        "2986914185/115N_vr"
+      ],
+      "lifespanYears": 0.0,
+      "length": 10.47,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "powerKW": 332.0,
+      "emptyWeight": 12.0,
+      "trainGroup": "tram",
+      "speed": 72.0,
+      "capacity": 235.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1995,
+      "to": 2006,
+      "countryId": 39006,
+      "electric": true,
+      "workshopId": "2986914185",
+      "modPath": "115N"
+    },
+    {
+      "id": "2986914185/115N_v",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.37,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 3600.0,
+      "emptyWeight": 10.0,
+      "trainGroup": "tram",
+      "speed": 72.0,
+      "from": 1995,
+      "to": 2006,
+      "countryId": 39006,
+      "electric": false,
+      "workshopId": "2986914185",
+      "modPath": "115N_v"
+    },
+    {
+      "id": "2986914185/115N_vr",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.78,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "emptyWeight": 12.0,
+      "trainGroup": "tram",
+      "speed": 72.0,
+      "from": 1995,
+      "to": 2006,
+      "countryId": 39006,
+      "electric": false,
+      "workshopId": "2986914185",
+      "modPath": "115N_vr"
+    }
+  ]
+}

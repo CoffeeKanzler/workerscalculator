@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3295819137",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:50:11+00:00",
+  "buildings": [
+    {
+      "id": "3295819137/MalMusZav",
+      "nameId": 7557,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3295819137",
+      "modPath": "MalMusZav"
+    }
+  ],
+  "vehicles": []
+}

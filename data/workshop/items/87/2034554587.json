@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2034554587",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:41:07+00:00",
+  "buildings": [
+    {
+      "id": "2034554587/dual_con",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4way Train Pumping Station",
+      "workshopId": "2034554587",
+      "modPath": "dual_con"
+    },
+    {
+      "id": "2034554587/full_con01",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4way Full Length Pumping Station",
+      "workshopId": "2034554587",
+      "modPath": "full_con01"
+    }
+  ],
+  "vehicles": []
+}

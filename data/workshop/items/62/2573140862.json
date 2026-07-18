@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2573140862",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:17:49+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2573140862/BigBoyF",
+      "category": "workshop",
+      "trainSet": [
+        "2573140862/BigBoyM",
+        "2573140862/BigBoyT"
+      ],
+      "lifespanYears": 0.0,
+      "length": 11.81,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "trainGroup": "locomotive",
+      "descriptionId": 2064207626,
+      "costUSD": 1.0,
+      "from": 1941,
+      "to": 1950,
+      "countryId": 39018,
+      "speed": 128.75,
+      "powerKW": 4680.0,
+      "emptyWeight": 1.0,
+      "consumption": 0.0,
+      "electric": false,
+      "workshopId": "2573140862",
+      "modPath": "BigBoyF"
+    },
+    {
+      "id": "2573140862/BigBoyM",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.44,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "trainGroup": "vagon",
+      "descriptionId": 2064207626,
+      "costUSD": 1.0,
+      "from": 1941,
+      "to": 1950,
+      "countryId": 39018,
+      "speed": 128.75,
+      "powerKW": 1.0,
+      "emptyWeight": 78.1,
+      "workshopId": "2573140862",
+      "modPath": "BigBoyM"
+    },
+    {
+      "id": "2573140862/BigBoyT",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.72,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "trainGroup": "vagon",
+      "descriptionId": 2064207626,
+      "costUSD": 1.0,
+      "from": 1941,
+      "to": 1950,
+      "countryId": 39018,
+      "emptyWeight": 1.0,
+      "consumption": 0.0,
+      "workshopId": "2573140862",
+      "modPath": "BigBoyT"
+    }
+  ]
+}

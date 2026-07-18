@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2173487210",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:19:00+00:00",
+  "buildings": [
+    {
+      "id": "2173487210/bolshoj1",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bolshoj Theater",
+      "workshopId": "2173487210",
+      "modPath": "bolshoj1"
+    }
+  ],
+  "vehicles": []
+}

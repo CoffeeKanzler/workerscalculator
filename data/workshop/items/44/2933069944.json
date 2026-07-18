@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2933069944",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:34:58+00:00",
+  "buildings": [
+    {
+      "id": "2933069944/dvin",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 42.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel Dvin",
+      "workshopId": "2933069944",
+      "modPath": "dvin"
+    }
+  ],
+  "vehicles": []
+}

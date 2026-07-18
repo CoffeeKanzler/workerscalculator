@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3367691206",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:00:17+00:00",
+  "buildings": [
+    {
+      "id": "3367691206/Muschel",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shell stage",
+      "workshopId": "3367691206",
+      "modPath": "Muschel"
+    }
+  ],
+  "vehicles": []
+}

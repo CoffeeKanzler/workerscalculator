@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3546915413",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:53:15+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3546915413/liebherr",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 23.18,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 80.0,
+      "powerKW": 540.0,
+      "emptyWeight": 108.0,
+      "from": 2005,
+      "to": 3000,
+      "countryId": 39003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3546915413",
+      "modPath": "liebherr"
+    }
+  ]
+}

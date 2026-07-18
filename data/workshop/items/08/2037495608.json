@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2037495608",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:11:57+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2037495608/Beast",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.05,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5098,
+      "costRUB": 4300.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "capacity": 5.0,
+      "consumption": 0.0,
+      "speed": 40.0,
+      "powerKW": 15.0,
+      "emptyWeight": 15.5,
+      "from": 1953,
+      "to": 1985,
+      "countryId": 39000,
+      "trainGroup": "motorvagon",
+      "electric": false,
+      "workshopId": "2037495608",
+      "modPath": "Beast"
+    }
+  ]
+}

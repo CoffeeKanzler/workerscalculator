@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2729424250",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:10:04+00:00",
+  "buildings": [
+    {
+      "id": "2729424250/hotel_famos",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mountain Hotel Famos ****",
+      "workshopId": "2729424250",
+      "modPath": "hotel_famos"
+    }
+  ],
+  "vehicles": []
+}

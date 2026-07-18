@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2652722754",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:58:31+00:00",
+  "buildings": [
+    {
+      "id": "2652722754/Dom8",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.08,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dom 8",
+      "workshopId": "2652722754",
+      "modPath": "Dom8"
+    }
+  ],
+  "vehicles": []
+}

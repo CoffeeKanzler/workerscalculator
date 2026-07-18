@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3651763478",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:32:48+00:00",
+  "buildings": [
+    {
+      "id": "3651763478/Statue",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ArmA2 statue",
+      "workshopId": "3651763478",
+      "modPath": "Statue"
+    }
+  ],
+  "vehicles": []
+}

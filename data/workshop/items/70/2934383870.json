@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2934383870",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:52:00+00:00",
+  "buildings": [
+    {
+      "id": "2934383870/zoll_air_soviet",
+      "nameId": 6421,
+      "types": [
+        "TYPE_CUSTOMHOUSE",
+        "SUBTYPE_AIRCUSTOM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0,
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_WATER": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2934383870",
+      "modPath": "zoll_air_soviet"
+    },
+    {
+      "id": "2934383870/zoll_air_west",
+      "nameId": 6420,
+      "types": [
+        "TYPE_CUSTOMHOUSE",
+        "SUBTYPE_AIR",
+        "SUBTYPE_AIRCUSTOM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0,
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_OIL": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_WATER": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2934383870",
+      "modPath": "zoll_air_west"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3556642858",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:47:34+00:00",
+  "buildings": [
+    {
+      "id": "3556642858/1",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 60.0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 6672.0,
+        "gravel": 140.0,
+        "concrete": 190.0,
+        "bricks": 586.0,
+        "steel": 73.0,
+        "boards": 195.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House party HQ",
+      "workshopId": "3556642858",
+      "modPath": "1"
+    },
+    {
+      "id": "3556642858/10",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 48.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House kindergarten endpiece",
+      "workshopId": "3556642858",
+      "modPath": "10"
+    },
+    {
+      "id": "3556642858/11",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 520.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 520.0
+      },
+      "constructionResources": {
+        "workers": 6672.0,
+        "gravel": 140.0,
+        "concrete": 190.0,
+        "bricks": 586.0,
+        "steel": 73.0,
+        "boards": 195.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House residential tower",
+      "workshopId": "3556642858",
+      "modPath": "11"
+    },
+    {
+      "id": "3556642858/12",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 300.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.87,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 300.0
+      },
+      "constructionResources": {
+        "workers": 4214.0,
+        "gravel": 124.0,
+        "concrete": 161.0,
+        "boards": 60.0,
+        "bricks": 189.0,
+        "steel": 44.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House residential spine with road",
+      "workshopId": "3556642858",
+      "modPath": "12"
+    },
+    {
+      "id": "3556642858/13",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 380.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.87,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 380.0
+      },
+      "constructionResources": {
+        "workers": 5402.0,
+        "gravel": 124.0,
+        "concrete": 161.0,
+        "boards": 52.0,
+        "bricks": 220.0,
+        "steel": 61.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House residential spine with clock tower",
+      "workshopId": "3556642858",
+      "modPath": "13"
+    },
+    {
+      "id": "3556642858/2",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 60.0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 6672.0,
+        "gravel": 140.0,
+        "concrete": 190.0,
+        "bricks": 586.0,
+        "steel": 73.0,
+        "boards": 195.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House technical university",
+      "workshopId": "3556642858",
+      "modPath": "2"
+    },
+    {
+      "id": "3556642858/3",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_MEDICAL"
+      ],
+      "workers": 60.0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 5402.0,
+        "gravel": 124.0,
+        "concrete": 161.0,
+        "boards": 52.0,
+        "bricks": 220.0,
+        "steel": 61.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House medical university",
+      "workshopId": "3556642858",
+      "modPath": "3"
+    },
+    {
+      "id": "3556642858/4",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 5402.0,
+        "gravel": 124.0,
+        "concrete": 161.0,
+        "boards": 52.0,
+        "bricks": 220.0,
+        "steel": 61.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House administrative building",
+      "workshopId": "3556642858",
+      "modPath": "4"
+    },
+    {
+      "id": "3556642858/5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 360.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.87,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 360.0
+      },
+      "constructionResources": {
+        "workers": 4214.0,
+        "gravel": 124.0,
+        "concrete": 161.0,
+        "boards": 60.0,
+        "bricks": 189.0,
+        "steel": 44.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House residential spine",
+      "workshopId": "3556642858",
+      "modPath": "5"
+    },
+    {
+      "id": "3556642858/6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "SUBTYPE_HOSTEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 300.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.87,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 300.0
+      },
+      "constructionResources": {
+        "workers": 4214.0,
+        "gravel": 124.0,
+        "concrete": 161.0,
+        "boards": 60.0,
+        "bricks": 189.0,
+        "steel": 44.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House student halls spine",
+      "workshopId": "3556642858",
+      "modPath": "6"
+    },
+    {
+      "id": "3556642858/7",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House library spine",
+      "workshopId": "3556642858",
+      "modPath": "7"
+    },
+    {
+      "id": "3556642858/8",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House sports hall spine",
+      "workshopId": "3556642858",
+      "modPath": "8"
+    },
+    {
+      "id": "3556642858/9",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Senate House residential endpiece",
+      "workshopId": "3556642858",
+      "modPath": "9"
+    }
+  ],
+  "vehicles": []
+}

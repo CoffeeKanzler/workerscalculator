@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3257164189",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:01:22+00:00",
+  "buildings": [
+    {
+      "id": "3257164189/barocco",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 17.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Baroque Church (XVII)",
+      "workshopId": "3257164189",
+      "modPath": "barocco"
+    }
+  ],
+  "vehicles": []
+}

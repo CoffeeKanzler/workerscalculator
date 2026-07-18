@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3652440146",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:07:34+00:00",
+  "buildings": [
+    {
+      "id": "3652440146/blok",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "superkuper",
+      "workshopId": "3652440146",
+      "modPath": "blok"
+    }
+  ],
+  "vehicles": []
+}

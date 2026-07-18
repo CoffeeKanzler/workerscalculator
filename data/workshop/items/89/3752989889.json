@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3752989889",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:34:47+00:00",
+  "buildings": [
+    {
+      "id": "3752989889/militia",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 2.0,
+      "professors": 2.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 12.0,
+        "boards": 0.1,
+        "steel": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Линейный пост милиции",
+      "workshopId": "3752989889",
+      "modPath": "militia"
+    }
+  ],
+  "vehicles": []
+}

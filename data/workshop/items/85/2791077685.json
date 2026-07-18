@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2791077685",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:11:43+00:00",
+  "buildings": [
+    {
+      "id": "2791077685/terrestrial_sewage_discharge",
+      "nameId": null,
+      "types": [
+        "TYPE_SEWAGE_DISCHARGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.065
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Terrestrial Sewage Discharge",
+      "workshopId": "2791077685",
+      "modPath": "terrestrial_sewage_discharge"
+    }
+  ],
+  "vehicles": []
+}

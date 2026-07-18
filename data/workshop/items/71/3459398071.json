@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3459398071",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:22:43+00:00",
+  "buildings": [
+    {
+      "id": "3459398071/ice_pal",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "IcePalce",
+      "workshopId": "3459398071",
+      "modPath": "ice_pal"
+    }
+  ],
+  "vehicles": []
+}

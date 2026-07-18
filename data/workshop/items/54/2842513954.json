@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2842513954",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:20:45+00:00",
+  "buildings": [
+    {
+      "id": "2842513954/advertpole",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 4.0,
+        "prefabpanels": 0.8,
+        "concrete": 0.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Polish Advertising Pole",
+      "workshopId": "2842513954",
+      "modPath": "advertpole"
+    }
+  ],
+  "vehicles": []
+}

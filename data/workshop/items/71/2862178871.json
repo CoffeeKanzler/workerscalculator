@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2862178871",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:42:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2862178871/R32",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 18.87,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "trainGroup": "metro",
+      "descriptionId": 2064207626,
+      "costUSD": 1.0,
+      "from": 1964,
+      "to": 1990,
+      "countryId": 39018,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 70.0,
+      "speed": 89.0,
+      "powerKW": 344.0,
+      "emptyWeight": 36.0,
+      "electric": true,
+      "workshopId": "2862178871",
+      "modPath": "R32"
+    }
+  ]
+}

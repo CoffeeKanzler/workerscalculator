@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2473375063",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:42:08+00:00",
+  "buildings": [
+    {
+      "id": "2473375063/Blok3p4klv1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 105.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.87,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 105.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 3p 4kl v1",
+      "workshopId": "2473375063",
+      "modPath": "Blok3p4klv1"
+    }
+  ],
+  "vehicles": []
+}

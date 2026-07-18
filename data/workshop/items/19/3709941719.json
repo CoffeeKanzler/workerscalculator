@@ -1,0 +1,466 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3709941719",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:51:00+00:00",
+  "buildings": [
+    {
+      "id": "3709941719/1",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_TRAM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_VEHICLES": 1.0
+      },
+      "constructionResources": {
+        "workers": 940.0,
+        "gravel": 20.0,
+        "concrete": 20.0,
+        "bricks": 60.0,
+        "steel": 11.0,
+        "boards": 30.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat cargo station",
+      "workshopId": "3709941719",
+      "modPath": "1"
+    },
+    {
+      "id": "3709941719/10",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 80.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {
+        "workers": 6600.0,
+        "gravel": 120.0,
+        "concrete": 120.0,
+        "bricks": 420.0,
+        "steel": 60.0,
+        "boards": 180.0,
+        "mcomponents": 10.0,
+        "ecomponents": 6.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat department store",
+      "workshopId": "3709941719",
+      "modPath": "10"
+    },
+    {
+      "id": "3709941719/11",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 40.0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1700.0,
+        "gravel": 30.0,
+        "asphalt": 20.0,
+        "concrete": 30.0,
+        "bricks": 140.0,
+        "steel": 17.5,
+        "boards": 45.0,
+        "mcomponents": 1.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat end police station",
+      "workshopId": "3709941719",
+      "modPath": "11"
+    },
+    {
+      "id": "3709941719/12",
+      "nameId": null,
+      "types": [
+        "TYPE_SECRET_POLICE"
+      ],
+      "workers": 0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1700.0,
+        "gravel": 30.0,
+        "asphalt": 20.0,
+        "concrete": 30.0,
+        "bricks": 140.0,
+        "steel": 17.5,
+        "boards": 45.0,
+        "mcomponents": 1.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat end secret police",
+      "workshopId": "3709941719",
+      "modPath": "12"
+    },
+    {
+      "id": "3709941719/13",
+      "nameId": null,
+      "types": [
+        "TYPE_COURT_HOUSE"
+      ],
+      "workers": 75.0,
+      "professors": 45.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 6600.0,
+        "gravel": 120.0,
+        "concrete": 120.0,
+        "bricks": 420.0,
+        "steel": 60.0,
+        "boards": 180.0,
+        "mcomponents": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat courthouse",
+      "workshopId": "3709941719",
+      "modPath": "13"
+    },
+    {
+      "id": "3709941719/14",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 60.0,
+      "professors": 30.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 6600.0,
+        "gravel": 120.0,
+        "asphalt": 90.0,
+        "concrete": 120.0,
+        "bricks": 420.0,
+        "steel": 80.0,
+        "boards": 180.0,
+        "mcomponents": 10.0,
+        "ecomponents": 8.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat radio station",
+      "workshopId": "3709941719",
+      "modPath": "14"
+    },
+    {
+      "id": "3709941719/2",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_TRAM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_VEHICLES": 1.0
+      },
+      "constructionResources": {
+        "workers": 940.0,
+        "gravel": 20.0,
+        "concrete": 20.0,
+        "bricks": 60.0,
+        "steel": 11.0,
+        "boards": 30.0,
+        "ecomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat cargo tram station",
+      "workshopId": "3709941719",
+      "modPath": "2"
+    },
+    {
+      "id": "3709941719/3",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.0,
+        "RESOURCE_TRANSPORT_COVERED": 1.0,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1.0,
+        "RESOURCE_TRANSPORT_CEMENT": 1.0,
+        "RESOURCE_TRANSPORT_COOLER": 1.0,
+        "RESOURCE_TRANSPORT_VEHICLES": 1.0
+      },
+      "constructionResources": {
+        "workers": 1420.0,
+        "gravel": 20.0,
+        "concrete": 20.0,
+        "bricks": 100.0,
+        "steel": 14.0,
+        "boards": 30.0,
+        "ecomponents": 3.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat cargo train station",
+      "workshopId": "3709941719",
+      "modPath": "3"
+    },
+    {
+      "id": "3709941719/4",
+      "nameId": null,
+      "types": [
+        "TYPE_ORPHANAGE"
+      ],
+      "workers": 48.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2700.0,
+        "gravel": 40.0,
+        "concrete": 40.0,
+        "asphalt": 40.0,
+        "bricks": 140.0,
+        "steel": 20.0,
+        "boards": 60.0,
+        "mcomponents": 2.0,
+        "ecomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat orphanage (road)",
+      "workshopId": "3709941719",
+      "modPath": "4"
+    },
+    {
+      "id": "3709941719/5",
+      "nameId": null,
+      "types": [
+        "TYPE_ORPHANAGE"
+      ],
+      "workers": 60.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2500.0,
+        "gravel": 40.0,
+        "concrete": 40.0,
+        "bricks": 140.0,
+        "steel": 20.0,
+        "boards": 60.0,
+        "mcomponents": 2.0,
+        "ecomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat orphanage (no road)",
+      "workshopId": "3709941719",
+      "modPath": "5"
+    },
+    {
+      "id": "3709941719/6",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 26.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2700.0,
+        "gravel": 40.0,
+        "concrete": 40.0,
+        "asphalt": 40.0,
+        "bricks": 140.0,
+        "steel": 20.0,
+        "boards": 60.0,
+        "mcomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat pub (road)",
+      "workshopId": "3709941719",
+      "modPath": "6"
+    },
+    {
+      "id": "3709941719/7",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2500.0,
+        "gravel": 40.0,
+        "concrete": 40.0,
+        "bricks": 140.0,
+        "steel": 20.0,
+        "boards": 60.0,
+        "mcomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat pub (no road)",
+      "workshopId": "3709941719",
+      "modPath": "7"
+    },
+    {
+      "id": "3709941719/8",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2500.0,
+        "gravel": 40.0,
+        "concrete": 40.0,
+        "bricks": 140.0,
+        "steel": 20.0,
+        "boards": 60.0,
+        "mcomponents": 2.0,
+        "ecomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat shopping centre (no road)",
+      "workshopId": "3709941719",
+      "modPath": "8"
+    },
+    {
+      "id": "3709941719/9",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 26.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2700.0,
+        "gravel": 40.0,
+        "concrete": 40.0,
+        "asphalt": 40.0,
+        "bricks": 140.0,
+        "steel": 20.0,
+        "boards": 60.0,
+        "mcomponents": 2.0,
+        "ecomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ziggurat shopping centre (road)",
+      "workshopId": "3709941719",
+      "modPath": "9"
+    }
+  ],
+  "vehicles": []
+}

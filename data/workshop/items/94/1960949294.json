@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1960949294",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:11:52+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1960949294/bus_kavz651",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.12,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 2700.0,
+      "capacity": 19.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 70.0,
+      "powerKW": 85.0,
+      "emptyWeight": 3.2,
+      "from": 1950,
+      "to": 1973,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1960949294",
+      "modPath": "bus_kavz651"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2958243984",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:27:28+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2958243984/Marquis",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 20.75,
+      "type": "VEHICLETYPE_SHIP",
+      "from": 1983,
+      "to": 3000,
+      "countryId": 38998,
+      "costUSD": 1.0,
+      "speed": 30.0,
+      "powerKW": 223.0,
+      "emptyWeight": 12.2,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "electric": false,
+      "workshopId": "2958243984",
+      "modPath": "Marquis"
+    }
+  ]
+}

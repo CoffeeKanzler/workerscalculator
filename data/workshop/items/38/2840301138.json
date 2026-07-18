@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2840301138",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:11:46+00:00",
+  "buildings": [
+    {
+      "id": "2840301138/kaplicka",
+      "nameId": 6416,
+      "types": [
+        "TYPE_CHURCH",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 1.0,
+      "professors": 1.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 0.8,
+        "workers": 58.0,
+        "bricks": 4.7,
+        "boards": 1.3,
+        "steel": 0.22
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2840301138",
+      "modPath": "kaplicka"
+    },
+    {
+      "id": "2840301138/kaplicka_monument",
+      "nameId": 6416,
+      "types": [
+        "TYPE_MONUMENT",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 0.8,
+        "workers": 58.0,
+        "bricks": 4.7,
+        "boards": 1.3,
+        "steel": 0.22
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2840301138",
+      "modPath": "kaplicka_monument"
+    }
+  ],
+  "vehicles": []
+}

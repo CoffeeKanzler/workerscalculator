@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1970574567",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:40:11+00:00",
+  "buildings": [
+    {
+      "id": "1970574567/kwaswagen",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kwaswagen",
+      "workshopId": "1970574567",
+      "modPath": "kwaswagen"
+    }
+  ],
+  "vehicles": []
+}

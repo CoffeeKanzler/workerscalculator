@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2587195089",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:06:41+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2587195089/fiat_ducato_ambulance",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.8,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costRUB": 3900.0,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 120.0,
+      "powerKW": 70.0,
+      "emptyWeight": 1.6,
+      "from": 1981,
+      "to": 1994,
+      "countryId": 39017,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2587195089",
+      "modPath": "fiat_ducato_ambulance"
+    }
+  ]
+}

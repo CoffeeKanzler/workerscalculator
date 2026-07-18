@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2334230336",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:11:47+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2334230336/as1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.93,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 24.0,
+      "trainGroup": "motorvagon",
+      "speed": 82.0,
+      "powerKW": 51.5,
+      "emptyWeight": 9.0,
+      "from": 1960,
+      "to": 1980,
+      "countryId": 39021,
+      "electric": false,
+      "workshopId": "2334230336",
+      "modPath": "as1"
+    }
+  ]
+}

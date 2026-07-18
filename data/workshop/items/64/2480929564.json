@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2480929564",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:49:22+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2480929564/B29",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 30.07,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 1.0,
+      "from": 1944,
+      "to": 1960,
+      "countryId": 39018,
+      "consumption": 0.0,
+      "speed": 547.0,
+      "powerKW": 6560.0,
+      "emptyWeight": 32.432,
+      "capacity": 25.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "workshopId": "2480929564",
+      "modPath": "B29"
+    },
+    {
+      "id": "2480929564/B29S",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 30.07,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 1.0,
+      "from": 1944,
+      "to": 1960,
+      "countryId": 39018,
+      "consumption": 0.0,
+      "speed": 587.0,
+      "powerKW": 6580.0,
+      "emptyWeight": 30.432,
+      "capacity": 20.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "workshopId": "2480929564",
+      "modPath": "B29S"
+    }
+  ]
+}

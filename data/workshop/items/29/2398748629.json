@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2398748629",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:56:00+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2398748629/Li2_pass",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.75,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 245.0,
+      "powerKW": 1470.0,
+      "emptyWeight": 7.67,
+      "capacity": 24.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1939,
+      "to": 1970,
+      "countryId": 39011,
+      "workshopId": "2398748629",
+      "modPath": "Li2_pass"
+    }
+  ]
+}

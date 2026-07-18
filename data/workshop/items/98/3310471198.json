@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3310471198",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:23:23+00:00",
+  "buildings": [
+    {
+      "id": "3310471198/geo",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 12.0,
+      "professors": 0,
+      "production": {
+        "eletric": 25.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Geothermal Power Plant",
+      "workshopId": "3310471198",
+      "modPath": "geo"
+    }
+  ],
+  "vehicles": []
+}

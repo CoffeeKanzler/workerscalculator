@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2991289234",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:12:00+00:00",
+  "buildings": [
+    {
+      "id": "2991289234/I-408-5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 210.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 210.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "I-408-5",
+      "workshopId": "2991289234",
+      "modPath": "I-408-5"
+    }
+  ],
+  "vehicles": []
+}

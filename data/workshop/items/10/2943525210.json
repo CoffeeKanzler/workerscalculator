@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2943525210",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:44:17+00:00",
+  "buildings": [
+    {
+      "id": "2943525210/Forklift-M2E2",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forklift-M2E2",
+      "workshopId": "2943525210",
+      "modPath": "Forklift-M2E2"
+    }
+  ],
+  "vehicles": []
+}

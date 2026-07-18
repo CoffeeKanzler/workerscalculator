@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2958104997",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:50:59+00:00",
+  "buildings": [
+    {
+      "id": "2958104997/ware_emkost",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 600.0
+      },
+      "constructionResources": {
+        "workers": 95.0,
+        "gravel": 5.0,
+        "asphalt": 4.0,
+        "concrete": 1.5,
+        "steel": 6.0,
+        "mcomponents": 0.2,
+        "ecomponents": 0.03
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Емкость",
+      "workshopId": "2958104997",
+      "modPath": "ware_emkost"
+    }
+  ],
+  "vehicles": []
+}

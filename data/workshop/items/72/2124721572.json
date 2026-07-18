@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2124721572",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:10:19+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2124721572/bus_maz105",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 85.0,
+      "powerKW": 185.0,
+      "emptyWeight": 13.0,
+      "capacity": 160.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1997,
+      "to": 2017,
+      "countryId": 39019,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2124721572",
+      "modPath": "bus_maz105"
+    },
+    {
+      "id": "2124721572/bus_maz107",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.95,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5239,
+      "costRUB": 4400.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 150.0,
+      "emptyWeight": 13.0,
+      "capacity": 120.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2001,
+      "to": 3000,
+      "countryId": 39019,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2124721572",
+      "modPath": "bus_maz107"
+    }
+  ]
+}

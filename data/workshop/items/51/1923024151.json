@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1923024151",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:59:01+00:00",
+  "buildings": [
+    {
+      "id": "1923024151/police",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 50.0,
+      "professors": 50.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Police Central",
+      "workshopId": "1923024151",
+      "modPath": "police"
+    },
+    {
+      "id": "1923024151/police_real",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 30.0,
+      "professors": 50.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Police Central",
+      "workshopId": "1923024151",
+      "modPath": "police_real"
+    },
+    {
+      "id": "1923024151/secret_police",
+      "nameId": 6266,
+      "types": [
+        "TYPE_SECRET_POLICE"
+      ],
+      "workers": 0,
+      "professors": 30.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "1923024151",
+      "modPath": "secret_police"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2272190799",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:17:37+00:00",
+  "buildings": [
+    {
+      "id": "2272190799/blok",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 storey brick block of flats",
+      "workshopId": "2272190799",
+      "modPath": "blok"
+    },
+    {
+      "id": "2272190799/blok3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 storey brick block of flats",
+      "workshopId": "2272190799",
+      "modPath": "blok3"
+    },
+    {
+      "id": "2272190799/blok3n",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "2 storey brick block of flats",
+      "workshopId": "2272190799",
+      "modPath": "blok3n"
+    }
+  ],
+  "vehicles": []
+}

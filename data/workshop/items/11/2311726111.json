@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2311726111",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:11:59+00:00",
+  "buildings": [
+    {
+      "id": "2311726111/test1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 320.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 320.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-3 (10 STOREY)",
+      "workshopId": "2311726111",
+      "modPath": "test1"
+    },
+    {
+      "id": "2311726111/test2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 320.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 320.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-3 10 Storey 2.0",
+      "workshopId": "2311726111",
+      "modPath": "test2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3305842920",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:17:57+00:00",
+  "buildings": [
+    {
+      "id": "3305842920/large",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.013
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Heat Substation",
+      "workshopId": "3305842920",
+      "modPath": "large"
+    },
+    {
+      "id": "3305842920/pump",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.07
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heat Pumping Station",
+      "workshopId": "3305842920",
+      "modPath": "pump"
+    },
+    {
+      "id": "3305842920/small",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.05
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Heat Substation",
+      "workshopId": "3305842920",
+      "modPath": "small"
+    }
+  ],
+  "vehicles": []
+}

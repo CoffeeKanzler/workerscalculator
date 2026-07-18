@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3343038163",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:06:24+00:00",
+  "buildings": [
+    {
+      "id": "3343038163/bigone",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 352.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.81,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 352.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "big blocks of flats",
+      "workshopId": "3343038163",
+      "modPath": "bigone"
+    },
+    {
+      "id": "3343038163/mediumone",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 269.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.81,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 269.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "medium blocks of flats",
+      "workshopId": "3343038163",
+      "modPath": "mediumone"
+    },
+    {
+      "id": "3343038163/smallone",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 186.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.81,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 186.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "small blocks of flats",
+      "workshopId": "3343038163",
+      "modPath": "smallone"
+    }
+  ],
+  "vehicles": []
+}

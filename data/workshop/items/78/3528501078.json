@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3528501078",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:41:08+00:00",
+  "buildings": [
+    {
+      "id": "3528501078/METROPOLIS_70_Pines_Street_(NYC)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4200.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS 70 Pines Street (NYC)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_70_Pines_Street_(NYC)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Carew_Tower_(CIN)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2202.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2202.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Carew Tower (CIN)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Carew_Tower_(CIN)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Central_do_Brazil_(RIO)",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 9000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 9000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Central do Brazil (RIO)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Central_do_Brazil_(RIO)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Clark_Adams_Building_(CHI)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 634.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.73,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 634.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Clark Adams Building (CHI)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Clark_Adams_Building_(CHI)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Criminal_Courthouse_(NYC)",
+      "nameId": null,
+      "types": [
+        "TYPE_COURT_HOUSE"
+      ],
+      "workers": 150.0,
+      "professors": 90.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Criminal Courthouse (NYC)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Criminal_Courthouse_(NYC)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Criminal_Prison_(NYC)",
+      "nameId": null,
+      "types": [
+        "TYPE_PRISON"
+      ],
+      "workers": 90.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": 0.45,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Criminal Prison (NYC)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Criminal_Prison_(NYC)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Field_building_(CHI)",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 450.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Field building (CHI)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Field_building_(CHI)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Free_Press_building_(CIN)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 415.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.74,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 415.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Free Press building (CIN)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Free_Press_building_(CIN)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Gaz_and_Electric_building_(CIN)",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Gaz and Electric building (CIN)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Gaz_and_Electric_building_(CIN)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_INB_Providence_(PRV)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 348.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.83,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 348.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS INB Providence (PRV)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_INB_Providence_(PRV)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Lincoln_Tower_(FW)",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Lincoln Tower (FW)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Lincoln_Tower_(FW)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Palacio_de_caxias_(RIO)",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 85.0,
+      "professors": 75.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Palacio de caxias (RIO)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Palacio_de_caxias_(RIO)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Palmolive_Building_(CHI)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 664.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.83,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 664.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Palmolive Building (CHI)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Palmolive_Building_(CHI)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Penoboscot_Building_(DE)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1262.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1262.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Penoboscot Building (DE)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Penoboscot_Building_(DE)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Pittsfield_Building_(CHI)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1020.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1020.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Pittsfield Building (CHI)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Pittsfield_Building_(CHI)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Roanoke_Building_(CHI)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 930.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.76,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 930.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Roanoke Building (CHI)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Roanoke_Building_(CHI)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Seattle_Tower_(SEA)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 376.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.83,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 376.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Seattle Tower (SEA)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Seattle_Tower_(SEA)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_The_American_building_(CIN)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 220.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 220.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS The American building (CIN)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_The_American_building_(CIN)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_The_Pierre_Hotel_(NYC)",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 80.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS The Pierre Hotel (NYC)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_The_Pierre_Hotel_(NYC)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Times_Star_Building_(CIN)",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 45.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 11.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Times Star Building (CIN)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Times_Star_Building_(CIN)"
+    },
+    {
+      "id": "3528501078/METROPOLIS_Willoughby_Tower_(CHI)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 510.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.77,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 510.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "METROPOLIS Willoughby Tower (CHI)",
+      "workshopId": "3528501078",
+      "modPath": "METROPOLIS_Willoughby_Tower_(CHI)"
+    }
+  ],
+  "vehicles": []
+}

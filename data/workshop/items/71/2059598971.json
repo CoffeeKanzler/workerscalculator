@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2059598971",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:45:59+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2059598971/M25forklift",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.01,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 2.1,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "speed": 45.0,
+      "powerKW": 35.0,
+      "emptyWeight": 2.0,
+      "from": 1978,
+      "to": 3000,
+      "countryId": 39004,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2059598971",
+      "modPath": "M25forklift"
+    }
+  ]
+}

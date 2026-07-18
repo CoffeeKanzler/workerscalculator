@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2959538522",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:36:49+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2959538522/Jenny1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.43,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "trainGroup": "vagon",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "emptyWeight": 18.5,
+      "from": 1967,
+      "to": 3000,
+      "countryId": 39018,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "capacity": 70.0,
+      "workshopId": "2959538522",
+      "modPath": "Jenny1"
+    },
+    {
+      "id": "2959538522/Jenny2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.63,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "trainGroup": "vagon",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "emptyWeight": 18.5,
+      "from": 1967,
+      "to": 3000,
+      "countryId": 39018,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "capacity": 70.0,
+      "workshopId": "2959538522",
+      "modPath": "Jenny2"
+    }
+  ]
+}

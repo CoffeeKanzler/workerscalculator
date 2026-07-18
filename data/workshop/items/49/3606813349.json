@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3606813349",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:37:03+00:00",
+  "buildings": [
+    {
+      "id": "3606813349/giebelhaus1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 15.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 15.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gabled House",
+      "workshopId": "3606813349",
+      "modPath": "giebelhaus1"
+    }
+  ],
+  "vehicles": []
+}

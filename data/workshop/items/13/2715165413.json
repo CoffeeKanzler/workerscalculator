@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2715165413",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:50:00+00:00",
+  "buildings": [
+    {
+      "id": "2715165413/2101_small_police_station",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 30.0,
+      "professors": 20.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "small police station",
+      "workshopId": "2715165413",
+      "modPath": "2101_small_police_station"
+    }
+  ],
+  "vehicles": []
+}

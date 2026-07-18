@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1941256603",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:28:45+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1941256603/chevrolet_step_van",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.15,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "capacity": 2.5,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 67.0,
+      "powerKW": 73.0,
+      "emptyWeight": 4.0,
+      "from": 1967,
+      "to": 1978,
+      "countryId": 39003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1941256603",
+      "modPath": "chevrolet_step_van"
+    }
+  ]
+}

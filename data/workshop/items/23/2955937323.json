@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2955937323",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:00:56+00:00",
+  "buildings": [
+    {
+      "id": "2955937323/panel-rail",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 24.0,
+      "professors": 0,
+      "production": {
+        "prefabpanels": 4.0
+      },
+      "consumption": {
+        "boards": 0.4,
+        "plants": 2.8,
+        "water": 0.032
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 38.0,
+        "workers": 72.0,
+        "boards": 39.0,
+        "prefabpanels": 24.0,
+        "steel": 29.0,
+        "ecomponents": 6.0,
+        "mcomponents": 6.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Hempcrete Panel Factory -Rail",
+      "workshopId": "2955937323",
+      "modPath": "panel-rail"
+    },
+    {
+      "id": "2955937323/panel-trolley",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 24.0,
+      "professors": 0,
+      "production": {
+        "prefabpanels": 4.0
+      },
+      "consumption": {
+        "boards": 0.4,
+        "plants": 2.8,
+        "water": 0.032
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 38.0,
+        "workers": 72.0,
+        "boards": 39.0,
+        "prefabpanels": 24.0,
+        "steel": 29.0,
+        "ecomponents": 6.0,
+        "mcomponents": 6.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Hempcrete Panel Factory -Trolley",
+      "workshopId": "2955937323",
+      "modPath": "panel-trolley"
+    }
+  ],
+  "vehicles": []
+}

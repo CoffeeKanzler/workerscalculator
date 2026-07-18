@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2867627857",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:58:35+00:00",
+  "buildings": [
+    {
+      "id": "2867627857/vodozabor",
+      "nameId": 7515,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {
+        "water": 24.0
+      },
+      "consumption": {
+        "usagewater": 3.0,
+        "chemicals": 0.03
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.3
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2867627857",
+      "modPath": "vodozabor"
+    }
+  ],
+  "vehicles": []
+}

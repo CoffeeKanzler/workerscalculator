@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2006411065",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:17:12+00:00",
+  "buildings": [
+    {
+      "id": "2006411065/GSK_POD",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Underground Garage Cooperative",
+      "workshopId": "2006411065",
+      "modPath": "GSK_POD"
+    }
+  ],
+  "vehicles": []
+}

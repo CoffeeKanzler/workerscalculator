@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2573944593",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:29:59+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2573944593/mini_cooper",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.17,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costUSD": 2000.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 100.0,
+      "powerKW": 41.0,
+      "emptyWeight": 0.7,
+      "from": 1959,
+      "to": 2000,
+      "countryId": 39041,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2573944593",
+      "modPath": "mini_cooper"
+    }
+  ]
+}

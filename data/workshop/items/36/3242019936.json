@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3242019936",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:57:05+00:00",
+  "buildings": [
+    {
+      "id": "3242019936/WIP",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_MEDICAL"
+      ],
+      "workers": 70.0,
+      "professors": 70.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Faculty of Pedagogy, University of Warsaw",
+      "workshopId": "3242019936",
+      "modPath": "WIP"
+    }
+  ],
+  "vehicles": []
+}

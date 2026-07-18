@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2664035475",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:40:02+00:00",
+  "buildings": [
+    {
+      "id": "2664035475/villageurgentcare",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 4.0,
+      "professors": 2.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Village Urgent Care",
+      "workshopId": "2664035475",
+      "modPath": "villageurgentcare"
+    }
+  ],
+  "vehicles": []
+}

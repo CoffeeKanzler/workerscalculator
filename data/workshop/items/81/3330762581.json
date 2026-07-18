@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3330762581",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:47:07+00:00",
+  "buildings": [
+    {
+      "id": "3330762581/SiloCSR",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big Grain Silo ČSSR 60s",
+      "workshopId": "3330762581",
+      "modPath": "SiloCSR"
+    }
+  ],
+  "vehicles": []
+}

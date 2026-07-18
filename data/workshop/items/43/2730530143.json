@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2730530143",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:26:59+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2730530143/il76_flatbed",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 44.52,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 890.0,
+      "powerKW": 46800.0,
+      "emptyWeight": 101.0,
+      "capacity": 47.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1969,
+      "to": 2013,
+      "countryId": 39011,
+      "workshopId": "2730530143",
+      "modPath": "il76_flatbed"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3176052016",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:54:30+00:00",
+  "buildings": [
+    {
+      "id": "3176052016/1",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {
+        "eletric": 37.07
+      },
+      "consumption": {
+        "water": 12.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 100.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hydroelectric Powerhouse",
+      "workshopId": "3176052016",
+      "modPath": "1"
+    },
+    {
+      "id": "3176052016/2",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_WATER_SURFACE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 150.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tower Well",
+      "workshopId": "3176052016",
+      "modPath": "2"
+    },
+    {
+      "id": "3176052016/3",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 400.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Water Tower Deposit",
+      "workshopId": "3176052016",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

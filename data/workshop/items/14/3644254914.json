@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3644254914",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:34:56+00:00",
+  "buildings": [
+    {
+      "id": "3644254914/6712_Stroykontora-15",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stroykontora-15",
+      "workshopId": "3644254914",
+      "modPath": "6712_Stroykontora-15"
+    }
+  ],
+  "vehicles": []
+}

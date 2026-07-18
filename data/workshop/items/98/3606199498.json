@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3606199498",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:47:23+00:00",
+  "buildings": [
+    {
+      "id": "3606199498/hospital",
+      "nameId": 6256,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 70.0,
+      "professors": 70.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3606199498",
+      "modPath": "hospital"
+    }
+  ],
+  "vehicles": []
+}

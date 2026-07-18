@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1959300042",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:12:58+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1959300042/raketa",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 27.07,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 50736.0,
+      "speed": 75.0,
+      "powerKW": 400.0,
+      "emptyWeight": 135.0,
+      "capacity": 66.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1959,
+      "to": 1997,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "1959300042",
+      "modPath": "raketa"
+    }
+  ]
+}

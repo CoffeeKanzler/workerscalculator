@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2875455078",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:41:04+00:00",
+  "buildings": [
+    {
+      "id": "2875455078/mon_p1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 23.0,
+        "concrete": 4.0,
+        "steel": 0.01
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Агитплакат 1",
+      "workshopId": "2875455078",
+      "modPath": "mon_p1"
+    },
+    {
+      "id": "2875455078/mon_p2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Агитплакат 2",
+      "workshopId": "2875455078",
+      "modPath": "mon_p2"
+    },
+    {
+      "id": "2875455078/mon_p3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Агитплакат 3",
+      "workshopId": "2875455078",
+      "modPath": "mon_p3"
+    }
+  ],
+  "vehicles": []
+}

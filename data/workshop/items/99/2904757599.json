@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2904757599",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:26:05+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2904757599/Ty160",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 41.26,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 430000.0,
+      "consumption": 0.0,
+      "speed": 2200.0,
+      "powerKW": 25000.0,
+      "emptyWeight": 110.0,
+      "capacity": 27.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1984,
+      "to": 3000,
+      "countryId": 39011,
+      "workshopId": "2904757599",
+      "modPath": "Ty160"
+    }
+  ]
+}

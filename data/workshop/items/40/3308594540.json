@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3308594540",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:58:51+00:00",
+  "buildings": [
+    {
+      "id": "3308594540/sauna",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Public Sauna",
+      "workshopId": "3308594540",
+      "modPath": "sauna"
+    }
+  ],
+  "vehicles": []
+}

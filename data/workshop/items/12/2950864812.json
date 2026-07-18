@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2950864812",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:27:15+00:00",
+  "buildings": [
+    {
+      "id": "2950864812/Forge",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {
+        "steel": 0.04
+      },
+      "consumption": {
+        "iron": 0.1,
+        "coal": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small city forge",
+      "workshopId": "2950864812",
+      "modPath": "Forge"
+    }
+  ],
+  "vehicles": []
+}

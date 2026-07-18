@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2017458695",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:21:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2017458695/amb_avi_furgon",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.49,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5236,
+      "costRUB": 4300.0,
+      "speed": 95.0,
+      "powerKW": 61.0,
+      "emptyWeight": 2.2,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1983,
+      "to": 1997,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2017458695",
+      "modPath": "amb_avi_furgon"
+    }
+  ]
+}

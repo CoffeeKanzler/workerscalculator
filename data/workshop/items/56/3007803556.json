@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3007803556",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:32:28+00:00",
+  "buildings": [
+    {
+      "id": "3007803556/chess",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 13.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Chess house",
+      "workshopId": "3007803556",
+      "modPath": "chess"
+    }
+  ],
+  "vehicles": []
+}

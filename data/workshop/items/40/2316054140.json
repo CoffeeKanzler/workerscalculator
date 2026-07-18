@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2316054140",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:22:50+00:00",
+  "buildings": [
+    {
+      "id": "2316054140/Electrolytic",
+      "nameId": 26304,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 750.0,
+      "professors": 0,
+      "production": {
+        "aluminium": 0.032
+      },
+      "consumption": {
+        "rawbauxite": 0.2,
+        "coal": 0.048,
+        "chemicals": 0.008
+      },
+      "consumptionPerSecond": {
+        "eletric": 1.0
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 5.0,
+        "living": 45.0
+      },
+      "workshopId": "2316054140",
+      "modPath": "Electrolytic"
+    }
+  ],
+  "vehicles": []
+}

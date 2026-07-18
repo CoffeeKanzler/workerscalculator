@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2914303239",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:18:58+00:00",
+  "buildings": [
+    {
+      "id": "2914303239/lightrail_40m_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 400.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 400.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Light Rail Station",
+      "workshopId": "2914303239",
+      "modPath": "lightrail_40m_2"
+    }
+  ],
+  "vehicles": []
+}

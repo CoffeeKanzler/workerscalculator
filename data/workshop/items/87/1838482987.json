@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1838482987",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:59:37+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1838482987/russian_tram_lm68_old",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 17.18,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5116,
+      "costRUB": 4300.0,
+      "capacity": 75.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "tram",
+      "speed": 65.0,
+      "powerKW": 180.0,
+      "emptyWeight": 19.0,
+      "from": 1968,
+      "to": 1975,
+      "countryId": 39011,
+      "electric": true,
+      "workshopId": "1838482987",
+      "modPath": "russian_tram_lm68_old"
+    },
+    {
+      "id": "1838482987/russian_tram_t3_old",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.09,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5126,
+      "costRUB": 4300.0,
+      "powerKW": 160.0,
+      "emptyWeight": 16.6,
+      "trainGroup": "tram",
+      "speed": 65.0,
+      "capacity": 86.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1962,
+      "to": 1997,
+      "countryId": 39000,
+      "electric": true,
+      "workshopId": "1838482987",
+      "modPath": "russian_tram_t3_old"
+    }
+  ]
+}

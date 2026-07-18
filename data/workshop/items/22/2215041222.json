@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2215041222",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:37:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2215041222/MBLPK321Dumper",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.92,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "capacity": 7.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "speed": 70.0,
+      "powerKW": 80.0,
+      "emptyWeight": 5.0,
+      "from": 1958,
+      "to": 1970,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2215041222",
+      "modPath": "MBLPK321Dumper"
+    }
+  ]
+}

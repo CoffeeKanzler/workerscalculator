@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2151242314",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:07:08+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2151242314/bus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.25,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4000.0,
+      "speed": 80.0,
+      "powerKW": 66.0,
+      "emptyWeight": 4.5,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 30.0,
+      "from": 1958,
+      "to": 1968,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2151242314",
+      "modPath": "bus"
+    }
+  ]
+}

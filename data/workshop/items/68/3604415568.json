@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3604415568",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:02:32+00:00",
+  "buildings": [
+    {
+      "id": "3604415568/1",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 11.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "274-20-19 (Magazine)",
+      "workshopId": "3604415568",
+      "modPath": "1"
+    },
+    {
+      "id": "3604415568/2",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 11.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "274-20-19 (Bar)",
+      "workshopId": "3604415568",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

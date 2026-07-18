@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2871216310",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:26:41+00:00",
+  "buildings": [
+    {
+      "id": "2871216310/rossia",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cinema Rossia",
+      "workshopId": "2871216310",
+      "modPath": "rossia"
+    }
+  ],
+  "vehicles": []
+}

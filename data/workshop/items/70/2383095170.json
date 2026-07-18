@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2383095170",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:33:39+00:00",
+  "buildings": [
+    {
+      "id": "2383095170/mili",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "MIG-25 Monument",
+      "workshopId": "2383095170",
+      "modPath": "mili"
+    }
+  ],
+  "vehicles": []
+}

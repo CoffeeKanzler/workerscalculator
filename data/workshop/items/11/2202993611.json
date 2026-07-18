@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2202993611",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:45:09+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2202993611/FNMD11",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.73,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "speed": 70.0,
+      "powerKW": 110.0,
+      "emptyWeight": 7.0,
+      "from": 1960,
+      "to": 1975,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2202993611",
+      "modPath": "FNMD11"
+    }
+  ]
+}

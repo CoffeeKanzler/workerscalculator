@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3312353099",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:18:53+00:00",
+  "buildings": [
+    {
+      "id": "3312353099/lekuri",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 2.0,
+      "professors": 1.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Doctor's Practice",
+      "workshopId": "3312353099",
+      "modPath": "lekuri"
+    },
+    {
+      "id": "3312353099/talo",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.0,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Finnish 50s high quality house",
+      "workshopId": "3312353099",
+      "modPath": "talo"
+    }
+  ],
+  "vehicles": []
+}

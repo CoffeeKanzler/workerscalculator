@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3682528737",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:20:21+00:00",
+  "buildings": [
+    {
+      "id": "3682528737/bulletinboard",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nogova bulletin board",
+      "workshopId": "3682528737",
+      "modPath": "bulletinboard"
+    }
+  ],
+  "vehicles": []
+}

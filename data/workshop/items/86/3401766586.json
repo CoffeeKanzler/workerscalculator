@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3401766586",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:55:50+00:00",
+  "buildings": [
+    {
+      "id": "3401766586/PONzak1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 455.0,
+      "professors": 0,
+      "production": {
+        "eletronics": 0.028
+      },
+      "consumption": {
+        "mcomponents": 0.0012,
+        "ecomponents": 0.008,
+        "boards": 0.032
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 0.31
+      },
+      "nameStr": "Electronics Assembly Hall 50s",
+      "workshopId": "3401766586",
+      "modPath": "PONzak1"
+    }
+  ],
+  "vehicles": []
+}

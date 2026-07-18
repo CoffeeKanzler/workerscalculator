@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3119501077",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:48:13+00:00",
+  "buildings": [
+    {
+      "id": "3119501077/Radio1910",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 80.0,
+      "professors": 40.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 100.0,
+        "concrete": 100.0,
+        "workers": 1900.0,
+        "boards": 20.0,
+        "bricks": 300.0,
+        "steel": 30.0,
+        "ecomponents": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Historic Radio Station",
+      "workshopId": "3119501077",
+      "modPath": "Radio1910"
+    },
+    {
+      "id": "3119501077/RadioHall",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 50.0,
+        "concrete": 80.0,
+        "workers": 1100.0,
+        "boards": 20.0,
+        "bricks": 220.0,
+        "steel": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Radio City Hall",
+      "workshopId": "3119501077",
+      "modPath": "RadioHall"
+    },
+    {
+      "id": "3119501077/RadioHousing",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120.0
+      },
+      "constructionResources": {
+        "gravel": 50.0,
+        "concrete": 80.0,
+        "workers": 1000.0,
+        "boards": 20.0,
+        "bricks": 220.0,
+        "steel": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Historic Radio Annex",
+      "workshopId": "3119501077",
+      "modPath": "RadioHousing"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2780480678",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:30:44+00:00",
+  "buildings": [
+    {
+      "id": "2780480678/Pentagon_Police_Station",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 30.0,
+      "professors": 50.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pentagon Police Station",
+      "workshopId": "2780480678",
+      "modPath": "Pentagon_Police_Station"
+    },
+    {
+      "id": "2780480678/Pentagon_S_Police",
+      "nameId": null,
+      "types": [
+        "TYPE_SECRET_POLICE"
+      ],
+      "workers": 0,
+      "professors": 50.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pentagon Secret Police",
+      "workshopId": "2780480678",
+      "modPath": "Pentagon_S_Police"
+    }
+  ],
+  "vehicles": []
+}

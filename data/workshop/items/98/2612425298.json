@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2612425298",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:14:43+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2612425298/bmw_e30_320",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.31,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costUSD": 7000.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 190.0,
+      "powerKW": 95.0,
+      "emptyWeight": 1.2,
+      "from": 1983,
+      "to": 1993,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2612425298",
+      "modPath": "bmw_e30_320"
+    }
+  ]
+}

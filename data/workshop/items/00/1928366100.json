@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1928366100",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:39:30+00:00",
+  "buildings": [
+    {
+      "id": "1928366100/ifm",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Iron Felix Monument",
+      "workshopId": "1928366100",
+      "modPath": "ifm"
+    }
+  ],
+  "vehicles": []
+}

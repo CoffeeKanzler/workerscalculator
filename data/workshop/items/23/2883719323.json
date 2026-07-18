@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2883719323",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:20:02+00:00",
+  "buildings": [
+    {
+      "id": "2883719323/holidayinn",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 65.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.7,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Holiday Inn Hotel",
+      "workshopId": "2883719323",
+      "modPath": "holidayinn"
+    },
+    {
+      "id": "2883719323/holidayinn_fountain",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Holiday Inn fountain",
+      "workshopId": "2883719323",
+      "modPath": "holidayinn_fountain"
+    },
+    {
+      "id": "2883719323/holidayinn_lamp",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Holiday Inn lamp",
+      "workshopId": "2883719323",
+      "modPath": "holidayinn_lamp"
+    },
+    {
+      "id": "2883719323/holidayinn_parking",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Holiday Inn Parking",
+      "workshopId": "2883719323",
+      "modPath": "holidayinn_parking"
+    }
+  ],
+  "vehicles": []
+}

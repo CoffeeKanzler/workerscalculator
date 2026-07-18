@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2547967163",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:18:40+00:00",
+  "buildings": [
+    {
+      "id": "2547967163/osemuholnik",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shopping centre",
+      "workshopId": "2547967163",
+      "modPath": "osemuholnik"
+    }
+  ],
+  "vehicles": []
+}

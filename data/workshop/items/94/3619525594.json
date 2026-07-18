@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3619525594",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:52:25+00:00",
+  "buildings": [
+    {
+      "id": "3619525594/residential_palace",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1196.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1196.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Residential Palace",
+      "workshopId": "3619525594",
+      "modPath": "residential_palace"
+    }
+  ],
+  "vehicles": []
+}

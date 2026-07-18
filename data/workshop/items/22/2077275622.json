@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2077275622",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:22:52+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2077275622/combine_ck_6",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.53,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 20.0,
+      "powerKW": 110.0,
+      "emptyWeight": 9.45,
+      "from": 1971,
+      "to": 2000,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2077275622",
+      "modPath": "combine_ck_6"
+    }
+  ]
+}

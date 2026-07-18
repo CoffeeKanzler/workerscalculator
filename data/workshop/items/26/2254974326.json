@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2254974326",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:30:25+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2254974326/oil_20",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.91,
+      "type": "VEHICLETYPE_CONTAINER",
+      "costRUB": 4300.0,
+      "capacity": 19.5,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "speed": 0.0,
+      "emptyWeight": 3.24,
+      "from": 1950,
+      "to": 3000,
+      "countryId": 39000,
+      "workshopId": "2254974326",
+      "modPath": "oil_20"
+    },
+    {
+      "id": "2254974326/oil_40",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.54,
+      "type": "VEHICLETYPE_CONTAINER",
+      "costRUB": 4300.0,
+      "capacity": 29.2,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "speed": 0.0,
+      "emptyWeight": 5.5,
+      "from": 1950,
+      "to": 3000,
+      "countryId": 39000,
+      "workshopId": "2254974326",
+      "modPath": "oil_40"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3676923201",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:08:38+00:00",
+  "buildings": [
+    {
+      "id": "3676923201/prisonorphanage",
+      "nameId": 6263,
+      "types": [
+        "TYPE_ORPHANAGE"
+      ],
+      "workers": 70.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3676923201",
+      "modPath": "prisonorphanage"
+    }
+  ],
+  "vehicles": []
+}

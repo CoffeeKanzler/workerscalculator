@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2443844916",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:32:54+00:00",
+  "buildings": [
+    {
+      "id": "2443844916/29467_Blok20pv1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 205.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 205.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 20p v1",
+      "workshopId": "2443844916",
+      "modPath": "29467_Blok20pv1"
+    }
+  ],
+  "vehicles": []
+}

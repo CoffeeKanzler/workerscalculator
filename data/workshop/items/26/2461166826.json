@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2461166826",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:14:27+00:00",
+  "buildings": [
+    {
+      "id": "2461166826/Stadium_Medium",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 11.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Chandongja Stadium",
+      "workshopId": "2461166826",
+      "modPath": "Stadium_Medium"
+    }
+  ],
+  "vehicles": []
+}

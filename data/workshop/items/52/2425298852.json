@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2425298852",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:02:15+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2425298852/BBClass",
+      "category": "workshop",
+      "trainSet": [
+        "2425298852/BBTender"
+      ],
+      "lifespanYears": 0.0,
+      "length": 15.45,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 4300.0,
+      "speed": 98.0,
+      "emptyWeight": 86.0,
+      "powerKW": 980.0,
+      "from": 1945,
+      "to": 1963,
+      "countryId": 39041,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2425298852",
+      "modPath": "BBClass"
+    },
+    {
+      "id": "2425298852/BBTender",
+      "category": "workshop",
+      "trainSet": [
+        "2425298852/BBTender"
+      ],
+      "lifespanYears": 0.0,
+      "length": 6.85,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costUSD": 4300.0,
+      "emptyWeight": 6.0,
+      "consumption": 0.0,
+      "speed": 30.0,
+      "capacity": 68.0,
+      "from": 1945,
+      "to": 1963,
+      "countryId": 39041,
+      "workshopId": "2425298852",
+      "modPath": "BBTender"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2807731290",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:18:31+00:00",
+  "buildings": [
+    {
+      "id": "2807731290/01Medium",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_SEWAGE": 1.0
+      },
+      "constructionResources": {
+        "workers": 200.0,
+        "gravel": 6.0,
+        "asphalt": 2.0,
+        "concrete": 8.0,
+        "bricks": 10.0,
+        "boards": 3.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sewage Road Station Medium",
+      "workshopId": "2807731290",
+      "modPath": "01Medium"
+    },
+    {
+      "id": "2807731290/02Small",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_SEWAGE": 1.0
+      },
+      "constructionResources": {
+        "workers": 100.0,
+        "gravel": 6.0,
+        "asphalt": 2.0,
+        "concrete": 6.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sewage Road Station Small",
+      "workshopId": "2807731290",
+      "modPath": "02Small"
+    },
+    {
+      "id": "2807731290/03XSmall",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_SEWAGE": 1.0
+      },
+      "constructionResources": {
+        "workers": 55.0,
+        "gravel": 4.0,
+        "asphalt": 2.0,
+        "concrete": 4.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sewage Road Station XSmall",
+      "workshopId": "2807731290",
+      "modPath": "03XSmall"
+    },
+    {
+      "id": "2807731290/04Med1Way",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_SEWAGE": 1.0
+      },
+      "constructionResources": {
+        "workers": 180.0,
+        "gravel": 6.0,
+        "asphalt": 2.0,
+        "concrete": 8.0,
+        "bricks": 10.0,
+        "boards": 3.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sewage Road Station 1Way",
+      "workshopId": "2807731290",
+      "modPath": "04Med1Way"
+    }
+  ],
+  "vehicles": []
+}

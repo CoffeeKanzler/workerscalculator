@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2309814408",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:07:55+00:00",
+  "buildings": [
+    {
+      "id": "2309814408/BVVz",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 200.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 50.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1900.0,
+        "steel": 300.0,
+        "asphalt": 200.0,
+        "gravel": 300.0,
+        "bricks": 910.0,
+        "concrete": 1100.0,
+        "ecomponents": 50.0,
+        "mcomponents": 100.0,
+        "boards": 500.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Expo Centre Dome",
+      "workshopId": "2309814408",
+      "modPath": "BVVz"
+    }
+  ],
+  "vehicles": []
+}

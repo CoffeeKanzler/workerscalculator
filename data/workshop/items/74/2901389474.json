@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2901389474",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:57:26+00:00",
+  "buildings": [
+    {
+      "id": "2901389474/scieki",
+      "nameId": 7503,
+      "types": [
+        "TYPE_SEWAGE_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_SEWAGE": 32.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2901389474",
+      "modPath": "scieki"
+    }
+  ],
+  "vehicles": []
+}

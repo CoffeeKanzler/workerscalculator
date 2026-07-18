@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2466215550",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:05:16+00:00",
+  "buildings": [
+    {
+      "id": "2466215550/LATC",
+      "nameId": null,
+      "types": [
+        "TYPE_AIRPLANE_TOWER"
+      ],
+      "workers": 0,
+      "professors": 14.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Modern Big Control Tower",
+      "workshopId": "2466215550",
+      "modPath": "LATC"
+    }
+  ],
+  "vehicles": []
+}

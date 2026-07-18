@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2063479868",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:52:44+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2063479868/Victoria",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.79,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costUSD": 4550.0,
+      "consumption": 0.0,
+      "speed": 152.0,
+      "powerKW": 100.0,
+      "emptyWeight": 2.0,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1980,
+      "to": 1991,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2063479868",
+      "modPath": "Victoria"
+    }
+  ]
+}

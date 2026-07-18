@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2639179229",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:37:55+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2639179229/HayesHDX",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 18.53,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 75.0,
+      "powerKW": 478.0,
+      "emptyWeight": 28.0,
+      "from": 1959,
+      "to": 1975,
+      "capacity": 50.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2639179229",
+      "modPath": "HayesHDX"
+    },
+    {
+      "id": "2639179229/HayesHDXlowbed",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 75.0,
+      "powerKW": 478.0,
+      "emptyWeight": 28.0,
+      "from": 1959,
+      "to": 1975,
+      "capacity": 50.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2639179229",
+      "modPath": "HayesHDXlowbed"
+    }
+  ]
+}

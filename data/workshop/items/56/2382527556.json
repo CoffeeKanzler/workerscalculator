@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2382527556",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:59:07+00:00",
+  "buildings": [
+    {
+      "id": "2382527556/barrel",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "steel": 0.25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Barrel",
+      "workshopId": "2382527556",
+      "modPath": "barrel"
+    },
+    {
+      "id": "2382527556/pipes",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "concrete": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pipes",
+      "workshopId": "2382527556",
+      "modPath": "pipes"
+    },
+    {
+      "id": "2382527556/scaffold_01",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "steel": 1.0,
+        "boards": 4.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Scaffold 1",
+      "workshopId": "2382527556",
+      "modPath": "scaffold_01"
+    },
+    {
+      "id": "2382527556/scaffold_02",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "steel": 1.5,
+        "boards": 6.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Scaffold 2",
+      "workshopId": "2382527556",
+      "modPath": "scaffold_02"
+    },
+    {
+      "id": "2382527556/scaffold_03",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "steel": 2.0,
+        "boards": 8.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Scaffold 3",
+      "workshopId": "2382527556",
+      "modPath": "scaffold_03"
+    },
+    {
+      "id": "2382527556/scaffold_04",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "steel": 2.2,
+        "boards": 9.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Scaffold 4",
+      "workshopId": "2382527556",
+      "modPath": "scaffold_04"
+    }
+  ],
+  "vehicles": []
+}

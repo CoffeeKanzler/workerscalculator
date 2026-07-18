@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2638323128",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:17:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2638323128/jumbo",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.01,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5343,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 85.0,
+      "powerKW": 201.0,
+      "emptyWeight": 17.2,
+      "capacity": 170.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1975,
+      "to": 1992,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2638323128",
+      "modPath": "jumbo"
+    }
+  ]
+}

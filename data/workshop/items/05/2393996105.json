@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2393996105",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:40:40+00:00",
+  "buildings": [
+    {
+      "id": "2393996105/.",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Building",
+      "workshopId": "2393996105",
+      "modPath": "."
+    }
+  ],
+  "vehicles": []
+}

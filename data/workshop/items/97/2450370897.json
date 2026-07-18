@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2450370897",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:18:58+00:00",
+  "buildings": [
+    {
+      "id": "2450370897/lenin_avenue_short",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 140.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 140.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lenin Avenue Building Short",
+      "workshopId": "2450370897",
+      "modPath": "lenin_avenue_short"
+    }
+  ],
+  "vehicles": []
+}

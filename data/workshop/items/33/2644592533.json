@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2644592533",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:05:13+00:00",
+  "buildings": [
+    {
+      "id": "2644592533/kozara",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kozara Spomenik",
+      "workshopId": "2644592533",
+      "modPath": "kozara"
+    },
+    {
+      "id": "2644592533/kozara_info",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kozara Info Kiosk",
+      "workshopId": "2644592533",
+      "modPath": "kozara_info"
+    },
+    {
+      "id": "2644592533/kozara_small",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kozara Small",
+      "workshopId": "2644592533",
+      "modPath": "kozara_small"
+    },
+    {
+      "id": "2644592533/kozara_ver2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kozara Version 2",
+      "workshopId": "2644592533",
+      "modPath": "kozara_ver2"
+    }
+  ],
+  "vehicles": []
+}

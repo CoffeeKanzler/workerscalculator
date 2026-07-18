@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2303121025",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:06:41+00:00",
+  "buildings": [
+    {
+      "id": "2303121025/cooling",
+      "nameId": null,
+      "types": [
+        "TYPE_COOLING_TOWER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling tower 1",
+      "workshopId": "2303121025",
+      "modPath": "cooling"
+    },
+    {
+      "id": "2303121025/cooling2",
+      "nameId": null,
+      "types": [
+        "TYPE_COOLING_TOWER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling tower 2",
+      "workshopId": "2303121025",
+      "modPath": "cooling2"
+    },
+    {
+      "id": "2303121025/cooling2M",
+      "nameId": null,
+      "types": [
+        "TYPE_COOLING_TOWER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling tower 2-M",
+      "workshopId": "2303121025",
+      "modPath": "cooling2M"
+    },
+    {
+      "id": "2303121025/coolingM",
+      "nameId": null,
+      "types": [
+        "TYPE_COOLING_TOWER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling tower 1-M",
+      "workshopId": "2303121025",
+      "modPath": "coolingM"
+    }
+  ],
+  "vehicles": []
+}

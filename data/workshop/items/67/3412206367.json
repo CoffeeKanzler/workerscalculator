@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3412206367",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:58:11+00:00",
+  "buildings": [
+    {
+      "id": "3412206367/wh",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 60.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse",
+      "workshopId": "3412206367",
+      "modPath": "wh"
+    }
+  ],
+  "vehicles": []
+}

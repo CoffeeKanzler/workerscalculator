@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2941349637",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:48:21+00:00",
+  "buildings": [
+    {
+      "id": "2941349637/museum_kiosk",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 16.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Museum Kiosk",
+      "workshopId": "2941349637",
+      "modPath": "museum_kiosk"
+    },
+    {
+      "id": "2941349637/museum_parking",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Museum Parking",
+      "workshopId": "2941349637",
+      "modPath": "museum_parking"
+    },
+    {
+      "id": "2941349637/museum_parking4",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Museum Parking 4 places",
+      "workshopId": "2941349637",
+      "modPath": "museum_parking4"
+    },
+    {
+      "id": "2941349637/museum_parking8",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Museum Parking 8 places",
+      "workshopId": "2941349637",
+      "modPath": "museum_parking8"
+    }
+  ],
+  "vehicles": []
+}

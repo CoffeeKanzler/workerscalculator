@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3001703342",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:48:00+00:00",
+  "buildings": [
+    {
+      "id": "3001703342/cooling_1",
+      "nameId": 9060,
+      "types": [
+        "TYPE_COOLING_TOWER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3001703342",
+      "modPath": "cooling_1"
+    },
+    {
+      "id": "3001703342/cooling_2",
+      "nameId": 9060,
+      "types": [
+        "TYPE_COOLING_TOWER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3001703342",
+      "modPath": "cooling_2"
+    }
+  ],
+  "vehicles": []
+}

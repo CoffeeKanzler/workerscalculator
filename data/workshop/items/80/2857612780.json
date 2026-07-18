@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2857612780",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:59:26+00:00",
+  "buildings": [
+    {
+      "id": "2857612780/hotel_obrenovac",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 40.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel Obrenovac",
+      "workshopId": "2857612780",
+      "modPath": "hotel_obrenovac"
+    },
+    {
+      "id": "2857612780/hotel_obrenovac_parking",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel Obrenovac Parking",
+      "workshopId": "2857612780",
+      "modPath": "hotel_obrenovac_parking"
+    }
+  ],
+  "vehicles": []
+}

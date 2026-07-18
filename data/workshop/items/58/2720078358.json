@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2720078358",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:11:26+00:00",
+  "buildings": [
+    {
+      "id": "2720078358/policebox",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 2.0,
+      "professors": 1.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Police Box",
+      "workshopId": "2720078358",
+      "modPath": "policebox"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2405466261",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:06:59+00:00",
+  "buildings": [
+    {
+      "id": "2405466261/ukcouncilflat",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 32.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 32.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "UK Council House",
+      "workshopId": "2405466261",
+      "modPath": "ukcouncilflat"
+    }
+  ],
+  "vehicles": []
+}

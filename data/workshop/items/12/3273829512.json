@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3273829512",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:58:06+00:00",
+  "buildings": [
+    {
+      "id": "3273829512/coal",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 120.0,
+      "professors": 0,
+      "production": {
+        "coal": 2.2
+      },
+      "consumption": {
+        "rawcoal": 3.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Coal Breaker",
+      "workshopId": "3273829512",
+      "modPath": "coal"
+    }
+  ],
+  "vehicles": []
+}

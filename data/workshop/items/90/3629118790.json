@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3629118790",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:15:23+00:00",
+  "buildings": [
+    {
+      "id": "3629118790/SDH_Pruszkow",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 22.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "SDH Pruszkow",
+      "workshopId": "3629118790",
+      "modPath": "SDH_Pruszkow"
+    }
+  ],
+  "vehicles": []
+}

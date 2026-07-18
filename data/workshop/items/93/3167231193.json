@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3167231193",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:45:07+00:00",
+  "buildings": [
+    {
+      "id": "3167231193/1",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forest guesthouse",
+      "workshopId": "3167231193",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

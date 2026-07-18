@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2080281225",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:21:52+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2080281225/Argosy_Reefer",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.53,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5153,
+      "costUSD": 1.0,
+      "speed": 115.0,
+      "powerKW": 396.0,
+      "emptyWeight": 34.3,
+      "capacity": 33.0,
+      "transportType": "RESOURCE_TRANSPORT_COOLER",
+      "from": 1998,
+      "to": 3000,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2080281225",
+      "modPath": "Argosy_Reefer"
+    }
+  ]
+}

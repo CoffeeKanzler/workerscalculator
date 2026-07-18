@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1835517305",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:56:26+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1835517305/firetruck_b1000",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.61,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4000.0,
+      "capacity": 2.2,
+      "from": 1961,
+      "to": 1990,
+      "speed": 90.0,
+      "consumption": 0.0,
+      "powerKW": 31.0,
+      "emptyWeight": 2.05,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1835517305",
+      "modPath": "firetruck_b1000"
+    }
+  ]
+}

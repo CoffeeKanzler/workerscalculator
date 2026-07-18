@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3232127494",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:52:33+00:00",
+  "buildings": [
+    {
+      "id": "3232127494/N2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 17.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Breslau Shopping Mall (XIX cent)",
+      "workshopId": "3232127494",
+      "modPath": "N2"
+    }
+  ],
+  "vehicles": []
+}

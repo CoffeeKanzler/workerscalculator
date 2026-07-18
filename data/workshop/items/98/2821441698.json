@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2821441698",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:46:56+00:00",
+  "buildings": [
+    {
+      "id": "2821441698/briquettes",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {
+        "coal": 7.4
+      },
+      "consumption": {
+        "rawcoal": 10.0,
+        "bitumen": 0.2,
+        "water": 0.6
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.19
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Briquettes Factory",
+      "workshopId": "2821441698",
+      "modPath": "briquettes"
+    }
+  ],
+  "vehicles": []
+}

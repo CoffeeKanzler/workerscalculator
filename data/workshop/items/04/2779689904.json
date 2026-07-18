@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2779689904",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:15:30+00:00",
+  "buildings": [
+    {
+      "id": "2779689904/AggStorage1k",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "AggStorage1k",
+      "workshopId": "2779689904",
+      "modPath": "AggStorage1k"
+    },
+    {
+      "id": "2779689904/AggStorage1kRail",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "AggStorage1kRail",
+      "workshopId": "2779689904",
+      "modPath": "AggStorage1kRail"
+    },
+    {
+      "id": "2779689904/AggStorage3k",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 3000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "AggStorage3k",
+      "workshopId": "2779689904",
+      "modPath": "AggStorage3k"
+    },
+    {
+      "id": "2779689904/AggStorage3kRail",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 3000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "AggStorage3kRail",
+      "workshopId": "2779689904",
+      "modPath": "AggStorage3kRail"
+    }
+  ],
+  "vehicles": []
+}

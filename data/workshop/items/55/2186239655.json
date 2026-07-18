@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2186239655",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:54:41+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2186239655/BusMAN",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.47,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5265,
+      "costUSD": 4500.0,
+      "consumption": 0.0,
+      "speed": 130.0,
+      "powerKW": 270.0,
+      "emptyWeight": 7.8,
+      "capacity": 109.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2009,
+      "to": 3000,
+      "countryId": 39003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2186239655",
+      "modPath": "BusMAN"
+    }
+  ]
+}

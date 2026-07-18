@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2064446245",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:07:40+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2064446245/ambulance_gz2403",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.4,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costRUB": 4500.0,
+      "consumption": 0.0,
+      "speed": 140.0,
+      "powerKW": 75.0,
+      "emptyWeight": 1.8,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1975,
+      "to": 1987,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2064446245",
+      "modPath": "ambulance_gz2403"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3490308571",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:27:09+00:00",
+  "buildings": [
+    {
+      "id": "3490308571/0",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Obsevation",
+      "workshopId": "3490308571",
+      "modPath": "0"
+    }
+  ],
+  "vehicles": []
+}

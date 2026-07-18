@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2463725974",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:13:20+00:00",
+  "buildings": [
+    {
+      "id": "2463725974/newoldcity1",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": 0.5,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40.0
+      },
+      "constructionResources": {
+        "gravel": 50.0,
+        "workers": 150.0,
+        "boards": 30.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2463725974",
+      "modPath": "newoldcity1"
+    },
+    {
+      "id": "2463725974/newoldcity10",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 45.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": 0.5,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 45.0
+      },
+      "constructionResources": {
+        "gravel": 50.0,
+        "workers": 150.0,
+        "boards": 30.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2463725974",
+      "modPath": "newoldcity10"
+    },
+    {
+      "id": "2463725974/newoldcity2",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": 0.5,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40.0
+      },
+      "constructionResources": {
+        "gravel": 50.0,
+        "workers": 150.0,
+        "boards": 30.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2463725974",
+      "modPath": "newoldcity2"
+    },
+    {
+      "id": "2463725974/newoldcity3",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": 0.5,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40.0
+      },
+      "constructionResources": {
+        "gravel": 50.0,
+        "workers": 150.0,
+        "boards": 30.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2463725974",
+      "modPath": "newoldcity3"
+    },
+    {
+      "id": "2463725974/newoldcity4",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 45.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": 0.5,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 45.0
+      },
+      "constructionResources": {
+        "gravel": 50.0,
+        "workers": 150.0,
+        "boards": 30.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2463725974",
+      "modPath": "newoldcity4"
+    },
+    {
+      "id": "2463725974/newoldcity5",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": 0.5,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40.0
+      },
+      "constructionResources": {
+        "gravel": 50.0,
+        "workers": 150.0,
+        "boards": 30.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2463725974",
+      "modPath": "newoldcity5"
+    },
+    {
+      "id": "2463725974/newoldcity6",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": 0.5,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50.0
+      },
+      "constructionResources": {
+        "gravel": 50.0,
+        "workers": 150.0,
+        "boards": 30.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2463725974",
+      "modPath": "newoldcity6"
+    },
+    {
+      "id": "2463725974/newoldcity7",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": 0.5,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50.0
+      },
+      "constructionResources": {
+        "gravel": 50.0,
+        "workers": 150.0,
+        "boards": 30.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2463725974",
+      "modPath": "newoldcity7"
+    },
+    {
+      "id": "2463725974/newoldcity8",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": 0.5,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50.0
+      },
+      "constructionResources": {
+        "gravel": 50.0,
+        "workers": 150.0,
+        "boards": 30.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2463725974",
+      "modPath": "newoldcity8"
+    },
+    {
+      "id": "2463725974/newoldcity9",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": 0.5,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50.0
+      },
+      "constructionResources": {
+        "gravel": 50.0,
+        "workers": 150.0,
+        "boards": 30.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2463725974",
+      "modPath": "newoldcity9"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3248181083",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:45:45+00:00",
+  "buildings": [
+    {
+      "id": "3248181083/1",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Residential & Fire Building",
+      "workshopId": "3248181083",
+      "modPath": "1"
+    },
+    {
+      "id": "3248181083/2",
+      "nameId": null,
+      "types": [
+        "TYPE_REPAIR_OFFICE"
+      ],
+      "workers": 120.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Residential & Maintenance Buildings",
+      "workshopId": "3248181083",
+      "modPath": "2"
+    },
+    {
+      "id": "3248181083/3",
+      "nameId": null,
+      "types": [
+        "TYPE_SECRET_POLICE"
+      ],
+      "workers": 0,
+      "professors": 100.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Residential & SecretPolice Building",
+      "workshopId": "3248181083",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

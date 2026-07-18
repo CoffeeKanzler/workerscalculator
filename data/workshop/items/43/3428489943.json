@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3428489943",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:49:12+00:00",
+  "buildings": [
+    {
+      "id": "3428489943/heliport_passenger_emty",
+      "nameId": 26313,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 250.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 250.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3428489943",
+      "modPath": "heliport_passenger_emty"
+    }
+  ],
+  "vehicles": []
+}

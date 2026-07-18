@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2335205387",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:11:59+00:00",
+  "buildings": [
+    {
+      "id": "2335205387/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 700.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 700.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "30-storey STROITEL",
+      "workshopId": "2335205387",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2032332350",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:52:26+00:00",
+  "buildings": [
+    {
+      "id": "2032332350/pumpin",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 2.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Насос Вход",
+      "workshopId": "2032332350",
+      "modPath": "pumpin"
+    },
+    {
+      "id": "2032332350/pumpout",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 2.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Насос Выход",
+      "workshopId": "2032332350",
+      "modPath": "pumpout"
+    },
+    {
+      "id": "2032332350/underpipes",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Магистральная станция",
+      "workshopId": "2032332350",
+      "modPath": "underpipes"
+    }
+  ],
+  "vehicles": []
+}

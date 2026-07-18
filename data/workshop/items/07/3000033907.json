@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3000033907",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:51:27+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3000033907/Comet_4",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 33.99,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 840.0,
+      "powerKW": 18800.0,
+      "emptyWeight": 34.2,
+      "capacity": 56.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1956,
+      "to": 1964,
+      "countryId": 39041,
+      "workshopId": "3000033907",
+      "modPath": "Comet_4"
+    }
+  ]
+}

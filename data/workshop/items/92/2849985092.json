@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2849985092",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:05:45+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2849985092/nohab",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 18.93,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 4300.0,
+      "speed": 105.0,
+      "powerKW": 1435.0,
+      "emptyWeight": 102.0,
+      "from": 1954,
+      "to": 1969,
+      "countryId": 39022,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2849985092",
+      "modPath": "nohab"
+    }
+  ]
+}

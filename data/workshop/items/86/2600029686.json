@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2600029686",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:25:18+00:00",
+  "buildings": [
+    {
+      "id": "2600029686/HOUSE",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 130.0,
+      "professors": 90.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House_of_radio",
+      "workshopId": "2600029686",
+      "modPath": "HOUSE"
+    }
+  ],
+  "vehicles": []
+}

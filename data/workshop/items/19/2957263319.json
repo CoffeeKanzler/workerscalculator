@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2957263319",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:07:22+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2957263319/Coalporter",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.43,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "trainGroup": "vagon",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "emptyWeight": 18.9,
+      "from": 1978,
+      "to": 3000,
+      "countryId": 39018,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "capacity": 110.0,
+      "workshopId": "2957263319",
+      "modPath": "Coalporter"
+    }
+  ]
+}

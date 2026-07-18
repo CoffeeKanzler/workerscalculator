@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3689910119",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:47:50+00:00",
+  "buildings": [
+    {
+      "id": "3689910119/church",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 50.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "St. Nicholas church | Николаевская церковь (Хамовники)",
+      "workshopId": "3689910119",
+      "modPath": "church"
+    }
+  ],
+  "vehicles": []
+}

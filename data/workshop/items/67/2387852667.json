@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2387852667",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:33:40+00:00",
+  "buildings": [
+    {
+      "id": "2387852667/P4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 330.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 330.0
+      },
+      "constructionResources": {
+        "prefabpanels": 30.0,
+        "steel": 10.0,
+        "concrete": 5.0,
+        "asphalt": 7.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series P-4 flats",
+      "workshopId": "2387852667",
+      "modPath": "P4"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3015064208",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:05:39+00:00",
+  "buildings": [
+    {
+      "id": "3015064208/fountain_stela",
+      "nameId": 26320,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3015064208",
+      "modPath": "fountain_stela"
+    }
+  ],
+  "vehicles": []
+}

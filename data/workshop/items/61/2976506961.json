@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2976506961",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:41:40+00:00",
+  "buildings": [
+    {
+      "id": "2976506961/Tidal_Power",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 60.0,
+      "professors": 15.0,
+      "production": {
+        "eletric": 144.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tidal Power Plant",
+      "workshopId": "2976506961",
+      "modPath": "Tidal_Power"
+    }
+  ],
+  "vehicles": []
+}

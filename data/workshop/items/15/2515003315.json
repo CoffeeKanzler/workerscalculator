@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2515003315",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:55:19+00:00",
+  "buildings": [
+    {
+      "id": "2515003315/panelhouse",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 72.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 72.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian typical prefab building",
+      "workshopId": "2515003315",
+      "modPath": "panelhouse"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3307434988",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:54:49+00:00",
+  "buildings": [
+    {
+      "id": "3307434988/talo",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Wooden House",
+      "workshopId": "3307434988",
+      "modPath": "talo"
+    },
+    {
+      "id": "3307434988/tarha",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Village Kindergarten",
+      "workshopId": "3307434988",
+      "modPath": "tarha"
+    }
+  ],
+  "vehicles": []
+}

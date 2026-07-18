@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2164685160",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:01:42+00:00",
+  "buildings": [
+    {
+      "id": "2164685160/silo650t",
+      "nameId": 6107,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2164685160",
+      "modPath": "silo650t"
+    }
+  ],
+  "vehicles": []
+}

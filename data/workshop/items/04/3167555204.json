@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3167555204",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:36:18+00:00",
+  "buildings": [
+    {
+      "id": "3167555204/tavern1",
+      "nameId": 6254,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 6.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3167555204",
+      "modPath": "tavern1"
+    },
+    {
+      "id": "3167555204/tavern2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 6.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Restaurant",
+      "workshopId": "3167555204",
+      "modPath": "tavern2"
+    }
+  ],
+  "vehicles": []
+}

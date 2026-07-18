@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1892578930",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:13:23+00:00",
+  "buildings": [
+    {
+      "id": "1892578930/Auto_station",
+      "nameId": 1800,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 14.2,
+        "gravel": 20.1
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1892578930",
+      "modPath": "Auto_station"
+    }
+  ],
+  "vehicles": []
+}

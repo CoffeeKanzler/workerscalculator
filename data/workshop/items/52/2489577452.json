@@ -1,0 +1,544 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2489577452",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:10:32+00:00",
+  "buildings": [
+    {
+      "id": "2489577452/Apartment1",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 56.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.64,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 56.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment1"
+    },
+    {
+      "id": "2489577452/Apartment1C",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 62.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.64,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 62.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment1C"
+    },
+    {
+      "id": "2489577452/Apartment1S",
+      "nameId": 6260,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment1S"
+    },
+    {
+      "id": "2489577452/Apartment2",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 66.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.56,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 66.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment2"
+    },
+    {
+      "id": "2489577452/Apartment2C",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 72.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.53,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 72.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment2C"
+    },
+    {
+      "id": "2489577452/Apartment2R",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 54.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.71,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 54.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment2R"
+    },
+    {
+      "id": "2489577452/Apartment2S",
+      "nameId": 6250,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment2S"
+    },
+    {
+      "id": "2489577452/Apartment3",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 74.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.46,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 74.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment3"
+    },
+    {
+      "id": "2489577452/Apartment3C",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.48,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment3C"
+    },
+    {
+      "id": "2489577452/Apartment3D",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 148.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.44,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 148.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment3D"
+    },
+    {
+      "id": "2489577452/Apartment3L",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 18.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.5,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 18.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment3L"
+    },
+    {
+      "id": "2489577452/Apartment3LD",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 38.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.47,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 38.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment3LD"
+    },
+    {
+      "id": "2489577452/Apartment3S",
+      "nameId": 6250,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment3S"
+    },
+    {
+      "id": "2489577452/Apartment4",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.52,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment4"
+    },
+    {
+      "id": "2489577452/Apartment5",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 18.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.55,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 18.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment5"
+    },
+    {
+      "id": "2489577452/Apartment5L",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 11.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.57,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 11.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment5L"
+    },
+    {
+      "id": "2489577452/Apartment5M",
+      "nameId": 6256,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 5.0,
+      "professors": 5.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment5M"
+    },
+    {
+      "id": "2489577452/Apartment5MB",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 9.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.59,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 9.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment5MB"
+    },
+    {
+      "id": "2489577452/Apartment6",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 147.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.62,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 147.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment6"
+    },
+    {
+      "id": "2489577452/Apartment6C",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 156.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.61,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 156.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment6C"
+    },
+    {
+      "id": "2489577452/Apartment6D",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 298.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.54,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 298.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "Apartment6D"
+    },
+    {
+      "id": "2489577452/GeneralStore",
+      "nameId": 6260,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "GeneralStore"
+    },
+    {
+      "id": "2489577452/PartyHQ",
+      "nameId": 6020,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 120.0,
+      "professors": 120.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489577452",
+      "modPath": "PartyHQ"
+    }
+  ],
+  "vehicles": []
+}

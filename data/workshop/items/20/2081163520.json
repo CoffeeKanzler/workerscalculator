@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2081163520",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:49:50+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2081163520/personal_tiger",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.18,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5396,
+      "costRUB": 20300.0,
+      "consumption": 0.0,
+      "speed": 135.0,
+      "powerKW": 197.0,
+      "emptyWeight": 5.03,
+      "capacity": 10.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2000,
+      "to": 2020,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2081163520",
+      "modPath": "personal_tiger"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3628996629",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:55:00+00:00",
+  "buildings": [
+    {
+      "id": "3628996629/long_warehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 64.0,
+        "RESOURCE_TRANSPORT_COVERED": 460.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "long combined warehouse",
+      "workshopId": "3628996629",
+      "modPath": "long_warehouse"
+    },
+    {
+      "id": "3628996629/medium_warehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 40.0,
+        "RESOURCE_TRANSPORT_COVERED": 360.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "medium combined warehouse",
+      "workshopId": "3628996629",
+      "modPath": "medium_warehouse"
+    },
+    {
+      "id": "3628996629/medium_warehouse2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 100.0,
+        "RESOURCE_TRANSPORT_COVERED": 600.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "large combined warehouse",
+      "workshopId": "3628996629",
+      "modPath": "medium_warehouse2"
+    },
+    {
+      "id": "3628996629/small_warehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 60.0,
+        "RESOURCE_TRANSPORT_COVERED": 240.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "small combined warehouse",
+      "workshopId": "3628996629",
+      "modPath": "small_warehouse"
+    }
+  ],
+  "vehicles": []
+}

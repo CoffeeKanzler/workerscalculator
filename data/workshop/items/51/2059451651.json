@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2059451651",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:56:27+00:00",
+  "buildings": [
+    {
+      "id": "2059451651/RedRoadFlat",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 507.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 507.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "RedRoadFlats",
+      "workshopId": "2059451651",
+      "modPath": "RedRoadFlat"
+    }
+  ],
+  "vehicles": []
+}

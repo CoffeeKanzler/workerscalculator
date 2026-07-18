@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2869365797",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:18:27+00:00",
+  "buildings": [
+    {
+      "id": "2869365797/market",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.0,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 19.0,
+        "gravel": 47.9,
+        "workers": 508.0,
+        "bricks": 6.8,
+        "boards": 7.0,
+        "prefabpanels": 5.6,
+        "steel": 0.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "70s RSFSR brick store (medium)",
+      "workshopId": "2869365797",
+      "modPath": "market"
+    },
+    {
+      "id": "2869365797/market-2",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.0,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 19.0,
+        "gravel": 47.9,
+        "workers": 508.0,
+        "bricks": 6.8,
+        "boards": 7.0,
+        "prefabpanels": 5.6,
+        "steel": 0.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "70s RSFSR brick library (medium)",
+      "workshopId": "2869365797",
+      "modPath": "market-2"
+    },
+    {
+      "id": "2869365797/shop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.0,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 2.8,
+        "gravel": 7.2,
+        "workers": 77.0,
+        "bricks": 1.0,
+        "boards": 1.1,
+        "prefabpanels": 0.8,
+        "steel": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shop outbuilding for residential «1-528КП-40»",
+      "workshopId": "2869365797",
+      "modPath": "shop"
+    },
+    {
+      "id": "2869365797/shop-2",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.0,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 2.8,
+        "gravel": 7.2,
+        "workers": 77.0,
+        "bricks": 1.0,
+        "boards": 1.1,
+        "prefabpanels": 0.8,
+        "steel": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Post office outbuilding for residential «1-528КП-40»",
+      "workshopId": "2869365797",
+      "modPath": "shop-2"
+    },
+    {
+      "id": "2869365797/store",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.0,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 9.6,
+        "gravel": 24.0,
+        "workers": 254.0,
+        "bricks": 3.4,
+        "boards": 3.6,
+        "prefabpanels": 2.8,
+        "steel": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Retail stores outbuilding for residential «1-528КП-40»",
+      "workshopId": "2869365797",
+      "modPath": "store"
+    },
+    {
+      "id": "2869365797/store-2",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 6.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.0,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 9.6,
+        "gravel": 24.0,
+        "workers": 254.0,
+        "bricks": 3.4,
+        "boards": 3.6,
+        "prefabpanels": 2.8,
+        "steel": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium library outbuilding for residential «1-528КП-40»",
+      "workshopId": "2869365797",
+      "modPath": "store-2"
+    }
+  ],
+  "vehicles": []
+}

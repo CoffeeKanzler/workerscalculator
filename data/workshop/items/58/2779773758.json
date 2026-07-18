@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2779773758",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:10:58+00:00",
+  "buildings": [
+    {
+      "id": "2779773758/.",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {
+        "eletric": 10.0
+      },
+      "consumption": {
+        "fuel": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gas turbine power plant",
+      "workshopId": "2779773758",
+      "modPath": "."
+    }
+  ],
+  "vehicles": []
+}

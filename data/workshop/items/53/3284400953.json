@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3284400953",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:02:15+00:00",
+  "buildings": [
+    {
+      "id": "3284400953/ironplant",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {
+        "iron": 0.8
+      },
+      "consumption": {
+        "rawiron": 2.0,
+        "wood": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Iron Ore Processing Plant",
+      "workshopId": "3284400953",
+      "modPath": "ironplant"
+    }
+  ],
+  "vehicles": []
+}

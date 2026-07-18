@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2801697071",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:11:11+00:00",
+  "buildings": [
+    {
+      "id": "2801697071/House1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "US Prewar House",
+      "workshopId": "2801697071",
+      "modPath": "House1"
+    },
+    {
+      "id": "2801697071/House2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "US Prewar House",
+      "workshopId": "2801697071",
+      "modPath": "House2"
+    },
+    {
+      "id": "2801697071/House3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "US Prewar House",
+      "workshopId": "2801697071",
+      "modPath": "House3"
+    },
+    {
+      "id": "2801697071/House4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "US Prewar House",
+      "workshopId": "2801697071",
+      "modPath": "House4"
+    }
+  ],
+  "vehicles": []
+}

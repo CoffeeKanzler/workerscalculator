@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3144091261",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:47:16+00:00",
+  "buildings": [
+    {
+      "id": "3144091261/school",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 10.0,
+      "professors": 38.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 86.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "СШ №14",
+      "workshopId": "3144091261",
+      "modPath": "school"
+    },
+    {
+      "id": "3144091261/sportzal",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 16.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 938.0,
+        "asphalt": 29.0,
+        "gravel": 32.0,
+        "concrete": 38.0,
+        "steel": 14.0,
+        "prefabpanels": 187.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Спортзал школы",
+      "workshopId": "3144091261",
+      "modPath": "sportzal"
+    }
+  ],
+  "vehicles": []
+}

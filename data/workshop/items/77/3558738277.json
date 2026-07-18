@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3558738277",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:08:40+00:00",
+  "buildings": [
+    {
+      "id": "3558738277/P-46M(5-1U)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-46M(5-1U)",
+      "workshopId": "3558738277",
+      "modPath": "P-46M(5-1U)"
+    },
+    {
+      "id": "3558738277/P-46M(5-1p)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-46M (5-1p)",
+      "workshopId": "3558738277",
+      "modPath": "P-46M(5-1p)"
+    },
+    {
+      "id": "3558738277/P-46M(5-2p)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-46M(5-2p)",
+      "workshopId": "3558738277",
+      "modPath": "P-46M(5-2p)"
+    },
+    {
+      "id": "3558738277/P-46M(7-1U)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 28.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 28.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-46M(7-1U)",
+      "workshopId": "3558738277",
+      "modPath": "P-46M(7-1U)"
+    },
+    {
+      "id": "3558738277/P-46M(7-1p)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 35.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 35.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-46M(7-1p)",
+      "workshopId": "3558738277",
+      "modPath": "P-46M(7-1p)"
+    },
+    {
+      "id": "3558738277/P-46M(7-2p)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 70.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 70.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-46M(7-2p)",
+      "workshopId": "3558738277",
+      "modPath": "P-46M(7-2p)"
+    },
+    {
+      "id": "3558738277/P-46M(9-1U)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-46M(9-1U)",
+      "workshopId": "3558738277",
+      "modPath": "P-46M(9-1U)"
+    },
+    {
+      "id": "3558738277/P-46M(9-1p)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 45.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 45.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-46M(9-1p)",
+      "workshopId": "3558738277",
+      "modPath": "P-46M(9-1p)"
+    },
+    {
+      "id": "3558738277/P-46M(9-2p)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 90.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 90.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "P-46M(9-2p)",
+      "workshopId": "3558738277",
+      "modPath": "P-46M(9-2p)"
+    }
+  ],
+  "vehicles": []
+}

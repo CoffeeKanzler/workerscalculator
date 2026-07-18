@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2356408270",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:59:36+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2356408270/Volgabus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.36,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5265,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 120.0,
+      "powerKW": 290.0,
+      "emptyWeight": 7.8,
+      "capacity": 111.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2013,
+      "to": 2017,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2356408270",
+      "modPath": "Volgabus"
+    }
+  ]
+}

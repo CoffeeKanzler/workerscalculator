@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3542688957",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:53:26+00:00",
+  "buildings": [
+    {
+      "id": "3542688957/store_parking_lot_sign",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking Lot Sign for Stores",
+      "workshopId": "3542688957",
+      "modPath": "store_parking_lot_sign"
+    }
+  ],
+  "vehicles": []
+}

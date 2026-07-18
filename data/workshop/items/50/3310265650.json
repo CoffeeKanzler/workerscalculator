@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3310265650",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:45:33+00:00",
+  "buildings": [
+    {
+      "id": "3310265650/1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 500.0,
+        "RESOURCE_TRANSPORT_COOLER": 60.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse - Wood",
+      "workshopId": "3310265650",
+      "modPath": "1"
+    },
+    {
+      "id": "3310265650/2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 850.0,
+        "RESOURCE_TRANSPORT_COOLER": 100.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse - Wood",
+      "workshopId": "3310265650",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

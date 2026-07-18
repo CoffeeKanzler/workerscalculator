@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2334904149",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:04:09+00:00",
+  "buildings": [
+    {
+      "id": "2334904149/27057_10 Floor Residential Flats",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 168.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 168.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "10 Floor Residential Flats",
+      "workshopId": "2334904149",
+      "modPath": "27057_10 Floor Residential Flats"
+    }
+  ],
+  "vehicles": []
+}

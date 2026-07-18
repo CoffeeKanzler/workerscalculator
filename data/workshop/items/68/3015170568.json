@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3015170568",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:52:30+00:00",
+  "buildings": [
+    {
+      "id": "3015170568/1",
+      "nameId": null,
+      "types": [
+        "TYPE_REPAIR_OFFICE"
+      ],
+      "workers": 80.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rail Mainterance Dept.",
+      "workshopId": "3015170568",
+      "modPath": "1"
+    },
+    {
+      "id": "3015170568/2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {
+        "mcomponents": 0.06
+      },
+      "consumption": {
+        "steel": 0.2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rail Mainterance Dept Iron work room",
+      "workshopId": "3015170568",
+      "modPath": "2"
+    },
+    {
+      "id": "3015170568/3",
+      "nameId": null,
+      "types": [
+        "TYPE_REPAIR_OFFICE"
+      ],
+      "workers": 80.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Harbor Mainterance Dept.",
+      "workshopId": "3015170568",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

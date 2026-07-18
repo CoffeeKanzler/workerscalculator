@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2657711814",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:27:34+00:00",
+  "buildings": [
+    {
+      "id": "2657711814/comelect",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Comecon Electronics Shop",
+      "workshopId": "2657711814",
+      "modPath": "comelect"
+    },
+    {
+      "id": "2657711814/druzhba",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Druzhba Fast Food Restaurant",
+      "workshopId": "2657711814",
+      "modPath": "druzhba"
+    },
+    {
+      "id": "2657711814/pewex",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Foregin Goods Shop",
+      "workshopId": "2657711814",
+      "modPath": "pewex"
+    },
+    {
+      "id": "2657711814/sovarcade",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "The Soviet Arcade",
+      "workshopId": "2657711814",
+      "modPath": "sovarcade"
+    }
+  ],
+  "vehicles": []
+}

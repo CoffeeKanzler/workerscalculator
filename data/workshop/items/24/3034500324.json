@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3034500324",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:32:29+00:00",
+  "buildings": [
+    {
+      "id": "3034500324/high_capacity_water_pump",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 10.0
+      },
+      "constructionResources": {
+        "asphalt": 7.5,
+        "concrete": 10.0,
+        "gravel": 8.0,
+        "workers": 345.0,
+        "bricks": 12.0,
+        "boards": 5.0,
+        "steel": 11.25,
+        "mcomponents": 2.25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High-Capacity Water Pump",
+      "workshopId": "3034500324",
+      "modPath": "high_capacity_water_pump"
+    },
+    {
+      "id": "3034500324/high_capacity_water_reservoir",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 5000.0
+      },
+      "constructionResources": {
+        "asphalt": 7.5,
+        "concrete": 222.5,
+        "gravel": 100.0,
+        "workers": 825.0,
+        "boards": 4.5,
+        "steel": 22.0,
+        "mcomponents": 3.25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High-Capacity Water Reservoir",
+      "workshopId": "3034500324",
+      "modPath": "high_capacity_water_reservoir"
+    },
+    {
+      "id": "3034500324/high_capacity_water_well",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_WATER"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "water": 1500.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.375
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 35.0,
+        "concrete": 108.0,
+        "gravel": 50.0,
+        "workers": 765.0,
+        "bricks": 12.0,
+        "steel": 25.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High-Capacity Water Well",
+      "workshopId": "3034500324",
+      "modPath": "high_capacity_water_well"
+    }
+  ],
+  "vehicles": []
+}

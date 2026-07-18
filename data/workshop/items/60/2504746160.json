@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2504746160",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:54:58+00:00",
+  "buildings": [
+    {
+      "id": "2504746160/aquaglobus",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 2.0,
+        "workers": 140.0,
+        "steel": 6.0,
+        "mcomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Aquaglobus",
+      "workshopId": "2504746160",
+      "modPath": "aquaglobus"
+    },
+    {
+      "id": "2504746160/watertower",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 6.0,
+        "workers": 420.0,
+        "concrete": 44.0,
+        "steel": 8.0,
+        "bricks": 6.0,
+        "mcomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Watertower",
+      "workshopId": "2504746160",
+      "modPath": "watertower"
+    }
+  ],
+  "vehicles": []
+}

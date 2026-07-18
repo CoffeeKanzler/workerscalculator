@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2481006725",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:50:19+00:00",
+  "buildings": [
+    {
+      "id": "2481006725/RED",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24.0,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.0,
+        "living": 0.0
+      },
+      "nameStr": "RED",
+      "workshopId": "2481006725",
+      "modPath": "RED"
+    }
+  ],
+  "vehicles": []
+}

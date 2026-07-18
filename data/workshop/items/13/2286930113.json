@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2286930113",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:28:21+00:00",
+  "buildings": [
+    {
+      "id": "2286930113/salon_soviet",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "INGSOC People's Forums Hall",
+      "workshopId": "2286930113",
+      "modPath": "salon_soviet"
+    }
+  ],
+  "vehicles": []
+}

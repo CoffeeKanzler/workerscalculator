@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2553758365",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:39:57+00:00",
+  "buildings": [
+    {
+      "id": "2553758365/hotel_vs_station",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 75.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Отель-Вокзал",
+      "workshopId": "2553758365",
+      "modPath": "hotel_vs_station"
+    }
+  ],
+  "vehicles": []
+}

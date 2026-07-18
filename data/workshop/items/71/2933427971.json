@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2933427971",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:23:43+00:00",
+  "buildings": [
+    {
+      "id": "2933427971/ethelred6x2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48.0
+      },
+      "constructionResources": {
+        "asphalt": 10.0,
+        "concrete": 12.0,
+        "gravel": 12.0,
+        "workers": 220.0,
+        "steel": 2.0,
+        "bricks": 28.0,
+        "boards": 8.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ethelred 6x2 block",
+      "workshopId": "2933427971",
+      "modPath": "ethelred6x2"
+    }
+  ],
+  "vehicles": []
+}

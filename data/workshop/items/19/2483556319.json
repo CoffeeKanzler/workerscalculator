@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2483556319",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:02:10+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2483556319/firetruck_liaz_cas25",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.62,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5021,
+      "costRUB": 4300.0,
+      "capacity": 9.0,
+      "speed": 110.0,
+      "powerKW": 182.0,
+      "emptyWeight": 11.0,
+      "from": 1980,
+      "to": 1999,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2483556319",
+      "modPath": "firetruck_liaz_cas25"
+    }
+  ]
+}

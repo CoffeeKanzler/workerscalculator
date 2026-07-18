@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2273331369",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:34:09+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2273331369/typiiiferry",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 30.16,
+      "type": "VEHICLETYPE_SHIP",
+      "costUSD": 4300.0,
+      "speed": 45.0,
+      "powerKW": 280.0,
+      "emptyWeight": 255.0,
+      "capacity": 300.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1953,
+      "to": 2006,
+      "countryId": 39005,
+      "electric": false,
+      "workshopId": "2273331369",
+      "modPath": "typiiiferry"
+    }
+  ]
+}

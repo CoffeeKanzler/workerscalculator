@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1889420054",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:25:13+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1889420054/fsokombi",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.85,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5451,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 105.0,
+      "powerKW": 47.0,
+      "emptyWeight": 1.05,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1980,
+      "to": 1991,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1889420054",
+      "modPath": "fsokombi"
+    }
+  ]
+}

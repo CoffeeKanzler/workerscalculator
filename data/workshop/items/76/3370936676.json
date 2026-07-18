@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3370936676",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:39:13+00:00",
+  "buildings": [
+    {
+      "id": "3370936676/LEF",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 120.0,
+      "professors": 0,
+      "production": {
+        "explosives": 0.021
+      },
+      "consumption": {
+        "chemicals": 0.011,
+        "gravel": 0.033,
+        "wood": 0.022
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Explosives Factory",
+      "workshopId": "3370936676",
+      "modPath": "LEF"
+    }
+  ],
+  "vehicles": []
+}

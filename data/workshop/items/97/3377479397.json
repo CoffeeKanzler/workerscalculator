@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3377479397",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:06:14+00:00",
+  "buildings": [
+    {
+      "id": "3377479397/WasteBurnPit",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste": 0.35
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 20.0,
+        "workers": 120.0,
+        "bricks": 5.0,
+        "concrete": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Waste Burning Pit",
+      "workshopId": "3377479397",
+      "modPath": "WasteBurnPit"
+    }
+  ],
+  "vehicles": []
+}

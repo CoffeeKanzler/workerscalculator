@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2333739319",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:07:17+00:00",
+  "buildings": [
+    {
+      "id": "2333739319/test",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 256.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 256.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "16-storey P-43",
+      "workshopId": "2333739319",
+      "modPath": "test"
+    }
+  ],
+  "vehicles": []
+}

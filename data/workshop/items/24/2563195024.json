@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2563195024",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:00:45+00:00",
+  "buildings": [
+    {
+      "id": "2563195024/stalinmonument",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Joseph Stalin Monument",
+      "workshopId": "2563195024",
+      "modPath": "stalinmonument"
+    }
+  ],
+  "vehicles": []
+}

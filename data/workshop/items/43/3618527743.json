@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3618527743",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:12:32+00:00",
+  "buildings": [
+    {
+      "id": "3618527743/TrashCan",
+      "nameId": null,
+      "types": [
+        "TYPE_TRASH_CONTAINER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Centrosymmetric Large Garbage Containers with Paths",
+      "workshopId": "3618527743",
+      "modPath": "TrashCan"
+    }
+  ],
+  "vehicles": []
+}

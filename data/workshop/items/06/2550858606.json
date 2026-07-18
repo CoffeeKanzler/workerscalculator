@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2550858606",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:59:45+00:00",
+  "buildings": [
+    {
+      "id": "2550858606/steelmill",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 500.0,
+      "professors": 0,
+      "production": {
+        "steel": 0.15
+      },
+      "consumption": {
+        "coal": 0.24,
+        "iron": 0.28
+      },
+      "consumptionPerSecond": {
+        "eletric": 3.0
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Steel mill V2 (normal)",
+      "workshopId": "2550858606",
+      "modPath": "steelmill"
+    },
+    {
+      "id": "2550858606/steelmillore",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 600.0,
+      "professors": 0,
+      "production": {
+        "steel": 0.12
+      },
+      "consumption": {
+        "rawcoal": 0.48,
+        "rawiron": 0.64
+      },
+      "consumptionPerSecond": {
+        "eletric": 6.0
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Steel mill V2 (ore)",
+      "workshopId": "2550858606",
+      "modPath": "steelmillore"
+    }
+  ],
+  "vehicles": []
+}

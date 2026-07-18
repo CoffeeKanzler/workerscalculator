@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2466338031",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:56:53+00:00",
+  "buildings": [
+    {
+      "id": "2466338031/Blok8pv1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 145.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 145.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 8p v1",
+      "workshopId": "2466338031",
+      "modPath": "Blok8pv1"
+    }
+  ],
+  "vehicles": []
+}

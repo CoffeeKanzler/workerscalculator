@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2067521710",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:52:54+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2067521710/personal_zaz_968m",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.66,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costRUB": 4000.0,
+      "consumption": 0.0,
+      "speed": 118.0,
+      "powerKW": 35.0,
+      "emptyWeight": 1.1,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1979,
+      "to": 1994,
+      "countryId": 39015,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2067521710",
+      "modPath": "personal_zaz_968m"
+    }
+  ]
+}

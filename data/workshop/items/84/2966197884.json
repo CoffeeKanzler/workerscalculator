@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2966197884",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:13:27+00:00",
+  "buildings": [
+    {
+      "id": "2966197884/kgb",
+      "nameId": null,
+      "types": [
+        "TYPE_SECRET_POLICE"
+      ],
+      "workers": 0,
+      "professors": 250.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 489.0,
+        "steel": 92.70000000000002,
+        "prefabpanels": 332.0,
+        "workers": 13491.0,
+        "mcomponents": 5.4,
+        "ecomponents": 2.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Secret police, KGB hq «Raduga» (1991, Leningrad)",
+      "workshopId": "2966197884",
+      "modPath": "kgb"
+    },
+    {
+      "id": "2966197884/okb",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 500.0,
+      "professors": 200.0,
+      "production": {
+        "eletronics": 0.022
+      },
+      "consumption": {
+        "ecomponents": 0.008,
+        "mcomponents": 0.009,
+        "plastics": 0.002,
+        "aluminium": 0.005
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 489.0,
+        "steel": 92.70000000000002,
+        "prefabpanels": 332.0,
+        "workers": 13491.0,
+        "mcomponents": 5.4,
+        "ecomponents": 2.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Experimental design bureau «OKB Raduga» (1991, Leningrad)",
+      "workshopId": "2966197884",
+      "modPath": "okb"
+    },
+    {
+      "id": "2966197884/p",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "parking for OKB «Raduga»",
+      "workshopId": "2966197884",
+      "modPath": "p"
+    },
+    {
+      "id": "2966197884/phq",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 70.0,
+      "professors": 200.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 489.0,
+        "steel": 92.70000000000002,
+        "prefabpanels": 332.0,
+        "workers": 13491.0,
+        "mcomponents": 5.4,
+        "ecomponents": 2.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Party HQ «Raduga» (1991, Leningrad)",
+      "workshopId": "2966197884",
+      "modPath": "phq"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2887880450",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:17:32+00:00",
+  "buildings": [
+    {
+      "id": "2887880450/BAR",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stopochka",
+      "workshopId": "2887880450",
+      "modPath": "BAR"
+    }
+  ],
+  "vehicles": []
+}

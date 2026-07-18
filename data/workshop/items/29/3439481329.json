@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3439481329",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:28:22+00:00",
+  "buildings": [
+    {
+      "id": "3439481329/nast_UM",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Railroad interlocking tower",
+      "workshopId": "3439481329",
+      "modPath": "nast_UM"
+    },
+    {
+      "id": "3439481329/nast_trans",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 210.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Railroad transportation bureau",
+      "workshopId": "3439481329",
+      "modPath": "nast_trans"
+    }
+  ],
+  "vehicles": []
+}

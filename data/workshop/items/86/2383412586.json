@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2383412586",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:06:59+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2383412586/bardotka",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.5,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "speed": 100.0,
+      "powerKW": 1103.0,
+      "emptyWeight": 75.0,
+      "from": 1964,
+      "to": 1971,
+      "countryId": 39000,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2383412586",
+      "modPath": "bardotka"
+    }
+  ]
+}

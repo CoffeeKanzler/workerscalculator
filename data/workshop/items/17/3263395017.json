@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3263395017",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:04:17+00:00",
+  "buildings": [
+    {
+      "id": "3263395017/Shabolovka",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 200.0,
+      "professors": 120.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Башня на Шаболовке",
+      "workshopId": "3263395017",
+      "modPath": "Shabolovka"
+    }
+  ],
+  "vehicles": []
+}

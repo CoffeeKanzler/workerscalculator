@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2294001571",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:46:38+00:00",
+  "buildings": [
+    {
+      "id": "2294001571/Slaughterhouse",
+      "nameId": 6105,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "meat": 2.5
+      },
+      "consumption": {
+        "livestock": 5.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 5.0,
+        "concrete": 12.0,
+        "asphalt": 4.0,
+        "workers": 150.0,
+        "bricks": 20.0,
+        "steel": 12.0,
+        "prefabpanels": 4.0,
+        "mcomponents": 2.0,
+        "boards": 10.0
+      },
+      "electricWorkerFactors": {
+        "living": 1.0
+      },
+      "workshopId": "2294001571",
+      "modPath": "Slaughterhouse"
+    }
+  ],
+  "vehicles": []
+}

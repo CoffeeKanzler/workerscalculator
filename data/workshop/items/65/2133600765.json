@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2133600765",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:59:26+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2133600765/scania124_base",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.51,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.8,
+      "capacity": 32.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 95.0,
+      "powerKW": 268.452,
+      "emptyWeight": 9.0,
+      "from": 1998,
+      "to": 3000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2133600765",
+      "modPath": "scania124_base"
+    }
+  ]
+}

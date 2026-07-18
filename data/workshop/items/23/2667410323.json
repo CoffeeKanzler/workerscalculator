@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2667410323",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:57:19+00:00",
+  "buildings": [
+    {
+      "id": "2667410323/Tunnel10",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 4.0,
+        "concrete": 1.0,
+        "workers": 30.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pedestrian tunnel 10m",
+      "workshopId": "2667410323",
+      "modPath": "Tunnel10"
+    },
+    {
+      "id": "2667410323/Tunnel20",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 8.0,
+        "concrete": 2.0,
+        "workers": 60.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pedestrian tunnel 20m",
+      "workshopId": "2667410323",
+      "modPath": "Tunnel20"
+    },
+    {
+      "id": "2667410323/Tunnel30",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 12.0,
+        "concrete": 3.0,
+        "workers": 90.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pedestrian tunnel 30m",
+      "workshopId": "2667410323",
+      "modPath": "Tunnel30"
+    },
+    {
+      "id": "2667410323/Tunnel40",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 16.0,
+        "concrete": 4.0,
+        "workers": 120.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pedestrian tunnel 40m",
+      "workshopId": "2667410323",
+      "modPath": "Tunnel40"
+    },
+    {
+      "id": "2667410323/Tunnel50",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 20.0,
+        "concrete": 5.0,
+        "workers": 150.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pedestrian tunnel 50m",
+      "workshopId": "2667410323",
+      "modPath": "Tunnel50"
+    }
+  ],
+  "vehicles": []
+}

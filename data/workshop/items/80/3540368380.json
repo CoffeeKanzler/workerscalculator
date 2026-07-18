@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3540368380",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:40:42+00:00",
+  "buildings": [
+    {
+      "id": "3540368380/GreenhouseMid",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200.0,
+      "professors": 0,
+      "production": {
+        "plants": 0.1
+      },
+      "consumption": {
+        "fertiliser_liquid": 0.0011,
+        "water": 0.4,
+        "coal": 0.008
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.18
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 4.0,
+        "boards": 31.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Greenhouse Mid - Liquid fertilizer",
+      "workshopId": "3540368380",
+      "modPath": "GreenhouseMid"
+    },
+    {
+      "id": "3540368380/GreenhouseMidFert",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200.0,
+      "professors": 0,
+      "production": {
+        "plants": 0.1
+      },
+      "consumption": {
+        "fertiliser": 0.00082,
+        "water": 0.4,
+        "coal": 0.008
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.18
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 4.0,
+        "boards": 31.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Greenhouse Mid - Organic fertilizer",
+      "workshopId": "3540368380",
+      "modPath": "GreenhouseMidFert"
+    },
+    {
+      "id": "3540368380/GreenhouseMidMix",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200.0,
+      "professors": 0,
+      "production": {
+        "plants": 0.1
+      },
+      "consumption": {
+        "fertiliser_liquid": 0.0006,
+        "fertiliser": 0.0004,
+        "water": 0.4,
+        "coal": 0.008
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.18
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 4.0,
+        "boards": 31.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Greenhouse Mid - Mixed",
+      "workshopId": "3540368380",
+      "modPath": "GreenhouseMidMix"
+    },
+    {
+      "id": "3540368380/Greenhousesmall",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 130.0,
+      "professors": 0,
+      "production": {
+        "plants": 0.1
+      },
+      "consumption": {
+        "fertiliser_liquid": 0.0011,
+        "water": 0.4,
+        "coal": 0.008
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.09
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 1.0,
+        "boards": 17.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Greenhouse - Liquid fertilizer",
+      "workshopId": "3540368380",
+      "modPath": "Greenhousesmall"
+    },
+    {
+      "id": "3540368380/GreenhousesmallFert",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 130.0,
+      "professors": 0,
+      "production": {
+        "plants": 0.1
+      },
+      "consumption": {
+        "fertiliser": 0.00082,
+        "water": 0.4,
+        "coal": 0.008
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.09
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 1.0,
+        "boards": 17.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Greenhouse - Organic fertilizer",
+      "workshopId": "3540368380",
+      "modPath": "GreenhousesmallFert"
+    },
+    {
+      "id": "3540368380/GreenhousesmallMix",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 130.0,
+      "professors": 0,
+      "production": {
+        "plants": 0.1
+      },
+      "consumption": {
+        "fertiliser_liquid": 0.0006,
+        "fertiliser": 0.0004,
+        "water": 0.4,
+        "coal": 0.008
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.09
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 1.0,
+        "boards": 17.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Greenhouse - Mixed",
+      "workshopId": "3540368380",
+      "modPath": "GreenhousesmallMix"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3461916760",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:24:41+00:00",
+  "buildings": [
+    {
+      "id": "3461916760/1995",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Neftergorsk",
+      "workshopId": "3461916760",
+      "modPath": "1995"
+    }
+  ],
+  "vehicles": []
+}

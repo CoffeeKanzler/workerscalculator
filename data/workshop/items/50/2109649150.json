@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2109649150",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:01:00+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2109649150/yatb_3_1door",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.58,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5441,
+      "costRUB": 4300.0,
+      "speed": 54.0,
+      "powerKW": 74.0,
+      "capacity": 100.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1938,
+      "to": 1939,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2109649150",
+      "modPath": "yatb_3_1door"
+    },
+    {
+      "id": "2109649150/yatb_3_2door",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.58,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5441,
+      "costRUB": 4300.0,
+      "speed": 54.0,
+      "powerKW": 74.0,
+      "capacity": 100.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1938,
+      "to": 1939,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2109649150",
+      "modPath": "yatb_3_2door"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2096038128",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:06:03+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2096038128/LK1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.53,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 68.0,
+      "powerKW": 105.0,
+      "emptyWeight": 9.6,
+      "capacity": 55.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1933,
+      "to": 1936,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2096038128",
+      "modPath": "LK1"
+    }
+  ]
+}

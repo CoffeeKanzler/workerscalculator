@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2475523304",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:08:36+00:00",
+  "buildings": [
+    {
+      "id": "2475523304/rail_station_rumble_unloading_small",
+      "nameId": 6164,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2475523304",
+      "modPath": "rail_station_rumble_unloading_small"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3714831427",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:20:23+00:00",
+  "buildings": [
+    {
+      "id": "3714831427/lipsk",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 70.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Office building Leipzig",
+      "workshopId": "3714831427",
+      "modPath": "lipsk"
+    },
+    {
+      "id": "3714831427/lipsk02",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 80.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Office building Leipzig (with ground floor)",
+      "workshopId": "3714831427",
+      "modPath": "lipsk02"
+    },
+    {
+      "id": "3714831427/lipsk02_h",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 23.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel Leipzig",
+      "workshopId": "3714831427",
+      "modPath": "lipsk02_h"
+    }
+  ],
+  "vehicles": []
+}

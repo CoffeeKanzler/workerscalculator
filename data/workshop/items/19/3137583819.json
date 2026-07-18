@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3137583819",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:34:35+00:00",
+  "buildings": [
+    {
+      "id": "3137583819/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 260.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 260.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flats - veranda D 15",
+      "workshopId": "3137583819",
+      "modPath": "1"
+    },
+    {
+      "id": "3137583819/2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 460.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 460.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flats - veranda D 25",
+      "workshopId": "3137583819",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

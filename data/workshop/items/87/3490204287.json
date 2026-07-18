@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3490204287",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:43:48+00:00",
+  "buildings": [
+    {
+      "id": "3490204287/Temple",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 500.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "SAVAS V2",
+      "workshopId": "3490204287",
+      "modPath": "Temple"
+    }
+  ],
+  "vehicles": []
+}

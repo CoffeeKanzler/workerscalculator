@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2784895785",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:35:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2784895785/HELI_CPCD70",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.85,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 7.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "speed": 30.0,
+      "powerKW": 84.6,
+      "emptyWeight": 9.0,
+      "from": 2004,
+      "to": 3000,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2784895785",
+      "modPath": "HELI_CPCD70"
+    }
+  ]
+}

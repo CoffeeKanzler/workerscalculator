@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3569280893",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:34:20+00:00",
+  "buildings": [
+    {
+      "id": "3569280893/burggasse",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 800.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 800.0
+      },
+      "constructionResources": {
+        "workers": 1440.0,
+        "concrete": 120.0,
+        "gravel": 90.0,
+        "steel": 30.0,
+        "bricks": 80.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small underground metro station",
+      "workshopId": "3569280893",
+      "modPath": "burggasse"
+    },
+    {
+      "id": "3569280893/dinamo",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1200.0
+      },
+      "constructionResources": {
+        "workers": 1440.0,
+        "concrete": 120.0,
+        "gravel": 90.0,
+        "steel": 30.0,
+        "bricks": 80.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large underground metro station",
+      "workshopId": "3569280893",
+      "modPath": "dinamo"
+    },
+    {
+      "id": "3569280893/stadtbahn",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1200.0
+      },
+      "constructionResources": {
+        "workers": 1620.0,
+        "concrete": 40.0,
+        "gravel": 30.0,
+        "bricks": 160.0,
+        "steel": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated neoclassical metro station",
+      "workshopId": "3569280893",
+      "modPath": "stadtbahn"
+    },
+    {
+      "id": "3569280893/surbiton",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {
+        "workers": 1440.0,
+        "concrete": 120.0,
+        "gravel": 90.0,
+        "steel": 30.0,
+        "bricks": 80.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium underground metro station",
+      "workshopId": "3569280893",
+      "modPath": "surbiton"
+    },
+    {
+      "id": "3569280893/surbiton2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {
+        "workers": 1440.0,
+        "concrete": 120.0,
+        "gravel": 90.0,
+        "steel": 30.0,
+        "bricks": 80.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium underground metro station B",
+      "workshopId": "3569280893",
+      "modPath": "surbiton2"
+    }
+  ],
+  "vehicles": []
+}

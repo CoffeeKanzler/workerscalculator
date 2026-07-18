@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3364760766",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:59:47+00:00",
+  "buildings": [
+    {
+      "id": "3364760766/DistributionOffice18",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Distribution Office - 18",
+      "workshopId": "3364760766",
+      "modPath": "DistributionOffice18"
+    }
+  ],
+  "vehicles": []
+}

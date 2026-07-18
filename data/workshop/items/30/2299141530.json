@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2299141530",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:29:49+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2299141530/DodgeDurango",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.06,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5394,
+      "costUSD": 4500.0,
+      "speed": 239.0,
+      "powerKW": 360.0,
+      "emptyWeight": 1.055,
+      "capacity": 7.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2011,
+      "to": 3000,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2299141530",
+      "modPath": "DodgeDurango"
+    }
+  ]
+}

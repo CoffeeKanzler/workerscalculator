@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2793503107",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:54:20+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2793503107/Couger",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.15,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 19500.0,
+      "speed": 200.0,
+      "powerKW": 335.0,
+      "emptyWeight": 4.8,
+      "capacity": 78.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2050,
+      "to": 3000,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2793503107",
+      "modPath": "Couger"
+    }
+  ]
+}

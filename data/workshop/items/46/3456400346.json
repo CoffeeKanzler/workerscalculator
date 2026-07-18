@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3456400346",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:48:00+00:00",
+  "buildings": [
+    {
+      "id": "3456400346/SkyScraperHotel1",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.7,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Skyscraper_Hotel",
+      "workshopId": "3456400346",
+      "modPath": "SkyScraperHotel1"
+    }
+  ],
+  "vehicles": []
+}

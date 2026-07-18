@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3078144268",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:20:43+00:00",
+  "buildings": [
+    {
+      "id": "3078144268/1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 75.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste_mixed": 0.8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Waste separation plant",
+      "workshopId": "3078144268",
+      "modPath": "1"
+    },
+    {
+      "id": "3078144268/2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 45.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste_mixed": 0.8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.06
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small waste separation plant",
+      "workshopId": "3078144268",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

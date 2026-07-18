@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2052229484",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:35:00+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2052229484/PragaS5T_SteelBooth",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.51,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 80.0,
+      "powerKW": 81.0,
+      "emptyWeight": 4.46,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1956,
+      "to": 1972,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2052229484",
+      "modPath": "PragaS5T_SteelBooth"
+    },
+    {
+      "id": "2052229484/Praga_S5T",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.51,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 80.0,
+      "powerKW": 81.0,
+      "emptyWeight": 4.46,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "from": 1956,
+      "to": 1972,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2052229484",
+      "modPath": "Praga_S5T"
+    }
+  ]
+}

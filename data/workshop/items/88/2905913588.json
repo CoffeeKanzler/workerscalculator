@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2905913588",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:10:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2905913588/kalkinbanan",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 1.9999999889914546e+33,
+      "type": "VEHICLETYPE_CABIN",
+      "costUSD": 1.0,
+      "emptyWeight": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "capacity": 6.0,
+      "countryId": 39022,
+      "workshopId": "2905913588",
+      "modPath": "kalkinbanan"
+    },
+    {
+      "id": "2905913588/kalkinbanan-2x",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 1.9999999889914546e+33,
+      "type": "VEHICLETYPE_CABIN",
+      "costUSD": 1.0,
+      "emptyWeight": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "capacity": 12.0,
+      "countryId": 39022,
+      "workshopId": "2905913588",
+      "modPath": "kalkinbanan-2x"
+    },
+    {
+      "id": "2905913588/kalkinbanan-Light",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 1.9999999889914546e+33,
+      "type": "VEHICLETYPE_CABIN",
+      "costUSD": 1.0,
+      "emptyWeight": 0.5,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "capacity": 1.2,
+      "countryId": 39022,
+      "workshopId": "2905913588",
+      "modPath": "kalkinbanan-Light"
+    },
+    {
+      "id": "2905913588/kalkinbanan-Light-2x",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 1.9999999889914546e+33,
+      "type": "VEHICLETYPE_CABIN",
+      "costUSD": 1.0,
+      "emptyWeight": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "capacity": 2.4,
+      "countryId": 39022,
+      "workshopId": "2905913588",
+      "modPath": "kalkinbanan-Light-2x"
+    }
+  ]
+}

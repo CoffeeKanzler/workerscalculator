@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2544535123",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:59:36+00:00",
+  "buildings": [
+    {
+      "id": "2544535123/mono",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 420.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 420.0
+      },
+      "constructionResources": {
+        "mcomponents": 10.0,
+        "concrete": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Moscow 29-storey Monolith",
+      "workshopId": "2544535123",
+      "modPath": "mono"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2985536210",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:44:42+00:00",
+  "buildings": [
+    {
+      "id": "2985536210/kosz1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING",
+        "SUBTYPE_HOSTEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 145.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 145.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dorm (50s)",
+      "workshopId": "2985536210",
+      "modPath": "kosz1"
+    }
+  ],
+  "vehicles": []
+}

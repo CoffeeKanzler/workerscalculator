@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3365558527",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:55:33+00:00",
+  "buildings": [
+    {
+      "id": "3365558527/rail_station_passanger_1",
+      "nameId": 1802,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 300.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 300.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3365558527",
+      "modPath": "rail_station_passanger_1"
+    },
+    {
+      "id": "3365558527/rail_station_passanger_2",
+      "nameId": 34811,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_TRAM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 400.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 400.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3365558527",
+      "modPath": "rail_station_passanger_2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3042915302",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:20:03+00:00",
+  "buildings": [
+    {
+      "id": "3042915302/1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Reiterbahnhof Station 2 Line 200m",
+      "workshopId": "3042915302",
+      "modPath": "1"
+    },
+    {
+      "id": "3042915302/2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Reiterbahnhof Station 4 Line 200m",
+      "workshopId": "3042915302",
+      "modPath": "2"
+    },
+    {
+      "id": "3042915302/3",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Reiterbahnhof Station 6 Line 200m",
+      "workshopId": "3042915302",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2109617436",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:48:20+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2109617436/bust_svarz",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.55,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5441,
+      "costRUB": 4300.0,
+      "speed": 60.0,
+      "powerKW": 86.0,
+      "emptyWeight": 10.8,
+      "capacity": 65.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1955,
+      "to": 1964,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2109617436",
+      "modPath": "bust_svarz"
+    },
+    {
+      "id": "2109617436/bust_svarz_ts",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.33,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 65.0,
+      "powerKW": 110.0,
+      "emptyWeight": 16.0,
+      "capacity": 140.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1959,
+      "to": 1967,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2109617436",
+      "modPath": "bust_svarz_ts"
+    }
+  ]
+}

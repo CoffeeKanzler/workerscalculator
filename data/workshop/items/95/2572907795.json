@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2572907795",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:57:16+00:00",
+  "buildings": [
+    {
+      "id": "2572907795/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 50.0,
+      "professors": 120.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Latvian_Academy_of_Sciences",
+      "workshopId": "2572907795",
+      "modPath": "HOUSE1"
+    }
+  ],
+  "vehicles": []
+}

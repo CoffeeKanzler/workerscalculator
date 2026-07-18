@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2713641471",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:29:02+00:00",
+  "buildings": [
+    {
+      "id": "2713641471/Av6",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 132.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 132.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Aviastroitelei_6",
+      "workshopId": "2713641471",
+      "modPath": "Av6"
+    }
+  ],
+  "vehicles": []
+}

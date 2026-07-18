@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2952343337",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:20:11+00:00",
+  "buildings": [
+    {
+      "id": "2952343337/clock",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {
+        "workers": 50.0,
+        "gravel": 6.0,
+        "concrete": 6.0,
+        "steel": 14.0,
+        "mcomponents": 2.0,
+        "ecomponents": 0.5,
+        "bricks": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "DDR - Urania World Clock",
+      "workshopId": "2952343337",
+      "modPath": "clock"
+    }
+  ],
+  "vehicles": []
+}

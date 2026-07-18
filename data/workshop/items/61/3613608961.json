@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3613608961",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:14:49+00:00",
+  "buildings": [
+    {
+      "id": "3613608961/Majak",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Everon lighthouse",
+      "workshopId": "3613608961",
+      "modPath": "Majak"
+    }
+  ],
+  "vehicles": []
+}

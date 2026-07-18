@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3226819551",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:02:32+00:00",
+  "buildings": [
+    {
+      "id": "3226819551/1",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Church",
+      "workshopId": "3226819551",
+      "modPath": "1"
+    },
+    {
+      "id": "3226819551/2",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Church",
+      "workshopId": "3226819551",
+      "modPath": "2"
+    },
+    {
+      "id": "3226819551/3",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Church",
+      "workshopId": "3226819551",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2492579833",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:41:34+00:00",
+  "buildings": [
+    {
+      "id": "2492579833/ministerio",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 130.0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ministerio del Interior",
+      "workshopId": "2492579833",
+      "modPath": "ministerio"
+    }
+  ],
+  "vehicles": []
+}

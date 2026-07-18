@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2675789766",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:51:04+00:00",
+  "buildings": [
+    {
+      "id": "2675789766/Early_European_Asylum",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 20.0,
+      "professors": 6.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Early_European_Asylum",
+      "workshopId": "2675789766",
+      "modPath": "Early_European_Asylum"
+    }
+  ],
+  "vehicles": []
+}

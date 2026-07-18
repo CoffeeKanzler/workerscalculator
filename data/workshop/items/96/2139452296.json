@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2139452296",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:42:52+00:00",
+  "buildings": [
+    {
+      "id": "2139452296/cityhall",
+      "nameId": 13500,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 80.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2139452296",
+      "modPath": "cityhall"
+    }
+  ],
+  "vehicles": []
+}

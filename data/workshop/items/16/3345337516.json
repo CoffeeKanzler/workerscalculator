@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3345337516",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:17:25+00:00",
+  "buildings": [
+    {
+      "id": "3345337516/boom",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 125.0,
+      "professors": 10.0,
+      "production": {
+        "explosives": 0.02
+      },
+      "consumption": {
+        "chemicals": 0.01,
+        "gravel": 0.03,
+        "wood": 0.02
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Explosives Factory",
+      "workshopId": "3345337516",
+      "modPath": "boom"
+    }
+  ],
+  "vehicles": []
+}

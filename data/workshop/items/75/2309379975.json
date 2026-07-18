@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2309379975",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:00:37+00:00",
+  "buildings": [
+    {
+      "id": "2309379975/zjbi",
+      "nameId": 6172,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 220.0,
+      "professors": 0,
+      "production": {
+        "prefabpanels": 1.6
+      },
+      "consumption": {
+        "cement": 0.3,
+        "gravel": 1.2,
+        "steel": 0.1,
+        "coal": 0.3,
+        "water": 0.15
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.6
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2309379975",
+      "modPath": "zjbi"
+    },
+    {
+      "id": "2309379975/zjbi1",
+      "nameId": 6172,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 220.0,
+      "professors": 0,
+      "production": {
+        "prefabpanels": 1.6
+      },
+      "consumption": {
+        "cement": 0.3,
+        "gravel": 1.2,
+        "steel": 0.1,
+        "coal": 0.3,
+        "water": 0.15
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.6
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2309379975",
+      "modPath": "zjbi1"
+    }
+  ],
+  "vehicles": []
+}

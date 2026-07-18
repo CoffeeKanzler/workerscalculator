@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2853961065",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:15:58+00:00",
+  "buildings": [
+    {
+      "id": "2853961065/TopolcanyResident13s",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "panelak stredanska dokonceny",
+      "workshopId": "2853961065",
+      "modPath": "TopolcanyResident13s"
+    }
+  ],
+  "vehicles": []
+}

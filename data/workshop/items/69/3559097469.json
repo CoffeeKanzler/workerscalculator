@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3559097469",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:26:58+00:00",
+  "buildings": [
+    {
+      "id": "3559097469/kiosk",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 25.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kiosk",
+      "workshopId": "3559097469",
+      "modPath": "kiosk"
+    },
+    {
+      "id": "3559097469/nakki",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 25.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Grill Kiosk",
+      "workshopId": "3559097469",
+      "modPath": "nakki"
+    },
+    {
+      "id": "3559097469/old_nakki",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 1.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 25.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old Grill Kiosk",
+      "workshopId": "3559097469",
+      "modPath": "old_nakki"
+    }
+  ],
+  "vehicles": []
+}

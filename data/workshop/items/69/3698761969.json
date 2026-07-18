@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3698761969",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:34:01+00:00",
+  "buildings": [
+    {
+      "id": "3698761969/alternatywy",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Alternatywy 4 Sign",
+      "workshopId": "3698761969",
+      "modPath": "alternatywy"
+    }
+  ],
+  "vehicles": []
+}

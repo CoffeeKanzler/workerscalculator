@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2752306269",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:32:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2752306269/service_buldozer_d355a",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.62,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 100.0,
+      "powerKW": 305.0,
+      "emptyWeight": 50.0,
+      "speed": 13.0,
+      "from": 1982,
+      "to": 1999,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2752306269",
+      "modPath": "service_buldozer_d355a"
+    }
+  ]
+}

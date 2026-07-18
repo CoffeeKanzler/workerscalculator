@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3384967577",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:17:57+00:00",
+  "buildings": [
+    {
+      "id": "3384967577/.",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 12500.0,
+        "RESOURCE_TRANSPORT_OPEN": 10000.0,
+        "RESOURCE_TRANSPORT_OIL": 500.0,
+        "RESOURCE_TRANSPORT_COOLER": 600.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Logistikzentrum gross",
+      "workshopId": "3384967577",
+      "modPath": "."
+    },
+    {
+      "id": "3384967577/largelogisticscenter",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 12500.0,
+        "RESOURCE_TRANSPORT_OPEN": 10000.0,
+        "RESOURCE_TRANSPORT_OIL": 500.0,
+        "RESOURCE_TRANSPORT_COOLER": 600.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Logistikzentrum gross",
+      "workshopId": "3384967577",
+      "modPath": "largelogisticscenter"
+    }
+  ],
+  "vehicles": []
+}

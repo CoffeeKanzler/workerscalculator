@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2661377068",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:17:37+00:00",
+  "buildings": [
+    {
+      "id": "2661377068/simple",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 288.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 288.0
+      },
+      "constructionResources": {
+        "mcomponents": 8.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "KMS101 Tower - simple",
+      "workshopId": "2661377068",
+      "modPath": "simple"
+    },
+    {
+      "id": "2661377068/snazzy",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 288.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 288.0
+      },
+      "constructionResources": {
+        "mcomponents": 8.0,
+        "bricks": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "KMS101 Tower - snazzy",
+      "workshopId": "2661377068",
+      "modPath": "snazzy"
+    }
+  ],
+  "vehicles": []
+}

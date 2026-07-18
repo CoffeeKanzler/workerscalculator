@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3598282833",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:17:06+00:00",
+  "buildings": [
+    {
+      "id": "3598282833/For_Replacing/Russian names/Kot-1",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {
+        "heat": 199.0
+      },
+      "consumption": {
+        "coal": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Паровоз-котельная (уголь)",
+      "workshopId": "3598282833",
+      "modPath": "For_Replacing/Russian names/Kot-1"
+    },
+    {
+      "id": "3598282833/For_Replacing/Russian names/Kot-2",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {
+        "heat": 350.0
+      },
+      "consumption": {
+        "bitumen": 0.3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Паровоз-котельная (мазут)",
+      "workshopId": "3598282833",
+      "modPath": "For_Replacing/Russian names/Kot-2"
+    },
+    {
+      "id": "3598282833/For_Replacing/Russian names/M1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Гидроколонка",
+      "workshopId": "3598282833",
+      "modPath": "For_Replacing/Russian names/M1"
+    },
+    {
+      "id": "3598282833/For_Replacing/Russian names/M2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Путевой тупиковый упор",
+      "workshopId": "3598282833",
+      "modPath": "For_Replacing/Russian names/M2"
+    },
+    {
+      "id": "3598282833/For_Replacing/Russian names/Ugl",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION_COAL"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 150.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Пункт экипировки паровозов",
+      "workshopId": "3598282833",
+      "modPath": "For_Replacing/Russian names/Ugl"
+    },
+    {
+      "id": "3598282833/Kot-1",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {
+        "heat": 199.0
+      },
+      "consumption": {
+        "coal": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Locomotive-derived heating plant (coal)",
+      "workshopId": "3598282833",
+      "modPath": "Kot-1"
+    },
+    {
+      "id": "3598282833/Kot-2",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {
+        "heat": 350.0
+      },
+      "consumption": {
+        "bitumen": 0.3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Locomotive-derived heating plant (bitumen)",
+      "workshopId": "3598282833",
+      "modPath": "Kot-2"
+    },
+    {
+      "id": "3598282833/M1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Water crane",
+      "workshopId": "3598282833",
+      "modPath": "M1"
+    },
+    {
+      "id": "3598282833/M2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Railroad bumper",
+      "workshopId": "3598282833",
+      "modPath": "M2"
+    },
+    {
+      "id": "3598282833/Ugl",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION_COAL"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 150.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Steam locomotive servicing facility",
+      "workshopId": "3598282833",
+      "modPath": "Ugl"
+    }
+  ],
+  "vehicles": []
+}

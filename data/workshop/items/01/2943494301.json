@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2943494301",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:05:33+00:00",
+  "buildings": [
+    {
+      "id": "2943494301/HP1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "DDR-HP1",
+      "workshopId": "2943494301",
+      "modPath": "HP1"
+    }
+  ],
+  "vehicles": []
+}

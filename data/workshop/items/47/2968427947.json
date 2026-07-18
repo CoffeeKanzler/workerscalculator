@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2968427947",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:19:24+00:00",
+  "buildings": [
+    {
+      "id": "2968427947/potraviny",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big 70s grocery store",
+      "workshopId": "2968427947",
+      "modPath": "potraviny"
+    }
+  ],
+  "vehicles": []
+}

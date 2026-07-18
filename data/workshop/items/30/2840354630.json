@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2840354630",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:07:38+00:00",
+  "buildings": [
+    {
+      "id": "2840354630/Ammoniakfabrik",
+      "nameId": 6054,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 250.0,
+      "professors": 0,
+      "production": {
+        "chemicals": 0.01
+      },
+      "consumption": {
+        "rawcoal": 0.2,
+        "water": 0.17
+      },
+      "consumptionPerSecond": {
+        "eletric": 1.5
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 50.0,
+        "gravel": 150.0,
+        "concrete": 100.0,
+        "workers": 5900.0,
+        "bricks": 620.0,
+        "mcomponents": 15.0,
+        "steel": 150.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2840354630",
+      "modPath": "Ammoniakfabrik"
+    },
+    {
+      "id": "2840354630/Karbidfabrik",
+      "nameId": 6054,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 1000.0,
+      "professors": 0,
+      "production": {
+        "chemicals": 0.01
+      },
+      "consumption": {
+        "gravel": 0.1,
+        "coal": 0.08,
+        "water": 0.17
+      },
+      "consumptionPerSecond": {
+        "eletric": 12.0
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 200.0,
+        "gravel": 1000.0,
+        "concrete": 2000.0,
+        "workers": 30000.0,
+        "steel": 500.0,
+        "bricks": 4554.0,
+        "boards": 250.0,
+        "mcomponents": 30.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2840354630",
+      "modPath": "Karbidfabrik"
+    }
+  ],
+  "vehicles": []
+}

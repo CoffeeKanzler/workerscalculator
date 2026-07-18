@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2972623343",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:27:16+00:00",
+  "buildings": [
+    {
+      "id": "2972623343/Tansploshadka",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 6.8,
+      "storages": {},
+      "constructionResources": {
+        "workers": 70.0,
+        "gravel": 7.0,
+        "concrete": 9.0,
+        "steel": 6.0,
+        "boards": 6.0,
+        "mcomponents": 0.06,
+        "ecomponents": 0.03
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Танцплощадка",
+      "workshopId": "2972623343",
+      "modPath": "Tansploshadka"
+    }
+  ],
+  "vehicles": []
+}

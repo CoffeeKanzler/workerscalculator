@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3311930693",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:41:00+00:00",
+  "buildings": [
+    {
+      "id": "3311930693/MASP",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {
+        "workers": 150.0,
+        "boards": 50.0,
+        "bricks": 600.0,
+        "steel": 300.0,
+        "concrete": 400.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "MASP",
+      "workshopId": "3311930693",
+      "modPath": "MASP"
+    }
+  ],
+  "vehicles": []
+}

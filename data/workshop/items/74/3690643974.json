@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3690643974",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:48:32+00:00",
+  "buildings": [
+    {
+      "id": "3690643974/perret3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 600.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 600.0
+      },
+      "constructionResources": {
+        "workers": 4280.0,
+        "gravel": 80.0,
+        "concrete": 106.0,
+        "bricks": 660.0,
+        "boards": 160.0,
+        "steel": 76.0,
+        "mcomponents": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Perret Tower 3",
+      "workshopId": "3690643974",
+      "modPath": "perret3"
+    },
+    {
+      "id": "3690643974/vanallen",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 720.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 720.0
+      },
+      "constructionResources": {
+        "workers": 5180.0,
+        "bricks": 900.0,
+        "boards": 210.0,
+        "steel": 102.0,
+        "mcomponents": 7.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Van Allen Tower",
+      "workshopId": "3690643974",
+      "modPath": "vanallen"
+    }
+  ],
+  "vehicles": []
+}

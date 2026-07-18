@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2798793083",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:44:30+00:00",
+  "buildings": [
+    {
+      "id": "2798793083/gallery",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 40.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian National Gallery",
+      "workshopId": "2798793083",
+      "modPath": "gallery"
+    }
+  ],
+  "vehicles": []
+}

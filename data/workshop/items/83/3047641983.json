@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3047641983",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:00:36+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3047641983/vaz2108",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.28,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 6300.0,
+      "consumption": 0.0,
+      "speed": 150.0,
+      "powerKW": 75.0,
+      "emptyWeight": 1.003,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1984,
+      "to": 2004,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3047641983",
+      "modPath": "vaz2108"
+    }
+  ]
+}

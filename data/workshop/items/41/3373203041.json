@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3373203041",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:31:41+00:00",
+  "buildings": [
+    {
+      "id": "3373203041/cerkiew",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 20.0,
+      "professors": 10.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Orthodox Cathedral Church",
+      "workshopId": "3373203041",
+      "modPath": "cerkiew"
+    }
+  ],
+  "vehicles": []
+}

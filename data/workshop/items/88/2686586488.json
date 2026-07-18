@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2686586488",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:32:12+00:00",
+  "buildings": [
+    {
+      "id": "2686586488/msp",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {
+        "eletric": 5.0
+      },
+      "consumption": {
+        "coal": 0.36
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old Power Station",
+      "workshopId": "2686586488",
+      "modPath": "msp"
+    }
+  ],
+  "vehicles": []
+}

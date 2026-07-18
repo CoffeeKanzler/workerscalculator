@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2589728941",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:19:35+00:00",
+  "buildings": [
+    {
+      "id": "2589728941/KWBUNA2",
+      "nameId": 6300,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 35.0,
+      "professors": 0,
+      "production": {
+        "eletric": 60.0
+      },
+      "consumption": {
+        "rawcoal": 6.3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 50.0,
+        "gravel": 370.0,
+        "workers": 10500.0,
+        "steel": 503.0,
+        "concrete": 1500.0,
+        "mcomponents": 13.0,
+        "ecomponents": 6.5
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2589728941",
+      "modPath": "KWBUNA2"
+    },
+    {
+      "id": "2589728941/KWVockerode",
+      "nameId": 6300,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 148.0,
+      "professors": 0,
+      "production": {
+        "eletric": 60.0
+      },
+      "consumption": {
+        "rawcoal": 6.3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 100.0,
+        "concrete": 2000.0,
+        "gravel": 2000.0,
+        "workers": 35000.0,
+        "boards": 100.0,
+        "steel": 500.0,
+        "bricks": 18000.0,
+        "mcomponents": 43.3,
+        "ecomponents": 21.9
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2589728941",
+      "modPath": "KWVockerode"
+    }
+  ],
+  "vehicles": []
+}

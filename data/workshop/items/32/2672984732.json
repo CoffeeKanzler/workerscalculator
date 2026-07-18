@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2672984732",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:13:15+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2672984732/247",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.71,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 1.0,
+      "from": 1933,
+      "to": 1965,
+      "countryId": 39018,
+      "consumption": 0.0,
+      "speed": 320.0,
+      "powerKW": 735.0,
+      "emptyWeight": 4.055,
+      "capacity": 10.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "workshopId": "2672984732",
+      "modPath": "247"
+    }
+  ]
+}

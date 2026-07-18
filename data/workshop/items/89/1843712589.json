@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1843712589",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:55:16+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1843712589/B1000SMH3",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.67,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4500.0,
+      "speed": 100.0,
+      "powerKW": 34.0,
+      "emptyWeight": 2.2,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1983,
+      "to": 1990,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1843712589",
+      "modPath": "B1000SMH3"
+    }
+  ]
+}

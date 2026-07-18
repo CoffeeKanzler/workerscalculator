@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1972242948",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:54:59+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1972242948/tanker",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 22.69,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 8300.0,
+      "consumption": 0.0,
+      "speed": 120.0,
+      "emptyWeight": 47.0,
+      "capacity": 150.0,
+      "from": 1963,
+      "to": 3000,
+      "countryId": 39011,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "trainGroup": "vagon",
+      "workshopId": "1972242948",
+      "modPath": "tanker"
+    }
+  ]
+}

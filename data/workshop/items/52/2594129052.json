@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2594129052",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:06:23+00:00",
+  "buildings": [
+    {
+      "id": "2594129052/1964",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 198.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 198.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Resident building V2",
+      "workshopId": "2594129052",
+      "modPath": "1964"
+    }
+  ],
+  "vehicles": []
+}

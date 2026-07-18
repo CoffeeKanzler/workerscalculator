@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3271839802",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:24:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3271839802/t80u_personal",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.78,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 110000.0,
+      "consumption": 0.0,
+      "speed": 70.0,
+      "powerKW": 919.0,
+      "emptyWeight": 46.5,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1985,
+      "to": 1998,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3271839802",
+      "modPath": "t80u_personal"
+    },
+    {
+      "id": "3271839802/t80u_police",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 110000.0,
+      "consumption": 0.0,
+      "speed": 70.0,
+      "powerKW": 919.0,
+      "emptyWeight": 46.5,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1985,
+      "to": 1998,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3271839802",
+      "modPath": "t80u_police"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3755716868",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:00:09+00:00",
+  "buildings": [
+    {
+      "id": "3755716868/bar",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Food bar (Niewiadow N126)",
+      "workshopId": "3755716868",
+      "modPath": "bar"
+    }
+  ],
+  "vehicles": []
+}

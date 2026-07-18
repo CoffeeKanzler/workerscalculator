@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1898424287",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:10:12+00:00",
+  "buildings": [
+    {
+      "id": "1898424287/slaughter",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 150.0,
+      "professors": 0,
+      "production": {
+        "meat": 2.5
+      },
+      "consumption": {
+        "livestock": 0.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.5
+      },
+      "nameStr": "Slaughter House",
+      "workshopId": "1898424287",
+      "modPath": "slaughter"
+    }
+  ],
+  "vehicles": []
+}

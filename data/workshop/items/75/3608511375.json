@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3608511375",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:46:31+00:00",
+  "buildings": [
+    {
+      "id": "3608511375/bench",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nogova bench",
+      "workshopId": "3608511375",
+      "modPath": "bench"
+    },
+    {
+      "id": "3608511375/bench2",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nogova bench 2",
+      "workshopId": "3608511375",
+      "modPath": "bench2"
+    }
+  ],
+  "vehicles": []
+}

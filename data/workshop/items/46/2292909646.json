@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2292909646",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:48:11+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2292909646/project503",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 54.4,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 4300.0,
+      "speed": 40.0,
+      "powerKW": 970.0,
+      "emptyWeight": 341.0,
+      "capacity": 280.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1971,
+      "to": 1994,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "2292909646",
+      "modPath": "project503"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2850341146",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:18:52+00:00",
+  "buildings": [
+    {
+      "id": "2850341146/Residential",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 211.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.83,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 211.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Poprad T002",
+      "workshopId": "2850341146",
+      "modPath": "Residential"
+    }
+  ],
+  "vehicles": []
+}

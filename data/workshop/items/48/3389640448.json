@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3389640448",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:04:08+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3389640448/IFA_KM_2301",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.17,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 80.0,
+      "powerKW": 92.0,
+      "emptyWeight": 7.3,
+      "from": 1981,
+      "to": 1989,
+      "countryId": 39004,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3389640448",
+      "modPath": "IFA_KM_2301"
+    }
+  ]
+}

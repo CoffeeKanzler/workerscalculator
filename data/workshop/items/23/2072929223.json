@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2072929223",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:31:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2072929223/MB_Actros",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.98,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5153,
+      "costUSD": 1.0,
+      "speed": 130.0,
+      "powerKW": 411.0,
+      "emptyWeight": 18.0,
+      "capacity": 18.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1996,
+      "to": 2003,
+      "countryId": 39003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2072929223",
+      "modPath": "MB_Actros"
+    }
+  ]
+}

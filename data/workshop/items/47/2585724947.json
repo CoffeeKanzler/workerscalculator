@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2585724947",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:54:01+00:00",
+  "buildings": [
+    {
+      "id": "2585724947/Zeitz",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 500.0,
+      "professors": 5.0,
+      "production": {
+        "fuel": 0.35,
+        "bitumen": 0.05
+      },
+      "consumption": {
+        "rawcoal": 2.85,
+        "steel": 0.0002,
+        "meat": 0.0001,
+        "food": 0.0003
+      },
+      "consumptionPerSecond": {
+        "eletric": 4.0
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 100.0,
+        "concrete": 1666.0,
+        "gravel": 1800.0,
+        "workers": 6667.0,
+        "steel": 500.0,
+        "bricks": 120.0,
+        "boards": 40.0,
+        "mcomponents": 67.0,
+        "ecomponents": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Hydrierwerk-Zeitz",
+      "workshopId": "2585724947",
+      "modPath": "Zeitz"
+    }
+  ],
+  "vehicles": []
+}

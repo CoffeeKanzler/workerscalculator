@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3247762895",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:20:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3247762895/lok2000",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.81,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 1.0,
+      "speed": 160.0,
+      "powerKW": 6100.0,
+      "emptyWeight": 84.0,
+      "from": 1991,
+      "to": 3000,
+      "countryId": 38999,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "3247762895",
+      "modPath": "lok2000"
+    }
+  ]
+}

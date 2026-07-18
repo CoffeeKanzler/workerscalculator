@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3626226078",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:36:15+00:00",
+  "buildings": [
+    {
+      "id": "3626226078/Mrakodrap",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 330.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 330.0
+      },
+      "constructionResources": {
+        "gravel": 73.0,
+        "concrete": 143.0,
+        "asphalt": 12.0,
+        "workers": 1773.0,
+        "prefabpanels": 139.0,
+        "steel": 38.0,
+        "boards": 50.0,
+        "mcomponents": 0.6,
+        "ecomponents": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Skyscraper Ostrava",
+      "workshopId": "3626226078",
+      "modPath": "Mrakodrap"
+    }
+  ],
+  "vehicles": []
+}

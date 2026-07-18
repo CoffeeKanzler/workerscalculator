@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2403233721",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:50:13+00:00",
+  "buildings": [
+    {
+      "id": "2403233721/Cafe",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 7.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.4,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 4.0,
+        "gravel": 6.0,
+        "concrete": 20.0,
+        "workers": 280.0,
+        "bricks": 24.0,
+        "boards": 12.0,
+        "steel": 1.0,
+        "ecomponents": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Functionalist Café",
+      "workshopId": "2403233721",
+      "modPath": "Cafe"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2865222392",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:32:51+00:00",
+  "buildings": [
+    {
+      "id": "2865222392/Large City School",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 60.0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large City School",
+      "workshopId": "2865222392",
+      "modPath": "Large City School"
+    }
+  ],
+  "vehicles": []
+}

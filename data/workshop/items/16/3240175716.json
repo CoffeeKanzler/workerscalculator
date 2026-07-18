@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3240175716",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:24:19+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3240175716/425b",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.74,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 50.0,
+      "powerKW": 213.0,
+      "emptyWeight": 16.4,
+      "capacity": 25.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "from": 1979,
+      "to": 1984,
+      "countryId": 39022,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3240175716",
+      "modPath": "425b"
+    }
+  ]
+}

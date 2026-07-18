@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2009125457",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:19:25+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2009125457/project_585",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 4300.0,
+      "speed": 22.0,
+      "powerKW": 300.0,
+      "emptyWeight": 400.0,
+      "capacity": 700.0,
+      "transportType": "RESOURCE_TRANSPORT_COOLER",
+      "from": 1959,
+      "to": 1997,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "2009125457",
+      "modPath": "project_585"
+    }
+  ]
+}

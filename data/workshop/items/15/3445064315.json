@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3445064315",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:01:30+00:00",
+  "buildings": [
+    {
+      "id": "3445064315/razbor",
+      "nameId": null,
+      "types": [
+        "TYPE_SCRAPYARD",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 6.4,
+        "workers": 5.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Razborka",
+      "workshopId": "3445064315",
+      "modPath": "razbor"
+    }
+  ],
+  "vehicles": []
+}

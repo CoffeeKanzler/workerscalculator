@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1847999153",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:56:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1847999153/t6a2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.8,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4100.0,
+      "powerKW": 180.0,
+      "emptyWeight": 18.3,
+      "speed": 65.0,
+      "trainGroup": "tram",
+      "capacity": 109.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1985,
+      "to": 1999,
+      "countryId": 39000,
+      "electric": true,
+      "workshopId": "1847999153",
+      "modPath": "t6a2"
+    },
+    {
+      "id": "1847999153/t6a2sme",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.8,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4100.0,
+      "powerKW": 180.0,
+      "emptyWeight": 18.3,
+      "speed": 65.0,
+      "trainGroup": "tram",
+      "capacity": 109.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1985,
+      "to": 1999,
+      "countryId": 39000,
+      "electric": true,
+      "workshopId": "1847999153",
+      "modPath": "t6a2sme"
+    }
+  ]
+}

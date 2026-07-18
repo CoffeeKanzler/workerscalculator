@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3660539641",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:29:53+00:00",
+  "buildings": [
+    {
+      "id": "3660539641/arch1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Arch2",
+      "workshopId": "3660539641",
+      "modPath": "arch1"
+    },
+    {
+      "id": "3660539641/arch2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Arch1",
+      "workshopId": "3660539641",
+      "modPath": "arch2"
+    }
+  ],
+  "vehicles": []
+}

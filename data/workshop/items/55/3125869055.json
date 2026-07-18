@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3125869055",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:41:33+00:00",
+  "buildings": [
+    {
+      "id": "3125869055/smk",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 6.0,
+      "professors": 3.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 220.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3180.0,
+        "gravel": 80.0,
+        "bricks": 860.0,
+        "concrete": 126.0,
+        "boards": 190.0,
+        "steel": 100.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sankt Michael Kirche",
+      "workshopId": "3125869055",
+      "modPath": "smk"
+    }
+  ],
+  "vehicles": []
+}

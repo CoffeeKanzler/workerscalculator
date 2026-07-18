@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2027203961",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:24:43+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2027203961/Passenger",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.11,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5453,
+      "costRUB": 4300.0,
+      "speed": 120.0,
+      "powerKW": 29.0,
+      "emptyWeight": 0.58,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1987,
+      "to": 2008,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2027203961",
+      "modPath": "Passenger"
+    }
+  ]
+}

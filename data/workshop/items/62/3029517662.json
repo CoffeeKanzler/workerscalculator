@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3029517662",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:41:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3029517662/steam",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 32.87,
+      "type": "VEHICLETYPE_SHIP",
+      "costUSD": 50.0,
+      "speed": 15.0,
+      "powerKW": 70.0,
+      "emptyWeight": 32.1,
+      "capacity": 80.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1830,
+      "to": 1930,
+      "electric": false,
+      "workshopId": "3029517662",
+      "modPath": "steam"
+    }
+  ]
+}

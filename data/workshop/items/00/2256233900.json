@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2256233900",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:07:56+00:00",
+  "buildings": [
+    {
+      "id": "2256233900/base",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 99.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 99.0
+      },
+      "constructionResources": {
+        "asphalt": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series 85 9-storey flats",
+      "workshopId": "2256233900",
+      "modPath": "base"
+    },
+    {
+      "id": "2256233900/base3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 297.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 297.0
+      },
+      "constructionResources": {
+        "steel": 32.0,
+        "boards": 39.0,
+        "prefabpanels": 69.0,
+        "bricks": 93.0,
+        "asphalt": 15.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series 85 9-storey flats 3x",
+      "workshopId": "2256233900",
+      "modPath": "base3"
+    },
+    {
+      "id": "2256233900/base5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 495.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 495.0
+      },
+      "constructionResources": {
+        "steel": 46.0,
+        "boards": 57.0,
+        "prefabpanels": 102.0,
+        "bricks": 123.0,
+        "asphalt": 25.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series 85 9-storey flats 5x",
+      "workshopId": "2256233900",
+      "modPath": "base5"
+    }
+  ],
+  "vehicles": []
+}

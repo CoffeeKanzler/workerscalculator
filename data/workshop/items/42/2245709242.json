@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2245709242",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:12:48+00:00",
+  "buildings": [
+    {
+      "id": "2245709242/FI",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 80.0,
+      "professors": 80.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1430.0,
+        "steel": 200.0,
+        "asphalt": 30.0,
+        "gravel": 60.0,
+        "bricks": 490.0,
+        "concrete": 300.0,
+        "boards": 180.0,
+        "prefabpanels": 62.0,
+        "ecomponents": 10.0,
+        "mcomponents": 4.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Complex of Research Institutes",
+      "workshopId": "2245709242",
+      "modPath": "FI"
+    }
+  ],
+  "vehicles": []
+}

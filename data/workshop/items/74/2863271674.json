@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2863271674",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:15:01+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2863271674/ES44AC",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 24.46,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 2064207626,
+      "costUSD": 4300.0,
+      "speed": 113.0,
+      "powerKW": 3236.0,
+      "emptyWeight": 188.5,
+      "from": 1993,
+      "to": 3000,
+      "countryId": 39018,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2863271674",
+      "modPath": "ES44AC"
+    },
+    {
+      "id": "2863271674/ES44ACR",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 24.46,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 2064207626,
+      "costUSD": 4300.0,
+      "speed": 113.0,
+      "powerKW": 1.0,
+      "emptyWeight": 166.0,
+      "from": 1993,
+      "to": 3000,
+      "countryId": 39018,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2863271674",
+      "modPath": "ES44ACR"
+    }
+  ]
+}

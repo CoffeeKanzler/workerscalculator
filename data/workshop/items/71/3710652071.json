@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3710652071",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:42:41+00:00",
+  "buildings": [
+    {
+      "id": "3710652071/Sunflower_1",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 30.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 27.054642854,
+        "concrete": 3.9342857139999996,
+        "gravel": 0.874285714,
+        "chemicals": 10.157142857,
+        "steel": 7.328571429,
+        "mcomponents": 0.252,
+        "ecomponents": 1.131428571
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sunflower",
+      "workshopId": "3710652071",
+      "modPath": "Sunflower_1"
+    },
+    {
+      "id": "3710652071/Sunflower_2",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": -1.0,
+      "professors": 0,
+      "production": {
+        "eletric": 120.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 108.218571416,
+        "concrete": 15.737142855999998,
+        "gravel": 3.497142856,
+        "chemicals": 40.628571428,
+        "steel": 29.314285716,
+        "mcomponents": 1.008,
+        "ecomponents": 4.525714284
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sunflower (2x2)",
+      "workshopId": "3710652071",
+      "modPath": "Sunflower_2"
+    },
+    {
+      "id": "3710652071/Sunflower_3",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": -1.0,
+      "professors": 0,
+      "production": {
+        "eletric": 480.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 432.874285664,
+        "concrete": 62.948571423999994,
+        "gravel": 13.988571424,
+        "chemicals": 162.514285712,
+        "steel": 117.257142864,
+        "mcomponents": 4.032,
+        "ecomponents": 18.102857136
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sunflower (4x4)",
+      "workshopId": "3710652071",
+      "modPath": "Sunflower_3"
+    },
+    {
+      "id": "3710652071/Sunflower_4",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": -1.0,
+      "professors": 0,
+      "production": {
+        "eletric": 1920.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1731.497142656,
+        "concrete": 251.79428569599997,
+        "gravel": 55.954285696,
+        "chemicals": 650.057142848,
+        "steel": 469.028571456,
+        "mcomponents": 16.128,
+        "ecomponents": 72.411428544
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sunflower (8x8)",
+      "workshopId": "3710652071",
+      "modPath": "Sunflower_4"
+    }
+  ],
+  "vehicles": []
+}

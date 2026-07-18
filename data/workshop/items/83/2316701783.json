@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2316701783",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:05:54+00:00",
+  "buildings": [
+    {
+      "id": "2316701783/672_Sklad Mini",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 150.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sklad Mini",
+      "workshopId": "2316701783",
+      "modPath": "672_Sklad Mini"
+    }
+  ],
+  "vehicles": []
+}

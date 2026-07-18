@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2025865937",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:04:04+00:00",
+  "buildings": [
+    {
+      "id": "2025865937/fast_veh",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 1500.0,
+      "professors": 300.0,
+      "production": {
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "steel": 1.0,
+        "plastics": 1.0,
+        "mcomponents": 1.0,
+        "ecomponents": 1.0,
+        "fabric": 1.0,
+        "eletronics": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 3.0
+      },
+      "nameStr": "Faster Vehicle Construction",
+      "workshopId": "2025865937",
+      "modPath": "fast_veh"
+    },
+    {
+      "id": "2025865937/fast_vehx2",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 1500.0,
+      "professors": 300.0,
+      "production": {
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "steel": 1.0,
+        "plastics": 1.0,
+        "mcomponents": 1.0,
+        "ecomponents": 1.0,
+        "fabric": 1.0,
+        "eletronics": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 3.0
+      },
+      "nameStr": "Faster Vehicle Construction with Rail",
+      "workshopId": "2025865937",
+      "modPath": "fast_vehx2"
+    }
+  ],
+  "vehicles": []
+}

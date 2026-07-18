@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1961724764",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:12:13+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1961724764/bus_kuban",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.89,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4700.0,
+      "capacity": 21.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 85.0,
+      "powerKW": 85.0,
+      "emptyWeight": 3.2,
+      "from": 1962,
+      "to": 2003,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1961724764",
+      "modPath": "bus_kuban"
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3039914614",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:01:32+00:00",
+  "buildings": [
+    {
+      "id": "3039914614/1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40.0
+      },
+      "constructionResources": {
+        "bricks": 13.3,
+        "boards": 19.4,
+        "concrete": 4.5,
+        "steel": 0.27,
+        "workers": 415.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, House #1 (Marktpl. 3)",
+      "workshopId": "3039914614",
+      "modPath": "1"
+    },
+    {
+      "id": "3039914614/2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 52.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 52.0
+      },
+      "constructionResources": {
+        "bricks": 17.3,
+        "boards": 25.2,
+        "concrete": 5.8,
+        "steel": 0.35,
+        "workers": 540.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, House #2 (Marktpl. 5)",
+      "workshopId": "3039914614",
+      "modPath": "2"
+    },
+    {
+      "id": "3039914614/3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 44.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 44.0
+      },
+      "constructionResources": {
+        "bricks": 14.6,
+        "boards": 21.3,
+        "concrete": 4.9,
+        "steel": 0.3,
+        "workers": 457.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, House #3 (Marktpl. 6)",
+      "workshopId": "3039914614",
+      "modPath": "3"
+    },
+    {
+      "id": "3039914614/4",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48.0
+      },
+      "constructionResources": {
+        "bricks": 15.9,
+        "boards": 23.2,
+        "concrete": 5.3,
+        "steel": 0.33,
+        "workers": 499.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, House #4 (Marktpl. 7)",
+      "workshopId": "3039914614",
+      "modPath": "4"
+    },
+    {
+      "id": "3039914614/5",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24.0
+      },
+      "constructionResources": {
+        "bricks": 8.0,
+        "boards": 11.6,
+        "concrete": 2.7,
+        "steel": 0.16,
+        "workers": 249.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, House #5 (Ob.Schmiedgasse 1)",
+      "workshopId": "3039914614",
+      "modPath": "5"
+    },
+    {
+      "id": "3039914614/a1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 0.6,
+        "boards": 1.7,
+        "concrete": 0.3,
+        "workers": 43.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, connecting arch #1",
+      "workshopId": "3039914614",
+      "modPath": "a1"
+    },
+    {
+      "id": "3039914614/a2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 0.6,
+        "boards": 1.7,
+        "concrete": 0.3,
+        "workers": 43.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, connecting arch #2",
+      "workshopId": "3039914614",
+      "modPath": "a2"
+    },
+    {
+      "id": "3039914614/a3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 0.6,
+        "boards": 1.7,
+        "concrete": 0.3,
+        "workers": 43.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, connecting arch #3",
+      "workshopId": "3039914614",
+      "modPath": "a3"
+    },
+    {
+      "id": "3039914614/civ-1",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 5.0,
+      "professors": 15.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 13.3,
+        "boards": 19.4,
+        "concrete": 4.5,
+        "steel": 0.27,
+        "workers": 415.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, School (Marktpl. 3)",
+      "workshopId": "3039914614",
+      "modPath": "civ-1"
+    },
+    {
+      "id": "3039914614/civ-2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 17.3,
+        "boards": 25.2,
+        "concrete": 5.8,
+        "steel": 0.35,
+        "workers": 540.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, Cafe / restaurant (Marktpl. 5)",
+      "workshopId": "3039914614",
+      "modPath": "civ-2"
+    },
+    {
+      "id": "3039914614/civ-3",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 14.6,
+        "boards": 21.3,
+        "concrete": 4.9,
+        "steel": 0.3,
+        "workers": 457.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, Pub (Marktpl. 6)",
+      "workshopId": "3039914614",
+      "modPath": "civ-3"
+    },
+    {
+      "id": "3039914614/civ-4",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 15.9,
+        "boards": 23.2,
+        "concrete": 5.3,
+        "steel": 0.33,
+        "workers": 499.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, Retail stores #1 (Marktpl. 7)",
+      "workshopId": "3039914614",
+      "modPath": "civ-4"
+    },
+    {
+      "id": "3039914614/civ-5",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 8.0,
+        "boards": 11.6,
+        "concrete": 2.7,
+        "steel": 0.16,
+        "workers": 249.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rothenburg ob der Tauber, Retail stores #2 (Ob.Schmiedgasse 1)",
+      "workshopId": "3039914614",
+      "modPath": "civ-5"
+    }
+  ],
+  "vehicles": []
+}

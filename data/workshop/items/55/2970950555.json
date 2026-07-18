@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2970950555",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:25:48+00:00",
+  "buildings": [
+    {
+      "id": "2970950555/svetljachok",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 9.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Светлячок",
+      "workshopId": "2970950555",
+      "modPath": "svetljachok"
+    }
+  ],
+  "vehicles": []
+}

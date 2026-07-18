@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2237148912",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:15:52+00:00",
+  "buildings": [
+    {
+      "id": "2237148912/SMCF",
+      "nameId": 6357,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 35.0,
+      "professors": 0,
+      "production": {
+        "mcomponents": 0.025
+      },
+      "consumption": {
+        "steel": 0.05
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 0.3,
+        "living": 0.4
+      },
+      "workshopId": "2237148912",
+      "modPath": "SMCF"
+    }
+  ],
+  "vehicles": []
+}

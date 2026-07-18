@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3273238315",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:26:50+00:00",
+  "buildings": [
+    {
+      "id": "3273238315/Car_Repair_Shop",
+      "nameId": null,
+      "types": [
+        "TYPE_REPAIR_OFFICE"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Car Repair Shop",
+      "workshopId": "3273238315",
+      "modPath": "Car_Repair_Shop"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2316949919",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:05:15+00:00",
+  "buildings": [
+    {
+      "id": "2316949919/13304_Sklad Gravii",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 450.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sklad Gravii",
+      "workshopId": "2316949919",
+      "modPath": "13304_Sklad Gravii"
+    }
+  ],
+  "vehicles": []
+}

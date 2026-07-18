@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3020919066",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:59:10+00:00",
+  "buildings": [
+    {
+      "id": "3020919066/Bridge",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 0.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "James River Railway Bridge",
+      "workshopId": "3020919066",
+      "modPath": "Bridge"
+    }
+  ],
+  "vehicles": []
+}

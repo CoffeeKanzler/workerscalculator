@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3572481072",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:42:33+00:00",
+  "buildings": [
+    {
+      "id": "3572481072/ferma",
+      "nameId": 6104,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {
+        "livestock": 0.5
+      },
+      "consumption": {
+        "plants": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_LIVESTOCK": 100.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3572481072",
+      "modPath": "ferma"
+    }
+  ],
+  "vehicles": []
+}

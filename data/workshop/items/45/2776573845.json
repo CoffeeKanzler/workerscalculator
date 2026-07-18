@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2776573845",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:04:38+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2776573845/service_crane_octag_8130",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 17.41,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 100.0,
+      "speed": 60.0,
+      "powerKW": 305.0,
+      "emptyWeight": 90.0,
+      "from": 1982,
+      "to": 1985,
+      "countryId": 39041,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2776573845",
+      "modPath": "service_crane_octag_8130"
+    }
+  ]
+}

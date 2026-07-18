@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3197508066",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:16:01+00:00",
+  "buildings": [
+    {
+      "id": "3197508066/1",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 150.0,
+      "professors": 150.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 460.0,
+        "concrete": 213.5,
+        "steel": 52.1,
+        "prefabpanels": 283.2,
+        "workers": 9690.0,
+        "boards": 67.5,
+        "ecomponents": 5.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Moscow technical university (1953, USSR)",
+      "workshopId": "3197508066",
+      "modPath": "1"
+    },
+    {
+      "id": "3197508066/2",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_MEDICAL"
+      ],
+      "workers": 150.0,
+      "professors": 150.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 460.0,
+        "concrete": 213.5,
+        "steel": 52.1,
+        "prefabpanels": 283.2,
+        "workers": 9690.0,
+        "boards": 67.5,
+        "ecomponents": 5.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Moscow medical university (1953, USSR)",
+      "workshopId": "3197508066",
+      "modPath": "2"
+    },
+    {
+      "id": "3197508066/3",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 150.0,
+      "professors": 150.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 460.0,
+        "concrete": 213.5,
+        "steel": 52.1,
+        "prefabpanels": 283.2,
+        "workers": 9690.0,
+        "boards": 67.5,
+        "ecomponents": 5.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Moscow soviet party HQ (1953, USSR)",
+      "workshopId": "3197508066",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

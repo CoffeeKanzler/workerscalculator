@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2326798436",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:18:28+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2326798436/D8",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 30.47,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 5600.0,
+      "consumption": 0.0,
+      "speed": 667.0,
+      "powerKW": 3781.0,
+      "emptyWeight": 17.0,
+      "capacity": 82.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1989,
+      "to": 2030,
+      "workshopId": "2326798436",
+      "modPath": "D8"
+    }
+  ]
+}

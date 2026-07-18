@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3262053518",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:26:45+00:00",
+  "buildings": [
+    {
+      "id": "3262053518/ints",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 160.0,
+      "professors": 112.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "National Particle-Physics Institute",
+      "workshopId": "3262053518",
+      "modPath": "ints"
+    }
+  ],
+  "vehicles": []
+}

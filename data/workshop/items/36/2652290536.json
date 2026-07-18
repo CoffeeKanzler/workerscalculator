@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2652290536",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:36:30+00:00",
+  "buildings": [
+    {
+      "id": "2652290536/shop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Council Estate Shop",
+      "workshopId": "2652290536",
+      "modPath": "shop"
+    }
+  ],
+  "vehicles": []
+}

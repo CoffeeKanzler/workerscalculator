@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2287915734",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:46:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2287915734/personal_GAZm20",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.57,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 105.0,
+      "powerKW": 52.0,
+      "emptyWeight": 1.46,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1946,
+      "to": 1973,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2287915734",
+      "modPath": "personal_GAZm20"
+    }
+  ]
+}

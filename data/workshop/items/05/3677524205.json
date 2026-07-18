@@ -1,0 +1,544 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3677524205",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:44:17+00:00",
+  "buildings": [
+    {
+      "id": "3677524205/clinictooth",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 40.0,
+      "professors": 40.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1365.0,
+        "concrete": 24.0,
+        "gravel": 21.0,
+        "asphalt": 18.0,
+        "steel": 26.0,
+        "mcomponents": 24.0,
+        "prefabpanels": 180.0,
+        "boards": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform tooth clinic",
+      "workshopId": "3677524205",
+      "modPath": "clinictooth"
+    },
+    {
+      "id": "3677524205/courtspine",
+      "nameId": null,
+      "types": [
+        "TYPE_COURT_HOUSE"
+      ],
+      "workers": 300.0,
+      "professors": 150.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10920.0,
+        "concrete": 192.0,
+        "gravel": 140.0,
+        "asphalt": 120.0,
+        "steel": 108.0,
+        "mcomponents": 30.0,
+        "prefabpanels": 1440.0,
+        "boards": 160.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform spine courthouse",
+      "workshopId": "3677524205",
+      "modPath": "courtspine"
+    },
+    {
+      "id": "3677524205/culturetooth",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1365.0,
+        "concrete": 24.0,
+        "gravel": 21.0,
+        "asphalt": 18.0,
+        "steel": 26.0,
+        "mcomponents": 24.0,
+        "prefabpanels": 180.0,
+        "boards": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform tooth cultural centre",
+      "workshopId": "3677524205",
+      "modPath": "culturetooth"
+    },
+    {
+      "id": "3677524205/gymtooth",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1365.0,
+        "concrete": 24.0,
+        "gravel": 21.0,
+        "asphalt": 18.0,
+        "steel": 26.0,
+        "mcomponents": 24.0,
+        "prefabpanels": 180.0,
+        "boards": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform tooth gymnasium",
+      "workshopId": "3677524205",
+      "modPath": "gymtooth"
+    },
+    {
+      "id": "3677524205/hallcore",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 120.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 9100.0,
+        "concrete": 160.0,
+        "gravel": 140.0,
+        "asphalt": 120.0,
+        "steel": 80.0,
+        "mcomponents": 24.0,
+        "prefabpanels": 1200.0,
+        "boards": 120.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform core city hall",
+      "workshopId": "3677524205",
+      "modPath": "hallcore"
+    },
+    {
+      "id": "3677524205/hospitalspine",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 60.0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10920.0,
+        "concrete": 192.0,
+        "gravel": 180.0,
+        "asphalt": 160.0,
+        "steel": 108.0,
+        "mcomponents": 30.0,
+        "prefabpanels": 1440.0,
+        "boards": 160.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform spine hospital",
+      "workshopId": "3677524205",
+      "modPath": "hospitalspine"
+    },
+    {
+      "id": "3677524205/kindertooth",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 60.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1365.0,
+        "concrete": 24.0,
+        "gravel": 21.0,
+        "asphalt": 18.0,
+        "steel": 26.0,
+        "mcomponents": 24.0,
+        "prefabpanels": 180.0,
+        "boards": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform tooth kindergarten",
+      "workshopId": "3677524205",
+      "modPath": "kindertooth"
+    },
+    {
+      "id": "3677524205/orphanspine",
+      "nameId": null,
+      "types": [
+        "TYPE_ORPHANAGE"
+      ],
+      "workers": 350.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10920.0,
+        "concrete": 192.0,
+        "gravel": 140.0,
+        "asphalt": 120.0,
+        "steel": 108.0,
+        "mcomponents": 30.0,
+        "prefabpanels": 1440.0,
+        "boards": 160.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform spine orphanage",
+      "workshopId": "3677524205",
+      "modPath": "orphanspine"
+    },
+    {
+      "id": "3677524205/policespine",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 100.0,
+      "professors": 200.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10920.0,
+        "concrete": 192.0,
+        "gravel": 180.0,
+        "asphalt": 160.0,
+        "steel": 108.0,
+        "mcomponents": 30.0,
+        "prefabpanels": 1440.0,
+        "boards": 160.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform spine police station",
+      "workshopId": "3677524205",
+      "modPath": "policespine"
+    },
+    {
+      "id": "3677524205/radiocore",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 200.0,
+      "professors": 100.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 9100.0,
+        "concrete": 160.0,
+        "gravel": 140.0,
+        "asphalt": 120.0,
+        "steel": 80.0,
+        "mcomponents": 24.0,
+        "prefabpanels": 1200.0,
+        "boards": 120.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform core radio station",
+      "workshopId": "3677524205",
+      "modPath": "radiocore"
+    },
+    {
+      "id": "3677524205/resicore",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {
+        "workers": 9100.0,
+        "concrete": 160.0,
+        "gravel": 140.0,
+        "asphalt": 120.0,
+        "steel": 80.0,
+        "mcomponents": 24.0,
+        "prefabpanels": 1200.0,
+        "boards": 120.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform core residential",
+      "workshopId": "3677524205",
+      "modPath": "resicore"
+    },
+    {
+      "id": "3677524205/resispine",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1200.0
+      },
+      "constructionResources": {
+        "workers": 10920.0,
+        "concrete": 192.0,
+        "gravel": 140.0,
+        "asphalt": 120.0,
+        "steel": 108.0,
+        "mcomponents": 30.0,
+        "prefabpanels": 1440.0,
+        "boards": 160.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform spine residential",
+      "workshopId": "3677524205",
+      "modPath": "resispine"
+    },
+    {
+      "id": "3677524205/resitooth",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 180.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 180.0
+      },
+      "constructionResources": {
+        "workers": 1365.0,
+        "concrete": 24.0,
+        "gravel": 21.0,
+        "asphalt": 18.0,
+        "steel": 26.0,
+        "mcomponents": 24.0,
+        "prefabpanels": 180.0,
+        "boards": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform tooth residential",
+      "workshopId": "3677524205",
+      "modPath": "resitooth"
+    },
+    {
+      "id": "3677524205/schooltooth",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 30.0,
+      "professors": 30.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1365.0,
+        "concrete": 24.0,
+        "gravel": 21.0,
+        "asphalt": 18.0,
+        "steel": 26.0,
+        "mcomponents": 24.0,
+        "prefabpanels": 180.0,
+        "boards": 20.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform tooth school",
+      "workshopId": "3677524205",
+      "modPath": "schooltooth"
+    },
+    {
+      "id": "3677524205/shopspine",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 160.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10920.0,
+        "concrete": 192.0,
+        "gravel": 140.0,
+        "asphalt": 120.0,
+        "steel": 108.0,
+        "mcomponents": 30.0,
+        "prefabpanels": 1440.0,
+        "boards": 160.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform spine shopping centre",
+      "workshopId": "3677524205",
+      "modPath": "shopspine"
+    },
+    {
+      "id": "3677524205/stasispine",
+      "nameId": null,
+      "types": [
+        "TYPE_SECRET_POLICE"
+      ],
+      "workers": 0,
+      "professors": 300.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10920.0,
+        "concrete": 192.0,
+        "gravel": 180.0,
+        "asphalt": 160.0,
+        "steel": 108.0,
+        "mcomponents": 30.0,
+        "prefabpanels": 1440.0,
+        "boards": 160.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform spine secret police",
+      "workshopId": "3677524205",
+      "modPath": "stasispine"
+    },
+    {
+      "id": "3677524205/unicore",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 300.0,
+      "professors": 300.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 9100.0,
+        "concrete": 160.0,
+        "gravel": 140.0,
+        "asphalt": 120.0,
+        "steel": 80.0,
+        "mcomponents": 24.0,
+        "prefabpanels": 1200.0,
+        "boards": 120.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cruciform core university",
+      "workshopId": "3677524205",
+      "modPath": "unicore"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3168186979",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:15:41+00:00",
+  "buildings": [
+    {
+      "id": "3168186979/viru",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 206.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.7,
+      "storages": {},
+      "constructionResources": {
+        "boards": 40.0,
+        "concrete": 300.0,
+        "steel": 180.0,
+        "bricks": 100.0,
+        "mcomponents": 3.0,
+        "workers": 4000.0
+      },
+      "electricWorkerFactors": {
+        "lighting": 1.0,
+        "living": 1.0
+      },
+      "nameStr": "Hotel Viru",
+      "workshopId": "3168186979",
+      "modPath": "viru"
+    }
+  ],
+  "vehicles": []
+}

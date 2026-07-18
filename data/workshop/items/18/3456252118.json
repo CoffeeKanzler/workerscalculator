@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3456252118",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:50:45+00:00",
+  "buildings": [
+    {
+      "id": "3456252118/SkyScraper1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 650.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 650.0
+      },
+      "constructionResources": {
+        "gravel": 1000.0,
+        "concrete": 2000.0,
+        "workers": 18000.0,
+        "boards": 500.0,
+        "bricks": 2000.0,
+        "steel": 800.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "SkyScraper",
+      "workshopId": "3456252118",
+      "modPath": "SkyScraper1"
+    }
+  ],
+  "vehicles": []
+}

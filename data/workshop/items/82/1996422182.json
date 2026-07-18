@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1996422182",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:36:58+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1996422182/avi_po",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.24,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 7.0,
+      "speed": 82.0,
+      "powerKW": 59.0,
+      "emptyWeight": 2.8,
+      "from": 1968,
+      "to": 1996,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1996422182",
+      "modPath": "avi_po"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2636907397",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:30:38+00:00",
+  "buildings": [
+    {
+      "id": "2636907397/cafe",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 6.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Café",
+      "workshopId": "2636907397",
+      "modPath": "cafe"
+    },
+    {
+      "id": "2636907397/cafe2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 6.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Café",
+      "workshopId": "2636907397",
+      "modPath": "cafe2"
+    }
+  ],
+  "vehicles": []
+}

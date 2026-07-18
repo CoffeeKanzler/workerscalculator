@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2269135808",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:16:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2269135808/exkovator",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.09,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "powerKW": 190.0,
+      "emptyWeight": 22.0,
+      "speed": 35.0,
+      "from": 2007,
+      "to": 2015,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2269135808",
+      "modPath": "exkovator"
+    }
+  ]
+}

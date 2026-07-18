@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2941489712",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:21:30+00:00",
+  "buildings": [
+    {
+      "id": "2941489712/ST1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "livestock": 0.05
+      },
+      "consumption": {
+        "plants": 0.1,
+        "water": 0.0625
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.1,
+        "heating": 1.2
+      },
+      "nameStr": "DDR-EW58/ST1",
+      "workshopId": "2941489712",
+      "modPath": "ST1"
+    }
+  ],
+  "vehicles": []
+}

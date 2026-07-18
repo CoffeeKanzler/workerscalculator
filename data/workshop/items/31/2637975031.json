@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2637975031",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:13:01+00:00",
+  "buildings": [
+    {
+      "id": "2637975031/residental",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prefab Flats",
+      "workshopId": "2637975031",
+      "modPath": "residental"
+    }
+  ],
+  "vehicles": []
+}

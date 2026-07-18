@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2449491846",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:56:43+00:00",
+  "buildings": [
+    {
+      "id": "2449491846/eplant",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200.0,
+      "professors": 20.0,
+      "production": {
+        "ecomponents": 0.025
+      },
+      "consumption": {
+        "plastics": 0.01,
+        "steel": 0.01,
+        "chemicals": 0.008
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.1
+      },
+      "nameStr": "1930s Electric Components Factory",
+      "workshopId": "2449491846",
+      "modPath": "eplant"
+    },
+    {
+      "id": "2449491846/nosign",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200.0,
+      "professors": 20.0,
+      "production": {
+        "ecomponents": 0.025
+      },
+      "consumption": {
+        "plastics": 0.01,
+        "steel": 0.01,
+        "chemicals": 0.008
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.1
+      },
+      "nameStr": "1930s Electric Components Factory - custom text",
+      "workshopId": "2449491846",
+      "modPath": "nosign"
+    }
+  ],
+  "vehicles": []
+}

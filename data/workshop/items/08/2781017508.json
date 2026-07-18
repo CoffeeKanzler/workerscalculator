@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2781017508",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:43:03+00:00",
+  "buildings": [
+    {
+      "id": "2781017508/IndustryAggegrate7500",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 7500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "IndustryAggegrate7500",
+      "workshopId": "2781017508",
+      "modPath": "IndustryAggegrate7500"
+    },
+    {
+      "id": "2781017508/IndustryAggegrate7500Rail",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 7500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "IndustryAggegrate7500Rail",
+      "workshopId": "2781017508",
+      "modPath": "IndustryAggegrate7500Rail"
+    }
+  ],
+  "vehicles": []
+}

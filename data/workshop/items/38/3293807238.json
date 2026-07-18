@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3293807238",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:29:21+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3293807238/601W",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.2,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "trainGroup": "vagon",
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "speed": 100.0,
+      "emptyWeight": 30.5,
+      "capacity": 90.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "from": 1975,
+      "to": 1979,
+      "countryId": 39006,
+      "workshopId": "3293807238",
+      "modPath": "601W"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3064106840",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:53:03+00:00",
+  "buildings": [
+    {
+      "id": "3064106840/boad",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 50.0,
+      "professors": 50.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Technical university",
+      "workshopId": "3064106840",
+      "modPath": "boad"
+    }
+  ],
+  "vehicles": []
+}

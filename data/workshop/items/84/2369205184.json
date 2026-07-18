@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2369205184",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:12:22+00:00",
+  "buildings": [
+    {
+      "id": "2369205184/grav_medium_con",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 215.0,
+        "prefabpanels": 7.0,
+        "gravel": 41.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium gravel construction office",
+      "workshopId": "2369205184",
+      "modPath": "grav_medium_con"
+    },
+    {
+      "id": "2369205184/grav_medium_depot",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 215.0,
+        "prefabpanels": 7.0,
+        "gravel": 41.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium gravel depot",
+      "workshopId": "2369205184",
+      "modPath": "grav_medium_depot"
+    },
+    {
+      "id": "2369205184/grav_medium_distro",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 215.0,
+        "prefabpanels": 7.0,
+        "gravel": 41.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium gravel distro",
+      "workshopId": "2369205184",
+      "modPath": "grav_medium_distro"
+    },
+    {
+      "id": "2369205184/grav_medium_tech",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 215.0,
+        "prefabpanels": 7.0,
+        "gravel": 41.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium gravel tech",
+      "workshopId": "2369205184",
+      "modPath": "grav_medium_tech"
+    },
+    {
+      "id": "2369205184/medium_log_con",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 112.0,
+        "gravel": 21.0,
+        "boards": 24.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium log construction office",
+      "workshopId": "2369205184",
+      "modPath": "medium_log_con"
+    },
+    {
+      "id": "2369205184/medium_log_depot",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 112.0,
+        "gravel": 21.0,
+        "boards": 24.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium log depot",
+      "workshopId": "2369205184",
+      "modPath": "medium_log_depot"
+    },
+    {
+      "id": "2369205184/medium_log_distro",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 112.0,
+        "gravel": 21.0,
+        "boards": 24.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium log distro",
+      "workshopId": "2369205184",
+      "modPath": "medium_log_distro"
+    },
+    {
+      "id": "2369205184/medium_log_tech",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 112.0,
+        "gravel": 21.0,
+        "boards": 24.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium log tech",
+      "workshopId": "2369205184",
+      "modPath": "medium_log_tech"
+    },
+    {
+      "id": "2369205184/small_log_depot",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 99.0,
+        "gravel": 21.0,
+        "boards": 18.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small log vehicle depot",
+      "workshopId": "2369205184",
+      "modPath": "small_log_depot"
+    },
+    {
+      "id": "2369205184/small_log_distro",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 99.0,
+        "gravel": 21.0,
+        "boards": 18.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small log distro",
+      "workshopId": "2369205184",
+      "modPath": "small_log_distro"
+    },
+    {
+      "id": "2369205184/small_log_tech",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 99.0,
+        "gravel": 21.0,
+        "boards": 18.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small log tech",
+      "workshopId": "2369205184",
+      "modPath": "small_log_tech"
+    }
+  ],
+  "vehicles": []
+}

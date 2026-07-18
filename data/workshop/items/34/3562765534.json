@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3562765534",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:39:05+00:00",
+  "buildings": [
+    {
+      "id": "3562765534/avenueflats",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 960.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 960.0
+      },
+      "constructionResources": {
+        "workers": 10164.0,
+        "gravel": 430.0,
+        "concrete": 456.0,
+        "steel": 88.0,
+        "mcomponents": 12.0,
+        "bricks": 880.0,
+        "boards": 140.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Avenue of the Soviets residential block",
+      "workshopId": "3562765534",
+      "modPath": "avenueflats"
+    },
+    {
+      "id": "3562765534/avenuemarket",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 120.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10164.0,
+        "gravel": 430.0,
+        "concrete": 456.0,
+        "steel": 88.0,
+        "mcomponents": 12.0,
+        "bricks": 880.0,
+        "boards": 140.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Avenue of the Soviets department store",
+      "workshopId": "3562765534",
+      "modPath": "avenuemarket"
+    },
+    {
+      "id": "3562765534/flapjackmemorialhospital",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 96.0,
+      "professors": 96.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10964.0,
+        "gravel": 460.0,
+        "concrete": 504.0,
+        "steel": 94.0,
+        "mcomponents": 12.0,
+        "bricks": 1020.0,
+        "boards": 140.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Avenue of the Soviets hospital",
+      "workshopId": "3562765534",
+      "modPath": "flapjackmemorialhospital"
+    }
+  ],
+  "vehicles": []
+}

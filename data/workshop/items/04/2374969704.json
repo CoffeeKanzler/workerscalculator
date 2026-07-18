@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2374969704",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:56:43+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2374969704/bus_krs_sl11",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.24,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5005,
+      "costRUB": 1.0,
+      "speed": 100.0,
+      "capacity": 55.0,
+      "powerKW": 154.0,
+      "emptyWeight": 8.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1966,
+      "to": 1981,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2374969704",
+      "modPath": "bus_krs_sl11"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2856558663",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:26:05+00:00",
+  "buildings": [
+    {
+      "id": "2856558663/TAOL-Winery",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 85.0,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.1
+      },
+      "consumption": {
+        "plants": 0.36
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "TAOL-Winery",
+      "workshopId": "2856558663",
+      "modPath": "TAOL-Winery"
+    }
+  ],
+  "vehicles": []
+}

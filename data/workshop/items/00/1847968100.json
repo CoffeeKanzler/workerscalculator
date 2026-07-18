@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1847968100",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:00:47+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1847968100/W50LF16",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.58,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4800.0,
+      "capacity": 9.2,
+      "from": 1961,
+      "to": 1990,
+      "speed": 75.0,
+      "consumption": 0.0,
+      "powerKW": 92.0,
+      "emptyWeight": 10.2,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1847968100",
+      "modPath": "W50LF16"
+    }
+  ]
+}

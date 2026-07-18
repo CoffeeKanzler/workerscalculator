@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2143675187",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:21:57+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2143675187/brdm2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.61,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costRUB": 30000.0,
+      "consumption": 0.0,
+      "speed": 95.0,
+      "powerKW": 103.0,
+      "emptyWeight": 7.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1963,
+      "to": 1989,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2143675187",
+      "modPath": "brdm2"
+    }
+  ]
+}

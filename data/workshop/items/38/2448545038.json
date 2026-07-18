@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2448545038",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:34:40+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2448545038/SingleUnit",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 21.43,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 2064207626,
+      "costUSD": 4300.0,
+      "speed": 115.0,
+      "powerKW": 2680.0,
+      "emptyWeight": 166.0,
+      "from": 1972,
+      "to": 3000,
+      "countryId": 39018,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2448545038",
+      "modPath": "SingleUnit"
+    },
+    {
+      "id": "2448545038/SingleUnitReverse",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 22.23,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 2064207626,
+      "costUSD": 4300.0,
+      "speed": 115.0,
+      "powerKW": 2680.0,
+      "emptyWeight": 166.0,
+      "from": 1972,
+      "to": 3000,
+      "countryId": 39018,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2448545038",
+      "modPath": "SingleUnitReverse"
+    }
+  ]
+}

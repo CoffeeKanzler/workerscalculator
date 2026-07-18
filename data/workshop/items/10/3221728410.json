@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3221728410",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:00:44+00:00",
+  "buildings": [
+    {
+      "id": "3221728410/CO24",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Construction Office 24",
+      "workshopId": "3221728410",
+      "modPath": "CO24"
+    },
+    {
+      "id": "3221728410/CO32",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Construction Office 32",
+      "workshopId": "3221728410",
+      "modPath": "CO32"
+    }
+  ],
+  "vehicles": []
+}

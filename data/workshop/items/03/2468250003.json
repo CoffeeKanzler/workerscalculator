@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2468250003",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:26:24+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2468250003/G3WD",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.59,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "powerKW": 107.0,
+      "emptyWeight": 15.0,
+      "speed": 80.0,
+      "from": 1985,
+      "to": 2000,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2468250003",
+      "modPath": "G3WD"
+    }
+  ]
+}

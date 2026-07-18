@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2483077211",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:42:14+00:00",
+  "buildings": [
+    {
+      "id": "2483077211/hotel",
+      "nameId": 6043,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 53.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2483077211",
+      "modPath": "hotel"
+    }
+  ],
+  "vehicles": []
+}

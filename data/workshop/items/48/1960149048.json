@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1960149048",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:18:10+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1960149048/MF-35",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 1960149048,
+      "costUSD": 1.0,
+      "speed": 18.0,
+      "powerKW": 29.0,
+      "emptyWeight": 1.5,
+      "from": 1956,
+      "to": 1964,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1960149048",
+      "modPath": "MF-35"
+    }
+  ]
+}

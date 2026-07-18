@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2312485681",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:34:40+00:00",
+  "buildings": [
+    {
+      "id": "2312485681/Ground_Metro_Station_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vykhino Station v2",
+      "workshopId": "2312485681",
+      "modPath": "Ground_Metro_Station_v2"
+    }
+  ],
+  "vehicles": []
+}

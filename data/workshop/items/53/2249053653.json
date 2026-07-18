@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2249053653",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:45:05+00:00",
+  "buildings": [
+    {
+      "id": "2249053653/red_tower",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 100.0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Red Tower",
+      "workshopId": "2249053653",
+      "modPath": "red_tower"
+    }
+  ],
+  "vehicles": []
+}

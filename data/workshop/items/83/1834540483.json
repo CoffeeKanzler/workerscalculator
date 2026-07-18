@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1834540483",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:54:15+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1834540483/truck",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.04,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "capacity": 21.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 2000,
+      "to": 3000,
+      "speed": 120.0,
+      "powerKW": 320.0,
+      "emptyWeight": 7.5,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1834540483",
+      "modPath": "truck"
+    }
+  ]
+}

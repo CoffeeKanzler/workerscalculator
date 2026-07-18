@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3544742218",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:35:18+00:00",
+  "buildings": [
+    {
+      "id": "3544742218/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 360.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 360.0
+      },
+      "constructionResources": {
+        "workers": 3600.0,
+        "gravel": 100.0,
+        "concrete": 80.0,
+        "steel": 40.0,
+        "bricks": 300.0,
+        "boards": 120.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Oddfellows Temple - residential",
+      "workshopId": "3544742218",
+      "modPath": "1"
+    },
+    {
+      "id": "3544742218/2",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 40.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3600.0,
+        "gravel": 100.0,
+        "concrete": 80.0,
+        "steel": 40.0,
+        "bricks": 300.0,
+        "boards": 120.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Oddfellows Temple - hotel",
+      "workshopId": "3544742218",
+      "modPath": "2"
+    },
+    {
+      "id": "3544742218/3",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 40.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3600.0,
+        "gravel": 100.0,
+        "concrete": 80.0,
+        "steel": 40.0,
+        "bricks": 300.0,
+        "boards": 120.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Oddfellows Temple - City Hall",
+      "workshopId": "3544742218",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

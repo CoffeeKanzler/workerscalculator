@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3136475409",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:17:09+00:00",
+  "buildings": [
+    {
+      "id": "3136475409/fertilizer_v2",
+      "nameId": 7572,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {
+        "fertiliser": 1.0
+      },
+      "consumption": {
+        "waste_bio": 1.2,
+        "chemicals": 0.003
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3136475409",
+      "modPath": "fertilizer_v2"
+    }
+  ],
+  "vehicles": []
+}

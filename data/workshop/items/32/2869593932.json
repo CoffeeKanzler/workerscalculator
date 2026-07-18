@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2869593932",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:30:34+00:00",
+  "buildings": [
+    {
+      "id": "2869593932/gum",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 120.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big bazar",
+      "workshopId": "2869593932",
+      "modPath": "gum"
+    }
+  ],
+  "vehicles": []
+}

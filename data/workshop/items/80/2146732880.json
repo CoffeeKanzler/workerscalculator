@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2146732880",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:19:07+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2146732880/Caterpillar_RR270",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.6,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5131,
+      "costUSD": 6000.0,
+      "powerKW": 100.0,
+      "emptyWeight": 6.0,
+      "speed": 35.0,
+      "from": 1980,
+      "to": 2000,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2146732880",
+      "modPath": "Caterpillar_RR270"
+    },
+    {
+      "id": "2146732880/Forklift_CAT_25",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.92,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 6000.0,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "speed": 50.0,
+      "powerKW": 65.0,
+      "emptyWeight": 1.0,
+      "from": 1980,
+      "to": 2000,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2146732880",
+      "modPath": "Forklift_CAT_25"
+    }
+  ]
+}

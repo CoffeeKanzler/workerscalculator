@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2846469971",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:21:20+00:00",
+  "buildings": [
+    {
+      "id": "2846469971/Lenin_Dubna",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 130.0,
+        "gravel": 90.0,
+        "steel": 25.0,
+        "workers": 350.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ленин (Дубна) | Lenin (Dubna) ",
+      "workshopId": "2846469971",
+      "modPath": "Lenin_Dubna"
+    },
+    {
+      "id": "2846469971/Stalin_Dubna",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 140.0,
+        "gravel": 105.0,
+        "steel": 25.0,
+        "workers": 355.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Сталин (Дубна) | Stalin (Dubna) ",
+      "workshopId": "2846469971",
+      "modPath": "Stalin_Dubna"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3471457906",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:56:28+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3471457906/E12",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 174.0,
+      "powerKW": 85.0,
+      "emptyWeight": 1.31,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1972,
+      "to": 1978,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3471457906",
+      "modPath": "E12"
+    },
+    {
+      "id": "3471457906/E12police",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 174.0,
+      "powerKW": 85.0,
+      "emptyWeight": 1.4,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1972,
+      "to": 1978,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3471457906",
+      "modPath": "E12police"
+    }
+  ]
+}

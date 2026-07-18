@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1875186835",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:28:52+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1875186835/martini",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.58,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 2500.0,
+      "consumption": 0.0,
+      "speed": 25.0,
+      "powerKW": 38.0,
+      "emptyWeight": 12.0,
+      "from": 1941,
+      "to": 1979,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "1875186835",
+      "modPath": "martini"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3718631646",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:11:42+00:00",
+  "buildings": [
+    {
+      "id": "3718631646/basen",
+      "nameId": 6030,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.8,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sports hall Wołomin",
+      "workshopId": "3718631646",
+      "modPath": "basen"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2938322222",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:39:53+00:00",
+  "buildings": [
+    {
+      "id": "2938322222/wawa",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3600.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3600.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dworzec Centralny im. Stanisława Moniuszki",
+      "workshopId": "2938322222",
+      "modPath": "wawa"
+    },
+    {
+      "id": "2938322222/wawatext",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dworzec Centralny (addition)",
+      "workshopId": "2938322222",
+      "modPath": "wawatext"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2674360834",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:02:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2674360834/1910tronz",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.97,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "speed": 80.0,
+      "powerKW": 1007.0,
+      "emptyWeight": 100.0,
+      "trainGroup": "locomotive",
+      "from": 1910,
+      "to": 1970,
+      "countryId": 39016,
+      "electric": false,
+      "workshopId": "2674360834",
+      "modPath": "1910tronz"
+    }
+  ]
+}

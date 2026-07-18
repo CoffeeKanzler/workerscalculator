@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2409199116",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:41:47+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2409199116/Lowan",
+      "category": "workshop",
+      "trainSet": [
+        "2409199116/Lowantender"
+      ],
+      "lifespanYears": 0.0,
+      "length": 20.05,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "speed": 80.0,
+      "emptyWeight": 110.0,
+      "powerKW": 950.0,
+      "from": 1929,
+      "to": 1965,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2409199116",
+      "modPath": "Lowan"
+    },
+    {
+      "id": "2409199116/Lowantender",
+      "category": "workshop",
+      "trainSet": [
+        "2409199116/Lowantender"
+      ],
+      "lifespanYears": 0.0,
+      "length": 12.23,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4300.0,
+      "emptyWeight": 80.0,
+      "consumption": 0.0,
+      "speed": 30.0,
+      "capacity": 68.0,
+      "from": 1959,
+      "to": 1969,
+      "countryId": 39011,
+      "workshopId": "2409199116",
+      "modPath": "Lowantender"
+    }
+  ]
+}

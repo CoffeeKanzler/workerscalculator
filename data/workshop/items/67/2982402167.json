@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2982402167",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:22:31+00:00",
+  "buildings": [
+    {
+      "id": "2982402167/1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {
+        "prefabpanels": 25.0,
+        "concrete": 14.0,
+        "steel": 0.8,
+        "workers": 560.0,
+        "boards": 2.0,
+        "ecomponents": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny commuter station (70s, Leningrad)",
+      "workshopId": "2982402167",
+      "modPath": "1"
+    },
+    {
+      "id": "2982402167/100",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2000.0
+      },
+      "constructionResources": {
+        "prefabpanels": 40.0,
+        "concrete": 22.0,
+        "steel": 1.3,
+        "workers": 934.0,
+        "boards": 3.4,
+        "ecomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Mid commuter station (70s, Leningrad)",
+      "workshopId": "2982402167",
+      "modPath": "100"
+    },
+    {
+      "id": "2982402167/200",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3500.0
+      },
+      "constructionResources": {
+        "prefabpanels": 67.0,
+        "concrete": 37.0,
+        "steel": 2.2,
+        "workers": 1558.0,
+        "boards": 5.7,
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Huge commuter station (70s, Leningrad)",
+      "workshopId": "2982402167",
+      "modPath": "200"
+    }
+  ],
+  "vehicles": []
+}

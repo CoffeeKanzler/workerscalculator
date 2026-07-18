@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3610668995",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:55:05+00:00",
+  "buildings": [
+    {
+      "id": "3610668995/Concrete_22",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {
+        "concrete": 35.0
+      },
+      "consumption": {
+        "gravel": 27.0,
+        "cement": 6.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Concrete 22",
+      "workshopId": "3610668995",
+      "modPath": "Concrete_22"
+    }
+  ],
+  "vehicles": []
+}

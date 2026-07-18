@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3358829335",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:21:59+00:00",
+  "buildings": [
+    {
+      "id": "3358829335/1",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 30.0,
+      "professors": 5.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Leningrad TV Tower (1962)",
+      "workshopId": "3358829335",
+      "modPath": "1"
+    },
+    {
+      "id": "3358829335/deck",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 6.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Leningrad TV Tower (1962) observation tower",
+      "workshopId": "3358829335",
+      "modPath": "deck"
+    },
+    {
+      "id": "3358829335/mon",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Leningrad TV Tower (1962) monument",
+      "workshopId": "3358829335",
+      "modPath": "mon"
+    }
+  ],
+  "vehicles": []
+}

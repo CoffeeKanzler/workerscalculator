@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2340376377",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:38:59+00:00",
+  "buildings": [
+    {
+      "id": "2340376377/sawmill",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 80.0,
+      "professors": 0,
+      "production": {
+        "boards": 5.0
+      },
+      "consumption": {
+        "wood": 7.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Лесопилка (Sawmill)",
+      "workshopId": "2340376377",
+      "modPath": "sawmill"
+    }
+  ],
+  "vehicles": []
+}

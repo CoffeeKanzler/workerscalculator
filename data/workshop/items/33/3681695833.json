@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3681695833",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:21:28+00:00",
+  "buildings": [
+    {
+      "id": "3681695833/ClassicalCargo",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Main Cargo Station",
+      "workshopId": "3681695833",
+      "modPath": "ClassicalCargo"
+    }
+  ],
+  "vehicles": []
+}

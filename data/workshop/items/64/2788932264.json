@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2788932264",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:04:44+00:00",
+  "buildings": [
+    {
+      "id": "2788932264/Battery",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 0.006
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Traffic LED Solar Panel",
+      "workshopId": "2788932264",
+      "modPath": "Battery"
+    },
+    {
+      "id": "2788932264/LEDA",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Traffic LED Single",
+      "workshopId": "2788932264",
+      "modPath": "LEDA"
+    },
+    {
+      "id": "2788932264/LEDB",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Traffic LED Double",
+      "workshopId": "2788932264",
+      "modPath": "LEDB"
+    }
+  ],
+  "vehicles": []
+}

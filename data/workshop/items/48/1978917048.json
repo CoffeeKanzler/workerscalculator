@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1978917048",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:54:08+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1978917048/personal_moskvich_408",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.78,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 125.0,
+      "powerKW": 55.0,
+      "emptyWeight": 1.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1964,
+      "to": 1976,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1978917048",
+      "modPath": "personal_moskvich_408"
+    }
+  ]
+}

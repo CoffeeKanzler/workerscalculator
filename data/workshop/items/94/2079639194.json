@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2079639194",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:48:22+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2079639194/kamaz_55102",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.67,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 14000.0,
+      "capacity": 18.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1981,
+      "to": 3000,
+      "speed": 76.0,
+      "powerKW": 154.0,
+      "emptyWeight": 13.0,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2079639194",
+      "modPath": "kamaz_55102"
+    }
+  ]
+}

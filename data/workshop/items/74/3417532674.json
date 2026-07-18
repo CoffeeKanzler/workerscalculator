@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3417532674",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:22:17+00:00",
+  "buildings": [
+    {
+      "id": "3417532674/mandurah",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mandurah Train Station",
+      "workshopId": "3417532674",
+      "modPath": "mandurah"
+    }
+  ],
+  "vehicles": []
+}

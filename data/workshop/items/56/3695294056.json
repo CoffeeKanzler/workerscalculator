@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3695294056",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:57:55+00:00",
+  "buildings": [
+    {
+      "id": "3695294056/ares",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 160.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 160.0
+      },
+      "constructionResources": {
+        "workers": 1300.0,
+        "gravel": 30.0,
+        "concrete": 24.0,
+        "bricks": 110.0,
+        "steel": 12.0,
+        "boards": 32.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Allabanuel House",
+      "workshopId": "3695294056",
+      "modPath": "ares"
+    },
+    {
+      "id": "3695294056/ashop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1300.0,
+        "gravel": 30.0,
+        "concrete": 24.0,
+        "bricks": 110.0,
+        "steel": 12.0,
+        "mcomponents": 4.0,
+        "boards": 40.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Allabanuel Shop",
+      "workshopId": "3695294056",
+      "modPath": "ashop"
+    }
+  ],
+  "vehicles": []
+}

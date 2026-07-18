@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2643023762",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:30:53+00:00",
+  "buildings": [
+    {
+      "id": "2643023762/podgaric_attraction",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Podgaric Attraction",
+      "workshopId": "2643023762",
+      "modPath": "podgaric_attraction"
+    },
+    {
+      "id": "2643023762/podgaric_s",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Podgaric Small",
+      "workshopId": "2643023762",
+      "modPath": "podgaric_s"
+    },
+    {
+      "id": "2643023762/podgaric_spomenik",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Podgarac",
+      "workshopId": "2643023762",
+      "modPath": "podgaric_spomenik"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2878699206",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:14:53+00:00",
+  "buildings": [
+    {
+      "id": "2878699206/ryugyong",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 250.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ryugyong Hotel of the People",
+      "workshopId": "2878699206",
+      "modPath": "ryugyong"
+    },
+    {
+      "id": "2878699206/ryugyong3",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 375.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ryugyong Hotel of the People",
+      "workshopId": "2878699206",
+      "modPath": "ryugyong3"
+    },
+    {
+      "id": "2878699206/ryugyongf",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 150.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ryugyong Hotel of the People",
+      "workshopId": "2878699206",
+      "modPath": "ryugyongf"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3055244293",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:55:49+00:00",
+  "buildings": [
+    {
+      "id": "3055244293/1",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 60.0,
+      "professors": 60.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large elementary school",
+      "workshopId": "3055244293",
+      "modPath": "1"
+    },
+    {
+      "id": "3055244293/2",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 100.0,
+      "professors": 75.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Hospital",
+      "workshopId": "3055244293",
+      "modPath": "2"
+    },
+    {
+      "id": "3055244293/3",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 300.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Cityhall",
+      "workshopId": "3055244293",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

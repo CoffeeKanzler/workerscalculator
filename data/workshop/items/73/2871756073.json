@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2871756073",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:37:35+00:00",
+  "buildings": [
+    {
+      "id": "2871756073/temphouse5b",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 72.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 72.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.5,
+        "living": 1.5
+      },
+      "nameStr": "Temporary Housing 5B",
+      "workshopId": "2871756073",
+      "modPath": "temphouse5b"
+    }
+  ],
+  "vehicles": []
+}

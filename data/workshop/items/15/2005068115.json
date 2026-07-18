@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2005068115",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:17:26+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2005068115/Motorboat",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 48.21,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 1000.0,
+      "speed": 37.0,
+      "powerKW": 11.0,
+      "emptyWeight": 0.5,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1951,
+      "to": 1997,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "2005068115",
+      "modPath": "Motorboat"
+    }
+  ]
+}

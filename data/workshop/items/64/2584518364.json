@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2584518364",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:46:35+00:00",
+  "buildings": [
+    {
+      "id": "2584518364/CzechoslovakRes12s",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 198.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 198.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "cinziak 6088",
+      "workshopId": "2584518364",
+      "modPath": "CzechoslovakRes12s"
+    }
+  ],
+  "vehicles": []
+}

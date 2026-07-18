@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2881694461",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:57:30+00:00",
+  "buildings": [
+    {
+      "id": "2881694461/Samovar",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Samovar",
+      "workshopId": "2881694461",
+      "modPath": "Samovar"
+    }
+  ],
+  "vehicles": []
+}

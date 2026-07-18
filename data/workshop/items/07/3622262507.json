@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3622262507",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:22:23+00:00",
+  "buildings": [
+    {
+      "id": "3622262507/1",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 30.0,
+        "RESOURCE_TRANSPORT_VEHICLES": 100.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny containers pack workshop",
+      "workshopId": "3622262507",
+      "modPath": "1"
+    },
+    {
+      "id": "3622262507/2",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 30.0,
+        "RESOURCE_TRANSPORT_VEHICLES": 100.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny containers unpack workshop",
+      "workshopId": "3622262507",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

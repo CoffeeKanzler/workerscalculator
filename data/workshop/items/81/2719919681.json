@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2719919681",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:50:24+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2719919681/Vz2101_police",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.05,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 135.0,
+      "powerKW": 44.0,
+      "emptyWeight": 0.955,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1970,
+      "to": 1983,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2719919681",
+      "modPath": "Vz2101_police"
+    }
+  ]
+}

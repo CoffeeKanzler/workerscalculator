@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3706645890",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:43:16+00:00",
+  "buildings": [
+    {
+      "id": "3706645890/LED_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 110.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 110.0
+      },
+      "constructionResources": {
+        "workers": 743.0,
+        "concrete": 18.0,
+        "gravel": 22.7,
+        "asphalt": 8.6,
+        "steel": 6.1,
+        "prefabpanels": 86.0,
+        "bricks": 13.2,
+        "boards": 12.5,
+        "ecomponents": 0.18,
+        "mcomponents": 0.215
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "British Panel House 1 (10-Storey)",
+      "workshopId": "3706645890",
+      "modPath": "LED_1"
+    },
+    {
+      "id": "3706645890/LED_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 154.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 154.0
+      },
+      "constructionResources": {
+        "workers": 1038.0,
+        "concrete": 25.0,
+        "gravel": 32.0,
+        "asphalt": 12.0,
+        "steel": 8.5,
+        "prefabpanels": 120.0,
+        "bricks": 18.5,
+        "boards": 17.5,
+        "ecomponents": 0.25,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "British Panel House 1 (14-Storey)",
+      "workshopId": "3706645890",
+      "modPath": "LED_2"
+    },
+    {
+      "id": "3706645890/LED_3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 198.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 198.0
+      },
+      "constructionResources": {
+        "workers": 1330.0,
+        "concrete": 32.5,
+        "gravel": 41.3,
+        "asphalt": 15.4,
+        "steel": 10.9,
+        "prefabpanels": 154.0,
+        "bricks": 23.8,
+        "boards": 22.5,
+        "ecomponents": 0.32,
+        "mcomponents": 0.385
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "British Panel House 1 (18-Storey)",
+      "workshopId": "3706645890",
+      "modPath": "LED_3"
+    },
+    {
+      "id": "3706645890/LED_4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 242.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 242.0
+      },
+      "constructionResources": {
+        "workers": 1639.0,
+        "concrete": 39.0,
+        "gravel": 50.6,
+        "asphalt": 18.5,
+        "steel": 13.4,
+        "prefabpanels": 188.5,
+        "bricks": 29.0,
+        "boards": 27.5,
+        "ecomponents": 0.42,
+        "mcomponents": 0.47
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "British Panel House 1 (22-Storey)",
+      "workshopId": "3706645890",
+      "modPath": "LED_4"
+    }
+  ],
+  "vehicles": []
+}

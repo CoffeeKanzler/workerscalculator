@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3063891005",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:14:49+00:00",
+  "buildings": [
+    {
+      "id": "3063891005/cinema_1",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vintage Cinema 1_1",
+      "workshopId": "3063891005",
+      "modPath": "cinema_1"
+    }
+  ],
+  "vehicles": []
+}

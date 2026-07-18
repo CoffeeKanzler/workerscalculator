@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3503466809",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:33:07+00:00",
+  "buildings": [
+    {
+      "id": "3503466809/Hydrofornia",
+      "nameId": 7502,
+      "types": [
+        "TYPE_WATER_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 20.0,
+        "RESOURCE_TRANSPORT_ELETRIC": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3503466809",
+      "modPath": "Hydrofornia"
+    }
+  ],
+  "vehicles": []
+}

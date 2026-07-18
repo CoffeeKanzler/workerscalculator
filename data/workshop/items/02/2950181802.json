@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2950181802",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:08:19+00:00",
+  "buildings": [
+    {
+      "id": "2950181802/KT60",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "DDR-KT60",
+      "workshopId": "2950181802",
+      "modPath": "KT60"
+    },
+    {
+      "id": "2950181802/MT90",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 6.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "DDR-MT90",
+      "workshopId": "2950181802",
+      "modPath": "MT90"
+    }
+  ],
+  "vehicles": []
+}

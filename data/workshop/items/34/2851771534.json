@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2851771534",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:33:02+00:00",
+  "buildings": [
+    {
+      "id": "2851771534/pushkin",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 27.0,
+      "professors": 27.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "School named after Pushkin",
+      "workshopId": "2851771534",
+      "modPath": "pushkin"
+    }
+  ],
+  "vehicles": []
+}

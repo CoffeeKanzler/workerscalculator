@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3685668295",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:39:53+00:00",
+  "buildings": [
+    {
+      "id": "3685668295/office",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 70.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Office building Warszawa",
+      "workshopId": "3685668295",
+      "modPath": "office"
+    }
+  ],
+  "vehicles": []
+}

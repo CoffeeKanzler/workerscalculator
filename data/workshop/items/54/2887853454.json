@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2887853454",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:36:24+00:00",
+  "buildings": [
+    {
+      "id": "2887853454/HouseofSoviet",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 400.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "HouseOfSoviet",
+      "workshopId": "2887853454",
+      "modPath": "HouseofSoviet"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2831439930",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:32:30+00:00",
+  "buildings": [
+    {
+      "id": "2831439930/cheburashka",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 72.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.78,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 72.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cheburashka building",
+      "workshopId": "2831439930",
+      "modPath": "cheburashka"
+    }
+  ],
+  "vehicles": []
+}

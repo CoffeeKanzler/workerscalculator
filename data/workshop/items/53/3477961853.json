@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3477961853",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:02:55+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3477961853/43118garbage",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.13,
+      "type": "VEHICLETYPE_ROAD",
+      "capacity": 9.0,
+      "transportType": "RESOURCE_TRANSPORT_WASTE",
+      "costRUB": 4300.0,
+      "speed": 115.0,
+      "powerKW": 325.0,
+      "emptyWeight": 8.8,
+      "from": 2011,
+      "to": 2030,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3477961853",
+      "modPath": "43118garbage"
+    }
+  ]
+}

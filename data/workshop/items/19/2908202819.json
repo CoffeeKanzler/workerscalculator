@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2908202819",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:18:44+00:00",
+  "buildings": [
+    {
+      "id": "2908202819/apprentices",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 12.0,
+      "professors": 5.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Apprentices School",
+      "workshopId": "2908202819",
+      "modPath": "apprentices"
+    },
+    {
+      "id": "2908202819/sanatorium",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 15.0,
+      "professors": 5.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sanatorium",
+      "workshopId": "2908202819",
+      "modPath": "sanatorium"
+    },
+    {
+      "id": "2908202819/school",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 10.0,
+      "professors": 4.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 18.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Miners School",
+      "workshopId": "2908202819",
+      "modPath": "school"
+    }
+  ],
+  "vehicles": []
+}

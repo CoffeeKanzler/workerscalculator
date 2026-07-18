@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2472285777",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:44:15+00:00",
+  "buildings": [
+    {
+      "id": "2472285777/apteka",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 3.0,
+      "professors": 2.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 2.0,
+        "mcomponents": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pharmacy for 1950s Stalinka",
+      "workshopId": "2472285777",
+      "modPath": "apteka"
+    },
+    {
+      "id": "2472285777/books",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {
+        "boards": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bookstore for 1950s Stalinka",
+      "workshopId": "2472285777",
+      "modPath": "books"
+    },
+    {
+      "id": "2472285777/gastronom",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 1.0,
+        "steel": 2.0,
+        "boards": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Grocery store for 1950s Stalinka",
+      "workshopId": "2472285777",
+      "modPath": "gastronom"
+    },
+    {
+      "id": "2472285777/main",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200.0
+      },
+      "constructionResources": {
+        "mcomponents": 5.0,
+        "steel": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1950s Stalinka",
+      "workshopId": "2472285777",
+      "modPath": "main"
+    },
+    {
+      "id": "2472285777/post",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 2.0,
+        "steel": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Post Office for 1950s Stalinka",
+      "workshopId": "2472285777",
+      "modPath": "post"
+    },
+    {
+      "id": "2472285777/pub",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 1.0,
+        "steel": 1.0,
+        "boards": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pub for 1950s Stalinka",
+      "workshopId": "2472285777",
+      "modPath": "pub"
+    },
+    {
+      "id": "2472285777/store",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Clothes Store for 1950s Stalinka",
+      "workshopId": "2472285777",
+      "modPath": "store"
+    }
+  ],
+  "vehicles": []
+}

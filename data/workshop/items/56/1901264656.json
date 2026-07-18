@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1901264656",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:36:28+00:00",
+  "buildings": [
+    {
+      "id": "1901264656/food",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 170.0,
+      "professors": 0,
+      "production": {
+        "food": 0.25
+      },
+      "consumption": {
+        "plants": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.5
+      },
+      "nameStr": "Food Factory V2",
+      "workshopId": "1901264656",
+      "modPath": "food"
+    }
+  ],
+  "vehicles": []
+}

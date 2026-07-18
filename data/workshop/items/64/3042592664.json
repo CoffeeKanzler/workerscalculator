@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3042592664",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:15:47+00:00",
+  "buildings": [
+    {
+      "id": "3042592664/railway_container_transfer",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Container Transfer with claw machine and rail",
+      "workshopId": "3042592664",
+      "modPath": "railway_container_transfer"
+    }
+  ],
+  "vehicles": []
+}

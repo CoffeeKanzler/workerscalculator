@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2707591558",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:41:34+00:00",
+  "buildings": [
+    {
+      "id": "2707591558/stalinka_small",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian small stalinka",
+      "workshopId": "2707591558",
+      "modPath": "stalinka_small"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3117717561",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:01:23+00:00",
+  "buildings": [
+    {
+      "id": "3117717561/station_lamp",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Railway lamp 2",
+      "workshopId": "3117717561",
+      "modPath": "station_lamp"
+    }
+  ],
+  "vehicles": []
+}

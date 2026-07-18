@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3651200290",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:34:10+00:00",
+  "buildings": [
+    {
+      "id": "3651200290/1_car_15",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 27.0,
+        "gravel": 40.0,
+        "asphalt": 29.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "car-15",
+      "workshopId": "3651200290",
+      "modPath": "1_car_15"
+    },
+    {
+      "id": "3651200290/2_car_30",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 29.0,
+        "gravel": 42.0,
+        "asphalt": 31.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "car-30",
+      "workshopId": "3651200290",
+      "modPath": "2_car_30"
+    },
+    {
+      "id": "3651200290/3_car_7",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 16.0,
+        "gravel": 20.0,
+        "asphalt": 14.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "car-7",
+      "workshopId": "3651200290",
+      "modPath": "3_car_7"
+    },
+    {
+      "id": "3651200290/4_car_14",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 18.0,
+        "gravel": 22.0,
+        "asphalt": 16.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "car-14",
+      "workshopId": "3651200290",
+      "modPath": "4_car_14"
+    },
+    {
+      "id": "3651200290/5_car_3",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 8.0,
+        "gravel": 10.0,
+        "asphalt": 7.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "car-3",
+      "workshopId": "3651200290",
+      "modPath": "5_car_3"
+    }
+  ],
+  "vehicles": []
+}

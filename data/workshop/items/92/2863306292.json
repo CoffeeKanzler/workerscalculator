@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2863306292",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:06:28+00:00",
+  "buildings": [
+    {
+      "id": "2863306292/Kosice13s",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 185.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 185.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "kosice 13 s dokonceny",
+      "workshopId": "2863306292",
+      "modPath": "Kosice13s"
+    }
+  ],
+  "vehicles": []
+}

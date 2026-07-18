@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2776496991",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:28:52+00:00",
+  "buildings": [
+    {
+      "id": "2776496991/1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.78,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1930s Chelyabinsk homes 1 ",
+      "workshopId": "2776496991",
+      "modPath": "1"
+    },
+    {
+      "id": "2776496991/2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1930s Chelyabinsk homes 2",
+      "workshopId": "2776496991",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

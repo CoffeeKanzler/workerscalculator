@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3380160170",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:24:59+00:00",
+  "buildings": [
+    {
+      "id": "3380160170/LENAM",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 50.0,
+      "professors": 25.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "LenaM",
+      "workshopId": "3380160170",
+      "modPath": "LENAM"
+    }
+  ],
+  "vehicles": []
+}

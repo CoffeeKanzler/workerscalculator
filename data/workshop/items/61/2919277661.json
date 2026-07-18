@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2919277661",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:35:56+00:00",
+  "buildings": [
+    {
+      "id": "2919277661/Maison_Tour",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1164.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1164.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Maison-Tour Final",
+      "workshopId": "2919277661",
+      "modPath": "Maison_Tour"
+    }
+  ],
+  "vehicles": []
+}

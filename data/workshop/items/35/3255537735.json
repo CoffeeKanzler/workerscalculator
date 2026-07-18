@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3255537735",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:48:42+00:00",
+  "buildings": [
+    {
+      "id": "3255537735/1",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 40.0,
+      "professors": 40.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Госбанк Новосибирск 1930",
+      "workshopId": "3255537735",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

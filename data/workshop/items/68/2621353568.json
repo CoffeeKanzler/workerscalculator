@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2621353568",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:37:29+00:00",
+  "buildings": [
+    {
+      "id": "2621353568/ware",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 1000.0,
+        "RESOURCE_TRANSPORT_OPEN": 400.0,
+        "RESOURCE_TRANSPORT_COOLER": 100.0
+      },
+      "constructionResources": {
+        "bricks": 30.0,
+        "mcomponents": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1980s Moscow warehouse",
+      "workshopId": "2621353568",
+      "modPath": "ware"
+    }
+  ],
+  "vehicles": []
+}

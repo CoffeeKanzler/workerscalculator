@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2715162507",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:09:19+00:00",
+  "buildings": [
+    {
+      "id": "2715162507/23296_fish_meat_factory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {
+        "food": 0.55
+      },
+      "consumption": {
+        "meat": 0.6,
+        "steel": 0.02,
+        "chemicals": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "fish meat factory",
+      "workshopId": "2715162507",
+      "modPath": "23296_fish_meat_factory"
+    }
+  ],
+  "vehicles": []
+}

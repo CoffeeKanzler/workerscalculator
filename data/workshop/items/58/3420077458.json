@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3420077458",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:32:01+00:00",
+  "buildings": [
+    {
+      "id": "3420077458/3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.4,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Abandoned Residential 2",
+      "workshopId": "3420077458",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

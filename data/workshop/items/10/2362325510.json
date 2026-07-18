@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2362325510",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:33:33+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2362325510/SKhTZ15-30",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.59,
+      "type": "VEHICLETYPE_ROAD",
+      "speed": 15.0,
+      "emptyWeight": 3.0,
+      "costRUB": 3000.0,
+      "from": 1930,
+      "to": 1950,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2362325510",
+      "modPath": "SKhTZ15-30"
+    }
+  ]
+}

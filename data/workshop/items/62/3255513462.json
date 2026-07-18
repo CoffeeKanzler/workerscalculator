@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3255513462",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:22:57+00:00",
+  "buildings": [
+    {
+      "id": "3255513462/1",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 150.0,
+      "professors": 50.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kirov District Party HQ",
+      "workshopId": "3255513462",
+      "modPath": "1"
+    },
+    {
+      "id": "3255513462/2",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 75.0,
+      "professors": 40.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kirov District Police Dep",
+      "workshopId": "3255513462",
+      "modPath": "2"
+    },
+    {
+      "id": "3255513462/3",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 50.0,
+      "professors": 25.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kirov District City Hall",
+      "workshopId": "3255513462",
+      "modPath": "3"
+    },
+    {
+      "id": "3255513462/4",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kirov District Theater",
+      "workshopId": "3255513462",
+      "modPath": "4"
+    },
+    {
+      "id": "3255513462/5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kirov District Tower (monument)",
+      "workshopId": "3255513462",
+      "modPath": "5"
+    }
+  ],
+  "vehicles": []
+}

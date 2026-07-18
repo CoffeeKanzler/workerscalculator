@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3644453730",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:34:47+00:00",
+  "buildings": [
+    {
+      "id": "3644453730/hrusevka",
+      "nameId": 6011,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 115.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 115.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3644453730",
+      "modPath": "hrusevka"
+    }
+  ],
+  "vehicles": []
+}

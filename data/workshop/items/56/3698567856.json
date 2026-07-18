@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3698567856",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:30:20+00:00",
+  "buildings": [
+    {
+      "id": "3698567856/1",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Road vehicles depot office - Prefab",
+      "workshopId": "3698567856",
+      "modPath": "1"
+    },
+    {
+      "id": "3698567856/2",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Technical services office - Prefab",
+      "workshopId": "3698567856",
+      "modPath": "2"
+    },
+    {
+      "id": "3698567856/3",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Distribution office - Prefab",
+      "workshopId": "3698567856",
+      "modPath": "3"
+    },
+    {
+      "id": "3698567856/4",
+      "nameId": null,
+      "types": [
+        "TYPE_DEMOLITION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Demolition office - Prefab",
+      "workshopId": "3698567856",
+      "modPath": "4"
+    },
+    {
+      "id": "3698567856/5",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Construction office - Prefab",
+      "workshopId": "3698567856",
+      "modPath": "5"
+    }
+  ],
+  "vehicles": []
+}

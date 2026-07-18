@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2859009079",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:17:51+00:00",
+  "buildings": [
+    {
+      "id": "2859009079/robna_kuca",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 32.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Department Store Partizan",
+      "workshopId": "2859009079",
+      "modPath": "robna_kuca"
+    }
+  ],
+  "vehicles": []
+}

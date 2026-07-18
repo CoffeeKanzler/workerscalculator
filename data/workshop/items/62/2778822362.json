@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2778822362",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:17:06+00:00",
+  "buildings": [
+    {
+      "id": "2778822362/.",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 228.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.0,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 228.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Luxury apartaments",
+      "workshopId": "2778822362",
+      "modPath": "."
+    }
+  ],
+  "vehicles": []
+}

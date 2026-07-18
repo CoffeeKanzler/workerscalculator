@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2876589135",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:09:33+00:00",
+  "buildings": [
+    {
+      "id": "2876589135/.",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 90.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 50.0,
+        "bricks": 50.0,
+        "mcomponents": 10.0,
+        "ecomponents": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1980s Moscow Brutalist Hotel",
+      "workshopId": "2876589135",
+      "modPath": "."
+    }
+  ],
+  "vehicles": []
+}

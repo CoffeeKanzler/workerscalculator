@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2507987392",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:31:42+00:00",
+  "buildings": [
+    {
+      "id": "2507987392/kharkov",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 64.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 64.0
+      },
+      "constructionResources": {
+        "boards": 20.0,
+        "mcomponents": 3.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1930s Kharkov Apartment",
+      "workshopId": "2507987392",
+      "modPath": "kharkov"
+    }
+  ],
+  "vehicles": []
+}

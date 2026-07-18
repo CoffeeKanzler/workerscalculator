@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2307474776",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:57:37+00:00",
+  "buildings": [
+    {
+      "id": "2307474776/SNP",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT",
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.8,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Museum SNP",
+      "workshopId": "2307474776",
+      "modPath": "SNP"
+    }
+  ],
+  "vehicles": []
+}

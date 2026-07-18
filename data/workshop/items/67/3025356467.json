@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3025356467",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:28:49+00:00",
+  "buildings": [
+    {
+      "id": "3025356467/1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {
+        "food": 0.2
+      },
+      "consumption": {
+        "livestock": 0.3,
+        "plants": 0.15,
+        "steel": 0.01,
+        "chemicals": 0.01,
+        "wood": 0.3,
+        "water": 0.05
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cannery A",
+      "workshopId": "3025356467",
+      "modPath": "1"
+    },
+    {
+      "id": "3025356467/2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30.0,
+      "professors": 0,
+      "production": {
+        "food": 0.2
+      },
+      "consumption": {
+        "livestock": 0.3,
+        "plants": 0.15,
+        "steel": 0.01,
+        "chemicals": 0.01,
+        "wood": 0.3,
+        "water": 0.05
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cannery B",
+      "workshopId": "3025356467",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

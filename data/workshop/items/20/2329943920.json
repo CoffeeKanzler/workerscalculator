@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2329943920",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:11:16+00:00",
+  "buildings": [
+    {
+      "id": "2329943920/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 196.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 196.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "14-storey_E93",
+      "workshopId": "2329943920",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2053643705",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:21:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2053643705/710_fire",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.25,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 7.0,
+      "speed": 78.0,
+      "powerKW": 108.0,
+      "emptyWeight": 6.0,
+      "from": 1959,
+      "to": 1975,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2053643705",
+      "modPath": "710_fire"
+    },
+    {
+      "id": "2053643705/710_ladder",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.39,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 4.0,
+      "speed": 78.0,
+      "powerKW": 108.0,
+      "emptyWeight": 6.0,
+      "from": 1961,
+      "to": 1975,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2053643705",
+      "modPath": "710_ladder"
+    }
+  ]
+}

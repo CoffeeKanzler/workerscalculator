@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2395443412",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:03:39+00:00",
+  "buildings": [
+    {
+      "id": "2395443412/bolniza",
+      "nameId": 6256,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 16.0,
+      "professors": 8.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2395443412",
+      "modPath": "bolniza"
+    },
+    {
+      "id": "2395443412/bolniza0",
+      "nameId": 6256,
+      "types": [
+        "TYPE_HOSPITAL",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 16.0,
+      "professors": 8.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2395443412",
+      "modPath": "bolniza0"
+    },
+    {
+      "id": "2395443412/bolniza1",
+      "nameId": 6256,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 60.0,
+      "professors": 30.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 800.0,
+        "prefabpanels": 159.0,
+        "bricks": 6.0,
+        "boards": 5.0,
+        "steel": 11.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2395443412",
+      "modPath": "bolniza1"
+    },
+    {
+      "id": "2395443412/bolniza2",
+      "nameId": 6256,
+      "types": [
+        "TYPE_HOSPITAL",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 60.0,
+      "professors": 30.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 900.0,
+        "prefabpanels": 164.0,
+        "bricks": 6.0,
+        "boards": 5.0,
+        "steel": 12.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2395443412",
+      "modPath": "bolniza2"
+    }
+  ],
+  "vehicles": []
+}

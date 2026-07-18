@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2874292042",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:20:31+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2874292042/Taurus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.79,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5241,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 230.0,
+      "powerKW": 165.0,
+      "emptyWeight": 1.38,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1985,
+      "to": 2001,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2874292042",
+      "modPath": "Taurus"
+    },
+    {
+      "id": "2874292042/TaurusPolice",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.89,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5241,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 230.0,
+      "powerKW": 180.0,
+      "emptyWeight": 1.5,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1985,
+      "to": 2001,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2874292042",
+      "modPath": "TaurusPolice"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2363766993",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:03:16+00:00",
+  "buildings": [
+    {
+      "id": "2363766993/II68",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 176.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 176.0
+      },
+      "constructionResources": {
+        "asphalt": 7.0,
+        "prefabpanels": 12.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series II-68-01 16-storey flats",
+      "workshopId": "2363766993",
+      "modPath": "II68"
+    },
+    {
+      "id": "2363766993/II68b",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 176.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 176.0
+      },
+      "constructionResources": {
+        "asphalt": 7.0,
+        "prefabpanels": 12.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series II-68-01 16-storey flats yellow",
+      "workshopId": "2363766993",
+      "modPath": "II68b"
+    },
+    {
+      "id": "2363766993/II68corner",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 352.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 352.0
+      },
+      "constructionResources": {
+        "asphalt": 14.0,
+        "prefabpanels": 24.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series II-68-01 16-storey flats corner",
+      "workshopId": "2363766993",
+      "modPath": "II68corner"
+    },
+    {
+      "id": "2363766993/II68stag",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 352.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 352.0
+      },
+      "constructionResources": {
+        "asphalt": 14.0,
+        "prefabpanels": 24.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series II-68-01 doubled 16-storey flats",
+      "workshopId": "2363766993",
+      "modPath": "II68stag"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3286163496",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:58:12+00:00",
+  "buildings": [
+    {
+      "id": "3286163496/Storage",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 4000.0,
+        "RESOURCE_TRANSPORT_OPEN": 7000.0,
+        "RESOURCE_TRANSPORT_COOLER": 500.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Massive Storage Warehouse",
+      "workshopId": "3286163496",
+      "modPath": "Storage"
+    }
+  ],
+  "vehicles": []
+}

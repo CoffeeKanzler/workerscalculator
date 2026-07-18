@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2864630027",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:40:20+00:00",
+  "buildings": [
+    {
+      "id": "2864630027/l",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vogošća Spomenik Large",
+      "workshopId": "2864630027",
+      "modPath": "l"
+    },
+    {
+      "id": "2864630027/normal",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vogošća Spomenik Normal Size",
+      "workshopId": "2864630027",
+      "modPath": "normal"
+    },
+    {
+      "id": "2864630027/xl",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vogošća Spomenik XL",
+      "workshopId": "2864630027",
+      "modPath": "xl"
+    }
+  ],
+  "vehicles": []
+}

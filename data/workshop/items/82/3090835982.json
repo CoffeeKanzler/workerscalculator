@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3090835982",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:22:53+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3090835982/Yak-42M",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 36.05,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 810.0,
+      "powerKW": 19125.0,
+      "emptyWeight": 104.0,
+      "capacity": 168.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1978,
+      "to": 2003,
+      "countryId": 39011,
+      "workshopId": "3090835982",
+      "modPath": "Yak-42M"
+    }
+  ]
+}

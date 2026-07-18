@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2905148148",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:35:41+00:00",
+  "buildings": [
+    {
+      "id": "2905148148/1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 9000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 9000.0
+      },
+      "constructionResources": {
+        "prefabpanels": 212.0,
+        "concrete": 58.5,
+        "gravel": 79.5,
+        "asphalt": 23.1,
+        "workers": 2957.0,
+        "bricks": 18.6,
+        "boards": 45.099999999999994,
+        "steel": 11.1,
+        "ecomponents": 1.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Station of Pushkino city (1897, Moscow region)",
+      "workshopId": "2905148148",
+      "modPath": "1"
+    },
+    {
+      "id": "2905148148/f",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fountain prop for station of Pushkino",
+      "workshopId": "2905148148",
+      "modPath": "f"
+    }
+  ],
+  "vehicles": []
+}

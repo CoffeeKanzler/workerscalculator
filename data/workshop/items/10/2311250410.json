@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2311250410",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:34:49+00:00",
+  "buildings": [
+    {
+      "id": "2311250410/Theater",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 40.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.4,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 100.0,
+        "concrete": 260.0,
+        "steel": 50.0,
+        "workers": 1200.0,
+        "bricks": 330.0,
+        "boards": 94.0,
+        "mcomponents": 5.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Janáček Theater",
+      "workshopId": "2311250410",
+      "modPath": "Theater"
+    }
+  ],
+  "vehicles": []
+}

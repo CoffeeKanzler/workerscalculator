@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2071636014",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:59:47+00:00",
+  "buildings": [
+    {
+      "id": "2071636014/1-447c-6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Project 1-447c-6 variant",
+      "workshopId": "2071636014",
+      "modPath": "1-447c-6"
+    },
+    {
+      "id": "2071636014/1-447c-6_II",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Project 1-447c-6 variant 2",
+      "workshopId": "2071636014",
+      "modPath": "1-447c-6_II"
+    },
+    {
+      "id": "2071636014/1-447c-8",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Project 1-447c-8 with striped bricks",
+      "workshopId": "2071636014",
+      "modPath": "1-447c-8"
+    },
+    {
+      "id": "2071636014/1-447c-8_plaster",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Project 1-447c-8 with plaster 1",
+      "workshopId": "2071636014",
+      "modPath": "1-447c-8_plaster"
+    },
+    {
+      "id": "2071636014/1-447c-8_plaster2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Project 1-447c-8 with plaster 2",
+      "workshopId": "2071636014",
+      "modPath": "1-447c-8_plaster2"
+    }
+  ],
+  "vehicles": []
+}

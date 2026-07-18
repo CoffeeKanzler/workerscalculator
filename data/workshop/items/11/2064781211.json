@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2064781211",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:11:42+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2064781211/S600",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.74,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 250.0,
+      "powerKW": 290.0,
+      "emptyWeight": 1.8,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1991,
+      "to": 1998,
+      "countryId": 39003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2064781211",
+      "modPath": "S600"
+    }
+  ]
+}

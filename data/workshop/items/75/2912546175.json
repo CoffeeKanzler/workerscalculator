@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2912546175",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:31:27+00:00",
+  "buildings": [
+    {
+      "id": "2912546175/yerevantvtower_monument",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION",
+        "TYPE_MONUMENT"
+      ],
+      "workers": 120.0,
+      "professors": 70.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "TV tower-monument",
+      "workshopId": "2912546175",
+      "modPath": "yerevantvtower_monument"
+    },
+    {
+      "id": "2912546175/yerevantvtower_tv",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 120.0,
+      "professors": 70.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Television",
+      "workshopId": "2912546175",
+      "modPath": "yerevantvtower_tv"
+    }
+  ],
+  "vehicles": []
+}

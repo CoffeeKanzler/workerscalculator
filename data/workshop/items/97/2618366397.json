@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2618366397",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:58:58+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2618366397/vw_golf_mk1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.9,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costUSD": 3000.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 140.0,
+      "powerKW": 44.0,
+      "emptyWeight": 0.95,
+      "from": 1974,
+      "to": 1983,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2618366397",
+      "modPath": "vw_golf_mk1"
+    }
+  ]
+}

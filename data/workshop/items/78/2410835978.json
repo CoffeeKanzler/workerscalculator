@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2410835978",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:13:46+00:00",
+  "buildings": [
+    {
+      "id": "2410835978/PedPathes/3way",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2.0,
+        "concrete": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "3-way Path",
+      "workshopId": "2410835978",
+      "modPath": "PedPathes/3way"
+    },
+    {
+      "id": "2410835978/PedPathes/45angle",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.0,
+        "gravel": 0.5,
+        "steel": 0.4,
+        "concrete": 0.3,
+        "ecomponents": 0.04
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "45 degree Path",
+      "workshopId": "2410835978",
+      "modPath": "PedPathes/45angle"
+    },
+    {
+      "id": "2410835978/PedPathes/4way",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.0,
+        "gravel": 0.5,
+        "steel": 0.4,
+        "concrete": 0.3,
+        "ecomponents": 0.04
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "4-way Path",
+      "workshopId": "2410835978",
+      "modPath": "PedPathes/4way"
+    },
+    {
+      "id": "2410835978/PedPathes/510",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.0,
+        "gravel": 0.5,
+        "steel": 0.4,
+        "concrete": 0.3,
+        "ecomponents": 0.04
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "5x10 Path",
+      "workshopId": "2410835978",
+      "modPath": "PedPathes/510"
+    },
+    {
+      "id": "2410835978/PedPathes/520",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.0,
+        "gravel": 0.5,
+        "steel": 0.4,
+        "concrete": 0.3,
+        "ecomponents": 0.04
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "5x20 Path",
+      "workshopId": "2410835978",
+      "modPath": "PedPathes/520"
+    },
+    {
+      "id": "2410835978/PedPathes/55",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2.0,
+        "concrete": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "5x5 Path",
+      "workshopId": "2410835978",
+      "modPath": "PedPathes/55"
+    },
+    {
+      "id": "2410835978/PedPathes/55angle",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2.0,
+        "concrete": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "90 degree Path",
+      "workshopId": "2410835978",
+      "modPath": "PedPathes/55angle"
+    },
+    {
+      "id": "2410835978/PedPathes/55curve",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.0,
+        "gravel": 0.5,
+        "steel": 0.4,
+        "concrete": 0.3,
+        "ecomponents": 0.04
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Curve path",
+      "workshopId": "2410835978",
+      "modPath": "PedPathes/55curve"
+    },
+    {
+      "id": "2410835978/PedPathes/Tpath",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.0,
+        "gravel": 0.5,
+        "steel": 0.4,
+        "concrete": 0.3,
+        "ecomponents": 0.04
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "T-path",
+      "workshopId": "2410835978",
+      "modPath": "PedPathes/Tpath"
+    }
+  ],
+  "vehicles": []
+}

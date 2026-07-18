@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3690666835",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:58:40+00:00",
+  "buildings": [
+    {
+      "id": "3690666835/.",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 12.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ATB",
+      "workshopId": "3690666835",
+      "modPath": "."
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2144133772",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:47:24+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2144133772/tank_t64",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.52,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costRUB": 70000.0,
+      "consumption": 0.0,
+      "speed": 65.0,
+      "powerKW": 515.0,
+      "emptyWeight": 36.0,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1963,
+      "to": 1969,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2144133772",
+      "modPath": "tank_t64"
+    }
+  ]
+}

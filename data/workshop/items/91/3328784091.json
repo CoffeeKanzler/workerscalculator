@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3328784091",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:38:52+00:00",
+  "buildings": [
+    {
+      "id": "3328784091/Friendship",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Дружба",
+      "workshopId": "3328784091",
+      "modPath": "Friendship"
+    }
+  ],
+  "vehicles": []
+}

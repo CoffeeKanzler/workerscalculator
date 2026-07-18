@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2351190483",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:59:46+00:00",
+  "buildings": [
+    {
+      "id": "2351190483/1_Kasino_Opisto",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 5.0,
+      "professors": 5.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kasino Opisto",
+      "workshopId": "2351190483",
+      "modPath": "1_Kasino_Opisto"
+    },
+    {
+      "id": "2351190483/2_Kasino_Hotel",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.9,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kasino Hotel",
+      "workshopId": "2351190483",
+      "modPath": "2_Kasino_Hotel"
+    }
+  ],
+  "vehicles": []
+}

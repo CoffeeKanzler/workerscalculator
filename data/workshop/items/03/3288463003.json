@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3288463003",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:28:35+00:00",
+  "buildings": [
+    {
+      "id": "3288463003/large",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 10.0,
+      "professors": 19.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 26.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Finnish 50s School",
+      "workshopId": "3288463003",
+      "modPath": "large"
+    },
+    {
+      "id": "3288463003/medium",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 5.0,
+      "professors": 8.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 25.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Finnish 50s School",
+      "workshopId": "3288463003",
+      "modPath": "medium"
+    },
+    {
+      "id": "3288463003/village",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 2.0,
+      "professors": 2.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 25.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Finnish 50s Village School",
+      "workshopId": "3288463003",
+      "modPath": "village"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2716405734",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:14:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2716405734/police",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.11,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5394,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 190.0,
+      "powerKW": 230.0,
+      "emptyWeight": 1.2,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2050,
+      "to": 3000,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2716405734",
+      "modPath": "police"
+    }
+  ]
+}

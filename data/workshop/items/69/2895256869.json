@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2895256869",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:47:12+00:00",
+  "buildings": [
+    {
+      "id": "2895256869/CSAD",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 3.0,
+        "workers": 150.0,
+        "concrete": 2.0,
+        "steel": 12.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "CSAD sign",
+      "workshopId": "2895256869",
+      "modPath": "CSAD"
+    },
+    {
+      "id": "2895256869/Grand",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 500.0
+      },
+      "constructionResources": {
+        "gravel": 20.0,
+        "concrete": 52.0,
+        "steel": 20.0,
+        "asphalt": 28.0,
+        "workers": 700.0,
+        "bricks": 30.0,
+        "boards": 20.0,
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bus station Hotel Grand",
+      "workshopId": "2895256869",
+      "modPath": "Grand"
+    }
+  ],
+  "vehicles": []
+}

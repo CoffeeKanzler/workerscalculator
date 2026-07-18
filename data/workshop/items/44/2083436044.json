@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2083436044",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:20:43+00:00",
+  "buildings": [
+    {
+      "id": "2083436044/dedinaru1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.7,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8.0
+      },
+      "constructionResources": {
+        "workers": 45.0,
+        "bricks": 1.0,
+        "gravel": 1.0,
+        "boards": 12.0,
+        "steel": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 1ru",
+      "workshopId": "2083436044",
+      "modPath": "dedinaru1"
+    },
+    {
+      "id": "2083436044/dedinaru2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.7,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6.0
+      },
+      "constructionResources": {
+        "workers": 45.0,
+        "bricks": 4.0,
+        "gravel": 1.0,
+        "boards": 6.0,
+        "steel": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 2ru",
+      "workshopId": "2083436044",
+      "modPath": "dedinaru2"
+    },
+    {
+      "id": "2083436044/dedinaru3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.7,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10.0
+      },
+      "constructionResources": {
+        "workers": 45.0,
+        "bricks": 7.5,
+        "gravel": 3.0,
+        "boards": 12.0,
+        "steel": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 3ru",
+      "workshopId": "2083436044",
+      "modPath": "dedinaru3"
+    },
+    {
+      "id": "2083436044/dedinaru4",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.7,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10.0
+      },
+      "constructionResources": {
+        "workers": 45.0,
+        "bricks": 7.5,
+        "gravel": 3.0,
+        "boards": 12.0,
+        "steel": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village House 4ru",
+      "workshopId": "2083436044",
+      "modPath": "dedinaru4"
+    },
+    {
+      "id": "2083436044/dedinaru5",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.7,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5.0
+      },
+      "constructionResources": {
+        "workers": 45.0,
+        "bricks": 5.0,
+        "gravel": 1.0,
+        "boards": 5.0,
+        "steel": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 5ru",
+      "workshopId": "2083436044",
+      "modPath": "dedinaru5"
+    }
+  ],
+  "vehicles": []
+}

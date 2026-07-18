@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3448172050",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:52:45+00:00",
+  "buildings": [
+    {
+      "id": "3448172050/Files",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vega",
+      "workshopId": "3448172050",
+      "modPath": "Files"
+    }
+  ],
+  "vehicles": []
+}

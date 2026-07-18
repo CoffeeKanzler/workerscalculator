@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3273265910",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:47:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3273265910/Udaloy",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 164.0,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 600000.0,
+      "speed": 60.0,
+      "powerKW": 73549.0,
+      "emptyWeight": 6500.0,
+      "capacity": 275.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1977,
+      "to": 1991,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "3273265910",
+      "modPath": "Udaloy"
+    }
+  ]
+}

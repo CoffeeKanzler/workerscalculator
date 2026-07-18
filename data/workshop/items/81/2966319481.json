@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2966319481",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:31:32+00:00",
+  "buildings": [
+    {
+      "id": "2966319481/2x2x3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.2,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 3 2x2x3",
+      "workshopId": "2966319481",
+      "modPath": "2x2x3"
+    },
+    {
+      "id": "2966319481/2x3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.2,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 3 2x3",
+      "workshopId": "2966319481",
+      "modPath": "2x3"
+    },
+    {
+      "id": "2966319481/2x3x3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.2,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 3 2x3x3",
+      "workshopId": "2966319481",
+      "modPath": "2x3x3"
+    },
+    {
+      "id": "2966319481/3x3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.2,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 3 3x3",
+      "workshopId": "2966319481",
+      "modPath": "3x3"
+    },
+    {
+      "id": "2966319481/eco16x4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 128.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.0,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 128.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 4 16x4",
+      "workshopId": "2966319481",
+      "modPath": "eco16x4"
+    },
+    {
+      "id": "2966319481/eco5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.3,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 5",
+      "workshopId": "2966319481",
+      "modPath": "eco5"
+    },
+    {
+      "id": "2966319481/eco6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.0,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 6",
+      "workshopId": "2966319481",
+      "modPath": "eco6"
+    },
+    {
+      "id": "2966319481/eco6t",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.0,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 6 (tower)",
+      "workshopId": "2966319481",
+      "modPath": "eco6t"
+    },
+    {
+      "id": "2966319481/eco8x4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 64.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.0,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 64.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ecopartment series 4 8x4",
+      "workshopId": "2966319481",
+      "modPath": "eco8x4"
+    }
+  ],
+  "vehicles": []
+}

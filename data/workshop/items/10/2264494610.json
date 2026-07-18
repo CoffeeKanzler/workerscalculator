@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2264494610",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:12:49+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2264494610/Julia",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 34.16,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 4300.0,
+      "speed": 60.0,
+      "powerKW": 280.0,
+      "emptyWeight": 78.0,
+      "capacity": 100.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1945,
+      "to": 1970,
+      "countryId": 39006,
+      "electric": false,
+      "workshopId": "2264494610",
+      "modPath": "Julia"
+    }
+  ]
+}

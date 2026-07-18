@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2682988211",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:48:44+00:00",
+  "buildings": [
+    {
+      "id": "2682988211/Labe",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 150.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.8,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Department store Labe",
+      "workshopId": "2682988211",
+      "modPath": "Labe"
+    },
+    {
+      "id": "2682988211/PlastikaLABE",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Plastika_Labe",
+      "workshopId": "2682988211",
+      "modPath": "PlastikaLABE"
+    }
+  ],
+  "vehicles": []
+}

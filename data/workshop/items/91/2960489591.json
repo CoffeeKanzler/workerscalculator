@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2960489591",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:45:44+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2960489591/octavia1_police",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.51,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costRUB": 7000.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 190.0,
+      "powerKW": 90.0,
+      "emptyWeight": 1.5,
+      "from": 1997,
+      "to": 2008,
+      "countryId": 39001,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2960489591",
+      "modPath": "octavia1_police"
+    },
+    {
+      "id": "2960489591/octavia1_police_kombi",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.45,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costRUB": 7200.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 190.0,
+      "powerKW": 90.0,
+      "emptyWeight": 1.55,
+      "from": 1997,
+      "to": 2008,
+      "countryId": 39001,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2960489591",
+      "modPath": "octavia1_police_kombi"
+    }
+  ]
+}

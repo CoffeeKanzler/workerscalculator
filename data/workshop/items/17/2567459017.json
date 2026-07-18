@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2567459017",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:01:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2567459017/felicia_rally",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.9,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costRUB": 8000.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 190.0,
+      "powerKW": 110.0,
+      "emptyWeight": 2.0,
+      "from": 1994,
+      "to": 2000,
+      "countryId": 39001,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2567459017",
+      "modPath": "felicia_rally"
+    },
+    {
+      "id": "2567459017/skoda_felicia",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.9,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costRUB": 2300.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 125.0,
+      "powerKW": 60.0,
+      "emptyWeight": 1.2,
+      "from": 1994,
+      "to": 2000,
+      "countryId": 39001,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2567459017",
+      "modPath": "skoda_felicia"
+    }
+  ]
+}

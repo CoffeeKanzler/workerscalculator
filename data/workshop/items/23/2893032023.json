@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2893032023",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:05:05+00:00",
+  "buildings": [
+    {
+      "id": "2893032023/MALEt",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lenin 's Mausoleum",
+      "workshopId": "2893032023",
+      "modPath": "MALEt"
+    }
+  ],
+  "vehicles": []
+}

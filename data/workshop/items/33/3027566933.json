@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3027566933",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:36:37+00:00",
+  "buildings": [
+    {
+      "id": "3027566933/5",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Casino Projev",
+      "workshopId": "3027566933",
+      "modPath": "5"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2780840519",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:41:07+00:00",
+  "buildings": [
+    {
+      "id": "2780840519/.",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big station",
+      "workshopId": "2780840519",
+      "modPath": "."
+    }
+  ],
+  "vehicles": []
+}

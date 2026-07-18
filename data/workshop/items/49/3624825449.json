@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3624825449",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:40:08+00:00",
+  "buildings": [
+    {
+      "id": "3624825449/medium",
+      "nameId": null,
+      "types": [
+        "TYPE_SCRAPYARD",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 55.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Scrapyard medium",
+      "workshopId": "3624825449",
+      "modPath": "medium"
+    },
+    {
+      "id": "3624825449/small",
+      "nameId": null,
+      "types": [
+        "TYPE_SCRAPYARD",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 35.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Scrapyard small",
+      "workshopId": "3624825449",
+      "modPath": "small"
+    }
+  ],
+  "vehicles": []
+}

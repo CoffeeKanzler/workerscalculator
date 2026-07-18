@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2832941104",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:11:36+00:00",
+  "buildings": [
+    {
+      "id": "2832941104/Construction_office",
+      "nameId": 6151,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 15.0,
+        "gravel": 13.0,
+        "asphalt": 11.0,
+        "workers": 340.0,
+        "boards": 13.0,
+        "bricks": 15.0,
+        "steel": 4.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2832941104",
+      "modPath": "Construction_office"
+    }
+  ],
+  "vehicles": []
+}

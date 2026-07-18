@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2657187671",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:15:08+00:00",
+  "buildings": [
+    {
+      "id": "2657187671/LS",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 1.0,
+        "steel": 3.0,
+        "ecomponents": 1.0,
+        "workers": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Loudspeaker",
+      "workshopId": "2657187671",
+      "modPath": "LS"
+    }
+  ],
+  "vehicles": []
+}

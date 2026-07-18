@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2059633685",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:03:05+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2059633685/VL-8back",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.86,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 2059633685,
+      "costRUB": 4300.0,
+      "speed": 100.0,
+      "powerKW": 1830.0,
+      "emptyWeight": 90.0,
+      "from": 1953,
+      "to": 1971,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2059633685",
+      "modPath": "VL-8back"
+    },
+    {
+      "id": "2059633685/VL-8front",
+      "category": "workshop",
+      "trainSet": [
+        "2059633685/VL-8back"
+      ],
+      "lifespanYears": 0.0,
+      "length": 11.44,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 2059633685,
+      "costRUB": 4300.0,
+      "speed": 100.0,
+      "powerKW": 1830.0,
+      "emptyWeight": 90.0,
+      "from": 1953,
+      "to": 1971,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2059633685",
+      "modPath": "VL-8front"
+    }
+  ]
+}

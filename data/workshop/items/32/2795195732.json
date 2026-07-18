@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2795195732",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:16:23+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2795195732/service_tower_crane_lm_90",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.8,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 100.0,
+      "speed": 0.0,
+      "powerKW": 85.0,
+      "emptyWeight": 10.0,
+      "from": 1980,
+      "to": 3000,
+      "countryId": 39010,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2795195732",
+      "modPath": "service_tower_crane_lm_90"
+    }
+  ]
+}

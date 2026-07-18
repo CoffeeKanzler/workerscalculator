@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1863975417",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:41:37+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1863975417/pobeda_police",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.07,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5390,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 100.0,
+      "powerKW": 37.0,
+      "emptyWeight": 1.1,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1863975417",
+      "modPath": "pobeda_police"
+    }
+  ]
+}

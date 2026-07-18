@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2474829240",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:10:05+00:00",
+  "buildings": [
+    {
+      "id": "2474829240/camp",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 2.0,
+        "workers": 340.0,
+        "bricks": 9.0,
+        "concrete": 12.0,
+        "boards": 10.0,
+        "steel": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Forest camp",
+      "workshopId": "2474829240",
+      "modPath": "camp"
+    }
+  ],
+  "vehicles": []
+}

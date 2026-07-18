@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2326308934",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:01:20+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2326308934/Jelcz_043",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.66,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4500.0,
+      "consumption": 0.0,
+      "speed": 85.0,
+      "powerKW": 118.0,
+      "emptyWeight": 8.7,
+      "capacity": 55.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1959,
+      "to": 1986,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2326308934",
+      "modPath": "Jelcz_043"
+    },
+    {
+      "id": "2326308934/Jelcz_PO1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.66,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4700.0,
+      "consumption": 0.0,
+      "speed": 85.0,
+      "powerKW": 118.0,
+      "emptyWeight": 12.6,
+      "capacity": 90.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1965,
+      "to": 1982,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2326308934",
+      "modPath": "Jelcz_PO1"
+    }
+  ]
+}

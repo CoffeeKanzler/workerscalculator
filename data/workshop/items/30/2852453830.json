@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2852453830",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:56:38+00:00",
+  "buildings": [
+    {
+      "id": "2852453830/bio_reactor",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 12.0,
+      "professors": 0,
+      "production": {
+        "fuel": 0.5,
+        "coal": 0.2
+      },
+      "consumption": {
+        "usagewater": 4.5
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.071
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Био реактор",
+      "workshopId": "2852453830",
+      "modPath": "bio_reactor"
+    }
+  ],
+  "vehicles": []
+}

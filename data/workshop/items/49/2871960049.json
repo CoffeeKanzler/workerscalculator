@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2871960049",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:03:04+00:00",
+  "buildings": [
+    {
+      "id": "2871960049/NYATO",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "NATO Monument 5m",
+      "workshopId": "2871960049",
+      "modPath": "NYATO"
+    },
+    {
+      "id": "2871960049/NYATO2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "NATO Monument 10m",
+      "workshopId": "2871960049",
+      "modPath": "NYATO2"
+    }
+  ],
+  "vehicles": []
+}

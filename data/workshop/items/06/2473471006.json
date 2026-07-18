@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2473471006",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:15:54+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2473471006/fire_zil133",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.33,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5159,
+      "descriptionId": 5160,
+      "costRUB": 4500.0,
+      "capacity": 3.5,
+      "speed": 85.0,
+      "powerKW": 85.0,
+      "emptyWeight": 3.2,
+      "from": 1975,
+      "to": 1999,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2473471006",
+      "modPath": "fire_zil133"
+    }
+  ]
+}

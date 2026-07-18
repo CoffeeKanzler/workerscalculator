@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2338061381",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:42:34+00:00",
+  "buildings": [
+    {
+      "id": "2338061381/AIRPORT_S",
+      "nameId": 6386,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2338061381",
+      "modPath": "AIRPORT_S"
+    }
+  ],
+  "vehicles": []
+}

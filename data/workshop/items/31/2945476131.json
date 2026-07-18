@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2945476131",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:38:40+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2945476131/deutz7250",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.07,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5259,
+      "costUSD": 10000.0,
+      "speed": 61.0,
+      "powerKW": 180.0,
+      "emptyWeight": 9.0,
+      "from": 2018,
+      "to": 2028,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2945476131",
+      "modPath": "deutz7250"
+    }
+  ]
+}

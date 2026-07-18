@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2828859087",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:55:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2828859087/1pered",
+      "category": "workshop",
+      "trainSet": [
+        "2828859087/2centr",
+        "2828859087/3zad"
+      ],
+      "lifespanYears": 0.0,
+      "length": 11.51,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 7000.0,
+      "powerKW": 144.0,
+      "emptyWeight": 12.3,
+      "speed": 75.0,
+      "capacity": 106.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "tram",
+      "from": 2016,
+      "to": 3000,
+      "countryId": 39011,
+      "electric": true,
+      "workshopId": "2828859087",
+      "modPath": "1pered"
+    },
+    {
+      "id": "2828859087/2centr",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.13,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "powerKW": 144.0,
+      "speed": 75.0,
+      "capacity": 106.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "tram",
+      "from": 2016,
+      "to": 3000,
+      "countryId": 39011,
+      "electric": true,
+      "workshopId": "2828859087",
+      "modPath": "2centr"
+    },
+    {
+      "id": "2828859087/3zad",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.62,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "powerKW": 144.0,
+      "speed": 75.0,
+      "capacity": 106.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "tram",
+      "from": 2016,
+      "to": 3000,
+      "countryId": 39011,
+      "electric": true,
+      "workshopId": "2828859087",
+      "modPath": "3zad"
+    }
+  ]
+}

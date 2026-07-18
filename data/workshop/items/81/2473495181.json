@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2473495181",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:22:41+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2473495181/T148_Excavator",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.11,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "powerKW": 149.0,
+      "emptyWeight": 11.8,
+      "speed": 72.0,
+      "from": 1972,
+      "to": 1982,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2473495181",
+      "modPath": "T148_Excavator"
+    }
+  ]
+}

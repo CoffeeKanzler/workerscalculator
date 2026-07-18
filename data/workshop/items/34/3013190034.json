@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3013190034",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:29:12+00:00",
+  "buildings": [
+    {
+      "id": "3013190034/screenparking",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Screenshot Parking Spot",
+      "workshopId": "3013190034",
+      "modPath": "screenparking"
+    }
+  ],
+  "vehicles": []
+}

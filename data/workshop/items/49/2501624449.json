@@ -1,0 +1,975 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2501624449",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:46:07+00:00",
+  "buildings": [
+    {
+      "id": "2501624449/bridge",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 450.0,
+        "gravel": 30.0,
+        "concrete": 50.0,
+        "bricks": 30.0,
+        "boards": 25.0,
+        "steel": 40.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bridge",
+      "workshopId": "2501624449",
+      "modPath": "bridge"
+    },
+    {
+      "id": "2501624449/bridge-arch",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 400.0,
+        "gravel": 70.0,
+        "concrete": 120.0,
+        "bricks": 100.0,
+        "boards": 65.0,
+        "steel": 85.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tied Arch Bridge",
+      "workshopId": "2501624449",
+      "modPath": "bridge-arch"
+    },
+    {
+      "id": "2501624449/bridge-deck",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 400.0,
+        "gravel": 70.0,
+        "concrete": 120.0,
+        "bricks": 100.0,
+        "boards": 65.0,
+        "steel": 85.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Deck Arch Bridge",
+      "workshopId": "2501624449",
+      "modPath": "bridge-deck"
+    },
+    {
+      "id": "2501624449/filler-blank",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20.0,
+        "gravel": 10.0,
+        "bricks": 10.0,
+        "boards": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Blank",
+      "workshopId": "2501624449",
+      "modPath": "filler-blank"
+    },
+    {
+      "id": "2501624449/filler-cafe",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 300.0,
+        "gravel": 10.0,
+        "concrete": 20.0,
+        "bricks": 10.0,
+        "boards": 10.0,
+        "steel": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Cafe",
+      "workshopId": "2501624449",
+      "modPath": "filler-cafe"
+    },
+    {
+      "id": "2501624449/filler-coldstore",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 200.0,
+        "gravel": 10.0,
+        "concrete": 10.0,
+        "bricks": 10.0,
+        "boards": 10.0,
+        "steel": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Cold Storage",
+      "workshopId": "2501624449",
+      "modPath": "filler-coldstore"
+    },
+    {
+      "id": "2501624449/filler-coveredstore",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 100.0
+      },
+      "constructionResources": {
+        "workers": 250.0,
+        "gravel": 20.0,
+        "concrete": 20.0,
+        "bricks": 20.0,
+        "boards": 10.0,
+        "steel": 4.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Covered Storage",
+      "workshopId": "2501624449",
+      "modPath": "filler-coveredstore"
+    },
+    {
+      "id": "2501624449/filler-distro",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 200.0,
+        "gravel": 50.0,
+        "asphalt": 40.0,
+        "concrete": 10.0,
+        "bricks": 20.0,
+        "boards": 15.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Distrobution Office",
+      "workshopId": "2501624449",
+      "modPath": "filler-distro"
+    },
+    {
+      "id": "2501624449/filler-distro-reverse",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 200.0,
+        "gravel": 50.0,
+        "asphalt": 40.0,
+        "concrete": 10.0,
+        "bricks": 20.0,
+        "boards": 15.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Distrobution Office Reversed",
+      "workshopId": "2501624449",
+      "modPath": "filler-distro-reverse"
+    },
+    {
+      "id": "2501624449/filler-graffiti",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20.0,
+        "gravel": 10.0,
+        "bricks": 10.0,
+        "boards": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Graffiti",
+      "workshopId": "2501624449",
+      "modPath": "filler-graffiti"
+    },
+    {
+      "id": "2501624449/filler-heat",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 200.0,
+        "gravel": 10.0,
+        "concrete": 10.0,
+        "bricks": 10.0,
+        "boards": 10.0,
+        "steel": 11.0,
+        "mcomponents": 1.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Heat Exchanger",
+      "workshopId": "2501624449",
+      "modPath": "filler-heat"
+    },
+    {
+      "id": "2501624449/filler-lambda",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20.0,
+        "gravel": 10.0,
+        "bricks": 10.0,
+        "boards": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Lambda",
+      "workshopId": "2501624449",
+      "modPath": "filler-lambda"
+    },
+    {
+      "id": "2501624449/filler-openstore",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 150.0
+      },
+      "constructionResources": {
+        "workers": 110.0,
+        "gravel": 50.0,
+        "asphalt": 50.0,
+        "concrete": 10.0,
+        "steel": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Open Storage",
+      "workshopId": "2501624449",
+      "modPath": "filler-openstore"
+    },
+    {
+      "id": "2501624449/filler-openstore-reverse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 150.0
+      },
+      "constructionResources": {
+        "workers": 110.0,
+        "gravel": 50.0,
+        "asphalt": 50.0,
+        "concrete": 10.0,
+        "steel": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Open Storage Reversed",
+      "workshopId": "2501624449",
+      "modPath": "filler-openstore-reverse"
+    },
+    {
+      "id": "2501624449/filler-substation",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 200.0,
+        "gravel": 10.0,
+        "concrete": 10.0,
+        "bricks": 10.0,
+        "boards": 5.0,
+        "steel": 1.0,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Substation",
+      "workshopId": "2501624449",
+      "modPath": "filler-substation"
+    },
+    {
+      "id": "2501624449/filler-sushi",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 300.0,
+        "gravel": 10.0,
+        "concrete": 20.0,
+        "bricks": 10.0,
+        "boards": 10.0,
+        "steel": 2.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Sushi Bar",
+      "workshopId": "2501624449",
+      "modPath": "filler-sushi"
+    },
+    {
+      "id": "2501624449/filler-tech",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 200.0,
+        "gravel": 50.0,
+        "asphalt": 40.0,
+        "concrete": 10.0,
+        "bricks": 20.0,
+        "boards": 15.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Technical Office",
+      "workshopId": "2501624449",
+      "modPath": "filler-tech"
+    },
+    {
+      "id": "2501624449/filler-tech-reverse",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 200.0,
+        "gravel": 50.0,
+        "asphalt": 40.0,
+        "concrete": 10.0,
+        "bricks": 20.0,
+        "boards": 15.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Technical Office Reversed",
+      "workshopId": "2501624449",
+      "modPath": "filler-tech-reverse"
+    },
+    {
+      "id": "2501624449/filler-vehicledepot",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 200.0,
+        "gravel": 50.0,
+        "asphalt": 50.0,
+        "concrete": 10.0,
+        "bricks": 16.0,
+        "boards": 10.0,
+        "steel": 8.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Vehicle Depot",
+      "workshopId": "2501624449",
+      "modPath": "filler-vehicledepot"
+    },
+    {
+      "id": "2501624449/filler-vehicledepot-reverse",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 200.0,
+        "gravel": 50.0,
+        "asphalt": 50.0,
+        "concrete": 10.0,
+        "bricks": 16.0,
+        "boards": 10.0,
+        "steel": 8.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Archway Vehicle Depot Reversed",
+      "workshopId": "2501624449",
+      "modPath": "filler-vehicledepot-reverse"
+    },
+    {
+      "id": "2501624449/station-medium",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1500.0
+      },
+      "constructionResources": {
+        "workers": 1950.0,
+        "gravel": 70.0,
+        "concrete": 165.0,
+        "bricks": 200.0,
+        "boards": 135.0,
+        "steel": 105.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated Station - medium",
+      "workshopId": "2501624449",
+      "modPath": "station-medium"
+    },
+    {
+      "id": "2501624449/station-medium-e",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1500.0
+      },
+      "constructionResources": {
+        "workers": 1950.0,
+        "gravel": 70.0,
+        "concrete": 165.0,
+        "bricks": 200.0,
+        "boards": 135.0,
+        "steel": 105.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated Station (new) - medium",
+      "workshopId": "2501624449",
+      "modPath": "station-medium-e"
+    },
+    {
+      "id": "2501624449/viaduct-aggr",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {
+        "workers": 1100.0,
+        "gravel": 50.0,
+        "concrete": 90.0,
+        "bricks": 70.0,
+        "boards": 35.0,
+        "steel": 70.0,
+        "mcomponents": 0.25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Viaduct Aggregate Unloading",
+      "workshopId": "2501624449",
+      "modPath": "viaduct-aggr"
+    },
+    {
+      "id": "2501624449/viaduct3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 750.0,
+        "gravel": 30.0,
+        "concrete": 60.0,
+        "bricks": 55.0,
+        "boards": 30.0,
+        "steel": 30.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "3 Arch Viaduct",
+      "workshopId": "2501624449",
+      "modPath": "viaduct3"
+    },
+    {
+      "id": "2501624449/viaduct5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1250.0,
+        "gravel": 50.0,
+        "concrete": 100.0,
+        "bricks": 125.0,
+        "boards": 50.0,
+        "steel": 50.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "5 Arch Viaduct",
+      "workshopId": "2501624449",
+      "modPath": "viaduct5"
+    },
+    {
+      "id": "2501624449/viaduct5-bridge",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1200.0,
+        "gravel": 50.0,
+        "concrete": 115.0,
+        "bricks": 120.0,
+        "boards": 60.0,
+        "steel": 85.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "5 Arch Viaduct and Bridge",
+      "workshopId": "2501624449",
+      "modPath": "viaduct5-bridge"
+    },
+    {
+      "id": "2501624449/viaduct5-bridge-5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2050.0,
+        "gravel": 100.0,
+        "concrete": 230.0,
+        "bricks": 240.0,
+        "boards": 110.0,
+        "steel": 135.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "5 Arch - Bridge - 5 Arch",
+      "workshopId": "2501624449",
+      "modPath": "viaduct5-bridge-5"
+    },
+    {
+      "id": "2501624449/viaduct5-high",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1550.0,
+        "gravel": 50.0,
+        "concrete": 125.0,
+        "bricks": 200.0,
+        "boards": 75.0,
+        "steel": 75.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "5 Arch Viaduct High",
+      "workshopId": "2501624449",
+      "modPath": "viaduct5-high"
+    },
+    {
+      "id": "2501624449/viaduct7",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1550.0,
+        "gravel": 70.0,
+        "concrete": 155.0,
+        "bricks": 170.0,
+        "boards": 70.0,
+        "steel": 70.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "7 Arch Viaduct",
+      "workshopId": "2501624449",
+      "modPath": "viaduct7"
+    },
+    {
+      "id": "2501624449/viaduct7-arch",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1450.0,
+        "gravel": 70.0,
+        "concrete": 155.0,
+        "bricks": 170.0,
+        "boards": 100.0,
+        "steel": 120.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "7 Arch Viaduct and Tied Arch Bridge",
+      "workshopId": "2501624449",
+      "modPath": "viaduct7-arch"
+    },
+    {
+      "id": "2501624449/viaduct7-bridge",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1600.0,
+        "gravel": 70.0,
+        "concrete": 155.0,
+        "bricks": 170.0,
+        "boards": 80.0,
+        "steel": 105.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "7 Arch Viaduct and Bridge",
+      "workshopId": "2501624449",
+      "modPath": "viaduct7-bridge"
+    },
+    {
+      "id": "2501624449/viaduct7-high",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2050.0,
+        "gravel": 70.0,
+        "concrete": 175.0,
+        "bricks": 270.0,
+        "boards": 105.0,
+        "steel": 105.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "7 Arch Viaduct High",
+      "workshopId": "2501624449",
+      "modPath": "viaduct7-high"
+    },
+    {
+      "id": "2501624449/viaduct9",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2050.0,
+        "gravel": 90.0,
+        "concrete": 190.0,
+        "bricks": 210.0,
+        "boards": 90.0,
+        "steel": 90.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "9 Arch Viaduct",
+      "workshopId": "2501624449",
+      "modPath": "viaduct9"
+    }
+  ],
+  "vehicles": []
+}

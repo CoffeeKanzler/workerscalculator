@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2061168404",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:01:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2061168404/260T",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.26,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 66.0,
+      "powerKW": 150.0,
+      "emptyWeight": 8.0,
+      "capacity": 98.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1974,
+      "to": 1991,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2061168404",
+      "modPath": "260T"
+    },
+    {
+      "id": "2061168404/280T",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.01,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 63.0,
+      "powerKW": 196.0,
+      "emptyWeight": 12.2,
+      "capacity": 135.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1975,
+      "to": 1992,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2061168404",
+      "modPath": "280T"
+    }
+  ]
+}

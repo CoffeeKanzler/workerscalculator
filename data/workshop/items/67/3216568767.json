@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3216568767",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:19:17+00:00",
+  "buildings": [
+    {
+      "id": "3216568767/olymp_fire",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Олимпийский огонь",
+      "workshopId": "3216568767",
+      "modPath": "olymp_fire"
+    }
+  ],
+  "vehicles": []
+}

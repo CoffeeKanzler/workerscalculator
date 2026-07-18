@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2994317054",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:02:34+00:00",
+  "buildings": [
+    {
+      "id": "2994317054/Station",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Вокзал Тайшет",
+      "workshopId": "2994317054",
+      "modPath": "Station"
+    }
+  ],
+  "vehicles": []
+}

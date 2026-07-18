@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3478578979",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:15:33+00:00",
+  "buildings": [
+    {
+      "id": "3478578979/Pamatnik",
+      "nameId": 6363,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 0.52,
+        "workers": 100.0,
+        "bricks": 1.15
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "3478578979",
+      "modPath": "Pamatnik"
+    }
+  ],
+  "vehicles": []
+}

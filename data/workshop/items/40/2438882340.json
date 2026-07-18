@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2438882340",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:08:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2438882340/4man",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.3,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 2438882340,
+      "costRUB": 100.0,
+      "consumption": 0.0,
+      "speed": 0.0,
+      "powerKW": 1.0,
+      "emptyWeight": 0.4,
+      "from": 1832,
+      "to": 2021,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2438882340",
+      "modPath": "4man"
+    }
+  ]
+}

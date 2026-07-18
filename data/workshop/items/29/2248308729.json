@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2248308729",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:25:36+00:00",
+  "buildings": [
+    {
+      "id": "2248308729/Rohlik",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 30.0,
+      "professors": 30.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1100.0,
+        "steel": 130.0,
+        "asphalt": 50.0,
+        "gravel": 30.0,
+        "prefabpanels": 250.0,
+        "boards": 100.0,
+        "concrete": 130.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "University of Defense",
+      "workshopId": "2248308729",
+      "modPath": "Rohlik"
+    }
+  ],
+  "vehicles": []
+}

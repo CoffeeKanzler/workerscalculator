@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2790312354",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:37:20+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2790312354/40ft",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.33,
+      "type": "VEHICLETYPE_CONTAINER",
+      "costRUB": 4300.0,
+      "capacity": 26.74,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 0.0,
+      "emptyWeight": 3.74,
+      "from": 1950,
+      "to": 3000,
+      "countryId": 39000,
+      "workshopId": "2790312354",
+      "modPath": "40ft"
+    }
+  ]
+}

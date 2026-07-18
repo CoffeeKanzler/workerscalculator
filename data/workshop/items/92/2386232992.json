@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2386232992",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:38:29+00:00",
+  "buildings": [
+    {
+      "id": "2386232992/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 912.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 912.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "53-storey HeadLiner",
+      "workshopId": "2386232992",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

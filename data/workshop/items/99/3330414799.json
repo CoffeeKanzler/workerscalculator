@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3330414799",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:28:28+00:00",
+  "buildings": [
+    {
+      "id": "3330414799/1",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 420.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lenin Stadium (1925, Leningrad)",
+      "workshopId": "3330414799",
+      "modPath": "1"
+    },
+    {
+      "id": "3330414799/2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Light-tower for the stadium Petrovsky",
+      "workshopId": "3330414799",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

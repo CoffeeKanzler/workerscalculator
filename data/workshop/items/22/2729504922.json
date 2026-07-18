@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2729504922",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:38:47+00:00",
+  "buildings": [
+    {
+      "id": "2729504922/loghospital1",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 3.0,
+      "professors": 3.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "log_hospital_1",
+      "workshopId": "2729504922",
+      "modPath": "loghospital1"
+    },
+    {
+      "id": "2729504922/loghospital2",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 8.0,
+      "professors": 8.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "log_hospital_2",
+      "workshopId": "2729504922",
+      "modPath": "loghospital2"
+    },
+    {
+      "id": "2729504922/loghospital3",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 30.0,
+      "professors": 30.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "log_hospital_3",
+      "workshopId": "2729504922",
+      "modPath": "loghospital3"
+    }
+  ],
+  "vehicles": []
+}

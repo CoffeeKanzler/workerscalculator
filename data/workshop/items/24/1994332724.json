@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1994332724",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:07:37+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1994332724/Bus5256",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.59,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5265,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 170.0,
+      "emptyWeight": 7.8,
+      "capacity": 110.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1986,
+      "to": 2005,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1994332724",
+      "modPath": "Bus5256"
+    },
+    {
+      "id": "1994332724/Bus5256s",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.59,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5265,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 170.0,
+      "emptyWeight": 7.8,
+      "capacity": 88.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1986,
+      "to": 2005,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1994332724",
+      "modPath": "Bus5256s"
+    }
+  ]
+}

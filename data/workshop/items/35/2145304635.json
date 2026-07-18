@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2145304635",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:29:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2145304635/personal_gz69",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.18,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costRUB": 3000.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 38.0,
+      "emptyWeight": 1.5,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1952,
+      "to": 1972,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2145304635",
+      "modPath": "personal_gz69"
+    }
+  ]
+}

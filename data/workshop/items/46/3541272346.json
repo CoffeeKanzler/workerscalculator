@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3541272346",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:04:42+00:00",
+  "buildings": [
+    {
+      "id": "3541272346/vasomiskin",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 3.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vaso Miskin Crni Small Mountain Hotel",
+      "workshopId": "3541272346",
+      "modPath": "vasomiskin"
+    }
+  ],
+  "vehicles": []
+}

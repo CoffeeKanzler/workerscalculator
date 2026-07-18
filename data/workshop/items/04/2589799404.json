@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2589799404",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:53:56+00:00",
+  "buildings": [
+    {
+      "id": "2589799404/.",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1200.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vokzal",
+      "workshopId": "2589799404",
+      "modPath": "."
+    },
+    {
+      "id": "2589799404/17770_Vokzal",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1200.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1200.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vokzal",
+      "workshopId": "2589799404",
+      "modPath": "17770_Vokzal"
+    }
+  ],
+  "vehicles": []
+}

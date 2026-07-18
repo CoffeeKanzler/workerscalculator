@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2327508547",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:11:48+00:00",
+  "buildings": [
+    {
+      "id": "2327508547/test",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1260.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1260.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "test",
+      "workshopId": "2327508547",
+      "modPath": "test"
+    }
+  ],
+  "vehicles": []
+}

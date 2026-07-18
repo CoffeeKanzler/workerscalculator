@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2805952053",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:11:57+00:00",
+  "buildings": [
+    {
+      "id": "2805952053/.",
+      "nameId": 1802,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2000.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2805952053",
+      "modPath": "."
+    },
+    {
+      "id": "2805952053/railyard1",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Railyard one track",
+      "workshopId": "2805952053",
+      "modPath": "railyard1"
+    },
+    {
+      "id": "2805952053/railyard2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Railyard two tracks",
+      "workshopId": "2805952053",
+      "modPath": "railyard2"
+    },
+    {
+      "id": "2805952053/railyard3",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Railyard three tracks",
+      "workshopId": "2805952053",
+      "modPath": "railyard3"
+    },
+    {
+      "id": "2805952053/railyard5",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Railyard five tracks",
+      "workshopId": "2805952053",
+      "modPath": "railyard5"
+    }
+  ],
+  "vehicles": []
+}

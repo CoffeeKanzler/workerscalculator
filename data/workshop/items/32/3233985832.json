@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3233985832",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:12:44+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3233985832/Trinity",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 18.29,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "capacity": 140.5,
+      "emptyWeight": 28.4,
+      "from": 1995,
+      "to": 3000,
+      "countryId": 39018,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "trainGroup": "vagon",
+      "workshopId": "3233985832",
+      "modPath": "Trinity"
+    }
+  ]
+}

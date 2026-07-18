@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2455337263",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:37:56+00:00",
+  "buildings": [
+    {
+      "id": "2455337263/Home",
+      "nameId": 6411,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 95.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 95.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2455337263",
+      "modPath": "Home"
+    },
+    {
+      "id": "2455337263/Hotel",
+      "nameId": 6043,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 45.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2455337263",
+      "modPath": "Hotel"
+    },
+    {
+      "id": "2455337263/Museum",
+      "nameId": 6029,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.75,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2455337263",
+      "modPath": "Museum"
+    },
+    {
+      "id": "2455337263/Shop",
+      "nameId": 6261,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2455337263",
+      "modPath": "Shop"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2578078169",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:01:51+00:00",
+  "buildings": [
+    {
+      "id": "2578078169/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 100.0,
+      "professors": 350.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Riga_Technical_University",
+      "workshopId": "2578078169",
+      "modPath": "HOUSE1"
+    }
+  ],
+  "vehicles": []
+}

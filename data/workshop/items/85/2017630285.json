@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2017630285",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:15:36+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2017630285/bus_gz_66",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.1,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5000,
+      "descriptionId": 5001,
+      "costRUB": 4300.0,
+      "capacity": 20.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 80.0,
+      "powerKW": 132.0,
+      "emptyWeight": 7.8,
+      "from": 1964,
+      "to": 1996,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2017630285",
+      "modPath": "bus_gz_66"
+    },
+    {
+      "id": "2017630285/covered_gz_66",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.1,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5000,
+      "descriptionId": 5001,
+      "costRUB": 4300.0,
+      "capacity": 3.5,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 80.0,
+      "powerKW": 132.0,
+      "emptyWeight": 7.8,
+      "from": 1964,
+      "to": 1996,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2017630285",
+      "modPath": "covered_gz_66"
+    }
+  ]
+}

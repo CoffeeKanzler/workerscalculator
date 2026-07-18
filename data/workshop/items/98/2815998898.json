@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2815998898",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:57:33+00:00",
+  "buildings": [
+    {
+      "id": "2815998898/pplt",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "gravel": 0.01,
+        "water": 12.0
+      },
+      "consumption": {
+        "usagewater": 12.0,
+        "coal": 0.01
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.127
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Groundwater Filtration Plant",
+      "workshopId": "2815998898",
+      "modPath": "pplt"
+    },
+    {
+      "id": "2815998898/pplt2",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 14.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Electric Pumping Plant",
+      "workshopId": "2815998898",
+      "modPath": "pplt2"
+    },
+    {
+      "id": "2815998898/pplt3",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 7.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Electric Pumping Plant",
+      "workshopId": "2815998898",
+      "modPath": "pplt3"
+    },
+    {
+      "id": "2815998898/well",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_WATER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 240.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.09
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ground Water Well",
+      "workshopId": "2815998898",
+      "modPath": "well"
+    }
+  ],
+  "vehicles": []
+}

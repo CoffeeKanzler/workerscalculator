@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2508608875",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:41:17+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2508608875/SU-57",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.51,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 570000.0,
+      "consumption": 0.0,
+      "speed": 2440.0,
+      "powerKW": 6958.0,
+      "emptyWeight": 21.5,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2010,
+      "to": 2050,
+      "countryId": 39011,
+      "workshopId": "2508608875",
+      "modPath": "SU-57"
+    }
+  ]
+}

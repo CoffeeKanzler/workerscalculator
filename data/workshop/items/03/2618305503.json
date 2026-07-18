@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2618305503",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:40:41+00:00",
+  "buildings": [
+    {
+      "id": "2618305503/plotina",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 172.0,
+      "professors": 24.0,
+      "production": {
+        "eletric": 35.0
+      },
+      "consumption": {
+        "mcomponents": 0.0002,
+        "ecomponents": 0.0001
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 15323.0,
+        "boards": 135.0,
+        "steel": 395.0,
+        "concrete": 866.0,
+        "gravel": 382.0,
+        "asphalt": 236.0,
+        "prefabpanels": 95.0,
+        "bricks": 57.0,
+        "mcomponents": 178.0,
+        "ecomponents": 135.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ГЭС",
+      "workshopId": "2618305503",
+      "modPath": "plotina"
+    },
+    {
+      "id": "2618305503/wall",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 160.0,
+        "gravel": 75.5,
+        "steel": 36.4,
+        "concrete": 67.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Стена",
+      "workshopId": "2618305503",
+      "modPath": "wall"
+    },
+    {
+      "id": "2618305503/wall_sector",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 160.0,
+        "gravel": 75.5,
+        "steel": 36.4,
+        "concrete": 67.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Стена сектор",
+      "workshopId": "2618305503",
+      "modPath": "wall_sector"
+    },
+    {
+      "id": "2618305503/wall_short",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 85.0,
+        "gravel": 35.5,
+        "steel": 18.4,
+        "concrete": 33.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Стена короткая",
+      "workshopId": "2618305503",
+      "modPath": "wall_short"
+    }
+  ],
+  "vehicles": []
+}

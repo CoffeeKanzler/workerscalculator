@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2469369819",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:56:07+00:00",
+  "buildings": [
+    {
+      "id": "2469369819/autogenerator",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 12000.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 5000.0,
+        "ecomponents": 500.0,
+        "eletronics": 100.0,
+        "aluminium": 100.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "光伏发电站 (PV Powerplant)",
+      "workshopId": "2469369819",
+      "modPath": "autogenerator"
+    }
+  ],
+  "vehicles": []
+}

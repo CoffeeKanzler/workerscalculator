@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2074868723",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:49:01+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2074868723/EM1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.44,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 5300.0,
+      "speed": 105.0,
+      "powerKW": 969.0,
+      "emptyWeight": 89.0,
+      "from": 1950,
+      "to": 1981,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2074868723",
+      "modPath": "EM1"
+    }
+  ]
+}

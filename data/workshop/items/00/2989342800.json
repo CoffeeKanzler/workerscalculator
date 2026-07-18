@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2989342800",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:58:44+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2989342800/zb45",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 3785.0,
+      "speed": 0.0,
+      "powerKW": 255.0,
+      "emptyWeight": 2.5,
+      "from": 1956,
+      "to": 3000,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2989342800",
+      "modPath": "zb45"
+    }
+  ]
+}

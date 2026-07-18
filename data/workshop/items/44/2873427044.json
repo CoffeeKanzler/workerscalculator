@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2873427044",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:13:55+00:00",
+  "buildings": [
+    {
+      "id": "2873427044/city_17_train_station",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2500.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2500.0
+      },
+      "constructionResources": {
+        "gravel": 200.0,
+        "concrete": 500.0,
+        "workers": 2500.0,
+        "boards": 440.0,
+        "steel": 400.0,
+        "bricks": 600.0,
+        "mcomponents": 0.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "city 17 train station",
+      "workshopId": "2873427044",
+      "modPath": "city_17_train_station"
+    }
+  ],
+  "vehicles": []
+}

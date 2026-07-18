@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2346783350",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:21:57+00:00",
+  "buildings": [
+    {
+      "id": "2346783350/V76",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 80.0,
+      "professors": 40.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Проект школы V-76",
+      "workshopId": "2346783350",
+      "modPath": "V76"
+    }
+  ],
+  "vehicles": []
+}

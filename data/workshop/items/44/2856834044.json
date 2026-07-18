@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2856834044",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:22:12+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2856834044/tournarocker",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.03,
+      "type": "VEHICLETYPE_ROAD",
+      "capacity": 16.5,
+      "emptyWeight": 15.5,
+      "speed": 24.0,
+      "powerKW": 113.0,
+      "costUSD": 4300.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "from": 1942,
+      "to": 2050,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2856834044",
+      "modPath": "tournarocker"
+    }
+  ]
+}

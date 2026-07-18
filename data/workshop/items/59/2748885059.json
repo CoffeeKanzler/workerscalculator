@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2748885059",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:38:23+00:00",
+  "buildings": [
+    {
+      "id": "2748885059/przystanek1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 250.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 250.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bus Stop 1",
+      "workshopId": "2748885059",
+      "modPath": "przystanek1"
+    },
+    {
+      "id": "2748885059/przystanek2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bus Stop 2",
+      "workshopId": "2748885059",
+      "modPath": "przystanek2"
+    }
+  ],
+  "vehicles": []
+}

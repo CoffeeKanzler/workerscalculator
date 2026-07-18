@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2953370023",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:24:42+00:00",
+  "buildings": [
+    {
+      "id": "2953370023/Prachechnaja",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 17.0,
+      "professors": 0,
+      "production": {
+        "heat": 450.0
+      },
+      "consumption": {
+        "oil": 0.12
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 750.0,
+        "asphalt": 31.0,
+        "gravel": 52.0,
+        "concrete": 43.0,
+        "steel": 12.0,
+        "boards": 8.0,
+        "bricks": 132.0,
+        "prefabpanels": 12.0,
+        "ecomponents": 5.0,
+        "mcomponents": 8.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Прачечная №10 Новость",
+      "workshopId": "2953370023",
+      "modPath": "Prachechnaja"
+    }
+  ],
+  "vehicles": []
+}

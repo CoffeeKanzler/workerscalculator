@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1958077051",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:23:01+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1958077051/maz-2000",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.91,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 30000.0,
+      "capacity": 45.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1986,
+      "to": 3000,
+      "speed": 120.0,
+      "emptyWeight": 22.0,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1958077051",
+      "modPath": "maz-2000"
+    }
+  ]
+}

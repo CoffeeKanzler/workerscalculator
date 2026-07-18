@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2870846338",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:50:39+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2870846338/skoda_47e",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.42,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 2846143892,
+      "costRUB": 4150.0,
+      "speed": 120.0,
+      "powerKW": 3080.0,
+      "emptyWeight": 85.0,
+      "from": 1966,
+      "to": 1970,
+      "countryId": 39000,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2870846338",
+      "modPath": "skoda_47e"
+    }
+  ]
+}

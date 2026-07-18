@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2935786778",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:08:47+00:00",
+  "buildings": [
+    {
+      "id": "2935786778/1",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 2.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Сhapel of Pushkino city (1997, Moscow reg.)",
+      "workshopId": "2935786778",
+      "modPath": "1"
+    },
+    {
+      "id": "2935786778/2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 6.0,
+        "steel": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fence for chapel of Pushkino city",
+      "workshopId": "2935786778",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

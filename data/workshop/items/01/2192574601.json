@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2192574601",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:00:03+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2192574601/Liftback",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.25,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5394,
+      "costUSD": 4500.0,
+      "speed": 204.0,
+      "powerKW": 147.0,
+      "emptyWeight": 1.055,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2007,
+      "to": 2013,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2192574601",
+      "modPath": "Liftback"
+    },
+    {
+      "id": "2192574601/Wagon",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.44,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5394,
+      "costUSD": 4500.0,
+      "speed": 204.0,
+      "powerKW": 147.0,
+      "emptyWeight": 1.055,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2007,
+      "to": 2013,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2192574601",
+      "modPath": "Wagon"
+    }
+  ]
+}

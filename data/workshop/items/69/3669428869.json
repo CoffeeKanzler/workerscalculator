@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3669428869",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T06:49:37+00:00",
+  "buildings": [
+    {
+      "id": "3669428869/Stela",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stela «Lesnoy»",
+      "workshopId": "3669428869",
+      "modPath": "Stela"
+    }
+  ],
+  "vehicles": []
+}

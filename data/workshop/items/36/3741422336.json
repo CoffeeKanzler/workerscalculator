@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3741422336",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:14:42+00:00",
+  "buildings": [
+    {
+      "id": "3741422336/cemetery",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_CHURCH"
+      ],
+      "workers": 1.0,
+      "professors": 1.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cemetery",
+      "workshopId": "3741422336",
+      "modPath": "cemetery"
+    }
+  ],
+  "vehicles": []
+}

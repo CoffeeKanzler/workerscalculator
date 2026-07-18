@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3330411439",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:50:09+00:00",
+  "buildings": [
+    {
+      "id": "3330411439/1",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 40.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "The mall Akropol (2006, Kaliningrad)",
+      "workshopId": "3330411439",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

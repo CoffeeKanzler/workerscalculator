@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2776497354",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:22:01+00:00",
+  "buildings": [
+    {
+      "id": "2776497354/.",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 324.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.0,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 324.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "I-101",
+      "workshopId": "2776497354",
+      "modPath": "."
+    }
+  ],
+  "vehicles": []
+}

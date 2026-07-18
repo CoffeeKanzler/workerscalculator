@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3166678895",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:47:48+00:00",
+  "buildings": [
+    {
+      "id": "3166678895/OD",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 100.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 60.0,
+        "gravel": 100.0,
+        "concrete": 380.0,
+        "workers": 2900.0,
+        "bricks": 580.0,
+        "boards": 180.0,
+        "steel": 230.0,
+        "mcomponents": 4.0,
+        "ecomponents": 12.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ještěd Department Store",
+      "workshopId": "3166678895",
+      "modPath": "OD"
+    }
+  ],
+  "vehicles": []
+}

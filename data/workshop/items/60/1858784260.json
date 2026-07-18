@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1858784260",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:25:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1858784260/ritmo",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.09,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 145.0,
+      "powerKW": 48.0,
+      "emptyWeight": 0.85,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1978,
+      "to": 1988,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1858784260",
+      "modPath": "ritmo"
+    }
+  ]
+}

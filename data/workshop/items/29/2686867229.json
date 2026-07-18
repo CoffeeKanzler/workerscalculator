@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2686867229",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:25:03+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2686867229/uaz_469_mil",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.64,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5298,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 120.0,
+      "powerKW": 75.0,
+      "emptyWeight": 1.65,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1972,
+      "to": 1991,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2686867229",
+      "modPath": "uaz_469_mil"
+    }
+  ]
+}

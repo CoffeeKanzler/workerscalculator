@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2810496605",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:32:25+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2810496605/earlyforklift",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 2.48,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "capacity": 1.4,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "speed": 40.0,
+      "powerKW": 27.0,
+      "emptyWeight": 0.45,
+      "from": 1924,
+      "to": 1962,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2810496605",
+      "modPath": "earlyforklift"
+    },
+    {
+      "id": "2810496605/earlyforklift_sov",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 2.48,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 1.4,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "speed": 40.0,
+      "powerKW": 27.0,
+      "emptyWeight": 0.45,
+      "from": 1924,
+      "to": 1962,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2810496605",
+      "modPath": "earlyforklift_sov"
+    }
+  ]
+}

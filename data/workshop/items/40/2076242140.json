@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2076242140",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:10:55+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2076242140/bus_iks556",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.34,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5239,
+      "costRUB": 4400.0,
+      "consumption": 0.0,
+      "speed": 80.0,
+      "powerKW": 141.0,
+      "emptyWeight": 10.0,
+      "capacity": 105.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1962,
+      "to": 1973,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2076242140",
+      "modPath": "bus_iks556"
+    }
+  ]
+}

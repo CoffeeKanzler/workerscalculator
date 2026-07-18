@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3136490638",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:58:36+00:00",
+  "buildings": [
+    {
+      "id": "3136490638/gryfino",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 220.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Water Tower 50s ",
+      "workshopId": "3136490638",
+      "modPath": "gryfino"
+    }
+  ],
+  "vehicles": []
+}

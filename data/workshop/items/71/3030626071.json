@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3030626071",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:39:20+00:00",
+  "buildings": [
+    {
+      "id": "3030626071/forklift_garage_x16",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 450.0,
+        "asphalt": 90.0,
+        "workers": 1057.2,
+        "bricks": 258.3,
+        "prefabpanels": 184.0,
+        "concrete": 18.0,
+        "steel": 28.2,
+        "boards": 28.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Forklift garage x16",
+      "workshopId": "3030626071",
+      "modPath": "forklift_garage_x16"
+    },
+    {
+      "id": "3030626071/forklift_garage_x4",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 200.0,
+        "asphalt": 40.0,
+        "workers": 369.3,
+        "bricks": 64.6,
+        "prefabpanels": 46.0,
+        "concrete": 4.5,
+        "steel": 7.1,
+        "boards": 7.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Forklift garage x4",
+      "workshopId": "3030626071",
+      "modPath": "forklift_garage_x4"
+    },
+    {
+      "id": "3030626071/forklift_garage_x8",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 300.0,
+        "asphalt": 60.0,
+        "workers": 618.5,
+        "bricks": 129.1,
+        "prefabpanels": 92.0,
+        "concrete": 9.0,
+        "steel": 14.1,
+        "boards": 14.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Forklift garage x8",
+      "workshopId": "3030626071",
+      "modPath": "forklift_garage_x8"
+    }
+  ],
+  "vehicles": []
+}

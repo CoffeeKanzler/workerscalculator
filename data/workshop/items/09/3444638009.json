@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3444638009",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:27:05+00:00",
+  "buildings": [
+    {
+      "id": "3444638009/1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 4000.0,
+        "RESOURCE_TRANSPORT_OPEN": 3500.0,
+        "RESOURCE_TRANSPORT_COOLER": 500.0,
+        "RESOURCE_TRANSPORT_VEHICLES": 2000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5-Storey warehouse buliding",
+      "workshopId": "3444638009",
+      "modPath": "1"
+    },
+    {
+      "id": "3444638009/2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 4000.0,
+        "RESOURCE_TRANSPORT_OPEN": 3500.0,
+        "RESOURCE_TRANSPORT_COOLER": 500.0,
+        "RESOURCE_TRANSPORT_VEHICLES": 2000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5-Storey warehouse buliding norail",
+      "workshopId": "3444638009",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

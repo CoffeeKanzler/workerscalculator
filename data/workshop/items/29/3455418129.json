@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3455418129",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:57:45+00:00",
+  "buildings": [
+    {
+      "id": "3455418129/Bioreactor1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 800.0,
+      "professors": 50.0,
+      "production": {
+        "fuel": 0.02,
+        "meat": 0.01,
+        "food": 0.01,
+        "alcohol": 0.02,
+        "fertiliser_liquid": 0.01
+      },
+      "consumption": {
+        "plants": 0.25,
+        "chemicals": 0.01,
+        "yellowcake": 0.01,
+        "wood": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bioreactor",
+      "workshopId": "3455418129",
+      "modPath": "Bioreactor1"
+    }
+  ],
+  "vehicles": []
+}

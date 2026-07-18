@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1893247862",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:15:31+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1893247862/refrig_lz100",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.4,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 16.0,
+      "transportType": "RESOURCE_TRANSPORT_COOLER",
+      "speed": 92.0,
+      "powerKW": 165.0,
+      "emptyWeight": 9.0,
+      "from": 1976,
+      "to": 1995,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1893247862",
+      "modPath": "refrig_lz100"
+    }
+  ]
+}

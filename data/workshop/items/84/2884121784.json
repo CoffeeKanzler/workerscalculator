@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2884121784",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:44:31+00:00",
+  "buildings": [
+    {
+      "id": "2884121784/1",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 250.0
+      },
+      "constructionResources": {
+        "bricks": 25.9,
+        "boards": 13.2,
+        "concrete": 8.7,
+        "steel": 1.3,
+        "workers": 422.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Water tower of Pushkino, Moscow region (1903)",
+      "workshopId": "2884121784",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1943038195",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:47:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1943038195/Ford",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.66,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5382,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 130.0,
+      "powerKW": 35.0,
+      "emptyWeight": 1.275,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1991,
+      "to": 1998,
+      "countryId": 39003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1943038195",
+      "modPath": "Ford"
+    }
+  ]
+}

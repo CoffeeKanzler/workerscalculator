@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2585512620",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:35:08+00:00",
+  "buildings": [
+    {
+      "id": "2585512620/CzechoslovakTypicalResident",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "typical panel house",
+      "workshopId": "2585512620",
+      "modPath": "CzechoslovakTypicalResident"
+    }
+  ],
+  "vehicles": []
+}

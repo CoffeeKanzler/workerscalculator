@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3029528631",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:58:05+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3029528631/tug",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 30.13,
+      "type": "VEHICLETYPE_SHIP",
+      "costUSD": 250.0,
+      "speed": 65.0,
+      "powerKW": 580.0,
+      "emptyWeight": 352.1,
+      "capacity": 120.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1981,
+      "to": 2008,
+      "electric": false,
+      "workshopId": "3029528631",
+      "modPath": "tug"
+    }
+  ]
+}

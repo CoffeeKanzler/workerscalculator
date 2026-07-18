@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2733172546",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:36:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2733172546/railcar_M290",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 26.84,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "speed": 148.0,
+      "powerKW": 121.0,
+      "emptyWeight": 36.0,
+      "capacity": 72.0,
+      "from": 1936,
+      "to": 2021,
+      "countryId": 39000,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "motorvagon",
+      "electric": false,
+      "workshopId": "2733172546",
+      "modPath": "railcar_M290"
+    }
+  ]
+}

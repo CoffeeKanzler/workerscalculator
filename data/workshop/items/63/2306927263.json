@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2306927263",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:14:52+00:00",
+  "buildings": [
+    {
+      "id": "2306927263/test9",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1050.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1050.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Quadrilatero",
+      "workshopId": "2306927263",
+      "modPath": "test9"
+    }
+  ],
+  "vehicles": []
+}

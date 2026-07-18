@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2300482372",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:59:27+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2300482372/te2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.32,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "speed": 93.0,
+      "emptyWeight": 85.0,
+      "powerKW": 735.0,
+      "from": 1948,
+      "to": 1960,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2300482372",
+      "modPath": "te2"
+    },
+    {
+      "id": "2300482372/te2a",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.32,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "speed": 93.0,
+      "emptyWeight": 85.0,
+      "powerKW": 735.0,
+      "from": 1948,
+      "to": 1960,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2300482372",
+      "modPath": "te2a"
+    },
+    {
+      "id": "2300482372/te2b",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.32,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "speed": 93.0,
+      "emptyWeight": 85.0,
+      "powerKW": 735.0,
+      "from": 1948,
+      "to": 1960,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2300482372",
+      "modPath": "te2b"
+    }
+  ]
+}

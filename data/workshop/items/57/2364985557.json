@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2364985557",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:58:01+00:00",
+  "buildings": [
+    {
+      "id": "2364985557/Magazyn",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 100.0,
+        "RESOURCE_TRANSPORT_OPEN": 30.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Covered + Open Storage",
+      "workshopId": "2364985557",
+      "modPath": "Magazyn"
+    }
+  ],
+  "vehicles": []
+}

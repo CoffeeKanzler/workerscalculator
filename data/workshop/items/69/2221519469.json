@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2221519469",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:56:59+00:00",
+  "buildings": [
+    {
+      "id": "2221519469/BII-60",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 190.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 190.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "II-60",
+      "workshopId": "2221519469",
+      "modPath": "BII-60"
+    }
+  ],
+  "vehicles": []
+}

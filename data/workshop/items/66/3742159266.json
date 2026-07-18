@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3742159266",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:42:23+00:00",
+  "buildings": [
+    {
+      "id": "3742159266/ratusz",
+      "nameId": 13500,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 0,
+      "professors": 100.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3742159266",
+      "modPath": "ratusz"
+    },
+    {
+      "id": "3742159266/siedziba",
+      "nameId": 6020,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 100.0,
+      "professors": 100.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3742159266",
+      "modPath": "siedziba"
+    }
+  ],
+  "vehicles": []
+}

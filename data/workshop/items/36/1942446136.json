@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1942446136",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:46:07+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1942446136/maz_530",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 53224567456,
+      "costRUB": 10000.0,
+      "capacity": 40.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "speed": 43.0,
+      "emptyWeight": 38.55,
+      "from": 1957,
+      "to": 1963,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1942446136",
+      "modPath": "maz_530"
+    }
+  ]
+}

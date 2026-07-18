@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3437917236",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:12:09+00:00",
+  "buildings": [
+    {
+      "id": "3437917236/112",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 11.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "popov112",
+      "workshopId": "3437917236",
+      "modPath": "112"
+    }
+  ],
+  "vehicles": []
+}

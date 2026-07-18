@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2881977250",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:17:00+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2881977250/citroen_bx",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.32,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costUSD": 4000.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 130.0,
+      "powerKW": 53.0,
+      "emptyWeight": 1.0,
+      "from": 1982,
+      "to": 1994,
+      "countryId": 39016,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2881977250",
+      "modPath": "citroen_bx"
+    },
+    {
+      "id": "2881977250/citroen_bx_gt",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.32,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costUSD": 4000.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 180.0,
+      "powerKW": 110.0,
+      "emptyWeight": 1.1,
+      "from": 1982,
+      "to": 1994,
+      "countryId": 39016,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2881977250",
+      "modPath": "citroen_bx_gt"
+    }
+  ]
+}

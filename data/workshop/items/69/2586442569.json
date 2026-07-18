@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2586442569",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:55:54+00:00",
+  "buildings": [
+    {
+      "id": "2586442569/NitraPanelHouse2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 198.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 198.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "czechoslovak Nitra",
+      "workshopId": "2586442569",
+      "modPath": "NitraPanelHouse2"
+    }
+  ],
+  "vehicles": []
+}

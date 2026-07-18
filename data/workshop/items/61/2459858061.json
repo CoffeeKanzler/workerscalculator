@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2459858061",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:52:11+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2459858061/B17",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 22.6,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 1.0,
+      "from": 1935,
+      "to": 1968,
+      "countryId": 39018,
+      "consumption": 0.0,
+      "speed": 400.0,
+      "powerKW": 13692.0,
+      "emptyWeight": 16.3,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "workshopId": "2459858061",
+      "modPath": "B17"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3167174862",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:00:53+00:00",
+  "buildings": [
+    {
+      "id": "3167174862/WBS-70_1b11f",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 99.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 99.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "WBS-70_1b11f",
+      "workshopId": "3167174862",
+      "modPath": "WBS-70_1b11f"
+    },
+    {
+      "id": "3167174862/WBS-70_2b11f",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 141.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 141.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "WBS-70_2b11f",
+      "workshopId": "3167174862",
+      "modPath": "WBS-70_2b11f"
+    },
+    {
+      "id": "3167174862/WBS-70_2b11f-corner",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 110.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 110.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "WBS-70_2b11f-corner",
+      "workshopId": "3167174862",
+      "modPath": "WBS-70_2b11f-corner"
+    },
+    {
+      "id": "3167174862/WBS-70_2b11f-end-L",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 163.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 163.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "WBS-70_2b11f-end-L",
+      "workshopId": "3167174862",
+      "modPath": "WBS-70_2b11f-end-L"
+    },
+    {
+      "id": "3167174862/WBS-70_2b11f-end-R",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 158.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 158.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "WBS-70_2b11f-end-R",
+      "workshopId": "3167174862",
+      "modPath": "WBS-70_2b11f-end-R"
+    },
+    {
+      "id": "3167174862/WBS-70_2b11f-invert-corner",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 110.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 110.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "WBS-70_2b11f-invert-corner",
+      "workshopId": "3167174862",
+      "modPath": "WBS-70_2b11f-invert-corner"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2725635464",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:01:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2725635464/digging_crew",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.81,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 0.0,
+      "powerKW": 0.0,
+      "emptyWeight": 0.8,
+      "from": 1820,
+      "to": 3000,
+      "countryId": 38998,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2725635464",
+      "modPath": "digging_crew"
+    }
+  ]
+}

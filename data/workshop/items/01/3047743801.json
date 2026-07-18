@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3047743801",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:17:35+00:00",
+  "buildings": [
+    {
+      "id": "3047743801/5mw",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 300.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4.xwindturbine",
+      "workshopId": "3047743801",
+      "modPath": "5mw"
+    }
+  ],
+  "vehicles": []
+}

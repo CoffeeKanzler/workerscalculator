@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2964380925",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:45:15+00:00",
+  "buildings": [
+    {
+      "id": "2964380925/l1p1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "rawiron": 0.05
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bog iron mine (factory)",
+      "workshopId": "2964380925",
+      "modPath": "l1p1"
+    },
+    {
+      "id": "2964380925/l1p2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 6.0,
+      "professors": 0,
+      "production": {
+        "rawiron": 0.166
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bog iron (factory)",
+      "workshopId": "2964380925",
+      "modPath": "l1p2"
+    },
+    {
+      "id": "2964380925/l2p1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 4.0,
+      "professors": 0,
+      "production": {
+        "iron": 0.025
+      },
+      "consumption": {
+        "rawiron": 0.1,
+        "coal": 0.12
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bloomery furnace",
+      "workshopId": "2964380925",
+      "modPath": "l2p1"
+    },
+    {
+      "id": "2964380925/l2p2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "iron": 0.025
+      },
+      "consumption": {
+        "rawiron": 0.1,
+        "coal": 0.12
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bloomery furnace",
+      "workshopId": "2964380925",
+      "modPath": "l2p2"
+    },
+    {
+      "id": "2964380925/l3",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {
+        "steel": 0.03
+      },
+      "consumption": {
+        "iron": 0.1,
+        "coal": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forge",
+      "workshopId": "2964380925",
+      "modPath": "l3"
+    },
+    {
+      "id": "2964380925/l4",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {
+        "coal": 0.06
+      },
+      "consumption": {
+        "wood": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Charcoal maker",
+      "workshopId": "2964380925",
+      "modPath": "l4"
+    },
+    {
+      "id": "2964380925/l4p2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {
+        "coal": 0.06
+      },
+      "consumption": {
+        "wood": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Charcoal maker",
+      "workshopId": "2964380925",
+      "modPath": "l4p2"
+    }
+  ],
+  "vehicles": []
+}

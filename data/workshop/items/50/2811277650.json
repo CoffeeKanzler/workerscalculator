@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2811277650",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:41:52+00:00",
+  "buildings": [
+    {
+      "id": "2811277650/Tower1",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 480.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Water Tower Medium",
+      "workshopId": "2811277650",
+      "modPath": "Tower1"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2806094751",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:29:34+00:00",
+  "buildings": [
+    {
+      "id": "2806094751/cardio",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 300.0,
+      "professors": 300.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 1.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Institute of Cardiology",
+      "workshopId": "2806094751",
+      "modPath": "cardio"
+    }
+  ],
+  "vehicles": []
+}

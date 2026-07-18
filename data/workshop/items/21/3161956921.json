@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3161956921",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:43:07+00:00",
+  "buildings": [
+    {
+      "id": "3161956921/elevator",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 5.0,
+        "workers": 430.0,
+        "boards": 117.0,
+        "steel": 10.0,
+        "mcomponents": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wooden Grain Elevator",
+      "workshopId": "3161956921",
+      "modPath": "elevator"
+    },
+    {
+      "id": "3161956921/elevator_nr",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 5.0,
+        "workers": 430.0,
+        "boards": 117.0,
+        "steel": 9.0,
+        "mcomponents": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wooden Grain Elevator (no-rail)",
+      "workshopId": "3161956921",
+      "modPath": "elevator_nr"
+    }
+  ],
+  "vehicles": []
+}

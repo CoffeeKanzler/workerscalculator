@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2380444565",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:54:51+00:00",
+  "buildings": [
+    {
+      "id": "2380444565/aluminium",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "aluminium": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ploppable aluminium",
+      "workshopId": "2380444565",
+      "modPath": "aluminium"
+    },
+    {
+      "id": "2380444565/boards",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "boards": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ploppable boards",
+      "workshopId": "2380444565",
+      "modPath": "boards"
+    },
+    {
+      "id": "2380444565/bricks",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "bricks": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ploppable bricks",
+      "workshopId": "2380444565",
+      "modPath": "bricks"
+    },
+    {
+      "id": "2380444565/prefabpanels",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "prefabpanels": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ploppable prefabpanels",
+      "workshopId": "2380444565",
+      "modPath": "prefabpanels"
+    },
+    {
+      "id": "2380444565/resource_pile",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "gravel": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Resource pile",
+      "workshopId": "2380444565",
+      "modPath": "resource_pile"
+    },
+    {
+      "id": "2380444565/steel",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "steel": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ploppable steel",
+      "workshopId": "2380444565",
+      "modPath": "steel"
+    },
+    {
+      "id": "2380444565/wood",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0,
+        "wood": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ploppable wood",
+      "workshopId": "2380444565",
+      "modPath": "wood"
+    }
+  ],
+  "vehicles": []
+}

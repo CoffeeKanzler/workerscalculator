@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2858195567",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:03:31+00:00",
+  "buildings": [
+    {
+      "id": "2858195567/hotel_park",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 7.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel Park",
+      "workshopId": "2858195567",
+      "modPath": "hotel_park"
+    }
+  ],
+  "vehicles": []
+}

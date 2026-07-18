@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2461354920",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:47:48+00:00",
+  "buildings": [
+    {
+      "id": "2461354920/uhlie",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {
+        "coal": 0.9
+      },
+      "consumption": {
+        "wood": 1.8
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 0.2,
+        "living": 0.2
+      },
+      "nameStr": "uhlie",
+      "workshopId": "2461354920",
+      "modPath": "uhlie"
+    }
+  ],
+  "vehicles": []
+}

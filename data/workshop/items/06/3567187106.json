@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3567187106",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:56:29+00:00",
+  "buildings": [
+    {
+      "id": "3567187106/mupruma",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 18.0,
+      "professors": 32.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Police station",
+      "workshopId": "3567187106",
+      "modPath": "mupruma"
+    }
+  ],
+  "vehicles": []
+}

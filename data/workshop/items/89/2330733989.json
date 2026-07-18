@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2330733989",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:43:51+00:00",
+  "buildings": [
+    {
+      "id": "2330733989/iki",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 1200.0,
+      "professors": 1080.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ИКИ АН СССР",
+      "workshopId": "2330733989",
+      "modPath": "iki"
+    }
+  ],
+  "vehicles": []
+}

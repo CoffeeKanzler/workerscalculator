@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3501988337",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:11:08+00:00",
+  "buildings": [
+    {
+      "id": "3501988337/1",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 20.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1926 ОблПотребСоюз",
+      "workshopId": "3501988337",
+      "modPath": "1"
+    },
+    {
+      "id": "3501988337/2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1926 ОблПотребСоюз Универмаг",
+      "workshopId": "3501988337",
+      "modPath": "2"
+    },
+    {
+      "id": "3501988337/3",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1926 ОблПотребСоюз музей",
+      "workshopId": "3501988337",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

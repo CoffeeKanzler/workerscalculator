@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2063402966",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:33:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2063402966/personal_ms2140",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.03,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costRUB": 4600.0,
+      "consumption": 0.0,
+      "speed": 142.0,
+      "powerKW": 55.0,
+      "emptyWeight": 1.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1976,
+      "to": 1988,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2063402966",
+      "modPath": "personal_ms2140"
+    }
+  ]
+}

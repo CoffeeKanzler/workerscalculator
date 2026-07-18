@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2849430883",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:23:44+00:00",
+  "buildings": [
+    {
+      "id": "2849430883/Parklight",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parklight",
+      "workshopId": "2849430883",
+      "modPath": "Parklight"
+    },
+    {
+      "id": "2849430883/StreetDouble",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Double Streetlight",
+      "workshopId": "2849430883",
+      "modPath": "StreetDouble"
+    },
+    {
+      "id": "2849430883/StreetDoubleLED",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Double LED Streetlight",
+      "workshopId": "2849430883",
+      "modPath": "StreetDoubleLED"
+    },
+    {
+      "id": "2849430883/StreetSingle",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Streetlight",
+      "workshopId": "2849430883",
+      "modPath": "StreetSingle"
+    },
+    {
+      "id": "2849430883/StreetSingleLED",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "LED Streetlight",
+      "workshopId": "2849430883",
+      "modPath": "StreetSingleLED"
+    }
+  ],
+  "vehicles": []
+}

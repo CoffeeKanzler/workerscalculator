@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2761646147",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:16:23+00:00",
+  "buildings": [
+    {
+      "id": "2761646147/vanilla_style_school",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 25.0,
+      "professors": 20.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vanilla style school",
+      "workshopId": "2761646147",
+      "modPath": "vanilla_style_school"
+    }
+  ],
+  "vehicles": []
+}

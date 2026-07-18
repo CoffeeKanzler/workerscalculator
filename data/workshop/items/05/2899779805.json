@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2899779805",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:57:09+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2899779805/An-124",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 68.73,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 865.0,
+      "powerKW": 91600.0,
+      "emptyWeight": 181.0,
+      "capacity": 120.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1982,
+      "to": 2004,
+      "countryId": 39015,
+      "workshopId": "2899779805",
+      "modPath": "An-124"
+    }
+  ]
+}

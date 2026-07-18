@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3037637749",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T10:11:45+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3037637749/JLY6121S",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.13,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 75.0,
+      "powerKW": 147.0,
+      "emptyWeight": 14.0,
+      "capacity": 105.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1992,
+      "to": 2000,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3037637749",
+      "modPath": "JLY6121S"
+    }
+  ]
+}

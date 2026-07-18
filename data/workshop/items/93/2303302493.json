@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2303302493",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:15:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2303302493/2es5k",
+      "category": "workshop",
+      "trainSet": [
+        "2303302493/2es5kb"
+      ],
+      "lifespanYears": 0.0,
+      "length": 17.0,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "speed": 110.0,
+      "powerKW": 3060.0,
+      "emptyWeight": 96.0,
+      "from": 2004,
+      "to": 3000,
+      "countryId": 39021,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2303302493",
+      "modPath": "2es5k"
+    },
+    {
+      "id": "2303302493/2es5kb",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 17.7,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "speed": 110.0,
+      "powerKW": 3060.0,
+      "emptyWeight": 96.0,
+      "from": 2004,
+      "to": 3000,
+      "countryId": 39021,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2303302493",
+      "modPath": "2es5kb"
+    },
+    {
+      "id": "2303302493/e5k",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.51,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "speed": 110.0,
+      "powerKW": 3060.0,
+      "emptyWeight": 100.0,
+      "from": 2004,
+      "to": 3000,
+      "countryId": 39021,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2303302493",
+      "modPath": "e5k"
+    }
+  ]
+}

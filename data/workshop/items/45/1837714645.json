@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1837714645",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:32:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1837714645/moskvich",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.96,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 500.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 26.0,
+      "emptyWeight": 0.91,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1956,
+      "to": 1965,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1837714645",
+      "modPath": "moskvich"
+    }
+  ]
+}

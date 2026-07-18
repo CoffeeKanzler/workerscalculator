@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2637078320",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:09:14+00:00",
+  "buildings": [
+    {
+      "id": "2637078320/blok",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 58.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 58.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 storey prefabricated block of flats",
+      "workshopId": "2637078320",
+      "modPath": "blok"
+    },
+    {
+      "id": "2637078320/blok-brama",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 storey prefabricated block of flats gate",
+      "workshopId": "2637078320",
+      "modPath": "blok-brama"
+    },
+    {
+      "id": "2637078320/blok-naroznik",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 70.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 70.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 storey prefabricated block of flats corner",
+      "workshopId": "2637078320",
+      "modPath": "blok-naroznik"
+    }
+  ],
+  "vehicles": []
+}

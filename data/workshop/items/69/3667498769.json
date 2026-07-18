@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3667498769",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T04:38:15+00:00",
+  "buildings": [
+    {
+      "id": "3667498769/sklep",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cepelia",
+      "workshopId": "3667498769",
+      "modPath": "sklep"
+    }
+  ],
+  "vehicles": []
+}

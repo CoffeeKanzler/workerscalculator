@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2196900209",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:39:18+00:00",
+  "buildings": [
+    {
+      "id": "2196900209/steel1",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 25.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.2,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 5.8,
+        "workers": 1860.0,
+        "concrete": 58.900000000000006,
+        "steel": 91.5,
+        "prefabpanels": 51.5,
+        "mcomponents": 1.8,
+        "ecomponents": 0.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Steel coaster",
+      "workshopId": "2196900209",
+      "modPath": "steel1"
+    }
+  ],
+  "vehicles": []
+}

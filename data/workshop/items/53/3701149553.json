@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3701149553",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:34:17+00:00",
+  "buildings": [
+    {
+      "id": "3701149553/C",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 184.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 184.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Volgograd VI Lenina 20 Stalinka - Corner A",
+      "workshopId": "3701149553",
+      "modPath": "C"
+    },
+    {
+      "id": "3701149553/M",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 118.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 118.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Volgograd VI Lenina 20 Stalinka - Main",
+      "workshopId": "3701149553",
+      "modPath": "M"
+    }
+  ],
+  "vehicles": []
+}

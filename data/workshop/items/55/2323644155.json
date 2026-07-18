@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2323644155",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:43:42+00:00",
+  "buildings": [
+    {
+      "id": "2323644155/Powerplant",
+      "nameId": 6319,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 100.0,
+      "professors": 50.0,
+      "production": {
+        "eletric": 90.0,
+        "nuclearfuelburned": 0.0005,
+        "vehicles": 1.0
+      },
+      "consumption": {
+        "nuclearfuel": 0.0009,
+        "vehicles": 1.0
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 320.0,
+        "concrete": 420.0,
+        "asphalt": 300.0,
+        "workers": 8800.0,
+        "bricks": 240.0,
+        "steel": 630.0,
+        "boards": 80.0,
+        "mcomponents": 44.0,
+        "ecomponents": 28.0
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2323644155",
+      "modPath": "Powerplant"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3536076184",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:53:46+00:00",
+  "buildings": [
+    {
+      "id": "3536076184/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 980.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 980.0
+      },
+      "constructionResources": {
+        "workers": 8940.0,
+        "gravel": 140.0,
+        "concrete": 190.0,
+        "steel": 140.0,
+        "bricks": 1176.0,
+        "boards": 280.0,
+        "mcomponents": 9.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sunnyside Yard residential skyscraper",
+      "workshopId": "3536076184",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3013086251",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:39:44+00:00",
+  "buildings": [
+    {
+      "id": "3013086251/lankku",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1000.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Open Storage",
+      "workshopId": "3013086251",
+      "modPath": "lankku"
+    }
+  ],
+  "vehicles": []
+}

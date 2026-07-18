@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2411099237",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:21:19+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2411099237/LEWEL2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.99,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 3700.0,
+      "speed": 65.0,
+      "powerKW": 1400.0,
+      "emptyWeight": 100.0,
+      "from": 1952,
+      "to": 1988,
+      "countryId": 39004,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2411099237",
+      "modPath": "LEWEL2"
+    }
+  ]
+}

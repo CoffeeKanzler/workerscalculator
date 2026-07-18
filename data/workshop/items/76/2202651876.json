@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2202651876",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:09:48+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2202651876/dump2vs105",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.79,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "capacity": 105.0,
+      "emptyWeight": 50.0,
+      "from": 1967,
+      "to": 3000,
+      "countryId": 39011,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "trainGroup": "vagon",
+      "workshopId": "2202651876",
+      "modPath": "dump2vs105"
+    },
+    {
+      "id": "2202651876/dump6vs60",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.51,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "capacity": 60.0,
+      "emptyWeight": 27.0,
+      "from": 1950,
+      "to": 3000,
+      "countryId": 39011,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "trainGroup": "vagon",
+      "workshopId": "2202651876",
+      "modPath": "dump6vs60"
+    }
+  ]
+}

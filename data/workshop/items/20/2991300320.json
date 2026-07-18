@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2991300320",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:03:15+00:00",
+  "buildings": [
+    {
+      "id": "2991300320/1",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 5.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dom Karnerovcov",
+      "workshopId": "2991300320",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

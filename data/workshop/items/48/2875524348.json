@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2875524348",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:07:55+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2875524348/IL-86",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 59.93,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 870.0,
+      "powerKW": 50800.0,
+      "emptyWeight": 120.0,
+      "capacity": 320.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1976,
+      "to": 1991,
+      "countryId": 39011,
+      "workshopId": "2875524348",
+      "modPath": "IL-86"
+    }
+  ]
+}

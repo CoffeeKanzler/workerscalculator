@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2464334778",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:13:34+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2464334778/G1000",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.19,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "powerKW": 233.0,
+      "emptyWeight": 33.0,
+      "speed": 92.0,
+      "from": 1959,
+      "to": 1985,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2464334778",
+      "modPath": "G1000"
+    }
+  ]
+}

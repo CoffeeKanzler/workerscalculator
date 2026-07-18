@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2344010739",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T23:26:41+00:00",
+  "buildings": [
+    {
+      "id": "2344010739/l_refinery",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 250.0,
+      "professors": 0,
+      "production": {
+        "fuel": 0.15,
+        "bitumen": 0.09
+      },
+      "consumption": {
+        "oil": 0.3
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.5
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 25.8,
+        "workers": 748.0,
+        "concrete": 26.5,
+        "prefabpanels": 66.5,
+        "steel": 138.0,
+        "ecomponents": 4.5,
+        "mcomponents": 29.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large modular refinery",
+      "workshopId": "2344010739",
+      "modPath": "l_refinery"
+    },
+    {
+      "id": "2344010739/m_refinery",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 150.0,
+      "professors": 0,
+      "production": {
+        "fuel": 0.15,
+        "bitumen": 0.09
+      },
+      "consumption": {
+        "oil": 0.3
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.3
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 25.8,
+        "workers": 620.0,
+        "concrete": 21.5,
+        "prefabpanels": 54.6,
+        "steel": 114.8,
+        "ecomponents": 3.2,
+        "mcomponents": 24.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Modular refinery",
+      "workshopId": "2344010739",
+      "modPath": "m_refinery"
+    },
+    {
+      "id": "2344010739/u_refinery",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50.0,
+      "professors": 0,
+      "production": {
+        "fuel": 0.15,
+        "bitumen": 0.09
+      },
+      "consumption": {
+        "oil": 0.3
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 4.9,
+        "workers": 247.0,
+        "concrete": 7.8,
+        "prefabpanels": 18.6,
+        "steel": 34.599999999999994,
+        "ecomponents": 1.3,
+        "mcomponents": 6.9
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Microrefinery",
+      "workshopId": "2344010739",
+      "modPath": "u_refinery"
+    }
+  ],
+  "vehicles": []
+}

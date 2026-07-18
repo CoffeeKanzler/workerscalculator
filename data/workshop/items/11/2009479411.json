@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2009479411",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:35:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2009479411/GAZelle_minibus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.93,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 7000.0,
+      "consumption": 0.0,
+      "speed": 115.0,
+      "powerKW": 74.0,
+      "emptyWeight": 2.5,
+      "capacity": 12.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1996,
+      "to": 2003,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2009479411",
+      "modPath": "GAZelle_minibus"
+    },
+    {
+      "id": "2009479411/GAZelle_van",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.93,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 7000.0,
+      "consumption": 0.0,
+      "speed": 115.0,
+      "powerKW": 74.0,
+      "emptyWeight": 2.15,
+      "capacity": 1.35,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1996,
+      "to": 2003,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2009479411",
+      "modPath": "GAZelle_van"
+    }
+  ]
+}

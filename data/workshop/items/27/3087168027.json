@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3087168027",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:19:18+00:00",
+  "buildings": [
+    {
+      "id": "3087168027/Long",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "tower-long",
+      "workshopId": "3087168027",
+      "modPath": "Long"
+    },
+    {
+      "id": "3087168027/Med",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "tower-med",
+      "workshopId": "3087168027",
+      "modPath": "Med"
+    }
+  ],
+  "vehicles": []
+}

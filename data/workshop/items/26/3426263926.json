@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3426263926",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:23:59+00:00",
+  "buildings": [
+    {
+      "id": "3426263926/PMZ2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 7.0,
+        "gravel": 7.0,
+        "workers": 80.0,
+        "steel": 7.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Памятник ЗИС-5 (ПМЗ-2)",
+      "workshopId": "3426263926",
+      "modPath": "PMZ2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2890522873",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:02:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2890522873/IL-62",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 53.87,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 950.0,
+      "powerKW": 45120.0,
+      "emptyWeight": 71.6,
+      "capacity": 168.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1963,
+      "to": 1995,
+      "countryId": 39011,
+      "workshopId": "2890522873",
+      "modPath": "IL-62"
+    }
+  ]
+}

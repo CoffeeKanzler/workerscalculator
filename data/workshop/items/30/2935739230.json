@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2935739230",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:28:10+00:00",
+  "buildings": [
+    {
+      "id": "2935739230/monument2_3division",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3division Monument BIG",
+      "workshopId": "2935739230",
+      "modPath": "monument2_3division"
+    },
+    {
+      "id": "2935739230/monument_3division",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3division Monument",
+      "workshopId": "2935739230",
+      "modPath": "monument_3division"
+    }
+  ],
+  "vehicles": []
+}

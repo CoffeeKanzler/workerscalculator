@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2080510729",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:27:11+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2080510729/vl19",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.54,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 3500.0,
+      "speed": 85.0,
+      "powerKW": 1800.0,
+      "emptyWeight": 114.0,
+      "from": 1932,
+      "to": 1965,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2080510729",
+      "modPath": "vl19"
+    },
+    {
+      "id": "2080510729/vl22m",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.54,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 3500.0,
+      "speed": 90.0,
+      "powerKW": 2400.0,
+      "emptyWeight": 132.0,
+      "from": 1947,
+      "to": 1965,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2080510729",
+      "modPath": "vl22m"
+    }
+  ]
+}

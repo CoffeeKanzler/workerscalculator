@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2551689168",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:22:39+00:00",
+  "buildings": [
+    {
+      "id": "2551689168/house1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House",
+      "workshopId": "2551689168",
+      "modPath": "house1"
+    },
+    {
+      "id": "2551689168/house2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House",
+      "workshopId": "2551689168",
+      "modPath": "house2"
+    },
+    {
+      "id": "2551689168/house3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House",
+      "workshopId": "2551689168",
+      "modPath": "house3"
+    },
+    {
+      "id": "2551689168/house4",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House",
+      "workshopId": "2551689168",
+      "modPath": "house4"
+    }
+  ],
+  "vehicles": []
+}

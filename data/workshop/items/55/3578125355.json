@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3578125355",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T03:32:57+00:00",
+  "buildings": [
+    {
+      "id": "3578125355/grocery",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 10.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Aussig Grocery",
+      "workshopId": "3578125355",
+      "modPath": "grocery"
+    },
+    {
+      "id": "3578125355/library",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Aussig Library",
+      "workshopId": "3578125355",
+      "modPath": "library"
+    },
+    {
+      "id": "3578125355/pub",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Aussig Pub",
+      "workshopId": "3578125355",
+      "modPath": "pub"
+    },
+    {
+      "id": "3578125355/store",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Aussig Luxure Store",
+      "workshopId": "3578125355",
+      "modPath": "store"
+    },
+    {
+      "id": "3578125355/theatre",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 25.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 5.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Aussig Theatre",
+      "workshopId": "3578125355",
+      "modPath": "theatre"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2993531876",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T00:36:08+00:00",
+  "buildings": [
+    {
+      "id": "2993531876/apart",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 358.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 358.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Apartment Tower",
+      "workshopId": "2993531876",
+      "modPath": "apart"
+    }
+  ],
+  "vehicles": []
+}

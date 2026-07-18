@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2745980597",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:53:28+00:00",
+  "buildings": [
+    {
+      "id": "2745980597/josemartimonument",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Josi Marti Monument",
+      "workshopId": "2745980597",
+      "modPath": "josemartimonument"
+    }
+  ],
+  "vehicles": []
+}

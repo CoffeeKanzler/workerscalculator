@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3161332808",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:08:50+00:00",
+  "buildings": [
+    {
+      "id": "3161332808/Storage",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 350.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sklad",
+      "workshopId": "3161332808",
+      "modPath": "Storage"
+    }
+  ],
+  "vehicles": []
+}

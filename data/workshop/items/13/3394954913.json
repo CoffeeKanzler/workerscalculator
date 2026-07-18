@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3394954913",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:46:36+00:00",
+  "buildings": [
+    {
+      "id": "3394954913/farm",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 10.0
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small farm",
+      "workshopId": "3394954913",
+      "modPath": "farm"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1972555228",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:33:39+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1972555228/Nuclear-excavator",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.5,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "powerKW": 25000.0,
+      "emptyWeight": 15.0,
+      "from": 1945,
+      "to": 3000,
+      "countryId": 39012,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1972555228",
+      "modPath": "Nuclear-excavator"
+    }
+  ]
+}

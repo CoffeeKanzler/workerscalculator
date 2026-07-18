@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2294979332",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T08:31:01+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2294979332/TROLZA5265",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.54,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5441,
+      "costRUB": 4300.0,
+      "speed": 65.0,
+      "powerKW": 100.0,
+      "emptyWeight": 10.0,
+      "capacity": 85.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2005,
+      "to": 2019,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2294979332",
+      "modPath": "TROLZA5265"
+    }
+  ]
+}

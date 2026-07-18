@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2606160970",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T05:29:33+00:00",
+  "buildings": [
+    {
+      "id": "2606160970/18645_85-017",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 108.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 108.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "85-017-1",
+      "workshopId": "2606160970",
+      "modPath": "18645_85-017"
+    },
+    {
+      "id": "2606160970/26417_85-017",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 216.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 216.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "85-017-2",
+      "workshopId": "2606160970",
+      "modPath": "26417_85-017"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2494771013",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:26:29+00:00",
+  "buildings": [
+    {
+      "id": "2494771013/rural_pub",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 8.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Pub",
+      "workshopId": "2494771013",
+      "modPath": "rural_pub"
+    }
+  ],
+  "vehicles": []
+}

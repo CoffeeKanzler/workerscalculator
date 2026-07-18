@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2140182940",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-17T22:58:35+00:00",
+  "buildings": [
+    {
+      "id": "2140182940/Embassy",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 150.0,
+      "professors": 27.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 1.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Embassy",
+      "workshopId": "2140182940",
+      "modPath": "Embassy"
+    },
+    {
+      "id": "2140182940/Embassy_NO_WALL",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 150.0,
+      "professors": 27.0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 1.0,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.0,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Embassy no grounds",
+      "workshopId": "2140182940",
+      "modPath": "Embassy_NO_WALL"
+    }
+  ],
+  "vehicles": []
+}

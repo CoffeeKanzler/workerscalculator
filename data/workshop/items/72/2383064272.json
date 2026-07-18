@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2383064272",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:02:02+00:00",
+  "buildings": [
+    {
+      "id": "2383064272/mili",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 10.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Mil MI-24 or HIND",
+      "workshopId": "2383064272",
+      "modPath": "mili"
+    }
+  ],
+  "vehicles": []
+}

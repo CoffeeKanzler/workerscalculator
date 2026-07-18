@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2380391726",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T09:16:27+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2380391726/BR_Class_37",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.43,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 140.0,
+      "powerKW": 1305.0,
+      "emptyWeight": 102.0,
+      "from": 1960,
+      "to": 1975,
+      "countryId": 39041,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2380391726",
+      "modPath": "BR_Class_37"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3442295595",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:40:01+00:00",
+  "buildings": [
+    {
+      "id": "3442295595/1-335Ryad",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.72,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-335R",
+      "workshopId": "3442295595",
+      "modPath": "1-335Ryad"
+    },
+    {
+      "id": "3442295595/1-335Torez",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 70.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.72,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 70.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-335T",
+      "workshopId": "3442295595",
+      "modPath": "1-335Torez"
+    }
+  ],
+  "vehicles": []
+}

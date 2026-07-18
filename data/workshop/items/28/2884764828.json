@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2884764828",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T01:48:39+00:00",
+  "buildings": [
+    {
+      "id": "2884764828/yu_duplex",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Yugoslav 80s duplex house",
+      "workshopId": "2884764828",
+      "modPath": "yu_duplex"
+    },
+    {
+      "id": "2884764828/yu_duplex_garage",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Yugoslav 80s duplex garage",
+      "workshopId": "2884764828",
+      "modPath": "yu_duplex_garage"
+    }
+  ],
+  "vehicles": []
+}

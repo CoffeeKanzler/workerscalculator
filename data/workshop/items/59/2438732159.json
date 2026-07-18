@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2438732159",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T02:05:05+00:00",
+  "buildings": [
+    {
+      "id": "2438732159/bashnya",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 64.0,
+        "workers": 732.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Башня из дерева",
+      "workshopId": "2438732159",
+      "modPath": "bashnya"
+    },
+    {
+      "id": "2438732159/stena_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 49.0,
+        "workers": 291.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Стена",
+      "workshopId": "2438732159",
+      "modPath": "stena_1"
+    },
+    {
+      "id": "2438732159/ugol_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 49.0,
+        "workers": 291.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Угол стена",
+      "workshopId": "2438732159",
+      "modPath": "ugol_1"
+    },
+    {
+      "id": "2438732159/vorota",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 80.0,
+        "workers": 521.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ворота",
+      "workshopId": "2438732159",
+      "modPath": "vorota"
+    }
+  ],
+  "vehicles": []
+}

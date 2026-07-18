@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3428477824",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T07:19:30+00:00",
+  "buildings": [
+    {
+      "id": "3428477824/15520_5 floors Residental",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 84.0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.87,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 84.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5 floors Residental",
+      "workshopId": "3428477824",
+      "modPath": "15520_5 floors Residental"
+    }
+  ],
+  "vehicles": []
+}
