@@ -224,6 +224,64 @@ export function parseRoadNetwork(buffer) {
   return { nodes, edges, summary: { nodeCount, edgeCount, groupCount, pointCount, byteLength: c.bytes.length } };
 }
 
+export function parseHeightmapWater(buffer, { outputSize = 512, waterHeight = 0.2 } = {}) {
+  const c = new BinaryCursor(buffer);
+  c.require(0x80, 'heightmap DDS header');
+  if (c.view.getUint32(0, true) !== 0x20534444 || c.view.getUint32(4, true) !== 0x7c) {
+    throw new Error('heightmap.dds is not a supported DDS file');
+  }
+  const height = c.view.getUint32(0x0c, true);
+  const width = c.view.getUint32(0x10, true);
+  const pixelFormatSize = c.view.getUint32(0x4c, true);
+  const pixelFormatFlags = c.view.getUint32(0x50, true);
+  const fourCC = c.view.getUint32(0x54, true);
+  if (!width || !height || pixelFormatSize !== 0x20 || !(pixelFormatFlags & 0x04) || fourCC !== 114) {
+    throw new Error(`heightmap.dds requires D3DFMT_R32F, got ${width}x${height} format ${fourCC}`);
+  }
+  const expected = 0x80 + width * height * 4;
+  if (c.bytes.length !== expected) {
+    throw new Error(`heightmap.dds expected ${expected} bytes, got ${c.bytes.length}`);
+  }
+  const size = Math.min(outputSize, width, height);
+  if (!Number.isInteger(size) || size <= 0 || width % size || height % size) {
+    throw new Error(`heightmap.dds cannot downsample ${width}x${height} to ${outputSize}`);
+  }
+  const blockWidth = width / size;
+  const blockHeight = height / size;
+  const samplesPerBlock = blockWidth * blockHeight;
+  const packed = new Uint8Array(Math.ceil(size * size / 4));
+  for (let outY = 0; outY < size; outY += 1) {
+    for (let outX = 0; outX < size; outX += 1) {
+      let waterSamples = 0;
+      for (let dy = 0; dy < blockHeight; dy += 1) {
+        const sourceY = outY * blockHeight + dy;
+        for (let dx = 0; dx < blockWidth; dx += 1) {
+          const sourceX = outX * blockWidth + dx;
+          const value = c.view.getFloat32(0x80 + (sourceY * width + sourceX) * 4, true);
+          if (!Number.isFinite(value)) throw new Error(`heightmap.dds has an invalid sample at ${sourceX}/${sourceY}`);
+          if (value <= waterHeight) waterSamples += 1;
+        }
+      }
+      const level = waterSamples ? Math.min(3, Math.ceil(waterSamples * 3 / samplesPerBlock)) : 0;
+      const index = outY * size + outX;
+      packed[index >> 2] |= level << ((index & 3) * 2);
+    }
+  }
+  let binary = '';
+  for (let offset = 0; offset < packed.length; offset += 0x8000) {
+    binary += String.fromCharCode(...packed.subarray(offset, offset + 0x8000));
+  }
+  return {
+    width: size,
+    height: size,
+    packed: btoa(binary),
+    sourceWidth: width,
+    sourceHeight: height,
+    waterHeight,
+    worldBounds: { minX: -10000, maxX: 10000, minZ: -10000, maxZ: 10000 },
+  };
+}
+
 export function parseHeader(buffer) {
   const c = new BinaryCursor(buffer);
   c.require(0x204, 'header fixed metadata');

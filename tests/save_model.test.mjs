@@ -421,3 +421,17 @@ test('schematic map projects exact saved road centerlines with shared bounds', (
   assert.equal(result.buildings[0].mapX, 30);
   assert.equal(result.buildings[0].mapY, 50);
 });
+
+test('schematic map places heightmap-derived water in the shared world projection', () => {
+  const terrainWater = {
+    width: 2, height: 2, packed: 'Yw==',
+    worldBounds: { minX: -100, maxX: 100, minZ: -100, maxZ: 100 },
+  };
+  const result = buildSchematicMap([{ index: 1, x: 0, z: 0 }], [], null, {
+    width: 120, height: 80, padding: 10, terrainWater,
+  });
+  assert.deepEqual(result.bounds, { minX: -100, maxX: 100, minZ: -100, maxZ: 100 });
+  assert.deepEqual(result.water, {
+    ...terrainWater, mapX: 10, mapY: 10, mapWidth: 100, mapHeight: 60,
+  });
+});

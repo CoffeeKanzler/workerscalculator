@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   parseBuildingsGame, parseWorkers, parseHeader, parseMapClimate, parseResearch,
-  parseVehicles, parseUsedVehicles, parseLines, parseRoadNetwork,
+  parseVehicles, parseUsedVehicles, parseLines, parseRoadNetwork, parseHeightmapWater,
 } from '../js/savegame.js';
 import * as savegame from '../js/savegame.js';
 
@@ -50,6 +50,37 @@ test('road network parser exposes exact node topology and saved polyline samples
     summary: { nodeCount: 2, edgeCount: 1, groupCount: 0, pointCount: 1, byteLength: buffer.byteLength },
   });
   assert.throws(() => parseRoadNetwork(buffer.slice(0, -1)), /tail vectors/);
+});
+
+function heightmapFixture() {
+  const size = 8;
+  const buffer = new ArrayBuffer(0x80 + size * size * 4);
+  const view = new DataView(buffer);
+  view.setUint32(0, 0x20534444, true);
+  view.setUint32(4, 0x7c, true);
+  view.setUint32(0x0c, size, true);
+  view.setUint32(0x10, size, true);
+  view.setUint32(0x4c, 0x20, true);
+  view.setUint32(0x50, 0x04, true);
+  view.setUint32(0x54, 114, true);
+  for (let y = 0; y < size; y += 1) for (let x = 0; x < size; x += 1) {
+    let value = 0.3;
+    if (x < 4 && y < 4) value = 0.1;
+    else if (x < 4 && y >= 4 && x < 2) value = 0.1;
+    else if (x >= 4 && y >= 4 && x === 4 && y === 4) value = 0.1;
+    view.setFloat32(0x80 + (y * size + x) * 4, value, true);
+  }
+  return buffer;
+}
+
+test('heightmap parser validates R32F DDS and packs heightmap-derived water coverage', () => {
+  const buffer = heightmapFixture();
+  assert.deepEqual(parseHeightmapWater(buffer, { outputSize: 2 }), {
+    width: 2, height: 2, packed: 'Yw==', sourceWidth: 8, sourceHeight: 8,
+    waterHeight: 0.2,
+    worldBounds: { minX: -10000, maxX: 10000, minZ: -10000, maxZ: 10000 },
+  });
+  assert.throws(() => parseHeightmapWater(buffer.slice(0, -4), { outputSize: 2 }), /expected/);
 });
 
 function lineFixture({ saveVersion = 124 } = {}) {

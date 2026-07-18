@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=77';
+import { STRINGS } from './i18n.js?v=78';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -18,14 +18,14 @@ import {
   productionBufferAlerts, summarizeDistributionOffices, summarizeVehicleLines,
   summarizeCriminalityOutliers,
   buildSchematicMap,
-} from './save_model.js?v=13';
+} from './save_model.js?v=14';
 import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=8';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, resolveVehicleModels,
   shareSafeSaveImport, vehicleCategoryGroup, vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=9';
+} from './fleet.js?v=10';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',
@@ -49,6 +49,7 @@ let comparisonSnapshotName = '';
 let comparisonSnapshot = null;
 let comparisonSnapshotError = '';
 let mapFocusBuildingIndex = null;
+const terrainWaterImageCache = new Map();
 
 function createInitialState() {
   return {
@@ -161,8 +162,9 @@ function saveState() {
   // Exact road samples belong in the IndexedDB named snapshot. Keeping the
   // multi-megabyte geometry out of the small synchronous localStorage slot
   // prevents unrelated settings changes from silently hitting browser quota.
-  const persistent = rest.saveImport?.roadNetwork
-    ? { ...rest, saveImport: (({ roadNetwork, ...summary }) => summary)(rest.saveImport) }
+  const hasLocalMapData = rest.saveImport?.roadNetwork || rest.saveImport?.terrainWater;
+  const persistent = hasLocalMapData
+    ? { ...rest, saveImport: (({ roadNetwork, terrainWater, ...summary }) => summary)(rest.saveImport) }
     : rest;
   try { localStorage.setItem(LS_KEY, JSON.stringify(persistent)); } catch (e) { /* quota */ }
 }
@@ -1823,6 +1825,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
   sourceStatus = {}, parserWarnings = [], defaultProductivity = 1, workshopCatalog = null,
   cityStats = [], mapClimate = null, events = null,
   roadNetwork = null,
+  terrainWater = null,
 } = {}) {
   const occupiedScopeIds = new Set(buildings.map(building => building.scopeId).filter(Number.isInteger));
   const occupiedSettlements = settlements.filter(settlement => occupiedScopeIds.has(settlement.id));
@@ -1964,6 +1967,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
       version: 5, sourceName, importedAt: new Date().toISOString(), header, sourceStatus,
       mapClimate,
       roadNetwork,
+      terrainWater,
       settlementCount: occupiedSettlements.length, sourceSettlementCount: settlements.length,
       emptySettlementCount: settlements.length - occupiedSettlements.length, buildingCount: buildings.length,
       citizenCount: citizenResult?.recordCount ?? 0,
@@ -2021,7 +2025,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=21', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=22', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -2086,6 +2090,7 @@ async function handleSaveDirectory(fileList) {
   const usedVehiclesFile = byName.get('usedveh.bin');
   const linesFile = byName.get('lines.bin');
   const roadFile = byName.get('road.bin');
+  const heightmapFile = byName.get('heightmap.dds');
   const headerFile = byName.get('header.bin');
   const researchFile = byName.get('research.bin');
   const eventsFile = byName.get('events.bin');
@@ -2104,17 +2109,17 @@ async function handleSaveDirectory(fileList) {
   try {
     const readOptional = file => file ? file.arrayBuffer() : Promise.resolve(null);
     const [namepointBuffer, buildingBuffer, workerBuffer, vehicleBuffer, usedVehicleBuffer, lineBuffer,
-      roadBuffer, headerBuffer, researchBuffer, eventsBuffer, statsText, materialText] = await Promise.all([
+      roadBuffer, heightmapBuffer, headerBuffer, researchBuffer, eventsBuffer, statsText, materialText] = await Promise.all([
       namepoints.arrayBuffer(), buildingsFile.arrayBuffer(), readOptional(workersFile),
       readOptional(vehiclesFile), readOptional(usedVehiclesFile),
-      readOptional(linesFile), readOptional(roadFile),
+      readOptional(linesFile), readOptional(roadFile), readOptional(heightmapFile),
       readOptional(headerFile), readOptional(researchFile), readOptional(eventsFile), statsFile ? statsFile.text() : '',
       materialFile ? materialFile.text() : '',
     ]);
     const parsed = await parseSaveInWorker({
       namepoints: namepointBuffer, buildings: buildingBuffer, workers: workerBuffer,
       vehicles: vehicleBuffer, usedVehicles: usedVehicleBuffer,
-      lines: lineBuffer, road: roadBuffer,
+      lines: lineBuffer, road: roadBuffer, heightmap: heightmapBuffer,
       header: headerBuffer, research: researchBuffer, events: eventsBuffer, stats: statsText, material: materialText,
     });
     const relative = namepoints.webkitRelativePath || buildingsFile.webkitRelativePath || '';
@@ -2149,6 +2154,7 @@ async function handleSaveDirectory(fileList) {
         cityStats: parsed.cityStats ?? [],
         mapClimate: parsed.mapClimate,
         roadNetwork: parsed.roadNetwork,
+        terrainWater: parsed.terrainWater,
       });
     imported.metadata.statsRecordCount = statsRecords.length;
     imported.metadata.latestProductivity = productivity;
@@ -2271,6 +2277,7 @@ function renderSaveImport() {
     namepoints: 'namepoints.bin', buildings: 'buildings_game.bin', workers: 'workers.bin',
     vehicles: 'vehicles.bin', usedVehicles: 'usedveh.bin', lines: 'lines.bin',
     road: 'road.bin',
+    heightmap: 'heightmap.dds',
     header: 'header.bin', research: 'research.bin', events: 'events.bin', stats: 'stats.ini',
     material: 'material.mtl',
   };
@@ -2646,6 +2653,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
   const model = buildSchematicMap(buildings, scopes, outliers, {
     focusBuildingIndex: mapFocusBuildingIndex,
     roadNetwork: state.saveImport?.roadNetwork,
+    terrainWater: state.saveImport?.terrainWater,
   });
   if (!model) return null;
   const ns = 'http://www.w3.org/2000/svg';
@@ -2666,6 +2674,38 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
       ? `${zoomX} ${zoomY} ${zoomWidth} ${zoomHeight}` : `0 0 ${model.width} ${model.height}`,
     class: 'republic-map', role: 'img', 'aria-label': t('schematicRepublicMap'),
   });
+  const waterImageHref = water => {
+    if (terrainWaterImageCache.has(water.packed)) return terrainWaterImageCache.get(water.packed);
+    const packed = Uint8Array.from(atob(water.packed), character => character.charCodeAt(0));
+    const canvas = document.createElement('canvas');
+    canvas.width = water.width;
+    canvas.height = water.height;
+    const context = canvas.getContext('2d');
+    const pixels = context.createImageData(water.width, water.height);
+    const alpha = [0, 65, 115, 165];
+    for (let sourceY = 0; sourceY < water.height; sourceY += 1) {
+      for (let x = 0; x < water.width; x += 1) {
+        const sourceIndex = sourceY * water.width + x;
+        const level = (packed[sourceIndex >> 2] >> ((sourceIndex & 3) * 2)) & 3;
+        const targetIndex = ((water.height - 1 - sourceY) * water.width + x) * 4;
+        pixels.data[targetIndex] = 44;
+        pixels.data[targetIndex + 1] = 133;
+        pixels.data[targetIndex + 2] = 190;
+        pixels.data[targetIndex + 3] = alpha[level];
+      }
+    }
+    context.putImageData(pixels, 0, 0);
+    const href = canvas.toDataURL('image/png');
+    terrainWaterImageCache.set(water.packed, href);
+    return href;
+  };
+  const waterLayer = node('g', { class: 'map-water' });
+  if (model.water) waterLayer.append(node('image', {
+    href: waterImageHref(model.water),
+    x: model.water.mapX.toFixed(2), y: model.water.mapY.toFixed(2),
+    width: model.water.mapWidth.toFixed(2), height: model.water.mapHeight.toFixed(2),
+    preserveAspectRatio: 'none',
+  }));
   const scopeNames = new Map(model.scopes.map(scope => [scope.id, scope.name]));
   const roadLayer = node('g', { class: 'map-roads' });
   if (model.roads.length) {
@@ -2711,14 +2751,18 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     marker.append(title);
     scopeLayer.append(marker);
   }
-  svg.append(roadLayer, normalLayer, selectedLayer, scopeLayer, outlierLayer);
+  svg.append(waterLayer, roadLayer, normalLayer, selectedLayer, scopeLayer, outlierLayer);
+  const mapHintKey = model.water
+    ? (model.roads.length ? 'schematicMapRoadWaterHint' : 'schematicMapWaterHint')
+    : (model.roads.length ? 'schematicMapRoadHint' : 'schematicMapHint');
   return el('details', {
     class: 'secondary-section map-section',
     ...(focusedBuilding ? { open: '' } : {}),
   },
     el('summary', {}, `${t('schematicRepublicMap')} (${fmt(model.buildings.length, 0)})`),
-    el('p', { class: 'hint' }, t(model.roads.length ? 'schematicMapRoadHint' : 'schematicMapHint')),
+    el('p', { class: 'hint' }, t(mapHintKey)),
     el('div', { class: 'map-legend' },
+      model.water ? el('span', {}, el('i', { class: 'water' }), t('waterFootprint')) : null,
       model.roads.length ? el('span', {}, el('i', { class: 'road' }), t('roads')) : null,
       el('span', {}, el('i', { class: 'building' }), t('buildings')),
       el('span', {}, el('i', { class: 'scope' }), t('areaCenters')),
@@ -4201,16 +4245,18 @@ async function initializeNamedSnapshots() {
   await refreshNamedSnapshotNames();
 }
 
-async function restoreNamedRoadNetwork() {
-  if (state.saveImport?.roadNetwork || !state.saveImport || !state.saveSlotName
+async function restoreNamedMapLayers() {
+  if ((!state.saveImport || (state.saveImport.roadNetwork && state.saveImport.terrainWater))
+    || !state.saveSlotName
     || !namedSnapshotNames.includes(state.saveSlotName)) return;
   const saved = await snapshotStore.load(state.saveSlotName);
   const candidate = saved?.saveImport;
-  if (!candidate?.roadNetwork || candidate.sourceName !== state.saveImport.sourceName) return;
+  if (!candidate || candidate.sourceName !== state.saveImport.sourceName) return;
   const currentPath = state.saveImport.header?.savePath;
   const candidatePath = candidate.header?.savePath;
   if (currentPath && candidatePath && currentPath !== candidatePath) return;
-  state.saveImport.roadNetwork = candidate.roadNetwork;
+  if (!state.saveImport.roadNetwork && candidate.roadNetwork) state.saveImport.roadNetwork = candidate.roadNetwork;
+  if (!state.saveImport.terrainWater && candidate.terrainWater) state.saveImport.terrainWater = candidate.terrainWater;
 }
 
 async function saveNamedState(name) {
@@ -4309,7 +4355,7 @@ if (!IS_BETA && state.tab === 'saveimport') state.tab = 'republic';
 state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.calcOpts || {}) };
 loadData().then(async () => {
   await initializeNamedSnapshots();
-  await restoreNamedRoadNetwork();
+  await restoreNamedMapLayers();
   await applyHash();
   if (!state.cities.length) state.cities.push(defaultCity());
   applyTuning(state.tuning);
