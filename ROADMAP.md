@@ -275,7 +275,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   residence and return to the full-republic view. Clicking or keyboard-activating an area
   center, or using Locate on map from the Republic area table, opens the first city-detail
   view by fitting that area's exact saved buildings
-  while retaining surrounding roads and water; the same control returns to the whole map.
+  while retaining surrounding roads and water. Its compact exact summary reports mapped
+  buildings and construction count; the same control returns to the whole map.
   Road geometry is read locally from
   `road.bin`; both optional map layers are omitted from share links and restored from the
   local named snapshot. Full terrain shading remains a future layer.

@@ -301,6 +301,8 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-legend i.selected { background: var(--accent); }
 .map-legend i.scope { background: var(--panel); border: 2px solid var(--accent2); }
 .map-legend i.outlier { background: var(--neg); }
+.map-scope-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 8px 0; padding: 8px 10px; border: 1px solid var(--border); border-radius: 7px; background: var(--panel2); }
+.map-scope-summary strong { color: var(--accent2); }
 .planner-main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, 290px); align-items: start; gap: 12px; }
 .planner-main .totalsbox { position: sticky; top: 10px; margin: 0; }
 .planner-table { min-width: 0; }

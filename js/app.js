@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=79';
+import { STRINGS } from './i18n.js?v=80';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -2792,6 +2792,14 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
   const mapHintKey = model.water
     ? (model.roads.length ? 'schematicMapRoadWaterHint' : 'schematicMapWaterHint')
     : (model.roads.length ? 'schematicMapRoadHint' : 'schematicMapHint');
+  const focusedScope = scopeViewBox ? model.scopes.find(scope => scope.id === mapFocusScopeId) : null;
+  const scopeUnderConstruction = scopeBuildings.filter(building =>
+    (building.constructionProgress ?? 1) < 1).length;
+  const scopeSummary = focusedScope ? el('div', { class: 'map-scope-summary' },
+    el('strong', {}, focusedScope.name),
+    el('span', {}, `${t('mappedBuildings')}: ${fmt(scopeBuildings.length, 0)}`),
+    el('span', {}, `${t('underConstruction')}: ${fmt(scopeUnderConstruction, 0)}`),
+    el('span', { class: 'evidence-badge exact' }, t('exact'))) : null;
   return el('details', {
     class: 'secondary-section map-section',
     ...(focusedBuilding || scopeViewBox ? { open: '' } : {}),
@@ -2814,6 +2822,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
         document.querySelector('details.map-section')?.setAttribute('open', '');
       },
     }, t('showWholeRepublic')) : null,
+    scopeSummary,
     svg);
 }
 
