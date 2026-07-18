@@ -132,6 +132,7 @@ export function parseHeader(buffer) {
     settings: {
       seasonsEnabled: c.view.getInt32(0x1c0, true) !== 0,
       globalEventsLevel: c.view.getInt32(0x1c4, true),
+      pollutionEnabled: c.view.getUint32(0x1cc, true) !== 0,
       crimeJusticeEnabled: c.view.getUint32(0x1e8, true) !== 0,
       waterManagementEnabled: c.view.getUint32(0x1ec, true) !== 0,
       trafficSimulationEnabled: c.view.getUint32(0x1f0, true) !== 0,
