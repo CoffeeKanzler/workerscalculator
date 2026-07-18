@@ -293,12 +293,14 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .republic-map .map-scopes circle { fill: var(--panel); stroke: var(--accent2); stroke-width: 2; cursor: pointer; vector-effect: non-scaling-stroke; }
 .republic-map .map-outliers circle { fill: var(--neg); stroke: var(--panel); stroke-width: 1.8; vector-effect: non-scaling-stroke; }
 .republic-map circle.focused { fill: var(--neg); stroke: #ffd54a; stroke-width: 3.5; vector-effect: non-scaling-stroke; }
+.republic-map circle.under-construction { stroke: var(--accent2); stroke-width: 2; stroke-dasharray: 3 2; vector-effect: non-scaling-stroke; }
 .map-legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 8px; color: var(--muted); font-size: 12px; }
 .map-legend span { display: inline-flex; align-items: center; gap: 5px; }
 .map-legend i { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }
 .map-legend i.road { width: 14px; height: 2px; border-radius: 0; background: var(--muted); }
 .map-legend i.water { width: 14px; height: 7px; border-radius: 2px; background: rgba(44, 133, 190, .7); }
 .map-legend i.selected { background: var(--accent); }
+.map-legend i.construction { background: transparent; border: 2px dashed var(--accent2); }
 .map-legend i.scope { background: var(--panel); border: 2px solid var(--accent2); }
 .map-legend i.outlier { background: var(--neg); }
 .map-scope-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 8px 0; padding: 8px 10px; border: 1px solid var(--border); border-radius: 7px; background: var(--panel2); }

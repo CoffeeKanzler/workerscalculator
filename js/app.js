@@ -2749,16 +2749,22 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
   for (const building of model.buildings) {
     const selected = building.scopeId === state.republicScope;
     const outlier = building.criminalityOutlier;
+    const underConstruction = (building.constructionProgress ?? 1) < 1;
     const circle = node('circle', {
       cx: building.mapX.toFixed(2), cy: building.mapY.toFixed(2),
       r: (building.focused ? 7.5 : outlier ? 5.5 : selected ? 2.4 : 1.35) * mapPointScale,
-      ...(building.focused ? { class: 'focused' } : {}),
+      ...((building.focused || underConstruction) ? {
+        class: [building.focused ? 'focused' : '', underConstruction ? 'under-construction' : '']
+          .filter(Boolean).join(' '),
+      } : {}),
     });
     const title = node('title');
-    title.textContent = outlier
+    const buildingTitle = outlier
       ? `${t('citizen')} #${outlier.citizenIndex} · ${fmt(outlier.criminality * 100, 2)} % · `
         + `${building.name || building.type || t('building')} #${building.index} · ${scopeNames.get(building.scopeId) ?? t('unassigned')}`
       : `${building.name || building.type || t('building')} #${building.index} · ${scopeNames.get(building.scopeId) ?? t('unassigned')}`;
+    title.textContent = buildingTitle + (underConstruction
+      ? ` · ${t('underConstruction')} ${fmt(building.constructionProgress * 100, 0)} %` : '');
     circle.append(title);
     (outlier ? outlierLayer : selected ? selectedLayer : normalLayer).append(circle);
   }
@@ -2795,6 +2801,8 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
   const focusedScope = scopeViewBox ? model.scopes.find(scope => scope.id === mapFocusScopeId) : null;
   const scopeUnderConstruction = scopeBuildings.filter(building =>
     (building.constructionProgress ?? 1) < 1).length;
+  const hasUnderConstruction = model.buildings.some(building =>
+    (building.constructionProgress ?? 1) < 1);
   const scopeSummary = focusedScope ? el('div', { class: 'map-scope-summary' },
     el('strong', {}, focusedScope.name),
     el('span', {}, `${t('mappedBuildings')}: ${fmt(scopeBuildings.length, 0)}`),
@@ -2812,6 +2820,8 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
       el('span', {}, el('i', { class: 'building' }), t('buildings')),
       Number.isInteger(state.republicScope)
         ? el('span', {}, el('i', { class: 'selected' }), t('selectedAreaBuildings')) : null,
+      hasUnderConstruction
+        ? el('span', {}, el('i', { class: 'construction' }), t('underConstruction')) : null,
       el('span', {}, el('i', { class: 'scope' }), t('areaCenters')),
       el('span', {}, el('i', { class: 'outlier' }), t('highCriminalityResidents'))),
     focusedBuilding || scopeViewBox ? el('button', {
