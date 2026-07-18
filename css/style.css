@@ -190,6 +190,11 @@ button.danger:hover { border-color: var(--neg); }
 
 .history { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
 .history h3 { margin: 0 0 6px; color: var(--accent2); }
+.history-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+.history-primary { font-weight: 600; }
+.history-chip { padding: 3px 7px; font-size: 12px; }
+.history-compare-select { max-width: 180px; }
+.history-log-toggle { margin-left: auto; white-space: nowrap; color: var(--muted); font-size: 12px; }
 .chart { width: 100%; height: auto; background: var(--panel2); border-radius: 6px; }
 .chart .axislabel { fill: var(--muted); font-size: 10px; }
 .chart .chart-point { opacity: .25; stroke: var(--panel2); stroke-width: 1.2; cursor: crosshair; vector-effect: non-scaling-stroke; }

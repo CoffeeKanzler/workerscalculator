@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=71';
+import { STRINGS } from './i18n.js?v=72';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=28';
@@ -59,6 +59,8 @@ function createInitialState() {
     statsName: null,
     overrides: {},               // {"sellRUB.steel": 123}
     historyKey: 'steel',
+    historyCompareKeys: [],
+    historyLogScale: false,
     plan: {
       settings: { productivity: 1, timeUnit: 'day', seasons: true, calendarFlow: 1, fertilizer: 1, currency: 'RUB' },
       fields: { small: 0, medium: 0, large: 0, hectares: null },
@@ -778,7 +780,11 @@ function renderPrices() {
       th('ratioRUB', t('conversionRatioToRUB'), t('conversionRatioToRUBHint')),
       th('ratioUSD', t('conversionRatioToUSD'), t('conversionRatioToUSDHint')))),
     el('tbody', {}, withRatio.map(({ r, ratioRUB, ratioUSD }) => el('tr', {},
-      el('td', { class: 'clickable', onclick: () => { state.historyKey = r.key; update(); } }, rname(r)),
+      el('td', { class: 'clickable', onclick: () => {
+        state.historyKey = r.key;
+        state.historyCompareKeys = (state.historyCompareKeys ?? []).filter(key => key !== r.key);
+        update();
+      } }, rname(r)),
       el('td', {}, priceCell('sellRUB', r.key, prices)),
       el('td', {}, priceCell('purchaseRUB', r.key, prices)),
       el('td', {}, priceCell('sellUSD', r.key, prices)),
@@ -814,37 +820,71 @@ function renderHistory() {
     box.append(el('p', { class: 'hint' }, t('noHistory')));
     return box;
   }
-  const r = DATA.resources.find(x => x.key === state.historyKey) || DATA.resources[0];
-  box.append(el('p', {}, rname(r)));
+  const primary = DATA.resources.find(resource => resource.key === state.historyKey) ?? DATA.resources[0];
+  state.historyKey = primary.key;
+  if (!Array.isArray(state.historyCompareKeys)) state.historyCompareKeys = [];
+  state.historyCompareKeys = [...new Set(state.historyCompareKeys)]
+    .filter(key => key !== primary.key && DATA.resources.some(resource => resource.key === key))
+    .slice(0, 2);
+  const selectedResources = [primary, ...state.historyCompareKeys.map(key =>
+    DATA.resources.find(resource => resource.key === key)).filter(Boolean)];
+  const addOptions = DATA.resources.filter(resource =>
+    !selectedResources.some(selected => selected.key === resource.key));
+  const controls = el('div', { class: 'history-controls' },
+    el('span', { class: 'history-primary' }, rname(primary)),
+    ...selectedResources.slice(1).map(resource => el('button', {
+      class: 'history-chip',
+      title: t('removeComparison'),
+      onclick: () => {
+        state.historyCompareKeys = state.historyCompareKeys.filter(key => key !== resource.key);
+        update();
+      },
+    }, `${rname(resource)} ×`)),
+    selectedResources.length < 3 && addOptions.length ? selectInput(
+      [['', t('compareResource')], ...addOptions.map(resource => [resource.key, rname(resource)])],
+      '', key => {
+        if (key) state.historyCompareKeys = [...state.historyCompareKeys, key].slice(0, 2);
+      }, { class: 'history-compare-select' }) : null,
+    el('label', { class: 'history-log-toggle' }, el('input', {
+      type: 'checkbox', checked: !!state.historyLogScale,
+      onchange: event => { state.historyLogScale = event.target.checked; update(); },
+    }), ' ', t('logScale')));
+  box.append(controls);
   // Only plot the currently selected currency's sell/buy - RUB and USD
   // values live on incomparable scales, so mixing all four on one shared
   // axis produced a meaningless min/max and a mislabeled (single-currency)
   // axis.
-  const definitions = state.currency === 'USD'
-    ? [['sellUSD', '#27ae60'], ['purchaseUSD', '#2980b9']]
-    : [['sellRUB', '#c0392b'], ['purchaseRUB', '#e67e22']];
+  const tables = state.currency === 'USD' ? ['sellUSD', 'purchaseUSD'] : ['sellRUB', 'purchaseRUB'];
+  const colors = [
+    ['#c0392b', '#e67e22'], ['#2980b9', '#3498db'], ['#8e44ad', '#9b59b6'],
+  ];
   const recs = state.statsRecords;
   const labelFor = tab => t(tab === 'sellRUB' ? 'sellRUB'
     : tab === 'purchaseRUB' ? 'buyRUB' : tab === 'sellUSD' ? 'sellUSD' : 'buyUSD');
-  const series = definitions.map(([tab, color]) => ({
-    tab, color, label: labelFor(tab),
-    points: seriesFromRecords(recs, record => record[tab]?.[r.key]),
-  })).filter(item => item.points.length);
+  const series = selectedResources.flatMap((resource, resourceIndex) => tables.map((tab, tableIndex) => ({
+    tab, color: colors[resourceIndex][tableIndex],
+    label: `${rname(resource)} · ${labelFor(tab)}`,
+    points: seriesFromRecords(recs, record => record[tab]?.[resource.key])
+      .filter(point => !state.historyLogScale || point.y > 0),
+  }))).filter(item => item.points.length);
   const all = series.flatMap(item => item.points);
   if (!all.length) { box.append(el('p', {}, '—')); return box; }
   const W = 460, H = 220, P = 34;
-  const min = Math.min(0, ...all.map(point => point.y));
+  const min = state.historyLogScale ? Math.min(...all.map(point => point.y))
+    : Math.min(0, ...all.map(point => point.y));
   const max = Math.max(...all.map(point => point.y));
   const minX = Math.min(...all.map(point => point.x));
   const maxX = Math.max(...all.map(point => point.x));
   const x = value => P + (W - 2 * P) * ((value - minX) / ((maxX - minX) || 1));
-  const y = v => H - P - (H - 2 * P) * ((v - min) / ((max - min) || 1));
+  const yValue = value => state.historyLogScale ? Math.log10(value) : value;
+  const minY = yValue(min), maxY = yValue(max);
+  const y = value => H - P - (H - 2 * P) * ((yValue(value) - minY) / ((maxY - minY) || 1));
   const svgNS = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(svgNS, 'svg');
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   svg.setAttribute('class', 'chart');
   svg.setAttribute('role', 'img');
-  svg.setAttribute('aria-label', `${t('history')}: ${rname(r)}`);
+  svg.setAttribute('aria-label', `${t('history')}: ${selectedResources.map(rname).join(', ')}`);
   for (const item of series) {
     const sampled = downsampleMinMax(item.points, 160);
     const pl = document.createElementNS(svgNS, 'polyline');
