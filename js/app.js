@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=53';
+import { STRINGS } from './i18n.js?v=54';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, vehicleProductionRecipe, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=26';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -13,7 +13,7 @@ import {
   inferObservedHousing, latestProductivity, matchObservedBuilding, productionBufferStatus,
   productionBufferAlerts, summarizeDistributionOffices, summarizeVehicleLines,
   summarizeCriminalityOutliers,
-} from './save_model.js?v=8';
+} from './save_model.js?v=9';
 import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
@@ -1694,7 +1694,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
     cities,
     productionRows,
     metadata: {
-      version: 3, sourceName, importedAt: new Date().toISOString(), header, sourceStatus,
+      version: 4, sourceName, importedAt: new Date().toISOString(), header, sourceStatus,
       mapClimate,
       settlementCount: occupiedSettlements.length, sourceSettlementCount: settlements.length,
       emptySettlementCount: settlements.length - occupiedSettlements.length, buildingCount: buildings.length,
@@ -1753,7 +1753,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=11', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=12', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -2874,6 +2874,29 @@ function renderRepublic() {
   const lineSummary = lineOperations?.summary;
   const distributionSummary = distributionOperations?.summary;
   const scheduleKeys = block => [...new Set((block?.entries ?? []).map(entry => entry.key || '∅'))].join(', ') || '—';
+  const distributionResourceLabel = key => {
+    const resource = DATA.resources.find(item => item.key === key);
+    return resource ? rname(resource) : key;
+  };
+  const distributionThresholdLine = (assignment, state) => {
+    const target = assignment.target?.name || assignment.target?.type
+      || `#${assignment.targetBuildingIndex}`;
+    const action = t(state.direction === 'load' ? 'loadAction' : 'unloadAction');
+    if (state.status === 'unrestricted') return `${target} · ${action}: ${t('noExplicitResource')}`;
+    const resource = distributionResourceLabel(state.resource);
+    if (state.status !== 'resolved') {
+      const key = {
+        'resource-not-directly-stored': 'resourceNotDirectlyStored',
+        'ambiguous-storage-role': 'ambiguousStorageRole',
+        'no-finite-capacity': 'noFiniteCapacity',
+        'invalid-target': 'invalidTarget',
+      }[state.status] ?? 'unresolvedThresholds';
+      return `${target} · ${action} ${resource}: ${t(key)}`;
+    }
+    const operator = state.direction === 'load' ? '>' : '<';
+    return `${target} · ${action} ${resource}: ${fmt(state.ratio * 100, 1)} % ${operator} `
+      + `${fmt(state.threshold * 100, 1)} % · ${t(state.conditionMet ? 'conditionMet' : 'conditionNotMet')}`;
+  };
   const logisticsOperations = lineOperations || distributionSummary?.officeCount ? el('section', {
     class: 'institution-overview',
   },
@@ -2898,7 +2921,15 @@ function renderRepublic() {
         kv(t('officesWithoutTargets'), fmt(distributionSummary.officesWithoutTargets, 0),
           distributionSummary.officesWithoutTargets ? 'warn' : ''),
         kv(t('officesWithoutAssociatedVehicles'), fmt(distributionSummary.officesWithoutAssociatedVehicles, 0),
-          distributionSummary.officesWithoutAssociatedVehicles ? 'warn' : '')) : null),
+          distributionSummary.officesWithoutAssociatedVehicles ? 'warn' : ''),
+        kv(t('configuredWithoutFleet'), fmt(distributionSummary.configuredWithoutFleetOfficeCount ?? 0, 0),
+          distributionSummary.configuredWithoutFleetOfficeCount ? 'warn' : ''),
+        kv(t('inactiveAssignments'), fmt(distributionSummary.neitherActionCount ?? 0, 0),
+          distributionSummary.neitherActionCount ? 'warn' : ''),
+        kv(t('pickupConditionsMet'), fmt(distributionSummary.pickupConditionMetCount ?? 0, 0)),
+        kv(t('deliveryConditionsMet'), fmt(distributionSummary.deliveryConditionMetCount ?? 0, 0)),
+        kv(t('unresolvedThresholds'), fmt(distributionSummary.unresolvedThresholdCount ?? 0, 0),
+          distributionSummary.unresolvedThresholdCount ? 'warn' : '')) : null),
     lineOperations ? el('details', { class: 'secondary-section' },
       el('summary', {}, `${t('vehicleLineDetails')} (${fmt(lineSummary.lineCount, 0)})`),
       el('p', { class: 'hint warn' }, t('observedIntervalCaveat')),
@@ -2922,20 +2953,50 @@ function renderRepublic() {
     distributionSummary?.officeCount ? el('details', { class: 'secondary-section' },
       el('summary', {}, `${t('distributionOfficeDetails')} (${fmt(distributionSummary.officeCount, 0)})`),
       el('p', { class: 'hint warn' }, t('distributionCoverageCaveat')),
+      el('p', { class: 'hint' }, t('distributionThresholdHint')),
       el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
         el('thead', {}, el('tr', {},
           el('th', {}, t('distributionOffice')), el('th', {}, t('kind')),
           el('th', {}, t('configuredTargets')), el('th', {}, t('associatedVehicles')),
-          el('th', {}, t('configuredActions')))),
+          el('th', {}, t('configuredActions')), el('th', {}, t('thresholdDiagnostics')))),
         el('tbody', {}, ...distributionOperations.offices.map(office => {
           const loads = office.assignments.filter(assignment => assignment.load.enabled).length;
           const unloads = office.assignments.filter(assignment => assignment.unload.enabled).length;
+          const thresholdStates = office.assignments.flatMap(assignment =>
+            (assignment.thresholdStates ?? []).map(state => ({ assignment, state })));
+          const operational = office.operational ?? {
+            inactiveAssignmentCount: office.assignments.filter(assignment =>
+              !assignment.load.enabled && !assignment.unload.enabled).length,
+            pickupConditionMetCount: 0, deliveryConditionMetCount: 0, unresolvedThresholdCount: 0,
+          };
+          const stateSummary = [
+            `${t('pickupConditionsMet')}: ${fmt(operational.pickupConditionMetCount, 0)}`,
+            `${t('deliveryConditionsMet')}: ${fmt(operational.deliveryConditionMetCount, 0)}`,
+            `${t('unresolvedThresholds')}: ${fmt(operational.unresolvedThresholdCount, 0)}`,
+          ].join(' · ');
           return el('tr', {},
-            el('td', {}, office.name || office.type || `#${office.buildingIndex}`),
+            el('td', {}, office.name || office.type || `#${office.buildingIndex}`,
+              office.configuredWithoutFleet
+                ? el('div', { class: 'subline warn' }, t('configuredWithoutFleet')) : null),
             el('td', {}, t(office.kind === 'rail' ? 'fleetRail' : 'fleetRoad')),
             el('td', { class: `r ${office.assignments.length ? '' : 'warn'}` }, fmt(office.assignments.length, 0)),
             el('td', { class: `r ${office.associatedVehicles.length ? '' : 'warn'}` }, fmt(office.associatedVehicles.length, 0)),
-            el('td', {}, `${t('loadAction')}: ${fmt(loads, 0)} · ${t('unloadAction')}: ${fmt(unloads, 0)}`));
+            el('td', {}, `${t('loadAction')}: ${fmt(loads, 0)} · ${t('unloadAction')}: ${fmt(unloads, 0)}`,
+              operational.inactiveAssignmentCount
+                ? el('div', { class: 'subline warn' },
+                  `${t('inactiveAssignments')}: ${fmt(operational.inactiveAssignmentCount, 0)}`) : null),
+            el('td', {}, thresholdStates.length || operational.inactiveAssignmentCount
+              ? el('details', {},
+                el('summary', {}, stateSummary),
+                el('ul', {},
+                  ...thresholdStates.map(({ assignment, state }) => el('li', {
+                    class: state.status !== 'resolved'
+                      || (state.conditionMet && office.configuredWithoutFleet) ? 'warn' : '',
+                  }, distributionThresholdLine(assignment, state))),
+                  ...office.assignments.filter(assignment => assignment.inactive
+                    || (!assignment.load.enabled && !assignment.unload.enabled)).map(assignment =>
+                    el('li', { class: 'warn' }, `${assignment.target?.name || assignment.target?.type
+                      || `#${assignment.targetBuildingIndex}`} · ${t('inactiveAssignments')}`)))) : '—'));
         }))))) : null) : null;
 
   const historyRecords = filterRange(state.statsRecords ?? [], state.republicRange);

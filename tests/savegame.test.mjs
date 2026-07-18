@@ -248,7 +248,8 @@ test('live building preserves exact first-pass storage inventories', () => {
     { resource: 'oil', amount: 21.581411361694336, secondary: 0 },
   ];
   const firstPassSize = 0x20 + rows.length * 0x48;
-  const buffer = new ArrayBuffer(4 + 0x6d8 + firstPassSize + 0x10 + 0x80);
+  const secondPassSize = 0x10 + 0x48;
+  const buffer = new ArrayBuffer(4 + 0x6d8 + firstPassSize + secondPassSize + 0x80);
   const view = new DataView(buffer);
   const bytes = new Uint8Array(buffer);
   const start = 4;
@@ -268,11 +269,17 @@ test('live building preserves exact first-pass storage inventories', () => {
     view.setFloat32(offset + 0x40, row.amount, true);
     view.setFloat32(offset + 0x44, row.secondary, true);
   });
+  const controls = storage + firstPassSize;
+  view.setUint32(controls, 1, true);
+  bytes.set(new TextEncoder().encode('plants\0'), controls + 0x10);
+  view.setFloat32(controls + 0x50, 0.25, true);
+  view.setFloat32(controls + 0x54, 0, true);
 
   const [building] = parseBuildingsGame(buffer);
   assert.deepEqual(building.storages, [{
     storageIndex: 0, inputFlag: 1, outputFlag: 0, selector: -1,
     capacity: 20, mode: 3, resources: rows,
+    controls: [{ resource: 'plants', amount: 0.25, secondary: 0 }],
   }]);
 });
 

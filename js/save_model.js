@@ -149,6 +149,67 @@ function compactResolvedVehicle(id, vehicle) {
   };
 }
 
+export function evaluateDistributionResourceRule(target, rule, direction, resource) {
+  if (!target) return { status: 'invalid-target', resource };
+  const candidates = [];
+  for (const storage of target.storages ?? []) {
+    const entry = storage.resources?.find(item => item.resource === resource);
+    if (!entry) continue;
+    candidates.push({ storage, entry, controls: storage.controls ?? [] });
+  }
+  if (!candidates.length) return { status: 'resource-not-directly-stored', resource };
+
+  let selected = candidates;
+  if (selected.every(candidate => candidate.storage.mode === 17)) {
+    const explicit = selected.filter(candidate => candidate.controls.some(item =>
+      item.resource === resource && item.amount > 0));
+    if (explicit.length) selected = explicit;
+    else {
+      const unspecialized = selected.filter(candidate =>
+        !candidate.controls.some(item => item.amount > 0));
+      if (unspecialized.length) selected = unspecialized;
+    }
+  }
+
+  const roles = new Map();
+  for (const candidate of selected) {
+    const key = `${candidate.storage.selector}/${candidate.storage.mode}`;
+    const group = roles.get(key) ?? [];
+    group.push(candidate);
+    roles.set(key, group);
+  }
+  if (roles.size !== 1) {
+    return { status: 'ambiguous-storage-role', resource, roles: [...roles.keys()] };
+  }
+
+  let amount = 0;
+  let capacity = 0;
+  const storageIndexes = [];
+  for (const candidate of [...roles.values()][0]) {
+    const { storage, controls } = candidate;
+    amount += candidate.entry.amount;
+    storageIndexes.push(storage.storageIndex);
+    const allocationApplies = storage.selector === -1 && storage.mode <= 6;
+    const positiveTotal = allocationApplies ? controls.reduce((sum, item) =>
+      sum + (Number.isFinite(item.amount) && item.amount > 0 ? item.amount : 0), 0) : 0;
+    if (allocationApplies && positiveTotal > 0) {
+      const resourceShare = controls.reduce((sum, item) =>
+        sum + (item.resource === resource && Number.isFinite(item.amount) && item.amount > 0
+          ? item.amount : 0), 0);
+      capacity += storage.capacity * resourceShare;
+    } else capacity += storage.capacity;
+  }
+  if (!Number.isFinite(amount) || !Number.isFinite(capacity) || capacity <= 0) {
+    return { status: 'no-finite-capacity', resource, amount, capacity, storageIndexes };
+  }
+  const ratio = amount / capacity;
+  return {
+    status: 'resolved', resource, amount, capacity, ratio, threshold: rule.threshold,
+    conditionMet: direction === 'load' ? ratio > rule.threshold : ratio < rule.threshold,
+    storageIndexes,
+  };
+}
+
 export function summarizeDistributionOffices(buildings, vehicles = []) {
   const buildingMap = new Map((buildings ?? []).map(building => [building.index, building]));
   const vehicleMap = savedVehicleMap(vehicles);
@@ -163,6 +224,22 @@ export function summarizeDistributionOffices(buildings, vehicles = []) {
     const assignments = (building.distributionAssignments ?? []).map(assignment => {
       const targetBuilding = buildingMap.get(assignment.targetBuildingIndex);
       if (!targetBuilding) invalidTargetReferenceCount += 1;
+      const thresholdStates = [];
+      for (const direction of ['load', 'unload']) {
+        const rule = assignment[direction];
+        if (!rule.enabled) continue;
+        const resources = [...new Set(rule.resources ?? [])];
+        if (!resources.length) {
+          thresholdStates.push({ direction, status: 'unrestricted', threshold: rule.threshold });
+          continue;
+        }
+        for (const resource of resources) {
+          thresholdStates.push({
+            direction,
+            ...evaluateDistributionResourceRule(targetBuilding, rule, direction, resource),
+          });
+        }
+      }
       return {
         targetBuildingIndex: assignment.targetBuildingIndex,
         target: targetBuilding ? {
@@ -171,15 +248,33 @@ export function summarizeDistributionOffices(buildings, vehicles = []) {
         } : null,
         load: assignment.load,
         unload: assignment.unload,
+        inactive: !assignment.load.enabled && !assignment.unload.enabled,
+        thresholdStates,
       };
     });
+    const thresholdStates = assignments.flatMap(assignment => assignment.thresholdStates);
     return {
       buildingIndex: building.index, name: building.name, type: building.type,
       scopeId: building.scopeId ?? null, kind: building.distributionKind,
       associatedVehicleIds: building.associatedVehicleIds ?? [], associatedVehicles, assignments,
+      configuredWithoutFleet: assignments.length > 0 && !(building.associatedVehicleIds ?? []).length,
+      operational: {
+        inactiveAssignmentCount: assignments.filter(assignment => assignment.inactive).length,
+        pickupConditionMetCount: thresholdStates.filter(state =>
+          state.direction === 'load' && state.status === 'resolved' && state.conditionMet).length,
+        deliveryConditionMetCount: thresholdStates.filter(state =>
+          state.direction === 'unload' && state.status === 'resolved' && state.conditionMet).length,
+        unresolvedThresholdCount: thresholdStates.filter(state =>
+          !['resolved', 'unrestricted'].includes(state.status)).length,
+        unrestrictedRuleCount: thresholdStates.filter(state => state.status === 'unrestricted').length,
+      },
     };
   });
   const assignments = offices.flatMap(office => office.assignments);
+  const thresholdStates = assignments.flatMap(assignment => assignment.thresholdStates);
+  const resolvedThresholds = thresholdStates.filter(state => state.status === 'resolved');
+  const unresolvedThresholds = thresholdStates.filter(state =>
+    !['resolved', 'unrestricted'].includes(state.status));
   return {
     offices,
     summary: {
@@ -191,8 +286,22 @@ export function summarizeDistributionOffices(buildings, vehicles = []) {
         sum + office.associatedVehicleIds.length, 0),
       officesWithoutTargets: offices.filter(office => !office.assignments.length).length,
       officesWithoutAssociatedVehicles: offices.filter(office => !office.associatedVehicleIds.length).length,
+      configuredWithoutFleetOfficeCount: offices.filter(office => office.configuredWithoutFleet).length,
       neitherActionCount: assignments.filter(assignment =>
         !assignment.load.enabled && !assignment.unload.enabled).length,
+      unrestrictedRuleCount: thresholdStates.filter(state => state.status === 'unrestricted').length,
+      resolvedThresholdCount: resolvedThresholds.length,
+      conditionMetCount: resolvedThresholds.filter(state => state.conditionMet).length,
+      conditionNotMetCount: resolvedThresholds.filter(state => !state.conditionMet).length,
+      pickupConditionMetCount: resolvedThresholds.filter(state =>
+        state.direction === 'load' && state.conditionMet).length,
+      deliveryConditionMetCount: resolvedThresholds.filter(state =>
+        state.direction === 'unload' && state.conditionMet).length,
+      unresolvedThresholdCount: unresolvedThresholds.length,
+      resourceNotDirectlyStoredCount: unresolvedThresholds.filter(state =>
+        state.status === 'resource-not-directly-stored').length,
+      ambiguousStorageRoleCount: unresolvedThresholds.filter(state =>
+        state.status === 'ambiguous-storage-role').length,
       invalidTargetReferenceCount,
       invalidVehicleReferenceCount,
     },

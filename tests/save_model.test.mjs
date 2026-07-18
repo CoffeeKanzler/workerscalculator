@@ -4,6 +4,7 @@ import {
   citizenProductivity, aggregateCitizensByScope, compactObservedBuildings,
   groupObservedProduction, latestProductivity, productionBufferStatus, productionBufferAlerts,
   inferObservedHousing, summarizeDistributionOffices, summarizeVehicleLines,
+  evaluateDistributionResourceRule,
   summarizeCriminalityOutliers,
 } from '../js/save_model.js';
 
@@ -236,11 +237,92 @@ test('distribution office summary resolves exact targets and associated fleets w
     officeCount: 2, roadCount: 1, railCount: 1, targetCount: 2,
     associatedVehicleReferenceCount: 1, officesWithoutTargets: 1,
     officesWithoutAssociatedVehicles: 1, neitherActionCount: 1,
+    configuredWithoutFleetOfficeCount: 0, unrestrictedRuleCount: 0,
+    resolvedThresholdCount: 0, conditionMetCount: 0, conditionNotMetCount: 0,
+    pickupConditionMetCount: 0, deliveryConditionMetCount: 0,
+    unresolvedThresholdCount: 1, resourceNotDirectlyStoredCount: 1,
+    ambiguousStorageRoleCount: 0,
     invalidTargetReferenceCount: 1, invalidVehicleReferenceCount: 0,
   });
   assert.equal(result.offices[0].associatedVehicles[0].name, 'Truck T');
   assert.equal(result.offices[0].assignments[0].target.name, 'Sawmill');
   assert.equal(result.offices[0].assignments[1].target, null);
+});
+
+test('distribution diagnostics use allocation-aware capacity and literal direction thresholds', () => {
+  const target = {
+    index: 1, type: 'warehouse', name: 'Allocated store', storages: [{
+      storageIndex: 0, inputFlag: 1, outputFlag: 0, selector: -1, mode: 1, capacity: 4300,
+      resources: [
+        { resource: 'boards', amount: 3010 },
+        { resource: 'wood', amount: 655.5507202148438 },
+      ],
+      controls: [
+        { resource: 'wood', amount: 0.30000001192092896 },
+        { resource: 'boards', amount: 0.699999988079071 },
+      ],
+    }],
+  };
+  const office = {
+    index: 0, type: 'office', name: 'No trucks', distributionKind: 'road',
+    associatedVehicleIds: [],
+    distributionAssignments: [
+      { targetBuildingIndex: 1,
+        load: { enabled: true, threshold: 0.10000000149011612, resources: ['boards'] },
+        unload: { enabled: true, threshold: 0.30000001192092896, resources: ['wood'] } },
+      { targetBuildingIndex: 1,
+        load: { enabled: false, threshold: 0, resources: [] },
+        unload: { enabled: false, threshold: 1, resources: [] } },
+      { targetBuildingIndex: 1,
+        load: { enabled: true, threshold: 0, resources: [] },
+        unload: { enabled: false, threshold: 1, resources: [] } },
+    ],
+  };
+  const result = summarizeDistributionOffices([office, target]);
+  const [boards, wood] = result.offices[0].assignments[0].thresholdStates;
+  assert.equal(boards.status, 'resolved');
+  assert.equal(boards.capacity, 4300 * 0.699999988079071);
+  assert.equal(boards.conditionMet, true);
+  assert.equal(wood.status, 'resolved');
+  assert.equal(wood.capacity, 4300 * 0.30000001192092896);
+  assert.equal(wood.conditionMet, false);
+  assert.equal(result.offices[0].configuredWithoutFleet, true);
+  assert.deepEqual(result.summary, {
+    officeCount: 1, roadCount: 1, railCount: 0, targetCount: 3,
+    associatedVehicleReferenceCount: 0, officesWithoutTargets: 0,
+    officesWithoutAssociatedVehicles: 1, configuredWithoutFleetOfficeCount: 1,
+    neitherActionCount: 1, unrestrictedRuleCount: 1,
+    resolvedThresholdCount: 2, conditionMetCount: 1, conditionNotMetCount: 1,
+    pickupConditionMetCount: 1, deliveryConditionMetCount: 0,
+    unresolvedThresholdCount: 0, resourceNotDirectlyStoredCount: 0,
+    ambiguousStorageRoleCount: 0, invalidTargetReferenceCount: 0,
+    invalidVehicleReferenceCount: 0,
+  });
+});
+
+test('distribution resource resolution ignores production direction flags and refuses unsafe aliases or role merges', () => {
+  const inputStore = { storages: [{
+    storageIndex: 0, inputFlag: 1, outputFlag: 0, selector: -1, mode: 3, capacity: 80,
+    resources: [{ resource: 'plastics', amount: 20 }], controls: [],
+  }] };
+  const load = evaluateDistributionResourceRule(
+    inputStore, { threshold: 0.1 }, 'load', 'plastics');
+  assert.equal(load.status, 'resolved');
+  assert.equal(load.conditionMet, true);
+
+  assert.equal(evaluateDistributionResourceRule(
+    inputStore, { threshold: 0.1 }, 'load', 'waste_mixed').status,
+  'resource-not-directly-stored');
+
+  const conflictingRoles = { storages: [
+    { storageIndex: 0, selector: -1, mode: 17, capacity: 10,
+      resources: [{ resource: 'waste_steel', amount: 1 }], controls: [] },
+    { storageIndex: 1, selector: 4, mode: 17, capacity: 10,
+      resources: [{ resource: 'waste_steel', amount: 1 }], controls: [] },
+  ] };
+  assert.equal(evaluateDistributionResourceRule(
+    conflictingRoles, { threshold: 0.5 }, 'unload', 'waste_steel').status,
+  'ambiguous-storage-role');
 });
 
 test('vehicle line summary resolves references and labels only complete raw observed cycles', () => {

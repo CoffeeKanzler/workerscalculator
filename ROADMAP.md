@@ -227,8 +227,13 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   Complete observed cycles are shown only when every saved interval is positive; the raw game-time
   values are explicitly not labeled as seconds or pure travel time. Exact saved runtime types also
   gate 36 road and 3 rail distribution offices in the supplied save, exposing 337 configured target
-  actions and 276 associated vehicle references. Cached network paths are excluded: assignments do
-  not claim current reachability, exclusive vehicle ownership, or delivery throughput.
+  actions and 276 associated vehicle references. Exact target inventories and storage-allocation
+  controls now evaluate 305 explicit resource thresholds: 41 pickup and 150 delivery conditions are
+  currently met, while 114 are not met. Another 155 unrestricted rules and 24 ambiguous or indirect
+  checks remain visibly unevaluated rather than guessed. Three configured offices have assignments
+  but no associated fleet; these are distinguished from empty offices. Cached network paths are
+  excluded: assignments do not claim current reachability, exclusive vehicle ownership, dispatch,
+  compatible vehicles, or delivery throughput.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
   catalog contains 1,843 packages with 3,307 building and 1,918 vehicle definitions as compact
@@ -246,8 +251,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   `$LIFESPAN` fact is present; vanilla/DLC models use verified category defaults. An earlier
   10%/20%/70% assumption was found to apply to container vehicles, not ships, and was never
   shipped as a ship recommendation.
-  - **Next high-value save modules:** current vehicle task/busy state, evidence-safe logistics
-  bottlenecks, and optional live follow of a save directory. Cosmetic map/network geometry stays out of scope until a
+  - **Next high-value save modules:** exact current route cursor/target facts, catalog-authoritative
+  train capacities, and optional live follow of a save directory. Cosmetic map/network geometry stays out of scope until a
   planner feature needs it.
 
 ### 4.2 Live-follow stats.ini

@@ -519,10 +519,21 @@ function readEbc70(c, context, storageIndex) {
   };
 }
 
-function skipEc470(c, context) {
+function readEc470(c, context) {
+  const start = c.offset;
   c.require(0x10, context);
-  const count = c.countAt(c.offset, `${context}.count`);
-  c.skip(0x10 + count * 0x48, context);
+  const count = c.countAt(start, `${context}.count`);
+  c.skip(0x10, `${context}.header`);
+  const entries = [];
+  for (let index = 0; index < count; index += 1) {
+    entries.push({
+      resource: c.asciiZStrict(c.offset, 0x40, `${context}.resource[${index}]`),
+      amount: c.view.getFloat32(c.offset + 0x40, true),
+      secondary: c.view.getFloat32(c.offset + 0x44, true),
+    });
+    c.skip(0x48, `${context}.resource[${index}]`);
+  }
+  return entries;
 }
 
 function skipEc730(c, context) {
@@ -634,7 +645,10 @@ export function parseBuildingsGame(buffer, { onProgress } = {}) {
     }
     const typePlusOne = record.savedTypePlusOne;
     if (typePlusOne === 0x20 || typePlusOne === 0x21) c.skip(n310 * 4, `building ${index}.310extra`);
-    for (let i = 0; i < n310; i += 1) skipEc470(c, `building ${index}.310b[${i}]`);
+    for (let i = 0; i < n310; i += 1) {
+      const controls = readEc470(c, `building ${index}.310b[${i}]`);
+      if (controls.length) record.storages[i].controls = controls;
+    }
     c.skip(c.view.getUint8(start + second(0x821)), `building ${index}.821`);
 
     c.skip(fixedCount(start, 0x304) * 0x3c, `building ${index}.304`);
