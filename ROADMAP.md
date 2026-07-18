@@ -182,7 +182,7 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   - **Fleet sources:** optional `vehicles.bin` and `usedveh.bin` now traverse writer-defined
   record boundaries in the import worker and require exact EOF. The supplied save validates
   at 1,294 owned records and 75 current used-market offers. Compact model, age, saved usage,
-  state, fuel, positive cargo and offer facts are retained in the named snapshot; vanilla
+  sale-adjustment state, fuel, positive cargo and offer facts are retained in the named snapshot; vanilla
   models resolve against current game-file data and numeric Workshop identities remain exact.
   Missing or unsupported optional files remain visibly unavailable instead of becoming zero.
   - **Map/game settings:** verified season state from `header.bin` and climate family from
@@ -239,7 +239,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   observed occupancy without inventing capacity. For packages Steam does not expose
   anonymously, users can optionally select their installed
   `steamapps/workshop/content/784150` folder; its `building.ini` facts are read locally
-  and never uploaded. Live vehicle task state and proven network reachability are not decoded yet.
+  and never uploaded. Exact route cursors and building relationships are available for a future
+  operational view, but no universal busy/idle state or proven network reachability is established.
   Model-defined hard attachments are never inferred from save consist children. Workshop vehicle
   lifespans are used only when their exact
   `$LIFESPAN` fact is present; vanilla/DLC models use verified category defaults. An earlier

@@ -325,8 +325,8 @@ export function parseVehicles(buffer, { onProgress } = {}) {
       model: c.asciiZStrict(start + 0x728, 0x80, `vehicle ${index} model`),
       ownershipField: c.view.getInt32(start + 0x10, true),
       fuel: c.view.getFloat32(start + 0x7b8, true),
-      state: c.view.getInt32(start + 0x7cc, true),
-      progress: c.view.getFloat32(start + 0x7d0, true),
+      // Exact sale/depreciation formula input; not a universal operating state.
+      saleAdjustmentState: c.view.getInt32(start + 0x7cc, true),
       accumulatedUsage: blobSize >= 8
         ? c.f64beAt(blobStart, `vehicle ${index} accumulated usage`) : null,
       age: blobSize >= 16 ? c.f64beAt(blobStart + 8, `vehicle ${index} age`) : null,

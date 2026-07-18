@@ -79,12 +79,15 @@ export function ownedVehicleDepreciationFactor({
 export function ownedVehicleExportMultiplier(record, {
   category, lifespan, saleAdjustmentLevel, depreciationLevel,
 }) {
+  // `state` is retained only as a legacy named-snapshot fallback. The field's
+  // sale-formula role is proven, but it is not a universal operating state.
+  const saleAdjustmentState = record?.saleAdjustmentState ?? record?.state;
   if (!Number.isInteger(category)
       || !Number.isFinite(saleAdjustmentLevel)
       || !Number.isFinite(depreciationLevel)
-      || !Number.isFinite(record?.state)
+      || !Number.isFinite(saleAdjustmentState)
       || !Number.isFinite(record?.ownershipField)) return null;
-  const stateAdjustment = record.state === 1 ? 1 : saleAdjustmentLevel < 2 ? 0.8 : 0.2;
+  const stateAdjustment = saleAdjustmentState === 1 ? 1 : saleAdjustmentLevel < 2 ? 0.8 : 0.2;
   const depreciationEnabled = depreciationLevel > 0
     && record.ownershipField < 1
     && !DEPRECIATION_EXCLUDED_CATEGORIES.has(category);
@@ -94,7 +97,7 @@ export function ownedVehicleExportMultiplier(record, {
       age: record.age,
       accumulatedUsage: record.accumulatedUsage,
       lifespan,
-      state: record.state,
+      state: saleAdjustmentState,
     });
     if (depreciation === null) return null;
   }

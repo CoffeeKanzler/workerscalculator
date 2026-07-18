@@ -65,7 +65,7 @@ test('owned export combines saved state adjustment and gated depreciation', () =
   const tanker = {
     age: 630.9812399897511,
     accumulatedUsage: 21772.365181054876,
-    state: 0,
+    saleAdjustmentState: 0,
     ownershipField: -1,
   };
   assert.deepEqual(ownedVehicleExportMultiplier(tanker, {
@@ -78,7 +78,7 @@ test('owned export combines saved state adjustment and gated depreciation', () =
   });
 
   const worn = ownedVehicleExportMultiplier({
-    age: 500, accumulatedUsage: 100, state: -1, ownershipField: 0,
+    age: 500, accumulatedUsage: 100, saleAdjustmentState: -1, ownershipField: 0,
   }, { category: 1, lifespan: 1000, saleAdjustmentLevel: 0, depreciationLevel: 1 });
   assert.deepEqual(worn, {
     multiplier: 0.32000000000000006,
@@ -86,10 +86,13 @@ test('owned export combines saved state adjustment and gated depreciation', () =
     depreciation: 0.4,
     depreciationEnabled: true,
   });
+  assert.equal(ownedVehicleExportMultiplier({
+    age: 0, accumulatedUsage: 0, state: 1, ownershipField: -1,
+  }, { category: 9, lifespan: null, saleAdjustmentLevel: 2, depreciationLevel: 1 }).multiplier, 1);
 });
 
 test('owned export skips depreciation for excluded categories and saved gates', () => {
-  const record = { age: 900, accumulatedUsage: 0, state: 1, ownershipField: -1 };
+  const record = { age: 900, accumulatedUsage: 0, saleAdjustmentState: 1, ownershipField: -1 };
   assert.deepEqual(ownedVehicleExportMultiplier(record, {
     category: 9, lifespan: null, saleAdjustmentLevel: 2, depreciationLevel: 1,
   }), {
@@ -272,7 +275,7 @@ test('ship opportunity compares exact export with derived recycling labor view',
   };
   const record = {
     age: 630.9812399897511, accumulatedUsage: 21772.365181054876,
-    state: 0, ownershipField: -1, cargo: [{ resource: 'oil', amount: 4338 }],
+    saleAdjustmentState: 0, ownershipField: -1, cargo: [{ resource: 'oil', amount: 4338 }],
     modelFacts: {
       runtimeCategory: 6, emptyWeight: 8780.2, powerKW: 18000,
       transportSubtype: 3, capacity: 19250, electric: false,
@@ -298,7 +301,7 @@ test('vehicle opportunity applies aircraft export doubling only to payout', () =
     buy: () => 30,
   };
   const record = {
-    age: 100, accumulatedUsage: 50, state: 1, ownershipField: -1,
+    age: 100, accumulatedUsage: 50, saleAdjustmentState: 1, ownershipField: -1,
     modelFacts: {
       runtimeCategory: 10, emptyWeight: 7.2, powerKW: 1120,
       transportSubtype: 7, capacity: 22, electric: null, availableFrom: 1959,
@@ -323,7 +326,7 @@ test('vehicle opportunity applies aircraft export doubling only to payout', () =
 test('vehicle opportunities use model introduction year and reject hard attachments', () => {
   const economy = { workday: () => 1, sell: () => 1, buy: () => 1 };
   const record = {
-    age: 1, accumulatedUsage: 1, state: 1, ownershipField: -1,
+    age: 1, accumulatedUsage: 1, saleAdjustmentState: 1, ownershipField: -1,
     modelFacts: {
       runtimeCategory: 6, emptyWeight: 100, powerKW: 1000, transportSubtype: 0,
       capacity: 0, electric: false, availableFrom: 1930, originCurrency: 'RUB',

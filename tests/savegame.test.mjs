@@ -100,8 +100,9 @@ test('vehicle records expose decision fields and require exact EOF', () => {
   assert.deepEqual(parsed.summary, { recordCount: 1, byteLength: buffer.byteLength, trailingBytes: 0 });
   assert.equal(parsed.vehicles[0].id, 0);
   assert.equal(parsed.vehicles[0].model, 'tanker');
-  assert.equal(parsed.vehicles[0].state, -1);
-  assert.equal(parsed.vehicles[0].progress, 0.75);
+  assert.equal(parsed.vehicles[0].saleAdjustmentState, -1);
+  assert.equal('state' in parsed.vehicles[0], false);
+  assert.equal('progress' in parsed.vehicles[0], false);
   assert.ok(Math.abs(parsed.vehicles[0].fuel - 93.6) < 1e-4);
   assert.equal(parsed.vehicles[0].accumulatedUsage, 21772.365181054876);
   assert.equal(parsed.vehicles[0].age, 630.9812399897511);
