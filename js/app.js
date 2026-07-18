@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=50';
+import { STRINGS } from './i18n.js?v=51';
 import { parseStatsIni, recordToPrices } from './statsini.js?v=16';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleProductionGroup, VEHICLE_PRODUCTION_MATERIALS, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=25';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -12,7 +12,8 @@ import {
   aggregateCitizensByScope, compactObservedBuildings, groupObservedProduction,
   inferObservedHousing, latestProductivity, matchObservedBuilding, productionBufferStatus,
   productionBufferAlerts, summarizeDistributionOffices, summarizeVehicleLines,
-} from './save_model.js?v=7';
+  summarizeCriminalityOutliers,
+} from './save_model.js?v=8';
 import { buildRepublicModel, republicAlerts } from './republic.js?v=4';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
@@ -149,6 +150,9 @@ function loadState() {
     if (!raw) return;
     const s = JSON.parse(raw);
     Object.assign(state, s);
+    // Price-table sorting is a view preference, not plan state. Each launch
+    // starts with the resource names in ascending alphabetical order.
+    state.priceSort = { col: 'name', dir: 1 };
     state.localWorkshopStatus = '';
   } catch (e) { /* ignore */ }
 }
@@ -1672,6 +1676,8 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
   const distributionOperations = summarizeDistributionOffices(buildings, vehicles ?? []);
   const lineOperations = vehicleLines
     ? summarizeVehicleLines(vehicleLines, vehicles ?? [], buildings) : null;
+  const criminalityOutliers = citizens
+    ? summarizeCriminalityOutliers(citizens, buildings) : null;
   const inventoryBuildings = buildings.filter(building =>
     building.storages?.some(storage => storage.resources?.length));
   const inventoryStorageCount = inventoryBuildings.reduce((sum, building) =>
@@ -1699,6 +1705,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
       lineFileSummary,
       vehicleLines: lineOperations,
       distributionOffices: distributionOperations,
+      criminalityOutliers,
       vehicleModelCoverage,
       usedVehicleOffers,
       usedVehicleFileSummary,
@@ -2666,6 +2673,28 @@ function renderRepublic() {
           el('td', { class: 'r' }, history ? fmt(history.unresolvedCrimes ?? 0, 0) : '—'));
       })))),
     el('p', { class: 'hint' }, t('currentCrimeRankingNote'))) : null;
+  const criminalityOutliers = state.saveImport?.criminalityOutliers;
+  const criminalityOutlierDetails = criminalityOutliers?.residents?.length ? el('details', {
+    class: 'secondary-section',
+  },
+    el('summary', {}, `${t('highCriminalityResidents')} (`
+      + `${fmt(criminalityOutliers.residents.length, 0)} / ${fmt(criminalityOutliers.locatedOutlierCount, 0)})`),
+    el('p', { class: 'hint' }, t('criminalityOutlierRule')
+      .replace('{average}', fmt(criminalityOutliers.averageCriminality * 100, 2))
+      .replace('{threshold}', fmt(criminalityOutliers.threshold * 100, 2))),
+    criminalityOutliers.unlocatedOutlierCount ? el('p', { class: 'hint warn' },
+      t('unlocatedCriminalityOutliers').replace('{count}', fmt(criminalityOutliers.unlocatedOutlierCount, 0))) : null,
+    el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+      el('thead', {}, el('tr', {},
+        el('th', {}, t('citizen')), el('th', {}, t('criminality')),
+        el('th', {}, t('area')), el('th', {}, t('residence')), el('th', {}, t('building')))),
+      el('tbody', {}, ...criminalityOutliers.residents.map(resident => el('tr', {},
+        el('td', {}, `#${resident.citizenIndex}`),
+        el('td', { class: 'r warn' }, fmt(resident.criminality * 100, 2) + ' %'),
+        el('td', {}, plannerScopeName(resident.residence?.scopeId)),
+        el('td', {}, resident.residence?.name || resident.residence?.type || '—'),
+        el('td', { class: 'r' }, Number.isInteger(resident.residenceBuildingIndex)
+          ? `#${resident.residenceBuildingIndex}` : '—'))))))) : null;
   const institutionOverview = republicOperations ? el('section', { class: 'institution-overview' },
     el('h3', {}, t('republicInstitutions')),
     el('div', { class: 'institution-grid' },
@@ -2701,6 +2730,7 @@ function renderRepublic() {
       kv(t('liveCourtCases'), fmt(republicLiveQueue.atCourt, 0)),
       kv(t('crimeSeverity'), `${fmt(republicLiveQueue.mild, 0)} / ${fmt(republicLiveQueue.medium, 0)} / ${fmt(republicLiveQueue.serious, 0)} ${t('mildMediumSerious')}`)) : null,
     crimeRanking,
+    criminalityOutlierDetails,
     el('p', { class: 'hint' }, t('crimeHistoryNote'))) : null;
 
   const fleetRecords = state.saveImport?.ownedVehicles ?? [];

@@ -175,7 +175,10 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   summarized republic-wide. `events.bin` supplies exact current medical emergencies and
   crime stages (awaiting police, investigation, or court), while clinic records expose
   current patients and effective treatment capacity. Prison/orphan occupancy follows live
-  citizen residence links; cumulative `stats.ini` failures stay labelled as history.
+  citizen residence links; cumulative `stats.ini` failures stay labelled as history. A compact
+  outlier view now flags residents at or above both 10% criminality and five times the republic
+  average, resolving each displayed citizen to the exact saved area and residence building;
+  residents without a resolvable home are counted but not assigned an invented location.
   - **Fleet sources:** optional `vehicles.bin` and `usedveh.bin` now traverse writer-defined
   record boundaries in the import worker and require exact EOF. The supplied save validates
   at 1,294 owned records and 75 current used-market offers. Compact model, age, saved usage,

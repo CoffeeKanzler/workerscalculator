@@ -606,6 +606,8 @@ export function resolveVehicleModels(records, { game = [], workshop = [] } = {})
 
 export function shareSafeSaveImport(saveImport) {
   if (!saveImport) return saveImport;
-  const { ownedVehicles, usedVehicleOffers, vehicleLines, distributionOffices, ...summary } = saveImport;
+  const {
+    ownedVehicles, usedVehicleOffers, vehicleLines, distributionOffices, criminalityOutliers, ...summary
+  } = saveImport;
   return summary;
 }

@@ -4,6 +4,7 @@ import {
   citizenProductivity, aggregateCitizensByScope, compactObservedBuildings,
   groupObservedProduction, latestProductivity, productionBufferStatus, productionBufferAlerts,
   inferObservedHousing, summarizeDistributionOffices, summarizeVehicleLines,
+  summarizeCriminalityOutliers,
 } from '../js/save_model.js';
 
 test('citizens aggregate through residence buildings without forced assignment', () => {
@@ -266,4 +267,27 @@ test('vehicle line summary resolves references and labels only complete raw obse
   assert.equal(result.lines[0].assignedVehicles[0].name, 'Tanker');
   assert.equal(result.lines[0].stops[0].building.name, 'Oil Harbor');
   assert.equal(result.lines[1].completeObservedCycle, null);
+});
+
+test('criminality outliers resolve exact residence and scope locations', () => {
+  const citizens = [
+    { index: 0, id: 100, residenceBuildingIndex: 4, criminality: 0.01 },
+    { index: 1, id: 101, residenceBuildingIndex: 5, criminality: 0.02 },
+    { index: 2, id: 102, residenceBuildingIndex: 4, criminality: 0.3 },
+    { index: 3, id: 103, residenceBuildingIndex: -1, criminality: 0.28 },
+  ];
+  const buildings = [
+    { index: 4, scopeId: 7, type: 'panelak', name: 'House A' },
+    { index: 5, scopeId: 8, type: 'flat', name: 'House B' },
+  ];
+  const result = summarizeCriminalityOutliers(citizens, buildings, { multiplier: 1.5, minAbsolute: 0.1 });
+  assert.equal(result.averageCriminality, 0.1525);
+  assert.equal(result.threshold, 0.22875);
+  assert.equal(result.unlocatedOutlierCount, 1);
+  assert.equal(result.locatedOutlierCount, 1);
+  assert.deepEqual(result.residents, [{
+    citizenIndex: 2, citizenId: 102, criminality: 0.3,
+    residenceBuildingIndex: 4,
+    residence: { index: 4, scopeId: 7, type: 'panelak', name: 'House A' },
+  }]);
 });

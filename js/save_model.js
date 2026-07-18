@@ -75,6 +75,43 @@ export function aggregateCitizensByScope(citizens, buildings) {
   };
 }
 
+export function summarizeCriminalityOutliers(citizens, buildings, {
+  multiplier = 5, minAbsolute = 0.1, limit = 10,
+} = {}) {
+  const measured = (citizens ?? []).filter(citizen => Number.isFinite(citizen.criminality));
+  const averageCriminality = measured.length
+    ? measured.reduce((sum, citizen) => sum + citizen.criminality, 0) / measured.length : null;
+  const threshold = averageCriminality == null ? null
+    : Math.max(minAbsolute, averageCriminality * multiplier);
+  const buildingsByIndex = new Map((buildings ?? []).map(building => [building.index, building]));
+  const outliers = threshold == null ? [] : measured
+    .filter(citizen => citizen.criminality >= threshold)
+    .sort((a, b) => b.criminality - a.criminality || a.index - b.index);
+  const located = outliers.filter(citizen => buildingsByIndex.has(citizen.residenceBuildingIndex));
+  const residents = located
+    .slice(0, limit)
+    .map(citizen => {
+      const building = buildingsByIndex.get(citizen.residenceBuildingIndex);
+      return {
+        citizenIndex: citizen.index,
+        citizenId: citizen.id,
+        criminality: citizen.criminality,
+        residenceBuildingIndex: citizen.residenceBuildingIndex,
+        residence: building ? {
+          index: building.index, scopeId: building.scopeId ?? null,
+          type: building.type, name: building.name,
+        } : null,
+      };
+    });
+  return {
+    averageCriminality, threshold, measuredCitizenCount: measured.length,
+    outlierCount: outliers.length,
+    locatedOutlierCount: located.length,
+    unlocatedOutlierCount: outliers.length - located.length,
+    residents,
+  };
+}
+
 export function compactObservedBuildings(buildings) {
   const keys = [
     'index', 'type', 'name', 'scopeId', 'x', 'y', 'z', 'currentWorkers',
