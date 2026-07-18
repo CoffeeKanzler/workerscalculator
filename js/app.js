@@ -2170,6 +2170,7 @@ function renderCity() {
       details.push(`${fmt(building.quality * 100, 0)}% ${t('qualityShort')}`);
     }
     details.push(building.kind === 'Vanilla' ? 'Vanilla' : 'Mod');
+    if (building.gameId) details.push(`✓ ${t('exact')}`);
     return `${building[state.lang]} — ${details.join(' · ')}`;
   };
 

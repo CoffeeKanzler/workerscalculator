@@ -327,7 +327,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "dlc3/cafe",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Kneipe",
@@ -507,7 +513,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.22,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_chamomile",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Karussell - Die Überraschung",
@@ -537,7 +549,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.32,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_surprise",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Autoscooter",
@@ -567,7 +585,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.35,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_swing_cage",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Space Combat",
@@ -657,7 +681,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_zoo",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Lviv Circus",
@@ -687,7 +717,13 @@
   "panels": 0.0,
   "ecomponents": 0.73,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "dlc1/lviv_state_circus",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Aussichtsturm",
@@ -717,7 +753,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_sight_tower",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Aussichtsturm 2",
@@ -747,7 +789,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_sight_tower_2",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Einkaufzentrum klein 1",
@@ -867,7 +915,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 7700.0
+  "recommendedFor": 7700.0,
+  "gameId": "shop_prior",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Kleines Geschäft",
@@ -1137,7 +1191,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 4658.024691
+  "recommendedFor": 4658.024691,
+  "gameId": "dlc3/market_hall",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Lebensmittelmarkt",
@@ -1197,7 +1257,13 @@
   "panels": 255.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 950.617284
+  "recommendedFor": 950.617284,
+  "gameId": "co_look_out_cafe",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Ekspres Bistro",
@@ -1208,9 +1274,9 @@
   },
   "kind": "Vanilla",
   "quality": 0.8,
-  "workers": 4.0,
+  "workers": 6.0,
   "special": 0,
-  "visitors": 24.0,
+  "visitors": 36.0,
   "inhabitants": 0,
   "power": 3.0,
   "maxKW": 50.0,
@@ -1227,7 +1293,13 @@
   "panels": 0.0,
   "ecomponents": 1.0,
   "mcomponents": 0.0,
-  "recommendedFor": 456.296296
+  "recommendedFor": 456.296296,
+  "gameId": "dlc1/Ekspres",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Restaurant early",
@@ -2967,7 +3039,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "dlc3/theatre",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Cinema Sojus",
@@ -4317,7 +4395,13 @@
   "panels": 202.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_museum_pyramid",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Museeum des Nationalen Aufstandes",
@@ -4377,7 +4461,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_palace_of_communism",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Village Libary & Club",
@@ -4437,7 +4527,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "dlc3/expo_hall",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Polizei klein",
@@ -9627,7 +9723,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "dlc1/hotelukrajine",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Hotel 4 Sterne",
@@ -9897,7 +9999,13 @@
   "panels": 0,
   "ecomponents": 0,
   "mcomponents": 0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "co_beach",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Schwimmbad",
@@ -9927,7 +10035,13 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 0.0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "cwc/OutdoorSwimmingPools",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Volleyballplatz",
@@ -9957,7 +10071,13 @@
   "panels": 0,
   "ecomponents": 0,
   "mcomponents": 0,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "gameId": "cwc/Playground4",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "serviceCapacity": "game-file"
+  }
  },
  {
   "de": "Fußballplatz groß",

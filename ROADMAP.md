@@ -253,8 +253,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   `$LIFESPAN` fact is present; vanilla/DLC models use verified category defaults. An earlier
   10%/20%/70% assumption was found to apply to container vehicles, not ships, and was never
   shipped as a ship recommendation.
-  - **Next high-value save modules:** catalog-authoritative train capacities, stable city-building
-  game IDs, and optional live follow of a save directory. Cosmetic map/network geometry stays out of scope until a
+  - **Next high-value save modules:** expand the first 20 uniquely matched stable city-building
+  game IDs through careful curation, and optionally follow a live save directory. Cosmetic map/network geometry stays out of scope until a
   planner feature needs it.
 
 ### 4.2 Live-follow stats.ini

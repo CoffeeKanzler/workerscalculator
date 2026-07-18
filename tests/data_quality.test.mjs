@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 
 const rawBuildings = JSON.parse(readFileSync(new URL('../data/game/buildings_raw.json', import.meta.url)));
 const production = JSON.parse(readFileSync(new URL('../data/game/production_buildings.json', import.meta.url)));
+const cityBuildings = JSON.parse(readFileSync(new URL('../data/city_buildings.json', import.meta.url)));
 const resources = JSON.parse(readFileSync(new URL('../data/resources.json', import.meta.url))).resources;
 
 test('game production dataset keeps game workers and economic rates authoritative', () => {
@@ -54,5 +55,25 @@ test('per-second electricity stays a utility field, not a per-worker material in
   for (const building of production) {
     assert.equal(building.consumption.some(item => item.de === 'Strom' || item.en === 'Electricity'), false,
       `${building.gameId} exposes utility electricity as economic consumption`);
+  }
+});
+
+test('stable city-building IDs expose only exact raw game facts', () => {
+  const raw = new Map(rawBuildings.map(building => [building.id, building]));
+  const identified = cityBuildings.filter(building => building.gameId);
+  assert.equal(identified.length, 20);
+  for (const building of identified) {
+    const source = raw.get(building.gameId);
+    assert.ok(source, `missing city source ${building.gameId}`);
+    assert.equal(building.provenance.identity, 'game-file');
+    assert.equal(building.workers, source.workers, `${building.gameId} workers`);
+    if (source.livingSpace > 0) {
+      assert.equal(building.inhabitants, source.livingSpace, `${building.gameId} housing`);
+      assert.equal(building.quality, source.qualityOfLiving, `${building.gameId} quality`);
+    }
+    if (source.workers > 0 && source.citizenAbleServe > 0) {
+      assert.equal(Math.max(building.visitors, building.special),
+        source.workers * source.citizenAbleServe, `${building.gameId} service capacity`);
+    }
   }
 });
