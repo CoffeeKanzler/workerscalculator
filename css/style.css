@@ -287,6 +287,7 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-section { overflow: hidden; }
 .republic-map { display: block; width: 100%; max-height: 560px; background: var(--panel2); border: 1px solid var(--border); border-radius: 8px; }
 .republic-map .map-water image { image-rendering: auto; }
+.republic-map .map-pollution image { image-rendering: auto; }
 .republic-map .map-rails path { fill: none; stroke: var(--accent2); stroke-width: 1.15; stroke-linecap: round; stroke-linejoin: round; opacity: .78; vector-effect: non-scaling-stroke; }
 .republic-map .map-roads path { fill: none; stroke: var(--muted); stroke-width: .9; stroke-linecap: round; stroke-linejoin: round; opacity: .55; vector-effect: non-scaling-stroke; }
 .republic-map .map-buildings circle { fill: var(--muted); opacity: .52; }
@@ -302,6 +303,7 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-legend i.road { width: 14px; height: 2px; border-radius: 0; background: var(--muted); }
 .map-legend i.rail { width: 14px; height: 4px; border-radius: 0; border-top: 1px solid var(--accent2); border-bottom: 1px solid var(--accent2); background: transparent; }
 .map-legend i.water { width: 14px; height: 7px; border-radius: 2px; background: rgba(44, 133, 190, .7); }
+.map-legend i.pollution { width: 22px; height: 7px; border-radius: 2px; background: linear-gradient(90deg, #2db058, #f6c937, #dc372d); }
 .map-legend i.selected { background: var(--accent); }
 .map-legend i.construction { background: transparent; border: 2px dashed var(--accent2); }
 .map-legend i.border { background: #ffb02e; border: 1px solid #111; }
@@ -316,6 +318,11 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-toolbar fieldset label { white-space: nowrap; }
 .map-toolbar > label { display: grid; gap: 4px; min-width: min(100%, 260px); }
 .map-zoom-controls { display: flex; gap: 5px; }
+.import-activity { display: flex; align-items: center; gap: 9px; margin: 8px 0; padding: 9px 12px; border: 1px solid var(--accent); border-radius: 8px; background: var(--panel); color: var(--text); }
+.import-activity.neg { border-color: var(--neg); color: var(--neg); }
+.import-spinner { width: 15px; height: 15px; flex: 0 0 auto; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: import-spin .8s linear infinite; }
+@keyframes import-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .import-spinner { animation: none; border-top-color: var(--border); background: var(--accent); } }
 .planner-main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, 290px); align-items: start; gap: 12px; }
 .planner-main .totalsbox { position: sticky; top: 10px; margin: 0; }
 .planner-table { min-width: 0; }

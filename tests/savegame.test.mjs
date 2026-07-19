@@ -2,9 +2,29 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   parseBuildingsGame, parseWorkers, parseHeader, parseMapClimate, parseResearch,
-  parseVehicles, parseUsedVehicles, parseLines, parseRoadNetwork, parseHeightmapWater,
+  parseVehicles, parseUsedVehicles, parseLines, parseRoadNetwork, parseHeightmapWater, parsePollution,
 } from '../js/savegame.js';
 import * as savegame from '../js/savegame.js';
+
+test('pollution parser packs the exact X-major Z-fast air field in screen order', () => {
+  const buffer = new ArrayBuffer(4 + 4 * 12);
+  const view = new DataView(buffer);
+  view.setInt32(0, 4, true);
+  // Serialized indices: x0/z0, x0/z1, x1/z0, x1/z1.
+  [0.25, 0.5, 0.75, 1].forEach((value, index) => {
+    view.setFloat32(4 + index * 12 + 4, value, true);
+  });
+  const result = parsePollution(buffer, {
+    worldBounds: { minX: -200, maxX: 200, minZ: -200, maxZ: 200 },
+  });
+  assert.deepEqual([...Buffer.from(result.airPacked, 'base64')], [128, 255, 64, 191]);
+  assert.equal(result.airNonzero, 4);
+  assert.equal(result.airMax, 1);
+  assert.equal(result.radiationPacked, undefined);
+  assert.throws(() => parsePollution(buffer.slice(0, -1), {
+    worldBounds: { minX: -200, maxX: 200, minZ: -200, maxZ: 200 },
+  }), /expected/);
+});
 
 function writeUtf16(bytes, offset, text) {
   const encoded = new TextEncoder().encode(text);

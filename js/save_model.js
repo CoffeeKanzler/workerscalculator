@@ -132,7 +132,7 @@ export function compactObservedBuildings(buildings) {
 
 export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
   width = 760, height = 480, padding = 18, focusBuildingIndex = null, roadNetwork = null,
-  railNetwork = null, terrainWater = null,
+  railNetwork = null, terrainWater = null, pollutionLayer = null,
 } = {}) {
   const located = (buildings ?? []).filter(building =>
     Number.isFinite(building.x) && Number.isFinite(building.z));
@@ -153,8 +153,9 @@ export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
       includeExtent(network.nodes?.[edge.to]);
     }
   }
-  if (terrainWater?.worldBounds) {
-    ({ minX, maxX, minZ, maxZ } = terrainWater.worldBounds);
+  const authoritativeBounds = terrainWater?.worldBounds ?? pollutionLayer?.worldBounds;
+  if (authoritativeBounds) {
+    ({ minX, maxX, minZ, maxZ } = authoritativeBounds);
   }
   const projectX = value => padding + (width - 2 * padding) * ((value - minX) / ((maxX - minX) || 1));
   const projectY = value => height - padding
@@ -172,15 +173,17 @@ export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
       })),
     };
   }).filter(edge => edge.points.length > 1);
+  const projectRaster = layer => layer?.worldBounds ? {
+    ...layer,
+    mapX: projectX(layer.worldBounds.minX),
+    mapY: projectY(layer.worldBounds.maxZ),
+    mapWidth: projectX(layer.worldBounds.maxX) - projectX(layer.worldBounds.minX),
+    mapHeight: projectY(layer.worldBounds.minZ) - projectY(layer.worldBounds.maxZ),
+  } : null;
   return {
     width, height, bounds: { minX, maxX, minZ, maxZ },
-    water: terrainWater?.worldBounds ? {
-      ...terrainWater,
-      mapX: projectX(terrainWater.worldBounds.minX),
-      mapY: projectY(terrainWater.worldBounds.maxZ),
-      mapWidth: projectX(terrainWater.worldBounds.maxX) - projectX(terrainWater.worldBounds.minX),
-      mapHeight: projectY(terrainWater.worldBounds.minZ) - projectY(terrainWater.worldBounds.maxZ),
-    } : null,
+    water: projectRaster(terrainWater),
+    pollution: projectRaster(pollutionLayer),
     roads: projectNetwork(roadNetwork),
     rails: projectNetwork(railNetwork),
     buildings: located.map(building => ({

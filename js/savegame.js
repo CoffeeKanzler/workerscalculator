@@ -282,6 +282,61 @@ export function parseHeightmapWater(buffer, { outputSize = 512, waterHeight = 0.
   };
 }
 
+export function parsePollution(buffer, { worldBounds, cellSize = 200 } = {}) {
+  if (!buffer?.byteLength) return null;
+  if (!worldBounds) throw new Error('pollution.bin requires verified terrain world bounds');
+  const { minX, maxX, minZ, maxZ } = worldBounds;
+  const width = (maxX - minX) / cellSize;
+  const height = (maxZ - minZ) / cellSize;
+  if (!Number.isInteger(width) || !Number.isInteger(height) || width <= 0 || height <= 0) {
+    throw new Error(`pollution.bin cannot map bounds to ${cellSize}-unit cells`);
+  }
+  const view = new DataView(buffer);
+  if (view.byteLength < 4) throw new Error('pollution.bin is truncated before its cell count');
+  const count = view.getInt32(0, true);
+  if (count < 0 || count > 10_000_000) throw new Error(`pollution.bin has implausible cell count ${count}`);
+  if (count !== width * height) {
+    throw new Error(`pollution.bin has ${count} cells, expected ${width}x${height}`);
+  }
+  const expected = 4 + count * 12;
+  if (view.byteLength !== expected) {
+    throw new Error(`pollution.bin expected ${expected} bytes, got ${view.byteLength}`);
+  }
+  const air = new Uint8Array(count);
+  const radiation = new Uint8Array(count);
+  let airNonzero = 0, airMax = 0, radiationNonzero = 0, radiationMax = 0;
+  for (let index = 0; index < count; index += 1) {
+    const offset = 4 + index * 12;
+    const radiationValue = view.getFloat32(offset, true);
+    const airValue = view.getFloat32(offset + 4, true);
+    if (!Number.isFinite(airValue) || !Number.isFinite(radiationValue)) {
+      throw new Error(`pollution.bin has a non-finite value in cell ${index}`);
+    }
+    const x = Math.floor(index / height);
+    const z = index % height;
+    const imageIndex = (height - 1 - z) * width + x;
+    air[imageIndex] = Math.round(Math.max(0, Math.min(1, airValue)) * 255);
+    radiation[imageIndex] = Math.round(Math.max(0, Math.min(3, radiationValue)) / 3 * 255);
+    if (airValue !== 0) airNonzero += 1;
+    if (radiationValue !== 0) radiationNonzero += 1;
+    airMax = Math.max(airMax, airValue);
+    radiationMax = Math.max(radiationMax, radiationValue);
+  }
+  const encode = bytes => {
+    let binary = '';
+    for (let offset = 0; offset < bytes.length; offset += 0x8000) {
+      binary += String.fromCharCode(...bytes.subarray(offset, offset + 0x8000));
+    }
+    return btoa(binary);
+  };
+  return {
+    width, height, cellSize, worldBounds: { ...worldBounds },
+    airPacked: encode(air),
+    ...(radiationNonzero ? { radiationPacked: encode(radiation) } : {}),
+    airNonzero, airMax, radiationNonzero, radiationMax,
+  };
+}
+
 export function parseHeader(buffer) {
   const c = new BinaryCursor(buffer);
   c.require(0x204, 'header fixed metadata');

@@ -285,11 +285,14 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   local named snapshot. A dedicated Republic map tab adds wheel/drag zoom, reset controls,
   independent water/road/rail/building/construction/border/area/criminality layers, and a
   saved-type filter. Physical customs posts have their own marker; artificial off-map air
-  import/export targets are omitted. Full terrain and pollution shading remain future layers.
-  As optional save sources grow, replace the single long import wait with staged per-file
-  progress, early access to completed summaries, and on-demand parsing/rendering for heavy
-  network and heatmap layers. The worker already keeps parsing off the UI thread; the remaining
-  goal is progressive presentation and explicit recovery for slow or failed optional files.
+  import/export targets are omitted. Exact `pollution.bin` air pollution is rendered as an
+  optional compact green/yellow/red raster with adjustable opacity; clean cells stay transparent.
+  Radiation is a distinct saved channel and remains hidden when empty. Full terrain shading
+  remains a future layer.
+  Large imports now expose staged progress without rerendering/persisting the whole application
+  for every parser tick. Core Republic data becomes usable first; roads, railways, water and
+  pollution load sequentially in a second worker and enrich the same local snapshot afterward.
+  Explicit recovery for slow or failed optional files remains a follow-up.
 
 ### 4.2 Live-follow stats.ini ✅ done 2026-07-18
 - **Delivered:** The Save Import page can watch a user-approved save directory through

@@ -473,8 +473,12 @@ test('schematic map places heightmap-derived water in the shared world projectio
     width: 2, height: 2, packed: 'Yw==',
     worldBounds: { minX: -100, maxX: 100, minZ: -100, maxZ: 100 },
   };
+  const pollutionLayer = {
+    width: 2, height: 2, airPacked: 'AAEC/w==', airNonzero: 3,
+    worldBounds: { ...terrainWater.worldBounds },
+  };
   const result = buildSchematicMap([{ index: 1, x: 0, z: 0 }], [], null, {
-    width: 120, height: 80, padding: 10, terrainWater,
+    width: 120, height: 80, padding: 10, terrainWater, pollutionLayer,
     railNetwork: {
       nodes: [{ id: 0, x: -1000, z: -1000 }, { id: 1, x: 1000, z: 1000 }],
       edges: [{ id: 0, from: 0, to: 1, points: [] }],
@@ -483,5 +487,8 @@ test('schematic map places heightmap-derived water in the shared world projectio
   assert.deepEqual(result.bounds, { minX: -100, maxX: 100, minZ: -100, maxZ: 100 });
   assert.deepEqual(result.water, {
     ...terrainWater, mapX: 10, mapY: 10, mapWidth: 100, mapHeight: 60,
+  });
+  assert.deepEqual(result.pollution, {
+    ...pollutionLayer, mapX: 10, mapY: 10, mapWidth: 100, mapHeight: 60,
   });
 });
