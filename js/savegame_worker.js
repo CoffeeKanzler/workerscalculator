@@ -4,7 +4,9 @@ import {
   parseRoadNetwork,
   parseHeightmapWater,
 } from './savegame.js?v=22';
-import { parseBlueprintOwned, parseCityStatsIni, parseStatsIni } from './statsini.js?v=19';
+import {
+  parseBlueprintOwned, parseCityStatsIni, parseStatsIni, statsPayloadText,
+} from './statsini.js?v=23';
 
 const sourceStatus = (payload) => Object.fromEntries(
   ['namepoints', 'buildings', 'workers', 'vehicles', 'usedVehicles', 'lines', 'road', 'rail', 'pedestrian', 'heightmap', 'pollution', 'header', 'research', 'events', 'stats', 'material']
@@ -14,6 +16,7 @@ const sourceStatus = (payload) => Object.fromEntries(
 self.onmessage = ({ data }) => {
   const status = sourceStatus(data);
   const warnings = [];
+  const statsText = statsPayloadText(data.stats);
   const required = (key, parse) => {
     try {
       const value = parse(data[key]);
@@ -61,9 +64,9 @@ self.onmessage = ({ data }) => {
     const terrainWater = optional('heightmap', parseHeightmapWater);
     const research = optional('research', parseResearch);
     const events = optional('events', parseEvents);
-    const statsRecords = optional('stats', parseStatsIni);
-    const cityStats = data.stats ? parseCityStatsIni(data.stats) : [];
-    const blueprintOwned = data.stats ? parseBlueprintOwned(data.stats) : null;
+    const statsRecords = optional('stats', () => parseStatsIni(statsText));
+    const cityStats = data.stats ? parseCityStatsIni(statsText) : [];
+    const blueprintOwned = data.stats ? parseBlueprintOwned(statsText) : null;
     const mapClimate = optional('material', parseMapClimate);
     self.postMessage({
       type: 'complete',

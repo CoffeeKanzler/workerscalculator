@@ -82,6 +82,12 @@ const RESOURCE_HISTORY_FIELDS = [
   'resourcesSpendShops', 'resourcesSpendConstructions', 'resourcesSpendVehicles',
 ];
 
+export function statsPayloadText(payload) {
+  if (typeof payload === 'string') return payload;
+  if (payload instanceof ArrayBuffer) return new TextDecoder().decode(payload);
+  return '';
+}
+
 export function resourceHistoryKeys(records) {
   return [...new Set((records ?? []).flatMap(record =>
     RESOURCE_HISTORY_FIELDS.flatMap(field => Object.keys(record[field] ?? {}))))];

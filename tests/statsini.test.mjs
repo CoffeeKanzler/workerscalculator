@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   parseBlueprintOwned, parseCityStatsIni, parseStatsIni, recordToPrices, resourceHistoryKeys,
+  statsPayloadText,
 } from '../js/statsini.js';
 
 const SAMPLE = `$STAT_RECORD 0
@@ -42,6 +43,12 @@ $Economy_DeliveryCostRUB 0.000000
 
 $Tourism_SpendUSD 12.5
 `;
+
+test('stats payload decoding accepts transferred buffers and legacy strings', () => {
+  assert.equal(statsPayloadText(SAMPLE), SAMPLE);
+  const bytes = new TextEncoder().encode(SAMPLE);
+  assert.equal(statsPayloadText(bytes.buffer), SAMPLE);
+});
 
 test('parses exact owned blueprint identities before statistics records', () => {
   const text = `$BLUEPRINT_OWNED bus_cav11m3\n$BLUEPRINT_OWNED loco_t478\n`

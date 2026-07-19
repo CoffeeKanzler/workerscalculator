@@ -1,5 +1,5 @@
 import { STRINGS } from './i18n.js?v=93';
-import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=22';
+import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=23';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -2063,7 +2063,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=26', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=27', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -2198,10 +2198,10 @@ async function handleSaveDirectory(fileList) {
     presentImportStatus(t('importReadingFiles'));
     const readOptional = file => file ? file.arrayBuffer() : Promise.resolve(null);
     const [namepointBuffer, buildingBuffer, workerBuffer, vehicleBuffer, usedVehicleBuffer, lineBuffer,
-      headerBuffer, researchBuffer, eventsBuffer, statsText, materialText] = await Promise.all([
+      headerBuffer, researchBuffer, eventsBuffer, statsBuffer, materialText] = await Promise.all([
       namepoints.arrayBuffer(), buildingsFile.arrayBuffer(), readOptional(workersFile),
       readOptional(vehiclesFile), readOptional(usedVehiclesFile),
-      readOptional(linesFile), readOptional(headerFile), readOptional(researchFile), readOptional(eventsFile), statsFile ? statsFile.text() : '',
+      readOptional(linesFile), readOptional(headerFile), readOptional(researchFile), readOptional(eventsFile), readOptional(statsFile),
       materialFile ? materialFile.text() : '',
     ]);
     presentImportStatus(t('importParsingCore'));
@@ -2209,7 +2209,7 @@ async function handleSaveDirectory(fileList) {
       namepoints: namepointBuffer, buildings: buildingBuffer, workers: workerBuffer,
       vehicles: vehicleBuffer, usedVehicles: usedVehicleBuffer,
       lines: lineBuffer, road: null, rail: null, pedestrian: null, heightmap: null, pollution: null,
-      header: headerBuffer, research: researchBuffer, events: eventsBuffer, stats: statsText, material: materialText,
+      header: headerBuffer, research: researchBuffer, events: eventsBuffer, stats: statsBuffer, material: materialText,
     });
     const relative = namepoints.webkitRelativePath || buildingsFile.webkitRelativePath || '';
     const sourceName = parsed.header?.title || relative.split('/')[0]

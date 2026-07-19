@@ -310,7 +310,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   construction state, coordinates, and raw save identity; exact Workshop matching rules remain
   unchanged and unresolved numeric packages are never aliased by basename.
   Large imports now expose staged progress without rerendering/persisting the whole application
-  for every parser tick. Core Republic data becomes usable first; roads, railways, pedestrian paths,
+  for every parser tick. The 50.5 MB reference `stats.ini` is transferred as a buffer and decoded
+  inside the parser worker instead of being decoded and copied on the main thread. Core Republic
+  data becomes usable first; roads, railways, pedestrian paths,
   water and pollution load sequentially in a second worker and enrich the same local snapshot afterward.
   Explicit recovery for slow or failed optional files remains a follow-up.
 
