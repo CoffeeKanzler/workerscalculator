@@ -233,3 +233,17 @@ export function visibleRepublicAlerts(alerts, { expanded = false, limit = 8 } = 
   const visible = expanded ? source : source.slice(0, Math.max(0, limit));
   return { visible, total: source.length, hiddenCount: source.length - visible.length };
 }
+
+export function alertCategory(alert) {
+  const metric = String(alert?.metric ?? '');
+  if (metric === 'staffing' || metric === 'netWorkers') return 'workforce';
+  if (metric === 'health' || metric === 'food') return 'needs';
+  if (metric.startsWith('buffer.')) return 'buffers';
+  if (metric.startsWith('coverage.')) return 'coverage';
+  return 'other';
+}
+
+export function filterRepublicAlerts(alerts, category = 'all') {
+  const source = Array.isArray(alerts) ? alerts : [];
+  return category === 'all' ? source : source.filter(alert => alertCategory(alert) === category);
+}

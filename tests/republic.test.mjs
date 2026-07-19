@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
+  alertCategory, filterRepublicAlerts,
 } from '../js/republic.js';
 
 const observed = {
@@ -27,6 +28,18 @@ test('attention presentation reports every hidden alert and expands without loss
   const expanded = visibleRepublicAlerts(alerts, { expanded: true });
   assert.equal(expanded.hiddenCount, 0);
   assert.deepEqual(expanded.visible, alerts);
+});
+
+test('attention categories preserve every alert and isolate player-facing tracks', () => {
+  const alerts = [
+    { metric: 'staffing' }, { metric: 'netWorkers' }, { metric: 'health' },
+    { metric: 'buffer.input' }, { metric: 'coverage.workshop' },
+  ];
+  assert.deepEqual(alerts.map(alertCategory), [
+    'workforce', 'workforce', 'needs', 'buffers', 'coverage',
+  ]);
+  assert.deepEqual(filterRepublicAlerts(alerts, 'workforce'), alerts.slice(0, 2));
+  assert.deepEqual(filterRepublicAlerts(alerts, 'all'), alerts);
 });
 
 test('projects actual plan and evidence-aware difference', () => {

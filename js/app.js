@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=95';
+import { STRINGS } from './i18n.js?v=96';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=23';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -21,7 +21,10 @@ import {
   buildSchematicMap,
   isNonPlannerSupportType, isBorderPostType, isExternalAirLinkType,
 } from './save_model.js?v=19';
-import { buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts } from './republic.js?v=9';
+import {
+  buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
+  alertCategory, filterRepublicAlerts,
+} from './republic.js?v=10';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
@@ -40,7 +43,7 @@ const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'p
   'chains', 'activeChain', 'tuning', 'productionScope', 'saveImport', 'republicView',
   'buildingOverrides', 'customBuildings',
   'republicRange', 'republicResource', 'republicScope', 'mapLayers', 'mapBuildingFilter',
-  'mapPollutionOpacity', 'tab'];
+  'mapPollutionOpacity', 'republicAlertFilter', 'tab'];
 const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex'];
 
 // ---------------------------------------------------------------- state
@@ -121,6 +124,7 @@ function createInitialState() {
     fleetFilter: { category: 'all', action: 'all', sort: 'advantage' },
     fleetDetails: false,
     republicAlertsExpanded: false,
+    republicAlertFilter: 'all',
   };
 }
 
@@ -3694,7 +3698,14 @@ function renderRepublic() {
           scope.production ? el('button', { onclick: () => openArea(scopeId, 'production') }, t('openProduction')) : null));
     })));
 
-  const alertPresentation = visibleRepublicAlerts(alerts, {
+  const alertCategories = ['workforce', 'needs', 'buffers', 'coverage'];
+  if (!['all', ...alertCategories].includes(state.republicAlertFilter)) {
+    state.republicAlertFilter = 'all';
+  }
+  const categoryCounts = new Map(alertCategories.map(category => [category,
+    alerts.filter(alert => alertCategory(alert) === category).length]));
+  const filteredAlerts = filterRepublicAlerts(alerts, state.republicAlertFilter);
+  const alertPresentation = visibleRepublicAlerts(filteredAlerts, {
     expanded: state.republicAlertsExpanded,
   });
   const alertAction = alert => {
@@ -3709,7 +3720,7 @@ function renderRepublic() {
     return mappableScopeIds.has(alert.scopeId)
       ? el('button', { onclick: () => locateAreaOnMap(alert.scopeId) }, t('locateOnMap')) : null;
   };
-  const alertItems = alerts.length ? alertPresentation.visible.map(alert => el('div', { class: `alert ${alert.severity}` },
+  const alertItems = filteredAlerts.length ? alertPresentation.visible.map(alert => el('div', { class: `alert ${alert.severity}` },
       el('strong', {}, alert.scopeName || t('republicOverview')),
       el('span', {}, t(`alert.${alert.metric}`)),
       el('span', { class: 'alert-tail' },
@@ -3721,8 +3732,22 @@ function renderRepublic() {
         alertAction(alert))))
     : [el('p', { class: 'hint pos' }, t('noAlerts'))];
   const alertList = el('div', { class: 'alert-list' },
-    el('h3', {}, `${t('attention')} (${fmt(alertPresentation.total, 0)})`), ...alertItems,
-    alerts.length > 8 ? el('button', {
+    el('h3', {}, state.republicAlertFilter === 'all'
+      ? `${t('attention')} (${fmt(alerts.length, 0)})`
+      : `${t('attention')} (${fmt(filteredAlerts.length, 0)} / ${fmt(alerts.length, 0)})`),
+    alerts.length > 8 ? el('div', { class: 'settingsbar alert-filters' },
+      ...[['all', alerts.length], ...alertCategories.map(category =>
+        [category, categoryCounts.get(category)])].filter(([, count]) => count > 0).map(([category, count]) =>
+        el('button', {
+          class: state.republicAlertFilter === category ? 'active' : '',
+          onclick: () => {
+            state.republicAlertFilter = category;
+            state.republicAlertsExpanded = false;
+            update();
+          },
+        }, `${t(`alertCategory.${category}`)} (${fmt(count, 0)})`))) : null,
+    ...alertItems,
+    filteredAlerts.length > 8 ? el('button', {
       class: 'secondary',
       onclick: () => { state.republicAlertsExpanded = !state.republicAlertsExpanded; update(); },
     }, state.republicAlertsExpanded ? t('showFewerAlerts')
