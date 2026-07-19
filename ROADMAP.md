@@ -238,7 +238,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   coverage while retaining the unfiltered total and the bounded eight-row collapsed view.
   An active-construction drill-down lists every exact incomplete non-temporary building by area, saved type and
   completion fraction, sorted by nearest completion and linked directly to its map marker; it does
-  not invent remaining time or material requirements.
+  not invent remaining time or material requirements. A complete/above-0%-progress filter isolates
+  the 12 progressing reference-save projects without hiding the full 253-project count.
   These buffer projections remain distinct from actual throughput. A strict serialized
   `$TYPE_FACTORY` plus resolved-production gate now exposes exact rolling first-output telemetry
   for 32 supplied-save factories, including previous normalized-day quantity, current partial

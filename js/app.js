@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=104';
+import { STRINGS } from './i18n.js?v=105';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -63,6 +63,7 @@ let compactMapExpanded = false;
 let compactMapOpen = false;
 let constructionPage = 1;
 let constructionDetailsOpen = false;
+let constructionProgressFilter = 'all';
 let deferredMapRetry = null;
 const terrainWaterImageCache = new Map();
 const pollutionImageCache = new Map();
@@ -3820,7 +3821,15 @@ function renderRepublic() {
     }, state.republicAlertsExpanded ? t('showFewerAlerts')
       : t('showAllAlerts').replace('{count}', fmt(alertPresentation.hiddenCount, 0))) : null);
 
-  const constructionProjects = activeConstructionProjects(state.saveImport?.observedBuildings);
+  const allConstructionProjects = activeConstructionProjects(state.saveImport?.observedBuildings);
+  const positiveConstructionCount = allConstructionProjects.filter(project =>
+    project.constructionProgress > 0).length;
+  if (constructionProgressFilter === 'positive' && !positiveConstructionCount) {
+    constructionProgressFilter = 'all';
+  }
+  const constructionProjects = constructionProgressFilter === 'positive'
+    ? allConstructionProjects.filter(project => project.constructionProgress > 0)
+    : allConstructionProjects;
   const constructionPageSize = 50;
   const constructionPageCount = Math.max(1, Math.ceil(constructionProjects.length / constructionPageSize));
   constructionPage = Math.max(1, Math.min(constructionPage, constructionPageCount));
@@ -3871,13 +3880,25 @@ function renderRepublic() {
         ...(constructionPage >= constructionPageCount ? { disabled: '' } : {}),
         onclick: () => { constructionPage += 1; update(); },
       }, `${t('fleetNextPage')} →`)) : null;
-  const constructionDetails = constructionProjects.length ? el('details', {
+  const constructionDetails = allConstructionProjects.length ? el('details', {
     class: 'secondary-section construction-projects',
     ...(constructionDetailsOpen ? { open: '' } : {}),
     ontoggle: event => { constructionDetailsOpen = event.currentTarget.open; },
   },
-    el('summary', {}, `${t('activeConstruction')} (${fmt(constructionProjects.length, 0)})`),
+    el('summary', {}, `${t('activeConstruction')} (${fmt(allConstructionProjects.length, 0)})`),
     el('p', { class: 'hint' }, t('constructionProjectMeaning')),
+    positiveConstructionCount && positiveConstructionCount < allConstructionProjects.length
+      ? el('div', { class: 'settingsbar construction-filters' },
+        ...[['all', allConstructionProjects.length], ['positive', positiveConstructionCount]]
+          .map(([filter, count]) => el('button', {
+            class: constructionProgressFilter === filter ? 'active' : '',
+            onclick: () => {
+              constructionProgressFilter = filter;
+              constructionPage = 1;
+              update();
+            },
+          }, `${t(filter === 'all' ? 'constructionAll' : 'constructionAboveZero')} (${fmt(count, 0)})`)))
+      : null,
     constructionTable, constructionPagination) : null;
 
   const republicOperations = state.saveImport?.operationalServices?.republic;
