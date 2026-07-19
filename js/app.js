@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=93';
+import { STRINGS } from './i18n.js?v=94';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=23';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -56,6 +56,7 @@ let mapFocusBuildingIndex = null;
 let mapFocusScopeId = null;
 let mapSelectedBuildingIndex = null;
 let standaloneMapViewBox = null;
+let deferredMapRetry = null;
 const terrainWaterImageCache = new Map();
 const pollutionImageCache = new Map();
 
@@ -2164,6 +2165,7 @@ function renderLocalWorkshopPicker() {
 }
 
 async function handleSaveDirectory(fileList) {
+  deferredMapRetry = null;
   const files = [...fileList];
   const byName = new Map(files.map(file => [file.name.toLowerCase(), file]));
   const namepoints = byName.get('namepoints.bin');
@@ -2300,14 +2302,16 @@ async function handleSaveDirectory(fileList) {
     update();
 
     if (hasDeferredMap) {
-      try {
-        const mapResult = await parseMapLayersInWorker({
-          road: roadFile ?? null,
-          rail: railFile ?? null,
-          pedestrian: pedestrianFile ?? null,
-          heightmap: heightmapFile ?? null,
+      deferredMapRetry = {
+        importName, sourceName,
+        files: {
+          road: roadFile ?? null, rail: railFile ?? null,
+          pedestrian: pedestrianFile ?? null, heightmap: heightmapFile ?? null,
           pollution: pollutionFile ?? null,
-        });
+        },
+      };
+      try {
+        const mapResult = await parseMapLayersInWorker(deferredMapRetry.files);
         // A second import or snapshot load may have replaced the visible state
         // while the optional map files were parsing. Never attach them there.
         if (state.saveSlotName !== importName || state.saveImport?.sourceName !== sourceName) return;
@@ -2324,6 +2328,7 @@ async function handleSaveDirectory(fileList) {
         }
         state.importStatus = mapResult.warnings.length ? t('importCompleteMapWarnings') : t('importComplete');
         state.importBusy = false;
+        if (!mapResult.warnings.length) deferredMapRetry = null;
         const mapSaveResult = await saveNamedState(importName);
         if (!mapSaveResult.ok) throw mapSaveResult.error;
         update();
@@ -2341,6 +2346,50 @@ async function handleSaveDirectory(fileList) {
     state.importStatusError = true;
     state.importBusy = false;
     update();
+  }
+}
+
+function deferredMapRetryMatchesState() {
+  return deferredMapRetry && state.saveImport
+    && state.saveSlotName === deferredMapRetry.importName
+    && state.saveImport.sourceName === deferredMapRetry.sourceName;
+}
+
+async function retryDeferredMapLayers() {
+  if (!deferredMapRetryMatchesState() || state.importBusy) return;
+  const retry = deferredMapRetry;
+  state.importBusy = true;
+  state.importStatusError = false;
+  state.importStatus = t('importRetryingMap');
+  update();
+  try {
+    const mapResult = await parseMapLayersInWorker(retry.files);
+    if (!deferredMapRetryMatchesState() || deferredMapRetry !== retry) return;
+    Object.assign(state.saveImport, mapResult.parsed);
+    refreshPollutionDiagnostics(state.saveImport);
+    state.saveImport.sourceStatus = {
+      ...(state.saveImport.sourceStatus ?? {}), ...mapResult.sourceStatus,
+    };
+    const mapKeys = Object.keys(retry.files);
+    state.saveImport.warnings = [
+      ...(state.saveImport.warnings ?? []).filter(warning =>
+        !mapKeys.some(key => warning.startsWith(`${key}:`))),
+      ...mapResult.warnings.map(warning => `${warning.file}: ${warning.message}`),
+    ];
+    state.importStatus = mapResult.warnings.length ? t('importCompleteMapWarnings') : t('importComplete');
+    state.importBusy = false;
+    state.importStatusError = false;
+    const saved = await saveNamedState(retry.importName);
+    if (!saved.ok) throw saved.error;
+    if (!mapResult.warnings.length) deferredMapRetry = null;
+    update();
+  } catch (error) {
+    if (deferredMapRetry === retry && deferredMapRetryMatchesState()) {
+      state.importStatus = `${t('importMapFailed')}: ${error.message}`;
+      state.importStatusError = true;
+      state.importBusy = false;
+      update();
+    }
   }
 }
 
@@ -2401,6 +2450,12 @@ function renderSaveImport() {
       onchange: event => event.target.files.length && handleSaveDirectory(event.target.files) }));
   const status = state.importStatus
     ? el('p', { class: state.importStatusError ? 'neg' : 'pos' }, state.importStatus) : null;
+  const retryMap = deferredMapRetryMatchesState()
+    && Object.entries(deferredMapRetry.files).some(([key, file]) =>
+      file && info?.sourceStatus?.[key] === 'failed')
+    ? el('button', {
+      ...(state.importBusy ? { disabled: '' } : {}), onclick: retryDeferredMapLayers,
+    }, t('retryMapLayers')) : null;
   const liveStats = el('details', { class: 'secondary-section', open: !!liveStatsDirectory },
     el('summary', {}, t('liveStatsTitle')),
     el('p', { class: 'hint' }, t(liveStatsSupported() ? 'liveStatsHint' : 'liveStatsUnsupported')),
@@ -2493,7 +2548,7 @@ function renderSaveImport() {
           el('td', {}, item.type), el('td', { class: 'r' }, fmt(item.count, 0))))))) : null) : null;
 
   return el('section', {}, el('h2', {}, t('saveImportTitle')), el('p', { class: 'hint' }, t('saveImportHint')),
-    renderLocalWorkshopPicker(), picker, status, liveStats, audit);
+    renderLocalWorkshopPicker(), picker, status, retryMap, liveStats, audit);
 }
 
 // ---------------------------------------------------------------- city tab

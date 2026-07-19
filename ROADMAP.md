@@ -314,7 +314,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   inside the parser worker instead of being decoded and copied on the main thread. Core Republic
   data becomes usable first; roads, railways, pedestrian paths,
   water and pollution load sequentially in a second worker and enrich the same local snapshot afterward.
-  Explicit recovery for slow or failed optional files remains a follow-up.
+  If an optional local layer fails, the core Republic stays usable and the Save Import audit offers
+  a bounded manual retry using the still-authorized local files; successful retries replace stale
+  warnings and refresh the named snapshot without repeating the core import.
 
 ### 4.2 Live-follow stats.ini ✅ done 2026-07-18
 - **Delivered:** The Save Import page can watch a user-approved save directory through
