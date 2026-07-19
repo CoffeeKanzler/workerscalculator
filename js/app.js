@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=108';
+import { STRINGS } from './i18n.js?v=109';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -66,6 +66,7 @@ let constructionDetailsOpen = false;
 let constructionProgressFilter = 'all';
 let constructionScopeFilter = '';
 let constructionSearch = '';
+let unmatchedScopeFilter = '';
 let deferredMapRetry = null;
 const terrainWaterImageCache = new Map();
 const pollutionImageCache = new Map();
@@ -2556,16 +2557,40 @@ function renderSaveImport() {
         el('tbody', {}, ...info.unrepresentedSupport.map(item => el('tr', {},
           el('td', {}, areaNames.get(item.scopeId) ?? t('unassigned')),
           el('td', {}, item.type), el('td', { class: 'r' }, fmt(item.count, 0))))))) : null,
-    info.unmatched?.length ? el('details', { class: 'tablewrap' },
+    info.unmatched?.length ? (() => {
+      const unmatchedScopeIds = [...new Set(info.unmatched.map(item => item.scopeId ?? null))]
+        .sort((a, b) => (areaNames.get(a) ?? t('unassigned')).localeCompare(areaNames.get(b) ?? t('unassigned')));
+      const scopeToken = scopeId => scopeId === null ? 'unassigned' : String(scopeId);
+      if (unmatchedScopeFilter && !unmatchedScopeIds.some(scopeId => scopeToken(scopeId) === unmatchedScopeFilter)) {
+        unmatchedScopeFilter = '';
+      }
+      const selectedScope = unmatchedScopeFilter === '' ? undefined
+        : unmatchedScopeFilter === 'unassigned' ? null : Number(unmatchedScopeFilter);
+      const visibleUnmatched = selectedScope === undefined ? info.unmatched
+        : info.unmatched.filter(item => (item.scopeId ?? null) === selectedScope);
+      const visibleInstances = visibleUnmatched.reduce((sum, item) => sum + item.count, 0);
+      return el('details', {
+        class: 'tablewrap unmatched-types', ...(unmatchedScopeFilter ? { open: '' } : {}),
+      },
       el('summary', {}, `${t('unmatchedTypes')} (${fmt(info.unmatched.length, 0)})`),
       el('p', { class: 'hint' }, t('unmatchedExplanation')
         .replace('{instances}', fmt(info.unmatchedCount, 0))
         .replace('{groups}', fmt(info.unmatched.length, 0))),
       hasUnmatchedWorkshopPackages ? el('p', { class: 'hint' }, t('unmatchedWorkshopHint')) : null,
+      el('label', {}, t('area'), selectInput([
+        ['', `${t('allAreas')} (${fmt(info.unmatchedCount, 0)})`],
+        ...unmatchedScopeIds.map(scopeId => [scopeToken(scopeId),
+          `${areaNames.get(scopeId) ?? t('unassigned')} (${fmt(info.unmatched
+            .filter(item => (item.scopeId ?? null) === scopeId)
+            .reduce((sum, item) => sum + item.count, 0), 0)})`]),
+      ], unmatchedScopeFilter, value => { unmatchedScopeFilter = value; }, { class: 'unmatched-area-filter' })),
+      el('p', { class: 'hint unmatched-filter-status' }, t('unmatchedFilterStatus')
+        .replace('{groups}', fmt(visibleUnmatched.length, 0))
+        .replace('{instances}', fmt(visibleInstances, 0))),
       el('table', { class: 'data' },
         el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('sourceGameId')),
           el('th', {}, t('count')), el('th', {}, t('workshopItem')))),
-        el('tbody', {}, ...info.unmatched.map(item => {
+        el('tbody', {}, ...visibleUnmatched.map(item => {
           const packageId = workshopPackageId(item.type);
           return el('tr', {},
             el('td', {}, areaNames.get(item.scopeId) ?? t('unassigned')),
@@ -2574,7 +2599,8 @@ function renderSaveImport() {
               href: `https://steamcommunity.com/sharedfiles/filedetails/?id=${packageId}`,
               target: '_blank', rel: 'noopener noreferrer',
             }, t('openWorkshopItem')) : null));
-        })))) : null) : null;
+        }))));
+    })() : null) : null;
 
   return el('section', {}, el('h2', {}, t('saveImportTitle')), el('p', { class: 'hint' }, t('saveImportHint')),
     renderLocalWorkshopPicker(), picker, status, retryMap, liveStats, audit);
@@ -3792,6 +3818,16 @@ function renderRepublic() {
   const alertAction = alert => {
     if (!Number.isInteger(alert.scopeId)) return null;
     const scope = scopeInfo.get(alert.scopeId) ?? {};
+    if (IS_BETA && alert.metric === 'coverage.workshop') {
+      return el('button', { onclick: () => {
+        unmatchedScopeFilter = String(alert.scopeId);
+        state.tab = 'saveimport';
+        update();
+        setTimeout(() => document.querySelector('details.unmatched-types')?.scrollIntoView({
+          behavior: 'smooth', block: 'start',
+        }), 0);
+      } }, t('reviewUnmatched'));
+    }
     if (alert.metric.startsWith('buffer.') && scope.production) {
       return el('button', { onclick: () => openArea(alert.scopeId, 'production') }, t('openProduction'));
     }
