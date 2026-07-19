@@ -303,6 +303,10 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   type filtering responds while the player types. Both compact and dedicated maps now fit the
   developed republic by default rather than spending most of the view on empty 20 km terrain;
   the dedicated map retains an explicit Full terrain view for borders and the complete raster.
+  Building filtering matches the best available localized name, saved instance name, or exact
+  raw type. Mouse- and keyboard-selectable markers open an in-place inspector with area,
+  construction state, coordinates, and raw save identity; exact Workshop matching rules remain
+  unchanged and unresolved numeric packages are never aliased by basename.
   Large imports now expose staged progress without rerendering/persisting the whole application
   for every parser tick. Core Republic data becomes usable first; roads, railways, water and
   pollution load sequentially in a second worker and enrich the same local snapshot afterward.

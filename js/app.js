@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=88';
+import { STRINGS } from './i18n.js?v=89';
 import { recordToPrices } from './statsini.js?v=18';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -54,6 +54,7 @@ let comparisonSnapshot = null;
 let comparisonSnapshotError = '';
 let mapFocusBuildingIndex = null;
 let mapFocusScopeId = null;
+let mapSelectedBuildingIndex = null;
 let standaloneMapViewBox = null;
 const terrainWaterImageCache = new Map();
 const pollutionImageCache = new Map();
@@ -2277,6 +2278,7 @@ async function handleSaveDirectory(fileList) {
     replaceSharedState(next);
     mapFocusBuildingIndex = null;
     mapFocusScopeId = null;
+    mapSelectedBuildingIndex = null;
     if (statsRecords.length) {
       state.statsRecords = statsRecords;
       state.statsName = statsFile.name;
@@ -2810,7 +2812,8 @@ function applyStandaloneMapVisibility(svg, layers, buildingFilter = '', legend =
       if (target && marker.parentElement !== target) target.append(marker);
     }
     const typeMatches = kind === 'border' || !filter
-      || String(marker.dataset.buildingType ?? '').toLowerCase().includes(filter);
+      || [marker.dataset.buildingType, marker.dataset.buildingLabel, marker.dataset.buildingName]
+        .some(value => String(value ?? '').toLowerCase().includes(filter));
     const layerVisible = kind === 'border'
       ? layers.borders
       : kind === 'construction'
@@ -2830,6 +2833,13 @@ function applyStandaloneMapVisibility(svg, layers, buildingFilter = '', legend =
       item.style.display = visibility[item.dataset.mapLegend] ? '' : 'none';
     }
   }
+}
+
+function mapBuildingDisplayName(building) {
+  const raw = matchSaveBuilding(building.type,
+    [...(DATA.rawBuildings ?? []), ...(DATA.workshopBuildings ?? [])], entry => entry.id);
+  const localized = state.lang === 'de' ? raw?.de : raw?.en;
+  return localized || raw?.en || raw?.de || raw?.nameStr || building.type || t('building');
 }
 
 function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = false } = {}) {
@@ -3063,23 +3073,48 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   const selectedLayer = node('g', { class: 'map-selected' });
   const borderLayer = node('g', { class: 'map-borders' });
   const outlierLayer = node('g', { class: 'map-outliers' });
+  let mapInspector = null;
+  const renderBuildingInspector = building => {
+    const progress = building.constructionProgress ?? 1;
+    return el('aside', { class: 'map-building-inspector', 'aria-live': 'polite' },
+      el('h3', {}, mapBuildingDisplayName(building),
+        el('span', { class: 'evidence-badge exact' }, t('exact'))),
+      building.name ? kv(t('savedBuildingName'), building.name) : null,
+      kv(t('savedBuildingType'), building.type || '—'),
+      kv(t('area'), plannerScopeName(building.scopeId)),
+      kv(t('building'), `#${building.index}`),
+      kv(t('status'), progress < 1
+        ? `${t('underConstruction')} · ${fmt(progress * 100, 0)} %` : t('completed')),
+      Number.isFinite(building.configuredWorkers) && building.configuredWorkers > 0
+        ? kv(t('staffing'), `${fmt(building.currentWorkers ?? 0, 0)} / ${fmt(building.configuredWorkers ?? 0, 0)}`) : null,
+      kv(t('mapCoordinates'), `X ${fmt(building.x, 1)} · Z ${fmt(building.z, 1)}`));
+  };
+  const inspectBuilding = (building, circle) => {
+    mapSelectedBuildingIndex = building.index;
+    for (const marker of svg.querySelectorAll('circle.map-inspected')) marker.classList.remove('map-inspected');
+    circle.classList.add('map-inspected');
+    if (mapInspector) mapInspector.replaceWith(mapInspector = renderBuildingInspector(building));
+  };
   for (const building of model.buildings) {
     if (isExternalAirLinkType(building.type)) continue;
     const borderPost = isBorderPostType(building.type);
     const selected = building.scopeId === state.republicScope;
     const outlier = building.criminalityOutlier;
     const underConstruction = (building.constructionProgress ?? 1) < 1;
+    const displayName = mapBuildingDisplayName(building);
     const circle = node('circle', {
       cx: building.mapX.toFixed(2), cy: building.mapY.toFixed(2),
       'data-building-type': building.type ?? '',
+      'data-building-label': displayName,
+      'data-building-name': building.name ?? '',
       'data-map-kind': borderPost ? 'border' : underConstruction ? 'construction' : 'building',
       'data-map-outlier': outlier ? 'true' : 'false',
       'data-map-selected': selected ? 'true' : 'false',
+      ...(standalone ? { tabindex: '0', role: 'button', 'aria-label': displayName } : {}),
       r: (building.focused ? 7.5 : borderPost ? 4.5 : outlier ? 5.5 : selected ? 2.4 : 1.35) * mapPointScale,
-      ...((building.focused || underConstruction || borderPost) ? {
-        class: [building.focused ? 'focused' : '', underConstruction ? 'under-construction' : '', borderPost ? 'border-post' : '']
-          .filter(Boolean).join(' '),
-      } : {}),
+      class: [building.focused ? 'focused' : '', underConstruction ? 'under-construction' : '',
+        borderPost ? 'border-post' : '', building.index === mapSelectedBuildingIndex ? 'map-inspected' : '']
+        .filter(Boolean).join(' '),
     });
     const title = node('title');
     const buildingTitle = outlier
@@ -3089,6 +3124,14 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     title.textContent = buildingTitle + (underConstruction
       ? ` · ${t('underConstruction')} ${fmt(building.constructionProgress * 100, 0)} %` : '');
     circle.append(title);
+    if (standalone) {
+      circle.addEventListener('click', () => inspectBuilding(building, circle));
+      circle.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        inspectBuilding(building, circle);
+      });
+    }
     (borderPost ? borderLayer : outlier ? outlierLayer : selected ? selectedLayer : normalLayer).append(circle);
   }
   const scopeBuildingTypes = new Map();
@@ -3176,9 +3219,11 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
           saveState();
         },
       }), ' ', label) : null;
-    const buildingTypes = [...new Set(model.buildings
+    const buildingTypes = [...new Map(model.buildings
       .filter(building => !isBorderPostType(building.type) && !isExternalAirLinkType(building.type))
-      .map(building => building.type).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+      .map(building => [building.type, {
+        type: building.type, label: mapBuildingDisplayName(building),
+      }])).values()].sort((a, b) => a.label.localeCompare(b.label) || a.type.localeCompare(b.type));
     const currentView = () => standaloneMapViewBox ?? fullViewBox;
     const zoom = factor => {
       const view = currentView();
@@ -3225,7 +3270,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
             onchange: () => saveState(),
           }),
           el('datalist', { id: 'map-building-types' },
-            ...buildingTypes.map(type => el('option', { value: type })))),
+            ...buildingTypes.map(item => el('option', { value: item.label, label: item.type })))),
         el('div', { class: 'map-zoom-controls' },
           el('button', { title: t('mapZoomIn'), onclick: () => zoom(0.7) }, '+'),
           el('button', { title: t('mapZoomOut'), onclick: () => zoom(1.4) }, '−'),
@@ -3246,6 +3291,13 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
               update();
             },
           }, t('mapFullTerrain')))),
+      mapInspector = (() => {
+        const selectedBuilding = model.buildings.find(building =>
+          building.index === mapSelectedBuildingIndex || building.focused);
+        return selectedBuilding ? renderBuildingInspector(selectedBuilding)
+          : el('aside', { class: 'map-building-inspector empty' },
+            el('p', { class: 'hint' }, t('selectMapBuilding')));
+      })(),
       legend, svg);
   }
   return el('details', {
@@ -3677,6 +3729,7 @@ function renderRepublic() {
   const pollutionDiagnostics = state.saveImport?.pollutionDiagnostics;
   const locatePollutedResidence = residence => {
     mapFocusBuildingIndex = residence.buildingIndex;
+    mapSelectedBuildingIndex = residence.buildingIndex;
     mapFocusScopeId = null;
     standaloneMapViewBox = null;
     state.republicScope = residence.scopeId ?? state.republicScope;

@@ -342,6 +342,10 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .alert.critical { border-left-color: var(--neg); }
 .alert-value { font-variant-numeric: tabular-nums; }
 .alert-tail { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.map-building-inspector { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 14px; margin: 8px 0; padding: 10px 12px; border: 1px solid var(--border); border-radius: 7px; background: var(--panel); }
+.map-building-inspector h3, .map-building-inspector > p { grid-column: 1 / -1; margin: 0; }
+.republic-map.standalone circle[data-map-kind] { cursor: pointer; }
+.republic-map circle.map-inspected { stroke: var(--accent2); stroke-width: 3; vector-effect: non-scaling-stroke; }
 .area-health tbody tr.warning td:first-child { box-shadow: inset 3px 0 var(--warn); }
 .area-health tbody tr.critical td:first-child { box-shadow: inset 3px 0 var(--neg); }
 .area-health tbody tr.selected-area td { background: color-mix(in srgb, var(--accent) 10%, var(--panel)); }
