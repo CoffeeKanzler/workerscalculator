@@ -27,6 +27,8 @@ $Loan_Ballance_RUB 125000.000000
 $Loan_Interest_RUB 625.000000
 $Vehicles_ImportRUB 35326.394531
 $Vehicles_ExportRUB 8125.500000
+$Citizens_AverageAge 34.25
+$Citizens_AverageLifespan 76.5
 
 $STAT_RECORD 1
 ====
@@ -69,6 +71,8 @@ test('parses records with prices, dates and scalars', () => {
   assert.equal(recs[0].loanInterestRUB, 625);
   assert.equal(recs[0].vehicleImportRUB, 35326.394531);
   assert.equal(recs[0].vehicleExportRUB, 8125.5);
+  assert.equal(recs[0].averageAge, 34.25);
+  assert.equal(recs[0].averageLifespan, 76.5);
   assert.equal(recs[1].purchaseUSD.steel, 410);
 });
 

@@ -335,7 +335,7 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   scalar names (while retaining older aliases), so missing child fields are omitted rather
   than drawn as an authoritative-looking zero. Separate exact charts now expose the saved
   births/deaths, escapes and Soviet/African immigration fields, plus no/basic/higher education
-  counts. They remain labelled as per-record saved values rather than invented daily rates or
+  counts and average age/lifespan in saved years. They remain labelled as per-record saved values rather than invented daily rates or
   cumulative totals. The selected-resource charts keep exact ₽-market and $-market import/export
   channels separate and add factory, shop, construction, and vehicle use; unlike resource units
   are never summed into a false republic total. The selector includes all 45 resources observed in

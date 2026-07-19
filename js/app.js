@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=94';
+import { STRINGS } from './i18n.js?v=95';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=23';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -4252,6 +4252,10 @@ function renderRepublic() {
         series(t('noEducation'), '#c0392b', record => record.educationNone),
         series(t('basicEducation'), '#f1c40f', record => record.educationBasic),
         series(t('higherEducation'), '#2980b9', record => record.educationHigh),
+      ]),
+      renderRepublicLineChart(t('longevityHistory'), [
+        series(t('averageAge'), '#2980b9', record => record.averageAge),
+        series(t('averageLifespan'), '#27ae60', record => record.averageLifespan),
       ]),
       renderRepublicLineChart(t('productivityHistory'), [
         series(t('productivity'), '#27ae60', record => Number.isFinite(record.averageProductivity)
