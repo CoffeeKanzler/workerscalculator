@@ -315,7 +315,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   Building filtering matches the best available localized name, saved instance name, or exact
   raw type. Mouse- and keyboard-selectable markers open an in-place inspector with area,
   construction state, coordinates, and raw save identity; exact Workshop matching rules remain
-  unchanged and unresolved numeric packages are never aliased by basename.
+  unchanged and unresolved numeric packages are never aliased by basename. The interactive map
+  exposes a labelled group with individually named keyboard buttons instead of hiding those
+  markers inside an image role; the compact read-only map remains an image.
   The import audit distinguishes unresolved building instances from grouped area/type rows and
   explains that unresolved records remain in the save and map while only unsafe calculations are omitted.
   Large imports now expose staged progress without rerendering/persisting the whole application

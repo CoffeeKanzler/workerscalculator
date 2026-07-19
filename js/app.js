@@ -2993,7 +2993,8 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     viewBox: standalone
       ? `${activeStandaloneViewBox.x} ${activeStandaloneViewBox.y} ${activeStandaloneViewBox.width} ${activeStandaloneViewBox.height}`
       : `${compactViewBox.x} ${compactViewBox.y} ${compactViewBox.width} ${compactViewBox.height}`,
-    class: `republic-map${standalone ? ' standalone' : ''}`, role: 'img', 'aria-label': t('schematicRepublicMap'),
+    class: `republic-map${standalone ? ' standalone' : ''}`,
+    role: standalone ? 'group' : 'img', 'aria-label': t('schematicRepublicMap'),
   });
   const applyStandaloneViewBox = view => {
     standaloneMapViewBox = clampViewBox(view);
