@@ -1,5 +1,5 @@
 import { STRINGS } from './i18n.js?v=84';
-import { recordToPrices } from './statsini.js?v=17';
+import { recordToPrices } from './statsini.js?v=18';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -2775,6 +2775,50 @@ function totalMapValues(map) {
   return Object.values(map ?? {}).reduce((total, value) => total + (Number.isFinite(value) ? value : 0), 0);
 }
 
+function applyStandaloneMapVisibility(svg, layers, buildingFilter = '', legend = null) {
+  const setGroupVisible = (selector, visible) => {
+    const group = svg.querySelector(selector);
+    if (group) group.style.display = visible ? '' : 'none';
+  };
+  setGroupVisible('.map-water', layers.water);
+  setGroupVisible('.map-pollution', layers.pollution);
+  setGroupVisible('.map-roads', layers.roads);
+  setGroupVisible('.map-rails', layers.rails);
+  setGroupVisible('.map-scopes', layers.scopes);
+
+  const filter = String(buildingFilter ?? '').trim().toLowerCase();
+  for (const marker of svg.querySelectorAll('circle[data-map-kind]')) {
+    const kind = marker.dataset.mapKind;
+    const outlier = marker.dataset.mapOutlier === 'true';
+    if (outlier && kind !== 'border') {
+      const target = layers.outliers
+        ? svg.querySelector('.map-outliers')
+        : svg.querySelector(marker.dataset.mapSelected === 'true' ? '.map-selected' : '.map-buildings');
+      if (target && marker.parentElement !== target) target.append(marker);
+    }
+    const typeMatches = kind === 'border' || !filter
+      || String(marker.dataset.buildingType ?? '').toLowerCase().includes(filter);
+    const layerVisible = kind === 'border'
+      ? layers.borders
+      : kind === 'construction'
+        ? layers.construction
+        : outlier ? layers.buildings || layers.outliers : layers.buildings;
+    marker.style.display = layerVisible && typeMatches ? '' : 'none';
+  }
+
+  if (legend) {
+    const visibility = {
+      water: layers.water, pollution: layers.pollution, roads: layers.roads, rails: layers.rails,
+      buildings: layers.buildings, selected: layers.buildings,
+      construction: layers.construction, borders: layers.borders,
+      scopes: layers.scopes, outliers: layers.outliers,
+    };
+    for (const item of legend.querySelectorAll('[data-map-legend]')) {
+      item.style.display = visibility[item.dataset.mapLegend] ? '' : 'none';
+    }
+  }
+}
+
 function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = false } = {}) {
   const model = buildSchematicMap(buildings, scopes, outliers, {
     focusBuildingIndex: mapFocusBuildingIndex,
@@ -3001,18 +3045,15 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   for (const building of model.buildings) {
     if (isExternalAirLinkType(building.type)) continue;
     const borderPost = isBorderPostType(building.type);
-    if (!borderPost && buildingFilter && !String(building.type ?? '').toLowerCase().includes(buildingFilter)) continue;
     const selected = building.scopeId === state.republicScope;
     const outlier = building.criminalityOutlier;
     const underConstruction = (building.constructionProgress ?? 1) < 1;
-    if (borderPost && !layers.borders) continue;
-    if (!borderPost && underConstruction && !layers.construction) continue;
-    if (!borderPost && !underConstruction && !layers.buildings && !(outlier && layers.outliers)) continue;
-    if (!borderPost && outlier && !layers.outliers && !layers.buildings) continue;
     const circle = node('circle', {
       cx: building.mapX.toFixed(2), cy: building.mapY.toFixed(2),
       'data-building-type': building.type ?? '',
       'data-map-kind': borderPost ? 'border' : underConstruction ? 'construction' : 'building',
+      'data-map-outlier': outlier ? 'true' : 'false',
+      'data-map-selected': selected ? 'true' : 'false',
       r: (building.focused ? 7.5 : borderPost ? 4.5 : outlier ? 5.5 : selected ? 2.4 : 1.35) * mapPointScale,
       ...((building.focused || underConstruction || borderPost) ? {
         class: [building.focused ? 'focused' : '', underConstruction ? 'under-construction' : '', borderPost ? 'border-post' : '']
@@ -3027,7 +3068,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     title.textContent = buildingTitle + (underConstruction
       ? ` · ${t('underConstruction')} ${fmt(building.constructionProgress * 100, 0)} %` : '');
     circle.append(title);
-    (borderPost ? borderLayer : outlier && layers.outliers ? outlierLayer : selected ? selectedLayer : normalLayer).append(circle);
+    (borderPost ? borderLayer : outlier ? outlierLayer : selected ? selectedLayer : normalLayer).append(circle);
   }
   const scopeBuildingTypes = new Map();
   for (const building of model.buildings) {
@@ -3043,7 +3084,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     .map(([scopeId]) => scopeId));
   const scopeLayer = node('g', { class: 'map-scopes' });
   for (const scope of model.scopes) {
-    if (!layers.scopes || borderOnlyScopeIds.has(scope.id)) continue;
+    if (borderOnlyScopeIds.has(scope.id)) continue;
     const focusedScopeId = focusedBuilding?.scopeId ?? (scopeViewBox ? mapFocusScopeId : null);
     if (Number.isInteger(focusedScopeId) && scope.id !== focusedScopeId) continue;
     const marker = node('circle', {
@@ -3068,10 +3109,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     marker.append(title);
     scopeLayer.append(marker);
   }
-  if (layers.water) svg.append(waterLayer);
-  if (layers.pollution) svg.append(pollutionLayer);
-  if (layers.rails) svg.append(railLayer);
-  if (layers.roads) svg.append(roadLayer);
+  svg.append(waterLayer, pollutionLayer, railLayer, roadLayer);
   svg.append(normalLayer, selectedLayer, borderLayer, scopeLayer, outlierLayer);
   const mapHintKey = model.rails.length
     ? (model.water ? 'schematicMapNetworksWaterHint' : 'schematicMapNetworksHint')
@@ -3090,27 +3128,31 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     el('span', { class: 'evidence-badge exact' }, t('exact'))) : null;
   const borderPosts = model.buildings.filter(building => isBorderPostType(building.type));
   const legend = el('div', { class: 'map-legend' },
-    model.water ? el('span', {}, el('i', { class: 'water' }), t('waterFootprint')) : null,
-    layers.pollution && model.pollution ? el('span', {
+    model.water ? el('span', { 'data-map-legend': 'water' }, el('i', { class: 'water' }), t('waterFootprint')) : null,
+    model.pollution ? el('span', {
+      'data-map-legend': 'pollution',
       title: `${fmt(model.pollution.airNonzero, 0)} ${t('pollutedCells')}`,
     }, el('i', { class: 'pollution' }), t('airPollution')) : null,
-    model.roads.length ? el('span', {}, el('i', { class: 'road' }), t('roads')) : null,
-    model.rails.length ? el('span', {}, el('i', { class: 'rail' }), t('rails')) : null,
-    el('span', {}, el('i', { class: 'building' }), t('buildings')),
+    model.roads.length ? el('span', { 'data-map-legend': 'roads' }, el('i', { class: 'road' }), t('roads')) : null,
+    model.rails.length ? el('span', { 'data-map-legend': 'rails' }, el('i', { class: 'rail' }), t('rails')) : null,
+    el('span', { 'data-map-legend': 'buildings' }, el('i', { class: 'building' }), t('buildings')),
     Number.isInteger(state.republicScope)
-      ? el('span', {}, el('i', { class: 'selected' }), t('selectedAreaBuildings')) : null,
+      ? el('span', { 'data-map-legend': 'selected' }, el('i', { class: 'selected' }), t('selectedAreaBuildings')) : null,
     hasUnderConstruction
-      ? el('span', {}, el('i', { class: 'construction' }), t('underConstruction')) : null,
-    borderPosts.length ? el('span', {}, el('i', { class: 'border' }), t('borderPosts')) : null,
-    el('span', {}, el('i', { class: 'scope' }), t('areaCenters')),
-    el('span', {}, el('i', { class: 'outlier' }), t('highCriminalityResidents')));
+      ? el('span', { 'data-map-legend': 'construction' }, el('i', { class: 'construction' }), t('underConstruction')) : null,
+    borderPosts.length ? el('span', { 'data-map-legend': 'borders' }, el('i', { class: 'border' }), t('borderPosts')) : null,
+    el('span', { 'data-map-legend': 'scopes' }, el('i', { class: 'scope' }), t('areaCenters')),
+    el('span', { 'data-map-legend': 'outliers' }, el('i', { class: 'outlier' }), t('highCriminalityResidents')));
+  applyStandaloneMapVisibility(svg, layers, buildingFilter, legend);
   if (standalone) {
     const layerToggle = (key, label, available = true) => available ? el('label', {},
       el('input', {
         type: 'checkbox', checked: layers[key], 'data-map-layer': key,
         onchange: event => {
-          state.mapLayers = { ...layers, [key]: event.target.checked };
-          update();
+          state.mapLayers = { ...state.mapLayers, [key]: event.target.checked };
+          layers[key] = event.target.checked;
+          applyStandaloneMapVisibility(svg, layers, state.mapBuildingFilter, legend);
+          saveState();
         },
       }), ' ', label) : null;
     const buildingTypes = [...new Set(model.buildings
@@ -3149,13 +3191,17 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
               state.mapPollutionOpacity = Number(event.target.value);
               svg.querySelector('.map-pollution')?.setAttribute('opacity', event.target.value);
             },
-            onchange: () => update(),
+            onchange: () => saveState(),
           })) : null,
         el('label', {}, t('mapBuildingFilter'), ' ',
           el('input', {
             id: 'mapBuildingFilter', type: 'search', list: 'map-building-types',
             value: state.mapBuildingFilter ?? '', placeholder: t('mapAllBuildingTypes'),
-            onchange: event => { state.mapBuildingFilter = event.target.value; update(); },
+            oninput: event => {
+              state.mapBuildingFilter = event.target.value;
+              applyStandaloneMapVisibility(svg, layers, state.mapBuildingFilter, legend);
+            },
+            onchange: () => saveState(),
           }),
           el('datalist', { id: 'map-building-types' },
             ...buildingTypes.map(type => el('option', { value: type })))),
@@ -3920,7 +3966,9 @@ function renderRepublic() {
     el('div', { class: 'chart-grid' },
       renderRepublicLineChart(t('citizenHistory'), [
         series(t('adults'), '#d35400', record => record.adults),
-        series(t('children'), '#2980b9', record => (record.childrenSmall ?? 0) + (record.childrenMedium ?? 0)),
+        series(t('children'), '#2980b9', record =>
+          Number.isFinite(record.childrenSmall) || Number.isFinite(record.childrenMedium)
+            ? (record.childrenSmall ?? 0) + (record.childrenMedium ?? 0) : null),
         series(t('unemployed'), '#c0392b', record => record.unemployed),
       ]),
       renderRepublicLineChart(t('productivityHistory'), [

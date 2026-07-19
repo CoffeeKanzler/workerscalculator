@@ -135,6 +135,11 @@ $Citizens_Adults 1200
 $Citizens_Unemployed 40
 $Citizens_Born 8
 $Citizens_Dead 2
+$Citizens_SmallChilds 2144
+$Citizens_MediumChilds 3374
+$Citizens_NoEducation 3079
+$Citizens_BasicEducationNum 12338
+$Citizens_HighEducationNum 4393
 $Citizens_AverageProductivity 0.91
 $STAT_CITY 4
 $DATE_YEAR 1965
@@ -149,6 +154,11 @@ $end`;
   assert.equal(record.unemployed, 40);
   assert.equal(record.born, 8);
   assert.equal(record.dead, 2);
+  assert.equal(record.childrenSmall, 2144);
+  assert.equal(record.childrenMedium, 3374);
+  assert.equal(record.educationNone, 3079);
+  assert.equal(record.educationBasic, 12338);
+  assert.equal(record.educationHigh, 4393);
   assert.equal(record.averageProductivity, 0.91);
   assert.equal(record.year, 2000);
 });

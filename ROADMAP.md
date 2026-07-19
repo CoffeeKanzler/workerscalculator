@@ -288,7 +288,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   import/export targets are omitted. Exact `pollution.bin` air pollution is rendered as an
   optional compact green/yellow/red raster with adjustable opacity; clean cells stay transparent.
   Radiation is a distinct saved channel and remains hidden when empty. Full terrain shading
-  remains a future layer.
+  remains a future layer. Dedicated-map layer switches, opacity, and saved-type filtering update
+  the existing SVG in place instead of rebuilding the complete application and map geometry;
+  type filtering responds while the player types.
   Large imports now expose staged progress without rerendering/persisting the whole application
   for every parser tick. Core Republic data becomes usable first; roads, railways, water and
   pollution load sequentially in a second worker and enrich the same local snapshot afterward.
@@ -307,6 +309,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   year/day labels and sampled point-value hover tooltips. Missing price observations
   are omitted instead of becoming false zeroes, while min/max-preserving sampling
   bounds each rendered series to 160 points for the supplied 3,002-record history.
+  Population history recognizes the current save's exact `SmallChilds` / `MediumChilds`
+  scalar names (while retaining older aliases), so missing child fields are omitted rather
+  than drawn as an authoritative-looking zero.
 - **Comparison:** Up to three resources can share the selected-currency chart,
   with separately labelled buy/sell series. An optional logarithmic scale keeps
   commodities with very different price magnitudes readable and excludes
