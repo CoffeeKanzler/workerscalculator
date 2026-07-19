@@ -269,7 +269,7 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   housing remains excluded because its display names were previously assigned heuristically.
   Continue careful curation of ambiguous rows, and optionally follow more live save files. A first
   schematic Republic map now plots exact saved building X/Z positions, exact `road.bin`
-  centerlines when available, a compact water footprint derived from the optional saved
+  and `rail.bin` centerlines when available, a compact water footprint derived from the optional saved
   `heightmap.dds` and water plane, area centers, and
   highlighted criminality-outlier residences; each outlier row can zoom directly to its
   residence and return to the full-republic view. Clicking or keyboard-activating an area
@@ -278,8 +278,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   while retaining surrounding roads and water. Its compact exact summary reports mapped
   buildings and construction count, and dashed rings identify each unfinished building at
   its saved position and progress; the same control returns to the whole map.
-  Road geometry is read locally from
-  `road.bin`; both optional map layers are omitted from share links and restored from the
+  Road and rail geometry are read locally from their network files; all optional map layers
+  are omitted from share links and restored from the
   local named snapshot. Full terrain shading remains a future layer.
 
 ### 4.2 Live-follow stats.ini ✅ done 2026-07-18

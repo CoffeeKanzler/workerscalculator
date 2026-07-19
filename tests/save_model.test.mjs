@@ -422,6 +422,21 @@ test('schematic map projects exact saved road centerlines with shared bounds', (
   assert.equal(result.buildings[0].mapY, 50);
 });
 
+test('schematic map projects exact saved rail centerlines with shared bounds', () => {
+  const result = buildSchematicMap([{ index: 1, x: 0, z: 0 }], [], null, {
+    width: 100, height: 100, padding: 10,
+    railNetwork: {
+      nodes: [{ id: 0, x: -20, y: 1, z: -10 }, { id: 1, x: 20, y: 2, z: 30 }],
+      edges: [{ id: 4, from: 0, to: 1, points: [{ x: 0, y: 1.5, z: 10 }] }],
+    },
+  });
+  assert.deepEqual(result.bounds, { minX: -20, maxX: 20, minZ: -10, maxZ: 30 });
+  assert.deepEqual(result.rails, [{ id: 4, points: [
+    { mapX: 10, mapY: 90 }, { mapX: 50, mapY: 50 }, { mapX: 90, mapY: 10 },
+  ] }]);
+  assert.equal(result.roads.length, 0);
+});
+
 test('schematic map places heightmap-derived water in the shared world projection', () => {
   const terrainWater = {
     width: 2, height: 2, packed: 'Yw==',
@@ -429,6 +444,10 @@ test('schematic map places heightmap-derived water in the shared world projectio
   };
   const result = buildSchematicMap([{ index: 1, x: 0, z: 0 }], [], null, {
     width: 120, height: 80, padding: 10, terrainWater,
+    railNetwork: {
+      nodes: [{ id: 0, x: -1000, z: -1000 }, { id: 1, x: 1000, z: 1000 }],
+      edges: [{ id: 0, from: 0, to: 1, points: [] }],
+    },
   });
   assert.deepEqual(result.bounds, { minX: -100, maxX: 100, minZ: -100, maxZ: 100 });
   assert.deepEqual(result.water, {

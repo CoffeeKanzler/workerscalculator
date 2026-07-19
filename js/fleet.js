@@ -611,7 +611,7 @@ export function shareSafeSaveImport(saveImport) {
   if (!saveImport) return saveImport;
   const {
     ownedVehicles, usedVehicleOffers, vehicleLines, distributionOffices, criminalityOutliers,
-    blueprintOwned, roadNetwork, terrainWater, ...summary
+    blueprintOwned, roadNetwork, railNetwork, terrainWater, ...summary
   } = saveImport;
   return summary;
 }

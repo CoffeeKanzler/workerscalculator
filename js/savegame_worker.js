@@ -7,7 +7,7 @@ import {
 import { parseBlueprintOwned, parseCityStatsIni, parseStatsIni } from './statsini.js?v=17';
 
 const sourceStatus = (payload) => Object.fromEntries(
-  ['namepoints', 'buildings', 'workers', 'vehicles', 'usedVehicles', 'lines', 'road', 'heightmap', 'header', 'research', 'events', 'stats', 'material']
+  ['namepoints', 'buildings', 'workers', 'vehicles', 'usedVehicles', 'lines', 'road', 'rail', 'heightmap', 'header', 'research', 'events', 'stats', 'material']
     .map((key) => [key, payload[key] ? 'pending' : 'missing']),
 );
 
@@ -57,6 +57,7 @@ self.onmessage = ({ data }) => {
       saveVersion: header?.saveVersion ?? 124,
     }));
     const roadNetwork = optional('road', parseRoadNetwork);
+    const railNetwork = optional('rail', parseRoadNetwork);
     const terrainWater = optional('heightmap', parseHeightmapWater);
     const research = optional('research', parseResearch);
     const events = optional('events', parseEvents);
@@ -73,7 +74,7 @@ self.onmessage = ({ data }) => {
         usedVehicleOffers: usedVehicles?.offers ?? null,
         usedVehicleFileSummary: usedVehicles?.summary ?? null,
         vehicleLines: lines?.lines ?? null, lineFileSummary: lines?.summary ?? null,
-        roadNetwork,
+        roadNetwork, railNetwork,
         terrainWater,
         statsRecords, cityStats, blueprintOwned, membershipAudit, sourceStatus: status, warnings,
       },

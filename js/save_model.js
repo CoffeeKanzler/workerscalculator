@@ -132,7 +132,7 @@ export function compactObservedBuildings(buildings) {
 
 export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
   width = 760, height = 480, padding = 18, focusBuildingIndex = null, roadNetwork = null,
-  terrainWater = null,
+  railNetwork = null, terrainWater = null,
 } = {}) {
   const located = (buildings ?? []).filter(building =>
     Number.isFinite(building.x) && Number.isFinite(building.z));
@@ -146,20 +146,32 @@ export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
     maxZ = Math.max(maxZ, point.z);
   };
   located.forEach(includeExtent);
-  for (const edge of roadNetwork?.edges ?? []) {
-    includeExtent(roadNetwork.nodes?.[edge.from]);
-    edge.points?.forEach(includeExtent);
-    includeExtent(roadNetwork.nodes?.[edge.to]);
+  for (const network of [roadNetwork, railNetwork]) {
+    for (const edge of network?.edges ?? []) {
+      includeExtent(network.nodes?.[edge.from]);
+      edge.points?.forEach(includeExtent);
+      includeExtent(network.nodes?.[edge.to]);
+    }
   }
   if (terrainWater?.worldBounds) {
-    includeExtent({ x: terrainWater.worldBounds.minX, z: terrainWater.worldBounds.minZ });
-    includeExtent({ x: terrainWater.worldBounds.maxX, z: terrainWater.worldBounds.maxZ });
+    ({ minX, maxX, minZ, maxZ } = terrainWater.worldBounds);
   }
   const projectX = value => padding + (width - 2 * padding) * ((value - minX) / ((maxX - minX) || 1));
   const projectY = value => height - padding
     - (height - 2 * padding) * ((value - minZ) / ((maxZ - minZ) || 1));
   const outliers = new Map((criminalityOutliers?.residents ?? [])
     .map(resident => [resident.residenceBuildingIndex, resident]));
+  const projectNetwork = network => (network?.edges ?? []).map(edge => {
+    const from = network.nodes?.[edge.from];
+    const to = network.nodes?.[edge.to];
+    return {
+      id: edge.id,
+      points: [from, ...(edge.points ?? []), to].filter(point =>
+        Number.isFinite(point?.x) && Number.isFinite(point?.z)).map(point => ({
+        mapX: projectX(point.x), mapY: projectY(point.z),
+      })),
+    };
+  }).filter(edge => edge.points.length > 1);
   return {
     width, height, bounds: { minX, maxX, minZ, maxZ },
     water: terrainWater?.worldBounds ? {
@@ -169,17 +181,8 @@ export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
       mapWidth: projectX(terrainWater.worldBounds.maxX) - projectX(terrainWater.worldBounds.minX),
       mapHeight: projectY(terrainWater.worldBounds.minZ) - projectY(terrainWater.worldBounds.maxZ),
     } : null,
-    roads: (roadNetwork?.edges ?? []).map(edge => {
-      const from = roadNetwork.nodes?.[edge.from];
-      const to = roadNetwork.nodes?.[edge.to];
-      return {
-        id: edge.id,
-        points: [from, ...(edge.points ?? []), to].filter(point =>
-          Number.isFinite(point?.x) && Number.isFinite(point?.z)).map(point => ({
-          mapX: projectX(point.x), mapY: projectY(point.z),
-        })),
-      };
-    }).filter(edge => edge.points.length > 1),
+    roads: projectNetwork(roadNetwork),
+    rails: projectNetwork(railNetwork),
     buildings: located.map(building => ({
       ...building, mapX: projectX(building.x), mapY: projectY(building.z),
       criminalityOutlier: outliers.get(building.index) ?? null,

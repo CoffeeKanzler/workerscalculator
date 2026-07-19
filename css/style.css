@@ -287,6 +287,7 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-section { overflow: hidden; }
 .republic-map { display: block; width: 100%; max-height: 560px; background: var(--panel2); border: 1px solid var(--border); border-radius: 8px; }
 .republic-map .map-water image { image-rendering: auto; }
+.republic-map .map-rails path { fill: none; stroke: var(--accent2); stroke-width: 1.15; stroke-linecap: round; stroke-linejoin: round; opacity: .78; vector-effect: non-scaling-stroke; }
 .republic-map .map-roads path { fill: none; stroke: var(--muted); stroke-width: .9; stroke-linecap: round; stroke-linejoin: round; opacity: .55; vector-effect: non-scaling-stroke; }
 .republic-map .map-buildings circle { fill: var(--muted); opacity: .52; }
 .republic-map .map-selected circle { fill: var(--accent); opacity: .9; }
@@ -298,6 +299,7 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-legend span { display: inline-flex; align-items: center; gap: 5px; }
 .map-legend i { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }
 .map-legend i.road { width: 14px; height: 2px; border-radius: 0; background: var(--muted); }
+.map-legend i.rail { width: 14px; height: 4px; border-radius: 0; border-top: 1px solid var(--accent2); border-bottom: 1px solid var(--accent2); background: transparent; }
 .map-legend i.water { width: 14px; height: 7px; border-radius: 2px; background: rgba(44, 133, 190, .7); }
 .map-legend i.selected { background: var(--accent); }
 .map-legend i.construction { background: transparent; border: 2px dashed var(--accent2); }
