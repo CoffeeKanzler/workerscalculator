@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=86';
+import { STRINGS } from './i18n.js?v=87';
 import { recordToPrices } from './statsini.js?v=18';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -2862,32 +2862,6 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     ? Math.max(0, Math.min(model.width - zoomWidth, focusedBuilding.mapX - zoomWidth / 2)) : 0;
   const zoomY = focusedBuilding
     ? Math.max(0, Math.min(model.height - zoomHeight, focusedBuilding.mapY - zoomHeight / 2)) : 0;
-  const scopeBuildings = Number.isInteger(mapFocusScopeId)
-    ? model.buildings.filter(building => building.scopeId === mapFocusScopeId) : [];
-  let scopeZoomScale = 1;
-  const scopeViewBox = scopeBuildings.length ? (() => {
-    const xs = scopeBuildings.map(building => building.mapX);
-    const ys = scopeBuildings.map(building => building.mapY);
-    const spanX = Math.max(...xs) - Math.min(...xs);
-    const spanY = Math.max(...ys) - Math.min(...ys);
-    const margin = Math.max(10, Math.max(spanX, spanY) * 0.12);
-    let width = Math.max(80, spanX + margin * 2);
-    let height = Math.max(60, spanY + margin * 2);
-    const aspect = model.width / model.height;
-    if (width / height > aspect) height = width / aspect;
-    else width = height * aspect;
-    width = Math.min(model.width, width);
-    height = Math.min(model.height, height);
-    scopeZoomScale = width / model.width;
-    const centerX = (Math.min(...xs) + Math.max(...xs)) / 2;
-    const centerY = (Math.min(...ys) + Math.max(...ys)) / 2;
-    const x = Math.max(0, Math.min(model.width - width, centerX - width / 2));
-    const y = Math.max(0, Math.min(model.height - height, centerY - height / 2));
-    return `${x} ${y} ${width} ${height}`;
-  })() : null;
-  const mapPointScale = standalone && standaloneMapViewBox
-    ? standaloneMapViewBox.width / model.width
-    : focusedBuilding ? zoomWidth / model.width : scopeZoomScale;
   const fullViewBox = { x: 0, y: 0, width: model.width, height: model.height };
   const clampViewBox = view => {
     const width = Math.max(model.width / 32, Math.min(model.width, view.width));
@@ -2898,19 +2872,48 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       width, height,
     };
   };
+  const fitView = (points, { minimumWidth = 80, marginRatio = 0.12 } = {}) => {
+    if (!points.length) return fullViewBox;
+    const xs = points.map(point => point.mapX);
+    const ys = points.map(point => point.mapY);
+    const spanX = Math.max(...xs) - Math.min(...xs);
+    const spanY = Math.max(...ys) - Math.min(...ys);
+    const margin = Math.max(10, Math.max(spanX, spanY) * marginRatio);
+    let width = Math.max(minimumWidth, spanX + margin * 2);
+    let height = Math.max(minimumWidth * model.height / model.width, spanY + margin * 2);
+    const aspect = model.width / model.height;
+    if (width / height > aspect) height = width / aspect;
+    else width = height * aspect;
+    return clampViewBox({
+      x: (Math.min(...xs) + Math.max(...xs) - width) / 2,
+      y: (Math.min(...ys) + Math.max(...ys) - height) / 2,
+      width, height,
+    });
+  };
+  const developedBuildings = model.buildings.filter(building =>
+    !isBorderPostType(building.type) && !isExternalAirLinkType(building.type)
+    && !String(building.type ?? '').toLowerCase().includes('transformator_customin'));
+  const developedViewBox = fitView(developedBuildings, { minimumWidth: 95, marginRatio: 0.08 });
+  const scopeBuildings = Number.isInteger(mapFocusScopeId)
+    ? model.buildings.filter(building => building.scopeId === mapFocusScopeId) : [];
+  const scopeViewBox = scopeBuildings.length ? (() => {
+    return fitView(scopeBuildings);
+  })() : null;
   const activeStandaloneViewBox = standaloneMapViewBox
     ? clampViewBox(standaloneMapViewBox)
     : standalone && focusedBuilding
-      ? clampViewBox({ x: zoomX, y: zoomY, width: zoomWidth, height: zoomHeight }) : fullViewBox;
-  if (standalone && focusedBuilding && !standaloneMapViewBox) {
+      ? clampViewBox({ x: zoomX, y: zoomY, width: zoomWidth, height: zoomHeight }) : developedViewBox;
+  if (standalone && !standaloneMapViewBox) {
     standaloneMapViewBox = activeStandaloneViewBox;
   }
+  const compactViewBox = focusedBuilding
+    ? clampViewBox({ x: zoomX, y: zoomY, width: zoomWidth, height: zoomHeight })
+    : scopeViewBox ?? developedViewBox;
+  const mapPointScale = (standalone ? activeStandaloneViewBox.width : compactViewBox.width) / model.width;
   const svg = node('svg', {
     viewBox: standalone
       ? `${activeStandaloneViewBox.x} ${activeStandaloneViewBox.y} ${activeStandaloneViewBox.width} ${activeStandaloneViewBox.height}`
-      : focusedBuilding
-      ? `${zoomX} ${zoomY} ${zoomWidth} ${zoomHeight}`
-      : scopeViewBox ?? `0 0 ${model.width} ${model.height}`,
+      : `${compactViewBox.x} ${compactViewBox.y} ${compactViewBox.width} ${compactViewBox.height}`,
     class: `republic-map${standalone ? ' standalone' : ''}`, role: 'img', 'aria-label': t('schematicRepublicMap'),
   });
   const applyStandaloneViewBox = view => {
@@ -3226,13 +3229,22 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
           el('button', { title: t('mapZoomIn'), onclick: () => zoom(0.7) }, '+'),
           el('button', { title: t('mapZoomOut'), onclick: () => zoom(1.4) }, '−'),
           el('button', {
+            title: t('mapReset'),
             onclick: () => {
               mapFocusBuildingIndex = null;
               mapFocusScopeId = null;
-              standaloneMapViewBox = null;
+              standaloneMapViewBox = developedViewBox;
               update();
             },
-          }, t('mapReset')))),
+          }, t('mapFitDeveloped')),
+          el('button', {
+            onclick: () => {
+              mapFocusBuildingIndex = null;
+              mapFocusScopeId = null;
+              standaloneMapViewBox = fullViewBox;
+              update();
+            },
+          }, t('mapFullTerrain')))),
       legend, svg);
   }
   return el('details', {

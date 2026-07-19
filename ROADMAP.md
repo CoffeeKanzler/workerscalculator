@@ -297,7 +297,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   remains hidden when empty. Full terrain shading remains a future layer.
   Dedicated-map layer switches, opacity, and saved-type filtering update
   the existing SVG in place instead of rebuilding the complete application and map geometry;
-  type filtering responds while the player types.
+  type filtering responds while the player types. Both compact and dedicated maps now fit the
+  developed republic by default rather than spending most of the view on empty 20 km terrain;
+  the dedicated map retains an explicit Full terrain view for borders and the complete raster.
   Large imports now expose staged progress without rerendering/persisting the whole application
   for every parser tick. Core Republic data becomes usable first; roads, railways, water and
   pollution load sequentially in a second worker and enrich the same local snapshot afterward.
