@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=105';
+import { STRINGS } from './i18n.js?v=106';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -2457,6 +2457,8 @@ function renderSaveImport() {
   if (!IS_BETA) return el('section');
   const info = state.saveImport;
   const areaNames = new Map(plannerScopes().map(scope => [scope.id, scope.name]));
+  const workshopPackageId = type => String(type ?? '').match(/^(\d{8,})\//)?.[1] ?? null;
+  const hasUnmatchedWorkshopPackages = info?.unmatched?.some(item => workshopPackageId(item.type));
   const picker = el('label', { class: 'importpicker' },
     '📂 ', t('chooseSaveFolder'),
     el('input', { type: 'file', class: 'hidden', webkitdirectory: '', multiple: '',
@@ -2557,11 +2559,20 @@ function renderSaveImport() {
       el('p', { class: 'hint' }, t('unmatchedExplanation')
         .replace('{instances}', fmt(info.unmatchedCount, 0))
         .replace('{groups}', fmt(info.unmatched.length, 0))),
+      hasUnmatchedWorkshopPackages ? el('p', { class: 'hint' }, t('unmatchedWorkshopHint')) : null,
       el('table', { class: 'data' },
-        el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('sourceGameId')), el('th', {}, t('count')))),
-        el('tbody', {}, ...info.unmatched.map(item => el('tr', {},
-          el('td', {}, areaNames.get(item.scopeId) ?? t('unassigned')),
-          el('td', {}, item.type), el('td', { class: 'r' }, fmt(item.count, 0))))))) : null) : null;
+        el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('sourceGameId')),
+          el('th', {}, t('count')), el('th', {}, t('workshopItem')))),
+        el('tbody', {}, ...info.unmatched.map(item => {
+          const packageId = workshopPackageId(item.type);
+          return el('tr', {},
+            el('td', {}, areaNames.get(item.scopeId) ?? t('unassigned')),
+            el('td', {}, item.type), el('td', { class: 'r' }, fmt(item.count, 0)),
+            el('td', {}, packageId ? el('a', {
+              href: `https://steamcommunity.com/sharedfiles/filedetails/?id=${packageId}`,
+              target: '_blank', rel: 'noopener noreferrer',
+            }, t('openWorkshopItem')) : null));
+        })))) : null) : null;
 
   return el('section', {}, el('h2', {}, t('saveImportTitle')), el('p', { class: 'hint' }, t('saveImportHint')),
     renderLocalWorkshopPicker(), picker, status, retryMap, liveStats, audit);

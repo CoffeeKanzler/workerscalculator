@@ -323,6 +323,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   markers inside an image role; the compact read-only map remains an image.
   The import audit distinguishes unresolved building instances from grouped area/type rows and
   explains that unresolved records remain in the save and map while only unsafe calculations are omitted.
+  Numeric unresolved rows link to their Steam Workshop package and point back to the local-folder
+  re-import fallback, giving players a recovery action without weakening exact matching.
   The collapsed overview map initially renders only its disclosure and defers thousands of SVG
   paths and markers until first open or a Locate action; optional map parsing and snapshot
   persistence still complete through the worker-backed background path.
