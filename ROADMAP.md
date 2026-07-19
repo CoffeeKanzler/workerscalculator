@@ -296,6 +296,7 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   the reference save) without claiming walking reachability or connectivity. All optional map layers
   are omitted from share links and restored from the
   local named snapshot. A dedicated Republic map tab adds wheel/drag zoom, reset controls,
+  interpolates coarse desktop wheel steps across animation frames (while honoring reduced motion),
   independent water/road/rail/pedestrian/building/construction/border/area/criminality layers, and a
   saved-type filter. Physical customs posts have their own marker; artificial off-map air
   import/export targets are omitted. Exact `pollution.bin` air pollution is rendered as an

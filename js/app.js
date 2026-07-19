@@ -3004,6 +3004,8 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     let drag = null;
     let pendingView = null;
     let cameraFrame = null;
+    let wheelTarget = null;
+    let wheelFrame = null;
     let cachedRect = null;
     const currentCamera = () => pendingView ?? standaloneMapViewBox ?? fullViewBox;
     const mapRect = () => cachedRect ??= svg.getBoundingClientRect();
@@ -3018,9 +3020,44 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
         if (next) applyStandaloneViewBox(next);
       });
     };
+    const stopWheelAnimation = () => {
+      if (wheelFrame !== null) cancelAnimationFrame(wheelFrame);
+      wheelFrame = null;
+      wheelTarget = null;
+    };
+    const animateWheel = () => {
+      wheelFrame = null;
+      if (!wheelTarget) return;
+      const current = standaloneMapViewBox ?? fullViewBox;
+      const target = wheelTarget;
+      const next = {
+        x: current.x + (target.x - current.x) * 0.32,
+        y: current.y + (target.y - current.y) * 0.32,
+        width: current.width + (target.width - current.width) * 0.32,
+      };
+      next.height = next.width * model.height / model.width;
+      const remaining = Math.max(Math.abs(target.x - next.x), Math.abs(target.y - next.y),
+        Math.abs(target.width - next.width));
+      if (remaining < 0.02) {
+        applyStandaloneViewBox(target);
+        wheelTarget = null;
+        return;
+      }
+      applyStandaloneViewBox(next);
+      wheelFrame = requestAnimationFrame(animateWheel);
+    };
+    const scheduleWheel = view => {
+      wheelTarget = clampViewBox(view);
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        applyStandaloneViewBox(wheelTarget);
+        wheelTarget = null;
+      } else if (wheelFrame === null) {
+        wheelFrame = requestAnimationFrame(animateWheel);
+      }
+    };
     svg.addEventListener('wheel', event => {
       event.preventDefault();
-      const current = currentCamera();
+      const current = wheelTarget ?? currentCamera();
       const rect = mapRect();
       const anchorX = current.x + (event.clientX - rect.left) / rect.width * current.width;
       const anchorY = current.y + (event.clientY - rect.top) / rect.height * current.height;
@@ -3028,7 +3065,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       const factor = Math.max(0.84, Math.min(1.19, Math.exp(delta * 0.0015)));
       const width = current.width * factor;
       const height = width * model.height / model.width;
-      scheduleCamera({
+      scheduleWheel({
         x: anchorX - (anchorX - current.x) * width / current.width,
         y: anchorY - (anchorY - current.y) * height / current.height,
         width, height,
@@ -3036,6 +3073,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     }, { passive: false });
     svg.addEventListener('pointerdown', event => {
       if (event.button !== 0) return;
+      stopWheelAnimation();
       const current = currentCamera();
       drag = { x: event.clientX, y: event.clientY, view: { ...current }, rect: mapRect() };
       svg.setPointerCapture(event.pointerId);
