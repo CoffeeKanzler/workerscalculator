@@ -1,6 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from '../js/republic.js';
+import {
+  buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
+} from '../js/republic.js';
 
 const observed = {
   scopes: [{
@@ -15,6 +17,17 @@ const planned = {
   totals: { population: 1100, configuredIndustryWorkers: 120, netWorkers: 50 },
   areas: [{ scopeId: 4, name: 'Kohleburg', population: 1100, configuredIndustryWorkers: 120, netWorkers: 50 }],
 };
+
+test('attention presentation reports every hidden alert and expands without loss', () => {
+  const alerts = Array.from({ length: 11 }, (_, index) => ({ metric: `metric.${index}` }));
+  const collapsed = visibleRepublicAlerts(alerts);
+  assert.equal(collapsed.total, 11);
+  assert.equal(collapsed.hiddenCount, 3);
+  assert.deepEqual(collapsed.visible.map(alert => alert.metric), alerts.slice(0, 8).map(alert => alert.metric));
+  const expanded = visibleRepublicAlerts(alerts, { expanded: true });
+  assert.equal(expanded.hiddenCount, 0);
+  assert.deepEqual(expanded.visible, alerts);
+});
 
 test('projects actual plan and evidence-aware difference', () => {
   const model = buildRepublicModel({ observed, planned });

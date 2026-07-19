@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=87';
+import { STRINGS } from './i18n.js?v=88';
 import { recordToPrices } from './statsini.js?v=18';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -21,7 +21,7 @@ import {
   buildSchematicMap,
   isNonPlannerSupportType, isBorderPostType, isExternalAirLinkType,
 } from './save_model.js?v=18';
-import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=8';
+import { buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts } from './republic.js?v=9';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
@@ -118,6 +118,7 @@ function createInitialState() {
     cityDetails: false,
     fleetFilter: { category: 'all', action: 'all', sort: 'advantage' },
     fleetDetails: false,
+    republicAlertsExpanded: false,
   };
 }
 
@@ -3571,17 +3572,39 @@ function renderRepublic() {
           scope.production ? el('button', { onclick: () => openArea(scopeId, 'production') }, t('openProduction')) : null));
     })));
 
-  const alertItems = alerts.length ? alerts.slice(0, 8).map(alert => el('div', { class: `alert ${alert.severity}` },
+  const alertPresentation = visibleRepublicAlerts(alerts, {
+    expanded: state.republicAlertsExpanded,
+  });
+  const alertAction = alert => {
+    if (!Number.isInteger(alert.scopeId)) return null;
+    const scope = scopeInfo.get(alert.scopeId) ?? {};
+    if (alert.metric.startsWith('buffer.') && scope.production) {
+      return el('button', { onclick: () => openArea(alert.scopeId, 'production') }, t('openProduction'));
+    }
+    if (['health', 'food'].includes(alert.metric) && scope.city) {
+      return el('button', { onclick: () => openArea(alert.scopeId, 'city') }, t('openCity'));
+    }
+    return mappableScopeIds.has(alert.scopeId)
+      ? el('button', { onclick: () => locateAreaOnMap(alert.scopeId) }, t('locateOnMap')) : null;
+  };
+  const alertItems = alerts.length ? alertPresentation.visible.map(alert => el('div', { class: `alert ${alert.severity}` },
       el('strong', {}, alert.scopeName || t('republicOverview')),
       el('span', {}, t(`alert.${alert.metric}`)),
-      Number.isFinite(alert.observed) ? el('span', { class: 'alert-value' },
-        alert.metric === 'staffing' || alert.metric === 'health' || alert.metric === 'food'
-          ? fmt(alert.observed * 100, 1) + ' %'
-          : alert.metric.startsWith('buffer.') ? `${fmt(alert.observed, 2)} ${t('day')}`
-            : fmt(alert.observed, 1)) : null))
+      el('span', { class: 'alert-tail' },
+        Number.isFinite(alert.observed) ? el('span', { class: 'alert-value' },
+          alert.metric === 'staffing' || alert.metric === 'health' || alert.metric === 'food'
+            ? fmt(alert.observed * 100, 1) + ' %'
+            : alert.metric.startsWith('buffer.') ? `${fmt(alert.observed, 2)} ${t('day')}`
+              : fmt(alert.observed, 1)) : null,
+        alertAction(alert))))
     : [el('p', { class: 'hint pos' }, t('noAlerts'))];
   const alertList = el('div', { class: 'alert-list' },
-    el('h3', {}, t('attention')), ...alertItems);
+    el('h3', {}, `${t('attention')} (${fmt(alertPresentation.total, 0)})`), ...alertItems,
+    alerts.length > 8 ? el('button', {
+      class: 'secondary',
+      onclick: () => { state.republicAlertsExpanded = !state.republicAlertsExpanded; update(); },
+    }, state.republicAlertsExpanded ? t('showFewerAlerts')
+      : t('showAllAlerts').replace('{count}', fmt(alertPresentation.hiddenCount, 0))) : null);
 
   const republicOperations = state.saveImport?.operationalServices?.republic;
   const republicLiveQueue = republicOperations?.liveQueue ?? { available: false };

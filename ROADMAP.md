@@ -228,6 +228,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   and imported productivity; unlike water, waste, and production stores remain separate, and
   transient over-capacity amounts are not clamped. Sub-day input and output constraints also
   surface in the Republic attention list and link back to the affected production area.
+  The Attention panel reports its complete finding count, shows a bounded first eight by
+  default, and explicitly expands/collapses every remaining finding instead of silently
+  dropping them; scoped findings link to their production, city, or map context.
   These buffer projections remain distinct from actual throughput. A strict serialized
   `$TYPE_FACTORY` plus resolved-production gate now exposes exact rolling first-output telemetry
   for 32 supplied-save factories, including previous normalized-day quantity, current partial

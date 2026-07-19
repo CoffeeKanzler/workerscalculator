@@ -227,3 +227,9 @@ export function republicAlerts(model) {
   return alerts.sort((a, b) => order[a.severity] - order[b.severity]
     || a.scopeName.localeCompare(b.scopeName) || a.metric.localeCompare(b.metric));
 }
+
+export function visibleRepublicAlerts(alerts, { expanded = false, limit = 8 } = {}) {
+  const source = Array.isArray(alerts) ? alerts : [];
+  const visible = expanded ? source : source.slice(0, Math.max(0, limit));
+  return { visible, total: source.length, hiddenCount: source.length - visible.length };
+}

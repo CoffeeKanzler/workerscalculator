@@ -341,6 +341,7 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .alert { display: grid; grid-template-columns: minmax(120px, .5fr) 2fr auto; gap: 12px; padding: 8px 10px; border-left: 3px solid var(--warn); background: var(--panel); border-radius: 5px; }
 .alert.critical { border-left-color: var(--neg); }
 .alert-value { font-variant-numeric: tabular-nums; }
+.alert-tail { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
 .area-health tbody tr.warning td:first-child { box-shadow: inset 3px 0 var(--warn); }
 .area-health tbody tr.critical td:first-child { box-shadow: inset 3px 0 var(--neg); }
 .area-health tbody tr.selected-area td { background: color-mix(in srgb, var(--accent) 10%, var(--panel)); }
