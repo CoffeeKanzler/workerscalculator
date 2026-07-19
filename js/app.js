@@ -365,6 +365,8 @@ function el(tag, attrs = {}, ...children) {
     if (k === 'class') e.className = v;
     else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
     else if (k === 'checked' || k === 'selected' || k === 'value') e[k] = v;
+    else if (v === false || v === null || v === undefined) continue;
+    else if (v === true) e.setAttribute(k, '');
     else e.setAttribute(k, v);
   }
   for (const c of children.flat()) {
