@@ -320,6 +320,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   markers inside an image role; the compact read-only map remains an image.
   The import audit distinguishes unresolved building instances from grouped area/type rows and
   explains that unresolved records remain in the save and map while only unsafe calculations are omitted.
+  The collapsed overview map initially renders only its disclosure and defers thousands of SVG
+  paths and markers until first open or a Locate action; optional map parsing and snapshot
+  persistence still complete through the worker-backed background path.
   Large imports now expose staged progress without rerendering/persisting the whole application
   for every parser tick. The 50.5 MB reference `stats.ini` is transferred as a buffer and decoded
   inside the parser worker instead of being decoded and copied on the main thread. Core Republic

@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=100';
+import { STRINGS } from './i18n.js?v=101';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=24';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -59,6 +59,8 @@ let mapFocusBuildingIndex = null;
 let mapFocusScopeId = null;
 let mapSelectedBuildingIndex = null;
 let standaloneMapViewBox = null;
+let compactMapExpanded = false;
+let compactMapOpen = false;
 let constructionPage = 1;
 let constructionDetailsOpen = false;
 let deferredMapRetry = null;
@@ -2291,6 +2293,8 @@ async function handleSaveDirectory(fileList) {
     mapFocusBuildingIndex = null;
     mapFocusScopeId = null;
     mapSelectedBuildingIndex = null;
+    compactMapExpanded = false;
+    compactMapOpen = false;
     if (statsRecords.length) {
       state.statsRecords = statsRecords;
       state.statsName = statsFile.name;
@@ -2910,6 +2914,22 @@ function mapBuildingDisplayName(building) {
 }
 
 function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = false } = {}) {
+  if (!standalone && !compactMapExpanded
+    && !Number.isInteger(mapFocusBuildingIndex) && !Number.isInteger(mapFocusScopeId)) {
+    const locatedCount = (buildings ?? []).filter(building =>
+      Number.isFinite(building.x) && Number.isFinite(building.z)).length;
+    return el('details', {
+      class: 'secondary-section map-section map-deferred',
+      ontoggle: event => {
+        if (!event.currentTarget.open) return;
+        compactMapExpanded = true;
+        compactMapOpen = true;
+        update();
+      },
+    },
+      el('summary', {}, `${t('schematicRepublicMap')} (${fmt(locatedCount, 0)})`),
+      el('p', { class: 'hint' }, t('mapDeferredHint')));
+  }
   const model = buildSchematicMap(buildings, scopes, outliers, {
     focusBuildingIndex: mapFocusBuildingIndex,
     roadNetwork: state.saveImport?.roadNetwork,
@@ -3420,7 +3440,8 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   }
   return el('details', {
     class: 'secondary-section map-section',
-    ...(focusedBuilding || scopeViewBox ? { open: '' } : {}),
+    ...(focusedBuilding || scopeViewBox || (!standalone && compactMapOpen) ? { open: '' } : {}),
+    ...(!standalone ? { ontoggle: event => { compactMapOpen = event.currentTarget.open; } } : {}),
   },
     el('summary', {}, `${t('schematicRepublicMap')} (${fmt(model.buildings.length, 0)})`),
     el('p', { class: 'hint' }, t(mapHintKey)),
@@ -3429,6 +3450,8 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       onclick: () => {
         mapFocusBuildingIndex = null;
         mapFocusScopeId = null;
+        compactMapExpanded = true;
+        compactMapOpen = true;
         update();
         document.querySelector('details.map-section')?.setAttribute('open', '');
       },
