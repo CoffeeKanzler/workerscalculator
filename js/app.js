@@ -1,5 +1,5 @@
 import { STRINGS } from './i18n.js?v=93';
-import { recordToPrices } from './statsini.js?v=21';
+import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=22';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -4157,8 +4157,7 @@ function renderRepublic() {
   const historyRecords = filterRange(state.statsRecords ?? [], state.republicRange);
   const series = (label, color, valueOf) => ({ label, color, points: seriesFromRecords(historyRecords, valueOf) });
   const currencySuffix = state.currency === 'USD' ? 'USD' : 'RUB';
-  const resourceKeys = [...new Set((state.statsRecords ?? []).flatMap(record =>
-    Object.keys(record.resourcesProduced ?? {})))];
+  const resourceKeys = resourceHistoryKeys(state.statsRecords);
   if (!resourceKeys.includes(state.republicResource)) {
     const latest = state.statsRecords?.at(-1);
     state.republicResource = resourceKeys.sort((a, b) =>
@@ -4167,7 +4166,7 @@ function renderRepublic() {
   const resourceOptions = resourceKeys.map(key => {
     const resource = DATA.resources.find(item => item.key === key);
     return [key, resource ? rname(resource) : key];
-  });
+  }).sort((a, b) => a[1].localeCompare(b[1]) || a[0].localeCompare(b[0]));
   const charts = state.statsRecords?.length ? el('details', { class: 'history-section secondary-section' },
     el('summary', {}, `${t('republicHistory')} (${fmt(state.statsRecords.length, 0)})`),
     el('div', { class: 'chart-controls settingsbar' },

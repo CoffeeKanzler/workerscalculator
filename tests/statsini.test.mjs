@@ -1,6 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseBlueprintOwned, parseCityStatsIni, parseStatsIni, recordToPrices } from '../js/statsini.js';
+import {
+  parseBlueprintOwned, parseCityStatsIni, parseStatsIni, recordToPrices, resourceHistoryKeys,
+} from '../js/statsini.js';
 
 const SAMPLE = `$STAT_RECORD 0
 ====
@@ -181,6 +183,7 @@ $end`;
   assert.equal(record.educationNone, 3079);
   assert.equal(record.educationBasic, 12338);
   assert.equal(record.educationHigh, 4393);
+  assert.deepEqual(resourceHistoryKeys([record]).sort(), ['clothes', 'fuel', 'steel']);
   assert.equal(record.averageProductivity, 0.91);
   assert.equal(record.year, 2000);
 });

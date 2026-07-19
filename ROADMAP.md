@@ -334,7 +334,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   counts. They remain labelled as per-record saved values rather than invented daily rates or
   cumulative totals. The selected-resource charts keep exact ₽-market and $-market import/export
   channels separate and add factory, shop, construction, and vehicle use; unlike resource units
-  are never summed into a false republic total. Separate exact charts expose currency-valued saved
+  are never summed into a false republic total. The selector includes all 45 resources observed in
+  any flow channel—not only the 24 produced locally—and is localized/alphabetical. Separate exact charts expose currency-valued saved
   vehicle imports/exports and loan balance/interest in the selected RUB/USD view.
 - **Comparison:** Up to three resources can share the selected-currency chart,
   with separately labelled buy/sell series. An optional logarithmic scale keeps

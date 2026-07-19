@@ -76,6 +76,17 @@ const CRIME_KEYS = {
   Prisoners_Escaped: 'prisonersEscaped',
 };
 
+const RESOURCE_HISTORY_FIELDS = [
+  'resourcesProduced', 'resourcesImportRUB', 'resourcesImportUSD',
+  'resourcesExportRUB', 'resourcesExportUSD', 'resourcesSpendFactories',
+  'resourcesSpendShops', 'resourcesSpendConstructions', 'resourcesSpendVehicles',
+];
+
+export function resourceHistoryKeys(records) {
+  return [...new Set((records ?? []).flatMap(record =>
+    RESOURCE_HISTORY_FIELDS.flatMap(field => Object.keys(record[field] ?? {}))))];
+}
+
 function parseCrimeLine(line, target) {
   const match = line.match(/^Crime_(\S+)\s+(-?[\d.]+)/);
   if (!match || !(match[1] in CRIME_KEYS)) return false;
