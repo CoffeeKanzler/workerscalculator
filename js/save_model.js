@@ -216,6 +216,16 @@ export function activeConstructionProjects(buildings = []) {
       || a.index - b.index);
 }
 
+export function filterConstructionProjects(projects = [], {
+  progress = 'all', scopeId = undefined, query = '',
+} = {}) {
+  const needle = String(query).trim().toLocaleLowerCase();
+  return projects.filter(project => (progress !== 'positive' || project.constructionProgress > 0)
+    && (scopeId === undefined || project.scopeId === scopeId)
+    && (!needle || [project.name, project.type].some(value =>
+      String(value ?? '').toLocaleLowerCase().includes(needle))));
+}
+
 export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
   width = 760, height = 480, padding = 18, focusBuildingIndex = null, roadNetwork = null,
   railNetwork = null, pedestrianNetwork = null, terrainWater = null, pollutionLayer = null,

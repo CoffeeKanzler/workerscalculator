@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=107';
+import { STRINGS } from './i18n.js?v=108';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -18,9 +18,9 @@ import {
   productionBufferAlerts, summarizeDistributionOffices, summarizeVehicleLines,
   summarizeCriminalityOutliers,
   summarizeResidenceOccupancy, summarizeOccupiedBuildingPollution,
-  buildSchematicMap, activeConstructionProjects,
+  buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   isNonPlannerSupportType, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=20';
+} from './save_model.js?v=21';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -64,6 +64,8 @@ let compactMapOpen = false;
 let constructionPage = 1;
 let constructionDetailsOpen = false;
 let constructionProgressFilter = 'all';
+let constructionScopeFilter = '';
+let constructionSearch = '';
 let deferredMapRetry = null;
 const terrainWaterImageCache = new Map();
 const pollutionImageCache = new Map();
@@ -3838,9 +3840,18 @@ function renderRepublic() {
   if (constructionProgressFilter === 'positive' && !positiveConstructionCount) {
     constructionProgressFilter = 'all';
   }
-  const constructionProjects = constructionProgressFilter === 'positive'
-    ? allConstructionProjects.filter(project => project.constructionProgress > 0)
-    : allConstructionProjects;
+  const constructionScopeIds = [...new Set(allConstructionProjects.map(project => project.scopeId ?? null))]
+    .sort((a, b) => plannerScopeName(a).localeCompare(plannerScopeName(b)));
+  const constructionScopeToken = scopeId => scopeId === null ? 'unassigned' : String(scopeId);
+  if (constructionScopeFilter && !constructionScopeIds.some(scopeId =>
+    constructionScopeToken(scopeId) === constructionScopeFilter)) constructionScopeFilter = '';
+  const selectedConstructionScope = constructionScopeFilter === '' ? undefined
+    : constructionScopeFilter === 'unassigned' ? null : Number(constructionScopeFilter);
+  const constructionProjects = filterConstructionProjects(allConstructionProjects, {
+    progress: constructionProgressFilter,
+    scopeId: selectedConstructionScope,
+    query: constructionSearch,
+  });
   const constructionPageSize = 50;
   const constructionPageCount = Math.max(1, Math.ceil(constructionProjects.length / constructionPageSize));
   constructionPage = Math.max(1, Math.min(constructionPage, constructionPageCount));
@@ -3898,8 +3909,34 @@ function renderRepublic() {
   },
     el('summary', {}, `${t('activeConstruction')} (${fmt(allConstructionProjects.length, 0)})`),
     el('p', { class: 'hint' }, t('constructionProjectMeaning')),
+    el('div', { class: 'settingsbar construction-filters' },
+      el('label', {}, t('area'), selectInput([
+        ['', `${t('allAreas')} (${fmt(allConstructionProjects.length, 0)})`],
+        ...constructionScopeIds.map(scopeId => [constructionScopeToken(scopeId),
+          `${plannerScopeName(scopeId)} (${fmt(allConstructionProjects.filter(project =>
+            (project.scopeId ?? null) === scopeId).length, 0)})`]),
+      ], constructionScopeFilter, value => {
+        constructionScopeFilter = value;
+        constructionPage = 1;
+      }, { class: 'construction-area-filter' })),
+      el('label', {}, t('constructionSearch'), el('input', {
+        type: 'search', value: constructionSearch,
+        onkeydown: event => {
+          if (event.key !== 'Enter') return;
+          constructionSearch = event.currentTarget.value;
+          constructionPage = 1;
+          update();
+        },
+      })),
+      el('button', {
+        onclick: event => {
+          constructionSearch = event.currentTarget.parentElement.querySelector('input[type="search"]')?.value ?? '';
+          constructionPage = 1;
+          update();
+        },
+      }, t('fleetSearchApply'))),
     positiveConstructionCount && positiveConstructionCount < allConstructionProjects.length
-      ? el('div', { class: 'settingsbar construction-filters' },
+      ? el('div', { class: 'settingsbar construction-filters progress-filters' },
         ...[['all', allConstructionProjects.length], ['positive', positiveConstructionCount]]
           .map(([filter, count]) => el('button', {
             class: constructionProgressFilter === filter ? 'active' : '',
@@ -3910,7 +3947,11 @@ function renderRepublic() {
             },
           }, `${t(filter === 'all' ? 'constructionAll' : 'constructionAboveZero')} (${fmt(count, 0)})`)))
       : null,
-    constructionTable, constructionPagination) : null;
+    el('p', { class: 'hint construction-filter-status' }, t('constructionFilterStatus')
+      .replace('{visible}', fmt(constructionProjects.length, 0))
+      .replace('{total}', fmt(allConstructionProjects.length, 0))),
+    constructionProjects.length ? constructionTable : el('p', { class: 'hint' }, t('constructionNoResults')),
+    constructionPagination) : null;
 
   const republicOperations = state.saveImport?.operationalServices?.republic;
   const republicLiveQueue = republicOperations?.liveQueue ?? { available: false };

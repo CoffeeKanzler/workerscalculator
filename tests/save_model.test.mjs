@@ -7,7 +7,7 @@ import {
   evaluateDistributionResourceRule,
   summarizeCriminalityOutliers,
   summarizeResidenceOccupancy, summarizeOccupiedBuildingPollution,
-  buildSchematicMap, activeConstructionProjects,
+  buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   isNonPlannerSupportType,
   isBorderPostType, isExternalAirLinkType,
 } from '../js/save_model.js';
@@ -23,6 +23,19 @@ test('active construction keeps exact incomplete buildings in useful progress or
   assert.deepEqual(projects.map(project => [project.index, project.constructionProgress]), [
     [8, 0.9], [4, 0.25],
   ]);
+});
+
+test('active construction filters exact scope, progress, name and saved type', () => {
+  const projects = activeConstructionProjects([
+    { index: 1, scopeId: 4, name: 'New school', type: 'school_city', constructionProgress: 0.4 },
+    { index: 2, scopeId: 4, name: 'Depot', type: 'road_depot', constructionProgress: 0 },
+    { index: 3, scopeId: 9, name: 'New school', type: 'workshop_school', constructionProgress: 0.8 },
+  ]);
+  assert.deepEqual(filterConstructionProjects(projects, { scopeId: 4 }).map(item => item.index), [1, 2]);
+  assert.deepEqual(filterConstructionProjects(projects, { progress: 'positive' }).map(item => item.index), [3, 1]);
+  assert.deepEqual(filterConstructionProjects(projects, { query: 'ROAD_DEPOT' }).map(item => item.index), [2]);
+  assert.deepEqual(filterConstructionProjects(projects, { scopeId: 9, query: 'school' })
+    .map(item => item.index), [3]);
 });
 
 test('known support and decorative save types do not masquerade as planner coverage failures', () => {
