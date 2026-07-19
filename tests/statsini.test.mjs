@@ -158,6 +158,10 @@ $end
 $Resources_SpendVehicles
   fuel 6.25 0
 $end
+$Waste_ProductionDemolition
+  waste_mixed 7.75 0
+  waste_mixed -1 -12.5
+$end
 $Citizens_Adults 1200
 $Citizens_Unemployed 40
 $Citizens_Born 8
@@ -182,6 +186,7 @@ $end`;
   assert.equal(record.resourcesExportRUB.clothes, 3);
   assert.equal(record.resourcesSpendConstructions.steel, 4.5);
   assert.equal(record.resourcesSpendVehicles.fuel, 6.25);
+  assert.equal(record.wasteProductionDemolition.waste_mixed, 7.75);
   assert.equal(record.adults, 1200);
   assert.equal(record.unemployed, 40);
   assert.equal(record.born, 8);
@@ -194,7 +199,7 @@ $end`;
   assert.equal(record.educationNone, 3079);
   assert.equal(record.educationBasic, 12338);
   assert.equal(record.educationHigh, 4393);
-  assert.deepEqual(resourceHistoryKeys([record]).sort(), ['clothes', 'fuel', 'steel']);
+  assert.deepEqual(resourceHistoryKeys([record]).sort(), ['clothes', 'fuel', 'steel', 'waste_mixed']);
   assert.equal(record.averageProductivity, 0.91);
   assert.equal(record.year, 2000);
 });

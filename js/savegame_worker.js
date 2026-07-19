@@ -6,7 +6,7 @@ import {
 } from './savegame.js?v=22';
 import {
   parseBlueprintOwned, parseCityStatsIni, parseStatsIni, statsPayloadText,
-} from './statsini.js?v=23';
+} from './statsini.js?v=24';
 
 const sourceStatus = (payload) => Object.fromEntries(
   ['namepoints', 'buildings', 'workers', 'vehicles', 'usedVehicles', 'lines', 'road', 'rail', 'pedestrian', 'heightmap', 'pollution', 'header', 'research', 'events', 'stats', 'material']

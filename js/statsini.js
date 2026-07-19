@@ -23,6 +23,7 @@ const MAP_SECTIONS = {
   Resources_SpendVehicles: 'resourcesSpendVehicles',
   Waste_ProductionFactories: 'wasteProductionFactories',
   Waste_ProductionPeople: 'wasteProductionPeople',
+  Waste_ProductionDemolition: 'wasteProductionDemolition',
 };
 
 const SCALAR_KEYS = {
@@ -80,6 +81,7 @@ const RESOURCE_HISTORY_FIELDS = [
   'resourcesProduced', 'resourcesImportRUB', 'resourcesImportUSD',
   'resourcesExportRUB', 'resourcesExportUSD', 'resourcesSpendFactories',
   'resourcesSpendShops', 'resourcesSpendConstructions', 'resourcesSpendVehicles',
+  'wasteProductionFactories', 'wasteProductionPeople', 'wasteProductionDemolition',
 ];
 
 export function statsPayloadText(payload) {
@@ -147,7 +149,14 @@ export function parseStatsIni(text) {
     if (rec && parseCrimeLine(line, rec)) continue;
     if (rec && section) {
       const m = line.match(/^(\S+)\s+(-?[\d.]+)/);
-      if (m) rec[section][m[1]] = parseFloat(m[2]);
+      if (m) {
+        const value = parseFloat(m[2]);
+        // Waste sections write a second row for some resources with -1 in the
+        // quantity column. It is a saved sentinel, not negative production;
+        // retain the non-negative quantity row without combining either row.
+        if (section.startsWith('wasteProduction') && value === -1) continue;
+        rec[section][m[1]] = value;
+      }
     }
   }
   const out = records.filter(r => r.year !== null || r.current);

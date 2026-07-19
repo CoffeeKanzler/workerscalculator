@@ -1,5 +1,5 @@
-import { STRINGS } from './i18n.js?v=97';
-import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=23';
+import { STRINGS } from './i18n.js?v=99';
+import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=24';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -2070,7 +2070,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=27', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=28', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -4250,8 +4250,13 @@ function renderRepublic() {
   }
   const resourceOptions = resourceKeys.map(key => {
     const resource = DATA.resources.find(item => item.key === key);
-    return [key, resource ? rname(resource) : key];
+    return [key, resource ? rname(resource) : key === 'waste_mixed' ? t('mixedWaste') : key];
   }).sort((a, b) => a[1].localeCompare(b[1]) || a[0].localeCompare(b[0]));
+  const selectedResourceLabel = resourceOptions.find(([key]) => key === state.republicResource)?.[1]
+    ?? state.republicResource;
+  const hasSelectedWasteHistory = state.republicResource && historyRecords.some(record =>
+    ['wasteProductionFactories', 'wasteProductionPeople', 'wasteProductionDemolition']
+      .some(field => Number.isFinite(record[field]?.[state.republicResource])));
   const charts = state.statsRecords?.length ? el('details', { class: 'history-section secondary-section' },
     el('summary', {}, `${t('republicHistory')} (${fmt(state.statsRecords.length, 0)})`),
     el('div', { class: 'chart-controls settingsbar' },
@@ -4305,7 +4310,7 @@ function renderRepublic() {
         series(t('loanInterest'), '#d35400', record => record[`loanInterest${currencySuffix}`]),
       ]),
       state.republicResource ? renderRepublicLineChart(
-        resourceOptions.find(([key]) => key === state.republicResource)?.[1] ?? state.republicResource, [
+        selectedResourceLabel, [
           series(t('produced'), '#2980b9', record => record.resourcesProduced?.[state.republicResource]),
           series(t('importsRUB'), '#c0392b', record => record.resourcesImportRUB?.[state.republicResource]),
           series(t('importsUSD'), '#e67e22', record => record.resourcesImportUSD?.[state.republicResource]),
@@ -4313,12 +4318,17 @@ function renderRepublic() {
           series(t('exportsUSD'), '#16a085', record => record.resourcesExportUSD?.[state.republicResource]),
         ]) : null,
       state.republicResource ? renderRepublicLineChart(
-        `${resourceOptions.find(([key]) => key === state.republicResource)?.[1]
-          ?? state.republicResource} · ${t('resourceUse')}`, [
+        `${selectedResourceLabel} · ${t('resourceUse')}`, [
           series(t('factoryUse'), '#8e44ad', record => record.resourcesSpendFactories?.[state.republicResource]),
           series(t('shopUse'), '#d35400', record => record.resourcesSpendShops?.[state.republicResource]),
           series(t('constructionUse'), '#7f8c8d', record => record.resourcesSpendConstructions?.[state.republicResource]),
           series(t('vehicleUse'), '#2c3e50', record => record.resourcesSpendVehicles?.[state.republicResource]),
+        ]) : null,
+      hasSelectedWasteHistory ? renderRepublicLineChart(
+        `${selectedResourceLabel} · ${t('wasteHistory')}`, [
+          series(t('factoryWaste'), '#8e44ad', record => record.wasteProductionFactories?.[state.republicResource]),
+          series(t('citizenWaste'), '#d35400', record => record.wasteProductionPeople?.[state.republicResource]),
+          series(t('demolitionOutput'), '#7f8c8d', record => record.wasteProductionDemolition?.[state.republicResource]),
         ]) : null),
     el('p', { class: 'hint' }, t('demographicHistoryMeaning'))) : null;
 
