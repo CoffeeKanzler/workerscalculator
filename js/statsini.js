@@ -17,8 +17,10 @@ const MAP_SECTIONS = {
   Resources_ImportRUB: 'resourcesImportRUB',
   Resources_ExportUSD: 'resourcesExportUSD',
   Resources_ExportRUB: 'resourcesExportRUB',
+  Resources_SpendConstructions: 'resourcesSpendConstructions',
   Resources_SpendFactories: 'resourcesSpendFactories',
   Resources_SpendShops: 'resourcesSpendShops',
+  Resources_SpendVehicles: 'resourcesSpendVehicles',
   Waste_ProductionFactories: 'wasteProductionFactories',
   Waste_ProductionPeople: 'wasteProductionPeople',
 };
