@@ -4040,7 +4040,7 @@ function renderRepublic() {
           }, t('fleetSearchApply'))),
         fleetPage.pageCount > 1 ? el('div', { class: 'settingsbar fleet-pagination' },
           el('button', {
-            disabled: fleetPage.page <= 1,
+            ...(fleetPage.page <= 1 ? { disabled: '' } : {}),
             onclick: () => { state.fleetFilter.page = fleetPage.page - 1; update(); },
           }, `← ${t('fleetPreviousPage')}`),
           el('span', {}, t('fleetPageStatus')
@@ -4049,7 +4049,7 @@ function renderRepublic() {
             .replace('{to}', fmt(Math.min(fleetPage.total, fleetPage.page * fleetPage.pageSize), 0))
             .replace('{total}', fmt(fleetPage.total, 0))),
           el('button', {
-            disabled: fleetPage.page >= fleetPage.pageCount,
+            ...(fleetPage.page >= fleetPage.pageCount ? { disabled: '' } : {}),
             onclick: () => { state.fleetFilter.page = fleetPage.page + 1; update(); },
           }, `${t('fleetNextPage')} →`)) : null,
         el('div', { class: 'tablewrap' }, fleetDetailsTable)) : null) : null) : null;

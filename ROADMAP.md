@@ -220,7 +220,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   The full-fleet drill-down is built only when opened, filters by ship/road/rail/air,
   cash-out action, and vehicle name, and sorts by advantage, either route value, or name.
   Its 50-row pages keep thousand-vehicle saves bounded instead of placing the entire fleet
-  in the DOM while the section is collapsed.
+  in the DOM while the section is collapsed. Real-browser checks exercise forward/back page
+  navigation so boolean-disabled markup cannot strand the player on page 1.
   - **Live production buffers:** `buildings_game.bin` now imports exact first-pass storage
   identities, input/output roles, resources, saved amounts, and nominal capacities. The
   supplied save has live inventory rows in 1,328 of 1,812 buildings. Matching production
