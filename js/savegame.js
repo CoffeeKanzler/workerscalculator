@@ -303,6 +303,8 @@ export function parsePollution(buffer, { worldBounds, cellSize = 200 } = {}) {
     throw new Error(`pollution.bin expected ${expected} bytes, got ${view.byteLength}`);
   }
   const air = new Uint8Array(count);
+  const airValues = new Uint8Array(count * 4);
+  const airValuesView = new DataView(airValues.buffer);
   const radiation = new Uint8Array(count);
   let airNonzero = 0, airMax = 0, radiationNonzero = 0, radiationMax = 0;
   for (let index = 0; index < count; index += 1) {
@@ -316,6 +318,7 @@ export function parsePollution(buffer, { worldBounds, cellSize = 200 } = {}) {
     const z = index % height;
     const imageIndex = (height - 1 - z) * width + x;
     air[imageIndex] = Math.round(Math.max(0, Math.min(1, airValue)) * 255);
+    airValuesView.setFloat32(imageIndex * 4, airValue, true);
     radiation[imageIndex] = Math.round(Math.max(0, Math.min(3, radiationValue)) / 3 * 255);
     if (airValue !== 0) airNonzero += 1;
     if (radiationValue !== 0) radiationNonzero += 1;
@@ -331,7 +334,7 @@ export function parsePollution(buffer, { worldBounds, cellSize = 200 } = {}) {
   };
   return {
     width, height, cellSize, worldBounds: { ...worldBounds },
-    airPacked: encode(air),
+    airPacked: encode(air), airValuesPacked: encode(airValues),
     ...(radiationNonzero ? { radiationPacked: encode(radiation) } : {}),
     airNonzero, airMax, radiationNonzero, radiationMax,
   };

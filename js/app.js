@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=85';
+import { STRINGS } from './i18n.js?v=86';
 import { recordToPrices } from './statsini.js?v=18';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -17,9 +17,10 @@ import {
   inferObservedHousing, latestProductivity, matchObservedBuilding, productionBufferStatus,
   productionBufferAlerts, summarizeDistributionOffices, summarizeVehicleLines,
   summarizeCriminalityOutliers,
+  summarizeResidenceOccupancy, summarizeOccupiedBuildingPollution,
   buildSchematicMap,
   isNonPlannerSupportType, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=17';
+} from './save_model.js?v=18';
 import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=8';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
@@ -1980,6 +1981,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
     ? summarizeVehicleLines(vehicleLines, vehicles ?? [], buildings) : null;
   const criminalityOutliers = citizens
     ? summarizeCriminalityOutliers(citizens, buildings) : null;
+  const residenceOccupancy = citizens ? summarizeResidenceOccupancy(citizens, buildings) : null;
   const inventoryBuildings = buildings.filter(building =>
     building.storages?.some(storage => storage.resources?.length));
   const inventoryStorageCount = inventoryBuildings.reduce((sum, building) =>
@@ -2011,6 +2013,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
       vehicleLines: lineOperations,
       distributionOffices: distributionOperations,
       criminalityOutliers,
+      residenceOccupancy,
       vehicleModelCoverage,
       usedVehicleOffers,
       usedVehicleFileSummary,
@@ -2080,7 +2083,7 @@ function parseSaveInWorker(payload) {
 
 function parseMapLayersInWorker(files) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_map_worker.js?v=2', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_map_worker.js?v=3', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Map parser worker failed'));
@@ -2097,6 +2100,13 @@ function parseMapLayersInWorker(files) {
     };
     worker.postMessage(files);
   });
+}
+
+function refreshPollutionDiagnostics(saveImport) {
+  if (!saveImport) return;
+  saveImport.pollutionDiagnostics = summarizeOccupiedBuildingPollution(
+    saveImport.residenceOccupancy, saveImport.pollutionLayer,
+  );
 }
 
 function presentImportStatus(message, error = false) {
@@ -2296,6 +2306,7 @@ async function handleSaveDirectory(fileList) {
         // while the optional map files were parsing. Never attach them there.
         if (state.saveSlotName !== importName || state.saveImport?.sourceName !== sourceName) return;
         Object.assign(state.saveImport, mapResult.parsed);
+        refreshPollutionDiagnostics(state.saveImport);
         state.saveImport.sourceStatus = {
           ...(state.saveImport.sourceStatus ?? {}), ...mapResult.sourceStatus,
         };
@@ -2888,7 +2899,12 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     };
   };
   const activeStandaloneViewBox = standaloneMapViewBox
-    ? clampViewBox(standaloneMapViewBox) : fullViewBox;
+    ? clampViewBox(standaloneMapViewBox)
+    : standalone && focusedBuilding
+      ? clampViewBox({ x: zoomX, y: zoomY, width: zoomWidth, height: zoomHeight }) : fullViewBox;
+  if (standalone && focusedBuilding && !standaloneMapViewBox) {
+    standaloneMapViewBox = activeStandaloneViewBox;
+  }
   const svg = node('svg', {
     viewBox: standalone
       ? `${activeStandaloneViewBox.x} ${activeStandaloneViewBox.y} ${activeStandaloneViewBox.width} ${activeStandaloneViewBox.height}`
@@ -3210,7 +3226,12 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
           el('button', { title: t('mapZoomIn'), onclick: () => zoom(0.7) }, '+'),
           el('button', { title: t('mapZoomOut'), onclick: () => zoom(1.4) }, '−'),
           el('button', {
-            onclick: () => { standaloneMapViewBox = null; applyStandaloneViewBox(fullViewBox); },
+            onclick: () => {
+              mapFocusBuildingIndex = null;
+              mapFocusScopeId = null;
+              standaloneMapViewBox = null;
+              update();
+            },
           }, t('mapReset')))),
       legend, svg);
   }
@@ -3618,6 +3639,48 @@ function renderRepublic() {
         el('td', {}, Number.isInteger(resident.residenceBuildingIndex) ? el('button', {
           onclick: () => locateOutlierResidence(resident),
         }, t('locateOnMap')) : null))))))) : null;
+  const pollutionDiagnostics = state.saveImport?.pollutionDiagnostics;
+  const locatePollutedResidence = residence => {
+    mapFocusBuildingIndex = residence.buildingIndex;
+    mapFocusScopeId = null;
+    standaloneMapViewBox = null;
+    state.republicScope = residence.scopeId ?? state.republicScope;
+    state.mapLayers = { ...state.mapLayers, pollution: true, buildings: true };
+    state.mapBuildingFilter = '';
+    state.tab = 'map';
+    update();
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+  };
+  const pollutionDetails = pollutionDiagnostics?.affectedBuildingCount ? el('details', {
+    class: 'secondary-section pollution-hotspots',
+  },
+    el('summary', {}, t('occupiedPollutionHotspots')
+      .replace('{buildings}', fmt(pollutionDiagnostics.affectedBuildingCount, 0))
+      .replace('{residents}', fmt(pollutionDiagnostics.affectedResidentCount, 0))),
+    el('p', { class: 'hint' }, t('occupiedPollutionMeaning')),
+    el('div', { class: 'tablewrap' }, el('table', { class: 'data pollution-area-summary' },
+      el('thead', {}, el('tr', {}, el('th', {}, t('area')),
+        el('th', {}, t('occupiedBuildings')), el('th', {}, t('residents')),
+        el('th', {}, t('residentWeightedPollution')), el('th', {}, t('maximumCellValue')))),
+      el('tbody', {}, ...pollutionDiagnostics.scopes.map(scope => el('tr', {},
+        el('td', {}, plannerScopeName(scope.scopeId)),
+        el('td', { class: 'r' }, fmt(scope.buildingCount, 0)),
+        el('td', { class: 'r' }, fmt(scope.residents, 0)),
+        el('td', { class: 'r' }, fmt(scope.residentWeightedAir, 4)),
+        el('td', { class: 'r' }, fmt(scope.maxAir, 4))))))),
+    el('h4', {}, t('highestOccupiedPollutionCells')),
+    el('div', { class: 'tablewrap' }, el('table', { class: 'data pollution-building-table' },
+      el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('residence')),
+        el('th', {}, t('residents')), el('th', {}, t('savedPollutionCellValue')),
+        el('th', {}, t('building')), el('th', {}))),
+      el('tbody', {}, ...pollutionDiagnostics.buildings.slice(0, 12).map(residence => el('tr', {},
+        el('td', {}, plannerScopeName(residence.scopeId)),
+        el('td', {}, residence.name || residence.type || '—'),
+        el('td', { class: 'r' }, fmt(residence.residents, 0)),
+        el('td', { class: 'r warn' }, fmt(residence.airValue, 4)),
+        el('td', { class: 'r' }, `#${residence.buildingIndex}`),
+        el('td', {}, el('button', { onclick: () => locatePollutedResidence(residence) },
+          t('locateOnMap'))))))))) : null;
   const institutionOverview = republicOperations ? el('section', { class: 'institution-overview' },
     el('h3', {}, t('republicInstitutions')),
     el('div', { class: 'institution-grid' },
@@ -4192,6 +4255,7 @@ function renderRepublic() {
         state.saveImport.research ? el('span', {}, `${fmt(state.saveImport.researchComplete, 0)} / ${fmt(state.saveImport.research.length, 0)} ${t('importedResearch')}`) : null) : null,
       el('div', { class: 'metric-grid' }, ...cards),
       alertList,
+      pollutionDetails,
       institutionOverview,
       fleetOpportunities,
       logisticsOperations,
@@ -4794,6 +4858,7 @@ async function restoreNamedMapLayers() {
   if (!state.saveImport.pollutionLayer && candidate.pollutionLayer) {
     state.saveImport.pollutionLayer = candidate.pollutionLayer;
   }
+  refreshPollutionDiagnostics(state.saveImport);
 }
 
 async function saveNamedState(name) {

@@ -289,8 +289,13 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   saved-type filter. Physical customs posts have their own marker; artificial off-map air
   import/export targets are omitted. Exact `pollution.bin` air pollution is rendered as an
   optional compact green/yellow/red raster with adjustable opacity; clean cells stay transparent.
-  Radiation is a distinct saved channel and remains hidden when empty. Full terrain shading
-  remains a future layer. Dedicated-map layer switches, opacity, and saved-type filtering update
+  The parser retains the exact float air value behind that display raster. Exact residence links
+  now identify occupied buildings in nonzero cells, summarize affected areas with
+  resident-weighted cell values, and locate the highest saved values directly on the pollution
+  map. The UI explicitly treats these as 200 m building-center cell signals—not personal
+  exposure, health effects, or danger thresholds. Radiation is a distinct saved channel and
+  remains hidden when empty. Full terrain shading remains a future layer.
+  Dedicated-map layer switches, opacity, and saved-type filtering update
   the existing SVG in place instead of rebuilding the complete application and map geometry;
   type filtering responds while the player types.
   Large imports now expose staged progress without rerendering/persisting the whole application

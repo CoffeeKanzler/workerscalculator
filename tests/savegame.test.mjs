@@ -18,6 +18,10 @@ test('pollution parser packs the exact X-major Z-fast air field in screen order'
     worldBounds: { minX: -200, maxX: 200, minZ: -200, maxZ: 200 },
   });
   assert.deepEqual([...Buffer.from(result.airPacked, 'base64')], [128, 255, 64, 191]);
+  const exactAir = Buffer.from(result.airValuesPacked, 'base64');
+  const exactView = new DataView(exactAir.buffer, exactAir.byteOffset, exactAir.byteLength);
+  assert.deepEqual(Array.from({ length: 4 }, (_, index) => exactView.getFloat32(index * 4, true)),
+    [0.5, 1, 0.25, 0.75]);
   assert.equal(result.airNonzero, 4);
   assert.equal(result.airMax, 1);
   assert.equal(result.radiationPacked, undefined);

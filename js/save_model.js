@@ -112,6 +112,82 @@ export function summarizeCriminalityOutliers(citizens, buildings, {
   };
 }
 
+export function summarizeResidenceOccupancy(citizens, buildings) {
+  const buildingsByIndex = new Map((buildings ?? []).map(building => [building.index, building]));
+  const residentsByBuilding = new Map();
+  for (const citizen of citizens ?? []) {
+    if (!Number.isInteger(citizen.residenceBuildingIndex) || citizen.residenceBuildingIndex < 0) continue;
+    if (!buildingsByIndex.has(citizen.residenceBuildingIndex)) continue;
+    residentsByBuilding.set(citizen.residenceBuildingIndex,
+      (residentsByBuilding.get(citizen.residenceBuildingIndex) ?? 0) + 1);
+  }
+  return [...residentsByBuilding.entries()].sort((a, b) => a[0] - b[0]).map(([buildingIndex, residents]) => {
+    const building = buildingsByIndex.get(buildingIndex);
+    return {
+      buildingIndex, scopeId: building.scopeId ?? null, type: building.type, name: building.name,
+      x: building.x, z: building.z, residents,
+    };
+  });
+}
+
+function decodePollutionValues(pollution) {
+  if (!pollution?.airValuesPacked || !Number.isInteger(pollution.width)
+      || !Number.isInteger(pollution.height)) return null;
+  const binary = atob(pollution.airValuesPacked);
+  const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
+  if (bytes.byteLength !== pollution.width * pollution.height * 4) return null;
+  return new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+}
+
+export function summarizeOccupiedBuildingPollution(occupancy, pollution) {
+  const values = decodePollutionValues(pollution);
+  const bounds = pollution?.worldBounds;
+  const cellSize = pollution?.cellSize;
+  if (!values || !bounds || !(cellSize > 0)) return null;
+  const buildings = [];
+  let outsideRasterBuildingCount = 0;
+  for (const residence of occupancy ?? []) {
+    const cellX = Math.floor((residence.x - bounds.minX) / cellSize);
+    const cellZ = Math.floor((residence.z - bounds.minZ) / cellSize);
+    if (!Number.isFinite(residence.x) || !Number.isFinite(residence.z)
+        || cellX < 0 || cellX >= pollution.width || cellZ < 0 || cellZ >= pollution.height) {
+      outsideRasterBuildingCount += 1;
+      continue;
+    }
+    const imageY = pollution.height - 1 - cellZ;
+    const airValue = values.getFloat32((imageY * pollution.width + cellX) * 4, true);
+    if (!(airValue > 0)) continue;
+    buildings.push({ ...residence, cellX, cellZ, airValue });
+  }
+  buildings.sort((a, b) => b.airValue - a.airValue || b.residents - a.residents
+    || a.buildingIndex - b.buildingIndex);
+  const byScope = new Map();
+  for (const building of buildings) {
+    const aggregate = byScope.get(building.scopeId) ?? {
+      scopeId: building.scopeId, buildingCount: 0, residents: 0,
+      residentWeightedAir: 0, maxAir: 0,
+    };
+    aggregate.buildingCount += 1;
+    aggregate.residents += building.residents;
+    aggregate.residentWeightedAir += building.airValue * building.residents;
+    aggregate.maxAir = Math.max(aggregate.maxAir, building.airValue);
+    byScope.set(building.scopeId, aggregate);
+  }
+  const scopes = [...byScope.values()].map(scope => ({
+    ...scope, residentWeightedAir: scope.residents
+      ? scope.residentWeightedAir / scope.residents : 0,
+  })).sort((a, b) => b.residentWeightedAir - a.residentWeightedAir
+    || b.residents - a.residents || (a.scopeId ?? Infinity) - (b.scopeId ?? Infinity));
+  return {
+    occupiedBuildingCount: occupancy?.length ?? 0,
+    affectedBuildingCount: buildings.length,
+    affectedResidentCount: buildings.reduce((sum, building) => sum + building.residents, 0),
+    outsideRasterBuildingCount,
+    maxAir: buildings[0]?.airValue ?? 0,
+    buildings, scopes,
+  };
+}
+
 export function compactObservedBuildings(buildings) {
   const keys = [
     'index', 'type', 'name', 'scopeId', 'x', 'y', 'z', 'currentWorkers',

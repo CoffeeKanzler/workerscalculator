@@ -6,6 +6,7 @@ import {
   inferObservedHousing, summarizeDistributionOffices, summarizeVehicleLines,
   evaluateDistributionResourceRule,
   summarizeCriminalityOutliers,
+  summarizeResidenceOccupancy, summarizeOccupiedBuildingPollution,
   buildSchematicMap,
   isNonPlannerSupportType,
   isBorderPostType, isExternalAirLinkType,
@@ -418,6 +419,39 @@ test('criminality outliers resolve exact residence and scope locations', () => {
     residenceBuildingIndex: 4,
     residence: { index: 4, scopeId: 7, type: 'panelak', name: 'House A' },
   }]);
+});
+
+test('occupied-building pollution samples exact saved cells and aggregates resident-weighted areas', () => {
+  const buildings = [
+    { index: 4, scopeId: 7, type: 'panelak', name: 'House A', x: -100, z: -100 },
+    { index: 5, scopeId: 8, type: 'flat', name: 'House B', x: 100, z: 100 },
+    { index: 6, scopeId: 8, type: 'flat', name: 'Outside', x: 300, z: 100 },
+  ];
+  const citizens = [
+    { residenceBuildingIndex: 4 }, { residenceBuildingIndex: 4 },
+    { residenceBuildingIndex: 5 }, { residenceBuildingIndex: 6 },
+    { residenceBuildingIndex: -1 },
+  ];
+  const occupancy = summarizeResidenceOccupancy(citizens, buildings);
+  assert.deepEqual(occupancy.map(row => [row.buildingIndex, row.residents]), [[4, 2], [5, 1], [6, 1]]);
+  const values = new ArrayBuffer(16);
+  const view = new DataView(values);
+  [0.5, 1, 0.25, 0.75].forEach((value, index) => view.setFloat32(index * 4, value, true));
+  const result = summarizeOccupiedBuildingPollution(occupancy, {
+    width: 2, height: 2, cellSize: 200,
+    worldBounds: { minX: -200, maxX: 200, minZ: -200, maxZ: 200 },
+    airValuesPacked: Buffer.from(values).toString('base64'),
+  });
+  assert.equal(result.affectedBuildingCount, 2);
+  assert.equal(result.affectedResidentCount, 3);
+  assert.equal(result.outsideRasterBuildingCount, 1);
+  assert.deepEqual(result.buildings.map(row => [row.buildingIndex, row.residents, row.airValue]),
+    [[5, 1, 1], [4, 2, 0.25]]);
+  assert.deepEqual(result.scopes.map(row => [row.scopeId, row.buildingCount, row.residents,
+    row.residentWeightedAir, row.maxAir]), [
+    [8, 1, 1, 1, 1],
+    [7, 1, 2, 0.25, 0.25],
+  ]);
 });
 
 test('schematic map projects exact x/z positions and marks outlier residences', () => {
