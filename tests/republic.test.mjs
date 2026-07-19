@@ -152,10 +152,10 @@ test('compares observed totals and stable areas current minus baseline', () => {
     observedProductionRows: [{ scopeId: 4, count: 1, configuredWorkers: 120, currentWorkers: 90 }],
   };
   const currentStats = [
-    { year: 1980, minorCrimes: 22, mediumCrimes: 7, seriousCrimes: 3 },
+    { year: 1980, day: 100, minorCrimes: 22, mediumCrimes: 7, seriousCrimes: 3 },
     { current: true },
   ];
-  const baselineStats = [{ year: 1979, minorCrimes: 18, mediumCrimes: 4, seriousCrimes: 2 }];
+  const baselineStats = [{ year: 1979, day: 90, minorCrimes: 18, mediumCrimes: 4, seriousCrimes: 2 }];
   const comparison = compareObservedSnapshots(current, baseline, currentStats, baselineStats);
   assert.equal(comparison.sameRepublic, true);
   assert.equal(comparison.deltas.population, 120);
@@ -170,6 +170,10 @@ test('compares observed totals and stable areas current minus baseline', () => {
   assert.equal(comparison.deltas.underInvestigation, 1);
   assert.equal(comparison.deltas.atCourt, 0);
   assert.equal(comparison.current.totals.minorCrimes, 22);
+  assert.equal(comparison.deltas.statsRecordCount, 1);
+  assert.deepEqual(comparison.dates, {
+    current: { year: 1980, day: 100 }, baseline: { year: 1979, day: 90 },
+  });
   assert.ok(Math.abs(comparison.deltas.productivity - 0.1) < 1e-9);
   assert.equal(comparison.areas[0].deltas.population, 120);
   assert.equal(comparison.areas[0].deltas.minorCrimes, 3);

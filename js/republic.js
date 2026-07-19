@@ -115,18 +115,33 @@ function latestCrimeHistory(records = []) {
     Number.isFinite(record?.[key]) ? record[key] : null]));
 }
 
+function latestDatedStatsRecord(records = []) {
+  return records.findLast?.(record => Number.isFinite(record?.year) && record.year > 0
+    && Number.isFinite(record?.day))
+    ?? [...records].reverse().find(record => Number.isFinite(record?.year) && record.year > 0
+      && Number.isFinite(record?.day)) ?? null;
+}
+
 export function compareObservedSnapshots(currentInfo, baselineInfo, currentStats = [], baselineStats = []) {
   const current = actualProjection(observedMetadata(currentInfo));
   const baseline = actualProjection(observedMetadata(baselineInfo));
   Object.assign(current.totals, latestCrimeHistory(currentStats));
   Object.assign(baseline.totals, latestCrimeHistory(baselineStats));
+  current.totals.statsRecordCount = currentStats.length;
+  baseline.totals.statsRecordCount = baselineStats.length;
+  const currentDate = latestDatedStatsRecord(currentStats);
+  const baselineDate = latestDatedStatsRecord(baselineStats);
   const keys = ['population', 'liveBuildingCount', 'configuredIndustryWorkers',
     'currentIndustryWorkers', 'productivity', 'health', 'criminality',
-    ...CRIME_HISTORY_KEYS, ...LIVE_QUEUE_KEYS];
+    'statsRecordCount', ...CRIME_HISTORY_KEYS, ...LIVE_QUEUE_KEYS];
   const deltas = Object.fromEntries(keys.map(key => [key,
     differenceValue(current.totals, baseline.totals, key)]));
   const sameRepublic = sameRepublicSource(currentInfo, baselineInfo);
-  if (!sameRepublic) return { sameRepublic, current, baseline, deltas, areas: [] };
+  const dates = {
+    current: currentDate ? { year: currentDate.year, day: currentDate.day } : null,
+    baseline: baselineDate ? { year: baselineDate.year, day: baselineDate.day } : null,
+  };
+  if (!sameRepublic) return { sameRepublic, current, baseline, deltas, dates, areas: [] };
 
   const currentAreas = new Map(current.areas.map(area => [area.scopeId, area]));
   const baselineAreas = new Map(baseline.areas.map(area => [area.scopeId, area]));
@@ -144,7 +159,7 @@ export function compareObservedSnapshots(currentInfo, baselineInfo, currentStats
         differenceValue(currentArea, baselineArea, key)])),
     };
   });
-  return { sameRepublic, current, baseline, deltas, areas };
+  return { sameRepublic, current, baseline, deltas, dates, areas };
 }
 
 function differenceValue(plan, actual, key) {

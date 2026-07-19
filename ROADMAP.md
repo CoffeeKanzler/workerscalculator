@@ -147,7 +147,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
 - **Comparison:** Republic Overview can load another named snapshot read-only and
   show current-minus-baseline population, buildings, staffing, productivity, health,
   criminality, cumulative minor/medium/serious crime counts, and exact current
-  medical/criminal case queues. Area deltas use stable scope IDs only when both snapshots report
+  medical/criminal case queues. Each side also shows its exact latest dated stats.ini game date
+  and retained history-record count, without inventing elapsed-day rates. Area deltas use stable
+  scope IDs only when both snapshots report
   the same saved-game path; unrelated republics retain totals without false city matches.
 
 ### 4.1b Full observed game-save snapshots 🧪 beta 2026-07-17
