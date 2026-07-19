@@ -206,6 +206,16 @@ export function compactObservedBuildings(buildings) {
   ));
 }
 
+export function activeConstructionProjects(buildings = []) {
+  return buildings.filter(building => Number.isFinite(building.constructionProgress)
+    && building.constructionProgress >= 0 && building.constructionProgress < 1
+    && building.type !== 'temp')
+    .sort((a, b) => b.constructionProgress - a.constructionProgress
+      || (a.scopeId ?? Infinity) - (b.scopeId ?? Infinity)
+      || String(a.name || a.type).localeCompare(String(b.name || b.type))
+      || a.index - b.index);
+}
+
 export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
   width = 760, height = 480, padding = 18, focusBuildingIndex = null, roadNetwork = null,
   railNetwork = null, pedestrianNetwork = null, terrainWater = null, pollutionLayer = null,

@@ -234,6 +234,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   dropping them; scoped findings link to their production, city, or map context.
   The complete queue can be filtered by workforce, citizen needs, production buffers, or data
   coverage while retaining the unfiltered total and the bounded eight-row collapsed view.
+  An active-construction drill-down lists every exact incomplete non-temporary building by area, saved type and
+  completion fraction, sorted by nearest completion and linked directly to its map marker; it does
+  not invent remaining time or material requirements.
   These buffer projections remain distinct from actual throughput. A strict serialized
   `$TYPE_FACTORY` plus resolved-production gate now exposes exact rolling first-output telemetry
   for 32 supplied-save factories, including previous normalized-day quantity, current partial

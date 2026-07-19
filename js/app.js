@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=99';
+import { STRINGS } from './i18n.js?v=100';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=24';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -18,9 +18,9 @@ import {
   productionBufferAlerts, summarizeDistributionOffices, summarizeVehicleLines,
   summarizeCriminalityOutliers,
   summarizeResidenceOccupancy, summarizeOccupiedBuildingPollution,
-  buildSchematicMap,
+  buildSchematicMap, activeConstructionProjects,
   isNonPlannerSupportType, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=19';
+} from './save_model.js?v=20';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -59,6 +59,8 @@ let mapFocusBuildingIndex = null;
 let mapFocusScopeId = null;
 let mapSelectedBuildingIndex = null;
 let standaloneMapViewBox = null;
+let constructionPage = 1;
+let constructionDetailsOpen = false;
 let deferredMapRetry = null;
 const terrainWaterImageCache = new Map();
 const pollutionImageCache = new Map();
@@ -3756,6 +3758,66 @@ function renderRepublic() {
     }, state.republicAlertsExpanded ? t('showFewerAlerts')
       : t('showAllAlerts').replace('{count}', fmt(alertPresentation.hiddenCount, 0))) : null);
 
+  const constructionProjects = activeConstructionProjects(state.saveImport?.observedBuildings);
+  const constructionPageSize = 50;
+  const constructionPageCount = Math.max(1, Math.ceil(constructionProjects.length / constructionPageSize));
+  constructionPage = Math.max(1, Math.min(constructionPage, constructionPageCount));
+  const visibleConstructionProjects = constructionProjects.slice(
+    (constructionPage - 1) * constructionPageSize, constructionPage * constructionPageSize,
+  );
+  const locateConstructionProject = project => {
+    mapFocusBuildingIndex = project.index;
+    mapSelectedBuildingIndex = project.index;
+    mapFocusScopeId = null;
+    standaloneMapViewBox = null;
+    state.republicScope = project.scopeId ?? state.republicScope;
+    state.mapLayers = { ...state.mapLayers, construction: true, buildings: true };
+    state.mapBuildingFilter = '';
+    state.tab = 'map';
+    update();
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+  };
+  const constructionTable = el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+    el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('building')),
+      el('th', {}, t('savedBuildingType')), el('th', {}, t('progress')),
+      el('th', {}, t('saveIndex')), el('th', {}))),
+    el('tbody', {}, ...visibleConstructionProjects.map(project => el('tr', {},
+      el('td', {}, plannerScopeName(project.scopeId)),
+      el('td', {}, project.name || project.type || '—'),
+      el('td', {}, el('code', {}, project.type || '—')),
+      el('td', { class: 'r' }, el('progress', {
+        value: project.constructionProgress, max: 1,
+        'aria-label': `${fmt(project.constructionProgress * 100, 1)} %`,
+      }), ` ${fmt(project.constructionProgress * 100, 1)} %`),
+      el('td', { class: 'r' }, `#${project.index}`),
+      el('td', {}, Number.isFinite(project.x) && Number.isFinite(project.z)
+        ? el('button', { onclick: () => locateConstructionProject(project) }, t('locateOnMap'))
+        : null))))));
+  const constructionPagination = constructionPageCount > 1
+    ? el('div', { class: 'settingsbar fleet-pagination' },
+      el('button', {
+        ...(constructionPage <= 1 ? { disabled: '' } : {}),
+        onclick: () => { constructionPage -= 1; update(); },
+      }, `← ${t('fleetPreviousPage')}`),
+      el('span', {}, t('fleetPageStatus')
+        .replace('{page}', fmt(constructionPage, 0)).replace('{pages}', fmt(constructionPageCount, 0))
+        .replace('{from}', fmt((constructionPage - 1) * constructionPageSize + 1, 0))
+        .replace('{to}', fmt(Math.min(constructionProjects.length,
+          constructionPage * constructionPageSize), 0))
+        .replace('{total}', fmt(constructionProjects.length, 0))),
+      el('button', {
+        ...(constructionPage >= constructionPageCount ? { disabled: '' } : {}),
+        onclick: () => { constructionPage += 1; update(); },
+      }, `${t('fleetNextPage')} →`)) : null;
+  const constructionDetails = constructionProjects.length ? el('details', {
+    class: 'secondary-section construction-projects',
+    ...(constructionDetailsOpen ? { open: '' } : {}),
+    ontoggle: event => { constructionDetailsOpen = event.currentTarget.open; },
+  },
+    el('summary', {}, `${t('activeConstruction')} (${fmt(constructionProjects.length, 0)})`),
+    el('p', { class: 'hint' }, t('constructionProjectMeaning')),
+    constructionTable, constructionPagination) : null;
+
   const republicOperations = state.saveImport?.operationalServices?.republic;
   const republicLiveQueue = republicOperations?.liveQueue ?? { available: false };
   const facilityStaff = facility => facility.buildingCount
@@ -4484,6 +4546,7 @@ function renderRepublic() {
         state.saveImport.research ? el('span', {}, `${fmt(state.saveImport.researchComplete, 0)} / ${fmt(state.saveImport.research.length, 0)} ${t('importedResearch')}`) : null) : null,
       el('div', { class: 'metric-grid' }, ...cards),
       alertList,
+      constructionDetails,
       pollutionDetails,
       institutionOverview,
       fleetOpportunities,

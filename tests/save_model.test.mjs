@@ -7,10 +7,23 @@ import {
   evaluateDistributionResourceRule,
   summarizeCriminalityOutliers,
   summarizeResidenceOccupancy, summarizeOccupiedBuildingPollution,
-  buildSchematicMap,
+  buildSchematicMap, activeConstructionProjects,
   isNonPlannerSupportType,
   isBorderPostType, isExternalAirLinkType,
 } from '../js/save_model.js';
+
+test('active construction keeps exact incomplete buildings in useful progress order', () => {
+  const projects = activeConstructionProjects([
+    { index: 4, type: 'school', constructionProgress: 0.25, x: 1, z: 2 },
+    { index: 8, type: 'hospital', constructionProgress: 0.9, x: 3, z: 4 },
+    { index: 9, type: 'finished', constructionProgress: 1, x: 5, z: 6 },
+    { index: 10, type: 'invalid', constructionProgress: -1, x: 7, z: 8 },
+    { index: 11, type: 'temp', constructionProgress: 0.99, x: 9, z: 10 },
+  ]);
+  assert.deepEqual(projects.map(project => [project.index, project.constructionProgress]), [
+    [8, 0.9], [4, 0.25],
+  ]);
+});
 
 test('known support and decorative save types do not masquerade as planner coverage failures', () => {
   for (const type of [
