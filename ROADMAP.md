@@ -258,6 +258,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   building relationships, and raw current line-interval accumulators for all 69 assigned vehicles;
   all 69 route vectors match their line stops. These are neutral saved facts: no universal busy/idle
   state or proven network reachability is established.
+  Known utility, transport-support, and decorative save types are reported separately from
+  planner-relevant unknowns, so they no longer inflate per-area incomplete-coverage warnings.
   Model-defined hard attachments are never inferred from save consist children. Workshop vehicle
   lifespans are used only when their exact
   `$LIFESPAN` fact is present; vanilla/DLC models use verified category defaults. An earlier
@@ -280,7 +282,14 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   its saved position and progress; the same control returns to the whole map.
   Road and rail geometry are read locally from their network files; all optional map layers
   are omitted from share links and restored from the
-  local named snapshot. Full terrain shading remains a future layer.
+  local named snapshot. A dedicated Republic map tab adds wheel/drag zoom, reset controls,
+  independent water/road/rail/building/construction/border/area/criminality layers, and a
+  saved-type filter. Physical customs posts have their own marker; artificial off-map air
+  import/export targets are omitted. Full terrain and pollution shading remain future layers.
+  As optional save sources grow, replace the single long import wait with staged per-file
+  progress, early access to completed summaries, and on-demand parsing/rendering for heavy
+  network and heatmap layers. The worker already keeps parsing off the UI thread; the remaining
+  goal is progressive presentation and explicit recovery for slow or failed optional files.
 
 ### 4.2 Live-follow stats.ini ✅ done 2026-07-18
 - **Delivered:** The Save Import page can watch a user-approved save directory through

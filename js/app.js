@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=81';
+import { STRINGS } from './i18n.js?v=82';
 import { recordToPrices } from './statsini.js?v=17';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -18,7 +18,8 @@ import {
   productionBufferAlerts, summarizeDistributionOffices, summarizeVehicleLines,
   summarizeCriminalityOutliers,
   buildSchematicMap,
-} from './save_model.js?v=15';
+  isNonPlannerSupportType, isBorderPostType, isExternalAirLinkType,
+} from './save_model.js?v=16';
 import { buildRepublicModel, compareObservedSnapshots, republicAlerts } from './republic.js?v=8';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
@@ -28,7 +29,7 @@ import {
 } from './fleet.js?v=11';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
-const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'production', 'city', 'chain',
+const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'map', 'production', 'city', 'chain',
   'prices', 'analysis', 'vehicleprod', ...(IS_BETA ? ['saveimport'] : []),
   'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
@@ -36,7 +37,7 @@ const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'p
   'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset',
   'chains', 'activeChain', 'tuning', 'productionScope', 'saveImport', 'republicView',
   'buildingOverrides', 'customBuildings',
-  'republicRange', 'republicResource', 'republicScope', 'tab'];
+  'republicRange', 'republicResource', 'republicScope', 'mapLayers', 'mapBuildingFilter', 'tab'];
 const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex'];
 
 // ---------------------------------------------------------------- state
@@ -50,6 +51,7 @@ let comparisonSnapshot = null;
 let comparisonSnapshotError = '';
 let mapFocusBuildingIndex = null;
 let mapFocusScopeId = null;
+let standaloneMapViewBox = null;
 const terrainWaterImageCache = new Map();
 
 function createInitialState() {
@@ -90,6 +92,11 @@ function createInitialState() {
     republicRange: 'all',
     republicResource: null,
     republicScope: null,
+    mapLayers: {
+      water: true, roads: true, rails: true, buildings: true,
+      construction: true, scopes: true, borders: true, outliers: true,
+    },
+    mapBuildingFilter: '',
     saveImport: null,
     analysisSort: { col: 'profit', dir: -1 },
     analysisSearch: '',
@@ -733,12 +740,12 @@ function renderSaveSlots() {
 function renderTabs() {
   const labels = { home: 'tabHome', prices: 'tabPrices', production: 'tabProduction', chain: 'tabChain',
     analysis: 'tabAnalysis', vehicleprod: 'tabVehicleProd', city: 'tabCity', republic: 'tabRepublic',
-    saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
+    map: 'tabMap', saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
   const button = id => el('button', {
     class: state.tab === id ? 'active' : '',
     onclick: () => { state.tab = id; update(); },
   }, t(labels[id]));
-  const primary = TABS.filter(id => ['home', 'republic', 'production', 'city'].includes(id));
+  const primary = TABS.filter(id => ['home', 'republic', 'map', 'production', 'city'].includes(id));
   const secondary = TABS.filter(id => !primary.includes(id));
   const activeSecondary = secondary.includes(state.tab);
   return el('nav', {}, ...primary.map(button),
@@ -757,6 +764,7 @@ function renderCurrentTab() {
     case 'vehicleprod': return renderVehicleProduction();
     case 'city': return renderCity();
     case 'republic': return renderRepublic();
+    case 'map': return renderMapTab();
     case 'saveimport': return renderSaveImport();
     case 'trains': return renderTrains();
     case 'research': return renderResearch();
@@ -1847,6 +1855,7 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
     productivity: citizenScopes.get(row.scopeId)?.productivity ?? defaultProductivity,
   }));
   const unmatched = new Map();
+  const unrepresentedSupport = new Map();
   let cityCount = 0, productionCount = 0, temporaryCount = 0, infrastructureCount = 0;
 
   for (const record of buildings) {
@@ -1878,6 +1887,15 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
 
     if (inferredHousingIndices.has(record.index)) continue;
     if (raw && !Object.keys(raw.production ?? {}).length && !Object.keys(raw.consumption ?? {}).length) {
+      infrastructureCount += 1;
+      continue;
+    }
+    if (!raw && isNonPlannerSupportType(record.type)) {
+      const key = `${record.scopeId ?? 'none'}\0${record.type}`;
+      const current = unrepresentedSupport.get(key)
+        ?? { scopeId: record.scopeId, type: record.type, count: 0 };
+      current.count += 1;
+      unrepresentedSupport.set(key, current);
       infrastructureCount += 1;
       continue;
     }
@@ -2013,6 +2031,10 @@ function buildImportedPlanning(sourceName, settlements, buildings, membershipAud
       inferredHousingResidents: inferredHousing.reduce((sum, group) => sum + group.residents, 0),
       temporaryCount, unmatchedCount: [...unmatched.values()].reduce((sum, item) => sum + item.count, 0),
       unmatched: [...unmatched.values()].sort((a, b) => b.count - a.count || a.type.localeCompare(b.type)),
+      unrepresentedSupportCount: [...unrepresentedSupport.values()]
+        .reduce((sum, item) => sum + item.count, 0),
+      unrepresentedSupport: [...unrepresentedSupport.values()]
+        .sort((a, b) => b.count - a.count || a.type.localeCompare(b.type)),
       warnings,
     },
   };
@@ -2347,6 +2369,13 @@ function renderSaveImport() {
       info.warnings?.length ? el('div', { class: 'totalsbox' },
         el('h3', {}, t('importedWarnings')),
         el('ul', {}, ...info.warnings.map(warning => el('li', {}, warning)))) : null),
+    info.unrepresentedSupport?.length ? el('details', { class: 'tablewrap' },
+      el('summary', {}, `${t('supportTypes')} (${fmt(info.unrepresentedSupport.length, 0)})`),
+      el('table', { class: 'data' },
+        el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('sourceGameId')), el('th', {}, t('count')))),
+        el('tbody', {}, ...info.unrepresentedSupport.map(item => el('tr', {},
+          el('td', {}, areaNames.get(item.scopeId) ?? t('unassigned')),
+          el('td', {}, item.type), el('td', { class: 'r' }, fmt(item.count, 0))))))) : null,
     info.unmatched?.length ? el('details', { class: 'tablewrap' },
       el('summary', {}, `${t('unmatchedTypes')} (${fmt(info.unmatched.length, 0)})`),
       el('table', { class: 'data' },
@@ -2656,7 +2685,7 @@ function totalMapValues(map) {
   return Object.values(map ?? {}).reduce((total, value) => total + (Number.isFinite(value) ? value : 0), 0);
 }
 
-function renderSchematicRepublicMap(buildings, scopes, outliers) {
+function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = false } = {}) {
   const model = buildSchematicMap(buildings, scopes, outliers, {
     focusBuildingIndex: mapFocusBuildingIndex,
     roadNetwork: state.saveImport?.roadNetwork,
@@ -2664,6 +2693,15 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     terrainWater: state.saveImport?.terrainWater,
   });
   if (!model) return null;
+  const layers = standalone ? {
+    water: true, roads: true, rails: true, buildings: true,
+    construction: true, scopes: true, borders: true, outliers: true,
+    ...(state.mapLayers ?? {}),
+  } : {
+    water: true, roads: true, rails: true, buildings: true,
+    construction: true, scopes: true, borders: true, outliers: true,
+  };
+  const buildingFilter = standalone ? String(state.mapBuildingFilter ?? '').trim().toLowerCase() : '';
   const ns = 'http://www.w3.org/2000/svg';
   const node = (tag, attrs = {}) => {
     const item = document.createElementNS(ns, tag);
@@ -2700,13 +2738,73 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     const y = Math.max(0, Math.min(model.height - height, centerY - height / 2));
     return `${x} ${y} ${width} ${height}`;
   })() : null;
-  const mapPointScale = focusedBuilding ? zoomWidth / model.width : scopeZoomScale;
+  const mapPointScale = standalone && standaloneMapViewBox
+    ? standaloneMapViewBox.width / model.width
+    : focusedBuilding ? zoomWidth / model.width : scopeZoomScale;
+  const fullViewBox = { x: 0, y: 0, width: model.width, height: model.height };
+  const clampViewBox = view => {
+    const width = Math.max(model.width / 32, Math.min(model.width, view.width));
+    const height = width * model.height / model.width;
+    return {
+      x: Math.max(0, Math.min(model.width - width, view.x)),
+      y: Math.max(0, Math.min(model.height - height, view.y)),
+      width, height,
+    };
+  };
+  const activeStandaloneViewBox = standaloneMapViewBox
+    ? clampViewBox(standaloneMapViewBox) : fullViewBox;
   const svg = node('svg', {
-    viewBox: focusedBuilding
+    viewBox: standalone
+      ? `${activeStandaloneViewBox.x} ${activeStandaloneViewBox.y} ${activeStandaloneViewBox.width} ${activeStandaloneViewBox.height}`
+      : focusedBuilding
       ? `${zoomX} ${zoomY} ${zoomWidth} ${zoomHeight}`
       : scopeViewBox ?? `0 0 ${model.width} ${model.height}`,
-    class: 'republic-map', role: 'img', 'aria-label': t('schematicRepublicMap'),
+    class: `republic-map${standalone ? ' standalone' : ''}`, role: 'img', 'aria-label': t('schematicRepublicMap'),
   });
+  const applyStandaloneViewBox = view => {
+    standaloneMapViewBox = clampViewBox(view);
+    const current = standaloneMapViewBox;
+    svg.setAttribute('viewBox', `${current.x} ${current.y} ${current.width} ${current.height}`);
+  };
+  if (standalone) {
+    let drag = null;
+    svg.addEventListener('wheel', event => {
+      event.preventDefault();
+      const current = standaloneMapViewBox ?? fullViewBox;
+      const rect = svg.getBoundingClientRect();
+      const anchorX = current.x + (event.clientX - rect.left) / rect.width * current.width;
+      const anchorY = current.y + (event.clientY - rect.top) / rect.height * current.height;
+      const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? rect.height : 1);
+      const factor = Math.max(0.84, Math.min(1.19, Math.exp(delta * 0.0015)));
+      const width = current.width * factor;
+      const height = width * model.height / model.width;
+      applyStandaloneViewBox({
+        x: anchorX - (anchorX - current.x) * width / current.width,
+        y: anchorY - (anchorY - current.y) * height / current.height,
+        width, height,
+      });
+    }, { passive: false });
+    svg.addEventListener('pointerdown', event => {
+      if (event.button !== 0) return;
+      const current = standaloneMapViewBox ?? fullViewBox;
+      drag = { x: event.clientX, y: event.clientY, view: { ...current } };
+      svg.setPointerCapture(event.pointerId);
+    });
+    svg.addEventListener('pointermove', event => {
+      if (!drag) return;
+      const rect = svg.getBoundingClientRect();
+      applyStandaloneViewBox({
+        ...drag.view,
+        x: drag.view.x - (event.clientX - drag.x) / rect.width * drag.view.width,
+        y: drag.view.y - (event.clientY - drag.y) / rect.height * drag.view.height,
+      });
+    });
+    svg.addEventListener('pointerup', event => {
+      if (svg.hasPointerCapture(event.pointerId)) svg.releasePointerCapture(event.pointerId);
+      drag = null;
+    });
+    svg.addEventListener('pointercancel', () => { drag = null; });
+  }
   const waterImageHref = water => {
     if (terrainWaterImageCache.has(water.packed)) return terrainWaterImageCache.get(water.packed);
     const packed = Uint8Array.from(atob(water.packed), character => character.charCodeAt(0));
@@ -2758,16 +2856,26 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
   }
   const normalLayer = node('g', { class: 'map-buildings' });
   const selectedLayer = node('g', { class: 'map-selected' });
+  const borderLayer = node('g', { class: 'map-borders' });
   const outlierLayer = node('g', { class: 'map-outliers' });
   for (const building of model.buildings) {
+    if (isExternalAirLinkType(building.type)) continue;
+    const borderPost = isBorderPostType(building.type);
+    if (!borderPost && buildingFilter && !String(building.type ?? '').toLowerCase().includes(buildingFilter)) continue;
     const selected = building.scopeId === state.republicScope;
     const outlier = building.criminalityOutlier;
     const underConstruction = (building.constructionProgress ?? 1) < 1;
+    if (borderPost && !layers.borders) continue;
+    if (!borderPost && underConstruction && !layers.construction) continue;
+    if (!borderPost && !underConstruction && !layers.buildings && !(outlier && layers.outliers)) continue;
+    if (!borderPost && outlier && !layers.outliers && !layers.buildings) continue;
     const circle = node('circle', {
       cx: building.mapX.toFixed(2), cy: building.mapY.toFixed(2),
-      r: (building.focused ? 7.5 : outlier ? 5.5 : selected ? 2.4 : 1.35) * mapPointScale,
-      ...((building.focused || underConstruction) ? {
-        class: [building.focused ? 'focused' : '', underConstruction ? 'under-construction' : '']
+      'data-building-type': building.type ?? '',
+      'data-map-kind': borderPost ? 'border' : underConstruction ? 'construction' : 'building',
+      r: (building.focused ? 7.5 : borderPost ? 4.5 : outlier ? 5.5 : selected ? 2.4 : 1.35) * mapPointScale,
+      ...((building.focused || underConstruction || borderPost) ? {
+        class: [building.focused ? 'focused' : '', underConstruction ? 'under-construction' : '', borderPost ? 'border-post' : '']
           .filter(Boolean).join(' '),
       } : {}),
     });
@@ -2779,10 +2887,23 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     title.textContent = buildingTitle + (underConstruction
       ? ` · ${t('underConstruction')} ${fmt(building.constructionProgress * 100, 0)} %` : '');
     circle.append(title);
-    (outlier ? outlierLayer : selected ? selectedLayer : normalLayer).append(circle);
+    (borderPost ? borderLayer : outlier && layers.outliers ? outlierLayer : selected ? selectedLayer : normalLayer).append(circle);
   }
+  const scopeBuildingTypes = new Map();
+  for (const building of model.buildings) {
+    if (!Number.isInteger(building.scopeId)) continue;
+    const types = scopeBuildingTypes.get(building.scopeId) ?? [];
+    types.push(building.type);
+    scopeBuildingTypes.set(building.scopeId, types);
+  }
+  const borderOnlyScopeIds = new Set([...scopeBuildingTypes.entries()]
+    .filter(([, types]) => types.length && types.every(type => isBorderPostType(type)
+      || isExternalAirLinkType(type)
+      || String(type ?? '').toLowerCase().includes('transformator_customin')))
+    .map(([scopeId]) => scopeId));
   const scopeLayer = node('g', { class: 'map-scopes' });
   for (const scope of model.scopes) {
+    if (!layers.scopes || borderOnlyScopeIds.has(scope.id)) continue;
     const focusedScopeId = focusedBuilding?.scopeId ?? (scopeViewBox ? mapFocusScopeId : null);
     if (Number.isInteger(focusedScopeId) && scope.id !== focusedScopeId) continue;
     const marker = node('circle', {
@@ -2807,7 +2928,10 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     marker.append(title);
     scopeLayer.append(marker);
   }
-  svg.append(waterLayer, railLayer, roadLayer, normalLayer, selectedLayer, scopeLayer, outlierLayer);
+  if (layers.water) svg.append(waterLayer);
+  if (layers.rails) svg.append(railLayer);
+  if (layers.roads) svg.append(roadLayer);
+  svg.append(normalLayer, selectedLayer, borderLayer, scopeLayer, outlierLayer);
   const mapHintKey = model.rails.length
     ? (model.water ? 'schematicMapNetworksWaterHint' : 'schematicMapNetworksHint')
     : model.water
@@ -2823,23 +2947,78 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     el('span', {}, `${t('mappedBuildings')}: ${fmt(scopeBuildings.length, 0)}`),
     el('span', {}, `${t('underConstruction')}: ${fmt(scopeUnderConstruction, 0)}`),
     el('span', { class: 'evidence-badge exact' }, t('exact'))) : null;
+  const borderPosts = model.buildings.filter(building => isBorderPostType(building.type));
+  const legend = el('div', { class: 'map-legend' },
+    model.water ? el('span', {}, el('i', { class: 'water' }), t('waterFootprint')) : null,
+    model.roads.length ? el('span', {}, el('i', { class: 'road' }), t('roads')) : null,
+    model.rails.length ? el('span', {}, el('i', { class: 'rail' }), t('rails')) : null,
+    el('span', {}, el('i', { class: 'building' }), t('buildings')),
+    Number.isInteger(state.republicScope)
+      ? el('span', {}, el('i', { class: 'selected' }), t('selectedAreaBuildings')) : null,
+    hasUnderConstruction
+      ? el('span', {}, el('i', { class: 'construction' }), t('underConstruction')) : null,
+    borderPosts.length ? el('span', {}, el('i', { class: 'border' }), t('borderPosts')) : null,
+    el('span', {}, el('i', { class: 'scope' }), t('areaCenters')),
+    el('span', {}, el('i', { class: 'outlier' }), t('highCriminalityResidents')));
+  if (standalone) {
+    const layerToggle = (key, label, available = true) => available ? el('label', {},
+      el('input', {
+        type: 'checkbox', checked: layers[key],
+        onchange: event => {
+          state.mapLayers = { ...layers, [key]: event.target.checked };
+          update();
+        },
+      }), ' ', label) : null;
+    const buildingTypes = [...new Set(model.buildings
+      .filter(building => !isBorderPostType(building.type) && !isExternalAirLinkType(building.type))
+      .map(building => building.type).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+    const currentView = () => standaloneMapViewBox ?? fullViewBox;
+    const zoom = factor => {
+      const view = currentView();
+      const width = view.width * factor;
+      const height = width * model.height / model.width;
+      applyStandaloneViewBox({
+        x: view.x + (view.width - width) / 2,
+        y: view.y + (view.height - height) / 2,
+        width, height,
+      });
+    };
+    return el('section', { class: 'map-page' },
+      el('h2', {}, t('republicMapTitle')),
+      el('p', { class: 'hint' }, t(mapHintKey)),
+      el('div', { class: 'map-toolbar' },
+        el('fieldset', {}, el('legend', {}, t('mapLayers')),
+          layerToggle('water', t('waterFootprint'), !!model.water),
+          layerToggle('roads', t('roads'), !!model.roads.length),
+          layerToggle('rails', t('rails'), !!model.rails.length),
+          layerToggle('buildings', t('buildings')),
+          layerToggle('construction', t('underConstruction'), hasUnderConstruction),
+          layerToggle('borders', t('borderPosts'), !!borderPosts.length),
+          layerToggle('scopes', t('areaCenters')),
+          layerToggle('outliers', t('highCriminalityResidents'), !!outliers?.residents?.length)),
+        el('label', {}, t('mapBuildingFilter'), ' ',
+          el('input', {
+            id: 'mapBuildingFilter', type: 'search', list: 'map-building-types',
+            value: state.mapBuildingFilter ?? '', placeholder: t('mapAllBuildingTypes'),
+            onchange: event => { state.mapBuildingFilter = event.target.value; update(); },
+          }),
+          el('datalist', { id: 'map-building-types' },
+            ...buildingTypes.map(type => el('option', { value: type })))),
+        el('div', { class: 'map-zoom-controls' },
+          el('button', { title: t('mapZoomIn'), onclick: () => zoom(0.7) }, '+'),
+          el('button', { title: t('mapZoomOut'), onclick: () => zoom(1.4) }, '−'),
+          el('button', {
+            onclick: () => { standaloneMapViewBox = null; applyStandaloneViewBox(fullViewBox); },
+          }, t('mapReset')))),
+      legend, svg);
+  }
   return el('details', {
     class: 'secondary-section map-section',
     ...(focusedBuilding || scopeViewBox ? { open: '' } : {}),
   },
     el('summary', {}, `${t('schematicRepublicMap')} (${fmt(model.buildings.length, 0)})`),
     el('p', { class: 'hint' }, t(mapHintKey)),
-    el('div', { class: 'map-legend' },
-      model.water ? el('span', {}, el('i', { class: 'water' }), t('waterFootprint')) : null,
-      model.roads.length ? el('span', {}, el('i', { class: 'road' }), t('roads')) : null,
-      model.rails.length ? el('span', {}, el('i', { class: 'rail' }), t('rails')) : null,
-      el('span', {}, el('i', { class: 'building' }), t('buildings')),
-      Number.isInteger(state.republicScope)
-        ? el('span', {}, el('i', { class: 'selected' }), t('selectedAreaBuildings')) : null,
-      hasUnderConstruction
-        ? el('span', {}, el('i', { class: 'construction' }), t('underConstruction')) : null,
-      el('span', {}, el('i', { class: 'scope' }), t('areaCenters')),
-      el('span', {}, el('i', { class: 'outlier' }), t('highCriminalityResidents'))),
+    legend,
     focusedBuilding || scopeViewBox ? el('button', {
       onclick: () => {
         mapFocusBuildingIndex = null;
@@ -2850,6 +3029,17 @@ function renderSchematicRepublicMap(buildings, scopes, outliers) {
     }, t('showWholeRepublic')) : null,
     scopeSummary,
     svg);
+}
+
+function renderMapTab() {
+  const buildings = state.saveImport?.observedBuildings;
+  const scopes = state.saveImport?.scopes;
+  if (!Array.isArray(buildings) || !buildings.length || !Array.isArray(scopes)) {
+    return el('section', {}, el('h2', {}, t('republicMapTitle')),
+      el('p', { class: 'hint' }, t('unavailable')));
+  }
+  return renderSchematicRepublicMap(buildings, scopes,
+    state.saveImport?.criminalityOutliers, { standalone: true });
 }
 
 // ---------------------------------------------------------------- republic overview tab

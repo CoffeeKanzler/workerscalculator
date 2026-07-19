@@ -7,7 +7,38 @@ import {
   evaluateDistributionResourceRule,
   summarizeCriminalityOutliers,
   buildSchematicMap,
+  isNonPlannerSupportType,
+  isBorderPostType, isExternalAirLinkType,
 } from '../js/save_model.js';
+
+test('known support and decorative save types do not masquerade as planner coverage failures', () => {
+  for (const type of [
+    'containerstand_big_pede',
+    'CWC_ElectricSubstationFootpath',
+    'MIRRORZ_CWC_HeatingEndstationSmallFootpath',
+    '2190194724/Engels_Poster',
+    '3282359449/opticontainer_transfer_2',
+    'muddy_distribution',
+    'water_reservoir_big',
+  ]) assert.equal(isNonPlannerSupportType(type), true, type);
+
+  for (const type of [
+    '1893637213/Doorse_10_1',
+    '2737076777/sad',
+    'CWC_SecretPoliceSmall',
+    'MIRRORZ_1865226599/VFD',
+    'storage_meat',
+  ]) assert.equal(isNonPlannerSupportType(type), false, type);
+});
+
+test('border posts remain a distinct exact map type', () => {
+  assert.equal(isBorderPostType('zoll_siatre'), true);
+  assert.equal(isBorderPostType('MIRRORZ_zoll_air_west'), false);
+  assert.equal(isExternalAirLinkType('MIRRORZ_zoll_air_west'), true);
+  assert.equal(isExternalAirLinkType('zoll_siatre'), false);
+  assert.equal(isBorderPostType('CWC_SecretPoliceSmall'), false);
+  assert.equal(isBorderPostType('eletric_transformator_customin'), false);
+});
 
 test('citizens aggregate through residence buildings without forced assignment', () => {
   const buildings = [{ index: 0, scopeId: 4, type: 'panelak' }];

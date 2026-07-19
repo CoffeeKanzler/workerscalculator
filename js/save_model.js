@@ -498,6 +498,45 @@ function saveTypeCandidates(type) {
   return [...new Set(candidates.map((value) => String(value).toLowerCase()))];
 }
 
+// Some saves contain utility, transport-support, and decorative buildings that
+// deliberately have no city-service or production-planner row. When their raw
+// game definition is unavailable, keep them auditable without presenting them
+// as missing calculation coverage.
+export function isNonPlannerSupportType(type) {
+  const clean = String(type ?? '')
+    .replace(/^MIRRORZ_/i, '')
+    .replace(/^\d{6,20}\//, '')
+    .toLowerCase();
+  return [
+    'containerstand', 'opticontainer_transfer',
+    'monument', 'poster', 'eternal_flame', 'obelisk',
+    'electricsubstation', 'substation', 'heatingendstation',
+    'sewage_switch', 'water_switch', 'eletric_switch',
+    'muddy_depot', 'tram_depo', 'construction_office',
+    'distribution_office', 'muddy_distribution',
+    'muddy_demolition', 'technical_services', 'muddy_technical',
+    'tram_trafo', 'water_pumping_station', 'water_reservoir',
+    'zoll',
+  ].some(fragment => clean.includes(fragment));
+}
+
+export function isBorderPostType(type) {
+  const clean = String(type ?? '')
+    .replace(/^MIRRORZ_/i, '')
+    .replace(/^\d{6,20}\//, '')
+    .toLowerCase();
+  return (clean.startsWith('zoll_') && !clean.startsWith('zoll_air_'))
+    || clean.includes('customhouse') || clean.includes('border_post');
+}
+
+export function isExternalAirLinkType(type) {
+  const clean = String(type ?? '')
+    .replace(/^MIRRORZ_/i, '')
+    .replace(/^\d{6,20}\//, '')
+    .toLowerCase();
+  return clean.startsWith('zoll_air_');
+}
+
 export function matchObservedBuilding(type, catalog, idOf = (entry) => entry.gameId) {
   const candidates = saveTypeCandidates(type);
   const exact = new Map(catalog.map((entry) => [String(idOf(entry) ?? '').toLowerCase(), entry]));
