@@ -1,5 +1,5 @@
-import { STRINGS } from './i18n.js?v=101';
-import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=24';
+import { STRINGS } from './i18n.js?v=102';
+import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=25';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -2074,7 +2074,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=28', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=29', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -4411,6 +4411,12 @@ function renderRepublic() {
         series(t('noEducation'), '#c0392b', record => record.educationNone),
         series(t('basicEducation'), '#f1c40f', record => record.educationBasic),
         series(t('higherEducation'), '#2980b9', record => record.educationHigh),
+      ]),
+      renderRepublicLineChart(t('electronicsHistory'), [
+        series(t('noElectronics'), '#7f8c8d', record => record.electronicsNone),
+        series(t('radioOwners'), '#d35400', record => record.electronicsRadio),
+        series(t('tvOwners'), '#2980b9', record => record.electronicsTV),
+        series(t('computerOwners'), '#8e44ad', record => record.electronicsComputer),
       ]),
       renderRepublicLineChart(t('longevityHistory'), [
         series(t('averageAge'), '#2980b9', record => record.averageAge),

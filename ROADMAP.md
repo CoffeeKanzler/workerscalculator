@@ -348,11 +348,12 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   Population history recognizes the current save's exact `SmallChilds` / `MediumChilds`
   scalar names (while retaining older aliases), so missing child fields are omitted rather
   than drawn as an authoritative-looking zero. Separate exact charts now expose the saved
-  births/deaths, escapes and Soviet/African immigration fields, plus no/basic/higher education
-  counts and average age/lifespan in saved years. They remain labelled as per-record saved values rather than invented daily rates or
+  births/deaths, escapes and Soviet/African immigration fields, plus no/basic/higher education,
+  average age/lifespan, and overlapping radio/TV/computer ownership counts. They remain labelled
+  as per-record saved values rather than invented percentages, exclusive categories, daily rates, or
   cumulative totals. The selected-resource charts keep exact ₽-market and $-market import/export
   channels separate and add factory, shop, construction, and vehicle use; unlike resource units
-  are never summed into a false republic total. The selector includes all 45 resources observed in
+  are never summed into a false republic total. The selector includes all 46 resources observed in
   any flow channel—not only the 24 produced locally—and is localized/alphabetical. Selecting a
   recorded waste/material channel also exposes exact factory, citizen, and demolition output
   separately. Separate exact charts expose currency-valued saved

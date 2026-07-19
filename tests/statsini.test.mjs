@@ -174,6 +174,10 @@ $Citizens_MediumChilds 3374
 $Citizens_NoEducation 3079
 $Citizens_BasicEducationNum 12338
 $Citizens_HighEducationNum 4393
+$Citizens_EletronicNone 61
+$Citizens_EletrinicRadio 1100
+$Citizens_EletronicTV 900
+$Citizens_EletronicComputer 450
 $Citizens_AverageProductivity 0.91
 $STAT_CITY 4
 $DATE_YEAR 1965
@@ -199,6 +203,10 @@ $end`;
   assert.equal(record.educationNone, 3079);
   assert.equal(record.educationBasic, 12338);
   assert.equal(record.educationHigh, 4393);
+  assert.equal(record.electronicsNone, 61);
+  assert.equal(record.electronicsRadio, 1100);
+  assert.equal(record.electronicsTV, 900);
+  assert.equal(record.electronicsComputer, 450);
   assert.deepEqual(resourceHistoryKeys([record]).sort(), ['clothes', 'fuel', 'steel', 'waste_mixed']);
   assert.equal(record.averageProductivity, 0.91);
   assert.equal(record.year, 2000);
