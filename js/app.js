@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=96';
+import { STRINGS } from './i18n.js?v=97';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=23';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -2547,6 +2547,9 @@ function renderSaveImport() {
           el('td', {}, item.type), el('td', { class: 'r' }, fmt(item.count, 0))))))) : null,
     info.unmatched?.length ? el('details', { class: 'tablewrap' },
       el('summary', {}, `${t('unmatchedTypes')} (${fmt(info.unmatched.length, 0)})`),
+      el('p', { class: 'hint' }, t('unmatchedExplanation')
+        .replace('{instances}', fmt(info.unmatchedCount, 0))
+        .replace('{groups}', fmt(info.unmatched.length, 0))),
       el('table', { class: 'data' },
         el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('sourceGameId')), el('th', {}, t('count')))),
         el('tbody', {}, ...info.unmatched.map(item => el('tr', {},

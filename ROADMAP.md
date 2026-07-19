@@ -312,6 +312,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   raw type. Mouse- and keyboard-selectable markers open an in-place inspector with area,
   construction state, coordinates, and raw save identity; exact Workshop matching rules remain
   unchanged and unresolved numeric packages are never aliased by basename.
+  The import audit distinguishes unresolved building instances from grouped area/type rows and
+  explains that unresolved records remain in the save and map while only unsafe calculations are omitted.
   Large imports now expose staged progress without rerendering/persisting the whole application
   for every parser tick. The 50.5 MB reference `stats.ini` is transferred as a buffer and decoded
   inside the parser worker instead of being decoded and copied on the main thread. Core Republic
