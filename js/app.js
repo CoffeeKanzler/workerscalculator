@@ -1,5 +1,5 @@
-import { STRINGS } from './i18n.js?v=102';
-import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=25';
+import { STRINGS } from './i18n.js?v=103';
+import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -2074,7 +2074,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=29', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=30', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -4381,6 +4381,10 @@ function renderRepublic() {
   const hasSelectedWasteHistory = state.republicResource && historyRecords.some(record =>
     ['wasteProductionFactories', 'wasteProductionPeople', 'wasteProductionDemolition']
       .some(field => Number.isFinite(record[field]?.[state.republicResource])));
+  const hasSelectedInternationalHistory = state.republicResource && historyRecords.some(record =>
+    ['resourcesImportInternationalRUB', 'resourcesImportInternationalUSD',
+      'resourcesExportInternationalRUB', 'resourcesExportInternationalUSD']
+      .some(field => Number.isFinite(record[field]?.[state.republicResource])));
   const charts = state.statsRecords?.length ? el('details', { class: 'history-section secondary-section' },
     el('summary', {}, `${t('republicHistory')} (${fmt(state.statsRecords.length, 0)})`),
     el('div', { class: 'chart-controls settingsbar' },
@@ -4453,6 +4457,17 @@ function renderRepublic() {
           series(t('shopUse'), '#d35400', record => record.resourcesSpendShops?.[state.republicResource]),
           series(t('constructionUse'), '#7f8c8d', record => record.resourcesSpendConstructions?.[state.republicResource]),
           series(t('vehicleUse'), '#2c3e50', record => record.resourcesSpendVehicles?.[state.republicResource]),
+        ]) : null,
+      hasSelectedInternationalHistory ? renderRepublicLineChart(
+        `${selectedResourceLabel} · ${t('internationalTradeHistory')}`, [
+          series(t('internationalImportsRUB'), '#c0392b', record =>
+            record.resourcesImportInternationalRUB?.[state.republicResource]),
+          series(t('internationalImportsUSD'), '#e67e22', record =>
+            record.resourcesImportInternationalUSD?.[state.republicResource]),
+          series(t('internationalExportsRUB'), '#27ae60', record =>
+            record.resourcesExportInternationalRUB?.[state.republicResource]),
+          series(t('internationalExportsUSD'), '#16a085', record =>
+            record.resourcesExportInternationalUSD?.[state.republicResource]),
         ]) : null,
       hasSelectedWasteHistory ? renderRepublicLineChart(
         `${selectedResourceLabel} · ${t('wasteHistory')}`, [

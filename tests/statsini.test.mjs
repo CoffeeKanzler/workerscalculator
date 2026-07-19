@@ -152,6 +152,12 @@ $end
 $Resources_ExportRUB
   clothes 3 0
 $end
+$Resources_ImportInternationalRUB
+  steel 2.25 0
+$end
+$Resources_ExportInternationalUSD
+  fuel 1.5 0
+$end
 $Resources_SpendConstructions
   steel 4.5 0
 $end
@@ -188,6 +194,8 @@ $end`;
   assert.equal(record.resourcesProduced.steel, 12.5);
   assert.equal(record.resourcesImportRUB.fuel, 8);
   assert.equal(record.resourcesExportRUB.clothes, 3);
+  assert.equal(record.resourcesImportInternationalRUB.steel, 2.25);
+  assert.equal(record.resourcesExportInternationalUSD.fuel, 1.5);
   assert.equal(record.resourcesSpendConstructions.steel, 4.5);
   assert.equal(record.resourcesSpendVehicles.fuel, 6.25);
   assert.equal(record.wasteProductionDemolition.waste_mixed, 7.75);

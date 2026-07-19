@@ -17,6 +17,10 @@ const MAP_SECTIONS = {
   Resources_ImportRUB: 'resourcesImportRUB',
   Resources_ExportUSD: 'resourcesExportUSD',
   Resources_ExportRUB: 'resourcesExportRUB',
+  Resources_ImportInternationalUSD: 'resourcesImportInternationalUSD',
+  Resources_ImportInternationalRUB: 'resourcesImportInternationalRUB',
+  Resources_ExportInternationalUSD: 'resourcesExportInternationalUSD',
+  Resources_ExportInternationalRUB: 'resourcesExportInternationalRUB',
   Resources_SpendConstructions: 'resourcesSpendConstructions',
   Resources_SpendFactories: 'resourcesSpendFactories',
   Resources_SpendShops: 'resourcesSpendShops',
@@ -84,6 +88,8 @@ const CRIME_KEYS = {
 const RESOURCE_HISTORY_FIELDS = [
   'resourcesProduced', 'resourcesImportRUB', 'resourcesImportUSD',
   'resourcesExportRUB', 'resourcesExportUSD', 'resourcesSpendFactories',
+  'resourcesImportInternationalRUB', 'resourcesImportInternationalUSD',
+  'resourcesExportInternationalRUB', 'resourcesExportInternationalUSD',
   'resourcesSpendShops', 'resourcesSpendConstructions', 'resourcesSpendVehicles',
   'wasteProductionFactories', 'wasteProductionPeople', 'wasteProductionDemolition',
 ];

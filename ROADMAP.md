@@ -352,7 +352,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   average age/lifespan, and overlapping radio/TV/computer ownership counts. They remain labelled
   as per-record saved values rather than invented percentages, exclusive categories, daily rates, or
   cumulative totals. The selected-resource charts keep exact ₽-market and $-market import/export
-  channels separate and add factory, shop, construction, and vehicle use; unlike resource units
+  channels separate and add factory, shop, construction, and vehicle use. Four explicitly saved
+  international RUB/USD import/export maps appear in their own chart and are never merged into
+  ordinary market trade; unlike resource units
   are never summed into a false republic total. The selector includes all 46 resources observed in
   any flow channel—not only the 24 produced locally—and is localized/alphabetical. Selecting a
   recorded waste/material channel also exposes exact factory, citizen, and demolition output
