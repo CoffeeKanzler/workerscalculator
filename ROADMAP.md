@@ -332,7 +332,9 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   than drawn as an authoritative-looking zero. Separate exact charts now expose the saved
   births/deaths, escapes and Soviet/African immigration fields, plus no/basic/higher education
   counts. They remain labelled as per-record saved values rather than invented daily rates or
-  cumulative totals.
+  cumulative totals. Currency-specific resource trade now follows the selected RUB/USD view
+  instead of always reading the ruble fields. Separate exact charts expose saved vehicle
+  imports/exports and loan balance/interest history in that same selected currency.
 - **Comparison:** Up to three resources can share the selected-currency chart,
   with separately labelled buy/sell series. An optional logarithmic scale keeps
   commodities with very different price magnitudes readable and excludes

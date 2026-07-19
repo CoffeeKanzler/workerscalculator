@@ -1,5 +1,5 @@
-import { STRINGS } from './i18n.js?v=91';
-import { recordToPrices } from './statsini.js?v=19';
+import { STRINGS } from './i18n.js?v=92';
+import { recordToPrices } from './statsini.js?v=20';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -4160,6 +4160,9 @@ function renderRepublic() {
 
   const historyRecords = filterRange(state.statsRecords ?? [], state.republicRange);
   const series = (label, color, valueOf) => ({ label, color, points: seriesFromRecords(historyRecords, valueOf) });
+  const currencySuffix = state.currency === 'USD' ? 'USD' : 'RUB';
+  const resourceImportField = `resourcesImport${currencySuffix}`;
+  const resourceExportField = `resourcesExport${currencySuffix}`;
   const resourceKeys = [...new Set((state.statsRecords ?? []).flatMap(record =>
     Object.keys(record.resourcesProduced ?? {})))];
   if (!resourceKeys.includes(state.republicResource)) {
@@ -4211,15 +4214,23 @@ function renderRepublic() {
         series(t('mediumCrimes'), '#e67e22', record => record.mediumCrimes),
         series(t('seriousCrimes'), '#c0392b', record => record.seriousCrimes),
       ]),
-      renderRepublicLineChart(t('tradeHistory'), [
-        series(t('imports'), '#c0392b', record => totalMapValues(record.resourcesImportRUB)),
-        series(t('exports'), '#27ae60', record => totalMapValues(record.resourcesExportRUB)),
+      renderRepublicLineChart(`${t('tradeHistory')} (${cur()})`, [
+        series(t('imports'), '#c0392b', record => totalMapValues(record[resourceImportField])),
+        series(t('exports'), '#27ae60', record => totalMapValues(record[resourceExportField])),
+      ]),
+      renderRepublicLineChart(`${t('vehicleTradeHistory')} (${cur()})`, [
+        series(t('imports'), '#c0392b', record => record[`vehicleImport${currencySuffix}`]),
+        series(t('exports'), '#27ae60', record => record[`vehicleExport${currencySuffix}`]),
+      ]),
+      renderRepublicLineChart(`${t('loanHistory')} (${cur()})`, [
+        series(t('loanBalance'), '#8e44ad', record => record[`loanBalance${currencySuffix}`]),
+        series(t('loanInterest'), '#d35400', record => record[`loanInterest${currencySuffix}`]),
       ]),
       state.republicResource ? renderRepublicLineChart(
         resourceOptions.find(([key]) => key === state.republicResource)?.[1] ?? state.republicResource, [
           series(t('produced'), '#2980b9', record => record.resourcesProduced?.[state.republicResource]),
-          series(t('imports'), '#c0392b', record => record.resourcesImportRUB?.[state.republicResource]),
-          series(t('exports'), '#27ae60', record => record.resourcesExportRUB?.[state.republicResource]),
+          series(t('imports'), '#c0392b', record => record[resourceImportField]?.[state.republicResource]),
+          series(t('exports'), '#27ae60', record => record[resourceExportField]?.[state.republicResource]),
         ]) : null),
     el('p', { class: 'hint' }, t('demographicHistoryMeaning'))) : null;
 

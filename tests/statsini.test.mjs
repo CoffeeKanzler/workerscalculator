@@ -20,6 +20,10 @@ $end
 
 $Economy_WorkdayCostRUB 9.000000
 $Economy_DeliveryCostRUB 4.000000
+$Loan_Ballance_RUB 125000.000000
+$Loan_Interest_RUB 625.000000
+$Vehicles_ImportRUB 35326.394531
+$Vehicles_ExportRUB 8125.500000
 
 $STAT_RECORD 1
 ====
@@ -52,6 +56,10 @@ test('parses records with prices, dates and scalars', () => {
   assert.equal(recs[0].purchaseUSD.coal, 16.9);
   assert.equal(recs[0].sellRUB.steel, 1700);
   assert.equal(recs[0].workdayCostRUB, 9);
+  assert.equal(recs[0].loanBalanceRUB, 125000);
+  assert.equal(recs[0].loanInterestRUB, 625);
+  assert.equal(recs[0].vehicleImportRUB, 35326.394531);
+  assert.equal(recs[0].vehicleExportRUB, 8125.5);
   assert.equal(recs[1].purchaseUSD.steel, 410);
 });
 
