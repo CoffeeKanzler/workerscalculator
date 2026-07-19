@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3366067443",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:53:10+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3366067443/Chengdu_36",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 21.36,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 2658.0,
+      "powerKW": 34000.0,
+      "emptyWeight": 23.0,
+      "capacity": 18.8,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 2024,
+      "to": 9999,
+      "countryId": 39042,
+      "workshopId": "3366067443",
+      "modPath": "Chengdu_36"
+    }
+  ]
+}

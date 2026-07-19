@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3211428216",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:08:46+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3211428216/monorels",
+      "category": "workshop",
+      "trainSet": [
+        "3211428216/monorels1",
+        "3211428216/monorels1",
+        "3211428216/monorels1",
+        "3211428216/monorels1"
+      ],
+      "lifespanYears": 0.0,
+      "length": 7.87,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5080,
+      "costUSD": 4300.0,
+      "speed": 80.0,
+      "powerKW": 288.0,
+      "from": 1972,
+      "to": 1997,
+      "countryId": 39011,
+      "capacity": 175.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "metro",
+      "electric": true,
+      "workshopId": "3211428216",
+      "modPath": "monorels"
+    },
+    {
+      "id": "3211428216/monorels1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.71,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5080,
+      "costUSD": 4300.0,
+      "speed": 80.0,
+      "powerKW": 288.0,
+      "from": 1972,
+      "to": 1997,
+      "countryId": 39011,
+      "capacity": 175.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "metro",
+      "electric": true,
+      "workshopId": "3211428216",
+      "modPath": "monorels1"
+    }
+  ]
+}

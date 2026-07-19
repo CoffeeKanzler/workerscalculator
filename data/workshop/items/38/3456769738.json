@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3456769738",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:17:09+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3456769738/Guido",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 2.23,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 2000.0,
+      "consumption": 0.0,
+      "speed": 114.0,
+      "powerKW": 514.0,
+      "emptyWeight": 25.0,
+      "capacity": 20.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1900,
+      "to": 2050,
+      "countryId": 39999,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3456769738",
+      "modPath": "Guido"
+    }
+  ]
+}

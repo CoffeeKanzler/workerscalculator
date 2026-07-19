@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2617256029",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:12:58+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2617256029/Daihatsu_Mira_L275",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.45,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5453,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 150.0,
+      "powerKW": 47.0,
+      "emptyWeight": 0.82,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2006,
+      "to": 2018,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2617256029",
+      "modPath": "Daihatsu_Mira_L275"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3062702515",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T14:00:32+00:00",
+  "buildings": [
+    {
+      "id": "3062702515/kindergarten",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 15.0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10.0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Kindergarten 80s",
+      "workshopId": "3062702515",
+      "modPath": "kindergarten"
+    }
+  ],
+  "vehicles": []
+}

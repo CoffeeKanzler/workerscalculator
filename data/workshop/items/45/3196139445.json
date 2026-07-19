@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3196139445",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:14:15+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3196139445/personal_azlk2020",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.38,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5397,
+      "costRUB": 4100.0,
+      "consumption": 0.0,
+      "speed": 150.0,
+      "powerKW": 112.0,
+      "emptyWeight": 1.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2020,
+      "to": 4000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3196139445",
+      "modPath": "personal_azlk2020"
+    },
+    {
+      "id": "3196139445/policay_azlk",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5390,
+      "costRUB": 4700.0,
+      "consumption": 0.0,
+      "speed": 150.0,
+      "powerKW": 112.0,
+      "emptyWeight": 1.0,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3196139445",
+      "modPath": "policay_azlk"
+    }
+  ]
+}

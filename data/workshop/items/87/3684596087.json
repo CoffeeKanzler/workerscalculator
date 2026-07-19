@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3684596087",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:11:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3684596087/JNR_9600_Engine",
+      "category": "workshop",
+      "trainSet": [
+        "3684596087/JNR_9600_Tender"
+      ],
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 500.0,
+      "speed": 65.0,
+      "powerKW": 640.0,
+      "emptyWeight": 60.0,
+      "from": 1912,
+      "to": 3000,
+      "countryId": 39030,
+      "trainGroup": "locomotive_steam",
+      "electric": false,
+      "workshopId": "3684596087",
+      "modPath": "JNR_9600_Engine"
+    },
+    {
+      "id": "3684596087/JNR_9600_Tender",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costUSD": 100.0,
+      "emptyWeight": 14.0,
+      "consumption": 0.0,
+      "speed": 65.0,
+      "capacity": 20.0,
+      "from": 1912,
+      "to": 3000,
+      "countryId": 39030,
+      "trainGroup": "locomotive",
+      "workshopId": "3684596087",
+      "modPath": "JNR_9600_Tender"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2937186143",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:17:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2937186143/personal_uralM",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 2.48,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 3300.0,
+      "consumption": 2300.0,
+      "speed": 125.0,
+      "emptyWeight": 0.175,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1980,
+      "to": 1985,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2937186143",
+      "modPath": "personal_uralM"
+    },
+    {
+      "id": "2937186143/personal_uralM1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 2.33,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 3300.0,
+      "consumption": 2300.0,
+      "speed": 125.0,
+      "emptyWeight": 0.175,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1980,
+      "to": 1985,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2937186143",
+      "modPath": "personal_uralM1"
+    }
+  ]
+}

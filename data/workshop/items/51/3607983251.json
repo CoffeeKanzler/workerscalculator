@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3607983251",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:37:36+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3607983251/Mig25",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 23.25,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 22400000.0,
+      "consumption": 0.0,
+      "speed": 3200.0,
+      "powerKW": 20000.0,
+      "emptyWeight": 20.0,
+      "capacity": 16.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1963,
+      "to": 2010,
+      "countryId": 39011,
+      "workshopId": "3607983251",
+      "modPath": "Mig25"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3404309981",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:33:43+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3404309981/qtz-40",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 0.0,
+      "powerKW": 72.9,
+      "emptyWeight": 10.75,
+      "from": 1992,
+      "to": 3000,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3404309981",
+      "modPath": "qtz-40"
+    },
+    {
+      "id": "3404309981/qtz-40-1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 0.0,
+      "powerKW": 72.9,
+      "emptyWeight": 10.75,
+      "from": 1992,
+      "to": 3000,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3404309981",
+      "modPath": "qtz-40-1"
+    }
+  ]
+}

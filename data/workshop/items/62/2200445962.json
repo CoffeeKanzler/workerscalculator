@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2200445962",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:48:43+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2200445962/Zil_4331_avto-kran",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.48,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 95.0,
+      "powerKW": 154.0,
+      "emptyWeight": 12.0,
+      "from": 1977,
+      "to": 2004,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2200445962",
+      "modPath": "Zil_4331_avto-kran"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1889419331",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:23:07+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1889419331/renegade",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.23,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 180.0,
+      "powerKW": 103.0,
+      "emptyWeight": 1.52,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2014,
+      "to": 3000,
+      "countryId": 39017,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1889419331",
+      "modPath": "renegade"
+    }
+  ]
+}

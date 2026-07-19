@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3657441850",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:34:57+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3657441850/axel",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.72,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 100.0,
+      "powerKW": 45.0,
+      "emptyWeight": 0.85,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 4.0,
+      "from": 1984,
+      "to": 1990,
+      "countryId": 39009,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3657441850",
+      "modPath": "axel"
+    },
+    {
+      "id": "3657441850/oltcit",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.72,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 100.0,
+      "powerKW": 45.0,
+      "emptyWeight": 0.85,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 4.0,
+      "from": 1982,
+      "to": 1996,
+      "countryId": 39009,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3657441850",
+      "modPath": "oltcit"
+    }
+  ]
+}

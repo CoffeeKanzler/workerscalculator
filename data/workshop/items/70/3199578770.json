@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3199578770",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:16:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3199578770/LiAZ5292",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.14,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5265,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 132.0,
+      "emptyWeight": 7.8,
+      "capacity": 114.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2014,
+      "to": 3000,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3199578770",
+      "modPath": "LiAZ5292"
+    },
+    {
+      "id": "3199578770/LiAZ5292GBO",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.14,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5265,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 132.0,
+      "emptyWeight": 7.8,
+      "capacity": 114.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2014,
+      "to": 3000,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3199578770",
+      "modPath": "LiAZ5292GBO"
+    }
+  ]
+}

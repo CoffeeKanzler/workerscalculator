@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2877483884",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:04:08+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2877483884/bmw",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.36,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 210.0,
+      "powerKW": 191.0,
+      "emptyWeight": 0.9,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2877483884",
+      "modPath": "bmw"
+    },
+    {
+      "id": "2877483884/dps",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.36,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 210.0,
+      "powerKW": 191.0,
+      "emptyWeight": 0.9,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2877483884",
+      "modPath": "dps"
+    }
+  ]
+}

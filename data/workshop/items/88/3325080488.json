@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3325080488",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:49:45+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3325080488/EN57R",
+      "category": "workshop",
+      "trainSet": [
+        "3325080488/EN57S"
+      ],
+      "lifespanYears": 0.0,
+      "length": 21.42,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "speed": 110.0,
+      "powerKW": 0.0,
+      "emptyWeight": 36.0,
+      "capacity": 218.0,
+      "from": 1962,
+      "to": 1992,
+      "countryId": 39006,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "trainset",
+      "electric": false,
+      "workshopId": "3325080488",
+      "modPath": "EN57R"
+    },
+    {
+      "id": "3325080488/EN57S",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 22.38,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "speed": 110.0,
+      "powerKW": 580.0,
+      "emptyWeight": 55.0,
+      "from": 1962,
+      "to": 1992,
+      "countryId": 39006,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 218.0,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "3325080488",
+      "modPath": "EN57S"
+    }
+  ]
+}

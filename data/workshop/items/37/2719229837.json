@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2719229837",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:55:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2719229837/DaciaPolice",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.39,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 130.0,
+      "powerKW": 39.0,
+      "emptyWeight": 0.93,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1976,
+      "to": 1985,
+      "countryId": 39009,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2719229837",
+      "modPath": "DaciaPolice"
+    }
+  ]
+}

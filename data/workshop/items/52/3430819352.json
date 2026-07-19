@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3430819352",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:18:45+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3430819352/XG15t",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.96,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 0.0,
+      "powerKW": 69.5,
+      "emptyWeight": 13.0,
+      "from": 1962,
+      "to": 1985,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3430819352",
+      "modPath": "XG15t"
+    }
+  ]
+}

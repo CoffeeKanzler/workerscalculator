@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3498476297",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:10:12+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3498476297/Derrick",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.65,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 0.0,
+      "powerKW": 5.0,
+      "emptyWeight": 1.0,
+      "from": 1900,
+      "to": 1940,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3498476297",
+      "modPath": "Derrick"
+    },
+    {
+      "id": "3498476297/Derrick_rub",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.65,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 0.0,
+      "powerKW": 5.0,
+      "emptyWeight": 1.0,
+      "from": 1900,
+      "to": 1940,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3498476297",
+      "modPath": "Derrick_rub"
+    }
+  ]
+}

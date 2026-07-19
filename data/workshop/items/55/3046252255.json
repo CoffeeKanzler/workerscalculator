@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3046252255",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:24:59+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3046252255/Isabella",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.39,
+      "descriptionId": 5401,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "speed": 130.0,
+      "powerKW": 45.0,
+      "emptyWeight": 1.01,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1954,
+      "to": 1963,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3046252255",
+      "modPath": "Isabella"
+    }
+  ]
+}

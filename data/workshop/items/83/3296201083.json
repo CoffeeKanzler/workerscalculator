@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3296201083",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:38:49+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3296201083/personal_Niva",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.24,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5380,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 180.0,
+      "powerKW": 99.0,
+      "emptyWeight": 1.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2022,
+      "to": 6000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3296201083",
+      "modPath": "personal_Niva"
+    },
+    {
+      "id": "3296201083/personal_nivaLada",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.25,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5380,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 160.0,
+      "powerKW": 98.0,
+      "emptyWeight": 1.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2020,
+      "to": 3000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3296201083",
+      "modPath": "personal_nivaLada"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3511968540",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:49:42+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3511968540/HP_1",
+      "category": "workshop",
+      "trainSet": [
+        "3511968540/HP_2",
+        "3511968540/HP_3"
+      ],
+      "lifespanYears": 0.0,
+      "length": 10.75,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "powerKW": 244.0,
+      "emptyWeight": 10.0,
+      "speed": 60.0,
+      "trainGroup": "tram",
+      "capacity": 80.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1988,
+      "to": 1989,
+      "countryId": 39007,
+      "electric": true,
+      "workshopId": "3511968540",
+      "modPath": "HP_1"
+    },
+    {
+      "id": "3511968540/HP_2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 1.06,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 1.0,
+      "emptyWeight": 7.0,
+      "speed": 60.0,
+      "trainGroup": "tram",
+      "capacity": 13.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1988,
+      "to": 1989,
+      "countryId": 39007,
+      "workshopId": "3511968540",
+      "modPath": "HP_2"
+    },
+    {
+      "id": "3511968540/HP_3",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.75,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 1.0,
+      "emptyWeight": 10.0,
+      "speed": 60.0,
+      "trainGroup": "tram",
+      "capacity": 80.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1988,
+      "to": 1989,
+      "countryId": 39007,
+      "workshopId": "3511968540",
+      "modPath": "HP_3"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2458875527",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:56:23+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2458875527/bus_paz_4234",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.86,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5013,
+      "costRUB": 5300.0,
+      "speed": 95.0,
+      "powerKW": 100.03,
+      "emptyWeight": 6.37,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 71.0,
+      "from": 2002,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2458875527",
+      "modPath": "bus_paz_4234"
+    }
+  ]
+}

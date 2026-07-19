@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3667121194",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:47:55+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3667121194/kurzzug",
+      "category": "workshop",
+      "trainSet": [
+        "3667121194/silberpfeil"
+      ],
+      "lifespanYears": 0.0,
+      "length": 18.02,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 8960.0,
+      "speed": 80.0,
+      "powerKW": 800.0,
+      "emptyWeight": 67.0,
+      "from": 1972,
+      "to": 1997,
+      "capacity": 140.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "metro",
+      "electric": true,
+      "workshopId": "3667121194",
+      "modPath": "kurzzug"
+    },
+    {
+      "id": "3667121194/lang",
+      "category": "workshop",
+      "trainSet": [
+        "3667121194/silberpfeil",
+        "3667121194/silberpfeil"
+      ],
+      "lifespanYears": 0.0,
+      "length": 18.02,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 13440.0,
+      "speed": 80.0,
+      "powerKW": 1200.0,
+      "emptyWeight": 93.0,
+      "from": 1972,
+      "to": 1997,
+      "capacity": 140.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "metro",
+      "electric": true,
+      "workshopId": "3667121194",
+      "modPath": "lang"
+    },
+    {
+      "id": "3667121194/paar",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 18.02,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 2240.0,
+      "speed": 80.0,
+      "powerKW": 400.0,
+      "emptyWeight": 41.0,
+      "from": 1972,
+      "to": 1997,
+      "capacity": 140.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "metro",
+      "electric": true,
+      "workshopId": "3667121194",
+      "modPath": "paar"
+    },
+    {
+      "id": "3667121194/silberpfeil",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 18.02,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "speed": 80.0,
+      "powerKW": 200.0,
+      "emptyWeight": 0.0,
+      "from": 1972,
+      "to": 1997,
+      "capacity": 140.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "metro",
+      "workshopId": "3667121194",
+      "modPath": "silberpfeil"
+    }
+  ]
+}

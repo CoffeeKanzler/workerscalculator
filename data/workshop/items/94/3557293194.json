@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3557293194",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:14:38+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3557293194/personal_ford",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.12,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5380,
+      "costUSD": 4000.0,
+      "consumption": 2250.0,
+      "speed": 174.0,
+      "powerKW": 164.0,
+      "emptyWeight": 1.8,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1991,
+      "to": 2011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3557293194",
+      "modPath": "personal_ford"
+    }
+  ]
+}

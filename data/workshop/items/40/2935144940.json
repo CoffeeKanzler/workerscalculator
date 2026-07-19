@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2935144940",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:58:09+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2935144940/tral56t_MZKT",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.59,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5174,
+      "costRUB": 1300.0,
+      "capacity": 56.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "speed": 95.0,
+      "powerKW": 154.0,
+      "emptyWeight": 10.0,
+      "from": 2016,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2935144940",
+      "modPath": "tral56t_MZKT"
+    },
+    {
+      "id": "2935144940/tral63t_MZKT",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.59,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5174,
+      "costRUB": 1300.0,
+      "capacity": 63.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "speed": 95.0,
+      "powerKW": 154.0,
+      "emptyWeight": 10.0,
+      "from": 2016,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2935144940",
+      "modPath": "tral63t_MZKT"
+    }
+  ]
+}

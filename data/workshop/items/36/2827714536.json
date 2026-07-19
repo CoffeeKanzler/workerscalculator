@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2827714536",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:51:28+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2827714536/XRY",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.73,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 180.0,
+      "powerKW": 95.0,
+      "emptyWeight": 0.75,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2827714536",
+      "modPath": "XRY"
+    }
+  ]
+}

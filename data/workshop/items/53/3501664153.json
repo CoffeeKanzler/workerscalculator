@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3501664153",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:07:33+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3501664153/Car",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 2.97,
+      "type": "VEHICLETYPE_ROAD",
+      "trainGroup": "locomotive_steam",
+      "costUSD": 4300.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 60.0,
+      "powerKW": 8.0,
+      "emptyWeight": 0.6,
+      "from": 1879,
+      "to": 1940,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3501664153",
+      "modPath": "Car"
+    }
+  ]
+}

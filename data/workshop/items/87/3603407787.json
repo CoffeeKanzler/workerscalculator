@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3603407787",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:50:18+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3603407787/firetruck_f125",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.88,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 105.0,
+      "powerKW": 47.0,
+      "emptyWeight": 1.05,
+      "capacity": 1.1,
+      "from": 1967,
+      "to": 1991,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3603407787",
+      "modPath": "firetruck_f125"
+    }
+  ]
+}

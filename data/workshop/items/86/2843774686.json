@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2843774686",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:22:48+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2843774686/potcarrier",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.73,
+      "type": "VEHICLETYPE_ROAD",
+      "capacity": 55.0,
+      "emptyWeight": 52.4,
+      "speed": 35.0,
+      "powerKW": 174.0,
+      "costUSD": 4300.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "from": 1950,
+      "to": 2050,
+      "countryId": 38998,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2843774686",
+      "modPath": "potcarrier"
+    }
+  ]
+}

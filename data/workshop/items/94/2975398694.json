@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2975398694",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:32:26+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2975398694/buss",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.64,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5339,
+      "costRUB": 4000.0,
+      "consumption": 0.0,
+      "speed": 80.0,
+      "powerKW": 100.0,
+      "emptyWeight": 7.5,
+      "capacity": 40.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2000,
+      "to": 2005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2975398694",
+      "modPath": "buss"
+    }
+  ]
+}

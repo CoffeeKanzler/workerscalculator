@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2313985161",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:14:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2313985161/open_gz_sadko",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.85,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5322,
+      "costRUB": 4300.0,
+      "capacity": 4.5,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "speed": 95.0,
+      "powerKW": 85.0,
+      "emptyWeight": 3.2,
+      "from": 2003,
+      "to": 2005,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2313985161",
+      "modPath": "open_gz_sadko"
+    }
+  ]
+}

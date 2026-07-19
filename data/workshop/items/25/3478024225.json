@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3478024225",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:19:45+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3478024225/gtl55",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.66,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5439,
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "speed": 137.0,
+      "powerKW": 40.0,
+      "emptyWeight": 0.825,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1979,
+      "to": 1988,
+      "countryId": 39010,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3478024225",
+      "modPath": "gtl55"
+    },
+    {
+      "id": "3478024225/gtl55_milicija",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.66,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5439,
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "speed": 150.0,
+      "powerKW": 54.0,
+      "emptyWeight": 0.91,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1981,
+      "to": 1997,
+      "countryId": 39010,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3478024225",
+      "modPath": "gtl55_milicija"
+    }
+  ]
+}

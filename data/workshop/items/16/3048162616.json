@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3048162616",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:50:23+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3048162616/kuz",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 302.16,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 430000.0,
+      "speed": 25.0,
+      "powerKW": 750.0,
+      "emptyWeight": 270.1,
+      "capacity": 135.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1985,
+      "to": 2023,
+      "electric": false,
+      "workshopId": "3048162616",
+      "modPath": "kuz"
+    }
+  ]
+}

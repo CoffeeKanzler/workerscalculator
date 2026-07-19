@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3765115790",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:23:28+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3765115790/P601WE",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.47,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 3200.0,
+      "consumption": 0.0,
+      "speed": 110.0,
+      "powerKW": 30.0,
+      "emptyWeight": 0.8,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1982,
+      "to": 2000,
+      "countryId": 39004,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3765115790",
+      "modPath": "P601WE"
+    }
+  ]
+}

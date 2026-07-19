@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3690553222",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:44:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3690553222/D7M",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.12,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 6800.0,
+      "consumption": 0.0,
+      "speed": 9.0,
+      "powerKW": 68.0,
+      "emptyWeight": 14.0,
+      "from": 1938,
+      "to": 1970,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3690553222",
+      "modPath": "D7M"
+    },
+    {
+      "id": "3690553222/D7MArmored",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.23,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 7200.0,
+      "consumption": 0.0,
+      "speed": 8.5,
+      "powerKW": 68.0,
+      "emptyWeight": 15.8,
+      "from": 1944,
+      "to": 1970,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3690553222",
+      "modPath": "D7MArmored"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3534935425",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:54:37+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3534935425/Victory",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 102.41,
+      "type": "VEHICLETYPE_SHIP",
+      "costUSD": 2550000.0,
+      "speed": 30.0,
+      "powerKW": 5440.0,
+      "emptyWeight": 2162.0,
+      "capacity": 1394.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1765,
+      "to": 2050,
+      "countryId": 39041,
+      "electric": false,
+      "workshopId": "3534935425",
+      "modPath": "Victory"
+    }
+  ]
+}

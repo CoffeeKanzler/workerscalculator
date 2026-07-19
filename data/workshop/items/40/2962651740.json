@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2962651740",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:03:31+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2962651740/en71",
+      "category": "workshop",
+      "trainSet": [
+        "russian_set_e57_v"
+      ],
+      "lifespanYears": 0.0,
+      "length": 21.64,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "trainGroup": "trainset",
+      "speed": 100.0,
+      "powerKW": 0.0,
+      "emptyWeight": 29.0,
+      "capacity": 105.0,
+      "from": 1965,
+      "to": 2011,
+      "countryId": 39006,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "electric": false,
+      "workshopId": "2962651740",
+      "modPath": "en71"
+    },
+    {
+      "id": "2962651740/en71_v",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 21.34,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "speed": 100.0,
+      "emptyWeight": 42.0,
+      "powerKW": 700.0,
+      "capacity": 115.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "countryId": 39006,
+      "electric": true,
+      "workshopId": "2962651740",
+      "modPath": "en71_v"
+    }
+  ]
+}

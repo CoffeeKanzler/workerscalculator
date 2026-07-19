@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3688224219",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:56:09+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3688224219/caprice",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.59,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 174.0,
+      "powerKW": 205.0,
+      "emptyWeight": 1.92,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 8.0,
+      "from": 1991,
+      "to": 1996,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3688224219",
+      "modPath": "caprice"
+    }
+  ]
+}

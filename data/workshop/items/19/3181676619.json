@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3181676619",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:09:39+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3181676619/AGV",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.9,
+      "type": "VEHICLETYPE_ROAD",
+      "speed": 60.0,
+      "costUSD": 5600.0,
+      "capacity": 55.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "powerKW": 200.0,
+      "emptyWeight": 23.0,
+      "from": 2015,
+      "to": 2090,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3181676619",
+      "modPath": "AGV"
+    }
+  ]
+}

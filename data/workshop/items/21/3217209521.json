@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3217209521",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:06:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3217209521/humpen",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.98,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "capacity": 40.0,
+      "emptyWeight": 44.0,
+      "from": 1920,
+      "to": 1990,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "trainGroup": "vagon",
+      "workshopId": "3217209521",
+      "modPath": "humpen"
+    }
+  ]
+}

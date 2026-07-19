@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2571544513",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:38:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2571544513/1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.38,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 45.0,
+      "emptyWeight": 0.7,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1992,
+      "to": 1999,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2571544513",
+      "modPath": "1"
+    },
+    {
+      "id": "2571544513/2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.38,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 45.0,
+      "emptyWeight": 0.7,
+      "capacity": 0.6,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1992,
+      "to": 1999,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2571544513",
+      "modPath": "2"
+    }
+  ]
+}

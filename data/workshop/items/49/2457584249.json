@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2457584249",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:02:00+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2457584249/persona_nivaSh",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.04,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costRUB": 7300.0,
+      "consumption": 0.0,
+      "speed": 160.0,
+      "powerKW": 58.5,
+      "emptyWeight": 0.75,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2002,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2457584249",
+      "modPath": "persona_nivaSh"
+    }
+  ]
+}

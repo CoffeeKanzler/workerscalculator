@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3233722514",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:28:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3233722514/Bus_Delica",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.67,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3900.0,
+      "consumption": 0.0,
+      "speed": 220.0,
+      "powerKW": 100.0,
+      "emptyWeight": 1.7,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2000,
+      "to": 2017,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3233722514",
+      "modPath": "Bus_Delica"
+    },
+    {
+      "id": "3233722514/personal_delica",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.67,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3900.0,
+      "consumption": 0.0,
+      "speed": 220.0,
+      "powerKW": 100.0,
+      "emptyWeight": 1.7,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2000,
+      "to": 2017,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3233722514",
+      "modPath": "personal_delica"
+    }
+  ]
+}

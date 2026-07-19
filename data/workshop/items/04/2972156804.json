@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2972156804",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:03:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2972156804/BJ130",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.84,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "speed": 85.0,
+      "powerKW": 56.0,
+      "emptyWeight": 2.0,
+      "from": 1966,
+      "to": 1973,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2972156804",
+      "modPath": "BJ130"
+    }
+  ]
+}

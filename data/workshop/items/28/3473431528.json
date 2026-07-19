@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3473431528",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:49:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3473431528/Dauphin",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.83,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costUSD": 4500.0,
+      "consumption": 0.0,
+      "speed": 285.0,
+      "powerKW": 1100.0,
+      "emptyWeight": 2.24,
+      "capacity": 12.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1975,
+      "to": 2022,
+      "countryId": 39016,
+      "workshopId": "3473431528",
+      "modPath": "Dauphin"
+    },
+    {
+      "id": "3473431528/Z9",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.83,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costRUB": 4500.0,
+      "consumption": 0.0,
+      "speed": 285.0,
+      "powerKW": 1100.0,
+      "emptyWeight": 2.24,
+      "capacity": 12.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1981,
+      "to": 3000,
+      "countryId": 39042,
+      "workshopId": "3473431528",
+      "modPath": "Z9"
+    }
+  ]
+}

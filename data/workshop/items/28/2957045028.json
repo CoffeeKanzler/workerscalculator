@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2957045028",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:01:37+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2957045028/SHJT",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.25,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 300.0,
+      "consumption": 0.0,
+      "speed": 120.0,
+      "powerKW": 35.0,
+      "emptyWeight": 0.75,
+      "capacity": 12.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1985,
+      "to": 2008,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2957045028",
+      "modPath": "SHJT"
+    }
+  ]
+}

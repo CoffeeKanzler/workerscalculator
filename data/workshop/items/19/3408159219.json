@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3408159219",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T14:19:26+00:00",
+  "buildings": [
+    {
+      "id": "3408159219/2",
+      "nameId": null,
+      "types": [
+        "TYPE_WAITING_STATION",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ET120x60",
+      "workshopId": "3408159219",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

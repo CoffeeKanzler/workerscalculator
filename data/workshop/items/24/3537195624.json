@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3537195624",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:29:45+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3537195624/Moskva",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 186.33,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 5550000.0,
+      "speed": 90.0,
+      "powerKW": 95600.0,
+      "emptyWeight": 9300.0,
+      "capacity": 500.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1979,
+      "to": 2022,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "3537195624",
+      "modPath": "Moskva"
+    }
+  ]
+}

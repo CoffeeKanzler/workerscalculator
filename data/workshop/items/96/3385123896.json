@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3385123896",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:56:43+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3385123896/granit",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.18,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 12100.0,
+      "speed": 75.0,
+      "powerKW": 288.0,
+      "emptyWeight": 24.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 145.0,
+      "from": 2024,
+      "to": 3000,
+      "trainGroup": "tram",
+      "electric": true,
+      "workshopId": "3385123896",
+      "modPath": "granit"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3434524563",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:59:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3434524563/XG2-6t",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.71,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 0.0,
+      "powerKW": 47.5,
+      "emptyWeight": 9.0,
+      "from": 1957,
+      "to": 1985,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3434524563",
+      "modPath": "XG2-6t"
+    },
+    {
+      "id": "3434524563/XG2-6t-1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.71,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 0.0,
+      "powerKW": 47.5,
+      "emptyWeight": 9.5,
+      "from": 1957,
+      "to": 1985,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3434524563",
+      "modPath": "XG2-6t-1"
+    },
+    {
+      "id": "3434524563/XG2-6t-2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.71,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 0.0,
+      "powerKW": 47.5,
+      "emptyWeight": 10.0,
+      "from": 1957,
+      "to": 1985,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3434524563",
+      "modPath": "XG2-6t-2"
+    }
+  ]
+}

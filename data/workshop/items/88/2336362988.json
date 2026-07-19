@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2336362988",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:31:34+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2336362988/gravel_man",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.22,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5328,
+      "costUSD": 4300.0,
+      "capacity": 18.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "speed": 140.0,
+      "powerKW": 132.0,
+      "emptyWeight": 6.7,
+      "from": 2010,
+      "to": 4000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2336362988",
+      "modPath": "gravel_man"
+    }
+  ]
+}

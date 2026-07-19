@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3007179409",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:07:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3007179409/840",
+      "category": "workshop",
+      "trainSet": [
+        "3007179409/840_v"
+      ],
+      "lifespanYears": 0.0,
+      "length": 14.2,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 5200.0,
+      "consumption": 0.0,
+      "trainGroup": "trainset",
+      "speed": 115.0,
+      "powerKW": 1000.0,
+      "emptyWeight": 64.0,
+      "capacity": 114.0,
+      "from": 1980,
+      "to": 2003,
+      "countryId": 39002,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "electric": false,
+      "workshopId": "3007179409",
+      "modPath": "840"
+    },
+    {
+      "id": "3007179409/840_v",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.26,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "speed": 115.0,
+      "emptyWeight": 37.0,
+      "powerKW": 0.0,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1980,
+      "to": 2003,
+      "countryId": 39002,
+      "workshopId": "3007179409",
+      "modPath": "840_v"
+    }
+  ]
+}

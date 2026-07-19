@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2904580782",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:41:18+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2904580782/cargo_cable_2x",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.08,
+      "type": "VEHICLETYPE_CABIN",
+      "nameId": 5641,
+      "costRUB": 8600.0,
+      "emptyWeight": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "capacity": 5.0,
+      "countryId": 39000,
+      "workshopId": "2904580782",
+      "modPath": "cargo_cable_2x"
+    },
+    {
+      "id": "2904580782/cargo_cable_4x",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.08,
+      "type": "VEHICLETYPE_CABIN",
+      "nameId": 5641,
+      "costRUB": 17200.0,
+      "emptyWeight": 1.5,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "capacity": 10.0,
+      "countryId": 39000,
+      "workshopId": "2904580782",
+      "modPath": "cargo_cable_4x"
+    }
+  ]
+}

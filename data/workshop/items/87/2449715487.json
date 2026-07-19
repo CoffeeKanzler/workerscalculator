@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2449715487",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:55:54+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2449715487/gaz_53f_box",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.45,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 75.0,
+      "powerKW": 63.0,
+      "emptyWeight": 3.2,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1961,
+      "to": 1965,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2449715487",
+      "modPath": "gaz_53f_box"
+    },
+    {
+      "id": "2449715487/gaz_53f_kuzov",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.59,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "speed": 75.0,
+      "powerKW": 63.0,
+      "emptyWeight": 3.2,
+      "from": 1961,
+      "to": 1965,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2449715487",
+      "modPath": "gaz_53f_kuzov"
+    }
+  ]
+}

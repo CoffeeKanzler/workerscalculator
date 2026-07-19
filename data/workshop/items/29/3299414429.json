@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3299414429",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:52:15+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3299414429/Peugeot405",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.41,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 178.0,
+      "powerKW": 69.0,
+      "emptyWeight": 1.12,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1989,
+      "to": 2001,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3299414429",
+      "modPath": "Peugeot405"
+    }
+  ]
+}

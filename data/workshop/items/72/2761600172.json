@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2761600172",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:25:10+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2761600172/velorex_16_350",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.12,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costRUB": 1200.0,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 80.0,
+      "powerKW": 10.0,
+      "emptyWeight": 0.3,
+      "from": 1963,
+      "to": 1971,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2761600172",
+      "modPath": "velorex_16_350"
+    }
+  ]
+}

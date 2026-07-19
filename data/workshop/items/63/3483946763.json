@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3483946763",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:33:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3483946763/model",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 24.14,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 6700.0,
+      "speed": 140.0,
+      "powerKW": 640.0,
+      "emptyWeight": 50.0,
+      "from": 1983,
+      "to": 2017,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 152.0,
+      "trainGroup": "trainset",
+      "electric": true,
+      "workshopId": "3483946763",
+      "modPath": "model"
+    },
+    {
+      "id": "3483946763/model_2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 24.14,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 6700.0,
+      "speed": 140.0,
+      "powerKW": 640.0,
+      "emptyWeight": 50.0,
+      "from": 1983,
+      "to": 2017,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 152.0,
+      "trainGroup": "trainset",
+      "electric": true,
+      "workshopId": "3483946763",
+      "modPath": "model_2"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3695353480",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:05:54+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3695353480/gwr5700",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "trainGroup": "locomotive_steam",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 80.0,
+      "powerKW": 440.0,
+      "emptyWeight": 48.2,
+      "from": 1929,
+      "to": 1971,
+      "countryId": 39041,
+      "electric": false,
+      "workshopId": "3695353480",
+      "modPath": "gwr5700"
+    },
+    {
+      "id": "3695353480/peckett",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "trainGroup": "locomotive_steam",
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 40.0,
+      "powerKW": 163.0,
+      "emptyWeight": 23.0,
+      "from": 1885,
+      "to": 1975,
+      "countryId": 39041,
+      "electric": false,
+      "workshopId": "3695353480",
+      "modPath": "peckett"
+    }
+  ]
+}

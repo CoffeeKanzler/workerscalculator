@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2088979090",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:06:40+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2088979090/KaMaZ",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.21,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4600.0,
+      "speed": 100.0,
+      "powerKW": 260.0,
+      "emptyWeight": 12.0,
+      "from": 2000,
+      "to": 2020,
+      "countryId": 39003,
+      "capacity": 17.0,
+      "transportType": "RESOURCE_TRANSPORT_CONCRETE",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2088979090",
+      "modPath": "KaMaZ"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3206771389",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:15:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3206771389/maybah",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.82,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5459,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 220.0,
+      "powerKW": 160.0,
+      "emptyWeight": 1.1,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3206771389",
+      "modPath": "maybah"
+    }
+  ]
+}

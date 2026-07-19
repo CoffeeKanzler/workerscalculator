@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2908306049",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:59:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2908306049/bus_nefaz",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.91,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 3100.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "emptyWeight": 17.0,
+      "capacity": 120.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2908306049",
+      "modPath": "bus_nefaz"
+    },
+    {
+      "id": "2908306049/bus_nefaz_5299",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.57,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 3700.0,
+      "consumption": 0.0,
+      "speed": 70.0,
+      "emptyWeight": 18.0,
+      "capacity": 115.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2908306049",
+      "modPath": "bus_nefaz_5299"
+    }
+  ]
+}

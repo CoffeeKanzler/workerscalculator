@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3335138175",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:07:12+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3335138175/Balloon",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.68,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costRUB": 1000.0,
+      "speed": 36.0,
+      "powerKW": 18.0,
+      "emptyWeight": 0.5,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 8.0,
+      "from": 1783,
+      "to": 3000,
+      "countryId": 38998,
+      "workshopId": "3335138175",
+      "modPath": "Balloon"
+    }
+  ]
+}

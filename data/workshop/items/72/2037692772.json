@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2037692772",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:47:01+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2037692772/covered_zl_5301",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.47,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5153,
+      "costRUB": 5000.0,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 95.0,
+      "powerKW": 100.0,
+      "emptyWeight": 3.6,
+      "from": 1995,
+      "to": 2014,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2037692772",
+      "modPath": "covered_zl_5301"
+    },
+    {
+      "id": "2037692772/open_zl_5301",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.46,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5153,
+      "costRUB": 5000.0,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "speed": 95.0,
+      "powerKW": 100.0,
+      "emptyWeight": 3.6,
+      "from": 1995,
+      "to": 2014,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2037692772",
+      "modPath": "open_zl_5301"
+    }
+  ]
+}

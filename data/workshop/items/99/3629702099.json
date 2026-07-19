@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3629702099",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:49:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3629702099/chevrolet",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.66,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 60.0,
+      "powerKW": 50.0,
+      "emptyWeight": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 30.0,
+      "from": 1937,
+      "to": 1940,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3629702099",
+      "modPath": "chevrolet"
+    }
+  ]
+}

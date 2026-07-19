@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1888800300",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:57:47+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1888800300/fso",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.84,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5450,
+      "descriptionId": 5451,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 105.0,
+      "powerKW": 47.0,
+      "emptyWeight": 1.05,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1974,
+      "to": 1991,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1888800300",
+      "modPath": "fso"
+    }
+  ]
+}

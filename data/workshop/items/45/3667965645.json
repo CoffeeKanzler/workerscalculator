@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3667965645",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:04:37+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3667965645/CC95",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.19,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1000.0,
+      "speed": 35.0,
+      "powerKW": 70.0,
+      "emptyWeight": 10.0,
+      "from": 1960,
+      "to": 1980,
+      "countryId": 39042,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "3667965645",
+      "modPath": "CC95"
+    }
+  ]
+}

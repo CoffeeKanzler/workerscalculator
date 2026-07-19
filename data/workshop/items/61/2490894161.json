@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2490894161",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:15:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2490894161/firetruck_zil157",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.94,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5021,
+      "costRUB": 5300.0,
+      "capacity": 4.5,
+      "speed": 70.0,
+      "emptyWeight": 10.0,
+      "countryId": 39004,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2490894161",
+      "modPath": "firetruck_zil157"
+    }
+  ]
+}

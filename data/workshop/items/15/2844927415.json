@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2844927415",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:58:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2844927415/kamaz",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.01,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5167,
+      "costRUB": 2300.0,
+      "capacity": 26.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "speed": 110.0,
+      "powerKW": 331.0,
+      "emptyWeight": 9.0,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2844927415",
+      "modPath": "kamaz"
+    },
+    {
+      "id": "2844927415/kamazko",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.01,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5167,
+      "costRUB": 2300.0,
+      "capacity": 26.0,
+      "transportType": "RESOURCE_TRANSPORT_WASTE",
+      "speed": 110.0,
+      "powerKW": 331.0,
+      "emptyWeight": 9.0,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2844927415",
+      "modPath": "kamazko"
+    }
+  ]
+}

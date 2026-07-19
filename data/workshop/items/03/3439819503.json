@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3439819503",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:07:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3439819503/Armidale",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 50.93,
+      "type": "VEHICLETYPE_SHIP",
+      "costUSD": 30000.0,
+      "speed": 46.0,
+      "powerKW": 4642.0,
+      "emptyWeight": 270.0,
+      "capacity": 150.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2005,
+      "to": 3000,
+      "countryId": 39041,
+      "electric": false,
+      "workshopId": "3439819503",
+      "modPath": "Armidale"
+    }
+  ]
+}

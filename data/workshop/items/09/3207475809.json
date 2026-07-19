@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3207475809",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:55:36+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3207475809/bus_KamAZ_6282",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.24,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4000.0,
+      "consumption": 0.0,
+      "speed": 75.0,
+      "powerKW": 226.0,
+      "emptyWeight": 10.5,
+      "capacity": 85.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3207475809",
+      "modPath": "bus_KamAZ_6282"
+    },
+    {
+      "id": "3207475809/bust_KamAZ_6282",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.36,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4000.0,
+      "speed": 75.0,
+      "powerKW": 226.0,
+      "emptyWeight": 10.5,
+      "capacity": 85.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3207475809",
+      "modPath": "bust_KamAZ_6282"
+    }
+  ]
+}

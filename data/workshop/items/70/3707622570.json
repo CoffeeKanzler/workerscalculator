@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3707622570",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:02:00+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3707622570/t88cv",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.83,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "speed": 375.0,
+      "powerKW": 595.0,
+      "emptyWeight": 0.85,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1987,
+      "to": 1991,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3707622570",
+      "modPath": "t88cv"
+    }
+  ]
+}

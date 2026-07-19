@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3648219991",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:50:57+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3648219991/Avrora",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 127.1,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 5500000.0,
+      "speed": 57.0,
+      "powerKW": 8950.0,
+      "emptyWeight": 6731.0,
+      "capacity": 570.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1900,
+      "to": 2000,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "3648219991",
+      "modPath": "Avrora"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2778806485",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:50:17+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2778806485/A120",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.33,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5390,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 165.0,
+      "powerKW": 63.0,
+      "emptyWeight": 0.97,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1976,
+      "to": 1982,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2778806485",
+      "modPath": "A120"
+    },
+    {
+      "id": "2778806485/A120P",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.33,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5390,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 165.0,
+      "powerKW": 63.0,
+      "emptyWeight": 0.98,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1976,
+      "to": 1982,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2778806485",
+      "modPath": "A120P"
+    }
+  ]
+}

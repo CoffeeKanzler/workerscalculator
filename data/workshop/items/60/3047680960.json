@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3047680960",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:01:49+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3047680960/kursk",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 164.0,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 4300.0,
+      "speed": 25.0,
+      "powerKW": 750.0,
+      "emptyWeight": 270.1,
+      "capacity": 135.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1995,
+      "to": 2000,
+      "electric": false,
+      "workshopId": "3047680960",
+      "modPath": "kursk"
+    }
+  ]
+}

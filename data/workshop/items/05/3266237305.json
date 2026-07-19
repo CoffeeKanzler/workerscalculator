@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3266237305",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:19:45+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3266237305/Velo",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 2.25,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "countryId": 39003,
+      "speed": 25.0,
+      "powerKW": 2.0,
+      "emptyWeight": 0.3,
+      "from": 1894,
+      "to": 1902,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 4.0,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3266237305",
+      "modPath": "Velo"
+    }
+  ]
+}

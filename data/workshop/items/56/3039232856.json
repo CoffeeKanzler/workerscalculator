@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3039232856",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:03:52+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3039232856/1930Studebacker",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.72,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 96.0,
+      "powerKW": 52.0,
+      "emptyWeight": 0.5,
+      "from": 1930,
+      "to": 1936,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3039232856",
+      "modPath": "1930Studebacker"
+    },
+    {
+      "id": "3039232856/1930StudebackerAmbulance",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.72,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 96.0,
+      "powerKW": 52.0,
+      "emptyWeight": 0.65,
+      "from": 1930,
+      "to": 1936,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3039232856",
+      "modPath": "1930StudebackerAmbulance"
+    }
+  ]
+}

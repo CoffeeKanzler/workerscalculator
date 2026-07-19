@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2972723465",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:48:34+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2972723465/mersEQC",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.83,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5455,
+      "costUSD": 4000.0,
+      "consumption": 0.0,
+      "speed": 180.0,
+      "emptyWeight": 2.4,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2019,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2972723465",
+      "modPath": "mersEQC"
+    }
+  ]
+}

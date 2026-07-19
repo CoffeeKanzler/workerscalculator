@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3424918922",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:02:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3424918922/personal_polo",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.22,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 110.0,
+      "powerKW": 75.0,
+      "emptyWeight": 1.6,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1976,
+      "to": 1992,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3424918922",
+      "modPath": "personal_polo"
+    }
+  ]
+}

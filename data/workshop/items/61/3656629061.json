@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3656629061",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:03:27+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3656629061/.",
+      "category": "workshop",
+      "trainSet": [
+        "DLC3_russian_service_manual_machine_vagon",
+        "DLC3_russian_service_manual_machine_vagon",
+        "DLC3_russian_service_manual_machine_vagon",
+        "DLC3_russian_service_manual_machine_vagon",
+        "DLC3_russian_service_manual_machine_vagon",
+        "DLC3_russian_service_manual_machine_vagon",
+        "DLC3_russian_service_manual_machine_vagon",
+        "DLC3_russian_service_manual_machine_vagon",
+        "DLC3_russian_vagon_2axle",
+        "DLC3_russian_vagon_2axle",
+        "DLC3_Eseries",
+        "DLC3_Etender"
+      ],
+      "lifespanYears": 0.0,
+      "length": 3.36,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 5000.0,
+      "speed": 20.0,
+      "powerKW": 10.0,
+      "emptyWeight": 2.2,
+      "from": 1919,
+      "to": 1954,
+      "countryId": 39011,
+      "trainGroup": "trackbuilder_steam",
+      "electric": false,
+      "workshopId": "3656629061",
+      "modPath": "."
+    }
+  ]
+}

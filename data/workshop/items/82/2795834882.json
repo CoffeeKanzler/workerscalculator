@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2795834882",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:45:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2795834882/RollsRoyce",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.83,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 10000.0,
+      "powerKW": 58.0,
+      "emptyWeight": 4.7,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 72.0,
+      "from": 1914,
+      "to": 1925,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2795834882",
+      "modPath": "RollsRoyce"
+    },
+    {
+      "id": "2795834882/RollsRoyce45mm",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.83,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 10000.0,
+      "powerKW": 58.0,
+      "emptyWeight": 4.9,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 72.0,
+      "from": 1918,
+      "to": 1925,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2795834882",
+      "modPath": "RollsRoyce45mm"
+    }
+  ]
+}

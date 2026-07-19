@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3188944721",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:11:23+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3188944721/personal_mosck3",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.41,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5390,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 175.0,
+      "emptyWeight": 1.44,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3188944721",
+      "modPath": "personal_mosck3"
+    }
+  ]
+}

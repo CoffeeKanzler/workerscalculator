@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2916036322",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:27:50+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2916036322/bus_uaz",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.49,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4000.0,
+      "capacity": 7.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 90.0,
+      "emptyWeight": 2.0,
+      "from": 1996,
+      "to": 2003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2916036322",
+      "modPath": "bus_uaz"
+    },
+    {
+      "id": "2916036322/personal_uaz",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.49,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4000.0,
+      "capacity": 7.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 90.0,
+      "emptyWeight": 2.0,
+      "from": 1996,
+      "to": 2003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2916036322",
+      "modPath": "personal_uaz"
+    }
+  ]
+}

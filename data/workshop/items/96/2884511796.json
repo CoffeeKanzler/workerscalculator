@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2884511796",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:03:12+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2884511796/marcopolo3",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.68,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 147.1,
+      "emptyWeight": 7.5,
+      "capacity": 44.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1974,
+      "to": 1983,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2884511796",
+      "modPath": "marcopolo3"
+    }
+  ]
+}

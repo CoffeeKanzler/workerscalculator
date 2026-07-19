@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3630953051",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:33:17+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3630953051/1920combine",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5042,
+      "costUSD": 980.0,
+      "emptyWeight": 2.7,
+      "from": 1850,
+      "to": 1937,
+      "countryId": 39018,
+      "roadRecipeBranch": "horse-team",
+      "workshopId": "3630953051",
+      "modPath": "1920combine"
+    },
+    {
+      "id": "3630953051/1920combine9",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5042,
+      "costUSD": 980.0,
+      "emptyWeight": 2.7,
+      "from": 1850,
+      "to": 1937,
+      "countryId": 39018,
+      "roadRecipeBranch": "horse-team",
+      "workshopId": "3630953051",
+      "modPath": "1920combine9"
+    },
+    {
+      "id": "3630953051/1920combine9_RUB",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5042,
+      "costRUB": 1180.0,
+      "emptyWeight": 2.7,
+      "from": 1850,
+      "to": 1937,
+      "countryId": 39011,
+      "roadRecipeBranch": "horse-team",
+      "workshopId": "3630953051",
+      "modPath": "1920combine9_RUB"
+    },
+    {
+      "id": "3630953051/1920combine_RUB",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5042,
+      "costRUB": 1180.0,
+      "emptyWeight": 2.7,
+      "from": 1850,
+      "to": 1937,
+      "countryId": 39011,
+      "roadRecipeBranch": "horse-team",
+      "workshopId": "3630953051",
+      "modPath": "1920combine_RUB"
+    }
+  ]
+}

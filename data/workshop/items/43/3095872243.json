@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3095872243",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:35:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3095872243/bus_NWSO",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.09,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 6000.0,
+      "capacity": 12.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 20.0,
+      "powerKW": 17.7,
+      "emptyWeight": 8.5,
+      "from": 1900,
+      "to": 1907,
+      "countryId": 39001,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3095872243",
+      "modPath": "bus_NWSO"
+    },
+    {
+      "id": "3095872243/prison_NWSO",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.09,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 6000.0,
+      "capacity": 8.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 20.0,
+      "powerKW": 17.7,
+      "emptyWeight": 8.5,
+      "from": 1900,
+      "to": 1907,
+      "countryId": 39001,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3095872243",
+      "modPath": "prison_NWSO"
+    }
+  ]
+}

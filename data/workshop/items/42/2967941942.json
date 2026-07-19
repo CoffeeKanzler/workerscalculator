@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2967941942",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:17:15+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2967941942/skd130RS",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.13,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5380,
+      "costRUB": 6000.0,
+      "consumption": 0.0,
+      "speed": 190.0,
+      "powerKW": 100.0,
+      "emptyWeight": 0.8,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1975,
+      "to": 1982,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2967941942",
+      "modPath": "skd130RS"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3684869486",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:13:05+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3684869486/personal_toyota",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.38,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4100.0,
+      "consumption": 0.0,
+      "speed": 200.0,
+      "emptyWeight": 2.2,
+      "capacity": 7.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2015,
+      "to": 2023,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3684869486",
+      "modPath": "personal_toyota"
+    }
+  ]
+}

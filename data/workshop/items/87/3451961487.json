@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3451961487",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:01:17+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3451961487/pantsirS1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.38,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 200000.0,
+      "consumption": 0.0,
+      "speed": 70.0,
+      "powerKW": 300.0,
+      "emptyWeight": 34.0,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2012,
+      "to": 2030,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3451961487",
+      "modPath": "pantsirS1"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3477762073",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:00:10+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3477762073/MC-21-310",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 42.01,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 870.0,
+      "powerKW": 28000.0,
+      "emptyWeight": 48.0,
+      "capacity": 163.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2017,
+      "to": 9999,
+      "countryId": 39021,
+      "workshopId": "3477762073",
+      "modPath": "MC-21-310"
+    }
+  ]
+}

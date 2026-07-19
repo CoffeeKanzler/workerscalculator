@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3727069609",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:24:17+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3727069609/VAGON_123",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.24,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costUSD": 4300.0,
+      "speed": 70.0,
+      "powerKW": 215.0,
+      "emptyWeight": 36.0,
+      "from": 1938,
+      "to": 1988,
+      "countryId": 39041,
+      "capacity": 82.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "vagon",
+      "workshopId": "3727069609",
+      "modPath": "VAGON_123"
+    }
+  ]
+}

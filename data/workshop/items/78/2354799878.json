@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2354799878",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:44:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2354799878/personal_w_golf",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.17,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5457,
+      "costUSD": 1300.0,
+      "consumption": 0.0,
+      "speed": 150.0,
+      "powerKW": 43.0,
+      "emptyWeight": 0.9,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1986,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2354799878",
+      "modPath": "personal_w_golf"
+    }
+  ]
+}

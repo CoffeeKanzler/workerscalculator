@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2913006453",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:18:38+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2913006453/bus_higer",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.72,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4000.0,
+      "consumption": 0.0,
+      "speed": 120.0,
+      "emptyWeight": 11.2,
+      "capacity": 60.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2913006453",
+      "modPath": "bus_higer"
+    }
+  ]
+}

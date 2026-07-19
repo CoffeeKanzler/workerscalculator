@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2877837052",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:49:20+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2877837052/navaDps",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.2,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4100.0,
+      "consumption": 0.0,
+      "speed": 140.0,
+      "powerKW": 58.84,
+      "emptyWeight": 1.4,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2877837052",
+      "modPath": "navaDps"
+    },
+    {
+      "id": "2877837052/niva",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.2,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 140.0,
+      "powerKW": 58.84,
+      "emptyWeight": 1.4,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2877837052",
+      "modPath": "niva"
+    }
+  ]
+}

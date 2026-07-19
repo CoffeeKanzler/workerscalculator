@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2837883292",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:26:01+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2837883292/D344P",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.42,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5167,
+      "costRUB": 1220.0,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 82.0,
+      "powerKW": 74.0,
+      "emptyWeight": 5.7,
+      "from": 1960,
+      "to": 1975,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2837883292",
+      "modPath": "D344P"
+    },
+    {
+      "id": "2837883292/D344PL",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.42,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5167,
+      "costRUB": 1200.0,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "speed": 82.0,
+      "powerKW": 74.0,
+      "emptyWeight": 5.7,
+      "from": 1960,
+      "to": 1975,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2837883292",
+      "modPath": "D344PL"
+    }
+  ]
+}

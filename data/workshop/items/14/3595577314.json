@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3595577314",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:04:33+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3595577314/EF2000",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.95,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 77700000.0,
+      "consumption": 0.0,
+      "speed": 2495.0,
+      "powerKW": 12000.0,
+      "emptyWeight": 11.0,
+      "capacity": 11.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1990,
+      "to": 2050,
+      "countryId": 39003,
+      "workshopId": "3595577314",
+      "modPath": "EF2000"
+    }
+  ]
+}

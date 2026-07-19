@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2919037842",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:43:50+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2919037842/personal_geely",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.74,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1500.0,
+      "consumption": 0.0,
+      "speed": 185.0,
+      "emptyWeight": 1.7,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2919037842",
+      "modPath": "personal_geely"
+    }
+  ]
+}

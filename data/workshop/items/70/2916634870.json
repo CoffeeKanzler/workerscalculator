@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2916634870",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:20:36+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2916634870/personal_Mitsubishi",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.58,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3600.0,
+      "consumption": 0.0,
+      "speed": 180.0,
+      "powerKW": 93.0,
+      "emptyWeight": 1.6,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2916634870",
+      "modPath": "personal_Mitsubishi"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2975911430",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:46:15+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2975911430/tractor_T_40_bochka",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.04,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5335,
+      "costRUB": 4300.0,
+      "capacity": 36.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 28.0,
+      "powerKW": 110.0,
+      "emptyWeight": 6.1,
+      "from": 1966,
+      "to": 1977,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2975911430",
+      "modPath": "tractor_T_40_bochka"
+    },
+    {
+      "id": "2975911430/tractor_T_40_water",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.04,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5335,
+      "costRUB": 4300.0,
+      "capacity": 36.0,
+      "transportType": "RESOURCE_TRANSPORT_WATER",
+      "speed": 28.0,
+      "powerKW": 110.0,
+      "emptyWeight": 6.1,
+      "from": 1966,
+      "to": 1977,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2975911430",
+      "modPath": "tractor_T_40_water"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2905727386",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:39:09+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2905727386/covered_GMC",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.83,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 2300.0,
+      "consumption": 3000.0,
+      "speed": 190.0,
+      "powerKW": 210.0,
+      "emptyWeight": 3.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2905727386",
+      "modPath": "covered_GMC"
+    },
+    {
+      "id": "2905727386/personsl_GMC",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.23,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3300.0,
+      "speed": 230.0,
+      "powerKW": 295.0,
+      "emptyWeight": 2.3,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2905727386",
+      "modPath": "personsl_GMC"
+    },
+    {
+      "id": "2905727386/personsl_GMC1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.23,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3300.0,
+      "speed": 230.0,
+      "powerKW": 295.0,
+      "emptyWeight": 2.3,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2905727386",
+      "modPath": "personsl_GMC1"
+    }
+  ]
+}

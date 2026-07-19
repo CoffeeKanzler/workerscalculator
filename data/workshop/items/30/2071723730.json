@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2071723730",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:37:23+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2071723730/STORM_T2310_SEMI",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.7,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5153,
+      "costRUB": 1.0,
+      "speed": 240.0,
+      "powerKW": 514.0,
+      "emptyWeight": 28.0,
+      "capacity": 28.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1970,
+      "to": 3000,
+      "countryId": 39021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2071723730",
+      "modPath": "STORM_T2310_SEMI"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3735499486",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:22:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3735499486/TUBE_1938_2C",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.97,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "nameId": 5968,
+      "descriptionId": 5080,
+      "costUSD": 4300.0,
+      "speed": 70.0,
+      "powerKW": 180.0,
+      "emptyWeight": 28.0,
+      "from": 1938,
+      "to": 1988,
+      "countryId": 39041,
+      "capacity": 40.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "metro",
+      "electric": true,
+      "workshopId": "3735499486",
+      "modPath": "TUBE_1938_2C"
+    }
+  ]
+}

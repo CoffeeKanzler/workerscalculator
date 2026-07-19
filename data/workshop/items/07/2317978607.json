@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2317978607",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:54:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2317978607/bus_man",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.73,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5339,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 100.0,
+      "powerKW": 147.0,
+      "emptyWeight": 9.5,
+      "capacity": 67.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1983,
+      "to": 1993,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2317978607",
+      "modPath": "bus_man"
+    }
+  ]
+}

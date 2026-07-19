@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3658172251",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:00:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3658172251/Toyota_Land_Cruiser_200",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.96,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 3100.0,
+      "consumption": 0.0,
+      "speed": 209.0,
+      "powerKW": 210.0,
+      "emptyWeight": 2.7,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2007,
+      "to": 2018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3658172251",
+      "modPath": "Toyota_Land_Cruiser_200"
+    }
+  ]
+}

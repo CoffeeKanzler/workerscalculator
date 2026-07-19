@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2920336460",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:03:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2920336460/personal_bently",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.13,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 2300.0,
+      "consumption": 0.0,
+      "speed": 217.0,
+      "emptyWeight": 2.3,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2920336460",
+      "modPath": "personal_bently"
+    }
+  ]
+}

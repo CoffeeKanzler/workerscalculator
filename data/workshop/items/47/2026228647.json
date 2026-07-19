@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2026228647",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:02:21+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2026228647/banana",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.1,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 22600.0,
+      "speed": 160.0,
+      "powerKW": 150.0,
+      "emptyWeight": 2.0,
+      "from": 1960,
+      "to": 2020,
+      "capacity": 141.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2026228647",
+      "modPath": "banana"
+    }
+  ]
+}

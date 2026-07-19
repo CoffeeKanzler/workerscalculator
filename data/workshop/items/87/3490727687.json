@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3490727687",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:50:13+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3490727687/052C",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 153.38,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 5550000.0,
+      "speed": 55.5,
+      "powerKW": 55732.0,
+      "emptyWeight": 5700.0,
+      "capacity": 250.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2005,
+      "to": 2035,
+      "countryId": 39042,
+      "electric": false,
+      "workshopId": "3490727687",
+      "modPath": "052C"
+    }
+  ]
+}

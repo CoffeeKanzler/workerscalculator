@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2863508762",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:58:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2863508762/kamaz",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.91,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5322,
+      "costRUB": 4300.0,
+      "capacity": 3.0,
+      "speed": 90.0,
+      "powerKW": 228.0,
+      "emptyWeight": 19.0,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2863508762",
+      "modPath": "kamaz"
+    }
+  ]
+}

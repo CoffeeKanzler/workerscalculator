@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3585839177",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:05:42+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3585839177/personal_haval_jolion",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.44,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5457,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 185.0,
+      "powerKW": 105.0,
+      "emptyWeight": 1.3,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3585839177",
+      "modPath": "personal_haval_jolion"
+    }
+  ]
+}

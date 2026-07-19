@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3422018582",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:25:42+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3422018582/XGA-6013",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.71,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 100.0,
+      "speed": 0.0,
+      "powerKW": 62.0,
+      "emptyWeight": 8.0,
+      "from": 2005,
+      "to": 3000,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3422018582",
+      "modPath": "XGA-6013"
+    },
+    {
+      "id": "3422018582/XGA-6013-1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.71,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 100.0,
+      "speed": 0.0,
+      "powerKW": 62.0,
+      "emptyWeight": 8.0,
+      "from": 2005,
+      "to": 3000,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3422018582",
+      "modPath": "XGA-6013-1"
+    }
+  ]
+}

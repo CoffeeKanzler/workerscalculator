@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2960414789",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:36:10+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2960414789/zil_130_tank",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.89,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5576,
+      "descriptionId": 5153,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "capacity": 4.5,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "powerKW": 110.0,
+      "emptyWeight": 4.3,
+      "from": 1962,
+      "to": 1994,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2960414789",
+      "modPath": "zil_130_tank"
+    },
+    {
+      "id": "2960414789/zil_130_tank water",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5576,
+      "descriptionId": 5153,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "capacity": 4.5,
+      "transportType": "RESOURCE_TRANSPORT_WATER",
+      "powerKW": 110.0,
+      "emptyWeight": 4.3,
+      "from": 1962,
+      "to": 1994,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2960414789",
+      "modPath": "zil_130_tank water"
+    }
+  ]
+}

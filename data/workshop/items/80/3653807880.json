@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3653807880",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:11:44+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3653807880/personal_changan_UNI_S",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.7,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 200.0,
+      "powerKW": 170.0,
+      "emptyWeight": 1.6,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2020,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3653807880",
+      "modPath": "personal_changan_UNI_S"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3062630635",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:24:00+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3062630635/combine_acros",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.5,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5213,
+      "costRUB": 4300.0,
+      "speed": 40.0,
+      "emptyWeight": 13.4,
+      "from": 2004,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3062630635",
+      "modPath": "combine_acros"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3021542590",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:42:47+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3021542590/KaMaZ_sewage",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.85,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5153,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "capacity": 10.0,
+      "transportType": "RESOURCE_TRANSPORT_SEWAGE",
+      "powerKW": 220.0,
+      "emptyWeight": 4.3,
+      "from": 1998,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3021542590",
+      "modPath": "KaMaZ_sewage"
+    },
+    {
+      "id": "3021542590/garbage_big_kmz_53213",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.55,
+      "type": "VEHICLETYPE_ROAD",
+      "capacity": 23.0,
+      "transportType": "RESOURCE_TRANSPORT_WASTE",
+      "costRUB": 3300.0,
+      "speed": 100.0,
+      "powerKW": 256.0,
+      "emptyWeight": 9.1,
+      "from": 1984,
+      "to": 2005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3021542590",
+      "modPath": "garbage_big_kmz_53213"
+    },
+    {
+      "id": "3021542590/garbage_big_kmz_6520",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.02,
+      "type": "VEHICLETYPE_ROAD",
+      "capacity": 23.0,
+      "transportType": "RESOURCE_TRANSPORT_WASTE",
+      "costRUB": 3300.0,
+      "speed": 100.0,
+      "powerKW": 256.0,
+      "emptyWeight": 11.2,
+      "from": 2015,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3021542590",
+      "modPath": "garbage_big_kmz_6520"
+    }
+  ]
+}

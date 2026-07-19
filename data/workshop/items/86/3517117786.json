@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3517117786",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:28:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3517117786/VT209",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.69,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5147,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 68.0,
+      "costRUB": 4300.0,
+      "trainGroup": "tram",
+      "speed": 90.0,
+      "powerKW": 132.0,
+      "emptyWeight": 17.0,
+      "from": 1962,
+      "to": 1969,
+      "countryId": 39004,
+      "electric": false,
+      "workshopId": "3517117786",
+      "modPath": "VT209"
+    },
+    {
+      "id": "3517117786/VT209+BW",
+      "category": "workshop",
+      "trainSet": [
+        "3517117786/VT209"
+      ],
+      "lifespanYears": 0.0,
+      "length": 13.69,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5147,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 68.0,
+      "costRUB": 4300.0,
+      "trainGroup": "tram",
+      "speed": 90.0,
+      "powerKW": 132.0,
+      "emptyWeight": 17.0,
+      "from": 1962,
+      "to": 1969,
+      "countryId": 39004,
+      "electric": false,
+      "workshopId": "3517117786",
+      "modPath": "VT209+BW"
+    }
+  ]
+}

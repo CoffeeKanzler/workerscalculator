@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2853166893",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:44:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2853166893/iveco_1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.34,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5174,
+      "costUSD": 4300.0,
+      "capacity": 36.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "speed": 110.0,
+      "emptyWeight": 19.0,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2853166893",
+      "modPath": "iveco_1"
+    },
+    {
+      "id": "2853166893/iveco_s",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.34,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5167,
+      "costUSD": 4300.0,
+      "capacity": 40.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 110.0,
+      "emptyWeight": 19.0,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2853166893",
+      "modPath": "iveco_s"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3508896958",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:10:54+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3508896958/B30BIGPLATE",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 30.0,
+      "speed": 130.0,
+      "powerKW": 66.0,
+      "emptyWeight": 3.6,
+      "from": 1982,
+      "to": 1992,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3508896958",
+      "modPath": "B30BIGPLATE"
+    },
+    {
+      "id": "3508896958/B30ORINGIN",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 30.0,
+      "speed": 130.0,
+      "powerKW": 66.0,
+      "emptyWeight": 3.6,
+      "from": 1982,
+      "to": 1992,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3508896958",
+      "modPath": "B30ORINGIN"
+    },
+    {
+      "id": "3508896958/B30ORINGINPRISON",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 30.0,
+      "speed": 130.0,
+      "powerKW": 66.0,
+      "emptyWeight": 3.6,
+      "from": 1982,
+      "to": 1992,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3508896958",
+      "modPath": "B30ORINGINPRISON"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3192144937",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:41:08+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3192144937/T813_Dozer",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.37,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 92.0,
+      "powerKW": 198.6,
+      "emptyWeight": 16.0,
+      "from": 1967,
+      "to": 3000,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3192144937",
+      "modPath": "T813_Dozer"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3002046356",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:18:08+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3002046356/DK-2",
+      "category": "workshop",
+      "trainSet": [
+        "3002046356/DK-2",
+        "3002046356/DK-2"
+      ],
+      "lifespanYears": 0.0,
+      "length": 19.0,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 3300.0,
+      "speed": 80.0,
+      "powerKW": 288.0,
+      "from": 1969,
+      "to": 1985,
+      "countryId": 39042,
+      "capacity": 186.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "metro",
+      "electric": true,
+      "workshopId": "3002046356",
+      "modPath": "DK-2"
+    },
+    {
+      "id": "3002046356/DK-2_Vagon",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 18.0,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 2000.0,
+      "speed": 80.0,
+      "powerKW": 288.0,
+      "emptyWeight": 29.0,
+      "from": 1969,
+      "to": 1985,
+      "countryId": 39042,
+      "capacity": 220.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "metro",
+      "electric": true,
+      "workshopId": "3002046356",
+      "modPath": "DK-2_Vagon"
+    }
+  ]
+}

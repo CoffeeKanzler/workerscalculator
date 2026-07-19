@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3628222447",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:59:55+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3628222447/h_logger_low",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.62,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 260.0,
+      "capacity": 3.5,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "emptyWeight": 0.23,
+      "from": 1850,
+      "to": 1937,
+      "countryId": 39011,
+      "roadRecipeBranch": "horse-team",
+      "workshopId": "3628222447",
+      "modPath": "h_logger_low"
+    }
+  ]
+}

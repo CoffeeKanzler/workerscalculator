@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3041384946",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:58:21+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3041384946/1920Omnibus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.71,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 35.0,
+      "powerKW": 15.0,
+      "emptyWeight": 3.0,
+      "from": 1920,
+      "to": 1926,
+      "capacity": 48.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "countryId": 39041,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3041384946",
+      "modPath": "1920Omnibus"
+    },
+    {
+      "id": "3041384946/1920OmnibusSingle",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.28,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 45.0,
+      "powerKW": 17.0,
+      "emptyWeight": 2.0,
+      "from": 1920,
+      "to": 1926,
+      "capacity": 22.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "countryId": 39041,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3041384946",
+      "modPath": "1920OmnibusSingle"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3340616027",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:37:47+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3340616027/Skid",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 2.82,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5040,
+      "costUSD": 5000.0,
+      "powerKW": 30.0,
+      "emptyWeight": 1.5,
+      "speed": 30.0,
+      "from": 1900,
+      "to": 3000,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3340616027",
+      "modPath": "Skid"
+    },
+    {
+      "id": "3340616027/SkidE",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 2.82,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5040,
+      "costRUB": 5000.0,
+      "powerKW": 30.0,
+      "emptyWeight": 1.5,
+      "speed": 30.0,
+      "from": 1900,
+      "to": 3000,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3340616027",
+      "modPath": "SkidE"
+    }
+  ]
+}

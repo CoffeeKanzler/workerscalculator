@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2932928150",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:01:07+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2932928150/personal_H_santafe",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.8,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3300.0,
+      "consumption": 2300.0,
+      "speed": 160.0,
+      "powerKW": 227.0,
+      "emptyWeight": 1.9,
+      "capacity": 9.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2013,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2932928150",
+      "modPath": "personal_H_santafe"
+    },
+    {
+      "id": "2932928150/personal_santafe",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.73,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3300.0,
+      "consumption": 2300.0,
+      "speed": 160.0,
+      "powerKW": 227.0,
+      "emptyWeight": 1.9,
+      "capacity": 9.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2013,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2932928150",
+      "modPath": "personal_santafe"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3336112699",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:20:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3336112699/1910Bus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.31,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "countryId": 39041,
+      "speed": 26.0,
+      "powerKW": 33.0,
+      "emptyWeight": 3.78,
+      "from": 1910,
+      "to": 1914,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 34.0,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3336112699",
+      "modPath": "1910Bus"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2594242807",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:33:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2594242807/Mazda3",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.54,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5386,
+      "costUSD": 4300.0,
+      "speed": 170.0,
+      "powerKW": 77.0,
+      "emptyWeight": 1.34,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2003,
+      "to": 2014,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2594242807",
+      "modPath": "Mazda3"
+    }
+  ]
+}

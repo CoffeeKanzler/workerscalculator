@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3585617630",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:32:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3585617630/personal_mosc",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.53,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5396,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 190.0,
+      "powerKW": 128.0,
+      "emptyWeight": 1.5,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2022,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3585617630",
+      "modPath": "personal_mosc"
+    }
+  ]
+}

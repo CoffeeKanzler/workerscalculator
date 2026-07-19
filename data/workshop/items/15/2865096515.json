@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2865096515",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:46:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2865096515/W120",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.54,
+      "descriptionId": 5374,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "speed": 120.0,
+      "powerKW": 78.0,
+      "emptyWeight": 1.15,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1953,
+      "to": 1962,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2865096515",
+      "modPath": "W120"
+    },
+    {
+      "id": "2865096515/W120P",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.55,
+      "descriptionId": 5374,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "speed": 120.0,
+      "powerKW": 78.0,
+      "emptyWeight": 1.15,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1953,
+      "to": 1962,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2865096515",
+      "modPath": "W120P"
+    }
+  ]
+}

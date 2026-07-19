@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3527215659",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:41:12+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3527215659/Ferdinand",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.05,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 44200.0,
+      "consumption": 0.0,
+      "speed": 30.0,
+      "powerKW": 600.0,
+      "emptyWeight": 65.0,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1943,
+      "to": 1945,
+      "countryId": 39003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3527215659",
+      "modPath": "Ferdinand"
+    }
+  ]
+}

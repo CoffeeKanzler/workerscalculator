@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3495636067",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:50:24+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3495636067/Zoroaster",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 54.96,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 4300.0,
+      "speed": 24.0,
+      "powerKW": 150.0,
+      "emptyWeight": 1200.0,
+      "capacity": 450.0,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "from": 1900,
+      "to": 1950,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "3495636067",
+      "modPath": "Zoroaster"
+    },
+    {
+      "id": "3495636067/Zoroaster(USD)",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 54.96,
+      "type": "VEHICLETYPE_SHIP",
+      "costUSD": 4300.0,
+      "speed": 24.0,
+      "powerKW": 150.0,
+      "emptyWeight": 1200.0,
+      "capacity": 450.0,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "from": 1900,
+      "to": 1950,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "3495636067",
+      "modPath": "Zoroaster(USD)"
+    }
+  ]
+}

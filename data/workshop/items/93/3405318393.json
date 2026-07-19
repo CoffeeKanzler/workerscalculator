@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3405318393",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:08:16+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3405318393/DF11",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 21.28,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "speed": 170.0,
+      "powerKW": 3040.0,
+      "emptyWeight": 138.0,
+      "trainGroup": "locomotive",
+      "from": 1992,
+      "to": 2005,
+      "countryId": 39042,
+      "electric": false,
+      "workshopId": "3405318393",
+      "modPath": "DF11"
+    },
+    {
+      "id": "3405318393/DF11G",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 22.24,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "speed": 170.0,
+      "powerKW": 3040.0,
+      "emptyWeight": 138.0,
+      "trainGroup": "locomotive",
+      "from": 2003,
+      "to": 2017,
+      "countryId": 39042,
+      "electric": false,
+      "workshopId": "3405318393",
+      "modPath": "DF11G"
+    }
+  ]
+}

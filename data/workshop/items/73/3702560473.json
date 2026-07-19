@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3702560473",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:16:44+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3702560473/Personal_Renault_Laguna",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.93,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4100.0,
+      "consumption": 0.0,
+      "speed": 245.0,
+      "emptyWeight": 1.7,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2001,
+      "to": 2007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3702560473",
+      "modPath": "Personal_Renault_Laguna"
+    },
+    {
+      "id": "3702560473/z_police_laguna",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.93,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4100.0,
+      "consumption": 0.0,
+      "speed": 245.0,
+      "emptyWeight": 1.7,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2001,
+      "to": 2007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3702560473",
+      "modPath": "z_police_laguna"
+    }
+  ]
+}

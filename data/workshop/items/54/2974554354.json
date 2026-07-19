@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2974554354",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:57:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2974554354/T3",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.81,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5126,
+      "costRUB": 4500.0,
+      "powerKW": 160.0,
+      "emptyWeight": 16.6,
+      "trainGroup": "tram",
+      "speed": 65.0,
+      "capacity": 100.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1962,
+      "to": 1997,
+      "countryId": 39000,
+      "electric": true,
+      "workshopId": "2974554354",
+      "modPath": "T3"
+    }
+  ]
+}

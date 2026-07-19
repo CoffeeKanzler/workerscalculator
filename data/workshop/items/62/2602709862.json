@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2602709862",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:55:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2602709862/MazdaMX5",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.93,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5386,
+      "costUSD": 4300.0,
+      "speed": 203.0,
+      "powerKW": 86.0,
+      "emptyWeight": 0.96,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1989,
+      "to": 1997,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2602709862",
+      "modPath": "MazdaMX5"
+    }
+  ]
+}

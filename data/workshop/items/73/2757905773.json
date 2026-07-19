@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2757905773",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T12:06:45+00:00",
+  "buildings": [
+    {
+      "id": "2757905773/15",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1.0
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "MIG-15",
+      "workshopId": "2757905773",
+      "modPath": "15"
+    }
+  ],
+  "vehicles": []
+}

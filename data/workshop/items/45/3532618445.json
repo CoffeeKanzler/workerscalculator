@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3532618445",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:53:20+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3532618445/raba180",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.13,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5259,
+      "costRUB": 1.0,
+      "speed": 30.0,
+      "powerKW": 134.0,
+      "emptyWeight": 9.0,
+      "from": 1976,
+      "to": 1981,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3532618445",
+      "modPath": "raba180"
+    }
+  ]
+}

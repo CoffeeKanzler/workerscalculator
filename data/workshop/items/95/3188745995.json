@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3188745995",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:07:27+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3188745995/skoda_kodiaq",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.67,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costRUB": 10000.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 220.0,
+      "powerKW": 170.0,
+      "emptyWeight": 1.5,
+      "from": 2017,
+      "to": 2030,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3188745995",
+      "modPath": "skoda_kodiaq"
+    }
+  ]
+}

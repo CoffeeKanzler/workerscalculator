@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3251499939",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:43:10+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3251499939/alsthom",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.53,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 1.0,
+      "speed": 150.0,
+      "powerKW": 3490.0,
+      "emptyWeight": 107.0,
+      "from": 1952,
+      "to": 3000,
+      "countryId": 39016,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "3251499939",
+      "modPath": "alsthom"
+    }
+  ]
+}

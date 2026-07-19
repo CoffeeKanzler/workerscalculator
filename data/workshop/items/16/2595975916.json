@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2595975916",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:15:49+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2595975916/W222",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.42,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5394,
+      "costUSD": 4300.0,
+      "speed": 250.0,
+      "powerKW": 190.0,
+      "emptyWeight": 1.91,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2013,
+      "to": 2020,
+      "countryId": 39003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2595975916",
+      "modPath": "W222"
+    }
+  ]
+}

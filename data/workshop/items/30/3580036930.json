@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3580036930",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:47:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3580036930/QTF-160",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.52,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 0.0,
+      "powerKW": 88.0,
+      "emptyWeight": 16.6,
+      "from": 1973,
+      "to": 1995,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3580036930",
+      "modPath": "QTF-160"
+    },
+    {
+      "id": "3580036930/QTP-120",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.18,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 0.0,
+      "powerKW": 87.2,
+      "emptyWeight": 16.6,
+      "from": 1972,
+      "to": 1995,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3580036930",
+      "modPath": "QTP-120"
+    },
+    {
+      "id": "3580036930/QTP-40",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.79,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 0.0,
+      "powerKW": 35.7,
+      "emptyWeight": 12.75,
+      "from": 1973,
+      "to": 1990,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3580036930",
+      "modPath": "QTP-40"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2114826469",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:33:16+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2114826469/Dodge_2017",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.99,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4200.0,
+      "consumption": 0.0,
+      "speed": 250.0,
+      "powerKW": 527.0,
+      "emptyWeight": 2.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2010,
+      "to": 2015,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2114826469",
+      "modPath": "Dodge_2017"
+    }
+  ]
+}

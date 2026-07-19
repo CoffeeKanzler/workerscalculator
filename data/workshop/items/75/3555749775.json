@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3555749775",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:51:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3555749775/2te116",
+      "category": "workshop",
+      "trainSet": [
+        "3555749775/2te116_wagon"
+      ],
+      "lifespanYears": 0.0,
+      "length": 17.95,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 7000.0,
+      "speed": 100.0,
+      "powerKW": 3375.0,
+      "emptyWeight": 138.0,
+      "from": 1978,
+      "to": 2010,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "3555749775",
+      "modPath": "2te116"
+    },
+    {
+      "id": "3555749775/2te116_wagon",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 18.02,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4000.0,
+      "speed": 100.0,
+      "powerKW": 1.0,
+      "emptyWeight": 115.0,
+      "from": 1971,
+      "to": 1995,
+      "countryId": 39011,
+      "workshopId": "3555749775",
+      "modPath": "2te116_wagon"
+    }
+  ]
+}

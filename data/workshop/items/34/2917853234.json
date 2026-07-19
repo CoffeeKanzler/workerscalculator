@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2917853234",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:17:43+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2917853234/KaMaZ1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.09,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4000.0,
+      "capacity": 4.0,
+      "speed": 90.0,
+      "powerKW": 228.0,
+      "emptyWeight": 19.0,
+      "from": 2021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2917853234",
+      "modPath": "KaMaZ1"
+    }
+  ]
+}

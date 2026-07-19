@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2157176145",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:48:23+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2157176145/gravel_krz65055",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.24,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5217,
+      "costRUB": 4300.0,
+      "speed": 90.0,
+      "powerKW": 243.0,
+      "emptyWeight": 12.2,
+      "capacity": 18.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "from": 1994,
+      "to": 3000,
+      "countryId": 39020,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2157176145",
+      "modPath": "gravel_krz65055"
+    }
+  ]
+}

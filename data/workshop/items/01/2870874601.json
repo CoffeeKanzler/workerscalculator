@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2870874601",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:04:49+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2870874601/CivicHatch",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.07,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5394,
+      "costUSD": 4500.0,
+      "speed": 180.0,
+      "powerKW": 69.0,
+      "emptyWeight": 0.93,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1992,
+      "to": 1995,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2870874601",
+      "modPath": "CivicHatch"
+    },
+    {
+      "id": "2870874601/EGHD",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.41,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5394,
+      "costUSD": 4500.0,
+      "speed": 180.0,
+      "powerKW": 76.0,
+      "emptyWeight": 1.13,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1992,
+      "to": 1995,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2870874601",
+      "modPath": "EGHD"
+    }
+  ]
+}

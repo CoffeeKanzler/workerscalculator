@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2779048688",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:34:24+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2779048688/2es10",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 17.64,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4100.0,
+      "speed": 120.0,
+      "powerKW": 4200.0,
+      "emptyWeight": 100.0,
+      "from": 2010,
+      "to": 3000,
+      "countryId": 39021,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2779048688",
+      "modPath": "2es10"
+    }
+  ]
+}

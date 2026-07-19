@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3626369489",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:12:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3626369489/stift",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.83,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5439,
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 163.0,
+      "powerKW": 50.0,
+      "emptyWeight": 0.735,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1989,
+      "to": 1997,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3626369489",
+      "modPath": "stift"
+    },
+    {
+      "id": "3626369489/stift_facelift",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.83,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5439,
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 166.0,
+      "powerKW": 50.0,
+      "emptyWeight": 0.755,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1996,
+      "to": 2004,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3626369489",
+      "modPath": "stift_facelift"
+    }
+  ]
+}

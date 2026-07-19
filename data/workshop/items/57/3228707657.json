@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3228707657",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:30:18+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3228707657/bus_Volzhanin6270",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.55,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 2001,
+      "costRUB": 43000.0,
+      "consumption": 0.0,
+      "speed": 110.0,
+      "emptyWeight": 15.3,
+      "capacity": 145.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2001,
+      "to": 2008,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3228707657",
+      "modPath": "bus_Volzhanin6270"
+    }
+  ]
+}

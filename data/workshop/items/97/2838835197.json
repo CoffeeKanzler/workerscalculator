@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2838835197",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:59:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2838835197/IK506",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.42,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5241,
+      "costRUB": 2150.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 12.0,
+      "speed": 95.0,
+      "consumption": 0.0,
+      "powerKW": 57.0,
+      "emptyWeight": 3.0,
+      "from": 1987,
+      "to": 1990,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2838835197",
+      "modPath": "IK506"
+    },
+    {
+      "id": "2838835197/IK521",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.42,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5241,
+      "costRUB": 2150.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 31.0,
+      "speed": 95.0,
+      "consumption": 0.0,
+      "powerKW": 55.0,
+      "emptyWeight": 5.6,
+      "from": 1987,
+      "to": 1990,
+      "countryId": 39007,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2838835197",
+      "modPath": "IK521"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2889305899",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:31:45+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2889305899/Service_metro",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.44,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5080,
+      "costRUB": 4000.0,
+      "speed": 80.0,
+      "powerKW": 300.0,
+      "from": 1968,
+      "to": 1997,
+      "countryId": 39011,
+      "trainGroup": "metro",
+      "electric": true,
+      "workshopId": "2889305899",
+      "modPath": "Service_metro"
+    }
+  ]
+}

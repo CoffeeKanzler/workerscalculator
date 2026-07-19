@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2105307241",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:01:52+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2105307241/Kraz_255_Kran",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.75,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5222,
+      "costRUB": 4300.0,
+      "speed": 70.0,
+      "powerKW": 132.0,
+      "emptyWeight": 8.0,
+      "from": 1967,
+      "to": 1994,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2105307241",
+      "modPath": "Kraz_255_Kran"
+    }
+  ]
+}

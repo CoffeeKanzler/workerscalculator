@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3586048211",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:40:52+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3586048211/9P",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.7,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "speed": 35.0,
+      "powerKW": 238.0,
+      "emptyWeight": 45.0,
+      "from": 1935,
+      "to": 1957,
+      "countryId": 39011,
+      "trainGroup": "locomotive_steam",
+      "electric": false,
+      "workshopId": "3586048211",
+      "modPath": "9P"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3458602574",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:45:40+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3458602574/logi_tender_15t",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.33,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 1.0,
+      "speed": 19.0,
+      "powerKW": 55.0,
+      "emptyWeight": 15.0,
+      "capacity": 10.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1942,
+      "to": 3000,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "3458602574",
+      "modPath": "logi_tender_15t"
+    },
+    {
+      "id": "3458602574/logi_tender_25t",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.63,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 1.0,
+      "speed": 19.0,
+      "powerKW": 55.0,
+      "emptyWeight": 25.0,
+      "capacity": 20.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1942,
+      "to": 3000,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "3458602574",
+      "modPath": "logi_tender_25t"
+    }
+  ]
+}

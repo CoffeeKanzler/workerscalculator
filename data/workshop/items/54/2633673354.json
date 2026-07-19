@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2633673354",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:45:13+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2633673354/torpedowagon",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 18.59,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "capacity": 120.0,
+      "emptyWeight": 270.0,
+      "from": 1900,
+      "to": 2100,
+      "countryId": 38998,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "trainGroup": "vagon",
+      "workshopId": "2633673354",
+      "modPath": "torpedowagon"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3510916768",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:21:18+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3510916768/personal_X7",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.1,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5380,
+      "costUSD": 4000.0,
+      "consumption": 2250.0,
+      "speed": 245.0,
+      "powerKW": 330.0,
+      "emptyWeight": 1.67,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2023,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3510916768",
+      "modPath": "personal_X7"
+    }
+  ]
+}

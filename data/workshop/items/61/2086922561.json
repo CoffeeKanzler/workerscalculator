@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2086922561",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:40:12+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2086922561/personal_gaz_310221",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.4,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costRUB": 4500.0,
+      "consumption": 0.0,
+      "speed": 140.0,
+      "powerKW": 75.0,
+      "emptyWeight": 1.6,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1997,
+      "to": 2008,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2086922561",
+      "modPath": "personal_gaz_310221"
+    }
+  ]
+}

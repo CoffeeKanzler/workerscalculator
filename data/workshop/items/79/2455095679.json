@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2455095679",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:30:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2455095679/rybak",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.53,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "descriptionId": 5617,
+      "costRUB": 1300.0,
+      "capacity": 69.0,
+      "from": 1938,
+      "to": 1965,
+      "countryId": 39004,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "vagon",
+      "emptyWeight": 21.0,
+      "workshopId": "2455095679",
+      "modPath": "rybak"
+    }
+  ]
+}

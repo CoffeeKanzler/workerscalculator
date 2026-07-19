@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3337309168",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:54:52+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3337309168/W463",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.99,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1990,
+      "to": 2018,
+      "countryId": 39003,
+      "speed": 210.0,
+      "powerKW": 310.0,
+      "emptyWeight": 2.58,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3337309168",
+      "modPath": "W463"
+    }
+  ]
+}

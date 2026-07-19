@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3434748912",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:25:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3434748912/nati",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 15.0,
+      "powerKW": 38.0,
+      "emptyWeight": 4.0,
+      "from": 1937,
+      "to": 1952,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3434748912",
+      "modPath": "nati"
+    },
+    {
+      "id": "3434748912/natidozer",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 15.0,
+      "powerKW": 38.0,
+      "emptyWeight": 5.0,
+      "from": 1948,
+      "to": 1952,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3434748912",
+      "modPath": "natidozer"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2934033026",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:37:40+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2934033026/personal_vw",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.36,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5392,
+      "costUSD": 1300.0,
+      "consumption": 0.0,
+      "speed": 110.0,
+      "powerKW": 66.1,
+      "emptyWeight": 0.955,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1991,
+      "to": 1998,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2934033026",
+      "modPath": "personal_vw"
+    },
+    {
+      "id": "2934033026/z_police_VW",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.36,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5392,
+      "costUSD": 1300.0,
+      "consumption": 0.0,
+      "speed": 110.0,
+      "powerKW": 66.1,
+      "emptyWeight": 0.955,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1991,
+      "to": 1998,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2934033026",
+      "modPath": "z_police_VW"
+    }
+  ]
+}

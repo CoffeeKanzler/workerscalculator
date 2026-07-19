@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3644192939",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:56:30+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3644192939/HSTV",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.53,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 15000000.0,
+      "consumption": 0.0,
+      "speed": 85.0,
+      "powerKW": 484.0,
+      "emptyWeight": 20.45,
+      "capacity": 3.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1975,
+      "to": 2035,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3644192939",
+      "modPath": "HSTV"
+    }
+  ]
+}

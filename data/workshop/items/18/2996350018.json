@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2996350018",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:55:24+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2996350018/O305GT",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.2,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5267,
+      "costUSD": 5500.0,
+      "speed": 65.0,
+      "powerKW": 100.0,
+      "emptyWeight": 10.0,
+      "capacity": 127.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1969,
+      "to": 1988,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2996350018",
+      "modPath": "O305GT"
+    }
+  ]
+}

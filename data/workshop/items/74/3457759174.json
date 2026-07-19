@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3457759174",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:32:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3457759174/DFH-28",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.47,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 25.1,
+      "powerKW": 20.0,
+      "emptyWeight": 2.84,
+      "from": 1965,
+      "to": 1972,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3457759174",
+      "modPath": "DFH-28"
+    },
+    {
+      "id": "3457759174/T4-28",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.99,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 25.1,
+      "powerKW": 20.0,
+      "emptyWeight": 2.84,
+      "from": 1965,
+      "to": 1972,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3457759174",
+      "modPath": "T4-28"
+    }
+  ]
+}

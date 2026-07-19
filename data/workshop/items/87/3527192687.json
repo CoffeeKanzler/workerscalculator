@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3527192687",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:36:41+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3527192687/PanzerIVH",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.83,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4200.0,
+      "consumption": 0.0,
+      "speed": 40.0,
+      "powerKW": 220.0,
+      "emptyWeight": 25.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1940,
+      "to": 1945,
+      "countryId": 39003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3527192687",
+      "modPath": "PanzerIVH"
+    }
+  ]
+}

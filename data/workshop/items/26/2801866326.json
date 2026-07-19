@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2801866326",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:45:25+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2801866326/706vs",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.81,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5180,
+      "costRUB": 4300.0,
+      "capacity": 7.0,
+      "transportType": "RESOURCE_TRANSPORT_WATER",
+      "speed": 62.0,
+      "powerKW": 118.0,
+      "emptyWeight": 6.0,
+      "from": 1958,
+      "to": 1985,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2801866326",
+      "modPath": "706vs"
+    }
+  ]
+}

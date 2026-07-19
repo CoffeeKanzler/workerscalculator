@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3655599411",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:11:07+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3655599411/personal_omooda",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.35,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4100.0,
+      "consumption": 0.0,
+      "speed": 195.0,
+      "powerKW": 108.0,
+      "emptyWeight": 1.6,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2023,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3655599411",
+      "modPath": "personal_omooda"
+    }
+  ]
+}

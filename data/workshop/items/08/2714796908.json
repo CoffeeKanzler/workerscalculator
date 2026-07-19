@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2714796908",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:09:24+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2714796908/daf",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.63,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5167,
+      "costUSD": 4300.0,
+      "capacity": 20.758,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "speed": 120.0,
+      "emptyWeight": 8.0,
+      "from": 2000,
+      "to": 2006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2714796908",
+      "modPath": "daf"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3257611733",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:51:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3257611733/Isuzu_EGRA",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.27,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 80.0,
+      "powerKW": 100.0,
+      "emptyWeight": 7.8,
+      "capacity": 70.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2000,
+      "to": 3000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3257611733",
+      "modPath": "Isuzu_EGRA"
+    },
+    {
+      "id": "3257611733/Isuzu_EGRArest",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.27,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 80.0,
+      "powerKW": 100.0,
+      "emptyWeight": 7.8,
+      "capacity": 70.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2000,
+      "to": 3000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3257611733",
+      "modPath": "Isuzu_EGRArest"
+    }
+  ]
+}

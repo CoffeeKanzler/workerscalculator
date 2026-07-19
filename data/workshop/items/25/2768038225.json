@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2768038225",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:55:03+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2768038225/InvisLoco",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 2.0,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "speed": 160.0,
+      "powerKW": 1.0,
+      "emptyWeight": 0.0,
+      "from": 1900,
+      "to": 3000,
+      "countryId": 39006,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2768038225",
+      "modPath": "InvisLoco"
+    },
+    {
+      "id": "2768038225/InvisLocoDol",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 2.0,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 1.0,
+      "speed": 160.0,
+      "powerKW": 1.0,
+      "emptyWeight": 0.0,
+      "from": 1900,
+      "to": 3000,
+      "countryId": 39006,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2768038225",
+      "modPath": "InvisLocoDol"
+    }
+  ]
+}

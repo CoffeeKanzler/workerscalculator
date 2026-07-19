@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2823987594",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:57:13+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2823987594/cultivator_ml60_3_solo",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 2.29,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5259,
+      "costRUB": 1000.0,
+      "speed": 12.0,
+      "powerKW": 5.0,
+      "emptyWeight": 0.3,
+      "from": 1958,
+      "to": 2030,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2823987594",
+      "modPath": "cultivator_ml60_3_solo"
+    },
+    {
+      "id": "2823987594/cultivator_ml60_3_trailer",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.48,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5259,
+      "costRUB": 1100.0,
+      "speed": 19.0,
+      "powerKW": 5.0,
+      "emptyWeight": 0.4,
+      "from": 1958,
+      "to": 2030,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2823987594",
+      "modPath": "cultivator_ml60_3_trailer"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3173248459",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:18:11+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3173248459/m400",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_CONTAINER",
+      "costRUB": 9300.0,
+      "capacity": 0.9712,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 0.0,
+      "emptyWeight": 0.2,
+      "from": 1976,
+      "to": 1987,
+      "countryId": 39006,
+      "workshopId": "3173248459",
+      "modPath": "m400"
+    }
+  ]
+}

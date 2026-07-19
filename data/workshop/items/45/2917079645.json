@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2917079645",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:40:21+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2917079645/bus_hunday",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.03,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3300.0,
+      "consumption": 2300.0,
+      "speed": 160.0,
+      "powerKW": 227.0,
+      "emptyWeight": 1.9,
+      "capacity": 9.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2917079645",
+      "modPath": "bus_hunday"
+    },
+    {
+      "id": "2917079645/covered_hunday",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.03,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3300.0,
+      "consumption": 2300.0,
+      "speed": 160.0,
+      "powerKW": 227.0,
+      "emptyWeight": 1.9,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2917079645",
+      "modPath": "covered_hunday"
+    },
+    {
+      "id": "2917079645/personal_hyinday",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.03,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3300.0,
+      "consumption": 2300.0,
+      "speed": 160.0,
+      "powerKW": 227.0,
+      "emptyWeight": 1.9,
+      "capacity": 9.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2917079645",
+      "modPath": "personal_hyinday"
+    }
+  ]
+}

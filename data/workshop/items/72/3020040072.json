@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3020040072",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:57:00+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3020040072/mazBig",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.7,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4000.0,
+      "capacity": 11.0,
+      "transportType": "RESOURCE_TRANSPORT_WASTE",
+      "speed": 90.0,
+      "powerKW": 300.0,
+      "emptyWeight": 9.0,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3020040072",
+      "modPath": "mazBig"
+    },
+    {
+      "id": "3020040072/maz_5440",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "capacity": 8.0,
+      "transportType": "RESOURCE_TRANSPORT_WASTE",
+      "costRUB": 4000.0,
+      "speed": 90.0,
+      "emptyWeight": 5.5,
+      "from": 1997,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3020040072",
+      "modPath": "maz_5440"
+    }
+  ]
+}

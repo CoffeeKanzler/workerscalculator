@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2816703265",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:07:54+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2816703265/skoda_ferat",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.21,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costRUB": 1000000.0,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 180.0,
+      "powerKW": 54.0,
+      "emptyWeight": 50.0,
+      "from": 1971,
+      "to": 1981,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2816703265",
+      "modPath": "skoda_ferat"
+    }
+  ]
+}

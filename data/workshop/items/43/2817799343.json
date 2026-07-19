@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2817799343",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:34:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2817799343/Patrol_R977",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.88,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 34.0,
+      "emptyWeight": 1.6,
+      "capacity": 8.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1961,
+      "to": 1990,
+      "countryId": 39013,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2817799343",
+      "modPath": "Patrol_R977"
+    },
+    {
+      "id": "2817799343/Policebus_R977",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.88,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 34.0,
+      "emptyWeight": 1.6,
+      "capacity": 8.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1961,
+      "to": 1990,
+      "countryId": 39013,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2817799343",
+      "modPath": "Policebus_R977"
+    }
+  ]
+}

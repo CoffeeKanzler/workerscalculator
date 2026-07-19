@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3764762918",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:21:21+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3764762918/wozkonny_dump",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.36,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 91087,
+      "costRUB": 340.0,
+      "capacity": 2.5,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "emptyWeight": 0.55,
+      "from": 1929,
+      "to": 2006,
+      "countryId": 39006,
+      "roadRecipeBranch": "horse-team",
+      "workshopId": "3764762918",
+      "modPath": "wozkonny_dump"
+    },
+    {
+      "id": "3764762918/wozkonny_open",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.36,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 91088,
+      "costRUB": 340.0,
+      "capacity": 2.5,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "emptyWeight": 0.55,
+      "from": 1929,
+      "to": 2006,
+      "countryId": 39006,
+      "roadRecipeBranch": "horse-team",
+      "workshopId": "3764762918",
+      "modPath": "wozkonny_open"
+    },
+    {
+      "id": "3764762918/wozkonny_waste",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.36,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 91095,
+      "costRUB": 340.0,
+      "capacity": 2.5,
+      "transportType": "RESOURCE_TRANSPORT_WASTE",
+      "emptyWeight": 0.55,
+      "from": 1929,
+      "to": 2006,
+      "countryId": 39006,
+      "roadRecipeBranch": "horse-team",
+      "workshopId": "3764762918",
+      "modPath": "wozkonny_waste"
+    }
+  ]
+}

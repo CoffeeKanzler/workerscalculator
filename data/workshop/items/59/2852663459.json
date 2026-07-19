@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2852663459",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:22:30+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2852663459/Panda2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.56,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5451,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 150.0,
+      "powerKW": 40.0,
+      "emptyWeight": 0.84,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2003,
+      "to": 2012,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2852663459",
+      "modPath": "Panda2"
+    }
+  ]
+}

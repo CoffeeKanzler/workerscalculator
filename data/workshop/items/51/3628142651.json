@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3628142651",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:54:22+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3628142651/KTM-8K",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.79,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "powerKW": 200.0,
+      "emptyWeight": 20.0,
+      "trainGroup": "tram",
+      "speed": 65.0,
+      "capacity": 135.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1989,
+      "to": 1994,
+      "countryId": 39011,
+      "electric": true,
+      "workshopId": "3628142651",
+      "modPath": "KTM-8K"
+    },
+    {
+      "id": "3628142651/KTM-8K_SME_1",
+      "category": "workshop",
+      "trainSet": [
+        "3628142651/KTM-8K_SME_2"
+      ],
+      "lifespanYears": 0.0,
+      "length": 16.74,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "powerKW": 400.0,
+      "emptyWeight": 20.0,
+      "trainGroup": "tram",
+      "speed": 65.0,
+      "capacity": 135.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1989,
+      "to": 1994,
+      "countryId": 39011,
+      "electric": true,
+      "workshopId": "3628142651",
+      "modPath": "KTM-8K_SME_1"
+    },
+    {
+      "id": "3628142651/KTM-8K_SME_2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.82,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 1.0,
+      "emptyWeight": 20.0,
+      "trainGroup": "tram",
+      "speed": 65.0,
+      "capacity": 135.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1989,
+      "to": 1994,
+      "countryId": 39011,
+      "workshopId": "3628142651",
+      "modPath": "KTM-8K_SME_2"
+    }
+  ]
+}

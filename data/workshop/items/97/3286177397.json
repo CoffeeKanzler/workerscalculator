@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3286177397",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:34:17+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3286177397/z_police_t815_cistern",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.97,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5540,
+      "costRUB": 5700.0,
+      "speed": 80.0,
+      "powerKW": 208.0,
+      "emptyWeight": 13.0,
+      "from": 1983,
+      "to": 3000,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3286177397",
+      "modPath": "z_police_t815_cistern"
+    }
+  ]
+}

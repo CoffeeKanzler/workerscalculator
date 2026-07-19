@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3569694403",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:16:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3569694403/A380-800",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 72.75,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 903.0,
+      "powerKW": 133600.0,
+      "emptyWeight": 285.0,
+      "capacity": 525.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2005,
+      "to": 2021,
+      "countryId": 39016,
+      "workshopId": "3569694403",
+      "modPath": "A380-800"
+    }
+  ]
+}

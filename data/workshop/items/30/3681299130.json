@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3681299130",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:19:08+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3681299130/personal_suzuki",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4100.0,
+      "consumption": 0.0,
+      "speed": 160.0,
+      "emptyWeight": 2.0,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2015,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3681299130",
+      "modPath": "personal_suzuki"
+    }
+  ]
+}

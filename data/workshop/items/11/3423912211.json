@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3423912211",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:48:33+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3423912211/L_317",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_SHIP",
+      "costUSD": 1.0,
+      "from": 2022,
+      "to": 3000,
+      "speed": 35.0,
+      "powerKW": 450.0,
+      "emptyWeight": 450.0,
+      "capacity": 200.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "electric": false,
+      "workshopId": "3423912211",
+      "modPath": "L_317"
+    }
+  ]
+}

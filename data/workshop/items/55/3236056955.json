@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3236056955",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:49:47+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3236056955/RVZ6M2",
+      "category": "workshop",
+      "trainSet": [
+        "3236056955/RVZ6M2_vagon"
+      ],
+      "lifespanYears": 0.0,
+      "length": 14.69,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "trainGroup": "tram",
+      "capacity": 149.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "countryId": 39013,
+      "costRUB": 4300.0,
+      "from": 1974,
+      "to": 1987,
+      "speed": 60.0,
+      "powerKW": 172.0,
+      "emptyWeight": 20.0,
+      "electric": true,
+      "workshopId": "3236056955",
+      "modPath": "RVZ6M2"
+    },
+    {
+      "id": "3236056955/RVZ6M2_vagon",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.69,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "trainGroup": "tram",
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "countryId": 39013,
+      "costRUB": 4300.0,
+      "from": 1974,
+      "to": 1987,
+      "speed": 60.0,
+      "emptyWeight": 20.0,
+      "workshopId": "3236056955",
+      "modPath": "RVZ6M2_vagon"
+    },
+    {
+      "id": "3236056955/RVZ6M2v3",
+      "category": "workshop",
+      "trainSet": [
+        "3236056955/RVZ6M2_vagon",
+        "3236056955/RVZ6M2_vagon"
+      ],
+      "lifespanYears": 0.0,
+      "length": 14.69,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "trainGroup": "tram",
+      "capacity": 223.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "countryId": 39013,
+      "costRUB": 4300.0,
+      "from": 1974,
+      "to": 1987,
+      "speed": 60.0,
+      "powerKW": 172.0,
+      "emptyWeight": 20.0,
+      "electric": true,
+      "workshopId": "3236056955",
+      "modPath": "RVZ6M2v3"
+    }
+  ]
+}

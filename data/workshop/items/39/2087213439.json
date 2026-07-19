@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2087213439",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:57:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2087213439/autosan",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 100.0,
+      "powerKW": 54.0,
+      "emptyWeight": 1.35,
+      "capacity": 12.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1950,
+      "to": 1999,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2087213439",
+      "modPath": "autosan"
+    }
+  ]
+}

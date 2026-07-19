@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2642951418",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:49:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2642951418/plow",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.78,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 70.0,
+      "powerKW": 1.0,
+      "emptyWeight": 8.0,
+      "from": 1950,
+      "to": 3000,
+      "trainGroup": "locomotive",
+      "countryId": 39041,
+      "electric": false,
+      "workshopId": "2642951418",
+      "modPath": "plow"
+    },
+    {
+      "id": "2642951418/plow_el",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.78,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 70.0,
+      "powerKW": 1.0,
+      "emptyWeight": 8.0,
+      "from": 1950,
+      "to": 3000,
+      "trainGroup": "locomotive",
+      "countryId": 39041,
+      "electric": true,
+      "workshopId": "2642951418",
+      "modPath": "plow_el"
+    }
+  ]
+}

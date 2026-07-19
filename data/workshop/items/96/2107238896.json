@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2107238896",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:34:42+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2107238896/Kraz_260",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.32,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 2300.0,
+      "speed": 81.0,
+      "emptyWeight": 2100.0,
+      "from": 1979,
+      "to": 1981,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2107238896",
+      "modPath": "Kraz_260"
+    },
+    {
+      "id": "2107238896/Kraz_63221+KTA_25",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.4,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 100.0,
+      "powerKW": 154.0,
+      "emptyWeight": 12.0,
+      "from": 1994,
+      "to": 2020,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2107238896",
+      "modPath": "Kraz_63221+KTA_25"
+    }
+  ]
+}

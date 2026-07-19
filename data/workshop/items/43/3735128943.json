@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3735128943",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:23:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3735128943/mine_diesel",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.69,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "descriptionId": 5705,
+      "costRUB": 4300.0,
+      "speed": 95.0,
+      "powerKW": 1150.0,
+      "emptyWeight": 120.0,
+      "from": 1959,
+      "to": 2000,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "3735128943",
+      "modPath": "mine_diesel"
+    }
+  ]
+}

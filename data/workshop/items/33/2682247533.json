@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2682247533",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:54:47+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2682247533/MiataNB",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.95,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5386,
+      "costUSD": 4300.0,
+      "speed": 210.0,
+      "powerKW": 104.0,
+      "emptyWeight": 1.06,
+      "capacity": 2.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1998,
+      "to": 2005,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2682247533",
+      "modPath": "MiataNB"
+    }
+  ]
+}

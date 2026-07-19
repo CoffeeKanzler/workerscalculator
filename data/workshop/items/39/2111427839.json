@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2111427839",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:44:22+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2111427839/yatb_1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.8,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5441,
+      "costRUB": 4300.0,
+      "speed": 50.0,
+      "powerKW": 60.0,
+      "capacity": 55.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1936,
+      "to": 1937,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2111427839",
+      "modPath": "yatb_1"
+    }
+  ]
+}

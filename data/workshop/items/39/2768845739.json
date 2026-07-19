@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2768845739",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:18:42+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2768845739/Eraz3730",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.38,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 3000.0,
+      "consumption": 0.0,
+      "speed": 100.0,
+      "powerKW": 32.0,
+      "emptyWeight": 1.35,
+      "capacity": 11.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1994,
+      "to": 2001,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2768845739",
+      "modPath": "Eraz3730"
+    }
+  ]
+}

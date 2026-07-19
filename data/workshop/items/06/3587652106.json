@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3587652106",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:10:29+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3587652106/personal_BAW",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.77,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 110.0,
+      "powerKW": 55.0,
+      "emptyWeight": 1.5,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1965,
+      "to": 1988,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3587652106",
+      "modPath": "personal_BAW"
+    }
+  ]
+}

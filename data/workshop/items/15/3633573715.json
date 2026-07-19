@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3633573715",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:44:26+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3633573715/shuttle",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.33,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costRUB": 4500.0,
+      "consumption": 0.0,
+      "speed": 415.0,
+      "powerKW": 12790.0,
+      "emptyWeight": 8.0,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2245,
+      "to": 2295,
+      "workshopId": "3633573715",
+      "modPath": "shuttle"
+    },
+    {
+      "id": "3633573715/shuttle_cargo",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.33,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costRUB": 4500.0,
+      "consumption": 0.0,
+      "speed": 415.0,
+      "powerKW": 12790.0,
+      "emptyWeight": 8.0,
+      "capacity": 22.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 2245,
+      "to": 2295,
+      "workshopId": "3633573715",
+      "modPath": "shuttle_cargo"
+    }
+  ]
+}

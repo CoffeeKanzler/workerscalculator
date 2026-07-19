@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3087556128",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:09:31+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3087556128/k202",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 0.59,
+      "type": "VEHICLETYPE_CONTAINER",
+      "costRUB": 9300.0,
+      "capacity": 0.4721,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 0.0,
+      "emptyWeight": 0.03,
+      "from": 1970,
+      "to": 1973,
+      "countryId": 39006,
+      "workshopId": "3087556128",
+      "modPath": "k202"
+    }
+  ]
+}

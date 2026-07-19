@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2485044841",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:37:26+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2485044841/servis_crane",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.67,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5160,
+      "costRUB": 4300.0,
+      "speed": 95.0,
+      "powerKW": 132.0,
+      "emptyWeight": 6.7,
+      "from": 1977,
+      "to": 2008,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2485044841",
+      "modPath": "servis_crane"
+    }
+  ]
+}

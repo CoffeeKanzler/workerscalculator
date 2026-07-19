@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3490279322",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:58:54+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3490279322/Ferry",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 47.0,
+      "type": "VEHICLETYPE_SHIP",
+      "costUSD": 15000.0,
+      "speed": 22.0,
+      "powerKW": 75.0,
+      "emptyWeight": 32.0,
+      "capacity": 300.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1860,
+      "to": 1940,
+      "countryId": 39030,
+      "electric": false,
+      "workshopId": "3490279322",
+      "modPath": "Ferry"
+    }
+  ]
+}

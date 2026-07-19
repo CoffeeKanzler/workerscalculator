@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1889418901",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:45:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1889418901/zastava",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.28,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5453,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 95.0,
+      "powerKW": 23.0,
+      "emptyWeight": 0.58,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1955,
+      "to": 1985,
+      "countryId": 39010,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1889418901",
+      "modPath": "zastava"
+    }
+  ]
+}

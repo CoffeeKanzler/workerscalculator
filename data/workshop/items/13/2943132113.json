@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2943132113",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:44:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2943132113/pcc_art",
+      "category": "workshop",
+      "trainSet": [
+        "2943132113/pcc_mid",
+        "2943132113/pcc_tail"
+      ],
+      "lifespanYears": 0.0,
+      "length": 10.28,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 6600.0,
+      "powerKW": 164.0,
+      "emptyWeight": 10.0,
+      "trainGroup": "tram",
+      "speed": 65.0,
+      "capacity": 40.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1962,
+      "to": 1975,
+      "countryId": 39018,
+      "electric": true,
+      "workshopId": "2943132113",
+      "modPath": "pcc_art"
+    },
+    {
+      "id": "2943132113/pcc_mid",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 0.79,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costUSD": 1.0,
+      "emptyWeight": 2.0,
+      "trainGroup": "tram",
+      "speed": 65.0,
+      "capacity": 0.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1962,
+      "to": 1975,
+      "countryId": 39018,
+      "workshopId": "2943132113",
+      "modPath": "pcc_mid"
+    },
+    {
+      "id": "2943132113/pcc_tail",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.25,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costUSD": 1.0,
+      "emptyWeight": 10.0,
+      "trainGroup": "tram",
+      "speed": 65.0,
+      "capacity": 40.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1962,
+      "to": 1975,
+      "countryId": 39018,
+      "workshopId": "2943132113",
+      "modPath": "pcc_tail"
+    }
+  ]
+}

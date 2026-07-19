@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3222118769",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:07:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3222118769/CHAZ_Tajikistan_Crane",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.37,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4000.0,
+      "speed": 80.0,
+      "powerKW": 112.0,
+      "emptyWeight": 8.0,
+      "from": 1976,
+      "to": 1999,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3222118769",
+      "modPath": "CHAZ_Tajikistan_Crane"
+    }
+  ]
+}

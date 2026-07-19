@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2883870547",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:57:18+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2883870547/48ft",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.03,
+      "type": "VEHICLETYPE_CONTAINER",
+      "costRUB": 4300.0,
+      "capacity": 35.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 0.0,
+      "emptyWeight": 4.4,
+      "from": 1950,
+      "to": 3000,
+      "countryId": 39000,
+      "workshopId": "2883870547",
+      "modPath": "48ft"
+    },
+    {
+      "id": "2883870547/53ft",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 15.46,
+      "type": "VEHICLETYPE_CONTAINER",
+      "costRUB": 4300.0,
+      "capacity": 38.7,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 0.0,
+      "emptyWeight": 4.9,
+      "from": 1950,
+      "to": 3000,
+      "countryId": 39000,
+      "workshopId": "2883870547",
+      "modPath": "53ft"
+    }
+  ]
+}

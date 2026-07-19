@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2990821984",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:05:23+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2990821984/Sanos_S14",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 12.04,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5114,
+      "costRUB": 4300.0,
+      "speed": 93.0,
+      "powerKW": 140.0,
+      "emptyWeight": 9.25,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 52.0,
+      "from": 1977,
+      "to": 1985,
+      "countryId": 39010,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2990821984",
+      "modPath": "Sanos_S14"
+    }
+  ]
+}

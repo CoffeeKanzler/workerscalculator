@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3330673374",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:42:41+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3330673374/Olympic",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 202.51,
+      "type": "VEHICLETYPE_SHIP",
+      "costUSD": 25000.0,
+      "speed": 67.0,
+      "powerKW": 5197.0,
+      "emptyWeight": 620.1,
+      "capacity": 3327.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1911,
+      "to": 1935,
+      "electric": false,
+      "workshopId": "3330673374",
+      "modPath": "Olympic"
+    }
+  ]
+}

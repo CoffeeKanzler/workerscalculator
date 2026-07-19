@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3440322422",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:46:43+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3440322422/passenger_p70",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.77,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 70.0,
+      "powerKW": 16.0,
+      "emptyWeight": 0.8,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1955,
+      "to": 1959,
+      "countryId": 39004,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3440322422",
+      "modPath": "passenger_p70"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3504072617",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:09:53+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3504072617/wartburg-353-van",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 95.0,
+      "powerKW": 37.0,
+      "emptyWeight": 0.9,
+      "from": 1965,
+      "to": 1988,
+      "countryId": 39004,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3504072617",
+      "modPath": "wartburg-353-van"
+    }
+  ]
+}

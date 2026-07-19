@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2486721974",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:19:24+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2486721974/covered_star266",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.72,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5222,
+      "costUSD": 4300.0,
+      "speed": 70.0,
+      "powerKW": 110.0,
+      "emptyWeight": 7.35,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1970,
+      "to": 2000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2486721974",
+      "modPath": "covered_star266"
+    }
+  ]
+}

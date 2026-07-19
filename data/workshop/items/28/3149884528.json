@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3149884528",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:40:30+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3149884528/firetruck_t138",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.13,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 6800.0,
+      "capacity": 7.0,
+      "speed": 70.0,
+      "powerKW": 132.0,
+      "emptyWeight": 10.5,
+      "from": 1959,
+      "to": 1971,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3149884528",
+      "modPath": "firetruck_t138"
+    },
+    {
+      "id": "3149884528/firetruck_t148",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.13,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 6800.0,
+      "capacity": 7.0,
+      "speed": 70.0,
+      "powerKW": 149.0,
+      "emptyWeight": 10.5,
+      "from": 1970,
+      "to": 1982,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3149884528",
+      "modPath": "firetruck_t148"
+    }
+  ]
+}

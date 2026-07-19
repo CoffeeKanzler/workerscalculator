@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3754636415",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:04:15+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3754636415/tvz_61_4194_platckart",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 24.92,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "descriptionId": 5611,
+      "costRUB": 4500.0,
+      "capacity": 54.0,
+      "from": 1966,
+      "to": 2003,
+      "countryId": 39011,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "vagon",
+      "emptyWeight": 53.5,
+      "workshopId": "3754636415",
+      "modPath": "tvz_61_4194_platckart"
+    },
+    {
+      "id": "3754636415/tvz_61_4194М_platckart",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 24.92,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "descriptionId": 5611,
+      "costRUB": 4500.0,
+      "capacity": 54.0,
+      "from": 1966,
+      "to": 2003,
+      "countryId": 39011,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "vagon",
+      "emptyWeight": 53.5,
+      "workshopId": "3754636415",
+      "modPath": "tvz_61_4194М_platckart"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3032314547",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:08:58+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3032314547/personal_subaru",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.45,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 2300.0,
+      "consumption": 5000.0,
+      "speed": 260.0,
+      "powerKW": 120.0,
+      "emptyWeight": 0.9,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2004,
+      "to": 5000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3032314547",
+      "modPath": "personal_subaru"
+    }
+  ]
+}

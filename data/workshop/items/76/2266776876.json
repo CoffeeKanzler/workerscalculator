@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2266776876",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:39:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2266776876/buldozer",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.98,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "powerKW": 42.0,
+      "emptyWeight": 4.1,
+      "speed": 18.0,
+      "from": 1959,
+      "to": 1966,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2266776876",
+      "modPath": "buldozer"
+    }
+  ]
+}

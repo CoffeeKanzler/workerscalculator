@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3495071173",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:36:53+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3495071173/bab207",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 1.83,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 40.0,
+      "powerKW": 1.8,
+      "emptyWeight": 0.042,
+      "from": 1970,
+      "to": 1986,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3495071173",
+      "modPath": "bab207"
+    },
+    {
+      "id": "3495071173/bab207_izirajder",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 1.83,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 65.0,
+      "powerKW": 4.0,
+      "emptyWeight": 0.042,
+      "from": 1970,
+      "to": 1986,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3495071173",
+      "modPath": "bab207_izirajder"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2903377231",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:24:59+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2903377231/personal_nassan",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.92,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3300.0,
+      "consumption": 0.0,
+      "speed": 190.0,
+      "powerKW": 236.0,
+      "emptyWeight": 2.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2005,
+      "to": 2014,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2903377231",
+      "modPath": "personal_nassan"
+    },
+    {
+      "id": "2903377231/z_nissan_dps",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.92,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3300.0,
+      "consumption": 0.0,
+      "speed": 190.0,
+      "powerKW": 236.0,
+      "emptyWeight": 2.0,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2005,
+      "to": 2014,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2903377231",
+      "modPath": "z_nissan_dps"
+    }
+  ]
+}

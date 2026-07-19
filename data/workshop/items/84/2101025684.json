@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2101025684",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:29:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2101025684/LiteAce_M30",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.98,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 132.0,
+      "powerKW": 55.0,
+      "emptyWeight": 1.1,
+      "capacity": 8.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1985,
+      "to": 1988,
+      "countryId": 39030,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2101025684",
+      "modPath": "LiteAce_M30"
+    }
+  ]
+}

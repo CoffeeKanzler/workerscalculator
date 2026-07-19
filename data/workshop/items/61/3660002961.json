@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3660002961",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:05:43+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3660002961/TBES",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.64,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 50.0,
+      "powerKW": 86.0,
+      "emptyWeight": 10.8,
+      "capacity": 32.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1955,
+      "to": 1964,
+      "countryId": 39001,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3660002961",
+      "modPath": "TBES"
+    }
+  ]
+}

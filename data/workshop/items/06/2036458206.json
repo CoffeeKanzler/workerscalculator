@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2036458206",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:21:13+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2036458206/covered_amurtent",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.85,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5153,
+      "costRUB": 3500.0,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 85.0,
+      "powerKW": 110.0,
+      "emptyWeight": 6.3,
+      "from": 1994,
+      "to": 2010,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2036458206",
+      "modPath": "covered_amurtent"
+    },
+    {
+      "id": "2036458206/gravel_amur",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.8,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5153,
+      "costRUB": 3500.0,
+      "capacity": 5.8,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "speed": 85.0,
+      "powerKW": 110.0,
+      "emptyWeight": 5.1,
+      "from": 1994,
+      "to": 2010,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2036458206",
+      "modPath": "gravel_amur"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2111575580",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:01:40+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2111575580/Mustang_1967",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.25,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4615.0,
+      "consumption": 0.0,
+      "speed": 200.0,
+      "powerKW": 239.0,
+      "emptyWeight": 1.251,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1967,
+      "to": 1975,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2111575580",
+      "modPath": "Mustang_1967"
+    }
+  ]
+}

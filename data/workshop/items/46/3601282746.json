@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3601282746",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:11:56+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3601282746/buss",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.6,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5015,
+      "costUSD": 4300.0,
+      "speed": 78.0,
+      "powerKW": 77.0,
+      "emptyWeight": 4.2,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 30.0,
+      "from": 2000,
+      "to": 2010,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3601282746",
+      "modPath": "buss"
+    },
+    {
+      "id": "3601282746/personal_Chevrolet_Silverado",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.85,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5380,
+      "costUSD": 4000.0,
+      "consumption": 2250.0,
+      "speed": 165.0,
+      "powerKW": 160.0,
+      "emptyWeight": 1.0,
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1999,
+      "to": 2010,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3601282746",
+      "modPath": "personal_Chevrolet_Silverado"
+    }
+  ]
+}

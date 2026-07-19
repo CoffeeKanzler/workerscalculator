@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2442535923",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:23:39+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2442535923/kraz_255_tz_8",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.75,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "speed": 71.0,
+      "powerKW": 177.0,
+      "emptyWeight": 13.44,
+      "capacity": 8.0,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "from": 1975,
+      "to": 1993,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2442535923",
+      "modPath": "kraz_255_tz_8"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3019515324",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:58:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3019515324/chausson_aph521",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.2,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 78.0,
+      "powerKW": 60.0,
+      "emptyWeight": 6.65,
+      "capacity": 70.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1953,
+      "to": 1960,
+      "countryId": 39016,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3019515324",
+      "modPath": "chausson_aph521"
+    }
+  ]
+}

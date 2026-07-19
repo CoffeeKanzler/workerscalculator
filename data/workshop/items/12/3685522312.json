@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3685522312",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:06:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3685522312/personal_lancer",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.38,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4100.0,
+      "consumption": 0.0,
+      "speed": 250.0,
+      "emptyWeight": 1.4,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2001,
+      "to": 2003,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3685522312",
+      "modPath": "personal_lancer"
+    }
+  ]
+}

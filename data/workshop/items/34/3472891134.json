@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3472891134",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:23:33+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3472891134/lz695b_improved",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.11,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5107,
+      "descriptionId": 5108,
+      "costRUB": 4300.0,
+      "speed": 75.0,
+      "capacity": 52.0,
+      "powerKW": 80.0,
+      "emptyWeight": 6.5,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1958,
+      "to": 1975,
+      "countryId": 39015,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3472891134",
+      "modPath": "lz695b_improved"
+    }
+  ]
+}

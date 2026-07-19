@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2807850108",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:38:25+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2807850108/EQ1092tu",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.23,
+      "type": "VEHICLETYPE_ROAD",
+      "consumption": 0.0,
+      "speed": 80.0,
+      "costRUB": 5500.0,
+      "capacity": 20.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "powerKW": 117.0,
+      "emptyWeight": 6.5,
+      "from": 1980,
+      "to": 2016,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2807850108",
+      "modPath": "EQ1092tu"
+    },
+    {
+      "id": "2807850108/EQ1092wa",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.56,
+      "type": "VEHICLETYPE_ROAD",
+      "consumption": 0.0,
+      "speed": 80.0,
+      "costRUB": 5200.0,
+      "capacity": 7.5,
+      "transportType": "RESOURCE_TRANSPORT_WATER",
+      "powerKW": 104.0,
+      "emptyWeight": 6.5,
+      "from": 1980,
+      "to": 2016,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2807850108",
+      "modPath": "EQ1092wa"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2844515137",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:21:13+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2844515137/karosa_minibus_prison",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.94,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costRUB": 3200.0,
+      "capacity": 15.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 80.0,
+      "emptyWeight": 1.75,
+      "from": 1976,
+      "to": 1979,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2844515137",
+      "modPath": "karosa_minibus_prison"
+    }
+  ]
+}

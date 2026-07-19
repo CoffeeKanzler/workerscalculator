@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3318714112",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:09:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3318714112/service_buldozer_ChtzB111",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.58,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5040,
+      "costRUB": 4000.0,
+      "powerKW": 190.0,
+      "emptyWeight": 15.0,
+      "speed": 12.0,
+      "from": 2008,
+      "to": 2020,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3318714112",
+      "modPath": "service_buldozer_ChtzB111"
+    }
+  ]
+}

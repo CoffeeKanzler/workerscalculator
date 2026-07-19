@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1925741912",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:48:43+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1925741912/Skoda_1203_PO",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.33,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5303,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 35.0,
+      "emptyWeight": 1.1,
+      "capacity": 1.0,
+      "from": 1968,
+      "to": 1997,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "1925741912",
+      "modPath": "Skoda_1203_PO"
+    }
+  ]
+}

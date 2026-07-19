@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3678369342",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:14:17+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3678369342/personal_Peugeot_307",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.2,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4100.0,
+      "consumption": 0.0,
+      "speed": 190.0,
+      "emptyWeight": 1.2,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2001,
+      "to": 2008,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3678369342",
+      "modPath": "personal_Peugeot_307"
+    }
+  ]
+}

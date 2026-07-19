@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2686383031",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:21:41+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2686383031/raf_2203_m",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.89,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5298,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 71.0,
+      "emptyWeight": 1.7,
+      "capacity": 7.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1961,
+      "to": 1990,
+      "countryId": 39013,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2686383031",
+      "modPath": "raf_2203_m"
+    },
+    {
+      "id": "2686383031/vaz_2101_mil",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.05,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5392,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 135.0,
+      "powerKW": 44.0,
+      "emptyWeight": 0.955,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1971,
+      "to": 1983,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2686383031",
+      "modPath": "vaz_2101_mil"
+    }
+  ]
+}

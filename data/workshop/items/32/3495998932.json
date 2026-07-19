@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3495998932",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:59:53+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3495998932/q-82",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 9.13,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1000.0,
+      "speed": 60.0,
+      "powerKW": 102.0,
+      "emptyWeight": 7.5,
+      "from": 1961,
+      "to": 1975,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3495998932",
+      "modPath": "q-82"
+    },
+    {
+      "id": "3495998932/q2-12",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.14,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1000.0,
+      "speed": 60.0,
+      "powerKW": 102.0,
+      "emptyWeight": 10.5,
+      "from": 1972,
+      "to": 1995,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3495998932",
+      "modPath": "q2-12"
+    },
+    {
+      "id": "3495998932/q2-8",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.37,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1000.0,
+      "speed": 60.0,
+      "powerKW": 102.0,
+      "emptyWeight": 8.5,
+      "from": 1967,
+      "to": 1990,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3495998932",
+      "modPath": "q2-8"
+    }
+  ]
+}

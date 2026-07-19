@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3327260019",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:23:55+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3327260019/bus_vw_tranporter",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.56,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5267,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 110.0,
+      "powerKW": 85.0,
+      "emptyWeight": 1.4,
+      "capacity": 16.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3327260019",
+      "modPath": "bus_vw_tranporter"
+    },
+    {
+      "id": "3327260019/covered_vw_transporter",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.56,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5267,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 110.0,
+      "powerKW": 85.0,
+      "emptyWeight": 1.4,
+      "capacity": 0.8,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3327260019",
+      "modPath": "covered_vw_transporter"
+    },
+    {
+      "id": "3327260019/personal_vw_tranporter",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.56,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5267,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 110.0,
+      "powerKW": 85.0,
+      "emptyWeight": 1.4,
+      "capacity": 16.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3327260019",
+      "modPath": "personal_vw_tranporter"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3327294837",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:58:23+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3327294837/personal_nissan_martch",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.79,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5267,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 183.0,
+      "emptyWeight": 0.9,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2002,
+      "to": 2010,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3327294837",
+      "modPath": "personal_nissan_martch"
+    }
+  ]
+}

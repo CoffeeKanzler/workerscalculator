@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3391869576",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:26:30+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3391869576/SEVTRUCK_16120_38",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.69,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "capacity": 16.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "speed": 30.0,
+      "powerKW": 138.0,
+      "emptyWeight": 21.3,
+      "from": 2007,
+      "to": 2016,
+      "countryId": 39022,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3391869576",
+      "modPath": "SEVTRUCK_16120_38"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2354788358",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:48:11+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2354788358/l45h",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.42,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 42.0,
+      "powerKW": 330.0,
+      "emptyWeight": 32.0,
+      "from": 1964,
+      "to": 1987,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "2354788358",
+      "modPath": "l45h"
+    }
+  ]
+}

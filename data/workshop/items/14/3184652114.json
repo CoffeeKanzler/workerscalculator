@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3184652114",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:51:52+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3184652114/pesonal_martin",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.43,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5374,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 250.0,
+      "powerKW": 250.0,
+      "emptyWeight": 1.4,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3184652114",
+      "modPath": "pesonal_martin"
+    }
+  ]
+}

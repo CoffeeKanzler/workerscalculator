@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3580264604",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:36:33+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3580264604/ROLLER",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.72,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "powerKW": 110.0,
+      "emptyWeight": 16.0,
+      "speed": 11.0,
+      "from": 1981,
+      "to": 1989,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3580264604",
+      "modPath": "ROLLER"
+    },
+    {
+      "id": "3580264604/ROLLER2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.09,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "powerKW": 133.0,
+      "emptyWeight": 16.0,
+      "speed": 11.0,
+      "from": 1987,
+      "to": 1998,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3580264604",
+      "modPath": "ROLLER2"
+    }
+  ]
+}

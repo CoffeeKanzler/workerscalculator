@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2911875733",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:14:35+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2911875733/personal_Wtuareg",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.98,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 210.0,
+      "emptyWeight": 1.4,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2911875733",
+      "modPath": "personal_Wtuareg"
+    },
+    {
+      "id": "2911875733/z_police_VTouareg",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.98,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 210.0,
+      "emptyWeight": 1.4,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2911875733",
+      "modPath": "z_police_VTouareg"
+    }
+  ]
+}

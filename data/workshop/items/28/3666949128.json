@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3666949128",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:46:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3666949128/Ludmilla",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.69,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "speed": 140.0,
+      "powerKW": 2230.0,
+      "emptyWeight": 118.0,
+      "from": 1967,
+      "to": 1982,
+      "countryId": 39015,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "3666949128",
+      "modPath": "Ludmilla"
+    }
+  ]
+}

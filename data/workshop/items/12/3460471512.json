@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3460471512",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:18:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3460471512/Kuznetsov",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 305.51,
+      "type": "VEHICLETYPE_SHIP",
+      "costRUB": 600000.0,
+      "speed": 55.5,
+      "powerKW": 149000.0,
+      "emptyWeight": 46540.0,
+      "capacity": 5400.0,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "from": 1985,
+      "to": 2050,
+      "countryId": 39011,
+      "electric": false,
+      "workshopId": "3460471512",
+      "modPath": "Kuznetsov"
+    }
+  ]
+}

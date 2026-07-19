@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3683186425",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:19:32+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3683186425/sfa",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.04,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "speed": 100.0,
+      "powerKW": 51.5,
+      "emptyWeight": 1.98,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 11.0,
+      "from": 1964,
+      "to": 1979,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3683186425",
+      "modPath": "sfa"
+    },
+    {
+      "id": "3683186425/sfa_sanitarka",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.05,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 51.5,
+      "emptyWeight": 2.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1964,
+      "to": 1977,
+      "countryId": 39006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3683186425",
+      "modPath": "sfa_sanitarka"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3485560365",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:44:40+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3485560365/silverliner",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 16.4,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 1.0,
+      "powerKW": 420.0,
+      "emptyWeight": 47.0,
+      "speed": 130.0,
+      "trainGroup": "tram",
+      "capacity": 52.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1926,
+      "to": 1963,
+      "countryId": 39018,
+      "electric": true,
+      "workshopId": "3485560365",
+      "modPath": "silverliner"
+    }
+  ]
+}

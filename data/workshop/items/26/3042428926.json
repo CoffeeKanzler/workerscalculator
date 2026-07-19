@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3042428926",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:12:24+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3042428926/ttcBus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.51,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 41.0,
+      "powerKW": 43.0,
+      "emptyWeight": 5.5,
+      "from": 1922,
+      "to": 1927,
+      "capacity": 40.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3042428926",
+      "modPath": "ttcBus"
+    },
+    {
+      "id": "3042428926/ttcTrolleybus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.51,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 1.0,
+      "speed": 55.0,
+      "powerKW": 82.0,
+      "emptyWeight": 7.0,
+      "from": 1922,
+      "to": 1927,
+      "capacity": 40.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3042428926",
+      "modPath": "ttcTrolleybus"
+    }
+  ]
+}

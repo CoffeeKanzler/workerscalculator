@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2988249747",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:57:48+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2988249747/tajikstan5",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.61,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 6000.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 42.0,
+      "speed": 90.0,
+      "powerKW": 150.0,
+      "emptyWeight": 8.67,
+      "from": 1976,
+      "to": 1996,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2988249747",
+      "modPath": "tajikstan5"
+    }
+  ]
+}

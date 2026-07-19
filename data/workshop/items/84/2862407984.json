@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2862407984",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:15:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2862407984/IFAW50",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 6.59,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5534,
+      "descriptionId": 5021,
+      "costRUB": 4300.0,
+      "capacity": 18.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 80.0,
+      "powerKW": 92.0,
+      "emptyWeight": 4.0,
+      "from": 1962,
+      "to": 1990,
+      "countryId": 39004,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2862407984",
+      "modPath": "IFAW50"
+    }
+  ]
+}

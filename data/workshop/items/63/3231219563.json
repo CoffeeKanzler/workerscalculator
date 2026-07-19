@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3231219563",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:01:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3231219563/personal_M_Istra",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.37,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5459,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 185.0,
+      "emptyWeight": 0.7,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1980,
+      "to": 1985,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3231219563",
+      "modPath": "personal_M_Istra"
+    }
+  ]
+}

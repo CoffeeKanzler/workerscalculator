@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2076810594",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:20:33+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2076810594/JOSEPH_VOGELE_AG",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.33,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5135,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 15.0,
+      "powerKW": 50.0,
+      "emptyWeight": 5.0,
+      "from": 1975,
+      "to": 3000,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2076810594",
+      "modPath": "JOSEPH_VOGELE_AG"
+    }
+  ]
+}

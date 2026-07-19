@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3221947646",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:42:30+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3221947646/personsl_moscvich_2142",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.45,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5451,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 187.0,
+      "powerKW": 88.0,
+      "emptyWeight": 1.2,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1998,
+      "to": 2001,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3221947646",
+      "modPath": "personsl_moscvich_2142"
+    }
+  ]
+}

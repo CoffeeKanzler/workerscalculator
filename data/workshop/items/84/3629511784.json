@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3629511784",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:03:05+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3629511784/2143",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.3,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5396,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 160.0,
+      "powerKW": 70.0,
+      "emptyWeight": 1.03,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1993,
+      "to": 2004,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3629511784",
+      "modPath": "2143"
+    },
+    {
+      "id": "3629511784/2143_police",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.3,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5396,
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 160.0,
+      "powerKW": 70.0,
+      "emptyWeight": 1.03,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1993,
+      "to": 2004,
+      "countryId": 39011,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3629511784",
+      "modPath": "2143_police"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2357968338",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:37:55+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2357968338/Mrc_O305T_Cargo",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.42,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5461,
+      "descriptionId": 5441,
+      "costUSD": 4300.0,
+      "speed": 100.0,
+      "powerKW": 130.0,
+      "emptyWeight": 10.3,
+      "capacity": 11.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1979,
+      "to": 1991,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2357968338",
+      "modPath": "Mrc_O305T_Cargo"
+    }
+  ]
+}

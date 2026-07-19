@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3537133395",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:15:37+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3537133395/FAB5000",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.16,
+      "type": "VEHICLETYPE_CONTAINER",
+      "costRUB": 3200.0,
+      "speed": 0.0,
+      "emptyWeight": 5.0,
+      "from": 1943,
+      "to": 1965,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "capacity": 3.2,
+      "countryId": 39011,
+      "workshopId": "3537133395",
+      "modPath": "FAB5000"
+    }
+  ]
+}

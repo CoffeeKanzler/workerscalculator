@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2933815253",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:01:00+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2933815253/PCC",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.48,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 4500.0,
+      "powerKW": 164.0,
+      "emptyWeight": 16.0,
+      "trainGroup": "tram",
+      "speed": 65.0,
+      "capacity": 80.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1935,
+      "to": 1969,
+      "countryId": 39018,
+      "electric": true,
+      "workshopId": "2933815253",
+      "modPath": "PCC"
+    }
+  ]
+}

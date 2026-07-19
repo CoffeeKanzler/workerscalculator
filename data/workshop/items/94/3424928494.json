@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3424928494",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:59:24+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3424928494/t138_open_forklift",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.68,
+      "type": "VEHICLETYPE_ROAD",
+      "nameId": 5226,
+      "descriptionId": 5222,
+      "costRUB": 4300.0,
+      "speed": 70.0,
+      "powerKW": 132.0,
+      "emptyWeight": 8.1,
+      "capacity": 9.7,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "from": 1959,
+      "to": 1971,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3424928494",
+      "modPath": "t138_open_forklift"
+    }
+  ]
+}

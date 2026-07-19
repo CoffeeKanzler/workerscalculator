@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3033164723",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:17:19+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3033164723/personal_nissan_gtr",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.54,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 2300.0,
+      "consumption": 5000.0,
+      "speed": 330.0,
+      "emptyWeight": 1.74,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2007,
+      "to": 5000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3033164723",
+      "modPath": "personal_nissan_gtr"
+    },
+    {
+      "id": "3033164723/personal_nissan_gtrP",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 2300.0,
+      "consumption": 5000.0,
+      "speed": 330.0,
+      "emptyWeight": 1.74,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2007,
+      "to": 5000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3033164723",
+      "modPath": "personal_nissan_gtrP"
+    }
+  ]
+}

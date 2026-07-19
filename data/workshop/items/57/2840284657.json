@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2840284657",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:46:12+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2840284657/audi",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.05,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 280.0,
+      "powerKW": 205.0,
+      "emptyWeight": 0.9,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2840284657",
+      "modPath": "audi"
+    }
+  ]
+}

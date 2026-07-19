@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3694436021",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:11:19+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3694436021/oil1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4200.0,
+      "speed": 62.0,
+      "powerKW": 110.0,
+      "emptyWeight": 13.0,
+      "capacity": 14.3,
+      "transportType": "RESOURCE_TRANSPORT_OIL",
+      "from": 1945,
+      "to": 1957,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3694436021",
+      "modPath": "oil1"
+    }
+  ]
+}

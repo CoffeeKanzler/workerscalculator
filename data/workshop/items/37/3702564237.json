@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3702564237",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:16:23+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3702564237/personal_UNI_k",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.46,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4100.0,
+      "consumption": 0.0,
+      "speed": 205.0,
+      "emptyWeight": 2.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2021,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3702564237",
+      "modPath": "personal_UNI_k"
+    }
+  ]
+}

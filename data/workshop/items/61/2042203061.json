@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2042203061",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:03:16+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2042203061/Reno_Magnum",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.42,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "capacity": 38.0,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "from": 1990,
+      "to": 30000,
+      "speed": 120.0,
+      "powerKW": 320.0,
+      "emptyWeight": 7.5,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2042203061",
+      "modPath": "Reno_Magnum"
+    },
+    {
+      "id": "2042203061/Reno_Magnum1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.42,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 4300.0,
+      "capacity": 40.0,
+      "transportType": "RESOURCE_TRANSPORT_OPEN",
+      "from": 1990,
+      "to": 30000,
+      "speed": 120.0,
+      "powerKW": 320.0,
+      "emptyWeight": 7.5,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2042203061",
+      "modPath": "Reno_Magnum1"
+    }
+  ]
+}

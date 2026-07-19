@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3687972534",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:20:50+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3687972534/buss_gta",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.37,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5015,
+      "costUSD": 4300.0,
+      "speed": 80.0,
+      "powerKW": 120.0,
+      "emptyWeight": 6.2,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 60.0,
+      "from": 1999,
+      "to": 2010,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3687972534",
+      "modPath": "buss_gta"
+    }
+  ]
+}

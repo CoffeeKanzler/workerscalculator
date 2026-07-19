@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2917451291",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:47:02+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2917451291/personal_nissan_terano",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.86,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3600.0,
+      "consumption": 0.0,
+      "speed": 180.0,
+      "emptyWeight": 1.8,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2917451291",
+      "modPath": "personal_nissan_terano"
+    },
+    {
+      "id": "2917451291/z_police_terrano",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.86,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3600.0,
+      "consumption": 0.0,
+      "speed": 180.0,
+      "emptyWeight": 1.8,
+      "capacity": 5.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2917451291",
+      "modPath": "z_police_terrano"
+    }
+  ]
+}

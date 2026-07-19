@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2841225914",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:13:31+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2841225914/littlejoe",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 25.54,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 4300.0,
+      "speed": 109.0,
+      "powerKW": 4100.0,
+      "emptyWeight": 217.0,
+      "from": 1948,
+      "to": 1967,
+      "countryId": 39018,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "2841225914",
+      "modPath": "littlejoe"
+    }
+  ]
+}

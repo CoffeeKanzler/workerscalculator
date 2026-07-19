@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3609812846",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:42:38+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3609812846/S440",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.07,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 300.0,
+      "consumption": 0.0,
+      "speed": 100.0,
+      "powerKW": 27.0,
+      "emptyWeight": 0.928,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1955,
+      "to": 1959,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3609812846",
+      "modPath": "S440"
+    }
+  ]
+}

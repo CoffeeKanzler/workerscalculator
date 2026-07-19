@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3019349171",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:22:20+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3019349171/Santana_Person",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.45,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costUSD": 2800.0,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "consumption": 0.0,
+      "speed": 165.0,
+      "powerKW": 85.0,
+      "emptyWeight": 1.6,
+      "from": 1985,
+      "to": 2004,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3019349171",
+      "modPath": "Santana_Person"
+    }
+  ]
+}

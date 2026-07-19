@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2960682951",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:30:16+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2960682951/back_train",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 26.38,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 0.0,
+      "speed": 140.0,
+      "powerKW": 0.0,
+      "emptyWeight": 0.0,
+      "countryId": 39001,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 1.0,
+      "electric": false,
+      "workshopId": "2960682951",
+      "modPath": "back_train"
+    },
+    {
+      "id": "2960682951/train",
+      "category": "workshop",
+      "trainSet": [
+        "2960682951/vagon"
+      ],
+      "lifespanYears": 0.0,
+      "length": 26.38,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "speed": 140.0,
+      "powerKW": 2000.0,
+      "emptyWeight": 155.0,
+      "from": 1997,
+      "to": 3000,
+      "countryId": 39001,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 641.0,
+      "trainGroup": "trainset",
+      "electric": true,
+      "workshopId": "2960682951",
+      "modPath": "train"
+    },
+    {
+      "id": "2960682951/vagon",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 26.38,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 0.0,
+      "speed": 140.0,
+      "powerKW": 0.0,
+      "emptyWeight": 0.0,
+      "countryId": 39001,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "capacity": 1.0,
+      "electric": false,
+      "workshopId": "2960682951",
+      "modPath": "vagon"
+    }
+  ]
+}

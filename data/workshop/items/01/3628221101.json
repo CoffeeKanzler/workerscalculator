@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3628221101",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:26:08+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3628221101/R80_car",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 162.24,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costRUB": 340000.0,
+      "consumption": 1.0,
+      "speed": 70.0,
+      "powerKW": 800.0,
+      "emptyWeight": 70.0,
+      "capacity": 14.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1920,
+      "to": 1965,
+      "countryId": 39016,
+      "workshopId": "3628221101",
+      "modPath": "R80_car"
+    },
+    {
+      "id": "3628221101/R80_pas",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 162.24,
+      "type": "VEHICLETYPE_HELICOPTER",
+      "costRUB": 320000.0,
+      "consumption": 1.0,
+      "speed": 80.0,
+      "powerKW": 720.0,
+      "emptyWeight": 70.0,
+      "capacity": 35.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1920,
+      "to": 1965,
+      "countryId": 39016,
+      "workshopId": "3628221101",
+      "modPath": "R80_pas"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2901046925",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:48:50+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2901046925/covered_largus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.71,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4000.0,
+      "consumption": 0.0,
+      "speed": 156.0,
+      "powerKW": 64.0,
+      "emptyWeight": 1.2,
+      "capacity": 0.75,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2901046925",
+      "modPath": "covered_largus"
+    },
+    {
+      "id": "2901046925/personal_largus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.73,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4000.0,
+      "consumption": 0.0,
+      "speed": 156.0,
+      "powerKW": 64.0,
+      "emptyWeight": 1.2,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2901046925",
+      "modPath": "personal_largus"
+    },
+    {
+      "id": "2901046925/z_police_largus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.79,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4000.0,
+      "consumption": 0.0,
+      "speed": 156.0,
+      "powerKW": 64.0,
+      "emptyWeight": 1.2,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2901046925",
+      "modPath": "z_police_largus"
+    }
+  ]
+}

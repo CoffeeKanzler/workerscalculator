@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3549166280",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:42:58+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3549166280/BD1_Mc",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.7,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "trainGroup": "metro",
+      "speed": 80.0,
+      "powerKW": 344.0,
+      "emptyWeight": 34.0,
+      "capacity": 206.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1990,
+      "to": 1992,
+      "countryId": 39042,
+      "electric": true,
+      "workshopId": "3549166280",
+      "modPath": "BD1_Mc"
+    },
+    {
+      "id": "3549166280/BD2_M",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 19.62,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "trainGroup": "metro",
+      "speed": 80.0,
+      "powerKW": 344.0,
+      "emptyWeight": 33.0,
+      "capacity": 224.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1994,
+      "to": 1998,
+      "countryId": 39042,
+      "electric": true,
+      "workshopId": "3549166280",
+      "modPath": "BD2_M"
+    },
+    {
+      "id": "3549166280/BD2_Mc",
+      "category": "workshop",
+      "trainSet": [
+        "3549166280/BD2_M",
+        "3549166280/BD2_M"
+      ],
+      "lifespanYears": 0.0,
+      "length": 19.7,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 4300.0,
+      "trainGroup": "metro",
+      "speed": 80.0,
+      "powerKW": 344.0,
+      "emptyWeight": 34.0,
+      "capacity": 206.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1994,
+      "to": 1998,
+      "countryId": 39042,
+      "electric": true,
+      "workshopId": "3549166280",
+      "modPath": "BD2_Mc"
+    }
+  ]
+}

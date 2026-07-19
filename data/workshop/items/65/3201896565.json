@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3201896565",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:03:42+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3201896565/personal_jeep",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.44,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5459,
+      "costRUB": 4300.0,
+      "consumption": 2200.0,
+      "speed": 160.0,
+      "powerKW": 213.0,
+      "emptyWeight": 1.2,
+      "capacity": 6.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2007,
+      "to": 2012,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3201896565",
+      "modPath": "personal_jeep"
+    }
+  ]
+}

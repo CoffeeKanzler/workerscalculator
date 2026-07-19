@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2903010294",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:38:14+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2903010294/personal_Hyundai_Palisade",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.91,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3300.0,
+      "consumption": 0.0,
+      "speed": 210.0,
+      "emptyWeight": 2.0,
+      "capacity": 8.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2903010294",
+      "modPath": "personal_Hyundai_Palisade"
+    },
+    {
+      "id": "2903010294/z_rossgvardia_hyundai",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.91,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 3300.0,
+      "consumption": 0.0,
+      "speed": 210.0,
+      "emptyWeight": 2.0,
+      "capacity": 8.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2903010294",
+      "modPath": "z_rossgvardia_hyundai"
+    }
+  ]
+}

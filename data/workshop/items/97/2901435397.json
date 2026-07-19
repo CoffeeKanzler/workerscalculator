@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2901435397",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:05:46+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2901435397/eamosz",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 13.0,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "from": 1975,
+      "to": 3000,
+      "costRUB": 3500.0,
+      "countryId": 39010,
+      "consumption": 0.0,
+      "emptyWeight": 31.0,
+      "capacity": 59.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "trainGroup": "vagon",
+      "workshopId": "2901435397",
+      "modPath": "eamosz"
+    },
+    {
+      "id": "2901435397/eas",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 14.1,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "from": 1975,
+      "to": 3000,
+      "costRUB": 2900.0,
+      "countryId": 39010,
+      "consumption": 0.0,
+      "emptyWeight": 22.0,
+      "capacity": 58.0,
+      "transportType": "RESOURCE_TRANSPORT_GRAVEL",
+      "trainGroup": "vagon",
+      "workshopId": "2901435397",
+      "modPath": "eas"
+    }
+  ]
+}

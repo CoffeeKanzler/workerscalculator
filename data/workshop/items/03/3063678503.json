@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3063678503",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:06:53+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3063678503/odra",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 1.0,
+      "type": "VEHICLETYPE_CONTAINER",
+      "costRUB": 4300.0,
+      "capacity": 0.5712,
+      "transportType": "RESOURCE_TRANSPORT_COVERED",
+      "speed": 0.0,
+      "emptyWeight": 0.2,
+      "from": 1973,
+      "to": 1986,
+      "countryId": 39006,
+      "workshopId": "3063678503",
+      "modPath": "odra"
+    }
+  ]
+}

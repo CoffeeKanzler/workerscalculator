@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2912694921",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:42:26+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2912694921/bus_paz320402",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 7.24,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 3100.0,
+      "consumption": 1600.0,
+      "speed": 110.0,
+      "emptyWeight": 6.0,
+      "capacity": 30.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2912694921",
+      "modPath": "bus_paz320402"
+    }
+  ]
+}

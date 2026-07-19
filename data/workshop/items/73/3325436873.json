@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3325436873",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:21:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3325436873/stadsspoor_emu",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 18.66,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 4300.0,
+      "speed": 100.0,
+      "powerKW": 275.0,
+      "emptyWeight": 33.0,
+      "from": 1968,
+      "to": 2008,
+      "capacity": 175.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "trainGroup": "metro",
+      "electric": true,
+      "workshopId": "3325436873",
+      "modPath": "stadsspoor_emu"
+    }
+  ]
+}

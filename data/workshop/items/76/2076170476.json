@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2076170476",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:27:30+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2076170476/bus_setra_s215",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.78,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5239,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 100.0,
+      "powerKW": 188.0,
+      "emptyWeight": 13.0,
+      "capacity": 83.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1983,
+      "to": 1995,
+      "countryId": 39005,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2076170476",
+      "modPath": "bus_setra_s215"
+    }
+  ]
+}

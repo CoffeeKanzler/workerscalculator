@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3507093067",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T14:45:25+00:00",
+  "buildings": [
+    {
+      "id": "3507093067/Magazyn_peron",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 500.0,
+        "RESOURCE_TRANSPORT_OPEN": 100.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3507093067",
+      "modPath": "Magazyn_peron"
+    },
+    {
+      "id": "3507093067/Magazyn_peron_masowy",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 500.0,
+        "RESOURCE_TRANSPORT_GRAVEL": 150.0
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3507093067",
+      "modPath": "Magazyn_peron_masowy"
+    }
+  ],
+  "vehicles": []
+}

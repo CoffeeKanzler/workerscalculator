@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2545983582",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T19:21:51+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2545983582/Fiat_Uno",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 3.66,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5451,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 140.0,
+      "powerKW": 43.0,
+      "emptyWeight": 0.8,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1989,
+      "to": 2013,
+      "countryId": 39017,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2545983582",
+      "modPath": "Fiat_Uno"
+    }
+  ]
+}

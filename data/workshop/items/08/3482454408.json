@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3482454408",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:19:53+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3482454408/PS",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 0.5,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5215,
+      "costUSD": 387.0,
+      "powerKW": 20.0,
+      "emptyWeight": 0.0014,
+      "speed": 0.0,
+      "from": 1994,
+      "to": 2006,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3482454408",
+      "modPath": "PS"
+    },
+    {
+      "id": "3482454408/Sega",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 0.77,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5215,
+      "costUSD": 190.0,
+      "powerKW": 14.0,
+      "emptyWeight": 0.0013,
+      "speed": 0.0,
+      "from": 1988,
+      "to": 1997,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3482454408",
+      "modPath": "Sega"
+    }
+  ]
+}

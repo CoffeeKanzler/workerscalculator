@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2852570796",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:54:19+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2852570796/TamBus",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.21,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5046,
+      "costRUB": 1100.0,
+      "speed": 90.0,
+      "capacity": 144.0,
+      "powerKW": 260.0,
+      "emptyWeight": 15.5,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1992,
+      "to": 2010,
+      "countryId": 39000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2852570796",
+      "modPath": "TamBus"
+    }
+  ]
+}

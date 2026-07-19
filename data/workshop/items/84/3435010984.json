@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3435010984",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:23:10+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3435010984/AC140",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 4300.0,
+      "consumption": 0.0,
+      "speed": 90.0,
+      "powerKW": 106.0,
+      "emptyWeight": 4.1,
+      "capacity": 28.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1980,
+      "to": 2014,
+      "countryId": 39042,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3435010984",
+      "modPath": "AC140"
+    }
+  ]
+}

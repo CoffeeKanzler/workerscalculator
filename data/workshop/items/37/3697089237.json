@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3697089237",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:03:04+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3697089237/Twingo_P1",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5439,
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 151.0,
+      "powerKW": 40.0,
+      "emptyWeight": 0.78,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1993,
+      "to": 1998,
+      "countryId": 39016,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3697089237",
+      "modPath": "Twingo_P1"
+    },
+    {
+      "id": "3697089237/Twingo_P2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5439,
+      "costUSD": 1.0,
+      "consumption": 0.0,
+      "speed": 151.0,
+      "powerKW": 43.0,
+      "emptyWeight": 0.82,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 1998,
+      "to": 2007,
+      "countryId": 39016,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3697089237",
+      "modPath": "Twingo_P2"
+    }
+  ]
+}

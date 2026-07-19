@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3438447660",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:38:28+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3438447660/Ho-229",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.6,
+      "type": "VEHICLETYPE_AIRPLANE",
+      "costUSD": 15000.0,
+      "consumption": 0.0,
+      "speed": 918.0,
+      "powerKW": 1000.0,
+      "emptyWeight": 8.0,
+      "capacity": 10.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1943,
+      "to": 1945,
+      "countryId": 39005,
+      "workshopId": "3438447660",
+      "modPath": "Ho-229"
+    }
+  ]
+}

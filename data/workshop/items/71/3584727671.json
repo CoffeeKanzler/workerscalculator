@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3584727671",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:00:06+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3584727671/MZ2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.97,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 1.0,
+      "consumption": 0.0,
+      "speed": 42.0,
+      "powerKW": 54.0,
+      "emptyWeight": 8.0,
+      "from": 1933,
+      "to": 1960,
+      "countryId": 39011,
+      "trainGroup": "locomotive",
+      "electric": false,
+      "workshopId": "3584727671",
+      "modPath": "MZ2"
+    }
+  ]
+}

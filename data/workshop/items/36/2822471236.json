@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2822471236",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:45:43+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "2822471236/Hyundai",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.85,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 180.0,
+      "powerKW": 95.0,
+      "emptyWeight": 0.75,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2822471236",
+      "modPath": "Hyundai"
+    },
+    {
+      "id": "2822471236/i30",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.37,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4300.0,
+      "consumption": 0.0,
+      "speed": 160.0,
+      "powerKW": 105.0,
+      "emptyWeight": 1.3,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "2822471236",
+      "modPath": "i30"
+    }
+  ]
+}

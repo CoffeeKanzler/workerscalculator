@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3678324514",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:44:15+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3678324514/personal_audi_q7",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 5.09,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 4100.0,
+      "consumption": 0.0,
+      "speed": 225.0,
+      "emptyWeight": 2.2,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2005,
+      "to": 2015,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3678324514",
+      "modPath": "personal_audi_q7"
+    }
+  ]
+}

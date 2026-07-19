@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3026091148",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:03:05+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3026091148/persona_porsh",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 4.57,
+      "type": "VEHICLETYPE_ROAD",
+      "descriptionId": 5449,
+      "costUSD": 1300.0,
+      "consumption": 6000.0,
+      "speed": 250.0,
+      "emptyWeight": 2.9,
+      "capacity": 4.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2013,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3026091148",
+      "modPath": "persona_porsh"
+    }
+  ]
+}

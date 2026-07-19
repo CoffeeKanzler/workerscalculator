@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3641411537",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T21:15:17+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3641411537/M977",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 10.4,
+      "type": "VEHICLETYPE_ROAD",
+      "costUSD": 5555300.0,
+      "consumption": 0.0,
+      "speed": 100.0,
+      "powerKW": 384.0,
+      "emptyWeight": 17.5,
+      "capacity": 10.0,
+      "transportType": "RESOURCE_TRANSPORT_GENERAL",
+      "from": 1980,
+      "to": 2035,
+      "countryId": 39018,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3641411537",
+      "modPath": "M977"
+    }
+  ]
+}

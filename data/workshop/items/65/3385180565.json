@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3385180565",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:29:37+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3385180565/loco",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 17.02,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 12100.0,
+      "speed": 120.0,
+      "powerKW": 0.0,
+      "emptyWeight": 0.0,
+      "from": 2001,
+      "to": 3000,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "3385180565",
+      "modPath": "loco"
+    },
+    {
+      "id": "3385180565/loco_2",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 12100.0,
+      "speed": 120.0,
+      "powerKW": 6000.0,
+      "emptyWeight": 200.0,
+      "from": 2001,
+      "to": 3000,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "3385180565",
+      "modPath": "loco_2"
+    },
+    {
+      "id": "3385180565/loco_3",
+      "category": "workshop",
+      "trainSet": [
+        "3385180565/loco_v"
+      ],
+      "lifespanYears": 0.0,
+      "length": 17.02,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 12100.0,
+      "speed": 120.0,
+      "powerKW": 9000.0,
+      "emptyWeight": 300.0,
+      "from": 2001,
+      "to": 3000,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "3385180565",
+      "modPath": "loco_3"
+    },
+    {
+      "id": "3385180565/loco_4",
+      "category": "workshop",
+      "trainSet": [
+        "3385180565/loco_v",
+        "3385180565/loco_v"
+      ],
+      "lifespanYears": 0.0,
+      "length": 17.02,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costRUB": 12100.0,
+      "speed": 120.0,
+      "powerKW": 12000.0,
+      "emptyWeight": 400.0,
+      "from": 2001,
+      "to": 3000,
+      "trainGroup": "locomotive",
+      "electric": true,
+      "workshopId": "3385180565",
+      "modPath": "loco_4"
+    },
+    {
+      "id": "3385180565/loco_v",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 17.03,
+      "type": "VEHICLETYPE_RAIL_VAGON",
+      "costRUB": 12100.0,
+      "speed": 120.0,
+      "powerKW": 0.0,
+      "emptyWeight": 0.0,
+      "from": 2001,
+      "to": 3000,
+      "trainGroup": "locomotive",
+      "workshopId": "3385180565",
+      "modPath": "loco_v"
+    }
+  ]
+}

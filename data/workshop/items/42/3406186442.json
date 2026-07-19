@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3406186442",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T18:32:41+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3406186442/ED74A",
+      "category": "workshop",
+      "trainSet": [
+        "3406186442/ED74B",
+        "3406186442/ED74B",
+        "3406186442/ED74D"
+      ],
+      "lifespanYears": 0.0,
+      "length": 21.63,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 1.0,
+      "powerKW": 1000.0,
+      "emptyWeight": 40.0,
+      "speed": 160.0,
+      "trainGroup": "trainset",
+      "capacity": 307.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2006,
+      "to": 2009,
+      "countryId": 39006,
+      "electric": true,
+      "workshopId": "3406186442",
+      "modPath": "ED74A"
+    },
+    {
+      "id": "3406186442/ED74B",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 17.88,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 1.0,
+      "emptyWeight": 40.0,
+      "speed": 160.0,
+      "trainGroup": "trainset",
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2006,
+      "to": 2009,
+      "countryId": 39006,
+      "electric": false,
+      "workshopId": "3406186442",
+      "modPath": "ED74B"
+    },
+    {
+      "id": "3406186442/ED74D",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 22.05,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 1.0,
+      "emptyWeight": 40.0,
+      "powerKW": 1000.0,
+      "speed": 160.0,
+      "trainGroup": "trainset",
+      "capacity": 1.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "from": 2006,
+      "to": 2009,
+      "countryId": 39006,
+      "electric": true,
+      "workshopId": "3406186442",
+      "modPath": "ED74D"
+    }
+  ]
+}

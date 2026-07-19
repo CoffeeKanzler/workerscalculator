@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1907388650",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:03:15+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "1907388650/Battery_loco",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 11.52,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 3300.0,
+      "speed": 80.0,
+      "powerKW": 550.0,
+      "emptyWeight": 55.0,
+      "from": 1968,
+      "to": 1995,
+      "countryId": 39041,
+      "trainGroup": "metro",
+      "electric": true,
+      "workshopId": "1907388650",
+      "modPath": "Battery_loco"
+    }
+  ]
+}

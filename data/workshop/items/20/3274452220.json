@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3274452220",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T20:54:09+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3274452220/Falkenried",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "type": "VEHICLETYPE_RAIL_LOCOMOTIVE",
+      "costUSD": 1.0,
+      "capacity": 48.0,
+      "transportType": "RESOURCE_TRANSPORT_PASSANGER",
+      "speed": 40.0,
+      "powerKW": 80.0,
+      "emptyWeight": 9.0,
+      "from": 1894,
+      "to": 1912,
+      "countryId": 39003,
+      "trainGroup": "tram",
+      "electric": true,
+      "workshopId": "3274452220",
+      "modPath": "Falkenried"
+    }
+  ]
+}

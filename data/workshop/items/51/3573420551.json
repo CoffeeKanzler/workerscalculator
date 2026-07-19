@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3573420551",
+  "source": "steam-workshop-config",
+  "extractedAt": "2026-07-18T22:14:50+00:00",
+  "buildings": [],
+  "vehicles": [
+    {
+      "id": "3573420551/cattledrive",
+      "category": "workshop",
+      "lifespanYears": 0.0,
+      "length": 8.0,
+      "type": "VEHICLETYPE_ROAD",
+      "costRUB": 333.0,
+      "capacity": 2.8,
+      "speed": 19.0,
+      "powerKW": 0.0,
+      "emptyWeight": 0.3,
+      "transportType": "RESOURCE_TRANSPORT_LIVESTOCK",
+      "from": 1888,
+      "to": 3000,
+      "roadRecipeBranch": "ordinary",
+      "workshopId": "3573420551",
+      "modPath": "cattledrive"
+    }
+  ]
+}
