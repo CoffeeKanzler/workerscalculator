@@ -4,7 +4,7 @@ import {
   parseRoadNetwork,
   parseHeightmapWater,
 } from './savegame.js?v=22';
-import { parseBlueprintOwned, parseCityStatsIni, parseStatsIni } from './statsini.js?v=17';
+import { parseBlueprintOwned, parseCityStatsIni, parseStatsIni } from './statsini.js?v=19';
 
 const sourceStatus = (payload) => Object.fromEntries(
   ['namepoints', 'buildings', 'workers', 'vehicles', 'usedVehicles', 'lines', 'road', 'rail', 'heightmap', 'pollution', 'header', 'research', 'events', 'stats', 'material']

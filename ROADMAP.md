@@ -327,7 +327,10 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   bounds each rendered series to 160 points for the supplied 3,002-record history.
   Population history recognizes the current save's exact `SmallChilds` / `MediumChilds`
   scalar names (while retaining older aliases), so missing child fields are omitted rather
-  than drawn as an authoritative-looking zero.
+  than drawn as an authoritative-looking zero. Separate exact charts now expose the saved
+  births/deaths, escapes and Soviet/African immigration fields, plus no/basic/higher education
+  counts. They remain labelled as per-record saved values rather than invented daily rates or
+  cumulative totals.
 - **Comparison:** Up to three resources can share the selected-currency chart,
   with separately labelled buy/sell series. An optional logarithmic scale keeps
   commodities with very different price magnitudes readable and excludes

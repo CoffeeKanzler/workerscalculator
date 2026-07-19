@@ -135,6 +135,9 @@ $Citizens_Adults 1200
 $Citizens_Unemployed 40
 $Citizens_Born 8
 $Citizens_Dead 2
+$Citizens_Escaped 3
+$Citizens_ImigrantSoviet 12
+$Citizens_ImigrantAfrica 7
 $Citizens_SmallChilds 2144
 $Citizens_MediumChilds 3374
 $Citizens_NoEducation 3079
@@ -154,6 +157,9 @@ $end`;
   assert.equal(record.unemployed, 40);
   assert.equal(record.born, 8);
   assert.equal(record.dead, 2);
+  assert.equal(record.escaped, 3);
+  assert.equal(record.immigrantsSoviet, 12);
+  assert.equal(record.immigrantsAfrica, 7);
   assert.equal(record.childrenSmall, 2144);
   assert.equal(record.childrenMedium, 3374);
   assert.equal(record.educationNone, 3079);

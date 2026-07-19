@@ -1,5 +1,5 @@
-import { STRINGS } from './i18n.js?v=89';
-import { recordToPrices } from './statsini.js?v=18';
+import { STRINGS } from './i18n.js?v=90';
+import { recordToPrices } from './statsini.js?v=19';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
@@ -2062,7 +2062,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=24', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=25', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -4171,6 +4171,20 @@ function renderRepublic() {
             ? (record.childrenSmall ?? 0) + (record.childrenMedium ?? 0) : null),
         series(t('unemployed'), '#c0392b', record => record.unemployed),
       ]),
+      renderRepublicLineChart(t('birthDeathHistory'), [
+        series(t('births'), '#27ae60', record => record.born),
+        series(t('deaths'), '#7f8c8d', record => record.dead),
+      ]),
+      renderRepublicLineChart(t('migrationHistory'), [
+        series(t('escapedCitizens'), '#c0392b', record => record.escaped),
+        series(t('sovietImmigrants'), '#2980b9', record => record.immigrantsSoviet),
+        series(t('africanImmigrants'), '#d35400', record => record.immigrantsAfrica),
+      ]),
+      renderRepublicLineChart(t('educationHistory'), [
+        series(t('noEducation'), '#c0392b', record => record.educationNone),
+        series(t('basicEducation'), '#f1c40f', record => record.educationBasic),
+        series(t('higherEducation'), '#2980b9', record => record.educationHigh),
+      ]),
       renderRepublicLineChart(t('productivityHistory'), [
         series(t('productivity'), '#27ae60', record => Number.isFinite(record.averageProductivity)
           ? record.averageProductivity * 100 : null),
@@ -4189,7 +4203,8 @@ function renderRepublic() {
           series(t('produced'), '#2980b9', record => record.resourcesProduced?.[state.republicResource]),
           series(t('imports'), '#c0392b', record => record.resourcesImportRUB?.[state.republicResource]),
           series(t('exports'), '#27ae60', record => record.resourcesExportRUB?.[state.republicResource]),
-        ]) : null)) : null;
+        ]) : null),
+    el('p', { class: 'hint' }, t('demographicHistoryMeaning'))) : null;
 
   const comparisonNames = namedSnapshotNames.filter(name => name !== state.saveSlotName);
   if (comparisonSnapshotName && !comparisonNames.includes(comparisonSnapshotName)) {

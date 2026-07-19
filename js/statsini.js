@@ -37,6 +37,8 @@ const SCALAR_KEYS = {
   Citizens_Born: 'born',
   Citizens_Dead: 'dead',
   Citizens_Escaped: 'escaped',
+  Citizens_ImigrantSoviet: 'immigrantsSoviet',
+  Citizens_ImigrantAfrica: 'immigrantsAfrica',
   Citizens_ChildrenSmall: 'childrenSmall',
   Citizens_ChildrenMedium: 'childrenMedium',
   Citizens_SmallChilds: 'childrenSmall',
