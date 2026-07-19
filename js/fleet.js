@@ -406,12 +406,14 @@ export function rankUsedVehicleReplacements(ownedOpportunities, usedQuotes) {
 }
 
 export function filterAndSortVehicleOpportunities(opportunities, {
-  category = 'all', action = 'all', sort = 'advantage',
+  category = 'all', action = 'all', sort = 'advantage', search = '',
 } = {}) {
+  const query = String(search).trim().toLocaleLowerCase();
   const rows = (Array.isArray(opportunities) ? opportunities : []).filter(opportunity =>
     (category === 'all'
       || vehicleCategoryGroup(opportunity?.record?.modelFacts?.runtimeCategory) === category)
-    && (action === 'all' || opportunity?.cashOutAction === action));
+    && (action === 'all' || opportunity?.cashOutAction === action)
+    && (!query || String(opportunity?.record?.modelFacts?.name ?? '').toLocaleLowerCase().includes(query)));
   const numeric = key => (a, b) => (b?.[key] ?? -Infinity) - (a?.[key] ?? -Infinity);
   const compare = sort === 'name'
     ? (a, b) => String(a?.record?.modelFacts?.name ?? '')
@@ -420,6 +422,19 @@ export function filterAndSortVehicleOpportunities(opportunities, {
       : sort === 'recycle' ? 'recycleAfterLabor' : 'advantage');
   return [...rows].sort((a, b) => compare(a, b)
     || String(a?.record?.modelFacts?.name ?? '').localeCompare(String(b?.record?.modelFacts?.name ?? '')));
+}
+
+export function paginateVehicleOpportunities(opportunities, { page = 1, pageSize = 50 } = {}) {
+  const source = Array.isArray(opportunities) ? opportunities : [];
+  const size = Number.isInteger(pageSize) && pageSize > 0 ? pageSize : 50;
+  if (!source.length) return { rows: [], total: 0, page: 0, pageCount: 0, pageSize: size };
+  const pageCount = Math.ceil(source.length / size);
+  const current = Math.min(pageCount, Math.max(1, Number.isFinite(page) ? Math.floor(page) : 1));
+  const start = (current - 1) * size;
+  return {
+    rows: source.slice(start, start + size), total: source.length,
+    page: current, pageCount, pageSize: size,
+  };
 }
 
 const NORMAL_RECYCLE_CONVERSIONS = {

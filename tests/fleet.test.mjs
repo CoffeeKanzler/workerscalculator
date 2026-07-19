@@ -17,6 +17,7 @@ import {
   vehicleUsedMarketQuote,
   rankUsedVehicleReplacements,
   filterAndSortVehicleOpportunities,
+  paginateVehicleOpportunities,
   shipEconomicOpportunity,
   shipUsedMarketQuote,
   ownedVehicleExportValue,
@@ -462,6 +463,23 @@ test('fleet opportunity drill-down filters category and action with stable sorti
   assert.deepEqual(filterAndSortVehicleOpportunities(opportunities, {
     category: 'all', action: 'all', sort: 'export',
   }).map(item => item.record.modelFacts.name), ['Ship', 'Helicopter', 'Wagon', 'Service truck']);
+  assert.deepEqual(filterAndSortVehicleOpportunities(opportunities, {
+    search: 'service TR',
+  }).map(item => item.record.modelFacts.name), ['Service truck']);
+});
+
+test('fleet opportunity pages are bounded and clamp after filtering', () => {
+  const rows = Array.from({ length: 121 }, (_, index) => ({ index }));
+  const middle = paginateVehicleOpportunities(rows, { page: 2, pageSize: 50 });
+  assert.deepEqual({ page: middle.page, pageCount: middle.pageCount, total: middle.total,
+    first: middle.rows[0].index, last: middle.rows.at(-1).index },
+  { page: 2, pageCount: 3, total: 121, first: 50, last: 99 });
+  const clamped = paginateVehicleOpportunities(rows, { page: 99, pageSize: 50 });
+  assert.equal(clamped.page, 3);
+  assert.deepEqual(clamped.rows.map(row => row.index), Array.from({ length: 21 }, (_, index) => index + 100));
+  assert.deepEqual(paginateVehicleOpportunities([], { page: 2, pageSize: 50 }), {
+    rows: [], total: 0, page: 0, pageCount: 0, pageSize: 50,
+  });
 });
 
 test('container transport subtype 12/13 doubles work but not recovered materials', () => {

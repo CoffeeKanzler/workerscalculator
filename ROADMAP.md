@@ -217,8 +217,10 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   used-market offers. Capacity-safe replacement candidates require the same vehicle category
   and transport subtype, never reduce capacity, and show net cash against the closest-capacity
   owned target; speed, power, condition, schedules, and fleet count remain explicit caveats.
-  The collapsed full-fleet drill-down filters by ship/road/rail/air and cash-out action and
-  sorts by advantage, either route value, or name.
+  The full-fleet drill-down is built only when opened, filters by ship/road/rail/air,
+  cash-out action, and vehicle name, and sorts by advantage, either route value, or name.
+  Its 50-row pages keep thousand-vehicle saves bounded instead of placing the entire fleet
+  in the DOM while the section is collapsed.
   - **Live production buffers:** `buildings_game.bin` now imports exact first-pass storage
   identities, input/output roles, resources, saved amounts, and nominal capacities. The
   supplied save has live inventory rows in 1,328 of 1,812 buildings. Matching production

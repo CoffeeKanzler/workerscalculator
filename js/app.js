@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=84';
+import { STRINGS } from './i18n.js?v=85';
 import { recordToPrices } from './statsini.js?v=18';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -25,8 +25,9 @@ import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.j
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, resolveVehicleModels,
-  shareSafeSaveImport, vehicleCategoryGroup, vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=12';
+  paginateVehicleOpportunities, shareSafeSaveImport, vehicleCategoryGroup,
+  vehicleEconomicOpportunity, vehicleUsedMarketQuote,
+} from './fleet.js?v=13';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'map', 'production', 'city', 'chain',
@@ -3674,12 +3675,16 @@ function renderRepublic() {
   const replacementCandidates = rankUsedVehicleReplacements(
     exactFleetOpportunities, exactUsedVehicleQuotes,
   );
-  const fleetFilterDefaults = { category: 'all', action: 'all', sort: 'advantage' };
+  const fleetFilterDefaults = { category: 'all', action: 'all', sort: 'advantage', search: '', page: 1 };
   const fleetFilter = { ...fleetFilterDefaults, ...(state.fleetFilter ?? {}) };
   state.fleetFilter = fleetFilter;
   const filteredFleetOpportunities = filterAndSortVehicleOpportunities(
     exactFleetOpportunities, fleetFilter,
   );
+  const fleetPage = paginateVehicleOpportunities(filteredFleetOpportunities, {
+    page: fleetFilter.page, pageSize: 50,
+  });
+  if (fleetPage.page && fleetPage.page !== fleetFilter.page) fleetFilter.page = fleetPage.page;
   const fleetActionLabel = action => t(action === 'recycle' ? 'fleetRecycle' : 'fleetExport');
   const fleetCategoryLabel = facts => t(`fleetCategory.${vehicleCategoryGroup(facts?.runtimeCategory)}`);
   const fleetCapacityUnit = facts => facts?.transportSubtype === 7 ? t('fleetPassengers') : 't';
@@ -3700,13 +3705,13 @@ function renderRepublic() {
       ? `${fmt(opportunity.advantage, 0)} ${cur()}` : '—'),
     opportunity.recycling.ignoredCargo.length
       ? el('p', { class: 'hint warn' }, t('fleetCargoExcluded')) : null);
-  const fleetDetailsTable = filteredFleetOpportunities.length ? el('table', { class: 'data wide' },
+  const fleetDetailsTable = state.fleetDetails && fleetPage.rows.length ? el('table', { class: 'data wide' },
     el('thead', {}, el('tr', {},
       el('th', {}, t('vehicle')), el('th', {}, t('fleetCashOutAction')),
       el('th', {}, t('fleetExportPayout')), el('th', {}, t('fleetRecycleGross')),
       el('th', {}, t('fleetLaborCost')), el('th', {}, t('fleetRecycleAfterLabor')),
       el('th', {}, t('fleetAdvantage')), el('th', {}, t('fleetWorkdays')))),
-    el('tbody', {}, ...filteredFleetOpportunities.map(opportunity => el('tr', {},
+    el('tbody', {}, ...fleetPage.rows.map(opportunity => el('tr', {},
       el('td', {}, opportunity.record.modelFacts.name,
         el('div', { class: 'subline' }, fleetCategoryLabel(opportunity.record.modelFacts)),
         el('div', { class: 'subline' }, `${t('fleetSavedMultiplier')}: ${fmt(opportunity.exportMultiplier.multiplier * 100, 1)} %`),
@@ -3767,24 +3772,68 @@ function renderRepublic() {
     exactFleetOpportunities.length ? el('details', {
       class: 'secondary-section',
       ...(state.fleetDetails ? { open: '' } : {}),
-      ontoggle: event => { state.fleetDetails = event.currentTarget.open; },
+      ontoggle: event => {
+        const open = event.currentTarget.open;
+        if (open === state.fleetDetails) return;
+        state.fleetDetails = open;
+        update();
+      },
     },
       el('summary', {}, `${t('fleetDetails')} (${fmt(filteredFleetOpportunities.length, 0)} / ${fmt(exactFleetOpportunities.length, 0)})`),
-      el('p', { class: 'hint warn' }, t('fleetKeepCaveat')),
-      el('div', { class: 'settingsbar' },
-        el('label', {}, t('fleetCategoryFilter'), selectInput([
-          ['all', t('fleetAllCategories')], ['ship', t('fleetShips')],
-          ['road', t('fleetRoad')], ['rail', t('fleetRail')], ['air', t('fleetAir')],
-        ], fleetFilter.category, value => { state.fleetFilter.category = value; })),
-        el('label', {}, t('fleetActionFilter'), selectInput([
-          ['all', t('fleetAllActions')], ['export', t('fleetExport')],
-          ['recycle', t('fleetRecycle')],
-        ], fleetFilter.action, value => { state.fleetFilter.action = value; })),
-        el('label', {}, t('sortBy'), selectInput([
-          ['advantage', t('fleetAdvantage')], ['export', t('fleetExportPayout')],
-          ['recycle', t('fleetRecycleAfterLabor')], ['name', t('vehicle')],
-        ], fleetFilter.sort, value => { state.fleetFilter.sort = value; }))),
-      el('div', { class: 'tablewrap' }, fleetDetailsTable)) : null) : null;
+      state.fleetDetails ? el('div', { class: 'fleet-details-content' },
+        el('p', { class: 'hint warn' }, t('fleetKeepCaveat')),
+        el('div', { class: 'settingsbar' },
+          el('label', {}, t('fleetCategoryFilter'), selectInput([
+            ['all', t('fleetAllCategories')], ['ship', t('fleetShips')],
+            ['road', t('fleetRoad')], ['rail', t('fleetRail')], ['air', t('fleetAir')],
+          ], fleetFilter.category, value => {
+            state.fleetFilter.category = value; state.fleetFilter.page = 1;
+          })),
+          el('label', {}, t('fleetActionFilter'), selectInput([
+            ['all', t('fleetAllActions')], ['export', t('fleetExport')],
+            ['recycle', t('fleetRecycle')],
+          ], fleetFilter.action, value => {
+            state.fleetFilter.action = value; state.fleetFilter.page = 1;
+          })),
+          el('label', {}, t('sortBy'), selectInput([
+            ['advantage', t('fleetAdvantage')], ['export', t('fleetExportPayout')],
+            ['recycle', t('fleetRecycleAfterLabor')], ['name', t('vehicle')],
+          ], fleetFilter.sort, value => {
+            state.fleetFilter.sort = value; state.fleetFilter.page = 1;
+          })),
+          el('label', {}, t('fleetSearch'), el('input', {
+            type: 'search', value: fleetFilter.search ?? '',
+            oninput: event => { event.currentTarget.dataset.pendingValue = event.currentTarget.value; },
+            onkeydown: event => {
+              if (event.key !== 'Enter') return;
+              state.fleetFilter.search = event.currentTarget.value;
+              state.fleetFilter.page = 1;
+              update();
+            },
+          })),
+          el('button', {
+            onclick: event => {
+              const input = event.currentTarget.parentElement.querySelector('input[type="search"]');
+              state.fleetFilter.search = input?.value ?? '';
+              state.fleetFilter.page = 1;
+              update();
+            },
+          }, t('fleetSearchApply'))),
+        fleetPage.pageCount > 1 ? el('div', { class: 'settingsbar fleet-pagination' },
+          el('button', {
+            disabled: fleetPage.page <= 1,
+            onclick: () => { state.fleetFilter.page = fleetPage.page - 1; update(); },
+          }, `← ${t('fleetPreviousPage')}`),
+          el('span', {}, t('fleetPageStatus')
+            .replace('{page}', fmt(fleetPage.page, 0)).replace('{pages}', fmt(fleetPage.pageCount, 0))
+            .replace('{from}', fmt((fleetPage.page - 1) * fleetPage.pageSize + 1, 0))
+            .replace('{to}', fmt(Math.min(fleetPage.total, fleetPage.page * fleetPage.pageSize), 0))
+            .replace('{total}', fmt(fleetPage.total, 0))),
+          el('button', {
+            disabled: fleetPage.page >= fleetPage.pageCount,
+            onclick: () => { state.fleetFilter.page = fleetPage.page + 1; update(); },
+          }, `${t('fleetNextPage')} →`)) : null,
+        el('div', { class: 'tablewrap' }, fleetDetailsTable)) : null) : null) : null;
 
   const lineOperations = state.saveImport?.vehicleLines;
   const distributionOperations = state.saveImport?.distributionOffices;
