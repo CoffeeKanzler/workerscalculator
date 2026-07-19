@@ -502,6 +502,22 @@ test('schematic map projects exact saved rail centerlines with shared bounds', (
   assert.equal(result.roads.length, 0);
 });
 
+test('schematic map projects exact saved pedestrian centerlines with shared bounds', () => {
+  const result = buildSchematicMap([{ index: 1, x: 0, z: 0 }], [], null, {
+    width: 100, height: 100, padding: 10,
+    pedestrianNetwork: {
+      nodes: [{ id: 0, x: -30, y: 1, z: -20 }, { id: 1, x: 10, y: 2, z: 20 }],
+      edges: [{ id: 9, from: 0, to: 1, points: [{ x: -10, y: 1.5, z: 0 }] }],
+    },
+  });
+  assert.deepEqual(result.bounds, { minX: -30, maxX: 10, minZ: -20, maxZ: 20 });
+  assert.deepEqual(result.pedestrian, [{ id: 9, points: [
+    { mapX: 10, mapY: 90 }, { mapX: 50, mapY: 50 }, { mapX: 90, mapY: 10 },
+  ] }]);
+  assert.equal(result.roads.length, 0);
+  assert.equal(result.rails.length, 0);
+});
+
 test('schematic map places heightmap-derived water in the shared world projection', () => {
   const terrainWater = {
     width: 2, height: 2, packed: 'Yw==',

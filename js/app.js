@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=90';
+import { STRINGS } from './i18n.js?v=91';
 import { recordToPrices } from './statsini.js?v=19';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -20,7 +20,7 @@ import {
   summarizeResidenceOccupancy, summarizeOccupiedBuildingPollution,
   buildSchematicMap,
   isNonPlannerSupportType, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=18';
+} from './save_model.js?v=19';
 import { buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts } from './republic.js?v=9';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
@@ -28,7 +28,7 @@ import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, resolveVehicleModels,
   paginateVehicleOpportunities, shareSafeSaveImport, vehicleCategoryGroup,
   vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=13';
+} from './fleet.js?v=14';
 
 const IS_BETA = location.pathname.split('/').includes('beta');
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'map', 'production', 'city', 'chain',
@@ -98,7 +98,7 @@ function createInitialState() {
     republicResource: null,
     republicScope: null,
     mapLayers: {
-      water: true, pollution: true, roads: true, rails: true, buildings: true,
+      water: true, pollution: true, roads: true, rails: true, pedestrian: false, buildings: true,
       construction: true, scopes: true, borders: true, outliers: true,
     },
     mapBuildingFilter: '',
@@ -175,13 +175,14 @@ function saveState() {
     statsRecords, viewingSharedLink, snapshotNotice, importStatus, importStatusError, importBusy,
     localWorkshopStatus, liveStatsStatus, liveStatsStatusError, ...rest
   } = state;
-  // Exact road/rail samples belong in the IndexedDB named snapshot. Keeping the
+  // Exact network samples belong in the IndexedDB named snapshot. Keeping the
   // multi-megabyte geometry out of the small synchronous localStorage slot
   // prevents unrelated settings changes from silently hitting browser quota.
   const hasLocalMapData = rest.saveImport?.roadNetwork || rest.saveImport?.railNetwork
+    || rest.saveImport?.pedestrianNetwork
     || rest.saveImport?.terrainWater || rest.saveImport?.pollutionLayer;
   const persistent = hasLocalMapData
-    ? { ...rest, saveImport: (({ roadNetwork, railNetwork, terrainWater, pollutionLayer, ...summary }) => summary)(rest.saveImport) }
+    ? { ...rest, saveImport: (({ roadNetwork, railNetwork, pedestrianNetwork, terrainWater, pollutionLayer, ...summary }) => summary)(rest.saveImport) }
     : rest;
   try { localStorage.setItem(LS_KEY, JSON.stringify(persistent)); } catch (e) { /* quota */ }
 }
@@ -2062,7 +2063,7 @@ function uniqueSnapshotName(base) {
 
 function parseSaveInWorker(payload) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_worker.js?v=25', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_worker.js?v=26', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Save parser worker failed'));
@@ -2085,7 +2086,7 @@ function parseSaveInWorker(payload) {
 
 function parseMapLayersInWorker(files) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./savegame_map_worker.js?v=3', import.meta.url), { type: 'module' });
+    const worker = new Worker(new URL('./savegame_map_worker.js?v=4', import.meta.url), { type: 'module' });
     worker.onerror = event => {
       worker.terminate();
       reject(new Error(event.message || 'Map parser worker failed'));
@@ -2174,6 +2175,7 @@ async function handleSaveDirectory(fileList) {
   const linesFile = byName.get('lines.bin');
   const roadFile = byName.get('road.bin');
   const railFile = byName.get('rail.bin');
+  const pedestrianFile = byName.get('pedestrianway.bin');
   const heightmapFile = byName.get('heightmap.dds');
   const pollutionFile = byName.get('pollution.bin');
   const headerFile = byName.get('header.bin');
@@ -2206,7 +2208,7 @@ async function handleSaveDirectory(fileList) {
     const parsed = await parseSaveInWorker({
       namepoints: namepointBuffer, buildings: buildingBuffer, workers: workerBuffer,
       vehicles: vehicleBuffer, usedVehicles: usedVehicleBuffer,
-      lines: lineBuffer, road: null, rail: null, heightmap: null, pollution: null,
+      lines: lineBuffer, road: null, rail: null, pedestrian: null, heightmap: null, pollution: null,
       header: headerBuffer, research: researchBuffer, events: eventsBuffer, stats: statsText, material: materialText,
     });
     const relative = namepoints.webkitRelativePath || buildingsFile.webkitRelativePath || '';
@@ -2285,7 +2287,7 @@ async function handleSaveDirectory(fileList) {
       state.recordIndex = statsRecords.length - 1;
     }
     state.saveSlotName = importName;
-    const hasDeferredMap = !!(roadFile || railFile || heightmapFile || pollutionFile);
+    const hasDeferredMap = !!(roadFile || railFile || pedestrianFile || heightmapFile || pollutionFile);
     state.importStatus = hasDeferredMap ? t('importCoreComplete') : t('importComplete');
     state.importBusy = hasDeferredMap;
     state.importStatusError = false;
@@ -2302,6 +2304,7 @@ async function handleSaveDirectory(fileList) {
         const mapResult = await parseMapLayersInWorker({
           road: roadFile ?? null,
           rail: railFile ?? null,
+          pedestrian: pedestrianFile ?? null,
           heightmap: heightmapFile ?? null,
           pollution: pollutionFile ?? null,
         });
@@ -2410,7 +2413,7 @@ function renderSaveImport() {
   const sourceFiles = {
     namepoints: 'namepoints.bin', buildings: 'buildings_game.bin', workers: 'workers.bin',
     vehicles: 'vehicles.bin', usedVehicles: 'usedveh.bin', lines: 'lines.bin',
-    road: 'road.bin', rail: 'rail.bin',
+    road: 'road.bin', rail: 'rail.bin', pedestrian: 'pedestrianway.bin',
     heightmap: 'heightmap.dds', pollution: 'pollution.bin',
     header: 'header.bin', research: 'research.bin', events: 'events.bin', stats: 'stats.ini',
     material: 'material.mtl',
@@ -2799,6 +2802,7 @@ function applyStandaloneMapVisibility(svg, layers, buildingFilter = '', legend =
   setGroupVisible('.map-pollution', layers.pollution);
   setGroupVisible('.map-roads', layers.roads);
   setGroupVisible('.map-rails', layers.rails);
+  setGroupVisible('.map-pedestrian', layers.pedestrian);
   setGroupVisible('.map-scopes', layers.scopes);
 
   const filter = String(buildingFilter ?? '').trim().toLowerCase();
@@ -2825,6 +2829,7 @@ function applyStandaloneMapVisibility(svg, layers, buildingFilter = '', legend =
   if (legend) {
     const visibility = {
       water: layers.water, pollution: layers.pollution, roads: layers.roads, rails: layers.rails,
+      pedestrian: layers.pedestrian,
       buildings: layers.buildings, selected: layers.buildings,
       construction: layers.construction, borders: layers.borders,
       scopes: layers.scopes, outliers: layers.outliers,
@@ -2847,16 +2852,17 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     focusBuildingIndex: mapFocusBuildingIndex,
     roadNetwork: state.saveImport?.roadNetwork,
     railNetwork: state.saveImport?.railNetwork,
+    pedestrianNetwork: standalone ? state.saveImport?.pedestrianNetwork : null,
     terrainWater: state.saveImport?.terrainWater,
     pollutionLayer: state.saveImport?.pollutionLayer,
   });
   if (!model) return null;
   const layers = standalone ? {
-    water: true, pollution: true, roads: true, rails: true, buildings: true,
+    water: true, pollution: true, roads: true, rails: true, pedestrian: false, buildings: true,
     construction: true, scopes: true, borders: true, outliers: true,
     ...(state.mapLayers ?? {}),
   } : {
-    water: true, pollution: false, roads: true, rails: true, buildings: true,
+    water: true, pollution: false, roads: true, rails: true, pedestrian: false, buildings: true,
     construction: true, scopes: true, borders: true, outliers: true,
   };
   const buildingFilter = standalone ? String(state.mapBuildingFilter ?? '').trim().toLowerCase() : '';
@@ -3069,6 +3075,14 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       'data-road-count': model.roads.length,
     }));
   }
+  const pedestrianLayer = node('g', { class: 'map-pedestrian' });
+  if (model.pedestrian.length) {
+    pedestrianLayer.append(node('path', {
+      d: model.pedestrian.map(edge => edge.points.map((point, index) =>
+        `${index ? 'L' : 'M'}${point.mapX.toFixed(2)} ${point.mapY.toFixed(2)}`).join(' ')).join(' '),
+      'data-pedestrian-count': model.pedestrian.length,
+    }));
+  }
   const normalLayer = node('g', { class: 'map-buildings' });
   const selectedLayer = node('g', { class: 'map-selected' });
   const borderLayer = node('g', { class: 'map-borders' });
@@ -3173,7 +3187,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     marker.append(title);
     scopeLayer.append(marker);
   }
-  svg.append(waterLayer, pollutionLayer, railLayer, roadLayer);
+  svg.append(waterLayer, pollutionLayer, railLayer, roadLayer, pedestrianLayer);
   svg.append(normalLayer, selectedLayer, borderLayer, scopeLayer, outlierLayer);
   const mapHintKey = model.rails.length
     ? (model.water ? 'schematicMapNetworksWaterHint' : 'schematicMapNetworksHint')
@@ -3199,6 +3213,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     }, el('i', { class: 'pollution' }), t('airPollution')) : null,
     model.roads.length ? el('span', { 'data-map-legend': 'roads' }, el('i', { class: 'road' }), t('roads')) : null,
     model.rails.length ? el('span', { 'data-map-legend': 'rails' }, el('i', { class: 'rail' }), t('rails')) : null,
+    model.pedestrian.length ? el('span', { 'data-map-legend': 'pedestrian' }, el('i', { class: 'pedestrian' }), t('pedestrianPaths')) : null,
     el('span', { 'data-map-legend': 'buildings' }, el('i', { class: 'building' }), t('buildings')),
     Number.isInteger(state.republicScope)
       ? el('span', { 'data-map-legend': 'selected' }, el('i', { class: 'selected' }), t('selectedAreaBuildings')) : null,
@@ -3238,12 +3253,14 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     return el('section', { class: 'map-page' },
       el('h2', {}, t('republicMapTitle')),
       el('p', { class: 'hint' }, t(mapHintKey)),
+      model.pedestrian.length ? el('p', { class: 'hint' }, t('pedestrianPathsHint')) : null,
       el('div', { class: 'map-toolbar' },
         el('fieldset', {}, el('legend', {}, t('mapLayers')),
           layerToggle('water', t('waterFootprint'), !!model.water),
           layerToggle('pollution', t('airPollution'), !!model.pollution),
           layerToggle('roads', t('roads'), !!model.roads.length),
           layerToggle('rails', t('rails'), !!model.rails.length),
+          layerToggle('pedestrian', t('pedestrianPaths'), !!model.pedestrian.length),
           layerToggle('buildings', t('buildings')),
           layerToggle('construction', t('underConstruction'), hasUnderConstruction),
           layerToggle('borders', t('borderPosts'), !!borderPosts.length),
@@ -4945,7 +4962,9 @@ async function initializeNamedSnapshots() {
 
 async function restoreNamedMapLayers() {
   const expectsPollution = state.saveImport?.sourceStatus?.pollution === 'exact';
+  const expectsPedestrian = state.saveImport?.sourceStatus?.pedestrian === 'exact';
   if ((!state.saveImport || (state.saveImport.roadNetwork && state.saveImport.railNetwork
+      && (!expectsPedestrian || state.saveImport.pedestrianNetwork)
       && state.saveImport.terrainWater && (!expectsPollution || state.saveImport.pollutionLayer)))
     || !state.saveSlotName
     || !namedSnapshotNames.includes(state.saveSlotName)) return;
@@ -4957,6 +4976,9 @@ async function restoreNamedMapLayers() {
   if (currentPath && candidatePath && currentPath !== candidatePath) return;
   if (!state.saveImport.roadNetwork && candidate.roadNetwork) state.saveImport.roadNetwork = candidate.roadNetwork;
   if (!state.saveImport.railNetwork && candidate.railNetwork) state.saveImport.railNetwork = candidate.railNetwork;
+  if (!state.saveImport.pedestrianNetwork && candidate.pedestrianNetwork) {
+    state.saveImport.pedestrianNetwork = candidate.pedestrianNetwork;
+  }
   if (!state.saveImport.terrainWater && candidate.terrainWater) state.saveImport.terrainWater = candidate.terrainWater;
   if (!state.saveImport.pollutionLayer && candidate.pollutionLayer) {
     state.saveImport.pollutionLayer = candidate.pollutionLayer;

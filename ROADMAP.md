@@ -285,10 +285,12 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   while retaining surrounding roads and water. Its compact exact summary reports mapped
   buildings and construction count, and dashed rings identify each unfinished building at
   its saved position and progress; the same control returns to the whole map.
-  Road and rail geometry are read locally from their network files; all optional map layers
+  Road, rail, and `pedestrianway.bin` geometry are read locally from their network files; the
+  dedicated map exposes the exact pedestrian centerlines as a default-off layer (2,767 edges in
+  the reference save) without claiming walking reachability or connectivity. All optional map layers
   are omitted from share links and restored from the
   local named snapshot. A dedicated Republic map tab adds wheel/drag zoom, reset controls,
-  independent water/road/rail/building/construction/border/area/criminality layers, and a
+  independent water/road/rail/pedestrian/building/construction/border/area/criminality layers, and a
   saved-type filter. Physical customs posts have their own marker; artificial off-map air
   import/export targets are omitted. Exact `pollution.bin` air pollution is rendered as an
   optional compact green/yellow/red raster with adjustable opacity; clean cells stay transparent.
@@ -308,8 +310,8 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   construction state, coordinates, and raw save identity; exact Workshop matching rules remain
   unchanged and unresolved numeric packages are never aliased by basename.
   Large imports now expose staged progress without rerendering/persisting the whole application
-  for every parser tick. Core Republic data becomes usable first; roads, railways, water and
-  pollution load sequentially in a second worker and enrich the same local snapshot afterward.
+  for every parser tick. Core Republic data becomes usable first; roads, railways, pedestrian paths,
+  water and pollution load sequentially in a second worker and enrich the same local snapshot afterward.
   Explicit recovery for slow or failed optional files remains a follow-up.
 
 ### 4.2 Live-follow stats.ini ✅ done 2026-07-18

@@ -290,6 +290,7 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .republic-map .map-pollution image { image-rendering: auto; }
 .republic-map .map-rails path { fill: none; stroke: var(--accent2); stroke-width: 1.15; stroke-linecap: round; stroke-linejoin: round; opacity: .78; vector-effect: non-scaling-stroke; }
 .republic-map .map-roads path { fill: none; stroke: var(--muted); stroke-width: .9; stroke-linecap: round; stroke-linejoin: round; opacity: .55; vector-effect: non-scaling-stroke; }
+.republic-map .map-pedestrian path { fill: none; stroke: #e7bd69; stroke-width: .7; stroke-linecap: round; stroke-linejoin: round; opacity: .72; vector-effect: non-scaling-stroke; }
 .republic-map .map-buildings circle { fill: var(--muted); opacity: .52; }
 .republic-map .map-selected circle { fill: var(--accent); opacity: .9; }
 .republic-map .map-scopes circle { fill: var(--panel); stroke: var(--accent2); stroke-width: 2; cursor: pointer; vector-effect: non-scaling-stroke; }
@@ -302,6 +303,7 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-legend i { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }
 .map-legend i.road { width: 14px; height: 2px; border-radius: 0; background: var(--muted); }
 .map-legend i.rail { width: 14px; height: 4px; border-radius: 0; border-top: 1px solid var(--accent2); border-bottom: 1px solid var(--accent2); background: transparent; }
+.map-legend i.pedestrian { width: 14px; height: 2px; border-radius: 0; background: #e7bd69; }
 .map-legend i.water { width: 14px; height: 7px; border-radius: 2px; background: rgba(44, 133, 190, .7); }
 .map-legend i.pollution { width: 22px; height: 7px; border-radius: 2px; background: linear-gradient(90deg, #2db058, #f6c937, #dc372d); }
 .map-legend i.selected { background: var(--accent); }

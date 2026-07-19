@@ -208,7 +208,7 @@ export function compactObservedBuildings(buildings) {
 
 export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
   width = 760, height = 480, padding = 18, focusBuildingIndex = null, roadNetwork = null,
-  railNetwork = null, terrainWater = null, pollutionLayer = null,
+  railNetwork = null, pedestrianNetwork = null, terrainWater = null, pollutionLayer = null,
 } = {}) {
   const located = (buildings ?? []).filter(building =>
     Number.isFinite(building.x) && Number.isFinite(building.z));
@@ -222,7 +222,7 @@ export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
     maxZ = Math.max(maxZ, point.z);
   };
   located.forEach(includeExtent);
-  for (const network of [roadNetwork, railNetwork]) {
+  for (const network of [roadNetwork, railNetwork, pedestrianNetwork]) {
     for (const edge of network?.edges ?? []) {
       includeExtent(network.nodes?.[edge.from]);
       edge.points?.forEach(includeExtent);
@@ -262,6 +262,7 @@ export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
     pollution: projectRaster(pollutionLayer),
     roads: projectNetwork(roadNetwork),
     rails: projectNetwork(railNetwork),
+    pedestrian: projectNetwork(pedestrianNetwork),
     buildings: located.map(building => ({
       ...building, mapX: projectX(building.x), mapY: projectY(building.z),
       criminalityOutlier: outliers.get(building.index) ?? null,
