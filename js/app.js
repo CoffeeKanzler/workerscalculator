@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=106';
+import { STRINGS } from './i18n.js?v=107';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -24,7 +24,7 @@ import {
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
-} from './republic.js?v=11';
+} from './republic.js?v=12';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
@@ -4530,6 +4530,10 @@ function renderRepublic() {
     const suffix = ['productivity', 'health', 'criminality'].includes(key) ? ' pp' : '';
     return `${scaled > 0 ? '+' : ''}${fmt(scaled, key === 'criminality' ? 2 : 1)}${suffix}`;
   };
+  const comparisonRate = (key, value) => {
+    if (!Number.isFinite(value)) return '—';
+    return `${value > 0 ? '+' : ''}${fmt(value, key === 'population' ? 1 : 2)}`;
+  };
   const comparisonMetrics = [
     ['statsRecordCount', t('statsHistoryRecords')],
     ['population', t('population')], ['liveBuildingCount', t('importedBuildings')],
@@ -4566,19 +4570,23 @@ function renderRepublic() {
       el('p', { class: 'hint' }, `${state.saveSlotName || state.saveImport.sourceName} − ${comparisonSnapshotName}`),
       el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
         el('thead', {}, el('tr', {}, el('th', {}, t('metric')), el('th', {}, t('baseline')),
-          el('th', {}, t('current')), el('th', {}, t('change')))),
+          el('th', {}, t('current')), el('th', {}, t('change')),
+          el('th', {}, t('per30GameDays')))),
         el('tbody', {}, el('tr', {},
           el('td', {}, t('gameDate')),
           el('td', { class: 'r' }, comparison.dates.baseline
             ? `${comparison.dates.baseline.year} / ${comparison.dates.baseline.day}` : '—'),
           el('td', { class: 'r' }, comparison.dates.current
             ? `${comparison.dates.current.year} / ${comparison.dates.current.day}` : '—'),
+          el('td', { class: 'r' }, Number.isFinite(comparison.elapsedGameDays)
+            ? t('elapsedGameDays').replace('{days}', fmt(comparison.elapsedGameDays, 0)) : '—'),
           el('td', { class: 'r' }, '—')),
         ...comparisonMetrics.map(([key, label]) => el('tr', {},
           el('td', {}, label),
           el('td', { class: 'r' }, comparisonValue(key, comparison.baseline.totals[key])),
           el('td', { class: 'r' }, comparisonValue(key, comparison.current.totals[key])),
-          el('td', { class: 'r' }, comparisonDelta(key, comparison.deltas[key]))))))),
+          el('td', { class: 'r' }, comparisonDelta(key, comparison.deltas[key])),
+          el('td', { class: 'r' }, comparisonRate(key, comparison.ratesPer30Days[key]))))))),
       !comparison.sameRepublic ? el('p', { class: 'warn' }, t('differentRepublicComparison'))
         : comparisonAreaRows.length ? el('details', { class: 'secondary-section' },
           el('summary', {}, `${t('areaChanges')} (${fmt(comparisonAreaRows.length, 0)})`),

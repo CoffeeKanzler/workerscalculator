@@ -148,7 +148,10 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   show current-minus-baseline population, buildings, staffing, productivity, health,
   criminality, cumulative minor/medium/serious crime counts, and exact current
   medical/criminal case queues. Each side also shows its exact latest dated stats.ini game date
-  and retained history-record count, without inventing elapsed-day rates. Area deltas use stable
+  and retained history-record count. For a later snapshot of the same republic, the exact
+  365-day game calendar interval normalizes population and cumulative crime changes per 30 game
+  days; zero/reversed intervals and different republics remain unavailable rather than producing
+  misleading rates. Area deltas use stable
   scope IDs only when both snapshots report
   the same saved-game path; unrelated republics retain totals without false city matches.
 

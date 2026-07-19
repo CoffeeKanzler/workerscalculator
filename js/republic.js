@@ -107,6 +107,7 @@ function sameRepublicSource(current = {}, baseline = {}) {
 const CRIME_HISTORY_KEYS = ['minorCrimes', 'mediumCrimes', 'seriousCrimes'];
 const LIVE_QUEUE_KEYS = ['medicalEmergencies', 'activeCrimes', 'awaitingPolice',
   'underInvestigation', 'atCourt'];
+const SNAPSHOT_RATE_KEYS = ['population', ...CRIME_HISTORY_KEYS];
 
 function latestCrimeHistory(records = []) {
   const record = records.findLast?.(item => CRIME_HISTORY_KEYS.some(key => Number.isFinite(item?.[key])))
@@ -141,7 +142,16 @@ export function compareObservedSnapshots(currentInfo, baselineInfo, currentStats
     current: currentDate ? { year: currentDate.year, day: currentDate.day } : null,
     baseline: baselineDate ? { year: baselineDate.year, day: baselineDate.day } : null,
   };
-  if (!sameRepublic) return { sameRepublic, current, baseline, deltas, dates, areas: [] };
+  const elapsedGameDays = sameRepublic && dates.current && dates.baseline
+    ? (dates.current.year - dates.baseline.year) * 365 + dates.current.day - dates.baseline.day
+    : null;
+  const ratesPer30Days = elapsedGameDays > 0
+    ? Object.fromEntries(SNAPSHOT_RATE_KEYS.flatMap(key => Number.isFinite(deltas[key])
+      ? [[key, deltas[key] * 30 / elapsedGameDays]] : []))
+    : {};
+  if (!sameRepublic) {
+    return { sameRepublic, current, baseline, deltas, dates, elapsedGameDays, ratesPer30Days, areas: [] };
+  }
 
   const currentAreas = new Map(current.areas.map(area => [area.scopeId, area]));
   const baselineAreas = new Map(baseline.areas.map(area => [area.scopeId, area]));
@@ -159,7 +169,7 @@ export function compareObservedSnapshots(currentInfo, baselineInfo, currentStats
         differenceValue(currentArea, baselineArea, key)])),
     };
   });
-  return { sameRepublic, current, baseline, deltas, dates, areas };
+  return { sameRepublic, current, baseline, deltas, dates, elapsedGameDays, ratesPer30Days, areas };
 }
 
 function differenceValue(plan, actual, key) {

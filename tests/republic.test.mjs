@@ -174,6 +174,12 @@ test('compares observed totals and stable areas current minus baseline', () => {
   assert.deepEqual(comparison.dates, {
     current: { year: 1980, day: 100 }, baseline: { year: 1979, day: 90 },
   });
+  assert.equal(comparison.elapsedGameDays, 375);
+  assert.ok(Math.abs(comparison.ratesPer30Days.population - 9.6) < 1e-9);
+  assert.ok(Math.abs(comparison.ratesPer30Days.minorCrimes - 0.32) < 1e-9);
+  assert.ok(Math.abs(comparison.ratesPer30Days.mediumCrimes - 0.24) < 1e-9);
+  assert.ok(Math.abs(comparison.ratesPer30Days.seriousCrimes - 0.08) < 1e-9);
+  assert.equal(comparison.ratesPer30Days.activeCrimes, undefined);
   assert.ok(Math.abs(comparison.deltas.productivity - 0.1) < 1e-9);
   assert.equal(comparison.areas[0].deltas.population, 120);
   assert.equal(comparison.areas[0].deltas.minorCrimes, 3);
@@ -198,5 +204,16 @@ test('does not match area IDs across different republics', () => {
   const baseline = { sourceName: 'B', header: { savePath: 'save/b' }, scopes: [{ id: 1, name: 'Same ID' }] };
   const comparison = compareObservedSnapshots(current, baseline);
   assert.equal(comparison.sameRepublic, false);
+  assert.equal(comparison.elapsedGameDays, null);
+  assert.deepEqual(comparison.ratesPer30Days, {});
   assert.deepEqual(comparison.areas, []);
+});
+
+test('does not manufacture snapshot rates without a later dated observation', () => {
+  const save = { sourceName: 'Republic', header: { savePath: 'save/republic' } };
+  const comparison = compareObservedSnapshots(save, save,
+    [{ year: 1980, day: 10, minorCrimes: 8 }],
+    [{ year: 1980, day: 10, minorCrimes: 5 }]);
+  assert.equal(comparison.elapsedGameDays, 0);
+  assert.deepEqual(comparison.ratesPer30Days, {});
 });
