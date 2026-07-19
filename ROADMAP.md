@@ -265,7 +265,7 @@ the header's ⬇/⬆/🔗 buttons in `js/app.js`, `js/share.js`.)
   compatible vehicles, or delivery throughput.
   - **Current beta limitations:** workshop buildings without their mod `building.ini`
   remain unmatched (their IDs/scopes/counts are still reported). The published Workshop
-  catalog contains 1,909 packages with 3,307 building and 2,083 vehicle definitions as compact
+  catalog contains 2,449 packages with 3,317 building and 3,333 vehicle definitions as compact
   parsed INI facts under `data/workshop/`, never mod assets. Save seeding prioritizes exact
   Workshop identities found in owned and used-market vehicles as well as buildings.
   The browser resolves available packages automatically, imports exact mod housing,
