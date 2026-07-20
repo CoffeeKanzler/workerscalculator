@@ -106,7 +106,22 @@ export function solveChain(goalKey, amount, buildings, eco, opts = {}) {
     }
     return { count: n, output: out };
   };
+  // Full-quality nominal rate -- only valid for keys with no quality tiers.
   const outputOf = (b, key) => rateOf(b, key, 1);
+  // Real production capacity of a building for a key at the counts you'll
+  // actually build (countCeil), honoring whatever quality tiers were solved
+  // for it. outputOf's flat quality-1 rate massively overstates capacity --
+  // and thus "surplus"/byproduct amounts -- for anything below 100% quality,
+  // since e.g. a mine at 50% quality only makes half as much per building.
+  // Derive the actual blended per-building rate from the fixpoint's own
+  // solved count/output for this key, so mixed-quality deposit tiers are
+  // honored too; fall back to the flat rate for keys the fixpoint never
+  // demanded (pure secondary byproducts with no quality tier to speak of).
+  const capacityOf = (b, key, n) => {
+    const entry = counts.get(key);
+    if (entry && entry.count > 1e-9) return (entry.output / entry.count) * n;
+    return outputOf(b, key) * n;
+  };
 
   // fixpoint: demands -> building counts -> induced demands
   let demands = new Map([[goalKey, amount]]);
@@ -196,7 +211,7 @@ export function solveChain(goalKey, amount, buildings, eco, opts = {}) {
     for (const p of b.production) {
       const key = eco.keyForName(p.de);
       if (!key) continue;
-      const cap = outputOf(b, key) * n;
+      const cap = capacityOf(b, key, n);
       const dem = demands.get(key) ?? 0;
       const surplus = cap - Math.min(dem, cap);
       if (surplus > 1e-6) byproducts.set(key, (byproducts.get(key) ?? 0) + surplus);

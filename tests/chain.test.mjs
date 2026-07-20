@@ -98,6 +98,26 @@ test('qualityTiers: a fully-specified (non-zero last count) tier list can leave 
   assert.ok(row.output < row.demand);
 });
 
+test('byproduct surplus for a quality-tiered mine honors its actual quality, not a flat 100%', () => {
+  // Regression for a bug where the mine's rounding-up "surplus" (ceiled
+  // building count vs. fractional demand) was computed at nominal 100%
+  // quality regardless of the tier actually solved for, wildly overstating
+  // the reported rawiron byproduct the lower the quality got.
+  const full = solveChain('rawiron', 1000, gameBuildings, eco,
+    { producerChoice: new Map([['rawiron', 'Eisenmine']]), includeUtilities: false,
+      qualityTiers: new Map([['rawiron', [{ quality: 1, count: 0 }]]]) });
+  const half = solveChain('rawiron', 1000, gameBuildings, eco,
+    { producerChoice: new Map([['rawiron', 'Eisenmine']]), includeUtilities: false,
+      qualityTiers: new Map([['rawiron', [{ quality: 0.5, count: 0 }]]]) });
+  const fullSurplus = full.byproducts.get('rawiron') ?? 0;
+  const halfSurplus = half.byproducts.get('rawiron') ?? 0;
+  // Both cases round the fractional building count up by less than one whole
+  // building, so the true surplus stays small and comparable regardless of
+  // quality -- it must not balloon as quality drops (the bug scaled it up by
+  // roughly 1/quality since it always assumed 100%-quality buildings).
+  assert.ok(halfSurplus < fullSurplus * 3 + 1, `rawiron surplus ballooned: full=${fullSurplus} half=${halfSurplus}`);
+});
+
 test('cyclic chains converge (power plants need coal, mining needs power)', () => {
   const r = solveChain('eletric', 5000, gameBuildings, eco,
     { producerChoice: new Map([['eletric', 'Kohlekraftwerk']]) });
