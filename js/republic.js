@@ -1,3 +1,11 @@
+export {
+  REPUBLIC_MODEL_SCHEMA_VERSION,
+  createEvidence,
+  createEvidenceCollection,
+  createEvidenceValue,
+  createRepublicModel,
+} from './models/republic_model.js';
+
 const sum = (values) => values.reduce((total, value) => total + (Number.isFinite(value) ? value : 0), 0);
 
 function weightedAverage(areas, key) {
