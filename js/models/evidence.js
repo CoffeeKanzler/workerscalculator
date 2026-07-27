@@ -1,6 +1,11 @@
 const SOURCES = new Set(['live-sdk', 'save', 'stats-history', 'derived', 'plan']);
 const COMPLETENESS = new Set(['complete', 'partial', 'unavailable']);
 const CONFIDENCE = new Set(['exact', 'inferred', 'estimated']);
+const EVIDENCE_FIELDS = [
+  'source', 'observedAt', 'gameDate', 'completeness',
+  'confidence', 'capability', 'warning',
+];
+const ISO_DATE_TIME = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
 
 function deepFreeze(value, seen = new WeakSet()) {
   if (value === null || typeof value !== 'object' || seen.has(value)) return value;
@@ -17,7 +22,8 @@ function nullableString(value, field) {
 
 function validateObservedAt(value) {
   if (value === null) return;
-  if (typeof value !== 'string' || !Number.isFinite(Date.parse(value))) {
+  if (typeof value !== 'string' || !ISO_DATE_TIME.test(value)
+    || !Number.isFinite(Date.parse(value))) {
     throw new TypeError('observedAt must be an ISO date-time string or null');
   }
 }
@@ -31,6 +37,25 @@ function validateGameDate(value) {
   }
 }
 
+function validateEvidence(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)
+    || EVIDENCE_FIELDS.some(field => !Object.hasOwn(value, field))) {
+    throw new TypeError('Evidence must contain every required provenance field');
+  }
+  if (!SOURCES.has(value.source)) throw new TypeError(`Unsupported evidence source: ${value.source}`);
+  if (!COMPLETENESS.has(value.completeness)) {
+    throw new TypeError(`Unsupported evidence completeness: ${value.completeness}`);
+  }
+  if (!CONFIDENCE.has(value.confidence)) {
+    throw new TypeError(`Unsupported evidence confidence: ${value.confidence}`);
+  }
+  validateObservedAt(value.observedAt);
+  validateGameDate(value.gameDate);
+  nullableString(value.capability, 'capability');
+  nullableString(value.warning, 'warning');
+  return value;
+}
+
 export function createEvidence({
   source,
   observedAt,
@@ -40,19 +65,7 @@ export function createEvidence({
   capability,
   warning,
 } = {}) {
-  if (!SOURCES.has(source)) throw new TypeError(`Unsupported evidence source: ${source}`);
-  if (!COMPLETENESS.has(completeness)) {
-    throw new TypeError(`Unsupported evidence completeness: ${completeness}`);
-  }
-  if (!CONFIDENCE.has(confidence)) {
-    throw new TypeError(`Unsupported evidence confidence: ${confidence}`);
-  }
-  validateObservedAt(observedAt);
-  validateGameDate(gameDate);
-  nullableString(capability, 'capability');
-  nullableString(warning, 'warning');
-
-  return deepFreeze({
+  return deepFreeze(validateEvidence({
     source,
     observedAt,
     gameDate: gameDate === null ? null : { ...gameDate },
@@ -60,15 +73,17 @@ export function createEvidence({
     confidence,
     capability,
     warning,
-  });
+  }));
 }
 
 export function isEvidence(value) {
-  return !!value && typeof value === 'object'
-    && SOURCES.has(value.source)
-    && COMPLETENESS.has(value.completeness)
-    && CONFIDENCE.has(value.confidence)
-    && Object.isFrozen(value);
+  try {
+    validateEvidence(value);
+    return Object.isFrozen(value)
+      && (value.gameDate === null || Object.isFrozen(value.gameDate));
+  } catch {
+    return false;
+  }
 }
 
-export { deepFreeze };
+export { deepFreeze, validateGameDate, validateObservedAt };

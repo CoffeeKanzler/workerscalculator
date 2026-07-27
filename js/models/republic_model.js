@@ -1,6 +1,31 @@
-import { createEvidence, deepFreeze, isEvidence } from './evidence.js';
+import {
+  createEvidence,
+  deepFreeze,
+  isEvidence,
+  validateGameDate,
+  validateObservedAt,
+} from './evidence.js';
 
 export const REPUBLIC_MODEL_SCHEMA_VERSION = 1;
+export const REPUBLIC_SCALAR_FIELDS = Object.freeze([
+  'population',
+  'occupiedNamedAreas',
+  'liveBuildingCount',
+  'configuredIndustryWorkers',
+  'currentIndustryWorkers',
+  'productivity',
+  'health',
+  'criminality',
+  'happiness',
+  'loyalty',
+  'realizedProduction',
+  'medicalEmergencies',
+  'activeCrimes',
+  'awaitingPolice',
+  'underInvestigation',
+  'atCourt',
+]);
+const REPUBLIC_SCALAR_FIELD_SET = new Set(REPUBLIC_SCALAR_FIELDS);
 
 const DOMAIN_DEFAULTS = {
   republic: {},
@@ -31,20 +56,6 @@ function validateIdentity(identity) {
     || (typeof identity.id !== 'string' && !Number.isInteger(identity.id))
     || identity.id === '') {
     throw new TypeError('identity must contain a stable string or integer id');
-  }
-}
-
-function validateObservedAt(value) {
-  if (value !== null && (typeof value !== 'string' || !Number.isFinite(Date.parse(value)))) {
-    throw new TypeError('observedAt must be an ISO date-time string or null');
-  }
-}
-
-function validateGameDate(value) {
-  if (value !== null && (!value || typeof value !== 'object' || Array.isArray(value)
-    || !Number.isInteger(value.year) || value.year < 0
-    || !Number.isInteger(value.day) || value.day < 0)) {
-    throw new TypeError('gameDate must contain non-negative integer year and day values, or be null');
   }
 }
 
@@ -84,6 +95,11 @@ function validateDomain(name, domain) {
     if (!domain || typeof domain !== 'object' || Array.isArray(domain)) {
       throw new TypeError('republic domain must be an object');
     }
+    for (const field of REPUBLIC_SCALAR_FIELD_SET) {
+      if (Object.hasOwn(domain, field) && !isEvidenceValue(domain[field])) {
+        throw new TypeError(`republic.${field} must be an evidence value`);
+      }
+    }
     return;
   }
   if (!domain || typeof domain !== 'object' || Array.isArray(domain)
@@ -91,6 +107,12 @@ function validateDomain(name, domain) {
     || domain.completeness !== domain.evidence.completeness) {
     throw new TypeError(`${name} domain must be an evidence collection`);
   }
+}
+
+function isEvidenceValue(value) {
+  return !!value && typeof value === 'object' && !Array.isArray(value)
+    && Object.hasOwn(value, 'value') && Object.hasOwn(value, 'evidence')
+    && isEvidence(value.evidence);
 }
 
 export function createRepublicModel({

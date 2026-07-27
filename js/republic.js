@@ -1,5 +1,6 @@
 export {
   REPUBLIC_MODEL_SCHEMA_VERSION,
+  REPUBLIC_SCALAR_FIELDS,
   createEvidence,
   createEvidenceCollection,
   createEvidenceValue,

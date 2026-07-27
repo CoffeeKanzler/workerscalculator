@@ -60,6 +60,46 @@ test('createEvidence rejects unsupported provenance values and malformed dates',
   }
 });
 
+test('evidence consumers reject frozen objects missing required provenance fields', () => {
+  const complete = {
+    source: 'save',
+    observedAt: '2026-07-27T12:30:00.000Z',
+    gameDate: { year: 1984, day: 123 },
+    completeness: 'complete',
+    confidence: 'exact',
+    capability: null,
+    warning: null,
+  };
+
+  for (const field of ['observedAt', 'gameDate', 'capability', 'warning']) {
+    const forged = { ...complete };
+    delete forged[field];
+    Object.freeze(forged);
+    assert.throws(() => createEvidenceValue(10, forged), /evidence/i,
+      `frozen evidence missing ${field} should be rejected`);
+    assert.throws(() => createRepublicModel({
+      identity: { id: 'r1' },
+      sources: { forged },
+    }), /source catalog/i, `source catalog evidence missing ${field} should be rejected`);
+  }
+});
+
+test('evidence and model timestamps reject parseable non-ISO date strings', () => {
+  assert.throws(() => createEvidence({
+    source: 'save',
+    observedAt: '07/27/2026',
+    gameDate: null,
+    completeness: 'complete',
+    confidence: 'exact',
+    capability: null,
+    warning: null,
+  }), /ISO date-time/i);
+  assert.throws(() => createRepublicModel({
+    identity: { id: 'r1' },
+    observedAt: '07/27/2026',
+  }), /ISO date-time/i);
+});
+
 test('evidence values and collections preserve nested payloads with stable IDs', () => {
   const evidence = saveEvidence();
   const population = createEvidenceValue(18420, evidence);
@@ -88,7 +128,7 @@ test('createRepublicModel supplies the complete immutable normalized schema', ()
     sources: { workers: evidence },
     republic: {
       population: createEvidenceValue(18420, evidence),
-      leadership: { chairman: 'Novák' },
+      leadership: createEvidenceValue({ chairman: 'Novák' }, evidence),
     },
     buildings: createEvidenceCollection([{ id: 41, name: 'Coal mine' }], evidence),
   });
@@ -98,7 +138,7 @@ test('createRepublicModel supplies the complete immutable normalized schema', ()
   assert.equal(model.generation, 17);
   assert.equal(model.sources.workers, evidence);
   assert.equal(model.republic.population.value, 18420);
-  assert.equal(model.republic.leadership.chairman, 'Novák');
+  assert.equal(model.republic.leadership.value.chairman, 'Novák');
   assert.deepEqual(model.buildings.items.map(item => item.id), [41]);
   for (const domain of [
     'republic', 'areas', 'buildings', 'citizens', 'resources',
@@ -110,6 +150,22 @@ test('createRepublicModel supplies the complete immutable normalized schema', ()
   assert.ok(Object.isFrozen(model.sources));
   assert.ok(Object.isFrozen(model.republic.leadership));
   assert.throws(() => { model.generation = 18; }, TypeError);
+});
+
+test('republic scalar metrics require evidence while nested domain objects remain practical', () => {
+  const evidence = saveEvidence();
+
+  assert.throws(() => createRepublicModel({
+    identity: { id: 'r1' },
+    republic: { population: 18420 },
+  }), /population.*evidence value/i);
+  assert.doesNotThrow(() => createRepublicModel({
+    identity: { id: 'r1' },
+    republic: {
+      population: createEvidenceValue(18420, evidence),
+      government: { cabinet: [{ role: 'chairman', name: 'Novák' }] },
+    },
+  }));
 });
 
 test('createRepublicModel rejects invalid identity, generation, source catalog, and domains', () => {
