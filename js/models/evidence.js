@@ -9,6 +9,10 @@ const ISO_DATE_TIME = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d+)
 
 function deepFreeze(value, seen = new WeakSet()) {
   if (value === null || typeof value !== 'object' || seen.has(value)) return value;
+  const prototype = Object.getPrototypeOf(value);
+  if (!Array.isArray(value) && prototype !== Object.prototype && prototype !== null) {
+    throw new TypeError('Evidence payloads must use JSON-compatible arrays and plain objects');
+  }
   seen.add(value);
   for (const nested of Object.values(value)) deepFreeze(nested, seen);
   return Object.freeze(value);
@@ -44,8 +48,8 @@ function validateGameDate(value) {
   if (value === null) return;
   if (!value || typeof value !== 'object' || Array.isArray(value)
     || !Number.isInteger(value.year) || value.year < 0
-    || !Number.isInteger(value.day) || value.day < 0) {
-    throw new TypeError('gameDate must contain non-negative integer year and day values, or be null');
+    || !Number.isInteger(value.day) || value.day < 0 || value.day >= 365) {
+    throw new TypeError('gameDate must contain a non-negative integer year and a day from 0 through 364, or be null');
   }
 }
 

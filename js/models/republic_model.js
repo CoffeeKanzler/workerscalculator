@@ -64,9 +64,8 @@ export function createEvidenceValue(value, evidence) {
   return deepFreeze({ value, evidence });
 }
 
-export function createEvidenceCollection(items, evidence) {
+function validateCollectionItems(items) {
   if (!Array.isArray(items)) throw new TypeError('collection items must be an array');
-  if (!isEvidence(evidence)) throw new TypeError('collection evidence must come from createEvidence');
   const ids = new Set();
   for (const item of items) {
     const id = item?.id;
@@ -76,6 +75,11 @@ export function createEvidenceCollection(items, evidence) {
     if (ids.has(id)) throw new TypeError(`Duplicate stable id in collection: ${id}`);
     ids.add(id);
   }
+}
+
+export function createEvidenceCollection(items, evidence) {
+  validateCollectionItems(items);
+  if (!isEvidence(evidence)) throw new TypeError('collection evidence must come from createEvidence');
   return deepFreeze({
     items: [...items],
     evidence,
@@ -107,6 +111,7 @@ function validateDomain(name, domain) {
     || domain.completeness !== domain.evidence.completeness) {
     throw new TypeError(`${name} domain must be an evidence collection`);
   }
+  validateCollectionItems(domain.items);
 }
 
 function isEvidenceValue(value) {

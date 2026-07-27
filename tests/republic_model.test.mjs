@@ -60,6 +60,30 @@ test('createEvidence rejects unsupported provenance values and malformed dates',
   }
 });
 
+test('game dates stay within the project 365-day year', () => {
+  const valid = {
+    source: 'save',
+    observedAt: null,
+    completeness: 'complete',
+    confidence: 'exact',
+    capability: null,
+    warning: null,
+  };
+
+  assert.doesNotThrow(() => createEvidence({
+    ...valid,
+    gameDate: { year: 1984, day: 364 },
+  }));
+  assert.throws(() => createEvidence({
+    ...valid,
+    gameDate: { year: 1984, day: 365 },
+  }), /gameDate/i);
+  assert.throws(() => createRepublicModel({
+    identity: { id: 'r1' },
+    gameDate: { year: 1984, day: 999 },
+  }), /gameDate/i);
+});
+
 test('evidence consumers reject frozen objects missing required provenance fields', () => {
   const complete = {
     source: 'save',
@@ -141,6 +165,42 @@ test('evidence values and collections preserve nested payloads with stable IDs',
   assert.ok(Object.isFrozen(buildings.items[0].operation));
   assert.throws(() => createEvidenceCollection([{ name: 'Anonymous' }], evidence), /stable id/i);
   assert.throws(() => createEvidenceCollection([{ id: 7 }, { id: 7 }], evidence), /duplicate/i);
+});
+
+test('evidence payloads reject mutable non-JSON object types', () => {
+  const evidence = saveEvidence();
+
+  for (const payload of [
+    new Date('2026-07-27T12:30:00Z'),
+    new Map([['workers', 42]]),
+    new Set(['workers']),
+  ]) {
+    assert.throws(() => createEvidenceValue(payload, evidence), /JSON-compatible/i);
+    assert.throws(() => createEvidenceCollection([{ id: 1, payload }], evidence), /JSON-compatible/i);
+  }
+});
+
+test('createRepublicModel revalidates stable IDs in supplied collections', () => {
+  const evidence = saveEvidence();
+  const forgedDuplicate = Object.freeze({
+    items: Object.freeze([{ id: 7 }, { id: 7 }]),
+    evidence,
+    completeness: evidence.completeness,
+  });
+  const forgedInvalid = Object.freeze({
+    items: Object.freeze([{ name: 'Anonymous' }]),
+    evidence,
+    completeness: evidence.completeness,
+  });
+
+  assert.throws(() => createRepublicModel({
+    identity: { id: 'r1' },
+    buildings: forgedDuplicate,
+  }), /duplicate stable id/i);
+  assert.throws(() => createRepublicModel({
+    identity: { id: 'r1' },
+    buildings: forgedInvalid,
+  }), /stable id/i);
 });
 
 test('createRepublicModel supplies the complete immutable normalized schema', () => {
