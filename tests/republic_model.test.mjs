@@ -100,6 +100,31 @@ test('evidence and model timestamps reject parseable non-ISO date strings', () =
   }), /ISO date-time/i);
 });
 
+test('ISO-shaped timestamps reject impossible calendar dates without narrowing valid formats', () => {
+  const evidenceInput = {
+    source: 'save',
+    gameDate: null,
+    completeness: 'complete',
+    confidence: 'exact',
+    capability: null,
+    warning: null,
+  };
+
+  for (const observedAt of [
+    '2026-02-30T12:00:00Z',
+    '2026-04-31T12:00:00Z',
+  ]) {
+    assert.throws(() => createEvidence({ ...evidenceInput, observedAt }), /ISO date-time/i);
+  }
+  for (const observedAt of [
+    '2026-02-28T12:00:00Z',
+    '2024-02-29T12:00:00.125+02:00',
+    '2026-07-27T12:30:00-05:30',
+  ]) {
+    assert.doesNotThrow(() => createEvidence({ ...evidenceInput, observedAt }));
+  }
+});
+
 test('evidence values and collections preserve nested payloads with stable IDs', () => {
   const evidence = saveEvidence();
   const population = createEvidenceValue(18420, evidence);

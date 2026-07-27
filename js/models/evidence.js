@@ -5,7 +5,7 @@ const EVIDENCE_FIELDS = [
   'source', 'observedAt', 'gameDate', 'completeness',
   'confidence', 'capability', 'warning',
 ];
-const ISO_DATE_TIME = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
+const ISO_DATE_TIME = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
 
 function deepFreeze(value, seen = new WeakSet()) {
   if (value === null || typeof value !== 'object' || seen.has(value)) return value;
@@ -22,8 +22,20 @@ function nullableString(value, field) {
 
 function validateObservedAt(value) {
   if (value === null) return;
-  if (typeof value !== 'string' || !ISO_DATE_TIME.test(value)
-    || !Number.isFinite(Date.parse(value))) {
+  const match = typeof value === 'string' ? ISO_DATE_TIME.exec(value) : null;
+  if (!match || !Number.isFinite(Date.parse(value))) {
+    throw new TypeError('observedAt must be an ISO date-time string or null');
+  }
+  const [year, month, day, hour, minute, second] = match.slice(1).map(Number);
+  const calendar = new Date(0);
+  calendar.setUTCFullYear(year, month - 1, day);
+  calendar.setUTCHours(hour, minute, second, 0);
+  if (calendar.getUTCFullYear() !== year
+    || calendar.getUTCMonth() !== month - 1
+    || calendar.getUTCDate() !== day
+    || calendar.getUTCHours() !== hour
+    || calendar.getUTCMinutes() !== minute
+    || calendar.getUTCSeconds() !== second) {
     throw new TypeError('observedAt must be an ISO date-time string or null');
   }
 }
