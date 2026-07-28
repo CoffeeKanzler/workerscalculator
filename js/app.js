@@ -46,12 +46,15 @@ import {
 } from './fleet.js?v=14';
 import {
   SaveFolderValidationError,
-  importSaveFolder,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
 } from './adapters/save_folder_adapter.js?v=1';
+import { bootstrapRuntime } from './bootstrap.js?v=1';
+import { getRuntimeConfig } from './runtime/runtime_config.js?v=1';
 
-const IS_BETA = location.pathname.split('/').includes('beta');
+const RUNTIME_CONFIG = getRuntimeConfig();
+const APP_RUNTIME = bootstrapRuntime({ config: RUNTIME_CONFIG });
+const IS_BETA = RUNTIME_CONFIG.variant === 'beta';
 const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'map', 'production', 'city', 'chain',
   'prices', 'analysis', 'vehicleprod', ...(IS_BETA ? ['saveimport'] : []),
   'trains', 'research', 'advanced', 'help'];
@@ -1697,7 +1700,7 @@ async function handleSaveDirectory(fileList) {
 
   try {
     const custom = state.customBuildings.filter(building => building.customDataset === state.dataset);
-    const result = await importSaveFolder(fileList, {
+    const result = await APP_RUNTIME.importSave(fileList, {
       rawBuildings: DATA.rawBuildings ?? [],
       productionBuildings: [],
       combineProductionBuildings: workshopProduction => applyBuildingOverrides(
@@ -4943,6 +4946,7 @@ loadState().then(() => {
   state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.calcOpts || {}) };
   return loadData();
 }).then(async () => {
+  await APP_RUNTIME.start();
   await initializeNamedSnapshots();
   await restoreNamedMapLayers();
   await applyHash();
