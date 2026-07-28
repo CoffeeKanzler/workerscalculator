@@ -2,6 +2,13 @@
 // IndexedDB provides the quota and structured-clone semantics that localStorage
 // cannot, while this small adapter boundary keeps the behavior testable in Node.
 
+export {
+  createPlanningStore,
+  migrateLegacyPlannerState,
+  restorePlannerState,
+  serializePlannerState,
+} from './storage/planning_store.js';
+
 export function createSnapshotStore(adapter) {
   return {
     async names() {

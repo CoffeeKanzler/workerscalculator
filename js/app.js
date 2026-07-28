@@ -11,7 +11,20 @@ import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
 } from './train.js?v=17';
-import { createIndexedDbSnapshotStore, migrateLegacySnapshots } from './storage.js?v=1';
+import {
+  createIndexedDbSnapshotStore,
+  migrateLegacySnapshots,
+  restorePlannerState,
+  serializePlannerState,
+} from './storage.js?v=2';
+import {
+  PLANNING_KEYS,
+  createPlanningModel,
+  isPlanningKey,
+  planningProjection,
+  refreshPlanningFromObservation,
+  seedPlanningFromObservation,
+} from './models/planning_model.js';
 import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
@@ -74,7 +87,7 @@ const terrainWaterImageCache = new Map();
 const pollutionImageCache = new Map();
 
 function createInitialState() {
-  return {
+  const initial = {
     lang: 'en',
     tab: IS_BETA ? 'home' : 'prices',
     currency: 'RUB',
@@ -136,9 +149,32 @@ function createInitialState() {
     republicAlertsExpanded: false,
     republicAlertFilter: 'all',
   };
+  initial.planning = createPlanningModel(initial);
+  for (const key of PLANNING_KEYS) delete initial[key];
+  return initial;
 }
 
-const state = createInitialState();
+function createCompatibleState(initial) {
+  return new Proxy(initial, {
+    get(target, property, receiver) {
+      if (isPlanningKey(property)) return target.planning[property];
+      return Reflect.get(target, property, receiver);
+    },
+    set(target, property, value, receiver) {
+      if (isPlanningKey(property)) {
+        target.planning[property] = value;
+        return true;
+      }
+      if (property === 'planning') {
+        target.planning = createPlanningModel(value);
+        return true;
+      }
+      return Reflect.set(target, property, value, receiver);
+    },
+  });
+}
+
+const state = createCompatibleState(createInitialState());
 
 function plannerScopes(kind = null) {
   const imported = state.saveImport?.scopes;
@@ -196,9 +232,13 @@ function saveState() {
   const hasLocalMapData = rest.saveImport?.roadNetwork || rest.saveImport?.railNetwork
     || rest.saveImport?.pedestrianNetwork
     || rest.saveImport?.terrainWater || rest.saveImport?.pollutionLayer;
-  const persistent = hasLocalMapData
-    ? { ...rest, saveImport: (({ roadNetwork, railNetwork, pedestrianNetwork, terrainWater, pollutionLayer, ...summary }) => summary)(rest.saveImport) }
-    : rest;
+  const raw = { ...rest, planning: state.planning };
+  const persistent = serializePlannerState(raw);
+  if (hasLocalMapData) {
+    const { roadNetwork, railNetwork, pedestrianNetwork, terrainWater, pollutionLayer, ...summary } =
+      persistent.observation.saveImport ?? {};
+    persistent.observation.saveImport = summary;
+  }
   try { localStorage.setItem(LS_KEY, JSON.stringify(persistent)); } catch (e) { /* quota */ }
 }
 
@@ -206,8 +246,7 @@ function loadState() {
   try {
     const raw = localStorage.getItem(LS_KEY);
     if (!raw) return;
-    const s = JSON.parse(raw);
-    Object.assign(state, s);
+    Object.assign(state, restorePlannerState(JSON.parse(raw)));
     // Price-table sorting is a view preference, not plan state. Each launch
     // starts with the resource names in ascending alphabetical order.
     state.priceSort = { col: 'name', dir: 1 };
@@ -472,7 +511,6 @@ async function refreshLiveStats() {
     state.priceSource = 'stats';
     state.overrides = {};
     const productivity = latestProductivity(parsed.records, state.plan.settings.productivity || 1);
-    state.plan.settings.productivity = productivity;
     if (state.saveImport) {
       state.saveImport.blueprintOwned = parsed.blueprintOwned;
       state.saveImport.statsRecordCount = parsed.records.length;
@@ -1677,7 +1715,7 @@ async function handleSaveDirectory(fileList) {
     const backupResult = await saveNamedState(backupName);
     if (!backupResult.ok) throw backupResult.error;
 
-    const next = createInitialState();
+    const next = createCompatibleState(createInitialState());
     for (const key of ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'calcOpts', 'tuning']) {
       next[key] = cloneStateValue(state[key]);
     }
@@ -1686,13 +1724,26 @@ async function handleSaveDirectory(fileList) {
       next.priceSource = 'stats';
       next.overrides = {};
     }
-    next.plan.settings = { ...cloneStateValue(state.plan.settings), currency: state.currency };
-    next.plan.settings.productivity = productivity;
-    if (typeof parsed.header?.settings?.seasonsEnabled === 'boolean') {
-      next.plan.settings.seasons = parsed.header.settings.seasonsEnabled;
+    const currentIdentity = state.saveImport?.header?.savePath || state.saveImport?.sourceName;
+    const importedIdentity = parsed.header?.savePath || sourceName;
+    const sameRepublic = !!currentIdentity && currentIdentity === importedIdentity;
+    if (sameRepublic && state.planning) {
+      next.planning = refreshPlanningFromObservation(state.planning, result.model);
+    } else {
+      const planningSeed = {
+        ...next.planning,
+        plan: {
+          ...next.planning.plan,
+          settings: { ...cloneStateValue(state.plan.settings), currency: state.currency, productivity },
+          rows: imported.productionRows,
+        },
+        cities: imported.cities,
+      };
+      if (typeof parsed.header?.settings?.seasonsEnabled === 'boolean') {
+        planningSeed.plan.settings.seasons = parsed.header.settings.seasonsEnabled;
+      }
+      next.planning = seedPlanningFromObservation(result.model, planningSeed);
     }
-    next.plan.rows = imported.productionRows;
-    next.cities = imported.cities;
     next.saveImport = imported.metadata;
     next.tab = 'republic';
 
@@ -4666,6 +4717,7 @@ function renderHelp() {
 function sharedState() {
   const projected = stateProjection(SHARE_KEYS);
   projected.saveImport = shareSafeSaveImport(projected.saveImport);
+  projected.planning = planningProjection(state.planning);
   return projected;
 }
 
@@ -4681,17 +4733,22 @@ function stateProjection(keys) {
 }
 
 function snapshotState() {
-  return stateProjection(SNAPSHOT_KEYS);
+  return { ...stateProjection(SNAPSHOT_KEYS), planning: planningProjection(state.planning) };
 }
 
 function replaceStateProjection(obj, keys) {
   if (!obj || typeof obj !== 'object' || Array.isArray(obj)) throw new Error('Plan state must be an object');
   const defaults = createInitialState();
+  const hasCanonicalPlanning = obj.planning && typeof obj.planning === 'object'
+    && !Array.isArray(obj.planning);
   for (const key of keys) {
+    if (hasCanonicalPlanning && isPlanningKey(key)) continue;
     const value = obj[key] !== undefined ? obj[key] : defaults[key];
     if (value === undefined) delete state[key];
     else state[key] = cloneStateValue(value);
   }
+
+  if (hasCanonicalPlanning) state.planning = createPlanningModel(obj.planning);
 
   // Pre-multi-chain exports stored one `chain` object rather than `chains`.
   if (obj.chains === undefined && obj.chain && typeof obj.chain === 'object') {
