@@ -51,6 +51,9 @@ import {
 } from './adapters/save_folder_adapter.js?v=1';
 import { bootstrapRuntime } from './bootstrap.js?v=1';
 import { getRuntimeConfig } from './runtime/runtime_config.js?v=1';
+import {
+  COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
+} from './ui/command_center.js?v=1';
 
 const RUNTIME_CONFIG = getRuntimeConfig();
 const APP_RUNTIME = bootstrapRuntime({ config: RUNTIME_CONFIG });
@@ -158,6 +161,11 @@ function createInitialState() {
     fleetDetails: false,
     republicAlertsExpanded: false,
     republicAlertFilter: 'all',
+    runtimeStatus: RUNTIME_CONFIG.mode === 'hosted' ? 'ready' : 'loading',
+    runtimeReason: '',
+    runtimeGeneration: null,
+    runtimeObservedAt: null,
+    liveModel: null,
   };
   initial.planning = createPlanningModel(initial);
   for (const key of PLANNING_KEYS) delete initial[key];
@@ -233,7 +241,8 @@ function saveState() {
   const {
     statsRecords, viewingSharedLink, snapshotNotice, planningPersistenceError, observationPersistenceError,
     importStatus, importStatusError, importBusy,
-    localWorkshopStatus, liveStatsStatus, liveStatsStatusError, ...rest
+    localWorkshopStatus, liveStatsStatus, liveStatsStatusError,
+    runtimeStatus, runtimeReason, runtimeGeneration, runtimeObservedAt, liveModel, ...rest
   } = state;
   // Exact network samples belong in the IndexedDB named snapshot. Keeping the
   // multi-megabyte geometry out of the small synchronous localStorage slot
@@ -614,7 +623,7 @@ function render() {
     try { selStart = focused.selectionStart; selEnd = focused.selectionEnd; } catch { /* not a text-selectable input */ }
   }
 
-  root.replaceChildren(renderHeader(), ...(IS_BETA ? [renderBetaBanner()] : []),
+  root.replaceChildren(renderHeader(), renderEvidenceRail(), ...(IS_BETA ? [renderBetaBanner()] : []),
     ...(state.viewingSharedLink ? [renderSharedLinkBanner()] : []),
     ...(state.planningPersistenceError ? [el('p', { class: 'neg', role: 'alert' }, state.planningPersistenceError)] : []),
     ...(state.observationPersistenceError ? [el('p', { class: 'neg', role: 'alert' }, state.observationPersistenceError)] : []),
@@ -639,6 +648,37 @@ function renderBetaBanner() {
   return el('div', { class: 'betabanner' },
     el('strong', {}, 'β ' + t('betaTitle')), ' ', t('betaHint'),
     el('a', { href: '../' }, t('stableVersion')));
+}
+
+function renderEvidenceRail() {
+  const mode = RUNTIME_CONFIG.mode;
+  const stateKind = surfaceState({
+    mode, runtimeStatus: state.runtimeStatus, hasSave: !!state.saveImport, hasModel: !!state.liveModel,
+  });
+  const items = [
+    ['live', 'LIVE', mode === 'addon'
+      ? (state.runtimeStatus === 'ready' ? t('evidenceConnected')
+        : state.runtimeStatus === 'resynchronizing' ? t('evidenceResync') : t('evidenceWaiting'))
+      : t('evidenceAddonOnly')],
+    ['save', 'SAVE', state.saveImport ? t('evidenceSaveLoaded') : t('evidenceSaveWaiting')],
+    ['plan', 'PLAN', t('evidencePlanLocal')],
+    ['derived', 'DERIVED', t('evidenceDerived')],
+    ['unavailable', 'UNAVAILABLE', stateKind === 'resynchronizing'
+      ? t('evidenceResync') : stateKind === 'error' ? (state.runtimeReason || t('evidenceUnavailable'))
+        : t('evidenceUnavailable')],
+  ];
+  return el('aside', { class: `evidence-rail rail-${stateKind}`, 'aria-label': t('evidenceRail') },
+    el('div', { class: 'rail-mode' },
+      el('span', { class: 'rail-kicker' }, t('modeLabel')),
+      el('strong', {}, mode === 'addon' ? t('modeAddon') : t('modeHosted')),
+      el('span', { class: 'rail-state' }, t(`surface.${stateKind}`))),
+    el('div', { class: 'rail-stamps' }, ...items.map(([tone, label, detail]) => el('div', {
+      class: `evidence-stamp stamp-${tone}`,
+      'data-evidence': tone,
+      title: detail,
+    }, el('strong', {}, label), el('span', {}, detail)))),
+    mode === 'addon' && state.runtimeGeneration != null
+      ? el('span', { class: 'rail-generation' }, `${t('generation')} ${state.runtimeGeneration}`) : null);
 }
 
 function renderSharedLinkBanner() {
@@ -795,15 +835,24 @@ function renderTabs() {
     map: 'tabMap', saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
   const button = id => el('button', {
     class: state.tab === id ? 'active' : '',
+    'aria-current': state.tab === id ? 'page' : false,
     onclick: () => { state.tab = id; update(); },
   }, t(labels[id]));
-  const primary = TABS.filter(id => ['home', 'republic', 'map', 'production', 'city'].includes(id));
-  const secondary = TABS.filter(id => !primary.includes(id));
-  const activeSecondary = secondary.includes(state.tab);
-  return el('nav', {}, ...primary.map(button),
+  const activeSection = sectionForTab(state.tab);
+  const sectionButton = section => el('button', {
+    class: `section-tab ${activeSection === section.id ? 'active' : ''}`,
+    'aria-pressed': activeSection === section.id,
+    onclick: () => { state.tab = section.defaultTab; update(); },
+  }, t(section.labelKey));
+  const sectionTabs = tabsForSection(activeSection).filter(id => TABS.includes(id));
+  return el('nav', { class: 'command-navigation', 'aria-label': t('commandNavigation') },
+    el('div', { class: 'section-tabs', role: 'tablist' }, ...COMMAND_SECTIONS.map(sectionButton)),
+    el('div', { class: 'context-tabs', role: 'navigation', 'aria-label': t('sectionNavigation') },
+      ...sectionTabs.map(button)),
+    state.tab === 'home' ? button('home') : null,
     el('details', { class: 'more-nav' },
-      el('summary', { class: activeSecondary ? 'active' : '' }, activeSecondary ? t(labels[state.tab]) : t('moreTools')),
-      el('div', { class: 'more-nav-menu' }, ...secondary.map(button))));
+      el('summary', {}, t('moreTools')),
+      el('div', { class: 'more-nav-menu' }, ...TABS.filter(id => !sectionTabs.includes(id)).map(button))));
 }
 
 function renderCurrentTab() {
@@ -815,7 +864,9 @@ function renderCurrentTab() {
     case 'analysis': return renderAnalysis();
     case 'vehicleprod': return renderVehicleProduction();
     case 'city': return renderCity();
-    case 'republic': return renderRepublic();
+    case 'republic': return RUNTIME_CONFIG.mode === 'addon'
+      ? el('div', { class: 'republic-workspace' }, renderLiveBrief(), renderRepublic())
+      : renderRepublic();
     case 'map': return renderMapTab();
     case 'saveimport': return renderSaveImport();
     case 'trains': return renderTrains();
@@ -824,6 +875,54 @@ function renderCurrentTab() {
     case 'help': return renderHelp();
     default: return el('div');
   }
+}
+
+function evidenceValue(value, fallback = null) {
+  return value && typeof value === 'object' && Object.hasOwn(value, 'value') ? value.value : fallback;
+}
+
+function renderLiveBrief() {
+  const model = state.liveModel;
+  const current = surfaceState({ mode: 'addon', runtimeStatus: state.runtimeStatus, hasModel: !!model });
+  if (current === 'loading') {
+    return el('section', { class: 'live-brief surface-loading', 'aria-live': 'polite' },
+      el('span', { class: 'section-kicker' }, t('dispatchBoard')),
+      el('h2', {}, t('liveRepublicBrief')),
+      el('p', { class: 'hint' }, t('liveLoading')));
+  }
+  if (current === 'resynchronizing') {
+    return el('section', { class: 'live-brief surface-resync', role: 'status', 'aria-live': 'polite' },
+      el('span', { class: 'section-kicker' }, t('dispatchBoard')),
+      el('h2', {}, t('liveRepublicBrief')),
+      el('p', { class: 'warn' }, t('liveResynchronizing')),
+      state.runtimeReason ? el('p', { class: 'hint' }, state.runtimeReason) : null);
+  }
+  if (current === 'error') {
+    return el('section', { class: 'live-brief surface-error', role: 'alert' },
+      el('span', { class: 'section-kicker' }, t('dispatchBoard')),
+      el('h2', {}, t('liveRepublicBrief')),
+      el('p', { class: 'neg' }, state.runtimeReason || t('liveUnavailable')));
+  }
+  if (!model) return null;
+  const metric = (label, value, evidence) => el('div', { class: 'brief-row' },
+    el('span', {}, label), el('strong', {}, value ?? '—'),
+    el('span', { class: `evidence-badge ${evidence?.completeness === 'unavailable' ? 'missing' : 'exact'}` },
+      evidence?.source === 'live-sdk' ? 'LIVE SDK' : 'UNAVAILABLE'));
+  const population = evidenceValue(model.republic?.population);
+  const date = model.gameDate ? `${model.gameDate.year} · ${model.gameDate.day}` : '—';
+  return el('section', { class: 'live-brief surface-ready' },
+    el('div', { class: 'brief-heading' },
+      el('div', {}, el('span', { class: 'section-kicker' }, t('dispatchBoard')), el('h2', {}, t('liveRepublicBrief'))),
+      el('span', { class: 'mode-stamp live' }, 'LIVE SDK')),
+    el('p', { class: 'hint' }, `${t('lastObserved')} ${model.observedAt || '—'}${model.generation != null ? ` · ${t('generation')} ${model.generation}` : ''}`),
+    el('div', { class: 'brief-ledger' },
+      metric(t('gameDate'), date, model.sources?.lifecycle),
+      metric(t('population'), population == null ? null : fmt(population, 0), model.republic?.population?.evidence),
+      metric(t('cities'), model.areas?.items?.length, model.areas?.evidence),
+      metric(t('buildings'), model.buildings?.items?.length, model.buildings?.evidence),
+      metric(t('resources'), model.resources?.items?.length, model.resources?.evidence),
+      metric(t('transport'), model.transport?.items?.length, model.transport?.evidence)),
+    el('p', { class: 'hint' }, t('liveBriefHint')));
 }
 
 // ---------------------------------------------------------------- prices tab
@@ -4934,6 +5033,27 @@ window.addEventListener('hashchange', () => {
 });
 
 // ---------------------------------------------------------------- boot
+let liveRuntimeTimer = null;
+
+function applyRuntimeResult(result) {
+  state.runtimeStatus = result?.status ?? 'unavailable';
+  state.runtimeReason = result?.reason ?? result?.error?.message ?? '';
+  state.runtimeGeneration = result?.generation ?? null;
+  state.runtimeObservedAt = result?.model?.observedAt ?? null;
+  state.liveModel = result?.model ?? null;
+}
+
+async function refreshAddonRuntime() {
+  if (RUNTIME_CONFIG.mode !== 'addon' || !APP_RUNTIME.live?.refresh) return;
+  try {
+    applyRuntimeResult(await APP_RUNTIME.live.refresh());
+    update();
+  } catch (error) {
+    applyRuntimeResult({ status: 'unavailable', error });
+    update();
+  }
+}
+
 function update() {
   applyTuning(state.tuning);
   saveState();
@@ -4946,7 +5066,11 @@ loadState().then(() => {
   state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.calcOpts || {}) };
   return loadData();
 }).then(async () => {
-  await APP_RUNTIME.start();
+  applyRuntimeResult(await APP_RUNTIME.start());
+  if (RUNTIME_CONFIG.mode === 'addon') {
+    if (liveRuntimeTimer) clearInterval(liveRuntimeTimer);
+    liveRuntimeTimer = setInterval(refreshAddonRuntime, 5_000);
+  }
   await initializeNamedSnapshots();
   await restoreNamedMapLayers();
   await applyHash();

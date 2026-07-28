@@ -45,6 +45,8 @@ test('addon bootstrap uses the relative SDK bridge and keeps save import optiona
   assert.equal(runtime.capabilities.saveImport, true);
   const result = await runtime.start();
   assert.equal(result.status, 'ready');
+  assert.equal(runtime.state.status, 'ready');
+  assert.equal(runtime.state.model.identity.id, 'live:1');
   assert.equal(calls.length, 0);
 });
 
