@@ -47,10 +47,15 @@ export function restorePlannerState(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) {
     return { planning: createPlanningModel({}) };
   }
-  if (value.observation && value.planning) {
+  // The envelope is the current format whenever it carries an observation.
+  // Planning is optional in it: the app writes the observation with
+  // includePlanning:false because the canonical plan lives in IndexedDB.
+  // Requiring planning here sent every such envelope down the legacy path,
+  // which read the wrapper instead of the observation and dropped the save.
+  if (value.observation) {
     return {
       ...clone(value.observation),
-      planning: createPlanningModel(value.planning),
+      planning: createPlanningModel(value.planning ?? {}),
     };
   }
   return migrateLegacyPlannerState(value).state;
@@ -70,6 +75,35 @@ export function migrateLegacyPlannerState(input) {
   const state = observationValues(source);
   state.planning = createPlanningModel(planningSource);
   return { migrated: !parsed.planning, state };
+}
+
+// The observation is the save side of the state: several megabytes for a real
+// republic. It lives in IndexedDB beside the plan rather than in the ~5MB
+// synchronous localStorage slot it used to share with everything else.
+export function createObservationStore(adapter, { key = 'observation' } = {}) {
+  if (!adapter || typeof adapter.get !== 'function' || typeof adapter.put !== 'function') {
+    throw new TypeError('Observation store adapter must provide get and put');
+  }
+  return {
+    async load() {
+      const stored = await adapter.get(key);
+      if (!stored?.observation) return null;
+      return { observation: clone(stored.observation), savedAt: stored.savedAt ?? null };
+    },
+    // savedAt rides along on a record that is already written on every change,
+    // so "how long since this was last touched" costs no extra write.
+    async save(state, { now = Date.now() } = {}) {
+      const { observation } = serializePlannerState(state, { includePlanning: false });
+      await adapter.put(key, {
+        schemaVersion: PLANNER_STATE_SCHEMA_VERSION,
+        savedAt: now,
+        observation,
+      });
+    },
+    async remove() {
+      if (typeof adapter.delete === 'function') await adapter.delete(key);
+    },
+  };
 }
 
 export function createPlanningStore(adapter, { key = 'planning' } = {}) {

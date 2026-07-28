@@ -12,13 +12,14 @@ import {
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
 } from './train.js?v=17';
 import {
+  createIndexedDbObservationStore,
   createIndexedDbPlanningStore,
   createIndexedDbSnapshotStore,
   createPlanningPersistence,
   createPlanningSaveCoordinator,
   migrateLegacySnapshots,
   serializePlannerState,
-} from './storage.js?v=2';
+} from './storage.js?v=3';
 import {
   PLANNING_KEYS,
   createPlanningCompatibleState,
@@ -28,6 +29,7 @@ import {
   refreshPlanningFromObservation,
   seedPlanningFromObservation,
 } from './models/planning_model.js';
+import { planningAreas } from './models/planning_areas.js';
 import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
@@ -54,14 +56,15 @@ import { bootstrapRuntime } from './bootstrap.js?v=1';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
-} from './ui/command_center.js?v=1';
+  shouldOpenStartPage, relativeAge,
+} from './ui/command_center.js?v=3';
 
 const RUNTIME_CONFIG = getRuntimeConfig();
 const APP_RUNTIME = bootstrapRuntime({ config: RUNTIME_CONFIG });
 const IS_BETA = RUNTIME_CONFIG.variant === 'beta';
 const HAS_SAVE_WORKSPACE = hasSaveWorkspace(RUNTIME_CONFIG);
-const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'production', 'city', 'chain',
-  'prices', 'analysis', 'vehicleprod', ...(HAS_SAVE_WORKSPACE ? ['saveimport'] : []),
+const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'cities', 'production', 'city', 'chain',
+  'prices', 'priceedit', 'analysis', 'vehicleprod', ...(HAS_SAVE_WORKSPACE ? ['saveimport'] : []),
   'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
@@ -77,7 +80,8 @@ const SAVES_KEY = 'wr-planner-saves-v1';
 const snapshotStore = createIndexedDbSnapshotStore();
 const planningStore = createIndexedDbPlanningStore();
 const planningBackupStore = createIndexedDbPlanningStore(undefined, { key: 'planning-backup' });
-const planningPersistence = createPlanningPersistence({ planningStore });
+const observationStore = createIndexedDbObservationStore();
+const planningPersistence = createPlanningPersistence({ planningStore, observationStore });
 let hasPlanningBackup = false;
 let namedSnapshotNames = [];
 let comparisonSnapshotName = '';
@@ -202,6 +206,27 @@ function plannerScopes(kind = null) {
   }));
 }
 
+// City planning works on the same areas the republic overview lists, so a save
+// with production-only areas no longer hides them behind the hand-made
+// placeholder.
+function cityPlanningAreas() {
+  return planningAreas({
+    cities: state.cities,
+    scopes: state.saveImport?.scopes ?? null,
+    createDefault: defaultCity,
+  });
+}
+
+// The planner edits its area in place, so an area that exists only as a save
+// scope has to become a stored city before it can carry edits. Only the area
+// the user actually opened is materialised.
+function materializeCityArea(area) {
+  if (!area?.syntheticArea) return area;
+  const { syntheticArea, ...stored } = area;
+  state.cities.push(stored);
+  return state.cities[state.cities.length - 1];
+}
+
 function plannerScopeName(scopeId) {
   return plannerScopes().find(scope => scope.id === scopeId)?.name ?? t('unassigned');
 }
@@ -246,9 +271,9 @@ function saveState() {
     localWorkshopStatus, liveStatsStatus, liveStatsStatusError,
     runtimeStatus, runtimeReason, runtimeGeneration, runtimeObservedAt, liveModel, ...rest
   } = state;
-  // Exact network samples belong in the IndexedDB named snapshot. Keeping the
-  // multi-megabyte geometry out of the small synchronous localStorage slot
-  // prevents unrelated settings changes from silently hitting browser quota.
+  // Exact network samples belong in the IndexedDB named snapshot, which is
+  // restored separately. Keeping the multi-megabyte geometry out of the
+  // autosave stops every unrelated settings change from rewriting it.
   const hasLocalMapData = rest.saveImport?.roadNetwork || rest.saveImport?.railNetwork
     || rest.saveImport?.pedestrianNetwork
     || rest.saveImport?.terrainWater || rest.saveImport?.pollutionLayer;
@@ -262,10 +287,15 @@ function saveState() {
   planningSaveCoordinator.save({ ...persistent.observation, planning: state.planning });
 }
 
+// When the observation was last written. Used to decide whether this launch is
+// a resumed session or a new sitting.
+let observationSavedAt = null;
+
 async function loadState() {
   try {
     const loaded = await planningPersistence.load();
     Object.assign(state, loaded.state);
+    observationSavedAt = loaded.lastSavedAt ?? null;
     if (loaded.error) state.observationPersistenceError = loaded.error.message;
     // Price-table sorting is a view preference, not plan state. Each launch
     // starts with the resource names in ascending alphabetical order.
@@ -836,8 +866,8 @@ function renderSaveSlots() {
 }
 
 function renderTabs() {
-  const labels = { home: 'tabHome', prices: 'tabPrices', production: 'tabProduction', chain: 'tabChain',
-    analysis: 'tabAnalysis', vehicleprod: 'tabVehicleProd', city: 'tabCity', republic: 'tabRepublic',
+  const labels = { home: 'tabHome', prices: 'tabPrices', priceedit: 'tabPriceEdit', production: 'tabProduction', chain: 'tabChain',
+    analysis: 'tabAnalysis', vehicleprod: 'tabVehicleProd', city: 'tabCity', cities: 'tabCities', republic: 'tabRepublic',
     map: 'tabMap', saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
   const button = id => el('button', {
     class: state.tab === id ? 'active' : '',
@@ -857,7 +887,6 @@ function renderTabs() {
     el('div', { class: 'section-tabs', role: 'tablist' }, ...COMMAND_SECTIONS.map(sectionButton)),
     el('div', { class: 'context-tabs', role: 'navigation', 'aria-label': t('sectionNavigation') },
       ...sectionTabs.map(button)),
-    state.tab === 'home' ? button('home') : null,
     el('details', { class: 'more-nav' },
       el('summary', {}, t('moreTools')),
       el('div', { class: 'more-nav-menu' }, ...TABS.filter(id => !sectionTabs.includes(id)).map(button))));
@@ -867,6 +896,8 @@ function renderCurrentTab() {
   switch (state.tab) {
     case 'home': return renderHome();
     case 'prices': return renderPrices();
+    case 'priceedit': return renderPriceEdit();
+    case 'cities': return renderCities();
     case 'production': return renderProduction();
     case 'chain': return renderChain();
     case 'analysis': return renderAnalysis();
@@ -934,16 +965,27 @@ function renderLiveBrief() {
 }
 
 // ---------------------------------------------------------------- prices tab
+function priceCellClass(table, key, prices, base) {
+  const val = prices[table]?.[key];
+  const sign = val > 0 ? ' pos' : val < 0 ? ' neg' : '';
+  return base + sign
+    + (state.overrides[`${table}.${key}`] !== undefined ? ' overridden' : '')
+    + (prices.fallback?.[`${table}.${key}`] ? ' fallback' : '');
+}
+
+function priceFallbackTitle(table, key, prices) {
+  if (!prices.fallback?.[`${table}.${key}`]) return {};
+  return { title: state.lang === 'de'
+    ? 'Nicht in deiner stats.ini enthalten (ältere Spielversion) – Beispielwert von 1979'
+    : 'Not present in your stats.ini (older game version) – sample value from 1979' };
+}
+
 function priceCell(table, key, prices) {
   const val = prices[table]?.[key];
-  const isFallback = prices.fallback?.[`${table}.${key}`];
-  const sign = val > 0 ? ' pos' : val < 0 ? ' neg' : '';
   return el('input', {
     type: 'number', step: 'any',
-    class: 'num price' + sign + (state.overrides[`${table}.${key}`] !== undefined ? ' overridden' : '') + (isFallback ? ' fallback' : ''),
-    ...(isFallback ? { title: state.lang === 'de'
-      ? 'Nicht in deiner stats.ini enthalten (ältere Spielversion) – Beispielwert von 1979'
-      : 'Not present in your stats.ini (older game version) – sample value from 1979' } : {}),
+    class: priceCellClass(table, key, prices, 'num price'),
+    ...priceFallbackTitle(table, key, prices),
     value: val !== undefined ? Math.round(val * 1000) / 1000 : '',
     onchange: e => {
       const v = parseFloat(e.target.value);
@@ -954,7 +996,18 @@ function priceCell(table, key, prices) {
   });
 }
 
-function renderPrices() {
+// Observe reports prices; it never accepts one. The same cell without an input.
+function priceReadCell(table, key, prices) {
+  const val = prices[table]?.[key];
+  return el('span', {
+    class: priceCellClass(table, key, prices, 'price-read'),
+    ...priceFallbackTitle(table, key, prices),
+  }, val !== undefined ? fmt(Math.round(val * 1000) / 1000, 3) : '—');
+}
+
+// Both price surfaces share one table: Observe renders it read-only, Plan
+// renders the same rows as editable overrides.
+function priceTable({ editable }) {
   const prices = currentPrices();
   // Resource-implied exchange rates, for converting currency via trade
   // instead of just moving cash - each is a different trade direction:
@@ -988,6 +1041,7 @@ function renderPrices() {
     ...(title ? { title } : {}),
   }, label + (col === id ? (dir > 0 ? ' ↑' : ' ↓') : ''));
 
+  const cell = editable ? priceCell : priceReadCell;
   const table = el('table', { class: 'data' },
     el('thead', {}, el('tr', {},
       th('name', t('resource')),
@@ -1001,13 +1055,32 @@ function renderPrices() {
         state.historyCompareKeys = (state.historyCompareKeys ?? []).filter(key => key !== r.key);
         update();
       } }, rname(r)),
-      el('td', {}, priceCell('sellRUB', r.key, prices)),
-      el('td', {}, priceCell('purchaseRUB', r.key, prices)),
-      el('td', {}, priceCell('sellUSD', r.key, prices)),
-      el('td', {}, priceCell('purchaseUSD', r.key, prices)),
+      el('td', {}, cell('sellRUB', r.key, prices)),
+      el('td', {}, cell('purchaseRUB', r.key, prices)),
+      el('td', {}, cell('sellUSD', r.key, prices)),
+      el('td', {}, cell('purchaseUSD', r.key, prices)),
       el('td', { class: 'r' }, ratioRUB != null ? fmt(ratioRUB, 2) : '—'),
       el('td', { class: 'r' }, ratioUSD != null ? fmt(ratioUSD, 2) : '—')))));
 
+  return { prices, table };
+}
+
+// Observe: the observed price table and its history, with no way to type a
+// hypothetical value into it.
+function renderPrices() {
+  const { table } = priceTable({ editable: false });
+  return el('section', {},
+    el('p', { class: 'hint' }, t('pricesObservedHint'), ' ',
+      el('button', { class: 'linklike', onclick: () => { state.tab = 'priceedit'; update(); } },
+        t('editPricesLink'))),
+    el('div', { class: 'columns' },
+      el('div', { class: 'pricetablecol' }, table),
+      el('div', { class: 'pricehistorycol' }, renderHistory())));
+}
+
+// Plan: the same prices as hypotheses the user controls.
+function renderPriceEdit() {
+  const { prices, table } = priceTable({ editable: true });
   const scalars = el('div', { class: 'scalars' },
     ...[['workdayCostRUB', `${t('workday')} ₽`], ['workdayCostUSD', `${t('workday')} $`],
         ['deliveryCostRUB', `${t('delivery')} ₽`], ['deliveryCostUSD', `${t('delivery')} $`],
@@ -1023,11 +1096,10 @@ function renderPrices() {
     : null;
 
   return el('section', {},
+    returnToRepublicButton(),
     el('p', { class: 'hint' }, t('editHint'), ' ', resetBtn),
     scalars,
-    el('div', { class: 'columns' },
-      el('div', { class: 'pricetablecol' }, table),
-      el('div', { class: 'pricehistorycol' }, renderHistory())));
+    el('div', { class: 'pricetablecol' }, table));
 }
 
 function renderHistory() {
@@ -2018,6 +2090,7 @@ function renderHome() {
     el('strong', {}, state.saveImport.header?.title || state.saveImport.sourceName),
     el('span', { class: 'hint' }, `${fmt(state.saveImport.citizenCount ?? 0, 0)} ${t('importedCitizens')} · `
       + `${fmt(state.saveImport.buildingCount ?? 0, 0)} ${t('importedBuildings')}`),
+    lastOpenedLabel(),
     el('button', { class: 'primary', onclick: () => { state.tab = 'republic'; update(); } }, t('continueRepublic'))) : null;
   const saved = namedSnapshotNames.length ? el('details', { class: 'recent-republics secondary-section' },
     el('summary', {}, `${t('savedSnapshots')} (${fmt(namedSnapshotNames.length, 0)})`),
@@ -2187,22 +2260,85 @@ function renderSaveImport() {
 }
 
 // ---------------------------------------------------------------- city tab
+// Tells the reader how long this republic has been sitting there, so the
+// choice between continuing it and opening a different save is an informed one.
+function lastOpenedLabel() {
+  const age = relativeAge(observationSavedAt);
+  if (!age) return null;
+  return el('span', { class: 'hint start-last-opened' },
+    t(age.key).replace('{n}', fmt(age.value, 0)));
+}
+
+// Observe: what the save reports about each settlement. Read-only — the only
+// control is navigation into the matching City planning area.
+function renderCities() {
+  const scopes = state.saveImport?.scopes;
+  if (!Array.isArray(scopes) || !scopes.length) {
+    return el('section', {}, el('p', { class: 'hint' }, t('citiesEmpty')));
+  }
+  const inhabited = scopes.filter(scope => scope.city || scope.production);
+  const pct = value => (Number.isFinite(value) ? fmt(value * 100, 1) + ' %' : '—');
+  const openArea = scopeId => {
+    const index = cityPlanningAreas().findIndex(area => area.scopeId === scopeId);
+    if (index >= 0) state.activeCity = index;
+    state.tab = 'city';
+    update();
+  };
+
+  return el('section', {},
+    el('h2', {}, t('citiesObservedTitle'),
+      el('span', { class: 'evidence-badge exact' }, t('exact'))),
+    el('table', { class: 'data' },
+      el('thead', {}, el('tr', {},
+        el('th', {}, t('area')), el('th', {}, t('population')), el('th', {}, t('adults')),
+        el('th', {}, t('highEducation')), el('th', {}, t('productivity')),
+        el('th', {}, t('happiness')), el('th', {}, t('health')), el('th', {}, t('loyalty')),
+        el('th', {}, t('criminality')), el('th', {}, ''))),
+      el('tbody', {}, inhabited.map(scope => {
+        const observed = scope.citizens;
+        return el('tr', {},
+          el('td', {}, scope.name),
+          el('td', { class: 'r' }, observed ? fmt(observed.residents, 0) : '—'),
+          el('td', { class: 'r' }, observed ? fmt(observed.adults, 0) : '—'),
+          el('td', { class: 'r' }, observed ? fmt(observed.highEducation, 0) : '—'),
+          el('td', { class: 'r' }, pct(observed?.productivity)),
+          el('td', { class: 'r' }, pct(observed?.happiness)),
+          el('td', { class: 'r' }, pct(observed?.health)),
+          el('td', { class: 'r' }, pct(observed?.loyalty)),
+          el('td', { class: 'r' }, pct(observed?.criminality)),
+          el('td', {}, el('button', {
+            class: 'linklike', onclick: () => openArea(scope.id),
+          }, t('planThisArea'))));
+      }))));
+}
+
 function renderCity() {
-  if (!state.cities.length) state.cities.push(defaultCity());
-  if (state.activeCity >= state.cities.length) state.activeCity = 0;
-  const city = state.cities[state.activeCity];
+  const areas = cityPlanningAreas();
+  if (state.activeCity >= areas.length || state.activeCity < 0) state.activeCity = 0;
+  const city = materializeCityArea(areas[state.activeCity]);
   const eco = economy();
 
   const workspaceBar = el('div', { class: 'workspace-bar' },
     returnToRepublicButton(),
     el('label', { class: 'workspace-context' }, el('span', {}, t('cityArea')), selectInput(
-      state.cities.map((item, index) => [String(index), item.name || `${t('city')} ${index + 1}`]),
+      areas.map((item, index) => [String(index), item.name || `${t('city')} ${index + 1}`]),
       String(state.activeCity), value => { state.activeCity = Number(value); })),
     el('div', { class: 'workspace-actions' },
-      el('button', { onclick: () => { state.cities.push(defaultCity()); state.activeCity = state.cities.length - 1; update(); } }, t('addCity')),
-    state.cities.length > 1 ? el('button', {
+      el('button', { onclick: () => {
+        state.cities.push(defaultCity());
+        state.activeCity = cityPlanningAreas().length - 1;
+        update();
+      } }, t('addCity')),
+    // Removing works on the stored city, not the listed position: scope-backed
+    // areas and hand-made ones do not share an index space.
+    areas.length > 1 ? el('button', {
       class: 'danger',
-      onclick: () => { state.cities.splice(state.activeCity, 1); state.activeCity = 0; update(); },
+      onclick: () => {
+        const index = state.cities.indexOf(city);
+        if (index >= 0) state.cities.splice(index, 1);
+        state.activeCity = 0;
+        update();
+      },
     }, t('removeCity')) : null));
 
   const settings = el('div', { class: 'settingsbar' },
@@ -3325,7 +3461,7 @@ function renderRepublic() {
     state.republicScope = scopeId;
     if (tab === 'production') state.productionScope = String(scopeId);
     if (tab === 'city') {
-      const index = state.cities.findIndex(city => city.scopeId === scopeId);
+      const index = cityPlanningAreas().findIndex(area => area.scopeId === scopeId);
       if (index >= 0) state.activeCity = index;
     }
     state.tab = tab;
@@ -4892,9 +5028,13 @@ function replaceStateProjection(obj, keys) {
     state.chains = [{ name: null, ...cloneStateValue(obj.chain) }];
   }
   if (!Array.isArray(state.cities)) state.cities = [];
-  if (!state.cities.length) state.cities.push(defaultCity());
+  // A restored save supplies its areas through saveImport.scopes, so the
+  // hand-made placeholder must not be planted on top of them.
+  if (!state.cities.length && !Array.isArray(state.saveImport?.scopes)) {
+    state.cities.push(defaultCity());
+  }
   if (!Array.isArray(state.chains) || !state.chains.length) state.chains = [defaultChainPlan()];
-  state.activeCity = Math.max(0, Math.min(Number(state.activeCity) || 0, state.cities.length - 1));
+  state.activeCity = Math.max(0, Math.min(Number(state.activeCity) || 0, cityPlanningAreas().length - 1));
   state.activeChain = Math.max(0, Math.min(Number(state.activeChain) || 0, state.chains.length - 1));
   if (!HAS_SAVE_WORKSPACE && state.tab === 'saveimport') state.tab = 'republic';
 }
@@ -5090,7 +5230,18 @@ loadState().then(() => {
   await initializeNamedSnapshots();
   await restoreNamedMapLayers();
   await applyHash();
-  if (!state.cities.length) state.cities.push(defaultCity());
+  // After applyHash on purpose: syncHash writes the last tab into the URL, so
+  // the restored hash would otherwise put us straight back into it.
+  if (HAS_SAVE_WORKSPACE && shouldOpenStartPage({
+    lastSavedAt: observationSavedAt,
+    hasSave: !!state.saveImport,
+    viewingSharedLink: state.viewingSharedLink,
+  })) {
+    state.tab = 'home';
+  }
+  if (!state.cities.length && !Array.isArray(state.saveImport?.scopes)) {
+    state.cities.push(defaultCity());
+  }
   applyTuning(state.tuning);
   saveState();
   syncHash();

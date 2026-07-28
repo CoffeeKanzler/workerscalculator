@@ -270,7 +270,14 @@ function createPlanningMutationProxy(model, onMutation) {
             }
           };
         }
-        return wrap(Reflect.get(current, property, receiver));
+        const value = Reflect.get(current, property, receiver);
+        // A get trap must return the identical value for a non-configurable,
+        // non-writable property, which is what Object.freeze creates. Frozen
+        // payloads (evidence, and anything seeded from an observation) reach
+        // this trap, so they are handed back unwrapped.
+        const descriptor = Reflect.getOwnPropertyDescriptor(current, property);
+        if (descriptor && !descriptor.configurable && !descriptor.writable) return value;
+        return wrap(value);
       },
       set(current, property, value) {
         const next = unwrap(value);

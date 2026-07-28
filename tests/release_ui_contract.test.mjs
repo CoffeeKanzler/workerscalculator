@@ -49,3 +49,53 @@ test('the operations desk stays crisp and uses the ultrawide runway intentionall
   assert.match(css, /\.command-center > \.area-table-panel[\s\S]*grid-column: span 5;/);
   assert.match(css, /\.area-table-panel \.area-health[\s\S]*table-layout: fixed;/);
 });
+
+// The IA rework: Observe reports, Plan edits. The shipped app has to carry the
+// two new tabs the section table names, in both languages.
+test('the shipped app registers the read-only Cities tab and the split price overrides', async () => {
+  const [app, i18n] = await Promise.all([
+    fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8'),
+    fs.readFile(path.join(ROOT, 'js/i18n.js'), 'utf8'),
+  ]);
+
+  for (const tab of ['cities', 'priceedit']) {
+    assert.match(app, new RegExp(`TABS = \\[[\\s\\S]*'${tab}'`), `TABS is missing ${tab}`);
+    assert.match(app, new RegExp(`case '${tab}': return render`), `no renderer dispatched for ${tab}`);
+  }
+  assert.match(app, /cities: 'tabCities'/);
+  assert.match(app, /priceedit: 'tabPriceEdit'/);
+
+  // Both languages, or the nav renders an untranslated key.
+  assert.equal((i18n.match(/tabCities:/g) ?? []).length, 2);
+  assert.equal((i18n.match(/tabPriceEdit:/g) ?? []).length, 2);
+  assert.equal((i18n.match(/citiesEmpty:/g) ?? []).length, 2);
+  assert.equal((i18n.match(/planThisArea:/g) ?? []).length, 2);
+});
+
+test('the Observe price table carries no editable control', async () => {
+  const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
+  const renderPrices = app.slice(
+    app.indexOf('function renderPrices()'),
+    app.indexOf('function renderPriceEdit()'),
+  );
+
+  assert.ok(renderPrices.length > 0, 'renderPrices and renderPriceEdit must both exist');
+  assert.match(renderPrices, /priceTable\(\{ editable: false \}\)/);
+  // The scalars and the override reset belong to Plan.
+  assert.doesNotMatch(renderPrices, /scalars/);
+  assert.doesNotMatch(renderPrices, /state\.overrides\[/);
+  assert.doesNotMatch(renderPrices, /el\('input'/);
+});
+
+test('the Cities tab reads the save and never writes to it', async () => {
+  const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
+  const renderCities = app.slice(
+    app.indexOf('function renderCities()'),
+    app.indexOf('function renderCity()'),
+  );
+
+  assert.match(renderCities, /state\.saveImport\?\.scopes/);
+  assert.doesNotMatch(renderCities, /el\('input'/);
+  // Navigation into the planner is the one control it offers.
+  assert.match(renderCities, /state\.tab = 'city'/);
+});

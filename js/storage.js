@@ -3,27 +3,31 @@
 // cannot, while this small adapter boundary keeps the behavior testable in Node.
 
 import {
+  createObservationStore,
   createPlanningStore,
-  migrateLegacyPlannerState,
   restorePlannerState,
-  serializePlannerState,
-} from './storage/planning_store.js';
+} from './storage/planning_store.js?v=1';
 import { PLANNING_KEYS, createPlanningModel } from './models/planning_model.js';
 
 export {
+  createObservationStore,
   createPlanningStore,
   migrateLegacyPlannerState,
   restorePlannerState,
   serializePlannerState,
-} from './storage/planning_store.js';
+} from './storage/planning_store.js?v=1';
 
 export function createPlanningPersistence({
   planningStore,
+  observationStore,
   storage = globalThis.localStorage,
   key = 'wr-planner-v1',
 } = {}) {
   if (!planningStore || typeof planningStore.load !== 'function' || typeof planningStore.save !== 'function') {
     throw new TypeError('Planning persistence requires a planning store');
+  }
+  if (!observationStore || typeof observationStore.load !== 'function' || typeof observationStore.save !== 'function') {
+    throw new TypeError('Planning persistence requires an observation store');
   }
   if (!storage || typeof storage.getItem !== 'function' || typeof storage.setItem !== 'function') {
     throw new TypeError('Planning persistence requires a synchronous observation storage');
@@ -61,37 +65,59 @@ export function createPlanningPersistence({
     return PLANNING_KEYS.some(planningKey => Object.hasOwn(parsed, planningKey));
   }
 
+  function releaseLegacySlot() {
+    // The migrated observation can be megabytes. Give the space back so the
+    // shared localStorage origin quota stops being a cliff for large saves.
+    try {
+      storage.removeItem(key);
+    } catch {
+      // Losing the cleanup is harmless; IndexedDB is already authoritative.
+    }
+  }
+
   return {
     async load() {
-      const legacy = readLegacy();
+      const storedObservation = await observationStore.load();
+      const legacy = storedObservation ? null : readLegacy();
       const stored = await planningStore.load();
-      const state = stored
-        ? { ...legacy.state, planning: createPlanningModel(stored) }
+      const observationState = storedObservation
+        ? restorePlannerState({ schemaVersion: 1, observation: storedObservation.observation })
         : legacy.state;
+      const state = stored
+        ? { ...observationState, planning: createPlanningModel(stored) }
+        : observationState;
       let migrated = false;
-      let observationError = legacy.observationError ?? legacy.parseError ?? null;
-      if (hasLegacyPlanning(legacy.parsed)) {
-        if (!stored) await planningStore.save(state.planning);
+      let observationError = legacy?.observationError ?? legacy?.parseError ?? null;
+
+      if (legacy?.parsed) {
+        // First load after the move: carry the localStorage observation across
+        // and hand the slot back.
+        if (hasLegacyPlanning(legacy.parsed) && !stored) await planningStore.save(state.planning);
         try {
-          storage.setItem(key, JSON.stringify(serializePlannerState(state, { includePlanning: false })));
+          await observationStore.save(state);
+          releaseLegacySlot();
         } catch (error) {
           observationError = error;
         }
         migrated = true;
       }
-      return { state, migrated, error: observationError };
+      return {
+        state,
+        migrated,
+        error: observationError,
+        // A migrated observation has no recorded time; treat it as just saved.
+        lastSavedAt: storedObservation?.savedAt ?? (migrated ? Date.now() : null),
+      };
     },
 
     async save(state) {
       await planningStore.save(state.planning);
       try {
-        const observation = serializePlannerState(state, { includePlanning: false });
-        storage.setItem(key, JSON.stringify(observation));
+        await observationStore.save(state);
         return { planningSaved: true, observationSaved: true, observationError: null };
       } catch (observationError) {
-        // The canonical plan is already durable in IndexedDB. Keep the
-        // synchronous observation failure distinct instead of reporting a
-        // successful planning save as failed.
+        // The canonical plan is already durable. Keep the observation failure
+        // distinct instead of reporting a successful planning save as failed.
         return { planningSaved: true, observationSaved: false, observationError };
       }
     },
@@ -242,7 +268,9 @@ export function createIndexedDbSnapshotStore(indexedDB = globalThis.indexedDB) {
   });
 }
 
-export function createIndexedDbPlanningStore(indexedDB = globalThis.indexedDB, { key = 'planning' } = {}) {
+// The `planning` object store is keyed by record name, so the plan, its backup
+// and the observation all live in it without a schema change.
+function createPlanningRecordAdapter(indexedDB) {
   if (!indexedDB) throw new Error('IndexedDB is not available');
   const opened = indexedDB.open('wr-planner', PLANNER_DB_VERSION);
   opened.onupgradeneeded = () => {
@@ -268,9 +296,17 @@ export function createIndexedDbPlanningStore(indexedDB = globalThis.indexedDB, {
     return result;
   }
 
-  return createPlanningStore({
+  return {
     get: key => withStore('readonly', store => requestResult(store.get(key))),
     put: (key, value) => withStore('readwrite', store => requestResult(store.put({ key, ...value }))),
     delete: key => withStore('readwrite', store => requestResult(store.delete(key))),
-  }, { key });
+  };
+}
+
+export function createIndexedDbPlanningStore(indexedDB = globalThis.indexedDB, { key = 'planning' } = {}) {
+  return createPlanningStore(createPlanningRecordAdapter(indexedDB), { key });
+}
+
+export function createIndexedDbObservationStore(indexedDB = globalThis.indexedDB, { key = 'observation' } = {}) {
+  return createObservationStore(createPlanningRecordAdapter(indexedDB), { key });
 }

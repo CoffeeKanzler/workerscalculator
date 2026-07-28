@@ -155,6 +155,32 @@ test('compatibility proxy marks nested planning mutations without touching obser
   assert.deepEqual(compatible.state.observed, { population: 1200 });
 });
 
+test('compatibility proxy reads frozen evidence seeded from a save observation', () => {
+  // Evidence is deep-frozen by createEvidence, and a save import supplies a
+  // real gameDate object. A proxy get trap must return the identical value for
+  // a non-configurable, non-writable property, so the frozen nested object
+  // cannot be wrapped on the way out.
+  const compatible = createPlanningCompatibleState({
+    planning: seedPlanningFromObservation(observation()),
+  });
+
+  assert.deepEqual(compatible.state.planning.evidence.gameDate, { year: 1984, day: 123 });
+  assert.equal(Object.isFrozen(compatible.state.planning.evidence.gameDate), true);
+  assert.equal(compatible.state.planning.evidence.source, 'plan');
+});
+
+test('compatibility proxy still tracks mutations after reading frozen evidence', () => {
+  const compatible = createPlanningCompatibleState({
+    planning: seedPlanningFromObservation(observation(), { plan: { rows: [] } }),
+  });
+
+  assert.equal(compatible.state.planning.evidence.gameDate.year, 1984);
+  compatible.state.plan.rows.push({ name: 'Steel mill', count: 1 });
+
+  assert.equal(compatible.state.planning.edited, true);
+  assert.equal(compatible.state.planning.revision, 1);
+});
+
 test('compatibility proxy batches one revision for an array operation', () => {
   const compatible = createPlanningCompatibleState({
     planning: createPlanningModel({ plan: { rows: [{ count: 1 }, { count: 2 }] } }),
