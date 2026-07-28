@@ -100,7 +100,7 @@ const pollutionImageCache = new Map();
 function createInitialState() {
   const initial = {
     lang: 'en',
-    tab: IS_BETA ? 'home' : 'prices',
+    tab: IS_BETA ? 'home' : 'republic',
     currency: 'RUB',
     priceSource: 'default',      // default | stats | decade
     decade: 1980,
@@ -712,7 +712,9 @@ function renderHeader() {
     }, language.toUpperCase())));
   if (IS_BETA && state.tab === 'home') {
     return el('header', { class: 'compact-header' },
-      el('h1', {}, t('appTitle')), languageSwitch());
+      el('div', { class: 'product-identity' },
+        el('h1', {}, t('appTitle')),
+        el('p', { class: 'product-subtitle' }, t('appSubtitle'))), languageSwitch());
   }
   const showEconomyControls = ['prices', 'production', 'chain', 'analysis', 'vehicleprod'].includes(state.tab);
   const file = el('input', {
@@ -756,7 +758,9 @@ function renderHeader() {
   }
 
   return el('header', {},
-    el('h1', {}, t('appTitle')),
+    el('div', { class: 'product-identity' },
+      el('h1', {}, t('appTitle')),
+      el('p', { class: 'product-subtitle' }, t('appSubtitle'))),
     el('div', { class: 'controls' },
       ...(showEconomyControls ? [drop, el('label', {}, t('priceSource') + ' ', sourceSel), ...extras] : []),
       el('label', {}, t('currency') + ' ',
@@ -841,6 +845,8 @@ function renderTabs() {
   const activeSection = sectionForTab(state.tab);
   const sectionButton = section => el('button', {
     class: `section-tab ${activeSection === section.id ? 'active' : ''}`,
+    role: 'tab',
+    'aria-selected': activeSection === section.id,
     'aria-pressed': activeSection === section.id,
     onclick: () => { state.tab = section.defaultTab; update(); },
   }, t(section.labelKey));

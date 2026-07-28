@@ -1,7 +1,8 @@
 // UI strings. Game terms (resource/building names) come from data/*.json (de/en).
 export const STRINGS = {
   de: {
-    appTitle: 'W&R: Soviet Republic – Wirtschaftsplaner',
+    appTitle: 'Republic Command Center',
+    appSubtitle: 'Workers & Resources: Soviet Republic · lokale Betriebsleitstelle',
     navObserve: 'Beobachten', navDiagnose: 'Diagnose', navPlan: 'Planen', navCompare: 'Vergleichen',
     commandNavigation: 'Republik-Navigation', sectionNavigation: 'Bereichsnavigation', modeLabel: 'Betriebsart',
     modeHosted: 'Spielstand-Büro', modeAddon: 'Live-Leitstand', generation: 'Generation',
@@ -378,7 +379,8 @@ export const STRINGS = {
     powerHint: 'Faustregel: ab ~1 kW/t fährt der Zug an, ab ~2 kW/t auch an Steigungen zügig. Hängt vom Gelände ab.',
   },
   en: {
-    appTitle: 'W&R: Soviet Republic – Economy Planner',
+    appTitle: 'Republic Command Center',
+    appSubtitle: 'Workers & Resources: Soviet Republic · local operations desk',
     navObserve: 'Observe', navDiagnose: 'Diagnose', navPlan: 'Plan', navCompare: 'Compare',
     commandNavigation: 'Republic navigation', sectionNavigation: 'Section navigation', modeLabel: 'Mode',
     modeHosted: 'Save office', modeAddon: 'Live dispatch', generation: 'Generation',

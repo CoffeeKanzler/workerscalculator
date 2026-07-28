@@ -1,4 +1,4 @@
-# W&R: Soviet Republic – Economy Planner
+# Republic Command Center · W&R: Soviet Republic
 
 A fully client-side planner for **Workers & Resources: Soviet Republic**, rebuilt as a
 GitHub Pages web app from the community planning spreadsheet

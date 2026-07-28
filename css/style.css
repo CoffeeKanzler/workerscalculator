@@ -100,15 +100,14 @@ header h1 {
 .sharedlinkbanner button:hover { border-color: var(--accent); }
 
 nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
-.more-nav { position: relative; }
+.more-nav { position: relative; display: inline-block; justify-self: start; width: max-content; }
 .more-nav > summary { list-style: none; padding: 5px 12px; color: var(--muted); background: var(--panel2); border: 1px solid var(--border); border-radius: 5px; cursor: pointer; font-weight: 600; }
 .more-nav > summary::-webkit-details-marker { display: none; }
 .more-nav > summary::after { content: ' ▾'; }
 .more-nav > summary.active { color: #fff; background: var(--accent); border-color: var(--accent); }
 .more-nav-menu { position: absolute; z-index: 20; top: calc(100% + 5px); right: 0; display: grid; grid-template-columns: repeat(2, max-content); gap: 5px; min-width: 260px; padding: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,.28); }
 
-section { animation: fade 0.15s ease-in; }
-@keyframes fade { from { opacity: 0.4; } to { opacity: 1; } }
+section { animation: none; }
 
 .hint { color: var(--muted); font-size: 13px; }
 .subline { color: var(--muted); font-size: 11px; line-height: 1.3; margin-top: 3px; max-width: 520px; }
@@ -402,12 +401,17 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
   letter-spacing: .01em;
 }
 
-#app { width: min(100% - 32px, 1760px); max-width: none; padding: 20px 0 72px; }
+#app { width: min(100% - 48px, 1840px); max-width: none; padding: 22px 0 72px; }
 header { border-bottom: 2px solid var(--ink-soft); padding-bottom: 10px; }
 header h1, .command-header h2, .live-brief h2 { color: var(--ink-soft); letter-spacing: .02em; }
+header h1 { margin: 0 0 2px; font-size: clamp(24px, 1.7vw, 32px); }
+.product-identity { min-width: 0; }
+.product-subtitle { margin: 0; color: var(--muted); font-size: 13px; font-weight: 650; letter-spacing: .03em; }
 .controls, .settingsbar, .secondary-section, .planning-details, .totalsbox,
 .history, .trainvizbox, .workspace-bar, .command-meta span, .metric-card,
 .start-card, .coverage-item, .map-building-inspector, .map-toolbar,
@@ -471,15 +475,17 @@ table.data th, table.data td { border-color: var(--border); }
 .pos { color: var(--pos); } .warn { color: var(--warn); } .neg { color: var(--neg); }
 
 @media (min-width: 2200px) {
-  #app { width: min(100% - 64px, 2080px); }
-  body { font-size: 15px; }
+  #app { width: min(100% - 96px, 2240px); }
+  body { font-size: 16px; }
   .command-center { grid-template-columns: minmax(0, 1fr) minmax(300px, .42fr); align-items: start; }
   .command-center > .command-header, .command-center > .command-meta, .command-center > .metric-grid,
   .command-center > .alert-list, .command-center > .planning-details { grid-column: 1 / -1; }
+  .command-center > .tablewrap { grid-column: 1 / -1; }
 }
 
 @media (min-width: 4000px) {
-  #app { width: min(100% - 96px, 2400px); }
+  #app { width: min(100% - 160px, 3200px); }
+  body { font-size: 17px; }
   .brief-ledger { grid-template-columns: repeat(6, minmax(170px, 1fr)); }
 }
 
