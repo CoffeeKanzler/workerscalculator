@@ -12,13 +12,15 @@ import {
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
 } from './train.js?v=17';
 import {
+  createIndexedDbPlanningStore,
   createIndexedDbSnapshotStore,
+  createPlanningPersistence,
   migrateLegacySnapshots,
-  restorePlannerState,
   serializePlannerState,
 } from './storage.js?v=2';
 import {
   PLANNING_KEYS,
+  createPlanningCompatibleState,
   createPlanningModel,
   isPlanningKey,
   planningProjection,
@@ -62,10 +64,13 @@ const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'p
 const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex'];
 
 // ---------------------------------------------------------------- state
-const LS_KEY = 'wr-planner-v1';
-const LS_KEY_BACKUP = 'wr-planner-v1-backup'; // local plan saved before a shared link overwrote it
 const SAVES_KEY = 'wr-planner-saves-v1';
 const snapshotStore = createIndexedDbSnapshotStore();
+const planningStore = createIndexedDbPlanningStore();
+const planningBackupStore = createIndexedDbPlanningStore(undefined, { key: 'planning-backup' });
+const planningPersistence = createPlanningPersistence({ planningStore });
+let planningSaveQueue = Promise.resolve();
+let hasPlanningBackup = false;
 let namedSnapshotNames = [];
 let comparisonSnapshotName = '';
 let comparisonSnapshot = null;
@@ -136,6 +141,7 @@ function createInitialState() {
     priceSort: { col: 'name', dir: 1 },
     saveSlotName: '',   // transient UI field for the named-save-slot input, not shared/exported
     snapshotNotice: '', // transient feedback for named snapshot actions
+    planningPersistenceError: '', // transient IndexedDB/local observation error
     importStatus: '',    // transient save-directory parsing status
     importStatusError: false,
     importBusy: false,
@@ -155,23 +161,7 @@ function createInitialState() {
 }
 
 function createCompatibleState(initial) {
-  return new Proxy(initial, {
-    get(target, property, receiver) {
-      if (isPlanningKey(property)) return target.planning[property];
-      return Reflect.get(target, property, receiver);
-    },
-    set(target, property, value, receiver) {
-      if (isPlanningKey(property)) {
-        target.planning[property] = value;
-        return true;
-      }
-      if (property === 'planning') {
-        target.planning = createPlanningModel(value);
-        return true;
-      }
-      return Reflect.set(target, property, value, receiver);
-    },
-  });
+  return createPlanningCompatibleState(initial).state;
 }
 
 const state = createCompatibleState(createInitialState());
@@ -223,7 +213,8 @@ function chainPlans() {
 
 function saveState() {
   const {
-    statsRecords, viewingSharedLink, snapshotNotice, importStatus, importStatusError, importBusy,
+    statsRecords, viewingSharedLink, snapshotNotice, planningPersistenceError,
+    importStatus, importStatusError, importBusy,
     localWorkshopStatus, liveStatsStatus, liveStatsStatusError, ...rest
   } = state;
   // Exact network samples belong in the IndexedDB named snapshot. Keeping the
@@ -233,25 +224,34 @@ function saveState() {
     || rest.saveImport?.pedestrianNetwork
     || rest.saveImport?.terrainWater || rest.saveImport?.pollutionLayer;
   const raw = { ...rest, planning: state.planning };
-  const persistent = serializePlannerState(raw);
+  const persistent = serializePlannerState(raw, { includePlanning: false });
   if (hasLocalMapData) {
     const { roadNetwork, railNetwork, pedestrianNetwork, terrainWater, pollutionLayer, ...summary } =
       persistent.observation.saveImport ?? {};
     persistent.observation.saveImport = summary;
   }
-  try { localStorage.setItem(LS_KEY, JSON.stringify(persistent)); } catch (e) { /* quota */ }
+  planningSaveQueue = planningSaveQueue.catch(() => {}).then(async () => {
+    await planningPersistence.save({ ...persistent.observation, planning: state.planning });
+    state.planningPersistenceError = '';
+  }).catch(error => {
+    state.planningPersistenceError = `Planning state was not saved: ${error.message}`;
+    console.error(error);
+  });
 }
 
-function loadState() {
+async function loadState() {
   try {
-    const raw = localStorage.getItem(LS_KEY);
-    if (!raw) return;
-    Object.assign(state, restorePlannerState(JSON.parse(raw)));
+    const loaded = await planningPersistence.load();
+    Object.assign(state, loaded.state);
+    if (loaded.error) state.planningPersistenceError = loaded.error.message;
     // Price-table sorting is a view preference, not plan state. Each launch
     // starts with the resource names in ascending alphabetical order.
     state.priceSort = { col: 'name', dir: 1 };
     state.localWorkshopStatus = '';
-  } catch (e) { /* ignore */ }
+  } catch (error) {
+    state.planningPersistenceError = `Planning state could not be loaded: ${error.message}`;
+    console.error(error);
+  }
 }
 
 // ---------------------------------------------------------------- data
@@ -604,6 +604,7 @@ function render() {
 
   root.replaceChildren(renderHeader(), ...(IS_BETA ? [renderBetaBanner()] : []),
     ...(state.viewingSharedLink ? [renderSharedLinkBanner()] : []),
+    ...(state.planningPersistenceError ? [el('p', { class: 'neg', role: 'alert' }, state.planningPersistenceError)] : []),
     ...(state.importBusy ? [renderImportActivity()] : []),
     renderTabs(), renderCurrentTab());
   decorateResponsiveTables(root);
@@ -628,15 +629,23 @@ function renderBetaBanner() {
 }
 
 function renderSharedLinkBanner() {
-  const hasBackup = !!localStorage.getItem(LS_KEY_BACKUP);
   return el('div', { class: 'sharedlinkbanner' },
     el('span', {}, '🔗 ' + t('viewingSharedLink')),
-    hasBackup ? el('button', {
-      onclick: () => {
-        const backup = localStorage.getItem(LS_KEY_BACKUP);
-        if (backup) { localStorage.setItem(LS_KEY, backup); localStorage.removeItem(LS_KEY_BACKUP); }
-        location.hash = '';
-        location.reload();
+    hasPlanningBackup ? el('button', {
+      onclick: async () => {
+        try {
+          const backup = await planningBackupStore.load();
+          if (backup) {
+            state.planning = backup;
+            await planningStore.save(backup);
+            hasPlanningBackup = false;
+            state.viewingSharedLink = false;
+            update();
+          }
+        } catch (error) {
+          state.planningPersistenceError = `Planning backup could not be restored: ${error.message}`;
+          update();
+        }
       },
     }, t('restoreMyPlan')) : null,
     el('button', { onclick: () => { state.viewingSharedLink = false; update(); } }, '✕'));
@@ -4887,13 +4896,16 @@ async function applyHash() {
   const h = location.hash;
   if (h.startsWith('#s=')) {
     try {
-      // back up the local plan before overwriting it, so the shared-link
-      // banner's "restore my plan" is a real, working promise
-      const before = localStorage.getItem(LS_KEY);
-      if (before) localStorage.setItem(LS_KEY_BACKUP, before);
+      // Back up the canonical plan in IndexedDB before a shared link replaces
+      // it, so restoring a local plan never depends on localStorage.
+      await planningBackupStore.save(state.planning);
+      hasPlanningBackup = true;
       replaceSharedState(await fragmentToState(h.slice(3)));
       state.viewingSharedLink = true; // transient — not in SHARE_KEYS, not persisted
-    } catch (e) { console.warn('bad share link', e); }
+    } catch (e) {
+      state.planningPersistenceError = `Shared plan could not be opened safely: ${e.message}`;
+      console.warn('bad share link', e);
+    }
     history.replaceState(null, '', '#/' + state.tab);
   } else if (h.startsWith('#/') && TABS.includes(h.slice(2))) {
     state.tab = h.slice(2);
@@ -4916,10 +4928,11 @@ function update() {
   render();
 }
 
-loadState();
-if (!IS_BETA && state.tab === 'saveimport') state.tab = 'republic';
-state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.calcOpts || {}) };
-loadData().then(async () => {
+loadState().then(() => {
+  if (!IS_BETA && state.tab === 'saveimport') state.tab = 'republic';
+  state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.calcOpts || {}) };
+  return loadData();
+}).then(async () => {
   await initializeNamedSnapshots();
   await restoreNamedMapLayers();
   await applyHash();

@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 
 import {
   createPlanningModel,
+  createPlanningCompatibleState,
   refreshPlanningFromObservation,
   seedPlanningFromObservation,
   updatePlanningModel,
@@ -133,4 +134,34 @@ test('new planning models preserve defaults while accepting partial values', () 
   assert.equal(model.plan.settings.productivity, 1);
   assert.deepEqual(model.plan.rows, [{ count: 1 }]);
   assert.equal(model.evidence.source, 'plan');
+});
+
+test('compatibility proxy marks nested planning mutations without touching observation', () => {
+  const compatible = createPlanningCompatibleState({
+    observed: { population: 1200 },
+    planning: createPlanningModel({ plan: { rows: [] } }),
+  });
+
+  compatible.state.plan.rows.push({ name: 'Steel mill', count: 1 });
+
+  assert.deepEqual(compatible.state.observed, { population: 1200 });
+  assert.equal(compatible.state.plan.rows.length, 1);
+  assert.equal(compatible.state.planning.edited, true);
+  assert.equal(compatible.state.planning.revision, 1);
+
+  compatible.state.plan.rows[0].count = 2;
+  assert.equal(compatible.state.planning.revision, 2);
+  assert.equal(compatible.state.plan.rows[0].count, 2);
+  assert.deepEqual(compatible.state.observed, { population: 1200 });
+});
+
+test('compatibility proxy batches one revision for an array operation', () => {
+  const compatible = createPlanningCompatibleState({
+    planning: createPlanningModel({ plan: { rows: [{ count: 1 }, { count: 2 }] } }),
+  });
+
+  compatible.state.plan.rows.splice(0, 1, { count: 9 }, { count: 10 });
+
+  assert.equal(compatible.state.planning.revision, 1);
+  assert.deepEqual(compatible.state.plan.rows.map(row => row.count), [9, 10, 2]);
 });

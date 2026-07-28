@@ -137,24 +137,25 @@ function normalizeEvidence(evidence, gameDate = null) {
 }
 
 export function createPlanningModel(values = {}, {
-  seededFrom = null,
-  evidence = null,
-  edited = false,
-  revision = 0,
-  lastObserved = null,
+  seededFrom = undefined,
+  evidence = undefined,
+  edited = undefined,
+  revision = undefined,
+  lastObserved = undefined,
 } = {}) {
   const input = values?.planning && typeof values.planning === 'object'
     ? values.planning : values;
   const merged = merge(DEFAULT_PLANNING, pickValues(input));
-  const sourceSeed = seededFrom ?? input.seededFrom ?? null;
+  const sourceSeed = seededFrom !== undefined ? seededFrom : (input.seededFrom ?? null);
   const sourceDate = sourceSeed?.gameDate ?? input.lastObserved?.gameDate ?? null;
   return {
     schemaVersion: PLANNING_MODEL_SCHEMA_VERSION,
-    evidence: normalizeEvidence(evidence ?? input.evidence, sourceDate),
+    evidence: normalizeEvidence(evidence !== undefined ? evidence : input.evidence, sourceDate),
     seededFrom: sourceSeed ? clone(sourceSeed) : null,
-    edited: edited || input.edited === true,
-    revision: Number.isInteger(revision) ? revision : (Number.isInteger(input.revision) ? input.revision : 0),
-    lastObserved: clone(lastObserved ?? input.lastObserved ?? null),
+    edited: edited === undefined ? input.edited === true : edited === true,
+    revision: Number.isInteger(revision) ? revision
+      : (Number.isInteger(input.revision) ? input.revision : 0),
+    lastObserved: clone(lastObserved !== undefined ? lastObserved : (input.lastObserved ?? null)),
     ...merged,
   };
 }
@@ -208,7 +209,13 @@ export function refreshPlanningFromObservation(model, observation, nextValues = 
 }
 
 export function planningProjection(model) {
-  const current = createPlanningModel(model);
+  const current = createPlanningModel(model, {
+    seededFrom: model?.seededFrom ?? null,
+    evidence: model?.evidence,
+    edited: model?.edited === true,
+    revision: model?.revision ?? 0,
+    lastObserved: model?.lastObserved ?? null,
+  });
   return clone({
     schemaVersion: current.schemaVersion,
     evidence: current.evidence,
@@ -222,6 +229,116 @@ export function planningProjection(model) {
 
 export function isPlanningKey(key) {
   return PLANNING_KEY_SET.has(key);
+}
+
+const ARRAY_MUTATORS = new Set([
+  'copyWithin', 'fill', 'pop', 'push', 'reverse', 'shift', 'sort', 'splice', 'unshift',
+]);
+
+function createPlanningMutationProxy(model, onMutation) {
+  const proxyByTarget = new WeakMap();
+  const targetByProxy = new WeakMap();
+  let batchDepth = 0;
+  let batchChanged = false;
+
+  const unwrap = value => targetByProxy.get(value) ?? value;
+  const notify = () => {
+    if (batchDepth) {
+      batchChanged = true;
+      return;
+    }
+    onMutation(model);
+  };
+
+  const wrap = target => {
+    if (!target || typeof target !== 'object') return target;
+    const existing = proxyByTarget.get(target);
+    if (existing) return existing;
+    const proxy = new Proxy(target, {
+      get(current, property, receiver) {
+        if (Array.isArray(current) && ARRAY_MUTATORS.has(property)) {
+          return (...args) => {
+            batchDepth += 1;
+            try {
+              return Array.prototype[property].apply(receiver, args.map(unwrap));
+            } finally {
+              batchDepth -= 1;
+              if (!batchDepth && batchChanged) {
+                batchChanged = false;
+                onMutation(model);
+              }
+            }
+          };
+        }
+        return wrap(Reflect.get(current, property, receiver));
+      },
+      set(current, property, value) {
+        const next = unwrap(value);
+        if (Object.is(current[property], next)) return true;
+        Reflect.set(current, property, next, current);
+        notify();
+        return true;
+      },
+      deleteProperty(current, property) {
+        if (!Object.hasOwn(current, property)) return true;
+        delete current[property];
+        notify();
+        return true;
+      },
+    });
+    proxyByTarget.set(target, proxy);
+    targetByProxy.set(proxy, target);
+    return proxy;
+  };
+
+  return wrap(model);
+}
+
+// The old application surface exposes planning keys at the top level. Keep
+// that surface while making the canonical model the only mutable planning
+// object. The proxy marks every nested edit, including array mutators, and the
+// callback gives the host a chance to schedule persistence.
+export function createPlanningCompatibleState(initial = {}, { onMutation = null } = {}) {
+  const target = initial;
+  let planningProxy;
+
+  const installPlanning = value => {
+    const model = createPlanningModel(value);
+    planningProxy = createPlanningMutationProxy(model, changed => {
+      changed.edited = true;
+      changed.revision = (Number.isInteger(changed.revision) ? changed.revision : 0) + 1;
+      onMutation?.(changed);
+    });
+    target.planning = planningProxy;
+  };
+
+  installPlanning(target.planning ?? target);
+
+  const state = new Proxy(target, {
+    get(current, property, receiver) {
+      if (isPlanningKey(property)) return planningProxy[property];
+      if (property === 'planning') return planningProxy;
+      return Reflect.get(current, property, receiver);
+    },
+    set(current, property, value, receiver) {
+      if (isPlanningKey(property)) {
+        planningProxy[property] = value;
+        return true;
+      }
+      if (property === 'planning') {
+        // Replacing the whole model is used for loading/importing observed
+        // state. The incoming provenance is preserved and is not an edit.
+        installPlanning(value);
+        return true;
+      }
+      return Reflect.set(current, property, value, receiver);
+    },
+  });
+
+  return {
+    state,
+    replacePlanning: installPlanning,
+  };
 }
 
 export { DEFAULT_PLANNING };

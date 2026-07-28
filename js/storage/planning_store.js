@@ -31,15 +31,16 @@ function observationValues(source = {}) {
   return observation;
 }
 
-export function serializePlannerState(state = {}) {
+export function serializePlannerState(state = {}, { includePlanning = true } = {}) {
   const planning = createPlanningModel(state.planning ?? legacyPlanningValues(state));
   const observation = state.observation && typeof state.observation === 'object'
     ? clone(state.observation) : observationValues(state);
-  return {
+  const envelope = {
     schemaVersion: PLANNER_STATE_SCHEMA_VERSION,
     observation,
-    planning: planningProjection(planning),
   };
+  if (includePlanning) envelope.planning = planningProjection(planning);
+  return envelope;
 }
 
 export function restorePlannerState(value) {
