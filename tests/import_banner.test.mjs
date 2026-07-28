@@ -117,3 +117,24 @@ test('the shell mounts the banner on failure, not only while busy', async () => 
   // The old mount hid every message the moment the import stopped being busy.
   assert.doesNotMatch(app, /\.\.\.\(state\.importBusy \? \[renderImportActivity\(\)\] : \[\]\)/);
 });
+
+test('the save picker is disabled while an import is running', async () => {
+  const { importControls } = await import('../js/ui/import_banner.js');
+
+  assert.deepEqual(importControls({ importBusy: true }), {
+    pickerDisabled: true, retryDisabled: true,
+  });
+  assert.deepEqual(importControls({ importBusy: false }), {
+    pickerDisabled: false, retryDisabled: false,
+  });
+});
+
+test('the import handler refuses to start a second run over a live one', async () => {
+  const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
+  const handler = app.slice(app.indexOf('async function handleSaveDirectory'));
+  const head = handler.slice(0, 400);
+
+  // Disabling the picker covers the click; the guard covers every other route
+  // into the handler, including a file drop or a second change event.
+  assert.match(head, /if \(state\.importBusy\) return;/);
+});

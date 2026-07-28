@@ -31,7 +31,7 @@ import {
 } from './models/planning_model.js';
 import { planningAreas } from './models/planning_areas.js';
 import { statsStateForImport } from './models/import_stats.js';
-import { importBannerState } from './ui/import_banner.js';
+import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
 import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
@@ -1899,6 +1899,10 @@ function presentSaveAdapterProgress(event) {
 }
 
 async function handleSaveDirectory(fileList) {
+  // Importing a large save runs for minutes. A second run started on top of a
+  // live one interleaves with it: both write the same fixed backup snapshot,
+  // so the rollback target can end up being a half-imported state.
+  if (state.importBusy) return;
   deferredMapRetry = null;
   dismissedImportStatus = null;
   state.importStatus = t('importWorking');
@@ -2104,6 +2108,7 @@ function renderHome() {
     el('strong', {}, t('openRepublicSave')),
     el('span', { class: 'hint' }, t('openRepublicSaveHint')),
     el('input', { type: 'file', class: 'hidden', webkitdirectory: '', multiple: '',
+      ...(importControls({ importBusy: state.importBusy }).pickerDisabled ? { disabled: '' } : {}),
       onchange: event => event.target.files.length && handleSaveDirectory(event.target.files) }));
   const startManual = tab => {
     if (state.saveImport && !confirm(t('startManualConfirm'))) return;
@@ -2154,6 +2159,7 @@ function renderSaveImport() {
   const picker = el('label', { class: 'importpicker' },
     '📂 ', t('chooseSaveFolder'),
     el('input', { type: 'file', class: 'hidden', webkitdirectory: '', multiple: '',
+      ...(importControls({ importBusy: state.importBusy }).pickerDisabled ? { disabled: '' } : {}),
       onchange: event => event.target.files.length && handleSaveDirectory(event.target.files) }));
   const status = state.importStatus
     ? el('p', { class: state.importStatusError ? 'neg' : 'pos' }, state.importStatus) : null;
@@ -2161,7 +2167,7 @@ function renderSaveImport() {
     && Object.entries(deferredMapRetry.files).some(([key, file]) =>
       file && info?.sourceStatus?.[key] === 'failed')
     ? el('button', {
-      ...(state.importBusy ? { disabled: '' } : {}), onclick: retryDeferredMapLayers,
+      ...(importControls({ importBusy: state.importBusy }).retryDisabled ? { disabled: '' } : {}), onclick: retryDeferredMapLayers,
     }, t('retryMapLayers')) : null;
   const liveStats = el('details', { class: 'secondary-section', open: !!liveStatsDirectory },
     el('summary', {}, t('liveStatsTitle')),

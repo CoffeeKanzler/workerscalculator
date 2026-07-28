@@ -40,3 +40,15 @@ export function importBannerState({
     dismissible: visible,
   };
 }
+
+// An import of a large save runs for minutes, and nothing stopped a second one
+// from being started on top of it. Two concurrent imports interleave: they
+// share one fixed backup snapshot name, so the rollback target can become a
+// half-imported state, and the core pass has no equivalent of the guard the
+// deferred map pass uses to notice it has been superseded.
+export function importControls({ importBusy = false } = {}) {
+  return {
+    pickerDisabled: !!importBusy,
+    retryDisabled: !!importBusy,
+  };
+}
