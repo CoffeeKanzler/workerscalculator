@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main id="app">
+    <button id="control">Operations</button>
+  </main>
+  <script>
+    const app = document.querySelector('#app');
+    const control = document.querySelector('#control');
+    const body = getComputedStyle(document.body);
+    const appStyle = getComputedStyle(app);
+    const controlStyle = getComputedStyle(control);
+    document.body.innerHTML = '<pre id="viewport-contract">' + JSON.stringify({
+      viewport: window.innerWidth,
+      appWidth: app.getBoundingClientRect().width,
+      appWidthRule: appStyle.width,
+      bodyFontSize: body.fontSize,
+      controlFontSize: controlStyle.fontSize,
+      controlMinHeight: controlStyle.minHeight,
+      controlHeight: control.getBoundingClientRect().height,
+    }) + '</pre>';
+  </script>
+</body>
+</html>

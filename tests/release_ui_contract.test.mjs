@@ -20,9 +20,10 @@ test('the shipped shell identifies the Command Center and opens on the overview'
 test('the operations desk stays crisp and uses the ultrawide runway intentionally', async () => {
   const css = await fs.readFile(path.join(ROOT, 'css/style.css'), 'utf8');
   assert.match(css, /section \{ animation: none; \}/);
-  assert.match(css, /@media \(min-width: 4000px\)[\s\S]*3200px/);
-  assert.match(css, /body \{ font-size: 17px; \}/);
+  assert.match(css, /@media \(min-width: 4000px\)[\s\S]*4200px/);
+  assert.match(css, /body \{ font-size: 20px; \}/);
   assert.match(css, /\.more-nav \{[^}]*display: inline-block;/);
   assert.match(css, /\.more-nav \{[^}]*justify-self: start;/);
-  assert.match(css, /\.command-center > \.tablewrap \{ grid-column: 1 \/ -1; \}/);
+  assert.match(css, /\.command-center > \.area-table-panel[\s\S]*grid-column: span 5;/);
+  assert.match(css, /\.area-table-panel \.area-health[\s\S]*table-layout: fixed;/);
 });

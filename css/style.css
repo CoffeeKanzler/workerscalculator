@@ -590,3 +590,120 @@ table.data th, table.data td { border-color: var(--border); }
   table.data.mobile-cards tbody > tr > td[data-label=""] { grid-template-columns: 1fr; }
   table.data.mobile-cards tbody > tr > td[data-label=""]::before { display: none; }
 }
+
+/* Ultrawide operations desk -------------------------------------------------
+   1920px remains a single readable reading column.  At 3000px the overview
+   becomes a 12-column desk so evidence, map and area health stay visible as
+   separate work surfaces.  The 4K+ canvas uses the available runway instead
+   of preserving a laptop-sized centered page. */
+@media (min-width: 3000px) {
+  .command-center {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 18px;
+  }
+
+  .command-center > .command-header,
+  .command-center > .command-meta,
+  .command-center > .metric-grid,
+  .command-center > .construction-projects,
+  .command-center > .pollution-hotspots,
+  .command-center > .institution-overview,
+  .command-center > .history-section,
+  .command-center > .planning-details,
+  .command-center > .snapshot-comparison,
+  .command-center > .research-details,
+  .command-center > .settings-details {
+    grid-column: 1 / -1;
+  }
+
+  .command-center > .alert-list { grid-column: span 3; }
+  .command-center > .map-section { grid-column: span 4; }
+  .command-center > .area-table-panel {
+    grid-column: span 5;
+    align-self: start;
+    min-width: 0;
+  }
+
+  .command-center > .alert-list {
+    min-height: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--warn);
+    background: var(--panel);
+  }
+
+  .command-center > .map-section,
+  .command-center > .area-table-panel {
+    min-height: 100%;
+  }
+
+  .area-table-panel .area-health {
+    table-layout: fixed;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .area-table-panel .area-health th,
+  .area-table-panel .area-health td {
+    padding: 9px 10px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .area-table-panel .area-health th:nth-child(1),
+  .area-table-panel .area-health td:nth-child(1) { width: 18%; }
+  .area-table-panel .area-health th:nth-child(2),
+  .area-table-panel .area-health td:nth-child(2) { width: 10%; }
+  .area-table-panel .area-health th:nth-child(3),
+  .area-table-panel .area-health td:nth-child(3),
+  .area-table-panel .area-health th:nth-child(4),
+  .area-table-panel .area-health td:nth-child(4),
+  .area-table-panel .area-health th:nth-child(5),
+  .area-table-panel .area-health td:nth-child(5) { width: 11%; }
+  .area-table-panel .area-health th:nth-child(6),
+  .area-table-panel .area-health td:nth-child(6),
+  .area-table-panel .area-health th:nth-child(7),
+  .area-table-panel .area-health td:nth-child(7),
+  .area-table-panel .area-health th:nth-child(8),
+  .area-table-panel .area-health td:nth-child(8),
+  .area-table-panel .area-health th:nth-child(9),
+  .area-table-panel .area-health td:nth-child(9) { width: 12%; }
+  .area-table-panel .area-health th:nth-child(10),
+  .area-table-panel .area-health td:nth-child(10) { width: 9%; }
+  .area-table-panel .area-health th:nth-child(11),
+  .area-table-panel .area-health td:nth-child(11) { width: 13%; }
+
+  .chart-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .history-section .chart { min-height: 260px; }
+}
+
+@media (min-width: 4000px) {
+  #app {
+    width: min(100% - 160px, 4200px);
+    padding-top: 30px;
+  }
+
+  body { font-size: 20px; }
+
+  button, input, select {
+    min-height: 44px;
+    padding: 10px 16px;
+  }
+
+  header h1 { font-size: clamp(34px, 1.55vw, 44px); }
+  .product-subtitle { font-size: 17px; }
+  .controls, .settingsbar, .workspace-bar { padding: 14px 16px; }
+  .section-tab { min-height: 44px; padding: 10px 20px; }
+  .more-nav > summary { padding: 10px 16px; }
+  .brief-ledger { grid-template-columns: repeat(6, minmax(210px, 1fr)); }
+  .brief-row { padding: 14px; }
+  .brief-row strong { font-size: 27px; }
+  .metric-card { min-height: 132px; padding: 18px; }
+  .metric-card strong { font-size: clamp(29px, 1.6vw, 42px); }
+  .metric-label { font-size: 17px; }
+  .alert { grid-template-columns: minmax(150px, .8fr) minmax(0, 1.4fr) auto; padding: 11px 13px; }
+  .map-section .republic-map { max-height: 720px; }
+  table.data th, table.data td { padding: 10px 12px; }
+  table.data.wide { font-size: 17px; }
+}

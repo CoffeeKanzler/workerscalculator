@@ -2,7 +2,7 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { writeIntegrityManifest } from './integrity-manifest.mjs';
+import { listFiles, writeIntegrityManifest } from './integrity-manifest.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE_DIRS = ['css', 'data', 'js'];
@@ -17,6 +17,13 @@ async function copySource(target) {
   await fs.mkdir(target, { recursive: true });
   for (const directory of SOURCE_DIRS) await copyEntry(path.join(ROOT, directory), path.join(target, directory));
   for (const file of SOURCE_FILES) await copyEntry(path.join(ROOT, file), path.join(target, file));
+}
+
+async function normalizeArchiveTimes(root) {
+  const archiveTime = new Date('2000-01-01T00:00:00Z');
+  for (const file of await listFiles(root)) {
+    await fs.utimes(path.join(root, file), archiveTime, archiveTime);
+  }
 }
 
 async function patchRuntimeMode(target, mode) {
@@ -44,7 +51,8 @@ export async function buildRelease({ outDir = path.join(ROOT, 'dist'), revision 
 
   const zipPath = path.join(outDir, 'republic-command-center-addon.zip');
   try {
-    execFileSync('zip', ['-X', '-q', '-r', zipPath, '.'], { cwd: addon, stdio: 'ignore' });
+    await normalizeArchiveTimes(addon);
+    execFileSync('zip', ['-X', '-q', '-r', '-D', zipPath, '.'], { cwd: addon, stdio: 'ignore' });
   } catch {
     // Folder output remains the portable artifact when zip is unavailable.
   }

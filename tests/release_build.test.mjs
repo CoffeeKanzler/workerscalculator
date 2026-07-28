@@ -30,4 +30,7 @@ test('hosted and addon artifacts are deterministic and differ only by bootstrap 
   assert.match(await fs.readFile(path.join(first.addon, 'index.html'), 'utf8'), /data-runtime-mode="addon"/);
   assert.match(await fs.readFile(path.join(first.hosted, 'index.html'), 'utf8'), /data-runtime-mode="hosted"/);
   assert.ok((await fs.stat(path.join(first.addon, 'integrity.json'))).isFile());
+  const firstZip = await fs.readFile(first.zip).catch(() => null);
+  const secondZip = await fs.readFile(second.zip).catch(() => null);
+  if (firstZip && secondZip) assert.deepEqual(firstZip, secondZip, 'addon ZIP must be byte-deterministic');
 });

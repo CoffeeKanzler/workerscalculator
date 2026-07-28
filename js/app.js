@@ -4338,7 +4338,7 @@ function renderRepublic() {
       fleetOpportunities,
       logisticsOperations,
       schematicMap,
-      el('div', { class: 'tablewrap' }, areaTable),
+      el('div', { class: 'tablewrap area-table-panel' }, areaTable),
       charts,
       snapshotComparison,
       researchDetails,
