@@ -15,6 +15,7 @@ import {
   createIndexedDbPlanningStore,
   createIndexedDbSnapshotStore,
   createPlanningPersistence,
+  createPlanningSaveCoordinator,
   migrateLegacySnapshots,
   serializePlannerState,
 } from './storage.js?v=2';
@@ -69,7 +70,6 @@ const snapshotStore = createIndexedDbSnapshotStore();
 const planningStore = createIndexedDbPlanningStore();
 const planningBackupStore = createIndexedDbPlanningStore(undefined, { key: 'planning-backup' });
 const planningPersistence = createPlanningPersistence({ planningStore });
-let planningSaveQueue = Promise.resolve();
 let hasPlanningBackup = false;
 let namedSnapshotNames = [];
 let comparisonSnapshotName = '';
@@ -141,7 +141,8 @@ function createInitialState() {
     priceSort: { col: 'name', dir: 1 },
     saveSlotName: '',   // transient UI field for the named-save-slot input, not shared/exported
     snapshotNotice: '', // transient feedback for named snapshot actions
-    planningPersistenceError: '', // transient IndexedDB/local observation error
+    planningPersistenceError: '', // transient canonical IndexedDB planning error
+    observationPersistenceError: '', // transient localStorage observation error
     importStatus: '',    // transient save-directory parsing status
     importStatusError: false,
     importBusy: false,
@@ -165,6 +166,20 @@ function createCompatibleState(initial) {
 }
 
 const state = createCompatibleState(createInitialState());
+
+const planningSaveCoordinator = createPlanningSaveCoordinator({
+  persistence: planningPersistence,
+  onErrors: ({ planning, observation }) => {
+    const changed = state.planningPersistenceError !== planning
+      || state.observationPersistenceError !== observation;
+    state.planningPersistenceError = planning;
+    state.observationPersistenceError = observation;
+    if (planning) console.error(planning);
+    if (observation) console.error(observation);
+    return changed;
+  },
+  render,
+});
 
 function plannerScopes(kind = null) {
   const imported = state.saveImport?.scopes;
@@ -213,7 +228,7 @@ function chainPlans() {
 
 function saveState() {
   const {
-    statsRecords, viewingSharedLink, snapshotNotice, planningPersistenceError,
+    statsRecords, viewingSharedLink, snapshotNotice, planningPersistenceError, observationPersistenceError,
     importStatus, importStatusError, importBusy,
     localWorkshopStatus, liveStatsStatus, liveStatsStatusError, ...rest
   } = state;
@@ -230,20 +245,14 @@ function saveState() {
       persistent.observation.saveImport ?? {};
     persistent.observation.saveImport = summary;
   }
-  planningSaveQueue = planningSaveQueue.catch(() => {}).then(async () => {
-    await planningPersistence.save({ ...persistent.observation, planning: state.planning });
-    state.planningPersistenceError = '';
-  }).catch(error => {
-    state.planningPersistenceError = `Planning state was not saved: ${error.message}`;
-    console.error(error);
-  });
+  planningSaveCoordinator.save({ ...persistent.observation, planning: state.planning });
 }
 
 async function loadState() {
   try {
     const loaded = await planningPersistence.load();
     Object.assign(state, loaded.state);
-    if (loaded.error) state.planningPersistenceError = loaded.error.message;
+    if (loaded.error) state.observationPersistenceError = loaded.error.message;
     // Price-table sorting is a view preference, not plan state. Each launch
     // starts with the resource names in ascending alphabetical order.
     state.priceSort = { col: 'name', dir: 1 };
@@ -605,6 +614,7 @@ function render() {
   root.replaceChildren(renderHeader(), ...(IS_BETA ? [renderBetaBanner()] : []),
     ...(state.viewingSharedLink ? [renderSharedLinkBanner()] : []),
     ...(state.planningPersistenceError ? [el('p', { class: 'neg', role: 'alert' }, state.planningPersistenceError)] : []),
+    ...(state.observationPersistenceError ? [el('p', { class: 'neg', role: 'alert' }, state.observationPersistenceError)] : []),
     ...(state.importBusy ? [renderImportActivity()] : []),
     renderTabs(), renderCurrentTab());
   decorateResponsiveTables(root);

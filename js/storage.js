@@ -30,7 +30,17 @@ export function createPlanningPersistence({
   }
 
   function readLegacy() {
-    const raw = storage.getItem(key);
+    let raw;
+    try {
+      raw = storage.getItem(key);
+    } catch (observationError) {
+      return {
+        parsed: null,
+        state: { planning: createPlanningModel({}) },
+        parseError: null,
+        observationError,
+      };
+    }
     if (!raw) return { parsed: null, state: { planning: createPlanningModel({}) }, parseError: null };
     try {
       const parsed = JSON.parse(raw);
@@ -40,6 +50,7 @@ export function createPlanningPersistence({
         parsed: null,
         state: { planning: createPlanningModel({}) },
         parseError: new Error(`Could not read saved planner state: ${error.message}`),
+        observationError: null,
       };
     }
   }
@@ -58,21 +69,74 @@ export function createPlanningPersistence({
         ? { ...legacy.state, planning: createPlanningModel(stored) }
         : legacy.state;
       let migrated = false;
+      let observationError = legacy.observationError ?? legacy.parseError ?? null;
       if (hasLegacyPlanning(legacy.parsed)) {
         if (!stored) await planningStore.save(state.planning);
-        storage.setItem(key, JSON.stringify(serializePlannerState(state, { includePlanning: false })));
+        try {
+          storage.setItem(key, JSON.stringify(serializePlannerState(state, { includePlanning: false })));
+        } catch (error) {
+          observationError = error;
+        }
         migrated = true;
       }
-      return { state, migrated, error: legacy.parseError };
+      return { state, migrated, error: observationError };
     },
 
     async save(state) {
-      const observation = serializePlannerState(state, { includePlanning: false });
-      // A failed IndexedDB write is propagated to the caller; it must never
-      // be silently replaced by a localStorage copy of the canonical plan.
-      storage.setItem(key, JSON.stringify(observation));
       await planningStore.save(state.planning);
-      return { ok: true };
+      try {
+        const observation = serializePlannerState(state, { includePlanning: false });
+        storage.setItem(key, JSON.stringify(observation));
+        return { planningSaved: true, observationSaved: true, observationError: null };
+      } catch (observationError) {
+        // The canonical plan is already durable in IndexedDB. Keep the
+        // synchronous observation failure distinct instead of reporting a
+        // successful planning save as failed.
+        return { planningSaved: true, observationSaved: false, observationError };
+      }
+    },
+  };
+}
+
+export function createPlanningSaveCoordinator({ persistence, onErrors, render } = {}) {
+  if (!persistence || typeof persistence.save !== 'function') {
+    throw new TypeError('Planning save coordinator requires persistence.save');
+  }
+  if (typeof onErrors !== 'function' || typeof render !== 'function') {
+    throw new TypeError('Planning save coordinator requires onErrors and render callbacks');
+  }
+
+  let queue = Promise.resolve();
+  let renderScheduled = false;
+
+  function scheduleRender() {
+    if (renderScheduled) return;
+    renderScheduled = true;
+    queueMicrotask(() => {
+      renderScheduled = false;
+      render();
+    });
+  }
+
+  return {
+    save(state) {
+      queue = queue.catch(() => {}).then(async () => {
+        let changed;
+        try {
+          const result = await persistence.save(state);
+          const observation = result.observationError
+            ? `Observation state was not saved: ${result.observationError.message}`
+            : '';
+          changed = onErrors({ planning: '', observation });
+        } catch (error) {
+          changed = onErrors({
+            planning: `Planning state was not saved: ${error.message}`,
+            observation: '',
+          });
+        }
+        if (changed) scheduleRender();
+      });
+      return queue;
     },
   };
 }
