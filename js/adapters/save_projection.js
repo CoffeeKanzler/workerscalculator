@@ -76,7 +76,7 @@ function saveTypeCandidates(type) {
   return [...new Set(candidates.map(value => value.toLowerCase()))];
 }
 
-function matchSaveBuilding(type, entries, idOf) {
+export function matchSaveBuilding(type, entries, idOf) {
   const candidates = saveTypeCandidates(type);
   const exact = new Map(entries.map(entry => [String(idOf(entry) ?? '').toLowerCase(), entry]));
   for (const candidate of candidates) if (exact.has(candidate)) return exact.get(candidate);
@@ -142,13 +142,21 @@ function emptyFacilitySummary() {
   };
 }
 
+// The save splits a building's establishment across a basic and a high-education
+// slider. The catalog's nominal worker count is the combined total, so configured
+// staffing only compares against it when both sliders are counted.
+function configuredEstablishment(record) {
+  return (record.configuredWorkers ?? 0) + (record.configuredWorkersHighEducation ?? 0);
+}
+
 function addFacility(summary, record, raw, occupants, assignedEvents = 0) {
   const serve = raw?.citizenAbleServe ?? 0;
+  const configured = configuredEstablishment(record);
   summary.buildingCount += 1;
   summary.currentWorkers += record.currentWorkers ?? 0;
-  summary.configuredWorkers += record.configuredWorkers ?? 0;
+  summary.configuredWorkers += configured;
   summary.nominalWorkers += raw?.workers ?? 0;
-  summary.configuredCapacity += (record.configuredWorkers ?? 0) * serve;
+  summary.configuredCapacity += configured * serve;
   summary.nominalCapacity += (raw?.workers ?? 0) * serve;
   summary.occupants += occupants ?? 0;
   summary.currentVisitors += record.currentVisitors ?? 0;
@@ -744,8 +752,10 @@ export function projectSaveToRepublicModel(parsed, {
       stableItems(compactObservedBuildings(parsed.buildings ?? []), building => building.index),
       buildingsEvidence,
     ),
+    // A citizen's `id` is the save's recycled appearance code (100 values for
+    // tens of thousands of citizens), so only the record index identifies one.
     citizens: createEvidenceCollection(
-      stableItems(citizens, (citizen, index) => citizen.id ?? citizen.index ?? index),
+      stableItems(citizens, (citizen, index) => citizen.index ?? index),
       workersEvidence,
     ),
     resources: createEvidenceCollection(resources, statsEvidence),

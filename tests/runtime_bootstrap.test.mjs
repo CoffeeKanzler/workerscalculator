@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { bootstrapRuntime } from '../js/bootstrap.js';
-import { getRuntimeConfig } from '../js/runtime/runtime_config.js';
+import { getRuntimeConfig, hasSaveWorkspace } from '../js/runtime/runtime_config.js';
 
 test('runtime config uses explicit metadata and never infers beta mode from pathname', () => {
   const hosted = getRuntimeConfig({
@@ -24,6 +24,12 @@ test('hosted bootstrap is save-folder local-only and does not construct a live c
   assert.equal(runtime.live, null);
   await runtime.start();
   assert.equal(network, 0);
+});
+
+test('the normal hosted release exposes the save-folder workspace without beta branding', () => {
+  const config = { mode: 'hosted', variant: 'standard', sdkBaseUrl: '/sdk/v1' };
+  assert.equal(hasSaveWorkspace(config), true);
+  assert.equal(config.variant, 'standard');
 });
 
 test('addon bootstrap uses the relative SDK bridge and keeps save import optional', async () => {

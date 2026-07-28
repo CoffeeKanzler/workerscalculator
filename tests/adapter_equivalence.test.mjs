@@ -37,6 +37,24 @@ function liveClient() {
   };
 }
 
+// workers.bin stores a recycled 100-value appearance code at citizen offset 0,
+// not an identity: real saves hold 20k-40k citizens across exactly 100 distinct
+// values.  Only the parser's record index identifies a citizen, so the
+// projection must key on it or every real republic fails to import.
+test('citizens keep separate stable ids when the save reuses the same citizen code', () => {
+  const save = syntheticSave();
+  save.citizens = [
+    { index: 0, id: 30065, health: .9, happiness: .8, loyalty: .7, criminality: 0 },
+    { index: 1, id: 30065, health: .5, happiness: .4, loyalty: .3, criminality: .2 },
+    { index: 2, id: 30065, health: .1, happiness: .2, loyalty: .3, criminality: .4 },
+  ];
+
+  const model = projectSaveToRepublicModel(save, { sourceName: 'Synthetic Republic', observedAt });
+
+  assert.deepEqual(model.citizens.items.map(item => item.id), [0, 1, 2]);
+  assert.equal(model.republic.population.value, 3);
+});
+
 test('synthetic save and fake SDK agree on shared republic facts with provenance differences', async () => {
   const save = projectSaveToRepublicModel(syntheticSave(), { sourceName: 'Synthetic Republic', observedAt });
   const live = await createLiveSdkAdapter({ client: liveClient(), now: () => observedAt }).refresh();

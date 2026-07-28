@@ -223,7 +223,8 @@ test('save projection emits a normalized Republic model with stable IDs and file
   assert.equal(model.republic.population.evidence.capability, 'save.workers');
   assert.equal(model.areas.items[0].id, 7);
   assert.equal(model.buildings.items[0].id, 41);
-  assert.equal(model.citizens.items[0].id, 501);
+  // 501 is the save's reusable citizen code, not an identity: the record index is.
+  assert.equal(model.citizens.items[0].id, 0);
   assert.equal(model.transport.items[0].id, 90);
   assert.equal(model.research.items[0].id, 'vaccine_development');
   assert.equal(model.events.items[0].id, 0);
@@ -280,5 +281,23 @@ test('imported planning retains operational service staffing and observed city r
   assert.equal(operations.republic.liveQueue.medicalEmergencies, 1);
   assert.equal(planning.cities[0].name, 'Kohleburg');
   assert.equal(planning.cities[0].rows[0].importedBuilding.workers, 10);
-  assert.equal(planning.metadata.operationalServices.regional[0].clinics.configuredCapacity, 20);
+  assert.equal(planning.metadata.operationalServices.regional[0].clinics.configuredCapacity, 26);
+});
+
+// Institutions staff themselves largely from the high-education slider, so counting
+// only the basic one reports a court or police station as holding more workers than
+// it employs - a real save shows a secret police post staffed 8 against a capacity
+// of 0. Nominal staffing already comes from the catalog total, so the configured
+// side has to be the total too or the two are not comparable.
+test('configured staffing counts basic and high-education workers as one establishment', () => {
+  const parsed = parsedSave();
+
+  const operations = buildOperationalServices(
+    parsed.buildings, parsed.citizens, [rawHospital], [], parsed.events,
+  );
+
+  const clinics = operations.regional[0].clinics;
+  assert.equal(clinics.configuredWorkers, 13);
+  assert.ok(clinics.currentWorkers <= clinics.configuredWorkers,
+    'observed staff must never exceed the configured establishment');
 });

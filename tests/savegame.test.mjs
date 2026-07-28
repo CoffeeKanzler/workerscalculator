@@ -76,7 +76,7 @@ test('road network parser exposes exact node topology and saved polyline samples
   assert.throws(() => parseRoadNetwork(buffer.slice(0, -1)), /tail vectors/);
 });
 
-function heightmapFixture() {
+function heightmapFixture({ water = 0.1, land = 0.3, border = false } = {}) {
   const size = 8;
   const buffer = new ArrayBuffer(0x80 + size * size * 4);
   const view = new DataView(buffer);
@@ -88,10 +88,11 @@ function heightmapFixture() {
   view.setUint32(0x50, 0x04, true);
   view.setUint32(0x54, 114, true);
   for (let y = 0; y < size; y += 1) for (let x = 0; x < size; x += 1) {
-    let value = 0.3;
-    if (x < 4 && y < 4) value = 0.1;
-    else if (x < 4 && y >= 4 && x < 2) value = 0.1;
-    else if (x >= 4 && y >= 4 && x === 4 && y === 4) value = 0.1;
+    let value = land;
+    if (x < 4 && y < 4) value = water;
+    else if (x < 4 && y >= 4 && x < 2) value = water;
+    else if (x >= 4 && y >= 4 && x === 4 && y === 4) value = water;
+    if (border && (x === 0 || y === 0 || x === size - 1 || y === size - 1)) value = 0;
     view.setFloat32(0x80 + (y * size + x) * 4, value, true);
   }
   return buffer;
@@ -101,10 +102,30 @@ test('heightmap parser validates R32F DDS and packs heightmap-derived water cove
   const buffer = heightmapFixture();
   assert.deepEqual(parseHeightmapWater(buffer, { outputSize: 2 }), {
     width: 2, height: 2, packed: 'Yw==', sourceWidth: 8, sourceHeight: 8,
-    waterHeight: 0.2,
+    waterHeight: Math.fround(0.1),
     worldBounds: { minX: -10000, maxX: 10000, minZ: -10000, maxZ: 10000 },
   });
   assert.throws(() => parseHeightmapWater(buffer.slice(0, -4), { outputSize: 2 }), /expected/);
+});
+
+// Real maps normalize terrain against their own vertical scale, so the flat plain a
+// republic is built on can sit below another map's water. Reading the plane from the
+// heightmap keeps the low map dry; a fixed threshold submerged it entirely.
+test('water follows each map own flat water plane instead of a fixed height', () => {
+  const lowLandMap = heightmapFixture({ water: 0.17695, land: 0.18182 });
+
+  const derived = parseHeightmapWater(lowLandMap, { outputSize: 2 });
+
+  assert.equal(derived.waterHeight, Math.fround(0.17695));
+  assert.deepEqual(derived.packed, parseHeightmapWater(heightmapFixture(), { outputSize: 2 }).packed);
+  // The same map read with the old fixed threshold drowns every land sample.
+  assert.equal(parseHeightmapWater(lowLandMap, { outputSize: 2, waterHeight: 0.2 }).packed, '/w==');
+});
+
+test('border padding of exact zero is terrain edge, not a water plane', () => {
+  const bordered = heightmapFixture({ water: 0.175, land: 0.3, border: true });
+
+  assert.equal(parseHeightmapWater(bordered, { outputSize: 2 }).waterHeight, Math.fround(0.175));
 });
 
 function lineFixture({ saveVersion = 124 } = {}) {

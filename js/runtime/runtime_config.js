@@ -18,4 +18,8 @@ export function getRuntimeConfig({ document = globalThis.document, location = gl
   return Object.freeze({ mode, variant, sdkBaseUrl });
 }
 
+export function hasSaveWorkspace(config) {
+  return config?.mode === 'hosted' || config?.variant === 'beta';
+}
+
 export { MODES };

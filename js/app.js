@@ -49,8 +49,9 @@ import {
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
 } from './adapters/save_folder_adapter.js?v=1';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=1';
 import { bootstrapRuntime } from './bootstrap.js?v=1';
-import { getRuntimeConfig } from './runtime/runtime_config.js?v=1';
+import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
 } from './ui/command_center.js?v=1';
@@ -58,8 +59,9 @@ import {
 const RUNTIME_CONFIG = getRuntimeConfig();
 const APP_RUNTIME = bootstrapRuntime({ config: RUNTIME_CONFIG });
 const IS_BETA = RUNTIME_CONFIG.variant === 'beta';
-const TABS = [...(IS_BETA ? ['home'] : []), 'republic', 'map', 'production', 'city', 'chain',
-  'prices', 'analysis', 'vehicleprod', ...(IS_BETA ? ['saveimport'] : []),
+const HAS_SAVE_WORKSPACE = hasSaveWorkspace(RUNTIME_CONFIG);
+const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'production', 'city', 'chain',
+  'prices', 'analysis', 'vehicleprod', ...(HAS_SAVE_WORKSPACE ? ['saveimport'] : []),
   'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
@@ -100,7 +102,7 @@ const pollutionImageCache = new Map();
 function createInitialState() {
   const initial = {
     lang: 'en',
-    tab: IS_BETA ? 'home' : 'republic',
+    tab: HAS_SAVE_WORKSPACE ? 'home' : 'republic',
     currency: 'RUB',
     priceSource: 'default',      // default | stats | decade
     decade: 1980,
@@ -293,8 +295,8 @@ async function loadData() {
     get('data/production_buildings.json').then(r => r.json()),
     get('data/game/production_buildings.json').then(r => r.ok ? r.json() : null).catch(() => null),
     get('data/city_buildings.json').then(r => r.json()),
-    IS_BETA ? get('data/game/buildings_raw.json').then(r => r.ok ? r.json() : []).catch(() => []) : [],
-    IS_BETA ? get('data/workshop/index.json').then(r => r.ok ? r.json() : null).catch(() => null) : null,
+    HAS_SAVE_WORKSPACE ? get('data/game/buildings_raw.json').then(r => r.ok ? r.json() : []).catch(() => []) : [],
+    HAS_SAVE_WORKSPACE ? get('data/workshop/index.json').then(r => r.ok ? r.json() : null).catch(() => null) : null,
     get('data/vehicles.json').then(r => r.json()),
     get('data/game/rail_vehicles.json').then(r => r.ok ? r.json() : []).catch(() => []),
     get('data/game/vehicles_raw.json').then(r => r.ok ? r.json() : []).catch(() => []),
@@ -710,7 +712,7 @@ function renderHeader() {
       class: state.lang === language ? 'active' : '',
       onclick: () => { state.lang = language; update(); },
     }, language.toUpperCase())));
-  if (IS_BETA && state.tab === 'home') {
+  if (HAS_SAVE_WORKSPACE && state.tab === 'home') {
     return el('header', { class: 'compact-header' },
       el('div', { class: 'product-identity' },
         el('h1', {}, t('appTitle')),
@@ -1988,7 +1990,7 @@ async function retryDeferredMapLayers() {
 }
 
 function renderHome() {
-  if (!IS_BETA) return el('section');
+  if (!HAS_SAVE_WORKSPACE) return el('section');
   const picker = el('label', { class: 'start-card primary-start importpicker' },
     el('span', { class: 'start-icon' }, '📂'),
     el('strong', {}, t('openRepublicSave')),
@@ -2035,7 +2037,7 @@ function renderHome() {
 }
 
 function renderSaveImport() {
-  if (!IS_BETA) return el('section');
+  if (!HAS_SAVE_WORKSPACE) return el('section');
   const info = state.saveImport;
   const areaNames = new Map(plannerScopes().map(scope => [scope.id, scope.name]));
   const workshopPackageId = type => String(type ?? '').match(/^(\d{8,})\//)?.[1] ?? null;
@@ -2524,6 +2526,14 @@ function applyStandaloneMapVisibility(svg, layers, buildingFilter = '', legend =
   }
 }
 
+// A building's establishment is split across the save's basic and high-education
+// worker sliders; institutions such as courts and police posts staff almost
+// entirely from the second, so the basic slider alone reads as 8 workers out of 0.
+function buildingEstablishment(building) {
+  return (Number.isFinite(building.configuredWorkers) ? building.configuredWorkers : 0)
+    + (Number.isFinite(building.configuredWorkersHighEducation) ? building.configuredWorkersHighEducation : 0);
+}
+
 function mapBuildingDisplayName(building) {
   const raw = matchSaveBuilding(building.type,
     [...(DATA.rawBuildings ?? []), ...(DATA.workshopBuildings ?? [])], entry => entry.id);
@@ -2838,8 +2848,8 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       kv(t('building'), `#${building.index}`),
       kv(t('status'), progress < 1
         ? `${t('underConstruction')} · ${fmt(progress * 100, 0)} %` : t('completed')),
-      Number.isFinite(building.configuredWorkers) && building.configuredWorkers > 0
-        ? kv(t('staffing'), `${fmt(building.currentWorkers ?? 0, 0)} / ${fmt(building.configuredWorkers ?? 0, 0)}`) : null,
+      buildingEstablishment(building) > 0
+        ? kv(t('staffing'), `${fmt(building.currentWorkers ?? 0, 0)} / ${fmt(buildingEstablishment(building), 0)}`) : null,
       kv(t('mapCoordinates'), `X ${fmt(building.x, 1)} · Z ${fmt(building.z, 1)}`));
   };
   const inspectBuilding = (building, circle) => {
@@ -3396,7 +3406,7 @@ function renderRepublic() {
   const alertAction = alert => {
     if (!Number.isInteger(alert.scopeId)) return null;
     const scope = scopeInfo.get(alert.scopeId) ?? {};
-    if (IS_BETA && alert.metric === 'coverage.workshop') {
+    if (HAS_SAVE_WORKSPACE && alert.metric === 'coverage.workshop') {
       return el('button', { onclick: () => {
         unmatchedScopeFilter = String(alert.scopeId);
         state.tab = 'saveimport';
@@ -4886,7 +4896,7 @@ function replaceStateProjection(obj, keys) {
   if (!Array.isArray(state.chains) || !state.chains.length) state.chains = [defaultChainPlan()];
   state.activeCity = Math.max(0, Math.min(Number(state.activeCity) || 0, state.cities.length - 1));
   state.activeChain = Math.max(0, Math.min(Number(state.activeChain) || 0, state.chains.length - 1));
-  if (!IS_BETA && state.tab === 'saveimport') state.tab = 'republic';
+  if (!HAS_SAVE_WORKSPACE && state.tab === 'saveimport') state.tab = 'republic';
 }
 
 function replaceSharedState(obj) {
@@ -5068,7 +5078,7 @@ function update() {
 }
 
 loadState().then(() => {
-  if (!IS_BETA && state.tab === 'saveimport') state.tab = 'republic';
+  if (!HAS_SAVE_WORKSPACE && state.tab === 'saveimport') state.tab = 'republic';
   state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.calcOpts || {}) };
   return loadData();
 }).then(async () => {

@@ -1,4 +1,4 @@
-import { parseRoadNetwork, parseHeightmapWater, parsePollution } from './savegame.js?v=23';
+import { parseRoadNetwork, parseHeightmapWater, parsePollution } from './savegame.js?v=24';
 
 const sources = [
   ['road', 'roadNetwork', parseRoadNetwork],

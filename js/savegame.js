@@ -224,7 +224,34 @@ export function parseRoadNetwork(buffer) {
   return { nodes, edges, summary: { nodeCount, edgeCount, groupCount, pointCount, byteLength: c.bytes.length } };
 }
 
-export function parseHeightmapWater(buffer, { outputSize = 512, waterHeight = 0.2 } = {}) {
+// The saved heightmap is normalized and every map sets its own water plane, so no
+// single threshold classifies water everywhere: at a fixed 0.2 a canyon save whose
+// buildable plain sits at 0.1818 reported 99.8% of its own buildings under water.
+// A water surface is perfectly flat, so the plane is the lowest height that repeats
+// across a meaningful share of the map. Exact 0 is the border padding the game
+// writes around the terrain (one save's outer ring is entirely 0), not water.
+function detectWaterPlane(view, width, height, minimumShare) {
+  const samples = width * height;
+  const repeats = new Map();
+  for (let index = 0; index < samples; index += 1) {
+    const bits = view.getUint32(0x80 + index * 4, true);
+    if (bits === 0) continue;
+    repeats.set(bits, (repeats.get(bits) ?? 0) + 1);
+  }
+  let plane = null;
+  for (const [bits, count] of repeats) {
+    if (count < samples * minimumShare) continue;
+    const value = new DataView(Uint32Array.of(bits).buffer).getFloat32(0, true);
+    if (Number.isFinite(value) && (plane === null || value < plane)) plane = value;
+  }
+  return plane;
+}
+
+export function parseHeightmapWater(buffer, {
+  outputSize = 512,
+  waterHeight = null,
+  waterPlaneMinimumShare = 0.001,
+} = {}) {
   const c = new BinaryCursor(buffer);
   c.require(0x80, 'heightmap DDS header');
   if (c.view.getUint32(0, true) !== 0x20534444 || c.view.getUint32(4, true) !== 0x7c) {
@@ -246,6 +273,10 @@ export function parseHeightmapWater(buffer, { outputSize = 512, waterHeight = 0.
   if (!Number.isInteger(size) || size <= 0 || width % size || height % size) {
     throw new Error(`heightmap.dds cannot downsample ${width}x${height} to ${outputSize}`);
   }
+  const plane = waterHeight ?? detectWaterPlane(c.view, width, height, waterPlaneMinimumShare);
+  // Without a detectable plane the map has no flat surface to call water, and
+  // guessing a level would invent shoreline the save never recorded.
+  const waterLevel = plane ?? 0;
   const blockWidth = width / size;
   const blockHeight = height / size;
   const samplesPerBlock = blockWidth * blockHeight;
@@ -259,7 +290,7 @@ export function parseHeightmapWater(buffer, { outputSize = 512, waterHeight = 0.
           const sourceX = outX * blockWidth + dx;
           const value = c.view.getFloat32(0x80 + (sourceY * width + sourceX) * 4, true);
           if (!Number.isFinite(value)) throw new Error(`heightmap.dds has an invalid sample at ${sourceX}/${sourceY}`);
-          if (value <= waterHeight) waterSamples += 1;
+          if (value <= waterLevel) waterSamples += 1;
         }
       }
       const level = waterSamples ? Math.min(3, Math.ceil(waterSamples * 3 / samplesPerBlock)) : 0;
@@ -277,7 +308,7 @@ export function parseHeightmapWater(buffer, { outputSize = 512, waterHeight = 0.
     packed: btoa(binary),
     sourceWidth: width,
     sourceHeight: height,
-    waterHeight,
+    waterHeight: waterLevel,
     worldBounds: { minX: -10000, maxX: 10000, minZ: -10000, maxZ: 10000 },
   };
 }
