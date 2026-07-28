@@ -27,3 +27,28 @@ test('imported completion spends points only for completed paid research', () =>
     { key: 'phone_tapping', progress: 1 },
   ]), ['phone_tapping']);
 });
+
+// Only namepoints.bin and buildings_game.bin are required, so a perfectly
+// valid save folder can have no research.bin. The worker reports that as null
+// rather than undefined, which slips straight past a default parameter and
+// crashed the whole LowTech research tab: render threw part-way, leaving the
+// previous tab on screen while the navigation claimed otherwise.
+test('a save with no research data is empty, not a crash', () => {
+  assert.deepEqual(completedPaidResearchKeys(definitions, null), []);
+  assert.deepEqual(completedPaidResearchKeys(definitions, undefined), []);
+  assert.deepEqual(completedPaidResearchKeys(null, null), []);
+  assert.deepEqual(completedPaidResearchKeys(undefined, undefined), []);
+});
+
+test('research progress is still read when the save does carry it', () => {
+  const paid = definitions.filter(item => item.pointCost === 1).slice(0, 2).map(item => item.key);
+  const free = definitions.find(item => item.pointCost === 0).key;
+
+  const keys = completedPaidResearchKeys(definitions, [
+    { key: paid[0], progress: 1 },
+    { key: paid[1], progress: 0.5 },
+    { key: free, progress: 1 },
+  ]);
+
+  assert.deepEqual(keys, [paid[0]], 'only completed paid research counts');
+});
