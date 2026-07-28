@@ -19,7 +19,7 @@ import {
   createPlanningSaveCoordinator,
   migrateLegacySnapshots,
   serializePlannerState,
-} from './storage.js?v=3';
+} from './storage.js?v=5';
 import {
   PLANNING_KEYS,
   createPlanningCompatibleState,
@@ -32,6 +32,7 @@ import {
 import { planningAreas } from './models/planning_areas.js';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState } from './ui/import_banner.js';
+import { observationForAutosave } from './models/autosave_observation.js';
 import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
@@ -198,7 +199,20 @@ const planningSaveCoordinator = createPlanningSaveCoordinator({
     return changed;
   },
   render,
+  // Measured on a 2.77MB observation: a keystroke costs ~115ms with a save
+  // loaded against ~35ms with none. Waiting for a pause in editing takes the
+  // write off the keystroke path; leaving the page flushes it immediately.
+  delayMs: 400,
 });
+
+// pagehide covers navigation and tab close; visibilitychange covers the mobile
+// case where a backgrounded tab may never get pagehide at all.
+for (const [target, event] of [[window, 'pagehide'], [document, 'visibilitychange']]) {
+  target.addEventListener(event, () => {
+    if (event === 'visibilitychange' && document.visibilityState !== 'hidden') return;
+    planningSaveCoordinator.flush();
+  });
+}
 
 function plannerScopes(kind = null) {
   const imported = state.saveImport?.scopes;
@@ -267,26 +281,13 @@ function chainPlans() {
 }
 
 function saveState() {
-  const {
-    statsRecords, viewingSharedLink, snapshotNotice, planningPersistenceError, observationPersistenceError,
-    importStatus, importStatusError, importBusy,
-    localWorkshopStatus, liveStatsStatus, liveStatsStatusError,
-    runtimeStatus, runtimeReason, runtimeGeneration, runtimeObservedAt, liveModel, ...rest
-  } = state;
-  // Exact network samples belong in the IndexedDB named snapshot, which is
-  // restored separately. Keeping the multi-megabyte geometry out of the
-  // autosave stops every unrelated settings change from rewriting it.
-  const hasLocalMapData = rest.saveImport?.roadNetwork || rest.saveImport?.railNetwork
-    || rest.saveImport?.pedestrianNetwork
-    || rest.saveImport?.terrainWater || rest.saveImport?.pollutionLayer;
-  const raw = { ...rest, planning: state.planning };
-  const persistent = serializePlannerState(raw, { includePlanning: false });
-  if (hasLocalMapData) {
-    const { roadNetwork, railNetwork, pedestrianNetwork, terrainWater, pollutionLayer, ...summary } =
-      persistent.observation.saveImport ?? {};
-    persistent.observation.saveImport = summary;
-  }
-  planningSaveCoordinator.save({ ...persistent.observation, planning: state.planning });
+  // The persistence layer serialises what it is given, so this hands over a
+  // shallow projection rather than a second JSON round-trip of the same
+  // multi-megabyte observation.
+  planningSaveCoordinator.save({
+    ...observationForAutosave({ ...state }),
+    planning: state.planning,
+  });
 }
 
 // When the observation was last written. Used to decide whether this launch is

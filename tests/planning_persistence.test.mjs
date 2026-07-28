@@ -307,3 +307,176 @@ test('the observation records when it was last saved so the app can spot a resum
   assert.ok(savedAt >= before && savedAt <= Date.now());
   assert.equal((await persistence.load()).lastSavedAt, savedAt);
 });
+
+// Every keystroke calls update() -> saveState(), and the observation is
+// megabytes. Without coalescing, typing "1234" queues four full serialise +
+// IndexedDB write cycles when only the last one can matter.
+test('saves that arrive while one is in flight collapse to a single later write', async () => {
+  const seen = [];
+  let release;
+  const gate = new Promise(resolve => { release = resolve; });
+  let first = true;
+  const coordinator = createPlanningSaveCoordinator({
+    persistence: {
+      save: async state => {
+        seen.push(state.mark);
+        if (first) { first = false; await gate; }
+        return { planningSaved: true, observationSaved: true, observationError: null };
+      },
+    },
+    onErrors: () => false,
+    render: () => {},
+  });
+
+  const inFlight = coordinator.save({ mark: 'a' });
+  // These all arrive while 'a' is still being written.
+  coordinator.save({ mark: 'b' });
+  coordinator.save({ mark: 'c' });
+  const last = coordinator.save({ mark: 'd' });
+  release();
+  await Promise.all([inFlight, last]);
+
+  assert.deepEqual(seen, ['a', 'd'], 'only the first and the newest state are written');
+});
+
+test('a coalesced save still reports the failure of the write that ran', async () => {
+  let errors = null;
+  let release;
+  const gate = new Promise(resolve => { release = resolve; });
+  let first = true;
+  const coordinator = createPlanningSaveCoordinator({
+    persistence: {
+      save: async () => {
+        if (first) { first = false; await gate; return { planningSaved: true, observationSaved: true, observationError: null }; }
+        throw new Error('IndexedDB unavailable');
+      },
+    },
+    onErrors: next => { errors = next; return true; },
+    render: () => {},
+  });
+
+  const inFlight = coordinator.save({ mark: 'a' });
+  const last = coordinator.save({ mark: 'b' });
+  release();
+  await Promise.all([inFlight, last]);
+
+  assert.deepEqual(errors, {
+    planning: 'Planning state was not saved: IndexedDB unavailable',
+    observation: '',
+  });
+});
+
+test('a save that arrives after the queue drains still runs', async () => {
+  const seen = [];
+  const coordinator = createPlanningSaveCoordinator({
+    persistence: {
+      save: async state => { seen.push(state.mark); return { planningSaved: true, observationSaved: true, observationError: null }; },
+    },
+    onErrors: () => false,
+    render: () => {},
+  });
+
+  await coordinator.save({ mark: 'a' });
+  await coordinator.save({ mark: 'b' });
+
+  assert.deepEqual(seen, ['a', 'b']);
+});
+
+// Measured in the browser on a 2.77MB observation: a keystroke costs ~115ms
+// with a save loaded against ~35ms with none, so the autosave is the dominant
+// term while typing. Holding the write until typing pauses removes it from the
+// keystroke path without changing what ends up on disk.
+function manualTimer() {
+  let queued = null;
+  return {
+    schedule: (fn, ms) => { queued = { fn, ms }; return 1; },
+    cancel: () => { queued = null; },
+    pending: () => queued,
+    fire: () => { const job = queued; queued = null; job.fn(); },
+  };
+}
+
+test('a burst of edits results in one write after the burst', async () => {
+  const seen = [];
+  const timer = manualTimer();
+  const coordinator = createPlanningSaveCoordinator({
+    persistence: {
+      save: async state => {
+        seen.push(state.mark);
+        return { planningSaved: true, observationSaved: true, observationError: null };
+      },
+    },
+    onErrors: () => false,
+    render: () => {},
+    delayMs: 350,
+    schedule: timer.schedule,
+    cancel: timer.cancel,
+  });
+
+  coordinator.save({ mark: 'a' });
+  coordinator.save({ mark: 'b' });
+  coordinator.save({ mark: 'c' });
+  assert.deepEqual(seen, [], 'nothing is written while the user is still typing');
+  assert.equal(timer.pending().ms, 350);
+
+  timer.fire();
+  await coordinator.flush();
+
+  assert.deepEqual(seen, ['c'], 'only the state the user finished on is written');
+});
+
+// A debounce that can lose the last edit is worse than no debounce, so leaving
+// the page has to write immediately rather than wait out the delay.
+test('flush writes a pending edit immediately instead of waiting for the delay', async () => {
+  const seen = [];
+  const timer = manualTimer();
+  const coordinator = createPlanningSaveCoordinator({
+    persistence: {
+      save: async state => {
+        seen.push(state.mark);
+        return { planningSaved: true, observationSaved: true, observationError: null };
+      },
+    },
+    onErrors: () => false,
+    render: () => {},
+    delayMs: 350,
+    schedule: timer.schedule,
+    cancel: timer.cancel,
+  });
+
+  coordinator.save({ mark: 'unsaved' });
+  await coordinator.flush();
+
+  assert.deepEqual(seen, ['unsaved']);
+  assert.equal(timer.pending(), null, 'the pending timer is cleared, not left to fire twice');
+});
+
+test('flush with nothing pending is harmless', async () => {
+  let calls = 0;
+  const timer = manualTimer();
+  const coordinator = createPlanningSaveCoordinator({
+    persistence: { save: async () => { calls += 1; return { planningSaved: true, observationSaved: true, observationError: null }; } },
+    onErrors: () => false,
+    render: () => {},
+    delayMs: 350,
+    schedule: timer.schedule,
+    cancel: timer.cancel,
+  });
+
+  await coordinator.flush();
+  assert.equal(calls, 0);
+});
+
+test('with no delay configured a save still writes straight away', async () => {
+  const seen = [];
+  const coordinator = createPlanningSaveCoordinator({
+    persistence: {
+      save: async state => { seen.push(state.mark); return { planningSaved: true, observationSaved: true, observationError: null }; },
+    },
+    onErrors: () => false,
+    render: () => {},
+  });
+
+  await coordinator.save({ mark: 'now' });
+  assert.deepEqual(seen, ['now']);
+});

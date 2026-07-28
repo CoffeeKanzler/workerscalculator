@@ -124,7 +124,14 @@ export function createPlanningPersistence({
   };
 }
 
-export function createPlanningSaveCoordinator({ persistence, onErrors, render } = {}) {
+export function createPlanningSaveCoordinator({
+  persistence,
+  onErrors,
+  render,
+  delayMs = 0,
+  schedule = (fn, ms) => setTimeout(fn, ms),
+  cancel = handle => clearTimeout(handle),
+} = {}) {
   if (!persistence || typeof persistence.save !== 'function') {
     throw new TypeError('Planning save coordinator requires persistence.save');
   }
@@ -132,7 +139,9 @@ export function createPlanningSaveCoordinator({ persistence, onErrors, render } 
     throw new TypeError('Planning save coordinator requires onErrors and render callbacks');
   }
 
-  let queue = Promise.resolve();
+  let running = null;
+  let pending = null;
+  let timer = null;
   let renderScheduled = false;
 
   function scheduleRender() {
@@ -144,25 +153,63 @@ export function createPlanningSaveCoordinator({ persistence, onErrors, render } 
     });
   }
 
-  return {
-    save(state) {
-      queue = queue.catch(() => {}).then(async () => {
-        let changed;
-        try {
-          const result = await persistence.save(state);
-          const observation = result.observationError
-            ? `Observation state was not saved: ${result.observationError.message}`
-            : '';
-          changed = onErrors({ planning: '', observation });
-        } catch (error) {
-          changed = onErrors({
-            planning: `Planning state was not saved: ${error.message}`,
-            observation: '',
-          });
-        }
-        if (changed) scheduleRender();
+  async function writeOnce(state) {
+    let changed;
+    try {
+      const result = await persistence.save(state);
+      const observation = result.observationError
+        ? `Observation state was not saved: ${result.observationError.message}`
+        : '';
+      changed = onErrors({ planning: '', observation });
+    } catch (error) {
+      changed = onErrors({
+        planning: `Planning state was not saved: ${error.message}`,
+        observation: '',
       });
-      return queue;
+    }
+    if (changed) scheduleRender();
+  }
+
+  function drain() {
+    if (running) return running;
+    running = (async () => {
+      try {
+        while (pending !== null) {
+          const current = pending;
+          pending = null;
+          await writeOnce(current);
+        }
+      } finally {
+        running = null;
+      }
+    })();
+    return running;
+  }
+
+  return {
+    // Every edit calls this, including each keystroke, and the observation is
+    // megabytes. Two things keep that off the keystroke path: the write waits
+    // for a pause in editing, and states arriving while a write is in flight
+    // replace the queued one rather than adding another write. Only the newest
+    // state can matter, and the drain above always reaches it.
+    save(state) {
+      pending = state;
+      if (delayMs > 0) {
+        if (timer !== null) cancel(timer);
+        timer = schedule(() => { timer = null; drain(); }, delayMs);
+        return running ?? Promise.resolve();
+      }
+      return drain();
+    },
+
+    // Leaving the page must not cost the user their last edit, so the wait is
+    // abandoned rather than honoured when someone asks for the write now.
+    flush() {
+      if (timer !== null) {
+        cancel(timer);
+        timer = null;
+      }
+      return drain();
     },
   };
 }
