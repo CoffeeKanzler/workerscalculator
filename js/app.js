@@ -30,6 +30,8 @@ import {
   seedPlanningFromObservation,
 } from './models/planning_model.js';
 import { planningAreas } from './models/planning_areas.js';
+import { statsStateForImport } from './models/import_stats.js';
+import { importBannerState } from './ui/import_banner.js';
 import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
@@ -659,7 +661,7 @@ function render() {
     ...(state.viewingSharedLink ? [renderSharedLinkBanner()] : []),
     ...(state.planningPersistenceError ? [el('p', { class: 'neg', role: 'alert' }, state.planningPersistenceError)] : []),
     ...(state.observationPersistenceError ? [el('p', { class: 'neg', role: 'alert' }, state.observationPersistenceError)] : []),
-    ...(state.importBusy ? [renderImportActivity()] : []),
+    ...[renderImportActivity()].filter(Boolean),
     renderTabs(), renderCurrentTab());
   decorateResponsiveTables(root);
 
@@ -1813,13 +1815,39 @@ function presentImportStatus(message, error = false) {
   }
 }
 
+// Failures reported after the import hands the user to the republic tab are
+// otherwise invisible: the status text lives only on the start and save-import
+// tabs, and the retry button only on save-import.
+let dismissedImportStatus = null;
+
+function canRetryMapLayers() {
+  return deferredMapRetryMatchesState()
+    && Object.entries(deferredMapRetry.files).some(([key, file]) =>
+      file && state.saveImport?.sourceStatus?.[key] === 'failed');
+}
+
 function renderImportActivity() {
-  if (!state.importBusy) return null;
+  const banner = importBannerState({
+    importBusy: state.importBusy,
+    importStatus: state.importStatus,
+    importStatusError: state.importStatusError,
+    mapLayersFailed: canRetryMapLayers(),
+    dismissedStatus: dismissedImportStatus,
+  });
+  if (!banner.visible) return null;
   return el('div', {
-    class: state.importStatusError ? 'import-activity neg' : 'import-activity',
-    role: 'status', 'aria-live': 'polite', 'data-import-status': '',
-  }, el('span', { class: 'import-spinner', 'aria-hidden': 'true' }),
-  el('span', { 'data-import-status-text': '' }, state.importStatus));
+    class: banner.tone === 'error' ? 'import-activity neg'
+      : banner.tone === 'warn' ? 'import-activity warn' : 'import-activity',
+    role: banner.tone === 'busy' ? 'status' : 'alert',
+    'aria-live': 'polite', 'data-import-status': '',
+  },
+  banner.spinner ? el('span', { class: 'import-spinner', 'aria-hidden': 'true' }) : null,
+  el('span', { 'data-import-status-text': '' }, banner.message),
+  banner.retry ? el('button', { onclick: retryDeferredMapLayers }, t('retryMapLayers')) : null,
+  banner.dismissible ? el('button', {
+    class: 'linklike', 'aria-label': t('dismiss'),
+    onclick: () => { dismissedImportStatus = state.importStatus; update(); },
+  }, t('dismiss')) : null);
 }
 
 async function handleLocalWorkshopDirectory(fileList) {
@@ -1871,6 +1899,7 @@ function presentSaveAdapterProgress(event) {
 
 async function handleSaveDirectory(fileList) {
   deferredMapRetry = null;
+  dismissedImportStatus = null;
   state.importStatus = t('importWorking');
   state.importStatusError = false;
   state.importBusy = true;
@@ -1921,10 +1950,16 @@ async function handleSaveDirectory(fileList) {
       next[key] = cloneStateValue(state[key]);
     }
     next.dataset = 'game';
-    if (statsRecords.length) {
-      next.priceSource = 'stats';
-      next.overrides = {};
-    }
+    // The stats slice is decided once and applied to both the fresh state and
+    // the live state, so a save without stats.ini cannot inherit the previous
+    // republic's price history.
+    const statsState = statsStateForImport({
+      statsRecords,
+      statsFileName: statsFile?.name ?? null,
+      previousPriceSource: next.priceSource,
+    });
+    next.priceSource = statsState.priceSource;
+    if (statsRecords.length) next.overrides = {};
     const currentIdentity = state.saveImport?.header?.savePath || state.saveImport?.sourceName;
     const importedIdentity = parsed.header?.savePath || sourceName;
     const sameRepublic = !!currentIdentity && currentIdentity === importedIdentity;
@@ -1955,11 +1990,9 @@ async function handleSaveDirectory(fileList) {
     mapSelectedBuildingIndex = null;
     compactMapExpanded = false;
     compactMapOpen = false;
-    if (statsRecords.length) {
-      state.statsRecords = statsRecords;
-      state.statsName = statsFile.name;
-      state.recordIndex = statsRecords.length - 1;
-    }
+    state.statsRecords = statsState.statsRecords;
+    state.statsName = statsState.statsName;
+    state.recordIndex = statsState.recordIndex;
     state.saveSlotName = importName;
     const hasDeferredMap = Object.values(deferredMapFiles).some(Boolean);
     state.importStatus = hasDeferredMap ? t('importCoreComplete') : t('importComplete');
@@ -2026,6 +2059,8 @@ async function retryDeferredMapLayers() {
   const retry = deferredMapRetry;
   state.importBusy = true;
   state.importStatusError = false;
+  // A retry that fails again is new information, not the dismissed message.
+  dismissedImportStatus = null;
   state.importStatus = t('importRetryingMap');
   update();
   try {

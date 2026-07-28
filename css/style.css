@@ -334,6 +334,9 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-zoom-controls { display: flex; gap: 5px; }
 .import-activity { display: flex; align-items: center; gap: 9px; margin: 8px 0; padding: 9px 12px; border: 1px solid var(--accent); border-radius: 8px; background: var(--panel); color: var(--text); }
 .import-activity.neg { border-color: var(--neg); color: var(--neg); }
+.import-activity.warn { border-color: var(--warn); color: var(--warn); }
+.import-activity button { margin-left: auto; }
+.import-activity button + button { margin-left: 10px; }
 .import-spinner { width: 15px; height: 15px; flex: 0 0 auto; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: import-spin .8s linear infinite; }
 @keyframes import-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .import-spinner { animation: none; border-top-color: var(--border); background: var(--accent); } }
