@@ -6,6 +6,21 @@ GitHub Pages web app from the community planning spreadsheet
 
 **Everything runs locally in your browser – your stats.ini is never uploaded anywhere.**
 
+## Republic Command Center
+
+The same interface has two explicit operating modes:
+
+- **Hosted save office:** choose a complete save folder in the browser. Parsing,
+  planning, snapshots, and comparison stay local; no save file or derived
+  record is sent to a server.
+- **MpEconomy addon live dispatch:** the static addon reads relative `/sdk/v1`
+  gateway snapshots and cursors. The evidence rail labels LIVE, SAVE, PLAN,
+  DERIVED, and UNAVAILABLE values so observed state is never confused with a
+  hypothetical plan. Save import remains available for comparison.
+
+The navigation is organized as Observe, Diagnose, Plan, and Compare. Planning
+controls remain available in both modes and never submit game commands.
+
 ## Features
 
 - **stats.ini import** – drag & drop the `stats.ini` from your savegame folder
@@ -82,6 +97,20 @@ python3 tools/extract_from_xlsx.py
 
 Push to GitHub, then **Settings → Pages → Deploy from branch → `main` / root**.
 A `.nojekyll` file is included.
+
+### Building the hosted and addon artifacts
+
+The release script copies one source revision into deterministic hosted and
+static-addon trees, writes SHA-256 integrity manifests, and creates a static
+addon ZIP when the `zip` utility is available:
+
+```bash
+node scripts/build-release.mjs --out=/tmp/republic-command-center-dist
+```
+
+The addon artifact contains `addon.json` with `staticOnly: true`; it does not
+start a process or gain write capabilities. Its live data access is declared as
+read-only SDK capabilities.
 
 ## Notes on formulas
 

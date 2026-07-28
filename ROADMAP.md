@@ -1,5 +1,9 @@
 # Roadmap
 
+The dual-mode Republic Command Center slice is implemented on the feature
+branch: hosted save-folder analysis and the static addon share one evidence-
+aware UI, with deterministic packaging and synthetic adapter parity tests.
+
 Planned improvements, ordered by value. Each item is independently shippable;
 none are started until picked. See [CONTRIBUTING.md](CONTRIBUTING.md) for how
 the code and data fit together.

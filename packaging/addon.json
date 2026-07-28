@@ -1,0 +1,13 @@
+{
+  "id": "republic-command-center",
+  "version": "0.1.0",
+  "enabled": true,
+  "staticOnly": true,
+  "sdkVersion": ">=1.0.0",
+  "scopes": ["read.republic", "read.transport", "read.economy"],
+  "requiredCapabilities": ["republic", "cities", "buildings", "resources", "resource_flows", "vehicles", "research", "sdk_events"],
+  "ui": {
+    "entry": "index.html",
+    "consoleManifest": "integrity.json"
+  }
+}
