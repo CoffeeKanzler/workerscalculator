@@ -115,12 +115,12 @@ function saveIds(dirs) {
 // thousand items takes hours, and a download is dead weight the moment its
 // definitions are extracted, so this runs between batches too rather than only
 // at startup.
-function reclaimCataloguedDownloads(index) {
-  if (!existsSync(CONTENT)) return 0;
+export function reclaimCataloguedDownloads(index, contentDir = CONTENT) {
+  if (!existsSync(contentDir)) return 0;
   let reclaimed = 0;
-  for (const entry of readdirSync(CONTENT)) {
+  for (const entry of readdirSync(contentDir)) {
     if (!index.items[entry]) continue;
-    rmSync(path.join(CONTENT, entry), { recursive: true, force: true });
+    rmSync(path.join(contentDir, entry), { recursive: true, force: true });
     reclaimed += 1;
   }
   if (reclaimed) console.log(`reclaimed ${reclaimed} download(s) already catalogued`);

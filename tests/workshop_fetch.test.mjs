@@ -75,15 +75,59 @@ test('a backlog smaller than one batch is a single batch', async () => {
 
 // Items already catalogued are skipped on a re-run, which is right — but they
 // were being skipped past the pruning that happens alongside cataloguing, so
-// their raw downloads accumulated across runs. 14 GB had built up before this
-// was noticed, against a backlog that does not fit on the disk.
-test('a re-run reclaims downloads for items it already holds', async () => {
-  const source = await import('node:fs').then(fs =>
-    fs.readFileSync(new URL('../tools/workshop_fetch.mjs', import.meta.url), 'utf8'));
+// their raw downloads accumulated across runs. This was first written as a
+// check on the source text, which passed for the wrong reason and then failed
+// the moment the code was reshaped without its behaviour changing. It now
+// exercises the sweep against a real directory.
+test('the sweep deletes downloads whose definitions are already catalogued', async () => {
+  const { mkdtempSync, mkdirSync, writeFileSync, existsSync, rmSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const nodePath = await import('node:path');
+  const { reclaimCataloguedDownloads } = await import('../tools/workshop_fetch.mjs');
 
-  assert.match(source, /reclaimed \$\{reclaimed\} download\(s\) already catalogued/);
-  // The reclaim must consult what was requested, not the filtered list, or it
-  // can never see the items that were skipped.
-  assert.match(source, /const requested = new Set\(ids\);/);
-  assert.match(source, /for \(const id of requested\)/);
+  const content = mkdtempSync(nodePath.join(tmpdir(), 'workshop-sweep-'));
+  try {
+    for (const id of ['111', '222', '333']) {
+      mkdirSync(nodePath.join(content, id), { recursive: true });
+      writeFileSync(nodePath.join(content, id, 'big.dds'), 'x'.repeat(1024));
+    }
+    // 111 and 333 are catalogued; 222 has not been extracted yet.
+    const index = { items: { 111: { path: 'a' }, 333: { path: 'b' } } };
+
+    assert.equal(reclaimCataloguedDownloads(index, content), 2);
+    assert.equal(existsSync(nodePath.join(content, '111')), false);
+    assert.equal(existsSync(nodePath.join(content, '333')), false);
+    // The uncatalogued download must survive: deleting it would lose the only
+    // copy of something whose definitions were never extracted.
+    assert.equal(existsSync(nodePath.join(content, '222')), true);
+
+    // A second sweep has nothing left to do rather than failing on the
+    // directories it already removed.
+    assert.equal(reclaimCataloguedDownloads(index, content), 0);
+  } finally {
+    rmSync(content, { recursive: true, force: true });
+  }
+});
+
+test('the sweep sees downloads left by a run with a different id list', async () => {
+  // Scoped to the current run's ids, it could not see these at all, which is
+  // how 33 GB accumulated while --prune was on and appeared to be working.
+  const { mkdtempSync, mkdirSync, existsSync, rmSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const nodePath = await import('node:path');
+  const { reclaimCataloguedDownloads } = await import('../tools/workshop_fetch.mjs');
+
+  const content = mkdtempSync(nodePath.join(tmpdir(), 'workshop-sweep-'));
+  try {
+    mkdirSync(nodePath.join(content, '999'), { recursive: true });
+    assert.equal(reclaimCataloguedDownloads({ items: { 999: { path: 'c' } } }, content), 1);
+    assert.equal(existsSync(nodePath.join(content, '999')), false);
+  } finally {
+    rmSync(content, { recursive: true, force: true });
+  }
+});
+
+test('the sweep is safe when nothing has been downloaded', async () => {
+  const { reclaimCataloguedDownloads } = await import('../tools/workshop_fetch.mjs');
+  assert.equal(reclaimCataloguedDownloads({ items: {} }, '/nonexistent-content-dir'), 0);
 });
