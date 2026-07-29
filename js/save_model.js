@@ -450,6 +450,7 @@ export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
     const to = network.nodes?.[edge.to];
     return {
       id: edge.id,
+      ...(Number.isFinite(edge.length) ? { length: edge.length } : {}),
       points: [from, ...(edge.points ?? []), to].filter(point =>
         Number.isFinite(point?.x) && Number.isFinite(point?.z)).map(point => ({
         mapX: projectX(point.x), mapY: projectY(point.z),

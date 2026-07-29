@@ -124,7 +124,7 @@ export function parseNamepoints(buffer) {
 
 // The game's shared network writer serializes roads, rails, pipes, wires, and
 // footpaths with the same size-described layout.  This parser intentionally
-// exposes only topology and the saved 3D samples; all simulation-only blocks
+// exposes only topology, route length, and the saved 3D samples; all simulation-only blocks
 // are skipped by their exact serialized counts.
 export function parseRoadNetwork(buffer) {
   const c = new BinaryCursor(buffer);
@@ -163,9 +163,11 @@ export function parseRoadNetwork(buffer) {
     const samples = countInBlock(start, 0x00, `road edge ${index} sample count`);
     const from = c.view.getInt32(start + 0x04, true);
     const to = c.view.getInt32(start + 0x08, true);
+    const length = c.view.getFloat32(start + 0x3c, true);
     if (from < 0 || from >= nodeCount || to < 0 || to >= nodeCount) {
       throw new Error(`road edge ${index}: invalid endpoints ${from}/${to}`);
     }
+    if (!Number.isFinite(length) || length < 0) throw new Error(`road edge ${index}: invalid length ${length}`);
     const references = countInBlock(start, 0x0c, `road edge ${index} reference count`);
     const blocks30A = countInBlock(start, 0x10, `road edge ${index} block A count`);
     const blocks30D = countInBlock(start, 0x14, `road edge ${index} block D count`);
@@ -215,7 +217,7 @@ export function parseRoadNetwork(buffer) {
     skipItems(pairedReferences, 8, `road edge ${index} paired references`);
     c.skip(0x18, `road edge ${index} tail vectors`);
     edges.push({
-      id: index, from, to, points,
+      id: index, from, to, length, points,
       ...(referencedObjectIds.length ? { referencedObjectIds } : {}),
     });
   }
