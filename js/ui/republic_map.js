@@ -6,6 +6,23 @@ export function mapCountOrDash(value, formatter) {
   return Number.isFinite(value) ? formatter(value, 0) : '—';
 }
 
+export function radiationRasterPixels(packed, low, high) {
+  const samples = Uint8Array.from(atob(packed), character => character.charCodeAt(0));
+  const pixels = new Uint8ClampedArray(samples.length * 4);
+  for (let index = 0; index < samples.length; index += 1) {
+    const value = samples[index] / 255;
+    if (!value) continue;
+    const target = index * 4;
+    for (let channel = 0; channel < 3; channel += 1) {
+      pixels[target + channel] = Math.round(
+        low[channel] + (high[channel] - low[channel]) * value,
+      );
+    }
+    pixels[target + 3] = Math.round(72 + value * 183);
+  }
+  return pixels;
+}
+
 function workerPositions(building) {
   return (Number.isFinite(building.configuredWorkers) ? building.configuredWorkers : 0)
     + (Number.isFinite(building.configuredWorkersHighEducation)

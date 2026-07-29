@@ -14,7 +14,7 @@ import {
   filterMapBuildings,
   mapPointToLeaflet,
   summarizeMapViewport,
-} from './republic_map.js?v=12';
+} from './republic_map.js?v=15';
 
 function imageBounds(image, height) {
   return [
@@ -72,7 +72,7 @@ function schematicBounds(points, height) {
 export function mountRepublicLeafletMap(container, options) {
   const {
     model, buildings, scopes, layers, categoryVisibility, mode, query,
-    pollutionOpacity, palette, waterHref, pollutionHref, tooltipFor,
+    pollutionOpacity, radiationOpacity, palette, waterHref, pollutionHref, radiationHref, tooltipFor,
     onSelectBuilding, onSelectScope, onViewportSummary, initialCamera,
   } = options;
   const fullBounds = latLngBounds([[0, 0], [model.height, model.width]]);
@@ -88,6 +88,7 @@ export function mountRepublicLeafletMap(container, options) {
   });
   map.createPane('mapWaterPane').style.zIndex = '210';
   map.createPane('mapPollutionPane').style.zIndex = '220';
+  map.createPane('mapRadiationPane').style.zIndex = '230';
   map.createPane('mapVectorPane').style.zIndex = '410';
 
   // One renderer is essential here. Separate full-size canvas panes stack as
@@ -99,6 +100,7 @@ export function mountRepublicLeafletMap(container, options) {
   const groups = {
     water: layerGroup(),
     pollution: layerGroup(),
+    radiation: layerGroup(),
     roads: layerGroup(),
     rails: layerGroup(),
     pedestrian: layerGroup(),
@@ -123,6 +125,16 @@ export function mountRepublicLeafletMap(container, options) {
       pollutionHref(model.pollution), imageBounds(model.pollution, model.height), {
         pane: 'mapPollutionPane', interactive: false, opacity: pollutionOpacity,
       }).addTo(groups.pollution);
+  }
+  let radiationImage = null;
+  if (model.pollution?.radiationPacked) {
+    radiationImage = imageOverlay(
+      radiationHref(model.pollution), imageBounds(model.pollution, model.height), {
+        pane: 'mapRadiationPane',
+        className: 'map-radiation-overlay',
+        interactive: false,
+        opacity: radiationOpacity,
+      }).addTo(groups.radiation);
   }
   addNetwork('roads', model.roads, {
     color: palette.muted, weight: 1.1, opacity: 0.58,
@@ -225,7 +237,7 @@ export function mountRepublicLeafletMap(container, options) {
     container.dataset.mapCenter = `${center.lat.toFixed(4)},${center.lng.toFixed(4)}`;
   }
 
-  for (const key of ['water', 'pollution', 'roads', 'rails', 'pedestrian', 'scopes']) {
+  for (const key of ['water', 'pollution', 'radiation', 'roads', 'rails', 'pedestrian', 'scopes']) {
     updateLayer(key);
   }
   groups.buildings.addTo(map);
@@ -271,6 +283,9 @@ export function mountRepublicLeafletMap(container, options) {
     },
     setPollutionOpacity(value) {
       pollutionImage?.setOpacity(value);
+    },
+    setRadiationOpacity(value) {
+      radiationImage?.setOpacity(value);
     },
     fitDeveloped() {
       const points = visibleBuildings().filter(building => !building.borderPost);

@@ -13,7 +13,7 @@ export const PLANNING_KEYS = Object.freeze([
   'chains', 'activeChain', 'productionScope',
   'historyKey', 'historyCompareKeys', 'historyLogScale',
   'republicView', 'republicRange', 'republicResource', 'republicScope',
-  'mapLayers', 'mapBuildingFilter', 'mapPollutionOpacity',
+  'mapLayers', 'mapBuildingFilter', 'mapPollutionOpacity', 'mapRadiationOpacity',
   'mapMetric', 'mapCategoryVisibility',
   'republicAlertFilter', 'analysisSort', 'analysisSearch', 'priceSort',
 ]);
@@ -65,12 +65,13 @@ const DEFAULT_PLANNING = {
   republicResource: null,
   republicScope: null,
   mapLayers: {
-    water: true, pollution: true, roads: true, rails: true,
+    water: true, pollution: true, radiation: false, roads: true, rails: true,
     pedestrian: false, buildings: true, construction: true,
     scopes: true, borders: true, outliers: true,
   },
   mapBuildingFilter: '',
   mapPollutionOpacity: 0.68,
+  mapRadiationOpacity: 0.72,
   mapMetric: 'category',
   mapCategoryVisibility: {
     living: true, industry: true, services: true, support: true, other: true,

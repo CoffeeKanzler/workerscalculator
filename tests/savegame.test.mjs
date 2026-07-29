@@ -24,10 +24,30 @@ test('pollution parser packs the exact X-major Z-fast air field in screen order'
     [0.5, 1, 0.25, 0.75]);
   assert.equal(result.airNonzero, 4);
   assert.equal(result.airMax, 1);
-  assert.equal(result.radiationPacked, undefined);
+  assert.deepEqual([...Buffer.from(result.radiationPacked, 'base64')], [0, 0, 0, 0]);
   assert.throws(() => parsePollution(buffer.slice(0, -1), {
     worldBounds: { minX: -200, maxX: 200, minZ: -200, maxZ: 200 },
   }), /expected/);
+});
+
+test('pollution parser keeps radiation separate and packs its exact screen-order field', () => {
+  const buffer = new ArrayBuffer(4 + 4 * 12);
+  const view = new DataView(buffer);
+  view.setInt32(0, 4, true);
+  // Serialized indices: x0/z0, x0/z1, x1/z0, x1/z1.
+  [0.3, 1.2, 2.1, 3].forEach((value, index) => {
+    view.setFloat32(4 + index * 12, value, true);
+    view.setFloat32(4 + index * 12 + 4, 0.5, true);
+  });
+
+  const result = parsePollution(buffer, {
+    worldBounds: { minX: -200, maxX: 200, minZ: -200, maxZ: 200 },
+  });
+
+  assert.deepEqual([...Buffer.from(result.radiationPacked, 'base64')], [102, 255, 26, 178]);
+  assert.equal(result.radiationNonzero, 4);
+  assert.equal(result.radiationMax, Math.fround(3));
+  assert.deepEqual([...Buffer.from(result.airPacked, 'base64')], [128, 128, 128, 128]);
 });
 
 function writeUtf16(bytes, offset, text) {

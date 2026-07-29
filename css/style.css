@@ -416,6 +416,28 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
   box-shadow: 0 6px 20px rgb(0 0 0 / 24%);
 }
 .map-layer-menu .map-opacity { display: grid; gap: 4px; margin-top: 4px; }
+.map-radiation-key {
+  display: grid;
+  grid-template-columns: auto minmax(100px, 190px) auto auto minmax(150px, 1fr);
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 8px;
+  padding: 6px 9px;
+  color: var(--muted);
+  font-size: 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+}
+.map-radiation-key[hidden] { display: none; }
+.map-radiation-key strong { color: var(--text); }
+.map-radiation-gradient {
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, transparent, var(--blueprint), var(--accent));
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+.map-radiation-count { margin-left: 5px; }
 .map-data-legend { gap: 6px; }
 .map-data-legend button {
   display: inline-flex;

@@ -259,6 +259,24 @@ try {
       'the residence ledger contains no exact occupancy', ledgerText);
     await screenshot(page, 'map-light-residence');
 
+    await page.locator('.map-layer-menu > summary').click();
+    const radiationToggle = page.locator('[data-map-layer="radiation"]');
+    check(await radiationToggle.count() === 1,
+      'the exact radiation field has no independent map toggle');
+    check(!await radiationToggle.isChecked(), 'radiation should be off by default');
+    const pollutionToggle = page.locator('[data-map-layer="pollution"]');
+    if (await pollutionToggle.isChecked()) await pollutionToggle.uncheck();
+    await radiationToggle.check();
+    await page.locator('.map-layer-menu > summary').click();
+    await page.waitForTimeout(250);
+    const radiationKey = page.locator('[data-map-radiation-key]');
+    check(await radiationKey.isVisible(), 'enabling radiation showed no readable scale');
+    check(/0[\s\S]*3/.test(await radiationKey.innerText()),
+      'the radiation scale does not expose its saved 0–3 range');
+    check(await page.locator('.map-radiation-overlay').count() === 1,
+      'enabling radiation mounted no independent raster');
+    await screenshot(page, 'map-light-radiation');
+
     const themeButton = page.locator('.themeswitch').first();
     for (let step = 0; step < 3; step += 1) {
       if (await page.evaluate(() => document.documentElement.dataset.theme === 'dark')) break;
@@ -267,6 +285,7 @@ try {
     }
     await page.waitForSelector('.leaflet-republic-map.leaflet-container');
     await screenshot(page, 'map-dark-residence');
+    await screenshot(page, 'map-dark-radiation');
   } else {
     failures.push('no map tab was offered after importing a save');
   }

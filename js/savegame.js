@@ -366,7 +366,7 @@ export function parsePollution(buffer, { worldBounds, cellSize = 200 } = {}) {
   return {
     width, height, cellSize, worldBounds: { ...worldBounds },
     airPacked: encode(air), airValuesPacked: encode(airValues),
-    ...(radiationNonzero ? { radiationPacked: encode(radiation) } : {}),
+    radiationPacked: encode(radiation),
     airNonzero, airMax, radiationNonzero, radiationMax,
   };
 }

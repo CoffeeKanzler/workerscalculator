@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=135';
+import { STRINGS } from './i18n.js?v=138';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -20,7 +20,7 @@ import {
   createPlanningSaveCoordinator,
   migrateLegacySnapshots,
   serializePlannerState,
-} from './storage.js?v=8';
+} from './storage.js?v=9';
 import {
   PLANNING_KEYS,
   createPlanningCompatibleState,
@@ -29,7 +29,7 @@ import {
   planningProjection,
   refreshPlanningFromObservation,
   seedPlanningFromObservation,
-} from './models/planning_model.js?v=4';
+} from './models/planning_model.js?v=7';
 import { planningAreas } from './models/planning_areas.js';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
@@ -54,12 +54,13 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=21';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=27';
 import {
   mapCountOrDash,
   normalizeMapMetric,
+  radiationRasterPixels,
   residenceDetailForBuilding,
-} from './ui/republic_map.js?v=12';
+} from './ui/republic_map.js?v=23';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -126,6 +127,7 @@ let unmatchedScopeFilter = '';
 let deferredMapRetry = null;
 const terrainWaterImageCache = new Map();
 const pollutionImageCache = new Map();
+const radiationImageCache = new Map();
 
 function createInitialState() {
   const initial = {
@@ -166,11 +168,12 @@ function createInitialState() {
     republicResource: null,
     republicScope: null,
     mapLayers: {
-      water: true, pollution: true, roads: true, rails: true, pedestrian: false, buildings: true,
+      water: true, pollution: true, radiation: false, roads: true, rails: true, pedestrian: false, buildings: true,
       construction: true, scopes: true, borders: true, outliers: true,
     },
     mapBuildingFilter: '',
     mapPollutionOpacity: 0.68,
+    mapRadiationOpacity: 0.72,
     mapMetric: 'category',
     mapCategoryVisibility: {
       living: true, industry: true, services: true, support: true, other: true,
@@ -2792,6 +2795,30 @@ function standalonePollutionImageHref(pollution) {
   return href;
 }
 
+function themeHexRgb(value) {
+  const hex = String(value).trim().replace(/^#/, '');
+  const expanded = hex.length === 3
+    ? [...hex].map(character => character + character).join('')
+    : hex;
+  if (!/^[0-9a-f]{6}$/i.test(expanded)) return [0, 0, 0];
+  return [0, 2, 4].map(offset => Number.parseInt(expanded.slice(offset, offset + 2), 16));
+}
+
+function standaloneRadiationImageHref(pollution, low, high) {
+  const cacheKey = `${pollution.radiationPacked}:${low.join(',')}:${high.join(',')}`;
+  if (radiationImageCache.has(cacheKey)) return radiationImageCache.get(cacheKey);
+  const canvas = document.createElement('canvas');
+  canvas.width = pollution.width;
+  canvas.height = pollution.height;
+  const context = canvas.getContext('2d');
+  const pixels = context.createImageData(pollution.width, pollution.height);
+  pixels.data.set(radiationRasterPixels(pollution.radiationPacked, low, high));
+  context.putImageData(pixels, 0, 0);
+  const href = canvas.toDataURL('image/png');
+  radiationImageCache.set(cacheKey, href);
+  return href;
+}
+
 function renderMapBuildingInspector(building) {
   const progress = building.constructionProgress ?? 1;
   const percentOrDash = value =>
@@ -2929,6 +2956,21 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
       el('span', {}, el('i', { class: `map-metric-swatch ${band}` }), t(key))));
   };
   renderMetricKey(mapMetric);
+  const radiationAvailable = !!model.pollution?.radiationPacked;
+  const radiationKey = radiationAvailable ? el('div', {
+    class: 'map-radiation-key',
+    'data-map-radiation-key': '',
+    hidden: !layers.radiation,
+    'aria-label': t('radiationScale'),
+  },
+  el('strong', {}, t('radiation')),
+  el('span', { class: 'map-radiation-gradient', 'aria-hidden': 'true' }),
+  el('span', {}, '0'),
+  el('span', {}, '3'),
+  el('span', { class: 'map-radiation-count' },
+    model.pollution.radiationNonzero
+      ? `${fmt(model.pollution.radiationNonzero, 0)} ${t('radiationCells')}`
+      : t('noRadiationDetected'))) : null;
   const layerToggle = (key, label, available = true) => available ? el('label', {},
     el('input', {
       type: 'checkbox', checked: layers[key], 'data-map-layer': key,
@@ -2936,6 +2978,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         layers[key] = event.target.checked;
         state.mapLayers = { ...state.mapLayers, [key]: event.target.checked };
         api?.setLayer(key, event.target.checked);
+        if (key === 'radiation' && radiationKey) radiationKey.hidden = !event.target.checked;
         saveState();
       },
     }), ' ', label) : null;
@@ -2991,6 +3034,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
       el('fieldset', {},
         layerToggle('water', t('waterFootprint'), !!model.water),
         layerToggle('pollution', t('airPollution'), !!model.pollution),
+        layerToggle('radiation', t('radiation'), radiationAvailable),
         layerToggle('roads', t('roads'), !!model.roads.length),
         layerToggle('rails', t('rails'), !!model.rails.length),
         layerToggle('pedestrian', t('pedestrianPaths'), !!model.pedestrian.length),
@@ -3010,6 +3054,16 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
               api?.setPollutionOpacity(Number(event.target.value));
             },
             onchange: () => saveState(),
+          })) : null,
+        radiationAvailable ? el('label', { class: 'map-opacity' }, t('radiationOpacity'),
+          el('input', {
+            type: 'range', min: '0.2', max: '1', step: '0.05',
+            value: state.mapRadiationOpacity ?? 0.72,
+            oninput: event => {
+              state.mapRadiationOpacity = Number(event.target.value);
+              api?.setRadiationOpacity(Number(event.target.value));
+            },
+            onchange: () => saveState(),
           })) : null)),
     el('div', { class: 'map-zoom-controls' },
       el('button', { onclick: () => api?.fitDeveloped() }, t('mapFitDeveloped')),
@@ -3026,12 +3080,15 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
     toolbar,
     legend,
     metricKey,
+    radiationKey,
     viewport);
 
   requestAnimationFrame(() => {
     if (!container.isConnected) return;
     const styles = getComputedStyle(document.documentElement);
     const color = (name, fallback) => styles.getPropertyValue(name).trim() || fallback;
+    const radiationLow = themeHexRgb(color('--blueprint', '#48657b'));
+    const radiationHigh = themeHexRgb(color('--accent', '#9f2f2b'));
     api = mountRepublicLeafletMap(container, {
       model,
       buildings,
@@ -3041,6 +3098,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
       mode: mapMetric,
       query: state.mapBuildingFilter ?? '',
       pollutionOpacity: state.mapPollutionOpacity ?? 0.68,
+      radiationOpacity: state.mapRadiationOpacity ?? 0.72,
       palette: {
         living: color('--blueprint', '#4682a9'),
         industry: color('--accent', '#9f2f2b'),
@@ -3058,6 +3116,9 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
       },
       waterHref: standaloneWaterImageHref,
       pollutionHref: standalonePollutionImageHref,
+      radiationHref: pollution => standaloneRadiationImageHref(
+        pollution, radiationLow, radiationHigh,
+      ),
       tooltipFor: building => el('div', { class: 'map-tooltip-content' },
         el('strong', {}, building.displayName),
         building.name ? el('span', {}, building.name) : null,
@@ -3119,11 +3180,11 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   });
   if (!model) return null;
   const layers = standalone ? {
-    water: true, pollution: true, roads: true, rails: true, pedestrian: false, buildings: true,
+    water: true, pollution: true, radiation: false, roads: true, rails: true, pedestrian: false, buildings: true,
     construction: true, scopes: true, borders: true, outliers: true,
     ...(state.mapLayers ?? {}),
   } : {
-    water: true, pollution: false, roads: true, rails: true, pedestrian: false, buildings: true,
+    water: true, pollution: false, radiation: false, roads: true, rails: true, pedestrian: false, buildings: true,
     construction: true, scopes: true, borders: true, outliers: true,
   };
   const buildingFilter = standalone ? String(state.mapBuildingFilter ?? '').trim().toLowerCase() : '';

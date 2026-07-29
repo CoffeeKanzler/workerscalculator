@@ -42,15 +42,22 @@ test('analytical map choices survive through the planning model boundary', () =>
   assert.deepEqual(defaults.mapCategoryVisibility, {
     living: true, industry: true, services: true, support: true, other: true,
   });
+  assert.equal(defaults.mapLayers.radiation, false);
+  assert.equal(defaults.mapRadiationOpacity, 0.72);
 
   const restored = createPlanningCompatibleState({
     mapMetric: 'staffing',
+    mapLayers: { radiation: true },
+    mapRadiationOpacity: 0.45,
     mapCategoryVisibility: { industry: false },
   }).state;
   assert.equal(restored.mapMetric, 'staffing');
   assert.equal(normalizeMapMetric(restored.mapMetric), 'category');
   assert.equal(restored.mapCategoryVisibility.industry, false);
   assert.equal(restored.mapCategoryVisibility.living, true);
+  assert.equal(restored.mapLayers.radiation, true);
+  assert.equal(restored.mapLayers.pollution, true);
+  assert.equal(restored.mapRadiationOpacity, 0.45);
 });
 
 test('seeding a planning model gives hypothetical values PLAN evidence', () => {

@@ -7,9 +7,21 @@ import {
   mapCountOrDash,
   mapPointToLeaflet,
   normalizeMapMetric,
+  radiationRasterPixels,
   residenceDetailForBuilding,
   summarizeMapViewport,
 } from '../js/ui/republic_map.js';
+
+test('radiation raster colors only nonzero samples with the supplied theme palette', () => {
+  const packed = Buffer.from([0, 128, 255]).toString('base64');
+  const pixels = radiationRasterPixels(packed, [20, 40, 60], [220, 140, 80]);
+
+  assert.deepEqual([...pixels], [
+    0, 0, 0, 0,
+    120, 90, 70, 164,
+    220, 140, 80, 255,
+  ]);
+});
 
 test('map counts retain finite values and render non-finite values as unavailable', () => {
   const format = (value, digits) => `${value}:${digits}`;
