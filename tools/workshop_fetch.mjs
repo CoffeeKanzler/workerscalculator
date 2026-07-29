@@ -92,7 +92,21 @@ export function extractItem(id, dir, { now = new Date().toISOString() } = {}) {
 function download(ids) {
   // One invocation: the connection and content-server handshake is the slow
   // part, not the transfer, so batching is much faster than a call per item.
-  const args = ['+login', 'anonymous'];
+  //
+  // An anonymous login can only fetch a subset of the Workshop: of a 5,026
+  // item backlog, 3,141 were still public on the Steam API — real titles, real
+  // file sizes — and steamcmd refused every one of them with a bare
+  // "Failure", most without logging anything at all. It is not rate limiting
+  // or batch size; an item that works works immediately after one that does
+  // not.
+  //
+  // STEAM_USER switches to a named account, which can fetch the rest. No
+  // password is passed here and none is stored: steamcmd is expected to have a
+  // cached session from an interactive `steamcmd +login <user>` run beforehand,
+  // and if that session has expired this exits rather than prompting, because
+  // a prompt inside a batch run would hang until the timeout.
+  const user = process.env.STEAM_USER?.trim();
+  const args = ['+login', user || 'anonymous'];
   for (const id of ids) args.push('+workshop_download_item', APP_ID, String(id));
   args.push('+quit');
   execFileSync(STEAMCMD, args, { stdio: ['ignore', 'inherit', 'inherit'], timeout: 30 * 60 * 1000 });
@@ -209,7 +223,8 @@ function main(argv) {
 
   const groups = extractOnly ? [ids] : batches(ids, size);
   console.log(`${ids.length} item(s) in ${groups.length} batch(es) of up to ${size}`
-    + `${prune ? ', pruning raw downloads as they are catalogued' : ''}`);
+    + `${prune ? ', pruning raw downloads as they are catalogued' : ''}`
+    + `, as ${process.env.STEAM_USER?.trim() || 'anonymous'}`);
 
   let added = 0;
   let failed = 0;
