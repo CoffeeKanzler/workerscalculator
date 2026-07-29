@@ -100,9 +100,15 @@ function main(argv) {
       if (moduleName(target) === name) continue;
       after = bumpReferencesTo(after, name);
     }
-    // Any JavaScript change advances the shell, which is also DATA_V.
-    if (target === 'index.html' && plan.touchesJs) after = bumpReferencesTo(after, 'app.js');
-    if (target === 'index.html' && plan.touchesCss) after = bumpReferencesTo(after, 'style.css');
+    // Any JavaScript change advances the shell, which is also DATA_V — unless
+    // the shell itself changed, in which case the loop above already did, and
+    // advancing twice would be wrong rather than merely untidy.
+    if (target === 'index.html' && plan.touchesJs && !plan.modules.includes('app.js')) {
+      after = bumpReferencesTo(after, 'app.js');
+    }
+    if (target === 'index.html' && plan.touchesCss && !plan.modules.includes('style.css')) {
+      after = bumpReferencesTo(after, 'style.css');
+    }
     if (after !== before) {
       edits.push(target);
       if (!check) writeFileSync(file, after);

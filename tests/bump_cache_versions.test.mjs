@@ -77,3 +77,20 @@ test('module names and javascript are recognised by extension', () => {
   assert.equal(isJavaScript('tools/x.mjs'), true);
   assert.equal(isJavaScript('css/style.css'), false);
 });
+
+// Found by running the hook on a real commit: a stylesheet change matched both
+// the changed-module loop and the shell special case, advancing style.css by
+// two. Skipping a version is harmless to a browser but makes the markers lie
+// about how many releases there have been.
+test('a changed shell or stylesheet advances exactly once', () => {
+  const html = '<link href="css/style.css?v=51">\n<script src="js/app.js?v=153"></script>';
+
+  // Simulate the writer: modules loop first, then the shell special case.
+  const afterModules = ['style.css', 'app.js'].reduce(bumpReferencesTo, html);
+  assert.match(afterModules, /style\.css\?v=52/);
+  assert.match(afterModules, /app\.js\?v=154/);
+
+  const plan = planBump(['css/style.css', 'js/app.js']);
+  assert.ok(plan.modules.includes('style.css'), 'the shell case must know to stand down');
+  assert.ok(plan.modules.includes('app.js'));
+});

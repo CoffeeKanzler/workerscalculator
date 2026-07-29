@@ -130,12 +130,22 @@ def parse_building(path, ident=None, keep_all=False):
     return b
 
 
-def extract_buildings(media):
+def extract_buildings(media, keep_all=True):
+    """Every building the game defines, base and DLC.
+
+    keep_all is on because this dataset identifies what a save contains, not
+    what can be planned: planning reads production_buildings.json. Dropping
+    buildings without workers or production left pedestrian tunnel entries,
+    cableway poles, water and sewage switches and storage-only DLC buildings
+    with no definition at all, so a save full of them reported hundreds of
+    unmatched buildings it could perfectly well have named. The projection
+    already counts a matched building with no production as infrastructure.
+    """
     root = os.path.join(media, 'buildings_types')
     out = []
     for fn in sorted(os.listdir(root)):
         if fn.endswith('.ini'):
-            b = parse_building(os.path.join(root, fn))
+            b = parse_building(os.path.join(root, fn), keep_all=keep_all)
             if b:
                 out.append(b)
     # DLC / CWC buildings live in <dlc>/buildings/<name>/building.ini with $NAME_STR
@@ -146,7 +156,7 @@ def extract_buildings(media):
         for sub in sorted(os.listdir(broot)):
             ini = os.path.join(broot, sub, 'building.ini')
             if os.path.isfile(ini):
-                b = parse_building(ini, ident=f'{dlc}/{sub}')
+                b = parse_building(ini, ident=f'{dlc}/{sub}', keep_all=keep_all)
                 if b:
                     b['dlc'] = dlc
                     out.append(b)
