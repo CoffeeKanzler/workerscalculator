@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=112';
+import { STRINGS } from './i18n.js?v=113';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -62,13 +62,13 @@ import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
   shouldOpenStartPage, relativeAge,
-} from './ui/command_center.js?v=4';
+} from './ui/command_center.js?v=5';
 
 const RUNTIME_CONFIG = getRuntimeConfig();
 const APP_RUNTIME = bootstrapRuntime({ config: RUNTIME_CONFIG });
 const IS_BETA = RUNTIME_CONFIG.variant === 'beta';
 const HAS_SAVE_WORKSPACE = hasSaveWorkspace(RUNTIME_CONFIG);
-const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'cities', 'history', 'production', 'city', 'chain',
+const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'environment', 'snapshots', 'production', 'city', 'chain',
   'prices', 'priceedit', 'analysis', 'vehicleprod', ...(HAS_SAVE_WORKSPACE ? ['saveimport'] : []),
   'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
@@ -907,7 +907,7 @@ function renderSaveSlots() {
 function renderTabs() {
   const labels = { home: 'tabHome', prices: 'tabPrices', priceedit: 'tabPriceEdit', production: 'tabProduction', chain: 'tabChain',
     analysis: 'tabAnalysis', vehicleprod: 'tabVehicleProd', city: 'tabCity', cities: 'tabCities', republic: 'tabRepublic',
-    map: 'tabMap', history: 'tabHistory', saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
+    map: 'tabMap', history: 'tabHistory', construction: 'tabConstruction', logistics: 'tabLogistics', environment: 'tabEnvironment', snapshots: 'tabSnapshots', saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
   const button = id => el('button', {
     class: state.tab === id ? 'active' : '',
     'aria-current': state.tab === id ? 'page' : false,
@@ -938,6 +938,10 @@ function renderCurrentTab() {
     case 'priceedit': return renderPriceEdit();
     case 'cities': return renderCities();
     case 'history': return renderRepublicHistory();
+    case 'construction': return renderConstruction();
+    case 'logistics': return renderLogistics();
+    case 'environment': return renderEnvironment();
+    case 'snapshots': return renderSnapshots();
     case 'production': return renderProduction();
     case 'chain': return renderChain();
     case 'analysis': return renderAnalysis();
@@ -3455,6 +3459,675 @@ function renderRepublicHistory() {
   return charts;
 }
 
+
+// Compare: this republic against another saved snapshot. It carried the name
+// of the Compare section while living at the foot of the republic overview.
+function renderSnapshots() {
+  if (!state.saveImport) {
+    return el('section', {}, el('p', { class: 'hint' }, t('comparisonNotImported')));
+  }
+  const comparisonNames = namedSnapshotNames.filter(name => name !== state.saveSlotName);
+  if (comparisonSnapshotName && !comparisonNames.includes(comparisonSnapshotName)) {
+    comparisonSnapshotName = '';
+    comparisonSnapshot = null;
+    comparisonSnapshotError = '';
+  }
+  const comparison = comparisonSnapshot?.saveImport && state.saveImport
+    ? compareObservedSnapshots(state.saveImport, comparisonSnapshot.saveImport,
+      state.statsRecords, comparisonSnapshot.statsRecords) : null;
+  const comparisonValue = (key, value) => {
+    if (!Number.isFinite(value)) return '—';
+    return ['productivity', 'health', 'criminality'].includes(key)
+      ? `${fmt(value * 100, key === 'criminality' ? 2 : 1)} %`
+      : fmt(value, 0);
+  };
+  const comparisonDelta = (key, value) => {
+    if (!Number.isFinite(value)) return '—';
+    const scaled = ['productivity', 'health', 'criminality'].includes(key) ? value * 100 : value;
+    const suffix = ['productivity', 'health', 'criminality'].includes(key) ? ' pp' : '';
+    return `${scaled > 0 ? '+' : ''}${fmt(scaled, key === 'criminality' ? 2 : 1)}${suffix}`;
+  };
+  const comparisonRate = (key, value) => {
+    if (!Number.isFinite(value)) return '—';
+    return `${value > 0 ? '+' : ''}${fmt(value, key === 'population' ? 1 : 2)}`;
+  };
+  const comparisonMetrics = [
+    ['statsRecordCount', t('statsHistoryRecords')],
+    ['population', t('population')], ['liveBuildingCount', t('importedBuildings')],
+    ['configuredIndustryWorkers', t('configuredWorkers')],
+    ['currentIndustryWorkers', t('currentWorkers')], ['productivity', t('productivity')],
+    ['health', t('health')], ['criminality', t('criminality')],
+    ['minorCrimes', t('minorCrimes')], ['mediumCrimes', t('mediumCrimes')],
+    ['seriousCrimes', t('seriousCrimes')],
+    ['medicalEmergencies', t('activeMedicalEmergencies')],
+    ['activeCrimes', t('activeCriminalCases')], ['awaitingPolice', t('awaitingPolice')],
+    ['underInvestigation', t('underInvestigation')], ['atCourt', t('liveCourtCases')],
+  ];
+  const comparisonAreaRows = comparison?.sameRepublic ? comparison.areas.filter(area =>
+    Object.values(area.deltas).some(value => Number.isFinite(value) && Math.abs(value) > 1e-9))
+    .sort((a, b) => Math.abs(b.deltas.population ?? 0) - Math.abs(a.deltas.population ?? 0)
+      || String(a.name).localeCompare(String(b.name))) : [];
+  const comparisonAreaRow = area => el('tr', {},
+    el('td', {}, area.name),
+    ...['population', 'currentIndustryWorkers', 'productivity', 'health', 'criminality',
+      'minorCrimes', 'mediumCrimes', 'seriousCrimes']
+      .map(key => el('td', { class: 'r' }, comparisonDelta(key, area.deltas[key]))));
+  const snapshotComparison = el('section', { class: 'snapshot-comparison' },
+    el('h2', {}, t('compareSnapshots')),
+    el('p', { class: 'hint' }, t('compareSnapshotsHint')),
+    comparisonNames.length ? el('label', {}, t('baselineSnapshot'), ' ', selectInput(
+      [['', t('chooseSnapshot')], ...comparisonNames.map(name => [name, name])],
+      comparisonSnapshotName, value => { loadComparisonSnapshot(value); }))
+      : el('p', { class: 'hint' }, t('noComparisonSnapshots')),
+    comparisonSnapshotError ? el('p', { class: 'warn' }, comparisonSnapshotError) : null,
+    comparison ? el('div', { class: 'snapshot-comparison-results' },
+      el('p', { class: 'hint' }, `${state.saveSlotName || state.saveImport.sourceName} − ${comparisonSnapshotName}`),
+      el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+        el('thead', {}, el('tr', {}, el('th', {}, t('metric')), el('th', {}, t('baseline')),
+          el('th', {}, t('current')), el('th', {}, t('change')),
+          el('th', {}, t('per30GameDays')))),
+        el('tbody', {}, el('tr', {},
+          el('td', {}, t('gameDate')),
+          el('td', { class: 'r' }, comparison.dates.baseline
+            ? `${comparison.dates.baseline.year} / ${comparison.dates.baseline.day}` : '—'),
+          el('td', { class: 'r' }, comparison.dates.current
+            ? `${comparison.dates.current.year} / ${comparison.dates.current.day}` : '—'),
+          el('td', { class: 'r' }, Number.isFinite(comparison.elapsedGameDays)
+            ? t('elapsedGameDays').replace('{days}', fmt(comparison.elapsedGameDays, 0)) : '—'),
+          el('td', { class: 'r' }, '—')),
+        ...comparisonMetrics.map(([key, label]) => el('tr', {},
+          el('td', {}, label),
+          el('td', { class: 'r' }, comparisonValue(key, comparison.baseline.totals[key])),
+          el('td', { class: 'r' }, comparisonValue(key, comparison.current.totals[key])),
+          el('td', { class: 'r' }, comparisonDelta(key, comparison.deltas[key])),
+          el('td', { class: 'r' }, comparisonRate(key, comparison.ratesPer30Days[key]))))))),
+      !comparison.sameRepublic ? el('p', { class: 'warn' }, t('differentRepublicComparison'))
+        : comparisonAreaRows.length ? el('details', { class: 'secondary-section' },
+          el('summary', {}, `${t('areaChanges')} (${fmt(comparisonAreaRows.length, 0)})`),
+          el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+            el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('population')),
+              el('th', {}, t('currentWorkers')), el('th', {}, t('productivity')),
+              el('th', {}, t('health')), el('th', {}, t('criminality')),
+              el('th', {}, t('minorCrimes')), el('th', {}, t('mediumCrimes')),
+              el('th', {}, t('seriousCrimes')))),
+            el('tbody', {}, ...comparisonAreaRows.map(comparisonAreaRow)))))
+          : el('p', { class: 'hint' }, t('noObservedChanges'))) : null);
+  return snapshotComparison;
+}
+
+
+// Diagnose: where the republic is hurting its own people. Pollution exposure
+// and criminality outliers were two collapsed disclosures on the overview,
+// which is where a reader looks for what is, not for what is wrong.
+function renderEnvironment() {
+  if (!state.saveImport) {
+    return el('section', {}, el('p', { class: 'hint' }, t('citiesEmpty')));
+  }
+  const criminalityOutliers = state.saveImport?.criminalityOutliers;
+  const locateOutlierResidence = resident => {
+    mapFocusBuildingIndex = resident.residenceBuildingIndex;
+    mapFocusScopeId = null;
+    state.republicScope = resident.residence?.scopeId ?? state.republicScope;
+    update();
+    setTimeout(() => document.querySelector('.map-section')?.scrollIntoView({
+      behavior: 'smooth', block: 'center',
+    }), 0);
+  };
+
+  const criminalityOutlierDetails = criminalityOutliers?.residents?.length ? el('section', {
+    class: 'secondary-section',
+  },
+    el('h2', {}, `${t('highCriminalityResidents')} (`
+      + `${fmt(criminalityOutliers.residents.length, 0)} / ${fmt(criminalityOutliers.locatedOutlierCount, 0)})`),
+    el('p', { class: 'hint' }, t('criminalityOutlierRule')
+      .replace('{average}', fmt(criminalityOutliers.averageCriminality * 100, 2))
+      .replace('{threshold}', fmt(criminalityOutliers.threshold * 100, 2))),
+    criminalityOutliers.unlocatedOutlierCount ? el('p', { class: 'hint warn' },
+      t('unlocatedCriminalityOutliers').replace('{count}', fmt(criminalityOutliers.unlocatedOutlierCount, 0))) : null,
+    el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+      el('thead', {}, el('tr', {},
+        el('th', {}, t('citizen')), el('th', {}, t('criminality')),
+        el('th', {}, t('area')), el('th', {}, t('residence')), el('th', {}, t('building')), el('th', {}))),
+      el('tbody', {}, ...criminalityOutliers.residents.map(resident => el('tr', {},
+        el('td', {}, `#${resident.citizenIndex}`),
+        el('td', { class: 'r warn' }, fmt(resident.criminality * 100, 2) + ' %'),
+        el('td', {}, plannerScopeName(resident.residence?.scopeId)),
+        el('td', {}, resident.residence?.name || resident.residence?.type || '—'),
+        el('td', { class: 'r' }, Number.isInteger(resident.residenceBuildingIndex)
+          ? `#${resident.residenceBuildingIndex}` : '—'),
+        el('td', {}, Number.isInteger(resident.residenceBuildingIndex) ? el('button', {
+          onclick: () => locateOutlierResidence(resident),
+        }, t('locateOnMap')) : null))))))) : null;
+  const pollutionDiagnostics = state.saveImport?.pollutionDiagnostics;
+  const locatePollutedResidence = residence => {
+    mapFocusBuildingIndex = residence.buildingIndex;
+    mapSelectedBuildingIndex = residence.buildingIndex;
+    mapFocusScopeId = null;
+    standaloneMapViewBox = null;
+    state.republicScope = residence.scopeId ?? state.republicScope;
+    state.mapLayers = { ...state.mapLayers, pollution: true, buildings: true };
+    state.mapBuildingFilter = '';
+    state.tab = 'map';
+    update();
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+  };
+  const pollutionDetails = pollutionDiagnostics?.affectedBuildingCount ? el('section', {
+    class: 'secondary-section pollution-hotspots',
+  },
+    el('h2', {}, t('occupiedPollutionHotspots')
+      .replace('{buildings}', fmt(pollutionDiagnostics.affectedBuildingCount, 0))
+      .replace('{residents}', fmt(pollutionDiagnostics.affectedResidentCount, 0))),
+    el('p', { class: 'hint' }, t('occupiedPollutionMeaning')),
+    el('div', { class: 'tablewrap' }, el('table', { class: 'data pollution-area-summary' },
+      el('thead', {}, el('tr', {}, el('th', {}, t('area')),
+        el('th', {}, t('occupiedBuildings')), el('th', {}, t('residents')),
+        el('th', {}, t('residentWeightedPollution')), el('th', {}, t('maximumCellValue')))),
+      el('tbody', {}, ...pollutionDiagnostics.scopes.map(scope => el('tr', {},
+        el('td', {}, plannerScopeName(scope.scopeId)),
+        el('td', { class: 'r' }, fmt(scope.buildingCount, 0)),
+        el('td', { class: 'r' }, fmt(scope.residents, 0)),
+        el('td', { class: 'r' }, fmt(scope.residentWeightedAir, 4)),
+        el('td', { class: 'r' }, fmt(scope.maxAir, 4))))))),
+    el('h4', {}, t('highestOccupiedPollutionCells')),
+    el('div', { class: 'tablewrap' }, el('table', { class: 'data pollution-building-table' },
+      el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('residence')),
+        el('th', {}, t('residents')), el('th', {}, t('savedPollutionCellValue')),
+        el('th', {}, t('building')), el('th', {}))),
+      el('tbody', {}, ...pollutionDiagnostics.buildings.slice(0, 12).map(residence => el('tr', {},
+        el('td', {}, plannerScopeName(residence.scopeId)),
+        el('td', {}, residence.name || residence.type || '—'),
+        el('td', { class: 'r' }, fmt(residence.residents, 0)),
+        el('td', { class: 'r warn' }, fmt(residence.airValue, 4)),
+        el('td', { class: 'r' }, `#${residence.buildingIndex}`),
+        el('td', {}, el('button', { onclick: () => locatePollutedResidence(residence) },
+          t('locateOnMap'))))))))) : null;
+  if (!criminalityOutlierDetails && !pollutionDetails) {
+    return el('section', {}, el('h2', {}, t('tabEnvironment')),
+      el('p', { class: 'hint' }, t('unavailable')));
+  }
+  return el('section', {}, criminalityOutlierDetails, pollutionDetails);
+}
+
+
+// Observe: what the republic is currently building. Three hundred and thirty
+// five active projects on one test save, previously the single largest thing
+// hidden on the overview at 2,560px behind one collapsed summary.
+function renderConstruction() {
+  if (!state.saveImport) {
+    return el('section', {}, el('p', { class: 'hint' }, t('citiesEmpty')));
+  }
+  const allConstructionProjects = activeConstructionProjects(state.saveImport?.observedBuildings);
+  const positiveConstructionCount = allConstructionProjects.filter(project =>
+    project.constructionProgress > 0).length;
+  if (constructionProgressFilter === 'positive' && !positiveConstructionCount) {
+    constructionProgressFilter = 'all';
+  }
+  const constructionScopeIds = [...new Set(allConstructionProjects.map(project => project.scopeId ?? null))]
+    .sort((a, b) => plannerScopeName(a).localeCompare(plannerScopeName(b)));
+  const constructionScopeToken = scopeId => scopeId === null ? 'unassigned' : String(scopeId);
+  if (constructionScopeFilter && !constructionScopeIds.some(scopeId =>
+    constructionScopeToken(scopeId) === constructionScopeFilter)) constructionScopeFilter = '';
+  const selectedConstructionScope = constructionScopeFilter === '' ? undefined
+    : constructionScopeFilter === 'unassigned' ? null : Number(constructionScopeFilter);
+  const constructionProjects = filterConstructionProjects(allConstructionProjects, {
+    progress: constructionProgressFilter,
+    scopeId: selectedConstructionScope,
+    query: constructionSearch,
+  });
+  const constructionPageSize = 50;
+  const constructionPageCount = Math.max(1, Math.ceil(constructionProjects.length / constructionPageSize));
+  constructionPage = Math.max(1, Math.min(constructionPage, constructionPageCount));
+  const visibleConstructionProjects = constructionProjects.slice(
+    (constructionPage - 1) * constructionPageSize, constructionPage * constructionPageSize,
+  );
+  const locateConstructionProject = project => {
+    mapFocusBuildingIndex = project.index;
+    mapSelectedBuildingIndex = project.index;
+    mapFocusScopeId = null;
+    standaloneMapViewBox = null;
+    state.republicScope = project.scopeId ?? state.republicScope;
+    state.mapLayers = { ...state.mapLayers, construction: true, buildings: true };
+    state.mapBuildingFilter = '';
+    state.tab = 'map';
+    update();
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+  };
+  const constructionTable = el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+    el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('building')),
+      el('th', {}, t('savedBuildingType')), el('th', {}, t('progress')),
+      el('th', {}, t('saveIndex')), el('th', {}))),
+    el('tbody', {}, ...visibleConstructionProjects.map(project => el('tr', {},
+      el('td', {}, plannerScopeName(project.scopeId)),
+      el('td', {}, project.name || project.type || '—'),
+      el('td', {}, el('code', {}, project.type || '—')),
+      el('td', { class: 'r' }, el('progress', {
+        value: project.constructionProgress, max: 1,
+        'aria-label': `${fmt(project.constructionProgress * 100, 1)} %`,
+      }), ` ${fmt(project.constructionProgress * 100, 1)} %`),
+      el('td', { class: 'r' }, `#${project.index}`),
+      el('td', {}, Number.isFinite(project.x) && Number.isFinite(project.z)
+        ? el('button', { onclick: () => locateConstructionProject(project) }, t('locateOnMap'))
+        : null))))));
+  const constructionPagination = constructionPageCount > 1
+    ? el('div', { class: 'settingsbar fleet-pagination' },
+      el('button', {
+        ...(constructionPage <= 1 ? { disabled: '' } : {}),
+        onclick: () => { constructionPage -= 1; update(); },
+      }, `← ${t('fleetPreviousPage')}`),
+      el('span', {}, t('fleetPageStatus')
+        .replace('{page}', fmt(constructionPage, 0)).replace('{pages}', fmt(constructionPageCount, 0))
+        .replace('{from}', fmt((constructionPage - 1) * constructionPageSize + 1, 0))
+        .replace('{to}', fmt(Math.min(constructionProjects.length,
+          constructionPage * constructionPageSize), 0))
+        .replace('{total}', fmt(constructionProjects.length, 0))),
+      el('button', {
+        ...(constructionPage >= constructionPageCount ? { disabled: '' } : {}),
+        onclick: () => { constructionPage += 1; update(); },
+      }, `${t('fleetNextPage')} →`)) : null;
+  const constructionDetails = allConstructionProjects.length ? el('section', {
+    class: 'secondary-section construction-projects',
+    ...(constructionDetailsOpen ? { open: '' } : {}),
+    ontoggle: event => { constructionDetailsOpen = event.currentTarget.open; },
+  },
+    el('h2', {}, `${t('activeConstruction')} (${fmt(allConstructionProjects.length, 0)})`),
+    el('p', { class: 'hint' }, t('constructionProjectMeaning')),
+    el('div', { class: 'settingsbar construction-filters' },
+      el('label', {}, t('area'), selectInput([
+        ['', `${t('allAreas')} (${fmt(allConstructionProjects.length, 0)})`],
+        ...constructionScopeIds.map(scopeId => [constructionScopeToken(scopeId),
+          `${plannerScopeName(scopeId)} (${fmt(allConstructionProjects.filter(project =>
+            (project.scopeId ?? null) === scopeId).length, 0)})`]),
+      ], constructionScopeFilter, value => {
+        constructionScopeFilter = value;
+        constructionPage = 1;
+      }, { class: 'construction-area-filter' })),
+      el('label', {}, t('constructionSearch'), el('input', {
+        type: 'search', value: constructionSearch,
+        onkeydown: event => {
+          if (event.key !== 'Enter') return;
+          constructionSearch = event.currentTarget.value;
+          constructionPage = 1;
+          update();
+        },
+      })),
+      el('button', {
+        onclick: event => {
+          constructionSearch = event.currentTarget.parentElement.querySelector('input[type="search"]')?.value ?? '';
+          constructionPage = 1;
+          update();
+        },
+      }, t('fleetSearchApply'))),
+    positiveConstructionCount && positiveConstructionCount < allConstructionProjects.length
+      ? el('div', { class: 'settingsbar construction-filters progress-filters' },
+        ...[['all', allConstructionProjects.length], ['positive', positiveConstructionCount]]
+          .map(([filter, count]) => el('button', {
+            class: constructionProgressFilter === filter ? 'active' : '',
+            onclick: () => {
+              constructionProgressFilter = filter;
+              constructionPage = 1;
+              update();
+            },
+          }, `${t(filter === 'all' ? 'constructionAll' : 'constructionAboveZero')} (${fmt(count, 0)})`)))
+      : null,
+    el('p', { class: 'hint construction-filter-status' }, t('constructionFilterStatus')
+      .replace('{visible}', fmt(constructionProjects.length, 0))
+      .replace('{total}', fmt(allConstructionProjects.length, 0))),
+    constructionProjects.length ? constructionTable : el('p', { class: 'hint' }, t('constructionNoResults')),
+    constructionPagination) : null;
+  return constructionDetails ?? el('section', {}, el('h2', {}, t('tabConstruction')),
+    el('p', { class: 'hint' }, t('unavailable')));
+}
+
+
+// Observe: how goods and people actually move. Owned fleet and its replacement
+// opportunities, vehicle lines, and distribution offices — three surfaces that
+// shared the foot of the overview, several of them nesting a disclosure per
+// line and per office.
+function renderLogistics() {
+  if (!state.saveImport) {
+    return el('section', {}, el('p', { class: 'hint' }, t('citiesEmpty')));
+  }
+  const eco = economy();
+  const fleetRecords = state.saveImport?.ownedVehicles ?? [];
+  const fleetSettings = state.saveImport?.header?.settings;
+  const priceRecord = state.statsRecords?.[Math.min(state.recordIndex, (state.statsRecords?.length ?? 1) - 1)];
+  const exactFleetOpportunities = fleetSettings && Number.isFinite(priceRecord?.year)
+    ? fleetRecords.map(record => vehicleEconomicOpportunity(record, {
+      year: priceRecord.year,
+      currency: state.currency,
+      saleAdjustmentLevel: fleetSettings.vehicleSaleAdjustmentLevel,
+      depreciationLevel: fleetSettings.depreciationLevel,
+      economy: eco,
+    })).filter(Boolean).sort((a, b) => (b.advantage ?? -Infinity) - (a.advantage ?? -Infinity)) : [];
+  const usedFleetRecords = state.saveImport?.usedVehicleOffers ?? [];
+  const exactUsedVehicleQuotes = Number.isFinite(priceRecord?.year)
+    ? usedFleetRecords.map(offer => vehicleUsedMarketQuote(offer, {
+      year: priceRecord.year, currency: state.currency, economy: eco,
+    })).filter(Boolean).sort((a, b) => a.purchaseValue - b.purchaseValue) : [];
+  const replacementCandidates = rankUsedVehicleReplacements(
+    exactFleetOpportunities, exactUsedVehicleQuotes,
+  );
+  const fleetFilterDefaults = { category: 'all', action: 'all', sort: 'advantage', search: '', page: 1 };
+  const fleetFilter = { ...fleetFilterDefaults, ...(state.fleetFilter ?? {}) };
+  state.fleetFilter = fleetFilter;
+  const filteredFleetOpportunities = filterAndSortVehicleOpportunities(
+    exactFleetOpportunities, fleetFilter,
+  );
+  const fleetPage = paginateVehicleOpportunities(filteredFleetOpportunities, {
+    page: fleetFilter.page, pageSize: 50,
+  });
+  if (fleetPage.page && fleetPage.page !== fleetFilter.page) fleetFilter.page = fleetPage.page;
+  const fleetActionLabel = action => t(action === 'recycle' ? 'fleetRecycle' : 'fleetExport');
+  const fleetCategoryLabel = facts => t(`fleetCategory.${vehicleCategoryGroup(facts?.runtimeCategory)}`);
+  const fleetCapacityUnit = facts => facts?.transportSubtype === 7 ? t('fleetPassengers') : 't';
+  const materialSummary = opportunity => Object.entries(opportunity.recycling.materials)
+    .filter(([, amount]) => amount > 0.01)
+    .map(([key, amount]) => {
+      const resource = DATA.resources.find(item => item.key === key);
+      return `${resource ? rname(resource) : key}: ${fmt(amount, 2)} t`;
+    }).join(' · ');
+  const opportunityCard = opportunity => el('div', { class: 'totalsbox institution-card' },
+    el('h3', {}, opportunity.record.modelFacts.name,
+      el('span', { class: 'evidence-badge derived' }, fleetActionLabel(opportunity.cashOutAction))),
+    el('p', { class: 'subline' }, fleetCategoryLabel(opportunity.record.modelFacts)),
+    kv(t('fleetExportPayout'), `${fmt(opportunity.exportValue, 0)} ${cur()}`),
+    kv(t('fleetRecycleAfterLabor'), Number.isFinite(opportunity.recycleAfterLabor)
+      ? `${fmt(opportunity.recycleAfterLabor, 0)} ${cur()}` : '—'),
+    kv(t('fleetAdvantage'), Number.isFinite(opportunity.advantage)
+      ? `${fmt(opportunity.advantage, 0)} ${cur()}` : '—'),
+    opportunity.recycling.ignoredCargo.length
+      ? el('p', { class: 'hint warn' }, t('fleetCargoExcluded')) : null);
+  const fleetDetailsTable = state.fleetDetails && fleetPage.rows.length ? el('table', { class: 'data wide' },
+    el('thead', {}, el('tr', {},
+      el('th', {}, t('vehicle')), el('th', {}, t('fleetCashOutAction')),
+      el('th', {}, t('fleetExportPayout')), el('th', {}, t('fleetRecycleGross')),
+      el('th', {}, t('fleetLaborCost')), el('th', {}, t('fleetRecycleAfterLabor')),
+      el('th', {}, t('fleetAdvantage')), el('th', {}, t('fleetWorkdays')))),
+    el('tbody', {}, ...fleetPage.rows.map(opportunity => el('tr', {},
+      el('td', {}, opportunity.record.modelFacts.name,
+        el('div', { class: 'subline' }, fleetCategoryLabel(opportunity.record.modelFacts)),
+        el('div', { class: 'subline' }, `${t('fleetSavedMultiplier')}: ${fmt(opportunity.exportMultiplier.multiplier * 100, 1)} %`),
+        el('div', { class: 'subline' }, materialSummary(opportunity)),
+        opportunity.recycling.ignoredCargo.length
+          ? el('div', { class: 'subline warn' }, t('fleetCargoExcluded')) : null),
+      el('td', {}, fleetActionLabel(opportunity.cashOutAction)),
+      el('td', { class: 'r' }, fmt(opportunity.exportValue, 0)),
+      el('td', { class: 'r' }, Number.isFinite(opportunity.recoveredValue.immediateExportValue)
+        ? fmt(opportunity.recoveredValue.immediateExportValue, 0) : '—'),
+      el('td', { class: 'r' }, Number.isFinite(opportunity.laborOpportunityCost)
+        ? fmt(opportunity.laborOpportunityCost, 0) : '—'),
+      el('td', { class: 'r' }, Number.isFinite(opportunity.recycleAfterLabor)
+        ? fmt(opportunity.recycleAfterLabor, 0) : '—'),
+      el('td', { class: 'r' }, Number.isFinite(opportunity.advantage)
+        ? fmt(opportunity.advantage, 0) : '—'),
+      el('td', { class: 'r' }, fmt(opportunity.recycling.workdays, 0))))))
+    : el('p', { class: 'hint warn' }, t('fleetNoFilterResults'));
+  const fleetOpportunities = fleetRecords.length ? el('section', { class: 'institution-overview' },
+    el('h3', {}, t('fleetEconomicOpportunities'), el('span', { class: 'evidence-badge exact' }, t('exact'))),
+    el('p', { class: 'hint' }, t('fleetEconomicHint')),
+    exactFleetOpportunities.length
+      ? el('div', { class: 'institution-grid' }, ...exactFleetOpportunities.slice(0, 3).map(opportunityCard))
+      : el('p', { class: 'hint warn' }, t('fleetNoExactOpportunities')),
+    el('p', { class: 'hint' }, t('fleetCoverageHint')
+      .replace('{exact}', fmt(exactFleetOpportunities.length, 0)).replace('{total}', fmt(fleetRecords.length, 0))),
+    exactUsedVehicleQuotes.length ? el('div', { class: 'used-fleet-offers' },
+      el('h4', {}, t('fleetUsedHeading')),
+      el('p', { class: 'hint' }, t('fleetUsedHint')),
+      el('div', { class: 'institution-grid' }, ...exactUsedVehicleQuotes.slice(0, 3).map(quote =>
+        el('div', { class: 'totalsbox institution-card' },
+          el('h3', {}, quote.offer.modelFacts.name,
+            el('span', { class: 'evidence-badge exact' }, t('exact'))),
+          el('p', { class: 'subline' }, fleetCategoryLabel(quote.offer.modelFacts)),
+          kv(t('fleetUsedPrice'), `${fmt(quote.purchaseValue, 0)} ${cur()}`),
+          kv(t('fleetOfferFactor'), `${fmt(quote.factor * 100, 1)} %`),
+          kv(t('fleetCapacity'), Number.isFinite(quote.offer.modelFacts.capacity)
+            ? `${fmt(quote.offer.modelFacts.capacity, 0)} ${fleetCapacityUnit(quote.offer.modelFacts)}` : '—')))),
+      el('p', { class: 'hint' }, t('fleetUsedCoverage')
+        .replace('{exact}', fmt(exactUsedVehicleQuotes.length, 0)).replace('{total}', fmt(usedFleetRecords.length, 0)))) : null,
+    replacementCandidates.length ? el('div', { class: 'used-fleet-offers' },
+      el('h4', {}, t('fleetReplacementHeading')),
+      el('p', { class: 'hint' }, t('fleetReplacementHint')),
+      el('div', { class: 'institution-grid' }, ...replacementCandidates.slice(0, 3).map(candidate => {
+        const offerFacts = candidate.quote.offer.modelFacts;
+        const ownedFacts = candidate.targetOpportunity.record.modelFacts;
+        const releasesCash = candidate.netCashRequired < 0;
+        return el('div', { class: 'totalsbox institution-card' },
+          el('h3', {}, offerFacts.name,
+            el('span', { class: 'evidence-badge derived' }, t('fleetReplacement'))),
+          el('p', { class: 'subline' }, fleetCategoryLabel(offerFacts)),
+          kv(t('fleetReplacementTarget'), ownedFacts.name),
+          kv(t('fleetCapacityChange'), `${fmt(ownedFacts.capacity, 0)} → ${fmt(offerFacts.capacity, 0)} ${fleetCapacityUnit(offerFacts)}`),
+          kv(t(releasesCash ? 'fleetCashReleased' : 'fleetNetCashRequired'),
+            `${fmt(Math.abs(candidate.netCashRequired), 0)} ${cur()}`),
+          kv(t('fleetCompatibleOwned'), fmt(candidate.compatibleOwnedCount, 0)));
+      }))) : null,
+    exactFleetOpportunities.length ? el('details', {
+      class: 'secondary-section',
+      ...(state.fleetDetails ? { open: '' } : {}),
+      ontoggle: event => {
+        const open = event.currentTarget.open;
+        if (open === state.fleetDetails) return;
+        state.fleetDetails = open;
+        update();
+      },
+    },
+      el('summary', {}, `${t('fleetDetails')} (${fmt(filteredFleetOpportunities.length, 0)} / ${fmt(exactFleetOpportunities.length, 0)})`),
+      state.fleetDetails ? el('div', { class: 'fleet-details-content' },
+        el('p', { class: 'hint warn' }, t('fleetKeepCaveat')),
+        el('div', { class: 'settingsbar' },
+          el('label', {}, t('fleetCategoryFilter'), selectInput([
+            ['all', t('fleetAllCategories')], ['ship', t('fleetShips')],
+            ['road', t('fleetRoad')], ['rail', t('fleetRail')], ['air', t('fleetAir')],
+          ], fleetFilter.category, value => {
+            state.fleetFilter.category = value; state.fleetFilter.page = 1;
+          })),
+          el('label', {}, t('fleetActionFilter'), selectInput([
+            ['all', t('fleetAllActions')], ['export', t('fleetExport')],
+            ['recycle', t('fleetRecycle')],
+          ], fleetFilter.action, value => {
+            state.fleetFilter.action = value; state.fleetFilter.page = 1;
+          })),
+          el('label', {}, t('sortBy'), selectInput([
+            ['advantage', t('fleetAdvantage')], ['export', t('fleetExportPayout')],
+            ['recycle', t('fleetRecycleAfterLabor')], ['name', t('vehicle')],
+          ], fleetFilter.sort, value => {
+            state.fleetFilter.sort = value; state.fleetFilter.page = 1;
+          })),
+          el('label', {}, t('fleetSearch'), el('input', {
+            type: 'search', value: fleetFilter.search ?? '',
+            oninput: event => { event.currentTarget.dataset.pendingValue = event.currentTarget.value; },
+            onkeydown: event => {
+              if (event.key !== 'Enter') return;
+              state.fleetFilter.search = event.currentTarget.value;
+              state.fleetFilter.page = 1;
+              update();
+            },
+          })),
+          el('button', {
+            onclick: event => {
+              const input = event.currentTarget.parentElement.querySelector('input[type="search"]');
+              state.fleetFilter.search = input?.value ?? '';
+              state.fleetFilter.page = 1;
+              update();
+            },
+          }, t('fleetSearchApply'))),
+        fleetPage.pageCount > 1 ? el('div', { class: 'settingsbar fleet-pagination' },
+          el('button', {
+            ...(fleetPage.page <= 1 ? { disabled: '' } : {}),
+            onclick: () => { state.fleetFilter.page = fleetPage.page - 1; update(); },
+          }, `← ${t('fleetPreviousPage')}`),
+          el('span', {}, t('fleetPageStatus')
+            .replace('{page}', fmt(fleetPage.page, 0)).replace('{pages}', fmt(fleetPage.pageCount, 0))
+            .replace('{from}', fmt((fleetPage.page - 1) * fleetPage.pageSize + 1, 0))
+            .replace('{to}', fmt(Math.min(fleetPage.total, fleetPage.page * fleetPage.pageSize), 0))
+            .replace('{total}', fmt(fleetPage.total, 0))),
+          el('button', {
+            ...(fleetPage.page >= fleetPage.pageCount ? { disabled: '' } : {}),
+            onclick: () => { state.fleetFilter.page = fleetPage.page + 1; update(); },
+          }, `${t('fleetNextPage')} →`)) : null,
+        el('div', { class: 'tablewrap' }, fleetDetailsTable)) : null) : null) : null;
+
+  const lineOperations = state.saveImport?.vehicleLines;
+  const distributionOperations = state.saveImport?.distributionOffices;
+  const lineSummary = lineOperations?.summary;
+  const distributionSummary = distributionOperations?.summary;
+  const scheduleKeys = block => [...new Set((block?.entries ?? []).map(entry => entry.key || '∅'))].join(', ') || '—';
+  const operationalBuildingLabel = ref => ref?.building?.name || ref?.building?.type
+    || (Number.isInteger(ref?.buildingIndex) ? `#${ref.buildingIndex}` : '—');
+  const lineVehiclePosition = vehicle => {
+    const op = vehicle.operational;
+    if (!op) return el('li', {}, vehicle.name || vehicle.model || `#${vehicle.id}`);
+    const routeCount = op.routeTargets?.length ?? 0;
+    const cursor = op.hasValidScheduleCursor ? `${op.currentScheduleCursor}/${routeCount}` : '—';
+    const relationships = [
+      op.currentBuilding ? `${t('currentBuilding')}: ${operationalBuildingLabel(op.currentBuilding)}` : null,
+      op.homeWorkplace ? `${t('homeWorkplace')}: ${operationalBuildingLabel(op.homeWorkplace)}` : null,
+      op.stationBuilding ? `${t('stationBuilding')}: ${operationalBuildingLabel(op.stationBuilding)}` : null,
+      op.movingInsideBuilding ? `${t('insideBuilding')}: ${operationalBuildingLabel(op.movingInsideBuilding)}` : null,
+    ].filter(Boolean).join(' · ');
+    return el('li', {},
+      `${vehicle.name || vehicle.model || `#${vehicle.id}`} · ${t('savedRouteCursor')} ${cursor}`
+        + ` · ${t('currentTarget')}: ${operationalBuildingLabel(op.currentScheduleTarget)}`
+        + (Number.isFinite(op.currentLineIntervalRaw)
+          ? ` · ${t('currentLineIntervalRaw')}: ${fmt(op.currentLineIntervalRaw, 2)}` : ''),
+      relationships ? el('div', { class: 'subline' }, relationships) : null);
+  };
+  const distributionResourceLabel = key => {
+    const resource = DATA.resources.find(item => item.key === key);
+    return resource ? rname(resource) : key;
+  };
+  const distributionThresholdLine = (assignment, state) => {
+    const target = assignment.target?.name || assignment.target?.type
+      || `#${assignment.targetBuildingIndex}`;
+    const action = t(state.direction === 'load' ? 'loadAction' : 'unloadAction');
+    if (state.status === 'unrestricted') return `${target} · ${action}: ${t('noExplicitResource')}`;
+    const resource = distributionResourceLabel(state.resource);
+    if (state.status !== 'resolved') {
+      const key = {
+        'resource-not-directly-stored': 'resourceNotDirectlyStored',
+        'ambiguous-storage-role': 'ambiguousStorageRole',
+        'no-finite-capacity': 'noFiniteCapacity',
+        'invalid-target': 'invalidTarget',
+      }[state.status] ?? 'unresolvedThresholds';
+      return `${target} · ${action} ${resource}: ${t(key)}`;
+    }
+    const operator = state.direction === 'load' ? '>' : '<';
+    return `${target} · ${action} ${resource}: ${fmt(state.ratio * 100, 1)} % ${operator} `
+      + `${fmt(state.threshold * 100, 1)} % · ${t(state.conditionMet ? 'conditionMet' : 'conditionNotMet')}`;
+  };
+  const logisticsOperations = lineOperations || distributionSummary?.officeCount ? el('section', {
+    class: 'institution-overview',
+  },
+    el('h3', {}, t('savedLogisticsOperations'),
+      el('span', { class: 'evidence-badge exact' }, t('exact'))),
+    el('p', { class: 'hint' }, t('savedLogisticsHint')),
+    el('div', { class: 'columns' },
+      lineSummary ? el('div', { class: 'totalsbox' },
+        el('h4', {}, t('vehicleLines')),
+        kv(t('vehicleLines'), fmt(lineSummary.lineCount, 0)),
+        kv(t('linesWithAssignedVehicles'), fmt(lineSummary.assignedLineCount, 0)),
+        kv(t('assignedVehicleReferences'), fmt(lineSummary.vehicleReferenceCount, 0)),
+        kv(t('orderedStopReferences'), fmt(lineSummary.stopReferenceCount, 0)),
+        kv(t('completeObservedCycles'), fmt(lineSummary.completeObservedCycleCount, 0)),
+        kv(t('validRouteCursors'), fmt(lineSummary.validScheduleCursorVehicleCount ?? 0, 0)),
+        kv(t('positiveCurrentIntervals'), fmt(lineSummary.positiveCurrentIntervalVehicleCount ?? 0, 0))) : null,
+      distributionSummary?.officeCount ? el('div', { class: 'totalsbox' },
+        el('h4', {}, t('distributionOffices')),
+        kv(t('distributionOffices'), `${fmt(distributionSummary.officeCount, 0)} · `
+          + `${fmt(distributionSummary.roadCount, 0)} ${t('fleetRoad')} / `
+          + `${fmt(distributionSummary.railCount, 0)} ${t('fleetRail')}`),
+        kv(t('configuredTargets'), fmt(distributionSummary.targetCount, 0)),
+        kv(t('associatedVehicleReferences'), fmt(distributionSummary.associatedVehicleReferenceCount, 0)),
+        kv(t('officesWithoutTargets'), fmt(distributionSummary.officesWithoutTargets, 0),
+          distributionSummary.officesWithoutTargets ? 'warn' : ''),
+        kv(t('officesWithoutAssociatedVehicles'), fmt(distributionSummary.officesWithoutAssociatedVehicles, 0),
+          distributionSummary.officesWithoutAssociatedVehicles ? 'warn' : ''),
+        kv(t('configuredWithoutFleet'), fmt(distributionSummary.configuredWithoutFleetOfficeCount ?? 0, 0),
+          distributionSummary.configuredWithoutFleetOfficeCount ? 'warn' : ''),
+        kv(t('inactiveAssignments'), fmt(distributionSummary.neitherActionCount ?? 0, 0),
+          distributionSummary.neitherActionCount ? 'warn' : ''),
+        kv(t('pickupConditionsMet'), fmt(distributionSummary.pickupConditionMetCount ?? 0, 0)),
+        kv(t('deliveryConditionsMet'), fmt(distributionSummary.deliveryConditionMetCount ?? 0, 0)),
+        kv(t('unresolvedThresholds'), fmt(distributionSummary.unresolvedThresholdCount ?? 0, 0),
+          distributionSummary.unresolvedThresholdCount ? 'warn' : '')) : null),
+    lineOperations ? el('details', { class: 'secondary-section' },
+      el('summary', {}, `${t('vehicleLineDetails')} (${fmt(lineSummary.lineCount, 0)})`),
+      el('p', { class: 'hint warn' }, t('observedIntervalCaveat')),
+      el('div', { class: 'tablewrap' }, el('table', { class: 'data wide' },
+        el('thead', {}, el('tr', {},
+          el('th', {}, t('vehicleLine')), el('th', {}, t('assignedVehicles')),
+          el('th', {}, t('orderedStops')), el('th', {}, t('scheduleRules')),
+          el('th', {}, t('completeObservedCycle')), el('th', {}, t('largestObservedInterval')))),
+        el('tbody', {}, ...lineOperations.lines.map(line => el('tr', {},
+          el('td', {}, line.name || `#${line.slot}`),
+          el('td', {}, line.assignedVehicles.length
+            ? el('details', {},
+              el('summary', {}, `${fmt(line.assignedVehicles.length, 0)} · `
+                + line.assignedVehicles.map(vehicle => vehicle.name || vehicle.model || `#${vehicle.id}`).join(', ')),
+              el('ul', {}, ...line.assignedVehicles.map(lineVehiclePosition))) : '—'),
+          el('td', {}, line.stops.length ? line.stops.map(stop =>
+            stop.building?.name || stop.building?.type || (stop.buildingIndex < 0 ? '—' : `#${stop.buildingIndex}`)).join(' → ') : '—'),
+          el('td', {}, line.stops.map((stop, index) =>
+            `${index + 1}: P[${scheduleKeys(stop.primary)}] · S[${scheduleKeys(stop.secondary)}]`).join(' | ') || '—'),
+          el('td', { class: 'r' }, Number.isFinite(line.completeObservedCycle)
+            ? fmt(line.completeObservedCycle, 2) : '—'),
+          el('td', { class: 'r' }, Number.isFinite(line.largestObservedInterval)
+            ? fmt(line.largestObservedInterval, 2) : '—'))))))) : null,
+    distributionSummary?.officeCount ? el('details', { class: 'secondary-section' },
+      el('summary', {}, `${t('distributionOfficeDetails')} (${fmt(distributionSummary.officeCount, 0)})`),
+      el('p', { class: 'hint warn' }, t('distributionCoverageCaveat')),
+      el('p', { class: 'hint' }, t('distributionThresholdHint')),
+      el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+        el('thead', {}, el('tr', {},
+          el('th', {}, t('distributionOffice')), el('th', {}, t('kind')),
+          el('th', {}, t('configuredTargets')), el('th', {}, t('associatedVehicles')),
+          el('th', {}, t('configuredActions')), el('th', {}, t('thresholdDiagnostics')))),
+        el('tbody', {}, ...distributionOperations.offices.map(office => {
+          const loads = office.assignments.filter(assignment => assignment.load.enabled).length;
+          const unloads = office.assignments.filter(assignment => assignment.unload.enabled).length;
+          const thresholdStates = office.assignments.flatMap(assignment =>
+            (assignment.thresholdStates ?? []).map(state => ({ assignment, state })));
+          const operational = office.operational ?? {
+            inactiveAssignmentCount: office.assignments.filter(assignment =>
+              !assignment.load.enabled && !assignment.unload.enabled).length,
+            pickupConditionMetCount: 0, deliveryConditionMetCount: 0, unresolvedThresholdCount: 0,
+          };
+          const stateSummary = [
+            `${t('pickupConditionsMet')}: ${fmt(operational.pickupConditionMetCount, 0)}`,
+            `${t('deliveryConditionsMet')}: ${fmt(operational.deliveryConditionMetCount, 0)}`,
+            `${t('unresolvedThresholds')}: ${fmt(operational.unresolvedThresholdCount, 0)}`,
+          ].join(' · ');
+          return el('tr', {},
+            el('td', {}, office.name || office.type || `#${office.buildingIndex}`,
+              office.configuredWithoutFleet
+                ? el('div', { class: 'subline warn' }, t('configuredWithoutFleet')) : null),
+            el('td', {}, t(office.kind === 'rail' ? 'fleetRail' : 'fleetRoad')),
+            el('td', { class: `r ${office.assignments.length ? '' : 'warn'}` }, fmt(office.assignments.length, 0)),
+            el('td', { class: `r ${office.associatedVehicles.length ? '' : 'warn'}` }, fmt(office.associatedVehicles.length, 0)),
+            el('td', {}, `${t('loadAction')}: ${fmt(loads, 0)} · ${t('unloadAction')}: ${fmt(unloads, 0)}`,
+              operational.inactiveAssignmentCount
+                ? el('div', { class: 'subline warn' },
+                  `${t('inactiveAssignments')}: ${fmt(operational.inactiveAssignmentCount, 0)}`) : null),
+            el('td', {}, thresholdStates.length || operational.inactiveAssignmentCount
+              ? el('details', {},
+                el('summary', {}, stateSummary),
+                el('ul', {},
+                  ...thresholdStates.map(({ assignment, state }) => el('li', {
+                    class: state.status !== 'resolved'
+                      || (state.conditionMet && office.configuredWithoutFleet) ? 'warn' : '',
+                  }, distributionThresholdLine(assignment, state))),
+                  ...office.assignments.filter(assignment => assignment.inactive
+                    || (!assignment.load.enabled && !assignment.unload.enabled)).map(assignment =>
+                    el('li', { class: 'warn' }, `${assignment.target?.name || assignment.target?.type
+                      || `#${assignment.targetBuildingIndex}`} · ${t('inactiveAssignments')}`)))) : '—'));
+        }))))) : null) : null;
+  if (!fleetOpportunities && !logisticsOperations) {
+    return el('section', {}, el('h2', {}, t('tabLogistics')),
+      el('p', { class: 'hint' }, t('unavailable')));
+  }
+  return el('section', {}, fleetOpportunities, logisticsOperations);
+}
+
 function renderRepublic() {
   const eco = economy();
   if (!state.cities.length && !Array.isArray(state.saveImport?.scopes)) state.cities.push(defaultCity());
@@ -3808,124 +4481,7 @@ function renderRepublic() {
     }, state.republicAlertsExpanded ? t('showFewerAlerts')
       : t('showAllAlerts').replace('{count}', fmt(alertPresentation.hiddenCount, 0))) : null);
 
-  const allConstructionProjects = activeConstructionProjects(state.saveImport?.observedBuildings);
-  const positiveConstructionCount = allConstructionProjects.filter(project =>
-    project.constructionProgress > 0).length;
-  if (constructionProgressFilter === 'positive' && !positiveConstructionCount) {
-    constructionProgressFilter = 'all';
-  }
-  const constructionScopeIds = [...new Set(allConstructionProjects.map(project => project.scopeId ?? null))]
-    .sort((a, b) => plannerScopeName(a).localeCompare(plannerScopeName(b)));
-  const constructionScopeToken = scopeId => scopeId === null ? 'unassigned' : String(scopeId);
-  if (constructionScopeFilter && !constructionScopeIds.some(scopeId =>
-    constructionScopeToken(scopeId) === constructionScopeFilter)) constructionScopeFilter = '';
-  const selectedConstructionScope = constructionScopeFilter === '' ? undefined
-    : constructionScopeFilter === 'unassigned' ? null : Number(constructionScopeFilter);
-  const constructionProjects = filterConstructionProjects(allConstructionProjects, {
-    progress: constructionProgressFilter,
-    scopeId: selectedConstructionScope,
-    query: constructionSearch,
-  });
-  const constructionPageSize = 50;
-  const constructionPageCount = Math.max(1, Math.ceil(constructionProjects.length / constructionPageSize));
-  constructionPage = Math.max(1, Math.min(constructionPage, constructionPageCount));
-  const visibleConstructionProjects = constructionProjects.slice(
-    (constructionPage - 1) * constructionPageSize, constructionPage * constructionPageSize,
-  );
-  const locateConstructionProject = project => {
-    mapFocusBuildingIndex = project.index;
-    mapSelectedBuildingIndex = project.index;
-    mapFocusScopeId = null;
-    standaloneMapViewBox = null;
-    state.republicScope = project.scopeId ?? state.republicScope;
-    state.mapLayers = { ...state.mapLayers, construction: true, buildings: true };
-    state.mapBuildingFilter = '';
-    state.tab = 'map';
-    update();
-    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
-  };
-  const constructionTable = el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
-    el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('building')),
-      el('th', {}, t('savedBuildingType')), el('th', {}, t('progress')),
-      el('th', {}, t('saveIndex')), el('th', {}))),
-    el('tbody', {}, ...visibleConstructionProjects.map(project => el('tr', {},
-      el('td', {}, plannerScopeName(project.scopeId)),
-      el('td', {}, project.name || project.type || '—'),
-      el('td', {}, el('code', {}, project.type || '—')),
-      el('td', { class: 'r' }, el('progress', {
-        value: project.constructionProgress, max: 1,
-        'aria-label': `${fmt(project.constructionProgress * 100, 1)} %`,
-      }), ` ${fmt(project.constructionProgress * 100, 1)} %`),
-      el('td', { class: 'r' }, `#${project.index}`),
-      el('td', {}, Number.isFinite(project.x) && Number.isFinite(project.z)
-        ? el('button', { onclick: () => locateConstructionProject(project) }, t('locateOnMap'))
-        : null))))));
-  const constructionPagination = constructionPageCount > 1
-    ? el('div', { class: 'settingsbar fleet-pagination' },
-      el('button', {
-        ...(constructionPage <= 1 ? { disabled: '' } : {}),
-        onclick: () => { constructionPage -= 1; update(); },
-      }, `← ${t('fleetPreviousPage')}`),
-      el('span', {}, t('fleetPageStatus')
-        .replace('{page}', fmt(constructionPage, 0)).replace('{pages}', fmt(constructionPageCount, 0))
-        .replace('{from}', fmt((constructionPage - 1) * constructionPageSize + 1, 0))
-        .replace('{to}', fmt(Math.min(constructionProjects.length,
-          constructionPage * constructionPageSize), 0))
-        .replace('{total}', fmt(constructionProjects.length, 0))),
-      el('button', {
-        ...(constructionPage >= constructionPageCount ? { disabled: '' } : {}),
-        onclick: () => { constructionPage += 1; update(); },
-      }, `${t('fleetNextPage')} →`)) : null;
-  const constructionDetails = allConstructionProjects.length ? el('details', {
-    class: 'secondary-section construction-projects',
-    ...(constructionDetailsOpen ? { open: '' } : {}),
-    ontoggle: event => { constructionDetailsOpen = event.currentTarget.open; },
-  },
-    el('summary', {}, `${t('activeConstruction')} (${fmt(allConstructionProjects.length, 0)})`),
-    el('p', { class: 'hint' }, t('constructionProjectMeaning')),
-    el('div', { class: 'settingsbar construction-filters' },
-      el('label', {}, t('area'), selectInput([
-        ['', `${t('allAreas')} (${fmt(allConstructionProjects.length, 0)})`],
-        ...constructionScopeIds.map(scopeId => [constructionScopeToken(scopeId),
-          `${plannerScopeName(scopeId)} (${fmt(allConstructionProjects.filter(project =>
-            (project.scopeId ?? null) === scopeId).length, 0)})`]),
-      ], constructionScopeFilter, value => {
-        constructionScopeFilter = value;
-        constructionPage = 1;
-      }, { class: 'construction-area-filter' })),
-      el('label', {}, t('constructionSearch'), el('input', {
-        type: 'search', value: constructionSearch,
-        onkeydown: event => {
-          if (event.key !== 'Enter') return;
-          constructionSearch = event.currentTarget.value;
-          constructionPage = 1;
-          update();
-        },
-      })),
-      el('button', {
-        onclick: event => {
-          constructionSearch = event.currentTarget.parentElement.querySelector('input[type="search"]')?.value ?? '';
-          constructionPage = 1;
-          update();
-        },
-      }, t('fleetSearchApply'))),
-    positiveConstructionCount && positiveConstructionCount < allConstructionProjects.length
-      ? el('div', { class: 'settingsbar construction-filters progress-filters' },
-        ...[['all', allConstructionProjects.length], ['positive', positiveConstructionCount]]
-          .map(([filter, count]) => el('button', {
-            class: constructionProgressFilter === filter ? 'active' : '',
-            onclick: () => {
-              constructionProgressFilter = filter;
-              constructionPage = 1;
-              update();
-            },
-          }, `${t(filter === 'all' ? 'constructionAll' : 'constructionAboveZero')} (${fmt(count, 0)})`)))
-      : null,
-    el('p', { class: 'hint construction-filter-status' }, t('constructionFilterStatus')
-      .replace('{visible}', fmt(constructionProjects.length, 0))
-      .replace('{total}', fmt(allConstructionProjects.length, 0))),
-    constructionProjects.length ? constructionTable : el('p', { class: 'hint' }, t('constructionNoResults')),
-    constructionPagination) : null;
+
 
   const republicOperations = state.saveImport?.operationalServices?.republic;
   const republicLiveQueue = republicOperations?.liveQueue ?? { available: false };
@@ -3959,85 +4515,6 @@ function renderRepublic() {
           el('td', { class: 'r' }, history ? fmt(history.unresolvedCrimes ?? 0, 0) : '—'));
       })))),
     el('p', { class: 'hint' }, t('currentCrimeRankingNote'))) : null;
-  const criminalityOutliers = state.saveImport?.criminalityOutliers;
-  const locateOutlierResidence = resident => {
-    mapFocusBuildingIndex = resident.residenceBuildingIndex;
-    mapFocusScopeId = null;
-    state.republicScope = resident.residence?.scopeId ?? state.republicScope;
-    update();
-    setTimeout(() => document.querySelector('.map-section')?.scrollIntoView({
-      behavior: 'smooth', block: 'center',
-    }), 0);
-  };
-  const schematicMap = renderSchematicRepublicMap(
-    state.saveImport?.observedBuildings, state.saveImport?.scopes, criminalityOutliers);
-  const criminalityOutlierDetails = criminalityOutliers?.residents?.length ? el('details', {
-    class: 'secondary-section',
-  },
-    el('summary', {}, `${t('highCriminalityResidents')} (`
-      + `${fmt(criminalityOutliers.residents.length, 0)} / ${fmt(criminalityOutliers.locatedOutlierCount, 0)})`),
-    el('p', { class: 'hint' }, t('criminalityOutlierRule')
-      .replace('{average}', fmt(criminalityOutliers.averageCriminality * 100, 2))
-      .replace('{threshold}', fmt(criminalityOutliers.threshold * 100, 2))),
-    criminalityOutliers.unlocatedOutlierCount ? el('p', { class: 'hint warn' },
-      t('unlocatedCriminalityOutliers').replace('{count}', fmt(criminalityOutliers.unlocatedOutlierCount, 0))) : null,
-    el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
-      el('thead', {}, el('tr', {},
-        el('th', {}, t('citizen')), el('th', {}, t('criminality')),
-        el('th', {}, t('area')), el('th', {}, t('residence')), el('th', {}, t('building')), el('th', {}))),
-      el('tbody', {}, ...criminalityOutliers.residents.map(resident => el('tr', {},
-        el('td', {}, `#${resident.citizenIndex}`),
-        el('td', { class: 'r warn' }, fmt(resident.criminality * 100, 2) + ' %'),
-        el('td', {}, plannerScopeName(resident.residence?.scopeId)),
-        el('td', {}, resident.residence?.name || resident.residence?.type || '—'),
-        el('td', { class: 'r' }, Number.isInteger(resident.residenceBuildingIndex)
-          ? `#${resident.residenceBuildingIndex}` : '—'),
-        el('td', {}, Number.isInteger(resident.residenceBuildingIndex) ? el('button', {
-          onclick: () => locateOutlierResidence(resident),
-        }, t('locateOnMap')) : null))))))) : null;
-  const pollutionDiagnostics = state.saveImport?.pollutionDiagnostics;
-  const locatePollutedResidence = residence => {
-    mapFocusBuildingIndex = residence.buildingIndex;
-    mapSelectedBuildingIndex = residence.buildingIndex;
-    mapFocusScopeId = null;
-    standaloneMapViewBox = null;
-    state.republicScope = residence.scopeId ?? state.republicScope;
-    state.mapLayers = { ...state.mapLayers, pollution: true, buildings: true };
-    state.mapBuildingFilter = '';
-    state.tab = 'map';
-    update();
-    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
-  };
-  const pollutionDetails = pollutionDiagnostics?.affectedBuildingCount ? el('details', {
-    class: 'secondary-section pollution-hotspots',
-  },
-    el('summary', {}, t('occupiedPollutionHotspots')
-      .replace('{buildings}', fmt(pollutionDiagnostics.affectedBuildingCount, 0))
-      .replace('{residents}', fmt(pollutionDiagnostics.affectedResidentCount, 0))),
-    el('p', { class: 'hint' }, t('occupiedPollutionMeaning')),
-    el('div', { class: 'tablewrap' }, el('table', { class: 'data pollution-area-summary' },
-      el('thead', {}, el('tr', {}, el('th', {}, t('area')),
-        el('th', {}, t('occupiedBuildings')), el('th', {}, t('residents')),
-        el('th', {}, t('residentWeightedPollution')), el('th', {}, t('maximumCellValue')))),
-      el('tbody', {}, ...pollutionDiagnostics.scopes.map(scope => el('tr', {},
-        el('td', {}, plannerScopeName(scope.scopeId)),
-        el('td', { class: 'r' }, fmt(scope.buildingCount, 0)),
-        el('td', { class: 'r' }, fmt(scope.residents, 0)),
-        el('td', { class: 'r' }, fmt(scope.residentWeightedAir, 4)),
-        el('td', { class: 'r' }, fmt(scope.maxAir, 4))))))),
-    el('h4', {}, t('highestOccupiedPollutionCells')),
-    el('div', { class: 'tablewrap' }, el('table', { class: 'data pollution-building-table' },
-      el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('residence')),
-        el('th', {}, t('residents')), el('th', {}, t('savedPollutionCellValue')),
-        el('th', {}, t('building')), el('th', {}))),
-      el('tbody', {}, ...pollutionDiagnostics.buildings.slice(0, 12).map(residence => el('tr', {},
-        el('td', {}, plannerScopeName(residence.scopeId)),
-        el('td', {}, residence.name || residence.type || '—'),
-        el('td', { class: 'r' }, fmt(residence.residents, 0)),
-        el('td', { class: 'r warn' }, fmt(residence.airValue, 4)),
-        el('td', { class: 'r' }, `#${residence.buildingIndex}`),
-        el('td', {}, el('button', { onclick: () => locatePollutedResidence(residence) },
-          t('locateOnMap'))))))))) : null;
   const institutionOverview = republicOperations ? el('section', { class: 'institution-overview' },
     el('h3', {}, t('republicInstitutions')),
     el('div', { class: 'institution-grid' },
@@ -4073,438 +4550,15 @@ function renderRepublic() {
       kv(t('liveCourtCases'), fmt(republicLiveQueue.atCourt, 0)),
       kv(t('crimeSeverity'), `${fmt(republicLiveQueue.mild, 0)} / ${fmt(republicLiveQueue.medium, 0)} / ${fmt(republicLiveQueue.serious, 0)} ${t('mildMediumSerious')}`)) : null,
     crimeRanking,
-    criminalityOutlierDetails,
     el('p', { class: 'hint' }, t('crimeHistoryNote'))) : null;
 
-  const fleetRecords = state.saveImport?.ownedVehicles ?? [];
-  const fleetSettings = state.saveImport?.header?.settings;
-  const priceRecord = state.statsRecords?.[Math.min(state.recordIndex, (state.statsRecords?.length ?? 1) - 1)];
-  const exactFleetOpportunities = fleetSettings && Number.isFinite(priceRecord?.year)
-    ? fleetRecords.map(record => vehicleEconomicOpportunity(record, {
-      year: priceRecord.year,
-      currency: state.currency,
-      saleAdjustmentLevel: fleetSettings.vehicleSaleAdjustmentLevel,
-      depreciationLevel: fleetSettings.depreciationLevel,
-      economy: eco,
-    })).filter(Boolean).sort((a, b) => (b.advantage ?? -Infinity) - (a.advantage ?? -Infinity)) : [];
-  const usedFleetRecords = state.saveImport?.usedVehicleOffers ?? [];
-  const exactUsedVehicleQuotes = Number.isFinite(priceRecord?.year)
-    ? usedFleetRecords.map(offer => vehicleUsedMarketQuote(offer, {
-      year: priceRecord.year, currency: state.currency, economy: eco,
-    })).filter(Boolean).sort((a, b) => a.purchaseValue - b.purchaseValue) : [];
-  const replacementCandidates = rankUsedVehicleReplacements(
-    exactFleetOpportunities, exactUsedVehicleQuotes,
-  );
-  const fleetFilterDefaults = { category: 'all', action: 'all', sort: 'advantage', search: '', page: 1 };
-  const fleetFilter = { ...fleetFilterDefaults, ...(state.fleetFilter ?? {}) };
-  state.fleetFilter = fleetFilter;
-  const filteredFleetOpportunities = filterAndSortVehicleOpportunities(
-    exactFleetOpportunities, fleetFilter,
-  );
-  const fleetPage = paginateVehicleOpportunities(filteredFleetOpportunities, {
-    page: fleetFilter.page, pageSize: 50,
-  });
-  if (fleetPage.page && fleetPage.page !== fleetFilter.page) fleetFilter.page = fleetPage.page;
-  const fleetActionLabel = action => t(action === 'recycle' ? 'fleetRecycle' : 'fleetExport');
-  const fleetCategoryLabel = facts => t(`fleetCategory.${vehicleCategoryGroup(facts?.runtimeCategory)}`);
-  const fleetCapacityUnit = facts => facts?.transportSubtype === 7 ? t('fleetPassengers') : 't';
-  const materialSummary = opportunity => Object.entries(opportunity.recycling.materials)
-    .filter(([, amount]) => amount > 0.01)
-    .map(([key, amount]) => {
-      const resource = DATA.resources.find(item => item.key === key);
-      return `${resource ? rname(resource) : key}: ${fmt(amount, 2)} t`;
-    }).join(' · ');
-  const opportunityCard = opportunity => el('div', { class: 'totalsbox institution-card' },
-    el('h3', {}, opportunity.record.modelFacts.name,
-      el('span', { class: 'evidence-badge derived' }, fleetActionLabel(opportunity.cashOutAction))),
-    el('p', { class: 'subline' }, fleetCategoryLabel(opportunity.record.modelFacts)),
-    kv(t('fleetExportPayout'), `${fmt(opportunity.exportValue, 0)} ${cur()}`),
-    kv(t('fleetRecycleAfterLabor'), Number.isFinite(opportunity.recycleAfterLabor)
-      ? `${fmt(opportunity.recycleAfterLabor, 0)} ${cur()}` : '—'),
-    kv(t('fleetAdvantage'), Number.isFinite(opportunity.advantage)
-      ? `${fmt(opportunity.advantage, 0)} ${cur()}` : '—'),
-    opportunity.recycling.ignoredCargo.length
-      ? el('p', { class: 'hint warn' }, t('fleetCargoExcluded')) : null);
-  const fleetDetailsTable = state.fleetDetails && fleetPage.rows.length ? el('table', { class: 'data wide' },
-    el('thead', {}, el('tr', {},
-      el('th', {}, t('vehicle')), el('th', {}, t('fleetCashOutAction')),
-      el('th', {}, t('fleetExportPayout')), el('th', {}, t('fleetRecycleGross')),
-      el('th', {}, t('fleetLaborCost')), el('th', {}, t('fleetRecycleAfterLabor')),
-      el('th', {}, t('fleetAdvantage')), el('th', {}, t('fleetWorkdays')))),
-    el('tbody', {}, ...fleetPage.rows.map(opportunity => el('tr', {},
-      el('td', {}, opportunity.record.modelFacts.name,
-        el('div', { class: 'subline' }, fleetCategoryLabel(opportunity.record.modelFacts)),
-        el('div', { class: 'subline' }, `${t('fleetSavedMultiplier')}: ${fmt(opportunity.exportMultiplier.multiplier * 100, 1)} %`),
-        el('div', { class: 'subline' }, materialSummary(opportunity)),
-        opportunity.recycling.ignoredCargo.length
-          ? el('div', { class: 'subline warn' }, t('fleetCargoExcluded')) : null),
-      el('td', {}, fleetActionLabel(opportunity.cashOutAction)),
-      el('td', { class: 'r' }, fmt(opportunity.exportValue, 0)),
-      el('td', { class: 'r' }, Number.isFinite(opportunity.recoveredValue.immediateExportValue)
-        ? fmt(opportunity.recoveredValue.immediateExportValue, 0) : '—'),
-      el('td', { class: 'r' }, Number.isFinite(opportunity.laborOpportunityCost)
-        ? fmt(opportunity.laborOpportunityCost, 0) : '—'),
-      el('td', { class: 'r' }, Number.isFinite(opportunity.recycleAfterLabor)
-        ? fmt(opportunity.recycleAfterLabor, 0) : '—'),
-      el('td', { class: 'r' }, Number.isFinite(opportunity.advantage)
-        ? fmt(opportunity.advantage, 0) : '—'),
-      el('td', { class: 'r' }, fmt(opportunity.recycling.workdays, 0))))))
-    : el('p', { class: 'hint warn' }, t('fleetNoFilterResults'));
-  const fleetOpportunities = fleetRecords.length ? el('section', { class: 'institution-overview' },
-    el('h3', {}, t('fleetEconomicOpportunities'), el('span', { class: 'evidence-badge exact' }, t('exact'))),
-    el('p', { class: 'hint' }, t('fleetEconomicHint')),
-    exactFleetOpportunities.length
-      ? el('div', { class: 'institution-grid' }, ...exactFleetOpportunities.slice(0, 3).map(opportunityCard))
-      : el('p', { class: 'hint warn' }, t('fleetNoExactOpportunities')),
-    el('p', { class: 'hint' }, t('fleetCoverageHint')
-      .replace('{exact}', fmt(exactFleetOpportunities.length, 0)).replace('{total}', fmt(fleetRecords.length, 0))),
-    exactUsedVehicleQuotes.length ? el('div', { class: 'used-fleet-offers' },
-      el('h4', {}, t('fleetUsedHeading')),
-      el('p', { class: 'hint' }, t('fleetUsedHint')),
-      el('div', { class: 'institution-grid' }, ...exactUsedVehicleQuotes.slice(0, 3).map(quote =>
-        el('div', { class: 'totalsbox institution-card' },
-          el('h3', {}, quote.offer.modelFacts.name,
-            el('span', { class: 'evidence-badge exact' }, t('exact'))),
-          el('p', { class: 'subline' }, fleetCategoryLabel(quote.offer.modelFacts)),
-          kv(t('fleetUsedPrice'), `${fmt(quote.purchaseValue, 0)} ${cur()}`),
-          kv(t('fleetOfferFactor'), `${fmt(quote.factor * 100, 1)} %`),
-          kv(t('fleetCapacity'), Number.isFinite(quote.offer.modelFacts.capacity)
-            ? `${fmt(quote.offer.modelFacts.capacity, 0)} ${fleetCapacityUnit(quote.offer.modelFacts)}` : '—')))),
-      el('p', { class: 'hint' }, t('fleetUsedCoverage')
-        .replace('{exact}', fmt(exactUsedVehicleQuotes.length, 0)).replace('{total}', fmt(usedFleetRecords.length, 0)))) : null,
-    replacementCandidates.length ? el('div', { class: 'used-fleet-offers' },
-      el('h4', {}, t('fleetReplacementHeading')),
-      el('p', { class: 'hint' }, t('fleetReplacementHint')),
-      el('div', { class: 'institution-grid' }, ...replacementCandidates.slice(0, 3).map(candidate => {
-        const offerFacts = candidate.quote.offer.modelFacts;
-        const ownedFacts = candidate.targetOpportunity.record.modelFacts;
-        const releasesCash = candidate.netCashRequired < 0;
-        return el('div', { class: 'totalsbox institution-card' },
-          el('h3', {}, offerFacts.name,
-            el('span', { class: 'evidence-badge derived' }, t('fleetReplacement'))),
-          el('p', { class: 'subline' }, fleetCategoryLabel(offerFacts)),
-          kv(t('fleetReplacementTarget'), ownedFacts.name),
-          kv(t('fleetCapacityChange'), `${fmt(ownedFacts.capacity, 0)} → ${fmt(offerFacts.capacity, 0)} ${fleetCapacityUnit(offerFacts)}`),
-          kv(t(releasesCash ? 'fleetCashReleased' : 'fleetNetCashRequired'),
-            `${fmt(Math.abs(candidate.netCashRequired), 0)} ${cur()}`),
-          kv(t('fleetCompatibleOwned'), fmt(candidate.compatibleOwnedCount, 0)));
-      }))) : null,
-    exactFleetOpportunities.length ? el('details', {
-      class: 'secondary-section',
-      ...(state.fleetDetails ? { open: '' } : {}),
-      ontoggle: event => {
-        const open = event.currentTarget.open;
-        if (open === state.fleetDetails) return;
-        state.fleetDetails = open;
-        update();
-      },
-    },
-      el('summary', {}, `${t('fleetDetails')} (${fmt(filteredFleetOpportunities.length, 0)} / ${fmt(exactFleetOpportunities.length, 0)})`),
-      state.fleetDetails ? el('div', { class: 'fleet-details-content' },
-        el('p', { class: 'hint warn' }, t('fleetKeepCaveat')),
-        el('div', { class: 'settingsbar' },
-          el('label', {}, t('fleetCategoryFilter'), selectInput([
-            ['all', t('fleetAllCategories')], ['ship', t('fleetShips')],
-            ['road', t('fleetRoad')], ['rail', t('fleetRail')], ['air', t('fleetAir')],
-          ], fleetFilter.category, value => {
-            state.fleetFilter.category = value; state.fleetFilter.page = 1;
-          })),
-          el('label', {}, t('fleetActionFilter'), selectInput([
-            ['all', t('fleetAllActions')], ['export', t('fleetExport')],
-            ['recycle', t('fleetRecycle')],
-          ], fleetFilter.action, value => {
-            state.fleetFilter.action = value; state.fleetFilter.page = 1;
-          })),
-          el('label', {}, t('sortBy'), selectInput([
-            ['advantage', t('fleetAdvantage')], ['export', t('fleetExportPayout')],
-            ['recycle', t('fleetRecycleAfterLabor')], ['name', t('vehicle')],
-          ], fleetFilter.sort, value => {
-            state.fleetFilter.sort = value; state.fleetFilter.page = 1;
-          })),
-          el('label', {}, t('fleetSearch'), el('input', {
-            type: 'search', value: fleetFilter.search ?? '',
-            oninput: event => { event.currentTarget.dataset.pendingValue = event.currentTarget.value; },
-            onkeydown: event => {
-              if (event.key !== 'Enter') return;
-              state.fleetFilter.search = event.currentTarget.value;
-              state.fleetFilter.page = 1;
-              update();
-            },
-          })),
-          el('button', {
-            onclick: event => {
-              const input = event.currentTarget.parentElement.querySelector('input[type="search"]');
-              state.fleetFilter.search = input?.value ?? '';
-              state.fleetFilter.page = 1;
-              update();
-            },
-          }, t('fleetSearchApply'))),
-        fleetPage.pageCount > 1 ? el('div', { class: 'settingsbar fleet-pagination' },
-          el('button', {
-            ...(fleetPage.page <= 1 ? { disabled: '' } : {}),
-            onclick: () => { state.fleetFilter.page = fleetPage.page - 1; update(); },
-          }, `← ${t('fleetPreviousPage')}`),
-          el('span', {}, t('fleetPageStatus')
-            .replace('{page}', fmt(fleetPage.page, 0)).replace('{pages}', fmt(fleetPage.pageCount, 0))
-            .replace('{from}', fmt((fleetPage.page - 1) * fleetPage.pageSize + 1, 0))
-            .replace('{to}', fmt(Math.min(fleetPage.total, fleetPage.page * fleetPage.pageSize), 0))
-            .replace('{total}', fmt(fleetPage.total, 0))),
-          el('button', {
-            ...(fleetPage.page >= fleetPage.pageCount ? { disabled: '' } : {}),
-            onclick: () => { state.fleetFilter.page = fleetPage.page + 1; update(); },
-          }, `${t('fleetNextPage')} →`)) : null,
-        el('div', { class: 'tablewrap' }, fleetDetailsTable)) : null) : null) : null;
 
-  const lineOperations = state.saveImport?.vehicleLines;
-  const distributionOperations = state.saveImport?.distributionOffices;
-  const lineSummary = lineOperations?.summary;
-  const distributionSummary = distributionOperations?.summary;
-  const scheduleKeys = block => [...new Set((block?.entries ?? []).map(entry => entry.key || '∅'))].join(', ') || '—';
-  const operationalBuildingLabel = ref => ref?.building?.name || ref?.building?.type
-    || (Number.isInteger(ref?.buildingIndex) ? `#${ref.buildingIndex}` : '—');
-  const lineVehiclePosition = vehicle => {
-    const op = vehicle.operational;
-    if (!op) return el('li', {}, vehicle.name || vehicle.model || `#${vehicle.id}`);
-    const routeCount = op.routeTargets?.length ?? 0;
-    const cursor = op.hasValidScheduleCursor ? `${op.currentScheduleCursor}/${routeCount}` : '—';
-    const relationships = [
-      op.currentBuilding ? `${t('currentBuilding')}: ${operationalBuildingLabel(op.currentBuilding)}` : null,
-      op.homeWorkplace ? `${t('homeWorkplace')}: ${operationalBuildingLabel(op.homeWorkplace)}` : null,
-      op.stationBuilding ? `${t('stationBuilding')}: ${operationalBuildingLabel(op.stationBuilding)}` : null,
-      op.movingInsideBuilding ? `${t('insideBuilding')}: ${operationalBuildingLabel(op.movingInsideBuilding)}` : null,
-    ].filter(Boolean).join(' · ');
-    return el('li', {},
-      `${vehicle.name || vehicle.model || `#${vehicle.id}`} · ${t('savedRouteCursor')} ${cursor}`
-        + ` · ${t('currentTarget')}: ${operationalBuildingLabel(op.currentScheduleTarget)}`
-        + (Number.isFinite(op.currentLineIntervalRaw)
-          ? ` · ${t('currentLineIntervalRaw')}: ${fmt(op.currentLineIntervalRaw, 2)}` : ''),
-      relationships ? el('div', { class: 'subline' }, relationships) : null);
-  };
-  const distributionResourceLabel = key => {
-    const resource = DATA.resources.find(item => item.key === key);
-    return resource ? rname(resource) : key;
-  };
-  const distributionThresholdLine = (assignment, state) => {
-    const target = assignment.target?.name || assignment.target?.type
-      || `#${assignment.targetBuildingIndex}`;
-    const action = t(state.direction === 'load' ? 'loadAction' : 'unloadAction');
-    if (state.status === 'unrestricted') return `${target} · ${action}: ${t('noExplicitResource')}`;
-    const resource = distributionResourceLabel(state.resource);
-    if (state.status !== 'resolved') {
-      const key = {
-        'resource-not-directly-stored': 'resourceNotDirectlyStored',
-        'ambiguous-storage-role': 'ambiguousStorageRole',
-        'no-finite-capacity': 'noFiniteCapacity',
-        'invalid-target': 'invalidTarget',
-      }[state.status] ?? 'unresolvedThresholds';
-      return `${target} · ${action} ${resource}: ${t(key)}`;
-    }
-    const operator = state.direction === 'load' ? '>' : '<';
-    return `${target} · ${action} ${resource}: ${fmt(state.ratio * 100, 1)} % ${operator} `
-      + `${fmt(state.threshold * 100, 1)} % · ${t(state.conditionMet ? 'conditionMet' : 'conditionNotMet')}`;
-  };
-  const logisticsOperations = lineOperations || distributionSummary?.officeCount ? el('section', {
-    class: 'institution-overview',
-  },
-    el('h3', {}, t('savedLogisticsOperations'),
-      el('span', { class: 'evidence-badge exact' }, t('exact'))),
-    el('p', { class: 'hint' }, t('savedLogisticsHint')),
-    el('div', { class: 'columns' },
-      lineSummary ? el('div', { class: 'totalsbox' },
-        el('h4', {}, t('vehicleLines')),
-        kv(t('vehicleLines'), fmt(lineSummary.lineCount, 0)),
-        kv(t('linesWithAssignedVehicles'), fmt(lineSummary.assignedLineCount, 0)),
-        kv(t('assignedVehicleReferences'), fmt(lineSummary.vehicleReferenceCount, 0)),
-        kv(t('orderedStopReferences'), fmt(lineSummary.stopReferenceCount, 0)),
-        kv(t('completeObservedCycles'), fmt(lineSummary.completeObservedCycleCount, 0)),
-        kv(t('validRouteCursors'), fmt(lineSummary.validScheduleCursorVehicleCount ?? 0, 0)),
-        kv(t('positiveCurrentIntervals'), fmt(lineSummary.positiveCurrentIntervalVehicleCount ?? 0, 0))) : null,
-      distributionSummary?.officeCount ? el('div', { class: 'totalsbox' },
-        el('h4', {}, t('distributionOffices')),
-        kv(t('distributionOffices'), `${fmt(distributionSummary.officeCount, 0)} · `
-          + `${fmt(distributionSummary.roadCount, 0)} ${t('fleetRoad')} / `
-          + `${fmt(distributionSummary.railCount, 0)} ${t('fleetRail')}`),
-        kv(t('configuredTargets'), fmt(distributionSummary.targetCount, 0)),
-        kv(t('associatedVehicleReferences'), fmt(distributionSummary.associatedVehicleReferenceCount, 0)),
-        kv(t('officesWithoutTargets'), fmt(distributionSummary.officesWithoutTargets, 0),
-          distributionSummary.officesWithoutTargets ? 'warn' : ''),
-        kv(t('officesWithoutAssociatedVehicles'), fmt(distributionSummary.officesWithoutAssociatedVehicles, 0),
-          distributionSummary.officesWithoutAssociatedVehicles ? 'warn' : ''),
-        kv(t('configuredWithoutFleet'), fmt(distributionSummary.configuredWithoutFleetOfficeCount ?? 0, 0),
-          distributionSummary.configuredWithoutFleetOfficeCount ? 'warn' : ''),
-        kv(t('inactiveAssignments'), fmt(distributionSummary.neitherActionCount ?? 0, 0),
-          distributionSummary.neitherActionCount ? 'warn' : ''),
-        kv(t('pickupConditionsMet'), fmt(distributionSummary.pickupConditionMetCount ?? 0, 0)),
-        kv(t('deliveryConditionsMet'), fmt(distributionSummary.deliveryConditionMetCount ?? 0, 0)),
-        kv(t('unresolvedThresholds'), fmt(distributionSummary.unresolvedThresholdCount ?? 0, 0),
-          distributionSummary.unresolvedThresholdCount ? 'warn' : '')) : null),
-    lineOperations ? el('details', { class: 'secondary-section' },
-      el('summary', {}, `${t('vehicleLineDetails')} (${fmt(lineSummary.lineCount, 0)})`),
-      el('p', { class: 'hint warn' }, t('observedIntervalCaveat')),
-      el('div', { class: 'tablewrap' }, el('table', { class: 'data wide' },
-        el('thead', {}, el('tr', {},
-          el('th', {}, t('vehicleLine')), el('th', {}, t('assignedVehicles')),
-          el('th', {}, t('orderedStops')), el('th', {}, t('scheduleRules')),
-          el('th', {}, t('completeObservedCycle')), el('th', {}, t('largestObservedInterval')))),
-        el('tbody', {}, ...lineOperations.lines.map(line => el('tr', {},
-          el('td', {}, line.name || `#${line.slot}`),
-          el('td', {}, line.assignedVehicles.length
-            ? el('details', {},
-              el('summary', {}, `${fmt(line.assignedVehicles.length, 0)} · `
-                + line.assignedVehicles.map(vehicle => vehicle.name || vehicle.model || `#${vehicle.id}`).join(', ')),
-              el('ul', {}, ...line.assignedVehicles.map(lineVehiclePosition))) : '—'),
-          el('td', {}, line.stops.length ? line.stops.map(stop =>
-            stop.building?.name || stop.building?.type || (stop.buildingIndex < 0 ? '—' : `#${stop.buildingIndex}`)).join(' → ') : '—'),
-          el('td', {}, line.stops.map((stop, index) =>
-            `${index + 1}: P[${scheduleKeys(stop.primary)}] · S[${scheduleKeys(stop.secondary)}]`).join(' | ') || '—'),
-          el('td', { class: 'r' }, Number.isFinite(line.completeObservedCycle)
-            ? fmt(line.completeObservedCycle, 2) : '—'),
-          el('td', { class: 'r' }, Number.isFinite(line.largestObservedInterval)
-            ? fmt(line.largestObservedInterval, 2) : '—'))))))) : null,
-    distributionSummary?.officeCount ? el('details', { class: 'secondary-section' },
-      el('summary', {}, `${t('distributionOfficeDetails')} (${fmt(distributionSummary.officeCount, 0)})`),
-      el('p', { class: 'hint warn' }, t('distributionCoverageCaveat')),
-      el('p', { class: 'hint' }, t('distributionThresholdHint')),
-      el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
-        el('thead', {}, el('tr', {},
-          el('th', {}, t('distributionOffice')), el('th', {}, t('kind')),
-          el('th', {}, t('configuredTargets')), el('th', {}, t('associatedVehicles')),
-          el('th', {}, t('configuredActions')), el('th', {}, t('thresholdDiagnostics')))),
-        el('tbody', {}, ...distributionOperations.offices.map(office => {
-          const loads = office.assignments.filter(assignment => assignment.load.enabled).length;
-          const unloads = office.assignments.filter(assignment => assignment.unload.enabled).length;
-          const thresholdStates = office.assignments.flatMap(assignment =>
-            (assignment.thresholdStates ?? []).map(state => ({ assignment, state })));
-          const operational = office.operational ?? {
-            inactiveAssignmentCount: office.assignments.filter(assignment =>
-              !assignment.load.enabled && !assignment.unload.enabled).length,
-            pickupConditionMetCount: 0, deliveryConditionMetCount: 0, unresolvedThresholdCount: 0,
-          };
-          const stateSummary = [
-            `${t('pickupConditionsMet')}: ${fmt(operational.pickupConditionMetCount, 0)}`,
-            `${t('deliveryConditionsMet')}: ${fmt(operational.deliveryConditionMetCount, 0)}`,
-            `${t('unresolvedThresholds')}: ${fmt(operational.unresolvedThresholdCount, 0)}`,
-          ].join(' · ');
-          return el('tr', {},
-            el('td', {}, office.name || office.type || `#${office.buildingIndex}`,
-              office.configuredWithoutFleet
-                ? el('div', { class: 'subline warn' }, t('configuredWithoutFleet')) : null),
-            el('td', {}, t(office.kind === 'rail' ? 'fleetRail' : 'fleetRoad')),
-            el('td', { class: `r ${office.assignments.length ? '' : 'warn'}` }, fmt(office.assignments.length, 0)),
-            el('td', { class: `r ${office.associatedVehicles.length ? '' : 'warn'}` }, fmt(office.associatedVehicles.length, 0)),
-            el('td', {}, `${t('loadAction')}: ${fmt(loads, 0)} · ${t('unloadAction')}: ${fmt(unloads, 0)}`,
-              operational.inactiveAssignmentCount
-                ? el('div', { class: 'subline warn' },
-                  `${t('inactiveAssignments')}: ${fmt(operational.inactiveAssignmentCount, 0)}`) : null),
-            el('td', {}, thresholdStates.length || operational.inactiveAssignmentCount
-              ? el('details', {},
-                el('summary', {}, stateSummary),
-                el('ul', {},
-                  ...thresholdStates.map(({ assignment, state }) => el('li', {
-                    class: state.status !== 'resolved'
-                      || (state.conditionMet && office.configuredWithoutFleet) ? 'warn' : '',
-                  }, distributionThresholdLine(assignment, state))),
-                  ...office.assignments.filter(assignment => assignment.inactive
-                    || (!assignment.load.enabled && !assignment.unload.enabled)).map(assignment =>
-                    el('li', { class: 'warn' }, `${assignment.target?.name || assignment.target?.type
-                      || `#${assignment.targetBuildingIndex}`} · ${t('inactiveAssignments')}`)))) : '—'));
-        }))))) : null) : null;
 
   // Forty years of history live on their own tab now; keep a way through to it
   // from the overview, which is where someone reading the republic starts.
   const historyLink = state.statsRecords?.length ? el('p', { class: 'hint' },
     el('button', { class: 'linklike', onclick: () => { state.tab = 'history'; update(); } },
       `${t('republicHistory')} (${fmt(state.statsRecords.length, 0)}) →`)) : null;
-
-  const comparisonNames = namedSnapshotNames.filter(name => name !== state.saveSlotName);
-  if (comparisonSnapshotName && !comparisonNames.includes(comparisonSnapshotName)) {
-    comparisonSnapshotName = '';
-    comparisonSnapshot = null;
-    comparisonSnapshotError = '';
-  }
-  const comparison = comparisonSnapshot?.saveImport && state.saveImport
-    ? compareObservedSnapshots(state.saveImport, comparisonSnapshot.saveImport,
-      state.statsRecords, comparisonSnapshot.statsRecords) : null;
-  const comparisonValue = (key, value) => {
-    if (!Number.isFinite(value)) return '—';
-    return ['productivity', 'health', 'criminality'].includes(key)
-      ? `${fmt(value * 100, key === 'criminality' ? 2 : 1)} %`
-      : fmt(value, 0);
-  };
-  const comparisonDelta = (key, value) => {
-    if (!Number.isFinite(value)) return '—';
-    const scaled = ['productivity', 'health', 'criminality'].includes(key) ? value * 100 : value;
-    const suffix = ['productivity', 'health', 'criminality'].includes(key) ? ' pp' : '';
-    return `${scaled > 0 ? '+' : ''}${fmt(scaled, key === 'criminality' ? 2 : 1)}${suffix}`;
-  };
-  const comparisonRate = (key, value) => {
-    if (!Number.isFinite(value)) return '—';
-    return `${value > 0 ? '+' : ''}${fmt(value, key === 'population' ? 1 : 2)}`;
-  };
-  const comparisonMetrics = [
-    ['statsRecordCount', t('statsHistoryRecords')],
-    ['population', t('population')], ['liveBuildingCount', t('importedBuildings')],
-    ['configuredIndustryWorkers', t('configuredWorkers')],
-    ['currentIndustryWorkers', t('currentWorkers')], ['productivity', t('productivity')],
-    ['health', t('health')], ['criminality', t('criminality')],
-    ['minorCrimes', t('minorCrimes')], ['mediumCrimes', t('mediumCrimes')],
-    ['seriousCrimes', t('seriousCrimes')],
-    ['medicalEmergencies', t('activeMedicalEmergencies')],
-    ['activeCrimes', t('activeCriminalCases')], ['awaitingPolice', t('awaitingPolice')],
-    ['underInvestigation', t('underInvestigation')], ['atCourt', t('liveCourtCases')],
-  ];
-  const comparisonAreaRows = comparison?.sameRepublic ? comparison.areas.filter(area =>
-    Object.values(area.deltas).some(value => Number.isFinite(value) && Math.abs(value) > 1e-9))
-    .sort((a, b) => Math.abs(b.deltas.population ?? 0) - Math.abs(a.deltas.population ?? 0)
-      || String(a.name).localeCompare(String(b.name))) : [];
-  const comparisonAreaRow = area => el('tr', {},
-    el('td', {}, area.name),
-    ...['population', 'currentIndustryWorkers', 'productivity', 'health', 'criminality',
-      'minorCrimes', 'mediumCrimes', 'seriousCrimes']
-      .map(key => el('td', { class: 'r' }, comparisonDelta(key, area.deltas[key]))));
-  const snapshotComparison = state.saveImport ? el('details', {
-    class: 'history-section secondary-section snapshot-comparison',
-    ...(comparisonSnapshotName || comparisonSnapshotError ? { open: '' } : {}),
-  },
-    el('summary', {}, t('compareSnapshots')),
-    el('p', { class: 'hint' }, t('compareSnapshotsHint')),
-    comparisonNames.length ? el('label', {}, t('baselineSnapshot'), ' ', selectInput(
-      [['', t('chooseSnapshot')], ...comparisonNames.map(name => [name, name])],
-      comparisonSnapshotName, value => { loadComparisonSnapshot(value); }))
-      : el('p', { class: 'hint' }, t('noComparisonSnapshots')),
-    comparisonSnapshotError ? el('p', { class: 'warn' }, comparisonSnapshotError) : null,
-    comparison ? el('div', { class: 'snapshot-comparison-results' },
-      el('p', { class: 'hint' }, `${state.saveSlotName || state.saveImport.sourceName} − ${comparisonSnapshotName}`),
-      el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
-        el('thead', {}, el('tr', {}, el('th', {}, t('metric')), el('th', {}, t('baseline')),
-          el('th', {}, t('current')), el('th', {}, t('change')),
-          el('th', {}, t('per30GameDays')))),
-        el('tbody', {}, el('tr', {},
-          el('td', {}, t('gameDate')),
-          el('td', { class: 'r' }, comparison.dates.baseline
-            ? `${comparison.dates.baseline.year} / ${comparison.dates.baseline.day}` : '—'),
-          el('td', { class: 'r' }, comparison.dates.current
-            ? `${comparison.dates.current.year} / ${comparison.dates.current.day}` : '—'),
-          el('td', { class: 'r' }, Number.isFinite(comparison.elapsedGameDays)
-            ? t('elapsedGameDays').replace('{days}', fmt(comparison.elapsedGameDays, 0)) : '—'),
-          el('td', { class: 'r' }, '—')),
-        ...comparisonMetrics.map(([key, label]) => el('tr', {},
-          el('td', {}, label),
-          el('td', { class: 'r' }, comparisonValue(key, comparison.baseline.totals[key])),
-          el('td', { class: 'r' }, comparisonValue(key, comparison.current.totals[key])),
-          el('td', { class: 'r' }, comparisonDelta(key, comparison.deltas[key])),
-          el('td', { class: 'r' }, comparisonRate(key, comparison.ratesPer30Days[key]))))))),
-      !comparison.sameRepublic ? el('p', { class: 'warn' }, t('differentRepublicComparison'))
-        : comparisonAreaRows.length ? el('details', { class: 'secondary-section' },
-          el('summary', {}, `${t('areaChanges')} (${fmt(comparisonAreaRows.length, 0)})`),
-          el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
-            el('thead', {}, el('tr', {}, el('th', {}, t('area')), el('th', {}, t('population')),
-              el('th', {}, t('currentWorkers')), el('th', {}, t('productivity')),
-              el('th', {}, t('health')), el('th', {}, t('criminality')),
-              el('th', {}, t('minorCrimes')), el('th', {}, t('mediumCrimes')),
-              el('th', {}, t('seriousCrimes')))),
-            el('tbody', {}, ...comparisonAreaRows.map(comparisonAreaRow)))))
-          : el('p', { class: 'hint' }, t('noObservedChanges'))) : null) : null;
 
   const incompleteResearch = state.saveImport?.research?.filter(item => item.progress < 1)
     .sort((a, b) => b.progress - a.progress) ?? [];
@@ -4584,15 +4638,9 @@ function renderRepublic() {
         state.saveImport.research ? el('span', {}, `${fmt(state.saveImport.researchComplete, 0)} / ${fmt(state.saveImport.research.length, 0)} ${t('importedResearch')}`) : null) : null,
       el('div', { class: 'metric-grid' }, ...cards),
       alertList,
-      constructionDetails,
-      pollutionDetails,
       institutionOverview,
-      fleetOpportunities,
-      logisticsOperations,
-      schematicMap,
       el('div', { class: 'tablewrap area-table-panel' }, areaTable),
       historyLink,
-      snapshotComparison,
       researchDetails,
       settingsDetails,
       el('details', { class: 'planning-details' }, el('summary', {}, t('planningDetails')),

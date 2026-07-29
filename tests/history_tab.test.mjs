@@ -17,7 +17,7 @@ const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 test('history is a first-class Observe tab', () => {
   assert.equal(sectionForTab('history'), 'observe');
   assert.deepEqual(tabsForSection('observe'),
-    ['home', 'republic', 'map', 'cities', 'history', 'prices']);
+    ['home', 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'prices']);
 });
 
 test('the history tab is named in both languages', () => {

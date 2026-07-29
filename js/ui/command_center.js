@@ -6,10 +6,10 @@
 // that accepts a hypothetical value belongs to Plan — which is why the price
 // table (Observe) and the price overrides (Plan) are separate tabs.
 export const COMMAND_SECTIONS = Object.freeze([
-  Object.freeze({ id: 'observe', labelKey: 'navObserve', defaultTab: 'republic', tabs: Object.freeze(['home', 'republic', 'map', 'cities', 'history', 'prices']) }),
-  Object.freeze({ id: 'diagnose', labelKey: 'navDiagnose', defaultTab: 'analysis', tabs: Object.freeze(['analysis']) }),
+  Object.freeze({ id: 'observe', labelKey: 'navObserve', defaultTab: 'republic', tabs: Object.freeze(['home', 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'prices']) }),
+  Object.freeze({ id: 'diagnose', labelKey: 'navDiagnose', defaultTab: 'analysis', tabs: Object.freeze(['analysis', 'environment']) }),
   Object.freeze({ id: 'plan', labelKey: 'navPlan', defaultTab: 'chain', tabs: Object.freeze(['chain', 'city', 'priceedit', 'production', 'vehicleprod', 'trains', 'research', 'advanced']) }),
-  Object.freeze({ id: 'compare', labelKey: 'navCompare', defaultTab: 'saveimport', tabs: Object.freeze(['saveimport', 'help']) }),
+  Object.freeze({ id: 'compare', labelKey: 'navCompare', defaultTab: 'saveimport', tabs: Object.freeze(['saveimport', 'snapshots', 'help']) }),
 ]);
 
 const TAB_SECTION = new Map();

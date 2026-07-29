@@ -37,12 +37,12 @@ test('each section opens on a tab it actually owns', () => {
 
 test('the confirmed tab to section table is what ships', () => {
   assert.deepEqual(tabsForSection('observe'),
-    ['home', 'republic', 'map', 'cities', 'history', 'prices']);
-  assert.deepEqual(tabsForSection('diagnose'), ['analysis']);
+    ['home', 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'prices']);
+  assert.deepEqual(tabsForSection('diagnose'), ['analysis', 'environment']);
   assert.deepEqual(tabsForSection('plan'), [
     'chain', 'city', 'priceedit', 'production', 'vehicleprod', 'trains', 'research', 'advanced',
   ]);
-  assert.deepEqual(tabsForSection('compare'), ['saveimport', 'help']);
+  assert.deepEqual(tabsForSection('compare'), ['saveimport', 'snapshots', 'help']);
 });
 
 // Observe is the read-only surface: it reports what the save contains and
