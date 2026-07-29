@@ -844,6 +844,23 @@ table.data th, table.data td { border-color: var(--border); }
    out of sight for anyone who had scrolled down far enough to click a marker,
    so selecting a building looked like it did nothing at all. */
 .map-viewport { position: relative; }
+/* Both map layers sit in here so a gesture moves them as one image. The
+   transform is set from script during a pan or zoom and cleared when the view
+   is committed and the layers are re-rendered properly.
+
+   transform-origin must be the top-left corner: the transform is derived by
+   solving for where content already drawn should appear, and that derivation
+   assumes an untranslated origin. will-change promotes it to its own
+   compositor layer, which is what keeps the gesture off the main thread. */
+.map-camera {
+  /* Relative, not absolute: the svg inside it is what gives the viewport its
+     height, and taking it out of flow collapsed the map to nothing. */
+  position: relative;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+/* No transition: the transform tracks the pointer directly, and easing it
+   would put the map behind the cursor rather than under it. */
 .map-viewport.standalone > .map-building-inspector {
   position: absolute; top: 10px; right: 10px; z-index: 6;
   width: min(320px, 46%); margin: 0;

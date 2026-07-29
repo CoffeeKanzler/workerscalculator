@@ -111,6 +111,22 @@ function saveIds(dirs) {
   return referenced;
 }
 
+// Deletes the raw download of anything already catalogued. A run of several
+// thousand items takes hours, and a download is dead weight the moment its
+// definitions are extracted, so this runs between batches too rather than only
+// at startup.
+function reclaimCataloguedDownloads(index) {
+  if (!existsSync(CONTENT)) return 0;
+  let reclaimed = 0;
+  for (const entry of readdirSync(CONTENT)) {
+    if (!index.items[entry]) continue;
+    rmSync(path.join(CONTENT, entry), { recursive: true, force: true });
+    reclaimed += 1;
+  }
+  if (reclaimed) console.log(`reclaimed ${reclaimed} download(s) already catalogued`);
+  return reclaimed;
+}
+
 function catalogueOne(id, index, { prune = false } = {}) {
   const dir = path.join(CONTENT, String(id));
   if (!existsSync(dir)) return { ok: false };
@@ -180,17 +196,12 @@ function main(argv) {
   // reaching the pruning that happens alongside it, so their raw downloads
   // accumulated across runs — 14 GB of them before this was noticed. Anything
   // already catalogued has no further use for its download.
-  if (prune) {
-    let reclaimed = 0;
-    for (const id of requested) {
-      if (!index.items[String(id)]) continue;
-      const dir = path.join(CONTENT, String(id));
-      if (!existsSync(dir)) continue;
-      rmSync(dir, { recursive: true, force: true });
-      reclaimed += 1;
-    }
-    if (reclaimed) console.log(`reclaimed ${reclaimed} download(s) already catalogued`);
-  }
+  //
+  // The sweep walks everything on disk rather than only this run's id list.
+  // Scoped to `requested` it could not see downloads left by an earlier run
+  // with a different list, which is how 33 GB accumulated while a run with
+  // --prune was in progress and apparently working.
+  if (prune) reclaimCataloguedDownloads(index);
   if (!ids.length) {
     console.log('nothing to fetch');
     return;
@@ -218,6 +229,10 @@ function main(argv) {
       if (result.ok) { added += 1; buildings += result.buildings; } else failed += 1;
     }
     writeIndex(indexFile, index);
+    // Between batches, not only at startup: a failed download leaves its
+    // directory behind, and a long run would otherwise hold every one of them
+    // until it finished.
+    if (prune) reclaimCataloguedDownloads(index);
     console.log(`batch ${number + 1}/${groups.length}: ${added} catalogued, `
       + `${failed} unavailable, ${buildings} building definitions, `
       + `catalog holds ${index.itemCount}`);

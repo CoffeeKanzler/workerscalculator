@@ -54,6 +54,9 @@ import {
 } from './republic.js?v=12';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { cursorReadout, tooltipPlacement, plotFraction } from './ui/chart_cursor.js?v=7';
+import {
+  cameraTransform, cameraTransformCss, shouldCommit, zoomAround, pointerWorld,
+} from './ui/map_camera.js?v=2';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -2937,6 +2940,9 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   // Building markers are drawn here rather than as elements. The canvas is
   // laid over the svg at the same size and redrawn whenever the camera moves.
   const markerCanvas = el('canvas', { class: 'map-marker-canvas', 'aria-hidden': 'true' });
+  // Both layers live inside this so a gesture can move them together as one
+  // composited image instead of re-rendering either of them.
+  const cameraLayer = el('div', { class: 'map-camera' }, svg, markerCanvas);
   let drawMarkerLayer = () => {};
   // How far the pointer travelled while held down. The camera handlers and the
   // click that selects a building are registered in separate blocks, so this
@@ -2949,84 +2955,68 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     drawMarkerLayer();
   };
   if (standalone) {
+    // What the layers were actually rendered for, as opposed to what the user
+    // is currently looking at. During a gesture these diverge and the gap is
+    // expressed as a transform; committing brings them back together.
     let drag = null;
-    let pendingView = null;
-    let cameraFrame = null;
-    let wheelTarget = null;
-    let wheelFrame = null;
+    let liveView = null;
+    let transformFrame = null;
+    let lastGestureAt = 0;
+    let commitTimer = null;
     let cachedRect = null;
-    const currentCamera = () => pendingView ?? standaloneMapViewBox ?? fullViewBox;
-    const mapRect = () => cachedRect ??= svg.getBoundingClientRect();
-    const scheduleCamera = view => {
-      pendingView = clampViewBox(view);
-      if (cameraFrame !== null) return;
-      cameraFrame = requestAnimationFrame(() => {
-        const next = pendingView;
-        pendingView = null;
-        cameraFrame = null;
-        cachedRect = null;
-        if (next) applyStandaloneViewBox(next);
-      });
+    const mapRect = () => cachedRect ??= cameraLayer.getBoundingClientRect();
+    const committedView = () => standaloneMapViewBox ?? activeStandaloneViewBox;
+    const currentCamera = () => liveView ?? committedView();
+
+    const paintTransform = () => {
+      transformFrame = null;
+      if (!liveView) return;
+      const rect = mapRect();
+      cameraLayer.style.transform = cameraTransformCss(
+        cameraTransform(committedView(), liveView, { width: rect.width, height: rect.height }));
     };
-    const stopWheelAnimation = () => {
-      if (wheelFrame !== null) cancelAnimationFrame(wheelFrame);
-      wheelFrame = null;
-      wheelTarget = null;
-    };
-    const animateWheel = () => {
-      wheelFrame = null;
-      if (!wheelTarget) return;
-      const current = standaloneMapViewBox ?? fullViewBox;
-      const target = wheelTarget;
-      const next = {
-        x: current.x + (target.x - current.x) * 0.32,
-        y: current.y + (target.y - current.y) * 0.32,
-        width: current.width + (target.width - current.width) * 0.32,
-      };
-      next.height = next.width * model.height / model.width;
-      const remaining = Math.max(Math.abs(target.x - next.x), Math.abs(target.y - next.y),
-        Math.abs(target.width - next.width));
-      if (remaining < 0.02) {
-        applyStandaloneViewBox(target);
-        wheelTarget = null;
+
+    // Re-rendering is what made the map lurch, so it happens once the pointer
+    // stops rather than on every frame of the gesture.
+    const commitView = () => {
+      commitTimer = null;
+      if (!liveView) return;
+      if (!shouldCommit(lastGestureAt, performance.now())) {
+        commitTimer = setTimeout(commitView, 60);
         return;
       }
-      applyStandaloneViewBox(next);
-      wheelFrame = requestAnimationFrame(animateWheel);
+      const view = liveView;
+      liveView = null;
+      cachedRect = null;
+      cameraLayer.style.transform = '';
+      applyStandaloneViewBox(view);
     };
-    const scheduleWheel = view => {
-      wheelTarget = clampViewBox(view);
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        applyStandaloneViewBox(wheelTarget);
-        wheelTarget = null;
-      } else if (wheelFrame === null) {
-        wheelFrame = requestAnimationFrame(animateWheel);
-      }
+
+    const showView = view => {
+      liveView = clampViewBox(view);
+      lastGestureAt = performance.now();
+      if (transformFrame === null) transformFrame = requestAnimationFrame(paintTransform);
+      if (commitTimer === null) commitTimer = setTimeout(commitView, 160);
     };
-    // The camera listens on the canvas, not the svg. The canvas covers the
-    // whole viewport, so once building markers moved onto it every wheel and
-    // drag landed there instead and the map could no longer be zoomed or
-    // panned by pointer at all.
+
     markerCanvas.addEventListener('wheel', event => {
       event.preventDefault();
-      const current = wheelTarget ?? currentCamera();
+      const current = currentCamera();
       const rect = mapRect();
-      const anchorX = current.x + (event.clientX - rect.left) / rect.width * current.width;
-      const anchorY = current.y + (event.clientY - rect.top) / rect.height * current.height;
+      const anchor = pointerWorld(current, {
+        x: event.clientX - rect.left, y: event.clientY - rect.top,
+      }, { width: rect.width, height: rect.height });
       const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? rect.height : 1);
-      const factor = Math.max(0.84, Math.min(1.19, Math.exp(delta * 0.0015)));
-      const width = current.width * factor;
-      const height = width * model.height / model.width;
-      scheduleWheel({
-        x: anchorX - (anchorX - current.x) * width / current.width,
-        y: anchorY - (anchorY - current.y) * height / current.height,
-        width, height,
-      });
+      // Applied to the live view rather than to a tween target: the gesture is
+      // now cheap enough to follow the wheel directly, so there is nothing to
+      // animate towards.
+      const factor = Math.max(0.5, Math.min(2, Math.exp(delta * 0.0015)));
+      showView(zoomAround(current, anchor, factor, model.height / model.width));
     }, { passive: false });
+
     markerCanvas.addEventListener('pointerdown', event => {
       if (event.button !== 0) return;
       draggedDistance = 0;
-      stopWheelAnimation();
       const current = currentCamera();
       drag = { x: event.clientX, y: event.clientY, view: { ...current }, rect: mapRect() };
       markerCanvas.setPointerCapture(event.pointerId);
@@ -3035,17 +3025,26 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       if (!drag) return;
       draggedDistance = Math.max(draggedDistance,
         Math.abs(event.clientX - drag.x) + Math.abs(event.clientY - drag.y));
-      scheduleCamera({
+      showView({
         ...drag.view,
         x: drag.view.x - (event.clientX - drag.x) / drag.rect.width * drag.view.width,
         y: drag.view.y - (event.clientY - drag.y) / drag.rect.height * drag.view.height,
       });
     });
-    markerCanvas.addEventListener('pointerup', event => {
-      if (markerCanvas.hasPointerCapture(event.pointerId)) markerCanvas.releasePointerCapture(event.pointerId);
+    const endDrag = event => {
+      if (event && markerCanvas.hasPointerCapture(event.pointerId)) {
+        markerCanvas.releasePointerCapture(event.pointerId);
+      }
+      if (!drag) return;
       drag = null;
-    });
-    markerCanvas.addEventListener('pointercancel', () => { drag = null; });
+      // A released drag has stopped by definition, so it commits without
+      // waiting out the idle window.
+      lastGestureAt = 0;
+      if (commitTimer !== null) clearTimeout(commitTimer);
+      commitTimer = setTimeout(commitView, 0);
+    };
+    markerCanvas.addEventListener('pointerup', endDrag);
+    markerCanvas.addEventListener('pointercancel', endDrag);
   }
   const waterImageHref = water => {
     if (terrainWaterImageCache.has(water.packed)) return terrainWaterImageCache.get(water.packed);
@@ -3522,13 +3521,15 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       // The viewport carries the standalone marker, not the svg: the inspector
       // is the svg's sibling, so a selector rooted at the svg could never
       // reach it and the overlay styling silently did nothing.
-      el('div', { class: 'map-viewport standalone' }, svg, markerCanvas, mapInspector = (() => {
+      el('div', { class: 'map-viewport standalone' },
+        cameraLayer,
+        mapInspector = (() => {
         const selectedBuilding = model.buildings.find(building =>
           building.index === mapSelectedBuildingIndex || building.focused);
         return selectedBuilding ? renderBuildingInspector(selectedBuilding)
           : el('aside', { class: 'map-building-inspector empty' },
             el('p', { class: 'hint' }, t('selectMapBuilding')));
-      })()));
+        })()));
   }
   return el('details', {
     class: 'secondary-section map-section',
