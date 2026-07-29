@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=116';
+import { STRINGS } from './i18n.js?v=119';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -10,7 +10,7 @@ import { completedPaidResearchKeys } from './research.js?v=2';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
-} from './train.js?v=18';
+} from './train.js?v=19';
 import {
   createIndexedDbObservationStore,
   createIndexedDbStatsStore,
@@ -55,12 +55,12 @@ import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
   paginateVehicleOpportunities, shareSafeSaveImport, vehicleCategoryGroup,
   vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=16';
+} from './fleet.js?v=18';
 import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=5';
+} from './adapters/save_folder_adapter.js?v=6';
 import { matchSaveBuilding } from './adapters/save_projection.js?v=2';
 import { bootstrapRuntime } from './bootstrap.js?v=2';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
@@ -3845,6 +3845,8 @@ function renderLogistics() {
   const scrapArbitrage = rankUsedMarketArbitrage(exactUsedVehicleQuotes, {
     currency: state.currency, economy: eco,
   });
+  const scrapTrades = scrapArbitrage.filter(row => row.worthBuying);
+  const scrapArbitrageTotal = scrapTrades.reduce((sum, row) => sum + row.profit, 0);
   const replacementCandidates = rankUsedVehicleReplacements(
     exactFleetOpportunities, exactUsedVehicleQuotes,
   );
@@ -3912,16 +3914,28 @@ function renderLogistics() {
     el('p', { class: 'hint' }, t('fleetCoverageHint')
       .replace('{exact}', fmt(exactFleetOpportunities.length, 0)).replace('{total}', fmt(fleetRecords.length, 0))),
     scrapArbitrage.length ? el('div', { class: 'used-fleet-offers scrap-arbitrage' },
-      el('h4', {}, t('fleetScrapArbitrageHeading')),
+      // Lead with the money: this is the one panel here describing a trade
+      // available right now rather than an appraisal of what is already owned.
+      el('div', { class: 'scrap-headline' },
+        el('strong', {}, `${fmt(scrapArbitrageTotal, 0)} ${cur()}`),
+        el('span', {}, t('fleetScrapTotalHint')
+          .replace('{n}', fmt(scrapTrades.length, 0)))),
       el('p', { class: 'hint' }, t('fleetScrapArbitrageHint')),
-      el('div', { class: 'institution-grid' }, ...scrapArbitrage.slice(0, 3).map(row =>
-        el('div', { class: 'totalsbox institution-card' },
-          el('h3', {}, row.quote.offer.modelFacts.name,
-            el('span', { class: 'evidence-badge exact' }, t('exact'))),
-          kv(t('fleetScrapBuyPrice'), fmt(row.purchaseValue, 0) + ' ' + cur()),
-          kv(t('fleetScrapRecovered'), fmt(row.recoveredValue.immediateExportValue, 0) + ' ' + cur()),
-          kv(t('fleetScrapLabor'), '-' + fmt(row.laborCost, 0) + ' ' + cur()),
-          kv(t('fleetScrapProfit'), fmt(row.profit, 0) + ' ' + cur(), 'pos')))) ) : null,
+      el('p', { class: 'hint' }, t('fleetScrapAllHint')
+        .replace('{n}', fmt(scrapArbitrage.length, 0))),
+      el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+        el('thead', {}, el('tr', {},
+          el('th', {}, t('vehicle')),
+          el('th', { class: 'r' }, t('fleetScrapBuyPrice')),
+          el('th', { class: 'r' }, t('fleetScrapRecovered')),
+          el('th', { class: 'r' }, t('fleetScrapLabor')),
+          el('th', { class: 'r' }, t('fleetScrapProfit')))),
+        el('tbody', {}, ...scrapArbitrage.map(row => el('tr', {},
+          el('td', {}, row.quote.offer.modelFacts.name),
+          el('td', { class: 'r' }, fmt(row.purchaseValue, 0)),
+          el('td', { class: 'r' }, fmt(row.recoveredValue.immediateExportValue, 0)),
+          el('td', { class: 'r' }, '-' + fmt(row.laborCost, 0)),
+          el('td', { class: row.worthBuying ? 'r pos' : 'r neg' }, fmt(row.profit, 0))))))) ) : null,
     exactUsedVehicleQuotes.length ? el('div', { class: 'used-fleet-offers' },
       el('h4', {}, t('fleetUsedHeading')),
       el('p', { class: 'hint' }, t('fleetUsedHint')),

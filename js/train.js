@@ -1,6 +1,6 @@
 import {
   normalVehicleProductionRecipe, resourceTransportSubtype, vehicleRuntimeCategory,
-} from './fleet.js?v=9';
+} from './fleet.js?v=11';
 
 export const isLocomotive = vehicle =>
   ['Lokomotive', 'Triebwagen'].includes(vehicle?.attrs?.Typ);

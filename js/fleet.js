@@ -409,11 +409,14 @@ export function usedMarketRecyclingArbitrage(quote, { currency, economy }) {
   };
 }
 
-// Best trade first, and offers that lose money are not trades.
+// Best margin first, and every offer is kept. Hiding the ones that lose money
+// would leave the player unable to see the market they are trading in — the
+// worthBuying flag says which are trades, so the caller can show the rest
+// without pretending they are opportunities.
 export function rankUsedMarketArbitrage(quotes, options) {
   return (quotes ?? [])
     .map(quote => usedMarketRecyclingArbitrage(quote, options))
-    .filter(row => row?.worthBuying)
+    .filter(Boolean)
     .sort((a, b) => b.profit - a.profit);
 }
 

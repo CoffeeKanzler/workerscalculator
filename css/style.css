@@ -780,3 +780,10 @@ table.data th, table.data td { border-color: var(--border); }
 .republic-map .map-buildings [data-map-category="other"] { fill: var(--muted); opacity: .45; }
 .map-legend { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 6px 0; }
 .map-legend span { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); font-size: 12px; }
+
+/* The one panel describing a trade available now rather than an appraisal of
+   what is already owned, so it leads with the sum rather than burying it. */
+.scrap-headline { display: flex; align-items: baseline; gap: 10px; margin: 4px 0 8px; }
+.scrap-headline strong { font-size: 22px; color: var(--pos); font-variant-numeric: tabular-nums; }
+.scrap-headline span { color: var(--muted); font-size: 13px; }
+.scrap-arbitrage { border-left: 3px solid var(--pos); padding-left: 12px; margin: 12px 0; }

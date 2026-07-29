@@ -670,14 +670,18 @@ test('an offer priced above its scrap value is not a trade', async () => {
   assert.ok(row.profit < 0);
 });
 
-test('ranking keeps only trades, best margin first', async () => {
+// Hiding the offers that lose money would leave a player unable to see the
+// market they are trading in; worthBuying says which are trades.
+test('ranking keeps every offer, best margin first', async () => {
   const { rankUsedMarketArbitrage } = await import('../js/fleet.js');
   const { economy } = arbitrageFixture({ purchaseValue: 1 });
   const cheap = arbitrageFixture({ purchaseValue: 1 }).quote;
   const dear = arbitrageFixture({ purchaseValue: 1e9 }).quote;
 
   const ranked = rankUsedMarketArbitrage([dear, cheap], { currency: 'RUB', economy });
-  assert.ok(ranked.every(row => row.profit > 0), 'losing offers are not trades');
+  assert.equal(ranked.length, 2, 'a losing offer is still part of the market');
+  assert.equal(ranked[0].worthBuying, true);
+  assert.equal(ranked.at(-1).worthBuying, false);
   for (let i = 1; i < ranked.length; i += 1) {
     assert.ok(ranked[i - 1].profit >= ranked[i].profit, 'best margin first');
   }
