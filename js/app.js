@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=113';
+import { STRINGS } from './i18n.js?v=114';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -34,6 +34,7 @@ import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
 import { mapLayerReport } from './models/map_layer_report.js';
+import { republicTrendAlerts } from './models/republic_trends.js?v=1';
 import { isTheme, nextTheme, resolveTheme, themeAttribute } from './ui/theme.js?v=2';
 import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
@@ -4221,7 +4222,10 @@ function renderRepublic() {
     state.plan.rows, prodBuildings(), state.plan.settings, name => eco.keyForName(name),
   ).map(alert => ({ ...alert, scopeName: plannerScopeName(alert.scopeId) }));
   const severityOrder = { critical: 0, warning: 1 };
-  const alerts = [...republicAlerts(republicModel), ...bufferAlerts].sort((a, b) =>
+  // Alerts the snapshot cannot raise: a republic in a three-year decline has
+  // nothing wrong with it at this instant, which is why nothing else says so.
+  const trendAlerts = republicTrendAlerts(state.statsRecords ?? []);
+  const alerts = [...republicAlerts(republicModel), ...trendAlerts, ...bufferAlerts].sort((a, b) =>
     severityOrder[a.severity] - severityOrder[b.severity]
       || (a.observed ?? Infinity) - (b.observed ?? Infinity)
       || String(a.scopeName).localeCompare(String(b.scopeName)));
@@ -4450,7 +4454,10 @@ function renderRepublic() {
   };
   const alertItems = filteredAlerts.length ? alertPresentation.visible.map(alert => el('div', { class: `alert ${alert.severity}` },
       el('strong', {}, alert.scopeName || t('republicOverview')),
-      el('span', {}, t(`alert.${alert.metric}`)),
+      el('span', {}, t(`alert.${alert.metric}`),
+        alert.trend?.years >= 1 ? el('span', { class: 'alert-trend' },
+          ` · ${t(alert.trend.years === 1 ? 'trendOneYear' : 'trendYears')
+            .replace('{n}', fmt(alert.trend.years, 0))}`) : null),
       el('span', { class: 'alert-tail' },
         Number.isFinite(alert.observed) ? el('span', { class: 'alert-value' },
           alert.metric === 'staffing' || alert.metric === 'health' || alert.metric === 'food'
