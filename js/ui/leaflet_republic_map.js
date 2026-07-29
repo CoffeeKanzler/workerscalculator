@@ -14,7 +14,7 @@ import {
   filterMapBuildings,
   mapPointToLeaflet,
   summarizeMapViewport,
-} from './republic_map.js?v=15';
+} from './republic_map.js?v=16';
 
 function imageBounds(image, height) {
   return [
@@ -71,9 +71,10 @@ function schematicBounds(points, height) {
 
 export function mountRepublicLeafletMap(container, options) {
   const {
-    model, buildings, scopes, layers, categoryVisibility, mode, query,
+    model, buildings, scopes, transportLines, layers, categoryVisibility, mode, query,
     pollutionOpacity, radiationOpacity, palette, waterHref, pollutionHref, radiationHref, tooltipFor,
-    onSelectBuilding, onSelectScope, onViewportSummary, initialCamera,
+    transportTooltipFor, onSelectBuilding, onSelectTransportLine,
+    onSelectScope, onViewportSummary, initialCamera,
   } = options;
   const fullBounds = latLngBounds([[0, 0], [model.height, model.width]]);
   const map = createMap(container, {
@@ -104,6 +105,7 @@ export function mountRepublicLeafletMap(container, options) {
     roads: layerGroup(),
     rails: layerGroup(),
     pedestrian: layerGroup(),
+    transport: layerGroup(),
     buildings: layerGroup(),
     scopes: layerGroup(),
   };
@@ -146,7 +148,27 @@ export function mountRepublicLeafletMap(container, options) {
     color: palette.pedestrian, weight: 1, opacity: 0.76,
   });
 
+  const transportRecords = (transportLines ?? []).map(line => {
+    const path = polyline(line.segments.map(segment =>
+      segment.map(point => mapPointToLeaflet(point, model.height))), {
+      color: palette.transport,
+      weight: 3,
+      opacity: 0.82,
+      interactive: true,
+      renderer: vectorRenderer,
+      pane: 'mapVectorPane',
+    });
+    path.bindTooltip(() => transportTooltipFor(line), {
+      sticky: true, className: 'map-leaflet-tooltip',
+    });
+    path.on('click', () => selectTransportLine(line));
+    path.addTo(groups.transport);
+    return { line, path };
+  });
+  container.dataset.mapTransportLineCount = String(transportRecords.length);
+
   let selectBuilding = () => {};
+  let selectTransportLine = () => {};
   const markerRecords = buildings.map(building => {
     const marker = circleMarker(mapPointToLeaflet(building, model.height), {
       ...metricStyle(building, mode, palette),
@@ -212,6 +234,15 @@ export function mountRepublicLeafletMap(container, options) {
     refreshBuildings();
     onSelectBuilding(building);
   };
+  selectTransportLine = line => {
+    for (const record of transportRecords) {
+      record.path.setStyle({
+        weight: record.line.slot === line.slot ? 6 : 3,
+        opacity: record.line.slot === line.slot ? 1 : 0.55,
+      });
+    }
+    onSelectTransportLine(line);
+  };
   const updateLayer = key => {
     const groupKey = ['construction', 'borders', 'outliers'].includes(key) ? 'buildings' : key;
     const group = groups[groupKey];
@@ -237,7 +268,7 @@ export function mountRepublicLeafletMap(container, options) {
     container.dataset.mapCenter = `${center.lat.toFixed(4)},${center.lng.toFixed(4)}`;
   }
 
-  for (const key of ['water', 'pollution', 'radiation', 'roads', 'rails', 'pedestrian', 'scopes']) {
+  for (const key of ['water', 'pollution', 'radiation', 'roads', 'rails', 'pedestrian', 'transport', 'scopes']) {
     updateLayer(key);
   }
   groups.buildings.addTo(map);
@@ -298,6 +329,13 @@ export function mountRepublicLeafletMap(container, options) {
       const point = mapPointToLeaflet(building, model.height);
       map.setView(point, Math.max(map.getZoom(), 2), { animate: true });
       selectBuilding(building);
+    },
+    focusTransportLine(line) {
+      const points = line.segments.flat();
+      if (points.length) {
+        map.fitBounds(schematicBounds(points, model.height).pad(0.18), { animate: false });
+      }
+      selectTransportLine(line);
     },
   };
 }

@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=138';
+import { STRINGS } from './i18n.js?v=139';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -29,7 +29,7 @@ import {
   planningProjection,
   refreshPlanningFromObservation,
   seedPlanningFromObservation,
-} from './models/planning_model.js?v=7';
+} from './models/planning_model.js?v=8';
 import { planningAreas } from './models/planning_areas.js';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
@@ -54,13 +54,14 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=27';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=28';
 import {
+  buildMapTransportLines,
   mapCountOrDash,
   normalizeMapMetric,
   radiationRasterPixels,
   residenceDetailForBuilding,
-} from './ui/republic_map.js?v=23';
+} from './ui/republic_map.js?v=24';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -112,6 +113,7 @@ let comparisonSnapshotError = '';
 let mapFocusBuildingIndex = null;
 let mapFocusScopeId = null;
 let mapSelectedBuildingIndex = null;
+let mapSelectedTransportLineSlot = null;
 let standaloneMapViewBox = null;
 let standaloneLeafletMap = null;
 let standaloneLeafletCamera = null;
@@ -169,7 +171,7 @@ function createInitialState() {
     republicScope: null,
     mapLayers: {
       water: true, pollution: true, radiation: false, roads: true, rails: true, pedestrian: false, buildings: true,
-      construction: true, scopes: true, borders: true, outliers: true,
+      transport: false, construction: true, scopes: true, borders: true, outliers: true,
     },
     mapBuildingFilter: '',
     mapPollutionOpacity: 0.68,
@@ -2857,6 +2859,27 @@ function renderMapBuildingInspector(building) {
     kv(t('mapCoordinates'), `X ${fmt(building.x, 1)} · Z ${fmt(building.z, 1)}`));
 }
 
+function renderMapTransportInspector(line) {
+  const stopLabel = stop => stop.building?.name || stop.building?.type
+    || (stop.buildingIndex < 0 ? '—' : `#${stop.buildingIndex}`);
+  return el('aside', {
+    class: 'map-building-inspector map-transport-inspector',
+    'data-map-transport-inspector': '',
+    'aria-live': 'polite',
+  },
+  el('h3', {}, line.name || `${t('vehicleLine')} #${line.slot}`,
+    el('span', { class: 'evidence-badge exact' }, t('exact'))),
+  kv(t('orderedStops'), `${fmt(line.locatedStopCount, 0)} / ${fmt(line.stopCount, 0)}`),
+  el('ol', { class: 'map-transport-stops' },
+    ...(line.stops ?? []).map(stop => el('li', {}, stopLabel(stop)))),
+  kv(t('assignedVehicles'), fmt(line.assignedVehicles?.length ?? 0, 0)),
+  Number.isFinite(line.completeObservedCycle)
+    ? kv(t('completeObservedCycle'), fmt(line.completeObservedCycle, 2)) : null,
+  Number.isFinite(line.largestObservedInterval)
+    ? kv(t('largestObservedInterval'), fmt(line.largestObservedInterval, 2)) : null,
+  el('p', { class: 'hint' }, t('mapTransportStraightLineHint')));
+}
+
 function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
   const mapMetric = normalizeMapMetric(state.mapMetric);
   if (state.mapMetric !== mapMetric) state.mapMetric = mapMetric;
@@ -2891,6 +2914,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
   const scopes = model.scopes.map(scope => ({
     ...scope, selected: scope.id === state.republicScope,
   }));
+  const transportLines = buildMapTransportLines(state.saveImport?.vehicleLines, buildings);
   const categoryVisibility = {
     living: true, industry: true, services: true, support: true, other: true,
     ...(state.mapCategoryVisibility ?? {}),
@@ -3038,6 +3062,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         layerToggle('roads', t('roads'), !!model.roads.length),
         layerToggle('rails', t('rails'), !!model.rails.length),
         layerToggle('pedestrian', t('pedestrianPaths'), !!model.pedestrian.length),
+        layerToggle('transport', t('savedTransportLines'), !!transportLines.length),
         layerToggle('buildings', t('buildings')),
         layerToggle('construction', t('underConstruction'),
           buildings.some(building => building.underConstruction)),
@@ -3065,11 +3090,33 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
             },
             onchange: () => saveState(),
           })) : null)),
+    transportLines.length ? el('label', { class: 'map-transport-select' },
+      t('savedTransportLine'),
+      el('select', {
+        'aria-label': t('savedTransportLine'),
+        onchange: event => {
+          const line = transportLines.find(item => String(item.slot) === event.target.value);
+          if (!line) return;
+          layers.transport = true;
+          state.mapLayers = { ...state.mapLayers, transport: true };
+          section.querySelector('[data-map-layer="transport"]').checked = true;
+          api?.setLayer('transport', true);
+          api?.focusTransportLine(line);
+          saveState();
+        },
+      },
+      el('option', { value: '' }, t('selectTransportLine')),
+      ...transportLines.map(line => el('option', {
+        value: String(line.slot),
+        selected: line.slot === mapSelectedTransportLineSlot,
+      }, line.name || `${t('vehicleLine')} #${line.slot}`)))) : null,
     el('div', { class: 'map-zoom-controls' },
       el('button', { onclick: () => api?.fitDeveloped() }, t('mapFitDeveloped')),
       el('button', { onclick: () => api?.fitFull() }, t('mapFullTerrain'))));
+  const selectedLine = transportLines.find(line => line.slot === mapSelectedTransportLineSlot);
   const selectedBuilding = buildings.find(building => building.inspected || building.focused);
-  mapInspector = selectedBuilding ? renderMapBuildingInspector(selectedBuilding)
+  mapInspector = selectedLine ? renderMapTransportInspector(selectedLine)
+    : selectedBuilding ? renderMapBuildingInspector(selectedBuilding)
     : el('aside', { class: 'map-building-inspector empty' },
       el('p', { class: 'hint' }, t('selectMapBuilding')));
   const viewport = el('div', { class: 'map-viewport standalone leaflet-map-viewport' },
@@ -3093,6 +3140,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
       model,
       buildings,
       scopes,
+      transportLines,
       layers,
       categoryVisibility,
       mode: mapMetric,
@@ -3113,12 +3161,17 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         warn: color('--warn', '#b17a18'),
         neg: color('--neg', '#b63b35'),
         pedestrian: '#e7bd69',
+        transport: color('--focus', '#d19042'),
       },
       waterHref: standaloneWaterImageHref,
       pollutionHref: standalonePollutionImageHref,
       radiationHref: pollution => standaloneRadiationImageHref(
         pollution, radiationLow, radiationHigh,
       ),
+      transportTooltipFor: line => el('div', { class: 'map-tooltip-content' },
+        el('strong', {}, line.name || `${t('vehicleLine')} #${line.slot}`),
+        el('span', {}, `${line.locatedStopCount} / ${line.stopCount} ${t('orderedStops')}`),
+        el('span', {}, `${line.assignedVehicles?.length ?? 0} ${t('assignedVehicles')}`)),
       tooltipFor: building => el('div', { class: 'map-tooltip-content' },
         el('strong', {}, building.displayName),
         building.name ? el('span', {}, building.name) : null,
@@ -3130,9 +3183,16 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
           ? el('span', {}, `${t('underConstruction')}: ${fmt(building.constructionProgress * 100, 0)} %`)
           : null),
       onSelectBuilding: building => {
+        mapSelectedTransportLineSlot = null;
         mapSelectedBuildingIndex = building.index;
         mapInspector.replaceWith(mapInspector = renderMapBuildingInspector(building));
         container.dataset.selectedBuilding = String(building.index);
+      },
+      onSelectTransportLine: line => {
+        mapSelectedBuildingIndex = null;
+        mapSelectedTransportLineSlot = line.slot;
+        mapInspector.replaceWith(mapInspector = renderMapTransportInspector(line));
+        container.dataset.selectedTransportLine = String(line.slot);
       },
       onSelectScope: scope => {
         mapFocusBuildingIndex = null;
@@ -3181,7 +3241,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   if (!model) return null;
   const layers = standalone ? {
     water: true, pollution: true, radiation: false, roads: true, rails: true, pedestrian: false, buildings: true,
-    construction: true, scopes: true, borders: true, outliers: true,
+    transport: false, construction: true, scopes: true, borders: true, outliers: true,
     ...(state.mapLayers ?? {}),
   } : {
     water: true, pollution: false, radiation: false, roads: true, rails: true, pedestrian: false, buildings: true,

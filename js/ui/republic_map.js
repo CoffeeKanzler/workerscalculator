@@ -50,6 +50,35 @@ export function filterMapBuildings(buildings, query) {
       .some(value => String(value ?? '').toLocaleLowerCase().includes(needle)));
 }
 
+export function buildMapTransportLines(lineOperations, buildings) {
+  const buildingByIndex = new Map((buildings ?? []).map(building => [building.index, building]));
+  return (lineOperations?.lines ?? []).flatMap(line => {
+    const locatedStops = [];
+    const segments = [];
+    let segment = [];
+    for (const stop of line.stops ?? []) {
+      const building = buildingByIndex.get(stop.buildingIndex);
+      const point = building && Number.isFinite(building.mapX) && Number.isFinite(building.mapY)
+        ? { mapX: building.mapX, mapY: building.mapY, buildingIndex: building.index }
+        : null;
+      if (point) {
+        locatedStops.push(point);
+        segment.push(point);
+      } else {
+        if (segment.length > 1) segments.push(segment);
+        segment = [];
+      }
+    }
+    if (segment.length > 1) segments.push(segment);
+    return segments.length ? [{
+      ...line,
+      stopCount: line.stops?.length ?? 0,
+      locatedStopCount: locatedStops.length,
+      segments,
+    }] : [];
+  });
+}
+
 export function residenceDetailForBuilding(building, summaries, options) {
   const capacity = Number.isFinite(options.capacity) && options.capacity >= 0
     ? options.capacity : null;

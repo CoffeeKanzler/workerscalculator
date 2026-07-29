@@ -228,6 +228,39 @@ try {
     check(!metricLabels.some(label => /Staffing|Besetzung/i.test(label)),
       'the removed staffing map mode is still visible', JSON.stringify(metricLabels));
 
+    const transportSelect = page.locator('.map-transport-select select');
+    if (await transportSelect.count()) {
+      const mappedLines = Number(await canvas.getAttribute('data-map-transport-line-count'));
+      check(mappedLines > 0, 'saved transport lines produced no exact stop-to-stop links');
+      await transportSelect.selectOption({ index: 1 });
+      await page.waitForTimeout(500);
+      check(await page.locator('[data-map-layer="transport"]').isChecked(),
+        'choosing a saved line did not enable its optional map layer');
+      const lineInspector = page.locator('[data-map-transport-inspector]');
+      check(await lineInspector.count() === 1, 'choosing a saved line opened no line inspector');
+      const lineText = await lineInspector.count() ? (await lineInspector.innerText()).trim() : '';
+      check(/\d/.test(lineText) && /stop|halte|vehicle|fahrzeug/i.test(lineText),
+        'the line inspector contains no exact route facts', lineText);
+      await screenshot(page, 'map-light-transport-line');
+      const transportThemeButton = page.locator('.themeswitch').first();
+      for (let step = 0; step < 3; step += 1) {
+        if (await page.evaluate(() => document.documentElement.dataset.theme === 'dark')) break;
+        await transportThemeButton.click();
+        await page.waitForTimeout(150);
+      }
+      await screenshot(page, 'map-dark-transport-line');
+      for (let step = 0; step < 3; step += 1) {
+        if (await page.evaluate(() => document.documentElement.dataset.theme === 'light')) break;
+        await transportThemeButton.click();
+        await page.waitForTimeout(150);
+      }
+      await page.locator('.map-layer-menu > summary').click();
+      await page.locator('[data-map-layer="transport"]').uncheck();
+      await page.locator('.map-layer-menu > summary').click();
+    } else {
+      failures.push('the imported save offered no mapped transport-line selector');
+    }
+
     const categoryButtons = page.locator('.map-data-legend button');
     for (let index = 0; index < await categoryButtons.count(); index += 1) {
       const button = categoryButtons.nth(index);

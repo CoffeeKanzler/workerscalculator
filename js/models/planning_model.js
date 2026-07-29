@@ -66,7 +66,7 @@ const DEFAULT_PLANNING = {
   republicScope: null,
   mapLayers: {
     water: true, pollution: true, radiation: false, roads: true, rails: true,
-    pedestrian: false, buildings: true, construction: true,
+    pedestrian: false, transport: false, buildings: true, construction: true,
     scopes: true, borders: true, outliers: true,
   },
   mapBuildingFilter: '',

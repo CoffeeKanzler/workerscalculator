@@ -38,12 +38,12 @@ export function moduleName(file) {
 export function bumpReferencesTo(text, name) {
   const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   let next = text.replace(
-    new RegExp(`(${escaped})\\?v=(\\d+)`, 'g'),
+    new RegExp(`((?<![A-Za-z0-9_.-])${escaped})\\?v=(\\d+)`, 'g'),
     (_, file, version) => `${file}?v=${Number(version) + 1}`,
   );
   // A bare import is cached under a URL that never changes, so give it one.
   next = next.replace(
-    new RegExp(`(from\\s+'[^']*${escaped})'`, 'g'),
+    new RegExp(`(from\\s+'[^']*(?<![A-Za-z0-9_.-])${escaped})'`, 'g'),
     (match, prefix) => (match.includes('?v=') ? match : `${prefix}?v=1'`),
   );
   return next;
@@ -74,13 +74,13 @@ export function planBump(changedFiles, { allFiles = [] } = {}) {
 
 function referenceMarkerStatus(previousText, currentText, name) {
   const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const marker = new RegExp(`${escaped}\\?v=(\\d+)`, 'g');
+  const marker = new RegExp(`(?<![A-Za-z0-9_.-])${escaped}\\?v=(\\d+)`, 'g');
   const versions = text => [...text.matchAll(marker)].map(match => Number(match[1]));
   const previous = versions(previousText);
   const current = versions(currentText);
   if (!current.length) {
     const bareImport = new RegExp(
-      `(?:from\\s+['"][^'"]*|(?:src|href)=['"][^'"]*)${escaped}['"]`,
+      `(?:from\\s+['"][^'"]*|(?:src|href)=['"][^'"]*)(?<![A-Za-z0-9_.-])${escaped}['"]`,
     );
     return bareImport.test(currentText) ? false : null;
   }

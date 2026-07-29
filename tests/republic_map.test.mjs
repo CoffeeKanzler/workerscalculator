@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 
 import {
   buildingMapMetric,
+  buildMapTransportLines,
   filterMapBuildings,
   mapCountOrDash,
   mapPointToLeaflet,
@@ -21,6 +22,50 @@ test('radiation raster colors only nonzero samples with the supplied theme palet
     120, 90, 70, 164,
     220, 140, 80, 255,
   ]);
+});
+
+test('transport lines preserve exact stop order and split around unresolved stops', () => {
+  const buildings = [
+    { index: 1, mapX: 10, mapY: 20 },
+    { index: 2, mapX: 30, mapY: 40 },
+    { index: 3, mapX: 50, mapY: 60 },
+    { index: 4, mapX: 70, mapY: 80 },
+  ];
+  const operations = { lines: [{
+    slot: 7,
+    name: 'Workers',
+    stops: [
+      { buildingIndex: 1, observedInterval: 4 },
+      { buildingIndex: 2, observedInterval: 5 },
+      { buildingIndex: -1, observedInterval: 6 },
+      { buildingIndex: 3, observedInterval: 7 },
+      { buildingIndex: 4, observedInterval: 8 },
+    ],
+    assignedVehicles: [{ id: 11, name: 'Bus' }],
+    completeObservedCycle: 30,
+    largestObservedInterval: 8,
+  }] };
+
+  const [line] = buildMapTransportLines(operations, buildings);
+
+  assert.equal(line.slot, 7);
+  assert.equal(line.locatedStopCount, 4);
+  assert.equal(line.stopCount, 5);
+  assert.deepEqual(line.segments, [
+    [{ mapX: 10, mapY: 20, buildingIndex: 1 }, { mapX: 30, mapY: 40, buildingIndex: 2 }],
+    [{ mapX: 50, mapY: 60, buildingIndex: 3 }, { mapX: 70, mapY: 80, buildingIndex: 4 }],
+  ]);
+  assert.equal(line.completeObservedCycle, 30);
+});
+
+test('transport map omits lines without an exact stop-to-stop segment', () => {
+  const operations = { lines: [
+    { slot: 1, stops: [{ buildingIndex: 1 }], assignedVehicles: [] },
+    { slot: 2, stops: [{ buildingIndex: 1 }, { buildingIndex: 99 }], assignedVehicles: [] },
+  ] };
+
+  assert.deepEqual(buildMapTransportLines(operations, [{ index: 1, mapX: 2, mapY: 3 }]), []);
+  assert.deepEqual(buildMapTransportLines(null, []), []);
 });
 
 test('map counts retain finite values and render non-finite values as unavailable', () => {

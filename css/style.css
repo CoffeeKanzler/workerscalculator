@@ -385,6 +385,16 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-tooltip-content { display: grid; gap: 2px; min-width: 150px; font-size: 12px; }
 .map-tooltip-content strong { color: var(--accent2); font-size: 13px; }
 .map-tooltip-content span { color: var(--muted); }
+.map-transport-inspector h3 { color: var(--focus); }
+.map-transport-stops {
+  max-height: 170px;
+  margin: 7px 0 10px;
+  padding-left: 24px;
+  overflow: auto;
+  color: var(--muted);
+  font-size: 12px;
+}
+.map-transport-stops li + li { margin-top: 3px; }
 .map-toolbar { display: flex; flex-wrap: wrap; align-items: end; gap: 10px 18px; margin: 0 0 10px; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--panel); }
 .map-toolbar fieldset { display: flex; flex-wrap: wrap; gap: 6px 14px; min-width: min(100%, 620px); margin: 0; padding: 5px 8px 8px; border: 1px solid var(--border); border-radius: 6px; }
 .map-toolbar fieldset label { white-space: nowrap; }
@@ -393,6 +403,14 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-data-toolbar { align-items: center; gap: 8px 14px; }
 .map-data-toolbar .map-search { flex: 1 1 250px; min-width: min(100%, 250px); }
 .map-data-toolbar .map-search input { width: 100%; }
+.map-data-toolbar .map-transport-select {
+  display: grid;
+  gap: 3px;
+  min-width: min(100%, 240px);
+  color: var(--muted);
+  font-size: 12px;
+}
+.map-data-toolbar .map-transport-select select { max-width: 320px; }
 .map-metric-toggle { flex: 0 1 auto; }
 .map-layer-menu { position: relative; }
 .map-layer-menu > summary {

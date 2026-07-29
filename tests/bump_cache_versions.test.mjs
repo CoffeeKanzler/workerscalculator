@@ -127,6 +127,25 @@ test('check mode rejects a changed referenced module whose marker stayed put', (
   }), ['index.html']);
 });
 
+test('check mode does not combine a module marker with a longer module suffix', () => {
+  const targets = ['js/app.js'];
+  const previousFiles = {
+    'js/app.js': [
+      "import './ui/republic_map.js?v=12';",
+      "import './ui/leaflet_republic_map.js?v=21';",
+    ].join('\n'),
+  };
+  const currentFiles = {
+    'js/app.js': [
+      "import './ui/republic_map.js?v=13';",
+      "import './ui/leaflet_republic_map.js?v=22';",
+    ].join('\n'),
+  };
+  assert.deepEqual(staleReferenceTargets([
+    'js/ui/republic_map.js', 'js/ui/leaflet_republic_map.js',
+  ], { targets, previousFiles, currentFiles }), []);
+});
+
 test('the check CLI accepts moved markers and rejects unchanged markers', () => {
   const directory = mkdtempSync(join(tmpdir(), 'workers-cache-check-'));
   const runGit = (...args) => execFileSync('git', args, {
