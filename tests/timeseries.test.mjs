@@ -23,6 +23,17 @@ test('series extraction omits non-finite values', () => {
   assert.deepEqual(points.map(point => point.y), [2, 4]);
 });
 
+test('undated current snapshots do not flatten history or defeat recent ranges', () => {
+  const records = [
+    { year: 2024, day: 300, value: 2 },
+    { year: 2025, day: 200, value: 4 },
+    { year: 0, day: 0, current: true, value: 5 },
+  ];
+  assert.deepEqual(seriesFromRecords(records, record => record.value).map(point => point.y), [2, 4]);
+  assert.deepEqual(filterRange(records, 'year'), records.slice(0, 2));
+  assert.deepEqual(filterRange(records, 'month'), records.slice(1, 2));
+});
+
 test('downsampling preserves first last minimum and maximum', () => {
   const points = Array.from({ length: 1000 }, (_, x) => ({
     x, y: x === 501 ? 9000 : Math.sin(x),

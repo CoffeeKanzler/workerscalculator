@@ -38,7 +38,7 @@ import { mapLayerReport } from './models/map_layer_report.js';
 import {
   CATEGORY_MARKS, buildTypeCategoryIndex, categoryForSaveType,
 } from './models/building_category.js?v=6';
-import { republicTrendAlerts } from './models/republic_trends.js?v=1';
+import { republicTrendAlerts } from './models/republic_trends.js?v=2';
 import { isTheme, nextTheme, resolveTheme, themeAttribute } from './ui/theme.js?v=2';
 import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
@@ -49,10 +49,10 @@ import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
 } from './republic.js?v=12';
-import { filterRange, seriesFromRecords } from './timeseries.js?v=1';
+import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
-} from './ui/time_series_chart.js?v=3';
+} from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {

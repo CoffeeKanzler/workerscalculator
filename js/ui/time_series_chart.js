@@ -168,6 +168,8 @@ export function mountTimeSeriesChart(container, {
       max: formatValue(item.max),
     }) + ' '));
   container.classList.add('history-chart-host');
+  container.dataset.chartGroup = group;
+  container.dataset.visibleSeries = String(usable.length);
   container.replaceChildren(toolbar, plotHost, legend, tooltip, summary);
 
   let plot = null;
@@ -264,9 +266,19 @@ export function mountTimeSeriesChart(container, {
         if (index > 0) {
           legendButtons[index - 1].setAttribute(
             'aria-pressed', String(_chart.series[index].show));
+          container.dataset.visibleSeries = String(
+            _chart.series.slice(1).filter(item => item.show).length);
         }
       }],
       setScale: [(chart, key) => {
+        const scale = chart.scales[key];
+        if (key === 'x') {
+          container.dataset.chartMin = String(scale.min);
+          container.dataset.chartMax = String(scale.max);
+        } else if (key === 'y') {
+          container.dataset.chartYMin = String(scale.min);
+          container.dataset.chartYMax = String(scale.max);
+        }
         if (key !== 'x' || chart.status !== 1) return;
         const { min, max } = chart.scales.x;
         const zoomed = min > fullMin + epsilon || max < fullMax - epsilon;
@@ -275,6 +287,10 @@ export function mountTimeSeriesChart(container, {
     },
   };
   plot = new uPlot(options, [aligned.xValues, ...aligned.valueColumns], plotHost);
+  container.dataset.chartMin = String(plot.scales.x.min);
+  container.dataset.chartMax = String(plot.scales.x.max);
+  container.dataset.chartYMin = String(plot.scales.y.min);
+  container.dataset.chartYMax = String(plot.scales.y.max);
   plot.root.setAttribute('role', 'img');
   plot.root.setAttribute('aria-label',
     `${title}: ${formatGameDateKey(fullMin)}–${formatGameDateKey(fullMax)}`);

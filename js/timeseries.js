@@ -1,20 +1,28 @@
 export function recordDateKey(record) {
-  return (record.year ?? 0) * 366 + (record.day ?? 0);
+  const year = Number(record.year);
+  const day = Number(record.day);
+  // myCanyon ends with a useful $STAT_CURRENT snapshot dated 0/0. Treating
+  // that sentinel as year zero stretches a century of history across 2,025 years.
+  if (!Number.isFinite(year) || year <= 0 || !Number.isFinite(day) || day < 0) return NaN;
+  return year * 366 + day;
 }
 
 export function filterRange(records, range = 'all') {
-  if (range === 'all' || records.length < 2) return records;
+  if (range === 'all') return records;
+  const dated = records.filter(record => Number.isFinite(recordDateKey(record)));
+  if (dated.length < 2) return dated;
   const span = range === 'month' ? 30 : range === 'year' ? 366 : Infinity;
-  const latest = recordDateKey(records.at(-1));
-  return records.filter(record => recordDateKey(record) >= latest - span);
+  const latest = recordDateKey(dated.at(-1));
+  return dated.filter(record => recordDateKey(record) >= latest - span);
 }
 
 export function seriesFromRecords(records, valueOf) {
   return records.flatMap((record, index) => {
     const y = valueOf(record, index);
-    if (!Number.isFinite(y)) return [];
+    const x = recordDateKey(record);
+    if (!Number.isFinite(x) || !Number.isFinite(y)) return [];
     return [{
-      x: recordDateKey(record), y, record,
+      x, y, record,
       label: `${record.year ?? '?'} / ${record.day ?? '?'}`,
     }];
   });

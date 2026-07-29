@@ -48,6 +48,11 @@ try {
   if (zoomed.some(range => range.max - range.min >= 190)) {
     throw new Error(`drag zoom did not narrow both charts: ${JSON.stringify(zoomed)}`);
   }
+  const exposedZoom = await page.locator('.history-chart-host').evaluateAll(nodes =>
+    nodes.map(node => Number(node.dataset.chartMax) - Number(node.dataset.chartMin)));
+  if (exposedZoom.some(span => !(span < 190))) {
+    throw new Error(`mounted charts did not expose their zoom range: ${exposedZoom}`);
+  }
 
   await page.locator('#chart-a .chart-reset').click();
   await page.waitForTimeout(250);
@@ -59,6 +64,9 @@ try {
   await legend.click();
   if (await legend.getAttribute('aria-pressed') !== 'false') {
     throw new Error('a real legend click did not hide its series');
+  }
+  if (await page.locator('#chart-a').getAttribute('data-visible-series') !== '1') {
+    throw new Error('the mounted chart did not expose its visible-series count');
   }
 
   if (errors.length) throw new Error(errors.join('\n'));

@@ -11,7 +11,7 @@
 // city, not a series, so anything claiming a per-area direction would be
 // invented. Only the republic-wide series are real.
 
-import { recordDateKey } from '../timeseries.js';
+import { recordDateKey } from '../timeseries.js?v=2';
 
 const YEAR = 366;
 

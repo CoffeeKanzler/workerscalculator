@@ -13,9 +13,14 @@
 // Exits non-zero on the first failed expectation.
 
 import { chromium } from 'playwright';
+import { mkdir } from 'node:fs/promises';
+import path from 'node:path';
 
 const SAVE = process.argv[2];
 const BASE = process.argv[3] ?? 'http://localhost:8765/index.html';
+const SHOT_DIR = process.env.WORKERS_SCREENSHOT_DIR;
+const SAVE_SLUG = path.basename(SAVE ?? '').normalize('NFKD')
+  .replace(/[^\w.-]+/g, '-').replace(/^-|-$/g, '').toLowerCase();
 
 if (!SAVE) {
   console.error('usage: node tests/browser/save_import.mjs <save-dir> [baseUrl]');
@@ -27,6 +32,14 @@ const check = (condition, message, detail) => {
   if (condition) return true;
   failures.push(detail ? `${message}\n  ${detail}` : message);
   return false;
+};
+const screenshot = async (page, name) => {
+  if (!SHOT_DIR) return;
+  await mkdir(SHOT_DIR, { recursive: true });
+  await page.screenshot({
+    path: path.join(SHOT_DIR, `${SAVE_SLUG}-${name}.png`),
+    fullPage: true,
+  });
 };
 
 
@@ -40,15 +53,29 @@ page.on('console', message => {
 
 try {
   await page.goto(BASE, { waitUntil: 'load' });
+  await page.evaluate(async () => {
+    localStorage.clear();
+    const databases = typeof indexedDB.databases === 'function'
+      ? await indexedDB.databases() : [];
+    await Promise.all(databases.map(database => new Promise(resolve => {
+      const request = indexedDB.deleteDatabase(database.name);
+      request.onsuccess = request.onerror = request.onblocked = resolve;
+    })));
+  });
+  await page.reload({ waitUntil: 'load' });
   await page.waitForSelector('.section-tabs button', { timeout: 30_000 });
 
   // A webkitdirectory input takes the directory itself, not a file list.
   await page.setInputFiles('.importpicker input[type=file]', [SAVE]);
-  // A large save takes a while to parse; the republic name appearing is the
-  // signal that the projection landed.
-  await page.waitForSelector('.savebadge, .republic-name, [data-save-loaded]', { timeout: 180_000 })
-    .catch(() => {});
-  await page.waitForTimeout(4000);
+  // Waiting on selectors that never rendered hid every successful import
+  // behind a 180-second timeout, while advancing at core completion races the
+  // deferred map update that replaces myCanyon's live tab tree.
+  await page.waitForFunction(() =>
+    document.body.innerText.length > 2000
+      && !document.querySelector('.start-hero')
+      && !document.querySelector('.import-spinner'),
+  null, { timeout: 600_000 });
+  await page.waitForTimeout(500);
 
   const loaded = await page.evaluate(() =>
     document.body.innerText.length > 2000 && !document.querySelector('.start-hero'));
@@ -206,18 +233,19 @@ try {
     await historyTab.click();
     await page.waitForTimeout(1200);
 
-    const charts = page.locator('.republic-chart .chart');
+    const charts = page.locator('.republic-chart .uplot');
     const chartCount = await charts.count();
     check(chartCount > 0, 'the history tab drew no charts');
 
     if (chartCount) {
       const chart = charts.first();
-      const box = await chart.boundingBox();
+      const over = chart.locator('.u-over');
+      const box = await over.boundingBox();
       await page.mouse.move(box.x + box.width * 0.6, box.y + box.height * 0.5);
       await page.waitForTimeout(300);
 
       const readout = await page.evaluate(() => {
-        const tooltip = document.querySelector('.chart-tooltip');
+        const tooltip = document.querySelector('.republic-chart .chart-tooltip');
         if (!tooltip) return null;
         return {
           visible: getComputedStyle(tooltip).opacity !== '0',
@@ -229,6 +257,13 @@ try {
       check(readout?.visible, 'the chart tooltip stayed hidden while hovering');
       check(readout?.rows > 0, 'the chart tooltip named no series');
       check(readout?.text?.length > 0, 'the chart tooltip was empty');
+      const linked = await page.evaluate(() => {
+        const cursors = [...document.querySelectorAll('.republic-chart .u-cursor-x')];
+        return cursors.length > 1 && cursors.slice(0, 2)
+          .every(cursor => !cursor.classList.contains('u-off'));
+      });
+      check(linked, 'hovering one chart did not reveal the linked cursor on another');
+      await screenshot(page, 'history-light-hover');
 
       // Moving elsewhere must report something different, or the readout is
       // static decoration rather than a reading of the point under the cursor.
@@ -236,18 +271,92 @@ try {
       await page.mouse.move(box.x + box.width * 0.2, box.y + box.height * 0.5);
       await page.waitForTimeout(300);
       const secondText = await page.evaluate(() =>
-        document.querySelector('.chart-tooltip')?.innerText.trim());
+        document.querySelector('.republic-chart .chart-tooltip')?.innerText.trim());
       check(secondText && secondText !== firstText,
         'the tooltip reported the same values at two different points');
 
-      await page.mouse.move(box.x - 40, box.y - 40);
+      const fullRanges = await page.locator(
+        '.history-chart-host[data-chart-group="republic-history"]').evaluateAll(nodes =>
+        nodes.map(node => Number(node.dataset.chartMax) - Number(node.dataset.chartMin)));
+      await page.mouse.move(box.x + box.width * .25, box.y + box.height * .5);
+      await page.mouse.down();
+      await page.mouse.move(box.x + box.width * .55, box.y + box.height * .5, { steps: 12 });
+      await page.mouse.up();
       await page.waitForTimeout(300);
-      const hidden = await page.evaluate(() =>
-        getComputedStyle(document.querySelector('.chart-tooltip')).opacity === '0');
-      check(hidden, 'the tooltip stayed on screen after the pointer left the chart');
+      const zoomed = await page.locator(
+        '.history-chart-host[data-chart-group="republic-history"]').evaluateAll(nodes =>
+        nodes.map(node => ({
+          min: Number(node.dataset.chartMin),
+          max: Number(node.dataset.chartMax),
+        })));
+      check(zoomed.length === fullRanges.length
+        && zoomed.every((range, index) => range.max - range.min < fullRanges[index]),
+      'drag zoom did not narrow every republic chart', JSON.stringify({ fullRanges, zoomed }));
+      check(new Set(zoomed.map(range => `${range.min.toFixed(3)}:${range.max.toFixed(3)}`)).size === 1,
+        'republic charts did not share one zoom range', JSON.stringify(zoomed.slice(0, 4)));
+      await page.mouse.move(box.x + box.width * .45, box.y + box.height * .45);
+      await screenshot(page, 'history-zoom-hover');
+
+      const reset = page.locator('.republic-chart .chart-reset.active').first();
+      check(await reset.count() > 0, 'zooming revealed no Reset zoom control');
+      if (await reset.count()) {
+        await reset.click();
+        await page.waitForTimeout(300);
+      }
+      const restored = await page.locator(
+        '.history-chart-host[data-chart-group="republic-history"]').evaluateAll(nodes =>
+        nodes.map(node => Number(node.dataset.chartMax) - Number(node.dataset.chartMin)));
+      check(restored.every((span, index) => span >= fullRanges[index] - 1),
+        'Reset zoom did not restore every chart', JSON.stringify({ fullRanges, restored }));
+
+      const firstHost = page.locator(
+        '.history-chart-host[data-chart-group="republic-history"]').first();
+      const beforeY = await firstHost.evaluate(node =>
+        Number(node.dataset.chartYMax) - Number(node.dataset.chartYMin));
+      const legend = firstHost.locator('.chart-legend-item').first();
+      const beforeVisible = Number(await firstHost.getAttribute('data-visible-series'));
+      await legend.click();
+      await page.waitForTimeout(300);
+      const toggled = await firstHost.evaluate(node => ({
+        visible: Number(node.dataset.visibleSeries),
+        ySpan: Number(node.dataset.chartYMax) - Number(node.dataset.chartYMin),
+      }));
+      check(toggled.visible === beforeVisible - 1,
+        'a real legend click did not hide its series', JSON.stringify(toggled));
+      check(Math.abs(toggled.ySpan - beforeY) > Math.max(1e-9, beforeY * .001),
+        'hiding the dominant series did not rescale the chart',
+        JSON.stringify({ beforeY, afterY: toggled.ySpan }));
+      await screenshot(page, 'history-series-hidden');
+
+      const themeButton = page.locator('.themeswitch').first();
+      for (let step = 0; step < 3; step += 1) {
+        if (await page.evaluate(() => document.documentElement.dataset.theme === 'dark')) break;
+        await themeButton.click();
+        await page.waitForTimeout(150);
+      }
+      await screenshot(page, 'history-dark');
     }
   } else {
     failures.push('no history tab was offered after importing a save');
+  }
+
+  await page.locator('.section-tabs button', { hasText: /Diagnose|Diagnose/i }).first().click();
+  await page.locator('.context-tabs button', { hasText: /Analysis|Analyse/i }).first().click();
+  const virtualTable = page.locator('.virtual-tablewrap').first();
+  if (await virtualTable.count()) {
+    const tableState = await virtualTable.evaluate(node => ({
+      total: Number(node.dataset.virtualTotal),
+      mounted: node.querySelectorAll('tbody tr:not(.virtual-spacer)').length,
+    }));
+    check(tableState.total > tableState.mounted,
+      'Analysis mounted every row instead of a visible window', JSON.stringify(tableState));
+    await screenshot(page, 'analysis-top');
+    await virtualTable.focus();
+    await page.keyboard.press('PageDown');
+    await page.waitForTimeout(200);
+    await screenshot(page, 'analysis-scrolled');
+  } else {
+    failures.push('Analysis rendered no virtual table');
   }
 
   if (errors.length) failures.push(`page errors:\n  ${errors.join('\n  ')}`);
