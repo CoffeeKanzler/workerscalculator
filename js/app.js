@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=146';
+import { STRINGS } from './i18n.js?v=148';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -44,7 +44,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   filterCitizenDiagnostics, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=30';
+} from './save_model.js?v=31';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -57,8 +57,8 @@ import { createVirtualTable } from './ui/virtual_table.js?v=1';
 import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=30';
 import { workerAccessAvailability } from './models/access_graph.js?v=11';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=11';
-import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=5';
-import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=4';
+import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=6';
+import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=6';
 import {
   buildMapTransportLines,
   mapCountOrDash,
@@ -76,8 +76,8 @@ import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=10';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=8';
+} from './adapters/save_folder_adapter.js?v=11';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=10';
 import { bootstrapRuntime } from './bootstrap.js?v=4';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
@@ -367,6 +367,28 @@ let DATA = null; // {resources, defaults, prodBuildings, cityBuildings, vehicles
 // Data version: bumped together with the ?v= in index.html on each release so
 // GitHub Pages' 10-minute cache can't serve stale JSON to a fresh app.
 const DATA_V = new URL(import.meta.url).searchParams.get('v') ?? '0';
+
+// index.html carries no marker of its own, so a browser holding a stale copy of
+// the shell keeps loading the module versions that copy names and behaves like
+// an old build long after a new one is deployed. Asking the origin for the
+// dataset stamp uncached is the only way the running page can find that out.
+async function deployedAppBuild() {
+  try {
+    const url = new URL('../data/VERSION.json', import.meta.url);
+    url.searchParams.set('build', String(Date.now()));
+    const response = await fetch(url, { cache: 'no-store' });
+    if (!response.ok) return null;
+    return (await response.json())?.appBuild ?? null;
+  } catch {
+    return null;
+  }
+}
+
+export async function checkForNewerBuild() {
+  const deployed = await deployedAppBuild();
+  if (!deployed || String(deployed) === String(DATA_V)) return null;
+  return { running: String(DATA_V), deployed: String(deployed) };
+}
 
 async function loadData() {
   const get = path => {
@@ -2360,7 +2382,48 @@ function renderSaveImport() {
     })() : null) : null;
 
   return el('section', {}, el('h2', {}, t('saveImportTitle')), el('p', { class: 'hint' }, t('saveImportHint')),
-    renderLocalWorkshopPicker(), picker, status, retryMap, liveStats, audit);
+    renderLocalWorkshopPicker(), picker, status, retryMap, liveStats, audit,
+    renderStoredDataReset());
+}
+
+// Snapshots persist across releases, so one written by an older build can carry
+// a shape a newer one cannot use — and from the inside that looks like the app
+// is broken rather than like the data is old. This is the way out that does not
+// need developer tools.
+function renderStoredDataReset() {
+  return el('details', { class: 'secondary-section stored-data-reset' },
+    el('summary', {}, t('storedDataResetTitle')),
+    el('p', { class: 'hint' }, t('storedDataResetHint')),
+    el('button', {
+      class: 'danger',
+      'data-stored-data-reset': '',
+      onclick: async event => {
+        if (!confirm(t('storedDataResetConfirm'))) return;
+        event.currentTarget.disabled = true;
+        await clearStoredData();
+        const url = new URL(location.href);
+        url.hash = '';
+        url.searchParams.set('reset', String(Date.now()));
+        location.replace(url);
+      },
+    }, t('storedDataResetAction')));
+}
+
+export async function clearStoredData() {
+  try { localStorage.clear(); } catch { /* a locked-down profile still deserves the reload */ }
+  try { sessionStorage.clear(); } catch { /* same */ }
+  if (!globalThis.indexedDB?.databases) return;
+  try {
+    const databases = await indexedDB.databases();
+    await Promise.all(databases.map(database => database.name
+      ? new Promise(resolve => {
+        const request = indexedDB.deleteDatabase(database.name);
+        request.onsuccess = resolve;
+        request.onerror = resolve;
+        request.onblocked = resolve;
+      })
+      : null));
+  } catch { /* deleting is best effort; the reload is what the reader needs */ }
 }
 
 // ---------------------------------------------------------------- city tab
@@ -6207,6 +6270,25 @@ async function refreshAddonRuntime() {
   }
 }
 
+// A stale shell is invisible from the inside — the app looks like it simply
+// stopped working — so it has to say so, and offer the one action that fixes it.
+async function announceNewerBuild() {
+  const mismatch = await checkForNewerBuild();
+  if (!mismatch || document.querySelector('[data-stale-build]')) return;
+  const reload = el('button', {
+    onclick: () => {
+      const url = new URL(location.href);
+      url.searchParams.set('build', mismatch.deployed);
+      location.replace(url);
+    },
+  }, t('staleBuildReload'));
+  document.body.prepend(el('div', {
+    class: 'stale-build-banner',
+    role: 'status',
+    'data-stale-build': mismatch.deployed,
+  }, el('span', {}, t('staleBuildNotice')), reload));
+}
+
 function update() {
   applyTuning(state.tuning);
   saveState();
@@ -6242,6 +6324,7 @@ loadState().then(() => {
   saveState();
   syncHash();
   render();
+  announceNewerBuild();
 }).catch(err => {
   $('#app').textContent = 'Failed to load data files: ' + err +
     ' — if you opened index.html directly, serve the folder with a local web server (e.g. `python3 -m http.server`).';

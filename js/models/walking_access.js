@@ -115,6 +115,12 @@ const WALKING_SLOT_KINDS = new Set([0, 2]);
 // is a (class, id) pair because the id only means anything within its network.
 export function walkingEdgeRefsOf(building) {
   if (Array.isArray(building?.walkingEdgeRefs)) return building.walkingEdgeRefs;
+  // A snapshot taken before roads were walkable stored footpath ids only. It
+  // still describes a real, if incomplete, attachment, so it degrades to
+  // footpaths rather than leaving the reader with an empty graph and no reason.
+  if (Array.isArray(building?.pedestrianEdgeIds)) {
+    return building.pedestrianEdgeIds.map(id => [PEDESTRIAN_NETWORK_CLASS, id]);
+  }
   const refs = [];
   const seen = new Set();
   for (const connection of building?.connections ?? []) {

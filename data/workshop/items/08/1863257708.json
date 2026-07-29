@@ -2,30 +2,7 @@
   "schemaVersion": 1,
   "workshopId": "1863257708",
   "source": "steamcmd-anonymous",
-  "extractedAt": "2026-07-29T08:28:47.281Z",
-  "buildings": [
-    {
-      "id": "1863257708/type_164-80-4",
-      "nameId": null,
-      "types": [
-        "TYPE_LIVING"
-      ],
-      "workers": 0,
-      "professors": 0,
-      "production": {},
-      "consumption": {},
-      "consumptionPerSecond": {},
-      "livingSpace": 0,
-      "citizenAbleServe": 0,
-      "qualityOfLiving": 0.84,
-      "attractiveScore": null,
-      "storages": {},
-      "constructionResources": {},
-      "electricWorkerFactors": {},
-      "nameStr": "type-164 flats",
-      "workshopId": "1863257708",
-      "modPath": "type_164-80-4"
-    }
-  ],
+  "extractedAt": "2026-07-29T19:20:50.167Z",
+  "buildings": [],
   "vehicles": []
 }

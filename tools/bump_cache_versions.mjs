@@ -134,7 +134,13 @@ function main(argv) {
   // A data-only change moves no module marker but still has to advance the
   // shell, since DATA_V is where data/ fetches get their marker from.
   if (!plan.modules.length && !plan.touchesJs && !plan.touchesCss) {
-    if (!check) console.log('no js/, css/ or data/ change, nothing to advance');
+    // The build stamp still has to agree with the shell, whatever changed.
+    const stamped = stampAppBuild({ check });
+    if (stamped === 'stale') {
+      console.error('data/VERSION.json appBuild is stale');
+      return 1;
+    }
+    if (!check) console.log(stamped ? `advanced markers in ${stamped}` : 'no js/, css/ or data/ change, nothing to advance');
     return 0;
   }
 
@@ -184,8 +190,40 @@ function main(argv) {
     }
   }
 
+  // The one file with no marker of its own is index.html, so a browser holding
+  // a stale copy of it never learns that newer modules exist. Recording the
+  // shell's marker in the dataset lets the running app fetch it uncached and
+  // notice that it is out of date, instead of silently behaving like an old
+  // build that has already been deployed over.
+  const stampEdit = stampAppBuild({ check });
+  if (stampEdit === 'stale') {
+    console.error('data/VERSION.json appBuild is stale');
+    console.error('run: node tools/bump_cache_versions.mjs');
+    return 1;
+  }
+  if (stampEdit) edits.push(stampEdit);
+
   console.log(edits.length ? `advanced markers in ${edits.join(', ')}` : 'markers already current');
   return 0;
+}
+
+export function appBuildMarker(html) {
+  return html.match(/js\/app\.js\?v=(\d+)/)?.[1] ?? null;
+}
+
+function stampAppBuild({ check = false } = {}) {
+  const shell = path.join(ROOT, 'index.html');
+  const target = path.join(ROOT, 'data', 'VERSION.json');
+  if (!existsSync(shell) || !existsSync(target)) return null;
+  const marker = appBuildMarker(readFileSync(shell, 'utf8'));
+  if (!marker) return null;
+  const before = readFileSync(target, 'utf8');
+  const parsed = JSON.parse(before);
+  if (parsed.appBuild === marker) return null;
+  if (check) return 'stale';
+  parsed.appBuild = marker;
+  writeFileSync(target, `${JSON.stringify(parsed, null, 1)}\n`);
+  return 'data/VERSION.json';
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

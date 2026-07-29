@@ -1365,3 +1365,21 @@ table.data th, table.data td { border-color: var(--border); }
    the one that carries colour. */
 .worker-access-graph .node-capacity.short { fill: var(--warn); }
 .worker-access-inspector dd.short { color: var(--warn); }
+
+.stale-build-banner {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  background: var(--warn);
+  color: var(--panel);
+  font-weight: 600;
+}
+.stale-build-banner button {
+  padding: 3px 10px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}

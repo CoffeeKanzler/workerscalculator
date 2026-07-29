@@ -1,6 +1,6 @@
 import {
   WALKING_BUDGET_METRES, buildWalkingNetwork, walkingReachFrom,
-} from './walking_access.js?v=2';
+} from './walking_access.js?v=4';
 
 // The access corridor a worker can actually use: walk, or walk to a saved stop,
 // ride a saved line in its saved stop order, change at most once, and walk the

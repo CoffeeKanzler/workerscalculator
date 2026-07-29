@@ -12,7 +12,7 @@ import {
   summarizeResidenceDetails,
   summarizeResidenceOccupancy,
   summarizeVehicleLines,
-} from '../save_model.js?v=9';
+} from '../save_model.js?v=10';
 import {
   createEvidence,
   createEvidenceCollection,
@@ -48,6 +48,12 @@ const OPERATIONAL_TYPES = new Map([
   ['TYPE_PRISON', 'prisons'],
   ['TYPE_ORPHANAGE', 'orphanages'],
 ]);
+
+// Bump whenever the shape of the stored import changes in a way an already
+// saved snapshot cannot satisfy. A snapshot from before roads were walkable
+// carries no road attachments and no walking edge refs, and silently showing an
+// empty access graph for it reads as a broken build rather than as old data.
+export const SAVE_IMPORT_VERSION = 7;
 
 function clone(value) {
   return value === undefined ? undefined : JSON.parse(JSON.stringify(value));
@@ -581,7 +587,7 @@ export function buildImportedPlanning(sourceName, settlements, buildings, member
     cities,
     productionRows,
     metadata: {
-      version: 6,
+      version: SAVE_IMPORT_VERSION,
       sourceName,
       importedAt,
       header,
