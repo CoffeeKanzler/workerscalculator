@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=129';
+import { STRINGS } from './i18n.js?v=131';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -54,7 +54,8 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=4';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=11';
+import { normalizeMapMetric } from './ui/republic_map.js?v=6';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -2804,6 +2805,8 @@ function renderMapBuildingInspector(building) {
 }
 
 function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
+  const mapMetric = normalizeMapMetric(state.mapMetric);
+  if (state.mapMetric !== mapMetric) state.mapMetric = mapMetric;
   const scopeNames = new Map(model.scopes.map(scope => [scope.id, scope.name]));
   const categoryIndex = buildTypeCategoryIndex(
     [...(DATA?.rawBuildings ?? []), ...(DATA?.workshopBuildings ?? [])]);
@@ -2879,13 +2882,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
     'aria-label': t('mapMetricScale'),
   });
   const renderMetricKey = metric => {
-    const entries = metric === 'staffing' ? [
-      ['empty', 'mapScaleNoWorkers'],
-      ['low', 'mapScaleStaffingLow'],
-      ['medium', 'mapScaleStaffingMedium'],
-      ['full', 'mapScaleStaffingFull'],
-      ['unknown', 'mapScaleNoPositions'],
-    ] : metric === 'construction' ? [
+    const entries = metric === 'construction' ? [
       ['construction-low', 'mapScaleConstructionLow'],
       ['construction-medium', 'mapScaleConstructionMedium'],
       ['construction-high', 'mapScaleConstructionHigh'],
@@ -2895,7 +2892,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
     metricKey.replaceChildren(...entries.map(([band, key]) =>
       el('span', {}, el('i', { class: `map-metric-swatch ${band}` }), t(key))));
   };
-  renderMetricKey(state.mapMetric ?? 'category');
+  renderMetricKey(mapMetric);
   const layerToggle = (key, label, available = true) => available ? el('label', {},
     el('input', {
       type: 'checkbox', checked: layers[key], 'data-map-layer': key,
@@ -2909,11 +2906,10 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
   const modeButtons = el('div', { class: 'view-toggle map-metric-toggle', role: 'group', 'aria-label': t('mapMetric') },
     ...[
       ['category', 'mapMetricCategory'],
-      ['staffing', 'mapMetricStaffing'],
       ['construction', 'mapMetricConstruction'],
     ].map(([metric, key]) => el('button', {
-      class: state.mapMetric === metric ? 'active' : '',
-      'aria-pressed': String(state.mapMetric === metric),
+      class: mapMetric === metric ? 'active' : '',
+      'aria-pressed': String(mapMetric === metric),
       onclick: event => {
         state.mapMetric = metric;
         for (const button of event.currentTarget.parentElement.children) {
@@ -3006,7 +3002,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
       scopes,
       layers,
       categoryVisibility,
-      mode: state.mapMetric ?? 'category',
+      mode: mapMetric,
       query: state.mapBuildingFilter ?? '',
       pollutionOpacity: state.mapPollutionOpacity ?? 0.68,
       palette: {

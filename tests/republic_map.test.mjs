@@ -5,6 +5,7 @@ import {
   buildingMapMetric,
   filterMapBuildings,
   mapPointToLeaflet,
+  normalizeMapMetric,
   summarizeMapViewport,
 } from '../js/ui/republic_map.js';
 
@@ -13,16 +14,19 @@ test('the Leaflet adapter preserves the schematic map coordinate system', () => 
   assert.deepEqual(mapPointToLeaflet({ mapX: 0, mapY: 480 }, 480), [0, 0]);
 });
 
-test('staffing mode reports exact utilization and a readable band', () => {
-  assert.deepEqual(buildingMapMetric({
-    currentWorkers: 30,
-    configuredWorkers: 40,
-    configuredWorkersHighEducation: 10,
-  }, 'staffing'), {
-    mode: 'staffing', value: 0.6, band: 'medium', numerator: 30, denominator: 50,
+test('the focused map supports category and construction only', () => {
+  assert.equal(normalizeMapMetric('category'), 'category');
+  assert.equal(normalizeMapMetric('construction'), 'construction');
+  assert.equal(normalizeMapMetric('staffing'), 'category');
+  assert.equal(normalizeMapMetric('anything-else'), 'category');
+});
+
+test('category mode preserves the building category as its exact band', () => {
+  assert.deepEqual(buildingMapMetric({ category: 'industry' }, 'category'), {
+    mode: 'category', value: 'industry', band: 'industry',
   });
-  assert.deepEqual(buildingMapMetric({ currentWorkers: 4 }, 'staffing'), {
-    mode: 'staffing', value: null, band: 'unknown', numerator: 4, denominator: 0,
+  assert.deepEqual(buildingMapMetric({}, 'category'), {
+    mode: 'category', value: 'other', band: 'other',
   });
 });
 

@@ -14,6 +14,7 @@ import {
   restorePlannerState,
   serializePlannerState,
 } from '../js/storage/planning_store.js';
+import { normalizeMapMetric } from '../js/ui/republic_map.js';
 
 function observation(overrides = {}) {
   return {
@@ -47,6 +48,7 @@ test('analytical map choices survive through the planning model boundary', () =>
     mapCategoryVisibility: { industry: false },
   }).state;
   assert.equal(restored.mapMetric, 'staffing');
+  assert.equal(normalizeMapMetric(restored.mapMetric), 'category');
   assert.equal(restored.mapCategoryVisibility.industry, false);
   assert.equal(restored.mapCategoryVisibility.living, true);
 });

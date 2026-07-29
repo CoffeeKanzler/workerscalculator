@@ -8,17 +8,11 @@ function workerPositions(building) {
       ? building.configuredWorkersHighEducation : 0);
 }
 
+export function normalizeMapMetric(mode) {
+  return mode === 'construction' ? 'construction' : 'category';
+}
+
 export function buildingMapMetric(building, mode) {
-  if (mode === 'staffing') {
-    const numerator = Number.isFinite(building.currentWorkers) ? building.currentWorkers : 0;
-    const denominator = workerPositions(building);
-    if (denominator <= 0) {
-      return { mode, value: null, band: 'unknown', numerator, denominator };
-    }
-    const value = numerator / denominator;
-    const band = value <= 0 ? 'empty' : value < 0.5 ? 'low' : value < 0.9 ? 'medium' : 'full';
-    return { mode, value, band, numerator, denominator };
-  }
   if (mode === 'construction') {
     const value = Number.isFinite(building.constructionProgress)
       ? building.constructionProgress : 1;
