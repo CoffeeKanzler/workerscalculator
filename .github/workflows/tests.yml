@@ -1,0 +1,91 @@
+# The suite only ever ran when someone remembered to run it. The pre-commit
+# hook cannot cover this: `git commit --no-verify` skips it entirely, and a
+# commit made through the GitHub web UI never sees it at all.
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Two commits, so the cache-marker check below can see what changed.
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v4
+        with:
+          # structuredClone needs 17+, Object.hasOwn 16.9+. 22 is current LTS.
+          node-version: '22'
+
+      # No install step: the project has no dependencies, and keeping it that
+      # way is deliberate. A lockfile appearing here would be a real change.
+      - name: Confirm the project is still dependency-free
+        run: |
+          if [ -f package-lock.json ] || [ -d node_modules ]; then
+            echo "This project is dependency-free by design; a lockfile or"
+            echo "node_modules appeared. If that is intentional, update this step."
+            exit 1
+          fi
+
+      - name: Run the test suite
+        run: npm test
+
+      # GitHub Pages serves this with a ten-minute cache, so a module whose
+      # ?v= marker did not move is served stale beside one that did. That has
+      # produced several fixes that looked broken because the browser never
+      # loaded them.
+      - name: Check cache markers moved with the code
+        run: |
+          if git rev-parse HEAD^ >/dev/null 2>&1; then
+            CHANGED=$(git diff --name-only HEAD^ HEAD)
+            if [ -n "$CHANGED" ]; then
+              node tools/bump_cache_versions.mjs --check $CHANGED
+            fi
+          else
+            echo "No parent commit to compare against; skipping."
+          fi
+
+  # Kept apart from the unit job so that job still runs against a clean tree.
+  # Playwright is installed here only: the project itself stays dependency-free,
+  # which the step above enforces.
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium-headless-shell
+
+      # Serving and testing are one step: a background server started in its
+      # own step does not reliably outlive that step's shell, which would leave
+      # the smoke run with nothing to connect to.
+      #
+      # No save is imported: real saves are 150 MB to 1 GB and gitignored. What
+      # this catches is the app failing to boot at all, or a tab throwing
+      # part-way through its render, which reads to a user as a dead button.
+      - name: Boot and render every tab
+        run: |
+          python3 -m http.server 8765 >/dev/null 2>&1 &
+          SERVER=$!
+          trap 'kill $SERVER 2>/dev/null || true' EXIT
+          for _ in $(seq 1 30); do
+            curl -sf -o /dev/null http://localhost:8765/index.html && break
+            sleep 1
+          done
+          curl -sf -o /dev/null http://localhost:8765/index.html || {
+            echo "the app did not start serving"; exit 1; }
+          node tests/browser/smoke.mjs http://localhost:8765/index.html
