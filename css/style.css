@@ -787,3 +787,44 @@ table.data th, table.data td { border-color: var(--border); }
 .scrap-headline strong { font-size: 22px; color: var(--pos); font-variant-numeric: tabular-nums; }
 .scrap-headline span { color: var(--muted); font-size: 13px; }
 .scrap-arbitrage { border-left: 3px solid var(--pos); padding-left: 12px; margin: 12px 0; }
+
+/* Markers are kept at a constant screen size of roughly 2-3px across, which is
+   right for reading a republic of two thousand buildings at once and far too
+   small to hit with a mouse. A transparent stroke enlarges the clickable area
+   without changing what is drawn; non-scaling-stroke keeps that hit area the
+   same size at every zoom level. */
+.republic-map.standalone .map-buildings circle,
+.republic-map.standalone .map-buildings rect,
+.republic-map.standalone .map-buildings polygon {
+  stroke: transparent;
+  stroke-width: 8;
+  vector-effect: non-scaling-stroke;
+  paint-order: stroke fill;
+  pointer-events: all;
+}
+/* The existing dashed outline for construction has to win over the hit halo. */
+.republic-map .map-buildings .under-construction { stroke: var(--accent2); }
+.republic-map .map-buildings .map-inspected {
+  stroke: var(--focus); stroke-width: 3; vector-effect: non-scaling-stroke;
+}
+
+/* The building inspector floats over the map. Rendered above it, it updated
+   out of sight for anyone who had scrolled down far enough to click a marker,
+   so selecting a building looked like it did nothing at all. */
+.map-viewport { position: relative; }
+.republic-map.standalone .map-viewport .map-building-inspector {
+  position: absolute; top: 10px; right: 10px; z-index: 6;
+  width: min(320px, 46%); margin: 0;
+  background: var(--panel); border: 1px solid var(--accent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .32);
+  max-height: calc(100% - 20px); overflow: auto;
+}
+/* With nothing selected it is only a prompt, so it stays out of the way. */
+.republic-map.standalone .map-viewport .map-building-inspector.empty {
+  border-color: var(--border); box-shadow: none; opacity: .82; width: auto;
+}
+@media (max-width: 720px) {
+  .republic-map.standalone .map-viewport .map-building-inspector {
+    position: static; width: auto; max-height: none; margin-top: 8px;
+  }
+}

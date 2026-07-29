@@ -3106,7 +3106,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
 
   const inspectBuilding = (building, circle) => {
     mapSelectedBuildingIndex = building.index;
-    for (const marker of svg.querySelectorAll('circle.map-inspected')) marker.classList.remove('map-inspected');
+    for (const marker of svg.querySelectorAll('.map-inspected')) marker.classList.remove('map-inspected');
     circle.classList.add('map-inspected');
     if (mapInspector) mapInspector.replaceWith(mapInspector = renderBuildingInspector(building));
   };
@@ -3323,14 +3323,18 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
               update();
             },
           }, t('mapFullTerrain')))),
-      mapInspector = (() => {
+      legend,
+      // The inspector sits over the map rather than above it. Rendered before
+      // the map, it updated off-screen behind anyone who had scrolled down to
+      // click a building: the marker highlighted and nothing appeared to
+      // happen.
+      el('div', { class: 'map-viewport' }, svg, mapInspector = (() => {
         const selectedBuilding = model.buildings.find(building =>
           building.index === mapSelectedBuildingIndex || building.focused);
         return selectedBuilding ? renderBuildingInspector(selectedBuilding)
           : el('aside', { class: 'map-building-inspector empty' },
             el('p', { class: 'hint' }, t('selectMapBuilding')));
-      })(),
-      legend, svg);
+      })()));
   }
   return el('details', {
     class: 'secondary-section map-section',
