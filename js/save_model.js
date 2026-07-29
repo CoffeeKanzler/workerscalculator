@@ -1,5 +1,5 @@
 import { pedestrianEdgeIdsOf } from './models/walking_access.js?v=3';
-import { footprintRingsFor } from './models/building_footprint.js?v=2';
+import { footprintRingsFor } from './models/building_footprint.js?v=3';
 
 export function citizenProductivity(citizen) {
   const base = 0.5 * (
