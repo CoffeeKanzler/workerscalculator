@@ -62,8 +62,8 @@ try {
     await mapTab.click();
     await page.waitForTimeout(1500);
 
-    const canvas = page.locator('.map-marker-canvas');
-    check(await canvas.count() > 0, 'the map rendered no marker canvas');
+    const canvas = page.locator('svg.republic-map');
+    check(await canvas.count() > 0, 'the map rendered no svg');
 
     // The map sits below the fold on a desktop viewport, and synthetic mouse
     // events at coordinates outside the viewport silently go nowhere — which
@@ -71,18 +71,25 @@ try {
     await canvas.scrollIntoViewIfNeeded();
     await page.waitForTimeout(500);
 
-    // A canvas that is present but blank is the failure this is really for:
-    // it happened once already, when the first draw ran before layout.
-    const painted = await page.evaluate(() => {
-      const element = document.querySelector('canvas');
-      if (!element) return -1;
-      const context = element.getContext('2d');
-      const { data } = context.getImageData(0, 0, element.width, element.height);
-      let count = 0;
-      for (let index = 3; index < data.length; index += 4) if (data[index] > 0) count += 1;
-      return count;
+    const painted = await page.evaluate(() =>
+      document.querySelectorAll('svg.republic-map [data-map-kind]').length);
+    check(painted > 500, `the map drew almost no markers (${painted})`);
+
+    // The categories are what make the map readable rather than a field of
+    // identical dots, so a map where everything is 'other' is a failure even
+    // though it draws perfectly well.
+    const categories = await page.evaluate(() => {
+      const counts = {};
+      for (const marker of document.querySelectorAll('svg.republic-map [data-map-category]')) {
+        const key = marker.dataset.mapCategory;
+        counts[key] = (counts[key] ?? 0) + 1;
+      }
+      return counts;
     });
-    check(painted > 500, `the map canvas is blank (${painted} painted pixels)`);
+    const total = Object.values(categories).reduce((sum, n) => sum + n, 0);
+    check((categories.other ?? 0) / total < 0.15,
+      `${categories.other ?? 0} of ${total} markers are uncategorised: `
+      + JSON.stringify(categories));
 
     // The filter reaches the canvas through the draw now, not by hiding
     // elements, so a filter that changes nothing means it is wired wrong.
@@ -90,22 +97,39 @@ try {
     if (await filterInput.count()) {
       await filterInput.fill('zzzznotathing');
       await page.waitForTimeout(600);
-      const afterFilter = await page.evaluate(() => {
-        const element = document.querySelector('canvas');
-        const { data } = element.getContext('2d').getImageData(0, 0, element.width, element.height);
-        let count = 0;
-        for (let index = 3; index < data.length; index += 4) if (data[index] > 0) count += 1;
-        return count;
-      });
+      const afterFilter = await page.evaluate(() =>
+        [...document.querySelectorAll('svg.republic-map [data-map-kind]')]
+          .filter(marker => marker.style.display !== 'none').length);
       check(afterFilter < painted,
-        `a filter matching nothing left the map unchanged (${painted} then ${afterFilter} pixels)`);
+        `a filter matching nothing left the map unchanged (${painted} then ${afterFilter})`);
       await filterInput.fill('');
       await page.waitForTimeout(400);
     }
 
-    // Camera controls. The canvas covers the svg the handlers used to live on,
-    // so moving markers onto it silently took away wheel zoom and drag panning
-    // while leaving the map looking perfectly normal.
+    // Markers must sit inside the area the map draws. This is what a canvas
+    // overlay got wrong for days: it painted them 227px from their roads while
+    // every count and every click still looked correct.
+    const inside = await page.evaluate(() => {
+      const svg = document.querySelector('svg.republic-map');
+      const [vx, vy, vw, vh] = svg.getAttribute('viewBox').split(/\s+/).map(Number);
+      let checked = 0;
+      let outside = 0;
+      for (const marker of svg.querySelectorAll('.map-buildings [data-map-kind]')) {
+        const points = marker.getAttribute('points');
+        const [px, py] = points ? points.split(' ')[0].split(',').map(Number) : [];
+        const x = points ? px : Number(marker.getAttribute('cx') ?? marker.getAttribute('x'));
+        const y = points ? py : Number(marker.getAttribute('cy') ?? marker.getAttribute('y'));
+        if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
+        checked += 1;
+        if (x < vx - vw || x > vx + 2 * vw || y < vy - vh || y > vy + 2 * vh) outside += 1;
+      }
+      return { checked, outside };
+    });
+    check(inside.checked > 0, 'no marker geometry could be read');
+    check(inside.outside === 0,
+      `${inside.outside} of ${inside.checked} markers are nowhere near the mapped area`);
+
+    // Camera controls.
     const viewBox = () => page.evaluate(() =>
       document.querySelector('svg.republic-map')?.getAttribute('viewBox') ?? null);
     const box = await canvas.boundingBox();
@@ -132,14 +156,30 @@ try {
       !document.querySelector('.map-building-inspector.empty'));
     check(!selectedAfterDrag, 'panning the map selected a building');
 
-    // Clicking a marker opens the inspector. Several points are tried because
-    // markers are sparse and a given spot may hit empty ground.
-    for (const [fx, fy] of [[0.5, 0.5], [0.45, 0.52], [0.55, 0.48], [0.5, 0.45], [0.42, 0.58]]) {
-      await page.mouse.click(box.x + box.width * fx, box.y + box.height * fy);
-      await page.waitForTimeout(500);
-      const hit = await page.evaluate(() =>
-        !document.querySelector('.map-building-inspector.empty'));
-      if (hit) break;
+    // Clicking a marker opens the inspector. The marker element is clicked
+    // rather than a guessed coordinate: markers are a few pixels across, and a
+    // near miss reads identically to a broken handler.
+    // The earlier gesture checks left the map zoomed somewhere, so most
+    // markers are off screen. Pick one that is actually visible.
+    const target = await page.evaluateHandle(() => {
+      for (const marker of document.querySelectorAll('svg.republic-map .map-buildings [data-map-kind]')) {
+        const rect = marker.getBoundingClientRect();
+        if (rect.width <= 0 || rect.height <= 0) continue;
+        if (rect.top < 0 || rect.left < 0) continue;
+        if (rect.bottom > window.innerHeight || rect.right > window.innerWidth) continue;
+        return marker;
+      }
+      return null;
+    });
+    const element = target.asElement();
+    check(element, 'no map marker was visible to click');
+    if (element) {
+      // Dispatched rather than a real mouse click: markers overlap heavily on
+      // a dense republic, and Playwright refuses to click one another marker
+      // covers even by a pixel. What is under test is the handler, not the
+      // browser's hit-testing.
+      await element.dispatchEvent('click');
+      await page.waitForTimeout(600);
     }
     const inspector = await page.evaluate(() => {
       const panel = document.querySelector('.map-building-inspector');

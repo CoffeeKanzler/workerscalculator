@@ -845,28 +845,7 @@ table.data th, table.data td { border-color: var(--border); }
    so selecting a building looked like it did nothing at all. */
 .map-viewport {
   position: relative;
-  /* The camera layer is translated and scaled during a gesture, so without
-     this it slides out over the rest of the page and a zoom appears to make
-     the map grow rather than to move the view into it. */
-  overflow: hidden;
 }
-/* Both map layers sit in here so a gesture moves them as one image. The
-   transform is set from script during a pan or zoom and cleared when the view
-   is committed and the layers are re-rendered properly.
-
-   transform-origin must be the top-left corner: the transform is derived by
-   solving for where content already drawn should appear, and that derivation
-   assumes an untranslated origin. will-change promotes it to its own
-   compositor layer, which is what keeps the gesture off the main thread. */
-.map-camera {
-  /* Relative, not absolute: the svg inside it is what gives the viewport its
-     height, and taking it out of flow collapsed the map to nothing. */
-  position: relative;
-  transform-origin: 0 0;
-  will-change: transform;
-}
-/* No transition: the transform tracks the pointer directly, and easing it
-   would put the map behind the cursor rather than under it. */
 .map-viewport.standalone > .map-building-inspector {
   position: absolute; top: 10px; right: 10px; z-index: 6;
   width: min(320px, 46%); margin: 0;
@@ -884,14 +863,4 @@ table.data th, table.data td { border-color: var(--border); }
   }
 }
 
-/* Building markers are drawn on a canvas laid over the map. The svg keeps the
-   roads, rails, water and scope circles, where vector scaling is wanted and
-   the node count is small. */
-.map-viewport .map-marker-canvas {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  z-index: 2; pointer-events: auto;
-}
-.map-viewport .map-marker-canvas:focus-visible {
-  outline: 2px solid var(--focus); outline-offset: -2px;
-}
 .map-viewport .republic-map { position: relative; z-index: 1; }
