@@ -274,6 +274,31 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .coverage-item { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px; background: var(--panel); border: 1px solid var(--border); border-radius: 7px; }
 .coverage-item .evidence-badge { margin-left: 0; }
 .observed-card { margin: 10px 0; max-width: 440px; border-left: 3px solid var(--accent2); }
+.citizen-diagnostics h2 { display: flex; align-items: center; flex-wrap: wrap; }
+.citizen-diagnostic-summary {
+  display: grid; grid-template-columns: repeat(3, minmax(150px, 1fr));
+  gap: 8px; margin: 12px 0;
+}
+.citizen-diagnostic-summary > div {
+  display: grid; gap: 4px; padding: 11px 13px;
+  border: 1px solid var(--border); border-radius: 8px; background: var(--panel);
+}
+.citizen-diagnostic-summary span { color: var(--muted); font-size: 12px; }
+.citizen-diagnostic-summary strong { font-size: 22px; font-variant-numeric: tabular-nums; }
+.citizen-diagnostic-controls {
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: end; margin: 10px 0;
+}
+.citizen-diagnostic-controls label {
+  display: grid; gap: 4px; color: var(--muted); font-size: 12px; font-weight: 600;
+}
+.citizen-diagnostic-controls input { min-width: min(300px, 75vw); }
+.citizen-diagnostics table td { vertical-align: top; }
+.citizen-diagnostics table td.r { font-variant-numeric: tabular-nums; }
+.citizen-diagnostics table .subline { display: block; }
+.citizen-diagnostics .citizen-diagnostic-action { white-space: nowrap; }
+@media (max-width: 700px) {
+  .citizen-diagnostic-summary { grid-template-columns: 1fr; }
+}
 .plan-heading { margin: 18px 0 4px; color: var(--accent2); }
 .save-identity { max-width: 680px; margin-bottom: 12px; }
 .sourceid .evidence-badge { vertical-align: middle; }

@@ -323,6 +323,33 @@ try {
     failures.push('no map tab was offered after importing a save');
   }
 
+  // --- citizen diagnostics ----------------------------------------------
+  const citiesTab = page.locator('.context-tabs button', { hasText: /städte|cities/i }).first();
+  if (await citiesTab.count()) {
+    await citiesTab.click();
+    await page.waitForTimeout(500);
+    const diagnostics = page.locator('[data-citizen-diagnostics]');
+    check(await diagnostics.count() === 1, 'the Cities tab rendered no citizen diagnostics');
+    const rows = diagnostics.locator('tbody tr');
+    check(await rows.count() > 0, 'citizen diagnostics rendered no city rows');
+    const text = await diagnostics.innerText();
+    check(/Adult capacity margin|Erwachsenen-Kapazitätsreserve/i.test(text),
+      'citizen diagnostics omitted housing pressure', text.slice(0, 800));
+    check(/Age 18.?21|18.?21 Jahre/i.test(text),
+      'citizen diagnostics omitted the approaching-adulthood window', text.slice(0, 800));
+    await screenshot(page, 'citizen-diagnostics-dark');
+
+    const themeButton = page.locator('.themeswitch').first();
+    for (let step = 0; step < 3; step += 1) {
+      if (await page.evaluate(() => document.documentElement.dataset.theme === 'light')) break;
+      await themeButton.click();
+      await page.waitForTimeout(250);
+    }
+    await screenshot(page, 'citizen-diagnostics-light');
+  } else {
+    failures.push('no Cities tab was offered after importing a save');
+  }
+
   // --- the history charts ------------------------------------------------
   const historyTab = page.locator('.context-tabs button', { hasText: /verlauf|history/i }).first();
   if (await historyTab.count()) {

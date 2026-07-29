@@ -7,11 +7,12 @@ import {
   isNonPlannerSupportType,
   matchObservedBuilding,
   summarizeCriminalityOutliers,
+  summarizeCitizenDiagnostics,
   summarizeDistributionOffices,
   summarizeResidenceDetails,
   summarizeResidenceOccupancy,
   summarizeVehicleLines,
-} from '../save_model.js?v=1';
+} from '../save_model.js?v=4';
 import {
   createEvidence,
   createEvidenceCollection,
@@ -558,6 +559,11 @@ export function buildImportedPlanning(sourceName, settlements, buildings, member
     ? summarizeCriminalityOutliers(citizens, buildings) : null;
   const residenceDetails = citizens
     ? summarizeResidenceDetails(citizens, buildings) : null;
+  const citizenDiagnostics = citizens
+    ? summarizeCitizenDiagnostics(citizens, buildings, building => {
+      const raw = matchSaveBuilding(building.type, allRawBuildings, entry => entry.id);
+      return Number.isFinite(raw?.livingSpace) && raw.livingSpace > 0 ? raw.livingSpace : null;
+    }) : null;
   const residenceOccupancy = citizens ? summarizeResidenceOccupancy(citizens, buildings) : null;
   const inventoryBuildings = buildings.filter(building =>
     building.storages?.some(storage => storage.resources?.length));
@@ -575,7 +581,7 @@ export function buildImportedPlanning(sourceName, settlements, buildings, member
     cities,
     productionRows,
     metadata: {
-      version: 5,
+      version: 6,
       sourceName,
       importedAt,
       header,
@@ -602,6 +608,7 @@ export function buildImportedPlanning(sourceName, settlements, buildings, member
       distributionOffices: distributionOperations,
       criminalityOutliers,
       residenceDetails,
+      citizenDiagnostics,
       residenceOccupancy,
       vehicleModelCoverage,
       usedVehicleOffers,

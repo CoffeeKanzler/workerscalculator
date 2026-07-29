@@ -6,11 +6,103 @@ import {
   inferObservedHousing, summarizeDistributionOffices, summarizeVehicleLines,
   evaluateDistributionResourceRule,
   criminalityThreshold, summarizeCriminalityOutliers, summarizeResidenceDetails,
+  summarizeCitizenDiagnostics, filterCitizenDiagnostics,
   summarizeResidenceOccupancy, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   isNonPlannerSupportType,
   isBorderPostType, isExternalAirLinkType,
 } from '../js/save_model.js';
+
+test('citizen diagnostics separate exact resident facts from known housing capacity', () => {
+  const buildings = [
+    { index: 1, scopeId: 10, type: 'flat', constructionProgress: 1 },
+    { index: 2, scopeId: 10, type: 'flat', constructionProgress: 1 },
+    { index: 3, scopeId: 10, type: 'flat', constructionProgress: 0.5 },
+    { index: 4, scopeId: 20, type: 'workshop_flat', constructionProgress: 1 },
+  ];
+  const citizens = [
+    {
+      residenceBuildingIndex: 1, age: 30, education: 2,
+      health: 0.8, happiness: 0.7, loyalty: 0.6, criminality: 0.02,
+    },
+    {
+      residenceBuildingIndex: 1, age: 19, education: 1,
+      health: 1, happiness: 0.9, loyalty: 0.4, criminality: 0.3,
+    },
+    {
+      residenceBuildingIndex: 1, age: 10, education: 0.5,
+      health: 0.9, happiness: 0.8, loyalty: 0.5, criminality: 0.01,
+    },
+    {
+      residenceBuildingIndex: 4, age: 40, education: 1,
+      health: 0.7, happiness: 0.6, loyalty: 0.5, criminality: 0,
+    },
+  ];
+  const capacities = new Map([[1, 4], [2, 4], [3, 10]]);
+  const result = summarizeCitizenDiagnostics(
+    citizens,
+    buildings,
+    building => capacities.get(building.index) ?? null,
+  );
+
+  assert.ok(Math.abs(result.threshold - 0.4125) < 1e-12);
+  assert.ok(Math.abs(result.areas[0].happiness - 0.8) < 1e-12);
+  assert.deepEqual({ ...result.areas[0], happiness: 0.8 }, {
+    scopeId: 10,
+    residents: 3,
+    adults: 1,
+    children: 2,
+    approachingAdulthood: 1,
+    higherEducation: 1,
+    health: 0.9,
+    happiness: 0.8,
+    loyalty: 0.5,
+    criminality: 0.11,
+    highRiskResidents: 0,
+    completedResidences: 2,
+    vacantCompletedResidences: 1,
+    knownCapacityResidences: 2,
+    occupiedAdultsInKnownCapacity: 1,
+    adultSpaces: 8,
+    adultSpaceBalance: 7,
+    occupiedUnknownCapacityResidences: 0,
+  });
+  assert.deepEqual(result.areas[1], {
+    scopeId: 20,
+    residents: 1,
+    adults: 1,
+    children: 0,
+    approachingAdulthood: 0,
+    higherEducation: 0,
+    health: 0.7,
+    happiness: 0.6,
+    loyalty: 0.5,
+    criminality: 0,
+    highRiskResidents: 0,
+    completedResidences: 0,
+    vacantCompletedResidences: 0,
+    knownCapacityResidences: 0,
+    occupiedAdultsInKnownCapacity: 0,
+    adultSpaces: 0,
+    adultSpaceBalance: null,
+    occupiedUnknownCapacityResidences: 1,
+  });
+});
+
+test('citizen diagnostics search names and put the strongest selected signal first', () => {
+  const rows = [
+    { scopeId: 1, name: 'Petrograd', residents: 300, adultSpaceBalance: 3, approachingAdulthood: 12 },
+    { scopeId: 2, name: 'Kohleburg', residents: 900, adultSpaceBalance: -4, approachingAdulthood: 4 },
+    { scopeId: 3, name: 'Unknown', residents: 100, adultSpaceBalance: null, approachingAdulthood: 30 },
+  ];
+
+  assert.deepEqual(filterCitizenDiagnostics(rows, { sortKey: 'pressure' })
+    .map(row => row.scopeId), [2, 1, 3]);
+  assert.deepEqual(filterCitizenDiagnostics(rows, { sortKey: 'approaching' })
+    .map(row => row.scopeId), [3, 1, 2]);
+  assert.deepEqual(filterCitizenDiagnostics(rows, { query: 'grad' })
+    .map(row => row.scopeId), [1]);
+});
 
 test('active construction keeps exact incomplete buildings in useful progress order', () => {
   const projects = activeConstructionProjects([

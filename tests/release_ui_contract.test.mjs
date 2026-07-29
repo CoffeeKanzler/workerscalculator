@@ -95,7 +95,8 @@ test('the Cities tab reads the save and never writes to it', async () => {
   );
 
   assert.match(renderCities, /state\.saveImport\?\.scopes/);
-  assert.doesNotMatch(renderCities, /el\('input'/);
-  // Navigation into the planner is the one control it offers.
+  assert.doesNotMatch(renderCities, /state\.saveImport[^;\n]*=/);
+  // Search and sorting change only the report; navigation is the only planning action.
+  assert.match(renderCities, /type: 'search'/);
   assert.match(renderCities, /state\.tab = 'city'/);
 });

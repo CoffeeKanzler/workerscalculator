@@ -174,6 +174,10 @@ test('save folder reads required and optional core files locally and defers map 
     assert.equal(result.planning.metadata.operationalServices.regional[0].clinics.currentWorkers, 8);
     assert.equal(result.planning.metadata.residenceDetails.buildings[0].buildingIndex, 41);
     assert.equal(result.planning.metadata.residenceDetails.buildings[0].residents, 2);
+    assert.equal(result.planning.metadata.citizenDiagnostics.areas[0].approachingAdulthood, 1);
+    assert.equal(result.planning.metadata.citizenDiagnostics.areas[0].adultSpaceBalance, null);
+    assert.equal(result.planning.metadata.citizenDiagnostics.areas[0]
+      .occupiedUnknownCapacityResidences, 1);
     assert.equal('citizens' in result.planning.metadata, false);
   } finally {
     globalThis.fetch = oldFetch;

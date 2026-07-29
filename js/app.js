@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=139';
+import { STRINGS } from './i18n.js?v=140';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -43,8 +43,8 @@ import { isTheme, nextTheme, resolveTheme, themeAttribute } from './ui/theme.js?
 import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
-  isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=22';
+  filterCitizenDiagnostics, isBorderPostType, isExternalAirLinkType,
+} from './save_model.js?v=25';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -72,9 +72,9 @@ import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=7';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=4';
-import { bootstrapRuntime } from './bootstrap.js?v=3';
+} from './adapters/save_folder_adapter.js?v=9';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=7';
+import { bootstrapRuntime } from './bootstrap.js?v=4';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
@@ -110,6 +110,8 @@ let namedSnapshotNames = [];
 let comparisonSnapshotName = '';
 let comparisonSnapshot = null;
 let comparisonSnapshotError = '';
+let cityDiagnosticsSearch = '';
+let cityDiagnosticsSort = 'pressure';
 let mapFocusBuildingIndex = null;
 let mapFocusScopeId = null;
 let mapSelectedBuildingIndex = null;
@@ -2365,39 +2367,117 @@ function renderCities() {
     return el('section', {}, el('p', { class: 'hint' }, t('citiesEmpty')));
   }
   const inhabited = scopes.filter(scope => scope.city || scope.production);
+  const diagnostics = state.saveImport?.citizenDiagnostics?.areas;
+  const diagnosticByScope = new Map((diagnostics ?? []).map(area => [area.scopeId, area]));
+  const diagnosticScopes = inhabited.filter(scope =>
+    diagnosticByScope.has(scope.id) || scope.citizens);
+  const rows = filterCitizenDiagnostics(diagnosticScopes.map(scope => ({
+    ...diagnosticByScope.get(scope.id),
+    scopeId: scope.id,
+    name: scope.name,
+    observed: scope.citizens,
+  })), { query: cityDiagnosticsSearch, sortKey: cityDiagnosticsSort });
   const pct = value => (Number.isFinite(value) ? fmt(value * 100, 1) + ' %' : '—');
+  const count = value => (Number.isFinite(value) ? fmt(value, 0) : '—');
   const openArea = scopeId => {
     const index = cityPlanningAreas().findIndex(area => area.scopeId === scopeId);
     if (index >= 0) state.activeCity = index;
     state.tab = 'city';
     update();
   };
+  const hasDiagnostics = Array.isArray(diagnostics);
+  const totals = hasDiagnostics ? diagnostics.reduce((result, area) => ({
+    approaching: result.approaching + area.approachingAdulthood,
+    vacant: result.vacant + area.vacantCompletedResidences,
+    balance: result.balance + (area.adultSpaceBalance ?? 0),
+    knownAreas: result.knownAreas + (area.adultSpaceBalance == null ? 0 : 1),
+  }), { approaching: 0, vacant: 0, balance: 0, knownAreas: 0 }) : null;
+  const filterRows = event => {
+    cityDiagnosticsSearch = event.target.value;
+    const needle = cityDiagnosticsSearch.trim().toLocaleLowerCase();
+    for (const row of event.target.closest('[data-citizen-diagnostics]')
+      .querySelectorAll('tbody tr')) {
+      row.hidden = !!needle && !row.dataset.cityName.includes(needle);
+    }
+  };
 
   return el('section', {},
-    el('h2', {}, t('citiesObservedTitle'),
-      el('span', { class: 'evidence-badge exact' }, t('exact'))),
-    el('table', { class: 'data' },
-      el('thead', {}, el('tr', {},
-        el('th', {}, t('area')), el('th', {}, t('population')), el('th', {}, t('adults')),
-        el('th', {}, t('highEducation')), el('th', {}, t('productivity')),
-        el('th', {}, t('happiness')), el('th', {}, t('health')), el('th', {}, t('loyalty')),
-        el('th', {}, t('criminality')), el('th', {}, ''))),
-      el('tbody', {}, inhabited.map(scope => {
-        const observed = scope.citizens;
-        return el('tr', {},
-          el('td', {}, scope.name),
-          el('td', { class: 'r' }, observed ? fmt(observed.residents, 0) : '—'),
-          el('td', { class: 'r' }, observed ? fmt(observed.adults, 0) : '—'),
-          el('td', { class: 'r' }, observed ? fmt(observed.highEducation, 0) : '—'),
-          el('td', { class: 'r' }, pct(observed?.productivity)),
-          el('td', { class: 'r' }, pct(observed?.happiness)),
-          el('td', { class: 'r' }, pct(observed?.health)),
-          el('td', { class: 'r' }, pct(observed?.loyalty)),
-          el('td', { class: 'r' }, pct(observed?.criminality)),
-          el('td', {}, el('button', {
-            class: 'linklike', onclick: () => openArea(scope.id),
-          }, t('planThisArea'))));
-      }))));
+    el('div', { class: 'citizen-diagnostics', 'data-citizen-diagnostics': '' },
+      el('h2', {}, t('citizenDiagnosticsTitle'),
+        el('span', { class: 'evidence-badge exact' }, t('exact')),
+        el('span', { class: 'evidence-badge derived' }, t('derived'))),
+      hasDiagnostics ? el('p', { class: 'hint' }, t('housingPressureHint')) : null,
+      totals ? el('div', { class: 'citizen-diagnostic-summary' },
+        el('div', {}, el('span', {}, t('knownAdultSpaceBalance')),
+          el('strong', { class: totals.balance < 0 ? 'neg' : 'pos' },
+            totals.knownAreas ? fmt(totals.balance, 0) : '—')),
+        el('div', {}, el('span', {}, t('approachingAdulthood')),
+          el('strong', {}, fmt(totals.approaching, 0))),
+        el('div', {}, el('span', {}, t('vacantResidences')),
+          el('strong', {}, fmt(totals.vacant, 0)))) : null,
+      hasDiagnostics ? el('div', { class: 'citizen-diagnostic-controls' },
+        el('label', {}, t('search'),
+          el('input', {
+            type: 'search', value: cityDiagnosticsSearch,
+            placeholder: t('diagnosticSearchPlaceholder'), oninput: filterRows,
+          })),
+        el('label', {}, t('sort'),
+          selectInput([
+            ['pressure', t('sortHousingPressure')],
+            ['residents', t('population')],
+            ['approaching', t('approachingAdulthood')],
+            ['vacant', t('vacantResidences')],
+            ['crime', t('criminality')],
+            ['health', t('health')],
+          ], cityDiagnosticsSort, value => { cityDiagnosticsSort = value; }))) : null,
+      el('div', { class: 'tablewrap' },
+        el('table', { class: 'data' },
+          el('thead', {}, el('tr', {},
+            el('th', {}, t('area')), el('th', {}, t('residents')),
+            el('th', { title: t('adultsVsKnownCapacity') }, t('adultsCapacityShort')),
+            el('th', { title: t('knownAdultSpaceBalance') }, t('capacityMarginShort')),
+            el('th', {}, t('approachingAdulthood')),
+            el('th', { title: t('vacantResidences') }, t('vacantResidencesShort')),
+            el('th', {}, t('higherEducationShort')), el('th', {}, t('happiness')),
+            el('th', {}, t('health')), el('th', {}, t('residentCriminality')), el('th', {}, ''))),
+          el('tbody', {}, rows.map(row => {
+            const observed = row.observed;
+            const hasKnownCapacity = row.knownCapacityResidences > 0;
+            const residents = Number.isFinite(row.residents) ? row.residents : observed?.residents;
+            const children = Number.isFinite(row.children)
+              ? row.children : Number.isFinite(observed?.residents) && Number.isFinite(observed?.adults)
+                ? observed.residents - observed.adults : null;
+            return el('tr', {
+              'data-city-name': row.name.toLocaleLowerCase(),
+            },
+            el('td', {}, row.name),
+            el('td', { class: 'r' }, count(residents),
+              el('span', { class: 'subline' }, `${count(children)} ${t('children')}`)),
+            el('td', { class: 'r' }, hasKnownCapacity
+              ? `${count(row.occupiedAdultsInKnownCapacity)} / ${count(row.adultSpaces)}` : '—',
+            row.occupiedUnknownCapacityResidences
+              ? el('span', { class: 'subline warn' },
+                t('unknownResidenceCapacity').replace('{count}',
+                  count(row.occupiedUnknownCapacityResidences))) : null),
+            el('td', { class: `r ${row.adultSpaceBalance < 0 ? 'neg' : ''}` },
+              count(row.adultSpaceBalance)),
+            el('td', { class: 'r' }, count(row.approachingAdulthood)),
+            el('td', { class: 'r' }, count(row.vacantCompletedResidences)),
+            el('td', { class: 'r' }, count(Number.isFinite(row.higherEducation)
+              ? row.higherEducation : observed?.highEducation)),
+            el('td', { class: 'r' }, pct(Number.isFinite(row.happiness)
+              ? row.happiness : observed?.happiness)),
+            el('td', { class: 'r' }, pct(Number.isFinite(row.health) ? row.health : observed?.health)),
+            el('td', { class: 'r' }, pct(Number.isFinite(row.criminality)
+              ? row.criminality : observed?.criminality),
+            row.highRiskResidents
+              ? el('span', { class: 'subline warn' },
+                `${count(row.highRiskResidents)} ${t('highRiskResidents')}`) : null),
+            el('td', { class: 'citizen-diagnostic-action' }, el('button', {
+              class: 'linklike', title: t('planThisArea'), 'aria-label': t('planThisArea'),
+              onclick: () => openArea(row.scopeId),
+            }, '→')));
+          }))))));
 }
 
 function renderCity() {

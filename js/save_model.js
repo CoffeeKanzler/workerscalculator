@@ -183,6 +183,122 @@ export function summarizeResidenceDetails(citizens, buildings, options = {}) {
   return { threshold, buildings: result };
 }
 
+export function summarizeCitizenDiagnostics(citizens, buildings, capacityForBuilding, options = {}) {
+  const threshold = criminalityThreshold(citizens, options);
+  const buildingsByIndex = new Map((buildings ?? []).map(building => [building.index, building]));
+  const capacityByBuilding = new Map();
+  const areas = new Map();
+  const measurements = new Map();
+  const occupiedBuildingIndices = new Set();
+  const emptyArea = scopeId => ({
+    scopeId,
+    residents: 0,
+    adults: 0,
+    children: 0,
+    approachingAdulthood: 0,
+    higherEducation: 0,
+    health: 0,
+    happiness: 0,
+    loyalty: 0,
+    criminality: 0,
+    highRiskResidents: 0,
+    completedResidences: 0,
+    vacantCompletedResidences: 0,
+    knownCapacityResidences: 0,
+    occupiedAdultsInKnownCapacity: 0,
+    adultSpaces: 0,
+    adultSpaceBalance: null,
+    occupiedUnknownCapacityResidences: 0,
+  });
+  const areaFor = scopeId => {
+    if (!areas.has(scopeId)) areas.set(scopeId, emptyArea(scopeId));
+    return areas.get(scopeId);
+  };
+
+  for (const building of buildings ?? []) {
+    if (!Number.isInteger(building.scopeId) || (building.constructionProgress ?? 1) < 1) continue;
+    const capacity = capacityForBuilding?.(building);
+    if (!Number.isFinite(capacity) || capacity <= 0) continue;
+    capacityByBuilding.set(building.index, capacity);
+    const area = areaFor(building.scopeId);
+    area.completedResidences += 1;
+    area.knownCapacityResidences += 1;
+    area.adultSpaces += capacity;
+  }
+
+  for (const citizen of citizens ?? []) {
+    const building = buildingsByIndex.get(citizen.residenceBuildingIndex);
+    if (!building || !Number.isInteger(building.scopeId)) continue;
+    const area = areaFor(building.scopeId);
+    const measured = measurements.get(building.scopeId) ?? Object.fromEntries(
+      ['health', 'happiness', 'loyalty', 'criminality'].map(key => [key, { sum: 0, count: 0 }]),
+    );
+    occupiedBuildingIndices.add(building.index);
+    area.residents += 1;
+    if (Number.isFinite(citizen.age) && citizen.age > 21) {
+      area.adults += 1;
+      if (capacityByBuilding.has(building.index)) area.occupiedAdultsInKnownCapacity += 1;
+    } else if (Number.isFinite(citizen.age)) {
+      area.children += 1;
+      if (citizen.age >= 18) area.approachingAdulthood += 1;
+    }
+    if (citizen.education >= 2) area.higherEducation += 1;
+    for (const key of Object.keys(measured)) {
+      if (!Number.isFinite(citizen[key])) continue;
+      measured[key].sum += citizen[key];
+      measured[key].count += 1;
+    }
+    if (threshold != null && Number.isFinite(citizen.criminality)
+        && citizen.criminality >= threshold) area.highRiskResidents += 1;
+    measurements.set(building.scopeId, measured);
+  }
+
+  for (const buildingIndex of occupiedBuildingIndices) {
+    if (capacityByBuilding.has(buildingIndex)) continue;
+    const building = buildingsByIndex.get(buildingIndex);
+    areaFor(building.scopeId).occupiedUnknownCapacityResidences += 1;
+  }
+  for (const [buildingIndex] of capacityByBuilding) {
+    if (occupiedBuildingIndices.has(buildingIndex)) continue;
+    areaFor(buildingsByIndex.get(buildingIndex).scopeId).vacantCompletedResidences += 1;
+  }
+  for (const [scopeId, area] of areas) {
+    const measured = measurements.get(scopeId);
+    for (const key of ['health', 'happiness', 'loyalty', 'criminality']) {
+      area[key] = measured?.[key].count ? measured[key].sum / measured[key].count : null;
+    }
+    area.adultSpaceBalance = area.knownCapacityResidences
+      ? area.adultSpaces - area.occupiedAdultsInKnownCapacity : null;
+  }
+  return {
+    threshold,
+    areas: [...areas.values()].sort((a, b) => (a.scopeId ?? Infinity) - (b.scopeId ?? Infinity)),
+  };
+}
+
+export function filterCitizenDiagnostics(rows, { query = '', sortKey = 'pressure' } = {}) {
+  const needle = String(query).trim().toLocaleLowerCase();
+  const visible = (rows ?? []).filter(row =>
+    !needle || String(row.name ?? '').toLocaleLowerCase().includes(needle));
+  const valueFor = row => ({
+    pressure: row.adultSpaceBalance,
+    residents: row.residents,
+    approaching: row.approachingAdulthood,
+    vacant: row.vacantCompletedResidences,
+    crime: row.criminality,
+    health: row.health,
+  })[sortKey];
+  const ascending = sortKey === 'pressure' || sortKey === 'health';
+  return visible.sort((a, b) => {
+    const left = valueFor(a);
+    const right = valueFor(b);
+    if (!Number.isFinite(left)) return Number.isFinite(right) ? 1 : 0;
+    if (!Number.isFinite(right)) return -1;
+    const difference = ascending ? left - right : right - left;
+    return difference || String(a.name ?? '').localeCompare(String(b.name ?? ''));
+  });
+}
+
 export function summarizeResidenceOccupancy(citizens, buildings) {
   const buildingsByIndex = new Map((buildings ?? []).map(building => [building.index, building]));
   const residentsByBuilding = new Map();
