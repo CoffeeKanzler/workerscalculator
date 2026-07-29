@@ -38,40 +38,32 @@ export function buildingPlanningAuthority(building, scopes = ['economy', 'utilit
 }
 
 export class Economy {
-  // opts.inputPriceMode: 'sell' (like the sheet: inputs valued at what you could
-  //   have sold them for) or 'buy' (import view: inputs valued at purchase price).
-  // opts.includeDelivery: apply per-ton delivery cost to border trades.
-  constructor(resources, prices, opts = {}) {
+  constructor(resources, prices) {
     this.resources = resources;               // [{key, de, en, tid}]
     this.byDe = new Map(resources.map(r => [r.de, r]));
     this.byEn = new Map(resources.map(r => [r.en, r]));
     this.byKey = new Map(resources.map(r => [r.key, r]));
     this.prices = prices;                     // {purchaseUSD:{key:v}, ... , workdayCostRUB, ...}
-    this.inputPriceMode = opts.inputPriceMode ?? 'sell';
-    this.includeDelivery = opts.includeDelivery ?? false;
-  }
-
-  delivery(key, currency) {
-    if (!this.includeDelivery || NON_DELIVERABLE.has(key)) return 0;
-    return (currency === 'USD' ? this.prices.deliveryCostUSD : this.prices.deliveryCostRUB) ?? 0;
   }
 
   // Price used for produced goods (revenue side).
   outputPrice(nameOrKey, currency) {
     const key = this.byKey.has(nameOrKey) ? nameOrKey : this.keyForName(nameOrKey);
     if (!key) return 0;
-    return this.sell(key, currency) - this.delivery(key, currency);
+    return this.sell(key, currency);
   }
 
-  // Price used for consumed goods (cost side), per inputPriceMode.
+  // Price used for consumed goods (cost side). One convention: what you could
+  // have sold the input for, so consuming it is priced as the opportunity given
+  // up. The alternative import view, and the per-tonne border delivery cost,
+  // were options on screen that described neither where prices come from — the
+  // save's own stats.ini — nor how a vehicle's sale value is derived, which is
+  // the executable's ordered component formula. Two settings that explained
+  // nothing they appeared to explain are worse than one convention that holds.
   inputPrice(nameOrKey, currency) {
     const key = this.byKey.has(nameOrKey) ? nameOrKey : this.keyForName(nameOrKey);
     if (!key) return 0;
     if (key === 'workers') return this.workday(currency);
-    if (this.inputPriceMode === 'buy') return this.buy(key, currency) + this.delivery(key, currency);
-    // Consuming a locally produced input is not a border delivery. Keep its
-    // opportunity value unchanged; delivery only applies to actual exports or
-    // to imported inputs in buy mode.
     return this.sell(key, currency);
   }
 

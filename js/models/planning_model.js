@@ -8,7 +8,7 @@ export const PLANNING_MODEL_SCHEMA_VERSION = 1;
 export const PLANNING_KEYS = Object.freeze([
   'currency', 'priceSource', 'decade', 'overrides',
   'plan', 'cities', 'activeCity', 'vanillaOnly',
-  'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset',
+  'vehicleProduction', 'train', 'lowtech', 'dataset',
   'tuning', 'buildingOverrides', 'customBuildings', 'advancedBuildingKey',
   'chains', 'activeChain', 'productionScope',
   'historyKey', 'historyCompareKeys', 'historyLogScale',
@@ -45,7 +45,6 @@ const DEFAULT_PLANNING = {
     population: 2500, cities: 1, currentYear: 1930, startYear: 1920,
     researched: 0, researchKeys: null,
   },
-  calcOpts: { inputPriceMode: 'sell', includeDelivery: false },
   dataset: 'game',
   tuning: {},
   buildingOverrides: {},

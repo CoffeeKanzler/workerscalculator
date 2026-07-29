@@ -180,7 +180,10 @@ export function solveChain(goalKey, amount, buildings, eco, opts = {}) {
     if (dem < 1e-9) continue;
     const entry = counts.get(key);
     if (!entry || imports.has(key)) {
-      const price = eco.buy(key, currency) + eco.delivery(key, currency);
+      // Imported inputs are priced at what importing costs. The per-tonne
+      // border delivery that used to be added here was a toggle that
+      // explained neither where prices come from nor how they are used.
+      const price = eco.buy(key, currency);
       const cost = dem * price;
       rows.push({ key, demand: dem, imported: true, importCost: cost,
                   importable: !!index.get(key) });

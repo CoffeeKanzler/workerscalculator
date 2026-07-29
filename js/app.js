@@ -1,9 +1,9 @@
-import { STRINGS } from './i18n.js?v=119';
+import { STRINGS } from './i18n.js?v=121';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
-import { solveChain, producersByResource, defaultProducer } from './chain.js?v=15';
+import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
 import { applyBuildingOverrides, buildingOverrideKey, BUILDING_OVERRIDE_FIELDS, duplicateCustomBuilding } from './building_overrides.js?v=2';
 import { completedPaidResearchKeys } from './research.js?v=2';
@@ -20,7 +20,7 @@ import {
   createPlanningSaveCoordinator,
   migrateLegacySnapshots,
   serializePlannerState,
-} from './storage.js?v=6';
+} from './storage.js?v=7';
 import {
   PLANNING_KEYS,
   createPlanningCompatibleState,
@@ -29,7 +29,7 @@ import {
   planningProjection,
   refreshPlanningFromObservation,
   seedPlanningFromObservation,
-} from './models/planning_model.js';
+} from './models/planning_model.js?v=2';
 import { planningAreas } from './models/planning_areas.js';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
@@ -61,7 +61,7 @@ import {
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
 } from './adapters/save_folder_adapter.js?v=6';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=2';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=3';
 import { bootstrapRuntime } from './bootstrap.js?v=2';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
@@ -78,7 +78,7 @@ const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'citie
   'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'theme', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
-  'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset',
+  'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'dataset',
   'chains', 'activeChain', 'tuning', 'productionScope', 'saveImport', 'republicView',
   'buildingOverrides', 'customBuildings',
   'republicRange', 'republicResource', 'republicScope', 'mapLayers', 'mapBuildingFilter',
@@ -139,7 +139,6 @@ function createInitialState() {
     vanillaOnly: false,
     vehicleProduction: { productivity: 1, timeUnit: 'year', rows: [] },
     train: { cargo: 'Kohle', length: 450, locoName: null, locoCount: 1 },
-    calcOpts: { inputPriceMode: 'sell', includeDelivery: false },
     dataset: 'game',   // 'game' (current game files) | 'sheet' (spreadsheet snapshot)
     tuning: {},        // advanced-mode overrides for community constants
     buildingOverrides: {}, // dataset-scoped advanced production-building overrides
@@ -429,19 +428,9 @@ function currentPrices() {
 }
 
 function economy() {
-  return new Economy(DATA.resources, currentPrices(), state.calcOpts);
+  return new Economy(DATA.resources, currentPrices());
 }
 
-// Shared toggles for how profit is computed (production + analysis tabs).
-function renderCalcOpts() {
-  return el('div', { class: 'settingsbar' },
-    el('label', {}, t('inputPriceMode') + ' ',
-      selectInput([['sell', t('inputPriceSell')], ['buy', t('inputPriceBuy')]],
-        state.calcOpts.inputPriceMode, v => { state.calcOpts.inputPriceMode = v; })),
-    el('label', {}, t('includeDelivery') + ' ', el('input', {
-      type: 'checkbox', checked: state.calcOpts.includeDelivery,
-      onchange: e => { state.calcOpts.includeDelivery = e.target.checked; update(); } })));
-}
 
 // ---------------------------------------------------------------- helpers
 const $ = sel => document.querySelector(sel);
@@ -1448,7 +1437,7 @@ function renderProduction() {
     kv(t('buildCost') + ` ${cur()}`, fmt(result.totalBuildCost, 0)));
 
   const assumptions = el('details', { class: 'planner-assumptions secondary-section' },
-    el('summary', {}, t('planAssumptions')), settings, renderCalcOpts(), fieldsBox);
+    el('summary', {}, t('planAssumptions')), settings, fieldsBox);
   const planEditor = el('div', { class: 'planner-main' },
     el('div', { class: 'planner-table' },
       visibleRows.length ? el('div', { class: 'tablewrap' }, tbl) : el('p', { class: 'empty-state' }, t('emptyProductionArea')),
@@ -1659,7 +1648,6 @@ function renderAnalysis() {
 
   return el('section', {},
     el('p', { class: 'hint' }, t('analysisHint')),
-    renderCalcOpts(),
     el('input', {
       type: 'search', placeholder: t('searchPlaceholder'), value: state.analysisSearch,
       oninput: e => { state.analysisSearch = e.target.value; update(); },
@@ -1822,7 +1810,7 @@ function renderVehicleProduction() {
 
   return el('section', {},
     el('p', { class: 'hint' }, t('vehicleProdHint')),
-    settings, renderCalcOpts(),
+    settings,
     el('h3', {}, t('bestVehicles')),
     Array.isArray(blueprintOwned) ? el('p', { class: 'hint' },
       `${t('blueprintsOwnedInSave')}: ${fmt(blueprintOwned.length, 0)} · stats.ini`) : null,
@@ -2018,7 +2006,7 @@ async function handleSaveDirectory(fileList) {
     if (!backupResult.ok) throw backupResult.error;
 
     const next = createCompatibleState(createInitialState());
-    for (const key of ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'calcOpts', 'tuning']) {
+    for (const key of ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'tuning']) {
       next[key] = cloneStateValue(state[key]);
     }
     next.dataset = 'game';
@@ -2180,7 +2168,7 @@ function renderHome() {
       onchange: event => event.target.files.length && handleSaveDirectory(event.target.files) }));
   const startManual = tab => {
     if (state.saveImport && !confirm(t('startManualConfirm'))) return;
-    const preserved = Object.fromEntries(['lang', 'currency', 'calcOpts', 'tuning']
+    const preserved = Object.fromEntries(['lang', 'currency', 'tuning']
       .map(key => [key, cloneStateValue(state[key])]));
     replaceSharedState({ ...createInitialState(), ...preserved, tab });
     state.statsRecords = null;
@@ -5449,7 +5437,6 @@ function update() {
 
 loadState().then(() => {
   if (!HAS_SAVE_WORKSPACE && state.tab === 'saveimport') state.tab = 'republic';
-  state.calcOpts = { inputPriceMode: 'sell', includeDelivery: false, ...(state.calcOpts || {}) };
   return loadData();
 }).then(async () => {
   applyRuntimeResult(await APP_RUNTIME.start());
