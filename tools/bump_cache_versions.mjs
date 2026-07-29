@@ -146,7 +146,7 @@ function main(argv) {
       previousFiles[target] = previousFile(target);
       currentFiles[target] = existsSync(file) ? readFileSync(file, 'utf8') : '';
     }
-    const stale = staleReferenceTargets(changedFiles, {
+    const stale = staleReferenceTargets(changed, {
       targets: plan.targets, previousFiles, currentFiles,
     });
     if (stale.length) {
