@@ -25,13 +25,14 @@ jobs:
           # structuredClone needs 17+, Object.hasOwn 16.9+. 22 is current LTS.
           node-version: '22'
 
-      # No install step: the project has no dependencies, and keeping it that
-      # way is deliberate. A lockfile appearing here would be a real change.
-      - name: Confirm the project is still dependency-free
+      # Reviewed browser libraries may be committed under js/vendor and
+      # css/vendor. They stay offline static assets; a lockfile or node_modules
+      # would mean the no-build browser contract changed.
+      - name: Confirm the project has no install-time dependencies
         run: |
           if [ -f package-lock.json ] || [ -d node_modules ]; then
-            echo "This project is dependency-free by design; a lockfile or"
-            echo "node_modules appeared. If that is intentional, update this step."
+            echo "This project has no install-time dependencies by design."
+            echo "Vendored browser assets belong under js/vendor or css/vendor."
             exit 1
           fi
 
