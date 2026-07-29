@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=110';
+import { STRINGS } from './i18n.js?v=111';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -33,6 +33,7 @@ import { planningAreas } from './models/planning_areas.js';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
+import { mapLayerReport } from './models/map_layer_report.js';
 import { isTheme, nextTheme, resolveTheme, themeAttribute } from './ui/theme.js';
 import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
@@ -1933,6 +1934,18 @@ function presentSaveAdapterProgress(event) {
   }
 }
 
+// Naming the layers and the save version turns "the map is broken" into a
+// report that can be acted on: map layers are read at version-dependent
+// offsets, so an older save can fail exactly here with everything else intact.
+function mapLayerStatus(warnings) {
+  const report = mapLayerReport({
+    warnings,
+    saveVersion: state.saveImport?.header?.saveVersion ?? null,
+  });
+  if (!report.failed) return t('importComplete');
+  return `${t('importCompleteMapWarnings')}: ${report.summary}`;
+}
+
 async function handleSaveDirectory(fileList) {
   // Importing a large save runs for minutes. A second run started on top of a
   // live one interleaves with it: both write the same fixed backup snapshot,
@@ -2064,8 +2077,7 @@ async function handleSaveDirectory(fileList) {
             ...mapResult.warnings.map(warning => `${warning.file}: ${warning.message}`),
           ];
         }
-        state.importStatus = mapResult.warnings.length
-          ? t('importCompleteMapWarnings') : t('importComplete');
+        state.importStatus = mapLayerStatus(mapResult.warnings);
         state.importBusy = false;
         if (!mapResult.warnings.length) deferredMapRetry = null;
         const mapSaveResult = await saveNamedState(importName);
@@ -2119,7 +2131,7 @@ async function retryDeferredMapLayers() {
         !mapKeys.some(key => warning.startsWith(`${key}:`))),
       ...mapResult.warnings.map(warning => `${warning.file}: ${warning.message}`),
     ];
-    state.importStatus = mapResult.warnings.length ? t('importCompleteMapWarnings') : t('importComplete');
+    state.importStatus = mapLayerStatus(mapResult.warnings);
     state.importBusy = false;
     state.importStatusError = false;
     const saved = await saveNamedState(retry.importName);
