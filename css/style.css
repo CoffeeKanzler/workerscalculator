@@ -115,7 +115,8 @@ section { animation: none; }
   overflow: auto;
   position: relative;
 }
-.virtual-tablewrap table.data { margin: 0; }
+.virtual-tablewrap table.data { margin: 0; overflow: visible; }
+.virtual-tablewrap table.data th { z-index: 2; }
 .virtual-tablewrap tbody tr:not(.virtual-spacer) td { white-space: nowrap; }
 .virtual-spacer td { padding: 0; border: 0; }
 .virtual-tablewrap:focus-visible {

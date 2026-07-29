@@ -53,6 +53,7 @@ import { filterRange, seriesFromRecords } from './timeseries.js?v=1';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=3';
+import { createVirtualTable } from './ui/virtual_table.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -1604,27 +1605,37 @@ function renderAnalysis() {
     },
   }, label + (col === id ? (dir > 0 ? ' ↑' : ' ↓') : ''));
 
+  const table = createVirtualTable({
+    rows,
+    columnCount: 9,
+    className: 'data wide analysis-table',
+    ariaLabel: t('tabAnalysis'),
+    rowHeight: 52,
+    renderHead: () => el('thead', {}, el('tr', {},
+      th('name', t('building')), el('th', {}, t('group')), el('th', {}, t('workers')),
+      th('profit', `${t('profit')} ${cur()}`), th('profitPerWorker', t('profitPerWorker')),
+      th('amortDays', t('amortDays')), th('income', `${t('income')} ${cur()}`),
+      th('expenses', `${t('expenses')} ${cur()}`), th('buildCost', `${t('buildCost')} ${cur()}`))),
+    renderRow: r => el('tr', {},
+      el('td', {}, bname(r.b), planningAuthorityBadge(r.b, ['economy', 'construction'])),
+      el('td', {}, r.b.group[state.lang]),
+      el('td', { class: 'r' }, fmt(r.b.workers, 0)),
+      el('td', { class: 'r ' + (r.profit < 0 ? 'neg' : 'pos') }, fmt(r.profit)),
+      el('td', { class: 'r ' + (r.profitPerWorker < 0 ? 'neg' : 'pos') },
+        fmt(r.profitPerWorker)),
+      el('td', { class: 'r' }, fmt(r.amortDays, 1)),
+      el('td', { class: 'r' }, fmt(r.income)),
+      el('td', { class: 'r' }, fmt(r.expenses)),
+      el('td', { class: 'r' }, fmt(r.buildCost, 0))),
+  });
+
   return el('section', {},
     el('p', { class: 'hint' }, t('analysisHint')),
     el('input', {
       type: 'search', placeholder: t('searchPlaceholder'), value: state.analysisSearch,
       oninput: e => { state.analysisSearch = e.target.value; update(); },
     }),
-    el('table', { class: 'data wide' },
-      el('thead', {}, el('tr', {},
-        th('name', t('building')), el('th', {}, t('group')), el('th', {}, t('workers')),
-        th('profit', `${t('profit')} ${cur()}`), th('profitPerWorker', t('profitPerWorker')),
-        th('amortDays', t('amortDays')), th('income', `${t('income')} ${cur()}`),
-        th('expenses', `${t('expenses')} ${cur()}`), th('buildCost', `${t('buildCost')} ${cur()}`))),
-      el('tbody', {}, rows.map(r => el('tr', {},
-        el('td', {}, bname(r.b), planningAuthorityBadge(r.b, ['economy', 'construction'])),
-        el('td', {}, r.b.group[state.lang]),
-        el('td', { class: 'r' }, fmt(r.b.workers, 0)),
-        el('td', { class: 'r ' + (r.profit < 0 ? 'neg' : 'pos') }, fmt(r.profit)),
-        el('td', { class: 'r ' + (r.profitPerWorker < 0 ? 'neg' : 'pos') }, fmt(r.profitPerWorker)),
-        el('td', { class: 'r' }, fmt(r.amortDays, 1)),
-        el('td', { class: 'r' }, fmt(r.income)), el('td', { class: 'r' }, fmt(r.expenses)),
-        el('td', { class: 'r' }, fmt(r.buildCost, 0)))))));
+    table);
 }
 
 // ---------------------------------------------------------------- vehicle production tab
