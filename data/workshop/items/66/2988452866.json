@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2988452866",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.292Z",
+  "buildings": [
+    {
+      "id": "2988452866/Landfill",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste": 1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 15,
+        "gravel": 50,
+        "asphalt": 10,
+        "workers": 400,
+        "steel": 4,
+        "boards": 5,
+        "bricks": 10,
+        "mcomponents": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Landfill",
+      "workshopId": "2988452866",
+      "modPath": "Landfill"
+    },
+    {
+      "id": "2988452866/Landfill2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste_mixed": 1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.03
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 15,
+        "gravel": 50,
+        "asphalt": 10,
+        "workers": 470,
+        "steel": 10,
+        "boards": 5,
+        "bricks": 10,
+        "mcomponents": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Junk Yard",
+      "workshopId": "2988452866",
+      "modPath": "Landfill2"
+    }
+  ],
+  "vehicles": []
+}

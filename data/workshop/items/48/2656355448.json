@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2656355448",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.277Z",
+  "buildings": [
+    {
+      "id": "2656355448/015b",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 1
+      },
+      "constructionResources": {
+        "gravel": 20,
+        "asphalt": 3,
+        "workers": 250,
+        "boards": 2,
+        "steel": 10,
+        "mcomponents": 1,
+        "concrete": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "15m Dry Bulk Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "015b"
+    },
+    {
+      "id": "2656355448/015m",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {
+        "gravel": 20,
+        "asphalt": 3,
+        "workers": 250,
+        "boards": 2,
+        "steel": 10,
+        "mcomponents": 1,
+        "concrete": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "15m Underground Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "015m"
+    },
+    {
+      "id": "2656355448/050b",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 5
+      },
+      "constructionResources": {
+        "gravel": 50,
+        "asphalt": 5,
+        "workers": 700,
+        "boards": 5,
+        "steel": 25,
+        "mcomponents": 3,
+        "concrete": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "50m Dry Bulk Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "050b"
+    },
+    {
+      "id": "2656355448/050m",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 5
+      },
+      "constructionResources": {
+        "gravel": 50,
+        "asphalt": 5,
+        "workers": 750,
+        "boards": 5,
+        "steel": 25,
+        "mcomponents": 3,
+        "concrete": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "50m Underground Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "050m"
+    },
+    {
+      "id": "2656355448/100b",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 5
+      },
+      "constructionResources": {
+        "gravel": 90,
+        "asphalt": 10,
+        "workers": 850,
+        "boards": 10,
+        "steel": 40,
+        "mcomponents": 5,
+        "concrete": 30
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "100m Dry Bulk Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "100b"
+    },
+    {
+      "id": "2656355448/100m",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 5
+      },
+      "constructionResources": {
+        "gravel": 90,
+        "asphalt": 10,
+        "workers": 950,
+        "boards": 10,
+        "steel": 40,
+        "mcomponents": 5,
+        "concrete": 30
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "100m Underground Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "100m"
+    },
+    {
+      "id": "2656355448/150b",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 5
+      },
+      "constructionResources": {
+        "gravel": 140,
+        "asphalt": 10,
+        "workers": 1030,
+        "boards": 15,
+        "steel": 45,
+        "mcomponents": 5,
+        "concrete": 40
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "150m Dry Bulk Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "150b"
+    },
+    {
+      "id": "2656355448/150m",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 5
+      },
+      "constructionResources": {
+        "gravel": 140,
+        "asphalt": 10,
+        "workers": 1180,
+        "boards": 15,
+        "steel": 45,
+        "mcomponents": 5,
+        "concrete": 40
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "150m Underground Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "150m"
+    },
+    {
+      "id": "2656355448/200b",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 5
+      },
+      "constructionResources": {
+        "gravel": 190,
+        "asphalt": 10,
+        "workers": 1150,
+        "boards": 20,
+        "steel": 50,
+        "mcomponents": 5,
+        "concrete": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "200m Dry Bulk Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "200b"
+    },
+    {
+      "id": "2656355448/200m",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 5
+      },
+      "constructionResources": {
+        "gravel": 190,
+        "asphalt": 10,
+        "workers": 1350,
+        "boards": 20,
+        "steel": 50,
+        "mcomponents": 5,
+        "concrete": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "200m Underground Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "200m"
+    },
+    {
+      "id": "2656355448/250b",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 5
+      },
+      "constructionResources": {
+        "gravel": 230,
+        "asphalt": 10,
+        "workers": 1300,
+        "boards": 20,
+        "steel": 60,
+        "mcomponents": 5,
+        "concrete": 60
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "250m Dry Bulk Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "250b"
+    },
+    {
+      "id": "2656355448/250m",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 5
+      },
+      "constructionResources": {
+        "gravel": 230,
+        "asphalt": 10,
+        "workers": 1500,
+        "boards": 20,
+        "steel": 60,
+        "mcomponents": 5,
+        "concrete": 60
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "250m Underground Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "250m"
+    },
+    {
+      "id": "2656355448/300b",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 5
+      },
+      "constructionResources": {
+        "gravel": 250,
+        "asphalt": 20,
+        "workers": 1450,
+        "boards": 30,
+        "steel": 55,
+        "mcomponents": 10,
+        "concrete": 60
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "300m Dry Bulk Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "300b"
+    },
+    {
+      "id": "2656355448/300m",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 5
+      },
+      "constructionResources": {
+        "gravel": 250,
+        "asphalt": 20,
+        "workers": 1750,
+        "boards": 30,
+        "steel": 55,
+        "mcomponents": 10,
+        "concrete": 60
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "300m Underground Conveyor",
+      "workshopId": "2656355448",
+      "modPath": "300m"
+    }
+  ],
+  "vehicles": []
+}

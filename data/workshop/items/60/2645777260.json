@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2645777260",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.210Z",
+  "buildings": [
+    {
+      "id": "2645777260/krusevo",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Krusevo spomenik",
+      "workshopId": "2645777260",
+      "modPath": "krusevo"
+    },
+    {
+      "id": "2645777260/krusevo_attraction",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.7,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Krusevo Attraction",
+      "workshopId": "2645777260",
+      "modPath": "krusevo_attraction"
+    }
+  ],
+  "vehicles": []
+}

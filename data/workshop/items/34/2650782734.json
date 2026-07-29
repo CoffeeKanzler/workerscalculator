@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2650782734",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.221Z",
+  "buildings": [
+    {
+      "id": "2650782734/muzej_revolucije",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 12,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.7,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Museum of the Revolution of BiH",
+      "workshopId": "2650782734",
+      "modPath": "muzej_revolucije"
+    }
+  ],
+  "vehicles": []
+}

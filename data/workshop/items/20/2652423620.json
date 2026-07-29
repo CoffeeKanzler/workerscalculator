@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2652423620",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.244Z",
+  "buildings": [
+    {
+      "id": "2652423620/museum",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Historical museum",
+      "workshopId": "2652423620",
+      "modPath": "museum"
+    }
+  ],
+  "vehicles": []
+}

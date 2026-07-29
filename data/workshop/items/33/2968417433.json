@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2968417433",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.167Z",
+  "buildings": [
+    {
+      "id": "2968417433/Osso",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {
+        "water": 11
+      },
+      "consumption": {
+        "usagewater": 1.4,
+        "gravel": 0.05
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.065
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 30,
+        "concrete": 100,
+        "workers": 1500,
+        "boards": 10,
+        "bricks": 30,
+        "steel": 20,
+        "mcomponents": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Osmosis Water Treatment plant.",
+      "workshopId": "2968417433",
+      "modPath": "Osso"
+    },
+    {
+      "id": "2968417433/Osso2",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "water": 11
+      },
+      "consumption": {
+        "usagewater": 1.4,
+        "gravel": 0.05
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.065
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 40,
+        "concrete": 190,
+        "workers": 2200,
+        "boards": 10,
+        "bricks": 40,
+        "steel": 40,
+        "mcomponents": 6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large Osmosis Waterworks.",
+      "workshopId": "2968417433",
+      "modPath": "Osso2"
+    },
+    {
+      "id": "2968417433/Osso3",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {
+        "water": 11
+      },
+      "consumption": {
+        "usagewater": 1.4,
+        "gravel": 0.05
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.065
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 50,
+        "concrete": 250,
+        "workers": 3000,
+        "boards": 10,
+        "bricks": 60,
+        "steel": 50,
+        "mcomponents": 8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Osmosis Waterworks XL.",
+      "workshopId": "2968417433",
+      "modPath": "Osso3"
+    }
+  ],
+  "vehicles": []
+}

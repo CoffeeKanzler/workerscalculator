@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2982185949",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.256Z",
+  "buildings": [
+    {
+      "id": "2982185949/Peasant",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.25,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Peasant Mudhouse",
+      "workshopId": "2982185949",
+      "modPath": "Peasant"
+    },
+    {
+      "id": "2982185949/Peasant2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.68,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20
+      },
+      "constructionResources": {
+        "gravel": 10,
+        "workers": 100,
+        "bricks": 10,
+        "boards": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Peasant Tenaments",
+      "workshopId": "2982185949",
+      "modPath": "Peasant2"
+    },
+    {
+      "id": "2982185949/Peasant3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.68,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20
+      },
+      "constructionResources": {
+        "gravel": 8,
+        "workers": 90,
+        "bricks": 10,
+        "boards": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Peasant Tenaments v2",
+      "workshopId": "2982185949",
+      "modPath": "Peasant3"
+    },
+    {
+      "id": "2982185949/Peasant4",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 4,
+      "professors": 4,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 8,
+        "workers": 90,
+        "bricks": 10,
+        "boards": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Peasant School",
+      "workshopId": "2982185949",
+      "modPath": "Peasant4"
+    },
+    {
+      "id": "2982185949/Peasant5",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 10,
+        "workers": 100,
+        "bricks": 10,
+        "boards": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Peasant Kindergarten",
+      "workshopId": "2982185949",
+      "modPath": "Peasant5"
+    },
+    {
+      "id": "2982185949/Peasant6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.66,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30
+      },
+      "constructionResources": {
+        "gravel": 10,
+        "workers": 120,
+        "bricks": 14,
+        "boards": 6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Peasant Housing",
+      "workshopId": "2982185949",
+      "modPath": "Peasant6"
+    },
+    {
+      "id": "2982185949/Tan",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "fabric": 0.02,
+        "meat": 0.1
+      },
+      "consumption": {
+        "livestock": 0.2,
+        "plants": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 16,
+        "workers": 140,
+        "bricks": 18,
+        "boards": 6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Old Tannery",
+      "workshopId": "2982185949",
+      "modPath": "Tan"
+    }
+  ],
+  "vehicles": []
+}

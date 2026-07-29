@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3045742731",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.357Z",
+  "buildings": [
+    {
+      "id": "3045742731/Nowowiejska4Block",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 168,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 168
+      },
+      "constructionResources": {
+        "workers": 490,
+        "asphalt": 14,
+        "gravel": 16,
+        "concrete": 12,
+        "steel": 5,
+        "bricks": 19
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Nowowiejska 4 Block",
+      "workshopId": "3045742731",
+      "modPath": "Nowowiejska4Block"
+    },
+    {
+      "id": "3045742731/Nowowiejska4Row",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 168,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 168
+      },
+      "constructionResources": {
+        "workers": 490,
+        "asphalt": 14,
+        "gravel": 16,
+        "concrete": 12,
+        "steel": 5,
+        "bricks": 19
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Nowowiejska 4 Row",
+      "workshopId": "3045742731",
+      "modPath": "Nowowiejska4Row"
+    },
+    {
+      "id": "3045742731/Nowowiejska4Shop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 490,
+        "asphalt": 14,
+        "gravel": 16,
+        "concrete": 12,
+        "steel": 5,
+        "bricks": 19
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Nowowiejska 4 Shop",
+      "workshopId": "3045742731",
+      "modPath": "Nowowiejska4Shop"
+    },
+    {
+      "id": "3045742731/Nowowiejska4SmallShop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 490,
+        "asphalt": 14,
+        "gravel": 16,
+        "concrete": 12,
+        "steel": 5,
+        "bricks": 19
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Nowowiejska 4 Small Shop",
+      "workshopId": "3045742731",
+      "modPath": "Nowowiejska4SmallShop"
+    }
+  ],
+  "vehicles": []
+}

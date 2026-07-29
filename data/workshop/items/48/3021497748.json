@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3021497748",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:40.999Z",
+  "buildings": [
+    {
+      "id": "3021497748/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 180,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 180
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flats - veranda 10",
+      "workshopId": "3021497748",
+      "modPath": "1"
+    },
+    {
+      "id": "3021497748/10",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 156,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 156
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flats - veranda O 15",
+      "workshopId": "3021497748",
+      "modPath": "10"
+    },
+    {
+      "id": "3021497748/11",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 216,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 216
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flats - veranda O 20",
+      "workshopId": "3021497748",
+      "modPath": "11"
+    },
+    {
+      "id": "3021497748/2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 140,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 140
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flats - veranda 8",
+      "workshopId": "3021497748",
+      "modPath": "2"
+    },
+    {
+      "id": "3021497748/3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flats - veranda 5",
+      "workshopId": "3021497748",
+      "modPath": "3"
+    },
+    {
+      "id": "3021497748/4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flats - veranda small",
+      "workshopId": "3021497748",
+      "modPath": "4"
+    },
+    {
+      "id": "3021497748/5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 70,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 70
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flats - veranda B 8",
+      "workshopId": "3021497748",
+      "modPath": "5"
+    },
+    {
+      "id": "3021497748/6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flats - veranda B 5",
+      "workshopId": "3021497748",
+      "modPath": "6"
+    },
+    {
+      "id": "3021497748/7",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flats - veranda B 3",
+      "workshopId": "3021497748",
+      "modPath": "7"
+    },
+    {
+      "id": "3021497748/8",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "detached house - veranda B 3",
+      "workshopId": "3021497748",
+      "modPath": "8"
+    },
+    {
+      "id": "3021497748/9",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flats - veranda O 10",
+      "workshopId": "3021497748",
+      "modPath": "9"
+    }
+  ],
+  "vehicles": []
+}

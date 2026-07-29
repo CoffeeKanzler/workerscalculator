@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2629303899",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.113Z",
+  "buildings": [
+    {
+      "id": "2629303899/sierociniec",
+      "nameId": 6263,
+      "types": [
+        "TYPE_ORPHANAGE"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2629303899",
+      "modPath": "sierociniec"
+    }
+  ],
+  "vehicles": []
+}

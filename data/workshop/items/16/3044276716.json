@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3044276716",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.234Z",
+  "buildings": [
+    {
+      "id": "3044276716/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60
+      },
+      "constructionResources": {
+        "asphalt": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "White Lowrise single unit",
+      "workshopId": "3044276716",
+      "modPath": "1"
+    },
+    {
+      "id": "3044276716/2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 140,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 140
+      },
+      "constructionResources": {
+        "asphalt": 25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "White Lowrise L-shape",
+      "workshopId": "3044276716",
+      "modPath": "2"
+    },
+    {
+      "id": "3044276716/3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120
+      },
+      "constructionResources": {
+        "asphalt": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Red Lowrise",
+      "workshopId": "3044276716",
+      "modPath": "3"
+    },
+    {
+      "id": "3044276716/4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {
+        "mcomponents": 6,
+        "asphalt": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Red Highrise",
+      "workshopId": "3044276716",
+      "modPath": "4"
+    },
+    {
+      "id": "3044276716/5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150
+      },
+      "constructionResources": {
+        "mcomponents": 7,
+        "asphalt": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "White Highrise",
+      "workshopId": "3044276716",
+      "modPath": "5"
+    },
+    {
+      "id": "3044276716/6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 196,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 196
+      },
+      "constructionResources": {
+        "mcomponents": 7,
+        "bricks": 25,
+        "asphalt": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Red Highrise",
+      "workshopId": "3044276716",
+      "modPath": "6"
+    },
+    {
+      "id": "3044276716/admin",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 35,
+      "professors": 10,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Izhevsk district administration",
+      "workshopId": "3044276716",
+      "modPath": "admin"
+    },
+    {
+      "id": "3044276716/bs",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 25,
+      "professors": 45,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Big school",
+      "workshopId": "3044276716",
+      "modPath": "bs"
+    },
+    {
+      "id": "3044276716/clinic",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 30,
+      "professors": 15,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Izhevsk clinic",
+      "workshopId": "3044276716",
+      "modPath": "clinic"
+    },
+    {
+      "id": "3044276716/popo",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 100,
+      "professors": 150,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 100,
+        "ecomponents": 5,
+        "mcomponents": 10,
+        "asphalt": 15,
+        "concrete": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Izhevsk Police Station",
+      "workshopId": "3044276716",
+      "modPath": "popo"
+    },
+    {
+      "id": "3044276716/radio",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 50,
+      "professors": 25,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Izhevsk Radio Station",
+      "workshopId": "3044276716",
+      "modPath": "radio"
+    },
+    {
+      "id": "3044276716/school",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 15,
+      "professors": 15,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small school",
+      "workshopId": "3044276716",
+      "modPath": "school"
+    },
+    {
+      "id": "3044276716/shop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Izhevsk shop",
+      "workshopId": "3044276716",
+      "modPath": "shop"
+    },
+    {
+      "id": "3044276716/sub",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electricity substation",
+      "workshopId": "3044276716",
+      "modPath": "sub"
+    }
+  ],
+  "vehicles": []
+}

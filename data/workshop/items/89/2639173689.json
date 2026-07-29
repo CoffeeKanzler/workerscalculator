@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2639173689",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.185Z",
+  "buildings": [
+    {
+      "id": "2639173689/coal_processing",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "coal": 12
+      },
+      "consumption": {
+        "rawcoal": 18,
+        "chemicals": 0.075
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.4
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Coal ore processing plant",
+      "workshopId": "2639173689",
+      "modPath": "coal_processing"
+    },
+    {
+      "id": "2639173689/iron_processing",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "iron": 12
+      },
+      "consumption": {
+        "rawiron": 18,
+        "chemicals": 0.075
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.4
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Iron ore processing plant",
+      "workshopId": "2639173689",
+      "modPath": "iron_processing"
+    }
+  ],
+  "vehicles": []
+}

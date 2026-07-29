@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2654818516",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.265Z",
+  "buildings": [
+    {
+      "id": "2654818516/muzej_21oktobar",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 12,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.7,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Muzej 21. Oktobar",
+      "workshopId": "2654818516",
+      "modPath": "muzej_21oktobar"
+    }
+  ],
+  "vehicles": []
+}

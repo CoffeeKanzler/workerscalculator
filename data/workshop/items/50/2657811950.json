@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2657811950",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:34:53.456Z",
+  "buildings": [
+    {
+      "id": "2657811950/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kirghiz SSR Large Flag",
+      "workshopId": "2657811950",
+      "modPath": "Large_Flying"
+    },
+    {
+      "id": "2657811950/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kirghiz SSR Medium Flag",
+      "workshopId": "2657811950",
+      "modPath": "Med_Flying"
+    },
+    {
+      "id": "2657811950/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kirghiz SSR Small Flag",
+      "workshopId": "2657811950",
+      "modPath": "Small_Flying"
+    }
+  ],
+  "vehicles": []
+}

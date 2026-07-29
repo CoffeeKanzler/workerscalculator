@@ -1,0 +1,676 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2987412554",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.282Z",
+  "buildings": [
+    {
+      "id": "2987412554/Circle",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16
+      },
+      "constructionResources": {
+        "gravel": 12,
+        "workers": 170,
+        "bricks": 8,
+        "boards": 12
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh Circle",
+      "workshopId": "2987412554",
+      "modPath": "Circle"
+    },
+    {
+      "id": "2987412554/Dacha5b",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 30,
+        "bricks": 1,
+        "boards": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5b"
+    },
+    {
+      "id": "2987412554/Dacha5b2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 30,
+        "bricks": 1,
+        "boards": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh v2",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5b2"
+    },
+    {
+      "id": "2987412554/Dacha5c",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 60,
+        "bricks": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh L2",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5c"
+    },
+    {
+      "id": "2987412554/Dacha5c2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 60,
+        "bricks": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh L2",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5c2"
+    },
+    {
+      "id": "2987412554/Dacha5d",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 60,
+        "bricks": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh Lv3",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5d"
+    },
+    {
+      "id": "2987412554/Dacha5ds",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 30,
+        "bricks": 1,
+        "boards": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh v3",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5ds"
+    },
+    {
+      "id": "2987412554/Dacha5e",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 60,
+        "bricks": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh Lv4",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5e"
+    },
+    {
+      "id": "2987412554/Dacha5es",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 30,
+        "bricks": 1,
+        "boards": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh v4",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5es"
+    },
+    {
+      "id": "2987412554/Dacha5f",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 60,
+        "bricks": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh Lv5",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5f"
+    },
+    {
+      "id": "2987412554/Dacha5fs",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 30,
+        "bricks": 1,
+        "boards": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh v5",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5fs"
+    },
+    {
+      "id": "2987412554/Dacha5g",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 60,
+        "bricks": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh Lv6",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5g"
+    },
+    {
+      "id": "2987412554/Dacha5gs",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 30,
+        "bricks": 1,
+        "boards": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh v6",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5gs"
+    },
+    {
+      "id": "2987412554/Dacha5h",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 60,
+        "bricks": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh Lv7",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5h"
+    },
+    {
+      "id": "2987412554/Dacha5hs",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 30,
+        "bricks": 1,
+        "boards": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh v7",
+      "workshopId": "2987412554",
+      "modPath": "Dacha5hs"
+    },
+    {
+      "id": "2987412554/Dacha7b",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 60,
+        "bricks": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh B2",
+      "workshopId": "2987412554",
+      "modPath": "Dacha7b"
+    },
+    {
+      "id": "2987412554/Dacha7c",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 60,
+        "bricks": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kottedzh B2r",
+      "workshopId": "2987412554",
+      "modPath": "Dacha7c"
+    },
+    {
+      "id": "2987412554/Dacha8b",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "workers": 60,
+        "bricks": 3,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "JACT V1",
+      "workshopId": "2987412554",
+      "modPath": "Dacha8b"
+    },
+    {
+      "id": "2987412554/Dacha8c",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "workers": 60,
+        "bricks": 3,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "JACT V2",
+      "workshopId": "2987412554",
+      "modPath": "Dacha8c"
+    },
+    {
+      "id": "2987412554/Dacha9b",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 60,
+        "bricks": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "JACT V3",
+      "workshopId": "2987412554",
+      "modPath": "Dacha9b"
+    },
+    {
+      "id": "2987412554/Dacha9c",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 60,
+        "bricks": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "JACT V4",
+      "workshopId": "2987412554",
+      "modPath": "Dacha9c"
+    },
+    {
+      "id": "2987412554/Huge",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120
+      },
+      "constructionResources": {
+        "gravel": 60,
+        "workers": 770,
+        "bricks": 58,
+        "boards": 52
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "JACT District",
+      "workshopId": "2987412554",
+      "modPath": "Huge"
+    },
+    {
+      "id": "2987412554/Huge2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 240,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 240
+      },
+      "constructionResources": {
+        "gravel": 100,
+        "workers": 1450,
+        "bricks": 110,
+        "boards": 100
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large JACT District",
+      "workshopId": "2987412554",
+      "modPath": "Huge2"
+    }
+  ],
+  "vehicles": []
+}

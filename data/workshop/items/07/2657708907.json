@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2657708907",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:34:53.437Z",
+  "buildings": [
+    {
+      "id": "2657708907/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Belarus WRW Large Flag",
+      "workshopId": "2657708907",
+      "modPath": "Large_Flying"
+    },
+    {
+      "id": "2657708907/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Belarus WRW Medium Flag",
+      "workshopId": "2657708907",
+      "modPath": "Med_Flying"
+    },
+    {
+      "id": "2657708907/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Belarus WRW Small Flag",
+      "workshopId": "2657708907",
+      "modPath": "Small_Flying"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,630 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3044284594",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.299Z",
+  "buildings": [
+    {
+      "id": "3044284594/biogas",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "fertiliser": 0.2,
+        "oil": 0.6
+      },
+      "consumption": {
+        "waste_bio": 2.3,
+        "water": 0.2
+      },
+      "consumptionPerSecond": {
+        "eletric": 1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bio gas Plant",
+      "workshopId": "3044284594",
+      "modPath": "biogas"
+    },
+    {
+      "id": "3044284594/biogassmall",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {
+        "fertiliser": 0.2,
+        "oil": 0.6
+      },
+      "consumption": {
+        "waste_bio": 2.3,
+        "water": 0.2
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.25
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "small Bio gas Plant",
+      "workshopId": "3044284594",
+      "modPath": "biogassmall"
+    },
+    {
+      "id": "3044284594/biowaste",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "fertiliser_liquid": 0.004
+      },
+      "consumption": {
+        "waste_bio": 0.21
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Bio Mass Heating Plant",
+      "workshopId": "3044284594",
+      "modPath": "biowaste"
+    },
+    {
+      "id": "3044284594/biowaste2",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 200
+      },
+      "consumption": {
+        "waste_bio": 0.21
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Bio Mass Heating Plant",
+      "workshopId": "3044284594",
+      "modPath": "biowaste2"
+    },
+    {
+      "id": "3044284594/biowastebig",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "eletric": 25,
+        "fertiliser_liquid": 0.007
+      },
+      "consumption": {
+        "waste_bio": 1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Biomass Power and Heating plant",
+      "workshopId": "3044284594",
+      "modPath": "biowastebig"
+    },
+    {
+      "id": "3044284594/biowastebig2",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "eletric": 25
+      },
+      "consumption": {
+        "waste_bio": 1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Biomass Power and Heating plant",
+      "workshopId": "3044284594",
+      "modPath": "biowastebig2"
+    },
+    {
+      "id": "3044284594/containerstand",
+      "nameId": 7579,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3044284594",
+      "modPath": "containerstand"
+    },
+    {
+      "id": "3044284594/gravelres",
+      "nameId": 7565,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "gravel": 6.5
+      },
+      "consumption": {
+        "waste_gravel": 7,
+        "water": 0.6
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.8
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3044284594",
+      "modPath": "gravelres"
+    },
+    {
+      "id": "3044284594/holzvergaser",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {
+        "fuel": 0.23,
+        "bitumen": 0.1
+      },
+      "consumption": {
+        "wood": 1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.07
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Wood Gas Production Plant",
+      "workshopId": "3044284594",
+      "modPath": "holzvergaser"
+    },
+    {
+      "id": "3044284594/holzvergaser2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {
+        "fuel": 0.23,
+        "bitumen": 0.1
+      },
+      "consumption": {
+        "waste_bio": 1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.07
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Wood Gas Production Plant (bio waste)",
+      "workshopId": "3044284594",
+      "modPath": "holzvergaser2"
+    },
+    {
+      "id": "3044284594/incinerator",
+      "nameId": 7560,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 40,
+      "professors": 5,
+      "production": {
+        "eletric": 33,
+        "fertiliser_liquid": 0.009
+      },
+      "consumption": {
+        "waste": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3044284594",
+      "modPath": "incinerator"
+    },
+    {
+      "id": "3044284594/incinerator2",
+      "nameId": 7560,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 40,
+      "professors": 5,
+      "production": {
+        "eletric": 33
+      },
+      "consumption": {
+        "waste": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3044284594",
+      "modPath": "incinerator2"
+    },
+    {
+      "id": "3044284594/landfill",
+      "nameId": 7554,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 45000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3044284594",
+      "modPath": "landfill"
+    },
+    {
+      "id": "3044284594/minisewagetreatment",
+      "nameId": null,
+      "types": [
+        "TYPE_SEWAGE_TREATMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 10
+      },
+      "consumption": {
+        "usagewater": 4
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.05
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 1,
+        "ecomponents": 0.1,
+        "mcomponents": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Mini Sewage Treatment Plant",
+      "workshopId": "3044284594",
+      "modPath": "minisewagetreatment"
+    },
+    {
+      "id": "3044284594/pighighrise",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "livestock": 0.8,
+        "waste_bio": 0.5
+      },
+      "consumption": {
+        "plants": 1.8,
+        "water": 1.05
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pig High Rise",
+      "workshopId": "3044284594",
+      "modPath": "pighighrise"
+    },
+    {
+      "id": "3044284594/plastic",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 75,
+      "professors": 0,
+      "production": {
+        "oil": 0.75
+      },
+      "consumption": {
+        "waste_plastic": 0.75,
+        "chemicals": 0.0375
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.5
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Depolymerasation Plant",
+      "workshopId": "3044284594",
+      "modPath": "plastic"
+    },
+    {
+      "id": "3044284594/rdfplant",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "coal": 0.2
+      },
+      "consumption": {
+        "waste": 1
+      },
+      "consumptionPerSecond": {
+        "eletric": 1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Refuse-derived fuel plant",
+      "workshopId": "3044284594",
+      "modPath": "rdfplant"
+    },
+    {
+      "id": "3044284594/recycling",
+      "nameId": 7563,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste_mixed": 1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.03
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3044284594",
+      "modPath": "recycling"
+    },
+    {
+      "id": "3044284594/stall",
+      "nameId": 2157,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_LIVESTOCK": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3044284594",
+      "modPath": "stall"
+    },
+    {
+      "id": "3044284594/toxic",
+      "nameId": 7598,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste_toxic": 0.25,
+        "chemicals": 0.037
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3044284594",
+      "modPath": "toxic"
+    },
+    {
+      "id": "3044284594/wastestorage",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 5000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Waste Storage",
+      "workshopId": "3044284594",
+      "modPath": "wastestorage"
+    },
+    {
+      "id": "3044284594/waterclearifier",
+      "nameId": null,
+      "types": [
+        "TYPE_SEWAGE_TREATMENT"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "water": 22
+      },
+      "consumption": {
+        "usagewater": 11,
+        "chemicals": 0.03
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.075
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "ecomponents": 0.4,
+        "mcomponents": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wastewater Clarifier",
+      "workshopId": "3044284594",
+      "modPath": "waterclearifier"
+    },
+    {
+      "id": "3044284594/woodpellet",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "waste_bio": 1.2
+      },
+      "consumption": {
+        "wood": 1.2
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.18
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Wood Pellet Plant",
+      "workshopId": "3044284594",
+      "modPath": "woodpellet"
+    }
+  ],
+  "vehicles": []
+}

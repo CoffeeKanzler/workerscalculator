@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3632632217",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T14:10:20.911Z",
+  "buildings": [
+    {
+      "id": "3632632217/domus",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dom_Handlowy_Domus",
+      "workshopId": "3632632217",
+      "modPath": "domus"
+    }
+  ],
+  "vehicles": []
+}

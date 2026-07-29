@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3042914770",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.179Z",
+  "buildings": [
+    {
+      "id": "3042914770/1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Reiterbahnhof Station 2 Line",
+      "workshopId": "3042914770",
+      "modPath": "1"
+    },
+    {
+      "id": "3042914770/2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Reiterbahnhof Station 4 Line",
+      "workshopId": "3042914770",
+      "modPath": "2"
+    },
+    {
+      "id": "3042914770/3",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Reiterbahnhof Station 6 Line",
+      "workshopId": "3042914770",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

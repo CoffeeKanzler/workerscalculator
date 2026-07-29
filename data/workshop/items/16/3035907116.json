@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3035907116",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.116Z",
+  "buildings": [
+    {
+      "id": "3035907116/bigheatstorage",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {
+        "heat": 2500
+      },
+      "consumption": {
+        "fertiliser_liquid": 0.05
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big Heat Storage",
+      "workshopId": "3035907116",
+      "modPath": "bigheatstorage"
+    },
+    {
+      "id": "3035907116/coalpowerplant",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "eletric": 30,
+        "fertiliser_liquid": 0.0063
+      },
+      "consumption": {
+        "coal": 0.625
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Combined Heat and Power Plant (coal)",
+      "workshopId": "3035907116",
+      "modPath": "coalpowerplant"
+    },
+    {
+      "id": "3035907116/coolingtower",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "fertiliser_liquid": 1,
+        "water": 100
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.5
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling Tower",
+      "workshopId": "3035907116",
+      "modPath": "coolingtower"
+    },
+    {
+      "id": "3035907116/coolingtower2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "fertiliser_liquid": 0.5,
+        "water": 50
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.25
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling Tower",
+      "workshopId": "3035907116",
+      "modPath": "coolingtower2"
+    },
+    {
+      "id": "3035907116/gaskraftwerk",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 45,
+      "professors": 7,
+      "production": {
+        "eletric": 39,
+        "fertiliser_liquid": 0.009
+      },
+      "consumption": {
+        "oil": 0.32
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined cycle power plant (power+heat/gas)",
+      "workshopId": "3035907116",
+      "modPath": "gaskraftwerk"
+    },
+    {
+      "id": "3035907116/gaspowerplant",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 50,
+      "professors": 8,
+      "production": {
+        "eletric": 52,
+        "fertiliser_liquid": 0.012
+      },
+      "consumption": {
+        "oil": 0.401
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Heat and Power Plant (Gas)",
+      "workshopId": "3035907116",
+      "modPath": "gaspowerplant"
+    },
+    {
+      "id": "3035907116/generator",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "eletric": 26.7
+      },
+      "consumption": {
+        "fertiliser_liquid": 0.009
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 50,
+        "ecomponents": 10,
+        "mcomponents": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Geothermal Power Plant",
+      "workshopId": "3035907116",
+      "modPath": "generator"
+    },
+    {
+      "id": "3035907116/geothermalhp",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {
+        "heat": 667
+      },
+      "consumption": {
+        "fertiliser_liquid": 0.013
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 35,
+        "ecomponents": 5,
+        "mcomponents": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Geothermal Heat Storage",
+      "workshopId": "3035907116",
+      "modPath": "geothermalhp"
+    },
+    {
+      "id": "3035907116/heatpump",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "fertiliser_liquid": 0.004
+      },
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.5
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "District Heatpump",
+      "workshopId": "3035907116",
+      "modPath": "heatpump"
+    },
+    {
+      "id": "3035907116/heatpump2",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 200
+      },
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.5
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "District Heatpump",
+      "workshopId": "3035907116",
+      "modPath": "heatpump2"
+    },
+    {
+      "id": "3035907116/kohlekraftwerk",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 50,
+      "professors": 10,
+      "production": {
+        "eletric": 53.6,
+        "gravel": 0.15,
+        "fertiliser_liquid": 0.0126
+      },
+      "consumption": {
+        "coal": 0.9
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Heat and Power Plant (Coal)",
+      "workshopId": "3035907116",
+      "modPath": "kohlekraftwerk"
+    },
+    {
+      "id": "3035907116/kuehleinheit",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "fertiliser_liquid": 0.2,
+        "water": 10
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.5
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Industrial cooling tower",
+      "workshopId": "3035907116",
+      "modPath": "kuehleinheit"
+    },
+    {
+      "id": "3035907116/kuehlturm",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "fertiliser_liquid": 0.4,
+        "water": 40
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.18
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling Tower",
+      "workshopId": "3035907116",
+      "modPath": "kuehlturm"
+    },
+    {
+      "id": "3035907116/mediumgas",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "eletric": 20.8,
+        "fertiliser_liquid": 0.005
+      },
+      "consumption": {
+        "oil": 0.173
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Combined Heat and Power Plant (Gas)",
+      "workshopId": "3035907116",
+      "modPath": "mediumgas"
+    },
+    {
+      "id": "3035907116/mediumheatstorage",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "heat": 2000
+      },
+      "consumption": {
+        "fertiliser_liquid": 0.04
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Heat Storage",
+      "workshopId": "3035907116",
+      "modPath": "mediumheatstorage"
+    },
+    {
+      "id": "3035907116/oilpump",
+      "nameId": 6056,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3035907116",
+      "modPath": "oilpump"
+    },
+    {
+      "id": "3035907116/oilpump2",
+      "nameId": 6056,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3035907116",
+      "modPath": "oilpump2"
+    },
+    {
+      "id": "3035907116/pumpe",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_URANIUM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "fertiliser_liquid": 0.1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 40,
+        "ecomponents": 2,
+        "mcomponents": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Geothermal Water Well",
+      "workshopId": "3035907116",
+      "modPath": "pumpe"
+    },
+    {
+      "id": "3035907116/smallheatstorage",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 2000
+      },
+      "consumption": {
+        "fertiliser_liquid": 0.04
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Heat Storage",
+      "workshopId": "3035907116",
+      "modPath": "smallheatstorage"
+    },
+    {
+      "id": "3035907116/solarthermic",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "fertiliser_liquid": 0.02
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 5,
+        "ecomponents": 0.5,
+        "mcomponents": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Solar Thermic Heating plant",
+      "workshopId": "3035907116",
+      "modPath": "solarthermic"
+    }
+  ],
+  "vehicles": []
+}

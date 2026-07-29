@@ -1,0 +1,417 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2965687946",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.151Z",
+  "buildings": [
+    {
+      "id": "2965687946/I-522AI_(II-68-04_12-78)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 188,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 188
+      },
+      "constructionResources": {
+        "concrete": 29.899999999999995,
+        "gravel": 1.75,
+        "workers": 921,
+        "prefabpanels": 82.44,
+        "steel": 3.68,
+        "bricks": 0.18,
+        "ecomponents": 0.13,
+        "mcomponents": 0.21,
+        "boards": 24.56
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series_I-522AI_(II-68-04/12-78)",
+      "workshopId": "2965687946",
+      "modPath": "I-522AI_(II-68-04_12-78)"
+    },
+    {
+      "id": "2965687946/I-522AI_(II-68-04_12-82)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 188,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 188
+      },
+      "constructionResources": {
+        "concrete": 29.899999999999995,
+        "gravel": 1.75,
+        "workers": 921,
+        "prefabpanels": 82.44,
+        "steel": 3.68,
+        "bricks": 0.18,
+        "ecomponents": 0.13,
+        "mcomponents": 0.21,
+        "boards": 24.56
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series_I-522AI_(II-68-04/12-82)",
+      "workshopId": "2965687946",
+      "modPath": "I-522AI_(II-68-04_12-82)"
+    },
+    {
+      "id": "2965687946/I-522AI_(II-68-04_16-78)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 252,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 252
+      },
+      "constructionResources": {
+        "concrete": 33.23,
+        "gravel": 1.75,
+        "workers": 1159,
+        "prefabpanels": 104.66,
+        "steel": 4.75,
+        "bricks": 0.23,
+        "ecomponents": 0.13,
+        "mcomponents": 0.21,
+        "boards": 32.75
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series_I-522AI_(II-68-04/16-78)",
+      "workshopId": "2965687946",
+      "modPath": "I-522AI_(II-68-04_16-78)"
+    },
+    {
+      "id": "2965687946/I-522AI_(II-68-04_16-82)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 252,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 252
+      },
+      "constructionResources": {
+        "concrete": 33.23,
+        "gravel": 1.75,
+        "workers": 1159,
+        "prefabpanels": 104.66,
+        "steel": 4.75,
+        "bricks": 0.23,
+        "ecomponents": 0.13,
+        "mcomponents": 0.21,
+        "boards": 32.75
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series_I-522AI_(II-68-04/16-82)",
+      "workshopId": "2965687946",
+      "modPath": "I-522AI_(II-68-04_16-82)"
+    },
+    {
+      "id": "2965687946/I-522AI_(II-68-04_9-78)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 140,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 140
+      },
+      "constructionResources": {
+        "concrete": 27.269999999999996,
+        "gravel": 1.75,
+        "workers": 733,
+        "prefabpanels": 64.89999999999999,
+        "steel": 2.85,
+        "bricks": 0.13999999999999999,
+        "ecomponents": 0.13,
+        "mcomponents": 0.21,
+        "boards": 18.42
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series_I-522AI_(II-68-04/9-78)",
+      "workshopId": "2965687946",
+      "modPath": "I-522AI_(II-68-04_9-78)"
+    },
+    {
+      "id": "2965687946/I-522AI_(II-68-04_9-82)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 140,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 140
+      },
+      "constructionResources": {
+        "concrete": 27.269999999999996,
+        "gravel": 1.75,
+        "workers": 733,
+        "prefabpanels": 64.89999999999999,
+        "steel": 2.85,
+        "bricks": 0.13999999999999999,
+        "ecomponents": 0.13,
+        "mcomponents": 0.21,
+        "boards": 18.42
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series_I-522AI_(II-68-04/9-82)",
+      "workshopId": "2965687946",
+      "modPath": "I-522AI_(II-68-04_9-82)"
+    },
+    {
+      "id": "2965687946/I-522A_(II-68-04_12-78)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 377,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 377
+      },
+      "constructionResources": {
+        "concrete": 55.349999999999994,
+        "gravel": 3.25,
+        "workers": 1702,
+        "prefabpanels": 152.56,
+        "steel": 6.77,
+        "bricks": 0.29,
+        "ecomponents": 0.24,
+        "mcomponents": 0.38,
+        "boards": 45.44
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series_I-522A_(II-68-04/12-78)",
+      "workshopId": "2965687946",
+      "modPath": "I-522A_(II-68-04_12-78)"
+    },
+    {
+      "id": "2965687946/I-522A_(II-68-04_12-82)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 377,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 377
+      },
+      "constructionResources": {
+        "concrete": 55.349999999999994,
+        "gravel": 3.25,
+        "workers": 1702,
+        "prefabpanels": 152.56,
+        "steel": 6.77,
+        "bricks": 0.29,
+        "ecomponents": 0.24,
+        "mcomponents": 0.38,
+        "boards": 45.44
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series_I-522A_(II-68-04/12-82)",
+      "workshopId": "2965687946",
+      "modPath": "I-522A_(II-68-04_12-82)"
+    },
+    {
+      "id": "2965687946/I-522A_(II-68-04_16-78)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 505,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 505
+      },
+      "constructionResources": {
+        "concrete": 61.51999999999999,
+        "gravel": 3.25,
+        "workers": 2145,
+        "prefabpanels": 193.67000000000002,
+        "steel": 8.729999999999999,
+        "bricks": 0.36,
+        "ecomponents": 0.24,
+        "mcomponents": 0.38,
+        "boards": 60.58
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series_I-522A_(II-68-04/16-78)",
+      "workshopId": "2965687946",
+      "modPath": "I-522A_(II-68-04_16-78)"
+    },
+    {
+      "id": "2965687946/I-522A_(II-68-04_16-82)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 505,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 505
+      },
+      "constructionResources": {
+        "concrete": 61.51999999999999,
+        "gravel": 3.25,
+        "workers": 2145,
+        "prefabpanels": 193.67000000000002,
+        "steel": 8.729999999999999,
+        "bricks": 0.36,
+        "ecomponents": 0.24,
+        "mcomponents": 0.38,
+        "boards": 60.58
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series_I-522A_(II-68-04/16-82)",
+      "workshopId": "2965687946",
+      "modPath": "I-522A_(II-68-04_16-82)"
+    },
+    {
+      "id": "2965687946/I-522A_(II-68-04_9-78)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 281,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 281
+      },
+      "constructionResources": {
+        "concrete": 50.47999999999999,
+        "gravel": 3.25,
+        "workers": 1354,
+        "prefabpanels": 120.1,
+        "steel": 5.25,
+        "bricks": 0.22999999999999998,
+        "ecomponents": 0.24,
+        "mcomponents": 0.38,
+        "boards": 34.08
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series_I-522A_(II-68-04/9-78)",
+      "workshopId": "2965687946",
+      "modPath": "I-522A_(II-68-04_9-78)"
+    },
+    {
+      "id": "2965687946/I-522A_(II-68-04_9-82)",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 281,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 281
+      },
+      "constructionResources": {
+        "concrete": 50.47999999999999,
+        "gravel": 3.25,
+        "workers": 1354,
+        "prefabpanels": 120.1,
+        "steel": 5.25,
+        "bricks": 0.22999999999999998,
+        "ecomponents": 0.24,
+        "mcomponents": 0.38,
+        "boards": 34.08
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Series_I-522A_(II-68-04/9-82)",
+      "workshopId": "2965687946",
+      "modPath": "I-522A_(II-68-04_9-82)"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2979287767",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.242Z",
+  "buildings": [
+    {
+      "id": "2979287767/Blok10pv1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 10p v1",
+      "workshopId": "2979287767",
+      "modPath": "Blok10pv1"
+    },
+    {
+      "id": "2979287767/Blok10pv2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 10p v2",
+      "workshopId": "2979287767",
+      "modPath": "Blok10pv2"
+    },
+    {
+      "id": "2979287767/Blok11p",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 94,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 94
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 11p",
+      "workshopId": "2979287767",
+      "modPath": "Blok11p"
+    },
+    {
+      "id": "2979287767/Blok12pv1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 164,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 164
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 12p v1",
+      "workshopId": "2979287767",
+      "modPath": "Blok12pv1"
+    },
+    {
+      "id": "2979287767/Blok12pv2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 75,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 75
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 12p v2",
+      "workshopId": "2979287767",
+      "modPath": "Blok12pv2"
+    },
+    {
+      "id": "2979287767/Blok13pv1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 145,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 145
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 13p v1",
+      "workshopId": "2979287767",
+      "modPath": "Blok13pv1"
+    },
+    {
+      "id": "2979287767/Blok13pv2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 156,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 156
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 13p v2",
+      "workshopId": "2979287767",
+      "modPath": "Blok13pv2"
+    },
+    {
+      "id": "2979287767/Blok14p",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 184,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 184
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 14p",
+      "workshopId": "2979287767",
+      "modPath": "Blok14p"
+    },
+    {
+      "id": "2979287767/Blok17p",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 210,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1.09,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 210
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 17p",
+      "workshopId": "2979287767",
+      "modPath": "Blok17p"
+    },
+    {
+      "id": "2979287767/Blok6p",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 6p",
+      "workshopId": "2979287767",
+      "modPath": "Blok6p"
+    },
+    {
+      "id": "2979287767/Blok9pv1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 9p v1",
+      "workshopId": "2979287767",
+      "modPath": "Blok9pv1"
+    },
+    {
+      "id": "2979287767/Blok9pv2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 56,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 56
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 9p v1",
+      "workshopId": "2979287767",
+      "modPath": "Blok9pv2"
+    }
+  ],
+  "vehicles": []
+}

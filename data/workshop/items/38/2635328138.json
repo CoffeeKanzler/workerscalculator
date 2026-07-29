@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2635328138",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.139Z",
+  "buildings": [
+    {
+      "id": "2635328138/kiosk",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1,
+        "steel": 0.01
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "K67 Kiosk",
+      "workshopId": "2635328138",
+      "modPath": "kiosk"
+    },
+    {
+      "id": "2635328138/zaba2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1,
+        "steel": 0.01
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Zaba2",
+      "workshopId": "2635328138",
+      "modPath": "zaba2"
+    }
+  ],
+  "vehicles": []
+}

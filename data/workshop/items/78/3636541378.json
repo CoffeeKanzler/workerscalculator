@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3636541378",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T14:10:20.924Z",
+  "buildings": [
+    {
+      "id": "3636541378/car_assembly_shop",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 15000,
+      "professors": 600,
+      "production": {
+        "vehicles": 1
+      },
+      "consumption": {
+        "steel": 1,
+        "plastics": 1,
+        "mcomponents": 1,
+        "ecomponents": 1,
+        "fabric": 1,
+        "eletronics": 1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 2
+      },
+      "nameStr": "Advanced and modern huge car plant",
+      "workshopId": "3636541378",
+      "modPath": "car_assembly_shop"
+    }
+  ],
+  "vehicles": []
+}

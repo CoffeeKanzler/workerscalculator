@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2790527903",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:51:51.752Z",
+  "buildings": [
+    {
+      "id": "2790527903/podch",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kindergarten PodchorÄÅ¼ych ('40)",
+      "workshopId": "2790527903",
+      "modPath": "podch"
+    }
+  ],
+  "vehicles": []
+}

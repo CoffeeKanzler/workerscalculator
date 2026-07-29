@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3043462563",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.199Z",
+  "buildings": [
+    {
+      "id": "3043462563/1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge old garden square",
+      "workshopId": "3043462563",
+      "modPath": "1"
+    },
+    {
+      "id": "3043462563/2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 400,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 400
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium old alley",
+      "workshopId": "3043462563",
+      "modPath": "2"
+    },
+    {
+      "id": "3043462563/3",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium old town square",
+      "workshopId": "3043462563",
+      "modPath": "3"
+    },
+    {
+      "id": "3043462563/4",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Battle Monument",
+      "workshopId": "3043462563",
+      "modPath": "4"
+    },
+    {
+      "id": "3043462563/5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium fountain prop",
+      "workshopId": "3043462563",
+      "modPath": "5"
+    }
+  ],
+  "vehicles": []
+}

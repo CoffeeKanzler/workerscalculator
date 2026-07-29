@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3281287898",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:20:37.714Z",
+  "buildings": [
+    {
+      "id": "3281287898/Cinema_01",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": 2,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 8.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Barracks-Cinema",
+      "workshopId": "3281287898",
+      "modPath": "Cinema_01"
+    },
+    {
+      "id": "3281287898/House_01",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16
+      },
+      "constructionResources": {
+        "bricks": 8.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Barracks1",
+      "workshopId": "3281287898",
+      "modPath": "House_01"
+    },
+    {
+      "id": "3281287898/Pharmacy_01",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 4,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 8.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Barracks-Pharmacy",
+      "workshopId": "3281287898",
+      "modPath": "Pharmacy_01"
+    },
+    {
+      "id": "3281287898/Pub_01",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 1,
+      "qualityOfLiving": null,
+      "attractiveScore": 2,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 8.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Barracks-Pub",
+      "workshopId": "3281287898",
+      "modPath": "Pub_01"
+    },
+    {
+      "id": "3281287898/Shop_01",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2,
+      "qualityOfLiving": null,
+      "attractiveScore": 2,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 8.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Barracks-Shop",
+      "workshopId": "3281287898",
+      "modPath": "Shop_01"
+    }
+  ],
+  "vehicles": []
+}

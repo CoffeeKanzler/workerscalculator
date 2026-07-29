@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2637443308",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.172Z",
+  "buildings": [
+    {
+      "id": "2637443308/2_1",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": 1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "R.T.S. General Store",
+      "workshopId": "2637443308",
+      "modPath": "2_1"
+    },
+    {
+      "id": "2637443308/2_2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": 1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "David's Emporium",
+      "workshopId": "2637443308",
+      "modPath": "2_2"
+    },
+    {
+      "id": "2637443308/2_3",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": 1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Redd's General Store",
+      "workshopId": "2637443308",
+      "modPath": "2_3"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3022562390",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.058Z",
+  "buildings": [
+    {
+      "id": "3022562390/apteka",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 3,
+      "professors": 3,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pharmacy",
+      "workshopId": "3022562390",
+      "modPath": "apteka"
+    },
+    {
+      "id": "3022562390/bar1",
+      "nameId": 6254,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3022562390",
+      "modPath": "bar1"
+    },
+    {
+      "id": "3022562390/bar2",
+      "nameId": 6254,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3022562390",
+      "modPath": "bar2"
+    },
+    {
+      "id": "3022562390/bar3",
+      "nameId": 6254,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3022562390",
+      "modPath": "bar3"
+    },
+    {
+      "id": "3022562390/biblioteka",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 4,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Village library",
+      "workshopId": "3022562390",
+      "modPath": "biblioteka"
+    },
+    {
+      "id": "3022562390/sklep1",
+      "nameId": 6250,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3022562390",
+      "modPath": "sklep1"
+    },
+    {
+      "id": "3022562390/sklep2",
+      "nameId": 6250,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3022562390",
+      "modPath": "sklep2"
+    },
+    {
+      "id": "3022562390/sklep3",
+      "nameId": 6250,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3022562390",
+      "modPath": "sklep3"
+    }
+  ],
+  "vehicles": []
+}

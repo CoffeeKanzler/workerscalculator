@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3054556826",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.397Z",
+  "buildings": [
+    {
+      "id": "3054556826/puzhkx",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 250,
+        "asphalt": 9,
+        "gravel": 12,
+        "concrete": 9,
+        "steel": 5,
+        "bricks": 19
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ£ÐÐÐ¥",
+      "workshopId": "3054556826",
+      "modPath": "puzhkx"
+    },
+    {
+      "id": "3054556826/puzhkx_bloki",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 35,
+      "professors": 0,
+      "production": {
+        "bricks": 0.68
+      },
+      "consumption": {
+        "cement": 0.1,
+        "gravel": 0.5,
+        "eletric": 0.001,
+        "water": 0.02
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 250,
+        "asphalt": 9,
+        "gravel": 12,
+        "concrete": 9,
+        "steel": 5,
+        "bricks": 19
+      },
+      "electricWorkerFactors": {
+        "lighting": 1.5,
+        "living": 1.9
+      },
+      "nameStr": "ÐÑÐ¾Ð¸Ð·Ð²Ð¾Ð´ÑÑÐ²Ð¾ Ð±Ð»Ð¾ÐºÐ¾Ð²",
+      "workshopId": "3054556826",
+      "modPath": "puzhkx_bloki"
+    },
+    {
+      "id": "3054556826/puzhkx_culture",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 7,
+        "bricks": 15,
+        "workers": 35
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾Ð¼ ÐºÑÐ»ÑÑÑÑÑ",
+      "workshopId": "3054556826",
+      "modPath": "puzhkx_culture"
+    },
+    {
+      "id": "3054556826/puzhkx_detsad",
+      "nameId": 6251,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "3054556826",
+      "modPath": "puzhkx_detsad"
+    },
+    {
+      "id": "3054556826/puzhkx_heating",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {
+        "heat": 600
+      },
+      "consumption": {
+        "coal": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾ÑÐµÐ»ÑÐ½Ð°Ñ",
+      "workshopId": "3054556826",
+      "modPath": "puzhkx_heating"
+    },
+    {
+      "id": "3054556826/puzhkx_school",
+      "nameId": 6252,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 10,
+      "professors": 15,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 7,
+        "bricks": 15,
+        "workers": 35
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "3054556826",
+      "modPath": "puzhkx_school"
+    },
+    {
+      "id": "3054556826/puzhkx_shop_xleb",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¥Ð»ÐµÐ±",
+      "workshopId": "3054556826",
+      "modPath": "puzhkx_shop_xleb"
+    },
+    {
+      "id": "3054556826/puzhkx_sov_small",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡Ð¾Ð²ÑÐ¾Ð·Ð½ÑÐ¹ Ð´Ð¾Ð¼ 1",
+      "workshopId": "3054556826",
+      "modPath": "puzhkx_sov_small"
+    },
+    {
+      "id": "3054556826/puzhkx_sovdom",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡Ð¾Ð²ÑÐ¾Ð·Ð½ÑÐ¹ Ð´Ð¾Ð¼ 2",
+      "workshopId": "3054556826",
+      "modPath": "puzhkx_sovdom"
+    },
+    {
+      "id": "3054556826/puzhkx_sovdom_2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡Ð¾Ð²ÑÐ¾Ð·Ð½ÑÐ¹ Ð´Ð¾Ð¼ 3",
+      "workshopId": "3054556826",
+      "modPath": "puzhkx_sovdom_2"
+    },
+    {
+      "id": "3054556826/puzhkx_warehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 550
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÑÐ¾Ð´ÑÐ½Ð°Ð±",
+      "workshopId": "3054556826",
+      "modPath": "puzhkx_warehouse"
+    }
+  ],
+  "vehicles": []
+}

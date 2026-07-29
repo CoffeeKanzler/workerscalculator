@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3041199109",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.170Z",
+  "buildings": [
+    {
+      "id": "3041199109/large_red_star_emblem",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 1.25,
+        "concrete": 37,
+        "gravel": 1.5,
+        "workers": 250,
+        "steel": 8.75
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large Red Star Emblem",
+      "workshopId": "3041199109",
+      "modPath": "large_red_star_emblem"
+    },
+    {
+      "id": "3041199109/small_red_star_emblem",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.75,
+        "concrete": 6,
+        "gravel": 1,
+        "workers": 100,
+        "steel": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Red Star Emblem",
+      "workshopId": "3041199109",
+      "modPath": "small_red_star_emblem"
+    }
+  ],
+  "vehicles": []
+}

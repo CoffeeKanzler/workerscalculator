@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2636143888",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.140Z",
+  "buildings": [
+    {
+      "id": "2636143888/shoppingcentre",
+      "nameId": 6257,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 2,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2636143888",
+      "modPath": "shoppingcentre"
+    }
+  ],
+  "vehicles": []
+}

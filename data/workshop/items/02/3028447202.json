@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3028447202",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.082Z",
+  "buildings": [
+    {
+      "id": "3028447202/warehouse_covered_30x120",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 12408
+      },
+      "constructionResources": {
+        "gravel": 1800,
+        "asphalt": 377.3,
+        "workers": 6744.6,
+        "bricks": 2515,
+        "steel": 7.8,
+        "concrete": 271.8,
+        "prefabpanels": 1725.5,
+        "boards": 43.2,
+        "ecomponents": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse covered 30x120",
+      "workshopId": "3028447202",
+      "modPath": "warehouse_covered_30x120"
+    },
+    {
+      "id": "3028447202/warehouse_covered_30x150",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 15576
+      },
+      "constructionResources": {
+        "gravel": 2250,
+        "asphalt": 471.6,
+        "workers": 8309.800000000001,
+        "bricks": 3018,
+        "steel": 9.5,
+        "concrete": 341.2,
+        "prefabpanels": 2160.5,
+        "boards": 54,
+        "ecomponents": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse covered 30x150",
+      "workshopId": "3028447202",
+      "modPath": "warehouse_covered_30x150"
+    },
+    {
+      "id": "3028447202/warehouse_covered_30x30",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 2904
+      },
+      "constructionResources": {
+        "gravel": 450,
+        "asphalt": 94.2,
+        "workers": 2048.7,
+        "bricks": 1006,
+        "steel": 2.6,
+        "concrete": 63.6,
+        "prefabpanels": 420.5,
+        "boards": 10.8,
+        "ecomponents": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse covered 30x30",
+      "workshopId": "3028447202",
+      "modPath": "warehouse_covered_30x30"
+    },
+    {
+      "id": "3028447202/warehouse_covered_30x60",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 6072
+      },
+      "constructionResources": {
+        "gravel": 900,
+        "asphalt": 188.5,
+        "workers": 3614.1,
+        "bricks": 1509,
+        "steel": 4.5,
+        "concrete": 133,
+        "prefabpanels": 855.5,
+        "boards": 21.6,
+        "ecomponents": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse covered 30x60",
+      "workshopId": "3028447202",
+      "modPath": "warehouse_covered_30x60"
+    },
+    {
+      "id": "3028447202/warehouse_covered_30x90",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 9240
+      },
+      "constructionResources": {
+        "gravel": 1350,
+        "asphalt": 282.9,
+        "workers": 5179.2,
+        "bricks": 2012,
+        "steel": 6,
+        "concrete": 202.4,
+        "prefabpanels": 1290.5,
+        "boards": 32.4,
+        "ecomponents": 3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse covered 30x90",
+      "workshopId": "3028447202",
+      "modPath": "warehouse_covered_30x90"
+    }
+  ],
+  "vehicles": []
+}

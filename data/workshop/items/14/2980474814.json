@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2980474814",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.250Z",
+  "buildings": [
+    {
+      "id": "2980474814/kirovakan",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural corner stalinka",
+      "workshopId": "2980474814",
+      "modPath": "kirovakan"
+    }
+  ],
+  "vehicles": []
+}

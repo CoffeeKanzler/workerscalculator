@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2977374988",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.231Z",
+  "buildings": [
+    {
+      "id": "2977374988/tower",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 200,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": 5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Soviet Trade Center",
+      "workshopId": "2977374988",
+      "modPath": "tower"
+    }
+  ],
+  "vehicles": []
+}

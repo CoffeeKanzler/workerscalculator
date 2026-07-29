@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2629900328",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.115Z",
+  "buildings": [
+    {
+      "id": "2629900328/Tubes",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {
+        "ecomponents": 0.025
+      },
+      "consumption": {
+        "cement": 0.04,
+        "steel": 0.01,
+        "chemicals": 0.005
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.3
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 60,
+        "steel": 40,
+        "bricks": 100,
+        "mcomponents": 4,
+        "workers": 1800
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Vacuum Tube Factory",
+      "workshopId": "2629900328",
+      "modPath": "Tubes"
+    }
+  ],
+  "vehicles": []
+}

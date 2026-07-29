@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3280496024",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:20:37.713Z",
+  "buildings": [
+    {
+      "id": "3280496024/House_01",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6
+      },
+      "constructionResources": {
+        "bricks": 8.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Apartment2",
+      "workshopId": "3280496024",
+      "modPath": "House_01"
+    }
+  ],
+  "vehicles": []
+}

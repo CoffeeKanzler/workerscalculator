@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2973196270",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.203Z",
+  "buildings": [
+    {
+      "id": "2973196270/stacja_koncowa",
+      "nameId": 1836,
+      "types": [
+        "TYPE_WAITING_STATION",
+        "SUBTYPE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2973196270",
+      "modPath": "stacja_koncowa"
+    },
+    {
+      "id": "2973196270/stacja_koncowa_m",
+      "nameId": 1835,
+      "types": [
+        "TYPE_WAITING_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2973196270",
+      "modPath": "stacja_koncowa_m"
+    }
+  ],
+  "vehicles": []
+}

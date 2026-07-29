@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2632057607",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.122Z",
+  "buildings": [
+    {
+      "id": "2632057607/circus",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 22,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Circus",
+      "workshopId": "2632057607",
+      "modPath": "circus"
+    }
+  ],
+  "vehicles": []
+}

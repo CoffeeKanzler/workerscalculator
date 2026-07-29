@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2974090837",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.207Z",
+  "buildings": [
+    {
+      "id": "2974090837/Aon",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3500
+      },
+      "constructionResources": {
+        "gravel": 200,
+        "concrete": 600,
+        "workers": 16000,
+        "boards": 100,
+        "bricks": 200,
+        "steel": 400,
+        "mcomponents": 10,
+        "ecomponents": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Amaco Tower Appartments",
+      "workshopId": "2974090837",
+      "modPath": "Aon"
+    },
+    {
+      "id": "2974090837/Aon2",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 1500,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 200,
+        "concrete": 600,
+        "workers": 16000,
+        "boards": 100,
+        "bricks": 200,
+        "steel": 400,
+        "mcomponents": 10,
+        "ecomponents": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Amaco Tower",
+      "workshopId": "2974090837",
+      "modPath": "Aon2"
+    },
+    {
+      "id": "2974090837/Aon3",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 2000,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 200,
+        "concrete": 800,
+        "workers": 20000,
+        "boards": 100,
+        "bricks": 200,
+        "steel": 600,
+        "mcomponents": 10,
+        "ecomponents": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Amaco Tower v2",
+      "workshopId": "2974090837",
+      "modPath": "Aon3"
+    },
+    {
+      "id": "2974090837/Aon4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4500
+      },
+      "constructionResources": {
+        "gravel": 200,
+        "concrete": 800,
+        "workers": 20000,
+        "boards": 200,
+        "bricks": 300,
+        "steel": 600,
+        "mcomponents": 10,
+        "ecomponents": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Amaco Tower Appartments v2",
+      "workshopId": "2974090837",
+      "modPath": "Aon4"
+    }
+  ],
+  "vehicles": []
+}

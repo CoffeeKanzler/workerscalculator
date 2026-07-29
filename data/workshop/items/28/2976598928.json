@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2976598928",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.218Z",
+  "buildings": [
+    {
+      "id": "2976598928/spalarnia1",
+      "nameId": 7557,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste": 2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2976598928",
+      "modPath": "spalarnia1"
+    },
+    {
+      "id": "2976598928/spalarnia2",
+      "nameId": 7559,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 450
+      },
+      "consumption": {
+        "waste": 2.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2976598928",
+      "modPath": "spalarnia2"
+    }
+  ],
+  "vehicles": []
+}

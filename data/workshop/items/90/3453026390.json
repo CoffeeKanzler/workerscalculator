@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3453026390",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:42:15.871Z",
+  "buildings": [
+    {
+      "id": "3453026390/1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_SPORT"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 4,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1930s Bath House",
+      "workshopId": "3453026390",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2978768363",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.239Z",
+  "buildings": [
+    {
+      "id": "2978768363/Fallow",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "plants": 1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 16,
+        "workers": 80,
+        "boards": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fallow Field",
+      "workshopId": "2978768363",
+      "modPath": "Fallow"
+    },
+    {
+      "id": "2978768363/Fallow2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "plants": 0.8
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 3,
+        "workers": 3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Muddy Fallow Field",
+      "workshopId": "2978768363",
+      "modPath": "Fallow2"
+    },
+    {
+      "id": "2978768363/Fallow3",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "plants": 1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 30,
+        "workers": 160,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large Fallow Field",
+      "workshopId": "2978768363",
+      "modPath": "Fallow3"
+    },
+    {
+      "id": "2978768363/Fallow4",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "plants": 1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 16,
+        "workers": 80,
+        "boards": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Hedgerow Fallow Field",
+      "workshopId": "2978768363",
+      "modPath": "Fallow4"
+    },
+    {
+      "id": "2978768363/Siloes",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 15,
+        "workers": 100,
+        "boards": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Grain Storage",
+      "workshopId": "2978768363",
+      "modPath": "Siloes"
+    }
+  ],
+  "vehicles": []
+}

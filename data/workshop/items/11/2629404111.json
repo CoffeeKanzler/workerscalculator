@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2629404111",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.114Z",
+  "buildings": [
+    {
+      "id": "2629404111/KGB_small",
+      "nameId": null,
+      "types": [
+        "TYPE_SECRET_POLICE"
+      ],
+      "workers": 0,
+      "professors": 15,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small secret police (50s)",
+      "workshopId": "2629404111",
+      "modPath": "KGB_small"
+    }
+  ],
+  "vehicles": []
+}

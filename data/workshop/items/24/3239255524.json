@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3239255524",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:14:41.257Z",
+  "buildings": [
+    {
+      "id": "3239255524/bonfire",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste": 2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Waste burning pit",
+      "workshopId": "3239255524",
+      "modPath": "bonfire"
+    },
+    {
+      "id": "3239255524/bonfire2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "fuel": 0.1,
+        "waste": 0.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Waste burning pit-fuel",
+      "workshopId": "3239255524",
+      "modPath": "bonfire2"
+    }
+  ],
+  "vehicles": []
+}

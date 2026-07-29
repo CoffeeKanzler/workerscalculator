@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3024238155",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.073Z",
+  "buildings": [
+    {
+      "id": "3024238155/substation",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 7.5
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Limits Be Gone Substation",
+      "workshopId": "3024238155",
+      "modPath": "substation"
+    }
+  ],
+  "vehicles": []
+}

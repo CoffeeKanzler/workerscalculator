@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2657680173",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:34:53.428Z",
+  "buildings": [
+    {
+      "id": "2657680173/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Karleo-Finnish SSR Large Flag",
+      "workshopId": "2657680173",
+      "modPath": "Large_Flying"
+    },
+    {
+      "id": "2657680173/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Karleo-Finnish Medium Flag",
+      "workshopId": "2657680173",
+      "modPath": "Med_Flying"
+    },
+    {
+      "id": "2657680173/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Karleo-Finnish SSR Small Flag",
+      "workshopId": "2657680173",
+      "modPath": "Small_Flying"
+    }
+  ],
+  "vehicles": []
+}

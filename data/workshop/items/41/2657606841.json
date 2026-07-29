@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2657606841",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:34:53.418Z",
+  "buildings": [
+    {
+      "id": "2657606841/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Democratic Republic of Louissiana Large Flag",
+      "workshopId": "2657606841",
+      "modPath": "Large_Flying"
+    },
+    {
+      "id": "2657606841/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Democratic Republic of Louisiana Medium Flag",
+      "workshopId": "2657606841",
+      "modPath": "Med_Flying"
+    },
+    {
+      "id": "2657606841/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Democratic Republic of Louisiana Small Flag",
+      "workshopId": "2657606841",
+      "modPath": "Small_Flying"
+    }
+  ],
+  "vehicles": []
+}

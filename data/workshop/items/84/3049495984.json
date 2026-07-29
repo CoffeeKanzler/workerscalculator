@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3049495984",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.372Z",
+  "buildings": [
+    {
+      "id": "3049495984/Nowowiejska3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80
+      },
+      "constructionResources": {
+        "workers": 490,
+        "asphalt": 14,
+        "gravel": 16,
+        "concrete": 12,
+        "steel": 5,
+        "bricks": 19
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Nowowiejska 3",
+      "workshopId": "3049495984",
+      "modPath": "Nowowiejska3"
+    },
+    {
+      "id": "3049495984/Nowowiejska3Cinema",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 2,
+      "storages": {},
+      "constructionResources": {
+        "workers": 490,
+        "asphalt": 14,
+        "gravel": 16,
+        "concrete": 12,
+        "steel": 5,
+        "bricks": 19
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Nowowiejska 3 Cinema",
+      "workshopId": "3049495984",
+      "modPath": "Nowowiejska3Cinema"
+    },
+    {
+      "id": "3049495984/Nowowiejska3Shop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 490,
+        "asphalt": 14,
+        "gravel": 16,
+        "concrete": 12,
+        "steel": 5,
+        "bricks": 19
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Nowowiejska 3 Shop",
+      "workshopId": "3049495984",
+      "modPath": "Nowowiejska3Shop"
+    }
+  ],
+  "vehicles": []
+}

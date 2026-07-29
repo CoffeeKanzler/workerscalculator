@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3280058981",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:20:37.711Z",
+  "buildings": [
+    {
+      "id": "3280058981/111-121-1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 90,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 90
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "111-121-1",
+      "workshopId": "3280058981",
+      "modPath": "111-121-1"
+    },
+    {
+      "id": "3280058981/111-121-1-PEDESTRIAN",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 90,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 90
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "111-121-1-PEDESTRIAN",
+      "workshopId": "3280058981",
+      "modPath": "111-121-1-PEDESTRIAN"
+    }
+  ],
+  "vehicles": []
+}

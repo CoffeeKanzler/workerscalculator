@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3053861343",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.395Z",
+  "buildings": [
+    {
+      "id": "3053861343/StraNa",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "StraNa",
+      "workshopId": "3053861343",
+      "modPath": "StraNa"
+    }
+  ],
+  "vehicles": []
+}

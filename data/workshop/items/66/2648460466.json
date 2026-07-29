@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2648460466",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.215Z",
+  "buildings": [
+    {
+      "id": "2648460466/Cold_Storage_on_warehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 700
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cold storage in vanilla warehouse",
+      "workshopId": "2648460466",
+      "modPath": "Cold_Storage_on_warehouse"
+    }
+  ],
+  "vehicles": []
+}

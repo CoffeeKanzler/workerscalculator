@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2983917574",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.262Z",
+  "buildings": [
+    {
+      "id": "2983917574/swim",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 14,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 110,
+        "workers": 420,
+        "steel": 55,
+        "concrete": 120,
+        "bricks": 70,
+        "prefabpanels": 60,
+        "ecomponents": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "DDR Schwimmhalle",
+      "workshopId": "2983917574",
+      "modPath": "swim"
+    }
+  ],
+  "vehicles": []
+}

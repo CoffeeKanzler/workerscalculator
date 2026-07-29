@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2981784699",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.255Z",
+  "buildings": [
+    {
+      "id": "2981784699/zakladyodziezowe",
+      "nameId": 6352,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 37,
+      "professors": 0,
+      "production": {
+        "clothes": 0.0145
+      },
+      "consumption": {
+        "fabric": 0.03
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.25,
+        "living": 1.5
+      },
+      "workshopId": "2981784699",
+      "modPath": "zakladyodziezowe"
+    }
+  ],
+  "vehicles": []
+}

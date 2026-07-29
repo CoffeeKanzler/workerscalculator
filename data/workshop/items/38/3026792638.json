@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3026792638",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.078Z",
+  "buildings": [
+    {
+      "id": "3026792638/electric_substation_high",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 9.5
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 1.875,
+        "concrete": 2.75,
+        "gravel": 2.25,
+        "workers": 120,
+        "bricks": 4.5,
+        "boards": 1.75,
+        "steel": 3,
+        "ecomponents": 0.2125
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small High-Voltage Electrical Substation",
+      "workshopId": "3026792638",
+      "modPath": "electric_substation_high"
+    },
+    {
+      "id": "3026792638/electric_substation_high_large",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 34
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.75,
+        "concrete": 1,
+        "gravel": 1,
+        "workers": 50,
+        "bricks": 2.5,
+        "boards": 0.75,
+        "steel": 1,
+        "ecomponents": 0.075
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large High-Voltage Electric Substation",
+      "workshopId": "3026792638",
+      "modPath": "electric_substation_high_large"
+    },
+    {
+      "id": "3026792638/electric_substation_medium",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.75,
+        "concrete": 1,
+        "gravel": 1,
+        "workers": 50,
+        "bricks": 2.5,
+        "boards": 0.75,
+        "steel": 1,
+        "ecomponents": 0.075
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Medium-Voltage Electrical Substation",
+      "workshopId": "3026792638",
+      "modPath": "electric_substation_medium"
+    },
+    {
+      "id": "3026792638/electric_substation_medium_large",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 7
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 2.125,
+        "concrete": 2.25,
+        "gravel": 1.75,
+        "workers": 140,
+        "bricks": 4.5,
+        "boards": 1.55,
+        "steel": 3,
+        "ecomponents": 0.175
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large Medium-Voltage Electrical Substation",
+      "workshopId": "3026792638",
+      "modPath": "electric_substation_medium_large"
+    }
+  ],
+  "vehicles": []
+}

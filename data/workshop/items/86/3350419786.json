@@ -1,0 +1,746 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3350419786",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:31:34.804Z",
+  "buildings": [
+    {
+      "id": "3350419786/sub065",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.5,
+        "concrete": 4.7,
+        "gravel": 0.5,
+        "workers": 41,
+        "steel": 1,
+        "ecomponents": 0.85
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW Single Circuit Indoor Substation",
+      "workshopId": "3350419786",
+      "modPath": "sub065"
+    },
+    {
+      "id": "3350419786/sub065underground",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.5,
+        "concrete": 4.7,
+        "gravel": 0.5,
+        "workers": 41,
+        "steel": 1.1,
+        "ecomponents": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW Underground Cable Indoor Substation",
+      "workshopId": "3350419786",
+      "modPath": "sub065underground"
+    },
+    {
+      "id": "3350419786/sub115",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.8,
+        "concrete": 5.5,
+        "gravel": 1,
+        "workers": 41,
+        "steel": 1,
+        "ecomponents": 1.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.15MW Underground Cable Indoor Substation",
+      "workshopId": "3350419786",
+      "modPath": "sub115"
+    },
+    {
+      "id": "3350419786/sub120",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.8,
+        "concrete": 5.5,
+        "gravel": 1,
+        "workers": 41,
+        "steel": 1.2,
+        "ecomponents": 1.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.20MW Single Phase Quad Circuit Indoor Substation",
+      "workshopId": "3350419786",
+      "modPath": "sub120"
+    },
+    {
+      "id": "3350419786/subpole065",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 1,
+        "boards": 1,
+        "ecomponents": 0.55,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW Pole Mounted Transformer Single Circuit (Long Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "subpole065"
+    },
+    {
+      "id": "3350419786/subpole065double",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 2,
+        "boards": 2,
+        "ecomponents": 1.3,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW H-Pole Pole Mounted Transformer Single Circuit (Long Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "subpole065double"
+    },
+    {
+      "id": "3350419786/subpole065doubleshort",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 2,
+        "boards": 2,
+        "ecomponents": 1.3,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW H-Pole Pole Mounted Transformer Single Circuit (Short Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "subpole065doubleshort"
+    },
+    {
+      "id": "3350419786/subpole065short",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 1,
+        "boards": 1,
+        "ecomponents": 0.55,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW Pole Mounted Transformer Single Circuit (Short Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "subpole065short"
+    },
+    {
+      "id": "3350419786/subpole065underground",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 2,
+        "boards": 1,
+        "ecomponents": 1.7,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW Underground Cable Pole Mounted Transformer Single Circuit",
+      "workshopId": "3350419786",
+      "modPath": "subpole065underground"
+    },
+    {
+      "id": "3350419786/subpole115singlephase",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 1.8,
+        "boards": 1,
+        "ecomponents": 1.4,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.15MW Underground Cable Pole Mounted Transformer Single Phase Double Circuit",
+      "workshopId": "3350419786",
+      "modPath": "subpole115singlephase"
+    },
+    {
+      "id": "3350419786/subpole115threephase",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 3.8,
+        "boards": 1.8,
+        "ecomponents": 2,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.15MW Underground Cable Pole Mounted Transformer Three Phase Single Circuit",
+      "workshopId": "3350419786",
+      "modPath": "subpole115threephase"
+    },
+    {
+      "id": "3350419786/subpole120singlephase",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 2.8,
+        "boards": 2,
+        "ecomponents": 2.5,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.20MW Pole Mounted Transformers Single Phase Quad Circuit (Long Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "subpole120singlephase"
+    },
+    {
+      "id": "3350419786/subpole120singlephasedouble",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 2,
+        "boards": 2,
+        "ecomponents": 2.5,
+        "workers": 35
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.20MW H-Pole Single Phase Quad Circuit Pole Mounted Transformers (Long Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "subpole120singlephasedouble"
+    },
+    {
+      "id": "3350419786/subpole120singlephasedoubleshort",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 2,
+        "boards": 2,
+        "ecomponents": 2.5,
+        "workers": 35
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.20MW H-Pole Single Phase Quad Circuit Pole Mounted Transformers (Short Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "subpole120singlephasedoubleshort"
+    },
+    {
+      "id": "3350419786/subpole120singlephaseshort",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 2.8,
+        "boards": 2,
+        "ecomponents": 2.5,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.20MW Pole Mounted Transformers Single Phase Quad Circuit (Short Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "subpole120singlephaseshort"
+    },
+    {
+      "id": "3350419786/subpole120threephase",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 6.4,
+        "boards": 4,
+        "ecomponents": 3.6,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.20MW Pole Mounted Transformer Three Phase Single Circuit (Long Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "subpole120threephase"
+    },
+    {
+      "id": "3350419786/subpole120threephaseshort",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 6.4,
+        "boards": 4,
+        "ecomponents": 3.6,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.20MW Pole Mounted Transformer Three Phase Single Circuit (Short Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "subpole120threephaseshort"
+    },
+    {
+      "id": "3350419786/termpole065",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.12,
+        "boards": 1,
+        "ecomponents": 0.15,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW Cable Sealing End Single Circuit (Long Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "termpole065"
+    },
+    {
+      "id": "3350419786/termpole065double",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 1.5,
+        "boards": 2,
+        "ecomponents": 0.15,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW H-Pole Cable Sealing End Single Circuit (Long Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "termpole065double"
+    },
+    {
+      "id": "3350419786/termpole065doubleshort",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 1.5,
+        "boards": 2,
+        "ecomponents": 0.15,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW H-Pole Cable Sealing End Single Circuit (Short Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "termpole065doubleshort"
+    },
+    {
+      "id": "3350419786/termpole065horizontal",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 1,
+        "boards": 1,
+        "ecomponents": 0.15,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW Horizontal Cable Sealing End Single Circuit (Long Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "termpole065horizontal"
+    },
+    {
+      "id": "3350419786/termpole065horizontalshort",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 1,
+        "boards": 1,
+        "ecomponents": 0.15,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW Horizontal Cable Sealing End Single Circuit (Short Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "termpole065horizontalshort"
+    },
+    {
+      "id": "3350419786/termpole065short",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.12,
+        "boards": 1,
+        "ecomponents": 0.15,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "0.65MW Cable Sealing End Single Circuit (Short Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "termpole065short"
+    },
+    {
+      "id": "3350419786/termpole120double",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 2,
+        "boards": 2,
+        "ecomponents": 0.5,
+        "workers": 35
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.20MW H-Pole Cable Sealing End Single Circuit (Long Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "termpole120double"
+    },
+    {
+      "id": "3350419786/termpole120doubleshort",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 2,
+        "boards": 2,
+        "ecomponents": 0.5,
+        "workers": 35
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.20MW H-Pole Cable Sealing End Single Circuit (Short Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "termpole120doubleshort"
+    },
+    {
+      "id": "3350419786/termpoles120",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.5,
+        "boards": 2,
+        "ecomponents": 0.4,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.20MW Cable Sealing End Single Phase Quad Circuit (Long Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "termpoles120"
+    },
+    {
+      "id": "3350419786/termpoles120short",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.5,
+        "boards": 2,
+        "ecomponents": 0.4,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1.20MW Cable Sealing End Single Phase Quad Circuit (Short Wire Version)",
+      "workshopId": "3350419786",
+      "modPath": "termpoles120short"
+    }
+  ],
+  "vehicles": []
+}

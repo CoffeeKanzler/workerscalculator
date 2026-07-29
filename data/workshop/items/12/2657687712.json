@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2657687712",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:34:53.431Z",
+  "buildings": [
+    {
+      "id": "2657687712/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Burundi Large Flag",
+      "workshopId": "2657687712",
+      "modPath": "Large_Flying"
+    },
+    {
+      "id": "2657687712/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Burundi Medium Flag",
+      "workshopId": "2657687712",
+      "modPath": "Med_Flying"
+    },
+    {
+      "id": "2657687712/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Burundi Small Flag",
+      "workshopId": "2657687712",
+      "modPath": "Small_Flying"
+    }
+  ],
+  "vehicles": []
+}

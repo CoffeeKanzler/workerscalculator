@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3591713316",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T14:03:59.355Z",
+  "buildings": [
+    {
+      "id": "3591713316/1_mauer",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¢Ð¾Ð½Ð½ÐµÐ»Ñ",
+      "workshopId": "3591713316",
+      "modPath": "1_mauer"
+    },
+    {
+      "id": "3591713316/2_mauer",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¢Ð¾Ð½Ð½ÐµÐ»Ñ",
+      "workshopId": "3591713316",
+      "modPath": "2_mauer"
+    },
+    {
+      "id": "3591713316/8_transparant",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð£ÐºÐ°Ð·Ð°ÑÐµÐ»Ñ Ð½Ð°Ð¿ÑÐ°Ð²Ð»ÐµÐ½Ð¸Ð¹",
+      "workshopId": "3591713316",
+      "modPath": "8_transparant"
+    }
+  ],
+  "vehicles": []
+}

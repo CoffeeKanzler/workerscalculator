@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3182382298",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:09:05.329Z",
+  "buildings": [
+    {
+      "id": "3182382298/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "LiAZ logo monument",
+      "workshopId": "3182382298",
+      "modPath": "HOUSE1"
+    }
+  ],
+  "vehicles": []
+}

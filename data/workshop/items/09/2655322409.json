@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2655322409",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.272Z",
+  "buildings": [
+    {
+      "id": "2655322409/zizkov",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 90,
+      "professors": 30,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "TV tower",
+      "workshopId": "2655322409",
+      "modPath": "zizkov"
+    }
+  ],
+  "vehicles": []
+}

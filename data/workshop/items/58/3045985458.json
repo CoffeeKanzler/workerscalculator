@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3045985458",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.361Z",
+  "buildings": [
+    {
+      "id": "3045985458/I-464D_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "I-464D (1-section)",
+      "workshopId": "3045985458",
+      "modPath": "I-464D_1"
+    },
+    {
+      "id": "3045985458/I-464D_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 240,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 240
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "I-464D (2-sections)",
+      "workshopId": "3045985458",
+      "modPath": "I-464D_2"
+    },
+    {
+      "id": "3045985458/I-464D_3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 360,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 360
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "I-464D (3-sections)",
+      "workshopId": "3045985458",
+      "modPath": "I-464D_3"
+    }
+  ],
+  "vehicles": []
+}

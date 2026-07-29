@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2986156161",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.278Z",
+  "buildings": [
+    {
+      "id": "2986156161/tv",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 5,
+      "professors": 3,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "tv",
+      "workshopId": "2986156161",
+      "modPath": "tv"
+    }
+  ],
+  "vehicles": []
+}

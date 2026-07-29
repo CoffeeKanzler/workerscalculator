@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2983127973",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.259Z",
+  "buildings": [
+    {
+      "id": "2983127973/edificio_ladrillo_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60
+      },
+      "constructionResources": {
+        "gravel": 6.8,
+        "asphalt": 5.6,
+        "concrete": 8.8,
+        "workers": 339,
+        "steel": 4.2,
+        "bricks": 46.2,
+        "boards": 3,
+        "mcomponents": 0.1,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Brick building",
+      "workshopId": "2983127973",
+      "modPath": "edificio_ladrillo_2"
+    }
+  ],
+  "vehicles": []
+}

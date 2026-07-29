@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2654931885",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.267Z",
+  "buildings": [
+    {
+      "id": "2654931885/airport_cargo",
+      "nameId": 6387,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1.1,
+        "RESOURCE_TRANSPORT_COVERED": 1.5,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 0.8,
+        "RESOURCE_TRANSPORT_COOLER": 0.9
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2654931885",
+      "modPath": "airport_cargo"
+    },
+    {
+      "id": "2654931885/airport_cargo2",
+      "nameId": 6387,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 4,
+        "RESOURCE_TRANSPORT_COVERED": 3.5,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 2.5,
+        "RESOURCE_TRANSPORT_CEMENT": 2.75,
+        "RESOURCE_TRANSPORT_COOLER": 2.5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2654931885",
+      "modPath": "airport_cargo2"
+    },
+    {
+      "id": "2654931885/airport_light",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Runway Lights",
+      "workshopId": "2654931885",
+      "modPath": "airport_light"
+    },
+    {
+      "id": "2654931885/hangar30",
+      "nameId": 6383,
+      "types": [
+        "TYPE_AIRPLANE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2654931885",
+      "modPath": "hangar30"
+    },
+    {
+      "id": "2654931885/hangar50",
+      "nameId": 6385,
+      "types": [
+        "TYPE_AIRPLANE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2654931885",
+      "modPath": "hangar50"
+    },
+    {
+      "id": "2654931885/tower",
+      "nameId": 9048,
+      "types": [
+        "TYPE_AIRPLANE_TOWER"
+      ],
+      "workers": 0,
+      "professors": 25,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2654931885",
+      "modPath": "tower"
+    },
+    {
+      "id": "2654931885/tower2",
+      "nameId": 9048,
+      "types": [
+        "TYPE_AIRPLANE_TOWER"
+      ],
+      "workers": 0,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2654931885",
+      "modPath": "tower2"
+    },
+    {
+      "id": "2654931885/tower3",
+      "nameId": 9048,
+      "types": [
+        "TYPE_AIRPLANE_TOWER"
+      ],
+      "workers": 0,
+      "professors": 18,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2654931885",
+      "modPath": "tower3"
+    },
+    {
+      "id": "2654931885/tower4",
+      "nameId": 9048,
+      "types": [
+        "TYPE_AIRPLANE_TOWER"
+      ],
+      "workers": 0,
+      "professors": 22,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2654931885",
+      "modPath": "tower4"
+    },
+    {
+      "id": "2654931885/tower5",
+      "nameId": 9048,
+      "types": [
+        "TYPE_AIRPLANE_TOWER"
+      ],
+      "workers": 0,
+      "professors": 17,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2654931885",
+      "modPath": "tower5"
+    }
+  ],
+  "vehicles": []
+}

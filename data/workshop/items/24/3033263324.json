@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3033263324",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.101Z",
+  "buildings": [
+    {
+      "id": "3033263324/Railway_station_Ukhta",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Railway_station_Ukhta",
+      "workshopId": "3033263324",
+      "modPath": "Railway_station_Ukhta"
+    }
+  ],
+  "vehicles": []
+}

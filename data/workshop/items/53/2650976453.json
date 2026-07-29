@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2650976453",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.224Z",
+  "buildings": [
+    {
+      "id": "2650976453/MosaicMonument",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mosaic",
+      "workshopId": "2650976453",
+      "modPath": "MosaicMonument"
+    }
+  ],
+  "vehicles": []
+}

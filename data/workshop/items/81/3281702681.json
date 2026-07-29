@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3281702681",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:20:37.718Z",
+  "buildings": [
+    {
+      "id": "3281702681/FishingHut",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {
+        "meat": 0.1
+      },
+      "consumption": {
+        "wood": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 5,
+        "workers": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fishing Hut",
+      "workshopId": "3281702681",
+      "modPath": "FishingHut"
+    },
+    {
+      "id": "3281702681/FishingHut2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {
+        "meat": 0.1
+      },
+      "consumption": {
+        "wood": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 5,
+        "workers": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fishing Hut",
+      "workshopId": "3281702681",
+      "modPath": "FishingHut2"
+    },
+    {
+      "id": "3281702681/FishingHut3",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {
+        "meat": 0.1
+      },
+      "consumption": {
+        "wood": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 5,
+        "workers": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fishing Hut",
+      "workshopId": "3281702681",
+      "modPath": "FishingHut3"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2980362860",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.249Z",
+  "buildings": [
+    {
+      "id": "2980362860/Produce",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.9,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 150,
+        "workers": 2800,
+        "boards": 140
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Produce Exchange",
+      "workshopId": "2980362860",
+      "modPath": "Produce"
+    },
+    {
+      "id": "2980362860/Produce2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 70,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 70
+      },
+      "constructionResources": {
+        "gravel": 150,
+        "workers": 2300,
+        "boards": 100
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shopkeeper housing",
+      "workshopId": "2980362860",
+      "modPath": "Produce2"
+    },
+    {
+      "id": "2980362860/Produce3",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.9,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 80,
+        "workers": 1300,
+        "boards": 100,
+        "concrete": 60,
+        "steel": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Produce Exchange v2",
+      "workshopId": "2980362860",
+      "modPath": "Produce3"
+    }
+  ],
+  "vehicles": []
+}

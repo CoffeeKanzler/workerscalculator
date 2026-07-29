@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3633208977",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T14:10:20.914Z",
+  "buildings": [
+    {
+      "id": "3633208977/32-Prefab",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 768,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 768
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "32-roof Prefab",
+      "workshopId": "3633208977",
+      "modPath": "32-Prefab"
+    }
+  ],
+  "vehicles": []
+}

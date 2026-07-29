@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2983466520",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.260Z",
+  "buildings": [
+    {
+      "id": "2983466520/metro_fork",
+      "nameId": null,
+      "types": [
+        "TYPE_WAITING_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Metro Switch/Fork Line",
+      "workshopId": "2983466520",
+      "modPath": "metro_fork"
+    }
+  ],
+  "vehicles": []
+}

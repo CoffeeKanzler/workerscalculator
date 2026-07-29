@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3027569073",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.081Z",
+  "buildings": [
+    {
+      "id": "3027569073/biblioteka",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Library",
+      "workshopId": "3027569073",
+      "modPath": "biblioteka"
+    }
+  ],
+  "vehicles": []
+}

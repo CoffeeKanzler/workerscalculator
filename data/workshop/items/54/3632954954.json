@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3632954954",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T14:10:20.912Z",
+  "buildings": [
+    {
+      "id": "3632954954/dprk_school",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 20,
+      "professors": 5,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "DPRK School",
+      "workshopId": "3632954954",
+      "modPath": "dprk_school"
+    }
+  ],
+  "vehicles": []
+}

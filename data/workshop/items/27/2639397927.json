@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2639397927",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.187Z",
+  "buildings": [
+    {
+      "id": "2639397927/filharmonia",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Philharmonics",
+      "workshopId": "2639397927",
+      "modPath": "filharmonia"
+    }
+  ],
+  "vehicles": []
+}

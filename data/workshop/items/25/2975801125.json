@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2975801125",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.211Z",
+  "buildings": [
+    {
+      "id": "2975801125/unimag",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 36,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.8,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Department Store UNIMAG",
+      "workshopId": "2975801125",
+      "modPath": "unimag"
+    }
+  ],
+  "vehicles": []
+}

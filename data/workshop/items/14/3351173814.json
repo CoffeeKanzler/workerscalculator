@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3351173814",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:31:34.815Z",
+  "buildings": [
+    {
+      "id": "3351173814/asphalt",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {
+        "asphalt": 1.5
+      },
+      "consumption": {
+        "gravel": 1,
+        "bitumen": 0.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Temporary Asphalt Production Site",
+      "workshopId": "3351173814",
+      "modPath": "asphalt"
+    },
+    {
+      "id": "3351173814/cargo",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 500,
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_OIL": 1,
+        "RESOURCE_TRANSPORT_GRAVEL": 1,
+        "RESOURCE_TRANSPORT_DUMP": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Free Landing (cargo)",
+      "workshopId": "3351173814",
+      "modPath": "cargo"
+    },
+    {
+      "id": "3351173814/concrete",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {
+        "concrete": 1.5
+      },
+      "consumption": {
+        "gravel": 1,
+        "cement": 0.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Temporary Concrete Mixer",
+      "workshopId": "3351173814",
+      "modPath": "concrete"
+    },
+    {
+      "id": "3351173814/depot",
+      "nameId": null,
+      "types": [
+        "TYPE_SHIP_DOCK"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Free Landing (depot)",
+      "workshopId": "3351173814",
+      "modPath": "depot"
+    },
+    {
+      "id": "3351173814/gravel",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_GRAVEL"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "gravel": 0.33
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Free Gravel Pit",
+      "workshopId": "3351173814",
+      "modPath": "gravel"
+    },
+    {
+      "id": "3351173814/passanger",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Free Landing (passanger)",
+      "workshopId": "3351173814",
+      "modPath": "passanger"
+    },
+    {
+      "id": "3351173814/road",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Free Landing (vehicles)",
+      "workshopId": "3351173814",
+      "modPath": "road"
+    }
+  ],
+  "vehicles": []
+}

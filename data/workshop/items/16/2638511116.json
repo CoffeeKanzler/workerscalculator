@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2638511116",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.177Z",
+  "buildings": [
+    {
+      "id": "2638511116/vokzal_rail",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Central Rail Station",
+      "workshopId": "2638511116",
+      "modPath": "vokzal_rail"
+    }
+  ],
+  "vehicles": []
+}

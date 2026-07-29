@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2627230006",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.108Z",
+  "buildings": [
+    {
+      "id": "2627230006/courthouse",
+      "nameId": 6264,
+      "types": [
+        "TYPE_COURT_HOUSE"
+      ],
+      "workers": 40,
+      "professors": 25,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2627230006",
+      "modPath": "courthouse"
+    }
+  ],
+  "vehicles": []
+}

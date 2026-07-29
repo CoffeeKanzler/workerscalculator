@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3041449583",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.173Z",
+  "buildings": [
+    {
+      "id": "3041449583/obelisk_monument",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 4,
+        "concrete": 56,
+        "gravel": 5,
+        "workers": 325,
+        "steel": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Obelisk Monument",
+      "workshopId": "3041449583",
+      "modPath": "obelisk_monument"
+    }
+  ],
+  "vehicles": []
+}

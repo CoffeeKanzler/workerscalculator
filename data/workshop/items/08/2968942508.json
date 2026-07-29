@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2968942508",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.169Z",
+  "buildings": [
+    {
+      "id": "2968942508/vandellos1",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 42,
+      "professors": 22,
+      "production": {
+        "eletric": 117,
+        "nuclearfuelburned": 0.0005,
+        "vehicles": 1
+      },
+      "consumption": {
+        "nuclearfuel": 0.001,
+        "vehicles": 1,
+        "water": 0.22
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 210,
+        "asphalt": 150,
+        "concrete": 717,
+        "workers": 14206,
+        "steel": 317.5,
+        "bricks": 316,
+        "mcomponents": 21.2,
+        "ecomponents": 22.099999999999998,
+        "boards": 40.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Vandellos I nuclear power plant",
+      "workshopId": "2968942508",
+      "modPath": "vandellos1"
+    }
+  ],
+  "vehicles": []
+}

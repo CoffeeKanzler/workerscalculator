@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2634924918",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.131Z",
+  "buildings": [
+    {
+      "id": "2634924918/nbk",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 120,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Central Bank",
+      "workshopId": "2634924918",
+      "modPath": "nbk"
+    }
+  ],
+  "vehicles": []
+}

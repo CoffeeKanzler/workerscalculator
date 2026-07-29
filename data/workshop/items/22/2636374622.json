@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2636374622",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.141Z",
+  "buildings": [
+    {
+      "id": "2636374622/BigL",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 132,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 132
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mid-size town Stalinka - Big L ",
+      "workshopId": "2636374622",
+      "modPath": "BigL"
+    },
+    {
+      "id": "2636374622/first",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mid-size town Stalinka",
+      "workshopId": "2636374622",
+      "modPath": "first"
+    },
+    {
+      "id": "2636374622/mirror",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mid-size town Stalinka - MIRRORED",
+      "workshopId": "2636374622",
+      "modPath": "mirror"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2626930599",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.107Z",
+  "buildings": [
+    {
+      "id": "2626930599/2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 220,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 220
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "22-st Clouds",
+      "workshopId": "2626930599",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

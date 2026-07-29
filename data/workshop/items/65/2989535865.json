@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2989535865",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.314Z",
+  "buildings": [
+    {
+      "id": "2989535865/hidropp",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 15,
+      "professors": 5,
+      "production": {
+        "eletric": 22
+      },
+      "consumption": {
+        "water": 2.5,
+        "chemicals": 0.005,
+        "aluminium": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 30,
+        "workers": 470,
+        "concrete": 42,
+        "prefabpanels": 35,
+        "bricks": 29,
+        "boards": 12,
+        "steel": 29,
+        "ecomponents": 2,
+        "mcomponents": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Home Field",
+      "workshopId": "2989535865",
+      "modPath": "hidropp"
+    }
+  ],
+  "vehicles": []
+}

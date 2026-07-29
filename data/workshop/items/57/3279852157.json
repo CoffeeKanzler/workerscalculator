@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3279852157",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:20:37.680Z",
+  "buildings": [
+    {
+      "id": "3279852157/burmacity1",
+      "nameId": 6090,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 15,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 15
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "burmacity1"
+    },
+    {
+      "id": "3279852157/burmacity2",
+      "nameId": 6090,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 18,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 18
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "burmacity2"
+    },
+    {
+      "id": "3279852157/burmacity3",
+      "nameId": 6090,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 17,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 17
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "burmacity3"
+    },
+    {
+      "id": "3279852157/burmacity4",
+      "nameId": 6090,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "burmacity4"
+    },
+    {
+      "id": "3279852157/burmacity5",
+      "nameId": 6090,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 14,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 14
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "burmacity5"
+    },
+    {
+      "id": "3279852157/chatrc1",
+      "nameId": 6091,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "chatrc1"
+    },
+    {
+      "id": "3279852157/chatrc2",
+      "nameId": 6091,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "chatrc2"
+    },
+    {
+      "id": "3279852157/chatrc3",
+      "nameId": 6091,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "chatrc3"
+    },
+    {
+      "id": "3279852157/plechac1",
+      "nameId": 6091,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "plechac1"
+    },
+    {
+      "id": "3279852157/plechac2",
+      "nameId": 6091,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "plechac2"
+    },
+    {
+      "id": "3279852157/plechac3",
+      "nameId": 6091,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "plechac3"
+    },
+    {
+      "id": "3279852157/plechac4",
+      "nameId": 6091,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "plechac4"
+    },
+    {
+      "id": "3279852157/temple1",
+      "nameId": 6092,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_CHURCH"
+      ],
+      "workers": 1,
+      "professors": 1,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "temple1"
+    },
+    {
+      "id": "3279852157/temple2",
+      "nameId": 6092,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_CHURCH"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "temple2"
+    },
+    {
+      "id": "3279852157/temple3",
+      "nameId": 6092,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_CHURCH"
+      ],
+      "workers": 4,
+      "professors": 4,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3279852157",
+      "modPath": "temple3"
+    }
+  ],
+  "vehicles": []
+}

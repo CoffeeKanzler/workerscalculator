@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2630876199",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.117Z",
+  "buildings": [
+    {
+      "id": "2630876199/poster_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 220,
+        "gravel": 2.5,
+        "steel": 3.5,
+        "concrete": 3.5,
+        "boards": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "More Propaganda Posters (Large)",
+      "workshopId": "2630876199",
+      "modPath": "poster_1"
+    },
+    {
+      "id": "2630876199/poster_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 150,
+        "gravel": 2,
+        "steel": 2.5,
+        "concrete": 2.5,
+        "boards": 1.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "More Propaganda Posters (Medium)",
+      "workshopId": "2630876199",
+      "modPath": "poster_2"
+    },
+    {
+      "id": "2630876199/poster_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 75,
+        "gravel": 1,
+        "steel": 1,
+        "concrete": 1,
+        "boards": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "More Propaganda Posters (Small)",
+      "workshopId": "2630876199",
+      "modPath": "poster_3"
+    }
+  ],
+  "vehicles": []
+}

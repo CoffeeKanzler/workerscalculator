@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3282195099",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:20:37.720Z",
+  "buildings": [
+    {
+      "id": "3282195099/27840conforminggravel",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conforming gravel filler",
+      "workshopId": "3282195099",
+      "modPath": "27840conforminggravel"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3630969632",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T14:10:20.910Z",
+  "buildings": [
+    {
+      "id": "3630969632/dprk_small_food_store",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 4,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.75,
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 135,
+        "concrete": 10.5,
+        "steel": 1.7
+      },
+      "electricWorkerFactors": {
+        "lighting": 1,
+        "living": 1
+      },
+      "nameStr": "DPRK Small Food Store",
+      "workshopId": "3630969632",
+      "modPath": "dprk_small_food_store"
+    }
+  ],
+  "vehicles": []
+}

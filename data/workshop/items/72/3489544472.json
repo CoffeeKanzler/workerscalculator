@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3489544472",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:47:35.665Z",
+  "buildings": [
+    {
+      "id": "3489544472/1",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.9,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "mg1",
+      "workshopId": "3489544472",
+      "modPath": "1"
+    },
+    {
+      "id": "3489544472/2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "mg2",
+      "workshopId": "3489544472",
+      "modPath": "2"
+    },
+    {
+      "id": "3489544472/3",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 9,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.6,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "mg3",
+      "workshopId": "3489544472",
+      "modPath": "3"
+    },
+    {
+      "id": "3489544472/4",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 9,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 11,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.7,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "mg4",
+      "workshopId": "3489544472",
+      "modPath": "4"
+    },
+    {
+      "id": "3489544472/5",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "mg5",
+      "workshopId": "3489544472",
+      "modPath": "5"
+    },
+    {
+      "id": "3489544472/6",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 7,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.6,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "mg6",
+      "workshopId": "3489544472",
+      "modPath": "6"
+    },
+    {
+      "id": "3489544472/7",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 18,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "mg7",
+      "workshopId": "3489544472",
+      "modPath": "7"
+    },
+    {
+      "id": "3489544472/8",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 11,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "mg8",
+      "workshopId": "3489544472",
+      "modPath": "8"
+    },
+    {
+      "id": "3489544472/9",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 4,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "mg9",
+      "workshopId": "3489544472",
+      "modPath": "9"
+    }
+  ],
+  "vehicles": []
+}

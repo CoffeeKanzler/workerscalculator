@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2966531113",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.162Z",
+  "buildings": [
+    {
+      "id": "2966531113/Tenement5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 12,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.79,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 12
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "concrete": 0.5,
+        "workers": 40,
+        "bricks": 8.1,
+        "steel": 0.5,
+        "boards": 1.6,
+        "mcomponents": 0.5,
+        "ecomponents": 0.25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Tenement 5",
+      "workshopId": "2966531113",
+      "modPath": "Tenement5"
+    },
+    {
+      "id": "2966531113/Tenement6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.77,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "concrete": 1,
+        "workers": 80,
+        "bricks": 16.1,
+        "steel": 1,
+        "boards": 3.2,
+        "mcomponents": 1,
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Tenement 6",
+      "workshopId": "2966531113",
+      "modPath": "Tenement6"
+    },
+    {
+      "id": "2966531113/Tenement7",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24
+      },
+      "constructionResources": {
+        "gravel": 1.8,
+        "concrete": 0.8,
+        "workers": 70,
+        "bricks": 15.1,
+        "steel": 0.9,
+        "boards": 3,
+        "mcomponents": 1,
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Tenement 7",
+      "workshopId": "2966531113",
+      "modPath": "Tenement7"
+    },
+    {
+      "id": "2966531113/Tenement8",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.73,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36
+      },
+      "constructionResources": {
+        "gravel": 1.8,
+        "concrete": 0.8,
+        "workers": 96,
+        "bricks": 21.5,
+        "steel": 1.3,
+        "boards": 4.3,
+        "mcomponents": 1.4,
+        "ecomponents": 0.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Tenement 8",
+      "workshopId": "2966531113",
+      "modPath": "Tenement8"
+    }
+  ],
+  "vehicles": []
+}

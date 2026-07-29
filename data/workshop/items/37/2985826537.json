@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2985826537",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.276Z",
+  "buildings": [
+    {
+      "id": "2985826537/baghramyan",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 55,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 55
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka on marshal Baghramyan street",
+      "workshopId": "2985826537",
+      "modPath": "baghramyan"
+    },
+    {
+      "id": "2985826537/kalinin",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 68,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 68
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka on Kalinin street",
+      "workshopId": "2985826537",
+      "modPath": "kalinin"
+    },
+    {
+      "id": "2985826537/spandaryan",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 68,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 68
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka on Tamanskaya street",
+      "workshopId": "2985826537",
+      "modPath": "spandaryan"
+    },
+    {
+      "id": "2985826537/tumanyan",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 54,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 54
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka on Tumanyan street",
+      "workshopId": "2985826537",
+      "modPath": "tumanyan"
+    },
+    {
+      "id": "2985826537/zakiyan",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 86,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 86
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka on Zakiyan street",
+      "workshopId": "2985826537",
+      "modPath": "zakiyan"
+    }
+  ],
+  "vehicles": []
+}

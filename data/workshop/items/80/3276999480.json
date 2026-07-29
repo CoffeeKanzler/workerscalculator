@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3276999480",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:20:37.678Z",
+  "buildings": [
+    {
+      "id": "3276999480/1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "POST60-1",
+      "workshopId": "3276999480",
+      "modPath": "1"
+    },
+    {
+      "id": "3276999480/2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "POST60-2",
+      "workshopId": "3276999480",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

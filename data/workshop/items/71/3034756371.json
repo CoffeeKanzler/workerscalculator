@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3034756371",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.109Z",
+  "buildings": [
+    {
+      "id": "3034756371/advanced_water_treatment_plant",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 24,
+      "professors": 6,
+      "production": {
+        "water": 1500
+      },
+      "consumption": {
+        "usagewater": 200,
+        "chemicals": 0.125
+      },
+      "consumptionPerSecond": {
+        "eletric": 7.65
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 90,
+        "concrete": 175,
+        "gravel": 120,
+        "workers": 4530,
+        "bricks": 85,
+        "boards": 25,
+        "steel": 125.5,
+        "mcomponents": 22.25,
+        "ecomponents": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Advanced Water Treatment Plant",
+      "workshopId": "3034756371",
+      "modPath": "advanced_water_treatment_plant"
+    }
+  ],
+  "vehicles": []
+}

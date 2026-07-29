@@ -1,0 +1,532 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2651153316",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.227Z",
+  "buildings": [
+    {
+      "id": "2651153316/1x3",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1in3out",
+      "workshopId": "2651153316",
+      "modPath": "1x3"
+    },
+    {
+      "id": "2651153316/2x2",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "2in2out",
+      "workshopId": "2651153316",
+      "modPath": "2x2"
+    },
+    {
+      "id": "2651153316/2x4",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "2in4out",
+      "workshopId": "2651153316",
+      "modPath": "2x4"
+    },
+    {
+      "id": "2651153316/3x1",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3in1out",
+      "workshopId": "2651153316",
+      "modPath": "3x1"
+    },
+    {
+      "id": "2651153316/3x3",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3in3out",
+      "workshopId": "2651153316",
+      "modPath": "3x3"
+    },
+    {
+      "id": "2651153316/FT2i3o",
+      "nameId": 6167,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 5,
+        "concrete": 7,
+        "asphalt": 2,
+        "mcomponents": 1.2,
+        "steel": 9
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2651153316",
+      "modPath": "FT2i3o"
+    },
+    {
+      "id": "2651153316/FT3i4o",
+      "nameId": 6167,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 5,
+        "concrete": 7,
+        "asphalt": 2,
+        "mcomponents": 1.2,
+        "steel": 7
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2651153316",
+      "modPath": "FT3i4o"
+    },
+    {
+      "id": "2651153316/FT4i1o",
+      "nameId": 6167,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 5,
+        "concrete": 7,
+        "asphalt": 2,
+        "mcomponents": 1.2,
+        "steel": 9
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2651153316",
+      "modPath": "FT4i1o"
+    },
+    {
+      "id": "2651153316/hochbunker",
+      "nameId": 6156,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 4000
+      },
+      "constructionResources": {
+        "workers": 2500,
+        "gravel": 220,
+        "asphalt": 20,
+        "concrete": 220,
+        "mcomponents": 5,
+        "prefabpanels": 240,
+        "steel": 90
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2651153316",
+      "modPath": "hochbunker"
+    },
+    {
+      "id": "2651153316/kiesgrube",
+      "nameId": 6155,
+      "types": [
+        "TYPE_MINE_GRAVEL"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "rawgravel": 3
+      },
+      "consumption": {},
+      "consumptionPerSecond": {
+        "fuel": 0.004
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 120,
+        "gravel": 50,
+        "mcomponents": 0.5,
+        "ecomponents": 0.02,
+        "steel": 10,
+        "prefabpanels": 10
+      },
+      "electricWorkerFactors": {
+        "living": 0.2,
+        "heating": 0.2
+      },
+      "workshopId": "2651153316",
+      "modPath": "kiesgrube"
+    },
+    {
+      "id": "2651153316/kiesgrubeklein",
+      "nameId": 6155,
+      "types": [
+        "TYPE_MINE_GRAVEL"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "rawgravel": 3
+      },
+      "consumption": {},
+      "consumptionPerSecond": {
+        "fuel": 0.002
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 130,
+        "bricks": 5,
+        "boards": 15,
+        "concrete": 5
+      },
+      "electricWorkerFactors": {
+        "living": 0.2,
+        "heating": 0.2
+      },
+      "workshopId": "2651153316",
+      "modPath": "kiesgrubeklein"
+    },
+    {
+      "id": "2651153316/lager2KTmr",
+      "nameId": 6156,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 2000
+      },
+      "constructionResources": {
+        "workers": 1400,
+        "gravel": 150,
+        "concrete": 50,
+        "mcomponents": 1.5,
+        "bricks": 50,
+        "steel": 58
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2651153316",
+      "modPath": "lager2KTmr"
+    },
+    {
+      "id": "2651153316/lageroffen",
+      "nameId": 6157,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 8000
+      },
+      "constructionResources": {
+        "workers": 2800,
+        "gravel": 500,
+        "concrete": 200,
+        "prefabpanels": 230,
+        "steel": 100,
+        "mcomponents": 4
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2651153316",
+      "modPath": "lageroffen"
+    },
+    {
+      "id": "2651153316/schlitzbunker",
+      "nameId": 6157,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 15000
+      },
+      "constructionResources": {
+        "workers": 9100,
+        "gravel": 500,
+        "asphalt": 50,
+        "concrete": 1000,
+        "steel": 370,
+        "mcomponents": 14
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2651153316",
+      "modPath": "schlitzbunker"
+    },
+    {
+      "id": "2651153316/schotterwerk",
+      "nameId": 6158,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "gravel": 5.5
+      },
+      "consumption": {
+        "rawgravel": 8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.19
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 550,
+        "gravel": 150,
+        "mcomponents": 1,
+        "ecomponents": 0.1,
+        "steel": 25,
+        "prefabpanels": 25
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2651153316",
+      "modPath": "schotterwerk"
+    },
+    {
+      "id": "2651153316/schotterwerkalt",
+      "nameId": 6158,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 18,
+      "professors": 0,
+      "production": {
+        "gravel": 5.5
+      },
+      "consumption": {
+        "rawgravel": 8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.33
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2651153316",
+      "modPath": "schotterwerkalt"
+    },
+    {
+      "id": "2651153316/schotterwerkgr",
+      "nameId": 6158,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "gravel": 5.5
+      },
+      "consumption": {
+        "rawgravel": 8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.52
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1500,
+        "gravel": 300,
+        "asphalt": 20,
+        "concrete": 90,
+        "mcomponents": 3,
+        "ecomponents": 0.3,
+        "steel": 75,
+        "prefabpanels": 75
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2651153316",
+      "modPath": "schotterwerkgr"
+    },
+    {
+      "id": "2651153316/schotterwerkgrneu",
+      "nameId": 6158,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 37,
+      "professors": 0,
+      "production": {
+        "gravel": 5.5
+      },
+      "consumption": {
+        "rawgravel": 8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.8
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2651153316",
+      "modPath": "schotterwerkgrneu"
+    }
+  ],
+  "vehicles": []
+}

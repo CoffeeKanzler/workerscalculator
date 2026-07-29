@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2640562446",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.189Z",
+  "buildings": [
+    {
+      "id": "2640562446/building",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 10,
+      "professors": 8,
+      "production": {
+        "eletric": 145,
+        "nuclearfuelburned": 0.001,
+        "vehicles": 1
+      },
+      "consumption": {
+        "vehicles": 1,
+        "water": 0.0125
+      },
+      "consumptionPerSecond": {
+        "nuclearfuel": 0.000083
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 5,
+        "concrete": 50,
+        "gravel": 12.5,
+        "workers": 260,
+        "bricks": 30,
+        "steel": 24,
+        "ecomponents": 2,
+        "mcomponents": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Nuclear Power Plant",
+      "workshopId": "2640562446",
+      "modPath": "building"
+    }
+  ],
+  "vehicles": []
+}

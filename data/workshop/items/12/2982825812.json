@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2982825812",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.258Z",
+  "buildings": [
+    {
+      "id": "2982825812/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kashubian Large Flag",
+      "workshopId": "2982825812",
+      "modPath": "Large_Flying"
+    },
+    {
+      "id": "2982825812/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kashubian Medium Flag",
+      "workshopId": "2982825812",
+      "modPath": "Med_Flying"
+    },
+    {
+      "id": "2982825812/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kashubian Small Flag",
+      "workshopId": "2982825812",
+      "modPath": "Small_Flying"
+    }
+  ],
+  "vehicles": []
+}

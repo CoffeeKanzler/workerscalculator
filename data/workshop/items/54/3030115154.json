@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3030115154",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.090Z",
+  "buildings": [
+    {
+      "id": "3030115154/1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny vehicle storage A",
+      "workshopId": "3030115154",
+      "modPath": "1"
+    },
+    {
+      "id": "3030115154/2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 1500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny vehicle storage B",
+      "workshopId": "3030115154",
+      "modPath": "2"
+    },
+    {
+      "id": "3030115154/3",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small vehicle storage A",
+      "workshopId": "3030115154",
+      "modPath": "3"
+    },
+    {
+      "id": "3030115154/4",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 1500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small vehicle storage B",
+      "workshopId": "3030115154",
+      "modPath": "4"
+    }
+  ],
+  "vehicles": []
+}

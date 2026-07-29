@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3052437725",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.382Z",
+  "buildings": [
+    {
+      "id": "3052437725/1-1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 400,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 400
+      },
+      "constructionResources": {
+        "bricks": 9.3,
+        "boards": 7.4,
+        "concrete": 3.5,
+        "steel": 1,
+        "ecomponents": 0.5,
+        "workers": 237
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1-track station building LVI/H (Czech Rep, XX)",
+      "workshopId": "3052437725",
+      "modPath": "1-1"
+    },
+    {
+      "id": "3052437725/1-2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 400,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 400
+      },
+      "constructionResources": {
+        "bricks": 9.3,
+        "boards": 7.4,
+        "concrete": 3.5,
+        "steel": 1,
+        "ecomponents": 0.5,
+        "workers": 237
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "2-track station building LVI/H (Czech Rep, XX)",
+      "workshopId": "3052437725",
+      "modPath": "1-2"
+    },
+    {
+      "id": "3052437725/1-pub",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": 1,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 9.3,
+        "boards": 7.4,
+        "concrete": 3.5,
+        "steel": 1,
+        "ecomponents": 0.5,
+        "workers": 237
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Pub based on building LVI/H (Czech Rep, XX)",
+      "workshopId": "3052437725",
+      "modPath": "1-pub"
+    },
+    {
+      "id": "3052437725/2-1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 600,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 600
+      },
+      "constructionResources": {
+        "bricks": 11.8,
+        "boards": 8.1,
+        "concrete": 3.4,
+        "steel": 1,
+        "ecomponents": 0.5,
+        "workers": 256
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1-track station building LVII/H (Czech Rep, XX)",
+      "workshopId": "3052437725",
+      "modPath": "2-1"
+    },
+    {
+      "id": "3052437725/2-2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 600,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 600
+      },
+      "constructionResources": {
+        "bricks": 11.8,
+        "boards": 8.1,
+        "concrete": 3.4,
+        "steel": 1,
+        "ecomponents": 0.5,
+        "workers": 256
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "2-track station building LVII/H (Czech Rep, XX)",
+      "workshopId": "3052437725",
+      "modPath": "2-2"
+    },
+    {
+      "id": "3052437725/2-bus",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 500
+      },
+      "constructionResources": {
+        "bricks": 11.8,
+        "boards": 8.1,
+        "concrete": 3.4,
+        "steel": 1,
+        "ecomponents": 0.5,
+        "workers": 256
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bus station project LVII/H (Czech Rep, XX)",
+      "workshopId": "3052437725",
+      "modPath": "2-bus"
+    },
+    {
+      "id": "3052437725/3-1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 700,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 700
+      },
+      "constructionResources": {
+        "bricks": 13.2,
+        "boards": 9.8,
+        "concrete": 4.8,
+        "steel": 1,
+        "ecomponents": 0.5,
+        "workers": 298
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1-track station building LVIII/H (Czech Rep, XX)",
+      "workshopId": "3052437725",
+      "modPath": "3-1"
+    },
+    {
+      "id": "3052437725/3-2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 700,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 700
+      },
+      "constructionResources": {
+        "bricks": 13.2,
+        "boards": 9.8,
+        "concrete": 4.8,
+        "steel": 1,
+        "ecomponents": 0.5,
+        "workers": 298
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "2-track station building LVIII/H (Czech Rep, XX)",
+      "workshopId": "3052437725",
+      "modPath": "3-2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2656057679",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.274Z",
+  "buildings": [
+    {
+      "id": "2656057679/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 160,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": 60,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel_Ukraine",
+      "workshopId": "2656057679",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2656057679/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 20,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tourist_agency(Hotel)",
+      "workshopId": "2656057679",
+      "modPath": "HOUSE2"
+    },
+    {
+      "id": "2656057679/HOUSE3",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": 4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Swimming_pool(Hotel)",
+      "workshopId": "2656057679",
+      "modPath": "HOUSE3"
+    },
+    {
+      "id": "2656057679/HOUSE4",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bowling(Hotel)",
+      "workshopId": "2656057679",
+      "modPath": "HOUSE4"
+    }
+  ],
+  "vehicles": []
+}

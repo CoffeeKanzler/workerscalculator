@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2652040315",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.241Z",
+  "buildings": [
+    {
+      "id": "2652040315/HillRanchBig",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "livestock": 0.1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 10,
+        "gravel": 10,
+        "workers": 150,
+        "boards": 50,
+        "steel": 1
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.1,
+        "living": 0.1
+      },
+      "nameStr": "Large Beef Cattle Hill",
+      "workshopId": "2652040315",
+      "modPath": "HillRanchBig"
+    },
+    {
+      "id": "2652040315/HillRanchMed",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "livestock": 0.075
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 5,
+        "gravel": 10,
+        "workers": 75,
+        "boards": 25,
+        "steel": 0.5
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.1,
+        "living": 0.1
+      },
+      "nameStr": "Medium Beef Cattle Hill",
+      "workshopId": "2652040315",
+      "modPath": "HillRanchMed"
+    },
+    {
+      "id": "2652040315/HillRanchSmall",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "livestock": 0.05
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 2.5,
+        "gravel": 10,
+        "workers": 40,
+        "boards": 12.5,
+        "steel": 0.25
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.1,
+        "living": 0.1
+      },
+      "nameStr": "Small Beef Cattle Hill",
+      "workshopId": "2652040315",
+      "modPath": "HillRanchSmall"
+    },
+    {
+      "id": "2652040315/RanchBig",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "livestock": 0.1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 10,
+        "gravel": 10,
+        "workers": 150,
+        "boards": 50,
+        "steel": 1
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.1,
+        "living": 0.1
+      },
+      "nameStr": "Big Beef Cattle Field",
+      "workshopId": "2652040315",
+      "modPath": "RanchBig"
+    },
+    {
+      "id": "2652040315/RanchMed",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "livestock": 0.075
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 5,
+        "gravel": 10,
+        "workers": 75,
+        "boards": 25,
+        "steel": 0.5
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.1,
+        "living": 0.1
+      },
+      "nameStr": "Medium Beef Cattle Field",
+      "workshopId": "2652040315",
+      "modPath": "RanchMed"
+    },
+    {
+      "id": "2652040315/RanchSmall",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "livestock": 0.05
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 2.5,
+        "gravel": 10,
+        "workers": 40,
+        "boards": 12.5,
+        "steel": 0.25
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.1,
+        "living": 0.1
+      },
+      "nameStr": "Small Beef Cattle Field",
+      "workshopId": "2652040315",
+      "modPath": "RanchSmall"
+    }
+  ],
+  "vehicles": []
+}

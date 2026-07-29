@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3022150983",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.043Z",
+  "buildings": [
+    {
+      "id": "3022150983/ais1",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 5,
+        "gravel": 8.6,
+        "prefabpanels": 17.5,
+        "steel": 21.035,
+        "boards": 2,
+        "concrete": 19,
+        "workers": 893,
+        "bricks": 21,
+        "mcomponents": 1.2,
+        "ecomponents": 3.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Substation 10 MVA, 1-circuit air input",
+      "workshopId": "3022150983",
+      "modPath": "ais1"
+    },
+    {
+      "id": "3022150983/ais2",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 8,
+        "prefabpanels": 22.8,
+        "steel": 40.625,
+        "boards": 3.2,
+        "concrete": 43.9,
+        "gravel": 11.5,
+        "workers": 2264,
+        "bricks": 71.8,
+        "mcomponents": 2.5,
+        "ecomponents": 6.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Substation 20 MVA, 2-circuit air input",
+      "workshopId": "3022150983",
+      "modPath": "ais2"
+    },
+    {
+      "id": "3022150983/ais3",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 5,
+        "gravel": 8.6,
+        "prefabpanels": 18,
+        "steel": 21.384999999999998,
+        "boards": 2,
+        "concrete": 18.6,
+        "workers": 917,
+        "bricks": 21.3,
+        "mcomponents": 1.2,
+        "ecomponents": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Substation 10 MVA with cable inputs/outputs",
+      "workshopId": "3022150983",
+      "modPath": "ais3"
+    },
+    {
+      "id": "3022150983/ais4",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 8,
+        "prefabpanels": 23.3,
+        "steel": 42.025000000000006,
+        "boards": 3.2,
+        "concrete": 43.9,
+        "gravel": 11.5,
+        "workers": 2301,
+        "bricks": 71.8,
+        "mcomponents": 2.5,
+        "ecomponents": 6.9
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Substation 20MVA with cable inputs/outputs",
+      "workshopId": "3022150983",
+      "modPath": "ais4"
+    },
+    {
+      "id": "3022150983/b110-1",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 4,
+        "workers": 112,
+        "steel": 1.9,
+        "ecomponents": 0.38
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tapping 110kV (T-junction), three 1-circuit outputs",
+      "workshopId": "3022150983",
+      "modPath": "b110-1"
+    },
+    {
+      "id": "3022150983/b110-2",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 5,
+        "workers": 178,
+        "steel": 3.4,
+        "ecomponents": 0.73
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "2-circuit tapping 110kV (T-junction), three outputs",
+      "workshopId": "3022150983",
+      "modPath": "b110-2"
+    },
+    {
+      "id": "3022150983/b20-1",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.2,
+        "prefabpanels": 2.5,
+        "ecomponents": 0.15,
+        "workers": 36
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tapping 20kV (T-junction), three 1-circuit outputs",
+      "workshopId": "3022150983",
+      "modPath": "b20-1"
+    },
+    {
+      "id": "3022150983/b20-2",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.35,
+        "prefabpanels": 3.8,
+        "ecomponents": 0.15,
+        "workers": 59
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1-circuit tapping 20kV (T-junction), 2-circuit line",
+      "workshopId": "3022150983",
+      "modPath": "b20-2"
+    },
+    {
+      "id": "3022150983/ct1",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.22,
+        "prefabpanels": 2.3,
+        "ecomponents": 0.15,
+        "workers": 31
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Transition station 20kV, 1-circuit input",
+      "workshopId": "3022150983",
+      "modPath": "ct1"
+    },
+    {
+      "id": "3022150983/ct2",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.45,
+        "prefabpanels": 4.5,
+        "ecomponents": 0.3,
+        "workers": 63
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Transition station 20kV, 2-circuit input 2.35MW",
+      "workshopId": "3022150983",
+      "modPath": "ct2"
+    },
+    {
+      "id": "3022150983/ct3",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "prefabpanels": 2.4,
+        "steel": 1.6,
+        "concrete": 1.5,
+        "gravel": 3,
+        "workers": 131,
+        "ecomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Transition station 110kV, 1-circuit input",
+      "workshopId": "3022150983",
+      "modPath": "ct3"
+    },
+    {
+      "id": "3022150983/ct4",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "prefabpanels": 4.5,
+        "steel": 3,
+        "concrete": 3,
+        "gravel": 5.5,
+        "workers": 252,
+        "ecomponents": 0.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Transition station 110kV, 2-circuit input",
+      "workshopId": "3022150983",
+      "modPath": "ct4"
+    },
+    {
+      "id": "3022150983/s110-2",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 4,
+        "workers": 128,
+        "steel": 2.1,
+        "ecomponents": 0.51
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Splitter 110kV for 2-circuit power line",
+      "workshopId": "3022150983",
+      "modPath": "s110-2"
+    },
+    {
+      "id": "3022150983/s110-4",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 8,
+        "workers": 256,
+        "steel": 4.2,
+        "ecomponents": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Splitter 110kV for 4-circuit 18MW power line",
+      "workshopId": "3022150983",
+      "modPath": "s110-4"
+    },
+    {
+      "id": "3022150983/s20",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.35,
+        "prefabpanels": 4.5,
+        "ecomponents": 0.25,
+        "workers": 55
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Splitter 20kV",
+      "workshopId": "3022150983",
+      "modPath": "s20"
+    },
+    {
+      "id": "3022150983/s20-2",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 4,
+        "workers": 114,
+        "steel": 2,
+        "ecomponents": 0.24
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Splitter 20kV with the tower US110-7",
+      "workshopId": "3022150983",
+      "modPath": "s20-2"
+    }
+  ],
+  "vehicles": []
+}

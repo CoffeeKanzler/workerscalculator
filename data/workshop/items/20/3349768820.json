@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3349768820",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:31:34.801Z",
+  "buildings": [
+    {
+      "id": "3349768820/8-5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 95,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 95
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "VVU-ETA 8-5",
+      "workshopId": "3349768820",
+      "modPath": "8-5"
+    },
+    {
+      "id": "3349768820/8-5B",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 95,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 95
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "VVU-ETA 8-5B",
+      "workshopId": "3349768820",
+      "modPath": "8-5B"
+    },
+    {
+      "id": "3349768820/8-5L",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 95,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 95
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "VVU-ETA 8-5L",
+      "workshopId": "3349768820",
+      "modPath": "8-5L"
+    },
+    {
+      "id": "3349768820/8-5P",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 95,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 95
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "VVU-ETA 8-5P",
+      "workshopId": "3349768820",
+      "modPath": "8-5P"
+    }
+  ],
+  "vehicles": []
+}

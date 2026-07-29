@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2651240791",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.239Z",
+  "buildings": [
+    {
+      "id": "2651240791/genocide",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 50,
+        "bricks": 500,
+        "workers": 300
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian Genocide monument",
+      "workshopId": "2651240791",
+      "modPath": "genocide"
+    },
+    {
+      "id": "2651240791/genocide_church",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 5,
+      "professors": 5,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 300,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 50,
+        "bricks": 500,
+        "workers": 300
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian Genocide memorial (church)",
+      "workshopId": "2651240791",
+      "modPath": "genocide_church"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2973053191",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.201Z",
+  "buildings": [
+    {
+      "id": "2973053191/Market1",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 16,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 7.5,
+        "concrete": 3.3,
+        "workers": 290,
+        "prefabpanels": 49,
+        "steel": 8.2,
+        "boards": 10,
+        "mcomponents": 2.2,
+        "ecomponents": 1.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Market 1",
+      "workshopId": "2973053191",
+      "modPath": "Market1"
+    },
+    {
+      "id": "2973053191/Market2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 13,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 7.1,
+        "concrete": 3,
+        "workers": 260,
+        "prefabpanels": 42,
+        "steel": 7.2,
+        "boards": 8.5,
+        "mcomponents": 1.9,
+        "ecomponents": 1.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Market 2",
+      "workshopId": "2973053191",
+      "modPath": "Market2"
+    },
+    {
+      "id": "2973053191/Shop1",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 0.5,
+        "concrete": 0.3,
+        "workers": 19,
+        "prefabpanels": 0.6,
+        "steel": 0.2,
+        "boards": 6,
+        "mcomponents": 0.2,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Shop 1",
+      "workshopId": "2973053191",
+      "modPath": "Shop1"
+    },
+    {
+      "id": "2973053191/Shop2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 0.5,
+        "concrete": 0.3,
+        "workers": 19,
+        "prefabpanels": 0.6,
+        "steel": 0.2,
+        "boards": 6,
+        "mcomponents": 0.2,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Grocery Store 1",
+      "workshopId": "2973053191",
+      "modPath": "Shop2"
+    }
+  ],
+  "vehicles": []
+}

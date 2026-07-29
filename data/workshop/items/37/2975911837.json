@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2975911837",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.211Z",
+  "buildings": [
+    {
+      "id": "2975911837/mon_bochka",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 11,
+        "boards": 0.01,
+        "concrete": 0.3,
+        "steel": 0.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾ÑÐºÐ°",
+      "workshopId": "2975911837",
+      "modPath": "mon_bochka"
+    },
+    {
+      "id": "2975911837/pub_bochka",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 11,
+        "boards": 0.01,
+        "concrete": 0.3,
+        "steel": 0.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¸Ð²Ð¾",
+      "workshopId": "2975911837",
+      "modPath": "pub_bochka"
+    },
+    {
+      "id": "2975911837/shop_bochka",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 11,
+        "boards": 0.01,
+        "concrete": 0.3,
+        "steel": 0.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾Ð»Ð¾ÐºÐ¾",
+      "workshopId": "2975911837",
+      "modPath": "shop_bochka"
+    }
+  ],
+  "vehicles": []
+}

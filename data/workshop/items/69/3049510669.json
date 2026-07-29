@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3049510669",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.374Z",
+  "buildings": [
+    {
+      "id": "3049510669/not",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House of culture",
+      "workshopId": "3049510669",
+      "modPath": "not"
+    }
+  ],
+  "vehicles": []
+}

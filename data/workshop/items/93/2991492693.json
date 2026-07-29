@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2991492693",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.330Z",
+  "buildings": [
+    {
+      "id": "2991492693/technical-services",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Snowplow station",
+      "workshopId": "2991492693",
+      "modPath": "technical-services"
+    }
+  ],
+  "vehicles": []
+}

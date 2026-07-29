@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2640774878",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.190Z",
+  "buildings": [
+    {
+      "id": "2640774878/1",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forlift garage 4",
+      "workshopId": "2640774878",
+      "modPath": "1"
+    },
+    {
+      "id": "2640774878/2",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forklift garage 8",
+      "workshopId": "2640774878",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

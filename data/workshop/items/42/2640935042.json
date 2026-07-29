@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2640935042",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.192Z",
+  "buildings": [
+    {
+      "id": "2640935042/1",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 600,
+      "professors": 0,
+      "production": {
+        "eletric": 10
+      },
+      "consumption": {
+        "coal": 1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Power plant Ekibastuz",
+      "workshopId": "2640935042",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

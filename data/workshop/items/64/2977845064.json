@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2977845064",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.235Z",
+  "buildings": [
+    {
+      "id": "2977845064/1",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {
+        "eletric": 30
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 114.2,
+        "boards": 79.1,
+        "concrete": 34.4,
+        "steel": 30.799999999999997,
+        "workers": 3122,
+        "ecomponents": 6.5,
+        "mcomponents": 11.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Czech hydroelectricity (late XIX, Pisek)",
+      "workshopId": "2977845064",
+      "modPath": "1"
+    },
+    {
+      "id": "2977845064/2",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 4.3,
+        "concrete": 1.2,
+        "boards": 0.5,
+        "steel": 0.6,
+        "ecomponents": 0.2,
+        "workers": 135
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "substation for XIX Czech mill",
+      "workshopId": "2977845064",
+      "modPath": "2"
+    }
+  ],
+  "vehicles": []
+}

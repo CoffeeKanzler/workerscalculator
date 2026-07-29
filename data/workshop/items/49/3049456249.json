@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3049456249",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.371Z",
+  "buildings": [
+    {
+      "id": "3049456249/Row1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36
+      },
+      "constructionResources": {
+        "gravel": 20,
+        "concrete": 20,
+        "workers": 200,
+        "boards": 10,
+        "bricks": 40
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Historic Row House",
+      "workshopId": "3049456249",
+      "modPath": "Row1"
+    },
+    {
+      "id": "3049456249/Row2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50
+      },
+      "constructionResources": {
+        "gravel": 30,
+        "concrete": 22,
+        "workers": 240,
+        "boards": 12,
+        "bricks": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Historic Flats",
+      "workshopId": "3049456249",
+      "modPath": "Row2"
+    }
+  ],
+  "vehicles": []
+}

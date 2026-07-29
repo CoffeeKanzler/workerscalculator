@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3185206996",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:09:05.332Z",
+  "buildings": [
+    {
+      "id": "3185206996/Minsub",
+      "nameId": null,
+      "types": [
+        "TYPE_SUBSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_ELETRIC": 1
+      },
+      "constructionResources": {
+        "workers": 10,
+        "concrete": 0.1,
+        "steel": 0.2,
+        "ecomponents": 0.05
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Mini Substation",
+      "workshopId": "3185206996",
+      "modPath": "Minsub"
+    },
+    {
+      "id": "3185206996/Minswitch",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_ELETRIC": 1
+      },
+      "constructionResources": {
+        "workers": 10,
+        "concrete": 0.1,
+        "steel": 0.2,
+        "ecomponents": 0.05
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Mini Switch",
+      "workshopId": "3185206996",
+      "modPath": "Minswitch"
+    }
+  ],
+  "vehicles": []
+}

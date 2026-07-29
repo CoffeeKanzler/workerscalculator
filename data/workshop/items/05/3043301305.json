@@ -1,0 +1,382 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3043301305",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.184Z",
+  "buildings": [
+    {
+      "id": "3043301305/Asphalt_2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {
+        "asphalt": 10
+      },
+      "consumption": {
+        "gravel": 2,
+        "bitumen": 1,
+        "eletric": 0.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 1.85,
+        "boards": 2.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Asphalt Plant",
+      "workshopId": "3043301305",
+      "modPath": "Asphalt_2"
+    },
+    {
+      "id": "3043301305/Beton_2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {
+        "concrete": 10
+      },
+      "consumption": {
+        "gravel": 4,
+        "cement": 1.6
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Concrete Plant",
+      "workshopId": "3043301305",
+      "modPath": "Beton_2"
+    },
+    {
+      "id": "3043301305/CoalHeating",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 140
+      },
+      "consumption": {
+        "coal": 0.13
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Basic Heating Plant",
+      "workshopId": "3043301305",
+      "modPath": "CoalHeating"
+    },
+    {
+      "id": "3043301305/CoalPower",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {
+        "eletric": 6
+      },
+      "consumption": {
+        "coal": 0.18
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Basic Coal Power Plant",
+      "workshopId": "3043301305",
+      "modPath": "CoalPower"
+    },
+    {
+      "id": "3043301305/Outflow",
+      "nameId": null,
+      "types": [
+        "TYPE_SEWAGE_DISCHARGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 4,
+        "boards": 0.11,
+        "steel": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Sewage Outlet (with Road Access)",
+      "workshopId": "3043301305",
+      "modPath": "Outflow"
+    },
+    {
+      "id": "3043301305/Pioneer_dock",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150,
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_OIL": 1,
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Free Harbour",
+      "workshopId": "3043301305",
+      "modPath": "Pioneer_dock"
+    },
+    {
+      "id": "3043301305/Pioneer_dock2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHIP_DOCK"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Free Ship Dock",
+      "workshopId": "3043301305",
+      "modPath": "Pioneer_dock2"
+    },
+    {
+      "id": "3043301305/Pioneer_dockwk",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Free Passenger Harbour",
+      "workshopId": "3043301305",
+      "modPath": "Pioneer_dockwk"
+    },
+    {
+      "id": "3043301305/SmallIncinerator",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste": 0.3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Basic Incinerator",
+      "workshopId": "3043301305",
+      "modPath": "SmallIncinerator"
+    },
+    {
+      "id": "3043301305/SmallStand2",
+      "nameId": null,
+      "types": [
+        "TYPE_TRASH_CONTAINER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 30,
+        "concrete": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Trash Stand",
+      "workshopId": "3043301305",
+      "modPath": "SmallStand2"
+    },
+    {
+      "id": "3043301305/brick_farm",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 10
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Brick Farm",
+      "workshopId": "3043301305",
+      "modPath": "brick_farm"
+    },
+    {
+      "id": "3043301305/powerfree_fuel_tank",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Free Gas Station",
+      "workshopId": "3043301305",
+      "modPath": "powerfree_fuel_tank"
+    },
+    {
+      "id": "3043301305/warehus1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 60,
+        "RESOURCE_TRANSPORT_COOLER": 5
+      },
+      "constructionResources": {
+        "workers": 80,
+        "gravel": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Storage",
+      "workshopId": "3043301305",
+      "modPath": "warehus1"
+    },
+    {
+      "id": "3043301305/warehus2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 120,
+        "RESOURCE_TRANSPORT_COOLER": 20,
+        "RESOURCE_TRANSPORT_WASTE": 30
+      },
+      "constructionResources": {
+        "workers": 160,
+        "gravel": 30
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "IC: Harbour with Storage",
+      "workshopId": "3043301305",
+      "modPath": "warehus2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2990773384",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.322Z",
+  "buildings": [
+    {
+      "id": "2990773384/abovyan",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 72,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 72
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka on Abovyan street",
+      "workshopId": "2990773384",
+      "modPath": "abovyan"
+    },
+    {
+      "id": "2990773384/hoktemberyan",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 84,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 84
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka on October avenue",
+      "workshopId": "2990773384",
+      "modPath": "hoktemberyan"
+    },
+    {
+      "id": "2990773384/kievyan",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 72,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 72
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka on Kievyan street",
+      "workshopId": "2990773384",
+      "modPath": "kievyan"
+    },
+    {
+      "id": "2990773384/lenin",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 94,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 94
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka on Lenin avenue",
+      "workshopId": "2990773384",
+      "modPath": "lenin"
+    },
+    {
+      "id": "2990773384/marx",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 66,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 66
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka on Marx street",
+      "workshopId": "2990773384",
+      "modPath": "marx"
+    }
+  ],
+  "vehicles": []
+}

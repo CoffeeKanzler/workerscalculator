@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3134055667",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:03:21.684Z",
+  "buildings": [
+    {
+      "id": "3134055667/dworzec_1",
+      "nameId": 1802,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3134055667",
+      "modPath": "dworzec_1"
+    },
+    {
+      "id": "3134055667/dworzec_2",
+      "nameId": 1802,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3134055667",
+      "modPath": "dworzec_2"
+    }
+  ],
+  "vehicles": []
+}

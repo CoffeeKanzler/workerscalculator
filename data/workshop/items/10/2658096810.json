@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2658096810",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:34:53.473Z",
+  "buildings": [
+    {
+      "id": "2658096810/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "England Large Flag",
+      "workshopId": "2658096810",
+      "modPath": "Large_Flying"
+    },
+    {
+      "id": "2658096810/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "England Medium Flag",
+      "workshopId": "2658096810",
+      "modPath": "Med_Flying"
+    },
+    {
+      "id": "2658096810/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "England Small Flag",
+      "workshopId": "2658096810",
+      "modPath": "Small_Flying"
+    }
+  ],
+  "vehicles": []
+}

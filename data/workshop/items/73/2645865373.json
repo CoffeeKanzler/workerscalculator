@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2645865373",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.212Z",
+  "buildings": [
+    {
+      "id": "2645865373/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 294,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 294
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "U City Block 1",
+      "workshopId": "2645865373",
+      "modPath": "1"
+    },
+    {
+      "id": "2645865373/2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 234,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 234
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "U City Block 2",
+      "workshopId": "2645865373",
+      "modPath": "2"
+    },
+    {
+      "id": "2645865373/3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 252,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 252
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "U City Block 3",
+      "workshopId": "2645865373",
+      "modPath": "3"
+    }
+  ],
+  "vehicles": []
+}

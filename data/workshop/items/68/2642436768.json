@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2642436768",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.200Z",
+  "buildings": [
+    {
+      "id": "2642436768/Mallz",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 400,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 5,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 360,
+        "steel": 150,
+        "bricks": 400,
+        "boards": 100,
+        "ecomponents": 5,
+        "mcomponents": 5,
+        "workers": 12000
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Mall",
+      "workshopId": "2642436768",
+      "modPath": "Mallz"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3055242210",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:58:00.966Z",
+  "buildings": [
+    {
+      "id": "3055242210/Marszalkowska2426",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 80,
+      "professors": 40,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 490,
+        "asphalt": 14,
+        "gravel": 16,
+        "concrete": 12,
+        "steel": 5,
+        "bricks": 19
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Marszalkowska 24/26 Hospital",
+      "workshopId": "3055242210",
+      "modPath": "Marszalkowska2426"
+    }
+  ],
+  "vehicles": []
+}

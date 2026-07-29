@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2970260612",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.174Z",
+  "buildings": [
+    {
+      "id": "2970260612/House1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 1.2,
+        "concrete": 0.7,
+        "workers": 27,
+        "prefabpanels": 3,
+        "steel": 0.3,
+        "boards": 1,
+        "mcomponents": 0.3,
+        "ecomponents": 0.15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Modernist House 1",
+      "workshopId": "2970260612",
+      "modPath": "House1"
+    },
+    {
+      "id": "2970260612/House2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 1.2,
+        "concrete": 0.7,
+        "workers": 27,
+        "prefabpanels": 3,
+        "steel": 0.3,
+        "boards": 1,
+        "mcomponents": 0.3,
+        "ecomponents": 0.15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Modernist House 2",
+      "workshopId": "2970260612",
+      "modPath": "House2"
+    },
+    {
+      "id": "2970260612/House3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 1.2,
+        "concrete": 0.7,
+        "workers": 27,
+        "prefabpanels": 3,
+        "steel": 0.3,
+        "boards": 1,
+        "mcomponents": 0.3,
+        "ecomponents": 0.15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Modernist House 3",
+      "workshopId": "2970260612",
+      "modPath": "House3"
+    },
+    {
+      "id": "2970260612/House4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 1.2,
+        "concrete": 0.7,
+        "workers": 37,
+        "prefabpanels": 4.2,
+        "steel": 0.4,
+        "boards": 1.6,
+        "mcomponents": 0.4,
+        "ecomponents": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Modernist House 4",
+      "workshopId": "2970260612",
+      "modPath": "House4"
+    },
+    {
+      "id": "2970260612/House5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 1.2,
+        "concrete": 0.7,
+        "workers": 37,
+        "prefabpanels": 4.2,
+        "steel": 0.4,
+        "boards": 1.6,
+        "mcomponents": 0.4,
+        "ecomponents": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Modernist House 5",
+      "workshopId": "2970260612",
+      "modPath": "House5"
+    },
+    {
+      "id": "2970260612/House6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "concrete": 1.2,
+        "workers": 65,
+        "prefabpanels": 6.8,
+        "steel": 0.7,
+        "boards": 2.8,
+        "mcomponents": 0.5,
+        "ecomponents": 0.25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Modernist House 6",
+      "workshopId": "2970260612",
+      "modPath": "House6"
+    },
+    {
+      "id": "2970260612/House7",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 2,
+        "concrete": 1.2,
+        "workers": 65,
+        "prefabpanels": 6.8,
+        "steel": 0.7,
+        "boards": 2.8,
+        "mcomponents": 0.5,
+        "ecomponents": 0.25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Modernist House 7",
+      "workshopId": "2970260612",
+      "modPath": "House7"
+    }
+  ],
+  "vehicles": []
+}

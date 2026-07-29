@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3348869935",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:31:34.796Z",
+  "buildings": [
+    {
+      "id": "3348869935/a",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt road dead end",
+      "workshopId": "3348869935",
+      "modPath": "a"
+    },
+    {
+      "id": "3348869935/c",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Concrete road dead end",
+      "workshopId": "3348869935",
+      "modPath": "c"
+    },
+    {
+      "id": "3348869935/g",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gravel road dead end",
+      "workshopId": "3348869935",
+      "modPath": "g"
+    },
+    {
+      "id": "3348869935/m",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dirt road dead end",
+      "workshopId": "3348869935",
+      "modPath": "m"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3040260961",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.161Z",
+  "buildings": [
+    {
+      "id": "3040260961/House1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 12,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.68,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 12
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Panel Individual Houses (IV)",
+      "workshopId": "3040260961",
+      "modPath": "House1"
+    },
+    {
+      "id": "3040260961/Tenement1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 12,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.64,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 12
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Panel Rowhouses (IV)",
+      "workshopId": "3040260961",
+      "modPath": "Tenement1"
+    },
+    {
+      "id": "3040260961/Tenement2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.62,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Panel Tenements (IV)",
+      "workshopId": "3040260961",
+      "modPath": "Tenement2"
+    }
+  ],
+  "vehicles": []
+}

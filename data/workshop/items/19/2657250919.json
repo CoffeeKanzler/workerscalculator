@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2657250919",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.285Z",
+  "buildings": [
+    {
+      "id": "2657250919/platform",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Central Railway Station",
+      "workshopId": "2657250919",
+      "modPath": "platform"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2643769797",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.205Z",
+  "buildings": [
+    {
+      "id": "2643769797/przedszkole",
+      "nameId": 6251,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 12,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2643769797",
+      "modPath": "przedszkole"
+    }
+  ],
+  "vehicles": []
+}

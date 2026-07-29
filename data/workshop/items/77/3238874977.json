@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3238874977",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T13:14:41.253Z",
+  "buildings": [
+    {
+      "id": "3238874977/Pioneer1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pioneer Railway Passenger Station",
+      "workshopId": "3238874977",
+      "modPath": "Pioneer1"
+    },
+    {
+      "id": "3238874977/Pioneer2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 240
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pioneer Railway Open Cargo Storage",
+      "workshopId": "3238874977",
+      "modPath": "Pioneer2"
+    },
+    {
+      "id": "3238874977/Pioneer3",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 57
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pioneer Railway Oil Storage",
+      "workshopId": "3238874977",
+      "modPath": "Pioneer3"
+    },
+    {
+      "id": "3238874977/Pioneer4",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 120
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pioneer Railway Container Storage",
+      "workshopId": "3238874977",
+      "modPath": "Pioneer4"
+    },
+    {
+      "id": "3238874977/Pioneer5",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 244
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pioneer Railway Covered Storage",
+      "workshopId": "3238874977",
+      "modPath": "Pioneer5"
+    },
+    {
+      "id": "3238874977/Pioneer6",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE_RAIL"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 120
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 0.1,
+        "lighting": 0.1
+      },
+      "nameStr": "Pioneer Railway Construction Office",
+      "workshopId": "3238874977",
+      "modPath": "Pioneer6"
+    }
+  ],
+  "vehicles": []
+}

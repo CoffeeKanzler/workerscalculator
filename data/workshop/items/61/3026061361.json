@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3026061361",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.075Z",
+  "buildings": [
+    {
+      "id": "3026061361/1",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "heat exchanger",
+      "workshopId": "3026061361",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

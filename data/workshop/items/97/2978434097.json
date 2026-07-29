@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2978434097",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.236Z",
+  "buildings": [
+    {
+      "id": "2978434097/central",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 16,
+      "professors": 8,
+      "production": {
+        "eletric": 120,
+        "nuclearfuelburned": 0.0005,
+        "vehicles": 1
+      },
+      "consumption": {
+        "nuclearfuel": 0.001,
+        "vehicles": 1,
+        "water": 0.3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 88.5,
+        "asphalt": 95,
+        "concrete": 415,
+        "workers": 5782,
+        "steel": 202,
+        "bricks": 140,
+        "prefabpanels": 50.3,
+        "boards": 20.5,
+        "mcomponents": 14.3,
+        "ecomponents": 12.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Zorita nuclear power plant",
+      "workshopId": "2978434097",
+      "modPath": "central"
+    },
+    {
+      "id": "2978434097/refrigeracion",
+      "nameId": null,
+      "types": [
+        "TYPE_COOLING_TOWER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 92,
+        "asphalt": 98,
+        "concrete": 153,
+        "workers": 2650,
+        "steel": 69.3,
+        "mcomponents": 6.7,
+        "ecomponents": 0.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Zorita cooling tower",
+      "workshopId": "2978434097",
+      "modPath": "refrigeracion"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2651211961",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.236Z",
+  "buildings": [
+    {
+      "id": "2651211961/1storey_luxury",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-Storey Stalinka",
+      "workshopId": "2651211961",
+      "modPath": "1storey_luxury"
+    },
+    {
+      "id": "2651211961/2storey_flats",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 46,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.86,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 46
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "2-Storey Stalinka",
+      "workshopId": "2651211961",
+      "modPath": "2storey_flats"
+    },
+    {
+      "id": "2651211961/2storey_luxury",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 42,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 42
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "2-Storey Stalinka",
+      "workshopId": "2651211961",
+      "modPath": "2storey_luxury"
+    },
+    {
+      "id": "2651211961/3storey_flats",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 68,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 68
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3-Storey Stalinka",
+      "workshopId": "2651211961",
+      "modPath": "3storey_flats"
+    }
+  ],
+  "vehicles": []
+}

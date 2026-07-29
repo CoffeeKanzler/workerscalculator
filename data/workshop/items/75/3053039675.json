@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3053039675",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.394Z",
+  "buildings": [
+    {
+      "id": "3053039675/Ward",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 360,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 360
+      },
+      "constructionResources": {
+        "gravel": 100,
+        "concrete": 100,
+        "workers": 1300,
+        "boards": 20,
+        "bricks": 200,
+        "steel": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Montgomery Appartments",
+      "workshopId": "3053039675",
+      "modPath": "Ward"
+    },
+    {
+      "id": "3053039675/Ward2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.6,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 100,
+        "concrete": 110,
+        "workers": 1500,
+        "boards": 20,
+        "bricks": 200,
+        "steel": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Historic Shopping Center",
+      "workshopId": "3053039675",
+      "modPath": "Ward2"
+    }
+  ],
+  "vehicles": []
+}

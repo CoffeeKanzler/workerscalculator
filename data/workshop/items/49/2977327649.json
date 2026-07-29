@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2977327649",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:35:29.230Z",
+  "buildings": [
+    {
+      "id": "2977327649/library_80s_medium",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 24,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Library",
+      "workshopId": "2977327649",
+      "modPath": "library_80s_medium"
+    }
+  ],
+  "vehicles": []
+}

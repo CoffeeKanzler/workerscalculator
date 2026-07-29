@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3030126026",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T12:52:41.092Z",
+  "buildings": [
+    {
+      "id": "3030126026/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Miners House",
+      "workshopId": "3030126026",
+      "modPath": "1"
+    },
+    {
+      "id": "3030126026/2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 65,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 65
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Miners Block",
+      "workshopId": "3030126026",
+      "modPath": "2"
+    },
+    {
+      "id": "3030126026/3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Miners Block Small",
+      "workshopId": "3030126026",
+      "modPath": "3"
+    },
+    {
+      "id": "3030126026/4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Engineers House",
+      "workshopId": "3030126026",
+      "modPath": "4"
+    }
+  ],
+  "vehicles": []
+}

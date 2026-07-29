@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2632819708",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.122Z",
+  "buildings": [
+    {
+      "id": "2632819708/konsum",
+      "nameId": 6257,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": 1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2632819708",
+      "modPath": "konsum"
+    }
+  ],
+  "vehicles": []
+}

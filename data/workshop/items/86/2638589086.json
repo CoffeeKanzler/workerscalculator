@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2638589086",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.178Z",
+  "buildings": [
+    {
+      "id": "2638589086/mother",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 5,
+        "concrete": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Mother",
+      "workshopId": "2638589086",
+      "modPath": "mother"
+    },
+    {
+      "id": "2638589086/salaspil_memorial",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 5,
+        "concrete": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Salaspils_Memorial",
+      "workshopId": "2638589086",
+      "modPath": "salaspil_memorial"
+    }
+  ],
+  "vehicles": []
+}

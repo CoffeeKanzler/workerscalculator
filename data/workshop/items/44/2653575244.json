@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2653575244",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:23:34.249Z",
+  "buildings": [
+    {
+      "id": "2653575244/BusStop",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {
+        "gravel": 10,
+        "asphalt": 2,
+        "workers": 80,
+        "steel": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Steam Bus Stop",
+      "workshopId": "2653575244",
+      "modPath": "BusStop"
+    },
+    {
+      "id": "2653575244/CoalConverter",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {
+        "fuel": 1
+      },
+      "consumption": {
+        "coal": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 3,
+        "workers": 30,
+        "boards": 1,
+        "steel": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Coal Gas Converter",
+      "workshopId": "2653575244",
+      "modPath": "CoalConverter"
+    },
+    {
+      "id": "2653575244/CoalCoverter2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "fuel": 1
+      },
+      "consumption": {
+        "coal": 4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 3,
+        "workers": 30,
+        "boards": 1,
+        "steel": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Coal Gas Converter v2",
+      "workshopId": "2653575244",
+      "modPath": "CoalCoverter2"
+    },
+    {
+      "id": "2653575244/SteamFuel",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 35,
+        "asphalt": 2,
+        "workers": 250,
+        "boards": 40,
+        "steel": 6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Steam Fueling Station",
+      "workshopId": "2653575244",
+      "modPath": "SteamFuel"
+    },
+    {
+      "id": "2653575244/SteamFuel2",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 35,
+        "asphalt": 2,
+        "workers": 270,
+        "boards": 40,
+        "steel": 8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Steampunk Fueling Station",
+      "workshopId": "2653575244",
+      "modPath": "SteamFuel2"
+    },
+    {
+      "id": "2653575244/SteamFuel3",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 45,
+        "asphalt": 2,
+        "workers": 270,
+        "boards": 40,
+        "steel": 12
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Train Coaling Station",
+      "workshopId": "2653575244",
+      "modPath": "SteamFuel3"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3635945659",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T14:10:20.922Z",
+  "buildings": [
+    {
+      "id": "3635945659/big_field",
+      "nameId": null,
+      "types": [
+        "TYPE_FIELD"
+      ],
+      "workers": 250,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Field Non Block",
+      "workshopId": "3635945659",
+      "modPath": "big_field"
+    },
+    {
+      "id": "3635945659/medium_field",
+      "nameId": null,
+      "types": [
+        "TYPE_FIELD"
+      ],
+      "workers": 150,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Field Non Block",
+      "workshopId": "3635945659",
+      "modPath": "medium_field"
+    },
+    {
+      "id": "3635945659/small_field",
+      "nameId": null,
+      "types": [
+        "TYPE_FIELD"
+      ],
+      "workers": 75,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Field Non Block",
+      "workshopId": "3635945659",
+      "modPath": "small_field"
+    }
+  ],
+  "vehicles": []
+}
