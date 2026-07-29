@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=111';
+import { STRINGS } from './i18n.js?v=112';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -62,13 +62,13 @@ import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
   shouldOpenStartPage, relativeAge,
-} from './ui/command_center.js?v=3';
+} from './ui/command_center.js?v=4';
 
 const RUNTIME_CONFIG = getRuntimeConfig();
 const APP_RUNTIME = bootstrapRuntime({ config: RUNTIME_CONFIG });
 const IS_BETA = RUNTIME_CONFIG.variant === 'beta';
 const HAS_SAVE_WORKSPACE = hasSaveWorkspace(RUNTIME_CONFIG);
-const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'cities', 'production', 'city', 'chain',
+const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'cities', 'history', 'production', 'city', 'chain',
   'prices', 'priceedit', 'analysis', 'vehicleprod', ...(HAS_SAVE_WORKSPACE ? ['saveimport'] : []),
   'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
@@ -907,7 +907,7 @@ function renderSaveSlots() {
 function renderTabs() {
   const labels = { home: 'tabHome', prices: 'tabPrices', priceedit: 'tabPriceEdit', production: 'tabProduction', chain: 'tabChain',
     analysis: 'tabAnalysis', vehicleprod: 'tabVehicleProd', city: 'tabCity', cities: 'tabCities', republic: 'tabRepublic',
-    map: 'tabMap', saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
+    map: 'tabMap', history: 'tabHistory', saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
   const button = id => el('button', {
     class: state.tab === id ? 'active' : '',
     'aria-current': state.tab === id ? 'page' : false,
@@ -937,6 +937,7 @@ function renderCurrentTab() {
     case 'prices': return renderPrices();
     case 'priceedit': return renderPriceEdit();
     case 'cities': return renderCities();
+    case 'history': return renderRepublicHistory();
     case 'production': return renderProduction();
     case 'chain': return renderChain();
     case 'analysis': return renderAnalysis();
@@ -3330,6 +3331,130 @@ function renderMapTab() {
 // needed. Food/clothes/alcohol demand vs. production is NOT shown: no
 // per-citizen consumption rate was found in the game files, our datasets,
 // or the accessible spreadsheet (see ROADMAP.md 2.2).
+
+// Observe: the save's own recorded history. Twelve series over the full span
+// of the republic — this was previously collapsed at the foot of the overview,
+// where a 3,002-record history sat 92% of the way down the page.
+function renderRepublicHistory() {
+  if (!state.statsRecords?.length) {
+    return el('section', {}, el('p', { class: 'hint' }, t('noHistory')));
+  }
+  const historyRecords = filterRange(state.statsRecords ?? [], state.republicRange);
+  const series = (label, color, valueOf) => ({ label, color, points: seriesFromRecords(historyRecords, valueOf) });
+  const currencySuffix = state.currency === 'USD' ? 'USD' : 'RUB';
+  const resourceKeys = resourceHistoryKeys(state.statsRecords);
+  if (!resourceKeys.includes(state.republicResource)) {
+    const latest = state.statsRecords?.at(-1);
+    state.republicResource = resourceKeys.sort((a, b) =>
+      (latest?.resourcesProduced?.[b] ?? 0) - (latest?.resourcesProduced?.[a] ?? 0))[0] ?? null;
+  }
+  const resourceOptions = resourceKeys.map(key => {
+    const resource = DATA.resources.find(item => item.key === key);
+    return [key, resource ? rname(resource) : key === 'waste_mixed' ? t('mixedWaste') : key];
+  }).sort((a, b) => a[1].localeCompare(b[1]) || a[0].localeCompare(b[0]));
+  const selectedResourceLabel = resourceOptions.find(([key]) => key === state.republicResource)?.[1]
+    ?? state.republicResource;
+  const hasSelectedWasteHistory = state.republicResource && historyRecords.some(record =>
+    ['wasteProductionFactories', 'wasteProductionPeople', 'wasteProductionDemolition']
+      .some(field => Number.isFinite(record[field]?.[state.republicResource])));
+  const hasSelectedInternationalHistory = state.republicResource && historyRecords.some(record =>
+    ['resourcesImportInternationalRUB', 'resourcesImportInternationalUSD',
+      'resourcesExportInternationalRUB', 'resourcesExportInternationalUSD']
+      .some(field => Number.isFinite(record[field]?.[state.republicResource])));
+  const charts = el('section', { class: 'history-section' },
+    el('h2', {}, `${t('republicHistory')} (${fmt(state.statsRecords.length, 0)})`),
+    el('div', { class: 'chart-controls settingsbar' },
+      ...['month', 'year', 'all'].map(range => el('button', {
+        class: state.republicRange === range ? 'active' : '',
+        onclick: () => { state.republicRange = range; update(); },
+      }, t(`range.${range}`))),
+      resourceOptions.length ? selectInput(resourceOptions, state.republicResource,
+        value => { state.republicResource = value; }) : null),
+    el('div', { class: 'chart-grid' },
+      renderRepublicLineChart(t('citizenHistory'), [
+        series(t('adults'), '#d35400', record => record.adults),
+        series(t('children'), '#2980b9', record =>
+          Number.isFinite(record.childrenSmall) || Number.isFinite(record.childrenMedium)
+            ? (record.childrenSmall ?? 0) + (record.childrenMedium ?? 0) : null),
+        series(t('unemployed'), '#c0392b', record => record.unemployed),
+      ]),
+      renderRepublicLineChart(t('birthDeathHistory'), [
+        series(t('births'), '#27ae60', record => record.born),
+        series(t('deaths'), '#7f8c8d', record => record.dead),
+      ]),
+      renderRepublicLineChart(t('migrationHistory'), [
+        series(t('escapedCitizens'), '#c0392b', record => record.escaped),
+        series(t('sovietImmigrants'), '#2980b9', record => record.immigrantsSoviet),
+        series(t('africanImmigrants'), '#d35400', record => record.immigrantsAfrica),
+      ]),
+      renderRepublicLineChart(t('educationHistory'), [
+        series(t('noEducation'), '#c0392b', record => record.educationNone),
+        series(t('basicEducation'), '#f1c40f', record => record.educationBasic),
+        series(t('higherEducation'), '#2980b9', record => record.educationHigh),
+      ]),
+      renderRepublicLineChart(t('electronicsHistory'), [
+        series(t('noElectronics'), '#7f8c8d', record => record.electronicsNone),
+        series(t('radioOwners'), '#d35400', record => record.electronicsRadio),
+        series(t('tvOwners'), '#2980b9', record => record.electronicsTV),
+        series(t('computerOwners'), '#8e44ad', record => record.electronicsComputer),
+      ]),
+      renderRepublicLineChart(t('longevityHistory'), [
+        series(t('averageAge'), '#2980b9', record => record.averageAge),
+        series(t('averageLifespan'), '#27ae60', record => record.averageLifespan),
+      ]),
+      renderRepublicLineChart(t('productivityHistory'), [
+        series(t('productivity'), '#27ae60', record => Number.isFinite(record.averageProductivity)
+          ? record.averageProductivity * 100 : null),
+      ]),
+      renderRepublicLineChart(t('crimeHistory'), [
+        series(t('minorCrimes'), '#f1c40f', record => record.minorCrimes),
+        series(t('mediumCrimes'), '#e67e22', record => record.mediumCrimes),
+        series(t('seriousCrimes'), '#c0392b', record => record.seriousCrimes),
+      ]),
+      renderRepublicLineChart(`${t('vehicleTradeHistory')} (${cur()})`, [
+        series(t('imports'), '#c0392b', record => record[`vehicleImport${currencySuffix}`]),
+        series(t('exports'), '#27ae60', record => record[`vehicleExport${currencySuffix}`]),
+      ]),
+      renderRepublicLineChart(`${t('loanHistory')} (${cur()})`, [
+        series(t('loanBalance'), '#8e44ad', record => record[`loanBalance${currencySuffix}`]),
+        series(t('loanInterest'), '#d35400', record => record[`loanInterest${currencySuffix}`]),
+      ]),
+      state.republicResource ? renderRepublicLineChart(
+        selectedResourceLabel, [
+          series(t('produced'), '#2980b9', record => record.resourcesProduced?.[state.republicResource]),
+          series(t('importsRUB'), '#c0392b', record => record.resourcesImportRUB?.[state.republicResource]),
+          series(t('importsUSD'), '#e67e22', record => record.resourcesImportUSD?.[state.republicResource]),
+          series(t('exportsRUB'), '#27ae60', record => record.resourcesExportRUB?.[state.republicResource]),
+          series(t('exportsUSD'), '#16a085', record => record.resourcesExportUSD?.[state.republicResource]),
+        ]) : null,
+      state.republicResource ? renderRepublicLineChart(
+        `${selectedResourceLabel} · ${t('resourceUse')}`, [
+          series(t('factoryUse'), '#8e44ad', record => record.resourcesSpendFactories?.[state.republicResource]),
+          series(t('shopUse'), '#d35400', record => record.resourcesSpendShops?.[state.republicResource]),
+          series(t('constructionUse'), '#7f8c8d', record => record.resourcesSpendConstructions?.[state.republicResource]),
+          series(t('vehicleUse'), '#2c3e50', record => record.resourcesSpendVehicles?.[state.republicResource]),
+        ]) : null,
+      hasSelectedInternationalHistory ? renderRepublicLineChart(
+        `${selectedResourceLabel} · ${t('internationalTradeHistory')}`, [
+          series(t('internationalImportsRUB'), '#c0392b', record =>
+            record.resourcesImportInternationalRUB?.[state.republicResource]),
+          series(t('internationalImportsUSD'), '#e67e22', record =>
+            record.resourcesImportInternationalUSD?.[state.republicResource]),
+          series(t('internationalExportsRUB'), '#27ae60', record =>
+            record.resourcesExportInternationalRUB?.[state.republicResource]),
+          series(t('internationalExportsUSD'), '#16a085', record =>
+            record.resourcesExportInternationalUSD?.[state.republicResource]),
+        ]) : null,
+      hasSelectedWasteHistory ? renderRepublicLineChart(
+        `${selectedResourceLabel} · ${t('wasteHistory')}`, [
+          series(t('factoryWaste'), '#8e44ad', record => record.wasteProductionFactories?.[state.republicResource]),
+          series(t('citizenWaste'), '#d35400', record => record.wasteProductionPeople?.[state.republicResource]),
+          series(t('demolitionOutput'), '#7f8c8d', record => record.wasteProductionDemolition?.[state.republicResource]),
+        ]) : null),
+    el('p', { class: 'hint' }, t('demographicHistoryMeaning')));
+  return charts;
+}
+
 function renderRepublic() {
   const eco = economy();
   if (!state.cities.length && !Array.isArray(state.saveImport?.scopes)) state.cities.push(defaultCity());
@@ -4285,119 +4410,11 @@ function renderRepublic() {
                       || `#${assignment.targetBuildingIndex}`} · ${t('inactiveAssignments')}`)))) : '—'));
         }))))) : null) : null;
 
-  const historyRecords = filterRange(state.statsRecords ?? [], state.republicRange);
-  const series = (label, color, valueOf) => ({ label, color, points: seriesFromRecords(historyRecords, valueOf) });
-  const currencySuffix = state.currency === 'USD' ? 'USD' : 'RUB';
-  const resourceKeys = resourceHistoryKeys(state.statsRecords);
-  if (!resourceKeys.includes(state.republicResource)) {
-    const latest = state.statsRecords?.at(-1);
-    state.republicResource = resourceKeys.sort((a, b) =>
-      (latest?.resourcesProduced?.[b] ?? 0) - (latest?.resourcesProduced?.[a] ?? 0))[0] ?? null;
-  }
-  const resourceOptions = resourceKeys.map(key => {
-    const resource = DATA.resources.find(item => item.key === key);
-    return [key, resource ? rname(resource) : key === 'waste_mixed' ? t('mixedWaste') : key];
-  }).sort((a, b) => a[1].localeCompare(b[1]) || a[0].localeCompare(b[0]));
-  const selectedResourceLabel = resourceOptions.find(([key]) => key === state.republicResource)?.[1]
-    ?? state.republicResource;
-  const hasSelectedWasteHistory = state.republicResource && historyRecords.some(record =>
-    ['wasteProductionFactories', 'wasteProductionPeople', 'wasteProductionDemolition']
-      .some(field => Number.isFinite(record[field]?.[state.republicResource])));
-  const hasSelectedInternationalHistory = state.republicResource && historyRecords.some(record =>
-    ['resourcesImportInternationalRUB', 'resourcesImportInternationalUSD',
-      'resourcesExportInternationalRUB', 'resourcesExportInternationalUSD']
-      .some(field => Number.isFinite(record[field]?.[state.republicResource])));
-  const charts = state.statsRecords?.length ? el('details', { class: 'history-section secondary-section' },
-    el('summary', {}, `${t('republicHistory')} (${fmt(state.statsRecords.length, 0)})`),
-    el('div', { class: 'chart-controls settingsbar' },
-      ...['month', 'year', 'all'].map(range => el('button', {
-        class: state.republicRange === range ? 'active' : '',
-        onclick: () => { state.republicRange = range; update(); },
-      }, t(`range.${range}`))),
-      resourceOptions.length ? selectInput(resourceOptions, state.republicResource,
-        value => { state.republicResource = value; }) : null),
-    el('div', { class: 'chart-grid' },
-      renderRepublicLineChart(t('citizenHistory'), [
-        series(t('adults'), '#d35400', record => record.adults),
-        series(t('children'), '#2980b9', record =>
-          Number.isFinite(record.childrenSmall) || Number.isFinite(record.childrenMedium)
-            ? (record.childrenSmall ?? 0) + (record.childrenMedium ?? 0) : null),
-        series(t('unemployed'), '#c0392b', record => record.unemployed),
-      ]),
-      renderRepublicLineChart(t('birthDeathHistory'), [
-        series(t('births'), '#27ae60', record => record.born),
-        series(t('deaths'), '#7f8c8d', record => record.dead),
-      ]),
-      renderRepublicLineChart(t('migrationHistory'), [
-        series(t('escapedCitizens'), '#c0392b', record => record.escaped),
-        series(t('sovietImmigrants'), '#2980b9', record => record.immigrantsSoviet),
-        series(t('africanImmigrants'), '#d35400', record => record.immigrantsAfrica),
-      ]),
-      renderRepublicLineChart(t('educationHistory'), [
-        series(t('noEducation'), '#c0392b', record => record.educationNone),
-        series(t('basicEducation'), '#f1c40f', record => record.educationBasic),
-        series(t('higherEducation'), '#2980b9', record => record.educationHigh),
-      ]),
-      renderRepublicLineChart(t('electronicsHistory'), [
-        series(t('noElectronics'), '#7f8c8d', record => record.electronicsNone),
-        series(t('radioOwners'), '#d35400', record => record.electronicsRadio),
-        series(t('tvOwners'), '#2980b9', record => record.electronicsTV),
-        series(t('computerOwners'), '#8e44ad', record => record.electronicsComputer),
-      ]),
-      renderRepublicLineChart(t('longevityHistory'), [
-        series(t('averageAge'), '#2980b9', record => record.averageAge),
-        series(t('averageLifespan'), '#27ae60', record => record.averageLifespan),
-      ]),
-      renderRepublicLineChart(t('productivityHistory'), [
-        series(t('productivity'), '#27ae60', record => Number.isFinite(record.averageProductivity)
-          ? record.averageProductivity * 100 : null),
-      ]),
-      renderRepublicLineChart(t('crimeHistory'), [
-        series(t('minorCrimes'), '#f1c40f', record => record.minorCrimes),
-        series(t('mediumCrimes'), '#e67e22', record => record.mediumCrimes),
-        series(t('seriousCrimes'), '#c0392b', record => record.seriousCrimes),
-      ]),
-      renderRepublicLineChart(`${t('vehicleTradeHistory')} (${cur()})`, [
-        series(t('imports'), '#c0392b', record => record[`vehicleImport${currencySuffix}`]),
-        series(t('exports'), '#27ae60', record => record[`vehicleExport${currencySuffix}`]),
-      ]),
-      renderRepublicLineChart(`${t('loanHistory')} (${cur()})`, [
-        series(t('loanBalance'), '#8e44ad', record => record[`loanBalance${currencySuffix}`]),
-        series(t('loanInterest'), '#d35400', record => record[`loanInterest${currencySuffix}`]),
-      ]),
-      state.republicResource ? renderRepublicLineChart(
-        selectedResourceLabel, [
-          series(t('produced'), '#2980b9', record => record.resourcesProduced?.[state.republicResource]),
-          series(t('importsRUB'), '#c0392b', record => record.resourcesImportRUB?.[state.republicResource]),
-          series(t('importsUSD'), '#e67e22', record => record.resourcesImportUSD?.[state.republicResource]),
-          series(t('exportsRUB'), '#27ae60', record => record.resourcesExportRUB?.[state.republicResource]),
-          series(t('exportsUSD'), '#16a085', record => record.resourcesExportUSD?.[state.republicResource]),
-        ]) : null,
-      state.republicResource ? renderRepublicLineChart(
-        `${selectedResourceLabel} · ${t('resourceUse')}`, [
-          series(t('factoryUse'), '#8e44ad', record => record.resourcesSpendFactories?.[state.republicResource]),
-          series(t('shopUse'), '#d35400', record => record.resourcesSpendShops?.[state.republicResource]),
-          series(t('constructionUse'), '#7f8c8d', record => record.resourcesSpendConstructions?.[state.republicResource]),
-          series(t('vehicleUse'), '#2c3e50', record => record.resourcesSpendVehicles?.[state.republicResource]),
-        ]) : null,
-      hasSelectedInternationalHistory ? renderRepublicLineChart(
-        `${selectedResourceLabel} · ${t('internationalTradeHistory')}`, [
-          series(t('internationalImportsRUB'), '#c0392b', record =>
-            record.resourcesImportInternationalRUB?.[state.republicResource]),
-          series(t('internationalImportsUSD'), '#e67e22', record =>
-            record.resourcesImportInternationalUSD?.[state.republicResource]),
-          series(t('internationalExportsRUB'), '#27ae60', record =>
-            record.resourcesExportInternationalRUB?.[state.republicResource]),
-          series(t('internationalExportsUSD'), '#16a085', record =>
-            record.resourcesExportInternationalUSD?.[state.republicResource]),
-        ]) : null,
-      hasSelectedWasteHistory ? renderRepublicLineChart(
-        `${selectedResourceLabel} · ${t('wasteHistory')}`, [
-          series(t('factoryWaste'), '#8e44ad', record => record.wasteProductionFactories?.[state.republicResource]),
-          series(t('citizenWaste'), '#d35400', record => record.wasteProductionPeople?.[state.republicResource]),
-          series(t('demolitionOutput'), '#7f8c8d', record => record.wasteProductionDemolition?.[state.republicResource]),
-        ]) : null),
-    el('p', { class: 'hint' }, t('demographicHistoryMeaning'))) : null;
+  // Forty years of history live on their own tab now; keep a way through to it
+  // from the overview, which is where someone reading the republic starts.
+  const historyLink = state.statsRecords?.length ? el('p', { class: 'hint' },
+    el('button', { class: 'linklike', onclick: () => { state.tab = 'history'; update(); } },
+      `${t('republicHistory')} (${fmt(state.statsRecords.length, 0)}) →`)) : null;
 
   const comparisonNames = namedSnapshotNames.filter(name => name !== state.saveSlotName);
   if (comparisonSnapshotName && !comparisonNames.includes(comparisonSnapshotName)) {
@@ -4574,7 +4591,7 @@ function renderRepublic() {
       logisticsOperations,
       schematicMap,
       el('div', { class: 'tablewrap area-table-panel' }, areaTable),
-      charts,
+      historyLink,
       snapshotComparison,
       researchDetails,
       settingsDetails,
