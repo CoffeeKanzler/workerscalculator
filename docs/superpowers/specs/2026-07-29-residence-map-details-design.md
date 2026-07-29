@@ -87,12 +87,14 @@ Housing capacity comes from the already-loaded game or Workshop building
 catalog using the existing exact save-type resolver. If no unique catalog
 match exists, capacity stays unavailable.
 
-## Missing and degraded data
+## Missing and degraded fields
 
-- A save without `workers.bin` renders the existing building inspector with no
-  residence ledger.
-- A residence with zero linked records shows zero residents only when citizen
-  data was successfully parsed; otherwise it shows no occupancy claim.
+Complete player saves in scope contain `workers.bin`, so a successful import is
+expected to produce residence summaries. A residence with no linked citizen
+records therefore reports zero residents rather than an ambiguous unavailable
+state.
+
+- A residence with zero linked records shows zero residents.
 - Missing catalog capacity renders `—`.
 - Non-finite citizen measurements are excluded from their respective averages.
 - A building can receive a resident summary even if its catalog type is
