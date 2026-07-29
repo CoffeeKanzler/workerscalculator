@@ -25,7 +25,7 @@ jobs:
           # structuredClone needs 17+, Object.hasOwn 16.9+. 22 is current LTS.
           node-version: '22'
 
-      # Pinned, reviewed uPlot 1.6.31 and Leaflet 1.9.4 copies are permitted
+      # Pinned, reviewed uPlot 1.6.32 and Leaflet 1.9.4 copies are permitted
       # under js/vendor and css/vendor. They make large histories and republic
       # maps interactive without uploading save data or requiring a build;
       # a lockfile or node_modules would mean that offline contract changed.
