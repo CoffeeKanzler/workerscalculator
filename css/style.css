@@ -1,17 +1,3 @@
-:root {
-  --bg: #14161a;
-  --panel: #1e2127;
-  --panel2: #262a31;
-  --text: #d8dde4;
-  --muted: #8b93a1;
-  --accent: #c74a3a;      /* soviet red, slightly muted */
-  --accent2: #d9a441;     /* gold */
-  --pos: #6fbf73;
-  --neg: #e06c5b;
-  --warn: #d9a441;
-  --border: #343a44;
-}
-
 * { box-sizing: border-box; }
 
 body {
@@ -64,7 +50,17 @@ header h1 {
 .saveslots button:hover { border-color: var(--accent); }
 .saveslotname { width: 8em; }
 .saveslotnotice { color: var(--pos); font-size: 12px; white-space: nowrap; }
-.langswitch { display: flex; gap: 2px; }
+.langswitch { display: flex; gap: 2px; align-items: center; }
+/* Sits with the language switch: both are reading preferences, not planning
+   controls, so they share the same corner of the header. */
+.themeswitch {
+  margin-right: 6px; padding: 5px 9px; line-height: 1;
+  font-size: 15px; cursor: pointer;
+  background: var(--panel2); color: var(--text);
+  border: 1px solid var(--border); border-radius: 5px;
+}
+.themeswitch:hover { border-color: var(--accent); }
+.themeswitch:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
 .langswitch button, nav button {
   background: var(--panel2); color: var(--muted); border: 1px solid var(--border);
   padding: 5px 12px; cursor: pointer; border-radius: 5px; font-weight: 600;
@@ -411,6 +407,53 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
   --blueprint: #48657b;
   --focus: #1f587d;
   --ink-soft: #3b413d;
+  color-scheme: light;
+}
+
+/* The same planning office at night: graphite and ink instead of paper, with
+   the machinery green, blueprint blue and amber lifted enough to stay legible
+   on a dark surface. Every value is contrast-checked in tests/theme.test.mjs,
+   which holds body text to WCAG AA and status colours to 3:1.
+
+   Both selectors carry the palette: the media query follows the system for
+   anyone who has expressed no preference, and the attribute wins over it so an
+   explicit choice in the app beats the operating system in either direction. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #16181a;
+    --panel: #1f2224;
+    --panel2: #292d30;
+    --text: #e9e4d7;
+    --muted: #a3a99f;
+    --accent: #e2705f;
+    --accent2: #d9a441;
+    --pos: #74c295;
+    --neg: #e2705f;
+    --warn: #d9a441;
+    --border: #3b403f;
+    --blueprint: #8fb3cd;
+    --focus: #6fb2df;
+    --ink-soft: #cdc8ba;
+    color-scheme: dark;
+  }
+}
+
+[data-theme="dark"] {
+  --bg: #16181a;
+  --panel: #1f2224;
+  --panel2: #292d30;
+  --text: #e9e4d7;
+  --muted: #a3a99f;
+  --accent: #e2705f;
+  --accent2: #d9a441;
+  --pos: #74c295;
+  --neg: #e2705f;
+  --warn: #d9a441;
+  --border: #3b403f;
+  --blueprint: #8fb3cd;
+  --focus: #6fb2df;
+  --ink-soft: #cdc8ba;
+  color-scheme: dark;
 }
 
 body {

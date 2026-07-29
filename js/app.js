@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=109';
+import { STRINGS } from './i18n.js?v=110';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -33,6 +33,7 @@ import { planningAreas } from './models/planning_areas.js';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
+import { isTheme, nextTheme, resolveTheme, themeAttribute } from './ui/theme.js';
 import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
@@ -70,7 +71,7 @@ const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'citie
   'prices', 'priceedit', 'analysis', 'vehicleprod', ...(HAS_SAVE_WORKSPACE ? ['saveimport'] : []),
   'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
-const SHARE_KEYS = ['lang', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
+const SHARE_KEYS = ['lang', 'theme', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
   'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'calcOpts', 'dataset',
   'chains', 'activeChain', 'tuning', 'productionScope', 'saveImport', 'republicView',
   'buildingOverrides', 'customBuildings',
@@ -109,6 +110,7 @@ const pollutionImageCache = new Map();
 function createInitialState() {
   const initial = {
     lang: 'en',
+    theme: 'auto',               // auto | light | dark — a reading preference
     tab: HAS_SAVE_WORKSPACE ? 'home' : 'republic',
     currency: 'RUB',
     priceSource: 'default',      // default | stats | decade
@@ -207,6 +209,12 @@ const planningSaveCoordinator = createPlanningSaveCoordinator({
 
 // pagehide covers navigation and tab close; visibilitychange covers the mobile
 // case where a backgrounded tab may never get pagehide at all.
+// On 'auto' the stylesheet follows the system by itself, but anything the app
+// derives from the resolved theme would otherwise go stale until the next
+// render, so a system change is treated as a reason to redraw.
+globalThis.matchMedia?.('(prefers-color-scheme: dark)')
+  ?.addEventListener?.('change', () => { if (!themeAttribute(state.theme)) render(); });
+
 for (const [target, event] of [[window, 'pagehide'], [document, 'visibilitychange']]) {
   target.addEventListener(event, () => {
     if (event === 'visibilitychange' && document.visibilityState !== 'hidden') return;
@@ -642,6 +650,7 @@ function decorateResponsiveTables(root) {
 
 function render() {
   document.title = t('appTitle');
+  applyTheme();
   const root = $('#app');
 
   // Preserve focus/cursor/typed-but-unparsed text across the full re-render
@@ -739,8 +748,34 @@ function renderSharedLinkBanner() {
     el('button', { onclick: () => { state.viewingSharedLink = false; update(); } }, '✕'));
 }
 
+// A reading preference, so it is applied to the document root rather than
+// threaded through the render: the stylesheet keys off the attribute, and
+// clearing it hands the decision back to the operating system.
+function applyTheme() {
+  const preference = isTheme(state.theme) ? state.theme : 'auto';
+  const attribute = themeAttribute(preference);
+  if (attribute) document.documentElement.setAttribute('data-theme', attribute);
+  else document.documentElement.removeAttribute('data-theme');
+}
+
+const THEME_ICONS = { auto: '🌗', light: '☀️', dark: '🌙' };
+
 function renderHeader() {
+  const themeSwitch = () => {
+    const preference = isTheme(state.theme) ? state.theme : 'auto';
+    const resolved = resolveTheme(preference,
+      globalThis.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false);
+    return el('button', {
+      class: 'themeswitch',
+      title: t(`theme_${preference}`),
+      'aria-label': t(`theme_${preference}`),
+      'data-theme-preference': preference,
+      'data-theme-resolved': resolved,
+      onclick: () => { state.theme = nextTheme(preference); update(); },
+    }, THEME_ICONS[preference] ?? THEME_ICONS.auto);
+  };
   const languageSwitch = () => el('div', { class: 'langswitch' },
+    themeSwitch(),
     ...['de', 'en'].map(language => el('button', {
       class: state.lang === language ? 'active' : '',
       onclick: () => { state.lang = language; update(); },
