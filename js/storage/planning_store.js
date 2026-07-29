@@ -106,6 +106,41 @@ export function createObservationStore(adapter, { key = 'observation' } = {}) {
   };
 }
 
+// stats.ini history is large — 27 MB parsed for a modest save, 74 MB for a big
+// one — and it never changes once a save is imported. Writing it with the
+// autosave would put tens of megabytes on the path of every keystroke, so it
+// gets a record of its own, written at import and read at startup.
+//
+// Without this it was simply dropped, and a reloaded republic showed an empty
+// history asking to be given a stats.ini the save had already supplied.
+export function createStatsStore(adapter, { key = 'stats' } = {}) {
+  if (!adapter || typeof adapter.get !== 'function' || typeof adapter.put !== 'function') {
+    throw new TypeError('Stats store adapter must provide get and put');
+  }
+  return {
+    async load() {
+      const stored = await adapter.get(key);
+      if (!stored?.records) return null;
+      return { records: stored.records, name: stored.name ?? null };
+    },
+    async save(records, { name = null } = {}) {
+      if (!Array.isArray(records) || !records.length) {
+        if (typeof adapter.delete === 'function') await adapter.delete(key);
+        return;
+      }
+      await adapter.put(key, {
+        schemaVersion: PLANNER_STATE_SCHEMA_VERSION,
+        savedAt: Date.now(),
+        name,
+        records,
+      });
+    },
+    async remove() {
+      if (typeof adapter.delete === 'function') await adapter.delete(key);
+    },
+  };
+}
+
 export function createPlanningStore(adapter, { key = 'planning' } = {}) {
   if (!adapter || typeof adapter.get !== 'function' || typeof adapter.put !== 'function') {
     throw new TypeError('Planning store adapter must provide get and put');

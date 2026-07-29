@@ -5,17 +5,19 @@
 import {
   createObservationStore,
   createPlanningStore,
+  createStatsStore,
   restorePlannerState,
-} from './storage/planning_store.js?v=1';
+} from './storage/planning_store.js?v=2';
 import { PLANNING_KEYS, createPlanningModel } from './models/planning_model.js';
 
 export {
   createObservationStore,
   createPlanningStore,
+  createStatsStore,
   migrateLegacyPlannerState,
   restorePlannerState,
   serializePlannerState,
-} from './storage/planning_store.js?v=1';
+} from './storage/planning_store.js?v=2';
 
 export function createPlanningPersistence({
   planningStore,
@@ -356,4 +358,8 @@ export function createIndexedDbPlanningStore(indexedDB = globalThis.indexedDB, {
 
 export function createIndexedDbObservationStore(indexedDB = globalThis.indexedDB, { key = 'observation' } = {}) {
   return createObservationStore(createPlanningRecordAdapter(indexedDB), { key });
+}
+
+export function createIndexedDbStatsStore(indexedDB = globalThis.indexedDB, { key = 'stats' } = {}) {
+  return createStatsStore(createPlanningRecordAdapter(indexedDB), { key });
 }

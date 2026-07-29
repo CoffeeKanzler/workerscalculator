@@ -13,13 +13,14 @@ import {
 } from './train.js?v=18';
 import {
   createIndexedDbObservationStore,
+  createIndexedDbStatsStore,
   createIndexedDbPlanningStore,
   createIndexedDbSnapshotStore,
   createPlanningPersistence,
   createPlanningSaveCoordinator,
   migrateLegacySnapshots,
   serializePlannerState,
-} from './storage.js?v=5';
+} from './storage.js?v=6';
 import {
   PLANNING_KEYS,
   createPlanningCompatibleState,
@@ -90,6 +91,7 @@ const snapshotStore = createIndexedDbSnapshotStore();
 const planningStore = createIndexedDbPlanningStore();
 const planningBackupStore = createIndexedDbPlanningStore(undefined, { key: 'planning-backup' });
 const observationStore = createIndexedDbObservationStore();
+const statsStore = createIndexedDbStatsStore();
 const planningPersistence = createPlanningPersistence({ planningStore, observationStore });
 let hasPlanningBackup = false;
 let namedSnapshotNames = [];
@@ -312,6 +314,14 @@ async function loadState() {
     const loaded = await planningPersistence.load();
     Object.assign(state, loaded.state);
     observationSavedAt = loaded.lastSavedAt ?? null;
+    // stats.ini history is written once at import rather than with the
+    // autosave: it is tens of megabytes and never changes until the next save.
+    const storedStats = await statsStore.load().catch(() => null);
+    if (storedStats?.records?.length) {
+      state.statsRecords = storedStats.records;
+      state.statsName = storedStats.name ?? state.statsName;
+      state.recordIndex = storedStats.records.length - 1;
+    }
     if (loaded.error) state.observationPersistenceError = loaded.error.message;
     // Price-table sorting is a view preference, not plan state. Each launch
     // starts with the resource names in ascending alphabetical order.
@@ -2055,6 +2065,8 @@ async function handleSaveDirectory(fileList) {
     state.statsRecords = statsState.statsRecords;
     state.statsName = statsState.statsName;
     state.recordIndex = statsState.recordIndex;
+    await statsStore.save(statsState.statsRecords, { name: statsState.statsName })
+      .catch(error => console.error('stats history was not saved:', error));
     state.saveSlotName = importName;
     const hasDeferredMap = Object.values(deferredMapFiles).some(Boolean);
     state.importStatus = hasDeferredMap ? t('importCoreComplete') : t('importComplete');

@@ -1,5 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
+
+const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 
 import { createPlanningCompatibleState, createPlanningModel } from '../js/models/planning_model.js';
 import {
@@ -34,6 +38,9 @@ function memoryAdapter(initial = null, { failGet = null, failPut = null, onPut =
       if (failPut) throw failPut;
       value = structuredClone(next);
     },
+    // The IndexedDB adapter supports deletion, so the double must too, or a
+    // store that clears a record looks like a store that ignores the request.
+    delete: async () => { value = null; },
     value: () => structuredClone(value),
   };
 }
@@ -479,4 +486,40 @@ test('with no delay configured a save still writes straight away', async () => {
 
   await coordinator.save({ mark: 'now' });
   assert.deepEqual(seen, ['now']);
+});
+
+// stats.ini history is 27 MB parsed for a modest save and 74 MB for a large
+// one, and it never changes once imported. It was excluded from the autosave
+// for that reason, but nothing else stored it, so a reloaded republic showed
+// an empty history asking to be given a stats.ini its save had supplied.
+test('stats history survives a reload without riding on the autosave', async () => {
+  const { createStatsStore } = await import('../js/storage/planning_store.js');
+  const adapter = memoryAdapter();
+  const store = createStatsStore(adapter);
+  const records = [{ year: 1960, day: 1 }, { year: 1960, day: 2 }, { year: 1961, day: 0 }];
+
+  await store.save(records, { name: 'stats.ini' });
+  const loaded = await store.load();
+
+  assert.equal(loaded.records.length, 3);
+  assert.equal(loaded.name, 'stats.ini');
+  // Its own record, so the per-edit autosave never carries the weight.
+  assert.equal(adapter.value().records.length, 3);
+});
+
+test('a save with no history clears the stored history rather than keeping the last', async () => {
+  const { createStatsStore } = await import('../js/storage/planning_store.js');
+  const adapter = memoryAdapter();
+  const store = createStatsStore(adapter);
+
+  await store.save([{ year: 1960, day: 1 }], { name: 'stats.ini' });
+  await store.save([], { name: null });
+
+  assert.equal(await store.load(), null, 'the previous republic history must not linger');
+});
+
+test('the app restores stats at startup and writes them at import', async () => {
+  const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
+  assert.match(app, /const storedStats = await statsStore\.load\(\)/);
+  assert.match(app, /await statsStore\.save\(statsState\.statsRecords/);
 });
