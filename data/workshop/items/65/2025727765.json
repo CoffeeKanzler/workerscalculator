@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2025727765",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.243Z",
+  "buildings": [
+    {
+      "id": "2025727765/shop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shop",
+      "workshopId": "2025727765",
+      "modPath": "shop"
+    }
+  ],
+  "vehicles": []
+}

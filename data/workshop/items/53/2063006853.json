@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2063006853",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.344Z",
+  "buildings": [
+    {
+      "id": "2063006853/generalstore",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 500,
+        "RESOURCE_TRANSPORT_COOLER": 50
+      },
+      "constructionResources": {
+        "gravel": 120,
+        "asphalt": 60,
+        "concrete": 550,
+        "workers": 4000,
+        "steel": 60,
+        "bricks": 60,
+        "boards": 60,
+        "mcomponents": 3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Waterfront General Store",
+      "workshopId": "2063006853",
+      "modPath": "generalstore"
+    },
+    {
+      "id": "2063006853/graveldock",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {
+        "gravel": 100,
+        "concrete": 500,
+        "workers": 3600,
+        "steel": 160,
+        "bricks": 30,
+        "boards": 50,
+        "mcomponents": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Gravel Loading",
+      "workshopId": "2063006853",
+      "modPath": "graveldock"
+    },
+    {
+      "id": "2063006853/graveldockalt",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {
+        "gravel": 100,
+        "concrete": 500,
+        "workers": 3600,
+        "steel": 160,
+        "bricks": 30,
+        "boards": 50,
+        "mcomponents": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Gravel Loading Alternate",
+      "workshopId": "2063006853",
+      "modPath": "graveldockalt"
+    },
+    {
+      "id": "2063006853/mediumstore",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 600
+      },
+      "constructionResources": {
+        "gravel": 120,
+        "asphalt": 60,
+        "concrete": 550,
+        "workers": 4000,
+        "steel": 60,
+        "bricks": 60,
+        "boards": 60,
+        "mcomponents": 3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Waterfront Store",
+      "workshopId": "2063006853",
+      "modPath": "mediumstore"
+    },
+    {
+      "id": "2063006853/seawall",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 100,
+        "concrete": 140,
+        "workers": 900,
+        "steel": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Seawall Place Anywhere",
+      "workshopId": "2063006853",
+      "modPath": "seawall"
+    },
+    {
+      "id": "2063006853/seawallcorner",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 50,
+        "concrete": 70,
+        "workers": 600,
+        "steel": 6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Seawall Corner Place Anywhere",
+      "workshopId": "2063006853",
+      "modPath": "seawallcorner"
+    },
+    {
+      "id": "2063006853/seawallicorner",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 50,
+        "concrete": 70,
+        "workers": 600,
+        "steel": 6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Seawall Inner Corner Place Anywhere",
+      "workshopId": "2063006853",
+      "modPath": "seawallicorner"
+    }
+  ],
+  "vehicles": []
+}

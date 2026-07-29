@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2118770198",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.646Z",
+  "buildings": [
+    {
+      "id": "2118770198/nuclear",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 130,
+      "professors": 60,
+      "production": {
+        "eletric": 117,
+        "nuclearfuelburned": 0.0007,
+        "vehicles": 1
+      },
+      "consumption": {
+        "nuclearfuel": 0.001,
+        "vehicles": 1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Double twin reactor nuclear power plant",
+      "workshopId": "2118770198",
+      "modPath": "nuclear"
+    }
+  ],
+  "vehicles": []
+}

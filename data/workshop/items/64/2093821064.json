@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2093821064",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.592Z",
+  "buildings": [
+    {
+      "id": "2093821064/house21",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 300,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 300
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ampir house",
+      "workshopId": "2093821064",
+      "modPath": "house21"
+    },
+    {
+      "id": "2093821064/house21_mirror",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 300,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 300
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ampir house 1 mirror",
+      "workshopId": "2093821064",
+      "modPath": "house21_mirror"
+    }
+  ],
+  "vehicles": []
+}

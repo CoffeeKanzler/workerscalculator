@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1982064747",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:11.014Z",
+  "buildings": [
+    {
+      "id": "1982064747/BARAK",
+      "nameId": 6001,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.42,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "1982064747",
+      "modPath": "BARAK"
+    }
+  ],
+  "vehicles": []
+}

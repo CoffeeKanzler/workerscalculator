@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2124755644",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.666Z",
+  "buildings": [
+    {
+      "id": "2124755644/joelamp_b",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "ecomponents": 0.1,
+        "steel": 0.75
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sidewalk lamp 1 (blown)",
+      "workshopId": "2124755644",
+      "modPath": "joelamp_b"
+    },
+    {
+      "id": "2124755644/joelamp_e",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "ecomponents": 0.1,
+        "steel": 0.75
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sidewalk lamp 1",
+      "workshopId": "2124755644",
+      "modPath": "joelamp_e"
+    },
+    {
+      "id": "2124755644/prl_prefab2_ne",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 11,
+        "prefabpanels": 0.9,
+        "concrete": 0.5,
+        "ecomponents": 0.014
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PRL prefab double lamp, old",
+      "workshopId": "2124755644",
+      "modPath": "prl_prefab2_ne"
+    },
+    {
+      "id": "2124755644/prl_prefab2_ob",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 11,
+        "prefabpanels": 0.9,
+        "concrete": 0.5,
+        "ecomponents": 0.014
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PRL prefab double lamp, old (blown)",
+      "workshopId": "2124755644",
+      "modPath": "prl_prefab2_ob"
+    },
+    {
+      "id": "2124755644/prl_prefab2_oe",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 11,
+        "prefabpanels": 0.9,
+        "concrete": 0.5,
+        "ecomponents": 0.014
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PRL prefab double lamp, old",
+      "workshopId": "2124755644",
+      "modPath": "prl_prefab2_oe"
+    },
+    {
+      "id": "2124755644/prl_prefab_ne",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 9,
+        "prefabpanels": 0.8,
+        "concrete": 0.4,
+        "ecomponents": 0.007
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PRL prefab lamp, old",
+      "workshopId": "2124755644",
+      "modPath": "prl_prefab_ne"
+    },
+    {
+      "id": "2124755644/prl_prefab_ob",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 9,
+        "prefabpanels": 0.8,
+        "concrete": 0.4,
+        "ecomponents": 0.007
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PRL prefab lamp, old (blown)",
+      "workshopId": "2124755644",
+      "modPath": "prl_prefab_ob"
+    },
+    {
+      "id": "2124755644/prl_prefab_oe",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 9,
+        "prefabpanels": 0.8,
+        "concrete": 0.4,
+        "ecomponents": 0.007
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PRL prefab lamp, old",
+      "workshopId": "2124755644",
+      "modPath": "prl_prefab_oe"
+    }
+  ],
+  "vehicles": []
+}

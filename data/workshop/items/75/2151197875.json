@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2151197875",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.046Z",
+  "buildings": [
+    {
+      "id": "2151197875/coalsmelt_ws",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 180,
+      "professors": 0,
+      "production": {
+        "coal": 1.2
+      },
+      "consumption": {
+        "rawcoal": 2.9
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.18
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Coal Cleaner Shop",
+      "workshopId": "2151197875",
+      "modPath": "coalsmelt_ws"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2032435755",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.287Z",
+  "buildings": [
+    {
+      "id": "2032435755/busstop_r",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 220,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 220
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Busstop Mosaic",
+      "workshopId": "2032435755",
+      "modPath": "busstop_r"
+    },
+    {
+      "id": "2032435755/busstop_single",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Busstop One Way",
+      "workshopId": "2032435755",
+      "modPath": "busstop_single"
+    }
+  ],
+  "vehicles": []
+}

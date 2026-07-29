@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2082201690",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.547Z",
+  "buildings": [
+    {
+      "id": "2082201690/huntingtower",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {
+        "meat": 0.06
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hunting Tower",
+      "workshopId": "2082201690",
+      "modPath": "huntingtower"
+    },
+    {
+      "id": "2082201690/huntingtower2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {
+        "meat": 0.06
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hunting Tower2",
+      "workshopId": "2082201690",
+      "modPath": "huntingtower2"
+    },
+    {
+      "id": "2082201690/huntingtower3",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {
+        "meat": 0.06
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hunting Tower3",
+      "workshopId": "2082201690",
+      "modPath": "huntingtower3"
+    }
+  ],
+  "vehicles": []
+}

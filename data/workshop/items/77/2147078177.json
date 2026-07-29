@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2147078177",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.021Z",
+  "buildings": [
+    {
+      "id": "2147078177/Ambulance",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 9,
+      "professors": 9,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking of ambulances",
+      "workshopId": "2147078177",
+      "modPath": "Ambulance"
+    },
+    {
+      "id": "2147078177/Polyclinic",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 40,
+      "professors": 40,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Polyclinic",
+      "workshopId": "2147078177",
+      "modPath": "Polyclinic"
+    }
+  ],
+  "vehicles": []
+}

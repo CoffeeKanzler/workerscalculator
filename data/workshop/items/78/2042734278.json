@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2042734278",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.205Z",
+  "buildings": [
+    {
+      "id": "2042734278/bench",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡ÐºÐ°Ð¼ÐµÐ¹ÐºÐ°",
+      "workshopId": "2042734278",
+      "modPath": "bench"
+    },
+    {
+      "id": "2042734278/futboll",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÑÑÑÐ±Ð¾Ð»",
+      "workshopId": "2042734278",
+      "modPath": "futboll"
+    },
+    {
+      "id": "2042734278/futboll_2",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 4,
+        "steel": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¿Ð¾Ð»Ðµ",
+      "workshopId": "2042734278",
+      "modPath": "futboll_2"
+    },
+    {
+      "id": "2042734278/gym",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 38,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 32,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 938,
+        "asphalt": 29,
+        "gravel": 32,
+        "concrete": 38,
+        "steel": 14,
+        "prefabpanels": 187
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡Ð¿Ð¾ÑÑÐ·Ð°Ð»",
+      "workshopId": "2042734278",
+      "modPath": "gym"
+    },
+    {
+      "id": "2042734278/lazurny",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 35,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1260,
+        "asphalt": 34,
+        "gravel": 36,
+        "concrete": 42,
+        "steel": 15,
+        "prefabpanels": 195
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ°Ð·ÑÑÐ½ÑÐ¹",
+      "workshopId": "2042734278",
+      "modPath": "lazurny"
+    },
+    {
+      "id": "2042734278/playground",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡Ð¿Ð¾ÑÑ Ð¿Ð»Ð¾ÑÐ°Ð´ÐºÐ°",
+      "workshopId": "2042734278",
+      "modPath": "playground"
+    },
+    {
+      "id": "2042734278/spotkompleks_Avangard",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 27,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1265,
+        "asphalt": 37,
+        "gravel": 38,
+        "concrete": 44,
+        "steel": 16,
+        "bricks": 197
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÑÐ¿Ð¾ÑÑÐºÐ¾Ð¼Ð¿Ð»ÐµÐºÑ ÐÐ²Ð°Ð½Ð³Ð°ÑÐ´",
+      "workshopId": "2042734278",
+      "modPath": "spotkompleks_Avangard"
+    },
+    {
+      "id": "2042734278/start",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 14,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡ÑÐ°ÑÑ",
+      "workshopId": "2042734278",
+      "modPath": "start"
+    },
+    {
+      "id": "2042734278/tir",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¢Ð¸Ñ",
+      "workshopId": "2042734278",
+      "modPath": "tir"
+    }
+  ],
+  "vehicles": []
+}

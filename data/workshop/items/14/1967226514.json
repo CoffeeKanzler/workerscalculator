@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1967226514",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.954Z",
+  "buildings": [
+    {
+      "id": "1967226514/RESIDENTIAL2",
+      "nameId": 6001,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.72,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "1967226514",
+      "modPath": "RESIDENTIAL2"
+    }
+  ],
+  "vehicles": []
+}

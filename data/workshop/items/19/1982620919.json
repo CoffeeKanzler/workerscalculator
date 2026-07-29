@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1982620919",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:11.019Z",
+  "buildings": [
+    {
+      "id": "1982620919/BARAKSHOP",
+      "nameId": 6250,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "1982620919",
+      "modPath": "BARAKSHOP"
+    }
+  ],
+  "vehicles": []
+}

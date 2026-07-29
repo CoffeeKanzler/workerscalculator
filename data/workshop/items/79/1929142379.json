@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1929142379",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.921Z",
+  "buildings": [
+    {
+      "id": "1929142379/music_school",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 5,
+      "professors": 5,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "School Of Music",
+      "workshopId": "1929142379",
+      "modPath": "music_school"
+    }
+  ],
+  "vehicles": []
+}

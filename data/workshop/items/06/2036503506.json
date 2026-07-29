@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2036503506",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.178Z",
+  "buildings": [
+    {
+      "id": "2036503506/bblock1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "60x40 Block",
+      "workshopId": "2036503506",
+      "modPath": "bblock1"
+    },
+    {
+      "id": "2036503506/bblock10",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "15x9 End Cap",
+      "workshopId": "2036503506",
+      "modPath": "bblock10"
+    },
+    {
+      "id": "2036503506/bblock2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 105,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 105
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "60x20 Corner Strip",
+      "workshopId": "2036503506",
+      "modPath": "bblock2"
+    },
+    {
+      "id": "2036503506/bblock3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "40x20 Corner Strip",
+      "workshopId": "2036503506",
+      "modPath": "bblock3"
+    },
+    {
+      "id": "2036503506/bblock4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "20x20 Corner",
+      "workshopId": "2036503506",
+      "modPath": "bblock4"
+    },
+    {
+      "id": "2036503506/bblock5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "10x15 Row House",
+      "workshopId": "2036503506",
+      "modPath": "bblock5"
+    },
+    {
+      "id": "2036503506/bblock6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "15x15 Row Building",
+      "workshopId": "2036503506",
+      "modPath": "bblock6"
+    },
+    {
+      "id": "2036503506/bblock7",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "15x15 Row Building",
+      "workshopId": "2036503506",
+      "modPath": "bblock7"
+    },
+    {
+      "id": "2036503506/bblock8",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "15x10 Corner Building",
+      "workshopId": "2036503506",
+      "modPath": "bblock8"
+    },
+    {
+      "id": "2036503506/bblock9",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.97,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "15x10 End Cap",
+      "workshopId": "2036503506",
+      "modPath": "bblock9"
+    },
+    {
+      "id": "2036503506/bmesto2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "10x16 Row House",
+      "workshopId": "2036503506",
+      "modPath": "bmesto2"
+    }
+  ],
+  "vehicles": []
+}

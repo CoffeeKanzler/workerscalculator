@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2165407694",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.119Z",
+  "buildings": [
+    {
+      "id": "2165407694/buran",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Monument Buran Shuttle",
+      "workshopId": "2165407694",
+      "modPath": "buran"
+    }
+  ],
+  "vehicles": []
+}

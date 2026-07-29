@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2099138047",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.600Z",
+  "buildings": [
+    {
+      "id": "2099138047/do1",
+      "nameId": 6210,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 9.3,
+        "asphalt": 8.5
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2099138047",
+      "modPath": "do1"
+    },
+    {
+      "id": "2099138047/do2",
+      "nameId": 6211,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 10.3,
+        "bricks": 10,
+        "steel": 4.85
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2099138047",
+      "modPath": "do2"
+    },
+    {
+      "id": "2099138047/do3",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 25.3,
+        "bricks": 28,
+        "steel": 35.85
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large distribution office",
+      "workshopId": "2099138047",
+      "modPath": "do3"
+    }
+  ],
+  "vehicles": []
+}

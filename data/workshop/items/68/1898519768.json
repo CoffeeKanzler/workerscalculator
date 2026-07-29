@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1898519768",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.377Z",
+  "buildings": [
+    {
+      "id": "1898519768/television_tower",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 2,
+      "professors": 1,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Television tover",
+      "workshopId": "1898519768",
+      "modPath": "television_tower"
+    }
+  ],
+  "vehicles": []
+}

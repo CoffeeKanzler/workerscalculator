@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2017931501",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.208Z",
+  "buildings": [
+    {
+      "id": "2017931501/brick_dom_27_citizens",
+      "nameId": 6001,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 27,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 27
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2017931501",
+      "modPath": "brick_dom_27_citizens"
+    }
+  ],
+  "vehicles": []
+}

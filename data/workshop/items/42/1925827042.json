@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1925827042",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.912Z",
+  "buildings": [
+    {
+      "id": "1925827042/Fakel_Monument",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 4,
+        "concrete": 1.9
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾Ð³Ð¸Ð±ÑÐ¸Ð¼ Ð² ÐÐÐ",
+      "workshopId": "1925827042",
+      "modPath": "Fakel_Monument"
+    },
+    {
+      "id": "1925827042/OVD",
+      "nameId": null,
+      "types": [
+        "TYPE_SECRET_POLICE"
+      ],
+      "workers": 0,
+      "professors": 25,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐ",
+      "workshopId": "1925827042",
+      "modPath": "OVD"
+    },
+    {
+      "id": "1925827042/SZ_Pripjat",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡ÑÐµÐ»Ð° ÑÐµÐ²ÐµÑÐ¾-Ð·Ð°Ð¿Ð°Ð´",
+      "workshopId": "1925827042",
+      "modPath": "SZ_Pripjat"
+    },
+    {
+      "id": "1925827042/autostation",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 800,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 800
+      },
+      "constructionResources": {
+        "workers": 180,
+        "asphalt": 34,
+        "gravel": 36,
+        "concrete": 42,
+        "prefabpanels": 35,
+        "steel": 5,
+        "ecomponents": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ²ÑÐ¾ÑÑÐ°Ð½ÑÐ¸Ñ",
+      "workshopId": "1925827042",
+      "modPath": "autostation"
+    },
+    {
+      "id": "1925827042/autostation2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 300,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 300
+      },
+      "constructionResources": {
+        "workers": 180,
+        "asphalt": 34,
+        "gravel": 36,
+        "concrete": 42,
+        "prefabpanels": 35,
+        "steel": 5,
+        "ecomponents": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ²ÑÐ¾ÑÑÐ°Ð½ÑÐ¸Ñ ÐÑÐ¸Ð¿ÑÑÑ",
+      "workshopId": "1925827042",
+      "modPath": "autostation2"
+    },
+    {
+      "id": "1925827042/banja_sauna_6",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 12,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.6,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ°Ð½Ñ-ÑÐ°ÑÐ½Ð°",
+      "workshopId": "1925827042",
+      "modPath": "banja_sauna_6"
+    },
+    {
+      "id": "1925827042/basseiyn",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 18,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 170,
+        "asphalt": 12,
+        "gravel": 12,
+        "concrete": 18,
+        "steel": 7,
+        "prefabpanels": 9
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¨Ð°ÑÐ¼Ð°ÑÐ½ÑÐ¹ ÐºÐ»ÑÐ±",
+      "workshopId": "1925827042",
+      "modPath": "basseiyn"
+    },
+    {
+      "id": "1925827042/communication_center",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 25,
+      "professors": 15,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð£Ð·ÐµÐ» ÑÐ²ÑÐ·Ð¸",
+      "workshopId": "1925827042",
+      "modPath": "communication_center"
+    },
+    {
+      "id": "1925827042/dispensary_solar",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 75,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": 4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¿Ñ-Ð¸Ð¹ Ð¡Ð¾Ð»Ð½ÐµÑÐ½ÑÐ¹",
+      "workshopId": "1925827042",
+      "modPath": "dispensary_solar"
+    },
+    {
+      "id": "1925827042/heatingendstation",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÑÐµÐ¿Ð»Ð¾ÑÐ°ÑÐ¿ÑÐµÐ´ÐµÐ»Ð¸ÑÐµÐ»Ñ",
+      "workshopId": "1925827042",
+      "modPath": "heatingendstation"
+    },
+    {
+      "id": "1925827042/lampa1",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¤Ð¾Ð½Ð°ÑÑ",
+      "workshopId": "1925827042",
+      "modPath": "lampa1"
+    },
+    {
+      "id": "1925827042/lampa2",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¤Ð¾Ð½Ð°ÑÑ",
+      "workshopId": "1925827042",
+      "modPath": "lampa2"
+    },
+    {
+      "id": "1925827042/lampa3",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¤Ð¾Ð½Ð°ÑÑ",
+      "workshopId": "1925827042",
+      "modPath": "lampa3"
+    },
+    {
+      "id": "1925827042/lampa4",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¤Ð¾Ð½Ð°ÑÑ",
+      "workshopId": "1925827042",
+      "modPath": "lampa4"
+    },
+    {
+      "id": "1925827042/lampa5",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.01
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¤Ð¾Ð½Ð°ÑÑ",
+      "workshopId": "1925827042",
+      "modPath": "lampa5"
+    },
+    {
+      "id": "1925827042/parking",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 100,
+        "asphalt": 16,
+        "gravel": 8,
+        "concrete": 4,
+        "steel": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ°ÑÐºÐ¾Ð²ÐºÐ°",
+      "workshopId": "1925827042",
+      "modPath": "parking"
+    },
+    {
+      "id": "1925827042/prometey",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 1,
+      "professors": 1,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 30,
+        "asphalt": 1,
+        "gravel": 3,
+        "concrete": 2,
+        "steel": 0.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÑÐ¾Ð¼ÐµÑÐµÐ¹ Ð¿Ð°Ð¼ÑÑÐ½Ð¸Ðº",
+      "workshopId": "1925827042",
+      "modPath": "prometey"
+    },
+    {
+      "id": "1925827042/sadik",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐµÐ´Ð²ÐµÐ¶Ð¾Ð½Ð¾Ðº",
+      "workshopId": "1925827042",
+      "modPath": "sadik"
+    }
+  ],
+  "vehicles": []
+}

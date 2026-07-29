@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1876281552",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.314Z",
+  "buildings": [
+    {
+      "id": "1876281552/domek",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 56,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.68,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 56
+      },
+      "constructionResources": {
+        "gravel": 5.4,
+        "workers": 29
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wooden Apartments",
+      "workshopId": "1876281552",
+      "modPath": "domek"
+    }
+  ],
+  "vehicles": []
+}

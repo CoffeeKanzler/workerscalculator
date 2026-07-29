@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2136777912",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:50.982Z",
+  "buildings": [
+    {
+      "id": "2136777912/comb_fact3",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 300,
+      "professors": 0,
+      "production": {
+        "mcomponents": 0.05,
+        "ecomponents": 0.013
+      },
+      "consumption": {
+        "chemicals": 0.005,
+        "plastics": 0.008,
+        "steel": 0.085
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Factory 3",
+      "workshopId": "2136777912",
+      "modPath": "comb_fact3"
+    },
+    {
+      "id": "2136777912/comb_fact4",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 500,
+      "professors": 0,
+      "production": {
+        "chemicals": 0.004,
+        "fabric": 0.015,
+        "plastics": 0.015
+      },
+      "consumption": {
+        "plants": 0.04,
+        "wood": 0.03,
+        "oil": 0.05,
+        "gravel": 0.03
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.5
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Factory 4.1",
+      "workshopId": "2136777912",
+      "modPath": "comb_fact4"
+    },
+    {
+      "id": "2136777912/comb_fact5",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 500,
+      "professors": 0,
+      "production": {
+        "chemicals": 0.004,
+        "fabric": 0.015,
+        "plastics": 0.015
+      },
+      "consumption": {
+        "plants": 0.04,
+        "wood": 0.03,
+        "oil": 0.05,
+        "gravel": 0.03
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.5
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Factory 4",
+      "workshopId": "2136777912",
+      "modPath": "comb_fact5"
+    },
+    {
+      "id": "2136777912/comb_fact6",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 500,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.012,
+        "food": 0.04,
+        "clothes": 0.007,
+        "eletronics": 0.01,
+        "meat": 0.04
+      },
+      "consumption": {
+        "plants": 0.14,
+        "fabric": 0.014,
+        "ecomponents": 0.003,
+        "plastics": 0.005,
+        "mcomponents": 0.003,
+        "livestock": 0.08
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.3
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.3,
+        "heating": 2
+      },
+      "nameStr": "Combined Factory x 1.1",
+      "workshopId": "2136777912",
+      "modPath": "comb_fact6"
+    },
+    {
+      "id": "2136777912/comb_fact7",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 300,
+      "professors": 0,
+      "production": {
+        "mcomponents": 0.05,
+        "ecomponents": 0.013
+      },
+      "consumption": {
+        "chemicals": 0.005,
+        "plastics": 0.008,
+        "steel": 0.085
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Factory 3.1",
+      "workshopId": "2136777912",
+      "modPath": "comb_fact7"
+    },
+    {
+      "id": "2136777912/comb_facx2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 1000,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.012,
+        "food": 0.04,
+        "clothes": 0.007,
+        "eletronics": 0.01,
+        "meat": 0.04
+      },
+      "consumption": {
+        "plants": 0.14,
+        "fabric": 0.014,
+        "ecomponents": 0.003,
+        "plastics": 0.005,
+        "mcomponents": 0.003,
+        "livestock": 0.08
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.6
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 2.3,
+        "heating": 2.5
+      },
+      "nameStr": "Combined Factory x 2",
+      "workshopId": "2136777912",
+      "modPath": "comb_facx2"
+    },
+    {
+      "id": "2136777912/comb_facx3",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 1000,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.012,
+        "food": 0.04,
+        "clothes": 0.007,
+        "eletronics": 0.01,
+        "meat": 0.04
+      },
+      "consumption": {
+        "plants": 0.14,
+        "fabric": 0.014,
+        "ecomponents": 0.003,
+        "plastics": 0.005,
+        "mcomponents": 0.003,
+        "livestock": 0.08
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.6
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 2.3,
+        "heating": 2.5
+      },
+      "nameStr": "Combined Factory x 2.1",
+      "workshopId": "2136777912",
+      "modPath": "comb_facx3"
+    },
+    {
+      "id": "2136777912/multi_fac",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 500,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.012,
+        "food": 0.04,
+        "clothes": 0.007,
+        "eletronics": 0.01,
+        "meat": 0.04
+      },
+      "consumption": {
+        "plants": 0.14,
+        "fabric": 0.014,
+        "ecomponents": 0.003,
+        "plastics": 0.005,
+        "mcomponents": 0.003,
+        "livestock": 0.08
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.3
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.3,
+        "heating": 2
+      },
+      "nameStr": "Combined Factory x 1",
+      "workshopId": "2136777912",
+      "modPath": "multi_fac"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2154666529",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.056Z",
+  "buildings": [
+    {
+      "id": "2154666529/Kvas",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kvass",
+      "workshopId": "2154666529",
+      "modPath": "Kvas"
+    },
+    {
+      "id": "2154666529/Kvas1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kvass",
+      "workshopId": "2154666529",
+      "modPath": "Kvas1"
+    },
+    {
+      "id": "2154666529/Pivo",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Beer",
+      "workshopId": "2154666529",
+      "modPath": "Pivo"
+    },
+    {
+      "id": "2154666529/Pivo1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Beer",
+      "workshopId": "2154666529",
+      "modPath": "Pivo1"
+    }
+  ],
+  "vehicles": []
+}

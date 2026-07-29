@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2003458864",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.178Z",
+  "buildings": [
+    {
+      "id": "2003458864/Forklift",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 5,
+        "RESOURCE_TRANSPORT_COVERED": 5,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 5,
+        "RESOURCE_TRANSPORT_CEMENT": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forklift Unloading Station",
+      "workshopId": "2003458864",
+      "modPath": "Forklift"
+    }
+  ],
+  "vehicles": []
+}

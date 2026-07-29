@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1915461599",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.886Z",
+  "buildings": [
+    {
+      "id": "1915461599/14lrg_road_depo",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "14 spot fenced vehicle depo",
+      "workshopId": "1915461599",
+      "modPath": "14lrg_road_depo"
+    },
+    {
+      "id": "1915461599/28lrg_road_depo",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "28 spot fenced vehicle depo",
+      "workshopId": "1915461599",
+      "modPath": "28lrg_road_depo"
+    },
+    {
+      "id": "1915461599/4fenced_road_depo",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 spot fenced vehicle depo",
+      "workshopId": "1915461599",
+      "modPath": "4fenced_road_depo"
+    },
+    {
+      "id": "1915461599/concrete_mini",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {
+        "concrete": 18
+      },
+      "consumption": {
+        "gravel": 14,
+        "cement": 3,
+        "water": 8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Concrete Batching Plant",
+      "workshopId": "1915461599",
+      "modPath": "concrete_mini"
+    },
+    {
+      "id": "1915461599/flare",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "bitumen": 0.3
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Flare",
+      "workshopId": "1915461599",
+      "modPath": "flare"
+    },
+    {
+      "id": "1915461599/hot_mix_mini",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {
+        "asphalt": 8
+      },
+      "consumption": {
+        "gravel": 6,
+        "bitumen": 1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.4
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Hot mix Plant",
+      "workshopId": "1915461599",
+      "modPath": "hot_mix_mini"
+    },
+    {
+      "id": "1915461599/powerplant01",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "eletric": 18
+      },
+      "consumption": {
+        "fuel": 0.36
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick Municipal Power Station",
+      "workshopId": "1915461599",
+      "modPath": "powerplant01"
+    },
+    {
+      "id": "1915461599/xtra_small_tank",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 100
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small tank",
+      "workshopId": "1915461599",
+      "modPath": "xtra_small_tank"
+    }
+  ],
+  "vehicles": []
+}

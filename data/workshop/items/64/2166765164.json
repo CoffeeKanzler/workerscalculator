@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2166765164",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.126Z",
+  "buildings": [
+    {
+      "id": "2166765164/bit_old_s",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 220
+      },
+      "consumption": {
+        "bitumen": 0.05
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 313,
+        "concrete": 11,
+        "bricks": 6.3,
+        "prefabpanels": 11,
+        "steel": 4,
+        "mcomponents": 0.12
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small bitumen heating plant",
+      "workshopId": "2166765164",
+      "modPath": "bit_old_s"
+    },
+    {
+      "id": "2166765164/fuel_old_s",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 190
+      },
+      "consumption": {
+        "fuel": 0.05
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 400,
+        "concrete": 11,
+        "bricks": 6.3,
+        "prefabpanels": 11,
+        "steel": 5.8,
+        "mcomponents": 0.15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small fuel heating plant",
+      "workshopId": "2166765164",
+      "modPath": "fuel_old_s"
+    },
+    {
+      "id": "2166765164/wood_old_s",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 150
+      },
+      "consumption": {
+        "wood": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 271,
+        "concrete": 11.9,
+        "bricks": 10.9,
+        "prefabpanels": 11,
+        "steel": 1.1,
+        "mcomponents": 0.08
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small biomass heating plant",
+      "workshopId": "2166765164",
+      "modPath": "wood_old_s"
+    }
+  ],
+  "vehicles": []
+}

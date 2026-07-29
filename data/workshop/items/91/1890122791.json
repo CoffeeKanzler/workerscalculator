@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1890122791",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.351Z",
+  "buildings": [
+    {
+      "id": "1890122791/1-447_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 54,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.78,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 54
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "I-447 brick 2 sections",
+      "workshopId": "1890122791",
+      "modPath": "1-447_2"
+    },
+    {
+      "id": "1890122791/1-447_3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 81,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.78,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 81
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "I-447 brick 3 sections",
+      "workshopId": "1890122791",
+      "modPath": "1-447_3"
+    }
+  ],
+  "vehicles": []
+}

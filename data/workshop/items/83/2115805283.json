@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2115805283",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.637Z",
+  "buildings": [
+    {
+      "id": "2115805283/cityhall",
+      "nameId": 13500,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 140,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2115805283",
+      "modPath": "cityhall"
+    },
+    {
+      "id": "2115805283/cityhallsmall",
+      "nameId": 13500,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2115805283",
+      "modPath": "cityhallsmall"
+    }
+  ],
+  "vehicles": []
+}

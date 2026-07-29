@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2087128038",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.563Z",
+  "buildings": [
+    {
+      "id": "2087128038/Cafe",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_SHIP",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 650,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 650
+      },
+      "constructionResources": {
+        "workers": 1260,
+        "asphalt": 34,
+        "gravel": 36,
+        "concrete": 42,
+        "steel": 15,
+        "prefabpanels": 195
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÑÐ¸ÑÐ°Ð»-ÐºÐ°ÑÐµ",
+      "workshopId": "2087128038",
+      "modPath": "Cafe"
+    },
+    {
+      "id": "2087128038/Janov",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 950,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 950
+      },
+      "constructionResources": {
+        "workers": 1260,
+        "asphalt": 34,
+        "gravel": 36,
+        "concrete": 42,
+        "steel": 15,
+        "bricks": 195,
+        "boards": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¯Ð½Ð¾Ð²",
+      "workshopId": "2087128038",
+      "modPath": "Janov"
+    },
+    {
+      "id": "2087128038/avtovokzal",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 550,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 550
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ²ÑÐ¾Ð²Ð¾ÐºÐ·Ð°Ð»",
+      "workshopId": "2087128038",
+      "modPath": "avtovokzal"
+    },
+    {
+      "id": "2087128038/busstop1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 370,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 370
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÑÐºÐ°",
+      "workshopId": "2087128038",
+      "modPath": "busstop1"
+    },
+    {
+      "id": "2087128038/circular_bus_stop",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 420,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 420
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾Ð»ÑÑÐ¾",
+      "workshopId": "2087128038",
+      "modPath": "circular_bus_stop"
+    },
+    {
+      "id": "2087128038/circular_bus_stop2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 420,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 420
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡ÑÑÐ¾Ð¹Ð¿Ð»Ð¾ÑÐ°Ð´ÐºÐ°",
+      "workshopId": "2087128038",
+      "modPath": "circular_bus_stop2"
+    },
+    {
+      "id": "2087128038/circular_bus_stop3",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 600,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 600
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾Ð»ÑÐºÑÑÐ³",
+      "workshopId": "2087128038",
+      "modPath": "circular_bus_stop3"
+    },
+    {
+      "id": "2087128038/dispetcherskaja",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 420,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 420
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¸ÑÐ¿ÐµÑÑÐµÑÑÐºÐ°Ñ",
+      "workshopId": "2087128038",
+      "modPath": "dispetcherskaja"
+    },
+    {
+      "id": "2087128038/kosmodrom",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 700,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 700
+      },
+      "constructionResources": {
+        "workers": 1670,
+        "asphalt": 44,
+        "gravel": 36,
+        "concrete": 92,
+        "prefabpanels": 195,
+        "bricks": 12,
+        "boards": 6,
+        "steel": 15,
+        "mcomponents": 18,
+        "ecomponents": 7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð²Ð¾ÐºÐ·Ð°Ð» ÐÐ¾ÑÑÐ¾Ðº",
+      "workshopId": "2087128038",
+      "modPath": "kosmodrom"
+    },
+    {
+      "id": "2087128038/mon_bench",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡ÐºÐ°Ð¼ÐµÐ¹ÐºÐ°",
+      "workshopId": "2087128038",
+      "modPath": "mon_bench"
+    },
+    {
+      "id": "2087128038/mon_icecream",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾ÑÐ¾Ð¶ÐµÐ½Ð½Ð¾Ðµ",
+      "workshopId": "2087128038",
+      "modPath": "mon_icecream"
+    },
+    {
+      "id": "2087128038/mon_kiosk",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¸Ð¾ÑÐº",
+      "workshopId": "2087128038",
+      "modPath": "mon_kiosk"
+    }
+  ],
+  "vehicles": []
+}

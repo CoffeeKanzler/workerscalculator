@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2030501566",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.273Z",
+  "buildings": [
+    {
+      "id": "2030501566/hor1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "SUBTYPE_HOSTEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Student Halls Small",
+      "workshopId": "2030501566",
+      "modPath": "hor1"
+    },
+    {
+      "id": "2030501566/hor2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "SUBTYPE_HOSTEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Student Halls Medium",
+      "workshopId": "2030501566",
+      "modPath": "hor2"
+    },
+    {
+      "id": "2030501566/hor3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "SUBTYPE_HOSTEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Student Halls Large",
+      "workshopId": "2030501566",
+      "modPath": "hor3"
+    },
+    {
+      "id": "2030501566/hor4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "SUBTYPE_HOSTEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Student Halls XL",
+      "workshopId": "2030501566",
+      "modPath": "hor4"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2156855132",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:07.483Z",
+  "buildings": [
+    {
+      "id": "2156855132/stepeniste",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 322,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 322
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stepeniste Building",
+      "workshopId": "2156855132",
+      "modPath": "stepeniste"
+    }
+  ],
+  "vehicles": []
+}

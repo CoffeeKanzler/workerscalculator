@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1895387536",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.363Z",
+  "buildings": [
+    {
+      "id": "1895387536/SteelMillV2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10000,
+      "professors": 0,
+      "production": {
+        "steel": 0.06
+      },
+      "consumption": {
+        "rawcoal": 1.2,
+        "rawiron": 0.8
+      },
+      "consumptionPerSecond": {
+        "eletric": 2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Steel Mill v2",
+      "workshopId": "1895387536",
+      "modPath": "SteelMillV2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1900512214",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.857Z",
+  "buildings": [
+    {
+      "id": "1900512214/SmTech",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 15,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Technical College",
+      "workshopId": "1900512214",
+      "modPath": "SmTech"
+    },
+    {
+      "id": "1900512214/Small_CPHQ",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 10,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Communist Party Headquarters",
+      "workshopId": "1900512214",
+      "modPath": "Small_CPHQ"
+    }
+  ],
+  "vehicles": []
+}

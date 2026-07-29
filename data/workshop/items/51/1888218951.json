@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1888218951",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.333Z",
+  "buildings": [
+    {
+      "id": "1888218951/Rail_koleya",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 270,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 270
+      },
+      "constructionResources": {
+        "steel": 1.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "rail station 1x",
+      "workshopId": "1888218951",
+      "modPath": "Rail_koleya"
+    }
+  ],
+  "vehicles": []
+}

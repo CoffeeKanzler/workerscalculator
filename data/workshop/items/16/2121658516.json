@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2121658516",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.654Z",
+  "buildings": [
+    {
+      "id": "2121658516/elevator",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Grain Elevator",
+      "workshopId": "2121658516",
+      "modPath": "elevator"
+    }
+  ],
+  "vehicles": []
+}

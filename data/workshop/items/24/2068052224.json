@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2068052224",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.358Z",
+  "buildings": [
+    {
+      "id": "2068052224/gas_st",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Retro Gas Station v.1",
+      "workshopId": "2068052224",
+      "modPath": "gas_st"
+    },
+    {
+      "id": "2068052224/gas_st1",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Retro Gas Station.v2",
+      "workshopId": "2068052224",
+      "modPath": "gas_st1"
+    },
+    {
+      "id": "2068052224/gas_st2",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Retro Gas Station.v3",
+      "workshopId": "2068052224",
+      "modPath": "gas_st2"
+    }
+  ],
+  "vehicles": []
+}

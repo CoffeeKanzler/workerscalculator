@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2073666954",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.393Z",
+  "buildings": [
+    {
+      "id": "2073666954/dredger",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {
+        "gravel": 2
+      },
+      "consumption": {
+        "fuel": 0.05
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bucket Dredger",
+      "workshopId": "2073666954",
+      "modPath": "dredger"
+    }
+  ],
+  "vehicles": []
+}

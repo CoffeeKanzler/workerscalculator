@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2123723466",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.663Z",
+  "buildings": [
+    {
+      "id": "2123723466/milltower",
+      "nameId": 6107,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2123723466",
+      "modPath": "milltower"
+    }
+  ],
+  "vehicles": []
+}

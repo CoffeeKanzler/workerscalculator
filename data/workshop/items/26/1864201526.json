@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1864201526",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.283Z",
+  "buildings": [
+    {
+      "id": "1864201526/militia_station",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 50,
+      "professors": 50,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Militia station",
+      "workshopId": "1864201526",
+      "modPath": "militia_station"
+    }
+  ],
+  "vehicles": []
+}

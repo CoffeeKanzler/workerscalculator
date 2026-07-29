@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2004680742",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.180Z",
+  "buildings": [
+    {
+      "id": "2004680742/8_rail_high_trafo",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "High voltage 8-railroad electric connection",
+      "workshopId": "2004680742",
+      "modPath": "8_rail_high_trafo"
+    }
+  ],
+  "vehicles": []
+}

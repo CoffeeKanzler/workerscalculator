@@ -162,7 +162,24 @@ function main(argv) {
     console.log(`${ids.length} missing item(s) referenced by ${rest.length} save(s)`);
   }
   // Resumable: anything already catalogued is skipped, so a re-run continues.
-  ids = missingWorkshopIds(new Set(ids), index);
+  const requested = new Set(ids);
+  ids = missingWorkshopIds(requested, index);
+
+  // Skipping them is right, but they were reaching the catalogue without ever
+  // reaching the pruning that happens alongside it, so their raw downloads
+  // accumulated across runs — 14 GB of them before this was noticed. Anything
+  // already catalogued has no further use for its download.
+  if (prune) {
+    let reclaimed = 0;
+    for (const id of requested) {
+      if (!index.items[String(id)]) continue;
+      const dir = path.join(CONTENT, String(id));
+      if (!existsSync(dir)) continue;
+      rmSync(dir, { recursive: true, force: true });
+      reclaimed += 1;
+    }
+    if (reclaimed) console.log(`reclaimed ${reclaimed} download(s) already catalogued`);
+  }
   if (!ids.length) {
     console.log('nothing to fetch');
     return;

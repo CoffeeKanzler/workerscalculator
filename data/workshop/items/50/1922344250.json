@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1922344250",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.908Z",
+  "buildings": [
+    {
+      "id": "1922344250/kino_international",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kino International",
+      "workshopId": "1922344250",
+      "modPath": "kino_international"
+    }
+  ],
+  "vehicles": []
+}

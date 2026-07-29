@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2007332536",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.183Z",
+  "buildings": [
+    {
+      "id": "2007332536/tramcross",
+      "nameId": 6206,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2007332536",
+      "modPath": "tramcross"
+    }
+  ],
+  "vehicles": []
+}

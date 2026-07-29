@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2112762606",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.631Z",
+  "buildings": [
+    {
+      "id": "2112762606/sala",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "School gym (60s)",
+      "workshopId": "2112762606",
+      "modPath": "sala"
+    },
+    {
+      "id": "2112762606/szkola",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 20,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "School (60s)",
+      "workshopId": "2112762606",
+      "modPath": "szkola"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1896614193",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.365Z",
+  "buildings": [
+    {
+      "id": "1896614193/Binge",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "alcohol": 1.2
+      },
+      "consumption": {
+        "food": 0.8,
+        "chemicals": 0.0025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.16
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Binge",
+      "workshopId": "1896614193",
+      "modPath": "Binge"
+    }
+  ],
+  "vehicles": []
+}

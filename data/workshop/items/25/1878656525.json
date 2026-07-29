@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1878656525",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.319Z",
+  "buildings": [
+    {
+      "id": "1878656525/Rinok",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 65,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rinok",
+      "workshopId": "1878656525",
+      "modPath": "Rinok"
+    }
+  ],
+  "vehicles": []
+}

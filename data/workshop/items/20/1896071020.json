@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1896071020",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.364Z",
+  "buildings": [
+    {
+      "id": "1896071020/KREMLIN",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 100,
+      "professors": 100,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "KREMLIN",
+      "workshopId": "1896071020",
+      "modPath": "KREMLIN"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2010218049",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.189Z",
+  "buildings": [
+    {
+      "id": "2010218049/dom1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 14",
+      "workshopId": "2010218049",
+      "modPath": "dom1"
+    },
+    {
+      "id": "2010218049/dom10",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 4",
+      "workshopId": "2010218049",
+      "modPath": "dom10"
+    },
+    {
+      "id": "2010218049/dom11",
+      "nameId": 6410,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2010218049",
+      "modPath": "dom11"
+    },
+    {
+      "id": "2010218049/dom12",
+      "nameId": 6410,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2010218049",
+      "modPath": "dom12"
+    },
+    {
+      "id": "2010218049/dom13",
+      "nameId": 6410,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2010218049",
+      "modPath": "dom13"
+    },
+    {
+      "id": "2010218049/dom14",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 3",
+      "workshopId": "2010218049",
+      "modPath": "dom14"
+    },
+    {
+      "id": "2010218049/dom15",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 2",
+      "workshopId": "2010218049",
+      "modPath": "dom15"
+    },
+    {
+      "id": "2010218049/dom2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 12",
+      "workshopId": "2010218049",
+      "modPath": "dom2"
+    },
+    {
+      "id": "2010218049/dom3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 11",
+      "workshopId": "2010218049",
+      "modPath": "dom3"
+    },
+    {
+      "id": "2010218049/dom4",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 10",
+      "workshopId": "2010218049",
+      "modPath": "dom4"
+    },
+    {
+      "id": "2010218049/dom5",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 9",
+      "workshopId": "2010218049",
+      "modPath": "dom5"
+    },
+    {
+      "id": "2010218049/dom6",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 8",
+      "workshopId": "2010218049",
+      "modPath": "dom6"
+    },
+    {
+      "id": "2010218049/dom7",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 7",
+      "workshopId": "2010218049",
+      "modPath": "dom7"
+    },
+    {
+      "id": "2010218049/dom8",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 5",
+      "workshopId": "2010218049",
+      "modPath": "dom8"
+    },
+    {
+      "id": "2010218049/dom9",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 9,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 9
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 6",
+      "workshopId": "2010218049",
+      "modPath": "dom9"
+    },
+    {
+      "id": "2010218049/pak_chastnykh_dam",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "house in the village 1",
+      "workshopId": "2010218049",
+      "modPath": "pak_chastnykh_dam"
+    }
+  ],
+  "vehicles": []
+}

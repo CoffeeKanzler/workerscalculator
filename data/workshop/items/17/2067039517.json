@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2067039517",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.356Z",
+  "buildings": [
+    {
+      "id": "2067039517/plasticsfactory",
+      "nameId": 6354,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 220,
+      "professors": 0,
+      "production": {
+        "plastics": 0.15
+      },
+      "consumption": {
+        "chemicals": 0.1,
+        "oil": 0.35
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.22
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2067039517",
+      "modPath": "plasticsfactory"
+    }
+  ],
+  "vehicles": []
+}

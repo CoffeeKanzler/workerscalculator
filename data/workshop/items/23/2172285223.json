@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2172285223",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.144Z",
+  "buildings": [
+    {
+      "id": "2172285223/cnigri",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 335,
+      "professors": 335,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¦ÐÐÐÐ Ð (RM-RSI)",
+      "workshopId": "2172285223",
+      "modPath": "cnigri"
+    }
+  ],
+  "vehicles": []
+}

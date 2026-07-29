@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2077465178",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.538Z",
+  "buildings": [
+    {
+      "id": "2077465178/Bus_Station_XL_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "XL Bus Station V2",
+      "workshopId": "2077465178",
+      "modPath": "Bus_Station_XL_v2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1877631207",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.318Z",
+  "buildings": [
+    {
+      "id": "1877631207/Tabletennis",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Table tennis plate",
+      "workshopId": "1877631207",
+      "modPath": "Tabletennis"
+    }
+  ],
+  "vehicles": []
+}

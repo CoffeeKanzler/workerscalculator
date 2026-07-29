@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2007701209",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.183Z",
+  "buildings": [
+    {
+      "id": "2007701209/tiraspol",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tiraspol",
+      "workshopId": "2007701209",
+      "modPath": "tiraspol"
+    }
+  ],
+  "vehicles": []
+}

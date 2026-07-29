@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2071468199",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.371Z",
+  "buildings": [
+    {
+      "id": "2071468199/hardau1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 582,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 582
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hardau 1",
+      "workshopId": "2071468199",
+      "modPath": "hardau1"
+    },
+    {
+      "id": "2071468199/hardau2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 511,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 511
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hardau 2",
+      "workshopId": "2071468199",
+      "modPath": "hardau2"
+    },
+    {
+      "id": "2071468199/hardau3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 439,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 439
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hardau 3",
+      "workshopId": "2071468199",
+      "modPath": "hardau3"
+    },
+    {
+      "id": "2071468199/hardau4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 374,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 374
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hardau 4",
+      "workshopId": "2071468199",
+      "modPath": "hardau4"
+    },
+    {
+      "id": "2071468199/hardaux",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 881,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 881
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hardau X",
+      "workshopId": "2071468199",
+      "modPath": "hardaux"
+    }
+  ],
+  "vehicles": []
+}

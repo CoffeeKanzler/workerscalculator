@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2049717720",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.236Z",
+  "buildings": [
+    {
+      "id": "2049717720/Bus_stop_1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {
+        "workers": 30,
+        "gravel": 8,
+        "concrete": 1,
+        "asphalt": 5,
+        "steel": 0.25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bus stop 1",
+      "workshopId": "2049717720",
+      "modPath": "Bus_stop_1"
+    },
+    {
+      "id": "2049717720/Bus_stop_1_1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {
+        "workers": 80,
+        "gravel": 9,
+        "concrete": 20,
+        "asphalt": 6,
+        "steel": 3.25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bus stop 1-1",
+      "workshopId": "2049717720",
+      "modPath": "Bus_stop_1_1"
+    },
+    {
+      "id": "2049717720/Bus_stop_1_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {
+        "workers": 120,
+        "gravel": 10,
+        "concrete": 30,
+        "asphalt": 7,
+        "steel": 6.25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bus stop 1-2",
+      "workshopId": "2049717720",
+      "modPath": "Bus_stop_1_2"
+    },
+    {
+      "id": "2049717720/Bus_stop_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {
+        "workers": 45,
+        "gravel": 12,
+        "concrete": 1.5,
+        "asphalt": 7.5,
+        "steel": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bus stop 2",
+      "workshopId": "2049717720",
+      "modPath": "Bus_stop_2"
+    },
+    {
+      "id": "2049717720/Bus_stop_2_1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {
+        "workers": 165,
+        "gravel": 14,
+        "concrete": 30.5,
+        "asphalt": 9.5,
+        "steel": 9.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bus stop 2-1",
+      "workshopId": "2049717720",
+      "modPath": "Bus_stop_2_1"
+    },
+    {
+      "id": "2049717720/Bus_stop_2_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {
+        "workers": 245,
+        "gravel": 16,
+        "concrete": 50.5,
+        "asphalt": 11.5,
+        "steel": 15.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bus stop 2-2",
+      "workshopId": "2049717720",
+      "modPath": "Bus_stop_2_2"
+    },
+    {
+      "id": "2049717720/Bus_stop_t",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {
+        "workers": 30,
+        "gravel": 8,
+        "concrete": 1,
+        "asphalt": 5,
+        "steel": 0.25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bus stop ending station",
+      "workshopId": "2049717720",
+      "modPath": "Bus_stop_t"
+    }
+  ],
+  "vehicles": []
+}

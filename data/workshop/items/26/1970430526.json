@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1970430526",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.965Z",
+  "buildings": [
+    {
+      "id": "1970430526/TELEVISION",
+      "nameId": 2700,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 50,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "1970430526",
+      "modPath": "TELEVISION"
+    }
+  ],
+  "vehicles": []
+}

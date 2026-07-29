@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1871192577",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.291Z",
+  "buildings": [
+    {
+      "id": "1871192577/CityHall",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinismus Radnice",
+      "workshopId": "1871192577",
+      "modPath": "CityHall"
+    },
+    {
+      "id": "1871192577/CityHallFrontRoad",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinismus Radnice Front Road",
+      "workshopId": "1871192577",
+      "modPath": "CityHallFrontRoad"
+    },
+    {
+      "id": "1871192577/Hospital",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 25,
+      "professors": 25,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinismus Hospital",
+      "workshopId": "1871192577",
+      "modPath": "Hospital"
+    },
+    {
+      "id": "1871192577/UniMed",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_MEDICAL"
+      ],
+      "workers": 25,
+      "professors": 25,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinismus Medical University",
+      "workshopId": "1871192577",
+      "modPath": "UniMed"
+    }
+  ],
+  "vehicles": []
+}

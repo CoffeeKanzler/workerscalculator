@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2082293353",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.549Z",
+  "buildings": [
+    {
+      "id": "2082293353/Station",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "StaÈie nr.1",
+      "workshopId": "2082293353",
+      "modPath": "Station"
+    }
+  ],
+  "vehicles": []
+}

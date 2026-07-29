@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1905819956",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.869Z",
+  "buildings": [
+    {
+      "id": "1905819956/barn",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 90
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Barn",
+      "workshopId": "1905819956",
+      "modPath": "barn"
+    },
+    {
+      "id": "1905819956/food_factory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "food": 0.2
+      },
+      "consumption": {
+        "plants": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Food Factory",
+      "workshopId": "1905819956",
+      "modPath": "food_factory"
+    },
+    {
+      "id": "1905819956/micro_brewery",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.05
+      },
+      "consumption": {
+        "plants": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Micro Brewery",
+      "workshopId": "1905819956",
+      "modPath": "micro_brewery"
+    },
+    {
+      "id": "1905819956/small_farm",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Farm",
+      "workshopId": "1905819956",
+      "modPath": "small_farm"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2013935650",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.199Z",
+  "buildings": [
+    {
+      "id": "2013935650/fence_10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 10,
+        "prefabpanels": 2.5,
+        "concrete": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "school fence 10",
+      "workshopId": "2013935650",
+      "modPath": "fence_10"
+    },
+    {
+      "id": "2013935650/fence_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2,
+        "prefabpanels": 0.5,
+        "concrete": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "school fence 2",
+      "workshopId": "2013935650",
+      "modPath": "fence_2"
+    },
+    {
+      "id": "2013935650/gate",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1,
+        "steel": 0.1,
+        "concrete": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "school fence gate",
+      "workshopId": "2013935650",
+      "modPath": "gate"
+    },
+    {
+      "id": "2013935650/gate_big",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2,
+        "steel": 0.2,
+        "concrete": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "school fence long gate",
+      "workshopId": "2013935650",
+      "modPath": "gate_big"
+    }
+  ],
+  "vehicles": []
+}

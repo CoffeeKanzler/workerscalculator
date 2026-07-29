@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2071728827",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.388Z",
+  "buildings": [
+    {
+      "id": "2071728827/Fisher",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 12,
+      "professors": 0,
+      "production": {
+        "meat": 1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fisher house",
+      "workshopId": "2071728827",
+      "modPath": "Fisher"
+    }
+  ],
+  "vehicles": []
+}

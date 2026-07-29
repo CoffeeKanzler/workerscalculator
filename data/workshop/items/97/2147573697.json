@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2147573697",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.023Z",
+  "buildings": [
+    {
+      "id": "2147573697/machine_shop",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 450,
+      "professors": 45,
+      "production": {
+        "mcomponents": 0.2
+      },
+      "consumption": {
+        "steel": 0.3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.2,
+        "living": 2.8
+      },
+      "nameStr": "Engineering Shop",
+      "workshopId": "2147573697",
+      "modPath": "machine_shop"
+    }
+  ],
+  "vehicles": []
+}

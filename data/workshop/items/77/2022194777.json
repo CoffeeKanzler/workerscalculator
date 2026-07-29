@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2022194777",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.212Z",
+  "buildings": [
+    {
+      "id": "2022194777/chainlink1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Chainlink 01",
+      "workshopId": "2022194777",
+      "modPath": "chainlink1"
+    },
+    {
+      "id": "2022194777/chainlink10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Chainlink 10",
+      "workshopId": "2022194777",
+      "modPath": "chainlink10"
+    },
+    {
+      "id": "2022194777/chainlink3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Chainlink 03",
+      "workshopId": "2022194777",
+      "modPath": "chainlink3"
+    }
+  ],
+  "vehicles": []
+}

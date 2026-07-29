@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2046421931",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.230Z",
+  "buildings": [
+    {
+      "id": "2046421931/KIOSK",
+      "nameId": 6257,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2046421931",
+      "modPath": "KIOSK"
+    }
+  ],
+  "vehicles": []
+}

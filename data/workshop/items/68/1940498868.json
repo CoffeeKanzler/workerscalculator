@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1940498868",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.928Z",
+  "buildings": [
+    {
+      "id": "1940498868/prefab",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 960,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.68,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 960
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Peoples Palace Flats Washed Out",
+      "workshopId": "1940498868",
+      "modPath": "prefab"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1980429086",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:11.010Z",
+  "buildings": [
+    {
+      "id": "1980429086/Ostankino",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 720,
+      "professors": 60,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ostankino",
+      "workshopId": "1980429086",
+      "modPath": "Ostankino"
+    }
+  ],
+  "vehicles": []
+}

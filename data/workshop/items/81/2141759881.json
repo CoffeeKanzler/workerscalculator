@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2141759881",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:50.996Z",
+  "buildings": [
+    {
+      "id": "2141759881/construction",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small shed as Construction Office",
+      "workshopId": "2141759881",
+      "modPath": "construction"
+    },
+    {
+      "id": "2141759881/depo",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small shed as Road Depot",
+      "workshopId": "2141759881",
+      "modPath": "depo"
+    },
+    {
+      "id": "2141759881/distrib",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small shed as Distrib Office",
+      "workshopId": "2141759881",
+      "modPath": "distrib"
+    },
+    {
+      "id": "2141759881/roadserv",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small shed as Technical Services",
+      "workshopId": "2141759881",
+      "modPath": "roadserv"
+    }
+  ],
+  "vehicles": []
+}

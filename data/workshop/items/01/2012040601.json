@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2012040601",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.197Z",
+  "buildings": [
+    {
+      "id": "2012040601/KM",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kilometer sign",
+      "workshopId": "2012040601",
+      "modPath": "KM"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2046239585",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.227Z",
+  "buildings": [
+    {
+      "id": "2046239585/Build13",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 160,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 160
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Build13",
+      "workshopId": "2046239585",
+      "modPath": "Build13"
+    },
+    {
+      "id": "2046239585/Build13x2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 288,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 288
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Build13",
+      "workshopId": "2046239585",
+      "modPath": "Build13x2"
+    },
+    {
+      "id": "2046239585/Build13x3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 410,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 410
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Build13",
+      "workshopId": "2046239585",
+      "modPath": "Build13x3"
+    },
+    {
+      "id": "2046239585/Build9",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Build9",
+      "workshopId": "2046239585",
+      "modPath": "Build9"
+    },
+    {
+      "id": "2046239585/Build9M",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Build9M",
+      "workshopId": "2046239585",
+      "modPath": "Build9M"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2083112460",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.550Z",
+  "buildings": [
+    {
+      "id": "2083112460/Checkpoint",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kayman Poster",
+      "workshopId": "2083112460",
+      "modPath": "Checkpoint"
+    },
+    {
+      "id": "2083112460/Container",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "SuperCargo Container",
+      "workshopId": "2083112460",
+      "modPath": "Container"
+    },
+    {
+      "id": "2083112460/FuelTank",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fuel Tank",
+      "workshopId": "2083112460",
+      "modPath": "FuelTank"
+    }
+  ],
+  "vehicles": []
+}

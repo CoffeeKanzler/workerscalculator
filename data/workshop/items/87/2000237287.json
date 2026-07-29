@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2000237287",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.171Z",
+  "buildings": [
+    {
+      "id": "2000237287/checkpoint",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Checkpoint",
+      "workshopId": "2000237287",
+      "modPath": "checkpoint"
+    }
+  ],
+  "vehicles": []
+}

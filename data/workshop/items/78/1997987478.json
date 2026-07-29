@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1997987478",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.159Z",
+  "buildings": [
+    {
+      "id": "1997987478/nayka",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nayka",
+      "workshopId": "1997987478",
+      "modPath": "nayka"
+    }
+  ],
+  "vehicles": []
+}

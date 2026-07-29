@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2042253420",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.202Z",
+  "buildings": [
+    {
+      "id": "2042253420/Energetic",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð­Ð½ÐµÑÐ³ÐµÑÐ¸Ðº",
+      "workshopId": "2042253420",
+      "modPath": "Energetic"
+    },
+    {
+      "id": "2042253420/Energetic2",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¸Ð½Ð¾ÑÐµÐ°ÑÑ",
+      "workshopId": "2042253420",
+      "modPath": "Energetic2"
+    },
+    {
+      "id": "2042253420/Prometey",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÑÐ¾Ð¼ÐµÑÐµÐ¹",
+      "workshopId": "2042253420",
+      "modPath": "Prometey"
+    },
+    {
+      "id": "2042253420/Unost",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 23,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð®Ð½Ð¾ÑÑÑ",
+      "workshopId": "2042253420",
+      "modPath": "Unost"
+    },
+    {
+      "id": "2042253420/administration",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 35,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾ÑÐ¸ÑÐ¿Ð¾Ð»ÐºÐ¾Ð¼",
+      "workshopId": "2042253420",
+      "modPath": "administration"
+    }
+  ],
+  "vehicles": []
+}

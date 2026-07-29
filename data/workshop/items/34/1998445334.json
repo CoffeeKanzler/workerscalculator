@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1998445334",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.160Z",
+  "buildings": [
+    {
+      "id": "1998445334/LoggingCamp",
+      "nameId": 7001,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "wood": 0.35
+      },
+      "consumption": {
+        "food": 0.01,
+        "alcohol": 0.005
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 0.1,
+        "living": 0.1,
+        "heating": 0.1
+      },
+      "workshopId": "1998445334",
+      "modPath": "LoggingCamp"
+    }
+  ],
+  "vehicles": []
+}

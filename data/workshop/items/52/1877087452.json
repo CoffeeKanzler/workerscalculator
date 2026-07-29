@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1877087452",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.316Z",
+  "buildings": [
+    {
+      "id": "1877087452/type14486",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "type-11486 flats",
+      "workshopId": "1877087452",
+      "modPath": "type14486"
+    },
+    {
+      "id": "1877087452/type1448618",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "type-1148618 flats",
+      "workshopId": "1877087452",
+      "modPath": "type1448618"
+    }
+  ],
+  "vehicles": []
+}

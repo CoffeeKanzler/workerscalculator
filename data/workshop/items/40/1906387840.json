@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1906387840",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.874Z",
+  "buildings": [
+    {
+      "id": "1906387840/trainoffice",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE_RAIL"
+      ],
+      "workers": 125,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 300
+      },
+      "constructionResources": {
+        "workers": 1800,
+        "concrete": 70,
+        "gravel": 100,
+        "asphalt": 100,
+        "steel": 30,
+        "prefabpanels": 100,
+        "boards": 5
+      },
+      "electricWorkerFactors": {
+        "living": 0.2,
+        "lighting": 0.2
+      },
+      "nameStr": "Large Rail Construction Office",
+      "workshopId": "1906387840",
+      "modPath": "trainoffice"
+    }
+  ],
+  "vehicles": []
+}

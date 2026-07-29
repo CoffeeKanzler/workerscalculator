@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2040218667",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.194Z",
+  "buildings": [
+    {
+      "id": "2040218667/PT-76",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PT-76",
+      "workshopId": "2040218667",
+      "modPath": "PT-76"
+    }
+  ],
+  "vehicles": []
+}

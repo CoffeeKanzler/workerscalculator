@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2024632942",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.225Z",
+  "buildings": [
+    {
+      "id": "2024632942/guevara",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CheGuevara",
+      "workshopId": "2024632942",
+      "modPath": "guevara"
+    },
+    {
+      "id": "2024632942/guevara2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "GuevaraFlagge",
+      "workshopId": "2024632942",
+      "modPath": "guevara2"
+    }
+  ],
+  "vehicles": []
+}

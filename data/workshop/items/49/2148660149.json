@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2148660149",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.024Z",
+  "buildings": [
+    {
+      "id": "2148660149/monument",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Monument Tupolev 144",
+      "workshopId": "2148660149",
+      "modPath": "monument"
+    }
+  ],
+  "vehicles": []
+}

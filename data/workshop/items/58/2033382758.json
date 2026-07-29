@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2033382758",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.150Z",
+  "buildings": [
+    {
+      "id": "2033382758/high_flow",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_OIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "oil": 30
+      },
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.02
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "High Flow Oil Rig",
+      "workshopId": "2033382758",
+      "modPath": "high_flow"
+    }
+  ],
+  "vehicles": []
+}

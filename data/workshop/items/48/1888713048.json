@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1888713048",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.334Z",
+  "buildings": [
+    {
+      "id": "1888713048/SmallCargoStation-2way",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Cargo Station-2way",
+      "workshopId": "1888713048",
+      "modPath": "SmallCargoStation-2way"
+    }
+  ],
+  "vehicles": []
+}

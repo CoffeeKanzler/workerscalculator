@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2038250240",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.192Z",
+  "buildings": [
+    {
+      "id": "2038250240/Minin_Pojarski",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Minin Pojarski",
+      "workshopId": "2038250240",
+      "modPath": "Minin_Pojarski"
+    }
+  ],
+  "vehicles": []
+}

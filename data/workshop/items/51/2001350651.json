@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2001350651",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.173Z",
+  "buildings": [
+    {
+      "id": "2001350651/longvehicledepot",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 150,
+        "concrete": 20,
+        "gravel": 20,
+        "asphalt": 10,
+        "prefabpanels": 20,
+        "steel": 5,
+        "boards": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Long Vehicle Depot",
+      "workshopId": "2001350651",
+      "modPath": "longvehicledepot"
+    }
+  ],
+  "vehicles": []
+}

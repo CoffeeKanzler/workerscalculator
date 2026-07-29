@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2153265668",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.053Z",
+  "buildings": [
+    {
+      "id": "2153265668/heating_endstation_big",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {
+        "heat": 700
+      },
+      "consumption": {
+        "coal": 0.56
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Coal heating plant",
+      "workshopId": "2153265668",
+      "modPath": "heating_endstation_big"
+    }
+  ],
+  "vehicles": []
+}

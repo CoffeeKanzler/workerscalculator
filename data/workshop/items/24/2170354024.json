@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2170354024",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.134Z",
+  "buildings": [
+    {
+      "id": "2170354024/fort",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 100,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 80
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ananuri Fortress",
+      "workshopId": "2170354024",
+      "modPath": "fort"
+    },
+    {
+      "id": "2170354024/fortm",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 80
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ananuri Fortress",
+      "workshopId": "2170354024",
+      "modPath": "fortm"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2047605521",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.230Z",
+  "buildings": [
+    {
+      "id": "2047605521/retorty",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 12,
+      "professors": 0,
+      "production": {
+        "coal": 0.4
+      },
+      "consumption": {
+        "wood": 2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Toprus Charcoal Burners",
+      "workshopId": "2047605521",
+      "modPath": "retorty"
+    }
+  ],
+  "vehicles": []
+}

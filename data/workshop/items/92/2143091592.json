@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2143091592",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.002Z",
+  "buildings": [
+    {
+      "id": "2143091592/azul",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2750,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2750
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cepsa Tower [Blue]",
+      "workshopId": "2143091592",
+      "modPath": "azul"
+    },
+    {
+      "id": "2143091592/ca",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2750,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2750
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cepsa Tower [Canada]",
+      "workshopId": "2143091592",
+      "modPath": "ca"
+    },
+    {
+      "id": "2143091592/esp",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2750,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2750
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cepsa Tower [Spain]",
+      "workshopId": "2143091592",
+      "modPath": "esp"
+    },
+    {
+      "id": "2143091592/morado",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2750,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2750
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cepsa Tower [Purple]",
+      "workshopId": "2143091592",
+      "modPath": "morado"
+    },
+    {
+      "id": "2143091592/pride",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2750,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2750
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cepsa Tower [Pride]",
+      "workshopId": "2143091592",
+      "modPath": "pride"
+    },
+    {
+      "id": "2143091592/rojo",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2750,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2750
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cepsa Tower [Red]",
+      "workshopId": "2143091592",
+      "modPath": "rojo"
+    },
+    {
+      "id": "2143091592/rus",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2750,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2750
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cepsa Tower [Russia]",
+      "workshopId": "2143091592",
+      "modPath": "rus"
+    },
+    {
+      "id": "2143091592/soviet",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2750,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2750
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cepsa Tower [Soviet Union]",
+      "workshopId": "2143091592",
+      "modPath": "soviet"
+    },
+    {
+      "id": "2143091592/ukr",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2750,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2750
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cepsa Tower [Ukraine]",
+      "workshopId": "2143091592",
+      "modPath": "ukr"
+    },
+    {
+      "id": "2143091592/verde",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2750,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2750
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cepsa Tower [Green]",
+      "workshopId": "2143091592",
+      "modPath": "verde"
+    }
+  ],
+  "vehicles": []
+}

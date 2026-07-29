@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2102664796",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.604Z",
+  "buildings": [
+    {
+      "id": "2102664796/cov_brown",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 650
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Covered Storage Brown",
+      "workshopId": "2102664796",
+      "modPath": "cov_brown"
+    },
+    {
+      "id": "2102664796/cov_green",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 650
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Covered Storage Green",
+      "workshopId": "2102664796",
+      "modPath": "cov_green"
+    },
+    {
+      "id": "2102664796/cov_original",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 650
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Covered Storage Original",
+      "workshopId": "2102664796",
+      "modPath": "cov_original"
+    },
+    {
+      "id": "2102664796/cov_red",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 650
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Covered Storage Red",
+      "workshopId": "2102664796",
+      "modPath": "cov_red"
+    },
+    {
+      "id": "2102664796/cov_yellow",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 650
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Covered Storage Yellow",
+      "workshopId": "2102664796",
+      "modPath": "cov_yellow"
+    }
+  ],
+  "vehicles": []
+}

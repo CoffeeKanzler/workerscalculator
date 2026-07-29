@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2098597596",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.599Z",
+  "buildings": [
+    {
+      "id": "2098597596/house13",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 250,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 250
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Spire house 1",
+      "workshopId": "2098597596",
+      "modPath": "house13"
+    },
+    {
+      "id": "2098597596/house13_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 250,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 250
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Spire house 2",
+      "workshopId": "2098597596",
+      "modPath": "house13_2"
+    }
+  ],
+  "vehicles": []
+}

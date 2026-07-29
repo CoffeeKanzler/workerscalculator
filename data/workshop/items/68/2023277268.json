@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2023277268",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.217Z",
+  "buildings": [
+    {
+      "id": "2023277268/SteelMillV3",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_IRON"
+      ],
+      "workers": 500,
+      "professors": 0,
+      "production": {
+        "steel": 0.4
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3050,
+        "boards": 1500,
+        "concrete": 1800,
+        "steel": 450
+      },
+      "electricWorkerFactors": {
+        "lighting": 50,
+        "living": 250
+      },
+      "nameStr": "Steel Mill v3",
+      "workshopId": "2023277268",
+      "modPath": "SteelMillV3"
+    }
+  ],
+  "vehicles": []
+}

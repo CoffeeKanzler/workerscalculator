@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1996319971",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.141Z",
+  "buildings": [
+    {
+      "id": "1996319971/GNII_42_1",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 360,
+      "professors": 220,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐ-42 | NII-42",
+      "workshopId": "1996319971",
+      "modPath": "GNII_42_1"
+    }
+  ],
+  "vehicles": []
+}

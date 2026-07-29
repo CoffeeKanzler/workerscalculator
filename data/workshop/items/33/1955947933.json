@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1955947933",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.948Z",
+  "buildings": [
+    {
+      "id": "1955947933/medium_ag_unldr",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Aggregate Unloader",
+      "workshopId": "1955947933",
+      "modPath": "medium_ag_unldr"
+    },
+    {
+      "id": "1955947933/red_ag_unldr",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Aggregate Unloader with Red Shed",
+      "workshopId": "1955947933",
+      "modPath": "red_ag_unldr"
+    },
+    {
+      "id": "1955947933/single_train_fuel",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Single Track Fuel Station",
+      "workshopId": "1955947933",
+      "modPath": "single_train_fuel"
+    },
+    {
+      "id": "1955947933/small_ag_unldr",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Aggregate Unloader",
+      "workshopId": "1955947933",
+      "modPath": "small_ag_unldr"
+    },
+    {
+      "id": "1955947933/truck_term_oil",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oil Loading Terminal",
+      "workshopId": "1955947933",
+      "modPath": "truck_term_oil"
+    },
+    {
+      "id": "1955947933/two_train_fuel",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Two Track Fuel Station",
+      "workshopId": "1955947933",
+      "modPath": "two_train_fuel"
+    }
+  ],
+  "vehicles": []
+}

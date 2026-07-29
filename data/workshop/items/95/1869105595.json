@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1869105595",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.287Z",
+  "buildings": [
+    {
+      "id": "1869105595/preschool",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Preschool",
+      "workshopId": "1869105595",
+      "modPath": "preschool"
+    }
+  ],
+  "vehicles": []
+}

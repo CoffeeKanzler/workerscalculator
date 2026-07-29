@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2174198243",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.160Z",
+  "buildings": [
+    {
+      "id": "2174198243/TRUCHOBI",
+      "nameId": 6001,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 800,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.5,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 800
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2174198243",
+      "modPath": "TRUCHOBI"
+    }
+  ],
+  "vehicles": []
+}

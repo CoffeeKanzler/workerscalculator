@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2051848032",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.240Z",
+  "buildings": [
+    {
+      "id": "2051848032/cflr",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "clothes": 0.01
+      },
+      "consumption": {
+        "fabric": 0.02
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Clothing Factory Red L",
+      "workshopId": "2051848032",
+      "modPath": "cflr"
+    },
+    {
+      "id": "2051848032/cflw",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "clothes": 0.01
+      },
+      "consumption": {
+        "fabric": 0.02
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Clothing Factory White L",
+      "workshopId": "2051848032",
+      "modPath": "cflw"
+    },
+    {
+      "id": "2051848032/cfrr",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "clothes": 0.01
+      },
+      "consumption": {
+        "fabric": 0.02
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Clothing Factory Red R",
+      "workshopId": "2051848032",
+      "modPath": "cfrr"
+    },
+    {
+      "id": "2051848032/clothing",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "clothes": 0.01
+      },
+      "consumption": {
+        "fabric": 0.02
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Clothing Factory White R",
+      "workshopId": "2051848032",
+      "modPath": "clothing"
+    }
+  ],
+  "vehicles": []
+}

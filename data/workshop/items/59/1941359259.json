@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1941359259",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.938Z",
+  "buildings": [
+    {
+      "id": "1941359259/townhall",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Town Hall",
+      "workshopId": "1941359259",
+      "modPath": "townhall"
+    }
+  ],
+  "vehicles": []
+}

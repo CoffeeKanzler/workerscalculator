@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2041250003",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.197Z",
+  "buildings": [
+    {
+      "id": "2041250003/Checkpoint_Rail",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {
+        "workers": 20,
+        "asphalt": 8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡heckpoint N2",
+      "workshopId": "2041250003",
+      "modPath": "Checkpoint_Rail"
+    },
+    {
+      "id": "2041250003/Checkpoint_Rail_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {
+        "workers": 20,
+        "asphalt": 8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡heckpoint N2 with the motto",
+      "workshopId": "2041250003",
+      "modPath": "Checkpoint_Rail_2"
+    }
+  ],
+  "vehicles": []
+}

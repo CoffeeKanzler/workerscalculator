@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2060649124",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.329Z",
+  "buildings": [
+    {
+      "id": "2060649124/con_extend",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Compact Connection Extender",
+      "workshopId": "2060649124",
+      "modPath": "con_extend"
+    }
+  ],
+  "vehicles": []
+}

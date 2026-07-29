@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2152760473",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.050Z",
+  "buildings": [
+    {
+      "id": "2152760473/electricalheater",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 600
+      },
+      "consumption": {
+        "eletric": 84
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electric Heating Plant",
+      "workshopId": "2152760473",
+      "modPath": "electricalheater"
+    },
+    {
+      "id": "2152760473/electricalheatersmall",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 200
+      },
+      "consumption": {
+        "eletric": 28
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electric Heating Plant Small",
+      "workshopId": "2152760473",
+      "modPath": "electricalheatersmall"
+    }
+  ],
+  "vehicles": []
+}

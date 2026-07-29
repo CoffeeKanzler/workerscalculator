@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2085125676",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.559Z",
+  "buildings": [
+    {
+      "id": "2085125676/station",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4000
+      },
+      "constructionResources": {
+        "workers": 3300,
+        "concrete": 180,
+        "gravel": 100,
+        "asphalt": 60,
+        "steel": 85,
+        "prefabpanels": 200,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Holden Station",
+      "workshopId": "2085125676",
+      "modPath": "station"
+    },
+    {
+      "id": "2085125676/stationreverse",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4000
+      },
+      "constructionResources": {
+        "workers": 3300,
+        "concrete": 180,
+        "gravel": 100,
+        "asphalt": 60,
+        "steel": 85,
+        "prefabpanels": 200,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Holden Station Reverse",
+      "workshopId": "2085125676",
+      "modPath": "stationreverse"
+    },
+    {
+      "id": "2085125676/stationsmall",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2000
+      },
+      "constructionResources": {
+        "workers": 2300,
+        "concrete": 132,
+        "gravel": 60,
+        "asphalt": 40,
+        "steel": 50,
+        "prefabpanels": 140,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Holden Station 2 Platform",
+      "workshopId": "2085125676",
+      "modPath": "stationsmall"
+    }
+  ],
+  "vehicles": []
+}

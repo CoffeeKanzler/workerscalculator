@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2116071428",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.640Z",
+  "buildings": [
+    {
+      "id": "2116071428/gmine",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_GRAVEL"
+      ],
+      "workers": 110,
+      "professors": 0,
+      "production": {
+        "gravel": 1.2
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 0.3,
+        "heating": 0.4
+      },
+      "nameStr": "Big Gravel Mine",
+      "workshopId": "2116071428",
+      "modPath": "gmine"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2105666097",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.619Z",
+  "buildings": [
+    {
+      "id": "2105666097/deadlock",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Deadlock",
+      "workshopId": "2105666097",
+      "modPath": "deadlock"
+    }
+  ],
+  "vehicles": []
+}

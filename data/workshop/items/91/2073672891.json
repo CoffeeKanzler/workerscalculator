@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2073672891",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.505Z",
+  "buildings": [
+    {
+      "id": "2073672891/BusTrolley_Station_S_v2_t",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 230,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 230
+      },
+      "constructionResources": {
+        "ecomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "B/T Station S V2",
+      "workshopId": "2073672891",
+      "modPath": "BusTrolley_Station_S_v2_t"
+    },
+    {
+      "id": "2073672891/BusTrolley_Station_S_v2_t_1way",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 230,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 230
+      },
+      "constructionResources": {
+        "ecomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "B/T Station S 1way",
+      "workshopId": "2073672891",
+      "modPath": "BusTrolley_Station_S_v2_t_1way"
+    },
+    {
+      "id": "2073672891/BusTrolley_Station_XS_v2_t_1way",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150
+      },
+      "constructionResources": {
+        "ecomponents": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "B/T Station XS 1way",
+      "workshopId": "2073672891",
+      "modPath": "BusTrolley_Station_XS_v2_t_1way"
+    },
+    {
+      "id": "2073672891/BusTrolley_Station_v2_L_t",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 500
+      },
+      "constructionResources": {
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "B/T Station L V2",
+      "workshopId": "2073672891",
+      "modPath": "BusTrolley_Station_v2_L_t"
+    }
+  ],
+  "vehicles": []
+}

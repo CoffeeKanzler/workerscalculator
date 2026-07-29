@@ -1,0 +1,769 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2144903815",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.009Z",
+  "buildings": [
+    {
+      "id": "2144903815/rbcBakerL",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "food": 0.2
+      },
+      "consumption": {
+        "plants": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Bakery Stone (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcBakerL"
+    },
+    {
+      "id": "2144903815/rbcBakerLR",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "food": 0.2
+      },
+      "consumption": {
+        "plants": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Bakery Brick (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcBakerLR"
+    },
+    {
+      "id": "2144903815/rbcBakerR",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "food": 0.2
+      },
+      "consumption": {
+        "plants": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Bakery Stone (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcBakerR"
+    },
+    {
+      "id": "2144903815/rbcBakerRR",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "food": 0.2
+      },
+      "consumption": {
+        "plants": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Bakery Brick (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcBakerRR"
+    },
+    {
+      "id": "2144903815/rbcBreweryL",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.075
+      },
+      "consumption": {
+        "plants": 0.375
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Brewery Stone (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcBreweryL"
+    },
+    {
+      "id": "2144903815/rbcBreweryLR",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.075
+      },
+      "consumption": {
+        "plants": 0.375
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Brewery Brick (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcBreweryLR"
+    },
+    {
+      "id": "2144903815/rbcBreweryR",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.075
+      },
+      "consumption": {
+        "plants": 0.375
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Brewery Stone (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcBreweryR"
+    },
+    {
+      "id": "2144903815/rbcBreweryRR",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.075
+      },
+      "consumption": {
+        "plants": 0.375
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Brewery Brick (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcBreweryRR"
+    },
+    {
+      "id": "2144903815/rbcClothingL",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "clothes": 0.01
+      },
+      "consumption": {
+        "fabric": 0.02
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Clothing Stone (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcClothingL"
+    },
+    {
+      "id": "2144903815/rbcClothingLR",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "clothes": 0.01
+      },
+      "consumption": {
+        "fabric": 0.02
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Clothing Brick (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcClothingLR"
+    },
+    {
+      "id": "2144903815/rbcClothingR",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "clothes": 0.01
+      },
+      "consumption": {
+        "fabric": 0.02
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Clothing Stone (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcClothingR"
+    },
+    {
+      "id": "2144903815/rbcClothingRR",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "clothes": 0.01
+      },
+      "consumption": {
+        "fabric": 0.02
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Clothing Brick (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcClothingRR"
+    },
+    {
+      "id": "2144903815/rbcFarmL",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Farm Stone (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcFarmL"
+    },
+    {
+      "id": "2144903815/rbcFarmLR",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Farm Brick (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcFarmLR"
+    },
+    {
+      "id": "2144903815/rbcFarmR",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Farm Stone (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcFarmR"
+    },
+    {
+      "id": "2144903815/rbcFarmRR",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Farm Brick (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcFarmRR"
+    },
+    {
+      "id": "2144903815/rbcFire",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Firestation Stone",
+      "workshopId": "2144903815",
+      "modPath": "rbcFire"
+    },
+    {
+      "id": "2144903815/rbcFireR",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Firestation Brick",
+      "workshopId": "2144903815",
+      "modPath": "rbcFireR"
+    },
+    {
+      "id": "2144903815/rbcStorage1L",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 90
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Store 1 Stone (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcStorage1L"
+    },
+    {
+      "id": "2144903815/rbcStorage1LR",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 90
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Store 1 Brick (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcStorage1LR"
+    },
+    {
+      "id": "2144903815/rbcStorage1R",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 90
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Store 1 Stone (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcStorage1R"
+    },
+    {
+      "id": "2144903815/rbcStorage1RR",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 90
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Store 1 Brick (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcStorage1RR"
+    },
+    {
+      "id": "2144903815/rbcStorage2L",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 180
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Store 2 Stone (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcStorage2L"
+    },
+    {
+      "id": "2144903815/rbcStorage2LR",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 180
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Store 2 Brick (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcStorage2LR"
+    },
+    {
+      "id": "2144903815/rbcStorage2R",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 180
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Store 2 Stone (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcStorage2R"
+    },
+    {
+      "id": "2144903815/rbcStorage2RR",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 180
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Store 2 Brick (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcStorage2RR"
+    },
+    {
+      "id": "2144903815/rbcTextilesL",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "fabric": 0.025
+      },
+      "consumption": {
+        "plants": 0.1,
+        "chemicals": 0.0025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.09
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Textiles Stone (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcTextilesL"
+    },
+    {
+      "id": "2144903815/rbcTextilesLR",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "fabric": 0.025
+      },
+      "consumption": {
+        "plants": 0.1,
+        "chemicals": 0.0025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.09
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Textiles Brick (L)",
+      "workshopId": "2144903815",
+      "modPath": "rbcTextilesLR"
+    },
+    {
+      "id": "2144903815/rbcTextilesR",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "fabric": 0.025
+      },
+      "consumption": {
+        "plants": 0.1,
+        "chemicals": 0.0025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.09
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Textiles Stone (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcTextilesR"
+    },
+    {
+      "id": "2144903815/rbcTextilesRR",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "fabric": 0.025
+      },
+      "consumption": {
+        "plants": 0.1,
+        "chemicals": 0.0025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.09
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Textiles Brick (R)",
+      "workshopId": "2144903815",
+      "modPath": "rbcTextilesRR"
+    }
+  ],
+  "vehicles": []
+}

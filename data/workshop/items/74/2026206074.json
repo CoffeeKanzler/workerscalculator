@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2026206074",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.251Z",
+  "buildings": [
+    {
+      "id": "2026206074/Cathedral",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 10,
+      "professors": 10,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 90,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1740,
+        "gravel": 82,
+        "concrete": 112,
+        "boards": 132,
+        "bricks": 570,
+        "steel": 47
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Orthodox Cathedral 2",
+      "workshopId": "2026206074",
+      "modPath": "Cathedral"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,729 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2034916737",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.155Z",
+  "buildings": [
+    {
+      "id": "2034916737/bfn131",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 Story Single New 1",
+      "workshopId": "2034916737",
+      "modPath": "bfn131"
+    },
+    {
+      "id": "2034916737/bfn132",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 Story Double New 1",
+      "workshopId": "2034916737",
+      "modPath": "bfn132"
+    },
+    {
+      "id": "2034916737/bfn141",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 64,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 64
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 Story Single New 1",
+      "workshopId": "2034916737",
+      "modPath": "bfn141"
+    },
+    {
+      "id": "2034916737/bfn142",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 128,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 128
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 Story Double New 1",
+      "workshopId": "2034916737",
+      "modPath": "bfn142"
+    },
+    {
+      "id": "2034916737/bfn151",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5 Story Single New 1",
+      "workshopId": "2034916737",
+      "modPath": "bfn151"
+    },
+    {
+      "id": "2034916737/bfn152",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 160,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 160
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5 Story Double New 1",
+      "workshopId": "2034916737",
+      "modPath": "bfn152"
+    },
+    {
+      "id": "2034916737/bfn231",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 Story Single New 2",
+      "workshopId": "2034916737",
+      "modPath": "bfn231"
+    },
+    {
+      "id": "2034916737/bfn232",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 Story Double New 2",
+      "workshopId": "2034916737",
+      "modPath": "bfn232"
+    },
+    {
+      "id": "2034916737/bfn241",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 64,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 64
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 Story Single New 2",
+      "workshopId": "2034916737",
+      "modPath": "bfn241"
+    },
+    {
+      "id": "2034916737/bfn242",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 128,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 128
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 Story Double New 2",
+      "workshopId": "2034916737",
+      "modPath": "bfn242"
+    },
+    {
+      "id": "2034916737/bfn251",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5 Story Single New 2",
+      "workshopId": "2034916737",
+      "modPath": "bfn251"
+    },
+    {
+      "id": "2034916737/bfn252",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 160,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 160
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5 Story Double New 2",
+      "workshopId": "2034916737",
+      "modPath": "bfn252"
+    },
+    {
+      "id": "2034916737/bfo131",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 Story Single Old 1",
+      "workshopId": "2034916737",
+      "modPath": "bfo131"
+    },
+    {
+      "id": "2034916737/bfo132",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 Story Double Old 1",
+      "workshopId": "2034916737",
+      "modPath": "bfo132"
+    },
+    {
+      "id": "2034916737/bfo141",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 64,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 64
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 Story Single Old 1",
+      "workshopId": "2034916737",
+      "modPath": "bfo141"
+    },
+    {
+      "id": "2034916737/bfo142",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 128,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 128
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 Story Double Old 1",
+      "workshopId": "2034916737",
+      "modPath": "bfo142"
+    },
+    {
+      "id": "2034916737/bfo151",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5 Story Single Old 1",
+      "workshopId": "2034916737",
+      "modPath": "bfo151"
+    },
+    {
+      "id": "2034916737/bfo152",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 160,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 160
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5 Story Double Old 1",
+      "workshopId": "2034916737",
+      "modPath": "bfo152"
+    },
+    {
+      "id": "2034916737/bfo231",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 Story Single Old 2",
+      "workshopId": "2034916737",
+      "modPath": "bfo231"
+    },
+    {
+      "id": "2034916737/bfo232",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 Story Double Old 2",
+      "workshopId": "2034916737",
+      "modPath": "bfo232"
+    },
+    {
+      "id": "2034916737/bfo241",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 64,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 64
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 Story Single Old 2",
+      "workshopId": "2034916737",
+      "modPath": "bfo241"
+    },
+    {
+      "id": "2034916737/bfo242",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 128,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 128
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 Story Double Old 2",
+      "workshopId": "2034916737",
+      "modPath": "bfo242"
+    },
+    {
+      "id": "2034916737/bfo251",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5 Story Single Old 2",
+      "workshopId": "2034916737",
+      "modPath": "bfo251"
+    },
+    {
+      "id": "2034916737/bfo252",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 160,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 160
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5 Story Double Old 2",
+      "workshopId": "2034916737",
+      "modPath": "bfo252"
+    },
+    {
+      "id": "2034916737/bfo331",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 Story Single Old 3",
+      "workshopId": "2034916737",
+      "modPath": "bfo331"
+    },
+    {
+      "id": "2034916737/bfo332",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 Story Double Old 3",
+      "workshopId": "2034916737",
+      "modPath": "bfo332"
+    },
+    {
+      "id": "2034916737/bfo341",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 64,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 64
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 Story Single Old 3",
+      "workshopId": "2034916737",
+      "modPath": "bfo341"
+    },
+    {
+      "id": "2034916737/bfo342",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 128,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 128
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 Story Double Old 3",
+      "workshopId": "2034916737",
+      "modPath": "bfo342"
+    },
+    {
+      "id": "2034916737/bfo351",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5 Story Single Old 3",
+      "workshopId": "2034916737",
+      "modPath": "bfo351"
+    },
+    {
+      "id": "2034916737/bfo352",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 160,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 160
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "5 Story Double Old 3",
+      "workshopId": "2034916737",
+      "modPath": "bfo352"
+    }
+  ],
+  "vehicles": []
+}

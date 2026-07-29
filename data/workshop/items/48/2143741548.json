@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2143741548",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.007Z",
+  "buildings": [
+    {
+      "id": "2143741548/wezel",
+      "nameId": 6332,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2143741548",
+      "modPath": "wezel"
+    },
+    {
+      "id": "2143741548/wezel2",
+      "nameId": 6332,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2143741548",
+      "modPath": "wezel2"
+    }
+  ],
+  "vehicles": []
+}

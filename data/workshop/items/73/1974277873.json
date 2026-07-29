@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1974277873",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.967Z",
+  "buildings": [
+    {
+      "id": "1974277873/pipe_trans_a11",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PIPE 2 INPUTS 6 OUTPUTS",
+      "workshopId": "1974277873",
+      "modPath": "pipe_trans_a11"
+    },
+    {
+      "id": "1974277873/pipe_trans_a12",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PIPE 2 OUTPUTS 6 INPUTS",
+      "workshopId": "1974277873",
+      "modPath": "pipe_trans_a12"
+    }
+  ],
+  "vehicles": []
+}

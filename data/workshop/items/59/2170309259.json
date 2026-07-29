@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2170309259",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.134Z",
+  "buildings": [
+    {
+      "id": "2170309259/storage_meat_trolley",
+      "nameId": 6106,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2170309259",
+      "modPath": "storage_meat_trolley"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1898421829",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.374Z",
+  "buildings": [
+    {
+      "id": "1898421829/livestock",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_LIVESTOCK": 600
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Livestock Hall Storage V2",
+      "workshopId": "1898421829",
+      "modPath": "livestock"
+    }
+  ],
+  "vehicles": []
+}

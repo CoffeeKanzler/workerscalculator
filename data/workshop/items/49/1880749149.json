@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1880749149",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.324Z",
+  "buildings": [
+    {
+      "id": "1880749149/KULTURA",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "KULTURA",
+      "workshopId": "1880749149",
+      "modPath": "KULTURA"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2167251589",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.128Z",
+  "buildings": [
+    {
+      "id": "2167251589/siedziba",
+      "nameId": 6020,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 40,
+      "professors": 40,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2167251589",
+      "modPath": "siedziba"
+    }
+  ],
+  "vehicles": []
+}

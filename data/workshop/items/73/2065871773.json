@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2065871773",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.352Z",
+  "buildings": [
+    {
+      "id": "2065871773/FuelTank",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 1,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1,
+        "lighting": 1
+      },
+      "nameStr": "Fuel Tank",
+      "workshopId": "2065871773",
+      "modPath": "FuelTank"
+    },
+    {
+      "id": "2065871773/GasStation",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gas Station",
+      "workshopId": "2065871773",
+      "modPath": "GasStation"
+    },
+    {
+      "id": "2065871773/OilBase",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 250
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tank Storage",
+      "workshopId": "2065871773",
+      "modPath": "OilBase"
+    },
+    {
+      "id": "2065871773/Service",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Car Service",
+      "workshopId": "2065871773",
+      "modPath": "Service"
+    },
+    {
+      "id": "2065871773/SuperCargo",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 20
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "SuperCargo Container",
+      "workshopId": "2065871773",
+      "modPath": "SuperCargo"
+    },
+    {
+      "id": "2065871773/base",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 300,
+        "RESOURCE_TRANSPORT_COOLER": 100
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cargo Base",
+      "workshopId": "2065871773",
+      "modPath": "base"
+    },
+    {
+      "id": "2065871773/base2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 300,
+        "RESOURCE_TRANSPORT_COOLER": 100
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cargo Base",
+      "workshopId": "2065871773",
+      "modPath": "base2"
+    },
+    {
+      "id": "2065871773/dispatch",
+      "nameId": null,
+      "types": [
+        "TYPE_CUSTOMHOUSE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1,
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_OIL": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cargo Dispatch Post",
+      "workshopId": "2065871773",
+      "modPath": "dispatch"
+    }
+  ],
+  "vehicles": []
+}

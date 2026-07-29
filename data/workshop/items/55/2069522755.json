@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2069522755",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.362Z",
+  "buildings": [
+    {
+      "id": "2069522755/vegetablegarden",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "food": 0.006
+      },
+      "consumption": {
+        "wood": 0.003
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1,
+        "living": 1
+      },
+      "nameStr": "Vegetable Garden",
+      "workshopId": "2069522755",
+      "modPath": "vegetablegarden"
+    },
+    {
+      "id": "2069522755/vegetablegarden2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "food": 0.006
+      },
+      "consumption": {
+        "wood": 0.003
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1,
+        "living": 1
+      },
+      "nameStr": "Vegetable Garden 2",
+      "workshopId": "2069522755",
+      "modPath": "vegetablegarden2"
+    },
+    {
+      "id": "2069522755/vegetablegarden3",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "food": 0.006
+      },
+      "consumption": {
+        "wood": 0.003
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1,
+        "living": 1
+      },
+      "nameStr": "Vegetable Garden 3",
+      "workshopId": "2069522755",
+      "modPath": "vegetablegarden3"
+    }
+  ],
+  "vehicles": []
+}

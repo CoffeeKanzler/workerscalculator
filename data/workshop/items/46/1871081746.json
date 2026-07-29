@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1871081746",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.289Z",
+  "buildings": [
+    {
+      "id": "1871081746/domek",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 70,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 70
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinismus 1A",
+      "workshopId": "1871081746",
+      "modPath": "domek"
+    },
+    {
+      "id": "1871081746/domek2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "SUBTYPE_HOSTEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 70,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 70
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinismus 1A Hostel",
+      "workshopId": "1871081746",
+      "modPath": "domek2"
+    }
+  ],
+  "vehicles": []
+}

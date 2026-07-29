@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1868172847",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.287Z",
+  "buildings": [
+    {
+      "id": "1868172847/Graffiti_brick_03",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.77,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brown Brick 174 Workers",
+      "workshopId": "1868172847",
+      "modPath": "Graffiti_brick_03"
+    }
+  ],
+  "vehicles": []
+}

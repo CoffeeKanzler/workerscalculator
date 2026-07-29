@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1992514036",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.127Z",
+  "buildings": [
+    {
+      "id": "1992514036/oil_pipeline_customs",
+      "nameId": null,
+      "types": [
+        "TYPE_CUSTOMHOUSE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oil pipeline customs",
+      "workshopId": "1992514036",
+      "modPath": "oil_pipeline_customs"
+    }
+  ],
+  "vehicles": []
+}

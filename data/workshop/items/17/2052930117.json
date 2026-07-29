@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2052930117",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.245Z",
+  "buildings": [
+    {
+      "id": "2052930117/przystanek",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 800,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 800
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Toprus Rural Passenger Stop",
+      "workshopId": "2052930117",
+      "modPath": "przystanek"
+    }
+  ],
+  "vehicles": []
+}

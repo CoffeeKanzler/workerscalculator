@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1872807444",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.299Z",
+  "buildings": [
+    {
+      "id": "1872807444/busstop_t_r",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "RoadRail Station",
+      "workshopId": "1872807444",
+      "modPath": "busstop_t_r"
+    }
+  ],
+  "vehicles": []
+}

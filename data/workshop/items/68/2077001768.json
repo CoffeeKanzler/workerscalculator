@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2077001768",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.528Z",
+  "buildings": [
+    {
+      "id": "2077001768/KBO",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 57,
+      "professors": 0,
+      "production": {
+        "clothes": 0.015
+      },
+      "consumption": {
+        "fabric": 0.03
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐ",
+      "workshopId": "2077001768",
+      "modPath": "KBO"
+    },
+    {
+      "id": "2077001768/Upiter",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 650,
+      "professors": 0,
+      "production": {
+        "ecomponents": 0.025,
+        "eletronics": 0.03,
+        "mcomponents": 0.1
+      },
+      "consumption": {
+        "plastics": 0.02,
+        "steel": 0.1,
+        "chemicals": 0.008
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.4
+      },
+      "nameStr": "Ð®Ð¿Ð¸ÑÐµÑ",
+      "workshopId": "2077001768",
+      "modPath": "Upiter"
+    },
+    {
+      "id": "2077001768/agroprom",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 87,
+      "professors": 12,
+      "production": {
+        "fuel": 0.03,
+        "bitumen": 0.01,
+        "coal": 0.02,
+        "boards": 0.01
+      },
+      "consumption": {
+        "wood": 0.1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1260,
+        "asphalt": 47,
+        "gravel": 39,
+        "concrete": 51,
+        "steel": 35,
+        "prefabpanels": 198
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐ ÐÐ³ÑÐ¾Ð¿ÑÐ¾Ð¼",
+      "workshopId": "2077001768",
+      "modPath": "agroprom"
+    },
+    {
+      "id": "2077001768/autobaza",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ²ÑÐ¾Ð±Ð°Ð·Ð°",
+      "workshopId": "2077001768",
+      "modPath": "autobaza"
+    },
+    {
+      "id": "2077001768/fabric",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "food": 0.6
+      },
+      "consumption": {
+        "plants": 0.9
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¤Ð°Ð±ÑÐ¸ÐºÐ°-ÐºÑÑÐ½Ñ",
+      "workshopId": "2077001768",
+      "modPath": "fabric"
+    },
+    {
+      "id": "2077001768/fabric_xlebzavod_p",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "food": 0.6
+      },
+      "consumption": {
+        "plants": 0.9
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¥Ð»ÐµÐ±Ð·Ð°Ð²Ð¾Ð´",
+      "workshopId": "2077001768",
+      "modPath": "fabric_xlebzavod_p"
+    },
+    {
+      "id": "2077001768/fabric_xlebzavod_s",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {
+        "food": 0.3
+      },
+      "consumption": {
+        "plants": 0.6
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡ÑÐ°ÑÑÐ¹ Ð¥Ð»ÐµÐ±Ð·Ð°Ð²Ð¾Ð´",
+      "workshopId": "2077001768",
+      "modPath": "fabric_xlebzavod_s"
+    },
+    {
+      "id": "2077001768/gravel",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {
+        "gravel": 7
+      },
+      "consumption": {
+        "rawgravel": 8.4
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÑÐ¾Ð±Ð¸Ð»ÐºÐ°",
+      "workshopId": "2077001768",
+      "modPath": "gravel"
+    },
+    {
+      "id": "2077001768/masterskaja",
+      "nameId": null,
+      "types": [
+        "TYPE_REPAIR_OFFICE"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ²ÑÐ¾Ð¼Ð°ÑÑÐµÑÑÐºÐ°Ñ",
+      "workshopId": "2077001768",
+      "modPath": "masterskaja"
+    },
+    {
+      "id": "2077001768/milk_kitchen",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 28,
+      "professors": 0,
+      "production": {
+        "food": 0.5
+      },
+      "consumption": {
+        "plants": 0.8
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾Ð»Ð¾ÑÐ½Ð°Ñ ÐºÑÑÐ½Ñ",
+      "workshopId": "2077001768",
+      "modPath": "milk_kitchen"
+    },
+    {
+      "id": "2077001768/smokehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 170,
+      "professors": 0,
+      "production": {
+        "food": 0.5
+      },
+      "consumption": {
+        "meat": 0.6
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.5
+      },
+      "nameStr": "ÐºÐ¾Ð¿ÑÐ¸Ð»ÑÐ½Ñ",
+      "workshopId": "2077001768",
+      "modPath": "smokehouse"
+    },
+    {
+      "id": "2077001768/vinogradnik",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 28,
+      "professors": 0,
+      "production": {
+        "plants": 1.25
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 0.03,
+        "steel": 0.01
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¸Ð½Ð¾Ð³ÑÐ°Ð´Ð½Ð¸Ðº",
+      "workshopId": "2077001768",
+      "modPath": "vinogradnik"
+    },
+    {
+      "id": "2077001768/vinogradnik_2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 44,
+      "professors": 0,
+      "production": {
+        "plants": 1.26
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 0.02,
+        "wood": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡Ð°Ð´",
+      "workshopId": "2077001768",
+      "modPath": "vinogradnik_2"
+    },
+    {
+      "id": "2077001768/vinogradnik_3",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 22,
+      "professors": 0,
+      "production": {
+        "plants": 0.25
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¢ÐµÐ¿Ð»Ð¸ÑÐ°",
+      "workshopId": "2077001768",
+      "modPath": "vinogradnik_3"
+    }
+  ],
+  "vehicles": []
+}

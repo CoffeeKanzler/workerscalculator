@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2115817391",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.638Z",
+  "buildings": [
+    {
+      "id": "2115817391/School",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 20,
+      "professors": 30,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "School",
+      "workshopId": "2115817391",
+      "modPath": "School"
+    }
+  ],
+  "vehicles": []
+}

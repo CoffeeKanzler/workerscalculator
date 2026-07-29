@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1951499574",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.947Z",
+  "buildings": [
+    {
+      "id": "1951499574/GSK",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Garage Cooperative",
+      "workshopId": "1951499574",
+      "modPath": "GSK"
+    }
+  ],
+  "vehicles": []
+}

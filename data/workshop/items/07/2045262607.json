@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2045262607",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.217Z",
+  "buildings": [
+    {
+      "id": "2045262607/Neurology",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 35,
+      "professors": 18,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐµÐ²ÑÐ¾Ð»Ð¾Ð³Ð¸Ñ",
+      "workshopId": "2045262607",
+      "modPath": "Neurology"
+    },
+    {
+      "id": "2045262607/hospital_1",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 250,
+      "professors": 135,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3400,
+        "asphalt": 95,
+        "gravel": 82,
+        "concrete": 158,
+        "steel": 75,
+        "prefabpanels": 650
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¼Ñ/Ñ-126",
+      "workshopId": "2045262607",
+      "modPath": "hospital_1"
+    },
+    {
+      "id": "2045262607/nychildhospital_2",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 68,
+      "professors": 54,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐµÑÑÐºÐ°Ñ Ð¿Ð¾Ð»Ð¸ÐºÐ»Ð¸Ð½Ð¸ÐºÐ°",
+      "workshopId": "2045262607",
+      "modPath": "nychildhospital_2"
+    }
+  ],
+  "vehicles": []
+}

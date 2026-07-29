@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2086654646",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.562Z",
+  "buildings": [
+    {
+      "id": "2086654646/blok",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Panel house 3",
+      "workshopId": "2086654646",
+      "modPath": "blok"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2026723605",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.259Z",
+  "buildings": [
+    {
+      "id": "2026723605/ak47",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "AK47 MONUMENT",
+      "workshopId": "2026723605",
+      "modPath": "ak47"
+    }
+  ],
+  "vehicles": []
+}

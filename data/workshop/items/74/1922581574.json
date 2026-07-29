@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1922581574",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.908Z",
+  "buildings": [
+    {
+      "id": "1922581574/elec_fac",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 150,
+      "professors": 0,
+      "production": {
+        "eletronics": 0.15
+      },
+      "consumption": {
+        "ecomponents": 0.06,
+        "plastics": 0.05,
+        "mcomponents": 0.06
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 0.12
+      },
+      "nameStr": "Large Electronics Assembly",
+      "workshopId": "1922581574",
+      "modPath": "elec_fac"
+    },
+    {
+      "id": "1922581574/tele_alt",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 120,
+      "professors": 70,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Alternate TV Station",
+      "workshopId": "1922581574",
+      "modPath": "tele_alt"
+    }
+  ],
+  "vehicles": []
+}

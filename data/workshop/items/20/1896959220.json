@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1896959220",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.372Z",
+  "buildings": [
+    {
+      "id": "1896959220/data",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "eletric": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lamp Post",
+      "workshopId": "1896959220",
+      "modPath": "data"
+    },
+    {
+      "id": "1896959220/data2",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "eletric": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lamp Post with wire connection",
+      "workshopId": "1896959220",
+      "modPath": "data2"
+    },
+    {
+      "id": "1896959220/data3",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "eletric": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Steel Lamp Post with wire connection",
+      "workshopId": "1896959220",
+      "modPath": "data3"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2137925072",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:50.990Z",
+  "buildings": [
+    {
+      "id": "2137925072/repo",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 80,
+      "professors": 40,
+      "production": {
+        "uf6": 0.0065,
+        "vehicles": 1
+      },
+      "consumption": {
+        "nuclearfuelburned": 0.0007,
+        "chemicals": 0.025,
+        "vehicles": 1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.7
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nuclear Reprocessing Plant",
+      "workshopId": "2137925072",
+      "modPath": "repo"
+    }
+  ],
+  "vehicles": []
+}

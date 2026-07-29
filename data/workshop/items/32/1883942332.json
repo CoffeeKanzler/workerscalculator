@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1883942332",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.330Z",
+  "buildings": [
+    {
+      "id": "1883942332/DES",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "eletric": 40
+      },
+      "consumption": {
+        "fuel": 0.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "DIZILPLANT",
+      "workshopId": "1883942332",
+      "modPath": "DES"
+    }
+  ],
+  "vehicles": []
+}

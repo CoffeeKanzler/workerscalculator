@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1995718265",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.138Z",
+  "buildings": [
+    {
+      "id": "1995718265/fence1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Plain Fence 01",
+      "workshopId": "1995718265",
+      "modPath": "fence1"
+    },
+    {
+      "id": "1995718265/fence10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Plain Fence 10",
+      "workshopId": "1995718265",
+      "modPath": "fence10"
+    },
+    {
+      "id": "1995718265/fence3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Plain Fence 03",
+      "workshopId": "1995718265",
+      "modPath": "fence3"
+    }
+  ],
+  "vehicles": []
+}

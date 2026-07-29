@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1891202320",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.352Z",
+  "buildings": [
+    {
+      "id": "1891202320/dedina1a",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "workers": 45,
+        "gravel": 1,
+        "boards": 2,
+        "bricks": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Dedina 1a",
+      "workshopId": "1891202320",
+      "modPath": "dedina1a"
+    },
+    {
+      "id": "1891202320/dedina1b",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "workers": 45,
+        "gravel": 1,
+        "boards": 2,
+        "bricks": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Dedina 1b",
+      "workshopId": "1891202320",
+      "modPath": "dedina1b"
+    },
+    {
+      "id": "1891202320/dedina2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6
+      },
+      "constructionResources": {
+        "workers": 40,
+        "gravel": 1,
+        "boards": 3,
+        "bricks": 12
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Dedina 2",
+      "workshopId": "1891202320",
+      "modPath": "dedina2"
+    },
+    {
+      "id": "1891202320/dedina3a",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "workers": 20,
+        "gravel": 1,
+        "bricks": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Dedina 3a",
+      "workshopId": "1891202320",
+      "modPath": "dedina3a"
+    },
+    {
+      "id": "1891202320/dedina3b",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "workers": 20,
+        "gravel": 1,
+        "bricks": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Dedina 3b",
+      "workshopId": "1891202320",
+      "modPath": "dedina3b"
+    },
+    {
+      "id": "1891202320/dedina4",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10
+      },
+      "constructionResources": {
+        "workers": 50,
+        "gravel": 1,
+        "boards": 5,
+        "bricks": 12
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Dedina 4",
+      "workshopId": "1891202320",
+      "modPath": "dedina4"
+    },
+    {
+      "id": "1891202320/dedina5",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 13,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 13
+      },
+      "constructionResources": {
+        "workers": 60,
+        "gravel": 1.5,
+        "boards": 5,
+        "bricks": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Dedina 5",
+      "workshopId": "1891202320",
+      "modPath": "dedina5"
+    },
+    {
+      "id": "1891202320/dedina6",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "workers": 40,
+        "gravel": 0.8,
+        "boards": 2,
+        "bricks": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Dedina 6",
+      "workshopId": "1891202320",
+      "modPath": "dedina6"
+    }
+  ],
+  "vehicles": []
+}

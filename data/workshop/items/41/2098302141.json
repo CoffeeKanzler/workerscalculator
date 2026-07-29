@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2098302141",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.599Z",
+  "buildings": [
+    {
+      "id": "2098302141/missilesilo",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nuclear Storage",
+      "workshopId": "2098302141",
+      "modPath": "missilesilo"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2062989768",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.343Z",
+  "buildings": [
+    {
+      "id": "2062989768/straz",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "OSP Skrzynka",
+      "workshopId": "2062989768",
+      "modPath": "straz"
+    }
+  ],
+  "vehicles": []
+}

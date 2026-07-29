@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2109168811",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.622Z",
+  "buildings": [
+    {
+      "id": "2109168811/blue",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 505,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 505
+      },
+      "constructionResources": {
+        "bricks": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Warshavskoye Sh. (blue)",
+      "workshopId": "2109168811",
+      "modPath": "blue"
+    },
+    {
+      "id": "2109168811/sand",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 505,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 505
+      },
+      "constructionResources": {
+        "bricks": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Kantemirovskaya Ul. (sand)",
+      "workshopId": "2109168811",
+      "modPath": "sand"
+    }
+  ],
+  "vehicles": []
+}

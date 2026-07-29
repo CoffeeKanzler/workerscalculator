@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2158035969",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.066Z",
+  "buildings": [
+    {
+      "id": "2158035969/RCO_Small",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE_RAIL"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 50
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 0.2,
+        "lighting": 0.2
+      },
+      "nameStr": "Small Railroad Construction Office",
+      "workshopId": "2158035969",
+      "modPath": "RCO_Small"
+    },
+    {
+      "id": "2158035969/RDO_Small",
+      "nameId": null,
+      "types": [
+        "TYPE_RAILDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Railroad Depot",
+      "workshopId": "2158035969",
+      "modPath": "RDO_Small"
+    }
+  ],
+  "vehicles": []
+}

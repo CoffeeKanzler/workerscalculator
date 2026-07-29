@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2080811031",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.542Z",
+  "buildings": [
+    {
+      "id": "2080811031/dom1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.76,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick House 1",
+      "workshopId": "2080811031",
+      "modPath": "dom1"
+    },
+    {
+      "id": "2080811031/dom2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.78,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick House 2",
+      "workshopId": "2080811031",
+      "modPath": "dom2"
+    },
+    {
+      "id": "2080811031/dom3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.74,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick House 3",
+      "workshopId": "2080811031",
+      "modPath": "dom3"
+    },
+    {
+      "id": "2080811031/dom4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick House 4",
+      "workshopId": "2080811031",
+      "modPath": "dom4"
+    },
+    {
+      "id": "2080811031/dom5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.69,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick House 5",
+      "workshopId": "2080811031",
+      "modPath": "dom5"
+    },
+    {
+      "id": "2080811031/dom6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.72,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick House 6",
+      "workshopId": "2080811031",
+      "modPath": "dom6"
+    },
+    {
+      "id": "2080811031/dom7",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.7,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick House 7",
+      "workshopId": "2080811031",
+      "modPath": "dom7"
+    },
+    {
+      "id": "2080811031/dom8",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.78,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick House 8",
+      "workshopId": "2080811031",
+      "modPath": "dom8"
+    }
+  ],
+  "vehicles": []
+}

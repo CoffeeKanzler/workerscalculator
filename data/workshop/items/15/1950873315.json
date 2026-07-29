@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1950873315",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.945Z",
+  "buildings": [
+    {
+      "id": "1950873315/jk_clothing_factory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 80,
+      "professors": 0,
+      "production": {
+        "clothes": 0.01
+      },
+      "consumption": {
+        "fabric": 0.03
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.25,
+        "living": 1.5
+      },
+      "nameStr": "Clothing factory (JK's RBIP)",
+      "workshopId": "1950873315",
+      "modPath": "jk_clothing_factory"
+    },
+    {
+      "id": "1950873315/jk_coal_processing",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "coal": 2.5
+      },
+      "consumption": {
+        "rawcoal": 7
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.25
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Coal ore processing plant (JK's RBIP)",
+      "workshopId": "1950873315",
+      "modPath": "jk_coal_processing"
+    },
+    {
+      "id": "1950873315/jk_livestock_farm",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "livestock": 0.06
+      },
+      "consumption": {
+        "plants": 0.2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.3,
+        "heating": 2
+      },
+      "nameStr": "Livestock farm (JK's RBIP)",
+      "workshopId": "1950873315",
+      "modPath": "jk_livestock_farm"
+    },
+    {
+      "id": "1950873315/jk_oil_mine",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_OIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "oil": 3.5
+      },
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.065
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oil rig (JK's RBIP)",
+      "workshopId": "1950873315",
+      "modPath": "jk_oil_mine"
+    },
+    {
+      "id": "1950873315/jk_oil_refinery",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 500,
+      "professors": 0,
+      "production": {
+        "fuel": 0.2,
+        "bitumen": 0.12
+      },
+      "consumption": {
+        "oil": 0.5
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.21
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oil refinery (JK's RBIP)",
+      "workshopId": "1950873315",
+      "modPath": "jk_oil_refinery"
+    },
+    {
+      "id": "1950873315/jk_powerplant_coal",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "eletric": 25
+      },
+      "consumption": {
+        "coal": 0.6
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Coal power plant (JK's RBIP)",
+      "workshopId": "1950873315",
+      "modPath": "jk_powerplant_coal"
+    }
+  ],
+  "vehicles": []
+}

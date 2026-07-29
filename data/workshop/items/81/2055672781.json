@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2055672781",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.309Z",
+  "buildings": [
+    {
+      "id": "2055672781/carshop",
+      "nameId": null,
+      "types": [
+        "TYPE_CAR_DEALER"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CarShop / ÐÐ²ÑÐ¾Ð¼Ð¾Ð±Ð¸Ð»Ð¸",
+      "workshopId": "2055672781",
+      "modPath": "carshop"
+    },
+    {
+      "id": "2055672781/carshop2",
+      "nameId": null,
+      "types": [
+        "TYPE_CAR_DEALER"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CarShop Your sign",
+      "workshopId": "2055672781",
+      "modPath": "carshop2"
+    },
+    {
+      "id": "2055672781/carshopua",
+      "nameId": null,
+      "types": [
+        "TYPE_CAR_DEALER"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Carshop/ ÐÐ²ÑÐ¾Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½ UA",
+      "workshopId": "2055672781",
+      "modPath": "carshopua"
+    }
+  ],
+  "vehicles": []
+}

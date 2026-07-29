@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2055482710",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.306Z",
+  "buildings": [
+    {
+      "id": "2055482710/IVA",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐ",
+      "workshopId": "2055482710",
+      "modPath": "IVA"
+    },
+    {
+      "id": "2055482710/kamenchanka",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 880,
+        "asphalt": 34,
+        "gravel": 36,
+        "concrete": 42,
+        "boards": 1.2,
+        "bricks": 95,
+        "steel": 1.5,
+        "mcomponents": 0.2,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ°Ð¼'ÑÐ½ÑÐ°Ð½ÐºÐ°",
+      "workshopId": "2055482710",
+      "modPath": "kamenchanka"
+    },
+    {
+      "id": "2055482710/olimpija",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 28,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.2,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1030,
+        "asphalt": 34,
+        "gravel": 36,
+        "concrete": 51,
+        "boards": 7,
+        "steel": 8,
+        "bricks": 163,
+        "prefabpanels": 19,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ»Ð¸Ð¼Ð¿Ð¸Ñ",
+      "workshopId": "2055482710",
+      "modPath": "olimpija"
+    },
+    {
+      "id": "2055482710/privet",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 7,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ ÐÐÐÐ¢",
+      "workshopId": "2055482710",
+      "modPath": "privet"
+    },
+    {
+      "id": "2055482710/restaurant",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1260,
+        "asphalt": 34,
+        "gravel": 36,
+        "concrete": 42,
+        "steel": 15,
+        "prefabpanels": 195
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð ÐµÑÑÐ¾ÑÐ°Ð½",
+      "workshopId": "2055482710",
+      "modPath": "restaurant"
+    }
+  ],
+  "vehicles": []
+}

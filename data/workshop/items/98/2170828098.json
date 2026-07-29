@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2170828098",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.141Z",
+  "buildings": [
+    {
+      "id": "2170828098/shop_prior_trolley",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 45,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shop Prior Trolley",
+      "workshopId": "2170828098",
+      "modPath": "shop_prior_trolley"
+    }
+  ],
+  "vehicles": []
+}

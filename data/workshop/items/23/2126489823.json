@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2126489823",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:50.965Z",
+  "buildings": [
+    {
+      "id": "2126489823/gdansk",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {
+        "heat": 200
+      },
+      "consumption": {
+        "coal": 0.2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gdansk Oliwa Heating Plant",
+      "workshopId": "2126489823",
+      "modPath": "gdansk"
+    },
+    {
+      "id": "2126489823/olsztyn",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 150
+      },
+      "consumption": {
+        "coal": 0.15
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Olsztyn Heating Plant",
+      "workshopId": "2126489823",
+      "modPath": "olsztyn"
+    },
+    {
+      "id": "2126489823/pompa",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Belchatow Forwarding Pump",
+      "workshopId": "2126489823",
+      "modPath": "pompa"
+    },
+    {
+      "id": "2126489823/rusocin",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 4,
+      "professors": 0,
+      "production": {
+        "heat": 100
+      },
+      "consumption": {
+        "coal": 0.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rusocin Heating Plant",
+      "workshopId": "2126489823",
+      "modPath": "rusocin"
+    }
+  ],
+  "vehicles": []
+}

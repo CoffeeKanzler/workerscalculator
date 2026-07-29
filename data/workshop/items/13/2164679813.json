@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2164679813",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.106Z",
+  "buildings": [
+    {
+      "id": "2164679813/StationLong",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10000
+      },
+      "constructionResources": {
+        "gravel": 480,
+        "concrete": 80,
+        "workers": 4500,
+        "steel": 65,
+        "bricks": 120,
+        "asphalt": 70,
+        "boards": 125
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Train Station 'Baltis' LONG",
+      "workshopId": "2164679813",
+      "modPath": "StationLong"
+    },
+    {
+      "id": "2164679813/StationMedium",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5000
+      },
+      "constructionResources": {
+        "gravel": 275,
+        "concrete": 65,
+        "workers": 2750,
+        "steel": 65,
+        "bricks": 120,
+        "asphalt": 70,
+        "boards": 120
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Train Station 'Baltis' MEDIUM",
+      "workshopId": "2164679813",
+      "modPath": "StationMedium"
+    },
+    {
+      "id": "2164679813/StationShort",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1500
+      },
+      "constructionResources": {
+        "gravel": 195,
+        "concrete": 55,
+        "workers": 1900,
+        "steel": 55,
+        "bricks": 120,
+        "asphalt": 70,
+        "boards": 117.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Train Station 'Baltis' SHORT",
+      "workshopId": "2164679813",
+      "modPath": "StationShort"
+    }
+  ],
+  "vehicles": []
+}

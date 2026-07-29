@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2029422565",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.271Z",
+  "buildings": [
+    {
+      "id": "2029422565/overheadpassage",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000,
+        "RESOURCE_TRANSPORT_COVERED": 50
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ°Ð´Ð·ÐµÐ¼Ð½ÑÐ¹ Ð¿ÐµÑÐµÑÐ¾Ð´",
+      "workshopId": "2029422565",
+      "modPath": "overheadpassage"
+    },
+    {
+      "id": "2029422565/overheadpassage1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000,
+        "RESOURCE_TRANSPORT_COVERED": 50,
+        "RESOURCE_TRANSPORT_OIL": 0.03
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ°Ð´Ð·ÐµÐ¼Ð½ÑÐ¹ Ñ ÑÑÑÐ±Ð¾Ð¹",
+      "workshopId": "2029422565",
+      "modPath": "overheadpassage1"
+    },
+    {
+      "id": "2029422565/overheadpassage2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000,
+        "RESOURCE_TRANSPORT_COVERED": 50,
+        "RESOURCE_TRANSPORT_GRAVEL": 0.03
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ°Ð´Ð·ÐµÐ¼Ð½ÑÐ¹ Ñ ÐºÐ¾Ð½Ð²ÐµÐµÑÐ¾Ð¼",
+      "workshopId": "2029422565",
+      "modPath": "overheadpassage2"
+    },
+    {
+      "id": "2029422565/overheadpassage4",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¢ÑÐ°Ð¼Ð²Ð°Ð¹-Ð°Ð²ÑÐ¾Ð±ÑÑ",
+      "workshopId": "2029422565",
+      "modPath": "overheadpassage4"
+    },
+    {
+      "id": "2029422565/overheadpassage5",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ°Ð´Ð·ÐµÐ¼Ð½ÑÐ¹ Ð¿ÐµÑÐµÑÐ¾Ð´",
+      "workshopId": "2029422565",
+      "modPath": "overheadpassage5"
+    },
+    {
+      "id": "2029422565/undercrossing",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000,
+        "RESOURCE_TRANSPORT_COVERED": 50
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾Ð´Ð·ÐµÐ¼Ð½ÑÐ¹ Ð¿ÐµÑÐµÑÐ¾Ð´",
+      "workshopId": "2029422565",
+      "modPath": "undercrossing"
+    },
+    {
+      "id": "2029422565/undercrossing2",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾Ð´Ð·ÐµÐ¼Ð½ÑÐ¹ Ð¿ÐµÑÐµÑÐ¾Ð´",
+      "workshopId": "2029422565",
+      "modPath": "undercrossing2"
+    }
+  ],
+  "vehicles": []
+}

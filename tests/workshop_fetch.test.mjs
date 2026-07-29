@@ -72,3 +72,18 @@ test('a backlog smaller than one batch is a single batch', async () => {
   assert.deepEqual(batches(['a', 'b'], 100), [['a', 'b']]);
   assert.deepEqual(batches([], 100), []);
 });
+
+// Items already catalogued are skipped on a re-run, which is right — but they
+// were being skipped past the pruning that happens alongside cataloguing, so
+// their raw downloads accumulated across runs. 14 GB had built up before this
+// was noticed, against a backlog that does not fit on the disk.
+test('a re-run reclaims downloads for items it already holds', async () => {
+  const source = await import('node:fs').then(fs =>
+    fs.readFileSync(new URL('../tools/workshop_fetch.mjs', import.meta.url), 'utf8'));
+
+  assert.match(source, /reclaimed \$\{reclaimed\} download\(s\) already catalogued/);
+  // The reclaim must consult what was requested, not the filtered list, or it
+  // can never see the items that were skipped.
+  assert.match(source, /const requested = new Set\(ids\);/);
+  assert.match(source, /for \(const id of requested\)/);
+});

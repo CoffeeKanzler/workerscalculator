@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2084691301",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.555Z",
+  "buildings": [
+    {
+      "id": "2084691301/Asphalt",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "asphalt": 29
+      },
+      "consumption": {
+        "gravel": 25,
+        "bitumen": 4,
+        "eletric": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt Plant Big",
+      "workshopId": "2084691301",
+      "modPath": "Asphalt"
+    }
+  ],
+  "vehicles": []
+}

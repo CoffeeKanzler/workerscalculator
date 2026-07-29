@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2023159439",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.215Z",
+  "buildings": [
+    {
+      "id": "2023159439/playground1",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 1,
+        "concrete": 1,
+        "workers": 20,
+        "boards": 1,
+        "steel": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Playground",
+      "workshopId": "2023159439",
+      "modPath": "playground1"
+    },
+    {
+      "id": "2023159439/playground2",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 1,
+        "concrete": 1,
+        "workers": 20,
+        "boards": 1,
+        "steel": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Playground",
+      "workshopId": "2023159439",
+      "modPath": "playground2"
+    },
+    {
+      "id": "2023159439/playground3",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 1,
+        "concrete": 1,
+        "workers": 20,
+        "boards": 1,
+        "steel": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Playground",
+      "workshopId": "2023159439",
+      "modPath": "playground3"
+    }
+  ],
+  "vehicles": []
+}

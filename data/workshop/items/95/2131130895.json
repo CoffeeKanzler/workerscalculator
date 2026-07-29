@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2131130895",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:50.977Z",
+  "buildings": [
+    {
+      "id": "2131130895/bar",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Furgon bar",
+      "workshopId": "2131130895",
+      "modPath": "bar"
+    }
+  ],
+  "vehicles": []
+}

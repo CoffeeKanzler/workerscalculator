@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2082243308",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.548Z",
+  "buildings": [
+    {
+      "id": "2082243308/rail_gas_station_4pc",
+      "nameId": 6309,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2082243308",
+      "modPath": "rail_gas_station_4pc"
+    }
+  ],
+  "vehicles": []
+}

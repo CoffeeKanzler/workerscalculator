@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1941356858",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.929Z",
+  "buildings": [
+    {
+      "id": "1941356858/Domina_27",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 151,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 151
+      },
+      "constructionResources": {
+        "asphalt": 3.8,
+        "bricks": 24
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_27"
+    },
+    {
+      "id": "1941356858/Domina_27_2",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 151,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 151
+      },
+      "constructionResources": {
+        "asphalt": 3.8,
+        "bricks": 24
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_27_2"
+    },
+    {
+      "id": "1941356858/Domina_27_3",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 151,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 151
+      },
+      "constructionResources": {
+        "asphalt": 3.8,
+        "bricks": 24
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_27_3"
+    },
+    {
+      "id": "1941356858/Domina_28",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 51,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 51
+      },
+      "constructionResources": {
+        "asphalt": 3.8,
+        "bricks": 18
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_28"
+    },
+    {
+      "id": "1941356858/Domina_28_2",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 51,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 51
+      },
+      "constructionResources": {
+        "asphalt": 3.8,
+        "bricks": 18
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_28_2"
+    },
+    {
+      "id": "1941356858/Domina_28_3",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 51,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 51
+      },
+      "constructionResources": {
+        "asphalt": 3.8,
+        "bricks": 18
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_28_3"
+    },
+    {
+      "id": "1941356858/Domina_29",
+      "nameId": 6101,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 130,
+      "professors": 0,
+      "production": {
+        "food": 0.11
+      },
+      "consumption": {
+        "plants": 0.32
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 2.2,
+        "concrete": 22.5,
+        "gravel": 19.5,
+        "boards": 22.4,
+        "bricks": 121.5
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_29"
+    },
+    {
+      "id": "1941356858/Domina_30",
+      "nameId": 6356,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 320,
+      "professors": 0,
+      "production": {
+        "eletronics": 0.05
+      },
+      "consumption": {
+        "ecomponents": 0.03,
+        "plastics": 0.02,
+        "mcomponents": 0.03
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 10,
+        "mcomponents": 3.5,
+        "boards": 90.1,
+        "bricks": 80.2,
+        "steel": 80
+      },
+      "electricWorkerFactors": {
+        "living": 1.4
+      },
+      "workshopId": "1941356858",
+      "modPath": "Domina_30"
+    },
+    {
+      "id": "1941356858/Domina_31",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 46,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.57,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 46
+      },
+      "constructionResources": {
+        "asphalt": 1.8,
+        "bricks": 12
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_31"
+    },
+    {
+      "id": "1941356858/Domina_31_1",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 46,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.57,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 46
+      },
+      "constructionResources": {
+        "asphalt": 1.8,
+        "bricks": 12
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_31_1"
+    },
+    {
+      "id": "1941356858/Domina_31_2",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 46,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.57,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 46
+      },
+      "constructionResources": {
+        "asphalt": 1.8,
+        "bricks": 12
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_31_2"
+    },
+    {
+      "id": "1941356858/Domina_31_3",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 46,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.57,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 46
+      },
+      "constructionResources": {
+        "asphalt": 1.8,
+        "bricks": 12
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_31_3"
+    },
+    {
+      "id": "1941356858/Domina_32",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 161,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 161
+      },
+      "constructionResources": {
+        "asphalt": 1.8,
+        "steel": 8,
+        "bricks": 22
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_32"
+    },
+    {
+      "id": "1941356858/Domina_33",
+      "nameId": 6251,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 18,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 11,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 4.8,
+        "bricks": 26
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_33"
+    },
+    {
+      "id": "1941356858/Domina_34",
+      "nameId": 6106,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 500
+      },
+      "constructionResources": {
+        "asphalt": 2.8,
+        "bricks": 25
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_34"
+    },
+    {
+      "id": "1941356858/Domina_35",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 830
+      },
+      "constructionResources": {
+        "asphalt": 7.8,
+        "boards": 30,
+        "bricks": 70
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_35"
+    },
+    {
+      "id": "1941356858/Domina_35_1",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 275
+      },
+      "constructionResources": {
+        "asphalt": 7.8,
+        "boards": 10,
+        "bricks": 23
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_35_1"
+    },
+    {
+      "id": "1941356858/Domina_36",
+      "nameId": 6256,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 60,
+      "professors": 85,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 12.8,
+        "boards": 70,
+        "bricks": 170
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_36"
+    },
+    {
+      "id": "1941356858/Domina_37",
+      "nameId": 6256,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 7,
+      "professors": 9,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 12.8,
+        "boards": 5,
+        "bricks": 10
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_37"
+    },
+    {
+      "id": "1941356858/Domina_38",
+      "nameId": 6257,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 35,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 30.2,
+        "concrete": 78.5,
+        "gravel": 60.5,
+        "bricks": 91.5
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_38"
+    },
+    {
+      "id": "1941356858/Domina_39",
+      "nameId": 6256,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 45,
+      "professors": 51,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 12.8,
+        "boards": 40,
+        "bricks": 80
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_39"
+    },
+    {
+      "id": "1941356858/Domina_40",
+      "nameId": 6054,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 420,
+      "professors": 0,
+      "production": {
+        "chemicals": 0.02
+      },
+      "consumption": {
+        "gravel": 0.02,
+        "wood": 0.032,
+        "plants": 0.02,
+        "oil": 0.02
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.24
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 25.3,
+        "bricks": 218,
+        "workers": 2100,
+        "mcomponents": 10.5,
+        "boards": 75,
+        "concrete": 180,
+        "steel": 125
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_40"
+    },
+    {
+      "id": "1941356858/Domina_41",
+      "nameId": 6351,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 920,
+      "professors": 0,
+      "production": {
+        "fabric": 0.1
+      },
+      "consumption": {
+        "plants": 0.35,
+        "chemicals": 0.012
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.18
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 22.8,
+        "boards": 40,
+        "mcomponents": 12,
+        "concrete": 300,
+        "workers": 1837,
+        "ecomponents": 13.8,
+        "bricks": 148,
+        "steel": 167.85
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "1941356858",
+      "modPath": "Domina_41"
+    }
+  ],
+  "vehicles": []
+}

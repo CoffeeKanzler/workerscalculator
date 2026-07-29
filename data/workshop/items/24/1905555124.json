@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1905555124",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.867Z",
+  "buildings": [
+    {
+      "id": "1905555124/station",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Drive Through Bus Station",
+      "workshopId": "1905555124",
+      "modPath": "station"
+    },
+    {
+      "id": "1905555124/station_small",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 230,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 230
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Drive Through Station Small",
+      "workshopId": "1905555124",
+      "modPath": "station_small"
+    }
+  ],
+  "vehicles": []
+}

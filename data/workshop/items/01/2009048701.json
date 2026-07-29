@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2009048701",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.188Z",
+  "buildings": [
+    {
+      "id": "2009048701/nine_storey_residential_complex",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 228,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 228
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¿Ð°Ð½ÐµÐ»ÑÐ½ÑÐ¹ Ð´Ð¾Ð¼",
+      "workshopId": "2009048701",
+      "modPath": "nine_storey_residential_complex"
+    }
+  ],
+  "vehicles": []
+}

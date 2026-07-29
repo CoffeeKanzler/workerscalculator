@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2024153519",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.224Z",
+  "buildings": [
+    {
+      "id": "2024153519/cutter_auto",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "wood": 5.5
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 0.6,
+        "living": 0.2,
+        "heating": 0.2
+      },
+      "nameStr": "Auto Woodcutter",
+      "workshopId": "2024153519",
+      "modPath": "cutter_auto"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2124712073",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.665Z",
+  "buildings": [
+    {
+      "id": "2124712073/gazeboA",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 4,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 49,
+        "concrete": 0.8,
+        "gravel": 1.1,
+        "boards": 6.9,
+        "bricks": 2.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Gazebo A",
+      "workshopId": "2124712073",
+      "modPath": "gazeboA"
+    },
+    {
+      "id": "2124712073/gazeboC",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 39,
+        "concrete": 0.7,
+        "gravel": 1,
+        "boards": 5.1,
+        "bricks": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Gazebo C",
+      "workshopId": "2124712073",
+      "modPath": "gazeboC"
+    },
+    {
+      "id": "2124712073/signA",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 19,
+        "concrete": 0.4,
+        "boards": 1.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sign A",
+      "workshopId": "2124712073",
+      "modPath": "signA"
+    },
+    {
+      "id": "2124712073/signB",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 11,
+        "concrete": 0.4,
+        "boards": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sign B",
+      "workshopId": "2124712073",
+      "modPath": "signB"
+    },
+    {
+      "id": "2124712073/tableA",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3,
+        "boards": 1.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Table A",
+      "workshopId": "2124712073",
+      "modPath": "tableA"
+    },
+    {
+      "id": "2124712073/tableB",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3,
+        "prefabpanels": 1.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Table B",
+      "workshopId": "2124712073",
+      "modPath": "tableB"
+    }
+  ],
+  "vehicles": []
+}

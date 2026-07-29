@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1892463659",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.354Z",
+  "buildings": [
+    {
+      "id": "1892463659/grocery_store",
+      "nameId": 6250,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "1892463659",
+      "modPath": "grocery_store"
+    }
+  ],
+  "vehicles": []
+}

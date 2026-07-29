@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2013204450",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.198Z",
+  "buildings": [
+    {
+      "id": "2013204450/smallcementplant",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "cement": 0.6
+      },
+      "consumption": {
+        "coal": 0.15,
+        "gravel": 1.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Cement Plant",
+      "workshopId": "2013204450",
+      "modPath": "smallcementplant"
+    }
+  ],
+  "vehicles": []
+}

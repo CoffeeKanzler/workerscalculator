@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1907532040",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.877Z",
+  "buildings": [
+    {
+      "id": "1907532040/panel_factory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "prefabpanels": 1.1
+      },
+      "consumption": {
+        "cement": 0.15,
+        "gravel": 1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1
+      },
+      "nameStr": "Small Panel Factory",
+      "workshopId": "1907532040",
+      "modPath": "panel_factory"
+    }
+  ],
+  "vehicles": []
+}

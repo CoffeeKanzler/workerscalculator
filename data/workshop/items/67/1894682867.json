@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1894682867",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.358Z",
+  "buildings": [
+    {
+      "id": "1894682867/aluminiummine",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_GRAVEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "rawbauxite": 1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3050,
+        "boards": 75,
+        "concrete": 180,
+        "steel": 45
+      },
+      "electricWorkerFactors": {
+        "lighting": 5,
+        "living": 5
+      },
+      "nameStr": "Bauxite Mine ï¼Autoï¼",
+      "workshopId": "1894682867",
+      "modPath": "aluminiummine"
+    },
+    {
+      "id": "1894682867/coalmine",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_COAL",
+        "TYPE_MINE_GRAVEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "rawcoal": 4.2
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3050,
+        "boards": 75,
+        "concrete": 180,
+        "steel": 45
+      },
+      "electricWorkerFactors": {
+        "lighting": 5,
+        "living": 5
+      },
+      "nameStr": "Coal Mine ï¼Autoï¼",
+      "workshopId": "1894682867",
+      "modPath": "coalmine"
+    },
+    {
+      "id": "1894682867/ironmine",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_IRON",
+        "TYPE_MINE_GRAVEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "rawiron": 4
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3050,
+        "boards": 75,
+        "concrete": 180,
+        "steel": 45
+      },
+      "electricWorkerFactors": {
+        "lighting": 5,
+        "living": 5
+      },
+      "nameStr": "Iron Mine ï¼Autoï¼",
+      "workshopId": "1894682867",
+      "modPath": "ironmine"
+    },
+    {
+      "id": "1894682867/uraniummine",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_GRAVEL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "uranium": 1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3050,
+        "boards": 75,
+        "concrete": 180,
+        "steel": 45
+      },
+      "electricWorkerFactors": {
+        "lighting": 5,
+        "living": 5
+      },
+      "nameStr": "Uranium Mine ï¼Autoï¼",
+      "workshopId": "1894682867",
+      "modPath": "uraniummine"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1865226599",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.284Z",
+  "buildings": [
+    {
+      "id": "1865226599/VFD",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Volunteer Firestation East Germany, 3 fireengines",
+      "workshopId": "1865226599",
+      "modPath": "VFD"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2034758904",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.154Z",
+  "buildings": [
+    {
+      "id": "2034758904/busstation",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 750,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 750
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bus station / ÐÐ²ÑÐ¾ÑÑÐ°Ð½ÑÑÑ",
+      "workshopId": "2034758904",
+      "modPath": "busstation"
+    },
+    {
+      "id": "2034758904/busstation2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 750,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 750
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bus station Own sign",
+      "workshopId": "2034758904",
+      "modPath": "busstation2"
+    }
+  ],
+  "vehicles": []
+}

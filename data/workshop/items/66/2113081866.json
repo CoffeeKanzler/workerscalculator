@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2113081866",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.632Z",
+  "buildings": [
+    {
+      "id": "2113081866/brick_variant",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 18,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kindergarten 212-2-66 BRICK",
+      "workshopId": "2113081866",
+      "modPath": "brick_variant"
+    },
+    {
+      "id": "2113081866/tile_variant",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 18,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kindergarten 212-2-66 TILE",
+      "workshopId": "2113081866",
+      "modPath": "tile_variant"
+    }
+  ],
+  "vehicles": []
+}

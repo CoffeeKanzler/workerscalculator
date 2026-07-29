@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1915462022",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.893Z",
+  "buildings": [
+    {
+      "id": "1915462022/4_road_depo",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 spot vehicle depo",
+      "workshopId": "1915462022",
+      "modPath": "4_road_depo"
+    },
+    {
+      "id": "1915462022/4slot_parking",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "4 slot parking for residential houses",
+      "workshopId": "1915462022",
+      "modPath": "4slot_parking"
+    },
+    {
+      "id": "1915462022/Ruralrefuelingstation",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Refueling Station",
+      "workshopId": "1915462022",
+      "modPath": "Ruralrefuelingstation"
+    },
+    {
+      "id": "1915462022/Small_powerstation",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "eletric": 16.8
+      },
+      "consumption": {
+        "fuel": 0.18
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Power Station",
+      "workshopId": "1915462022",
+      "modPath": "Small_powerstation"
+    },
+    {
+      "id": "1915462022/grocer_0",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prefab Grocery Store",
+      "workshopId": "1915462022",
+      "modPath": "grocer_0"
+    },
+    {
+      "id": "1915462022/gstore_0",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prefab Goods Store",
+      "workshopId": "1915462022",
+      "modPath": "gstore_0"
+    },
+    {
+      "id": "1915462022/mediumrefuelingstation",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Refueling Station",
+      "workshopId": "1915462022",
+      "modPath": "mediumrefuelingstation"
+    },
+    {
+      "id": "1915462022/small_road_depo",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "small 8 slot vehicle depo",
+      "workshopId": "1915462022",
+      "modPath": "small_road_depo"
+    },
+    {
+      "id": "1915462022/xtra_small_powerstation",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "eletric": 8.4
+      },
+      "consumption": {
+        "fuel": 0.06
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Farm Generator Shed",
+      "workshopId": "1915462022",
+      "modPath": "xtra_small_powerstation"
+    }
+  ],
+  "vehicles": []
+}

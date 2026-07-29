@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1964101537",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:10.950Z",
+  "buildings": [
+    {
+      "id": "1964101537/UNIVERSAM",
+      "nameId": 6261,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "1964101537",
+      "modPath": "UNIVERSAM"
+    }
+  ],
+  "vehicles": []
+}

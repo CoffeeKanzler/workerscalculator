@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2108761328",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.621Z",
+  "buildings": [
+    {
+      "id": "2108761328/pub_3fc",
+      "nameId": 6254,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2108761328",
+      "modPath": "pub_3fc"
+    }
+  ],
+  "vehicles": []
+}

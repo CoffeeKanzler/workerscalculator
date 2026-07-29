@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2096567498",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:52:57.596Z",
+  "buildings": [
+    {
+      "id": "2096567498/freenergy",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 63,
+      "professors": 14,
+      "production": {
+        "eletric": 75
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "free energy",
+      "workshopId": "2096567498",
+      "modPath": "freenergy"
+    },
+    {
+      "id": "2096567498/tidal_power_plant",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 57,
+      "professors": 12,
+      "production": {
+        "eletric": 68
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¿ÑÐ¸Ð»Ð¸Ð²Ð½Ð°Ñ ÑÑÐ°Ð½ÑÐ¸Ñ",
+      "workshopId": "2096567498",
+      "modPath": "tidal_power_plant"
+    }
+  ],
+  "vehicles": []
+}

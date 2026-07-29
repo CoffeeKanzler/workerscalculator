@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2037897449",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.190Z",
+  "buildings": [
+    {
+      "id": "2037897449/3rail_stor",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 2500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": " 3 Rail Modified Covered Storage",
+      "workshopId": "2037897449",
+      "modPath": "3rail_stor"
+    },
+    {
+      "id": "2037897449/cov_stor",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 2500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Modified Covered Storage",
+      "workshopId": "2037897449",
+      "modPath": "cov_stor"
+    }
+  ],
+  "vehicles": []
+}

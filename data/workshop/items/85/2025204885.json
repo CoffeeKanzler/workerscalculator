@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2025204885",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.233Z",
+  "buildings": [
+    {
+      "id": "2025204885/magazyn",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 60
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Toprus Small Railway Storage",
+      "workshopId": "2025204885",
+      "modPath": "magazyn"
+    }
+  ],
+  "vehicles": []
+}

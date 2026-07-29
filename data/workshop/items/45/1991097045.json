@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1991097045",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:36:11.054Z",
+  "buildings": [
+    {
+      "id": "1991097045/selmag",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Selmag",
+      "workshopId": "1991097045",
+      "modPath": "selmag"
+    }
+  ],
+  "vehicles": []
+}

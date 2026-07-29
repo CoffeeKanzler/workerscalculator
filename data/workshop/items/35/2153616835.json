@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2153616835",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:17:51.054Z",
+  "buildings": [
+    {
+      "id": "2153616835/church",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 300,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1680,
+        "concrete": 62,
+        "gravel": 20,
+        "steel": 10,
+        "prefabpanels": 141,
+        "boards": 30
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Arctic Cathedral",
+      "workshopId": "2153616835",
+      "modPath": "church"
+    }
+  ],
+  "vehicles": []
+}

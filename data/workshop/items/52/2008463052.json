@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2008463052",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:41:36.187Z",
+  "buildings": [
+    {
+      "id": "2008463052/Detskij_sad_87",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 17,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 16,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kindergarten 87",
+      "workshopId": "2008463052",
+      "modPath": "Detskij_sad_87"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2064302840",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.349Z",
+  "buildings": [
+    {
+      "id": "2064302840/com1_002a",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 30000,
+        "RESOURCE_TRANSPORT_COOLER": 5000,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 2500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Cargo Storage V2",
+      "workshopId": "2064302840",
+      "modPath": "com1_002a"
+    },
+    {
+      "id": "2064302840/com2_01a",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 30000,
+        "RESOURCE_TRANSPORT_COOLER": 5000,
+        "RESOURCE_TRANSPORT_VEHICLES": 15,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 2500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Cargo / Vehicle Storage V2",
+      "workshopId": "2064302840",
+      "modPath": "com2_01a"
+    }
+  ],
+  "vehicles": []
+}

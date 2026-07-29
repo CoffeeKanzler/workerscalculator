@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1881653738",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:28:47.325Z",
+  "buildings": [
+    {
+      "id": "1881653738/Gazeta",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 25,
+      "professors": 15,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gazeta",
+      "workshopId": "1881653738",
+      "modPath": "Gazeta"
+    }
+  ],
+  "vehicles": []
+}

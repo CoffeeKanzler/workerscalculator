@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2054163016",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:47:09.293Z",
+  "buildings": [
+    {
+      "id": "2054163016/rudo",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 640,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 640
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rudo",
+      "workshopId": "2054163016",
+      "modPath": "rudo"
+    }
+  ],
+  "vehicles": []
+}
