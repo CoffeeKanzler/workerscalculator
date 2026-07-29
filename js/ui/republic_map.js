@@ -29,6 +29,30 @@ export function filterMapBuildings(buildings, query) {
       .some(value => String(value ?? '').toLocaleLowerCase().includes(needle)));
 }
 
+export function residenceDetailForBuilding(building, summaries, options) {
+  const capacity = Number.isFinite(options.capacity) && options.capacity >= 0
+    ? options.capacity : null;
+  const summary = summaries instanceof Map
+    ? summaries.get(building.index)
+    : summaries.find(detail => detail.buildingIndex === building.index);
+  if (summary) return { ...summary, capacity };
+  if (!options.residential) return null;
+  return {
+    buildingIndex: building.index,
+    residents: 0,
+    adults: 0,
+    children: 0,
+    higherEducation: 0,
+    health: null,
+    happiness: null,
+    loyalty: null,
+    criminality: null,
+    highestCriminality: null,
+    highRiskResidents: 0,
+    capacity,
+  };
+}
+
 export function summarizeMapViewport(buildings, bounds) {
   const visible = buildings.filter(building =>
     building.mapX >= bounds.minX && building.mapX <= bounds.maxX

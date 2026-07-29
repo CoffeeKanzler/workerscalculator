@@ -506,6 +506,22 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .alert-tail { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
 .map-building-inspector { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 14px; margin: 8px 0; padding: 10px 12px; border: 1px solid var(--border); border-radius: 7px; background: var(--panel); }
 .map-building-inspector h3, .map-building-inspector > p { grid-column: 1 / -1; margin: 0; }
+.map-residence-ledger {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.map-residence-ledger h4 {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.map-residence-ledger .kv {
+  gap: 12px;
+}
 .republic-map.standalone circle[data-map-kind] { cursor: pointer; }
 .republic-map circle.map-inspected { stroke: var(--accent2); stroke-width: 3; vector-effect: non-scaling-stroke; }
 

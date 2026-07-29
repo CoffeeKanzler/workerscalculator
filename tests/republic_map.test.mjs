@@ -6,6 +6,7 @@ import {
   filterMapBuildings,
   mapPointToLeaflet,
   normalizeMapMetric,
+  residenceDetailForBuilding,
   summarizeMapViewport,
 } from '../js/ui/republic_map.js';
 
@@ -69,4 +70,26 @@ test('viewport summary only totals visible filtered buildings', () => {
   }), {
     buildings: 2, workers: 11, positions: 17, underConstruction: 1,
   });
+});
+
+test('residence details join by exact building index and retain exact zero', () => {
+  const summaries = [{
+    buildingIndex: 7, residents: 12, adults: 8, children: 4,
+    higherEducation: 3, health: 0.8, happiness: 0.7, loyalty: 0.6,
+    criminality: 0.02, highestCriminality: 0.12, highRiskResidents: 1,
+  }];
+  assert.deepEqual(residenceDetailForBuilding(
+    { index: 7 }, summaries, { residential: true, capacity: 20 },
+  ), { ...summaries[0], capacity: 20 });
+  assert.deepEqual(residenceDetailForBuilding(
+    { index: 8 }, summaries, { residential: true, capacity: 40 },
+  ), {
+    buildingIndex: 8, residents: 0, adults: 0, children: 0,
+    higherEducation: 0, health: null, happiness: null, loyalty: null,
+    criminality: null, highestCriminality: null, highRiskResidents: 0,
+    capacity: 40,
+  });
+  assert.equal(residenceDetailForBuilding(
+    { index: 9 }, summaries, { residential: false, capacity: null },
+  ), null);
 });

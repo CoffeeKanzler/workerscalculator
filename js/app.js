@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=131';
+import { STRINGS } from './i18n.js?v=133';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -54,8 +54,11 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=11';
-import { normalizeMapMetric } from './ui/republic_map.js?v=6';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=15';
+import {
+  normalizeMapMetric,
+  residenceDetailForBuilding,
+} from './ui/republic_map.js?v=8';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -2727,11 +2730,11 @@ function buildingEstablishment(building) {
     + (Number.isFinite(building.configuredWorkersHighEducation) ? building.configuredWorkersHighEducation : 0);
 }
 
-function mapBuildingDisplayName(building) {
-  const raw = matchSaveBuilding(building.type,
-    [...(DATA.rawBuildings ?? []), ...(DATA.workshopBuildings ?? [])], entry => entry.id);
-  const localized = state.lang === 'de' ? raw?.de : raw?.en;
-  return localized || raw?.en || raw?.de || raw?.nameStr || building.type || t('building');
+function mapBuildingDisplayName(building, catalog = matchSaveBuilding(building.type,
+  [...(DATA.rawBuildings ?? []), ...(DATA.workshopBuildings ?? [])], entry => entry.id)) {
+  const localized = state.lang === 'de' ? catalog?.de : catalog?.en;
+  return localized || catalog?.en || catalog?.de || catalog?.nameStr
+    || building.type || t('building');
 }
 
 function standaloneWaterImageHref(water) {
@@ -2790,8 +2793,11 @@ function standalonePollutionImageHref(pollution) {
 
 function renderMapBuildingInspector(building) {
   const progress = building.constructionProgress ?? 1;
+  const percentOrDash = value =>
+    Number.isFinite(value) ? `${fmt(value * 100, 0)} %` : '—';
+  const residence = building.residenceDetail;
   return el('aside', { class: 'map-building-inspector', 'aria-live': 'polite' },
-    el('h3', {}, mapBuildingDisplayName(building),
+    el('h3', {}, building.displayName || mapBuildingDisplayName(building),
       el('span', { class: 'evidence-badge exact' }, t('exact'))),
     building.name ? kv(t('savedBuildingName'), building.name) : null,
     kv(t('savedBuildingType'), building.type || '—'),
@@ -2801,6 +2807,25 @@ function renderMapBuildingInspector(building) {
       ? `${t('underConstruction')} · ${fmt(progress * 100, 0)} %` : t('completed')),
     buildingEstablishment(building) > 0
       ? kv(t('staffing'), `${fmt(building.currentWorkers ?? 0, 0)} / ${fmt(buildingEstablishment(building), 0)}`) : null,
+    residence ? el('section', {
+      class: 'map-residence-ledger', 'data-residence-ledger': '',
+    },
+    el('h4', {}, t('residenceLedger')),
+    kv(t('occupancy'), residence.capacity == null
+      ? fmt(residence.residents, 0)
+      : `${fmt(residence.residents, 0)} / ${fmt(residence.capacity, 0)}`),
+    kv(t('residentComposition'),
+      `${fmt(residence.adults, 0)} ${t('adults')} · `
+      + `${fmt(residence.children, 0)} ${t('children')} · `
+      + `${fmt(residence.higherEducation, 0)} ${t('higherEducationShort')}`),
+    kv(t('residentWellbeing'),
+      `${percentOrDash(residence.health)} ${t('health')} · `
+      + `${percentOrDash(residence.happiness)} ${t('happiness')} · `
+      + `${percentOrDash(residence.loyalty)} ${t('loyalty')}`),
+    kv(t('residentCriminality'),
+      `${t('averageShort')} ${percentOrDash(residence.criminality)} · `
+      + `${t('highest')} ${percentOrDash(residence.highestCriminality)} · `
+      + `${fmt(residence.highRiskResidents, 0)} ${t('highRiskResidents')}`)) : null,
     kv(t('mapCoordinates'), `X ${fmt(building.x, 1)} · Z ${fmt(building.z, 1)}`));
 }
 
@@ -2808,15 +2833,24 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
   const mapMetric = normalizeMapMetric(state.mapMetric);
   if (state.mapMetric !== mapMetric) state.mapMetric = mapMetric;
   const scopeNames = new Map(model.scopes.map(scope => [scope.id, scope.name]));
-  const categoryIndex = buildTypeCategoryIndex(
-    [...(DATA?.rawBuildings ?? []), ...(DATA?.workshopBuildings ?? [])]);
+  const catalogEntries = [...(DATA?.rawBuildings ?? []), ...(DATA?.workshopBuildings ?? [])];
+  const categoryIndex = buildTypeCategoryIndex(catalogEntries);
+  const residenceDetails = new Map(
+    (state.saveImport?.residenceDetails?.buildings ?? [])
+      .map(detail => [detail.buildingIndex, detail]),
+  );
   const buildings = model.buildings.filter(building =>
     !isExternalAirLinkType(building.type) && building.type !== 'temp').map(building => {
+    const catalog = matchSaveBuilding(building.type, catalogEntries, entry => entry.id);
     const category = categoryForSaveType(building.type, categoryIndex);
     return {
       ...building,
       category,
-      displayName: mapBuildingDisplayName(building),
+      displayName: mapBuildingDisplayName(building, catalog),
+      residenceDetail: residenceDetailForBuilding(building, residenceDetails, {
+        residential: category === 'living',
+        capacity: Number.isFinite(catalog?.livingSpace) ? catalog.livingSpace : null,
+      }),
       areaName: scopeNames.get(building.scopeId) ?? t('unassigned'),
       markScale: CATEGORY_MARKS[category]?.scale ?? CATEGORY_MARKS.other.scale,
       borderPost: isBorderPostType(building.type),
@@ -2864,6 +2898,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
       countLabels.set(category, count);
       return el('button', {
         class: categoryVisibility[category] === false ? 'muted' : 'active',
+        'data-map-category': category,
         'aria-pressed': String(categoryVisibility[category] !== false),
         onclick: event => {
           const visible = event.currentTarget.getAttribute('aria-pressed') !== 'true';
