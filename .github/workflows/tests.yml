@@ -25,9 +25,10 @@ jobs:
           # structuredClone needs 17+, Object.hasOwn 16.9+. 22 is current LTS.
           node-version: '22'
 
-      # Reviewed browser libraries may be committed under js/vendor and
-      # css/vendor. They stay offline static assets; a lockfile or node_modules
-      # would mean the no-build browser contract changed.
+      # Pinned, reviewed uPlot 1.6.31 and Leaflet 1.9.4 copies are permitted
+      # under js/vendor and css/vendor. They make large histories and republic
+      # maps interactive without uploading save data or requiring a build;
+      # a lockfile or node_modules would mean that offline contract changed.
       - name: Confirm the project has no install-time dependencies
         run: |
           if [ -f package-lock.json ] || [ -d node_modules ]; then
