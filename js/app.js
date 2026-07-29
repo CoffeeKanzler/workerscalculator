@@ -58,7 +58,7 @@ import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=29';
 import { workerAccessAvailability } from './models/access_graph.js?v=9';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=9';
 import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=3';
-import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=2';
+import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=3';
 import {
   buildMapTransportLines,
   mapCountOrDash,
