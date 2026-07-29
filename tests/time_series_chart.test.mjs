@@ -31,6 +31,26 @@ test('series summaries expose exact first last minimum and maximum values', () =
   }]);
 });
 
+test('one zoom range reaches every chart in a group and reset restores auto range', () => {
+  assert.equal(typeof chartModule.createChartGroupState, 'function');
+  const calls = [];
+  const group = chartModule.createChartGroupState();
+  group.add({ setScale: (key, range) => calls.push(['a', key, range]) });
+  group.add({ setScale: (key, range) => calls.push(['b', key, range]) });
+
+  group.setRange(10, 20);
+  assert.deepEqual(calls.slice(-2), [
+    ['a', 'x', { min: 10, max: 20 }],
+    ['b', 'x', { min: 10, max: 20 }],
+  ]);
+
+  group.reset();
+  assert.deepEqual(calls.slice(-2), [
+    ['a', 'x', { min: null, max: null }],
+    ['b', 'x', { min: null, max: null }],
+  ]);
+});
+
 test('uPlot is pinned locally with its license and no CDN import', async () => {
   const files = await Promise.all([
     fs.readFile(path.join(ROOT, 'js/vendor/uPlot.esm.js'), 'utf8').catch(() => ''),

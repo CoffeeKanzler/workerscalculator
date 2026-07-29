@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=125';
+import { STRINGS } from './i18n.js?v=127';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -49,8 +49,10 @@ import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
 } from './republic.js?v=12';
-import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
-import { cursorReadout, tooltipPlacement, plotFraction } from './ui/chart_cursor.js?v=7';
+import { filterRange, seriesFromRecords } from './timeseries.js?v=1';
+import {
+  destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
+} from './ui/time_series_chart.js?v=3';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -105,6 +107,7 @@ let mapSelectedBuildingIndex = null;
 let standaloneMapViewBox = null;
 let compactMapExpanded = false;
 let compactMapOpen = false;
+let pendingChartMounts = [];
 let constructionPage = 1;
 let constructionDetailsOpen = false;
 let constructionProgressFilter = 'all';
@@ -657,6 +660,8 @@ function render() {
   document.title = t('appTitle');
   applyTheme();
   const root = $('#app');
+  destroyTimeSeriesCharts();
+  pendingChartMounts = [];
 
   // Preserve focus/cursor/typed-but-unparsed text across the full re-render
   // triggered by every keystroke (see numInput's 'input' listener) — without
@@ -679,6 +684,8 @@ function render() {
     ...[renderImportActivity()].filter(Boolean),
     renderTabs(), renderCurrentTab());
   decorateResponsiveTables(root);
+  for (const mount of pendingChartMounts) mount();
+  pendingChartMounts = [];
 
   if (focusPath) {
     let node = root;
@@ -1191,81 +1198,31 @@ function renderHistory() {
   // axis produced a meaningless min/max and a mislabeled (single-currency)
   // axis.
   const tables = state.currency === 'USD' ? ['sellUSD', 'purchaseUSD'] : ['sellRUB', 'purchaseRUB'];
-  const colors = [
-    ['#c0392b', '#e67e22'], ['#2980b9', '#3498db'], ['#8e44ad', '#9b59b6'],
-  ];
   const recs = state.statsRecords;
   const labelFor = tab => t(tab === 'sellRUB' ? 'sellRUB'
     : tab === 'purchaseRUB' ? 'buyRUB' : tab === 'sellUSD' ? 'sellUSD' : 'buyUSD');
   const series = selectedResources.flatMap((resource, resourceIndex) => tables.map((tab, tableIndex) => ({
-    tab, color: colors[resourceIndex][tableIndex],
+    tab,
+    colorSlot: resourceIndex * 2 + tableIndex + 1,
     label: `${rname(resource)} · ${labelFor(tab)}`,
     points: seriesFromRecords(recs, record => record[tab]?.[resource.key])
       .filter(point => !state.historyLogScale || point.y > 0),
   }))).filter(item => item.points.length);
-  const all = series.flatMap(item => item.points);
-  if (!all.length) { box.append(el('p', {}, '—')); return box; }
-  const W = 460, H = 220, P = 34;
-  const min = state.historyLogScale ? Math.min(...all.map(point => point.y))
-    : Math.min(0, ...all.map(point => point.y));
-  const max = Math.max(...all.map(point => point.y));
-  const minX = Math.min(...all.map(point => point.x));
-  const maxX = Math.max(...all.map(point => point.x));
-  const x = value => P + (W - 2 * P) * ((value - minX) / ((maxX - minX) || 1));
-  const yValue = value => state.historyLogScale ? Math.log10(value) : value;
-  const minY = yValue(min), maxY = yValue(max);
-  const y = value => H - P - (H - 2 * P) * ((yValue(value) - minY) / ((maxY - minY) || 1));
-  const svgNS = 'http://www.w3.org/2000/svg';
-  const svg = document.createElementNS(svgNS, 'svg');
-  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-  svg.setAttribute('class', 'chart');
-  svg.setAttribute('role', 'img');
-  svg.setAttribute('aria-label', `${t('history')}: ${selectedResources.map(rname).join(', ')}`);
-  for (const item of series) {
-    const sampled = downsampleMinMax(item.points, 160);
-    const pl = document.createElementNS(svgNS, 'polyline');
-    pl.setAttribute('points', sampled.map(point => `${x(point.x)},${y(point.y)}`).join(' '));
-    pl.setAttribute('fill', 'none');
-    pl.setAttribute('stroke', item.color);
-    pl.setAttribute('stroke-width', '1.6');
-    pl.setAttribute('vector-effect', 'non-scaling-stroke');
-    svg.append(pl);
-    appendChartPointMarkers(svg, item, sampled, x, y, svgNS, ` ${cur()}`);
-  }
-  appendChartAxisLabel(svg, `${fmt(max)} ${cur()}`, 3, 12, svgNS);
-  appendChartAxisLabel(svg, fmt(min), 3, H - 4, svgNS);
-  appendChartAxisLabel(svg, all.reduce((a, b) => a.x <= b.x ? a : b).label, P, H - 5, svgNS);
-  appendChartAxisLabel(svg, all.reduce((a, b) => a.x >= b.x ? a : b).label,
-    W - P, H - 5, svgNS, 'end');
-  box.append(svg,
-    el('div', { class: 'legend' }, ...series.map(item =>
-      el('span', {}, el('i', { style: `background:${item.color}` }), item.label))));
+  if (!series.length) { box.append(el('p', {}, '—')); return box; }
+  const host = el('div', {});
+  box.append(host);
+  pendingChartMounts.push(() => mountTimeSeriesChart(host, {
+    title: `${t('history')}: ${selectedResources.map(rname).join(', ')}`,
+    series,
+    group: 'price-history',
+    logScale: !!state.historyLogScale,
+    formatValue: value => fmt(value, 2),
+    valueSuffix: ` ${cur()}`,
+    resetZoomLabel: t('resetChartZoom'),
+    summaryTemplate: t('chartSeriesSummary'),
+    height: 250,
+  }));
   return box;
-}
-
-function appendChartAxisLabel(svg, value, x, y, ns, anchor = null) {
-  const node = document.createElementNS(ns, 'text');
-  node.setAttribute('x', x);
-  node.setAttribute('y', y);
-  node.setAttribute('class', 'axislabel');
-  if (anchor) node.setAttribute('text-anchor', anchor);
-  node.textContent = value;
-  svg.append(node);
-}
-
-function appendChartPointMarkers(svg, item, points, x, y, ns, suffix = '') {
-  for (const point of points) {
-    const marker = document.createElementNS(ns, 'circle');
-    marker.setAttribute('class', 'chart-point');
-    marker.setAttribute('cx', x(point.x));
-    marker.setAttribute('cy', y(point.y));
-    marker.setAttribute('r', 2.6);
-    marker.setAttribute('fill', item.color);
-    const tooltip = document.createElementNS(ns, 'title');
-    tooltip.textContent = `${item.label}: ${point.label} = ${fmt(point.y, 2)}${suffix}`;
-    marker.append(tooltip);
-    svg.append(marker);
-  }
 }
 
 // ---------------------------------------------------------------- production tab
@@ -2678,109 +2635,18 @@ function renderRepublicLineChart(title, series, evidence = 'stats.ini') {
   const nonEmpty = series.filter(item => item.points.length);
   if (!nonEmpty.length) return el('div', { class: 'history republic-chart' },
     el('h3', {}, title), el('p', { class: 'hint' }, t('unavailable')));
-  const points = nonEmpty.flatMap(item => item.points);
-  const minX = Math.min(...points.map(point => point.x));
-  const maxX = Math.max(...points.map(point => point.x));
-  const minY = Math.min(0, ...points.map(point => point.y));
-  const maxY = Math.max(...points.map(point => point.y));
-  const W = 640, H = 190, P = 32;
-  const x = value => P + (W - 2 * P) * ((value - minX) / ((maxX - minX) || 1));
-  const y = value => H - P - (H - 2 * P) * ((value - minY) / ((maxY - minY) || 1));
-  const ns = 'http://www.w3.org/2000/svg';
-  const svg = document.createElementNS(ns, 'svg');
-  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-  svg.setAttribute('class', 'chart');
-  svg.setAttribute('role', 'img');
-  svg.setAttribute('aria-label', title);
-  // The cursor reads the sampled series, not the raw one: it must report a
-  // value that is actually on the line the reader is pointing at.
-  const drawn = nonEmpty.map(item => ({ ...item, points: downsampleMinMax(item.points, 160) }));
-  for (const item of drawn) {
-    const polyline = document.createElementNS(ns, 'polyline');
-    polyline.setAttribute('points', item.points.map(point => `${x(point.x)},${y(point.y)}`).join(' '));
-    polyline.setAttribute('fill', 'none');
-    polyline.setAttribute('stroke', item.color);
-    polyline.setAttribute('stroke-width', '1.8');
-    polyline.setAttribute('vector-effect', 'non-scaling-stroke');
-    svg.append(polyline);
-    appendChartPointMarkers(svg, item, item.points, x, y, ns);
-  }
-  const first = points.reduce((a, b) => a.x <= b.x ? a : b);
-  const last = points.reduce((a, b) => a.x >= b.x ? a : b);
-  appendChartAxisLabel(svg, fmt(maxY, 2), 3, 12, ns);
-  appendChartAxisLabel(svg, fmt(minY, 2), 3, H - P + 3, ns);
-  appendChartAxisLabel(svg, first.label, P, H - 5, ns);
-  appendChartAxisLabel(svg, last.label, W - P, H - 5, ns, 'end');
-  box.append(svg, el('div', { class: 'legend' }, ...nonEmpty.map(item =>
-    el('span', {}, el('i', { style: `background:${item.color}` }), item.label))));
-  attachChartCursor(box, svg, drawn, { minX, maxX, x, y, width: W, height: H, padding: P, ns });
+  const host = el('div', {});
+  box.append(host);
+  pendingChartMounts.push(() => mountTimeSeriesChart(host, {
+    title,
+    series: nonEmpty.map((item, index) => ({ ...item, colorSlot: index + 1 })),
+    group: 'republic-history',
+    formatValue: value => fmt(value, 2),
+    resetZoomLabel: t('resetChartZoom'),
+    summaryTemplate: t('chartSeriesSummary'),
+    height: 230,
+  }));
   return box;
-}
-
-// Gives a chart a crosshair that names the date under the pointer and every
-// series' value there. Until this existed a reader could see a line's shape
-// but never a number on it, which made the twelve history charts decorative.
-function attachChartCursor(box, svg, series, geometry) {
-  const { minX, maxX, x, y, width, height, padding, ns } = geometry;
-  const rule = document.createElementNS(ns, 'line');
-  rule.setAttribute('class', 'chart-cursor-rule');
-  rule.setAttribute('y1', String(padding - 8));
-  rule.setAttribute('y2', String(height - padding));
-  const dots = series.map(item => {
-    const dot = document.createElementNS(ns, 'circle');
-    dot.setAttribute('class', 'chart-cursor-dot');
-    dot.setAttribute('r', '3.2');
-    dot.setAttribute('fill', item.color);
-    return dot;
-  });
-  const cursor = document.createElementNS(ns, 'g');
-  cursor.setAttribute('class', 'chart-cursor');
-  cursor.append(rule, ...dots);
-  svg.append(cursor);
-
-  const tooltip = el('div', { class: 'chart-tooltip' });
-  box.append(tooltip);
-
-  const hide = () => {
-    cursor.style.opacity = '0';
-    tooltip.style.opacity = '0';
-  };
-  hide();
-
-  const move = event => {
-    const bounds = svg.getBoundingClientRect();
-    const fraction = plotFraction(event.clientX - bounds.left, bounds.width,
-      { width, padding });
-    const value = minX + fraction * (maxX - minX);
-    const readout = cursorReadout(series, value);
-    if (!readout.rows.length) return hide();
-
-    // The rule snaps to the sample being reported rather than the raw pointer,
-    // so the line, the dots and the numbers all describe the same instant.
-    const snapped = readout.rows[0].x;
-    rule.setAttribute('x1', String(x(snapped)));
-    rule.setAttribute('x2', String(x(snapped)));
-    readout.rows.forEach((row, index) => {
-      dots[index].setAttribute('cx', String(x(row.x)));
-      dots[index].setAttribute('cy', String(y(row.value)));
-    });
-    cursor.style.opacity = '1';
-
-    tooltip.replaceChildren(
-      el('strong', {}, readout.label ?? ''),
-      ...readout.rows.map(row => el('span', { class: 'chart-tooltip-row' },
-        el('i', { style: `background:${row.color}` }),
-        el('span', { class: 'chart-tooltip-label' }, row.label),
-        el('b', {}, fmt(row.value, 2)))));
-    tooltip.style.opacity = '1';
-    // Measured after the content is in place, because the width depends on it.
-    const left = tooltipPlacement(event.clientX - bounds.left,
-      tooltip.offsetWidth, bounds.width);
-    tooltip.style.left = `${left}px`;
-  };
-
-  svg.addEventListener('mousemove', move);
-  svg.addEventListener('mouseleave', hide);
 }
 
 function applyStandaloneMapVisibility(svg, layers, buildingFilter = '', legend = null) {
@@ -3494,7 +3360,11 @@ function renderRepublicHistory() {
     el('div', { class: 'chart-controls settingsbar' },
       ...['month', 'year', 'all'].map(range => el('button', {
         class: state.republicRange === range ? 'active' : '',
-        onclick: () => { state.republicRange = range; update(); },
+        onclick: () => {
+          resetChartGroup('republic-history');
+          state.republicRange = range;
+          update();
+        },
       }, t(`range.${range}`))),
       resourceOptions.length ? selectInput(resourceOptions, state.republicResource,
         value => { state.republicResource = value; }) : null),
