@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { projectSaveToRepublicModel } from '../js/adapters/save_projection.js';
+import { projectSaveToRepublicModel, matchSaveBuilding } from '../js/adapters/save_projection.js';
 import { createLiveSdkAdapter, LIVE_SOURCE_IDS } from '../js/adapters/live_sdk_adapter.js';
 
 const observedAt = '2026-07-28T12:00:00.000Z';
@@ -70,4 +70,38 @@ test('synthetic save and fake SDK agree on shared republic facts with provenance
   assert.equal(save.events.items.length, live.model.events.items.length);
   assert.equal(save.republic.population.evidence.source, 'save');
   assert.equal(live.model.republic.population.evidence.source, 'live-sdk');
+});
+
+// A save writes DLC buildings with an underscore prefix — "DLC3_beer_stand" —
+// while the game files, and so our extracted dataset, key them by directory:
+// "dlc3/beer_stand". Only CWC_ was ever translated, leaving the dlc1, dlc2 and
+// dlc3 definitions we already hold unreachable: 230 of the 343 DLC entries.
+// MIRRORZ_ is the game's own mirror-placement prefix, not a mod, and is
+// stripped before any of this.
+test('save DLC prefixes resolve to the directory ids the dataset uses', () => {
+  const entries = [
+    { id: 'dlc3/beer_stand' }, { id: 'dlc2/foundry' },
+    { id: 'dlc1/small_shop' }, { id: 'cwc/magazyn1' },
+  ];
+  const idOf = entry => entry.id;
+
+  assert.equal(matchSaveBuilding('DLC3_beer_stand', entries, idOf).id, 'dlc3/beer_stand');
+  assert.equal(matchSaveBuilding('DLC2_foundry', entries, idOf).id, 'dlc2/foundry');
+  assert.equal(matchSaveBuilding('DLC1_small_shop', entries, idOf).id, 'dlc1/small_shop');
+  assert.equal(matchSaveBuilding('CWC_magazyn1', entries, idOf).id, 'cwc/magazyn1');
+});
+
+test('a mirrored DLC building resolves to the same definition as its original', () => {
+  const entries = [{ id: 'dlc3/beer_stand' }];
+  const idOf = entry => entry.id;
+
+  assert.equal(matchSaveBuilding('MIRRORZ_DLC3_beer_stand', entries, idOf).id, 'dlc3/beer_stand');
+});
+
+test('a base game type is unaffected by the DLC translation', () => {
+  const entries = [{ id: 'sewage_pump_1' }, { id: 'dlc3/beer_stand' }];
+  const idOf = entry => entry.id;
+
+  assert.equal(matchSaveBuilding('sewage_pump_1', entries, idOf).id, 'sewage_pump_1');
+  assert.equal(matchSaveBuilding('DLC9_nonexistent', entries, idOf), null);
 });

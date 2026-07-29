@@ -63,10 +63,23 @@ function defaultCity() {
   };
 }
 
+// A save writes DLC buildings with an underscore prefix — "DLC3_beer_stand" —
+// while the game ships them in a directory per expansion, which is how the
+// extracted dataset keys them: "dlc3/beer_stand". Only CWC_ was translated, so
+// the dlc1, dlc2 and dlc3 definitions we already hold could never be reached.
+// MIRRORZ_ is the game's own mirror-placement prefix, not a mod, and is
+// stripped first so a mirrored building resolves to the same definition.
+const DLC_PREFIXES = ['CWC', 'DLC1', 'DLC2', 'DLC3'];
+
 function saveTypeCandidates(type) {
   const clean = type.replace(/^MIRRORZ_/, '');
   const candidates = [type, clean];
-  if (clean.startsWith('CWC_')) candidates.push(`cwc/${clean.slice(4)}`);
+  for (const prefix of DLC_PREFIXES) {
+    if (clean.startsWith(`${prefix}_`)) {
+      candidates.push(`${prefix.toLowerCase()}/${clean.slice(prefix.length + 1)}`);
+      break;
+    }
+  }
   const aliases = {
     concrete_plant_v2: 'concrete_plant',
     brick_factory_v2: 'brick_factory',

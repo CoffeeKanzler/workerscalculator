@@ -1,6 +1,6 @@
 import { resolveVehicleModels } from '../fleet.js';
 import { latestProductivity } from '../save_model.js';
-import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js';
+import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=2';
 
 const REQUIRED_FILES = ['namepoints.bin', 'buildings_game.bin'];
 const CORE_BINARY_FILES = {
