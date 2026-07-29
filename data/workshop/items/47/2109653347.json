@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2109653347",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.233Z",
+  "buildings": [
+    {
+      "id": "2109653347/przedszkole",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small kindergarten (70s)",
+      "workshopId": "2109653347",
+      "modPath": "przedszkole"
+    }
+  ],
+  "vehicles": []
+}

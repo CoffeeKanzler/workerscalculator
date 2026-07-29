@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2156504427",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.253Z",
+  "buildings": [
+    {
+      "id": "2156504427/przychodnia",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 20,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big clinic",
+      "workshopId": "2156504427",
+      "modPath": "przychodnia"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2136282462",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.250Z",
+  "buildings": [
+    {
+      "id": "2136282462/kosmos",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cinema Kosmos",
+      "workshopId": "2136282462",
+      "modPath": "kosmos"
+    }
+  ],
+  "vehicles": []
+}

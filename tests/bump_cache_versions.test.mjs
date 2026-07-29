@@ -94,3 +94,13 @@ test('a changed shell or stylesheet advances exactly once', () => {
   assert.ok(plan.modules.includes('style.css'), 'the shell case must know to stand down');
   assert.ok(plan.modules.includes('app.js'));
 });
+
+// data/ files are fetched with DATA_V, which is the shell's own marker. A
+// refreshed workshop catalog was served stale for exactly this reason: the
+// data changed, no code did, and nothing advanced.
+test('a dataset change advances the shell, since DATA_V is its marker', () => {
+  const plan = planBump(['data/workshop/index.json', 'data/game/buildings_raw.json']);
+  assert.equal(plan.touchesJs, true, 'data changes must advance DATA_V');
+  assert.deepEqual(plan.modules, [], 'no module changed, so no module marker moves');
+  assert.ok(plan.targets.includes('index.html'));
+});

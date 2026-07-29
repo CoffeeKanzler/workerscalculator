@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2051699124",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.212Z",
+  "buildings": [
+    {
+      "id": "2051699124/tvtower",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 100,
+      "professors": 60,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Berlin TV Tower",
+      "workshopId": "2051699124",
+      "modPath": "tvtower"
+    }
+  ],
+  "vehicles": []
+}

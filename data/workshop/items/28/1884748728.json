@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1884748728",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.164Z",
+  "buildings": [
+    {
+      "id": "1884748728/GreenhouseMid",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 225,
+      "professors": 0,
+      "production": {
+        "plants": 0.05
+      },
+      "consumption": {
+        "chemicals": 0.0005,
+        "coal": 0.01
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.18
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "GreenHouseMid",
+      "workshopId": "1884748728",
+      "modPath": "GreenhouseMid"
+    },
+    {
+      "id": "1884748728/Greenhousesmall",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 165,
+      "professors": 0,
+      "production": {
+        "plants": 0.035
+      },
+      "consumption": {
+        "chemicals": 0.0003,
+        "coal": 0.006
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.12
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "GreenHouse",
+      "workshopId": "1884748728",
+      "modPath": "Greenhousesmall"
+    }
+  ],
+  "vehicles": []
+}

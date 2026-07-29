@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1999045576",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.202Z",
+  "buildings": [
+    {
+      "id": "1999045576/chem_plant",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 500,
+      "professors": 0,
+      "production": {
+        "chemicals": 0.01
+      },
+      "consumption": {
+        "gravel": 0.01,
+        "wood": 0.01,
+        "plants": 0.01,
+        "oil": 0.02,
+        "water": 0.17
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Chemical Plant",
+      "workshopId": "1999045576",
+      "modPath": "chem_plant"
+    }
+  ],
+  "vehicles": []
+}

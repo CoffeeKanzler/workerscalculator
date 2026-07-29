@@ -11,8 +11,9 @@
 //   1. A changed module has every ?v= reference to it advanced.
 //   2. A bare intra-project import of a changed module is given a marker,
 //      since an unversioned import is cached under a URL that never changes.
-//   3. Any changed JavaScript advances js/app.js in index.html, which is also
-//      the DATA_V the app stamps onto every data/ fetch.
+//   3. Any changed JavaScript, or any changed file under data/, advances
+//      js/app.js in index.html — that marker is also the DATA_V the app stamps
+//      onto every data/ fetch, so a refreshed dataset is invisible without it.
 //   4. Changed CSS advances css/style.css in index.html.
 //
 // Usage:
@@ -54,9 +55,12 @@ export function isJavaScript(file) {
 
 // Which files should be rewritten, given what changed.
 export function planBump(changedFiles, { allFiles = [] } = {}) {
-  const changed = changedFiles.filter(file => file.startsWith('js/') || file.startsWith('css/'));
-  const modules = changed.map(moduleName);
-  const touchesJs = changed.some(isJavaScript);
+  const changed = changedFiles.filter(file =>
+    file.startsWith('js/') || file.startsWith('css/') || file.startsWith('data/'));
+  const modules = changed.filter(file => !file.startsWith('data/')).map(moduleName);
+  // Data is fetched with DATA_V, which is the shell's own marker, so a dataset
+  // change has to advance it exactly as a code change does.
+  const touchesJs = changed.some(isJavaScript) || changed.some(file => file.startsWith('data/'));
   const touchesCss = changed.some(file => file.endsWith('.css'));
 
   // Anything that could hold a marker: the shell, plus every module, since
@@ -84,8 +88,10 @@ function main(argv) {
   const changed = explicit.length ? explicit : stagedFiles();
   const plan = planBump(changed, { allFiles: listTrackedFiles() });
 
-  if (!plan.modules.length) {
-    if (!check) console.log('no js/ or css/ change, nothing to advance');
+  // A data-only change moves no module marker but still has to advance the
+  // shell, since DATA_V is where data/ fetches get their marker from.
+  if (!plan.modules.length && !plan.touchesJs && !plan.touchesCss) {
+    if (!check) console.log('no js/, css/ or data/ change, nothing to advance');
     return 0;
   }
 

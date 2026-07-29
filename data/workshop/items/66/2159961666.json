@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2159961666",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.253Z",
+  "buildings": [
+    {
+      "id": "2159961666/hala",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sports hall",
+      "workshopId": "2159961666",
+      "modPath": "hala"
+    }
+  ],
+  "vehicles": []
+}

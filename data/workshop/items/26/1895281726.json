@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1895281726",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.179Z",
+  "buildings": [
+    {
+      "id": "1895281726/kek",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Perpendicular Parking",
+      "workshopId": "1895281726",
+      "modPath": "kek"
+    }
+  ],
+  "vehicles": []
+}

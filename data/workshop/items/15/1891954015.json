@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1891954015",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.178Z",
+  "buildings": [
+    {
+      "id": "1891954015/parking",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Underground parking garage",
+      "workshopId": "1891954015",
+      "modPath": "parking"
+    }
+  ],
+  "vehicles": []
+}

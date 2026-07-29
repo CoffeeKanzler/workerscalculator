@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2124846647",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.248Z",
+  "buildings": [
+    {
+      "id": "2124846647/sklep5",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small store",
+      "workshopId": "2124846647",
+      "modPath": "sklep5"
+    },
+    {
+      "id": "2124846647/sklep6",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Commercial building",
+      "workshopId": "2124846647",
+      "modPath": "sklep6"
+    },
+    {
+      "id": "2124846647/sklep7",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Department store RusaÅka",
+      "workshopId": "2124846647",
+      "modPath": "sklep7"
+    },
+    {
+      "id": "2124846647/sklep8",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 35,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Department store Orfeusz",
+      "workshopId": "2124846647",
+      "modPath": "sklep8"
+    },
+    {
+      "id": "2124846647/sklep9",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Department store Sezam",
+      "workshopId": "2124846647",
+      "modPath": "sklep9"
+    }
+  ],
+  "vehicles": []
+}

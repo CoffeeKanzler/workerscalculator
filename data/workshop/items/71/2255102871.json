@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2255102871",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.283Z",
+  "buildings": [
+    {
+      "id": "2255102871/Pipe_H_Rail_1",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 75,
+        "gravel": 7,
+        "concrete": 3,
+        "steel": 7,
+        "prefabpanels": 2,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Rail 1",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Rail_1"
+    },
+    {
+      "id": "2255102871/Pipe_H_Rail_11",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 75,
+        "gravel": 7,
+        "concrete": 3,
+        "steel": 7,
+        "prefabpanels": 2,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Rail 6",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Rail_11"
+    },
+    {
+      "id": "2255102871/Pipe_H_Rail_12",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 75,
+        "gravel": 7,
+        "concrete": 3,
+        "steel": 7,
+        "prefabpanels": 2,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Rail 7",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Rail_12"
+    },
+    {
+      "id": "2255102871/Pipe_H_Rail_15",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 75,
+        "gravel": 7,
+        "concrete": 3,
+        "steel": 7,
+        "prefabpanels": 2,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Rail 8",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Rail_15"
+    },
+    {
+      "id": "2255102871/Pipe_H_Rail_19",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 75,
+        "gravel": 7,
+        "concrete": 3,
+        "steel": 7,
+        "prefabpanels": 2,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Rail 9",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Rail_19"
+    },
+    {
+      "id": "2255102871/Pipe_H_Rail_2",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 75,
+        "gravel": 7,
+        "concrete": 3,
+        "steel": 7,
+        "prefabpanels": 2,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Rail 2",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Rail_2"
+    },
+    {
+      "id": "2255102871/Pipe_H_Rail_3",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 75,
+        "gravel": 7,
+        "concrete": 3,
+        "steel": 7,
+        "prefabpanels": 2,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Rail 3",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Rail_3"
+    },
+    {
+      "id": "2255102871/Pipe_H_Rail_6",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 75,
+        "gravel": 7,
+        "concrete": 3,
+        "steel": 7,
+        "prefabpanels": 2,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Rail 4",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Rail_6"
+    },
+    {
+      "id": "2255102871/Pipe_H_Rail_8",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 75,
+        "gravel": 7,
+        "concrete": 3,
+        "steel": 7,
+        "prefabpanels": 2,
+        "mcomponents": 0.3,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Rail 5",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Rail_8"
+    },
+    {
+      "id": "2255102871/Pipe_H_Road_1",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60,
+        "gravel": 2,
+        "concrete": 3,
+        "steel": 6,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Road 1",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Road_1"
+    },
+    {
+      "id": "2255102871/Pipe_H_Road_11",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60,
+        "gravel": 2,
+        "concrete": 3,
+        "steel": 6,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Road 6",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Road_11"
+    },
+    {
+      "id": "2255102871/Pipe_H_Road_12",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60,
+        "gravel": 2,
+        "concrete": 3,
+        "steel": 6,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Road 7",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Road_12"
+    },
+    {
+      "id": "2255102871/Pipe_H_Road_15",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60,
+        "gravel": 2,
+        "concrete": 3,
+        "steel": 6,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Road 8",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Road_15"
+    },
+    {
+      "id": "2255102871/Pipe_H_Road_19",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60,
+        "gravel": 2,
+        "concrete": 3,
+        "steel": 6,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Road 9",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Road_19"
+    },
+    {
+      "id": "2255102871/Pipe_H_Road_2",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60,
+        "gravel": 2,
+        "concrete": 3,
+        "steel": 6,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Road 2",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Road_2"
+    },
+    {
+      "id": "2255102871/Pipe_H_Road_3",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60,
+        "gravel": 2,
+        "concrete": 3,
+        "steel": 6,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Road 3",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Road_3"
+    },
+    {
+      "id": "2255102871/Pipe_H_Road_6",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60,
+        "gravel": 2,
+        "concrete": 3,
+        "steel": 6,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Road 4",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Road_6"
+    },
+    {
+      "id": "2255102871/Pipe_H_Road_8",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 60,
+        "gravel": 2,
+        "concrete": 3,
+        "steel": 6,
+        "mcomponents": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Heating main overpass Road 5",
+      "workshopId": "2255102871",
+      "modPath": "Pipe_H_Road_8"
+    }
+  ],
+  "vehicles": []
+}

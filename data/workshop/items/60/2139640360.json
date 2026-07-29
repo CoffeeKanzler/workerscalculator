@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2139640360",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.251Z",
+  "buildings": [
+    {
+      "id": "2139640360/domkultury2",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "LSM House of culture",
+      "workshopId": "2139640360",
+      "modPath": "domkultury2"
+    }
+  ],
+  "vehicles": []
+}

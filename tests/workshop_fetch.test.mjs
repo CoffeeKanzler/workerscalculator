@@ -52,3 +52,23 @@ test('a mod with no building folders extracts to an empty but valid item', () =>
   assert.deepEqual(item.buildings, []);
   assert.equal(item.workshopId, '123456789');
 });
+
+// The original catalogue run spawned one steamcmd login per item: 7,478
+// logins, of which 5,026 failed and were abandoned after three attempts. A
+// sample of those failures downloaded first time when batched into a single
+// login, so the batch size is the fix, not the retry count.
+test('a backlog is split into bounded batches that lose no ids', async () => {
+  const { batches } = await import('../tools/workshop_fetch.mjs');
+  const ids = Array.from({ length: 250 }, (_, i) => String(i));
+
+  const groups = batches(ids, 100);
+  assert.equal(groups.length, 3);
+  assert.deepEqual(groups.map(g => g.length), [100, 100, 50]);
+  assert.deepEqual(groups.flat(), ids, 'every id survives the split, in order');
+});
+
+test('a backlog smaller than one batch is a single batch', async () => {
+  const { batches } = await import('../tools/workshop_fetch.mjs');
+  assert.deepEqual(batches(['a', 'b'], 100), [['a', 'b']]);
+  assert.deepEqual(batches([], 100), []);
+});

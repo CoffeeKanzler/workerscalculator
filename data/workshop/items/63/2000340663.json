@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2000340663",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.205Z",
+  "buildings": [
+    {
+      "id": "2000340663/pump",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forwarding Pump",
+      "workshopId": "2000340663",
+      "modPath": "pump"
+    },
+    {
+      "id": "2000340663/pump2",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forwarding Pump (Mirrored)",
+      "workshopId": "2000340663",
+      "modPath": "pump2"
+    }
+  ],
+  "vehicles": []
+}

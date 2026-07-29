@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2094300274",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.228Z",
+  "buildings": [
+    {
+      "id": "2094300274/bodakva",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 250,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 250
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bodakva Station",
+      "workshopId": "2094300274",
+      "modPath": "bodakva"
+    },
+    {
+      "id": "2094300274/pisky",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 600,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 600
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pisky Station",
+      "workshopId": "2094300274",
+      "modPath": "pisky"
+    },
+    {
+      "id": "2094300274/station_146km",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 400,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 400
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "146 km Station",
+      "workshopId": "2094300274",
+      "modPath": "station_146km"
+    },
+    {
+      "id": "2094300274/sula",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sula Station",
+      "workshopId": "2094300274",
+      "modPath": "sula"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2080057513",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.223Z",
+  "buildings": [
+    {
+      "id": "2080057513/Garage_16",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 40
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Garage 16",
+      "workshopId": "2080057513",
+      "modPath": "Garage_16"
+    },
+    {
+      "id": "2080057513/Garage_32",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 80
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Garage 32",
+      "workshopId": "2080057513",
+      "modPath": "Garage_32"
+    },
+    {
+      "id": "2080057513/Garage_8",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Garage 8",
+      "workshopId": "2080057513",
+      "modPath": "Garage_8"
+    }
+  ],
+  "vehicles": []
+}

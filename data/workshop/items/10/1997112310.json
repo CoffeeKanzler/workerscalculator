@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1997112310",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.201Z",
+  "buildings": [
+    {
+      "id": "1997112310/cloth_factory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 250,
+      "professors": 0,
+      "production": {
+        "clothes": 0.015
+      },
+      "consumption": {
+        "fabric": 0.03
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1,
+        "living": 1.25
+      },
+      "nameStr": "Large Clothing Factory",
+      "workshopId": "1997112310",
+      "modPath": "cloth_factory"
+    }
+  ],
+  "vehicles": []
+}

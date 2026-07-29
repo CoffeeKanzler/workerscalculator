@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2338835220",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.289Z",
+  "buildings": [
+    {
+      "id": "2338835220/chlodnia",
+      "nameId": 6106,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 700
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2338835220",
+      "modPath": "chlodnia"
+    }
+  ],
+  "vehicles": []
+}

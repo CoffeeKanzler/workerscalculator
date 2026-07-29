@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2579947403",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.320Z",
+  "buildings": [
+    {
+      "id": "2579947403/hala",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 35,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big sports hall",
+      "workshopId": "2579947403",
+      "modPath": "hala"
+    }
+  ],
+  "vehicles": []
+}

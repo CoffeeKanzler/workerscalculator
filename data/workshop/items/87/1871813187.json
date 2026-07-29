@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1871813187",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.144Z",
+  "buildings": [
+    {
+      "id": "1871813187/conveyor_engine_3to1",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "3 into 1",
+      "workshopId": "1871813187",
+      "modPath": "conveyor_engine_3to1"
+    }
+  ],
+  "vehicles": []
+}

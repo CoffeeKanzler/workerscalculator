@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1891527055",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.175Z",
+  "buildings": [
+    {
+      "id": "1891527055/church1",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 160,
+        "gravel": 50,
+        "boards": 8,
+        "bricks": 20,
+        "steel": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Church 1",
+      "workshopId": "1891527055",
+      "modPath": "church1"
+    },
+    {
+      "id": "1891527055/church2",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 1,
+      "professors": 1,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 120,
+        "gravel": 20,
+        "boards": 4,
+        "bricks": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Church 2",
+      "workshopId": "1891527055",
+      "modPath": "church2"
+    },
+    {
+      "id": "1891527055/church3",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 180,
+        "gravel": 50,
+        "boards": 50,
+        "bricks": 100,
+        "steel": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Church 3",
+      "workshopId": "1891527055",
+      "modPath": "church3"
+    }
+  ],
+  "vehicles": []
+}

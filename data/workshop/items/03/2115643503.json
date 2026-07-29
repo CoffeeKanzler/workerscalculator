@@ -1,0 +1,937 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2115643503",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.233Z",
+  "buildings": [
+    {
+      "id": "2115643503/Village_house_1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 1",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_1"
+    },
+    {
+      "id": "2115643503/Village_house_10",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 10",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_10"
+    },
+    {
+      "id": "2115643503/Village_house_11",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 11",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_11"
+    },
+    {
+      "id": "2115643503/Village_house_12",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 12",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_12"
+    },
+    {
+      "id": "2115643503/Village_house_13",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 13",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_13"
+    },
+    {
+      "id": "2115643503/Village_house_14",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 14",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_14"
+    },
+    {
+      "id": "2115643503/Village_house_15",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 15",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_15"
+    },
+    {
+      "id": "2115643503/Village_house_16",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 16",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_16"
+    },
+    {
+      "id": "2115643503/Village_house_2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 2",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_2"
+    },
+    {
+      "id": "2115643503/Village_house_3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 3",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_3"
+    },
+    {
+      "id": "2115643503/Village_house_4",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 4",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_4"
+    },
+    {
+      "id": "2115643503/Village_house_5",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 5",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_5"
+    },
+    {
+      "id": "2115643503/Village_house_6",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 6",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_6"
+    },
+    {
+      "id": "2115643503/Village_house_7",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 7",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_7"
+    },
+    {
+      "id": "2115643503/Village_house_8",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 8",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_8"
+    },
+    {
+      "id": "2115643503/Village_house_9",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "bricks": 1,
+        "workers": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house 9",
+      "workshopId": "2115643503",
+      "modPath": "Village_house_9"
+    },
+    {
+      "id": "2115643503/Village_street_1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 12,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 12
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 1",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_1"
+    },
+    {
+      "id": "2115643503/Village_street_10",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 15,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.55,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 15
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 10",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_10"
+    },
+    {
+      "id": "2115643503/Village_street_11",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 14,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 14
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 11",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_11"
+    },
+    {
+      "id": "2115643503/Village_street_12",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 13,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 13
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 12",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_12"
+    },
+    {
+      "id": "2115643503/Village_street_13",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 15,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 15
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 13",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_13"
+    },
+    {
+      "id": "2115643503/Village_street_14",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 13,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 13
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 14",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_14"
+    },
+    {
+      "id": "2115643503/Village_street_15",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 11,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 11
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 15",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_15"
+    },
+    {
+      "id": "2115643503/Village_street_16",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 17,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 17
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 16",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_16"
+    },
+    {
+      "id": "2115643503/Village_street_2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 15,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 15
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 2",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_2"
+    },
+    {
+      "id": "2115643503/Village_street_3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 13,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 13
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 3",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_3"
+    },
+    {
+      "id": "2115643503/Village_street_4",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 12,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.55,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 12
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 4",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_4"
+    },
+    {
+      "id": "2115643503/Village_street_5",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 15,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 15
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 5",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_5"
+    },
+    {
+      "id": "2115643503/Village_street_6",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 6",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_6"
+    },
+    {
+      "id": "2115643503/Village_street_7",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 15,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 15
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 7",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_7"
+    },
+    {
+      "id": "2115643503/Village_street_8",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 12,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 12
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 8",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_8"
+    },
+    {
+      "id": "2115643503/Village_street_9",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "bricks": 3,
+        "workers": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village street 9",
+      "workshopId": "2115643503",
+      "modPath": "Village_street_9"
+    }
+  ],
+  "vehicles": []
+}

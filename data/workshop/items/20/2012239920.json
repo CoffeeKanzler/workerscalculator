@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2012239920",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.206Z",
+  "buildings": [
+    {
+      "id": "2012239920/4waymedium",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Transformer Medium V x 4",
+      "workshopId": "2012239920",
+      "modPath": "4waymedium"
+    },
+    {
+      "id": "2012239920/smalltransformer",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Transformer",
+      "workshopId": "2012239920",
+      "modPath": "smalltransformer"
+    }
+  ],
+  "vehicles": []
+}

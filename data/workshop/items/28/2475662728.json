@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2475662728",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.293Z",
+  "buildings": [
+    {
+      "id": "2475662728/koszykowka",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Basketball court",
+      "workshopId": "2475662728",
+      "modPath": "koszykowka"
+    },
+    {
+      "id": "2475662728/koszykowka_siatkowka",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Basketball and volleyball court",
+      "workshopId": "2475662728",
+      "modPath": "koszykowka_siatkowka"
+    },
+    {
+      "id": "2475662728/nozna",
+      "nameId": 6258,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 4,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2475662728",
+      "modPath": "nozna"
+    },
+    {
+      "id": "2475662728/siatkowka",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Volleyball court",
+      "workshopId": "2475662728",
+      "modPath": "siatkowka"
+    },
+    {
+      "id": "2475662728/stadion",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 7,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Football stadium",
+      "workshopId": "2475662728",
+      "modPath": "stadion"
+    }
+  ],
+  "vehicles": []
+}

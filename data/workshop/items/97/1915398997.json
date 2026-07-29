@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1915398997",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.184Z",
+  "buildings": [
+    {
+      "id": "1915398997/palast",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 250,
+      "professors": 250,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Palast der Republik",
+      "workshopId": "1915398997",
+      "modPath": "palast"
+    },
+    {
+      "id": "1915398997/palast2",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 80,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Palast der Republik",
+      "workshopId": "1915398997",
+      "modPath": "palast2"
+    }
+  ],
+  "vehicles": []
+}

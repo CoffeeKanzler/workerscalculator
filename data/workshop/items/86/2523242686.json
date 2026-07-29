@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2523242686",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.305Z",
+  "buildings": [
+    {
+      "id": "2523242686/zajezdnia1",
+      "nameId": 1600,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2523242686",
+      "modPath": "zajezdnia1"
+    },
+    {
+      "id": "2523242686/zajezdnia2",
+      "nameId": 1600,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2523242686",
+      "modPath": "zajezdnia2"
+    }
+  ],
+  "vehicles": []
+}

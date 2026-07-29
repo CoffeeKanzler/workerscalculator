@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1895559319",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.179Z",
+  "buildings": [
+    {
+      "id": "1895559319/Smalltank",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 300
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small oil storage",
+      "workshopId": "1895559319",
+      "modPath": "Smalltank"
+    }
+  ],
+  "vehicles": []
+}

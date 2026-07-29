@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1901799219",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.181Z",
+  "buildings": [
+    {
+      "id": "1901799219/parking_14",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium parking (x14)",
+      "workshopId": "1901799219",
+      "modPath": "parking_14"
+    },
+    {
+      "id": "1901799219/parking_20",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium parking (x20)",
+      "workshopId": "1901799219",
+      "modPath": "parking_20"
+    },
+    {
+      "id": "1901799219/parking_32",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large parking (x32)",
+      "workshopId": "1901799219",
+      "modPath": "parking_32"
+    },
+    {
+      "id": "1901799219/parking_L12",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small parking (x12)",
+      "workshopId": "1901799219",
+      "modPath": "parking_L12"
+    },
+    {
+      "id": "1901799219/parking_gravel",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gravel parking (x14)",
+      "workshopId": "1901799219",
+      "modPath": "parking_gravel"
+    }
+  ],
+  "vehicles": []
+}

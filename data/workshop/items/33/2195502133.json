@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2195502133",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.257Z",
+  "buildings": [
+    {
+      "id": "2195502133/uniwersytet",
+      "nameId": 6007,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_MEDICAL"
+      ],
+      "workers": 25,
+      "professors": 25,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2195502133",
+      "modPath": "uniwersytet"
+    }
+  ],
+  "vehicles": []
+}

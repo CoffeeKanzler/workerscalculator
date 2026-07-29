@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1895842380",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.180Z",
+  "buildings": [
+    {
+      "id": "1895842380/t34_monument",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "T-34 Monument",
+      "workshopId": "1895842380",
+      "modPath": "t34_monument"
+    }
+  ],
+  "vehicles": []
+}

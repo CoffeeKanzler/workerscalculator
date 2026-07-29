@@ -15,8 +15,16 @@
 //   node tools/workshop_fetch.mjs <id> [<id> ...]
 //   node tools/workshop_fetch.mjs --from-saves <save-dir> [<save-dir> ...]
 //   node tools/workshop_fetch.mjs --extract-only <id> ...   # skip the download
+//   node tools/workshop_fetch.mjs --ids-file <path> [--batch-size 100] [--prune]
+//
+// A large backlog must be pruned as it goes: the full catalogue is on the
+// order of 130 GB of models and textures, against far less free disk, while
+// the definitions extracted from it are a few megabytes. --prune deletes each
+// item's raw download once its definitions are safely written.
 
-import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync, statSync } from 'node:fs';
+import {
+  readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync, statSync, rmSync,
+} from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from '../js/workshop_ini.js';
@@ -31,6 +39,16 @@ const CONTENT = process.env.WORKSHOP_CONTENT
 const STEAMCMD = process.env.STEAMCMD ?? 'steamcmd';
 
 // Items are sharded by their last two digits, keeping any one directory small.
+// steamcmd is rate limited per login, and the original catalogue run spawned
+// one invocation per item: 7,478 logins, of which 5,026 failed and were
+// abandoned after three attempts. Batching into a single login fixed every one
+// of a sample that had failed that way, so batches stay large but bounded.
+export function batches(ids, size = 100) {
+  const out = [];
+  for (let index = 0; index < ids.length; index += size) out.push(ids.slice(index, index + size));
+  return out;
+}
+
 export function shardFor(id) {
   return String(id).slice(-2).padStart(2, '0');
 }
@@ -92,55 +110,93 @@ function saveIds(dirs) {
   return referenced;
 }
 
+function catalogueOne(id, index, { prune = false } = {}) {
+  const dir = path.join(CONTENT, String(id));
+  if (!existsSync(dir)) return { ok: false };
+  const item = extractItem(id, dir);
+  const relative = catalogPathFor(id);
+  const target = path.join(CATALOG, relative);
+  mkdirSync(path.dirname(target), { recursive: true });
+  writeFileSync(target, `${JSON.stringify(item, null, 2)}\n`);
+  // An item that declares no buildings is still recorded: without it the next
+  // run would try to fetch it again forever.
+  index.items[String(id)] = {
+    path: relative,
+    buildingCount: item.buildings.length,
+    vehicleCount: 0,
+  };
+  // Only after the definitions are on disk, so a crash mid-run loses a
+  // download rather than a catalogue entry.
+  if (prune) rmSync(dir, { recursive: true, force: true });
+  return { ok: true, buildings: item.buildings.length };
+}
+
+function writeIndex(indexFile, index) {
+  index.itemCount = Object.keys(index.items).length;
+  index.generatedAt = new Date().toISOString();
+  writeFileSync(indexFile, `${JSON.stringify(index, null, 2)}\n`);
+}
+
+function flagValue(argv, name, fallback) {
+  const at = argv.indexOf(name);
+  return at >= 0 && argv[at + 1] ? argv[at + 1] : fallback;
+}
+
 function main(argv) {
   const extractOnly = argv.includes('--extract-only');
   const fromSaves = argv.includes('--from-saves');
-  const rest = argv.filter(arg => !arg.startsWith('--'));
+  const prune = argv.includes('--prune');
+  const size = Number(flagValue(argv, '--batch-size', '100'));
+  const idsFile = flagValue(argv, '--ids-file', null);
+  const flagValues = new Set([idsFile, String(size)].filter(Boolean));
+  const rest = argv.filter(arg => !arg.startsWith('--') && !flagValues.has(arg));
   const indexFile = path.join(CATALOG, 'index.json');
   const index = JSON.parse(readFileSync(indexFile, 'utf8'));
 
   let ids = rest;
+  if (idsFile) {
+    ids = readFileSync(idsFile, 'utf8').split(/\s+/).filter(Boolean);
+  }
   if (fromSaves) {
     ids = missingWorkshopIds(saveIds(rest), index);
     console.log(`${ids.length} missing item(s) referenced by ${rest.length} save(s)`);
   }
+  // Resumable: anything already catalogued is skipped, so a re-run continues.
+  ids = missingWorkshopIds(new Set(ids), index);
   if (!ids.length) {
     console.log('nothing to fetch');
     return;
   }
 
-  if (!extractOnly) download(ids);
+  const groups = extractOnly ? [ids] : batches(ids, size);
+  console.log(`${ids.length} item(s) in ${groups.length} batch(es) of up to ${size}`
+    + `${prune ? ', pruning raw downloads as they are catalogued' : ''}`);
 
   let added = 0;
-  let empty = 0;
-  for (const id of ids) {
-    const dir = path.join(CONTENT, String(id));
-    if (!existsSync(dir)) {
-      console.error(`  ${id}: not downloaded, skipping`);
-      continue;
+  let failed = 0;
+  let buildings = 0;
+  groups.forEach((group, number) => {
+    if (!extractOnly) {
+      try {
+        download(group);
+      } catch (error) {
+        // A whole batch failing is worth reporting, but the next one may well
+        // succeed, so the run continues rather than abandoning the backlog.
+        console.error(`batch ${number + 1}: steamcmd failed (${error.message.slice(0, 80)})`);
+      }
     }
-    const item = extractItem(id, dir);
-    // An item that declares no buildings is still recorded: without it the
-    // next run would try to fetch it again forever.
-    if (!item.buildings.length) empty += 1;
-    const relative = catalogPathFor(id);
-    const target = path.join(CATALOG, relative);
-    mkdirSync(path.dirname(target), { recursive: true });
-    writeFileSync(target, `${JSON.stringify(item, null, 2)}\n`);
-    index.items[String(id)] = {
-      path: relative,
-      buildingCount: item.buildings.length,
-      vehicleCount: 0,
-    };
-    added += 1;
-    console.log(`  ${id}: ${item.buildings.length} building(s) -> ${relative}`);
-  }
+    for (const id of group) {
+      const result = catalogueOne(id, index, { prune });
+      if (result.ok) { added += 1; buildings += result.buildings; } else failed += 1;
+    }
+    writeIndex(indexFile, index);
+    console.log(`batch ${number + 1}/${groups.length}: ${added} catalogued, `
+      + `${failed} unavailable, ${buildings} building definitions, `
+      + `catalog holds ${index.itemCount}`);
+  });
 
-  index.itemCount = Object.keys(index.items).length;
-  index.generatedAt = new Date().toISOString();
-  writeFileSync(indexFile, `${JSON.stringify(index, null, 2)}\n`);
-  console.log(`\n${added} item(s) catalogued (${empty} declared no buildings), `
-    + `catalog now holds ${index.itemCount}`);
+  console.log(`\ndone: ${added} catalogued, ${failed} unavailable, `
+    + `${buildings} building definitions, catalog holds ${index.itemCount}`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

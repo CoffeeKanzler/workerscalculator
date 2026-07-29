@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "1881451605",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T08:23:02.156Z",
+  "buildings": [
+    {
+      "id": "1881451605/P3series4_9",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 198,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 198
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "9 storey prefab flats P-3 (red)",
+      "workshopId": "1881451605",
+      "modPath": "P3series4_9"
+    },
+    {
+      "id": "1881451605/P3series4_9_blue",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 198,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 198
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "9 storey prefab flats P-3 (blue)",
+      "workshopId": "1881451605",
+      "modPath": "P3series4_9_blue"
+    }
+  ],
+  "vehicles": []
+}
