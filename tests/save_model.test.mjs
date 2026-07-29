@@ -213,6 +213,7 @@ test('observed building compaction retains unknown and temporary records', () =>
   const observed = compactObservedBuildings([{
     index: 9, type: 'temp', name: 'Building 9', scopeId: null,
     x: 1, y: 2, z: 3, currentWorkers: 4, configuredWorkers: 5,
+    rotation: { x: 0, y: 1.25, z: 0 },
     configuredWorkersHighEducation: 6, mineQuality: 0.7,
     storages: [{ storageIndex: 0, inputFlag: 1, outputFlag: 0, selector: -1,
       capacity: 20, mode: 3, resources: [{ resource: 'oil', amount: 21 }] }],
@@ -221,6 +222,7 @@ test('observed building compaction retains unknown and temporary records', () =>
   assert.deepEqual(observed, [{
     index: 9, type: 'temp', name: 'Building 9', scopeId: null,
     x: 1, y: 2, z: 3, currentWorkers: 4, configuredWorkers: 5,
+    rotation: { x: 0, y: 1.25, z: 0 },
     configuredWorkersHighEducation: 6, mineQuality: 0.7,
     storages: [{ storageIndex: 0, inputFlag: 1, outputFlag: 0, selector: -1,
       capacity: 20, mode: 3, resources: [{ resource: 'oil', amount: 21 }] }],

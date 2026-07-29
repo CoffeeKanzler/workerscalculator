@@ -377,7 +377,7 @@ export function summarizeOccupiedBuildingPollution(occupancy, pollution) {
 
 export function compactObservedBuildings(buildings) {
   const keys = [
-    'index', 'type', 'name', 'scopeId', 'x', 'y', 'z', 'currentWorkers',
+    'index', 'type', 'name', 'scopeId', 'x', 'y', 'z', 'rotation', 'currentWorkers',
     'configuredWorkers', 'configuredWorkersHighEducation', 'mineQuality',
     'constructionProgress', 'storages',
   ];

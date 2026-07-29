@@ -60,7 +60,7 @@ function writeUtf16(bytes, offset, text) {
 
 function roadFixture() {
   const nodeSize = 0x48;
-  const edgeSize = 0x88 + 0x18 + 0x18;
+  const edgeSize = 0x88 + 0x18 + 2 * 4 + 0x18;
   const buffer = new ArrayBuffer(12 + nodeSize * 2 + edgeSize);
   const view = new DataView(buffer);
   view.setUint32(0, 2, true);
@@ -76,10 +76,13 @@ function roadFixture() {
   view.setUint32(edge, 1, true);
   view.setInt32(edge + 4, 0, true);
   view.setInt32(edge + 8, 1, true);
+  view.setUint32(edge + 0x74, 2, true);
   const sample = edge + 0x88;
   view.setFloat32(sample, 25, true);
   view.setFloat32(sample + 4, 3.5, true);
   view.setFloat32(sample + 8, 45, true);
+  view.setInt32(sample + 0x18, 17, true);
+  view.setInt32(sample + 0x1c, 29, true);
   return buffer;
 }
 
@@ -90,7 +93,10 @@ test('road network parser exposes exact node topology and saved polyline samples
       { id: 0, x: 10, y: 2, z: 30 },
       { id: 1, x: 40, y: 5, z: 60 },
     ],
-    edges: [{ id: 0, from: 0, to: 1, points: [{ x: 25, y: 3.5, z: 45 }] }],
+    edges: [{
+      id: 0, from: 0, to: 1, points: [{ x: 25, y: 3.5, z: 45 }],
+      referencedObjectIds: [17, 29],
+    }],
     summary: { nodeCount: 2, edgeCount: 1, groupCount: 0, pointCount: 1, byteLength: buffer.byteLength },
   });
   assert.throws(() => parseRoadNetwork(buffer.slice(0, -1)), /tail vectors/);
@@ -398,6 +404,9 @@ test('live building exposes configured caps, current workers and mine quality', 
   view.setInt32(4 + 0x4a0, 120, true);
   view.setInt32(4 + 0x4a4, 0, true);
   view.setFloat32(4 + 0x4a8, 0.56467056, true);
+  view.setFloat32(4 + 0x3a8, 0.125, true);
+  view.setFloat32(4 + 0x3ac, Math.PI / 3, true);
+  view.setFloat32(4 + 0x3b0, -0.25, true);
 
   const [building] = parseBuildingsGame(buffer);
 
@@ -418,6 +427,11 @@ test('live building exposes configured caps, current workers and mine quality', 
   assert.equal(building.configuredWorkers, 120);
   assert.equal(building.configuredWorkersHighEducation, 0);
   assert.ok(Math.abs(building.mineQuality - 0.56467056) < 1e-6);
+  assert.deepEqual(building.rotation, {
+    x: Math.fround(0.125),
+    y: Math.fround(Math.PI / 3),
+    z: Math.fround(-0.25),
+  });
 });
 
 test('live building preserves exact first-pass storage inventories', () => {

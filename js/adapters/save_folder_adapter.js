@@ -1,6 +1,6 @@
 import { resolveVehicleModels } from '../fleet.js?v=4';
-import { latestProductivity } from '../save_model.js?v=4';
-import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=7';
+import { latestProductivity } from '../save_model.js?v=6';
+import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=8';
 import { readWorkshopIndex } from '../models/workshop_index.js?v=2';
 
 const REQUIRED_FILES = ['namepoints.bin', 'buildings_game.bin'];
@@ -172,7 +172,7 @@ export async function orchestrateWorkshopCatalog(buildings, vehicles = [], {
 
 export function parseSaveInWorker(payload, {
   WorkerClass = globalThis.Worker,
-  workerUrl = new URL('../savegame_worker.js?v=32', import.meta.url),
+  workerUrl = new URL('../savegame_worker.js?v=33', import.meta.url),
   onProgress,
 } = {}) {
   return new Promise((resolve, reject) => {
@@ -203,7 +203,7 @@ export function parseSaveInWorker(payload, {
 
 export function parseMapLayersInWorker(files, {
   WorkerClass = globalThis.Worker,
-  workerUrl = new URL('../savegame_map_worker.js?v=6', import.meta.url),
+  workerUrl = new URL('../savegame_map_worker.js?v=7', import.meta.url),
   onProgress,
 } = {}) {
   return new Promise((resolve, reject) => {

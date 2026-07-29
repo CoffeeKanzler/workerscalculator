@@ -208,11 +208,16 @@ export function parseRoadNetwork(buffer) {
     }
     skipItems(blocks30A + blocks30B + blocks30C + blocks30D + blocks30E + blocks30F,
       0x30, `road edge ${index} 48-byte blocks`);
-    skipItems(scalarValues + objectReferences, 4, `road edge ${index} scalar arrays`);
+    skipItems(scalarValues, 4, `road edge ${index} scalar arrays`);
+    const referencedObjectIds = Array.from({ length: objectReferences }, (_, item) =>
+      c.i32(`road edge ${index} object reference ${item}`));
     skipItems(byteValues, 1, `road edge ${index} byte array`);
     skipItems(pairedReferences, 8, `road edge ${index} paired references`);
     c.skip(0x18, `road edge ${index} tail vectors`);
-    edges.push({ id: index, from, to, points });
+    edges.push({
+      id: index, from, to, points,
+      ...(referencedObjectIds.length ? { referencedObjectIds } : {}),
+    });
   }
   for (let index = 0; index < groupCount; index += 1) {
     c.i32(`road group ${index} id`);
@@ -885,6 +890,11 @@ export function parseBuildingsGame(buffer, { onProgress } = {}) {
       x: c.view.getFloat32(start + 0x39c, true),
       y: c.view.getFloat32(start + 0x3a0, true),
       z: c.view.getFloat32(start + 0x3a4, true),
+      rotation: {
+        x: c.view.getFloat32(start + 0x3a8, true),
+        y: c.view.getFloat32(start + 0x3ac, true),
+        z: c.view.getFloat32(start + 0x3b0, true),
+      },
       currentWorkers: c.view.getInt32(start + first(0x2b0), true),
       currentVisitors: c.view.getInt32(start + 0x47c, true),
       effectiveServiceCapacity: c.view.getFloat32(start + 0x490, true),
