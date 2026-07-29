@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2298501609",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.794Z",
+  "buildings": [
+    {
+      "id": "2298501609/barrier",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 2,
+        "ecomponents": 1,
+        "workers": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Highway Barrier",
+      "workshopId": "2298501609",
+      "modPath": "barrier"
+    },
+    {
+      "id": "2298501609/gate",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 10,
+        "ecomponents": 2,
+        "workers": 45
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Gatehouse",
+      "workshopId": "2298501609",
+      "modPath": "gate"
+    },
+    {
+      "id": "2298501609/wall",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 4,
+        "ecomponents": 1,
+        "workers": 25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wall x1",
+      "workshopId": "2298501609",
+      "modPath": "wall"
+    },
+    {
+      "id": "2298501609/wall.10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 40,
+        "ecomponents": 10,
+        "workers": 250
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wall x10",
+      "workshopId": "2298501609",
+      "modPath": "wall.10"
+    },
+    {
+      "id": "2298501609/wall.3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 12,
+        "ecomponents": 3,
+        "workers": 75
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wall x3",
+      "workshopId": "2298501609",
+      "modPath": "wall.3"
+    },
+    {
+      "id": "2298501609/wall.5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 20,
+        "ecomponents": 5,
+        "workers": 125
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wall x5",
+      "workshopId": "2298501609",
+      "modPath": "wall.5"
+    }
+  ],
+  "vehicles": []
+}

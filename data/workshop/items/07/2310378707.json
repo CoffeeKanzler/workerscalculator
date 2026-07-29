@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2310378707",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.539Z",
+  "buildings": [
+    {
+      "id": "2310378707/g_alk",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 380,
+      "professors": 120,
+      "production": {
+        "alumina": 0.2,
+        "usagewater": 0.001
+      },
+      "consumption": {
+        "bauxite": 0.4,
+        "chemicals": 0.04,
+        "bitumen": 0.06,
+        "water": 0.002
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ»Ð¸Ð½Ð¾Ð·ÐµÐ¼Ð½ÑÐ¹ ÑÐµÑ ÐÐÐ",
+      "workshopId": "2310378707",
+      "modPath": "g_alk"
+    }
+  ],
+  "vehicles": []
+}

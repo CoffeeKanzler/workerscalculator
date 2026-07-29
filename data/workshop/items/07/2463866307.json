@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2463866307",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.529Z",
+  "buildings": [
+    {
+      "id": "2463866307/Circuitry",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "ecomponents": 0.025
+      },
+      "consumption": {
+        "plastics": 0.01,
+        "aluminium": 0.01,
+        "chemicals": 0.001
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 55,
+        "asphalt": 5,
+        "bricks": 75,
+        "steel": 20,
+        "mcomponents": 2,
+        "workers": 1100
+      },
+      "electricWorkerFactors": {
+        "living": 1.4
+      },
+      "nameStr": "Electronic Circuitry Factory",
+      "workshopId": "2463866307",
+      "modPath": "Circuitry"
+    },
+    {
+      "id": "2463866307/SteelCircuits",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "ecomponents": 0.025
+      },
+      "consumption": {
+        "plastics": 0.01,
+        "steel": 0.01,
+        "chemicals": 0.008
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 55,
+        "asphalt": 5,
+        "bricks": 90,
+        "steel": 20,
+        "mcomponents": 2,
+        "workers": 1110
+      },
+      "electricWorkerFactors": {
+        "living": 1.4
+      },
+      "nameStr": "Medium Electronic Components Factory",
+      "workshopId": "2463866307",
+      "modPath": "SteelCircuits"
+    }
+  ],
+  "vehicles": []
+}

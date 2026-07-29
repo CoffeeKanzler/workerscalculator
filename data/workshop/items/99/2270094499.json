@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2270094499",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.638Z",
+  "buildings": [
+    {
+      "id": "2270094499/Hosp",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 50,
+      "professors": 50,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Hospital",
+      "workshopId": "2270094499",
+      "modPath": "Hosp"
+    },
+    {
+      "id": "2270094499/Kinderr",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hillside Kindergarten",
+      "workshopId": "2270094499",
+      "modPath": "Kinderr"
+    },
+    {
+      "id": "2270094499/Kinderr2",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hillside Kindergarten v2",
+      "workshopId": "2270094499",
+      "modPath": "Kinderr2"
+    },
+    {
+      "id": "2270094499/Luxury",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 26,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.98,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 26
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Luxury Flats",
+      "workshopId": "2270094499",
+      "modPath": "Luxury"
+    },
+    {
+      "id": "2270094499/Red",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 45,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 45
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Red Flats",
+      "workshopId": "2270094499",
+      "modPath": "Red"
+    },
+    {
+      "id": "2270094499/SchoolRed",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 10,
+      "professors": 12,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hillside School",
+      "workshopId": "2270094499",
+      "modPath": "SchoolRed"
+    },
+    {
+      "id": "2270094499/Shopping",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hillside Shop",
+      "workshopId": "2270094499",
+      "modPath": "Shopping"
+    },
+    {
+      "id": "2270094499/Storage",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Storage Facility",
+      "workshopId": "2270094499",
+      "modPath": "Storage"
+    },
+    {
+      "id": "2270094499/Tan",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tan Flats",
+      "workshopId": "2270094499",
+      "modPath": "Tan"
+    },
+    {
+      "id": "2270094499/Yellow",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 45,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 45
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Yellow Flats",
+      "workshopId": "2270094499",
+      "modPath": "Yellow"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2234113399",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.102Z",
+  "buildings": [
+    {
+      "id": "2234113399/largeoilstorage_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 13500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Oil Storage V2",
+      "workshopId": "2234113399",
+      "modPath": "largeoilstorage_v2"
+    },
+    {
+      "id": "2234113399/largeoilstoragerail_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 13500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "LOS with Loader V2",
+      "workshopId": "2234113399",
+      "modPath": "largeoilstoragerail_v2"
+    }
+  ],
+  "vehicles": []
+}

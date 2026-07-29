@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2496768741",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.118Z",
+  "buildings": [
+    {
+      "id": "2496768741/flowers",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 1,
+        "workers": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Flowers kiosk",
+      "workshopId": "2496768741",
+      "modPath": "flowers"
+    },
+    {
+      "id": "2496768741/shoes",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 1,
+        "workers": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shoes repair",
+      "workshopId": "2496768741",
+      "modPath": "shoes"
+    },
+    {
+      "id": "2496768741/watches",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 1,
+        "workers": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Watches repair",
+      "workshopId": "2496768741",
+      "modPath": "watches"
+    }
+  ],
+  "vehicles": []
+}

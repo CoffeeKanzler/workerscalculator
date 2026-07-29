@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2489257151",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.067Z",
+  "buildings": [
+    {
+      "id": "2489257151/zakladywlokiennicze",
+      "nameId": 6351,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 115,
+      "professors": 0,
+      "production": {
+        "fabric": 0.05
+      },
+      "consumption": {
+        "plants": 0.2,
+        "chemicals": 0.005,
+        "water": 0.11
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2489257151",
+      "modPath": "zakladywlokiennicze"
+    }
+  ],
+  "vehicles": []
+}

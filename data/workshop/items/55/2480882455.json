@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2480882455",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.012Z",
+  "buildings": [
+    {
+      "id": "2480882455/swit",
+      "nameId": 6253,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 12,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 2,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2480882455",
+      "modPath": "swit"
+    }
+  ],
+  "vehicles": []
+}

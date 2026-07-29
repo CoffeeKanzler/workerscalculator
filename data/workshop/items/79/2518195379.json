@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2518195379",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.743Z",
+  "buildings": [
+    {
+      "id": "2518195379/heliport_3_rail",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 50000,
+        "RESOURCE_TRANSPORT_COOLER": 5000,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 3500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Heliport + 3 Rail Storage",
+      "workshopId": "2518195379",
+      "modPath": "heliport_3_rail"
+    },
+    {
+      "id": "2518195379/heliport_8_rail",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 50000,
+        "RESOURCE_TRANSPORT_COOLER": 5000,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 3500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Heliport + 8 Rail Storage",
+      "workshopId": "2518195379",
+      "modPath": "heliport_8_rail"
+    },
+    {
+      "id": "2518195379/heliport_no_rail",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 50000,
+        "RESOURCE_TRANSPORT_COOLER": 5000,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 3500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Combined Heliport Storage",
+      "workshopId": "2518195379",
+      "modPath": "heliport_no_rail"
+    }
+  ],
+  "vehicles": []
+}

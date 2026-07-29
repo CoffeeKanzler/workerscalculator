@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2492965338",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.086Z",
+  "buildings": [
+    {
+      "id": "2492965338/Alternate20s",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 350,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 350
+      },
+      "constructionResources": {
+        "boards": 100,
+        "concrete": 120,
+        "steel": 50,
+        "bricks": 200,
+        "mcomponents": 3,
+        "workers": 2100
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1920s Residential Tower v2",
+      "workshopId": "2492965338",
+      "modPath": "Alternate20s"
+    },
+    {
+      "id": "2492965338/Residential1920s",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 350,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 350
+      },
+      "constructionResources": {
+        "boards": 100,
+        "concrete": 120,
+        "steel": 50,
+        "bricks": 200,
+        "mcomponents": 3,
+        "workers": 2100
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1920s Residential Tower",
+      "workshopId": "2492965338",
+      "modPath": "Residential1920s"
+    }
+  ],
+  "vehicles": []
+}

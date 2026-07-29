@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2276098923",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.694Z",
+  "buildings": [
+    {
+      "id": "2276098923/HOUSE",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 324,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 324
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka_2",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE"
+    },
+    {
+      "id": "2276098923/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka_L",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2276098923/HOUSE10GbR",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 648,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 648
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinkaGbR",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE10GbR"
+    },
+    {
+      "id": "2276098923/HOUSE11ShopL",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 18,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 18,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka_shopL",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE11ShopL"
+    },
+    {
+      "id": "2276098923/HOUSE11ShopR",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 18,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 18,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka_shopR",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE11ShopR"
+    },
+    {
+      "id": "2276098923/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinka_R",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE2"
+    },
+    {
+      "id": "2276098923/HOUSE3GmL",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 324,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 324
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinkaGmL",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE3GmL"
+    },
+    {
+      "id": "2276098923/HOUSE4GmbL",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 486,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 486
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinkaGmbL",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE4GmbL"
+    },
+    {
+      "id": "2276098923/HOUSE5GbL",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 648,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 648
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinkaGbL",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE5GbL"
+    },
+    {
+      "id": "2276098923/HOUSE6Pb",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 972,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 972
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinkaPb",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE6Pb"
+    },
+    {
+      "id": "2276098923/HOUSE7Pm",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 648,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 648
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinkaPm",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE7Pm"
+    },
+    {
+      "id": "2276098923/HOUSE8GmR",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 324,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 324
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinkaGmbL",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE8GmR"
+    },
+    {
+      "id": "2276098923/HOUSE9GmbR",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 486,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 486
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "stalinkaGmbR",
+      "workshopId": "2276098923",
+      "modPath": "HOUSE9GmbR"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2464642699",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.535Z",
+  "buildings": [
+    {
+      "id": "2464642699/field",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 6
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "eletronics": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Full-Auto Solar Farm",
+      "workshopId": "2464642699",
+      "modPath": "field"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2237466944",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.125Z",
+  "buildings": [
+    {
+      "id": "2237466944/parliamentbuilding",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 100,
+      "professors": 25,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "parliamentbuilding",
+      "workshopId": "2237466944",
+      "modPath": "parliamentbuilding"
+    }
+  ],
+  "vehicles": []
+}

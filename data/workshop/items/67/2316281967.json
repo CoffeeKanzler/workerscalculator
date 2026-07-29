@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2316281967",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.580Z",
+  "buildings": [
+    {
+      "id": "2316281967/CathTour",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.9,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Historic Cathedral Tour",
+      "workshopId": "2316281967",
+      "modPath": "CathTour"
+    },
+    {
+      "id": "2316281967/Tour2",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.9,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Historic Cathedral Tour v2",
+      "workshopId": "2316281967",
+      "modPath": "Tour2"
+    }
+  ],
+  "vehicles": []
+}

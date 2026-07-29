@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2410303786",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.506Z",
+  "buildings": [
+    {
+      "id": "2410303786/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 800,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 800
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "36-storey building",
+      "workshopId": "2410303786",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

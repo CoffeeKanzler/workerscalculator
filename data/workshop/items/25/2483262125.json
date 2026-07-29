@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2483262125",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.027Z",
+  "buildings": [
+    {
+      "id": "2483262125/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fire_station_1",
+      "workshopId": "2483262125",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2483262125/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fire_station_2",
+      "workshopId": "2483262125",
+      "modPath": "HOUSE2"
+    },
+    {
+      "id": "2483262125/HOUSE3",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fire_station_4",
+      "workshopId": "2483262125",
+      "modPath": "HOUSE3"
+    },
+    {
+      "id": "2483262125/HOUSE4",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fire_station_6",
+      "workshopId": "2483262125",
+      "modPath": "HOUSE4"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2457495678",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.494Z",
+  "buildings": [
+    {
+      "id": "2457495678/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Mozambique Flying Flag",
+      "workshopId": "2457495678",
+      "modPath": "Large_Flying"
+    },
+    {
+      "id": "2457495678/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Mozambique Flying Flag",
+      "workshopId": "2457495678",
+      "modPath": "Med_Flying"
+    },
+    {
+      "id": "2457495678/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Mozambique Flying Flag",
+      "workshopId": "2457495678",
+      "modPath": "Small_Flying"
+    }
+  ],
+  "vehicles": []
+}

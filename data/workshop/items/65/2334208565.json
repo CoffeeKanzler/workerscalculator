@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2334208565",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.702Z",
+  "buildings": [
+    {
+      "id": "2334208565/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 280,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 280
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "20-storey tower",
+      "workshopId": "2334208565",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

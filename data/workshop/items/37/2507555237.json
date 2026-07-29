@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2507555237",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.669Z",
+  "buildings": [
+    {
+      "id": "2507555237/MetalWindmill",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 5
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 7,
+        "mcomponents": 1,
+        "ecomponents": 0.1,
+        "workers": 180
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1900s Steel Windmill",
+      "workshopId": "2507555237",
+      "modPath": "MetalWindmill"
+    },
+    {
+      "id": "2507555237/Organizer",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 20,
+        "workers": 200,
+        "steel": 1,
+        "boards": 40,
+        "ecomponents": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Windmill Organizer",
+      "workshopId": "2507555237",
+      "modPath": "Organizer"
+    },
+    {
+      "id": "2507555237/Rotating",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 5
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 10,
+        "workers": 200,
+        "boards": 10,
+        "steel": 3,
+        "mcomponents": 1,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1900s Windmill Animated",
+      "workshopId": "2507555237",
+      "modPath": "Rotating"
+    },
+    {
+      "id": "2507555237/Rotating2",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 4
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 10,
+        "workers": 200,
+        "boards": 10,
+        "steel": 3,
+        "mcomponents": 1,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Early Start Windmill",
+      "workshopId": "2507555237",
+      "modPath": "Rotating2"
+    },
+    {
+      "id": "2507555237/WoodWindmill",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 5
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 10,
+        "workers": 200,
+        "boards": 10,
+        "steel": 3,
+        "mcomponents": 1,
+        "ecomponents": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1900s Windmill V2",
+      "workshopId": "2507555237",
+      "modPath": "WoodWindmill"
+    }
+  ],
+  "vehicles": []
+}

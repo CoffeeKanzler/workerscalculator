@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2507975071",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.676Z",
+  "buildings": [
+    {
+      "id": "2507975071/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 300
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse50s_1",
+      "workshopId": "2507975071",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2507975071/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 300,
+        "RESOURCE_TRANSPORT_COVERED": 896
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse50s_2",
+      "workshopId": "2507975071",
+      "modPath": "HOUSE2"
+    }
+  ],
+  "vehicles": []
+}

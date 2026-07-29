@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2231161505",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.083Z",
+  "buildings": [
+    {
+      "id": "2231161505/technical_university",
+      "nameId": 6013,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 105,
+      "professors": 90,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2231161505",
+      "modPath": "technical_university"
+    }
+  ],
+  "vehicles": []
+}

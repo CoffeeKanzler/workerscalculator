@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2261525181",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.275Z",
+  "buildings": [
+    {
+      "id": "2261525181/Zavod",
+      "nameId": 6169,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "asphalt": 29
+      },
+      "consumption": {
+        "gravel": 25,
+        "bitumen": 4,
+        "eletric": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2261525181",
+      "modPath": "Zavod"
+    },
+    {
+      "id": "2261525181/Zavod_01_1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "asphalt": 29
+      },
+      "consumption": {
+        "gravel": 25,
+        "bitumen": 4,
+        "eletric": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt plant_2",
+      "workshopId": "2261525181",
+      "modPath": "Zavod_01_1"
+    },
+    {
+      "id": "2261525181/Zavod_01_2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "asphalt": 29
+      },
+      "consumption": {
+        "gravel": 25,
+        "bitumen": 4,
+        "eletric": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt plant_2",
+      "workshopId": "2261525181",
+      "modPath": "Zavod_01_2"
+    },
+    {
+      "id": "2261525181/Zavod_01_3",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "asphalt": 29
+      },
+      "consumption": {
+        "gravel": 25,
+        "bitumen": 4,
+        "eletric": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt plant_2",
+      "workshopId": "2261525181",
+      "modPath": "Zavod_01_3"
+    },
+    {
+      "id": "2261525181/Zavod_02_1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "asphalt": 29
+      },
+      "consumption": {
+        "gravel": 25,
+        "bitumen": 4,
+        "eletric": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt plant_2",
+      "workshopId": "2261525181",
+      "modPath": "Zavod_02_1"
+    },
+    {
+      "id": "2261525181/Zavod_02_2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "asphalt": 29
+      },
+      "consumption": {
+        "gravel": 25,
+        "bitumen": 4,
+        "eletric": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt plant_2",
+      "workshopId": "2261525181",
+      "modPath": "Zavod_02_2"
+    },
+    {
+      "id": "2261525181/Zavod_03",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {
+        "asphalt": 29
+      },
+      "consumption": {
+        "gravel": 25,
+        "bitumen": 4,
+        "eletric": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt plant_3",
+      "workshopId": "2261525181",
+      "modPath": "Zavod_03"
+    },
+    {
+      "id": "2261525181/Zavod_04",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {
+        "asphalt": 29
+      },
+      "consumption": {
+        "gravel": 25,
+        "bitumen": 4,
+        "eletric": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt plant_3",
+      "workshopId": "2261525181",
+      "modPath": "Zavod_04"
+    }
+  ],
+  "vehicles": []
+}

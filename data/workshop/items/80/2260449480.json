@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2260449480",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.266Z",
+  "buildings": [
+    {
+      "id": "2260449480/R1r0",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100
+      },
+      "constructionResources": {
+        "concrete": 6,
+        "asphalt": 3,
+        "workers": 26,
+        "gravel": 10,
+        "bricks": 6,
+        "steel": 4,
+        "ecomponents": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tram stop",
+      "workshopId": "2260449480",
+      "modPath": "R1r0"
+    },
+    {
+      "id": "2260449480/R1r1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100
+      },
+      "constructionResources": {
+        "concrete": 6,
+        "asphalt": 13,
+        "workers": 26,
+        "gravel": 18,
+        "bricks": 6,
+        "steel": 4,
+        "ecomponents": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tram stop with road",
+      "workshopId": "2260449480",
+      "modPath": "R1r1"
+    },
+    {
+      "id": "2260449480/R1t1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100
+      },
+      "constructionResources": {
+        "concrete": 6,
+        "asphalt": 13,
+        "workers": 26,
+        "gravel": 18,
+        "bricks": 6,
+        "steel": 10,
+        "ecomponents": 3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tram stop with Trolleybus road",
+      "workshopId": "2260449480",
+      "modPath": "R1t1"
+    }
+  ],
+  "vehicles": []
+}

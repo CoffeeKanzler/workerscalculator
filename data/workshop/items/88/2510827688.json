@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2510827688",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.688Z",
+  "buildings": [
+    {
+      "id": "2510827688/chemical_plant_ztm",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 72,
+      "professors": 9,
+      "production": {
+        "chemicals": 0.05
+      },
+      "consumption": {
+        "fuel": 0.02,
+        "bitumen": 0.06,
+        "coal": 0.04
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.07
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¥Ð¸Ð¼Ð¸ÑÐµÑÐºÐ¸Ð¹ ÑÐµÑ (Chemical Plant)",
+      "workshopId": "2510827688",
+      "modPath": "chemical_plant_ztm"
+    }
+  ],
+  "vehicles": []
+}

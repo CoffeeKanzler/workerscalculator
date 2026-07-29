@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2506466320",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.655Z",
+  "buildings": [
+    {
+      "id": "2506466320/prospekt16",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 240,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 240
+      },
+      "constructionResources": {
+        "concrete": 25,
+        "boards": 8,
+        "bricks": 98,
+        "workers": 100
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Lenin Avenue building",
+      "workshopId": "2506466320",
+      "modPath": "prospekt16"
+    }
+  ],
+  "vehicles": []
+}

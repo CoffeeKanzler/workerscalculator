@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2391984666",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.450Z",
+  "buildings": [
+    {
+      "id": "2391984666/Propagand",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 25,
+      "professors": 15,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ministry of State Propaganda",
+      "workshopId": "2391984666",
+      "modPath": "Propagand"
+    },
+    {
+      "id": "2391984666/Propaganda",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 25,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ministry of State Propaganda v2",
+      "workshopId": "2391984666",
+      "modPath": "Propaganda"
+    }
+  ],
+  "vehicles": []
+}

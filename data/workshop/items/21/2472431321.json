@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2472431321",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.626Z",
+  "buildings": [
+    {
+      "id": "2472431321/Blok22pv1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 210,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 210
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 22p v1",
+      "workshopId": "2472431321",
+      "modPath": "Blok22pv1"
+    }
+  ],
+  "vehicles": []
+}

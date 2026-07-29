@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2394927376",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.457Z",
+  "buildings": [
+    {
+      "id": "2394927376/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 12,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.68,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 12
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-164",
+      "workshopId": "2394927376",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2394927376/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 32,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.74,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 32
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-216Ð",
+      "workshopId": "2394927376",
+      "modPath": "HOUSE2"
+    },
+    {
+      "id": "2394927376/HOUSE3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 32,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 32
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-216-2",
+      "workshopId": "2394927376",
+      "modPath": "HOUSE3"
+    },
+    {
+      "id": "2394927376/HOUSE4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-216-3",
+      "workshopId": "2394927376",
+      "modPath": "HOUSE4"
+    },
+    {
+      "id": "2394927376/HOUSE5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Yard restroom",
+      "workshopId": "2394927376",
+      "modPath": "HOUSE5"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2316760237",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.598Z",
+  "buildings": [
+    {
+      "id": "2316760237/Gravity-fed_basin",
+      "nameId": null,
+      "types": [
+        "TYPE_COOLING_TOWER",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gravity-fed basin",
+      "workshopId": "2316760237",
+      "modPath": "Gravity-fed_basin"
+    },
+    {
+      "id": "2316760237/Gravity-fed_basin_sewage",
+      "nameId": null,
+      "types": [
+        "TYPE_SEWAGE_DISCHARGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gravity-fed basin sewage",
+      "workshopId": "2316760237",
+      "modPath": "Gravity-fed_basin_sewage"
+    },
+    {
+      "id": "2316760237/Pumpinghouse",
+      "nameId": null,
+      "types": [
+        "TYPE_COOLING_TOWER",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling Water Pumping House",
+      "workshopId": "2316760237",
+      "modPath": "Pumpinghouse"
+    },
+    {
+      "id": "2316760237/Pumpinghouse_water",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_WATER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 1000
+      },
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling Water Pumping House Water",
+      "workshopId": "2316760237",
+      "modPath": "Pumpinghouse_water"
+    },
+    {
+      "id": "2316760237/RBMK-1500",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 110,
+      "professors": 90,
+      "production": {
+        "eletric": 65.5,
+        "nuclearfuelburned": 0.0003,
+        "vehicles": 1
+      },
+      "consumption": {
+        "nuclearfuel": 0.00067,
+        "vehicles": 1,
+        "water": 9.094
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "RBMK-1500 Ignalina-1/2",
+      "workshopId": "2316760237",
+      "modPath": "RBMK-1500"
+    }
+  ],
+  "vehicles": []
+}

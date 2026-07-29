@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2328973079",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.680Z",
+  "buildings": [
+    {
+      "id": "2328973079/Kaolinka",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 2,
+      "storages": {},
+      "constructionResources": {
+        "workers": 310,
+        "asphalt": 6,
+        "gravel": 8,
+        "bricks": 40,
+        "concrete": 20,
+        "steel": 2,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village hotel 'Kaolinka'",
+      "workshopId": "2328973079",
+      "modPath": "Kaolinka"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2495393502",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.107Z",
+  "buildings": [
+    {
+      "id": "2495393502/fishfactory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {
+        "meat": 0.75,
+        "oil": 0.01
+      },
+      "consumption": {
+        "livestock": 1.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.5
+      },
+      "nameStr": "fish factory",
+      "workshopId": "2495393502",
+      "modPath": "fishfactory"
+    },
+    {
+      "id": "2495393502/fishingharbor",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {
+        "meat": 0.75,
+        "oil": 0.01
+      },
+      "consumption": {
+        "livestock": 1.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.5
+      },
+      "nameStr": "fishing harbor",
+      "workshopId": "2495393502",
+      "modPath": "fishingharbor"
+    },
+    {
+      "id": "2495393502/kuehlhaus",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 800
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "KÃ¼hlhaus",
+      "workshopId": "2495393502",
+      "modPath": "kuehlhaus"
+    },
+    {
+      "id": "2495393502/port2",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "fishing port",
+      "workshopId": "2495393502",
+      "modPath": "port2"
+    }
+  ],
+  "vehicles": []
+}

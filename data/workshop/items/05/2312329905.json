@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2312329905",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.559Z",
+  "buildings": [
+    {
+      "id": "2312329905/Vuosaari",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 215,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 215
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vuosaari 64",
+      "workshopId": "2312329905",
+      "modPath": "Vuosaari"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2256094923",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.243Z",
+  "buildings": [
+    {
+      "id": "2256094923/loading",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling Container loading facility",
+      "workshopId": "2256094923",
+      "modPath": "loading"
+    },
+    {
+      "id": "2256094923/unloading",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling Container unloading facility",
+      "workshopId": "2256094923",
+      "modPath": "unloading"
+    }
+  ],
+  "vehicles": []
+}

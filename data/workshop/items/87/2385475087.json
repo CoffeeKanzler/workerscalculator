@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2385475087",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.418Z",
+  "buildings": [
+    {
+      "id": "2385475087/DPJ-2K-312U",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 288,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 288
+      },
+      "constructionResources": {
+        "workers": 1100,
+        "prefabpanels": 230,
+        "bricks": 5,
+        "boards": 3,
+        "concrete": 30,
+        "steel": 6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "2Ð-ÐÐÐ-312Ð£",
+      "workshopId": "2385475087",
+      "modPath": "DPJ-2K-312U"
+    },
+    {
+      "id": "2385475087/DPJ-2K-317U",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 408,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 408
+      },
+      "constructionResources": {
+        "workers": 1600,
+        "prefabpanels": 330,
+        "bricks": 7,
+        "boards": 5,
+        "concrete": 40,
+        "steel": 8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "2Ð-ÐÐÐ-317Ð£",
+      "workshopId": "2385475087",
+      "modPath": "DPJ-2K-317U"
+    },
+    {
+      "id": "2385475087/DPJ-2K-35U",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120
+      },
+      "constructionResources": {
+        "workers": 400,
+        "prefabpanels": 90,
+        "bricks": 2,
+        "boards": 1,
+        "concrete": 10,
+        "steel": 3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "2Ð-ÐÐÐ-305Ð£",
+      "workshopId": "2385475087",
+      "modPath": "DPJ-2K-35U"
+    },
+    {
+      "id": "2385475087/DPJ-2K-39U",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 216,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 216
+      },
+      "constructionResources": {
+        "workers": 800,
+        "prefabpanels": 170,
+        "bricks": 4,
+        "boards": 2,
+        "concrete": 20,
+        "steel": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "2Ð-ÐÐÐ-309Ð£",
+      "workshopId": "2385475087",
+      "modPath": "DPJ-2K-39U"
+    }
+  ],
+  "vehicles": []
+}

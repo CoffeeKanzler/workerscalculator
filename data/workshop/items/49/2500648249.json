@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2500648249",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.134Z",
+  "buildings": [
+    {
+      "id": "2500648249/ab_ztm",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ²ÑÐ¾ÑÐ»ÑÐ¶Ð±Ð° ÐÐ¢Ð (Distribution Station)",
+      "workshopId": "2500648249",
+      "modPath": "ab_ztm"
+    },
+    {
+      "id": "2500648249/sp_ztm",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡Ð½ÐµÐ³Ð¾ÑÐ±Ð¾ÑÐ¾ÑÐ½Ð°Ñ ÑÐ»ÑÐ¶Ð±Ð° ÐÐ¢Ð (Snowplow Station)",
+      "workshopId": "2500648249",
+      "modPath": "sp_ztm"
+    }
+  ],
+  "vehicles": []
+}

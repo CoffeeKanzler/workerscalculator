@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2434598247",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.692Z",
+  "buildings": [
+    {
+      "id": "2434598247/heat",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 1800
+      },
+      "consumption": {
+        "eletric": 7
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "NRES Heating extension",
+      "workshopId": "2434598247",
+      "modPath": "heat"
+    },
+    {
+      "id": "2434598247/heat2",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 1800
+      },
+      "consumption": {
+        "eletric": 7
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "NRES Heating extension 2",
+      "workshopId": "2434598247",
+      "modPath": "heat2"
+    },
+    {
+      "id": "2434598247/heat2M",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 1800
+      },
+      "consumption": {
+        "eletric": 7
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "NRES Heating extension 2 Mirrored",
+      "workshopId": "2434598247",
+      "modPath": "heat2M"
+    },
+    {
+      "id": "2434598247/plant",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "eletric": 26.4
+      },
+      "consumption": {
+        "coal": 1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 200
+      },
+      "constructionResources": {
+        "bricks": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1930s Power Plant",
+      "workshopId": "2434598247",
+      "modPath": "plant"
+    }
+  ],
+  "vehicles": []
+}

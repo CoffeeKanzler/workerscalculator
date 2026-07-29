@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2429541423",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.652Z",
+  "buildings": [
+    {
+      "id": "2429541423/sovietpalaceofsports",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.8,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Soviet Palace of Sports",
+      "workshopId": "2429541423",
+      "modPath": "sovietpalaceofsports"
+    }
+  ],
+  "vehicles": []
+}

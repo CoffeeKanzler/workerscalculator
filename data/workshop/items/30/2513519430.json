@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2513519430",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.702Z",
+  "buildings": [
+    {
+      "id": "2513519430/Town_house_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Town house 1",
+      "workshopId": "2513519430",
+      "modPath": "Town_house_1"
+    },
+    {
+      "id": "2513519430/Town_house_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Town house 2",
+      "workshopId": "2513519430",
+      "modPath": "Town_house_2"
+    },
+    {
+      "id": "2513519430/Town_house_3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Town house 3",
+      "workshopId": "2513519430",
+      "modPath": "Town_house_3"
+    },
+    {
+      "id": "2513519430/Town_house_4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Town house 4",
+      "workshopId": "2513519430",
+      "modPath": "Town_house_4"
+    },
+    {
+      "id": "2513519430/Town_house_5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Town house 5",
+      "workshopId": "2513519430",
+      "modPath": "Town_house_5"
+    },
+    {
+      "id": "2513519430/Town_house_6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Town house 6",
+      "workshopId": "2513519430",
+      "modPath": "Town_house_6"
+    }
+  ],
+  "vehicles": []
+}

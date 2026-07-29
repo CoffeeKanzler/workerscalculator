@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2376911118",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.347Z",
+  "buildings": [
+    {
+      "id": "2376911118/ruralseawall2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20,
+        "gravel": 10,
+        "bricks": 10,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Seawall",
+      "workshopId": "2376911118",
+      "modPath": "ruralseawall2"
+    },
+    {
+      "id": "2376911118/ruralseawall2c",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20,
+        "gravel": 10,
+        "bricks": 10,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Seawall Corner",
+      "workshopId": "2376911118",
+      "modPath": "ruralseawall2c"
+    },
+    {
+      "id": "2376911118/ruralseawall2c45",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20,
+        "gravel": 10,
+        "bricks": 10,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Seawall 45 degree corner",
+      "workshopId": "2376911118",
+      "modPath": "ruralseawall2c45"
+    },
+    {
+      "id": "2376911118/ruralseawall2c45i",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20,
+        "gravel": 10,
+        "bricks": 10,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Seawall 45 degree inner corner",
+      "workshopId": "2376911118",
+      "modPath": "ruralseawall2c45i"
+    },
+    {
+      "id": "2376911118/ruralseawall2ci",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20,
+        "gravel": 10,
+        "bricks": 10,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Seawall Inner Corner",
+      "workshopId": "2376911118",
+      "modPath": "ruralseawall2ci"
+    },
+    {
+      "id": "2376911118/ruralseawall2l",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 40,
+        "gravel": 20,
+        "bricks": 20,
+        "boards": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Seawall Large",
+      "workshopId": "2376911118",
+      "modPath": "ruralseawall2l"
+    },
+    {
+      "id": "2376911118/ruralseawall2nostep",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 20,
+        "gravel": 10,
+        "bricks": 10,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Seawall no steps",
+      "workshopId": "2376911118",
+      "modPath": "ruralseawall2nostep"
+    },
+    {
+      "id": "2376911118/ruralseawall3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Rural Seawall",
+      "workshopId": "2376911118",
+      "modPath": "ruralseawall3"
+    },
+    {
+      "id": "2376911118/ruralseawall3c45",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Rural Seawall 45 degree corner",
+      "workshopId": "2376911118",
+      "modPath": "ruralseawall3c45"
+    },
+    {
+      "id": "2376911118/ruralseawall3c90",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Rural Seawall 90 degree corner",
+      "workshopId": "2376911118",
+      "modPath": "ruralseawall3c90"
+    },
+    {
+      "id": "2376911118/ruralseawall3ci",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Rural Seawall inner corner",
+      "workshopId": "2376911118",
+      "modPath": "ruralseawall3ci"
+    }
+  ],
+  "vehicles": []
+}

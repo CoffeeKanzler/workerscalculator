@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2439070959",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.718Z",
+  "buildings": [
+    {
+      "id": "2439070959/ws_chem",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 78,
+      "professors": 10,
+      "production": {
+        "chemicals": 0.04
+      },
+      "consumption": {
+        "fuel": 0.005,
+        "bitumen": 0.01,
+        "plants": 0.02,
+        "wood": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¥Ð¸Ð¼Ð¸ÑÐµÑÐºÐ¸Ð¹ ÑÐµÑ",
+      "workshopId": "2439070959",
+      "modPath": "ws_chem"
+    }
+  ],
+  "vehicles": []
+}

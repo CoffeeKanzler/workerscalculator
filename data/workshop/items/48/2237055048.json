@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2237055048",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.123Z",
+  "buildings": [
+    {
+      "id": "2237055048/salyut",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.9,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð ÐµÑÑÐ¾ÑÐ°Ð½ Ð¡Ð°Ð»ÑÑ/Salyut",
+      "workshopId": "2237055048",
+      "modPath": "salyut"
+    },
+    {
+      "id": "2237055048/salyut_h",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.7,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hotel Salyut",
+      "workshopId": "2237055048",
+      "modPath": "salyut_h"
+    }
+  ],
+  "vehicles": []
+}

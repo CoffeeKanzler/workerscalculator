@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2544270352",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.843Z",
+  "buildings": [
+    {
+      "id": "2544270352/remiza",
+      "nameId": 6259,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2544270352",
+      "modPath": "remiza"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2300329596",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.797Z",
+  "buildings": [
+    {
+      "id": "2300329596/HOUSE100_B",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 9,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bar in the house-100",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE100_B"
+    },
+    {
+      "id": "2300329596/HOUSE100_C",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 12,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cinema in the house-100",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE100_C"
+    },
+    {
+      "id": "2300329596/HOUSE100_H",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House in the shop-100",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE100_H"
+    },
+    {
+      "id": "2300329596/HOUSE100_S",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 12,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shop in the house-100",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE100_S"
+    },
+    {
+      "id": "2300329596/HOUSE150_C",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 18,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cinema in the house-150",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE150_C"
+    },
+    {
+      "id": "2300329596/HOUSE150_H",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House in the shop-150",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE150_H"
+    },
+    {
+      "id": "2300329596/HOUSE150_S",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 18,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shop in the house-150",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE150_S"
+    },
+    {
+      "id": "2300329596/HOUSE200_C",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 24,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cinema in the house-200",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE200_C"
+    },
+    {
+      "id": "2300329596/HOUSE200_H",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House in the shop-200",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE200_H"
+    },
+    {
+      "id": "2300329596/HOUSE200_S",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 24,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shop in the house-200",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE200_S"
+    },
+    {
+      "id": "2300329596/HOUSE25_B",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bar in the house-25",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE25_B"
+    },
+    {
+      "id": "2300329596/HOUSE25_C",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cinema in the house-25",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE25_C"
+    },
+    {
+      "id": "2300329596/HOUSE25_K",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "kindergarten in the house-25",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE25_K"
+    },
+    {
+      "id": "2300329596/HOUSE25_S",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shop in the house-25",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE25_S"
+    },
+    {
+      "id": "2300329596/HOUSE300_C",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 36,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cinema in the house-300",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE300_C"
+    },
+    {
+      "id": "2300329596/HOUSE300_S",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 36,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shop in the house-300",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE300_S"
+    },
+    {
+      "id": "2300329596/HOUSE50_B",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bar in the house-50",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE50_B"
+    },
+    {
+      "id": "2300329596/HOUSE50_C",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cinema in the house-50",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE50_C"
+    },
+    {
+      "id": "2300329596/HOUSE50_H",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House in the shop-50",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE50_H"
+    },
+    {
+      "id": "2300329596/HOUSE50_K",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "kindergarten in the house-50",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE50_K"
+    },
+    {
+      "id": "2300329596/HOUSE50_S",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shop in the house-50",
+      "workshopId": "2300329596",
+      "modPath": "HOUSE50_S"
+    }
+  ],
+  "vehicles": []
+}

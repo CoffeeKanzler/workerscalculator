@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2247293907",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.195Z",
+  "buildings": [
+    {
+      "id": "2247293907/Clothes",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 80,
+      "professors": 0,
+      "production": {
+        "clothes": 0.015
+      },
+      "consumption": {
+        "fabric": 0.03
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Clothing Manufactory",
+      "workshopId": "2247293907",
+      "modPath": "Clothes"
+    },
+    {
+      "id": "2247293907/Distillary",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.06
+      },
+      "consumption": {
+        "plants": 0.3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Port Distillery",
+      "workshopId": "2247293907",
+      "modPath": "Distillary"
+    },
+    {
+      "id": "2247293907/Fabric",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {
+        "fabric": 0.05
+      },
+      "consumption": {
+        "plants": 0.2,
+        "chemicals": 0.005
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fabric Mill",
+      "workshopId": "2247293907",
+      "modPath": "Fabric"
+    },
+    {
+      "id": "2247293907/Flour",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 70,
+      "professors": 0,
+      "production": {
+        "food": 0.12
+      },
+      "consumption": {
+        "plants": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Food Processing Mill",
+      "workshopId": "2247293907",
+      "modPath": "Flour"
+    },
+    {
+      "id": "2247293907/HarborFarm",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Waterfront Farm",
+      "workshopId": "2247293907",
+      "modPath": "HarborFarm"
+    },
+    {
+      "id": "2247293907/Silo",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Silo Pier",
+      "workshopId": "2247293907",
+      "modPath": "Silo"
+    }
+  ],
+  "vehicles": []
+}

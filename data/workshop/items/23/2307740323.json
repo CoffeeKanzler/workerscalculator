@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2307740323",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.886Z",
+  "buildings": [
+    {
+      "id": "2307740323/cdb",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 256,
+      "professors": 211,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Central child clinic",
+      "workshopId": "2307740323",
+      "modPath": "cdb"
+    }
+  ],
+  "vehicles": []
+}

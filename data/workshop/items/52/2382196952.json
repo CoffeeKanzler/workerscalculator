@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2382196952",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.407Z",
+  "buildings": [
+    {
+      "id": "2382196952/hutagig",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 2000,
+      "professors": 0,
+      "production": {
+        "steel": 0.08
+      },
+      "consumption": {
+        "coal": 0.75,
+        "iron": 0.4
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.81
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Wielka huta stali",
+      "workshopId": "2382196952",
+      "modPath": "hutagig"
+    }
+  ],
+  "vehicles": []
+}

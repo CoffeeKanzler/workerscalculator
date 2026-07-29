@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2433908935",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.681Z",
+  "buildings": [
+    {
+      "id": "2433908935/P10X10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "P10X10",
+      "workshopId": "2433908935",
+      "modPath": "P10X10"
+    },
+    {
+      "id": "2433908935/P20X20",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "P20X20",
+      "workshopId": "2433908935",
+      "modPath": "P20X20"
+    },
+    {
+      "id": "2433908935/P40X40",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "P40X40",
+      "workshopId": "2433908935",
+      "modPath": "P40X40"
+    },
+    {
+      "id": "2433908935/P5X5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "P5X5",
+      "workshopId": "2433908935",
+      "modPath": "P5X5"
+    },
+    {
+      "id": "2433908935/PG10X5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PG10X5",
+      "workshopId": "2433908935",
+      "modPath": "PG10X5"
+    },
+    {
+      "id": "2433908935/PG20X5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PG20X5",
+      "workshopId": "2433908935",
+      "modPath": "PG20X5"
+    },
+    {
+      "id": "2433908935/PG5X5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PG5X5",
+      "workshopId": "2433908935",
+      "modPath": "PG5X5"
+    },
+    {
+      "id": "2433908935/PGC",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PGC",
+      "workshopId": "2433908935",
+      "modPath": "PGC"
+    },
+    {
+      "id": "2433908935/SW5X10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "SW5X10",
+      "workshopId": "2433908935",
+      "modPath": "SW5X10"
+    },
+    {
+      "id": "2433908935/SW5X20",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "SW20X5",
+      "workshopId": "2433908935",
+      "modPath": "SW5X20"
+    },
+    {
+      "id": "2433908935/SW5X40",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "SW40X5",
+      "workshopId": "2433908935",
+      "modPath": "SW5X40"
+    },
+    {
+      "id": "2433908935/SW5X5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "SW5X5",
+      "workshopId": "2433908935",
+      "modPath": "SW5X5"
+    },
+    {
+      "id": "2433908935/SW5X5SPEZ",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "SW5X5SPEZ",
+      "workshopId": "2433908935",
+      "modPath": "SW5X5SPEZ"
+    },
+    {
+      "id": "2433908935/SWC5X5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "SWC5X5",
+      "workshopId": "2433908935",
+      "modPath": "SWC5X5"
+    },
+    {
+      "id": "2433908935/SWRC5X5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "SWRC5X5",
+      "workshopId": "2433908935",
+      "modPath": "SWRC5X5"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2334054846",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.693Z",
+  "buildings": [
+    {
+      "id": "2334054846/PalaceOfSovietMuseum",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": 100,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 2900,
+        "workers": 10000,
+        "boards": 100,
+        "bricks": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Palace of Soviet Museum",
+      "workshopId": "2334054846",
+      "modPath": "PalaceOfSovietMuseum"
+    }
+  ],
+  "vehicles": []
+}

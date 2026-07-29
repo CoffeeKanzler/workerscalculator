@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2253936049",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.233Z",
+  "buildings": [
+    {
+      "id": "2253936049/DPRK_Mansion",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 57,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.99,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 57
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "DPRK Mansion",
+      "workshopId": "2253936049",
+      "modPath": "DPRK_Mansion"
+    }
+  ],
+  "vehicles": []
+}

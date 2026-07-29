@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2252231578",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.227Z",
+  "buildings": [
+    {
+      "id": "2252231578/angular",
+      "nameId": 6020,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 80,
+      "professors": 75,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2252231578",
+      "modPath": "angular"
+    }
+  ],
+  "vehicles": []
+}

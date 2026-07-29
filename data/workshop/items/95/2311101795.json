@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2311101795",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.544Z",
+  "buildings": [
+    {
+      "id": "2311101795/el_alk",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 440,
+      "professors": 120,
+      "production": {
+        "aluminium": 0.12
+      },
+      "consumption": {
+        "chemicals": 0.09,
+        "alumina": 0.21
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.49
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð­Ð»ÐµÐºÑÑÐ¾Ð»Ð¸Ð·Ð½ÑÐ¹ ÑÐµÑ ÐÐÐ",
+      "workshopId": "2311101795",
+      "modPath": "el_alk"
+    }
+  ],
+  "vehicles": []
+}

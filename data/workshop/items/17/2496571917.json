@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2496571917",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.115Z",
+  "buildings": [
+    {
+      "id": "2496571917/utrzymanie1",
+      "nameId": 6218,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2496571917",
+      "modPath": "utrzymanie1"
+    },
+    {
+      "id": "2496571917/utrzymanie2",
+      "nameId": 6218,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2496571917",
+      "modPath": "utrzymanie2"
+    },
+    {
+      "id": "2496571917/utrzymanie3",
+      "nameId": 6218,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2496571917",
+      "modPath": "utrzymanie3"
+    }
+  ],
+  "vehicles": []
+}

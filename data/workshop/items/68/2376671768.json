@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2376671768",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.345Z",
+  "buildings": [
+    {
+      "id": "2376671768/School",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 30,
+      "professors": 30,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 800,
+        "steel": 42,
+        "asphalt": 60,
+        "gravel": 40,
+        "prefabpanels": 300,
+        "bricks": 100,
+        "concrete": 80,
+        "boards": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "School of M. Lerch",
+      "workshopId": "2376671768",
+      "modPath": "School"
+    }
+  ],
+  "vehicles": []
+}

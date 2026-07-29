@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2389591247",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.433Z",
+  "buildings": [
+    {
+      "id": "2389591247/Woodys",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 24,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Woody's Bar",
+      "workshopId": "2389591247",
+      "modPath": "Woodys"
+    },
+    {
+      "id": "2389591247/Woodys2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.4,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Woody's Bar",
+      "workshopId": "2389591247",
+      "modPath": "Woodys2"
+    }
+  ],
+  "vehicles": []
+}

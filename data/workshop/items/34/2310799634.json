@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2310799634",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.541Z",
+  "buildings": [
+    {
+      "id": "2310799634/sauna1",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 10,
+      "professors": 7,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 70,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sauna Hospital/ ÐÐµÑÐµÐ±Ð½Ð°Ñ ÐÐ°Ð½Ñ ",
+      "workshopId": "2310799634",
+      "modPath": "sauna1"
+    },
+    {
+      "id": "2310799634/sauna2",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 55,
+      "qualityOfLiving": null,
+      "attractiveScore": 4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sauna Sport / ÐÐ°Ð½Ñ Ð¡Ð¿Ð¾ÑÑ",
+      "workshopId": "2310799634",
+      "modPath": "sauna2"
+    },
+    {
+      "id": "2310799634/sauna3",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": 4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sauna Cinema/ ÐÐ°Ð½Ñ ÐÐ¸Ð½Ð¾",
+      "workshopId": "2310799634",
+      "modPath": "sauna3"
+    }
+  ],
+  "vehicles": []
+}

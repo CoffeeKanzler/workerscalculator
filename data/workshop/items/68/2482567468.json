@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2482567468",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.024Z",
+  "buildings": [
+    {
+      "id": "2482567468/LPI",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 16,
+      "professors": 32,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 25,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 102,
+        "gravel": 44,
+        "boards": 56.5,
+        "workers": 3905,
+        "bricks": 231.3,
+        "prefabpanels": 188,
+        "steel": 1,
+        "ecomponents": 0.2,
+        "asphalt": 24
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "LPI Kalinina M.I.",
+      "workshopId": "2482567468",
+      "modPath": "LPI"
+    },
+    {
+      "id": "2482567468/canteen",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "canteen for LPI",
+      "workshopId": "2482567468",
+      "modPath": "canteen"
+    },
+    {
+      "id": "2482567468/parking",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "parking for LPI",
+      "workshopId": "2482567468",
+      "modPath": "parking"
+    }
+  ],
+  "vehicles": []
+}

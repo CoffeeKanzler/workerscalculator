@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2483328111",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.029Z",
+  "buildings": [
+    {
+      "id": "2483328111/Dealer",
+      "nameId": null,
+      "types": [
+        "TYPE_CAR_DEALER"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electric Car Dealership",
+      "workshopId": "2483328111",
+      "modPath": "Dealer"
+    },
+    {
+      "id": "2483328111/ElectricParking",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electric Car Parking",
+      "workshopId": "2483328111",
+      "modPath": "ElectricParking"
+    },
+    {
+      "id": "2483328111/Garage",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electric Parking Garage",
+      "workshopId": "2483328111",
+      "modPath": "Garage"
+    }
+  ],
+  "vehicles": []
+}

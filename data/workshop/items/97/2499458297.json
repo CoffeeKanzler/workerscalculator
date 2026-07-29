@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2499458297",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.122Z",
+  "buildings": [
+    {
+      "id": "2499458297/big_lab",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 34,
+      "production": {
+        "eletronics": 0.02
+      },
+      "consumption": {
+        "chemicals": 0.03,
+        "ecomponents": 0.1,
+        "plastics": 0.08
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¦ÐµÑ Ð Ð­Ð (Electronic Factory)",
+      "workshopId": "2499458297",
+      "modPath": "big_lab"
+    },
+    {
+      "id": "2499458297/nio",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 88,
+      "professors": 48,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐ ÐÐ¢Ð (Technical University)",
+      "workshopId": "2499458297",
+      "modPath": "nio"
+    },
+    {
+      "id": "2499458297/small_lab",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 18,
+      "professors": 23,
+      "production": {
+        "chemicals": 0.004,
+        "iron": 0.006
+      },
+      "consumption": {
+        "rawiron": 0.009
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¦ÐÐ ÐÐ¢Ð(Chemical Lab)",
+      "workshopId": "2499458297",
+      "modPath": "small_lab"
+    }
+  ],
+  "vehicles": []
+}

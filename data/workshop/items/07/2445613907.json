@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2445613907",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.740Z",
+  "buildings": [
+    {
+      "id": "2445613907/WTC",
+      "nameId": 6043,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 135,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2445613907",
+      "modPath": "WTC"
+    },
+    {
+      "id": "2445613907/WTChall",
+      "nameId": 13500,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 135,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2445613907",
+      "modPath": "WTChall"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2433756890",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.679Z",
+  "buildings": [
+    {
+      "id": "2433756890/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "United Republic of America Large Flag",
+      "workshopId": "2433756890",
+      "modPath": "Large_Flying"
+    },
+    {
+      "id": "2433756890/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "United Republic of America Medium Flag",
+      "workshopId": "2433756890",
+      "modPath": "Med_Flying"
+    },
+    {
+      "id": "2433756890/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "United Republic of America Small Flag",
+      "workshopId": "2433756890",
+      "modPath": "Small_Flying"
+    }
+  ],
+  "vehicles": []
+}

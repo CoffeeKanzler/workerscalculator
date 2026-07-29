@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2493701849",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.088Z",
+  "buildings": [
+    {
+      "id": "2493701849/TinyCO",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 15,
+        "workers": 120,
+        "boards": 25,
+        "asphalt": 3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny Construction Office",
+      "workshopId": "2493701849",
+      "modPath": "TinyCO"
+    },
+    {
+      "id": "2493701849/TinyCO2",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 20,
+        "workers": 120,
+        "boards": 25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny Construction Office v2",
+      "workshopId": "2493701849",
+      "modPath": "TinyCO2"
+    },
+    {
+      "id": "2493701849/TinyCO3",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 24,
+        "workers": 140,
+        "boards": 25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny Construction Office v3",
+      "workshopId": "2493701849",
+      "modPath": "TinyCO3"
+    },
+    {
+      "id": "2493701849/TinyCO4",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 26,
+        "workers": 144,
+        "boards": 25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Long Wagon Construction Office",
+      "workshopId": "2493701849",
+      "modPath": "TinyCO4"
+    }
+  ],
+  "vehicles": []
+}

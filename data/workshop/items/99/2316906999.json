@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2316906999",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.601Z",
+  "buildings": [
+    {
+      "id": "2316906999/NukeTour",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.9,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nuclear Power Plant Tour",
+      "workshopId": "2316906999",
+      "modPath": "NukeTour"
+    }
+  ],
+  "vehicles": []
+}

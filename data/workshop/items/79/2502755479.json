@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2502755479",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.641Z",
+  "buildings": [
+    {
+      "id": "2502755479/Stalin",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Stalin",
+      "workshopId": "2502755479",
+      "modPath": "Stalin"
+    }
+  ],
+  "vehicles": []
+}

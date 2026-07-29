@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2455766644",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.479Z",
+  "buildings": [
+    {
+      "id": "2455766644/galerie",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Galerie",
+      "workshopId": "2455766644",
+      "modPath": "galerie"
+    },
+    {
+      "id": "2455766644/klinikum",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 15,
+      "professors": 8,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Privatklinik",
+      "workshopId": "2455766644",
+      "modPath": "klinikum"
+    },
+    {
+      "id": "2455766644/kneipe",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.8,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "'Zum Henker'",
+      "workshopId": "2455766644",
+      "modPath": "kneipe"
+    }
+  ],
+  "vehicles": []
+}

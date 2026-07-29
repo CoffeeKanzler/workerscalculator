@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2294234012",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.783Z",
+  "buildings": [
+    {
+      "id": "2294234012/house_corner",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 285,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 285
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ampir brick house corner",
+      "workshopId": "2294234012",
+      "modPath": "house_corner"
+    },
+    {
+      "id": "2294234012/house_medium",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 220,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 220
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ampir brick house medium",
+      "workshopId": "2294234012",
+      "modPath": "house_medium"
+    },
+    {
+      "id": "2294234012/house_small",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ampir brick house small",
+      "workshopId": "2294234012",
+      "modPath": "house_small"
+    }
+  ],
+  "vehicles": []
+}

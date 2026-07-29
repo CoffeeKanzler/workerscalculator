@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2453063399",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.458Z",
+  "buildings": [
+    {
+      "id": "2453063399/1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated station",
+      "workshopId": "2453063399",
+      "modPath": "1"
+    },
+    {
+      "id": "2453063399/2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated station",
+      "workshopId": "2453063399",
+      "modPath": "2"
+    },
+    {
+      "id": "2453063399/3",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated station",
+      "workshopId": "2453063399",
+      "modPath": "3"
+    },
+    {
+      "id": "2453063399/4",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated station",
+      "workshopId": "2453063399",
+      "modPath": "4"
+    }
+  ],
+  "vehicles": []
+}

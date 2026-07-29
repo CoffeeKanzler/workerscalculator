@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2240965789",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.167Z",
+  "buildings": [
+    {
+      "id": "2240965789/kino_sputnik",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.9,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cinema \" Sputnik",
+      "workshopId": "2240965789",
+      "modPath": "kino_sputnik"
+    }
+  ],
+  "vehicles": []
+}

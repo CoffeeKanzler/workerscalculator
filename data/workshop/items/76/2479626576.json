@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2479626576",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.010Z",
+  "buildings": [
+    {
+      "id": "2479626576/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 7,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 50,
+      "qualityOfLiving": null,
+      "attractiveScore": 4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Reading_pavilion",
+      "workshopId": "2479626576",
+      "modPath": "HOUSE1"
+    }
+  ],
+  "vehicles": []
+}

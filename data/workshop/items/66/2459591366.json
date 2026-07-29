@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2459591366",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.505Z",
+  "buildings": [
+    {
+      "id": "2459591366/Blok11p2klv1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 110,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 110
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 11p 2kl v1",
+      "workshopId": "2459591366",
+      "modPath": "Blok11p2klv1"
+    }
+  ],
+  "vehicles": []
+}

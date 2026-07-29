@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2426885670",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.630Z",
+  "buildings": [
+    {
+      "id": "2426885670/ResidentN1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 107,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 107
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nine floor Residential Tower v1",
+      "workshopId": "2426885670",
+      "modPath": "ResidentN1"
+    },
+    {
+      "id": "2426885670/ResidentN3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 112,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 112
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nine Floor Residential Tower v2",
+      "workshopId": "2426885670",
+      "modPath": "ResidentN3"
+    },
+    {
+      "id": "2426885670/ResidentNW",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 130,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 130
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nine floor Residential Tower v3",
+      "workshopId": "2426885670",
+      "modPath": "ResidentNW"
+    },
+    {
+      "id": "2426885670/ResidentT1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 75,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 75
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Residential Tower v1",
+      "workshopId": "2426885670",
+      "modPath": "ResidentT1"
+    },
+    {
+      "id": "2426885670/ResidentT2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Residential Tower v2",
+      "workshopId": "2426885670",
+      "modPath": "ResidentT2"
+    },
+    {
+      "id": "2426885670/ResidentT3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Residential Tower v3",
+      "workshopId": "2426885670",
+      "modPath": "ResidentT3"
+    }
+  ],
+  "vehicles": []
+}

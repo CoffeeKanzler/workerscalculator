@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2520225672",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.771Z",
+  "buildings": [
+    {
+      "id": "2520225672/brama4",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prefabricated pedestrian gate (5 storey)",
+      "workshopId": "2520225672",
+      "modPath": "brama4"
+    },
+    {
+      "id": "2520225672/brama4_3p",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prefabricated pedestrian gate (4 storey)",
+      "workshopId": "2520225672",
+      "modPath": "brama4_3p"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2522715119",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.783Z",
+  "buildings": [
+    {
+      "id": "2522715119/POOL",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {
+        "workers": 85,
+        "gravel": 8,
+        "steel": 10,
+        "concrete": 67
+      },
+      "electricWorkerFactors": {
+        "lighting": 1,
+        "living": 1
+      },
+      "nameStr": "POOL",
+      "workshopId": "2522715119",
+      "modPath": "POOL"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2437324596",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.712Z",
+  "buildings": [
+    {
+      "id": "2437324596/teatr",
+      "nameId": 6034,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2437324596",
+      "modPath": "teatr"
+    }
+  ],
+  "vehicles": []
+}

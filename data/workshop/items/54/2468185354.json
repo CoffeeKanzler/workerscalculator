@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2468185354",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.580Z",
+  "buildings": [
+    {
+      "id": "2468185354/rural_shop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural Shop",
+      "workshopId": "2468185354",
+      "modPath": "rural_shop"
+    }
+  ],
+  "vehicles": []
+}

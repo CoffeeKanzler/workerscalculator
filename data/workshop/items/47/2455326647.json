@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2455326647",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.478Z",
+  "buildings": [
+    {
+      "id": "2455326647/rowcouncilhouse",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {
+        "concrete": 15,
+        "boards": 10,
+        "bricks": 25,
+        "workers": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Row Council House",
+      "workshopId": "2455326647",
+      "modPath": "rowcouncilhouse"
+    },
+    {
+      "id": "2455326647/singlecouncilhouse",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2
+      },
+      "constructionResources": {
+        "concrete": 15,
+        "boards": 10,
+        "bricks": 25,
+        "workers": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Single Council House",
+      "workshopId": "2455326647",
+      "modPath": "singlecouncilhouse"
+    }
+  ],
+  "vehicles": []
+}

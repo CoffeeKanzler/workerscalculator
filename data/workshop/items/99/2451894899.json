@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2451894899",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.765Z",
+  "buildings": [
+    {
+      "id": "2451894899/84",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 168,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.74,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 168
+      },
+      "constructionResources": {
+        "bricks": 127,
+        "boards": 40,
+        "concrete": 22.8,
+        "prefabpanels": 117,
+        "workers": 1776,
+        "asphalt": 5.6,
+        "ecomponents": 0.3,
+        "mcomponents": 0.5,
+        "steel": 1.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¨-5733/14-III",
+      "workshopId": "2451894899",
+      "modPath": "84"
+    },
+    {
+      "id": "2451894899/96",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 192,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.69,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 192
+      },
+      "constructionResources": {
+        "bricks": 131,
+        "boards": 40,
+        "concrete": 24.2,
+        "prefabpanels": 119,
+        "workers": 1836,
+        "asphalt": 5.6,
+        "ecomponents": 0.3,
+        "mcomponents": 0.5,
+        "steel": 1.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¨-5733/14-??",
+      "workshopId": "2451894899",
+      "modPath": "96"
+    },
+    {
+      "id": "2451894899/balcony",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 168,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.76,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 168
+      },
+      "constructionResources": {
+        "bricks": 127,
+        "boards": 41,
+        "concrete": 23.3,
+        "prefabpanels": 125,
+        "workers": 1810,
+        "asphalt": 5.6,
+        "ecomponents": 0.3,
+        "mcomponents": 0.5,
+        "steel": 1.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¨-5733/14 (balconies)",
+      "workshopId": "2451894899",
+      "modPath": "balcony"
+    },
+    {
+      "id": "2451894899/parking",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 0.01,
+        "workers": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "parking for Ð¨5833-14",
+      "workshopId": "2451894899",
+      "modPath": "parking"
+    }
+  ],
+  "vehicles": []
+}

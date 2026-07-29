@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2505413337",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.652Z",
+  "buildings": [
+    {
+      "id": "2505413337/STARL",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "STARL",
+      "workshopId": "2505413337",
+      "modPath": "STARL"
+    },
+    {
+      "id": "2505413337/STARS",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 24,
+        "gravel": 0.3,
+        "steel": 0.1,
+        "concrete": 0.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "STARS",
+      "workshopId": "2505413337",
+      "modPath": "STARS"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2246858793",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.194Z",
+  "buildings": [
+    {
+      "id": "2246858793/dushanbesta",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1400,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1400
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "dushanbesta",
+      "workshopId": "2246858793",
+      "modPath": "dushanbesta"
+    }
+  ],
+  "vehicles": []
+}

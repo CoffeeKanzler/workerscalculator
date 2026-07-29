@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2390566554",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.441Z",
+  "buildings": [
+    {
+      "id": "2390566554/onewayasphalt",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "asphalt": 29
+      },
+      "consumption": {
+        "gravel": 25,
+        "bitumen": 4,
+        "eletric": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oneway Asphalt Plant",
+      "workshopId": "2390566554",
+      "modPath": "onewayasphalt"
+    },
+    {
+      "id": "2390566554/onewayconcrete",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "concrete": 35
+      },
+      "consumption": {
+        "gravel": 27,
+        "cement": 6,
+        "water": 17
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oneway Concrete Plant",
+      "workshopId": "2390566554",
+      "modPath": "onewayconcrete"
+    },
+    {
+      "id": "2390566554/onewaygravel",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Oneway Aggregate loader",
+      "workshopId": "2390566554",
+      "modPath": "onewaygravel"
+    }
+  ],
+  "vehicles": []
+}

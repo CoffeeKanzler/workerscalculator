@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2460798475",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.509Z",
+  "buildings": [
+    {
+      "id": "2460798475/delicje_bar",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Delicje cafe",
+      "workshopId": "2460798475",
+      "modPath": "delicje_bar"
+    },
+    {
+      "id": "2460798475/delicje_restauracja",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Delicje restaurant",
+      "workshopId": "2460798475",
+      "modPath": "delicje_restauracja"
+    }
+  ],
+  "vehicles": []
+}

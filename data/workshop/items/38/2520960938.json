@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2520960938",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.779Z",
+  "buildings": [
+    {
+      "id": "2520960938/rail_xl_combined",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 70000,
+        "RESOURCE_TRANSPORT_COOLER": 9000,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 7000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "XL Rail Combined Heliport storage",
+      "workshopId": "2520960938",
+      "modPath": "rail_xl_combined"
+    },
+    {
+      "id": "2520960938/xl_combined",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 70000,
+        "RESOURCE_TRANSPORT_COOLER": 9000,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 7000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "XL Combined Heliport storage",
+      "workshopId": "2520960938",
+      "modPath": "xl_combined"
+    }
+  ],
+  "vehicles": []
+}

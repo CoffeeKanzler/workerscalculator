@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2475685190",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:11.988Z",
+  "buildings": [
+    {
+      "id": "2475685190/hutaczestochowa",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 1650,
+      "professors": 0,
+      "production": {
+        "steel": 0.1
+      },
+      "consumption": {
+        "coal": 0.01,
+        "iron": 0.32
+      },
+      "consumptionPerSecond": {
+        "eletric": 18
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electric Arch Furnace Steel Mill",
+      "workshopId": "2475685190",
+      "modPath": "hutaczestochowa"
+    }
+  ],
+  "vehicles": []
+}

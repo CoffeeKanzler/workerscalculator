@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2326086407",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.672Z",
+  "buildings": [
+    {
+      "id": "2326086407/heat_plant_alk",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 16,
+      "professors": 0,
+      "production": {
+        "heat": 975
+      },
+      "consumption": {
+        "coal": 0.7
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¢ÐµÐ¿Ð»Ð¾Ð±Ð»Ð¾Ðº Ð¢Ð­Ð¦-ÐÐÐ",
+      "workshopId": "2326086407",
+      "modPath": "heat_plant_alk"
+    },
+    {
+      "id": "2326086407/power_plant_alk",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {
+        "eletric": 52
+      },
+      "consumption": {
+        "coal": 0.44
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð­Ð½ÐµÑÐ³Ð¾Ð±Ð»Ð¾Ðº Ð¢Ð­Ð¡-ÐÐÐ",
+      "workshopId": "2326086407",
+      "modPath": "power_plant_alk"
+    }
+  ],
+  "vehicles": []
+}

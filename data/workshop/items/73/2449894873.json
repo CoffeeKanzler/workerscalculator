@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2449894873",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.760Z",
+  "buildings": [
+    {
+      "id": "2449894873/Magnolia1",
+      "nameId": 13500,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2449894873",
+      "modPath": "Magnolia1"
+    },
+    {
+      "id": "2449894873/Magnolia2",
+      "nameId": 6020,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 25,
+      "professors": 25,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2449894873",
+      "modPath": "Magnolia2"
+    },
+    {
+      "id": "2449894873/Magnolia3",
+      "nameId": 6020,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 25,
+      "professors": 25,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2449894873",
+      "modPath": "Magnolia3"
+    }
+  ],
+  "vehicles": []
+}

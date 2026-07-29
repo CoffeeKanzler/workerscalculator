@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2271194817",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.666Z",
+  "buildings": [
+    {
+      "id": "2271194817/House",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 1,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {
+        "gravel": 1,
+        "concrete": 5,
+        "asphalt": 1,
+        "workers": 60,
+        "bricks": 8,
+        "steel": 0,
+        "boards": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Å umperÃ¡k",
+      "workshopId": "2271194817",
+      "modPath": "House"
+    }
+  ],
+  "vehicles": []
+}

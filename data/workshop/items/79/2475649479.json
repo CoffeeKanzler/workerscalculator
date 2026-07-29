@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2475649479",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:11.985Z",
+  "buildings": [
+    {
+      "id": "2475649479/diesel",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 5,
+        "workers": 240,
+        "prefabpanels": 1.5,
+        "concrete": 10,
+        "steel": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Diesel train station",
+      "workshopId": "2475649479",
+      "modPath": "diesel"
+    }
+  ],
+  "vehicles": []
+}

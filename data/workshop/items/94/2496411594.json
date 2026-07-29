@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2496411594",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.111Z",
+  "buildings": [
+    {
+      "id": "2496411594/AirportHelicopterParking",
+      "nameId": null,
+      "types": [
+        "TYPE_AIRPLANE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Airport Helicopter Parking",
+      "workshopId": "2496411594",
+      "modPath": "AirportHelicopterParking"
+    },
+    {
+      "id": "2496411594/CargoHeliport",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_GRAVEL": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cargo Heliport",
+      "workshopId": "2496411594",
+      "modPath": "CargoHeliport"
+    },
+    {
+      "id": "2496411594/FirefightingHelicopterBase",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Firefighting Helicopter Base",
+      "workshopId": "2496411594",
+      "modPath": "FirefightingHelicopterBase"
+    },
+    {
+      "id": "2496411594/HelicopterBase",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Helicopter Base",
+      "workshopId": "2496411594",
+      "modPath": "HelicopterBase"
+    },
+    {
+      "id": "2496411594/HelicopterParking",
+      "nameId": null,
+      "types": [
+        "TYPE_AIRPLANE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Helicopter Parking",
+      "workshopId": "2496411594",
+      "modPath": "HelicopterParking"
+    },
+    {
+      "id": "2496411594/PassengerHeliport",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 250,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 250
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Passenger Heliport",
+      "workshopId": "2496411594",
+      "modPath": "PassengerHeliport"
+    },
+    {
+      "id": "2496411594/ProvincialCargoHeliport",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_GRAVEL": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Provincial Cargo Heliport",
+      "workshopId": "2496411594",
+      "modPath": "ProvincialCargoHeliport"
+    },
+    {
+      "id": "2496411594/ProvincialHelicopterParking",
+      "nameId": null,
+      "types": [
+        "TYPE_AIRPLANE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Provincial Helicopter Parking",
+      "workshopId": "2496411594",
+      "modPath": "ProvincialHelicopterParking"
+    },
+    {
+      "id": "2496411594/ProvincialPassengerHeliport",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Provincial Passenger Heliport",
+      "workshopId": "2496411594",
+      "modPath": "ProvincialPassengerHeliport"
+    }
+  ],
+  "vehicles": []
+}

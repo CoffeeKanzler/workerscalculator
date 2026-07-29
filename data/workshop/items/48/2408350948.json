@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2408350948",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.504Z",
+  "buildings": [
+    {
+      "id": "2408350948/plastik",
+      "nameId": 6354,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200,
+      "professors": 0,
+      "production": {
+        "plastics": 0.11
+      },
+      "consumption": {
+        "chemicals": 0.05,
+        "oil": 0.45
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.8
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2408350948",
+      "modPath": "plastik"
+    }
+  ],
+  "vehicles": []
+}

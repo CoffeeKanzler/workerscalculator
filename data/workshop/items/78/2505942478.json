@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2505942478",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.654Z",
+  "buildings": [
+    {
+      "id": "2505942478/Eb_Electrical_Heating_Stations",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 600
+      },
+      "consumption": {
+        "eletric": 24.33
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Eb_Electrc_Heating_Station",
+      "workshopId": "2505942478",
+      "modPath": "Eb_Electrical_Heating_Stations"
+    },
+    {
+      "id": "2505942478/Eb_Electrical_Heating_Stations_Small",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "heat": 200
+      },
+      "consumption": {
+        "eletric": 8.1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Eb_Electrc_Heating_Station_Small",
+      "workshopId": "2505942478",
+      "modPath": "Eb_Electrical_Heating_Stations_Small"
+    }
+  ],
+  "vehicles": []
+}

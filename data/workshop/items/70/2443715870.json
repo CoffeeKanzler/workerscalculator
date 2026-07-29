@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2443715870",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.735Z",
+  "buildings": [
+    {
+      "id": "2443715870/ContainerTerminal",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 1500
+      },
+      "constructionResources": {
+        "workers": 28788,
+        "concrete": 1237,
+        "gravel": 664,
+        "asphalt": 600,
+        "prefabpanels": 28,
+        "steel": 775.4,
+        "bricks": 26,
+        "boards": 9,
+        "mcomponents": 95,
+        "ecomponents": 1.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Container Terminal",
+      "workshopId": "2443715870",
+      "modPath": "ContainerTerminal"
+    },
+    {
+      "id": "2443715870/ContainerTerminal2",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 2000
+      },
+      "constructionResources": {
+        "workers": 32331,
+        "concrete": 1637,
+        "gravel": 1024,
+        "asphalt": 140,
+        "prefabpanels": 28,
+        "steel": 772,
+        "mcomponents": 95,
+        "ecomponents": 1.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Container Terminal",
+      "workshopId": "2443715870",
+      "modPath": "ContainerTerminal2"
+    },
+    {
+      "id": "2443715870/LoadingContainer",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 989,
+        "concrete": 54,
+        "gravel": 42,
+        "steel": 12.5,
+        "mcomponents": 2.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Loading Container",
+      "workshopId": "2443715870",
+      "modPath": "LoadingContainer"
+    },
+    {
+      "id": "2443715870/MetalwareAssemblySite",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 989,
+        "concrete": 54,
+        "gravel": 42,
+        "steel": 12.5,
+        "mcomponents": 2.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Metalware Assembly Site",
+      "workshopId": "2443715870",
+      "modPath": "MetalwareAssemblySite"
+    },
+    {
+      "id": "2443715870/UnloadingContainer",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 989,
+        "concrete": 54,
+        "gravel": 42,
+        "steel": 12.5,
+        "mcomponents": 2.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Unloading Container",
+      "workshopId": "2443715870",
+      "modPath": "UnloadingContainer"
+    }
+  ],
+  "vehicles": []
+}

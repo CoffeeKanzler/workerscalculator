@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2429602936",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.653Z",
+  "buildings": [
+    {
+      "id": "2429602936/czarnawoda",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 120,
+        "RESOURCE_TRANSPORT_GRAVEL": 40,
+        "RESOURCE_TRANSPORT_OPEN": 10
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2429602936",
+      "modPath": "czarnawoda"
+    },
+    {
+      "id": "2429602936/potegowo",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 220
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2429602936",
+      "modPath": "potegowo"
+    },
+    {
+      "id": "2429602936/slavosovce",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 570
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2429602936",
+      "modPath": "slavosovce"
+    },
+    {
+      "id": "2429602936/szczecin",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 780,
+        "RESOURCE_TRANSPORT_GRAVEL": 50,
+        "RESOURCE_TRANSPORT_OPEN": 35
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2429602936",
+      "modPath": "szczecin"
+    },
+    {
+      "id": "2429602936/wroclaw",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 1350
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2429602936",
+      "modPath": "wroclaw"
+    }
+  ],
+  "vehicles": []
+}

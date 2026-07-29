@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2387677293",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.429Z",
+  "buildings": [
+    {
+      "id": "2387677293/watertower",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.8,
+      "storages": {},
+      "constructionResources": {
+        "workers": 764,
+        "concrete": 37.8,
+        "bricks": 28,
+        "boards": 21.200000000000003,
+        "steel": 2.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Historic water tower",
+      "workshopId": "2387677293",
+      "modPath": "watertower"
+    }
+  ],
+  "vehicles": []
+}

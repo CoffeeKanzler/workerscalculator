@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2379816422",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.361Z",
+  "buildings": [
+    {
+      "id": "2379816422/ferumwaxt",
+      "nameId": 6160,
+      "types": [
+        "TYPE_MINE_IRON"
+      ],
+      "workers": 300,
+      "professors": 0,
+      "production": {
+        "rawiron": 4
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2030,
+        "boards": 80,
+        "concrete": 181,
+        "steel": 45.1
+      },
+      "electricWorkerFactors": {
+        "lighting": 0.8,
+        "living": 0.8
+      },
+      "workshopId": "2379816422",
+      "modPath": "ferumwaxt"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2517478291",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.739Z",
+  "buildings": [
+    {
+      "id": "2517478291/badalyan",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 156,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.81,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 156
+      },
+      "constructionResources": {
+        "concrete": 45,
+        "boards": 6,
+        "bricks": 5,
+        "workers": 165
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Badalyan project",
+      "workshopId": "2517478291",
+      "modPath": "badalyan"
+    }
+  ],
+  "vehicles": []
+}

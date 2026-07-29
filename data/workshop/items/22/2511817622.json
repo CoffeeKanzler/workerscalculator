@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2511817622",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.691Z",
+  "buildings": [
+    {
+      "id": "2511817622/Medical",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 50,
+      "professors": 50,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 30,
+        "steel": 70,
+        "concrete": 120,
+        "mcomponents": 2,
+        "ecomponents": 1,
+        "workers": 1600
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medical Tourist Hospital",
+      "workshopId": "2511817622",
+      "modPath": "Medical"
+    },
+    {
+      "id": "2511817622/Tourist",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2,
+      "qualityOfLiving": null,
+      "attractiveScore": 5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tourist Patient Enterance",
+      "workshopId": "2511817622",
+      "modPath": "Tourist"
+    }
+  ],
+  "vehicles": []
+}

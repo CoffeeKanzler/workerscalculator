@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2259923166",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.262Z",
+  "buildings": [
+    {
+      "id": "2259923166/vagonmash",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 340,
+      "professors": 214,
+      "production": {
+        "vehicles": 1
+      },
+      "consumption": {
+        "steel": 1,
+        "plastics": 1,
+        "mcomponents": 1,
+        "ecomponents": 1,
+        "fabric": 1,
+        "eletronics": 1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¢ÑÐ°ÐºÑÐ¾ÑÐ¾ÑÑÑÐ¾Ð¸ÑÐµÐ»ÑÐ½ÑÐ¹ Ð·Ð°Ð²Ð¾Ð´",
+      "workshopId": "2259923166",
+      "modPath": "vagonmash"
+    }
+  ],
+  "vehicles": []
+}

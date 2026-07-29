@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2308945509",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.897Z",
+  "buildings": [
+    {
+      "id": "2308945509/Bridge",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 16,
+        "boards": 1,
+        "steel": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Debarkader bridge",
+      "workshopId": "2308945509",
+      "modPath": "Bridge"
+    },
+    {
+      "id": "2308945509/Bridge_long",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 61,
+        "boards": 4,
+        "steel": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Debarkader bridge long",
+      "workshopId": "2308945509",
+      "modPath": "Bridge_long"
+    },
+    {
+      "id": "2308945509/Bridge_short",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 11,
+        "boards": 0.5,
+        "steel": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Debarkader bridge short",
+      "workshopId": "2308945509",
+      "modPath": "Bridge_short"
+    },
+    {
+      "id": "2308945509/D_cinema_theater",
+      "nameId": null,
+      "types": [
+        "SUBTYPE_SHIP",
+        "TYPE_KINO"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.4,
+      "storages": {},
+      "constructionResources": {
+        "workers": 520,
+        "gravel": 16,
+        "asphalt": 10,
+        "steel": 15,
+        "concrete": 100,
+        "boards": 93
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Debarkader cinema theater",
+      "workshopId": "2308945509",
+      "modPath": "D_cinema_theater"
+    },
+    {
+      "id": "2308945509/D_hotel",
+      "nameId": null,
+      "types": [
+        "SUBTYPE_SHIP",
+        "TYPE_HOTEL"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.7,
+      "storages": {},
+      "constructionResources": {
+        "workers": 520,
+        "gravel": 16,
+        "asphalt": 10,
+        "steel": 15,
+        "concrete": 100,
+        "boards": 93
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Debarkader hotel",
+      "workshopId": "2308945509",
+      "modPath": "D_hotel"
+    },
+    {
+      "id": "2308945509/D_restaurant",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.8,
+      "storages": {},
+      "constructionResources": {
+        "workers": 520,
+        "gravel": 16,
+        "asphalt": 10,
+        "steel": 15,
+        "concrete": 100,
+        "boards": 93
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Debarkader restaurant",
+      "workshopId": "2308945509",
+      "modPath": "D_restaurant"
+    },
+    {
+      "id": "2308945509/D_river_station",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000
+      },
+      "constructionResources": {
+        "workers": 520,
+        "gravel": 16,
+        "asphalt": 10,
+        "steel": 15,
+        "concrete": 100,
+        "boards": 93
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Debarkader river station",
+      "workshopId": "2308945509",
+      "modPath": "D_river_station"
+    }
+  ],
+  "vehicles": []
+}

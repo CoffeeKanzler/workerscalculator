@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2388807908",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.431Z",
+  "buildings": [
+    {
+      "id": "2388807908/Cathedral_of_Christ_the_Saviour",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 20,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 500,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2300,
+        "steel": 270,
+        "asphalt": 110,
+        "gravel": 150,
+        "concrete": 705,
+        "boards": 125,
+        "bricks": 840
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Orthodox Cathedral 3",
+      "workshopId": "2388807908",
+      "modPath": "Cathedral_of_Christ_the_Saviour"
+    }
+  ],
+  "vehicles": []
+}

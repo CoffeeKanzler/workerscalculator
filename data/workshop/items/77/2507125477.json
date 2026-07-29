@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2507125477",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.657Z",
+  "buildings": [
+    {
+      "id": "2507125477/U_big_station_1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1081,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1081
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "U_big_station_1",
+      "workshopId": "2507125477",
+      "modPath": "U_big_station_1"
+    },
+    {
+      "id": "2507125477/U_station_1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1081,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1081
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "U_station_1",
+      "workshopId": "2507125477",
+      "modPath": "U_station_1"
+    },
+    {
+      "id": "2507125477/U_station_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 657,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 657
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "U_Station_2",
+      "workshopId": "2507125477",
+      "modPath": "U_station_2"
+    },
+    {
+      "id": "2507125477/U_station_3",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 657,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 657
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "U_Station_3",
+      "workshopId": "2507125477",
+      "modPath": "U_station_3"
+    },
+    {
+      "id": "2507125477/big_station_1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1081,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1081
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "big_station_1",
+      "workshopId": "2507125477",
+      "modPath": "big_station_1"
+    },
+    {
+      "id": "2507125477/mini_station_1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 680,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 680
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mini_station_1",
+      "workshopId": "2507125477",
+      "modPath": "mini_station_1"
+    }
+  ],
+  "vehicles": []
+}

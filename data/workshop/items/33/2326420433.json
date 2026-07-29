@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2326420433",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.674Z",
+  "buildings": [
+    {
+      "id": "2326420433/test",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 320,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 320
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nerkin",
+      "workshopId": "2326420433",
+      "modPath": "test"
+    },
+    {
+      "id": "2326420433/test1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 320,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 320
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Nerkin2",
+      "workshopId": "2326420433",
+      "modPath": "test1"
+    }
+  ],
+  "vehicles": []
+}

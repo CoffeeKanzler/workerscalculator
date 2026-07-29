@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2379066640",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.356Z",
+  "buildings": [
+    {
+      "id": "2379066640/deepsea_1100",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 2.7,
+        "workers": 540,
+        "concrete": 75,
+        "steel": 74.7,
+        "ecomponents": 7.699999999999999,
+        "mcomponents": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High voltage undersea cable (1.1 km)",
+      "workshopId": "2379066640",
+      "modPath": "deepsea_1100"
+    },
+    {
+      "id": "2379066640/deepsea_1250",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 2.7,
+        "workers": 584,
+        "concrete": 84,
+        "steel": 83.7,
+        "ecomponents": 8.6,
+        "mcomponents": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High voltage undersea cable (1.25 km)",
+      "workshopId": "2379066640",
+      "modPath": "deepsea_1250"
+    },
+    {
+      "id": "2379066640/deepsea_1400",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 2.7,
+        "workers": 628,
+        "concrete": 93,
+        "steel": 92.7,
+        "ecomponents": 9.5,
+        "mcomponents": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High voltage undersea cable (1.4 km)",
+      "workshopId": "2379066640",
+      "modPath": "deepsea_1400"
+    },
+    {
+      "id": "2379066640/deepsea_1550",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 2.7,
+        "workers": 672,
+        "concrete": 102,
+        "steel": 101.7,
+        "ecomponents": 10.4,
+        "mcomponents": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High voltage undersea cable (1.55 km)",
+      "workshopId": "2379066640",
+      "modPath": "deepsea_1550"
+    },
+    {
+      "id": "2379066640/deepsea_500",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 2.7,
+        "workers": 364,
+        "concrete": 39,
+        "steel": 38.7,
+        "ecomponents": 4.1,
+        "mcomponents": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High voltage undersea cable (500m)",
+      "workshopId": "2379066640",
+      "modPath": "deepsea_500"
+    },
+    {
+      "id": "2379066640/deepsea_650",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 2.7,
+        "workers": 408,
+        "concrete": 48,
+        "steel": 47.7,
+        "ecomponents": 5,
+        "mcomponents": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High voltage undersea cable (650m)",
+      "workshopId": "2379066640",
+      "modPath": "deepsea_650"
+    },
+    {
+      "id": "2379066640/deepsea_800",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 2.7,
+        "workers": 452,
+        "concrete": 57,
+        "steel": 56.7,
+        "ecomponents": 5.9,
+        "mcomponents": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High voltage undersea cable (800m)",
+      "workshopId": "2379066640",
+      "modPath": "deepsea_800"
+    },
+    {
+      "id": "2379066640/deepsea_950",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 2.7,
+        "workers": 496,
+        "concrete": 66,
+        "steel": 65.7,
+        "ecomponents": 6.800000000000001,
+        "mcomponents": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High voltage undersea cable (950m)",
+      "workshopId": "2379066640",
+      "modPath": "deepsea_950"
+    },
+    {
+      "id": "2379066640/monu",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 2.7,
+        "workers": 136,
+        "concrete": 9,
+        "steel": 5.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "High voltage undersea cable end station",
+      "workshopId": "2379066640",
+      "modPath": "monu"
+    }
+  ],
+  "vehicles": []
+}

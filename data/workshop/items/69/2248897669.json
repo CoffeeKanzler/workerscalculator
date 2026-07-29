@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2248897669",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.205Z",
+  "buildings": [
+    {
+      "id": "2248897669/KSB",
+      "nameId": 1805,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 400,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 400
+      },
+      "constructionResources": {
+        "workers": 25,
+        "asphalt": 2,
+        "gravel": 3,
+        "steel": 10,
+        "boards": 2,
+        "concrete": 4
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2248897669",
+      "modPath": "KSB"
+    },
+    {
+      "id": "2248897669/basic",
+      "nameId": 1805,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150
+      },
+      "constructionResources": {
+        "workers": 15,
+        "asphalt": 2,
+        "gravel": 3,
+        "steel": 0.2,
+        "concrete": 1
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2248897669",
+      "modPath": "basic"
+    },
+    {
+      "id": "2248897669/end",
+      "nameId": 1805,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 300,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 300
+      },
+      "constructionResources": {
+        "workers": 30,
+        "asphalt": 2,
+        "gravel": 3,
+        "concrete": 10,
+        "steel": 0.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2248897669",
+      "modPath": "end"
+    }
+  ],
+  "vehicles": []
+}

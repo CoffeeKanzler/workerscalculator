@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2311718761",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.550Z",
+  "buildings": [
+    {
+      "id": "2311718761/BauxRefine",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "bauxite": 2
+      },
+      "consumption": {
+        "rawbauxite": 4
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.05
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny Bauxite Refinery",
+      "workshopId": "2311718761",
+      "modPath": "BauxRefine"
+    }
+  ],
+  "vehicles": []
+}

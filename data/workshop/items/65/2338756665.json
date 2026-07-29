@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2338756665",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.736Z",
+  "buildings": [
+    {
+      "id": "2338756665/1-464A15",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 180,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 180
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-464A15",
+      "workshopId": "2338756665",
+      "modPath": "1-464A15"
+    },
+    {
+      "id": "2338756665/464-4-3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-464Ð-7",
+      "workshopId": "2338756665",
+      "modPath": "464-4-3"
+    },
+    {
+      "id": "2338756665/464-5-3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-464Ð-3",
+      "workshopId": "2338756665",
+      "modPath": "464-5-3"
+    }
+  ],
+  "vehicles": []
+}

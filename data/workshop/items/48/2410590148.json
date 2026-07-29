@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2410590148",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.507Z",
+  "buildings": [
+    {
+      "id": "2410590148/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-104-10",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2410590148/HOUSE10",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 12,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 12
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Indiv_project6",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE10"
+    },
+    {
+      "id": "2410590148/HOUSE11",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 14,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 14
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Indiv_project7",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE11"
+    },
+    {
+      "id": "2410590148/HOUSE12",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Indiv_project8",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE12"
+    },
+    {
+      "id": "2410590148/HOUSE13",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking for house",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE13"
+    },
+    {
+      "id": "2410590148/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 9,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 9
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": " 1-104-14",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE2"
+    },
+    {
+      "id": "2410590148/HOUSE3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 7,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 7
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-104-3",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE3"
+    },
+    {
+      "id": "2410590148/HOUSE4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1-104-9",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE4"
+    },
+    {
+      "id": "2410590148/HOUSE5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 9,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 9
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Indiv_project1",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE5"
+    },
+    {
+      "id": "2410590148/HOUSE6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 13,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 13
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Indiv_project2",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE6"
+    },
+    {
+      "id": "2410590148/HOUSE7",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 14,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 14
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Indiv_project3",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE7"
+    },
+    {
+      "id": "2410590148/HOUSE8",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 9,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 9
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Indiv_project4",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE8"
+    },
+    {
+      "id": "2410590148/HOUSE9",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 12,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 12
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Indiv_project5",
+      "workshopId": "2410590148",
+      "modPath": "HOUSE9"
+    }
+  ],
+  "vehicles": []
+}

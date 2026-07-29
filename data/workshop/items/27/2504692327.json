@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2504692327",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.647Z",
+  "buildings": [
+    {
+      "id": "2504692327/Breeder",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 25,
+      "professors": 4,
+      "production": {
+        "vehicles": 1
+      },
+      "consumption": {
+        "plants": 1,
+        "wood": 1,
+        "fabric": 1,
+        "steel": 1,
+        "plastics": 1,
+        "mcomponents": 1,
+        "ecomponents": 1,
+        "eletronics": 1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 200,
+        "workers": 1000,
+        "boards": 80
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Horse Breeder and Wagon Workshop",
+      "workshopId": "2504692327",
+      "modPath": "Breeder"
+    },
+    {
+      "id": "2504692327/Converter",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "plastics": 0.014,
+        "steel": 0.2,
+        "mcomponents": 0.02,
+        "ecomponents": 0.009,
+        "eletronics": 0.008
+      },
+      "consumption": {
+        "plants": 3,
+        "wood": 1.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 30,
+        "workers": 130,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Horse Feed Converter",
+      "workshopId": "2504692327",
+      "modPath": "Converter"
+    },
+    {
+      "id": "2504692327/ConverterV2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "plastics": 0.014,
+        "steel": 0.1,
+        "aluminium": 0.1,
+        "mcomponents": 0.02,
+        "ecomponents": 0.009,
+        "eletronics": 0.008
+      },
+      "consumption": {
+        "plants": 3,
+        "wood": 1.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 30,
+        "workers": 130,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Horse Feed Converter v2",
+      "workshopId": "2504692327",
+      "modPath": "ConverterV2"
+    },
+    {
+      "id": "2504692327/HorseDealer",
+      "nameId": null,
+      "types": [
+        "TYPE_CAR_DEALER"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 100,
+        "workers": 300,
+        "boards": 40
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Horse Merchant",
+      "workshopId": "2504692327",
+      "modPath": "HorseDealer"
+    },
+    {
+      "id": "2504692327/HorseDepot",
+      "nameId": null,
+      "types": [
+        "TYPE_ROADDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 40,
+        "workers": 120,
+        "boards": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wagon Depot",
+      "workshopId": "2504692327",
+      "modPath": "HorseDepot"
+    },
+    {
+      "id": "2504692327/HorseVet",
+      "nameId": null,
+      "types": [
+        "TYPE_REPAIR_OFFICE"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 100,
+        "workers": 300,
+        "boards": 40
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Horse Veterinarian",
+      "workshopId": "2504692327",
+      "modPath": "HorseVet"
+    },
+    {
+      "id": "2504692327/Lodging",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 14,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.79,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 14
+      },
+      "constructionResources": {
+        "gravel": 20,
+        "workers": 150,
+        "boards": 40
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Stable Hands' Lodging",
+      "workshopId": "2504692327",
+      "modPath": "Lodging"
+    },
+    {
+      "id": "2504692327/Stables",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 100,
+        "workers": 280,
+        "boards": 45
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Horse Stables",
+      "workshopId": "2504692327",
+      "modPath": "Stables"
+    },
+    {
+      "id": "2504692327/Sweeper",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "gravel": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 30,
+        "workers": 230,
+        "boards": 65
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Street Sweeper",
+      "workshopId": "2504692327",
+      "modPath": "Sweeper"
+    }
+  ],
+  "vehicles": []
+}

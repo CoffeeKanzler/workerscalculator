@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2434682032",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.694Z",
+  "buildings": [
+    {
+      "id": "2434682032/ws_plastic",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 88,
+      "professors": 0,
+      "production": {
+        "plastics": 0.15
+      },
+      "consumption": {
+        "chemicals": 0.08,
+        "oil": 0.65
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ»Ð°ÑÑÐ¸ÐºÐ¾Ð²ÑÐ¹ ÑÐµÑ",
+      "workshopId": "2434682032",
+      "modPath": "ws_plastic"
+    }
+  ],
+  "vehicles": []
+}

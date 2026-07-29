@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2395385768",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.464Z",
+  "buildings": [
+    {
+      "id": "2395385768/mitht",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 700,
+      "professors": 400,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐ¢Ð¥Ð¢(Technical University)",
+      "workshopId": "2395385768",
+      "modPath": "mitht"
+    }
+  ],
+  "vehicles": []
+}

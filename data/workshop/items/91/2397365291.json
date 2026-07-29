@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2397365291",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.472Z",
+  "buildings": [
+    {
+      "id": "2397365291/big_cableway_station_multi",
+      "nameId": 6502,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_CABLEWAY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 500,
+        "RESOURCE_TRANSPORT_GENERAL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2397365291",
+      "modPath": "big_cableway_station_multi"
+    }
+  ],
+  "vehicles": []
+}

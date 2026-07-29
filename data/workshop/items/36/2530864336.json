@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2530864336",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.792Z",
+  "buildings": [
+    {
+      "id": "2530864336/CharKiln",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "coal": 0.2
+      },
+      "consumption": {
+        "wood": 0.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 70,
+        "workers": 600,
+        "boards": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Char Coal Kiln",
+      "workshopId": "2530864336",
+      "modPath": "CharKiln"
+    },
+    {
+      "id": "2530864336/WoodCutter",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_WOOD"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "wood": 0.7
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 70,
+        "workers": 600,
+        "boards": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wood Cutting Outpost",
+      "workshopId": "2530864336",
+      "modPath": "WoodCutter"
+    }
+  ],
+  "vehicles": []
+}

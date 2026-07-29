@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2287155907",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.764Z",
+  "buildings": [
+    {
+      "id": "2287155907/KCTower",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 50,
+      "qualityOfLiving": null,
+      "attractiveScore": 5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kremlin Clock Tower",
+      "workshopId": "2287155907",
+      "modPath": "KCTower"
+    }
+  ],
+  "vehicles": []
+}

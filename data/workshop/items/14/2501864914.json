@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2501864914",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.137Z",
+  "buildings": [
+    {
+      "id": "2501864914/container_packing",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 275,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐºÐ¾Ð½ÑÐµÐ¹Ð½ÐµÑÐ½ÑÐ¹ ÑÐµÑ Ð¿Ð¾Ð³ÑÑÐ·ÐºÐ¸ ÑÑÐ¿ÑÑÐ¸Ñ Ð³ÑÑÐ·Ð¾Ð²",
+      "workshopId": "2501864914",
+      "modPath": "container_packing"
+    },
+    {
+      "id": "2501864914/container_packing_big",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 350,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð±Ð¾Ð»ÑÑÐ¾Ð¹ ÐºÐ¾Ð½ÑÐµÐ¹Ð½ÐµÑÐ½ÑÐ¹ ÑÐµÑ Ð¿Ð¾Ð³ÑÑÐ·ÐºÐ¸ ÑÑÐ¿ÑÑÐ¸Ñ Ð³ÑÑÐ·Ð¾Ð²",
+      "workshopId": "2501864914",
+      "modPath": "container_packing_big"
+    },
+    {
+      "id": "2501864914/container_packing_small",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 160,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¼Ð°Ð»ÑÐ¹ ÐºÐ¾Ð½ÑÐµÐ¹Ð½ÐµÑÐ½ÑÐ¹ ÑÐµÑ Ð¿Ð¾Ð³ÑÑÐ·ÐºÐ¸ ÑÑÐ¿ÑÑÐ¸Ñ Ð³ÑÑÐ·Ð¾Ð²",
+      "workshopId": "2501864914",
+      "modPath": "container_packing_small"
+    },
+    {
+      "id": "2501864914/container_unpacking",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 275,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐºÐ¾Ð½ÑÐµÐ¹Ð½ÐµÑÐ½ÑÐ¹ ÑÐµÑ ÑÐ°Ð·Ð³ÑÑÐ·ÐºÐ¸ ÑÑÐ¿ÑÑÐ¸Ñ Ð³ÑÑÐ·Ð¾Ð²",
+      "workshopId": "2501864914",
+      "modPath": "container_unpacking"
+    },
+    {
+      "id": "2501864914/container_unpacking_big",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 350,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð±Ð¾Ð»ÑÑÐ¾Ð¹ ÐºÐ¾Ð½ÑÐµÐ¹Ð½ÐµÑÐ½ÑÐ¹ ÑÐµÑ ÑÐ°Ð·Ð³ÑÑÐ·ÐºÐ¸ ÑÑÐ¿ÑÑÐ¸Ñ Ð³ÑÑÐ·Ð¾Ð²",
+      "workshopId": "2501864914",
+      "modPath": "container_unpacking_big"
+    },
+    {
+      "id": "2501864914/container_unpacking_small",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 160,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¼Ð°Ð»ÑÐ¹ ÐºÐ¾Ð½ÑÐµÐ¹Ð½ÐµÑÐ½ÑÐ¹ ÑÐµÑ ÑÐ°Ð·Ð³ÑÑÐ·ÐºÐ¸ ÑÑÐ¿ÑÑÐ¸Ñ Ð³ÑÑÐ·Ð¾Ð²",
+      "workshopId": "2501864914",
+      "modPath": "container_unpacking_small"
+    }
+  ],
+  "vehicles": []
+}

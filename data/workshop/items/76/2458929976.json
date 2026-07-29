@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2458929976",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.500Z",
+  "buildings": [
+    {
+      "id": "2458929976/poster_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 35,
+        "steel": 1,
+        "concrete": 1.5,
+        "boards": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Poster 1",
+      "workshopId": "2458929976",
+      "modPath": "poster_1"
+    },
+    {
+      "id": "2458929976/poster_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 35,
+        "steel": 1,
+        "concrete": 2,
+        "boards": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Poster 2",
+      "workshopId": "2458929976",
+      "modPath": "poster_2"
+    },
+    {
+      "id": "2458929976/poster_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25,
+        "steel": 0.8,
+        "concrete": 1.5,
+        "boards": 0.3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Poster 3",
+      "workshopId": "2458929976",
+      "modPath": "poster_3"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2473199548",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.635Z",
+  "buildings": [
+    {
+      "id": "2473199548/Residental_brick",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old residential building",
+      "workshopId": "2473199548",
+      "modPath": "Residental_brick"
+    },
+    {
+      "id": "2473199548/Residental_brick1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old residential building",
+      "workshopId": "2473199548",
+      "modPath": "Residental_brick1"
+    },
+    {
+      "id": "2473199548/Residental_brick2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old residential building",
+      "workshopId": "2473199548",
+      "modPath": "Residental_brick2"
+    },
+    {
+      "id": "2473199548/Residental_brick3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old residential building",
+      "workshopId": "2473199548",
+      "modPath": "Residental_brick3"
+    }
+  ],
+  "vehicles": []
+}

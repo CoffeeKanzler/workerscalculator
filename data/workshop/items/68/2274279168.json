@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2274279168",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.678Z",
+  "buildings": [
+    {
+      "id": "2274279168/busstop_s",
+      "nameId": 1805,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2274279168",
+      "modPath": "busstop_s"
+    },
+    {
+      "id": "2274279168/chayka_pub",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 16,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.6,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PUB GULL / ÐÐÐ  Ð§ÐÐÐÐ",
+      "workshopId": "2274279168",
+      "modPath": "chayka_pub"
+    },
+    {
+      "id": "2274279168/club",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": 4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "House of culture / Ð¡ÐµÐ»ÑÑÐºÐ¸Ð¹ ÐºÐ»ÑÐ±",
+      "workshopId": "2274279168",
+      "modPath": "club"
+    },
+    {
+      "id": "2274279168/firestation",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Firestation / ÐÐ¾Ð¶Ð°ÑÐ½Ð°Ñ ÑÐ°ÑÑÑ",
+      "workshopId": "2274279168",
+      "modPath": "firestation"
+    },
+    {
+      "id": "2274279168/kolos2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ears of wheat/ÐÐ¾Ð»Ð¾ÑÐºÐ¸ Ð¿ÑÐµÐ½Ð¸ÑÑ",
+      "workshopId": "2274279168",
+      "modPath": "kolos2"
+    },
+    {
+      "id": "2274279168/lozung",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "My factory is my pride",
+      "workshopId": "2274279168",
+      "modPath": "lozung"
+    },
+    {
+      "id": "2274279168/medoffice",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 5,
+      "professors": 3,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medical office / ÐÐµÐ´Ð¿ÑÐ½ÐºÑ",
+      "workshopId": "2274279168",
+      "modPath": "medoffice"
+    },
+    {
+      "id": "2274279168/road_m",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stepove monument",
+      "workshopId": "2274279168",
+      "modPath": "road_m"
+    },
+    {
+      "id": "2274279168/rural_school",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 15,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 16,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural school 60s / Ð¡ÐµÐ»ÑÑÐºÐ°Ñ ÑÐºÐ¾Ð»Ð°",
+      "workshopId": "2274279168",
+      "modPath": "rural_school"
+    },
+    {
+      "id": "2274279168/sadok",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kindergarten Motherland",
+      "workshopId": "2274279168",
+      "modPath": "sadok"
+    },
+    {
+      "id": "2274279168/silmag",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Silmag",
+      "workshopId": "2274279168",
+      "modPath": "silmag"
+    },
+    {
+      "id": "2274279168/silrada",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rural council / Ð¡ÐµÐ»ÑÑÐ¾Ð²ÐµÑ",
+      "workshopId": "2274279168",
+      "modPath": "silrada"
+    }
+  ],
+  "vehicles": []
+}

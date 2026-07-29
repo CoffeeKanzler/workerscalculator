@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2473396681",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:11.974Z",
+  "buildings": [
+    {
+      "id": "2473396681/blok4p2klv2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 55,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 55
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "blok 4p 2kl v2",
+      "workshopId": "2473396681",
+      "modPath": "blok4p2klv2"
+    }
+  ],
+  "vehicles": []
+}

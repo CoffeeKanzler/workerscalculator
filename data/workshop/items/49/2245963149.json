@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2245963149",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.192Z",
+  "buildings": [
+    {
+      "id": "2245963149/blok1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick house 10 (1 section)",
+      "workshopId": "2245963149",
+      "modPath": "blok1"
+    },
+    {
+      "id": "2245963149/blok2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick house 10 (2 sections)",
+      "workshopId": "2245963149",
+      "modPath": "blok2"
+    },
+    {
+      "id": "2245963149/blok3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick house 10 (3 sections)",
+      "workshopId": "2245963149",
+      "modPath": "blok3"
+    }
+  ],
+  "vehicles": []
+}

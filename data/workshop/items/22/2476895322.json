@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2476895322",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.000Z",
+  "buildings": [
+    {
+      "id": "2476895322/alcoshop",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 1,
+        "workers": 1,
+        "boards": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian alcohol shop",
+      "workshopId": "2476895322",
+      "modPath": "alcoshop"
+    },
+    {
+      "id": "2476895322/arm_gastronom",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 22,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian Gastronom",
+      "workshopId": "2476895322",
+      "modPath": "arm_gastronom"
+    },
+    {
+      "id": "2476895322/bigshop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "big Armenian shop",
+      "workshopId": "2476895322",
+      "modPath": "bigshop"
+    },
+    {
+      "id": "2476895322/kafe",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 12,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian cafeteria",
+      "workshopId": "2476895322",
+      "modPath": "kafe"
+    },
+    {
+      "id": "2476895322/littleshop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian little shop of goods",
+      "workshopId": "2476895322",
+      "modPath": "littleshop"
+    },
+    {
+      "id": "2476895322/magazin",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian small store",
+      "workshopId": "2476895322",
+      "modPath": "magazin"
+    },
+    {
+      "id": "2476895322/restoran",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian restaurant",
+      "workshopId": "2476895322",
+      "modPath": "restoran"
+    },
+    {
+      "id": "2476895322/smallbazar",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 12.5,
+        "asphalt": 10.2,
+        "boards": 31.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian small bazar",
+      "workshopId": "2476895322",
+      "modPath": "smallbazar"
+    },
+    {
+      "id": "2476895322/smallshop",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 5.5,
+        "boards": 6.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian small shop",
+      "workshopId": "2476895322",
+      "modPath": "smallshop"
+    },
+    {
+      "id": "2476895322/stolovaya",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian stolovaya",
+      "workshopId": "2476895322",
+      "modPath": "stolovaya"
+    },
+    {
+      "id": "2476895322/univermag",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian univermag",
+      "workshopId": "2476895322",
+      "modPath": "univermag"
+    },
+    {
+      "id": "2476895322/universam",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 45,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Armenian universam",
+      "workshopId": "2476895322",
+      "modPath": "universam"
+    }
+  ],
+  "vehicles": []
+}

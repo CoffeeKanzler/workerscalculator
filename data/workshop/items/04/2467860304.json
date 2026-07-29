@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2467860304",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.560Z",
+  "buildings": [
+    {
+      "id": "2467860304/blastfurnace",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200,
+      "professors": 0,
+      "production": {
+        "steel": 0.15,
+        "gravel": 0.03
+      },
+      "consumption": {
+        "coal": 0.75,
+        "iron": 0.8,
+        "oil": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blast furnace (old)",
+      "workshopId": "2467860304",
+      "modPath": "blastfurnace"
+    },
+    {
+      "id": "2467860304/blastfurnaceb",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200,
+      "professors": 0,
+      "production": {
+        "steel": 0.15,
+        "waste_gravel": 0.05
+      },
+      "consumption": {
+        "coal": 0.75,
+        "iron": 0.8,
+        "fuel": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blast furnace (new)",
+      "workshopId": "2467860304",
+      "modPath": "blastfurnaceb"
+    },
+    {
+      "id": "2467860304/byproductplant",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "bitumen": 0.9,
+        "fuel": 0.3
+      },
+      "consumption": {
+        "oil": 1.7
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "by product recovery plant(old)",
+      "workshopId": "2467860304",
+      "modPath": "byproductplant"
+    },
+    {
+      "id": "2467860304/byproductplantb",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "bitumen": 0.9,
+        "fuel": 0.3
+      },
+      "consumption": {
+        "waste_toxic": 1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "by product recovery plant (new)",
+      "workshopId": "2467860304",
+      "modPath": "byproductplantb"
+    },
+    {
+      "id": "2467860304/flachlager",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 40000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flachlager",
+      "workshopId": "2467860304",
+      "modPath": "flachlager"
+    },
+    {
+      "id": "2467860304/flachlager2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 20000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flachlager small",
+      "workshopId": "2467860304",
+      "modPath": "flachlager2"
+    },
+    {
+      "id": "2467860304/gasometer",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 50000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gasometer",
+      "workshopId": "2467860304",
+      "modPath": "gasometer"
+    },
+    {
+      "id": "2467860304/halle2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1800
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Open Warehouse",
+      "workshopId": "2467860304",
+      "modPath": "halle2"
+    },
+    {
+      "id": "2467860304/kokerei",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "coal": 6,
+        "oil": 0.9
+      },
+      "consumption": {
+        "water": 4,
+        "rawcoal": 10
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Coking Plant (old)",
+      "workshopId": "2467860304",
+      "modPath": "kokerei"
+    },
+    {
+      "id": "2467860304/kokereib",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "coal": 6,
+        "waste_toxic": 0.9
+      },
+      "consumption": {
+        "water": 4,
+        "rawcoal": 10
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Coking Plant (new)",
+      "workshopId": "2467860304",
+      "modPath": "kokereib"
+    },
+    {
+      "id": "2467860304/konverter",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 600,
+      "professors": 50,
+      "production": {
+        "steel": 0.168,
+        "gravel": 0.035
+      },
+      "consumption": {
+        "coal": 0.67,
+        "iron": 0.75,
+        "oil": 0.03
+      },
+      "consumptionPerSecond": {
+        "eletric": 2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Converter Plant(old)",
+      "workshopId": "2467860304",
+      "modPath": "konverter"
+    },
+    {
+      "id": "2467860304/konverterb",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 600,
+      "professors": 50,
+      "production": {
+        "steel": 0.168,
+        "waste_gravel": 0.05
+      },
+      "consumption": {
+        "coal": 0.67,
+        "iron": 0.75,
+        "fuel": 0.03
+      },
+      "consumptionPerSecond": {
+        "eletric": 2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Converter Plant (new)",
+      "workshopId": "2467860304",
+      "modPath": "konverterb"
+    },
+    {
+      "id": "2467860304/minimill",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 250,
+      "professors": 15,
+      "production": {
+        "steel": 0.075,
+        "gravel": 0.015
+      },
+      "consumption": {
+        "chemicals": 0.01,
+        "oil": 0.03,
+        "iron": 0.4
+      },
+      "consumptionPerSecond": {
+        "eletric": 40
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Elektro Steel Mill (old)",
+      "workshopId": "2467860304",
+      "modPath": "minimill"
+    },
+    {
+      "id": "2467860304/minimillb",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 250,
+      "professors": 15,
+      "production": {
+        "steel": 0.3,
+        "waste_gravel": 0.09
+      },
+      "consumption": {
+        "fuel": 0.01,
+        "waste_steel": 0.6
+      },
+      "consumptionPerSecond": {
+        "eletric": 10.55
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Elektro Steel Mill (new)",
+      "workshopId": "2467860304",
+      "modPath": "minimillb"
+    },
+    {
+      "id": "2467860304/sinterplantmodernized",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "iron": 7
+      },
+      "consumption": {
+        "rawiron": 9,
+        "coal": 0.8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "modernized Sinter Plant",
+      "workshopId": "2467860304",
+      "modPath": "sinterplantmodernized"
+    },
+    {
+      "id": "2467860304/sinterplantold",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "iron": 7
+      },
+      "consumption": {
+        "rawiron": 10,
+        "coal": 1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.15
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old Sinter Plant",
+      "workshopId": "2467860304",
+      "modPath": "sinterplantold"
+    },
+    {
+      "id": "2467860304/walzwerk",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 15000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rolling Mill",
+      "workshopId": "2467860304",
+      "modPath": "walzwerk"
+    },
+    {
+      "id": "2467860304/walzwerkfactory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 1000,
+      "professors": 0,
+      "production": {
+        "mcomponents": 0.1
+      },
+      "consumption": {
+        "steel": 0.15
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.2,
+        "living": 1.8
+      },
+      "nameStr": "Rolling Mill (mechanical components factory)",
+      "workshopId": "2467860304",
+      "modPath": "walzwerkfactory"
+    }
+  ],
+  "vehicles": []
+}

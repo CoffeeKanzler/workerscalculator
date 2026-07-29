@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2510557340",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.685Z",
+  "buildings": [
+    {
+      "id": "2510557340/ConstructionMachineryBase",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Construction Machinery Base",
+      "workshopId": "2510557340",
+      "modPath": "ConstructionMachineryBase"
+    },
+    {
+      "id": "2510557340/ProvincialConstructionMachineryBase",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 102
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Provincial Construction Machinery Base",
+      "workshopId": "2510557340",
+      "modPath": "ProvincialConstructionMachineryBase"
+    },
+    {
+      "id": "2510557340/SmallProvincialConstructionMachineryBase",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 51
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Provincial Construction Machinery Base",
+      "workshopId": "2510557340",
+      "modPath": "SmallProvincialConstructionMachineryBase"
+    },
+    {
+      "id": "2510557340/largeConstructionMachineryBase",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "large Construction Machinery Base",
+      "workshopId": "2510557340",
+      "modPath": "largeConstructionMachineryBase"
+    },
+    {
+      "id": "2510557340/largeProvincialConstructionMachineryBase",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 113
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "large Provincial Construction Machinery Base",
+      "workshopId": "2510557340",
+      "modPath": "largeProvincialConstructionMachineryBase"
+    }
+  ],
+  "vehicles": []
+}

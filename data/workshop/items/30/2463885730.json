@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2463885730",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.530Z",
+  "buildings": [
+    {
+      "id": "2463885730/Charleston",
+      "nameId": 6043,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2463885730",
+      "modPath": "Charleston"
+    },
+    {
+      "id": "2463885730/Shop",
+      "nameId": 6261,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2463885730",
+      "modPath": "Shop"
+    }
+  ],
+  "vehicles": []
+}

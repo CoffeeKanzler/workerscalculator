@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2506891014",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.656Z",
+  "buildings": [
+    {
+      "id": "2506891014/bbk",
+      "nameId": 6152,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE_RAIL"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 0.2,
+        "lighting": 0.2
+      },
+      "workshopId": "2506891014",
+      "modPath": "bbk"
+    }
+  ],
+  "vehicles": []
+}

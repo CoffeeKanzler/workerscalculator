@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2490808469",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.069Z",
+  "buildings": [
+    {
+      "id": "2490808469/gazirovka",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 1,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "gazirovka (soda)",
+      "workshopId": "2490808469",
+      "modPath": "gazirovka"
+    },
+    {
+      "id": "2490808469/icecream",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "plastics": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ice cream machine",
+      "workshopId": "2490808469",
+      "modPath": "icecream"
+    },
+    {
+      "id": "2490808469/juices",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Juices",
+      "workshopId": "2490808469",
+      "modPath": "juices"
+    }
+  ],
+  "vehicles": []
+}

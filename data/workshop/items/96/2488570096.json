@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2488570096",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.060Z",
+  "buildings": [
+    {
+      "id": "2488570096/CO_0",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Construction Office",
+      "workshopId": "2488570096",
+      "modPath": "CO_0"
+    },
+    {
+      "id": "2488570096/CO_1",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Construction Office",
+      "workshopId": "2488570096",
+      "modPath": "CO_1"
+    },
+    {
+      "id": "2488570096/Coal_breaker",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 150,
+      "professors": 0,
+      "production": {
+        "coal": 2
+      },
+      "consumption": {
+        "rawcoal": 4.2,
+        "water": 1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 180,
+        "workers": 365
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Coal Breaker",
+      "workshopId": "2488570096",
+      "modPath": "Coal_breaker"
+    },
+    {
+      "id": "2488570096/DO_0",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Truck Yard",
+      "workshopId": "2488570096",
+      "modPath": "DO_0"
+    },
+    {
+      "id": "2488570096/DO_1",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Distribution Office",
+      "workshopId": "2488570096",
+      "modPath": "DO_1"
+    },
+    {
+      "id": "2488570096/RyansGarage",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Gas Station",
+      "workshopId": "2488570096",
+      "modPath": "RyansGarage"
+    },
+    {
+      "id": "2488570096/am30",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "asphalt": 2.4
+      },
+      "consumption": {
+        "coal": 0.1,
+        "bitumen": 0.3,
+        "gravel": 1.8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.3
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 90,
+        "gravel": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt Batch Mixing Plant",
+      "workshopId": "2488570096",
+      "modPath": "am30"
+    },
+    {
+      "id": "2488570096/cm30",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "concrete": 16
+      },
+      "consumption": {
+        "gravel": 11,
+        "cement": 3,
+        "water": 8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 80,
+        "gravel": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small Concrete mixing Plant",
+      "workshopId": "2488570096",
+      "modPath": "cm30"
+    },
+    {
+      "id": "2488570096/oldbrickdock",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 500
+      },
+      "constructionResources": {
+        "workers": 160,
+        "gravel": 500
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Aggregate Dock",
+      "workshopId": "2488570096",
+      "modPath": "oldbrickdock"
+    },
+    {
+      "id": "2488570096/wooddock1",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {
+        "workers": 120
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wood Ramp Docks",
+      "workshopId": "2488570096",
+      "modPath": "wooddock1"
+    },
+    {
+      "id": "2488570096/woodshipyard1",
+      "nameId": null,
+      "types": [
+        "TYPE_PRODUCTION_LINE",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 250,
+      "professors": 25,
+      "production": {
+        "vehicles": 1
+      },
+      "consumption": {
+        "steel": 1,
+        "plastics": 1,
+        "mcomponents": 1,
+        "ecomponents": 1,
+        "fabric": 1,
+        "eletronics": 1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 700,
+        "gravel": 20
+      },
+      "electricWorkerFactors": {
+        "living": 1
+      },
+      "nameStr": "Small Drydock",
+      "workshopId": "2488570096",
+      "modPath": "woodshipyard1"
+    }
+  ],
+  "vehicles": []
+}

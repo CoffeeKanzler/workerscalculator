@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2381403087",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.367Z",
+  "buildings": [
+    {
+      "id": "2381403087/uglepererab",
+      "nameId": 6162,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 120,
+      "professors": 0,
+      "production": {
+        "coal": 6
+      },
+      "consumption": {
+        "rawcoal": 9
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.8
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2381403087",
+      "modPath": "uglepererab"
+    },
+    {
+      "id": "2381403087/uglepererab1",
+      "nameId": 6162,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 120,
+      "professors": 0,
+      "production": {
+        "coal": 10
+      },
+      "consumption": {
+        "rawcoal": 15
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.8
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2381403087",
+      "modPath": "uglepererab1"
+    }
+  ],
+  "vehicles": []
+}

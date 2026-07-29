@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2309073533",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.531Z",
+  "buildings": [
+    {
+      "id": "2309073533/full_stor",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 2500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": " 3 Rail Long Combined Storage",
+      "workshopId": "2309073533",
+      "modPath": "full_stor"
+    }
+  ],
+  "vehicles": []
+}

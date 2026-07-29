@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2255859934",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.241Z",
+  "buildings": [
+    {
+      "id": "2255859934/Full",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 100,
+      "professors": 100,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 1440,
+        "asphalt": 80,
+        "workers": 1560,
+        "bricks": 440,
+        "steel": 320,
+        "prefabpanels": 680,
+        "ecomponents": 14,
+        "mcomponents": 18
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Transgas",
+      "workshopId": "2255859934",
+      "modPath": "Full"
+    }
+  ],
+  "vehicles": []
+}

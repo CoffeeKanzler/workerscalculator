@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2337932017",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.734Z",
+  "buildings": [
+    {
+      "id": "2337932017/ladownia",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ruda ÅlÄska Coal Loader",
+      "workshopId": "2337932017",
+      "modPath": "ladownia"
+    }
+  ],
+  "vehicles": []
+}

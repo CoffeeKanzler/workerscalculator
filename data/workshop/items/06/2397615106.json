@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2397615106",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.472Z",
+  "buildings": [
+    {
+      "id": "2397615106/Contraband",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 50,
+      "production": {
+        "ecomponents": 0.001,
+        "fabric": 0.005,
+        "alcohol": 0.005,
+        "chemicals": 0.001
+      },
+      "consumption": {
+        "steel": 0.001
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 10,
+        "gravel": 15,
+        "concrete": 50,
+        "workers": 550,
+        "steel": 16,
+        "bricks": 40,
+        "boards": 20,
+        "mcomponents": 8,
+        "ecomponents": 4
+      },
+      "electricWorkerFactors": {
+        "living": 0.8
+      },
+      "nameStr": "Police warehouse",
+      "workshopId": "2397615106",
+      "modPath": "Contraband"
+    }
+  ],
+  "vehicles": []
+}

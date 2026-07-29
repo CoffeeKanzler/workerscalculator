@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2329999177",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.685Z",
+  "buildings": [
+    {
+      "id": "2329999177/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 126,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 126
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "9-storey E93",
+      "workshopId": "2329999177",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

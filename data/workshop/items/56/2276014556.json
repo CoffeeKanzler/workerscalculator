@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2276014556",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.685Z",
+  "buildings": [
+    {
+      "id": "2276014556/halle",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 800
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse type 1",
+      "workshopId": "2276014556",
+      "modPath": "halle"
+    },
+    {
+      "id": "2276014556/lagerhalle",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse Type 4",
+      "workshopId": "2276014556",
+      "modPath": "lagerhalle"
+    },
+    {
+      "id": "2276014556/lagerhalle2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 2000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse Type 2",
+      "workshopId": "2276014556",
+      "modPath": "lagerhalle2"
+    },
+    {
+      "id": "2276014556/lagerhalle3",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 5000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse Type 3",
+      "workshopId": "2276014556",
+      "modPath": "lagerhalle3"
+    },
+    {
+      "id": "2276014556/lagerhalle4",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 2500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse Type 5",
+      "workshopId": "2276014556",
+      "modPath": "lagerhalle4"
+    },
+    {
+      "id": "2276014556/silo",
+      "nameId": 6107,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2276014556",
+      "modPath": "silo"
+    }
+  ],
+  "vehicles": []
+}

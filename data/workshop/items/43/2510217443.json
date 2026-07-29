@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2510217443",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.683Z",
+  "buildings": [
+    {
+      "id": "2510217443/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 720,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 720
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "45-st building",
+      "workshopId": "2510217443",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}

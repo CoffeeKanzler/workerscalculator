@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2237472542",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.126Z",
+  "buildings": [
+    {
+      "id": "2237472542/square",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 500
+      },
+      "constructionResources": {
+        "workers": 140,
+        "asphalt": 10,
+        "gravel": 10,
+        "prefabpanels": 35,
+        "steel": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Town Square",
+      "workshopId": "2237472542",
+      "modPath": "square"
+    },
+    {
+      "id": "2237472542/squareM",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 140,
+        "asphalt": 10,
+        "gravel": 10,
+        "prefabpanels": 35,
+        "steel": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Town Square (monument)",
+      "workshopId": "2237472542",
+      "modPath": "squareM"
+    }
+  ],
+  "vehicles": []
+}

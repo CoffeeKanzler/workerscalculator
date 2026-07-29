@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2467505328",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.558Z",
+  "buildings": [
+    {
+      "id": "2467505328/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 4,
+      "professors": 6,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Village_school",
+      "workshopId": "2467505328",
+      "modPath": "HOUSE1"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2313247503",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.561Z",
+  "buildings": [
+    {
+      "id": "2313247503/Alumin",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "aluminium": 0.1
+      },
+      "consumption": {
+        "alumina": 0.15,
+        "chemicals": 0.006
+      },
+      "consumptionPerSecond": {
+        "eletric": 2.4
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny Aluminium Plant",
+      "workshopId": "2313247503",
+      "modPath": "Alumin"
+    }
+  ],
+  "vehicles": []
+}

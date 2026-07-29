@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2446506517",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.745Z",
+  "buildings": [
+    {
+      "id": "2446506517/kosciol",
+      "nameId": 6415,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2446506517",
+      "modPath": "kosciol"
+    }
+  ],
+  "vehicles": []
+}

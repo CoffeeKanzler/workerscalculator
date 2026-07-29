@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2281290582",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.734Z",
+  "buildings": [
+    {
+      "id": "2281290582/haus_des_lehrers",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 80,
+      "professors": 80,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Haus des Lehrers (University)",
+      "workshopId": "2281290582",
+      "modPath": "haus_des_lehrers"
+    }
+  ],
+  "vehicles": []
+}

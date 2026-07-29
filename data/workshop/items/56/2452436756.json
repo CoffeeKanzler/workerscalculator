@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2452436756",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.768Z",
+  "buildings": [
+    {
+      "id": "2452436756/21863_blok14pv3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 145,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 145
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "blok 14p v3",
+      "workshopId": "2452436756",
+      "modPath": "21863_blok14pv3"
+    }
+  ],
+  "vehicles": []
+}

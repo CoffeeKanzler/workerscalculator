@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2492821405",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.080Z",
+  "buildings": [
+    {
+      "id": "2492821405/hotel",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small hotel (3 stars)",
+      "workshopId": "2492821405",
+      "modPath": "hotel"
+    }
+  ],
+  "vehicles": []
+}

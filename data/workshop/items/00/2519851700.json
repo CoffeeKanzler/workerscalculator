@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2519851700",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.756Z",
+  "buildings": [
+    {
+      "id": "2519851700/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 1200,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 100,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Palace_of_Culture_and_Science",
+      "workshopId": "2519851700",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2519851700/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PCS_addition_restaurant",
+      "workshopId": "2519851700",
+      "modPath": "HOUSE2"
+    },
+    {
+      "id": "2519851700/HOUSE3",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PCS_addition_gallery",
+      "workshopId": "2519851700",
+      "modPath": "HOUSE3"
+    },
+    {
+      "id": "2519851700/HOUSE4",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": 10,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PCS_addition_observation_tower",
+      "workshopId": "2519851700",
+      "modPath": "HOUSE4"
+    },
+    {
+      "id": "2519851700/HOUSE5",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PCS_addition_pub",
+      "workshopId": "2519851700",
+      "modPath": "HOUSE5"
+    },
+    {
+      "id": "2519851700/HOUSE6",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": 5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PCS_addition_swimming_pool",
+      "workshopId": "2519851700",
+      "modPath": "HOUSE6"
+    }
+  ],
+  "vehicles": []
+}

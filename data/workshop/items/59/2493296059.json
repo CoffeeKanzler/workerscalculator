@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2493296059",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.087Z",
+  "buildings": [
+    {
+      "id": "2493296059/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 10,
+      "professors": 14,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "52-05-27:Main_building",
+      "workshopId": "2493296059",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2493296059/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 3,
+      "professors": 5,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "52-05-27:Service_building",
+      "workshopId": "2493296059",
+      "modPath": "HOUSE2"
+    }
+  ],
+  "vehicles": []
+}

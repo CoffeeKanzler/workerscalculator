@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2513910596",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.711Z",
+  "buildings": [
+    {
+      "id": "2513910596/hamm",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Signalling control building Hamm no collision",
+      "workshopId": "2513910596",
+      "modPath": "hamm"
+    }
+  ],
+  "vehicles": []
+}

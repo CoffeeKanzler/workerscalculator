@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2438482060",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.716Z",
+  "buildings": [
+    {
+      "id": "2438482060/MegaCoal",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 428,
+      "professors": 0,
+      "production": {
+        "eletric": 70
+      },
+      "consumption": {
+        "coal": 1.2,
+        "steel": 0.001
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 500,
+        "bricks": 1600,
+        "steel": 200,
+        "mcomponents": 25,
+        "asphalt": 35,
+        "workers": 7700
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Coal Plant",
+      "workshopId": "2438482060",
+      "modPath": "MegaCoal"
+    },
+    {
+      "id": "2438482060/UndergroundPipe",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {
+        "heat": 1100
+      },
+      "consumption": {
+        "eletric": 200
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 10,
+        "steel": 20,
+        "workers": 100
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Battersea Steam Vent",
+      "workshopId": "2438482060",
+      "modPath": "UndergroundPipe"
+    },
+    {
+      "id": "2438482060/Visitors",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Battersea Visitors Center",
+      "workshopId": "2438482060",
+      "modPath": "Visitors"
+    }
+  ],
+  "vehicles": []
+}

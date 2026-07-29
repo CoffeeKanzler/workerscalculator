@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2405281210",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.491Z",
+  "buildings": [
+    {
+      "id": "2405281210/factory",
+      "nameId": 6357,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200,
+      "professors": 0,
+      "production": {
+        "mcomponents": 0.1
+      },
+      "consumption": {
+        "steel": 0.15
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.2,
+        "living": 1.8
+      },
+      "workshopId": "2405281210",
+      "modPath": "factory"
+    }
+  ],
+  "vehicles": []
+}

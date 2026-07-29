@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2256974212",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.249Z",
+  "buildings": [
+    {
+      "id": "2256974212/blok",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick house 11",
+      "workshopId": "2256974212",
+      "modPath": "blok"
+    }
+  ],
+  "vehicles": []
+}

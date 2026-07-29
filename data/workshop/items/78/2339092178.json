@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2339092178",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.740Z",
+  "buildings": [
+    {
+      "id": "2339092178/17461_16-storey_U-City_NORD",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 294,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 294
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "16-storey_U-City_NORD",
+      "workshopId": "2339092178",
+      "modPath": "17461_16-storey_U-City_NORD"
+    },
+    {
+      "id": "2339092178/18368_16-storey_U-City_SOUTH",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 294,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 294
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "16-storey_U-City_SOUTH",
+      "workshopId": "2339092178",
+      "modPath": "18368_16-storey_U-City_SOUTH"
+    },
+    {
+      "id": "2339092178/21784_16-storey_U-City_CENTRAL",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 334,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 334
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "16-storey_U-City_CENTRAL",
+      "workshopId": "2339092178",
+      "modPath": "21784_16-storey_U-City_CENTRAL"
+    },
+    {
+      "id": "2339092178/27161_9-storey_U-City",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 234,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 234
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "9-storey_U-City",
+      "workshopId": "2339092178",
+      "modPath": "27161_9-storey_U-City"
+    }
+  ],
+  "vehicles": []
+}

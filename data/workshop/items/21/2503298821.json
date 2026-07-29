@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2503298821",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.645Z",
+  "buildings": [
+    {
+      "id": "2503298821/bauxite",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_BAUXITE"
+      ],
+      "workers": 45,
+      "professors": 0,
+      "production": {
+        "rawbauxite": 0.5
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3000,
+        "boards": 75,
+        "concrete": 180,
+        "steel": 45
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Coal Mine with Tracks",
+      "workshopId": "2503298821",
+      "modPath": "bauxite"
+    },
+    {
+      "id": "2503298821/coal",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_COAL"
+      ],
+      "workers": 220,
+      "professors": 0,
+      "production": {
+        "rawcoal": 4.2
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3000,
+        "boards": 75,
+        "concrete": 180,
+        "steel": 45
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Coal Mine with Tracks",
+      "workshopId": "2503298821",
+      "modPath": "coal"
+    },
+    {
+      "id": "2503298821/iron",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_IRON"
+      ],
+      "workers": 220,
+      "professors": 0,
+      "production": {
+        "rawiron": 4.2
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3000,
+        "boards": 75,
+        "concrete": 180,
+        "steel": 45
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Iron Mine with Tracks",
+      "workshopId": "2503298821",
+      "modPath": "iron"
+    },
+    {
+      "id": "2503298821/uranium",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_URANIUM"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {
+        "uranium": 0.75
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3000,
+        "boards": 75,
+        "concrete": 180,
+        "steel": 45
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Coal Mine with Tracks",
+      "workshopId": "2503298821",
+      "modPath": "uranium"
+    }
+  ],
+  "vehicles": []
+}

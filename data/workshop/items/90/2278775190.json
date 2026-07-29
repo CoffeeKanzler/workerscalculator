@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2278775190",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.708Z",
+  "buildings": [
+    {
+      "id": "2278775190/ContainerRailwayStation",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 400
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Container Railway Station",
+      "workshopId": "2278775190",
+      "modPath": "ContainerRailwayStation"
+    },
+    {
+      "id": "2278775190/FreightRailwayStation",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Freight Railway Station",
+      "workshopId": "2278775190",
+      "modPath": "FreightRailwayStation"
+    },
+    {
+      "id": "2278775190/RailwayTrackConstructionEnterprise",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE_RAIL"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 0.2,
+        "lighting": 0.2
+      },
+      "nameStr": "Railway Track Construction Enterprise",
+      "workshopId": "2278775190",
+      "modPath": "RailwayTrackConstructionEnterprise"
+    },
+    {
+      "id": "2278775190/TechnicalRailwayStation",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Technical Railway Station",
+      "workshopId": "2278775190",
+      "modPath": "TechnicalRailwayStation"
+    }
+  ],
+  "vehicles": []
+}

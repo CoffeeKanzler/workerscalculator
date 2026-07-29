@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2264680071",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.556Z",
+  "buildings": [
+    {
+      "id": "2264680071/1",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 130,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 130
+      },
+      "constructionResources": {
+        "boards": 6.5,
+        "steel": 1.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2264680071",
+      "modPath": "1"
+    },
+    {
+      "id": "2264680071/10",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 210,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 210
+      },
+      "constructionResources": {
+        "asphalt": 2.8,
+        "boards": 14.5,
+        "steel": 4.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2264680071",
+      "modPath": "10"
+    },
+    {
+      "id": "2264680071/2",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 260,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 260
+      },
+      "constructionResources": {
+        "boards": 12.5,
+        "steel": 3.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2264680071",
+      "modPath": "2"
+    },
+    {
+      "id": "2264680071/3",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 390,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 390
+      },
+      "constructionResources": {
+        "boards": 18.5,
+        "steel": 4.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2264680071",
+      "modPath": "3"
+    },
+    {
+      "id": "2264680071/4",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150
+      },
+      "constructionResources": {
+        "boards": 8.5,
+        "steel": 2.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2264680071",
+      "modPath": "4"
+    },
+    {
+      "id": "2264680071/5",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 240,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 240
+      },
+      "constructionResources": {
+        "asphalt": 0.3,
+        "boards": 12.5,
+        "steel": 3.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2264680071",
+      "modPath": "5"
+    },
+    {
+      "id": "2264680071/6",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 63,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 63
+      },
+      "constructionResources": {
+        "boards": 3.5,
+        "steel": 1.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2264680071",
+      "modPath": "6"
+    },
+    {
+      "id": "2264680071/7",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 190,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 190
+      },
+      "constructionResources": {
+        "boards": 6.5,
+        "steel": 1.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2264680071",
+      "modPath": "7"
+    },
+    {
+      "id": "2264680071/8",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36
+      },
+      "constructionResources": {
+        "boards": 3.5,
+        "steel": 1.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2264680071",
+      "modPath": "8"
+    },
+    {
+      "id": "2264680071/9",
+      "nameId": 6010,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 15,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 15
+      },
+      "constructionResources": {
+        "boards": 1.5,
+        "steel": 1.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2264680071",
+      "modPath": "9"
+    }
+  ],
+  "vehicles": []
+}

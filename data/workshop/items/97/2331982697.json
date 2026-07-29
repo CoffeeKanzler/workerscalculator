@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2331982697",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.686Z",
+  "buildings": [
+    {
+      "id": "2331982697/HOUSE3",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 13,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡anteen 2-07-22",
+      "workshopId": "2331982697",
+      "modPath": "HOUSE3"
+    },
+    {
+      "id": "2331982697/HOUSE3P",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 13,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡anteen 2-07-22",
+      "workshopId": "2331982697",
+      "modPath": "HOUSE3P"
+    }
+  ],
+  "vehicles": []
+}

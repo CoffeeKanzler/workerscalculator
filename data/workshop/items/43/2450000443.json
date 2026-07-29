@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2450000443",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.762Z",
+  "buildings": [
+    {
+      "id": "2450000443/SRCO1890JF",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE_RAIL"
+      ],
+      "workers": 45,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 250
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 0.2,
+        "lighting": 0.2
+      },
+      "nameStr": "s-RCO-1890",
+      "workshopId": "2450000443",
+      "modPath": "SRCO1890JF"
+    },
+    {
+      "id": "2450000443/SRCO1891JF",
+      "nameId": null,
+      "types": [
+        "TYPE_CONSTRUCTION_OFFICE_RAIL"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 250
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 0.2,
+        "lighting": 0.2
+      },
+      "nameStr": "s-RCO-1891",
+      "workshopId": "2450000443",
+      "modPath": "SRCO1891JF"
+    }
+  ],
+  "vehicles": []
+}

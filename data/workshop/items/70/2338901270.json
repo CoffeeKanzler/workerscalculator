@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2338901270",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.737Z",
+  "buildings": [
+    {
+      "id": "2338901270/V_storage_400",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 400
+      },
+      "constructionResources": {
+        "workers": 175,
+        "gravel": 5,
+        "asphalt": 4,
+        "concrete": 1.5,
+        "steel": 6,
+        "mcomponents": 0.2,
+        "ecomponents": 0.03
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Vertical storage of oil, fuel, bitumen 400",
+      "workshopId": "2338901270",
+      "modPath": "V_storage_400"
+    }
+  ],
+  "vehicles": []
+}

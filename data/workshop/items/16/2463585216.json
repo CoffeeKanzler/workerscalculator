@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2463585216",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.525Z",
+  "buildings": [
+    {
+      "id": "2463585216/MedClothing",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 35,
+      "professors": 0,
+      "production": {
+        "clothes": 0.015
+      },
+      "consumption": {
+        "fabric": 0.03
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 45,
+        "asphalt": 5,
+        "bricks": 65,
+        "steel": 10,
+        "mcomponents": 1,
+        "workers": 1000
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Clothing Factory",
+      "workshopId": "2463585216",
+      "modPath": "MedClothing"
+    }
+  ],
+  "vehicles": []
+}

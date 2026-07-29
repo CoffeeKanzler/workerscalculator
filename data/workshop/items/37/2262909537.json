@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2262909537",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.283Z",
+  "buildings": [
+    {
+      "id": "2262909537/Idling",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 9,
+        "asphalt": 2,
+        "workers": 66,
+        "prefabpanels": 10,
+        "steel": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Fountain with Statue",
+      "workshopId": "2262909537",
+      "modPath": "Idling"
+    }
+  ],
+  "vehicles": []
+}

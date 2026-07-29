@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2514872399",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.720Z",
+  "buildings": [
+    {
+      "id": "2514872399/brama2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pedestrian gate (5 storey)",
+      "workshopId": "2514872399",
+      "modPath": "brama2"
+    },
+    {
+      "id": "2514872399/brama2_3p",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pedestrian gate (4 storey)",
+      "workshopId": "2514872399",
+      "modPath": "brama2_3p"
+    },
+    {
+      "id": "2514872399/brama3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pedestrian gate (5 storey)",
+      "workshopId": "2514872399",
+      "modPath": "brama3"
+    },
+    {
+      "id": "2514872399/brama3_3p",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pedestrian gate (4 storey)",
+      "workshopId": "2514872399",
+      "modPath": "brama3_3p"
+    }
+  ],
+  "vehicles": []
+}

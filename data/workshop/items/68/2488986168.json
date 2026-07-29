@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2488986168",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.066Z",
+  "buildings": [
+    {
+      "id": "2488986168/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 10,
+      "professors": 30,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 38,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡ÐÐÐ_ÐÐÐ£_ÐÐ¾ÑÑÐ¾Ð²ÐµÑ",
+      "workshopId": "2488986168",
+      "modPath": "HOUSE1"
+    }
+  ],
+  "vehicles": []
+}

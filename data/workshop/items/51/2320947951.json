@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2320947951",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.655Z",
+  "buildings": [
+    {
+      "id": "2320947951/Graverzav",
+      "nameId": 6158,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {
+        "gravel": 7
+      },
+      "consumption": {
+        "rawgravel": 8.75
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.8
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2320947951",
+      "modPath": "Graverzav"
+    },
+    {
+      "id": "2320947951/Graverzav1",
+      "nameId": 6158,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 120,
+      "professors": 0,
+      "production": {
+        "gravel": 7
+      },
+      "consumption": {
+        "rawgravel": 8.75
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.8
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2320947951",
+      "modPath": "Graverzav1"
+    },
+    {
+      "id": "2320947951/Graverzav2",
+      "nameId": 6158,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 150,
+      "professors": 0,
+      "production": {
+        "gravel": 7
+      },
+      "consumption": {
+        "rawgravel": 8.75
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.8
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2320947951",
+      "modPath": "Graverzav2"
+    }
+  ],
+  "vehicles": []
+}

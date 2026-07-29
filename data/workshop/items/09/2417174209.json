@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2417174209",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.535Z",
+  "buildings": [
+    {
+      "id": "2417174209/silo",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 70
+      },
+      "constructionResources": {
+        "gravel": 3,
+        "concrete": 2,
+        "asphalt": 1,
+        "workers": 130,
+        "steel": 6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Silo",
+      "workshopId": "2417174209",
+      "modPath": "silo"
+    }
+  ],
+  "vehicles": []
+}

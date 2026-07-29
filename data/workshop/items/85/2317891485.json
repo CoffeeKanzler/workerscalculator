@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2317891485",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.610Z",
+  "buildings": [
+    {
+      "id": "2317891485/TVTour",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Television Studio Tour",
+      "workshopId": "2317891485",
+      "modPath": "TVTour"
+    }
+  ],
+  "vehicles": []
+}

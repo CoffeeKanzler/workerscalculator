@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2386505090",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.422Z",
+  "buildings": [
+    {
+      "id": "2386505090/60s_linear_terminal_LH",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Linear Terminal LH",
+      "workshopId": "2386505090",
+      "modPath": "60s_linear_terminal_LH"
+    },
+    {
+      "id": "2386505090/60s_linear_terminal_RH",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Linear Terminal RH",
+      "workshopId": "2386505090",
+      "modPath": "60s_linear_terminal_RH"
+    },
+    {
+      "id": "2386505090/60s_linear_terminal_twin",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Linear Terminal Twin",
+      "workshopId": "2386505090",
+      "modPath": "60s_linear_terminal_twin"
+    },
+    {
+      "id": "2386505090/60s_radial_terminal",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Radial Terminal",
+      "workshopId": "2386505090",
+      "modPath": "60s_radial_terminal"
+    },
+    {
+      "id": "2386505090/auto_atc",
+      "nameId": null,
+      "types": [
+        "TYPE_AIRPLANE_TOWER"
+      ],
+      "workers": 0,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Semi Automatic ATC",
+      "workshopId": "2386505090",
+      "modPath": "auto_atc"
+    },
+    {
+      "id": "2386505090/av_fueltank",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Aviation Fuel Storage",
+      "workshopId": "2386505090",
+      "modPath": "av_fueltank"
+    },
+    {
+      "id": "2386505090/medium_atc",
+      "nameId": null,
+      "types": [
+        "TYPE_AIRPLANE_TOWER"
+      ],
+      "workers": 0,
+      "professors": 6,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium ATC",
+      "workshopId": "2386505090",
+      "modPath": "medium_atc"
+    },
+    {
+      "id": "2386505090/old_terminal",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1200
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old Passenger Terminal",
+      "workshopId": "2386505090",
+      "modPath": "old_terminal"
+    },
+    {
+      "id": "2386505090/single_hangar",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Cargo Terminal",
+      "workshopId": "2386505090",
+      "modPath": "single_hangar"
+    },
+    {
+      "id": "2386505090/tiny_atc",
+      "nameId": null,
+      "types": [
+        "TYPE_AIRPLANE_TOWER"
+      ],
+      "workers": 0,
+      "professors": 3,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny ATC",
+      "workshopId": "2386505090",
+      "modPath": "tiny_atc"
+    },
+    {
+      "id": "2386505090/triple_hangar",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 3,
+        "RESOURCE_TRANSPORT_COVERED": 3,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 3,
+        "RESOURCE_TRANSPORT_CEMENT": 3,
+        "RESOURCE_TRANSPORT_COOLER": 3
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Cargo Terminal",
+      "workshopId": "2386505090",
+      "modPath": "triple_hangar"
+    }
+  ],
+  "vehicles": []
+}

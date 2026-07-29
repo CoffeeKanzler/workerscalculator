@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2375710241",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.343Z",
+  "buildings": [
+    {
+      "id": "2375710241/20kV_splitter_left",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.2,
+        "prefabpanels": 4.5,
+        "ecomponents": 0.15,
+        "workers": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "20kV splitter (left)",
+      "workshopId": "2375710241",
+      "modPath": "20kV_splitter_left"
+    },
+    {
+      "id": "2375710241/20kV_splitter_right",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 0.2,
+        "prefabpanels": 4.5,
+        "ecomponents": 0.15,
+        "workers": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "20kV splitter (right)",
+      "workshopId": "2375710241",
+      "modPath": "20kV_splitter_right"
+    }
+  ],
+  "vehicles": []
+}

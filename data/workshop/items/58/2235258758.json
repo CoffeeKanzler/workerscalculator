@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2235258758",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.109Z",
+  "buildings": [
+    {
+      "id": "2235258758/MCPP",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "coal": 4
+      },
+      "consumption": {
+        "rawcoal": 7
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.16
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium coal processing plant",
+      "workshopId": "2235258758",
+      "modPath": "MCPP"
+    },
+    {
+      "id": "2235258758/MIPP",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "iron": 3.5
+      },
+      "consumption": {
+        "rawiron": 7.5
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.16
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium iron processing plant",
+      "workshopId": "2235258758",
+      "modPath": "MIPP"
+    }
+  ],
+  "vehicles": []
+}

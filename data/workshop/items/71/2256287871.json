@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2256287871",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.246Z",
+  "buildings": [
+    {
+      "id": "2256287871/loading",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Container loading facility",
+      "workshopId": "2256287871",
+      "modPath": "loading"
+    },
+    {
+      "id": "2256287871/unloading",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Container unloading facility",
+      "workshopId": "2256287871",
+      "modPath": "unloading"
+    }
+  ],
+  "vehicles": []
+}

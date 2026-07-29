@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2318833070",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.650Z",
+  "buildings": [
+    {
+      "id": "2318833070/AutoHeat",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "heat": 150
+      },
+      "consumption": {
+        "eletric": 20
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Automatic heating plant",
+      "workshopId": "2318833070",
+      "modPath": "AutoHeat"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2230299967",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.079Z",
+  "buildings": [
+    {
+      "id": "2230299967/niitm",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 410,
+      "professors": 280,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 701,
+        "asphalt": 68,
+        "gravel": 140,
+        "boards": 110,
+        "steel": 60,
+        "mcomponents": 53,
+        "prefabpanels": 213,
+        "ecomponents": 27
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐÐ¢Ð",
+      "workshopId": "2230299967",
+      "modPath": "niitm"
+    },
+    {
+      "id": "2230299967/niitm2",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_MEDICAL"
+      ],
+      "workers": 200,
+      "professors": 160,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 15,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 600,
+        "asphalt": 49,
+        "gravel": 100,
+        "boards": 80,
+        "steel": 40,
+        "mcomponents": 43,
+        "prefabpanels": 120,
+        "ecomponents": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐÐÐ",
+      "workshopId": "2230299967",
+      "modPath": "niitm2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2390863400",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.445Z",
+  "buildings": [
+    {
+      "id": "2390863400/magaz",
+      "nameId": 6257,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 36,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2000,
+        "prefabpanels": 60,
+        "bricks": 5,
+        "boards": 5,
+        "concrete": 20,
+        "steel": 6
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2390863400",
+      "modPath": "magaz"
+    },
+    {
+      "id": "2390863400/magaz0",
+      "nameId": 6257,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 36,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2000,
+        "prefabpanels": 60,
+        "bricks": 5,
+        "boards": 5,
+        "concrete": 20,
+        "steel": 6
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2390863400",
+      "modPath": "magaz0"
+    },
+    {
+      "id": "2390863400/magaz1",
+      "nameId": 6257,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 36,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2000,
+        "prefabpanels": 70,
+        "bricks": 6,
+        "boards": 6,
+        "concrete": 30,
+        "steel": 7
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2390863400",
+      "modPath": "magaz1"
+    },
+    {
+      "id": "2390863400/magaz2",
+      "nameId": 6257,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 36,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2000,
+        "prefabpanels": 70,
+        "bricks": 6,
+        "boards": 6,
+        "concrete": 30,
+        "steel": 7
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2390863400",
+      "modPath": "magaz2"
+    }
+  ],
+  "vehicles": []
+}

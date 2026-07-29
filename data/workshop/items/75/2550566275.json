@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2550566275",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.936Z",
+  "buildings": [
+    {
+      "id": "2550566275/veza",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 384,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 384
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "24 storey tower",
+      "workshopId": "2550566275",
+      "modPath": "veza"
+    }
+  ],
+  "vehicles": []
+}

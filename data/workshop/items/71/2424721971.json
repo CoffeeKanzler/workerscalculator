@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2424721971",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.614Z",
+  "buildings": [
+    {
+      "id": "2424721971/WYBS",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 5,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.01
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "WYBS 88.3 Radio Station",
+      "workshopId": "2424721971",
+      "modPath": "WYBS"
+    },
+    {
+      "id": "2424721971/WYBS_Antenna",
+      "nameId": null,
+      "types": [
+        "TYPE_POLLUTION_METER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.0025
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "80m Radio Mast",
+      "workshopId": "2424721971",
+      "modPath": "WYBS_Antenna"
+    }
+  ],
+  "vehicles": []
+}

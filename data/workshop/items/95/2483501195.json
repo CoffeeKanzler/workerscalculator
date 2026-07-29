@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2483501195",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.031Z",
+  "buildings": [
+    {
+      "id": "2483501195/big_tech",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 250,
+      "professors": 50,
+      "production": {
+        "mcomponents": 0.29
+      },
+      "consumption": {
+        "steel": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾Ð»ÑÑÐ¾Ð¹ Ð¼ÐµÑÐ°Ð½Ð¾ÑÐ±Ð¾ÑÐ¾ÑÐ½ÑÐ¹ ÑÐµÑ (Big Mech Assembly Shop)",
+      "workshopId": "2483501195",
+      "modPath": "big_tech"
+    },
+    {
+      "id": "2483501195/small_mech",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 100,
+      "professors": 20,
+      "production": {
+        "mcomponents": 0.29
+      },
+      "consumption": {
+        "steel": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐµÑÐ°Ð½Ð¾ÑÐ±Ð¾ÑÐ¾ÑÐ½ÑÐ¹ ÑÐµÑ (Mech Assembly Shop)",
+      "workshopId": "2483501195",
+      "modPath": "small_mech"
+    }
+  ],
+  "vehicles": []
+}

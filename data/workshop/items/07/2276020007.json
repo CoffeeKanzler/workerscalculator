@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2276020007",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.691Z",
+  "buildings": [
+    {
+      "id": "2276020007/Farmer",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hillside Farming Cooperative",
+      "workshopId": "2276020007",
+      "modPath": "Farmer"
+    },
+    {
+      "id": "2276020007/Large",
+      "nameId": null,
+      "types": [
+        "TYPE_FIELD"
+      ],
+      "workers": 75,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Farming Zone",
+      "workshopId": "2276020007",
+      "modPath": "Large"
+    },
+    {
+      "id": "2276020007/Medium",
+      "nameId": null,
+      "types": [
+        "TYPE_FIELD",
+        "TYPE_FIELD"
+      ],
+      "workers": 75,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Farming Zone",
+      "workshopId": "2276020007",
+      "modPath": "Medium"
+    },
+    {
+      "id": "2276020007/Small",
+      "nameId": null,
+      "types": [
+        "TYPE_FIELD"
+      ],
+      "workers": 75,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small farming zone",
+      "workshopId": "2276020007",
+      "modPath": "Small"
+    },
+    {
+      "id": "2276020007/SteelSilo",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Steel Silo",
+      "workshopId": "2276020007",
+      "modPath": "SteelSilo"
+    }
+  ],
+  "vehicles": []
+}

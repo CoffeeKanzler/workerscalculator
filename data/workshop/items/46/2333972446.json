@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2333972446",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.692Z",
+  "buildings": [
+    {
+      "id": "2333972446/blok-2seg",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 65,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 65
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick house 12 (2 sections)",
+      "workshopId": "2333972446",
+      "modPath": "blok-2seg"
+    },
+    {
+      "id": "2333972446/blok-3seg",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 92,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 92
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick house 12 (3 sections)",
+      "workshopId": "2333972446",
+      "modPath": "blok-3seg"
+    },
+    {
+      "id": "2333972446/blok-4seg",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 130,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 130
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick house 12 (4 sections)",
+      "workshopId": "2333972446",
+      "modPath": "blok-4seg"
+    },
+    {
+      "id": "2333972446/blok-6seg",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 195,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 195
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Brick house 12 (6 sections)",
+      "workshopId": "2333972446",
+      "modPath": "blok-6seg"
+    }
+  ],
+  "vehicles": []
+}

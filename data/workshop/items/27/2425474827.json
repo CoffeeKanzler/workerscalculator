@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2425474827",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.620Z",
+  "buildings": [
+    {
+      "id": "2425474827/Tronics",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {
+        "eletronics": 0.03
+      },
+      "consumption": {
+        "ecomponents": 0.01,
+        "plastics": 0.015,
+        "mcomponents": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "boards": 15,
+        "concrete": 35,
+        "steel": 15,
+        "bricks": 25,
+        "mcomponents": 5,
+        "workers": 999
+      },
+      "electricWorkerFactors": {
+        "living": 1.2
+      },
+      "nameStr": "Small Electronics Factory",
+      "workshopId": "2425474827",
+      "modPath": "Tronics"
+    }
+  ],
+  "vehicles": []
+}

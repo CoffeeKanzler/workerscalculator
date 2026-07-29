@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2251463075",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.220Z",
+  "buildings": [
+    {
+      "id": "2251463075/large_com1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Vehicle Storage",
+      "workshopId": "2251463075",
+      "modPath": "large_com1"
+    },
+    {
+      "id": "2251463075/large_com2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Vehicle Storage(ALLOWPASS)",
+      "workshopId": "2251463075",
+      "modPath": "large_com2"
+    },
+    {
+      "id": "2251463075/small_com1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 2500,
+        "RESOURCE_TRANSPORT_COOLER": 600,
+        "RESOURCE_TRANSPORT_VEHICLES": 100
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small combined Vehicle storage",
+      "workshopId": "2251463075",
+      "modPath": "small_com1"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2313974923",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.562Z",
+  "buildings": [
+    {
+      "id": "2313974923/kirpzav",
+      "nameId": 6171,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 220,
+      "professors": 0,
+      "production": {
+        "bricks": 1.25
+      },
+      "consumption": {
+        "coal": 0.75,
+        "water": 0.325
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.6
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2313974923",
+      "modPath": "kirpzav"
+    },
+    {
+      "id": "2313974923/kirpzav1",
+      "nameId": 6171,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 220,
+      "professors": 0,
+      "production": {
+        "bricks": 1.25
+      },
+      "consumption": {
+        "coal": 0.75,
+        "water": 0.325
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.6
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2313974923",
+      "modPath": "kirpzav1"
+    }
+  ],
+  "vehicles": []
+}

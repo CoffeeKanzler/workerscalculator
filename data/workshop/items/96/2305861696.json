@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2305861696",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.812Z",
+  "buildings": [
+    {
+      "id": "2305861696/rsi_tc",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 36,
+      "professors": 110,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 1,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 787,
+        "boards": 47,
+        "concrete": 248,
+        "prefabpanels": 110,
+        "steel": 70,
+        "bricks": 60,
+        "mcomponents": 8,
+        "ecomponents": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¦ÐÐÐÐ¡ (RSI TC)",
+      "workshopId": "2305861696",
+      "modPath": "rsi_tc"
+    }
+  ],
+  "vehicles": []
+}

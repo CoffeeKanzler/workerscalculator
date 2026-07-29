@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2384910975",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.416Z",
+  "buildings": [
+    {
+      "id": "2384910975/Heating_application",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "heat": 500
+      },
+      "consumption": {
+        "eletric": 9.33
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "VVER-1000 V-320 Heating application",
+      "workshopId": "2384910975",
+      "modPath": "Heating_application"
+    }
+  ],
+  "vehicles": []
+}

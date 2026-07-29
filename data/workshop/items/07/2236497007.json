@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2236497007",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.121Z",
+  "buildings": [
+    {
+      "id": "2236497007/postelbuilding",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "postelbuilding",
+      "workshopId": "2236497007",
+      "modPath": "postelbuilding"
+    }
+  ],
+  "vehicles": []
+}

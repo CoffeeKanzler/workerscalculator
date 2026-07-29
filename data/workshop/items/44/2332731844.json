@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2332731844",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.690Z",
+  "buildings": [
+    {
+      "id": "2332731844/ELWR",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 40,
+      "professors": 10,
+      "production": {
+        "eletric": 41.5,
+        "nuclearfuelburned": 0.00012,
+        "vehicles": 1
+      },
+      "consumption": {
+        "nuclearfuel": 0.00026,
+        "vehicles": 1
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Yongbyon ELWR",
+      "workshopId": "2332731844",
+      "modPath": "ELWR"
+    }
+  ],
+  "vehicles": []
+}

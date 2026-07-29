@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2499975355",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.130Z",
+  "buildings": [
+    {
+      "id": "2499975355/1-circuit",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 9.5,
+        "workers": 279,
+        "steel": 8.5,
+        "ecomponents": 0.86
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embranchment for 4,6,10 MW",
+      "workshopId": "2499975355",
+      "modPath": "1-circuit"
+    },
+    {
+      "id": "2499975355/10MW",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "connection for 10 MW line",
+      "workshopId": "2499975355",
+      "modPath": "10MW"
+    },
+    {
+      "id": "2499975355/13MW",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "connection for 13 MW line",
+      "workshopId": "2499975355",
+      "modPath": "13MW"
+    },
+    {
+      "id": "2499975355/14MW",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "connection for 14 MW line",
+      "workshopId": "2499975355",
+      "modPath": "14MW"
+    },
+    {
+      "id": "2499975355/15MW",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "connection for 15 MW line",
+      "workshopId": "2499975355",
+      "modPath": "15MW"
+    },
+    {
+      "id": "2499975355/18MW",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "connection for 18 MW line",
+      "workshopId": "2499975355",
+      "modPath": "18MW"
+    },
+    {
+      "id": "2499975355/2-circuit",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 14.2,
+        "workers": 449,
+        "steel": 14.5,
+        "ecomponents": 1.47
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Embranchment for 8,13,14,15,18 MW",
+      "workshopId": "2499975355",
+      "modPath": "2-circuit"
+    },
+    {
+      "id": "2499975355/4MW",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "connection for 4 MW line",
+      "workshopId": "2499975355",
+      "modPath": "4MW"
+    },
+    {
+      "id": "2499975355/6MW",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "connection for 6 MW line",
+      "workshopId": "2499975355",
+      "modPath": "6MW"
+    },
+    {
+      "id": "2499975355/8MW",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "connection for 8 MW line",
+      "workshopId": "2499975355",
+      "modPath": "8MW"
+    }
+  ],
+  "vehicles": []
+}

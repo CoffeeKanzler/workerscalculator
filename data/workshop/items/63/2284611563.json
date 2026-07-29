@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2284611563",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.759Z",
+  "buildings": [
+    {
+      "id": "2284611563/mili",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "mig25",
+      "workshopId": "2284611563",
+      "modPath": "mili"
+    }
+  ],
+  "vehicles": []
+}

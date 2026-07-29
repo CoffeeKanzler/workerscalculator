@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2420545685",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.558Z",
+  "buildings": [
+    {
+      "id": "2420545685/WoodStore",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 30
+      },
+      "constructionResources": {
+        "gravel": 8,
+        "workers": 230,
+        "boards": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village Storehouse",
+      "workshopId": "2420545685",
+      "modPath": "WoodStore"
+    }
+  ],
+  "vehicles": []
+}

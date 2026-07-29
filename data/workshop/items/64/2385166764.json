@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2385166764",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.417Z",
+  "buildings": [
+    {
+      "id": "2385166764/boksitpererab",
+      "nameId": 26302,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 120,
+      "professors": 0,
+      "production": {
+        "bauxite": 5
+      },
+      "consumption": {
+        "rawbauxite": 8.75
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.8
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2385166764",
+      "modPath": "boksitpererab"
+    },
+    {
+      "id": "2385166764/boksitpererab1",
+      "nameId": 26302,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 120,
+      "professors": 0,
+      "production": {
+        "bauxite": 5
+      },
+      "consumption": {
+        "rawbauxite": 8.75
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.8
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2385166764",
+      "modPath": "boksitpererab1"
+    }
+  ],
+  "vehicles": []
+}

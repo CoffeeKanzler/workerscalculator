@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2312054104",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.553Z",
+  "buildings": [
+    {
+      "id": "2312054104/test2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 700,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 700
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Airport Station",
+      "workshopId": "2312054104",
+      "modPath": "test2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2379903433",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.364Z",
+  "buildings": [
+    {
+      "id": "2379903433/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "heat": 500
+      },
+      "consumption": {
+        "fuel": 0.2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heating plant_fuel",
+      "workshopId": "2379903433",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2379903433/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "heat": 500
+      },
+      "consumption": {
+        "bitumen": 0.2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heating plant_bitumen",
+      "workshopId": "2379903433",
+      "modPath": "HOUSE2"
+    },
+    {
+      "id": "2379903433/HOUSE3",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "heat": 500
+      },
+      "consumption": {
+        "wood": 0.2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heating plant_wood",
+      "workshopId": "2379903433",
+      "modPath": "HOUSE3"
+    },
+    {
+      "id": "2379903433/HOUSE4",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "heat": 500
+      },
+      "consumption": {
+        "coal": 0.2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heating plant_coal",
+      "workshopId": "2379903433",
+      "modPath": "HOUSE4"
+    }
+  ],
+  "vehicles": []
+}

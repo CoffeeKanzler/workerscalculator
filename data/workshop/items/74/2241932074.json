@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2241932074",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.169Z",
+  "buildings": [
+    {
+      "id": "2241932074/sala",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "School gym (80s)",
+      "workshopId": "2241932074",
+      "modPath": "sala"
+    },
+    {
+      "id": "2241932074/szkola",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 45,
+      "professors": 45,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big school (80s)",
+      "workshopId": "2241932074",
+      "modPath": "szkola"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2418745788",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.536Z",
+  "buildings": [
+    {
+      "id": "2418745788/baeckerei",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "food": 0.3
+      },
+      "consumption": {
+        "plants": 0.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.2
+      },
+      "nameStr": "BÃ¤ckerei",
+      "workshopId": "2418745788",
+      "modPath": "baeckerei"
+    },
+    {
+      "id": "2418745788/bier",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bierkeller",
+      "workshopId": "2418745788",
+      "modPath": "bier"
+    },
+    {
+      "id": "2418745788/brauerei",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 35,
+      "professors": 0,
+      "production": {
+        "alcohol": 0.12
+      },
+      "consumption": {
+        "plants": 0.375
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.5
+      },
+      "nameStr": "Kellerbrauerei",
+      "workshopId": "2418745788",
+      "modPath": "brauerei"
+    },
+    {
+      "id": "2418745788/fleisch",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 100
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "KÃ¼hlhaus",
+      "workshopId": "2418745788",
+      "modPath": "fleisch"
+    },
+    {
+      "id": "2418745788/fleischerei",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "meat": 0.1
+      },
+      "consumption": {
+        "livestock": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.2
+      },
+      "nameStr": "Fleischerei",
+      "workshopId": "2418745788",
+      "modPath": "fleischerei"
+    },
+    {
+      "id": "2418745788/schneiderei",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {
+        "clothes": 0.01
+      },
+      "consumption": {
+        "fabric": 0.02
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.5,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 50,
+        "workers": 150,
+        "boards": 30,
+        "bricks": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Schneiderei",
+      "workshopId": "2418745788",
+      "modPath": "schneiderei"
+    },
+    {
+      "id": "2418745788/weberei",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "fabric": 0.03
+      },
+      "consumption": {
+        "plants": 0.2,
+        "wood": 0.03
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.5,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 60,
+        "workers": 150,
+        "boards": 40,
+        "bricks": 30
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Weberei",
+      "workshopId": "2418745788",
+      "modPath": "weberei"
+    }
+  ],
+  "vehicles": []
+}

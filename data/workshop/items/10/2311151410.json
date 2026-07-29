@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2311151410",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.545Z",
+  "buildings": [
+    {
+      "id": "2311151410/SHCH-5416-1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 168,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 168
+      },
+      "constructionResources": {
+        "bricks": 131,
+        "prefabpanels": 93,
+        "concrete": 26,
+        "steel": 9,
+        "workers": 2188,
+        "ecomponents": 0.9,
+        "mcomponents": 0.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð©-5416 (Ñ)",
+      "workshopId": "2311151410",
+      "modPath": "SHCH-5416-1"
+    },
+    {
+      "id": "2311151410/SHCH-5416-2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 168,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 168
+      },
+      "constructionResources": {
+        "bricks": 133,
+        "prefabpanels": 94,
+        "concrete": 26,
+        "steel": 9,
+        "workers": 2246,
+        "ecomponents": 0.9,
+        "mcomponents": 0.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð©-5416",
+      "workshopId": "2311151410",
+      "modPath": "SHCH-5416-2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2437197444",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.711Z",
+  "buildings": [
+    {
+      "id": "2437197444/akademie",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_MEDICAL"
+      ],
+      "workers": 8,
+      "professors": 10,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.8,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Akademie",
+      "workshopId": "2437197444",
+      "modPath": "akademie"
+    },
+    {
+      "id": "2437197444/kolleg",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 10,
+      "professors": 15,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.7,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kolleg",
+      "workshopId": "2437197444",
+      "modPath": "kolleg"
+    },
+    {
+      "id": "2437197444/seminar",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 5,
+      "professors": 5,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parteiseminar",
+      "workshopId": "2437197444",
+      "modPath": "seminar"
+    }
+  ],
+  "vehicles": []
+}

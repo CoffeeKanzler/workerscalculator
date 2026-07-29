@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2395213280",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.459Z",
+  "buildings": [
+    {
+      "id": "2395213280/A0",
+      "nameId": 6314,
+      "types": [
+        "TYPE_MINE_URANIUM"
+      ],
+      "workers": 520,
+      "professors": 0,
+      "production": {
+        "uranium": 6.1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 23.2,
+        "bricks": 62.5,
+        "mcomponents": 25.4,
+        "steel": 70.85,
+        "concrete": 280,
+        "boards": 127.2,
+        "workers": 4000
+      },
+      "electricWorkerFactors": {
+        "lighting": 1.5,
+        "living": 1.7
+      },
+      "workshopId": "2395213280",
+      "modPath": "A0"
+    },
+    {
+      "id": "2395213280/A1",
+      "nameId": 6315,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 270,
+      "professors": 60,
+      "production": {
+        "yellowcake": 0.03
+      },
+      "consumption": {
+        "uranium": 0.72
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.6
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 19.2,
+        "mcomponents": 45.4,
+        "steel": 90.85,
+        "concrete": 280,
+        "boards": 187.2,
+        "bricks": 77.5,
+        "workers": 2000
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2395213280",
+      "modPath": "A1"
+    },
+    {
+      "id": "2395213280/A2",
+      "nameId": 6316,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 120,
+      "professors": 45,
+      "production": {
+        "uf6": 0.02,
+        "vehicles": 1
+      },
+      "consumption": {
+        "yellowcake": 0.025,
+        "chemicals": 0.0026
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.8
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 23.2,
+        "bricks": 40.5,
+        "mcomponents": 25.4,
+        "steel": 70.85,
+        "concrete": 280,
+        "boards": 100.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2395213280",
+      "modPath": "A2"
+    },
+    {
+      "id": "2395213280/A3",
+      "nameId": 6317,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 70,
+      "professors": 70,
+      "production": {
+        "nuclearfuel": 0.002,
+        "vehicles": 1
+      },
+      "consumption": {
+        "uf6": 0.008,
+        "chemicals": 0.015,
+        "vehicles": 1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.7
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 30.2,
+        "bricks": 420.5,
+        "mcomponents": 30.4,
+        "steel": 141.7,
+        "concrete": 580,
+        "boards": 100.2,
+        "workers": 400
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2395213280",
+      "modPath": "A3"
+    }
+  ],
+  "vehicles": []
+}

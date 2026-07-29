@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2462049156",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.518Z",
+  "buildings": [
+    {
+      "id": "2462049156/10",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 160,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 160
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Experiment_10-roof",
+      "workshopId": "2462049156",
+      "modPath": "10"
+    },
+    {
+      "id": "2462049156/5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 80,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 80
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Experiment_5-roof",
+      "workshopId": "2462049156",
+      "modPath": "5"
+    },
+    {
+      "id": "2462049156/9",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 144,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 144
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Experiment_9-roof",
+      "workshopId": "2462049156",
+      "modPath": "9"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2503060185",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.643Z",
+  "buildings": [
+    {
+      "id": "2503060185/Farmstead",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 50,
+        "workers": 200,
+        "boards": 35
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny Farmstead",
+      "workshopId": "2503060185",
+      "modPath": "Farmstead"
+    },
+    {
+      "id": "2503060185/HorseFeed",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 30,
+        "workers": 130,
+        "boards": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Horse Feeding Station",
+      "workshopId": "2503060185",
+      "modPath": "HorseFeed"
+    },
+    {
+      "id": "2503060185/StoneSilo",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 40,
+        "workers": 130,
+        "boards": 8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Stone Silo",
+      "workshopId": "2503060185",
+      "modPath": "StoneSilo"
+    }
+  ],
+  "vehicles": []
+}

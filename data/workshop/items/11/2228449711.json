@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2228449711",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.071Z",
+  "buildings": [
+    {
+      "id": "2228449711/SCPP",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "coal": 1.2
+      },
+      "consumption": {
+        "rawcoal": 2
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.06
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 60
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small coal processing plant",
+      "workshopId": "2228449711",
+      "modPath": "SCPP"
+    },
+    {
+      "id": "2228449711/SIPP",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "iron": 1
+      },
+      "consumption": {
+        "rawiron": 1.8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.06
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 60
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small iron processing plant",
+      "workshopId": "2228449711",
+      "modPath": "SIPP"
+    }
+  ],
+  "vehicles": []
+}

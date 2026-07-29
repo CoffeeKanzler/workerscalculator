@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2452614396",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.457Z",
+  "buildings": [
+    {
+      "id": "2452614396/blok18pv1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 230,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 230
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "blok 18p v1",
+      "workshopId": "2452614396",
+      "modPath": "blok18pv1"
+    }
+  ],
+  "vehicles": []
+}

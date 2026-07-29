@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2327452075",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.676Z",
+  "buildings": [
+    {
+      "id": "2327452075/HOUSE",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Univermag_2-07-11",
+      "workshopId": "2327452075",
+      "modPath": "HOUSE"
+    },
+    {
+      "id": "2327452075/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Univermag_2-07-12",
+      "workshopId": "2327452075",
+      "modPath": "HOUSE1"
+    }
+  ],
+  "vehicles": []
+}

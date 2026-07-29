@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2249898871",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.209Z",
+  "buildings": [
+    {
+      "id": "2249898871/University",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_MEDICAL"
+      ],
+      "workers": 30,
+      "professors": 30,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 670,
+        "steel": 28,
+        "asphalt": 60,
+        "gravel": 20,
+        "prefabpanels": 210,
+        "bricks": 40,
+        "concrete": 260,
+        "boards": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "NCONZO",
+      "workshopId": "2249898871",
+      "modPath": "University"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2314614363",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.566Z",
+  "buildings": [
+    {
+      "id": "2314614363/biggarage",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 24,
+        "boards": 14,
+        "bricks": 30,
+        "workers": 70
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large UK Garage",
+      "workshopId": "2314614363",
+      "modPath": "biggarage"
+    },
+    {
+      "id": "2314614363/bighouse",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "concrete": 15,
+        "boards": 10,
+        "bricks": 25,
+        "workers": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "UK Detached House",
+      "workshopId": "2314614363",
+      "modPath": "bighouse"
+    },
+    {
+      "id": "2314614363/mediumgarage",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 12,
+        "boards": 7,
+        "bricks": 15,
+        "workers": 35
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Medium UK Garage",
+      "workshopId": "2314614363",
+      "modPath": "mediumgarage"
+    },
+    {
+      "id": "2314614363/smallgarage",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 7,
+        "boards": 4,
+        "bricks": 8,
+        "workers": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small UK Garage",
+      "workshopId": "2314614363",
+      "modPath": "smallgarage"
+    },
+    {
+      "id": "2314614363/smallhouse",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {
+        "concrete": 15,
+        "boards": 10,
+        "bricks": 25,
+        "workers": 50
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "UK Semi-Detached House",
+      "workshopId": "2314614363",
+      "modPath": "smallhouse"
+    }
+  ],
+  "vehicles": []
+}

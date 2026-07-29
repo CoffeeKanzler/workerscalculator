@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2409818816",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.505Z",
+  "buildings": [
+    {
+      "id": "2409818816/cnii",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 88,
+      "professors": 46,
+      "production": {
+        "eletronics": 0.09,
+        "chemicals": 0.02
+      },
+      "consumption": {
+        "chemicals": 0.05,
+        "ecomponents": 0.2,
+        "plastics": 0.3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¦ÐÐÐ (CRSI)",
+      "workshopId": "2409818816",
+      "modPath": "cnii"
+    }
+  ],
+  "vehicles": []
+}

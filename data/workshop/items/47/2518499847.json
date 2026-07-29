@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2518499847",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.748Z",
+  "buildings": [
+    {
+      "id": "2518499847/CustomHouse",
+      "nameId": null,
+      "types": [
+        "TYPE_CUSTOMHOUSE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1,
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_OIL": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_WATER": 1,
+        "RESOURCE_TRANSPORT_SEWAGE": 1
+      },
+      "constructionResources": {
+        "gravel": 50,
+        "boards": 110,
+        "workers": 330
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Old Custom House",
+      "workshopId": "2518499847",
+      "modPath": "CustomHouse"
+    },
+    {
+      "id": "2518499847/CustomHouse2",
+      "nameId": null,
+      "types": [
+        "TYPE_CUSTOMHOUSE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1,
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_OIL": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_WATER": 1,
+        "RESOURCE_TRANSPORT_SEWAGE": 1
+      },
+      "constructionResources": {
+        "gravel": 50,
+        "boards": 70,
+        "workers": 230
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Old Custom House v2",
+      "workshopId": "2518499847",
+      "modPath": "CustomHouse2"
+    }
+  ],
+  "vehicles": []
+}

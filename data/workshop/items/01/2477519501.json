@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2477519501",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.004Z",
+  "buildings": [
+    {
+      "id": "2477519501/BrickFacktori",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 75,
+      "professors": 0,
+      "production": {
+        "bricks": 2.68
+      },
+      "consumption": {
+        "coal": 0.45
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¸ÑÐ¿Ð¸ÑÐ½ÑÐ¹ ÐÐ°Ð²Ð¾Ð´",
+      "workshopId": "2477519501",
+      "modPath": "BrickFacktori"
+    }
+  ],
+  "vehicles": []
+}

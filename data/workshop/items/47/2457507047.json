@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2457507047",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.494Z",
+  "buildings": [
+    {
+      "id": "2457507047/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Laos Flying Flag",
+      "workshopId": "2457507047",
+      "modPath": "Large_Flying"
+    },
+    {
+      "id": "2457507047/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Laos Flying Flag",
+      "workshopId": "2457507047",
+      "modPath": "Med_Flying"
+    },
+    {
+      "id": "2457507047/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Laos Flying Flag",
+      "workshopId": "2457507047",
+      "modPath": "Small_Flying"
+    }
+  ],
+  "vehicles": []
+}

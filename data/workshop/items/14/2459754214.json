@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2459754214",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.506Z",
+  "buildings": [
+    {
+      "id": "2459754214/kinder",
+      "nameId": null,
+      "types": [
+        "TYPE_KINDERGARTEN"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 25,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐµÑÑÐºÐ¸Ð¹ ÑÐ°Ð´ â2048",
+      "workshopId": "2459754214",
+      "modPath": "kinder"
+    }
+  ],
+  "vehicles": []
+}

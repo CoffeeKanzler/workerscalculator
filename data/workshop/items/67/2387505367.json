@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2387505367",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.428Z",
+  "buildings": [
+    {
+      "id": "2387505367/vokzal",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Central Bus Station",
+      "workshopId": "2387505367",
+      "modPath": "vokzal"
+    }
+  ],
+  "vehicles": []
+}

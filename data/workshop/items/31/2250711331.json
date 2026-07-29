@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2250711331",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.218Z",
+  "buildings": [
+    {
+      "id": "2250711331/tower",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 4,
+        "workers": 16,
+        "steel": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Iron Curtain tower",
+      "workshopId": "2250711331",
+      "modPath": "tower"
+    },
+    {
+      "id": "2250711331/towerRoad",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 4,
+        "asphalt": 8,
+        "workers": 16,
+        "steel": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Iron Curtain tower with road",
+      "workshopId": "2250711331",
+      "modPath": "towerRoad"
+    }
+  ],
+  "vehicles": []
+}

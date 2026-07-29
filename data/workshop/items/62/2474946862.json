@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2474946862",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:11.981Z",
+  "buildings": [
+    {
+      "id": "2474946862/Buna-Werke",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 2000,
+      "professors": 0,
+      "production": {
+        "chemicals": 0.012
+      },
+      "consumption": {
+        "gravel": 0.0525,
+        "coal": 0.0265,
+        "ecomponents": 0.00095,
+        "meat": 0.0001,
+        "food": 0.0003,
+        "steel": 0.00005
+      },
+      "consumptionPerSecond": {
+        "eletric": 16
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 180,
+        "concrete": 1900,
+        "gravel": 2500,
+        "workers": 7500,
+        "steel": 500,
+        "bricks": 2700,
+        "boards": 81,
+        "mcomponents": 20,
+        "ecomponents": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "CHEMIEKOMBINAT",
+      "workshopId": "2474946862",
+      "modPath": "Buna-Werke"
+    }
+  ],
+  "vehicles": []
+}

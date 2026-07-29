@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2501533756",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.135Z",
+  "buildings": [
+    {
+      "id": "2501533756/zu_ztm",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ°Ð²Ð¾Ð´Ð¾ÑÐ¿ÑÐ°Ð²Ð»ÐµÐ½Ð¸Ðµ ÐÐ¢Ð (Cityhall)",
+      "workshopId": "2501533756",
+      "modPath": "zu_ztm"
+    }
+  ],
+  "vehicles": []
+}

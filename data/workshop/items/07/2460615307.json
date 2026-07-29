@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2460615307",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.508Z",
+  "buildings": [
+    {
+      "id": "2460615307/HugeWarehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 10000,
+        "RESOURCE_TRANSPORT_OPEN": 5000,
+        "RESOURCE_TRANSPORT_COOLER": 1000
+      },
+      "constructionResources": {
+        "concrete": 250,
+        "bricks": 1600,
+        "steel": 150,
+        "asphalt": 100,
+        "workers": 5000
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Warehouse",
+      "workshopId": "2460615307",
+      "modPath": "HugeWarehouse"
+    }
+  ],
+  "vehicles": []
+}

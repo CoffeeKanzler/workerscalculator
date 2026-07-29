@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2483159786",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:53:12.027Z",
+  "buildings": [
+    {
+      "id": "2483159786/lot",
+      "nameId": 6253,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2483159786",
+      "modPath": "lot"
+    }
+  ],
+  "vehicles": []
+}

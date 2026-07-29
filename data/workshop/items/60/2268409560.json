@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2268409560",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.628Z",
+  "buildings": [
+    {
+      "id": "2268409560/OilPlat",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_OIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "oil": 17
+      },
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.065
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Off Shore Oil Platform",
+      "workshopId": "2268409560",
+      "modPath": "OilPlat"
+    },
+    {
+      "id": "2268409560/OilPlat2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "oil": 7
+      },
+      "consumption": {},
+      "consumptionPerSecond": {
+        "eletric": 0.065
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Off Shore Oil Platform v2",
+      "workshopId": "2268409560",
+      "modPath": "OilPlat2"
+    }
+  ],
+  "vehicles": []
+}

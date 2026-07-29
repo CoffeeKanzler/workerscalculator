@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2424644955",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.612Z",
+  "buildings": [
+    {
+      "id": "2424644955/cosp",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 110,
+      "professors": 30,
+      "production": {
+        "eletronics": 0.061
+      },
+      "consumption": {
+        "ecomponents": 0.03,
+        "mcomponents": 0.03,
+        "plastics": 0.04
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð­Ð»ÐµÐºÑÑÐ¾Ð½Ð¾ÑÐ±Ð¾ÑÐ¾ÑÐ½ÑÐ¹ ÑÐµÑ",
+      "workshopId": "2424644955",
+      "modPath": "cosp"
+    }
+  ],
+  "vehicles": []
+}

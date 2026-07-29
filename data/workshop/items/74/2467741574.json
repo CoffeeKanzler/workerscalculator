@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2467741574",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.559Z",
+  "buildings": [
+    {
+      "id": "2467741574/bolnica",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 70,
+      "professors": 70,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 100,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¦,Ð,Ð",
+      "workshopId": "2467741574",
+      "modPath": "bolnica"
+    }
+  ],
+  "vehicles": []
+}

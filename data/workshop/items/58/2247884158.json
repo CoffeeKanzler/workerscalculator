@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2247884158",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.202Z",
+  "buildings": [
+    {
+      "id": "2247884158/Pyramid",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 30,
+        "concrete": 30,
+        "workers": 30
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Red Army Memorial",
+      "workshopId": "2247884158",
+      "modPath": "Pyramid"
+    }
+  ],
+  "vehicles": []
+}

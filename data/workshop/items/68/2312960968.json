@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2312960968",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.560Z",
+  "buildings": [
+    {
+      "id": "2312960968/reo",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 65,
+      "professors": 50,
+      "production": {
+        "eletronics": 0.014
+      },
+      "consumption": {
+        "plastics": 0.002,
+        "ecomponents": 0.005,
+        "chemicals": 0.001
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¦ÐµÑ ÑÐ°Ð´Ð¸Ð¾ÑÐ»ÐµÐºÑÑÐ¾Ð½Ð½Ð¾Ð³Ð¾ Ð¾Ð±Ð¾ÑÑÐ´Ð¾Ð²Ð°Ð½Ð¸Ñ",
+      "workshopId": "2312960968",
+      "modPath": "reo"
+    }
+  ],
+  "vehicles": []
+}

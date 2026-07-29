@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2450167693",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.763Z",
+  "buildings": [
+    {
+      "id": "2450167693/stadtbad1",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 17,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": 1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stadtbad",
+      "workshopId": "2450167693",
+      "modPath": "stadtbad1"
+    },
+    {
+      "id": "2450167693/stadtbad2",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 17,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": 1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stadtbad",
+      "workshopId": "2450167693",
+      "modPath": "stadtbad2"
+    },
+    {
+      "id": "2450167693/stadtbad3",
+      "nameId": null,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 17,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": 1,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stadtbad",
+      "workshopId": "2450167693",
+      "modPath": "stadtbad3"
+    }
+  ],
+  "vehicles": []
+}

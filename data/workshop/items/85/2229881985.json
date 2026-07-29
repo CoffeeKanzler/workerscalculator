@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2229881985",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.077Z",
+  "buildings": [
+    {
+      "id": "2229881985/farm",
+      "nameId": null,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 0.01
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2229881985",
+      "modPath": "farm"
+    }
+  ],
+  "vehicles": []
+}

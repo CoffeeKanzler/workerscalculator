@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2544836436",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.846Z",
+  "buildings": [
+    {
+      "id": "2544836436/SmokeHouse",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {
+        "meat": 0.2
+      },
+      "consumption": {
+        "livestock": 0.25,
+        "wood": 0.25
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 80,
+        "workers": 650,
+        "boards": 35
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Smoke House",
+      "workshopId": "2544836436",
+      "modPath": "SmokeHouse"
+    }
+  ],
+  "vehicles": []
+}

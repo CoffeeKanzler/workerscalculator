@@ -1,0 +1,534 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2272192306",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.667Z",
+  "buildings": [
+    {
+      "id": "2272192306/czynszowka",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 28,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.55,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 28
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "2 storey brick tenement",
+      "workshopId": "2272192306",
+      "modPath": "czynszowka"
+    },
+    {
+      "id": "2272192306/familok",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 18,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.55,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 18
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Familok",
+      "workshopId": "2272192306",
+      "modPath": "familok"
+    },
+    {
+      "id": "2272192306/kamienica1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 22,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 22
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica1"
+    },
+    {
+      "id": "2272192306/kamienica10",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 22,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 22
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica10"
+    },
+    {
+      "id": "2272192306/kamienica11",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 18,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 18
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica11"
+    },
+    {
+      "id": "2272192306/kamienica12",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 55,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 55
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica12"
+    },
+    {
+      "id": "2272192306/kamienica13",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica13"
+    },
+    {
+      "id": "2272192306/kamienica3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 45,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 45
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica3"
+    },
+    {
+      "id": "2272192306/kamienica4",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 35,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.65,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 35
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement corner",
+      "workshopId": "2272192306",
+      "modPath": "kamienica4"
+    },
+    {
+      "id": "2272192306/kamienica5",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica5"
+    },
+    {
+      "id": "2272192306/kamienica6",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica6"
+    },
+    {
+      "id": "2272192306/kamienica6brama",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement gate",
+      "workshopId": "2272192306",
+      "modPath": "kamienica6brama"
+    },
+    {
+      "id": "2272192306/kamienica6k135",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement 135deg",
+      "workshopId": "2272192306",
+      "modPath": "kamienica6k135"
+    },
+    {
+      "id": "2272192306/kamienica6k45",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement 45deg",
+      "workshopId": "2272192306",
+      "modPath": "kamienica6k45"
+    },
+    {
+      "id": "2272192306/kamienica6k90",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement 90deg",
+      "workshopId": "2272192306",
+      "modPath": "kamienica6k90"
+    },
+    {
+      "id": "2272192306/kamienica6s3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 15,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 15
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica6s3"
+    },
+    {
+      "id": "2272192306/kamienica6s5",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica6s5"
+    },
+    {
+      "id": "2272192306/kamienica7",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 35,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 35
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica7"
+    },
+    {
+      "id": "2272192306/kamienica8",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 65,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 65
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica8"
+    },
+    {
+      "id": "2272192306/kamienica9",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 22,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 22
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old tenement",
+      "workshopId": "2272192306",
+      "modPath": "kamienica9"
+    },
+    {
+      "id": "2272192306/ruina1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.15,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Overcrowded ruins",
+      "workshopId": "2272192306",
+      "modPath": "ruina1"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2319147053",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.650Z",
+  "buildings": [
+    {
+      "id": "2319147053/IronCurtain",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": 5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Top of the Iron Curtain",
+      "workshopId": "2319147053",
+      "modPath": "IronCurtain"
+    },
+    {
+      "id": "2319147053/IronDrink",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": 5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Top of the Television Bar",
+      "workshopId": "2319147053",
+      "modPath": "IronDrink"
+    }
+  ],
+  "vehicles": []
+}

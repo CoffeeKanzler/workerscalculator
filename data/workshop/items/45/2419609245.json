@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2419609245",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.554Z",
+  "buildings": [
+    {
+      "id": "2419609245/Mixer",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {
+        "asphalt": 2.3
+      },
+      "consumption": {
+        "gravel": 2,
+        "bitumen": 0.3,
+        "fuel": 0.03
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt Mixer",
+      "workshopId": "2419609245",
+      "modPath": "Mixer"
+    },
+    {
+      "id": "2419609245/MixerB",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {
+        "asphalt": 2.3
+      },
+      "consumption": {
+        "gravel": 2,
+        "bitumen": 0.3,
+        "fuel": 0.03
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 2,
+        "workers": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt Mixer V2",
+      "workshopId": "2419609245",
+      "modPath": "MixerB"
+    }
+  ],
+  "vehicles": []
+}

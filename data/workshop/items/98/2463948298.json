@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2463948298",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.532Z",
+  "buildings": [
+    {
+      "id": "2463948298/bar",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Miami Bar",
+      "workshopId": "2463948298",
+      "modPath": "bar"
+    },
+    {
+      "id": "2463948298/hotel_1",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 12,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.8,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Breakwater Hotel",
+      "workshopId": "2463948298",
+      "modPath": "hotel_1"
+    },
+    {
+      "id": "2463948298/hotel_2",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 23,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.8,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big Miami Hotel",
+      "workshopId": "2463948298",
+      "modPath": "hotel_2"
+    },
+    {
+      "id": "2463948298/soundshell",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 16,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.88,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Open Air Soundshell",
+      "workshopId": "2463948298",
+      "modPath": "soundshell"
+    }
+  ],
+  "vehicles": []
+}

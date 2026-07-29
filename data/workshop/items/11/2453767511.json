@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2453767511",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.464Z",
+  "buildings": [
+    {
+      "id": "2453767511/ws_research",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 230,
+      "professors": 134,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐ (Tecnhical University)",
+      "workshopId": "2453767511",
+      "modPath": "ws_research"
+    }
+  ],
+  "vehicles": []
+}

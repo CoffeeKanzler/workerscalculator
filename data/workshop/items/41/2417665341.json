@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2417665341",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.535Z",
+  "buildings": [
+    {
+      "id": "2417665341/HeatExchange",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "No Collision Heat Exchanger",
+      "workshopId": "2417665341",
+      "modPath": "HeatExchange"
+    },
+    {
+      "id": "2417665341/HeatPump",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "No Collision Heat Pump",
+      "workshopId": "2417665341",
+      "modPath": "HeatPump"
+    },
+    {
+      "id": "2417665341/SmallExchange",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_ENDSTATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "No Collision Small Heat Exchanger",
+      "workshopId": "2417665341",
+      "modPath": "SmallExchange"
+    },
+    {
+      "id": "2417665341/SmallPump",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "No Collision Small Heat Pump",
+      "workshopId": "2417665341",
+      "modPath": "SmallPump"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2457342886",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.490Z",
+  "buildings": [
+    {
+      "id": "2457342886/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Cuban Flying Flag",
+      "workshopId": "2457342886",
+      "modPath": "Large_Flying"
+    },
+    {
+      "id": "2457342886/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Cuban Flying Flag",
+      "workshopId": "2457342886",
+      "modPath": "Med_Flying"
+    },
+    {
+      "id": "2457342886/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Cuban Flying Flag",
+      "workshopId": "2457342886",
+      "modPath": "Small_Flying"
+    }
+  ],
+  "vehicles": []
+}

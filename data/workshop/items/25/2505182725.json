@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2505182725",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.650Z",
+  "buildings": [
+    {
+      "id": "2505182725/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Supermarket_51033",
+      "workshopId": "2505182725",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2505182725/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Supermarket_51034",
+      "workshopId": "2505182725",
+      "modPath": "HOUSE2"
+    },
+    {
+      "id": "2505182725/HOUSE3",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 12,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Supermarket_53-122",
+      "workshopId": "2505182725",
+      "modPath": "HOUSE3"
+    },
+    {
+      "id": "2505182725/HOUSE4",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Supermarket_51-41",
+      "workshopId": "2505182725",
+      "modPath": "HOUSE4"
+    }
+  ],
+  "vehicles": []
+}

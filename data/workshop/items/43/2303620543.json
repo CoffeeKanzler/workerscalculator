@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2303620543",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.809Z",
+  "buildings": [
+    {
+      "id": "2303620543/polyclinic",
+      "nameId": null,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 14,
+      "professors": 21,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 1,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 488,
+        "asphalt": 16,
+        "concrete": 58,
+        "boards": 45,
+        "bricks": 54,
+        "prefabpanels": 90,
+        "steel": 19,
+        "mcomponents": 9,
+        "ecomponents": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Ð Ð°Ð¹Ð¾Ð½Ð½Ð°Ñ Ð¿Ð¾Ð»Ð¸ÐºÐ»Ð¸Ð½Ð¸ÐºÐ°",
+      "workshopId": "2303620543",
+      "modPath": "polyclinic"
+    }
+  ],
+  "vehicles": []
+}

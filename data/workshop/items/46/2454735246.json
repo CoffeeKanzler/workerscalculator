@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2454735246",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.469Z",
+  "buildings": [
+    {
+      "id": "2454735246/E-187_Zelenograd_22",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 189,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 189
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "E-187_Zelenograd_22",
+      "workshopId": "2454735246",
+      "modPath": "E-187_Zelenograd_22"
+    },
+    {
+      "id": "2454735246/E-187_Zelenograd_25_1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 216,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 216
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "E-187_Zelenograd_25_1",
+      "workshopId": "2454735246",
+      "modPath": "E-187_Zelenograd_25_1"
+    },
+    {
+      "id": "2454735246/E-187_Zelenograd_25_2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 216,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 216
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "E-187_Zelenograd_25_2",
+      "workshopId": "2454735246",
+      "modPath": "E-187_Zelenograd_25_2"
+    }
+  ],
+  "vehicles": []
+}

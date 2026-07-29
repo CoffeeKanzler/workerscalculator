@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2238002203",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.145Z",
+  "buildings": [
+    {
+      "id": "2238002203/Asphalt",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "asphalt": 29
+      },
+      "consumption": {
+        "gravel": 25,
+        "bitumen": 4,
+        "eletric": 3
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Asphalt factory with 100t output storage",
+      "workshopId": "2238002203",
+      "modPath": "Asphalt"
+    }
+  ],
+  "vehicles": []
+}

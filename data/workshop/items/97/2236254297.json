@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2236254297",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.118Z",
+  "buildings": [
+    {
+      "id": "2236254297/kosmaj",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kosmaj Monument",
+      "workshopId": "2236254297",
+      "modPath": "kosmaj"
+    }
+  ],
+  "vehicles": []
+}

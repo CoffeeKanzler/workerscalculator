@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2512631725",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.698Z",
+  "buildings": [
+    {
+      "id": "2512631725/steel_shop",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 130,
+      "professors": 43,
+      "production": {
+        "steel": 0.25
+      },
+      "consumption": {
+        "iron": 0.7,
+        "coal": 1.2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡ÑÐ°Ð»ÐµÐ»Ð¸ÑÐµÐ¹Ð½ÑÐ¹ ÑÐµÑ (Steel Shop)",
+      "workshopId": "2512631725",
+      "modPath": "steel_shop"
+    }
+  ],
+  "vehicles": []
+}

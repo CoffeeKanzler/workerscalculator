@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2258758873",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.259Z",
+  "buildings": [
+    {
+      "id": "2258758873/cargo",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Road Cargo Station Oneway",
+      "workshopId": "2258758873",
+      "modPath": "cargo"
+    },
+    {
+      "id": "2258758873/graveloading",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gravel one way loading",
+      "workshopId": "2258758873",
+      "modPath": "graveloading"
+    }
+  ],
+  "vehicles": []
+}

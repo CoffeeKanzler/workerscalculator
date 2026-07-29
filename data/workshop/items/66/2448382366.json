@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2448382366",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.752Z",
+  "buildings": [
+    {
+      "id": "2448382366/hotel",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 35,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": 4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium hotel (4 stars)",
+      "workshopId": "2448382366",
+      "modPath": "hotel"
+    }
+  ],
+  "vehicles": []
+}

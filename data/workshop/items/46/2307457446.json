@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2307457446",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.840Z",
+  "buildings": [
+    {
+      "id": "2307457446/Colesso",
+      "nameId": 6038,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2307457446",
+      "modPath": "Colesso"
+    },
+    {
+      "id": "2307457446/Game_center",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 4,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 32,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.8,
+      "storages": {},
+      "constructionResources": {
+        "steel": 14.2,
+        "ecomponents": 5.2,
+        "mcomponents": 2.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Game chenter",
+      "workshopId": "2307457446",
+      "modPath": "Game_center"
+    },
+    {
+      "id": "2307457446/HOTEL_2",
+      "nameId": 6043,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 75,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.5,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 70.8,
+        "boards": 58.2,
+        "steel": 10.2,
+        "ecomponents": 1.2,
+        "mcomponents": 2.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2307457446",
+      "modPath": "HOTEL_2"
+    },
+    {
+      "id": "2307457446/HOTEL_3",
+      "nameId": 6043,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": 4,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 11.8,
+        "boards": 28.2,
+        "steel": 8.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2307457446",
+      "modPath": "HOTEL_3"
+    },
+    {
+      "id": "2307457446/Hotel",
+      "nameId": 6043,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 23,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": 4.8,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 1.8,
+        "steel": 8,
+        "bricks": 22
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2307457446",
+      "modPath": "Hotel"
+    },
+    {
+      "id": "2307457446/RUS_MIR",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 4,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 11,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.2,
+      "storages": {},
+      "constructionResources": {
+        "steel": 10.2,
+        "ecomponents": 1.2,
+        "mcomponents": 2.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Wadded World",
+      "workshopId": "2307457446",
+      "modPath": "RUS_MIR"
+    },
+    {
+      "id": "2307457446/Sailor",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.8,
+      "storages": {},
+      "constructionResources": {
+        "boards": 2.2,
+        "mcomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Sailor",
+      "workshopId": "2307457446",
+      "modPath": "Sailor"
+    },
+    {
+      "id": "2307457446/Sanatorium",
+      "nameId": 6043,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 90,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.7,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 70.8,
+        "boards": 28.2,
+        "steel": 10.2,
+        "ecomponents": 1.2,
+        "mcomponents": 2.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2307457446",
+      "modPath": "Sanatorium"
+    },
+    {
+      "id": "2307457446/Swing_Cage",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.8,
+      "storages": {},
+      "constructionResources": {
+        "boards": 12.2,
+        "ecomponents": 1.2,
+        "mcomponents": 5.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Swing Cage",
+      "workshopId": "2307457446",
+      "modPath": "Swing_Cage"
+    },
+    {
+      "id": "2307457446/Teatr",
+      "nameId": 6034,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.1,
+      "storages": {},
+      "constructionResources": {
+        "steel": 10.2,
+        "boards": 120.2,
+        "mcomponents": 2.2
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2307457446",
+      "modPath": "Teatr"
+    },
+    {
+      "id": "2307457446/illusion",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.8,
+      "storages": {},
+      "constructionResources": {
+        "boards": 5.2,
+        "ecomponents": 1.2,
+        "mcomponents": 2.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Illusion",
+      "workshopId": "2307457446",
+      "modPath": "illusion"
+    }
+  ],
+  "vehicles": []
+}

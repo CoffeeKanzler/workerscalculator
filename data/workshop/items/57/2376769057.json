@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2376769057",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.346Z",
+  "buildings": [
+    {
+      "id": "2376769057/tolong",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "concrete": 22,
+        "gravel": 30,
+        "asphalt": 16,
+        "prefabpanels": 20,
+        "steel": 6,
+        "boards": 5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Extra-Long Technical Office",
+      "workshopId": "2376769057",
+      "modPath": "tolong"
+    }
+  ],
+  "vehicles": []
+}

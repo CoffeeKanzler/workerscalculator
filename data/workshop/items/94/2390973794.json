@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2390973794",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.449Z",
+  "buildings": [
+    {
+      "id": "2390973794/bassein",
+      "nameId": 6030,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 16,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2390973794",
+      "modPath": "bassein"
+    },
+    {
+      "id": "2390973794/bassein_T",
+      "nameId": 6030,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 16,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2390973794",
+      "modPath": "bassein_T"
+    },
+    {
+      "id": "2390973794/sport",
+      "nameId": 6258,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2390973794",
+      "modPath": "sport"
+    },
+    {
+      "id": "2390973794/sport_T",
+      "nameId": 6258,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 30,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2390973794",
+      "modPath": "sport_T"
+    }
+  ],
+  "vehicles": []
+}

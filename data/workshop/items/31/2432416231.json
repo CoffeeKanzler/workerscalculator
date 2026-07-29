@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2432416231",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:33:33.667Z",
+  "buildings": [
+    {
+      "id": "2432416231/logger",
+      "nameId": 7001,
+      "types": [
+        "TYPE_MINE_WOOD"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "wood": 1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 0.6,
+        "living": 0.2,
+        "heating": 0.2
+      },
+      "workshopId": "2432416231",
+      "modPath": "logger"
+    },
+    {
+      "id": "2432416231/sawmill",
+      "nameId": 7002,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "boards": 0.525
+      },
+      "consumption": {
+        "wood": 0.625
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2432416231",
+      "modPath": "sawmill"
+    }
+  ],
+  "vehicles": []
+}

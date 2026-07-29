@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2320023998",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.653Z",
+  "buildings": [
+    {
+      "id": "2320023998/bulk_dry01",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dry Bulk 1 High Input 6 Outputs",
+      "workshopId": "2320023998",
+      "modPath": "bulk_dry01"
+    },
+    {
+      "id": "2320023998/bulk_dry02",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dry Bulk 1 High Output 6 Inputs",
+      "workshopId": "2320023998",
+      "modPath": "bulk_dry02"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2511286438",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T11:03:35.689Z",
+  "buildings": [
+    {
+      "id": "2511286438/biofuelplant",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {
+        "fuel": 0.1
+      },
+      "consumption": {
+        "plants": 0.2
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.18
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¸Ð¾ÑÐ¾Ð¿Ð»Ð¸Ð²Ð½ÑÐ¹ Ð·Ð°Ð²Ð¾Ð´",
+      "workshopId": "2511286438",
+      "modPath": "biofuelplant"
+    }
+  ],
+  "vehicles": []
+}

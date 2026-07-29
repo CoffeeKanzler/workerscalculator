@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2390089037",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.434Z",
+  "buildings": [
+    {
+      "id": "2390089037/forkliftpedestriancrossing",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Forklift/Road/Pedestrian Crossing",
+      "workshopId": "2390089037",
+      "modPath": "forkliftpedestriancrossing"
+    },
+    {
+      "id": "2390089037/pedestrianforkliftcrossing",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 50,
+        "gravel": 6,
+        "asphalt": 4.5,
+        "concrete": 2,
+        "steel": 0.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Forklift Pedestrian Crossing",
+      "workshopId": "2390089037",
+      "modPath": "pedestrianforkliftcrossing"
+    }
+  ],
+  "vehicles": []
+}

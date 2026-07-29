@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2336441455",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:09:26.718Z",
+  "buildings": [
+    {
+      "id": "2336441455/panelak",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 112,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 112
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PS69_1_8_pater",
+      "workshopId": "2336441455",
+      "modPath": "panelak"
+    }
+  ],
+  "vehicles": []
+}

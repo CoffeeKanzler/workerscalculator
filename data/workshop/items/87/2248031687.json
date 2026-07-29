@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2248031687",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T09:53:39.203Z",
+  "buildings": [
+    {
+      "id": "2248031687/university_tech",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 80,
+      "professors": 80,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "University UFO/Ð¢ÐµÑÑÐ½Ð¸Ð²ÐµÑ Ð¢Ð°ÑÐµÐ»ÐºÐ°",
+      "workshopId": "2248031687",
+      "modPath": "university_tech"
+    }
+  ],
+  "vehicles": []
+}

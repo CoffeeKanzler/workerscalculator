@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2382350308",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:24:27.407Z",
+  "buildings": [
+    {
+      "id": "2382350308/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 15,
+        "RESOURCE_TRANSPORT_COOLER": 8
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse1",
+      "workshopId": "2382350308",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "2382350308/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 30,
+        "RESOURCE_TRANSPORT_COOLER": 16
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse2",
+      "workshopId": "2382350308",
+      "modPath": "HOUSE2"
+    },
+    {
+      "id": "2382350308/HOUSE3",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 24,
+        "RESOURCE_TRANSPORT_COVERED": 45
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse3",
+      "workshopId": "2382350308",
+      "modPath": "HOUSE3"
+    },
+    {
+      "id": "2382350308/HOUSE4",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 30,
+        "RESOURCE_TRANSPORT_COVERED": 40
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Warehouse4",
+      "workshopId": "2382350308",
+      "modPath": "HOUSE4"
+    }
+  ],
+  "vehicles": []
+}

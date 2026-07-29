@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2294806836",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:01:19.785Z",
+  "buildings": [
+    {
+      "id": "2294806836/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Flying Flag",
+      "workshopId": "2294806836",
+      "modPath": "Large_Flying"
+    },
+    {
+      "id": "2294806836/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Flying Flag",
+      "workshopId": "2294806836",
+      "modPath": "Med_Flying"
+    },
+    {
+      "id": "2294806836/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Flying Flag",
+      "workshopId": "2294806836",
+      "modPath": "Small_Flying"
+    }
+  ],
+  "vehicles": []
+}

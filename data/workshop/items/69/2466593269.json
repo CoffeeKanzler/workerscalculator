@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2466593269",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T10:42:27.555Z",
+  "buildings": [
+    {
+      "id": "2466593269/Blok19pv1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 190,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.94,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 190
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blok 19p v1",
+      "workshopId": "2466593269",
+      "modPath": "Blok19pv1"
+    }
+  ],
+  "vehicles": []
+}
