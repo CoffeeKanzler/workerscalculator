@@ -1,3 +1,6 @@
+import { pedestrianEdgeIdsOf } from './models/walking_access.js?v=3';
+import { footprintRingsFor } from './models/building_footprint.js?v=3';
+
 export function citizenProductivity(citizen) {
   const base = 0.5 * (
     0.6 * citizen.food
@@ -305,14 +308,17 @@ export function summarizeResidenceOccupancy(citizens, buildings) {
   for (const citizen of citizens ?? []) {
     if (!Number.isInteger(citizen.residenceBuildingIndex) || citizen.residenceBuildingIndex < 0) continue;
     if (!buildingsByIndex.has(citizen.residenceBuildingIndex)) continue;
-    residentsByBuilding.set(citizen.residenceBuildingIndex,
-      (residentsByBuilding.get(citizen.residenceBuildingIndex) ?? 0) + 1);
+    const tally = residentsByBuilding.get(citizen.residenceBuildingIndex) ?? { residents: 0, adults: 0 };
+    tally.residents += 1;
+    // Only adults take a job, so this is the count an access corridor can carry.
+    if (citizen.age > 21) tally.adults += 1;
+    residentsByBuilding.set(citizen.residenceBuildingIndex, tally);
   }
-  return [...residentsByBuilding.entries()].sort((a, b) => a[0] - b[0]).map(([buildingIndex, residents]) => {
+  return [...residentsByBuilding.entries()].sort((a, b) => a[0] - b[0]).map(([buildingIndex, tally]) => {
     const building = buildingsByIndex.get(buildingIndex);
     return {
       buildingIndex, scopeId: building.scopeId ?? null, type: building.type, name: building.name,
-      x: building.x, z: building.z, residents,
+      x: building.x, z: building.z, residents: tally.residents, adults: tally.adults,
     };
   });
 }
@@ -379,8 +385,14 @@ export function compactObservedBuildings(buildings) {
   const keys = [
     'index', 'type', 'name', 'scopeId', 'x', 'y', 'z', 'rotation', 'currentWorkers',
     'configuredWorkers', 'configuredWorkersHighEducation', 'mineQuality',
-    'constructionProgress', 'storages',
+    'constructionProgress', 'pedestrianEdgeIds', 'storages',
   ];
+  for (const building of buildings) {
+    // The full connection slots carry pipes, wires and rails too; the walking
+    // graph only needs the pedestrian edge ids, and a snapshot keeps them.
+    const ids = pedestrianEdgeIdsOf(building);
+    if (ids.length) building.pedestrianEdgeIds = ids;
+  }
   return buildings.map((building) => Object.fromEntries(
     keys.filter((key) => building[key] !== undefined && (key !== 'storages' || building[key].some(
       storage => storage.resources?.length,
@@ -416,6 +428,7 @@ export function filterConstructionProjects(projects = [], {
 export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
   width = 760, height = 480, padding = 18, focusBuildingIndex = null, roadNetwork = null,
   railNetwork = null, pedestrianNetwork = null, terrainWater = null, pollutionLayer = null,
+  footprints = null,
 } = {}) {
   const located = (buildings ?? []).filter(building =>
     Number.isFinite(building.x) && Number.isFinite(building.z));
@@ -471,11 +484,17 @@ export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
     roads: projectNetwork(roadNetwork),
     rails: projectNetwork(railNetwork),
     pedestrian: projectNetwork(pedestrianNetwork),
-    buildings: located.map(building => ({
-      ...building, mapX: projectX(building.x), mapY: projectY(building.z),
-      criminalityOutlier: outliers.get(building.index) ?? null,
-      focused: building.index === focusBuildingIndex,
-    })),
+    buildings: located.map(building => {
+      const rings = footprints ? footprintRingsFor(building, footprints) : null;
+      return {
+        ...building, mapX: projectX(building.x), mapY: projectY(building.z),
+        criminalityOutlier: outliers.get(building.index) ?? null,
+        focused: building.index === focusBuildingIndex,
+        footprint: rings?.map(ring => ring.map(point => ({
+          mapX: projectX(point.x), mapY: projectY(point.z),
+        }))) ?? null,
+      };
+    }),
     scopes: (scopes ?? []).filter(scope =>
       Number.isFinite(scope.position?.x) && Number.isFinite(scope.position?.z)).map(scope => ({
       ...scope, mapX: projectX(scope.position.x), mapY: projectY(scope.position.z),

@@ -59,33 +59,58 @@ function addNeighborhood(selected, startId, adjacency, depth, maximum) {
   }
 }
 
+// The bound a corridor can carry is the smallest of the exact counts along it:
+// the adults living at the source, the worker slots at the destination, and any
+// leg that states a limit of its own. A leg that states none — walking has no
+// capacity — must not cut the corridor off, which is why an absent
+// capacityUpperBound reads as unbounded rather than as zero.
+function nodeCapacity(node) {
+  if (finiteNonnegative(node?.people)) return node.people;
+  if (finiteNonnegative(node?.workerSlots)) return node.workerSlots;
+  return Number.POSITIVE_INFINITY;
+}
+
 function widestWorkplaceBounds(nodes, edges, focusId) {
   const nodeById = new Map(nodes.map(node => [node.id, node]));
-  const capacity = new Map([[focusId, Number.POSITIVE_INFINITY]]);
+  const outgoing = new Map();
+  for (const edge of edges) {
+    if (!outgoing.has(edge.source)) outgoing.set(edge.source, []);
+    outgoing.get(edge.source).push(edge);
+  }
+  const capacity = new Map([[focusId, nodeCapacity(nodeById.get(focusId))]]);
   const predecessor = new Map();
-  for (let pass = 0; pass < nodes.length; pass += 1) {
-    let changed = false;
-    for (const edge of edges) {
-      if (!capacity.has(edge.source) || !finiteNonnegative(edge.capacityUpperBound)) continue;
-      const candidate = Math.min(capacity.get(edge.source), edge.capacityUpperBound);
+  // Widest path: always extend the best-so-far frontier, so each node settles
+  // once instead of the graph being swept until it stops changing.
+  const frontier = [focusId];
+  while (frontier.length) {
+    let bestAt = 0;
+    for (let index = 1; index < frontier.length; index += 1) {
+      if (capacity.get(frontier[index]) > capacity.get(frontier[bestAt])) bestAt = index;
+    }
+    const current = frontier.splice(bestAt, 1)[0];
+    for (const edge of outgoing.get(current) ?? []) {
+      const limit = finiteNonnegative(edge.capacityUpperBound)
+        ? edge.capacityUpperBound : Number.POSITIVE_INFINITY;
+      const candidate = Math.min(capacity.get(current), limit,
+        nodeCapacity(nodeById.get(edge.target)));
       if (candidate <= (capacity.get(edge.target) ?? -1)) continue;
       capacity.set(edge.target, candidate);
       predecessor.set(edge.target, edge);
-      changed = true;
+      frontier.push(edge.target);
     }
-    if (!changed) break;
   }
   return nodes.filter(node => node.kind === 'workplace' && capacity.has(node.id))
     .map(node => {
       let cursor = node.id;
       let bottleneck = null;
+      let bottleneckLimit = Number.POSITIVE_INFINITY;
       let guard = nodes.length + 1;
       while (cursor !== focusId && guard-- > 0) {
         const edge = predecessor.get(cursor);
         if (!edge) break;
-        if (!bottleneck || edge.capacityUpperBound < bottleneck.capacityUpperBound) {
-          bottleneck = edge;
-        }
+        const limit = finiteNonnegative(edge.capacityUpperBound)
+          ? edge.capacityUpperBound : Number.POSITIVE_INFINITY;
+        if (limit < bottleneckLimit) { bottleneck = edge; bottleneckLimit = limit; }
         cursor = edge.source;
       }
       return {
@@ -121,12 +146,27 @@ function layoutNodes(nodes) {
   return { width, height, positions };
 }
 
+// A residence in a dense city can reach sixty workplaces, and every one of its
+// neighbours can reach the same sixty. Drawing all of that is a hairball in
+// which no single corridor can be read, so the view keeps the focus node's own
+// links and then the shortest walks around it, and says how much it left out.
+function boundEdges(edges, focusId, maximum) {
+  if (edges.length <= maximum) return edges;
+  const rank = edge => (edge.source === focusId || edge.target === focusId ? 0 : 1);
+  return [...edges]
+    .sort((a, b) => rank(a) - rank(b)
+      || (a.distanceMeters ?? 0) - (b.distanceMeters ?? 0)
+      || a.id.localeCompare(b.id))
+    .slice(0, maximum);
+}
+
 export function buildWorkerAccessGraph(evidence, {
   focusId = null,
   expandedIds = [],
-  depth = 4,
-  expansionDepth = 2,
+  depth = 2,
+  expansionDepth = 1,
   maxNodes = 72,
+  maxEdges = 60,
 } = {}) {
   const availability = workerAccessAvailability(evidence);
   if (!availability.available) return { ...availability, nodes: [], edges: [] };
@@ -155,9 +195,12 @@ export function buildWorkerAccessGraph(evidence, {
   for (const id of expandedIds) {
     addNeighborhood(selected, id, adjacency, Math.max(0, expansionDepth), boundedMaximum);
   }
-  const visibleNodes = nodes.filter(node => selected.has(node.id));
-  const visibleEdges = evidence.edges.filter(edge =>
+  const candidateEdges = evidence.edges.filter(edge =>
     selected.has(edge.source) && selected.has(edge.target));
+  const visibleEdges = boundEdges(candidateEdges, resolvedFocus, Math.max(1, Math.floor(maxEdges)));
+  const drawn = new Set([resolvedFocus]);
+  for (const edge of visibleEdges) { drawn.add(edge.source); drawn.add(edge.target); }
+  const visibleNodes = nodes.filter(node => drawn.has(node.id));
   const upperBounds = widestWorkplaceBounds(nodes, evidence.edges, resolvedFocus);
   const bottlenecks = new Set(upperBounds.map(bound => bound.bottleneckEdgeId).filter(Boolean));
   const layout = layoutNodes(visibleNodes);
@@ -169,6 +212,7 @@ export function buildWorkerAccessGraph(evidence, {
     edges: visibleEdges.map(edge => ({ ...edge, bottleneck: bottlenecks.has(edge.id) })),
     upperBounds,
     hiddenNodes: Math.max(0, nodes.length - visibleNodes.length),
+    hiddenEdges: Math.max(0, candidateEdges.length - visibleEdges.length),
     width: layout.width,
     height: layout.height,
   };

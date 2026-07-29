@@ -78,6 +78,9 @@ function roadFixture() {
   view.setInt32(edge + 8, 1, true);
   view.setUint32(edge + 0x74, 2, true);
   view.setFloat32(edge + 0x3c, 52.75, true);
+  view.setInt32(edge + 0x40, 1, true);
+  view.setInt32(edge + 0x44, 1, true);
+  view.setInt32(edge + 0x4c, 4, true);
   const sample = edge + 0x88;
   view.setFloat32(sample, 25, true);
   view.setFloat32(sample + 4, 3.5, true);
@@ -96,6 +99,7 @@ test('road network parser exposes exact node topology and saved polyline samples
     ],
     edges: [{
       id: 0, from: 0, to: 1, length: 52.75, points: [{ x: 25, y: 3.5, z: 45 }],
+      surfaceType: 1, surfaceSubtype: 1, networkClass: 4,
       referencedObjectIds: [17, 29],
     }],
     summary: { nodeCount: 2, edgeCount: 1, groupCount: 0, pointCount: 1, byteLength: buffer.byteLength },
@@ -433,6 +437,41 @@ test('live building exposes configured caps, current workers and mine quality', 
     y: Math.fround(Math.PI / 3),
     z: Math.fround(-0.25),
   });
+});
+
+test('live building keeps the saved network connection slots the loader binds by', () => {
+  const buffer = new ArrayBuffer(4 + 0x6d8 + 2 * 0x3c + 0x80);
+  const view = new DataView(buffer);
+  const bytes = new Uint8Array(buffer);
+  const start = 4;
+  view.setUint32(0, 1, true);
+  bytes.set(new TextEncoder().encode('residential5\0'), start);
+  view.setInt32(start + 0x424, 2, true); // n304 connection slots
+  const first = start + 0x6d8;
+  view.setInt32(first, 2, true);
+  view.setFloat32(first + 0x08, -7544.5, true);
+  view.setFloat32(first + 0x0c, 9.25, true);
+  view.setFloat32(first + 0x10, 5084.75, true);
+  view.setInt32(first + 0x20, 411, true);
+  view.setInt32(first + 0x24, 4, true);
+  view.setInt32(first + 0x28, -1, true);
+  const second = first + 0x3c;
+  view.setInt32(second, 0, true);
+  view.setFloat32(second + 0x08, -7500, true);
+  view.setFloat32(second + 0x0c, 9, true);
+  view.setFloat32(second + 0x10, 5000, true);
+  view.setInt32(second + 0x20, -1, true);
+  view.setInt32(second + 0x28, -1, true);
+
+  const [building] = parseBuildingsGame(buffer);
+
+  assert.deepEqual(building.connections, [
+    {
+      kind: 2, x: -7544.5, y: 9.25, z: 5084.75,
+      references: [{ id: 411, networkClass: 4 }],
+    },
+    { kind: 0, x: -7500, y: 9, z: 5000, references: [] },
+  ]);
 });
 
 test('live building preserves exact first-pass storage inventories', () => {

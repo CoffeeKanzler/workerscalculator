@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=142';
+import { STRINGS } from './i18n.js?v=145';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -44,7 +44,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   filterCitizenDiagnostics, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=28';
+} from './save_model.js?v=29';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -54,9 +54,11 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=28';
-import { workerAccessAvailability } from './models/access_graph.js?v=5';
-import { mountWorkerAccessGraph } from './ui/access_graph.js?v=5';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=29';
+import { workerAccessAvailability } from './models/access_graph.js?v=9';
+import { mountWorkerAccessGraph } from './ui/access_graph.js?v=9';
+import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=4';
+import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=3';
 import {
   buildMapTransportLines,
   mapCountOrDash,
@@ -118,6 +120,7 @@ let mapFocusBuildingIndex = null;
 let mapFocusScopeId = null;
 let mapSelectedBuildingIndex = null;
 let mapSelectedTransportLineSlot = null;
+let mapWalkReach = null;
 let standaloneMapViewBox = null;
 let standaloneLeafletMap = null;
 let standaloneLeafletCamera = null;
@@ -371,7 +374,7 @@ async function loadData() {
     url.searchParams.set('v', DATA_V);
     return fetch(url);
   };
-  const [res, prod, prodGame, city, rawBuildings, workshopIndex, veh, rail, rawVehicles, dec, research, dataVersion] = await Promise.all([
+  const [res, prod, prodGame, city, rawBuildings, workshopIndex, veh, rail, rawVehicles, dec, research, dataVersion, footprints] = await Promise.all([
     get('data/resources.json').then(r => r.json()),
     get('data/production_buildings.json').then(r => r.json()),
     get('data/game/production_buildings.json').then(r => r.ok ? r.json() : null).catch(() => null),
@@ -384,6 +387,7 @@ async function loadData() {
     get('data/decade_prices.json').then(r => r.json()),
     get('data/game/research.json').then(r => r.ok ? r.json() : []).catch(() => []),
     get('data/VERSION.json').then(r => r.ok ? r.json() : null).catch(() => null),
+    get('data/building_footprints.json').then(r => r.ok ? r.json() : null).catch(() => null),
   ]);
   DATA = {
     resources: res.resources, defaults: res.defaults,
@@ -395,6 +399,7 @@ async function loadData() {
     sheetVehicles: veh.vehicles,
     vehicles: mergeVehiclePools(veh.vehicles, rail, rawVehicles),
     decades: dec, research, dataVersion,
+    buildingFootprints: footprints?.footprints ?? null,
   };
 }
 
@@ -2903,6 +2908,44 @@ function standaloneRadiationImageHref(pollution, low, high) {
   return href;
 }
 
+const WALK_SURFACE_KEYS = Object.freeze({
+  mud: 'walkSurfaceMud',
+  gravel: 'walkSurfaceGravel',
+  asphalt: 'walkSurfaceAsphalt',
+  brick: 'walkSurfaceBrick',
+  asphaltLit: 'walkSurfaceAsphaltLit',
+  brickLit: 'walkSurfaceBrickLit',
+  bridge: 'walkSurfaceBridge',
+  tunnel: 'walkSurfaceTunnel',
+  other: 'walkSurfaceOther',
+});
+
+function walkSurfaceLabel(key) {
+  return key ? t(WALK_SURFACE_KEYS[key] ?? 'walkSurfaceOther') : t('walkSurfaceNone');
+}
+
+// What the corridor overlay is claiming, said plainly: how far the walk goes,
+// which leg ran closest to the game's limit, and how much of the budget is
+// left. A building the save never connected says so instead of showing a zero.
+function renderWalkReachSection(building) {
+  if (!mapWalkReach || mapWalkReach.sourceIndex !== building.index) return null;
+  if (mapWalkReach.unattached) {
+    return el('section', { class: 'map-walk-reach', 'data-walk-reach': 'unattached' },
+      el('h4', {}, t('walkReachTitle')),
+      el('p', { class: 'hint' }, t('walkReachUnattached')));
+  }
+  const entries = [...mapWalkReach.buildings.values()];
+  const furthest = entries.reduce((worst, entry) =>
+    !worst || entry.budgetUsed > worst.budgetUsed ? entry : worst, null);
+  return el('section', { class: 'map-walk-reach', 'data-walk-reach': String(entries.length) },
+    el('h4', {}, t('walkReachTitle')),
+    kv(t('walkReachCount'), fmt(entries.length, 0)),
+    furthest ? kv(t('walkReachFurthest'),
+      `${fmt(furthest.distanceMeters, 0)} m · ${fmt(furthest.budgetUsed, 0)} / ${fmt(mapWalkReach.budgetMeters ?? 480, 0)} ${t('walkReachBudget')}`) : null,
+    furthest ? kv(t('walkReachLimitingLeg'), walkSurfaceLabel(furthest.limitingSurface)) : null,
+    el('p', { class: 'hint' }, t('walkReachHint')));
+}
+
 function renderMapBuildingInspector(building) {
   const progress = building.constructionProgress ?? 1;
   const percentOrDash = value =>
@@ -2938,6 +2981,7 @@ function renderMapBuildingInspector(building) {
       `${t('averageShort')} ${percentOrDash(residence.criminality)} · `
       + `${t('highest')} ${percentOrDash(residence.highestCriminality)} · `
       + `${mapCountOrDash(residence.highRiskResidents, fmt)} ${t('highRiskResidents')}`)) : null,
+    renderWalkReachSection(building),
     kv(t('mapCoordinates'), `X ${fmt(building.x, 1)} · Z ${fmt(building.z, 1)}`));
 }
 
@@ -2997,8 +3041,10 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
     ...scope, selected: scope.id === state.republicScope,
   }));
   const transportLines = buildMapTransportLines(state.saveImport?.vehicleLines, buildings);
-  const accessEvidence = state.saveImport?.workerAccessEvidence ?? null;
+  const accessContext = workerAccessContext();
+  const accessEvidence = accessContext.evidence;
   const accessAvailable = workerAccessAvailability(accessEvidence).available;
+  const walkingAvailable = !!accessContext.network?.completeness?.walkingEdgesComplete;
   const categoryVisibility = {
     living: true, industry: true, services: true, support: true, other: true,
     ...(state.mapCategoryVisibility ?? {}),
@@ -3146,8 +3192,11 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         layerToggle('roads', t('roads'), !!model.roads.length),
         layerToggle('rails', t('rails'), !!model.rails.length),
         layerToggle('pedestrian', t('pedestrianPaths'), !!model.pedestrian.length),
+        layerToggle('walkReach', t('mapWalkReachLayer'), walkingAvailable),
         layerToggle('transport', t('savedTransportLines'), !!transportLines.length),
         layerToggle('buildings', t('buildings')),
+        layerToggle('footprints', t('mapBuildingFootprints'),
+          buildings.some(building => building.footprint?.length)),
         layerToggle('construction', t('underConstruction'),
           buildings.some(building => building.underConstruction)),
         layerToggle('borders', t('borderPosts'),
@@ -3242,6 +3291,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         expand: t('workerAccessExpand'),
         locate: t('locateOnMap'),
         hidden: t('workerAccessHidden'),
+        hiddenEdges: t('workerAccessHiddenEdges'),
         maxWorkers: t('workerAccessMaxWorkers'),
         bottleneck: t('workerAccessBottleneck'),
         walkingDistance: t('walkingDistance'),
@@ -3252,6 +3302,12 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         line: t('vehicleLine'),
         transfer: t('transfer'),
         workplace: t('workplace'),
+        walk: t('accessLegWalk'),
+        board: t('accessLegBoard'),
+        ride: t('accessLegRide'),
+        direct: t('walkSurfaceNone'),
+        ...Object.fromEntries(Object.entries(WALK_SURFACE_KEYS)
+          .map(([surface, key]) => [surface, t(key)])),
       },
       initialFocusId: accessEvidence?.nodes?.find(node =>
         node.buildingIndex === mapSelectedBuildingIndex)?.id ?? null,
@@ -3301,16 +3357,26 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         el('strong', {}, line.name || `${t('vehicleLine')} #${line.slot}`),
         el('span', {}, `${line.locatedStopCount} / ${line.stopCount} ${t('orderedStops')}`),
         el('span', {}, `${line.assignedVehicles?.length ?? 0} ${t('assignedVehicles')}`)),
-      tooltipFor: building => el('div', { class: 'map-tooltip-content' },
+      tooltipFor: (building, reach) => el('div', { class: 'map-tooltip-content' },
         el('strong', {}, building.displayName),
         building.name ? el('span', {}, building.name) : null,
         el('span', {}, building.areaName),
         buildingEstablishment(building) > 0
           ? el('span', {}, `${t('staffing')}: ${fmt(building.currentWorkers ?? 0, 0)} / ${fmt(buildingEstablishment(building), 0)}`)
           : null,
+        reach ? el('span', { class: 'map-tooltip-walk' },
+          `${t('walkingDistance')}: ${fmt(reach.distanceMeters, 0)} m · ${walkSurfaceLabel(reach.limitingSurface)}`)
+          : null,
         building.underConstruction
           ? el('span', {}, `${t('underConstruction')}: ${fmt(building.constructionProgress * 100, 0)} %`)
           : null),
+      walkReachFor: walkingAvailable ? walkableBuildingsFrom : null,
+      onWalkReach: reach => {
+        mapWalkReach = reach;
+        if (mapSelectedBuildingIndex == null) return;
+        const building = buildings.find(item => item.index === mapSelectedBuildingIndex);
+        if (building) mapInspector.replaceWith(mapInspector = renderMapBuildingInspector(building));
+      },
       onSelectBuilding: building => {
         mapSelectedTransportLineSlot = null;
         mapSelectedBuildingIndex = building.index;
@@ -3345,6 +3411,45 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
   return section;
 }
 
+// The pedestrian network arrives in the deferred map pass, so the access graph
+// cannot be built at import time. Building it costs about a tenth of a second
+// on the largest republic tested, which is worth paying once and keeping: the
+// map overlay reruns a walking search on every click and needs the same graph.
+let accessCache = { key: null, network: null, evidence: null };
+
+function accessKeyForImport(imported) {
+  if (!imported?.pedestrianNetwork) return null;
+  return [imported.sourceName, imported.importedAt,
+    imported.pedestrianNetwork.summary?.byteLength ?? 0,
+    imported.observedBuildings?.length ?? 0].join('|');
+}
+
+function workerAccessContext() {
+  const imported = state.saveImport;
+  const key = accessKeyForImport(imported);
+  if (!key) return { network: null, evidence: null };
+  if (accessCache.key === key) return accessCache;
+  const buildings = imported.observedBuildings ?? [];
+  accessCache = {
+    key,
+    network: buildWalkingNetwork(imported.pedestrianNetwork, buildings),
+    evidence: buildWorkerAccessEvidence({
+      pedestrianNetwork: imported.pedestrianNetwork,
+      buildings,
+      residenceOccupancy: imported.residenceOccupancy,
+      vehicleLines: imported.vehicleLines,
+    }),
+  };
+  return accessCache;
+}
+
+function walkableBuildingsFrom(buildingIndex) {
+  const { network } = workerAccessContext();
+  if (!network || !Number.isInteger(buildingIndex)) return null;
+  const result = walkingReachFrom(network, buildingIndex);
+  return result.available ? result : null;
+}
+
 function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = false } = {}) {
   if (!standalone && !compactMapExpanded
     && !Number.isInteger(mapFocusBuildingIndex) && !Number.isInteger(mapFocusScopeId)) {
@@ -3369,11 +3474,13 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     pedestrianNetwork: standalone ? state.saveImport?.pedestrianNetwork : null,
     terrainWater: state.saveImport?.terrainWater,
     pollutionLayer: state.saveImport?.pollutionLayer,
+    footprints: standalone ? DATA.buildingFootprints : null,
   });
   if (!model) return null;
   const layers = standalone ? {
     water: true, pollution: true, radiation: false, roads: true, rails: true, pedestrian: false, buildings: true,
-    transport: false, construction: true, scopes: true, borders: true, outliers: true,
+    transport: false, construction: true, scopes: true, borders: true, outliers: true, walkReach: true,
+    footprints: true,
     ...(state.mapLayers ?? {}),
   } : {
     water: true, pollution: false, radiation: false, roads: true, rails: true, pedestrian: false, buildings: true,

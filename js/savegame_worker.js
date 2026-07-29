@@ -3,7 +3,7 @@ import {
   parseMapClimate, parseVehicles, parseUsedVehicles, parseLines, reconcileSettlementMembership,
   parseRoadNetwork,
   parseHeightmapWater,
-} from './savegame.js?v=30';
+} from './savegame.js?v=32';
 import {
   parseBlueprintOwned, parseCityStatsIni, parseStatsIni, statsPayloadText,
 } from './statsini.js?v=26';

@@ -15,6 +15,7 @@ const DEFAULT_LABELS = {
   expand: 'Expand neighborhood',
   locate: 'Locate on map',
   hidden: 'more nodes outside this neighborhood',
+  hiddenEdges: 'more links not drawn',
   maxWorkers: 'Theoretical maximum workers',
   bottleneck: 'Bottleneck',
   walkingDistance: 'Walking distance',
@@ -25,6 +26,10 @@ const DEFAULT_LABELS = {
   line: 'Transport line',
   transfer: 'Transfer',
   workplace: 'Workplace',
+  walk: 'Walk',
+  board: 'Board',
+  ride: 'Ride',
+  direct: 'same footpath',
 };
 
 function html(tag, attrs = {}, ...children) {
@@ -65,10 +70,11 @@ export function accessGraphReasonKey(reason) {
   return 'invalid';
 }
 
-export function workerAccessEdgeLabel(edge) {
+export function workerAccessEdgeLabel(edge, labels = {}) {
+  const name = key => labels[key] ?? key;
   const parts = edge.kind === 'walk'
-    ? [`${Math.round(edge.distanceMeters)} m`, edge.pathType]
-    : [edge.kind];
+    ? [`${Math.round(edge.distanceMeters)} m`, name(edge.pathType)]
+    : [name(edge.kind)];
   if (Number.isFinite(edge.capacityUpperBound)) {
     parts.push(`≤${Math.round(edge.capacityUpperBound)}`);
   }
@@ -107,6 +113,10 @@ export function mountWorkerAccessGraph(container, evidence, {
       html('p', {}, labels[reason]))));
   };
 
+  const hiddenLabel = graph => (graph.hiddenEdges
+    ? `+${graph.hiddenNodes} ${labels.hidden} · +${graph.hiddenEdges} ${labels.hiddenEdges}`
+    : `+${graph.hiddenNodes} ${labels.hidden}`);
+
   const render = () => {
     const graph = buildWorkerAccessGraph(evidence, {
       focusId,
@@ -127,7 +137,7 @@ export function mountWorkerAccessGraph(container, evidence, {
       const target = nodeById.get(edge.target);
       const x1 = source.x + 59;
       const x2 = target.x - 59;
-      const label = workerAccessEdgeLabel(edge);
+      const label = workerAccessEdgeLabel(edge, labels);
       edgeElements.push(svg('g', {
         class: `worker-access-edge edge-${edge.kind}${edge.bottleneck ? ' bottleneck' : ''}`,
       },
@@ -174,7 +184,9 @@ export function mountWorkerAccessGraph(container, evidence, {
       role: 'group',
       'aria-label': labels.title,
       'data-access-node-count': graph.nodes.length,
+      'data-access-edge-count': graph.edges.length,
       'data-access-hidden-count': graph.hiddenNodes,
+      'data-access-hidden-edge-count': graph.hiddenEdges,
     },
     svg('defs', {},
       svg('marker', {
@@ -199,14 +211,12 @@ export function mountWorkerAccessGraph(container, evidence, {
           html('h3', {}, labels.title),
           html('span', { class: 'evidence-badge exact' }, labels.exact)),
         graph.hiddenNodes
-          ? html('span', { class: 'worker-access-hidden' },
-            `+${graph.hiddenNodes} ${labels.hidden}`)
+          ? html('span', { class: 'worker-access-hidden' }, hiddenLabel(graph))
           : null) : null,
       html('div', { class: 'worker-access-body' },
         html('div', { class: 'worker-access-canvas' },
           !showHeading && graph.hiddenNodes
-            ? html('span', { class: 'worker-access-hidden-overlay' },
-              `+${graph.hiddenNodes} ${labels.hidden}`)
+            ? html('span', { class: 'worker-access-hidden-overlay' }, hiddenLabel(graph))
             : null,
           graphSvg),
         inspector));
@@ -231,7 +241,9 @@ export function mountWorkerAccessGraph(container, evidence, {
     const bound = graph.upperBounds.find(item => item.nodeId === node.id);
     const connectedEdges = graph.edges.filter(edge =>
       edge.source === node.id || edge.target === node.id);
-    inspector.replaceChildren(
+    // replaceChildren stringifies null into a literal "null" text node, which is
+    // how an absent capacity bound ended up printed in the panel.
+    inspector.replaceChildren(...[
       html('p', { class: 'worker-access-kind' }, labels[node.kind] ?? node.kind),
       html('h4', {}, node.label),
       bound ? html('dl', {},
@@ -241,14 +253,14 @@ export function mountWorkerAccessGraph(container, evidence, {
         html('div', {},
           html('dt', {}, labels.bottleneck),
           html('dd', {}, workerAccessEdgeLabel(
-            evidence.edges.find(edge => edge.id === bound.bottleneckEdgeId) ?? {},
+            evidence.edges.find(edge => edge.id === bound.bottleneckEdgeId) ?? {}, labels,
           )))) : null,
       html('p', { class: 'worker-access-connection-count' },
         `${labels.connections}: ${connectedEdges.length}`),
       ...connectedEdges.slice(0, 6).map(edge =>
         html('p', {
           class: `worker-access-connection${edge.bottleneck ? ' bottleneck' : ''}`,
-        }, workerAccessEdgeLabel(edge))),
+        }, workerAccessEdgeLabel(edge, labels))),
       html('div', { class: 'worker-access-actions' },
         html('button', {
           type: 'button',
@@ -269,7 +281,8 @@ export function mountWorkerAccessGraph(container, evidence, {
             type: 'button',
             onclick: () => onLocateBuilding(node.buildingIndex),
           }, labels.locate)
-          : null));
+          : null),
+    ].filter(child => child != null));
   };
 
   render();

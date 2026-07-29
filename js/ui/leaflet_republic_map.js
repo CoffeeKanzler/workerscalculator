@@ -6,6 +6,7 @@ import {
   latLngBounds,
   layerGroup,
   map as createMap,
+  polygon,
   polyline,
 } from '../vendor/leaflet-src.esm.js?v=1';
 
@@ -29,7 +30,39 @@ function imageBounds(image, height) {
   ];
 }
 
-function metricStyle(building, mode, palette) {
+// While a walking corridor is shown, the question on screen is "can a worker
+// get from there to here on foot", so reach takes over the marker's colour and
+// everything outside the corridor fades rather than disappears — a building
+// that is out of reach is the answer, not noise.
+function reachStyle(building, reach, palette) {
+  if (building.index === reach.sourceIndex) {
+    return {
+      radius: 9, color: palette.accent2, weight: 4,
+      fillColor: palette.accent2, fillOpacity: 1, opacity: 1, dashArray: null,
+    };
+  }
+  const entry = reach.buildings.get(building.index);
+  if (!entry) {
+    return {
+      radius: Math.max(2, 2.4 * (building.markScale ?? 1)),
+      color: palette.panel, weight: 1,
+      fillColor: palette.muted, fillOpacity: 0.12, opacity: 0.18, dashArray: null,
+    };
+  }
+  const share = entry.budgetUsed / (reach.budgetMeters || 480);
+  return {
+    radius: Math.max(3.4, 4.4 * (building.markScale ?? 1)),
+    color: palette.panel,
+    weight: 1,
+    fillColor: share <= 0.5 ? palette.pos : share <= 0.8 ? palette.warn : palette.neg,
+    fillOpacity: 0.95,
+    opacity: 0.9,
+    dashArray: null,
+  };
+}
+
+function metricStyle(building, mode, palette, reach = null) {
+  if (reach) return reachStyle(building, reach, palette);
   const metric = buildingMapMetric(building, mode);
   let fillColor = palette.muted;
   let fillOpacity = 0.5;
@@ -75,7 +108,9 @@ export function mountRepublicLeafletMap(container, options) {
     pollutionOpacity, radiationOpacity, palette, waterHref, pollutionHref, radiationHref, tooltipFor,
     transportTooltipFor, onSelectBuilding, onSelectTransportLine,
     onSelectScope, onViewportSummary, initialCamera,
+    walkReachFor = null, onWalkReach = null,
   } = options;
+  let walkReach = null;
   const fullBounds = latLngBounds([[0, 0], [model.height, model.width]]);
   const map = createMap(container, {
     crs: CRS.Simple,
@@ -106,6 +141,7 @@ export function mountRepublicLeafletMap(container, options) {
     rails: layerGroup(),
     pedestrian: layerGroup(),
     transport: layerGroup(),
+    footprints: layerGroup(),
     buildings: layerGroup(),
     scopes: layerGroup(),
   };
@@ -169,18 +205,40 @@ export function mountRepublicLeafletMap(container, options) {
 
   let selectBuilding = () => {};
   let selectTransportLine = () => {};
+  // The footprint is the building; the marker stays because a five-metre shed is
+  // a sub-pixel target when the whole republic is on screen, and because a type
+  // with no extracted geometry has to remain clickable.
+  const footprintStyle = building => {
+    const style = metricStyle(building, currentMode, palette, walkReach);
+    return {
+      color: style.color, weight: Math.min(1.5, style.weight), opacity: style.opacity,
+      fillColor: style.fillColor, fillOpacity: Math.min(0.92, style.fillOpacity + 0.06),
+    };
+  };
   const markerRecords = buildings.map(building => {
     const marker = circleMarker(mapPointToLeaflet(building, model.height), {
       ...metricStyle(building, mode, palette),
       renderer: vectorRenderer,
       pane: 'mapVectorPane',
     });
-    marker.bindTooltip(() => tooltipFor(building), {
+    marker.bindTooltip(() => tooltipFor(building, walkReach?.buildings.get(building.index) ?? null), {
       sticky: true, className: 'map-leaflet-tooltip',
     });
     marker.on('click', () => selectBuilding(building));
-    return { building, marker };
+    let shape = null;
+    if (building.footprint?.length) {
+      shape = polygon(building.footprint.map(ring =>
+        ring.map(point => mapPointToLeaflet(point, model.height))), {
+        renderer: vectorRenderer, pane: 'mapVectorPane', interactive: true,
+      });
+      shape.bindTooltip(() => tooltipFor(building, walkReach?.buildings.get(building.index) ?? null), {
+        sticky: true, className: 'map-leaflet-tooltip',
+      });
+      shape.on('click', () => selectBuilding(building));
+    }
+    return { building, marker, shape };
   });
+  container.dataset.mapFootprintCount = String(markerRecords.filter(record => record.shape).length);
   const scopeRecords = scopes.map(scope => {
     const marker = circleMarker(mapPointToLeaflet(scope, model.height), {
       renderer: vectorRenderer,
@@ -216,10 +274,22 @@ export function mountRepublicLeafletMap(container, options) {
   const refreshBuildings = () => {
     const visible = new Set(visibleBuildings());
     for (const record of markerRecords) {
-      record.marker.setStyle(metricStyle(record.building, currentMode, palette));
+      const style = metricStyle(record.building, currentMode, palette, walkReach);
+      const showShape = !!record.shape && currentLayers.footprints !== false;
+      record.marker.setStyle(showShape
+        ? { ...style, radius: Math.max(1.6, style.radius * 0.55), fillOpacity: style.fillOpacity * 0.6 }
+        : style);
       const mounted = groups.buildings.hasLayer(record.marker);
       if (visible.has(record.building) && !mounted) record.marker.addTo(groups.buildings);
       else if (!visible.has(record.building) && mounted) groups.buildings.removeLayer(record.marker);
+      if (!record.shape) continue;
+      record.shape.setStyle(footprintStyle(record.building));
+      const shapeMounted = groups.footprints.hasLayer(record.shape);
+      if (visible.has(record.building) && showShape && !shapeMounted) {
+        record.shape.addTo(groups.footprints);
+      } else if ((!visible.has(record.building) || !showShape) && shapeMounted) {
+        groups.footprints.removeLayer(record.shape);
+      }
     }
     container.dataset.mapMarkerCount = String(visible.size);
     const counts = {};
@@ -227,10 +297,23 @@ export function mountRepublicLeafletMap(container, options) {
     container.dataset.mapCategoryCounts = JSON.stringify(counts);
     updateSummary();
   };
+  const applyWalkReach = building => {
+    if (!currentLayers.walkReach || !walkReachFor || !building) {
+      walkReach = null;
+    } else {
+      const result = walkReachFor(building.index);
+      walkReach = result
+        ? { sourceIndex: building.index, ...result }
+        : { sourceIndex: building.index, buildings: new Map(), unattached: true };
+    }
+    container.dataset.mapWalkReachCount = walkReach ? String(walkReach.buildings.size) : '';
+    onWalkReach?.(walkReach);
+  };
   selectBuilding = building => {
     for (const record of markerRecords) {
       record.building.inspected = record.building.index === building.index;
     }
+    applyWalkReach(building);
     refreshBuildings();
     onSelectBuilding(building);
   };
@@ -244,7 +327,12 @@ export function mountRepublicLeafletMap(container, options) {
     onSelectTransportLine(line);
   };
   const updateLayer = key => {
-    const groupKey = ['construction', 'borders', 'outliers'].includes(key) ? 'buildings' : key;
+    if (key === 'walkReach') {
+      applyWalkReach(markerRecords.find(record => record.building.inspected)?.building ?? null);
+      return refreshBuildings();
+    }
+    const groupKey = ['construction', 'borders', 'outliers', 'footprints'].includes(key)
+      ? 'buildings' : key;
     const group = groups[groupKey];
     if (!group) return;
     if (groupKey === 'buildings') return refreshBuildings();
@@ -268,9 +356,10 @@ export function mountRepublicLeafletMap(container, options) {
     container.dataset.mapCenter = `${center.lat.toFixed(4)},${center.lng.toFixed(4)}`;
   }
 
-  for (const key of ['water', 'pollution', 'radiation', 'roads', 'rails', 'pedestrian', 'transport', 'scopes']) {
+  for (const key of ['water', 'pollution', 'radiation', 'roads', 'rails', 'pedestrian', 'transport', 'scopes', 'walkReach']) {
     updateLayer(key);
   }
+  groups.footprints.addTo(map);
   groups.buildings.addTo(map);
   refreshBuildings();
   if (initialCamera && Number.isFinite(initialCamera.zoom)) {
