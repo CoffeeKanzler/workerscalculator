@@ -110,6 +110,19 @@ section { animation: none; }
 .vehicletotals { margin-top: 10px; }
 .recommendations { margin-bottom: 14px; }
 .tablewrap { max-width: 100%; overflow-x: auto; }
+.virtual-tablewrap {
+  max-height: min(68vh, 680px);
+  overflow: auto;
+  position: relative;
+}
+.virtual-tablewrap table.data { margin: 0; overflow: visible; }
+.virtual-tablewrap table.data th { z-index: 2; }
+.virtual-tablewrap tbody tr:not(.virtual-spacer) td { white-space: nowrap; }
+.virtual-spacer td { padding: 0; border: 0; }
+.virtual-tablewrap:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
 
 table.data {
   border-collapse: collapse; width: 100%;
@@ -338,11 +351,132 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-scope-summary strong { color: var(--accent2); }
 .map-page .republic-map { max-height: none; height: min(72vh, 820px); touch-action: none; cursor: grab; user-select: none; }
 .map-page .republic-map:active { cursor: grabbing; }
+.leaflet-republic-map {
+  position: relative;
+  overflow: hidden;
+  color: var(--text);
+  background: var(--panel2);
+}
+.leaflet-republic-map .leaflet-control-zoom {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 18%);
+}
+.leaflet-republic-map .leaflet-control-zoom a {
+  color: var(--text);
+  background: var(--panel);
+  border-color: var(--border);
+}
+.leaflet-republic-map .leaflet-control-zoom a:hover,
+.leaflet-republic-map .leaflet-control-zoom a:focus-visible {
+  color: var(--accent2);
+  background: var(--panel2);
+}
+.leaflet-republic-map .leaflet-tooltip {
+  padding: 7px 9px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--panel) 94%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 24%);
+}
+.leaflet-republic-map .leaflet-tooltip::before { display: none; }
+.map-tooltip-content { display: grid; gap: 2px; min-width: 150px; font-size: 12px; }
+.map-tooltip-content strong { color: var(--accent2); font-size: 13px; }
+.map-tooltip-content span { color: var(--muted); }
 .map-toolbar { display: flex; flex-wrap: wrap; align-items: end; gap: 10px 18px; margin: 0 0 10px; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--panel); }
 .map-toolbar fieldset { display: flex; flex-wrap: wrap; gap: 6px 14px; min-width: min(100%, 620px); margin: 0; padding: 5px 8px 8px; border: 1px solid var(--border); border-radius: 6px; }
 .map-toolbar fieldset label { white-space: nowrap; }
 .map-toolbar > label { display: grid; gap: 4px; min-width: min(100%, 260px); }
 .map-zoom-controls { display: flex; gap: 5px; }
+.map-data-toolbar { align-items: center; gap: 8px 14px; }
+.map-data-toolbar .map-search { flex: 1 1 250px; min-width: min(100%, 250px); }
+.map-data-toolbar .map-search input { width: 100%; }
+.map-metric-toggle { flex: 0 1 auto; }
+.map-layer-menu { position: relative; }
+.map-layer-menu > summary {
+  min-height: 34px;
+  padding: 7px 10px;
+  color: var(--text);
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.map-layer-menu[open] > fieldset {
+  position: absolute;
+  right: 0;
+  z-index: 20;
+  display: grid;
+  min-width: 255px;
+  margin-top: 5px;
+  padding: 10px 12px;
+  background: var(--panel);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 24%);
+}
+.map-layer-menu .map-opacity { display: grid; gap: 4px; margin-top: 4px; }
+.map-data-legend { gap: 6px; }
+.map-data-legend button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 28px;
+  padding: 4px 7px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid transparent;
+}
+.map-data-legend button.active {
+  color: var(--text);
+  border-color: var(--border);
+  background: var(--panel);
+}
+.map-data-legend button.muted { opacity: 0.48; text-decoration: line-through; }
+.map-legend-count { font-variant-numeric: tabular-nums; }
+.map-metric-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 13px;
+  margin: 0 0 7px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.map-metric-key[hidden] { display: none; }
+.map-metric-key span { display: inline-flex; align-items: center; gap: 5px; }
+.map-metric-swatch {
+  width: 10px;
+  height: 10px;
+  background: var(--muted);
+  border: 1px solid var(--panel);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--border);
+}
+.map-metric-swatch.empty { background: var(--neg); }
+.map-metric-swatch.low, .map-metric-swatch.construction-medium { background: var(--warn); }
+.map-metric-swatch.medium { background: var(--accent2); }
+.map-metric-swatch.full, .map-metric-swatch.construction-high { background: var(--pos); }
+.map-metric-swatch.construction-low { background: var(--neg); }
+.leaflet-map-viewport { overflow: hidden; border-radius: 8px; }
+.map-viewport-summary {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 500;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 13px;
+  max-width: calc(100% - 20px);
+  padding: 6px 9px;
+  color: var(--muted);
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 18%);
+  font-size: 12px;
+  pointer-events: none;
+}
+.map-viewport-summary strong { color: var(--text); }
 .import-activity { display: flex; align-items: center; gap: 9px; margin: 8px 0; padding: 9px 12px; border: 1px solid var(--accent); border-radius: 8px; background: var(--panel); color: var(--text); }
 .import-activity.neg { border-color: var(--neg); color: var(--neg); }
 .import-activity.warn { border-color: var(--warn); color: var(--warn); }
@@ -423,6 +557,45 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
   box-shadow: 0 2px 8px rgb(0 0 0 / 22%);
   transition: opacity 90ms ease;
 }
+
+/* A forty-year republic needs instrument-like precision without turning every
+   chart into a control panel. Zoom controls therefore occupy the quiet top
+   edge only while a narrower range is active. */
+.history-chart-host { position: relative; min-width: 0; }
+.history-chart-host .uplot { max-width: 100%; }
+.history-chart-host canvas { cursor: crosshair; }
+.chart-toolbar {
+  display: flex; justify-content: flex-end; align-items: center; min-height: 27px;
+}
+.chart-reset {
+  visibility: hidden; padding: 3px 7px; border: 0; background: transparent;
+  color: var(--blueprint); font-size: 11px; font-weight: 700;
+}
+.chart-reset.active { visibility: visible; }
+.chart-legend { display: flex; flex-wrap: wrap; gap: 3px 9px; padding: 4px 0 0; }
+.chart-legend-item {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 2px 3px; border: 0; background: transparent;
+  color: var(--muted); font-size: 11px; line-height: 1.25;
+}
+.chart-legend-item i, .chart-tooltip-row i {
+  display: inline-block; width: 9px; height: 3px; flex: 0 0 auto;
+}
+.chart-legend-item[aria-pressed="false"] {
+  opacity: .45; text-decoration: line-through;
+}
+.chart-legend-item:hover { color: var(--text); border-color: transparent; }
+.chart-tooltip-row {
+  display: grid; grid-template-columns: 9px minmax(0, 1fr) auto;
+  align-items: center; gap: 6px;
+}
+.chart-tooltip-row b {
+  color: var(--text); font-variant-numeric: tabular-nums;
+}
+.virtual-summary {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
 .chart-tooltip strong { font-size: 11px; color: var(--muted); font-weight: 600; }
 .chart-tooltip-row { display: flex; align-items: center; gap: 6px; }
 .chart-tooltip-row i { width: 8px; height: 8px; border-radius: 2px; flex: none; }
@@ -466,6 +639,17 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
   --blueprint: #48657b;
   --focus: #1f587d;
   --ink-soft: #3b413d;
+  --chart-1: #315f83;
+  --chart-2: #9f2f2b;
+  --chart-3: #2f6b4f;
+  --chart-4: #8b5b0d;
+  --chart-5: #6d4a7d;
+  --chart-6: #176b6e;
+  --chart-7: #805137;
+  --chart-8: #4b5563;
+  --chart-grid: rgba(98, 103, 98, .25);
+  --chart-cursor: #3b413d;
+  --chart-selection: rgba(72, 101, 123, .18);
   color-scheme: light;
 }
 
@@ -493,6 +677,17 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
     --blueprint: #8fb3cd;
     --focus: #6fb2df;
     --ink-soft: #cdc8ba;
+    --chart-1: #72b7e2;
+    --chart-2: #f07868;
+    --chart-3: #82c9a0;
+    --chart-4: #e0b95a;
+    --chart-5: #c6a0d8;
+    --chart-6: #6bc6c8;
+    --chart-7: #d69a72;
+    --chart-8: #bbc4d0;
+    --chart-grid: rgba(163, 169, 159, .22);
+    --chart-cursor: #e9e4d7;
+    --chart-selection: rgba(143, 179, 205, .2);
     color-scheme: dark;
   }
 }
@@ -512,6 +707,17 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
   --blueprint: #8fb3cd;
   --focus: #6fb2df;
   --ink-soft: #cdc8ba;
+  --chart-1: #72b7e2;
+  --chart-2: #f07868;
+  --chart-3: #82c9a0;
+  --chart-4: #e0b95a;
+  --chart-5: #c6a0d8;
+  --chart-6: #6bc6c8;
+  --chart-7: #d69a72;
+  --chart-8: #bbc4d0;
+  --chart-grid: rgba(163, 169, 159, .22);
+  --chart-cursor: #e9e4d7;
+  --chart-selection: rgba(143, 179, 205, .2);
   color-scheme: dark;
 }
 
@@ -891,6 +1097,8 @@ table.data th, table.data td { border-color: var(--border); }
   .map-viewport.standalone > .map-building-inspector {
     position: static; width: auto; max-height: none; margin-top: 8px;
   }
+  .map-layer-menu[open] > fieldset { right: auto; left: 0; }
+  .map-viewport-summary { right: 8px; bottom: 8px; }
 }
 
 .map-viewport .republic-map { position: relative; z-index: 1; }

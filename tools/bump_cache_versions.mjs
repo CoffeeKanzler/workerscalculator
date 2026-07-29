@@ -72,6 +72,38 @@ export function planBump(changedFiles, { allFiles = [] } = {}) {
   return { modules, targets: [...targets].sort(), touchesJs, touchesCss };
 }
 
+function referenceMarkerStatus(previousText, currentText, name) {
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const marker = new RegExp(`${escaped}\\?v=(\\d+)`, 'g');
+  const versions = text => [...text.matchAll(marker)].map(match => Number(match[1]));
+  const previous = versions(previousText);
+  const current = versions(currentText);
+  if (!current.length) {
+    const bareImport = new RegExp(
+      `(?:from\\s+['"][^'"]*|(?:src|href)=['"][^'"]*)${escaped}['"]`,
+    );
+    return bareImport.test(currentText) ? false : null;
+  }
+  if (!previous.length) return true;
+  const previousMax = Math.max(...previous);
+  return current.every(version => version > previousMax);
+}
+
+export function staleReferenceTargets(changedFiles, {
+  targets, previousFiles, currentFiles,
+}) {
+  const plan = planBump(changedFiles, { allFiles: targets });
+  const names = [...plan.modules];
+  if (plan.touchesJs && !names.includes('app.js')) names.push('app.js');
+  if (plan.touchesCss && !names.includes('style.css')) names.push('style.css');
+  return targets.filter(target => names.some(name =>
+    referenceMarkerStatus(
+      previousFiles[target] ?? '',
+      currentFiles[target] ?? '',
+      name,
+    ) === false));
+}
+
 function listTrackedFiles() {
   return execFileSync('git', ['ls-files', 'js', 'css', 'index.html'], { cwd: ROOT })
     .toString().split('\n').filter(Boolean);
@@ -80,6 +112,17 @@ function listTrackedFiles() {
 function stagedFiles() {
   return execFileSync('git', ['diff', '--cached', '--name-only', '--diff-filter=ACMR'], { cwd: ROOT })
     .toString().split('\n').filter(Boolean);
+}
+
+function previousFile(file) {
+  try {
+    return execFileSync('git', ['show', `HEAD^:${file}`], {
+      cwd: ROOT,
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).toString();
+  } catch {
+    return '';
+  }
 }
 
 function main(argv) {
@@ -92,6 +135,26 @@ function main(argv) {
   // shell, since DATA_V is where data/ fetches get their marker from.
   if (!plan.modules.length && !plan.touchesJs && !plan.touchesCss) {
     if (!check) console.log('no js/, css/ or data/ change, nothing to advance');
+    return 0;
+  }
+
+  if (check) {
+    const previousFiles = {};
+    const currentFiles = {};
+    for (const target of plan.targets) {
+      const file = path.join(ROOT, target);
+      previousFiles[target] = previousFile(target);
+      currentFiles[target] = existsSync(file) ? readFileSync(file, 'utf8') : '';
+    }
+    const stale = staleReferenceTargets(changed, {
+      targets: plan.targets, previousFiles, currentFiles,
+    });
+    if (stale.length) {
+      console.error(`cache markers are stale in: ${stale.join(', ')}`);
+      console.error('run: node tools/bump_cache_versions.mjs');
+      return 1;
+    }
+    console.log('cache markers are current');
     return 0;
   }
 
@@ -121,15 +184,6 @@ function main(argv) {
     }
   }
 
-  if (check) {
-    if (edits.length) {
-      console.error(`cache markers are stale in: ${edits.join(', ')}`);
-      console.error('run: node tools/bump_cache_versions.mjs');
-      return 1;
-    }
-    console.log('cache markers are current');
-    return 0;
-  }
   console.log(edits.length ? `advanced markers in ${edits.join(', ')}` : 'markers already current');
   return 0;
 }

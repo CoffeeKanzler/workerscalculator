@@ -25,13 +25,15 @@ jobs:
           # structuredClone needs 17+, Object.hasOwn 16.9+. 22 is current LTS.
           node-version: '22'
 
-      # No install step: the project has no dependencies, and keeping it that
-      # way is deliberate. A lockfile appearing here would be a real change.
-      - name: Confirm the project is still dependency-free
+      # Pinned, reviewed uPlot 1.6.32 and Leaflet 1.9.4 copies are permitted
+      # under js/vendor and css/vendor. They make large histories and republic
+      # maps interactive without uploading save data or requiring a build;
+      # a lockfile or node_modules would mean that offline contract changed.
+      - name: Confirm the project has no install-time dependencies
         run: |
           if [ -f package-lock.json ] || [ -d node_modules ]; then
-            echo "This project is dependency-free by design; a lockfile or"
-            echo "node_modules appeared. If that is intentional, update this step."
+            echo "This project has no install-time dependencies by design."
+            echo "Vendored browser assets belong under js/vendor or css/vendor."
             exit 1
           fi
 
@@ -89,3 +91,7 @@ jobs:
           curl -sf -o /dev/null http://localhost:8765/index.html || {
             echo "the app did not start serving"; exit 1; }
           node tests/browser/smoke.mjs http://localhost:8765/index.html
+          node tests/browser/chart_interactions.mjs \
+            http://localhost:8765/tests/time_series_chart.html
+          node tests/browser/analysis_virtualization.mjs \
+            http://localhost:8765/index.html

@@ -75,6 +75,19 @@ test('both palettes define every token the stylesheet uses', async () => {
   }
 });
 
+test('both palettes define the complete canvas chart palette', async () => {
+  const css = await stylesheet();
+  const tokens = [
+    ...Array.from({ length: 8 }, (_, index) => `--chart-${index + 1}`),
+    '--chart-grid', '--chart-cursor', '--chart-selection',
+  ];
+  for (const selector of [':root {', '[data-theme="dark"] {']) {
+    const palette = parsePalette(css, selector);
+    assert.deepEqual(tokens.filter(token => palette[token] === undefined), [],
+      `${selector} is missing canvas chart colors`);
+  }
+});
+
 // Text that cannot be read is worse than no dark theme at all, so the palette
 // is held to WCAG AA: 4.5:1 for body text, 3:1 for large text and UI edges.
 test('dark palette text meets AA contrast on its own surfaces', async () => {

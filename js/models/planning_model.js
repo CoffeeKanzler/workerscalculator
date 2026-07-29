@@ -14,6 +14,7 @@ export const PLANNING_KEYS = Object.freeze([
   'historyKey', 'historyCompareKeys', 'historyLogScale',
   'republicView', 'republicRange', 'republicResource', 'republicScope',
   'mapLayers', 'mapBuildingFilter', 'mapPollutionOpacity',
+  'mapMetric', 'mapCategoryVisibility',
   'republicAlertFilter', 'analysisSort', 'analysisSearch', 'priceSort',
 ]);
 
@@ -70,6 +71,10 @@ const DEFAULT_PLANNING = {
   },
   mapBuildingFilter: '',
   mapPollutionOpacity: 0.68,
+  mapMetric: 'category',
+  mapCategoryVisibility: {
+    living: true, industry: true, services: true, support: true, other: true,
+  },
   republicAlertFilter: 'all',
   analysisSort: { col: 'profit', dir: -1 },
   analysisSearch: '',

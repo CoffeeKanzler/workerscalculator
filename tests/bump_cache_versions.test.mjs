@@ -1,8 +1,14 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import {
+  cpSync, mkdirSync, mkdtempSync, rmSync, writeFileSync,
+} from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { execFileSync, spawnSync } from 'node:child_process';
 
 import {
-  bumpReferencesTo, planBump, moduleName, isJavaScript,
+  bumpReferencesTo, planBump, moduleName, isJavaScript, staleReferenceTargets,
 } from '../tools/bump_cache_versions.mjs';
 
 // Pages caches for ten minutes, so a module whose marker did not move is
@@ -93,6 +99,76 @@ test('a changed shell or stylesheet advances exactly once', () => {
   const plan = planBump(['css/style.css', 'js/app.js']);
   assert.ok(plan.modules.includes('style.css'), 'the shell case must know to stand down');
   assert.ok(plan.modules.includes('app.js'));
+});
+
+test('check mode accepts a changed referenced module whose marker advanced', () => {
+  const targets = ['index.html'];
+  const previousFiles = {
+    'index.html': '<script type="module" src="js/app.js?v=41"></script>',
+  };
+  const currentFiles = {
+    'index.html': '<script type="module" src="js/app.js?v=42"></script>',
+  };
+  assert.deepEqual(staleReferenceTargets(['js/app.js'], {
+    targets, previousFiles, currentFiles,
+  }), []);
+});
+
+test('check mode rejects a changed referenced module whose marker stayed put', () => {
+  const targets = ['index.html'];
+  const previousFiles = {
+    'index.html': '<script type="module" src="js/app.js?v=41"></script>',
+  };
+  const currentFiles = {
+    'index.html': '<script type="module" src="js/app.js?v=41"></script>',
+  };
+  assert.deepEqual(staleReferenceTargets(['js/app.js'], {
+    targets, previousFiles, currentFiles,
+  }), ['index.html']);
+});
+
+test('the check CLI accepts moved markers and rejects unchanged markers', () => {
+  const directory = mkdtempSync(join(tmpdir(), 'workers-cache-check-'));
+  const runGit = (...args) => execFileSync('git', args, {
+    cwd: directory, stdio: 'ignore',
+  });
+  try {
+    mkdirSync(join(directory, 'js'));
+    mkdirSync(join(directory, 'tools'));
+    cpSync(new URL('../tools/bump_cache_versions.mjs', import.meta.url),
+      join(directory, 'tools/bump_cache_versions.mjs'));
+    writeFileSync(join(directory, 'js/app.js'), 'export const revision = 1;\n');
+    writeFileSync(join(directory, 'index.html'),
+      '<script type="module" src="js/app.js?v=1"></script>\n');
+    runGit('init');
+    runGit('config', 'user.email', 'tests@example.invalid');
+    runGit('config', 'user.name', 'Cache tests');
+    runGit('add', '.');
+    runGit('commit', '-m', 'base');
+
+    writeFileSync(join(directory, 'js/app.js'), 'export const revision = 2;\n');
+    writeFileSync(join(directory, 'index.html'),
+      '<script type="module" src="js/app.js?v=2"></script>\n');
+    runGit('add', '.');
+    runGit('commit', '-m', 'bumped');
+    const passed = spawnSync(process.execPath, [
+      'tools/bump_cache_versions.mjs', '--check', 'js/app.js',
+    ], { cwd: directory, encoding: 'utf8' });
+    assert.equal(passed.status, 0, passed.stderr);
+    assert.match(passed.stdout, /cache markers are current/);
+
+    writeFileSync(join(directory, 'js/app.js'), 'export const revision = 3;\n');
+    runGit('add', '.');
+    runGit('commit', '-m', 'stale');
+    const failed = spawnSync(process.execPath, [
+      'tools/bump_cache_versions.mjs', '--check', 'js/app.js',
+    ], { cwd: directory, encoding: 'utf8' });
+    assert.equal(failed.status, 1);
+    assert.match(failed.stderr, /cache markers are stale in: index\.html/);
+    assert.doesNotMatch(failed.stderr, /ReferenceError/);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
 });
 
 // data/ files are fetched with DATA_V, which is the shell's own marker. A

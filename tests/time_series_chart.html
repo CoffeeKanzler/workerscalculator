@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/vendor/uPlot.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body { padding: 20px; }
+    main { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="history republic-chart"><h3>Population</h3><div id="chart-a"></div></section>
+    <section class="history republic-chart"><h3>Employment</h3><div id="chart-b"></div></section>
+  </main>
+  <script type="module">
+    import { mountTimeSeriesChart } from '../js/ui/time_series_chart.js';
+
+    const points = Array.from({ length: 201 }, (_, day) => ({
+      x: 1980 * 366 + day,
+      y: 1000 + day * 4 + Math.sin(day / 7) * 80,
+      label: `1980 / ${String(day).padStart(3, '0')}`,
+    }));
+    window.testCharts = [
+      mountTimeSeriesChart(document.querySelector('#chart-a'), {
+        title: 'Population',
+        group: 'browser-contract',
+        series: [
+          { label: 'Adults', colorSlot: 1, points },
+          { label: 'Children', colorSlot: 2, points: points.map(point => ({
+            ...point, y: point.y * .28,
+          })) },
+        ],
+        formatValue: value => Math.round(value).toLocaleString('en'),
+        resetZoomLabel: 'Reset zoom',
+        summaryTemplate: '{series}: {first}, {last}, {min}, {max}',
+      }),
+      mountTimeSeriesChart(document.querySelector('#chart-b'), {
+        title: 'Employment',
+        group: 'browser-contract',
+        series: [{
+          label: 'Workers', colorSlot: 3, points: points.map(point => ({
+            ...point, y: point.y * .61,
+          })),
+        }],
+        formatValue: value => Math.round(value).toLocaleString('en'),
+        resetZoomLabel: 'Reset zoom',
+        summaryTemplate: '{series}: {first}, {last}, {min}, {max}',
+      }),
+    ];
+    document.body.dataset.ready = 'true';
+  </script>
+</body>
+</html>
