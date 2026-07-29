@@ -35,6 +35,22 @@ function memoryAdapter() {
   };
 }
 
+test('analytical map choices survive through the planning model boundary', () => {
+  const defaults = createPlanningCompatibleState({}).state;
+  assert.equal(defaults.mapMetric, 'category');
+  assert.deepEqual(defaults.mapCategoryVisibility, {
+    living: true, industry: true, services: true, support: true, other: true,
+  });
+
+  const restored = createPlanningCompatibleState({
+    mapMetric: 'staffing',
+    mapCategoryVisibility: { industry: false },
+  }).state;
+  assert.equal(restored.mapMetric, 'staffing');
+  assert.equal(restored.mapCategoryVisibility.industry, false);
+  assert.equal(restored.mapCategoryVisibility.living, true);
+});
+
 test('seeding a planning model gives hypothetical values PLAN evidence', () => {
   const model = seedPlanningFromObservation(observation(), {
     plan: { rows: [{ name: 'Steel mill', count: 2 }] },
