@@ -30,6 +30,7 @@ import path from 'node:path';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from '../js/workshop_ini.js';
 import { workshopIdsInTypes, missingWorkshopIds } from './workshop_missing.mjs';
 import { parseBuildingsGame } from '../js/savegame.js';
+import { readWorkshopIndex, writeWorkshopIndex } from '../js/models/workshop_index.js';
 
 const APP_ID = '784150';
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
@@ -132,9 +133,14 @@ function catalogueOne(id, index, { prune = false } = {}) {
 }
 
 function writeIndex(indexFile, index) {
-  index.itemCount = Object.keys(index.items).length;
-  index.generatedAt = new Date().toISOString();
-  writeFileSync(indexFile, `${JSON.stringify(index, null, 2)}\n`);
+  // Compact form: the index is fetched on every page load, and all it has to
+  // answer is which ids exist. Paths are derived and the counts are unread.
+  const compact = writeWorkshopIndex({
+    appId: index.appId ?? APP_ID,
+    ids: Object.keys(index.items),
+  });
+  index.itemCount = compact.itemCount;
+  writeFileSync(indexFile, `${JSON.stringify(compact, null, 2)}\n`);
 }
 
 function flagValue(argv, name, fallback) {
@@ -151,7 +157,12 @@ function main(argv) {
   const flagValues = new Set([idsFile, String(size)].filter(Boolean));
   const rest = argv.filter(arg => !arg.startsWith('--') && !flagValues.has(arg));
   const indexFile = path.join(CATALOG, 'index.json');
-  const index = JSON.parse(readFileSync(indexFile, 'utf8'));
+  const stored = JSON.parse(readFileSync(indexFile, 'utf8'));
+  // Normalise to the working shape regardless of which format is on disk.
+  const index = {
+    appId: stored.appId ?? APP_ID,
+    items: Object.fromEntries(readWorkshopIndex(stored).ids().map(id => [id, {}])),
+  };
 
   let ids = rest;
   if (idsFile) {

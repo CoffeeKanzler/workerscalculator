@@ -1,6 +1,7 @@
 import { resolveVehicleModels } from '../fleet.js?v=2';
 import { latestProductivity } from '../save_model.js';
 import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=2';
+import { readWorkshopIndex } from '../models/workshop_index.js?v=2';
 
 const REQUIRED_FILES = ['namepoints.bin', 'buildings_game.bin'];
 const CORE_BINARY_FILES = {
@@ -132,10 +133,11 @@ export async function orchestrateWorkshopCatalog(buildings, vehicles = [], {
     ...buildings.map(building => /^(\d{6,20})\//.exec(building.type)?.[1]),
     ...vehicles.map(vehicle => /^(\d{6,20})\//.exec(vehicle.model)?.[1]),
   ].filter(Boolean))];
-  const available = ids.filter(id => workshopIndex?.items?.[id]);
+  const catalog = readWorkshopIndex(workshopIndex);
+  const available = ids.filter(id => catalog.has(id));
   const loaded = await Promise.all(available.map(async id => {
     try {
-      return await fetchCatalog(workshopIndex.items[id].path, id);
+      return await fetchCatalog(catalog.pathFor(id), id);
     } catch {
       return null;
     }
