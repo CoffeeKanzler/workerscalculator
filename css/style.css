@@ -828,3 +828,15 @@ table.data th, table.data td { border-color: var(--border); }
     position: static; width: auto; max-height: none; margin-top: 8px;
   }
 }
+
+/* Building markers are drawn on a canvas laid over the map. The svg keeps the
+   roads, rails, water and scope circles, where vector scaling is wanted and
+   the node count is small. */
+.map-viewport .map-marker-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  z-index: 2; pointer-events: auto;
+}
+.map-viewport .map-marker-canvas:focus-visible {
+  outline: 2px solid var(--focus); outline-offset: -2px;
+}
+.map-viewport .republic-map { position: relative; z-index: 1; }

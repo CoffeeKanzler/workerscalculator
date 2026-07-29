@@ -38,6 +38,9 @@ import { mapLayerReport } from './models/map_layer_report.js';
 import {
   CATEGORY_MARKS, buildTypeCategoryIndex, categoryForSaveType,
 } from './models/building_category.js?v=2';
+import {
+  drawOrder, markerAt, markerRadius, paletteFrom, visibleMarkers,
+} from './ui/map_markers.js?v=2';
 import { republicTrendAlerts } from './models/republic_trends.js?v=1';
 import { isTheme, nextTheme, resolveTheme, themeAttribute } from './ui/theme.js?v=2';
 import {
@@ -2878,10 +2881,15 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     class: `republic-map${standalone ? ' standalone' : ''}`,
     role: standalone ? 'group' : 'img', 'aria-label': t('schematicRepublicMap'),
   });
+  // Building markers are drawn here rather than as elements. The canvas is
+  // laid over the svg at the same size and redrawn whenever the camera moves.
+  const markerCanvas = el('canvas', { class: 'map-marker-canvas', 'aria-hidden': 'true' });
+  let drawMarkerLayer = () => {};
   const applyStandaloneViewBox = view => {
     standaloneMapViewBox = clampViewBox(view);
     const current = standaloneMapViewBox;
     svg.setAttribute('viewBox', `${current.x} ${current.y} ${current.width} ${current.height}`);
+    drawMarkerLayer();
   };
   if (standalone) {
     let drag = null;
@@ -3066,10 +3074,6 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       'data-pedestrian-count': model.pedestrian.length,
     }));
   }
-  const normalLayer = node('g', { class: 'map-buildings' });
-  const selectedLayer = node('g', { class: 'map-selected' });
-  const borderLayer = node('g', { class: 'map-borders' });
-  const outlierLayer = node('g', { class: 'map-outliers' });
   let mapInspector = null;
   const renderBuildingInspector = building => {
     const progress = building.constructionProgress ?? 1;
@@ -3092,65 +3096,170 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   const markFor = building => CATEGORY_MARKS[categoryForSaveType(building.type, categoryIndex)]
     ?? CATEGORY_MARKS.other;
 
-  const inspectBuilding = (building, circle) => {
+  // Markers are drawn, not built, so selection is state plus a redraw rather
+  // than a class on an element.
+  const inspectBuilding = building => {
     mapSelectedBuildingIndex = building.index;
-    for (const marker of svg.querySelectorAll('.map-inspected')) marker.classList.remove('map-inspected');
-    circle.classList.add('map-inspected');
+    drawMarkerLayer();
     if (mapInspector) mapInspector.replaceWith(mapInspector = renderBuildingInspector(building));
   };
+  // One canvas instead of 2,142 SVG elements. Each marker used to be an
+  // element with a <title> child, rebuilt on every pan, zoom and filter: the
+  // map took 4.2s to open and a zoom press cost 246ms, worsening to 438ms as
+  // interaction continued. Roads, rail, water and scopes stay as SVG — there
+  // are few of them and their vector scaling is wanted.
+  const markers = [];
   for (const building of model.buildings) {
     if (isExternalAirLinkType(building.type)) continue;
     const borderPost = isBorderPostType(building.type);
-    const selected = building.scopeId === state.republicScope;
     const outlier = building.criminalityOutlier;
-    const underConstruction = (building.constructionProgress ?? 1) < 1;
-    const displayName = mapBuildingDisplayName(building);
+    const category = categoryForSaveType(building.type, categoryIndex);
     const mark = markFor(building);
-    const special = borderPost || outlier || building.focused;
-    const radius = (building.focused ? 7.5 : borderPost ? 4.5 : outlier ? 5.5
-      : selected ? 2.4 : 1.35 * mark.scale) * mapPointScale;
-    const shape = special ? 'circle' : mark.shape;
-    const cx = Number(building.mapX.toFixed(2));
-    const cy = Number(building.mapY.toFixed(2));
-    const geometry = shape === 'square'
-      ? { x: (cx - radius).toFixed(2), y: (cy - radius).toFixed(2),
-        width: (radius * 2).toFixed(2), height: (radius * 2).toFixed(2) }
-      : shape === 'diamond'
-        ? { points: [[cx, cy - radius], [cx + radius, cy], [cx, cy + radius], [cx - radius, cy]]
-          .map(([x, y]) => `${x.toFixed(2)},${y.toFixed(2)}`).join(' ') }
-        : { cx: cx.toFixed(2), cy: cy.toFixed(2), r: radius };
-    const circle = node(shape === 'square' ? 'rect' : shape === 'diamond' ? 'polygon' : 'circle', {
-      ...geometry,
-      'data-map-category': special ? 'status' : categoryForSaveType(building.type, categoryIndex),
-      'data-building-type': building.type ?? '',
-      'data-building-label': displayName,
-      'data-building-name': building.name ?? '',
-      'data-map-kind': borderPost ? 'border' : underConstruction ? 'construction' : 'building',
-      'data-map-outlier': outlier ? 'true' : 'false',
-      'data-map-selected': selected ? 'true' : 'false',
-      ...(standalone ? { tabindex: '0', role: 'button', 'aria-label': displayName } : {}),
-      class: [building.focused ? 'focused' : '', underConstruction ? 'under-construction' : '',
-        borderPost ? 'border-post' : '', building.index === mapSelectedBuildingIndex ? 'map-inspected' : '']
-        .filter(Boolean).join(' '),
+    const underConstruction = (building.constructionProgress ?? 1) < 1;
+    markers.push({
+      building,
+      x: building.mapX,
+      y: building.mapY,
+      category,
+      shape: mark.shape,
+      scale: mark.scale,
+      borderPost,
+      outlier: !!outlier,
+      underConstruction,
+      selected: building.scopeId === state.republicScope,
+      focused: !!building.focused,
+      label: mapBuildingDisplayName(building),
+      title: (outlier
+        ? `${t('citizen')} #${outlier.citizenIndex} · ${fmt(outlier.criminality * 100, 2)} % · `
+          + `${building.name || building.type || t('building')} #${building.index} · ${scopeNames.get(building.scopeId) ?? t('unassigned')}`
+        : `${building.name || building.type || t('building')} #${building.index} · ${scopeNames.get(building.scopeId) ?? t('unassigned')}`)
+        + (underConstruction
+          ? ` · ${t('underConstruction')} ${fmt(building.constructionProgress * 100, 0)} %` : ''),
     });
-    const title = node('title');
-    const buildingTitle = outlier
-      ? `${t('citizen')} #${outlier.citizenIndex} · ${fmt(outlier.criminality * 100, 2)} % · `
-        + `${building.name || building.type || t('building')} #${building.index} · ${scopeNames.get(building.scopeId) ?? t('unassigned')}`
-      : `${building.name || building.type || t('building')} #${building.index} · ${scopeNames.get(building.scopeId) ?? t('unassigned')}`;
-    title.textContent = buildingTitle + (underConstruction
-      ? ` · ${t('underConstruction')} ${fmt(building.constructionProgress * 100, 0)} %` : '');
-    circle.append(title);
-    if (standalone) {
-      circle.addEventListener('click', () => inspectBuilding(building, circle));
-      circle.addEventListener('keydown', event => {
-        if (event.key !== 'Enter' && event.key !== ' ') return;
-        event.preventDefault();
-        inspectBuilding(building, circle);
-      });
-    }
-    (borderPost ? borderLayer : outlier ? outlierLayer : selected ? selectedLayer : normalLayer).append(circle);
   }
+
+  // The draw itself. Canvas cannot inherit CSS, so the palette is read from the
+  // document each pass and the map follows the theme; and it has no elements,
+  // so only what the viewport shows is drawn rather than all two thousand.
+  const markerPalette = () => paletteFrom(getComputedStyle(document.documentElement), CATEGORY_MARKS);
+  const currentViewBox = () => (standalone
+    ? (standaloneMapViewBox ?? activeStandaloneViewBox)
+    : compactViewBox);
+
+  drawMarkerLayer = () => {
+    const context = markerCanvas.getContext('2d');
+    if (!context) return;
+    const rect = markerCanvas.getBoundingClientRect();
+    const width = Math.max(1, Math.round(rect.width));
+    const height = Math.max(1, Math.round(rect.height));
+    // Backing store at device resolution, or the markers blur on a HiDPI screen.
+    const ratio = Math.min(3, globalThis.devicePixelRatio || 1);
+    if (markerCanvas.width !== width * ratio || markerCanvas.height !== height * ratio) {
+      markerCanvas.width = width * ratio;
+      markerCanvas.height = height * ratio;
+    }
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    context.clearRect(0, 0, width, height);
+    if (!state.mapLayers.buildings) return;
+
+    const view = currentViewBox();
+    const scale = view.width / model.width;
+    const toScreenX = x => ((x - view.x) / view.width) * width;
+    const toScreenY = y => ((y - view.y) / view.height) * height;
+    const palette = markerPalette();
+
+    for (const marker of drawOrder(visibleMarkers(markers, view, scale))) {
+      if (marker.borderPost && !state.mapLayers.borders) continue;
+      if (marker.outlier && !state.mapLayers.outliers) continue;
+      if (marker.underConstruction && !state.mapLayers.construction) continue;
+      const screenRadius = Math.max(1.1, markerRadius(marker, scale) / scale);
+      const cx = toScreenX(marker.x);
+      const cy = toScreenY(marker.y);
+      const status = marker.focused || marker.outlier || marker.borderPost;
+      context.beginPath();
+      if (status || marker.shape === 'circle') {
+        context.arc(cx, cy, screenRadius, 0, Math.PI * 2);
+      } else if (marker.shape === 'square') {
+        context.rect(cx - screenRadius, cy - screenRadius, screenRadius * 2, screenRadius * 2);
+      } else {
+        context.moveTo(cx, cy - screenRadius);
+        context.lineTo(cx + screenRadius, cy);
+        context.lineTo(cx, cy + screenRadius);
+        context.lineTo(cx - screenRadius, cy);
+        context.closePath();
+      }
+      context.globalAlpha = marker.category === 'support' || marker.category === 'other' ? 0.5 : 0.95;
+      context.fillStyle = marker.focused ? palette.status_focused ?? '#e06c5b'
+        : marker.outlier ? palette.status_outlier ?? '#e06c5b'
+          : marker.borderPost ? '#ffb02e'
+            : palette[marker.category] ?? '#888';
+      context.fill();
+      // The inspected building keeps a ring so the selection survives a redraw.
+      if (marker.building.index === mapSelectedBuildingIndex) {
+        context.globalAlpha = 1;
+        context.lineWidth = 2;
+        context.strokeStyle = palette.focus ?? '#6fb2df';
+        context.stroke();
+      }
+    }
+    context.globalAlpha = 1;
+  };
+
+  // The first draw runs while the tree is still being built, when the canvas
+  // has no layout and sizes itself to the 300x150 default with nothing on it.
+  // Observing its box redraws once it has real dimensions, and again whenever
+  // the window changes them.
+  if (globalThis.ResizeObserver) {
+    const observer = new ResizeObserver(() => drawMarkerLayer());
+    observer.observe(markerCanvas);
+  } else {
+    requestAnimationFrame(() => drawMarkerLayer());
+  }
+
+  if (standalone) {
+    // Canvas has no per-element events, so a click becomes a nearest-marker
+    // lookup. The tolerance is what makes ~2.7px markers hittable at all.
+    const markerFromEvent = event => {
+      const rect = markerCanvas.getBoundingClientRect();
+      if (!rect.width || !rect.height) return null;
+      const view = currentViewBox();
+      const world = {
+        x: view.x + ((event.clientX - rect.left) / rect.width) * view.width,
+        y: view.y + ((event.clientY - rect.top) / rect.height) * view.height,
+      };
+      return markerAt(visibleMarkers(markers, view, view.width / model.width),
+        world, view.width / model.width);
+    };
+    markerCanvas.addEventListener('click', event => {
+      const hit = markerFromEvent(event);
+      if (hit) inspectBuilding(hit.building);
+    });
+    // The <title> elements are gone with the markers, so the tooltip is the
+    // canvas's own title attribute, refreshed as the pointer moves.
+    markerCanvas.addEventListener('mousemove', event => {
+      const hit = markerFromEvent(event);
+      markerCanvas.title = hit ? hit.title : '';
+      markerCanvas.style.cursor = hit ? 'pointer' : '';
+    });
+    // Per-marker tab stops are impossible on a canvas. Arrow keys step through
+    // the buildings instead, so the map stays reachable without a mouse.
+    markerCanvas.tabIndex = 0;
+    markerCanvas.setAttribute('role', 'application');
+    markerCanvas.setAttribute('aria-label', t('selectMapBuilding'));
+    markerCanvas.removeAttribute('aria-hidden');
+    markerCanvas.addEventListener('keydown', event => {
+      if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      if (!markers.length) return;
+      const at = markers.findIndex(marker => marker.building.index === mapSelectedBuildingIndex);
+      const next = event.key === 'Home' ? 0
+        : event.key === 'End' ? markers.length - 1
+          : event.key === 'ArrowRight' ? (at + 1 + markers.length) % markers.length
+            : (at - 1 + markers.length) % markers.length;
+      inspectBuilding(markers[next].building);
+    });
+  }
+
   const scopeBuildingTypes = new Map();
   for (const building of model.buildings) {
     if (!Number.isInteger(building.scopeId)) continue;
@@ -3191,7 +3300,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     scopeLayer.append(marker);
   }
   svg.append(waterLayer, pollutionLayer, railLayer, roadLayer, pedestrianLayer);
-  svg.append(normalLayer, selectedLayer, borderLayer, scopeLayer, outlierLayer);
+  svg.append(scopeLayer);
   const mapHintKey = model.rails.length
     ? (model.water ? 'schematicMapNetworksWaterHint' : 'schematicMapNetworksHint')
     : model.water
@@ -3316,7 +3425,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       // the map, it updated off-screen behind anyone who had scrolled down to
       // click a building: the marker highlighted and nothing appeared to
       // happen.
-      el('div', { class: 'map-viewport' }, svg, mapInspector = (() => {
+      el('div', { class: 'map-viewport' }, svg, markerCanvas, mapInspector = (() => {
         const selectedBuilding = model.buildings.find(building =>
           building.index === mapSelectedBuildingIndex || building.focused);
         return selectedBuilding ? renderBuildingInspector(selectedBuilding)
