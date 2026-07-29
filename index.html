@@ -12,6 +12,39 @@
 </head>
 <body>
   <div id="app"><noscript>This planner needs JavaScript.</noscript>⏳</div>
-  <script type="module" src="js/app.js?v=249"></script>
+  <!-- The module graph cannot rescue itself. If a browser is holding a cached
+       copy of one module and a fresh copy of another, the two may no longer
+       agree on what is exported, and the whole graph fails to link: nothing
+       runs, and the reader is left looking at the loading mark forever. This
+       script imports nothing, so it always runs, and it reloads once past the
+       cache. One retry only, so a genuine fault still surfaces. -->
+  <script>
+    (function () {
+      var KEY = 'appBootRetry';
+      var retried = sessionStorage.getItem(KEY);
+      function recover(reason) {
+        if (retried || !window.location.protocol.startsWith('http')) return;
+        sessionStorage.setItem(KEY, reason);
+        var url = new URL(window.location.href);
+        url.searchParams.set('reload', String(Date.now()));
+        window.location.replace(url);
+      }
+      window.addEventListener('error', function (event) {
+        var text = String((event && event.message) || '');
+        if (/does not provide an export|Failed to fetch dynamically imported|error loading dynamically imported|Unexpected token/i.test(text)) {
+          recover('link');
+        }
+      });
+      window.addEventListener('load', function () {
+        // A graph that never linked leaves the placeholder exactly as served.
+        setTimeout(function () {
+          var app = document.getElementById('app');
+          if (app && app.childElementCount <= 1 && app.textContent.indexOf('\u23F3') !== -1) recover('stalled');
+        }, 8000);
+      });
+      window.addEventListener('appready', function () { sessionStorage.removeItem(KEY); });
+    }());
+  </script>
+  <script type="module" src="js/app.js?v=251"></script>
 </body>
 </html>

@@ -2,30 +2,7 @@
   "schemaVersion": 1,
   "workshopId": "2105925801",
   "source": "steamcmd-anonymous",
-  "extractedAt": "2026-07-29T08:52:57.620Z",
-  "buildings": [
-    {
-      "id": "2105925801/switch43",
-      "nameId": null,
-      "types": [
-        "TYPE_TRANSFORMATOR"
-      ],
-      "workers": 0,
-      "professors": 0,
-      "production": {},
-      "consumption": {},
-      "consumptionPerSecond": {},
-      "livingSpace": 0,
-      "citizenAbleServe": 0,
-      "qualityOfLiving": null,
-      "attractiveScore": null,
-      "storages": {},
-      "constructionResources": {},
-      "electricWorkerFactors": {},
-      "nameStr": "switch43",
-      "workshopId": "2105925801",
-      "modPath": "switch43"
-    }
-  ],
+  "extractedAt": "2026-07-29T19:42:07.062Z",
+  "buildings": [],
   "vehicles": []
 }

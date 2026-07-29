@@ -136,6 +136,16 @@ export function walkingEdgeRefsOf(building) {
   return refs;
 }
 
+// Kept because removing an export is not a private change: a browser holding a
+// cached older copy of an importer can never link against a module that dropped
+// the name it asks for, and the page then fails to start at all rather than
+// merely running stale. Deprecated — walkingEdgeRefsOf covers roads too.
+export function pedestrianEdgeIdsOf(building) {
+  return walkingEdgeRefsOf(building)
+    .filter(([networkClass]) => networkClass === PEDESTRIAN_NETWORK_CLASS)
+    .map(([, id]) => id);
+}
+
 // A building's connection slots name the network edge the game bound them to,
 // so attachment needs no proximity guess. The search seeds those edges with
 // zero distance walked and charges every edge it steps onto afterwards, which

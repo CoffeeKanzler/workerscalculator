@@ -44,7 +44,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   filterCitizenDiagnostics, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=32';
+} from './save_model.js?v=33';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -57,8 +57,8 @@ import { createVirtualTable } from './ui/virtual_table.js?v=1';
 import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=30';
 import { workerAccessAvailability } from './models/access_graph.js?v=11';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=11';
-import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=6';
-import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=6';
+import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=7';
+import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=8';
 import { mergedFootprints } from './models/building_footprint.js?v=3';
 import {
   buildMapTransportLines,
@@ -6347,6 +6347,9 @@ loadState().then(() => {
   saveState();
   syncHash();
   render();
+  // Tells the shell's boot guard that the module graph linked and ran, so a
+  // retry it recorded is not held against the next visit.
+  dispatchEvent(new Event('appready'));
   announceNewerBuild();
 }).catch(err => {
   $('#app').textContent = 'Failed to load data files: ' + err +

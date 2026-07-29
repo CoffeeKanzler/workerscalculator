@@ -2,64 +2,7 @@
   "schemaVersion": 1,
   "workshopId": "2390787400",
   "source": "steamcmd-anonymous",
-  "extractedAt": "2026-07-29T10:24:27.444Z",
-  "buildings": [
-    {
-      "id": "2390787400/shckola",
-      "nameId": 6252,
-      "types": [
-        "TYPE_SCHOOL"
-      ],
-      "workers": 24,
-      "professors": 36,
-      "production": {},
-      "consumption": {},
-      "consumptionPerSecond": {},
-      "livingSpace": 0,
-      "citizenAbleServe": 45,
-      "qualityOfLiving": null,
-      "attractiveScore": null,
-      "storages": {},
-      "constructionResources": {
-        "workers": 1100,
-        "prefabpanels": 230,
-        "bricks": 5,
-        "boards": 4,
-        "concrete": 30,
-        "steel": 4
-      },
-      "electricWorkerFactors": {},
-      "workshopId": "2390787400",
-      "modPath": "shckola"
-    },
-    {
-      "id": "2390787400/shckola0",
-      "nameId": 6252,
-      "types": [
-        "TYPE_SCHOOL"
-      ],
-      "workers": 18,
-      "professors": 27,
-      "production": {},
-      "consumption": {},
-      "consumptionPerSecond": {},
-      "livingSpace": 0,
-      "citizenAbleServe": 45,
-      "qualityOfLiving": null,
-      "attractiveScore": null,
-      "storages": {},
-      "constructionResources": {
-        "workers": 1100,
-        "prefabpanels": 200,
-        "bricks": 5,
-        "boards": 4,
-        "concrete": 30,
-        "steel": 4
-      },
-      "electricWorkerFactors": {},
-      "workshopId": "2390787400",
-      "modPath": "shckola0"
-    }
-  ],
+  "extractedAt": "2026-07-29T19:42:07.056Z",
+  "buildings": [],
   "vehicles": []
 }

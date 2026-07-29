@@ -2,31 +2,7 @@
   "schemaVersion": 1,
   "workshopId": "2062102200",
   "source": "steamcmd-anonymous",
-  "extractedAt": "2026-07-29T08:47:09.340Z",
-  "buildings": [
-    {
-      "id": "2062102200/refrigerator",
-      "nameId": 6106,
-      "types": [
-        "TYPE_STORAGE"
-      ],
-      "workers": 0,
-      "professors": 0,
-      "production": {},
-      "consumption": {},
-      "consumptionPerSecond": {},
-      "livingSpace": 0,
-      "citizenAbleServe": 0,
-      "qualityOfLiving": null,
-      "attractiveScore": null,
-      "storages": {
-        "RESOURCE_TRANSPORT_COOLER": 2000
-      },
-      "constructionResources": {},
-      "electricWorkerFactors": {},
-      "workshopId": "2062102200",
-      "modPath": "refrigerator"
-    }
-  ],
+  "extractedAt": "2026-07-29T19:42:07.053Z",
+  "buildings": [],
   "vehicles": []
 }

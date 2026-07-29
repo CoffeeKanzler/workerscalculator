@@ -2,30 +2,7 @@
   "schemaVersion": 1,
   "workshopId": "2227838901",
   "source": "steamcmd-anonymous",
-  "extractedAt": "2026-07-29T09:53:39.068Z",
-  "buildings": [
-    {
-      "id": "2227838901/univermag",
-      "nameId": null,
-      "types": [
-        "TYPE_SHOP"
-      ],
-      "workers": 25,
-      "professors": 0,
-      "production": {},
-      "consumption": {},
-      "consumptionPerSecond": {},
-      "livingSpace": 0,
-      "citizenAbleServe": 12,
-      "qualityOfLiving": null,
-      "attractiveScore": null,
-      "storages": {},
-      "constructionResources": {},
-      "electricWorkerFactors": {},
-      "nameStr": "Univermag",
-      "workshopId": "2227838901",
-      "modPath": "univermag"
-    }
-  ],
+  "extractedAt": "2026-07-29T19:42:07.062Z",
+  "buildings": [],
   "vehicles": []
 }
