@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=133';
+import { STRINGS } from './i18n.js?v=135';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -54,12 +54,12 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=18';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=21';
 import {
   mapCountOrDash,
   normalizeMapMetric,
   residenceDetailForBuilding,
-} from './ui/republic_map.js?v=10';
+} from './ui/republic_map.js?v=12';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -2812,11 +2812,11 @@ function renderMapBuildingInspector(building) {
       class: 'map-residence-ledger', 'data-residence-ledger': '',
     },
     el('h4', {}, t('residenceLedger')),
-    kv(t('occupancy'), residence.capacity == null
-      ? mapCountOrDash(residence.residents, fmt)
-      : `${mapCountOrDash(residence.residents, fmt)} / ${mapCountOrDash(residence.capacity, fmt)}`),
-    kv(t('residentComposition'),
-      `${mapCountOrDash(residence.adults, fmt)} ${t('adults')} · `
+    kv(t('adultSpaces'), residence.capacity == null
+      ? mapCountOrDash(residence.occupiedAdultSpaces, fmt)
+      : `${mapCountOrDash(residence.occupiedAdultSpaces, fmt)} / ${mapCountOrDash(residence.capacity, fmt)}`),
+    kv(t('residents'),
+      `${mapCountOrDash(residence.residents, fmt)} · `
       + `${mapCountOrDash(residence.children, fmt)} ${t('children')} · `
       + `${mapCountOrDash(residence.higherEducation, fmt)} ${t('higherEducationShort')}`),
     kv(t('residentWellbeing'),

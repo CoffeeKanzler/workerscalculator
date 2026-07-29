@@ -39,7 +39,15 @@ export function residenceDetailForBuilding(building, summaries, options) {
   const summary = summaries instanceof Map
     ? summaries.get(building.index)
     : summaries.find(detail => detail.buildingIndex === building.index);
-  if (summary) return { ...summary, capacity };
+  if (summary) {
+    return {
+      ...summary,
+      // Children share their parent's apartment: Petrograd #971 has 348 residents,
+      // but only its 217 adults occupy the building's 220 saved housing slots.
+      occupiedAdultSpaces: Number.isFinite(summary.adults) ? summary.adults : null,
+      capacity,
+    };
+  }
   if (!options.residential) return null;
   return {
     buildingIndex: building.index,
@@ -53,6 +61,7 @@ export function residenceDetailForBuilding(building, summaries, options) {
     criminality: null,
     highestCriminality: null,
     highRiskResidents: 0,
+    occupiedAdultSpaces: 0,
     capacity,
   };
 }

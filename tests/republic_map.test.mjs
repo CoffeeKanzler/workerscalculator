@@ -89,16 +89,17 @@ test('residence details join by exact building index and retain exact zero', () 
   }];
   assert.deepEqual(residenceDetailForBuilding(
     { index: 7 }, summaries, { residential: true, capacity: 20 },
-  ), { ...summaries[0], capacity: 20 });
+  ), { ...summaries[0], occupiedAdultSpaces: 8, capacity: 20 });
   assert.deepEqual(residenceDetailForBuilding(
     { index: 7 }, summaries, { residential: false, capacity: null },
-  ), { ...summaries[0], capacity: null });
+  ), { ...summaries[0], occupiedAdultSpaces: 8, capacity: null });
   assert.deepEqual(residenceDetailForBuilding(
     { index: 8 }, summaries, { residential: true, capacity: 40 },
   ), {
     buildingIndex: 8, residents: 0, adults: 0, children: 0,
     higherEducation: 0, health: null, happiness: null, loyalty: null,
     criminality: null, highestCriminality: null, highRiskResidents: 0,
+    occupiedAdultSpaces: 0,
     capacity: 40,
   });
   assert.equal(residenceDetailForBuilding(
