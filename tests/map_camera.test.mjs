@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 
 import {
   cameraTransform, cameraTransformCss, isIdentity, shouldCommit, zoomAround, pointerWorld,
+  withViewportAspect,
 } from '../js/ui/map_camera.js';
 
 const viewport = { width: 1000, height: 500 };
@@ -86,4 +87,57 @@ test('the commit waits for the gesture to pause', () => {
 
 test('a long-running gesture still commits once it stops', () => {
   assert.equal(shouldCommit(0, 10_000), true);
+});
+
+// The svg letterboxes a view that does not match its container; the canvas
+// stretches it. Reshaping the view to the container makes both agree.
+test('a view is reshaped to the container it is drawn in', () => {
+  const shaped = withViewportAspect({ x: 0, y: 0, width: 100, height: 100 },
+    { width: 1000, height: 500 });
+  assert.equal(shaped.height / shaped.width, 0.5);
+});
+
+test('reshaping expands rather than crops, so nothing visible is lost', () => {
+  const view = { x: 0, y: 0, width: 100, height: 100 };
+  const shaped = withViewportAspect(view, { width: 1000, height: 500 });
+  // Wider container than the view is tall: the width grows and the height is
+  // untouched, so every point that was inside still is.
+  assert.ok(shaped.width >= view.width);
+  assert.ok(shaped.height >= view.height);
+  assert.ok(shaped.x <= view.x);
+  assert.ok(shaped.y <= view.y);
+});
+
+test('reshaping keeps the view centred on the same point', () => {
+  const view = { x: 10, y: 20, width: 100, height: 100 };
+  const shaped = withViewportAspect(view, { width: 1000, height: 500 });
+  assert.equal(shaped.x + shaped.width / 2, view.x + view.width / 2);
+  assert.equal(shaped.y + shaped.height / 2, view.y + view.height / 2);
+});
+
+test('a view already matching its container is left alone', () => {
+  const view = { x: 3, y: 4, width: 200, height: 100 };
+  assert.deepEqual(withViewportAspect(view, { width: 1000, height: 500 }), view);
+});
+
+test('a tall container reshapes the other way', () => {
+  const shaped = withViewportAspect({ x: 0, y: 0, width: 200, height: 100 },
+    { width: 500, height: 1000 });
+  assert.equal(shaped.height / shaped.width, 2);
+  assert.equal(shaped.width, 200);
+});
+
+test('reshaping survives a container measured before layout', () => {
+  const view = { x: 0, y: 0, width: 100, height: 50 };
+  assert.deepEqual(withViewportAspect(view, { width: 0, height: 0 }), view);
+});
+
+// Reshaping is what makes the letterbox vanish: once the view matches the
+// container, fitting it uniformly and stretching it are the same thing.
+test('after reshaping, a uniform fit and a stretch agree', () => {
+  const viewport = { width: 1652, height: 756 };
+  const shaped = withViewportAspect({ x: 195.7, y: 141.4, width: 183.4, height: 115.8 }, viewport);
+  const meet = Math.min(viewport.width / shaped.width, viewport.height / shaped.height);
+  assert.ok(Math.abs(meet - viewport.width / shaped.width) < 1e-9);
+  assert.ok(Math.abs(meet - viewport.height / shaped.height) < 1e-9);
 });

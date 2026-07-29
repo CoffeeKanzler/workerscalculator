@@ -56,7 +56,8 @@ import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.j
 import { cursorReadout, tooltipPlacement, plotFraction } from './ui/chart_cursor.js?v=7';
 import {
   cameraTransform, cameraTransformCss, shouldCommit, zoomAround, pointerWorld,
-} from './ui/map_camera.js?v=2';
+  withViewportAspect,
+} from './ui/map_camera.js?v=4';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -2885,7 +2886,14 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   const fullViewBox = { x: 0, y: 0, width: model.width, height: model.height };
   const clampViewBox = view => {
     const width = Math.max(model.width / 32, Math.min(model.width, view.width));
-    const height = width * model.height / model.width;
+    // The caller decides the view's shape. This forced the model's proportions
+    // onto every view, which silently undid the reshaping that makes the svg
+    // and the marker canvas agree, and left every building 227px from the road
+    // it stands on.
+    const aspect = view.width > 0 && view.height > 0
+      ? view.height / view.width
+      : model.height / model.width;
+    const height = width * aspect;
     return {
       x: Math.max(0, Math.min(model.width - width, view.x)),
       y: Math.max(0, Math.min(model.height - height, view.y)),
@@ -2949,7 +2957,12 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   // sits at function scope where both can reach it.
   let draggedDistance = 0;
   const applyStandaloneViewBox = view => {
-    standaloneMapViewBox = clampViewBox(view);
+    // Reshaped to the canvas before anything is drawn: the svg fits a view to
+    // its box and centres it, the canvas stretches it, and the two only agree
+    // when the view already has the box's shape.
+    const box = markerCanvas.getBoundingClientRect();
+    standaloneMapViewBox = clampViewBox(
+      withViewportAspect(view, { width: box.width, height: box.height }));
     const current = standaloneMapViewBox;
     svg.setAttribute('viewBox', `${current.x} ${current.y} ${current.width} ${current.height}`);
     drawMarkerLayer();
@@ -2993,7 +3006,9 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     };
 
     const showView = view => {
-      liveView = clampViewBox(view);
+      const box = mapRect();
+      liveView = clampViewBox(
+        withViewportAspect(view, { width: box.width, height: box.height }));
       lastGestureAt = performance.now();
       if (transformFrame === null) transformFrame = requestAnimationFrame(paintTransform);
       if (commitTimer === null) commitTimer = setTimeout(commitView, 160);
@@ -3285,11 +3300,20 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   // has no layout and sizes itself to the 300x150 default with nothing on it.
   // Observing its box redraws once it has real dimensions, and again whenever
   // the window changes them.
+  //
+  // Re-applying the view rather than only redrawing: the view is reshaped to
+  // the container's proportions, so a window resize changes what the correct
+  // view is, not just how much of the canvas it covers. Setting a viewBox
+  // attribute does not resize anything, so this cannot feed itself.
+  const refit = () => {
+    if (!standalone) return drawMarkerLayer();
+    applyStandaloneViewBox(standaloneMapViewBox ?? activeStandaloneViewBox);
+  };
   if (globalThis.ResizeObserver) {
-    const observer = new ResizeObserver(() => drawMarkerLayer());
+    const observer = new ResizeObserver(() => refit());
     observer.observe(markerCanvas);
   } else {
-    requestAnimationFrame(() => drawMarkerLayer());
+    requestAnimationFrame(() => refit());
   }
 
   if (standalone) {

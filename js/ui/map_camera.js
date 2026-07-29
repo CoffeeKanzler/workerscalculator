@@ -74,3 +74,28 @@ export function pointerWorld(view, offset, viewport) {
     y: view.y + (offset.y / viewport.height) * view.height,
   };
 }
+
+// An svg with a viewBox scales its content to fit and centres it — the default
+// `xMidYMid meet` — so a view whose shape differs from its container is drawn
+// with bars down the sides. The marker canvas has no such rule: it stretches
+// whatever view it is given across its whole width.
+//
+// The two disagreed by 227 pixels on a 1652-wide map, which put every building
+// well away from the road it stands on. Rather than teach the canvas to
+// letterbox, the view is reshaped to the container: then there is nothing to
+// letterbox and the two projections are identical by construction.
+//
+// The view is only ever expanded, never cropped, so everything that was
+// visible stays visible.
+export function withViewportAspect(view, viewport) {
+  if (!(viewport.width > 0) || !(viewport.height > 0)) return { ...view };
+  const target = viewport.height / viewport.width;
+  const current = view.height / view.width;
+  if (Math.abs(current - target) < 1e-9) return { ...view };
+  if (current < target) {
+    const height = view.width * target;
+    return { ...view, y: view.y - (height - view.height) / 2, height };
+  }
+  const width = view.height / target;
+  return { ...view, x: view.x - (width - view.width) / 2, width };
+}

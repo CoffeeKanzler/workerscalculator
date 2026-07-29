@@ -843,7 +843,13 @@ table.data th, table.data td { border-color: var(--border); }
 /* The building inspector floats over the map. Rendered above it, it updated
    out of sight for anyone who had scrolled down far enough to click a marker,
    so selecting a building looked like it did nothing at all. */
-.map-viewport { position: relative; }
+.map-viewport {
+  position: relative;
+  /* The camera layer is translated and scaled during a gesture, so without
+     this it slides out over the rest of the page and a zoom appears to make
+     the map grow rather than to move the view into it. */
+  overflow: hidden;
+}
 /* Both map layers sit in here so a gesture moves them as one image. The
    transform is set from script during a pan or zoom and cleared when the view
    is committed and the layers are re-rendered properly.
