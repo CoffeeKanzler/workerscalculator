@@ -1,0 +1,18 @@
+#!/bin/sh
+# Advance the ?v= cache markers for whatever is staged, then stage the result.
+#
+# GitHub Pages caches for ten minutes, so a module whose marker did not move is
+# served stale beside one that did. Doing this by hand failed three times in a
+# single session, each time producing a fix that looked broken because the
+# browser never loaded it.
+set -e
+
+node tools/bump_cache_versions.mjs
+
+# Re-stage only the files the bumper is allowed to touch, so nothing else the
+# author left unstaged is swept into the commit.
+for file in index.html $(git ls-files 'js/*.js' 'js/**/*.js'); do
+  if [ -f "$file" ] && ! git diff --quiet -- "$file" 2>/dev/null; then
+    git add "$file"
+  fi
+done

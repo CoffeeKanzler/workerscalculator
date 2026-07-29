@@ -29,3 +29,5 @@ export function nextTheme(preference) {
   const index = THEMES.indexOf(preference);
   return THEMES[(index + 1) % THEMES.length] ?? 'auto';
 }
+
+// hook smoke test

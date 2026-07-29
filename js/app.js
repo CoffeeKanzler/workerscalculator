@@ -34,7 +34,7 @@ import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
 import { mapLayerReport } from './models/map_layer_report.js';
-import { isTheme, nextTheme, resolveTheme, themeAttribute } from './ui/theme.js';
+import { isTheme, nextTheme, resolveTheme, themeAttribute } from './ui/theme.js?v=1';
 import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,

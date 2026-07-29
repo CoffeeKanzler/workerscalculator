@@ -766,3 +766,5 @@ table.data th, table.data td { border-color: var(--border); }
   table.data th, table.data td { padding: 10px 12px; }
   table.data.wide { font-size: 17px; }
 }
+
+/* hook smoke test */
