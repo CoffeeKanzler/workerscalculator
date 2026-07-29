@@ -1,0 +1,98 @@
+# Keeps the Workshop catalogue current.
+#
+# The catalogue was filled once from a hand-assembled backlog. That closes the
+# gap but does not hold it: the Workshop gains items continuously, and a save
+# using one the catalogue has never seen shows a raw `3153910867/pojazdy4`
+# where a building name belongs, and a grey 'other' dot where the map should
+# know what the building is for.
+#
+# Only extracted metadata is committed — building and vehicle definitions, a
+# few kilobytes each. The raw downloads are models and textures the app never
+# reads; they are pruned as they are catalogued and never leave the runner.
+name: workshop catalogue
+
+on:
+  schedule:
+    # Early morning UTC, when nothing else is running against the repo.
+    - cron: '17 4 * * *'
+  # So it can be run by hand after a Workshop surge without waiting a day.
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: 'Listing pages to walk (30 items each)'
+        required: false
+        default: '3'
+
+permissions:
+  contents: write
+
+# A run that overlaps another would fetch the same items twice and race on the
+# commit.
+concurrency:
+  group: workshop-catalogue
+  cancel-in-progress: false
+
+jobs:
+  catalogue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install steamcmd
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update -qq
+          # steamcmd itself is a 32-bit binary, hence the i386 runtime.
+          sudo apt-get install -y -qq lib32gcc-s1 > /dev/null
+          mkdir -p "$RUNNER_TEMP/steamcmd"
+          curl -sqL https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz \
+            | tar zxf - -C "$RUNNER_TEMP/steamcmd"
+
+      - name: Find items published since the last run
+        id: recent
+        run: |
+          PAGES="${{ github.event.inputs.pages || '3' }}"
+          node tools/workshop_recent.mjs --pages "$PAGES" --out "$RUNNER_TEMP/backlog.txt"
+          COUNT=$(wc -l < "$RUNNER_TEMP/backlog.txt" | tr -d ' ')
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "$COUNT item(s) to fetch"
+
+      # Anonymous login, so there are no credentials here and nothing to leak.
+      # --prune deletes each raw download once its definitions are extracted,
+      # which is what keeps this inside a runner's disk.
+      - name: Fetch and catalogue
+        if: steps.recent.outputs.count != '0'
+        run: |
+          STEAMCMD="$RUNNER_TEMP/steamcmd/steamcmd.sh" \
+            node tools/workshop_fetch.mjs \
+              --ids-file "$RUNNER_TEMP/backlog.txt" --batch-size 50 --prune
+
+      - name: Commit the new definitions
+        if: steps.recent.outputs.count != '0'
+        run: |
+          if [ -z "$(git status --porcelain data/workshop)" ]; then
+            echo "no catalogue change; nothing to commit"
+            exit 0
+          fi
+          # data/ changed, so the app's DATA_V marker has to move or Pages
+          # serves the old catalogue beside the new index for ten minutes.
+          node tools/bump_cache_versions.mjs $(git status --porcelain | awk '{print $2}')
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/workshop index.html js css
+          git commit -m "Catalogue $(git status --porcelain data/workshop | wc -l | tr -d ' ') new Workshop items
+
+Fetched by the scheduled catalogue run: metadata only, anonymous steamcmd.
+Raw downloads were pruned on the runner and never committed."
+          git push
+
+      - name: Report
+        run: |
+          node -e "
+            const index = require('./data/workshop/index.json');
+            console.log('catalogue holds', index.itemCount ?? (index.ids || []).length, 'items');
+          "
