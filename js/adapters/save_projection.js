@@ -12,7 +12,7 @@ import {
   summarizeResidenceDetails,
   summarizeResidenceOccupancy,
   summarizeVehicleLines,
-} from '../save_model.js?v=10';
+} from '../save_model.js?v=11';
 import {
   createEvidence,
   createEvidenceCollection,

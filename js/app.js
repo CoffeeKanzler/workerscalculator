@@ -44,7 +44,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   filterCitizenDiagnostics, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=31';
+} from './save_model.js?v=32';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -59,7 +59,7 @@ import { workerAccessAvailability } from './models/access_graph.js?v=11';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=11';
 import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=6';
 import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=6';
-import { mergedFootprints } from './models/building_footprint.js?v=2';
+import { mergedFootprints } from './models/building_footprint.js?v=3';
 import {
   buildMapTransportLines,
   mapCountOrDash,
