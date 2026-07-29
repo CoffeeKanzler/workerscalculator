@@ -159,28 +159,30 @@ try {
     // Clicking a marker opens the inspector. The marker element is clicked
     // rather than a guessed coordinate: markers are a few pixels across, and a
     // near miss reads identically to a broken handler.
-    // The earlier gesture checks left the map zoomed somewhere, so most
-    // markers are off screen. Pick one that is actually visible.
-    const target = await page.evaluateHandle(() => {
-      for (const marker of document.querySelectorAll('svg.republic-map .map-buildings [data-map-kind]')) {
+    // A real mouse click, not a dispatched one. Dispatching bypasses pointer
+    // capture, and pointer capture is precisely what broke this: the svg
+    // captured the pointer on press, the browser retargeted the click to the
+    // svg, and no marker ever saw it. A dispatched click passed throughout.
+    const spot = await page.evaluate(() => {
+      for (const marker of document.querySelectorAll(
+        'svg.republic-map .map-buildings [data-map-kind="building"]')) {
         const rect = marker.getBoundingClientRect();
-        if (rect.width <= 0 || rect.height <= 0) continue;
-        if (rect.top < 0 || rect.left < 0) continue;
-        if (rect.bottom > window.innerHeight || rect.right > window.innerWidth) continue;
-        return marker;
+        if (rect.width <= 0) continue;
+        if (rect.top < 60 || rect.bottom > window.innerHeight - 20) continue;
+        const x = rect.x + rect.width / 2;
+        const y = rect.y + rect.height / 2;
+        // Markers overlap heavily; only click one nothing else covers.
+        if (document.elementFromPoint(x, y) !== marker) continue;
+        return { x, y };
       }
       return null;
     });
-    const element = target.asElement();
-    check(element, 'no map marker was visible to click');
-    if (element) {
-      // Dispatched rather than a real mouse click: markers overlap heavily on
-      // a dense republic, and Playwright refuses to click one another marker
-      // covers even by a pixel. What is under test is the handler, not the
-      // browser's hit-testing.
-      await element.dispatchEvent('click');
-      await page.waitForTimeout(600);
+    check(spot, 'no unobstructed building marker was visible to click');
+    if (spot) {
+      await page.mouse.click(spot.x, spot.y);
+      await page.waitForTimeout(700);
     }
+
     const inspector = await page.evaluate(() => {
       const panel = document.querySelector('.map-building-inspector');
       if (!panel || panel.classList.contains('empty')) return null;

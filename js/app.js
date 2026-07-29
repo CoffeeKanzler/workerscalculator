@@ -3029,10 +3029,19 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       stopWheelAnimation();
       const current = currentCamera();
       drag = { x: event.clientX, y: event.clientY, view: { ...current }, rect: mapRect() };
-      svg.setPointerCapture(event.pointerId);
+      // Deliberately not capturing the pointer here. Capturing on press
+      // retargets the following click to the svg, so a marker's own click
+      // handler never ran and selecting a building did nothing at all.
+      // Capture starts below, once the pointer has actually moved.
     });
     svg.addEventListener('pointermove', event => {
       if (!drag) return;
+      const travelled = Math.abs(event.clientX - drag.x) + Math.abs(event.clientY - drag.y);
+      // A press that has not moved is still a click in progress. Only a real
+      // drag needs the pointer captured, and then it needs it so that panning
+      // continues when the cursor leaves the map.
+      if (travelled <= 3) return;
+      if (!svg.hasPointerCapture(event.pointerId)) svg.setPointerCapture(event.pointerId);
       scheduleCamera({
         ...drag.view,
         x: drag.view.x - (event.clientX - drag.x) / drag.rect.width * drag.view.width,
@@ -3182,8 +3191,8 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     const displayName = mapBuildingDisplayName(building);
     const mark = markFor(building);
     const special = borderPost || outlier || building.focused;
-    const radius = (building.focused ? 7.5 : outlier ? 5 : borderPost ? 4.5
-      : selected ? 2.6 : 2 * mark.scale) * mapPointScale;
+    const radius = (building.focused ? 7.5 : borderPost ? 4.5 : outlier ? 5.5
+      : selected ? 2.4 : 1.35 * mark.scale) * mapPointScale;
     const shape = special ? 'circle' : mark.shape;
     const cx = Number(building.mapX.toFixed(2));
     const cy = Number(building.mapY.toFixed(2));
