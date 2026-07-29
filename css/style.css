@@ -110,6 +110,18 @@ section { animation: none; }
 .vehicletotals { margin-top: 10px; }
 .recommendations { margin-bottom: 14px; }
 .tablewrap { max-width: 100%; overflow-x: auto; }
+.virtual-tablewrap {
+  max-height: min(68vh, 680px);
+  overflow: auto;
+  position: relative;
+}
+.virtual-tablewrap table.data { margin: 0; }
+.virtual-tablewrap tbody tr:not(.virtual-spacer) td { white-space: nowrap; }
+.virtual-spacer td { padding: 0; border: 0; }
+.virtual-tablewrap:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
 
 table.data {
   border-collapse: collapse; width: 100%;
