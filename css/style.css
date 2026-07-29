@@ -766,3 +766,17 @@ table.data th, table.data td { border-color: var(--border); }
   table.data th, table.data td { padding: 10px 12px; }
   table.data.wide { font-size: 17px; }
 }
+
+/* Map markers carry their category in shape and colour: houses, production and
+   services are what a player looks for, so infrastructure recedes behind them
+   rather than competing at the same weight. The base rule below targets circle
+   only, so squares and diamonds need the same footing or they draw unfilled. */
+.republic-map .map-buildings rect,
+.republic-map .map-buildings polygon { fill: var(--muted); opacity: .52; }
+.republic-map .map-buildings [data-map-category="living"] { fill: var(--blueprint); opacity: .95; }
+.republic-map .map-buildings [data-map-category="industry"] { fill: var(--accent); opacity: .95; }
+.republic-map .map-buildings [data-map-category="services"] { fill: var(--pos); opacity: .95; }
+.republic-map .map-buildings [data-map-category="support"],
+.republic-map .map-buildings [data-map-category="other"] { fill: var(--muted); opacity: .45; }
+.map-legend { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 6px 0; }
+.map-legend span { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); font-size: 12px; }

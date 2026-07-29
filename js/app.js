@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=114';
+import { STRINGS } from './i18n.js?v=116';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=29';
@@ -10,7 +10,7 @@ import { completedPaidResearchKeys } from './research.js?v=2';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
-} from './train.js?v=17';
+} from './train.js?v=18';
 import {
   createIndexedDbObservationStore,
   createIndexedDbPlanningStore,
@@ -34,6 +34,9 @@ import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
 import { mapLayerReport } from './models/map_layer_report.js';
+import {
+  CATEGORY_MARKS, buildTypeCategoryIndex, categoryForSaveType,
+} from './models/building_category.js?v=2';
 import { republicTrendAlerts } from './models/republic_trends.js?v=1';
 import { isTheme, nextTheme, resolveTheme, themeAttribute } from './ui/theme.js?v=2';
 import {
@@ -48,15 +51,15 @@ import {
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
-  filterAndSortVehicleOpportunities, rankUsedVehicleReplacements,
+  filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
   paginateVehicleOpportunities, shareSafeSaveImport, vehicleCategoryGroup,
   vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=14';
+} from './fleet.js?v=16';
 import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=2';
+} from './adapters/save_folder_adapter.js?v=3';
 import { matchSaveBuilding } from './adapters/save_projection.js?v=2';
 import { bootstrapRuntime } from './bootstrap.js?v=1';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
@@ -3083,6 +3086,12 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
         ? kv(t('staffing'), `${fmt(building.currentWorkers ?? 0, 0)} / ${fmt(buildingEstablishment(building), 0)}`) : null,
       kv(t('mapCoordinates'), `X ${fmt(building.x, 1)} · Z ${fmt(building.z, 1)}`));
   };
+  // One pass over the dataset, so each marker costs a Map lookup rather than a
+  // search through it.
+  const categoryIndex = buildTypeCategoryIndex(DATA?.rawBuildings ?? []);
+  const markFor = building => CATEGORY_MARKS[categoryForSaveType(building.type, categoryIndex)]
+    ?? CATEGORY_MARKS.other;
+
   const inspectBuilding = (building, circle) => {
     mapSelectedBuildingIndex = building.index;
     for (const marker of svg.querySelectorAll('circle.map-inspected')) marker.classList.remove('map-inspected');
@@ -3096,8 +3105,23 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     const outlier = building.criminalityOutlier;
     const underConstruction = (building.constructionProgress ?? 1) < 1;
     const displayName = mapBuildingDisplayName(building);
-    const circle = node('circle', {
-      cx: building.mapX.toFixed(2), cy: building.mapY.toFixed(2),
+    const mark = markFor(building);
+    const special = borderPost || outlier || building.focused;
+    const radius = (building.focused ? 7.5 : borderPost ? 4.5 : outlier ? 5.5
+      : selected ? 2.4 : 1.35 * mark.scale) * mapPointScale;
+    const shape = special ? 'circle' : mark.shape;
+    const cx = Number(building.mapX.toFixed(2));
+    const cy = Number(building.mapY.toFixed(2));
+    const geometry = shape === 'square'
+      ? { x: (cx - radius).toFixed(2), y: (cy - radius).toFixed(2),
+        width: (radius * 2).toFixed(2), height: (radius * 2).toFixed(2) }
+      : shape === 'diamond'
+        ? { points: [[cx, cy - radius], [cx + radius, cy], [cx, cy + radius], [cx - radius, cy]]
+          .map(([x, y]) => `${x.toFixed(2)},${y.toFixed(2)}`).join(' ') }
+        : { cx: cx.toFixed(2), cy: cy.toFixed(2), r: radius };
+    const circle = node(shape === 'square' ? 'rect' : shape === 'diamond' ? 'polygon' : 'circle', {
+      ...geometry,
+      'data-map-category': special ? 'status' : categoryForSaveType(building.type, categoryIndex),
       'data-building-type': building.type ?? '',
       'data-building-label': displayName,
       'data-building-name': building.name ?? '',
@@ -3105,7 +3129,6 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       'data-map-outlier': outlier ? 'true' : 'false',
       'data-map-selected': selected ? 'true' : 'false',
       ...(standalone ? { tabindex: '0', role: 'button', 'aria-label': displayName } : {}),
-      r: (building.focused ? 7.5 : borderPost ? 4.5 : outlier ? 5.5 : selected ? 2.4 : 1.35) * mapPointScale,
       class: [building.focused ? 'focused' : '', underConstruction ? 'under-construction' : '',
         borderPost ? 'border-post' : '', building.index === mapSelectedBuildingIndex ? 'map-inspected' : '']
         .filter(Boolean).join(' '),
@@ -3805,6 +3828,11 @@ function renderLogistics() {
     ? usedFleetRecords.map(offer => vehicleUsedMarketQuote(offer, {
       year: priceRecord.year, currency: state.currency, economy: eco,
     })).filter(Boolean).sort((a, b) => a.purchaseValue - b.purchaseValue) : [];
+  // Buy off the used market and scrap it for materials: a trade to act on now,
+  // as opposed to an appraisal of vehicles already owned.
+  const scrapArbitrage = rankUsedMarketArbitrage(exactUsedVehicleQuotes, {
+    currency: state.currency, economy: eco,
+  });
   const replacementCandidates = rankUsedVehicleReplacements(
     exactFleetOpportunities, exactUsedVehicleQuotes,
   );
@@ -3871,6 +3899,17 @@ function renderLogistics() {
       : el('p', { class: 'hint warn' }, t('fleetNoExactOpportunities')),
     el('p', { class: 'hint' }, t('fleetCoverageHint')
       .replace('{exact}', fmt(exactFleetOpportunities.length, 0)).replace('{total}', fmt(fleetRecords.length, 0))),
+    scrapArbitrage.length ? el('div', { class: 'used-fleet-offers scrap-arbitrage' },
+      el('h4', {}, t('fleetScrapArbitrageHeading')),
+      el('p', { class: 'hint' }, t('fleetScrapArbitrageHint')),
+      el('div', { class: 'institution-grid' }, ...scrapArbitrage.slice(0, 3).map(row =>
+        el('div', { class: 'totalsbox institution-card' },
+          el('h3', {}, row.quote.offer.modelFacts.name,
+            el('span', { class: 'evidence-badge exact' }, t('exact'))),
+          kv(t('fleetScrapBuyPrice'), fmt(row.purchaseValue, 0) + ' ' + cur()),
+          kv(t('fleetScrapRecovered'), fmt(row.recoveredValue.immediateExportValue, 0) + ' ' + cur()),
+          kv(t('fleetScrapLabor'), '-' + fmt(row.laborCost, 0) + ' ' + cur()),
+          kv(t('fleetScrapProfit'), fmt(row.profit, 0) + ' ' + cur(), 'pos')))) ) : null,
     exactUsedVehicleQuotes.length ? el('div', { class: 'used-fleet-offers' },
       el('h4', {}, t('fleetUsedHeading')),
       el('p', { class: 'hint' }, t('fleetUsedHint')),

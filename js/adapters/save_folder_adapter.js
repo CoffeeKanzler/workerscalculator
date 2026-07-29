@@ -1,4 +1,4 @@
-import { resolveVehicleModels } from '../fleet.js';
+import { resolveVehicleModels } from '../fleet.js?v=2';
 import { latestProductivity } from '../save_model.js';
 import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=2';
 

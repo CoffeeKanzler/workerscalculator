@@ -363,6 +363,60 @@ export function shipUsedMarketQuote(offer, options) {
   return vehicleUsedMarketQuote(offer, options);
 }
 
+// Buy off the used market, scrap it, keep the materials. The recycling side of
+// this was only ever asked about vehicles already owned, which answers a
+// different question — whether to sell what you have. This asks whether a
+// listing is worth buying purely for what it breaks down into, which is a
+// trade you can act on right now rather than an appraisal of your own fleet.
+//
+// Labour is charged at the workday price, because the workdays spent scrapping
+// are workdays not spent elsewhere; a profit that ignores them is not real.
+export function usedMarketRecyclingArbitrage(quote, { currency, economy }) {
+  const facts = quote?.offer?.modelFacts;
+  if (!facts || !Number.isFinite(quote?.purchaseValue)) return null;
+  const recycling = normalVehicleRecyclingTargets({
+    runtimeCategory: facts.runtimeCategory,
+    emptyWeight: facts.emptyWeight,
+    powerKW: facts.powerKW,
+    introductionYear: facts.availableFrom,
+    transportSubtype: facts.transportSubtype,
+    capacity: facts.capacity ?? 0,
+    electric: facts.electric,
+    roadRecipeBranch: facts.roadRecipeBranch,
+    singleHorsePower: facts.singleHorsePower,
+    // null would override the parameter default; an absent cargo is no cargo.
+    cargo: quote.offer?.cargo ?? [],
+  });
+  if (!recycling) return null;
+
+  const recovered = valueRecoveredMaterials(recycling.materials, currency, economy);
+  const workdayPrice = economy.workday(currency);
+  const laborCost = Number.isFinite(workdayPrice) ? recycling.workdays * workdayPrice : null;
+  if (!Number.isFinite(recovered.immediateExportValue) || !Number.isFinite(laborCost)) return null;
+
+  const netRecycleValue = recovered.immediateExportValue - laborCost;
+  const profit = netRecycleValue - quote.purchaseValue;
+  return {
+    quote,
+    purchaseValue: quote.purchaseValue,
+    recycling,
+    recoveredValue: recovered,
+    laborCost,
+    netRecycleValue,
+    profit,
+    // Only a positive margin is a trade; the rest is an offer to decline.
+    worthBuying: profit > 0,
+  };
+}
+
+// Best trade first, and offers that lose money are not trades.
+export function rankUsedMarketArbitrage(quotes, options) {
+  return (quotes ?? [])
+    .map(quote => usedMarketRecyclingArbitrage(quote, options))
+    .filter(row => row?.worthBuying)
+    .sort((a, b) => b.profit - a.profit);
+}
+
 export function rankUsedVehicleReplacements(ownedOpportunities, usedQuotes) {
   if (!Array.isArray(ownedOpportunities) || !Array.isArray(usedQuotes)) return [];
   const results = [];

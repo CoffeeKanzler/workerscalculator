@@ -615,3 +615,79 @@ test('shared plans retain fleet coverage but omit per-vehicle save facts', () =>
   assert.equal('pollutionLayer' in shared, false);
   assert.equal(source.ownedVehicles.length, 1);
 });
+
+// Buying off the used market to scrap for materials is a trade you can act on
+// now. The recycling maths existed but was only ever asked about vehicles
+// already owned, which answers the different question of whether to sell what
+// you have.
+function arbitrageFixture({ purchaseValue }) {
+  const economy = {
+    workday: () => 10,
+    sell: () => 100,
+    buy: () => 120,
+  };
+  const quote = {
+    purchaseValue,
+    offer: {
+      cargo: null,
+      modelFacts: {
+        runtimeCategory: 2,
+        emptyWeight: 8000,
+        powerKW: 120,
+        availableFrom: 1960,
+        transportSubtype: 0,
+        capacity: 0,
+        electric: false,
+        roadRecipeBranch: null,
+        singleHorsePower: null,
+        originCurrency: 'RUB',
+        lifespanDays: 3650,
+      },
+    },
+  };
+  return { quote, economy };
+}
+
+test('a used offer worth less than its scrap is flagged as worth buying', async () => {
+  const { usedMarketRecyclingArbitrage } = await import('../js/fleet.js');
+  const { quote, economy } = arbitrageFixture({ purchaseValue: 1 });
+
+  const row = usedMarketRecyclingArbitrage(quote, { currency: 'RUB', economy });
+  assert.ok(row, 'the fixture should produce a valuation');
+  assert.equal(row.profit, row.netRecycleValue - row.purchaseValue);
+  assert.equal(row.worthBuying, row.profit > 0);
+  // Labour is charged: scrapping costs workdays that could be spent elsewhere.
+  assert.equal(row.netRecycleValue, row.recoveredValue.immediateExportValue - row.laborCost);
+  assert.ok(row.laborCost >= 0);
+});
+
+test('an offer priced above its scrap value is not a trade', async () => {
+  const { usedMarketRecyclingArbitrage } = await import('../js/fleet.js');
+  const { quote, economy } = arbitrageFixture({ purchaseValue: 1e9 });
+
+  const row = usedMarketRecyclingArbitrage(quote, { currency: 'RUB', economy });
+  assert.equal(row.worthBuying, false);
+  assert.ok(row.profit < 0);
+});
+
+test('ranking keeps only trades, best margin first', async () => {
+  const { rankUsedMarketArbitrage } = await import('../js/fleet.js');
+  const { economy } = arbitrageFixture({ purchaseValue: 1 });
+  const cheap = arbitrageFixture({ purchaseValue: 1 }).quote;
+  const dear = arbitrageFixture({ purchaseValue: 1e9 }).quote;
+
+  const ranked = rankUsedMarketArbitrage([dear, cheap], { currency: 'RUB', economy });
+  assert.ok(ranked.every(row => row.profit > 0), 'losing offers are not trades');
+  for (let i = 1; i < ranked.length; i += 1) {
+    assert.ok(ranked[i - 1].profit >= ranked[i].profit, 'best margin first');
+  }
+});
+
+test('an offer with no model facts is skipped rather than guessed at', async () => {
+  const { usedMarketRecyclingArbitrage, rankUsedMarketArbitrage } = await import('../js/fleet.js');
+  const economy = { workday: () => 10, sell: () => 100, buy: () => 120 };
+
+  assert.equal(usedMarketRecyclingArbitrage(null, { currency: 'RUB', economy }), null);
+  assert.equal(usedMarketRecyclingArbitrage({ purchaseValue: 5 }, { currency: 'RUB', economy }), null);
+  assert.deepEqual(rankUsedMarketArbitrage(null, { currency: 'RUB', economy }), []);
+});
