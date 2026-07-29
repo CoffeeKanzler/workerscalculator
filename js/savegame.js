@@ -164,6 +164,13 @@ export function parseRoadNetwork(buffer) {
     const from = c.view.getInt32(start + 0x04, true);
     const to = c.view.getInt32(start + 0x08, true);
     const length = c.view.getFloat32(start + 0x3c, true);
+    // The loaded edge object keeps this run of fields at runtime offsets 0x11c..0x12c,
+    // exactly 0xe0 above the serialized header. The runtime asset-name resolver switches
+    // on 0x12c (network class), then 0x120 (type) and 0x124 (subtype); the same triple is
+    // what the build menu feeds to the speed-factor table, so it identifies the surface.
+    const surfaceType = c.view.getInt32(start + 0x40, true);
+    const surfaceSubtype = c.view.getInt32(start + 0x44, true);
+    const networkClass = c.view.getInt32(start + 0x4c, true);
     if (from < 0 || from >= nodeCount || to < 0 || to >= nodeCount) {
       throw new Error(`road edge ${index}: invalid endpoints ${from}/${to}`);
     }
@@ -218,6 +225,7 @@ export function parseRoadNetwork(buffer) {
     c.skip(0x18, `road edge ${index} tail vectors`);
     edges.push({
       id: index, from, to, length, points,
+      surfaceType, surfaceSubtype, networkClass,
       ...(referencedObjectIds.length ? { referencedObjectIds } : {}),
     });
   }
@@ -872,6 +880,33 @@ function skipEd810(c, context) {
   c.skip(0x28 + count * 0x48, context);
 }
 
+// A building's connection slots are the game's own record of where the asset meets a
+// network. The loader restores each slot's network object by looking up the saved
+// (id, class) pair, so these references — not proximity — are the authoritative
+// building-to-network binding. Slots whose reference is -1 were never connected.
+function readConnections(c, count, context) {
+  const connections = [];
+  for (let index = 0; index < count; index += 1) {
+    const start = c.offset;
+    c.require(0x3c, `${context}[${index}]`);
+    const references = [];
+    for (const offset of [0x20, 0x28]) {
+      const id = c.view.getInt32(start + offset, true);
+      if (id < 0) continue;
+      references.push({ id, networkClass: c.view.getInt32(start + offset + 4, true) });
+    }
+    connections.push({
+      kind: c.view.getInt32(start, true),
+      x: c.view.getFloat32(start + 0x08, true),
+      y: c.view.getFloat32(start + 0x0c, true),
+      z: c.view.getFloat32(start + 0x10, true),
+      references,
+    });
+    c.offset = start + 0x3c;
+  }
+  return connections;
+}
+
 export function parseBuildingsGame(buffer, { onProgress } = {}) {
   const c = new BinaryCursor(buffer);
   const total = c.u32('building count');
@@ -944,7 +979,7 @@ export function parseBuildingsGame(buffer, { onProgress } = {}) {
     }
     c.skip(c.view.getUint8(start + second(0x821)), `building ${index}.821`);
 
-    c.skip(fixedCount(start, 0x304) * 0x3c, `building ${index}.304`);
+    record.connections = readConnections(c, fixedCount(start, 0x304), `building ${index}.304`);
     c.skip(fixedCount(start, 0x300) * 0x3c, `building ${index}.300`);
     c.skip(fixedCount(start, 0x2fc) * 0x20, `building ${index}.2fc`);
     c.skip(fixedCount(start, 0x2d8) * 0x20, `building ${index}.2d8`);
