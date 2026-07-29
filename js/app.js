@@ -65,9 +65,9 @@ import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=6';
+} from './adapters/save_folder_adapter.js?v=7';
 import { matchSaveBuilding } from './adapters/save_projection.js?v=4';
-import { bootstrapRuntime } from './bootstrap.js?v=2';
+import { bootstrapRuntime } from './bootstrap.js?v=3';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
