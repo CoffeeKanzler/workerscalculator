@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3293488314",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.616Z",
+  "buildings": [
+    {
+      "id": "3293488314/HOUSE1",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Red Rocket",
+      "workshopId": "3293488314",
+      "modPath": "HOUSE1"
+    },
+    {
+      "id": "3293488314/HOUSE2",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Red Rocket CTV",
+      "workshopId": "3293488314",
+      "modPath": "HOUSE2"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2934203546",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.610Z",
+  "buildings": [
+    {
+      "id": "2934203546/pompa_cieplociag",
+      "nameId": 6330,
+      "types": [
+        "TYPE_HEATING_SWITCH"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2934203546",
+      "modPath": "pompa_cieplociag"
+    },
+    {
+      "id": "2934203546/pompa_ropa1",
+      "nameId": 6056,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2934203546",
+      "modPath": "pompa_ropa1"
+    },
+    {
+      "id": "2934203546/pompa_ropa2",
+      "nameId": 6056,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2934203546",
+      "modPath": "pompa_ropa2"
+    },
+    {
+      "id": "2934203546/pompa_woda",
+      "nameId": 7507,
+      "types": [
+        "TYPE_WATER_PUMP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 10
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2934203546",
+      "modPath": "pompa_woda"
+    }
+  ],
+  "vehicles": []
+}

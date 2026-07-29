@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3103565058",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.612Z",
+  "buildings": [
+    {
+      "id": "3103565058/elevated_station_5",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated Train & Bus Station",
+      "workshopId": "3103565058",
+      "modPath": "elevated_station_5"
+    },
+    {
+      "id": "3103565058/elevated_station_6",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated Metro & Bus Station",
+      "workshopId": "3103565058",
+      "modPath": "elevated_station_6"
+    },
+    {
+      "id": "3103565058/elevated_station_7",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Elevated Train & Bus Station",
+      "workshopId": "3103565058",
+      "modPath": "elevated_station_7"
+    }
+  ],
+  "vehicles": []
+}

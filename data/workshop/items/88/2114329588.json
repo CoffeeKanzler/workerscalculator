@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2114329588",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.566Z",
+  "buildings": [
+    {
+      "id": "2114329588/conveyortower1to1",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Tower",
+      "workshopId": "2114329588",
+      "modPath": "conveyortower1to1"
+    },
+    {
+      "id": "2114329588/conveyortower1to1noroad",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Tower (no road connection)",
+      "workshopId": "2114329588",
+      "modPath": "conveyortower1to1noroad"
+    },
+    {
+      "id": "2114329588/conveyortower1to3",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Tower 1-to-3",
+      "workshopId": "2114329588",
+      "modPath": "conveyortower1to3"
+    },
+    {
+      "id": "2114329588/conveyortower1to3noroad",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Tower 1-to-3 (no road connection)",
+      "workshopId": "2114329588",
+      "modPath": "conveyortower1to3noroad"
+    },
+    {
+      "id": "2114329588/conveyortower3to1",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Tower 3-to-1",
+      "workshopId": "2114329588",
+      "modPath": "conveyortower3to1"
+    },
+    {
+      "id": "2114329588/conveyortower3to1noroad",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Conveyor Tower 3-to-1 (no road connection)",
+      "workshopId": "2114329588",
+      "modPath": "conveyortower3to1noroad"
+    }
+  ],
+  "vehicles": []
+}

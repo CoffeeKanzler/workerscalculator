@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2854744124",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.607Z",
+  "buildings": [
+    {
+      "id": "2854744124/Lamp",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PRIOR lamp",
+      "workshopId": "2854744124",
+      "modPath": "Lamp"
+    },
+    {
+      "id": "2854744124/Logo",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "asphalt": 0.1,
+        "workers": 30,
+        "steel": 3,
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PRIOR Logo",
+      "workshopId": "2854744124",
+      "modPath": "Logo"
+    },
+    {
+      "id": "2854744124/Parking",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 1,
+        "workers": 40,
+        "ecomponents": 0.1,
+        "steel": 1,
+        "asphalt": 8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PRIOR parking",
+      "workshopId": "2854744124",
+      "modPath": "Parking"
+    },
+    {
+      "id": "2854744124/Prior",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.5,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 40,
+        "asphalt": 90,
+        "concrete": 360,
+        "steel": 200,
+        "workers": 2650,
+        "bricks": 530,
+        "boards": 310,
+        "prefabpanels": 100,
+        "ecomponents": 8,
+        "mcomponents": 24
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Department store PRIOR",
+      "workshopId": "2854744124",
+      "modPath": "Prior"
+    },
+    {
+      "id": "2854744124/Railing12",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PRIOR railing 12m",
+      "workshopId": "2854744124",
+      "modPath": "Railing12"
+    },
+    {
+      "id": "2854744124/Railing4",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PRIOR railing 4m",
+      "workshopId": "2854744124",
+      "modPath": "Railing4"
+    },
+    {
+      "id": "2854744124/Ramp",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 2,
+        "concrete": 8,
+        "workers": 240,
+        "bricks": 2,
+        "steel": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PRIOR Ramp",
+      "workshopId": "2854744124",
+      "modPath": "Ramp"
+    },
+    {
+      "id": "2854744124/StairsL",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 2,
+        "concrete": 10,
+        "workers": 240,
+        "bricks": 6,
+        "steel": 3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PRIOR Stairs large",
+      "workshopId": "2854744124",
+      "modPath": "StairsL"
+    },
+    {
+      "id": "2854744124/StairsS",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 2,
+        "concrete": 5,
+        "workers": 190,
+        "bricks": 1,
+        "steel": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PRIOR Stairs small",
+      "workshopId": "2854744124",
+      "modPath": "StairsS"
+    }
+  ],
+  "vehicles": []
+}

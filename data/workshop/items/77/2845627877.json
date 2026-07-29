@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2845627877",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.599Z",
+  "buildings": [
+    {
+      "id": "2845627877/arbed",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 300,
+      "professors": 25,
+      "production": {
+        "steel": 0.32,
+        "waste_gravel": 0.04
+      },
+      "consumption": {
+        "fuel": 0.01,
+        "waste_steel": 0.6
+      },
+      "consumptionPerSecond": {
+        "eletric": 53.3
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Four electrique",
+      "workshopId": "2845627877",
+      "modPath": "arbed"
+    },
+    {
+      "id": "2845627877/backyardblastfurnace",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "waste_steel": 0.03
+      },
+      "consumption": {
+        "wood": 0.5,
+        "iron": 0.07
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Backyard Blast Furnace",
+      "workshopId": "2845627877",
+      "modPath": "backyardblastfurnace"
+    },
+    {
+      "id": "2845627877/bigblastfurnace",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 600,
+      "professors": 50,
+      "production": {
+        "steel": 0.25,
+        "waste_gravel": 0.05
+      },
+      "consumption": {
+        "coal": 0.9,
+        "iron": 1,
+        "fuel": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big Blast furnace",
+      "workshopId": "2845627877",
+      "modPath": "bigblastfurnace"
+    },
+    {
+      "id": "2845627877/bigconveyer",
+      "nameId": 6167,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2845627877",
+      "modPath": "bigconveyer"
+    },
+    {
+      "id": "2845627877/bigconveyerhigh",
+      "nameId": 6167,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2845627877",
+      "modPath": "bigconveyerhigh"
+    },
+    {
+      "id": "2845627877/coalmine",
+      "nameId": 6159,
+      "types": [
+        "TYPE_MINE_COAL"
+      ],
+      "workers": 500,
+      "professors": 0,
+      "production": {
+        "rawcoal": 5.5,
+        "waste_gravel": 0.1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3050,
+        "concrete": 380,
+        "steel": 100,
+        "mcomponents": 10
+      },
+      "electricWorkerFactors": {
+        "lighting": 2.5,
+        "living": 3
+      },
+      "workshopId": "2845627877",
+      "modPath": "coalmine"
+    },
+    {
+      "id": "2845627877/converter",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 500,
+      "professors": 0,
+      "production": {
+        "mcomponents": 0.1
+      },
+      "consumption": {
+        "steel": 0.101,
+        "oil": 0.005
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Converter",
+      "workshopId": "2845627877",
+      "modPath": "converter"
+    },
+    {
+      "id": "2845627877/driplant",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "waste_steel": 4
+      },
+      "consumption": {
+        "oil": 1,
+        "iron": 7
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.2
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Direct Reduction Plant",
+      "workshopId": "2845627877",
+      "modPath": "driplant"
+    },
+    {
+      "id": "2845627877/endlager",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 500
+      },
+      "constructionResources": {
+        "workers": 3050,
+        "concrete": 380,
+        "steel": 100,
+        "mcomponents": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Deep geological repository",
+      "workshopId": "2845627877",
+      "modPath": "endlager"
+    },
+    {
+      "id": "2845627877/endlager2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 10000
+      },
+      "constructionResources": {
+        "workers": 3050,
+        "concrete": 380,
+        "steel": 100,
+        "mcomponents": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Deep geological repository",
+      "workshopId": "2845627877",
+      "modPath": "endlager2"
+    },
+    {
+      "id": "2845627877/gravelloader",
+      "nameId": 6165,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2845627877",
+      "modPath": "gravelloader"
+    },
+    {
+      "id": "2845627877/gravelunloader",
+      "nameId": 6166,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2845627877",
+      "modPath": "gravelunloader"
+    },
+    {
+      "id": "2845627877/haldetrain",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "gravel": 4
+      },
+      "consumption": {
+        "waste_gravel": 6
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.3
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "slag heap",
+      "workshopId": "2845627877",
+      "modPath": "haldetrain"
+    },
+    {
+      "id": "2845627877/haldetruck",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {
+        "gravel": 4
+      },
+      "consumption": {
+        "waste_gravel": 6
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.3
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "slag heap",
+      "workshopId": "2845627877",
+      "modPath": "haldetruck"
+    },
+    {
+      "id": "2845627877/ironmine",
+      "nameId": 6160,
+      "types": [
+        "TYPE_MINE_IRON"
+      ],
+      "workers": 500,
+      "professors": 0,
+      "production": {
+        "rawiron": 5.5,
+        "waste_gravel": 0.1
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3050,
+        "concrete": 380,
+        "steel": 100,
+        "mcomponents": 10
+      },
+      "electricWorkerFactors": {
+        "lighting": 2.5,
+        "living": 3
+      },
+      "workshopId": "2845627877",
+      "modPath": "ironmine"
+    },
+    {
+      "id": "2845627877/kuehlturm",
+      "nameId": null,
+      "types": [
+        "TYPE_COOLING_TOWER"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cooling Tower",
+      "workshopId": "2845627877",
+      "modPath": "kuehlturm"
+    },
+    {
+      "id": "2845627877/mediumoresilo",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 30000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Ore Silo",
+      "workshopId": "2845627877",
+      "modPath": "mediumoresilo"
+    },
+    {
+      "id": "2845627877/oldblastfurnace",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 120,
+      "professors": 0,
+      "production": {
+        "steel": 0.1,
+        "waste_gravel": 0.05
+      },
+      "consumption": {
+        "coal": 0.6,
+        "iron": 0.7
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Blast furnace",
+      "workshopId": "2845627877",
+      "modPath": "oldblastfurnace"
+    },
+    {
+      "id": "2845627877/pelletplant",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 200,
+      "professors": 0,
+      "production": {
+        "iron": 7
+      },
+      "consumption": {
+        "oil": 0.2,
+        "rawiron": 8
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.7
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "iron ore pelletizing plant",
+      "workshopId": "2845627877",
+      "modPath": "pelletplant"
+    },
+    {
+      "id": "2845627877/schaufelradruecklader",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 400000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stacker/Reclaimer",
+      "workshopId": "2845627877",
+      "modPath": "schaufelradruecklader"
+    },
+    {
+      "id": "2845627877/smallconveyer1",
+      "nameId": 6167,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2845627877",
+      "modPath": "smallconveyer1"
+    },
+    {
+      "id": "2845627877/smallconveyer1high",
+      "nameId": 6167,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2845627877",
+      "modPath": "smallconveyer1high"
+    },
+    {
+      "id": "2845627877/smallconveyer2",
+      "nameId": 6167,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2845627877",
+      "modPath": "smallconveyer2"
+    },
+    {
+      "id": "2845627877/smallconveyer2high",
+      "nameId": 6167,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2845627877",
+      "modPath": "smallconveyer2high"
+    },
+    {
+      "id": "2845627877/smalloresilo",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 10000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Ore Silo",
+      "workshopId": "2845627877",
+      "modPath": "smalloresilo"
+    },
+    {
+      "id": "2845627877/walzwerk",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 10000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Rolling Mill",
+      "workshopId": "2845627877",
+      "modPath": "walzwerk"
+    }
+  ],
+  "vehicles": []
+}

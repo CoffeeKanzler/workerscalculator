@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2482020223",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.589Z",
+  "buildings": [
+    {
+      "id": "2482020223/dwukierunkowy",
+      "nameId": 1805,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 400,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 400
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2482020223",
+      "modPath": "dwukierunkowy"
+    },
+    {
+      "id": "2482020223/dwukierunkowy1",
+      "nameId": 1805,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 400,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 400
+      },
+      "constructionResources": {
+        "workers": 33,
+        "gravel": 0.5,
+        "concrete": 0.75,
+        "asphalt": 0.45,
+        "steel": 1.8
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2482020223",
+      "modPath": "dwukierunkowy1"
+    },
+    {
+      "id": "2482020223/jednokierunkowy",
+      "nameId": 1805,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2482020223",
+      "modPath": "jednokierunkowy"
+    },
+    {
+      "id": "2482020223/jednokierunkowy1",
+      "nameId": 1805,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {
+        "workers": 15,
+        "gravel": 0.3,
+        "concrete": 0.4,
+        "asphalt": 0.25,
+        "steel": 0.9
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2482020223",
+      "modPath": "jednokierunkowy1"
+    },
+    {
+      "id": "2482020223/petla",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy bus stop",
+      "workshopId": "2482020223",
+      "modPath": "petla"
+    },
+    {
+      "id": "2482020223/petla2",
+      "nameId": 1805,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 200,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 200
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2482020223",
+      "modPath": "petla2"
+    }
+  ],
+  "vehicles": []
+}

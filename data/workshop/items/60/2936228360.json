@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2936228360",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.610Z",
+  "buildings": [
+    {
+      "id": "2936228360/stacja1",
+      "nameId": 6164,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2936228360",
+      "modPath": "stacja1"
+    },
+    {
+      "id": "2936228360/stacja2",
+      "nameId": 6164,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2936228360",
+      "modPath": "stacja2"
+    },
+    {
+      "id": "2936228360/stacja3",
+      "nameId": 6164,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2936228360",
+      "modPath": "stacja3"
+    }
+  ],
+  "vehicles": []
+}

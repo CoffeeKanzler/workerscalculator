@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2494174821",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.591Z",
+  "buildings": [
+    {
+      "id": "2494174821/wegiel",
+      "nameId": 6162,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "coal": 8
+      },
+      "consumption": {
+        "rawcoal": 14
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.4
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2494174821",
+      "modPath": "wegiel"
+    }
+  ],
+  "vehicles": []
+}

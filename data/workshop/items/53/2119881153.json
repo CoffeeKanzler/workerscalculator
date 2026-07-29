@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2119881153",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.567Z",
+  "buildings": [
+    {
+      "id": "2119881153/Monopolowy",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Liquor store",
+      "workshopId": "2119881153",
+      "modPath": "Monopolowy"
+    },
+    {
+      "id": "2119881153/bar",
+      "nameId": null,
+      "types": [
+        "TYPE_PUB"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Train-themed bar",
+      "workshopId": "2119881153",
+      "modPath": "bar"
+    },
+    {
+      "id": "2119881153/pewex",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pewex store",
+      "workshopId": "2119881153",
+      "modPath": "pewex"
+    },
+    {
+      "id": "2119881153/sklep1",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small grocery store",
+      "workshopId": "2119881153",
+      "modPath": "sklep1"
+    },
+    {
+      "id": "2119881153/sklep2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium grocery store",
+      "workshopId": "2119881153",
+      "modPath": "sklep2"
+    },
+    {
+      "id": "2119881153/sklep3",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big grocery store",
+      "workshopId": "2119881153",
+      "modPath": "sklep3"
+    },
+    {
+      "id": "2119881153/sklep4",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Very big grocery store",
+      "workshopId": "2119881153",
+      "modPath": "sklep4"
+    }
+  ],
+  "vehicles": []
+}

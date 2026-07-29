@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2716232112",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.594Z",
+  "buildings": [
+    {
+      "id": "2716232112/biuro1",
+      "nameId": 6219,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2716232112",
+      "modPath": "biuro1"
+    },
+    {
+      "id": "2716232112/biuro2",
+      "nameId": 6219,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2716232112",
+      "modPath": "biuro2"
+    }
+  ],
+  "vehicles": []
+}

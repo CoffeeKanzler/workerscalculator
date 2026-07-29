@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2905140834",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.609Z",
+  "buildings": [
+    {
+      "id": "2905140834/koncowy1",
+      "nameId": 34809,
+      "types": [
+        "TYPE_WAITING_STATION",
+        "SUBTYPE_TRAM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2905140834",
+      "modPath": "koncowy1"
+    },
+    {
+      "id": "2905140834/koncowy2",
+      "nameId": 34809,
+      "types": [
+        "TYPE_WAITING_STATION",
+        "SUBTYPE_TRAM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "2905140834",
+      "modPath": "koncowy2"
+    }
+  ],
+  "vehicles": []
+}

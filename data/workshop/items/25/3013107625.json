@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3013107625",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.611Z",
+  "buildings": [
+    {
+      "id": "3013107625/bay",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Roadside Bay (Snowplow)",
+      "workshopId": "3013107625",
+      "modPath": "bay"
+    },
+    {
+      "id": "3013107625/parkki",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Extentable parking lot",
+      "workshopId": "3013107625",
+      "modPath": "parkki"
+    },
+    {
+      "id": "3013107625/side",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Tiny Roadside Parking",
+      "workshopId": "3013107625",
+      "modPath": "side"
+    },
+    {
+      "id": "3013107625/umpikuja1",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Road Dead-End",
+      "workshopId": "3013107625",
+      "modPath": "umpikuja1"
+    },
+    {
+      "id": "3013107625/umpikuja1b",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Road Dead-End",
+      "workshopId": "3013107625",
+      "modPath": "umpikuja1b"
+    },
+    {
+      "id": "3013107625/umpikuja2",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Street Dead-End",
+      "workshopId": "3013107625",
+      "modPath": "umpikuja2"
+    },
+    {
+      "id": "3013107625/umpikuja2b",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Street Dead-End",
+      "workshopId": "3013107625",
+      "modPath": "umpikuja2b"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2371071683",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.575Z",
+  "buildings": [
+    {
+      "id": "2371071683/UMagazynB",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 850
+      },
+      "constructionResources": {
+        "workers": 1130,
+        "concrete": 49,
+        "gravel": 68,
+        "bricks": 60,
+        "boards": 20,
+        "steel": 27,
+        "ecomponents": 0.5,
+        "prefabpanels": 12
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2371071683",
+      "modPath": "UMagazynB"
+    },
+    {
+      "id": "2371071683/UMagazynB2",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 850
+      },
+      "constructionResources": {
+        "workers": 1050,
+        "concrete": 49,
+        "gravel": 41,
+        "bricks": 60,
+        "boards": 20,
+        "steel": 12
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "2371071683",
+      "modPath": "UMagazynB2"
+    }
+  ],
+  "vehicles": []
+}

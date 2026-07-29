@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3312056823",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.617Z",
+  "buildings": [
+    {
+      "id": "3312056823/1",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 500,
+        "RESOURCE_TRANSPORT_VEHICLES": 600
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Container Unpack",
+      "workshopId": "3312056823",
+      "modPath": "1"
+    },
+    {
+      "id": "3312056823/10",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 9600,
+        "RESOURCE_TRANSPORT_COOLER": 4800,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 800,
+        "RESOURCE_TRANSPORT_OIL": 1000,
+        "RESOURCE_TRANSPORT_GRAVEL": 1000,
+        "RESOURCE_TRANSPORT_VEHICLES": 4000,
+        "RESOURCE_TRANSPORT_OPEN": 9600
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Warehouse Rail V4",
+      "workshopId": "3312056823",
+      "modPath": "10"
+    },
+    {
+      "id": "3312056823/11",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 4000,
+        "RESOURCE_TRANSPORT_VEHICLES": 600
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Oil Packing",
+      "workshopId": "3312056823",
+      "modPath": "11"
+    },
+    {
+      "id": "3312056823/12",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 200,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 12000,
+        "RESOURCE_TRANSPORT_VEHICLES": 600
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Aggregate Packing",
+      "workshopId": "3312056823",
+      "modPath": "12"
+    },
+    {
+      "id": "3312056823/13",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 1000,
+        "RESOURCE_TRANSPORT_VEHICLES": 600
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Meat Packing",
+      "workshopId": "3312056823",
+      "modPath": "13"
+    },
+    {
+      "id": "3312056823/14",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 600,
+        "RESOURCE_TRANSPORT_VEHICLES": 600
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Container Packing",
+      "workshopId": "3312056823",
+      "modPath": "14"
+    },
+    {
+      "id": "3312056823/2",
+      "nameId": null,
+      "types": [
+        "TYPE_CONTAINER_FACILITY"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 500,
+        "RESOURCE_TRANSPORT_VEHICLES": 600
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Container Packing",
+      "workshopId": "3312056823",
+      "modPath": "2"
+    },
+    {
+      "id": "3312056823/3",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1200,
+        "RESOURCE_TRANSPORT_COVERED": 1200,
+        "RESOURCE_TRANSPORT_COOLER": 600,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 100,
+        "RESOURCE_TRANSPORT_OIL": 500,
+        "RESOURCE_TRANSPORT_GRAVEL": 500,
+        "RESOURCE_TRANSPORT_VEHICLES": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old General Warehouse V1",
+      "workshopId": "3312056823",
+      "modPath": "3"
+    },
+    {
+      "id": "3312056823/4",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1200,
+        "RESOURCE_TRANSPORT_COVERED": 1200,
+        "RESOURCE_TRANSPORT_COOLER": 600,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 100,
+        "RESOURCE_TRANSPORT_OIL": 500,
+        "RESOURCE_TRANSPORT_GRAVEL": 500,
+        "RESOURCE_TRANSPORT_VEHICLES": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old General Warehouse Rail V1",
+      "workshopId": "3312056823",
+      "modPath": "4"
+    },
+    {
+      "id": "3312056823/5",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 2400,
+        "RESOURCE_TRANSPORT_COVERED": 2400,
+        "RESOURCE_TRANSPORT_COOLER": 1200,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 200,
+        "RESOURCE_TRANSPORT_OIL": 1000,
+        "RESOURCE_TRANSPORT_GRAVEL": 1000,
+        "RESOURCE_TRANSPORT_VEHICLES": 2000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old General Warehouse V2",
+      "workshopId": "3312056823",
+      "modPath": "5"
+    },
+    {
+      "id": "3312056823/6",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 2400,
+        "RESOURCE_TRANSPORT_COVERED": 2400,
+        "RESOURCE_TRANSPORT_COOLER": 1200,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 200,
+        "RESOURCE_TRANSPORT_OIL": 1000,
+        "RESOURCE_TRANSPORT_GRAVEL": 1000,
+        "RESOURCE_TRANSPORT_VEHICLES": 2000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Old General Warehouse Rail V2",
+      "workshopId": "3312056823",
+      "modPath": "6"
+    },
+    {
+      "id": "3312056823/7",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 4800,
+        "RESOURCE_TRANSPORT_COVERED": 4800,
+        "RESOURCE_TRANSPORT_COOLER": 2400,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 400,
+        "RESOURCE_TRANSPORT_OIL": 1000,
+        "RESOURCE_TRANSPORT_GRAVEL": 1000,
+        "RESOURCE_TRANSPORT_VEHICLES": 4000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Warehouse V3",
+      "workshopId": "3312056823",
+      "modPath": "7"
+    },
+    {
+      "id": "3312056823/8",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 4800,
+        "RESOURCE_TRANSPORT_COVERED": 4800,
+        "RESOURCE_TRANSPORT_COOLER": 2400,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 400,
+        "RESOURCE_TRANSPORT_OIL": 1000,
+        "RESOURCE_TRANSPORT_GRAVEL": 1000,
+        "RESOURCE_TRANSPORT_VEHICLES": 4000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Warehouse Rail V3",
+      "workshopId": "3312056823",
+      "modPath": "8"
+    },
+    {
+      "id": "3312056823/9",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 4800,
+        "RESOURCE_TRANSPORT_COOLER": 2400,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 400,
+        "RESOURCE_TRANSPORT_OIL": 1000,
+        "RESOURCE_TRANSPORT_GRAVEL": 1000,
+        "RESOURCE_TRANSPORT_VEHICLES": 4000,
+        "RESOURCE_TRANSPORT_OPEN": 9600
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "General Warehouse V4",
+      "workshopId": "3312056823",
+      "modPath": "9"
+    }
+  ],
+  "vehicles": []
+}

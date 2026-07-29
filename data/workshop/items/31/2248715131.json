@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2248715131",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.573Z",
+  "buildings": [
+    {
+      "id": "2248715131/open_nill_3",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 2500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "No Rail Large Open Storage",
+      "workshopId": "2248715131",
+      "modPath": "open_nill_3"
+    },
+    {
+      "id": "2248715131/open_nill_4",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1250
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "No Rail Medium Open Storage",
+      "workshopId": "2248715131",
+      "modPath": "open_nill_4"
+    },
+    {
+      "id": "2248715131/open_rail_1",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 2500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Twin Rail Large Open Storage",
+      "workshopId": "2248715131",
+      "modPath": "open_rail_1"
+    },
+    {
+      "id": "2248715131/open_rail_2",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1250
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Twin Rail Medium Open Storage",
+      "workshopId": "2248715131",
+      "modPath": "open_rail_2"
+    }
+  ],
+  "vehicles": []
+}

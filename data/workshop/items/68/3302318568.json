@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3302318568",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-29T07:52:02.616Z",
+  "buildings": [
+    {
+      "id": "3302318568/End",
+      "nameId": null,
+      "types": [
+        "TYPE_WAITING_STATION",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bus Scheduling Station",
+      "workshopId": "3302318568",
+      "modPath": "End"
+    },
+    {
+      "id": "3302318568/Large",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bus Station Large",
+      "workshopId": "3302318568",
+      "modPath": "Large"
+    },
+    {
+      "id": "3302318568/Small",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bus Station Small",
+      "workshopId": "3302318568",
+      "modPath": "Small"
+    },
+    {
+      "id": "3302318568/Stop",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bus Stop Small",
+      "workshopId": "3302318568",
+      "modPath": "Stop"
+    },
+    {
+      "id": "3302318568/StopLarge",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 500,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bus Stop Large",
+      "workshopId": "3302318568",
+      "modPath": "StopLarge"
+    },
+    {
+      "id": "3302318568/waiting",
+      "nameId": null,
+      "types": [
+        "TYPE_WAITING_STATION",
+        "SUBTYPE_ROAD"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Roadside Bay (bus waiting stop)",
+      "workshopId": "3302318568",
+      "modPath": "waiting"
+    }
+  ],
+  "vehicles": []
+}
