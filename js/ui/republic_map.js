@@ -2,6 +2,10 @@ export function mapPointToLeaflet(point, mapHeight) {
   return [mapHeight - point.mapY, point.mapX];
 }
 
+export function mapCountOrDash(value, formatter) {
+  return Number.isFinite(value) ? formatter(value, 0) : '—';
+}
+
 function workerPositions(building) {
   return (Number.isFinite(building.configuredWorkers) ? building.configuredWorkers : 0)
     + (Number.isFinite(building.configuredWorkersHighEducation)

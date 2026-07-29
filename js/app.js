@@ -54,11 +54,12 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=15';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=18';
 import {
+  mapCountOrDash,
   normalizeMapMetric,
   residenceDetailForBuilding,
-} from './ui/republic_map.js?v=8';
+} from './ui/republic_map.js?v=10';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -2812,12 +2813,12 @@ function renderMapBuildingInspector(building) {
     },
     el('h4', {}, t('residenceLedger')),
     kv(t('occupancy'), residence.capacity == null
-      ? fmt(residence.residents, 0)
-      : `${fmt(residence.residents, 0)} / ${fmt(residence.capacity, 0)}`),
+      ? mapCountOrDash(residence.residents, fmt)
+      : `${mapCountOrDash(residence.residents, fmt)} / ${mapCountOrDash(residence.capacity, fmt)}`),
     kv(t('residentComposition'),
-      `${fmt(residence.adults, 0)} ${t('adults')} · `
-      + `${fmt(residence.children, 0)} ${t('children')} · `
-      + `${fmt(residence.higherEducation, 0)} ${t('higherEducationShort')}`),
+      `${mapCountOrDash(residence.adults, fmt)} ${t('adults')} · `
+      + `${mapCountOrDash(residence.children, fmt)} ${t('children')} · `
+      + `${mapCountOrDash(residence.higherEducation, fmt)} ${t('higherEducationShort')}`),
     kv(t('residentWellbeing'),
       `${percentOrDash(residence.health)} ${t('health')} · `
       + `${percentOrDash(residence.happiness)} ${t('happiness')} · `
@@ -2825,7 +2826,7 @@ function renderMapBuildingInspector(building) {
     kv(t('residentCriminality'),
       `${t('averageShort')} ${percentOrDash(residence.criminality)} · `
       + `${t('highest')} ${percentOrDash(residence.highestCriminality)} · `
-      + `${fmt(residence.highRiskResidents, 0)} ${t('highRiskResidents')}`)) : null,
+      + `${mapCountOrDash(residence.highRiskResidents, fmt)} ${t('highRiskResidents')}`)) : null,
     kv(t('mapCoordinates'), `X ${fmt(building.x, 1)} · Z ${fmt(building.z, 1)}`));
 }
 

@@ -14,7 +14,7 @@ import {
   filterMapBuildings,
   mapPointToLeaflet,
   summarizeMapViewport,
-} from './republic_map.js?v=8';
+} from './republic_map.js?v=10';
 
 function imageBounds(image, height) {
   return [

@@ -4,11 +4,20 @@ import assert from 'node:assert/strict';
 import {
   buildingMapMetric,
   filterMapBuildings,
+  mapCountOrDash,
   mapPointToLeaflet,
   normalizeMapMetric,
   residenceDetailForBuilding,
   summarizeMapViewport,
 } from '../js/ui/republic_map.js';
+
+test('map counts retain finite values and render non-finite values as unavailable', () => {
+  const format = (value, digits) => `${value}:${digits}`;
+  assert.equal(mapCountOrDash(0, format), '0:0');
+  assert.equal(mapCountOrDash(12, format), '12:0');
+  assert.equal(mapCountOrDash(Number.NaN, format), '—');
+  assert.equal(mapCountOrDash(Number.POSITIVE_INFINITY, format), '—');
+});
 
 test('the Leaflet adapter preserves the schematic map coordinate system', () => {
   assert.deepEqual(mapPointToLeaflet({ mapX: 125, mapY: 80 }, 480), [400, 125]);
