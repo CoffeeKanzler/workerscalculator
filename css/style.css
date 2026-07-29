@@ -748,6 +748,22 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-residence-ledger .kv {
   gap: 12px;
 }
+.map-walk-reach {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.map-walk-reach h4 {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.map-walk-reach .kv { gap: 12px; }
+.map-walk-reach .hint { margin: 6px 0 0; }
+.map-tooltip-walk { color: var(--pos); }
 .republic-map.standalone circle[data-map-kind] { cursor: pointer; }
 .republic-map circle.map-inspected { stroke: var(--accent2); stroke-width: 3; vector-effect: non-scaling-stroke; }
 
