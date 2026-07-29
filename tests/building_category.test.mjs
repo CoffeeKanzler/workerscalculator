@@ -106,3 +106,72 @@ test('the shipped dataset categorises the great majority of buildings', () => {
   assert.ok((counts.get('living') ?? 0) > 0);
   assert.ok((counts.get('industry') ?? 0) > 0);
 });
+
+// --- coverage against the real dataset ---------------------------------
+//
+// The rules above were first written from guesswork about what the game's
+// flags are called, and roughly half of the names matched nothing: police
+// stations, oil wells, fire stations, road depots and rail transformers all
+// silently landed in 'other', which on the map is an undifferentiated grey
+// dot. Nothing failed, because a rule that matches nothing is not an error —
+// it is just a rule that never fires.
+//
+// These read the extracted dataset itself, so a flag that exists in the game
+// and is named in no rule is a failure rather than a silent miscategorisation.
+
+import { CATEGORY_RULES, UNCATEGORISED_FLAGS } from '../js/models/building_category.js';
+
+const dataset = (() => {
+  const parsed = JSON.parse(readFileSync(
+    new URL('../data/game/buildings_raw.json', import.meta.url), 'utf8'));
+  return parsed.buildings ?? parsed;
+})();
+
+const datasetFlags = new Set(dataset.flatMap(building => building.types ?? []));
+const ruleFlags = new Set(CATEGORY_RULES.flatMap(([, flags]) => flags));
+
+test('every flag the dataset uses is named by some rule', () => {
+  const ignored = new Set(UNCATEGORISED_FLAGS);
+  const unhandled = [...datasetFlags].filter(flag => !ruleFlags.has(flag) && !ignored.has(flag));
+  assert.deepEqual(unhandled, [],
+    `these flags exist in the dataset but no rule mentions them:\n  ${unhandled.join('\n  ')}`);
+});
+
+test('no rule names a flag the dataset never uses', () => {
+  // A rule that matches nothing is the failure mode this whole block exists
+  // for: it looks like coverage and provides none.
+  const dead = [...ruleFlags].filter(flag => !datasetFlags.has(flag));
+  assert.deepEqual(dead, [],
+    `these rules can never match; check the spelling against the dataset:\n  ${dead.join('\n  ')}`);
+});
+
+test('the dataset leaves few building types uncategorised', () => {
+  const uncategorised = dataset.filter(building =>
+    categoryForFlags(building.types) === 'other');
+  // Some entries genuinely carry no type flags at all — decorations, fences,
+  // terrain pieces. The bar is that this stays a small minority rather than
+  // the near-half it was when the flag names were guesses.
+  assert.ok(uncategorised.length / dataset.length < 0.2,
+    `${uncategorised.length} of ${dataset.length} dataset types fall to 'other': `
+    + uncategorised.slice(0, 15).map(building => building.id).join(', '));
+});
+
+test('the vanilla types that were miscategorised now land where they belong', () => {
+  const index = buildTypeCategoryIndex(dataset);
+  // Each of these was 'other' before the flag names were read off the dataset.
+  assert.equal(categoryForSaveType('police', index), 'services');
+  assert.equal(categoryForSaveType('police_small', index), 'services');
+  assert.equal(categoryForSaveType('oil_mine', index), 'industry');
+  assert.equal(categoryForSaveType('rail_trafo', index), 'support');
+  assert.equal(categoryForSaveType('muddy_depot', index), 'support');
+  // A water well is flagged as a mine but supplies water, so it reads as
+  // plumbing rather than as an ore pit.
+  assert.equal(categoryForSaveType('water_well_small', index), 'support');
+});
+
+test('a DLC building is categorised through its prefix', () => {
+  const index = buildTypeCategoryIndex(dataset);
+  assert.equal(categoryForSaveType('CWC_Kindergarten1', index), 'services');
+  // The save writes mirrored placements with a prefix the dataset never uses.
+  assert.equal(categoryForSaveType('MIRRORZ_CWC_Kindergarten1', index), 'services');
+});

@@ -37,10 +37,10 @@ import { observationForAutosave } from './models/autosave_observation.js';
 import { mapLayerReport } from './models/map_layer_report.js';
 import {
   CATEGORY_MARKS, buildTypeCategoryIndex, categoryForSaveType,
-} from './models/building_category.js?v=2';
+} from './models/building_category.js?v=6';
 import {
   drawOrder, markerAt, markerRadius, paletteFrom, visibleMarkers,
-} from './ui/map_markers.js?v=2';
+} from './ui/map_markers.js?v=7';
 import { republicTrendAlerts } from './models/republic_trends.js?v=1';
 import { isTheme, nextTheme, resolveTheme, themeAttribute } from './ui/theme.js?v=2';
 import {
@@ -53,6 +53,7 @@ import {
   alertCategory, filterRepublicAlerts,
 } from './republic.js?v=12';
 import { filterRange, seriesFromRecords, downsampleMinMax } from './timeseries.js?v=1';
+import { cursorReadout, tooltipPlacement, plotFraction } from './ui/chart_cursor.js?v=7';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -2694,16 +2695,18 @@ function renderRepublicLineChart(title, series, evidence = 'stats.ini') {
   svg.setAttribute('class', 'chart');
   svg.setAttribute('role', 'img');
   svg.setAttribute('aria-label', title);
-  for (const item of nonEmpty) {
-    const sampled = downsampleMinMax(item.points, 160);
+  // The cursor reads the sampled series, not the raw one: it must report a
+  // value that is actually on the line the reader is pointing at.
+  const drawn = nonEmpty.map(item => ({ ...item, points: downsampleMinMax(item.points, 160) }));
+  for (const item of drawn) {
     const polyline = document.createElementNS(ns, 'polyline');
-    polyline.setAttribute('points', sampled.map(point => `${x(point.x)},${y(point.y)}`).join(' '));
+    polyline.setAttribute('points', item.points.map(point => `${x(point.x)},${y(point.y)}`).join(' '));
     polyline.setAttribute('fill', 'none');
     polyline.setAttribute('stroke', item.color);
     polyline.setAttribute('stroke-width', '1.8');
     polyline.setAttribute('vector-effect', 'non-scaling-stroke');
     svg.append(polyline);
-    appendChartPointMarkers(svg, item, sampled, x, y, ns);
+    appendChartPointMarkers(svg, item, item.points, x, y, ns);
   }
   const first = points.reduce((a, b) => a.x <= b.x ? a : b);
   const last = points.reduce((a, b) => a.x >= b.x ? a : b);
@@ -2713,7 +2716,74 @@ function renderRepublicLineChart(title, series, evidence = 'stats.ini') {
   appendChartAxisLabel(svg, last.label, W - P, H - 5, ns, 'end');
   box.append(svg, el('div', { class: 'legend' }, ...nonEmpty.map(item =>
     el('span', {}, el('i', { style: `background:${item.color}` }), item.label))));
+  attachChartCursor(box, svg, drawn, { minX, maxX, x, y, width: W, height: H, padding: P, ns });
   return box;
+}
+
+// Gives a chart a crosshair that names the date under the pointer and every
+// series' value there. Until this existed a reader could see a line's shape
+// but never a number on it, which made the twelve history charts decorative.
+function attachChartCursor(box, svg, series, geometry) {
+  const { minX, maxX, x, y, width, height, padding, ns } = geometry;
+  const rule = document.createElementNS(ns, 'line');
+  rule.setAttribute('class', 'chart-cursor-rule');
+  rule.setAttribute('y1', String(padding - 8));
+  rule.setAttribute('y2', String(height - padding));
+  const dots = series.map(item => {
+    const dot = document.createElementNS(ns, 'circle');
+    dot.setAttribute('class', 'chart-cursor-dot');
+    dot.setAttribute('r', '3.2');
+    dot.setAttribute('fill', item.color);
+    return dot;
+  });
+  const cursor = document.createElementNS(ns, 'g');
+  cursor.setAttribute('class', 'chart-cursor');
+  cursor.append(rule, ...dots);
+  svg.append(cursor);
+
+  const tooltip = el('div', { class: 'chart-tooltip' });
+  box.append(tooltip);
+
+  const hide = () => {
+    cursor.style.opacity = '0';
+    tooltip.style.opacity = '0';
+  };
+  hide();
+
+  const move = event => {
+    const bounds = svg.getBoundingClientRect();
+    const fraction = plotFraction(event.clientX - bounds.left, bounds.width,
+      { width, padding });
+    const value = minX + fraction * (maxX - minX);
+    const readout = cursorReadout(series, value);
+    if (!readout.rows.length) return hide();
+
+    // The rule snaps to the sample being reported rather than the raw pointer,
+    // so the line, the dots and the numbers all describe the same instant.
+    const snapped = readout.rows[0].x;
+    rule.setAttribute('x1', String(x(snapped)));
+    rule.setAttribute('x2', String(x(snapped)));
+    readout.rows.forEach((row, index) => {
+      dots[index].setAttribute('cx', String(x(row.x)));
+      dots[index].setAttribute('cy', String(y(row.value)));
+    });
+    cursor.style.opacity = '1';
+
+    tooltip.replaceChildren(
+      el('strong', {}, readout.label ?? ''),
+      ...readout.rows.map(row => el('span', { class: 'chart-tooltip-row' },
+        el('i', { style: `background:${row.color}` }),
+        el('span', { class: 'chart-tooltip-label' }, row.label),
+        el('b', {}, fmt(row.value, 2)))));
+    tooltip.style.opacity = '1';
+    // Measured after the content is in place, because the width depends on it.
+    const left = tooltipPlacement(event.clientX - bounds.left,
+      tooltip.offsetWidth, bounds.width);
+    tooltip.style.left = `${left}px`;
+  };
+
+  svg.addEventListener('mousemove', move);
+  svg.addEventListener('mouseleave', hide);
 }
 
 function applyStandaloneMapVisibility(svg, layers, buildingFilter = '', legend = null) {
@@ -2728,26 +2798,9 @@ function applyStandaloneMapVisibility(svg, layers, buildingFilter = '', legend =
   setGroupVisible('.map-pedestrian', layers.pedestrian);
   setGroupVisible('.map-scopes', layers.scopes);
 
-  const filter = String(buildingFilter ?? '').trim().toLowerCase();
-  for (const marker of svg.querySelectorAll('circle[data-map-kind]')) {
-    const kind = marker.dataset.mapKind;
-    const outlier = marker.dataset.mapOutlier === 'true';
-    if (outlier && kind !== 'border') {
-      const target = layers.outliers
-        ? svg.querySelector('.map-outliers')
-        : svg.querySelector(marker.dataset.mapSelected === 'true' ? '.map-selected' : '.map-buildings');
-      if (target && marker.parentElement !== target) target.append(marker);
-    }
-    const typeMatches = kind === 'border' || !filter
-      || [marker.dataset.buildingType, marker.dataset.buildingLabel, marker.dataset.buildingName]
-        .some(value => String(value ?? '').toLowerCase().includes(filter));
-    const layerVisible = kind === 'border'
-      ? layers.borders
-      : kind === 'construction'
-        ? layers.construction
-        : outlier ? layers.buildings || layers.outliers : layers.buildings;
-    marker.style.display = layerVisible && typeMatches ? '' : 'none';
-  }
+  // Building markers live on a canvas now, so the filter and their layer
+  // toggles are applied when it is drawn rather than by hiding elements.
+  // Only the svg-backed layers are switched here.
 
   if (legend) {
     const visibility = {
@@ -2885,6 +2938,10 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   // laid over the svg at the same size and redrawn whenever the camera moves.
   const markerCanvas = el('canvas', { class: 'map-marker-canvas', 'aria-hidden': 'true' });
   let drawMarkerLayer = () => {};
+  // How far the pointer travelled while held down. The camera handlers and the
+  // click that selects a building are registered in separate blocks, so this
+  // sits at function scope where both can reach it.
+  let draggedDistance = 0;
   const applyStandaloneViewBox = view => {
     standaloneMapViewBox = clampViewBox(view);
     const current = standaloneMapViewBox;
@@ -2946,7 +3003,11 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
         wheelFrame = requestAnimationFrame(animateWheel);
       }
     };
-    svg.addEventListener('wheel', event => {
+    // The camera listens on the canvas, not the svg. The canvas covers the
+    // whole viewport, so once building markers moved onto it every wheel and
+    // drag landed there instead and the map could no longer be zoomed or
+    // panned by pointer at all.
+    markerCanvas.addEventListener('wheel', event => {
       event.preventDefault();
       const current = wheelTarget ?? currentCamera();
       const rect = mapRect();
@@ -2962,26 +3023,29 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
         width, height,
       });
     }, { passive: false });
-    svg.addEventListener('pointerdown', event => {
+    markerCanvas.addEventListener('pointerdown', event => {
       if (event.button !== 0) return;
+      draggedDistance = 0;
       stopWheelAnimation();
       const current = currentCamera();
       drag = { x: event.clientX, y: event.clientY, view: { ...current }, rect: mapRect() };
-      svg.setPointerCapture(event.pointerId);
+      markerCanvas.setPointerCapture(event.pointerId);
     });
-    svg.addEventListener('pointermove', event => {
+    markerCanvas.addEventListener('pointermove', event => {
       if (!drag) return;
+      draggedDistance = Math.max(draggedDistance,
+        Math.abs(event.clientX - drag.x) + Math.abs(event.clientY - drag.y));
       scheduleCamera({
         ...drag.view,
         x: drag.view.x - (event.clientX - drag.x) / drag.rect.width * drag.view.width,
         y: drag.view.y - (event.clientY - drag.y) / drag.rect.height * drag.view.height,
       });
     });
-    svg.addEventListener('pointerup', event => {
-      if (svg.hasPointerCapture(event.pointerId)) svg.releasePointerCapture(event.pointerId);
+    markerCanvas.addEventListener('pointerup', event => {
+      if (markerCanvas.hasPointerCapture(event.pointerId)) markerCanvas.releasePointerCapture(event.pointerId);
       drag = null;
     });
-    svg.addEventListener('pointercancel', () => { drag = null; });
+    markerCanvas.addEventListener('pointercancel', () => { drag = null; });
   }
   const waterImageHref = water => {
     if (terrainWaterImageCache.has(water.packed)) return terrainWaterImageCache.get(water.packed);
@@ -3092,7 +3156,12 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   };
   // One pass over the dataset, so each marker costs a Map lookup rather than a
   // search through it.
-  const categoryIndex = buildTypeCategoryIndex(DATA?.rawBuildings ?? []);
+  // Workshop buildings carry the same TYPE_* flags as vanilla ones and the
+  // name lookup already merges them. Leaving them out here is why a modded
+  // republic drew as grey 'other' dots: the flags were on disk and simply were
+  // not being read.
+  const categoryIndex = buildTypeCategoryIndex(
+    [...(DATA?.rawBuildings ?? []), ...(DATA?.workshopBuildings ?? [])]);
   const markFor = building => CATEGORY_MARKS[categoryForSaveType(building.type, categoryIndex)]
     ?? CATEGORY_MARKS.other;
 
@@ -3129,6 +3198,10 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       selected: building.scopeId === state.republicScope,
       focused: !!building.focused,
       label: mapBuildingDisplayName(building),
+      // What the filter box matches against; the data- attributes it used to
+      // read are gone with the elements.
+      search: [building.type, mapBuildingDisplayName(building), building.name]
+        .map(value => String(value ?? '').toLowerCase()).join(' '),
       title: (outlier
         ? `${t('citizen')} #${outlier.citizenIndex} · ${fmt(outlier.criminality * 100, 2)} % · `
           + `${building.name || building.type || t('building')} #${building.index} · ${scopeNames.get(building.scopeId) ?? t('unassigned')}`
@@ -3160,7 +3233,6 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     }
     context.setTransform(ratio, 0, 0, ratio, 0, 0);
     context.clearRect(0, 0, width, height);
-    if (!state.mapLayers.buildings) return;
 
     const view = currentViewBox();
     const scale = view.width / model.width;
@@ -3168,10 +3240,15 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     const toScreenY = y => ((y - view.y) / view.height) * height;
     const palette = markerPalette();
 
+    const filter = String(state.mapBuildingFilter ?? '').trim().toLowerCase();
     for (const marker of drawOrder(visibleMarkers(markers, view, scale))) {
+      if (!marker.borderPost && !marker.outlier && !state.mapLayers.buildings) continue;
       if (marker.borderPost && !state.mapLayers.borders) continue;
-      if (marker.outlier && !state.mapLayers.outliers) continue;
+      if (marker.outlier && !state.mapLayers.outliers && !state.mapLayers.buildings) continue;
       if (marker.underConstruction && !state.mapLayers.construction) continue;
+      // Border posts are landmarks rather than buildings, so a name filter
+      // narrows the republic without hiding its edges.
+      if (filter && !marker.borderPost && !marker.search.includes(filter)) continue;
       const screenRadius = Math.max(1.1, markerRadius(marker, scale) / scale);
       const cx = toScreenX(marker.x);
       const cy = toScreenY(marker.y);
@@ -3231,6 +3308,10 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
         world, view.width / model.width);
     };
     markerCanvas.addEventListener('click', event => {
+      // Panning ends with a click on the canvas. Without this the drag that
+      // moved the camera would also select whatever building it happened to
+      // finish over.
+      if (draggedDistance > 4) return;
       const hit = markerFromEvent(event);
       if (hit) inspectBuilding(hit.building);
     });
@@ -3343,6 +3424,8 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
           state.mapLayers = { ...state.mapLayers, [key]: event.target.checked };
           layers[key] = event.target.checked;
           applyStandaloneMapVisibility(svg, layers, state.mapBuildingFilter, legend);
+          // Building markers are on the canvas, so they change with the draw.
+          drawMarkerLayer();
           saveState();
         },
       }), ' ', label) : null;
@@ -3395,6 +3478,8 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
             oninput: event => {
               state.mapBuildingFilter = event.target.value;
               applyStandaloneMapVisibility(svg, layers, state.mapBuildingFilter, legend);
+          // Building markers are on the canvas, so they change with the draw.
+          drawMarkerLayer();
             },
             onchange: () => saveState(),
           }),
@@ -3425,7 +3510,10 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       // the map, it updated off-screen behind anyone who had scrolled down to
       // click a building: the marker highlighted and nothing appeared to
       // happen.
-      el('div', { class: 'map-viewport' }, svg, markerCanvas, mapInspector = (() => {
+      // The viewport carries the standalone marker, not the svg: the inspector
+      // is the svg's sibling, so a selector rooted at the svg could never
+      // reach it and the overlay styling silently did nothing.
+      el('div', { class: 'map-viewport standalone' }, svg, markerCanvas, mapInspector = (() => {
         const selectedBuilding = model.buildings.find(building =>
           building.index === mapSelectedBuildingIndex || building.focused);
         return selectedBuilding ? renderBuildingInspector(selectedBuilding)

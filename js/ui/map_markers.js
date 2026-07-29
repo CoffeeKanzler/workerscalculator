@@ -13,12 +13,16 @@
 // A marker is drawn at a constant screen size, so the radius in world units
 // shrinks as the view zooms in. Everything below works in world units and
 // converts once, at the edges.
+// Sizes are in screen pixels before the scale conversion. An ordinary
+// building was 1.35 — under three pixels across — which made the category
+// shape and colour it is drawn with impossible to tell apart, so the map read
+// as one undifferentiated speckle whatever the legend claimed.
 export function markerRadius(marker, scale) {
-  const base = marker.focused ? 7.5
-    : marker.borderPost ? 4.5
-      : marker.outlier ? 5.5
-        : marker.selected ? 2.4
-          : 1.35 * (marker.scale ?? 1);
+  const base = marker.focused ? 8
+    : marker.outlier ? 5.5
+      : marker.borderPost ? 5
+        : marker.selected ? 3.6
+          : 2.9 * (marker.scale ?? 1);
   return base * scale;
 }
 

@@ -369,6 +369,32 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .chart-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .republic-chart { min-width: 0; }
 .republic-chart .evidence-badge { float: right; }
+
+/* The crosshair readout. The chart is the positioning context so the tooltip
+   can be placed in the chart's own pixels, which is what the placement
+   calculation works in. */
+.history { position: relative; }
+.history .chart { cursor: crosshair; }
+.chart-cursor { pointer-events: none; transition: opacity 90ms ease; }
+.chart-cursor-rule { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3;
+  vector-effect: non-scaling-stroke; }
+.chart-cursor-dot { stroke: var(--panel); stroke-width: 1.5; }
+.chart-tooltip {
+  position: absolute; top: 34px; z-index: 3; pointer-events: none;
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px;
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+  /* Sits over the plotted lines, so it needs to stay legible against them. */
+  backdrop-filter: blur(2px);
+  font-size: 12px; line-height: 1.35; white-space: nowrap;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 22%);
+  transition: opacity 90ms ease;
+}
+.chart-tooltip strong { font-size: 11px; color: var(--muted); font-weight: 600; }
+.chart-tooltip-row { display: flex; align-items: center; gap: 6px; }
+.chart-tooltip-row i { width: 8px; height: 8px; border-radius: 2px; flex: none; }
+.chart-tooltip-label { flex: 1; }
+.chart-tooltip b { font-variant-numeric: tabular-nums; }
 .planning-details { padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--panel); }
 .planning-details > summary { cursor: pointer; color: var(--accent2); font-weight: 600; }
 .start-page { max-width: 1050px; margin: 0 auto; }
@@ -812,7 +838,7 @@ table.data th, table.data td { border-color: var(--border); }
    out of sight for anyone who had scrolled down far enough to click a marker,
    so selecting a building looked like it did nothing at all. */
 .map-viewport { position: relative; }
-.republic-map.standalone .map-viewport .map-building-inspector {
+.map-viewport.standalone > .map-building-inspector {
   position: absolute; top: 10px; right: 10px; z-index: 6;
   width: min(320px, 46%); margin: 0;
   background: var(--panel); border: 1px solid var(--accent);
@@ -820,11 +846,11 @@ table.data th, table.data td { border-color: var(--border); }
   max-height: calc(100% - 20px); overflow: auto;
 }
 /* With nothing selected it is only a prompt, so it stays out of the way. */
-.republic-map.standalone .map-viewport .map-building-inspector.empty {
+.map-viewport.standalone > .map-building-inspector.empty {
   border-color: var(--border); box-shadow: none; opacity: .82; width: auto;
 }
 @media (max-width: 720px) {
-  .republic-map.standalone .map-viewport .map-building-inspector {
+  .map-viewport.standalone > .map-building-inspector {
     position: static; width: auto; max-height: none; margin-top: 8px;
   }
 }

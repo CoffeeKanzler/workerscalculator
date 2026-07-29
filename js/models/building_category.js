@@ -11,25 +11,59 @@
 // Order matters: a building carries several flags, and the first match wins.
 // Production is checked before storage because a factory with a warehouse
 // attached is a factory.
-const CATEGORY_RULES = Object.freeze([
-  ['industry', ['TYPE_FACTORY', 'TYPE_ENGINE', 'TYPE_FIELD', 'TYPE_MINE',
-    'TYPE_OIL_WELL', 'TYPE_FARM', 'TYPE_FORESTRY']],
+// Every name below is taken from the extracted dataset, not from what the
+// game's flags ought to be called. The first pass here was written from
+// guesswork and half of it never matched anything: the save calls a police
+// station TYPE_POLICE_STATION, an oil well TYPE_MINE_OIL and a fire station
+// TYPE_FIRESTATION, so TYPE_POLICE, TYPE_OIL_WELL and TYPE_FIRE_DEPARTMENT
+// quietly matched nothing and their buildings all landed in 'other'.
+// buildings_category.test.mjs now fails if the dataset carries a flag no rule
+// mentions, which is what makes that class of mistake visible.
+export const CATEGORY_RULES = Object.freeze([
+  ['industry', ['TYPE_FACTORY', 'TYPE_ENGINE', 'TYPE_FIELD', 'TYPE_FARM',
+    'TYPE_PRODUCTION_LINE', 'TYPE_SCRAPYARD',
+    'TYPE_MINE_COAL', 'TYPE_MINE_IRON', 'TYPE_MINE_GRAVEL', 'TYPE_MINE_URANIUM',
+    'TYPE_MINE_BAUXITE', 'TYPE_MINE_OIL', 'TYPE_MINE_WOOD']],
+  // Water wells are flagged as mines but they supply the republic's water, so
+  // they belong with the plumbing rather than with the ore pits.
   ['utility', ['TYPE_SUBSTATION', 'TYPE_TRANSFORMATOR', 'TYPE_POWERPLANT',
-    'TYPE_WATER_PUMP', 'TYPE_WATER_ENDSTATION', 'SUBTYPE_WATER_SWITCH', 'TYPE_WATER_TOWER',
-    'TYPE_SEWAGE_PUMP', 'TYPE_SEWAGE_ENDSTATION', 'SUBTYPE_SEWAGE_SWITCH',
-    'TYPE_HEATING_PLANT', 'TYPE_HEATING_ENDSTATION', 'TYPE_HEATING_SWITCH',
-    'TYPE_TRASH_CONTAINER', 'TYPE_WASTE', 'TYPE_INCINERATOR']],
-  ['transport', ['TYPE_CARGO_STATION', 'TYPE_PASSANGER_STATION', 'TYPE_GARAGE',
-    'TYPE_GAS_STATION', 'TYPE_AIRPLANE_GATE', 'TYPE_CUSTOMHOUSE', 'TYPE_PEDESTRIAN_BRIDGE',
-    'SUBTYPE_CABLEWAY', 'SUBTYPE_TRAM', 'SUBTYPE_TROLLEYBUS', 'SUBTYPE_AIRPLANE',
-    'SUBTYPE_SHIP', 'TYPE_PARKING']],
-  ['storage', ['TYPE_STORAGE', 'TYPE_OPEN_STORAGE', 'TYPE_DISTRIBUTION_OFFICE',
-    'TYPE_CONTAINER_STAND']],
-  ['living', ['TYPE_LIVING', 'TYPE_HOTEL']],
-  ['civic', ['CIVIL_BUILDING', 'TYPE_SHOP', 'TYPE_UNIVERSITY', 'TYPE_SCHOOL',
-    'TYPE_HOSPITAL', 'TYPE_SPORT', 'TYPE_ATTRACTION', 'TYPE_MONUMENT',
-    'TYPE_POLICE', 'TYPE_FIRE_DEPARTMENT', 'TYPE_KINO', 'TYPE_CHURCH',
-    'TYPE_CONSTRUCTION_OFFICE', 'TYPE_PRISON', 'TYPE_COURT']],
+    'TYPE_COOLING_TOWER', 'TYPE_RAIL_TRAFO', 'TYPE_ELETRIC_IMPORT',
+    'TYPE_WATER_PUMP', 'TYPE_WATER_ENDSTATION', 'SUBTYPE_WATER_SWITCH',
+    'TYPE_WATER_TREATMENT', 'TYPE_MINE_WATER', 'TYPE_MINE_WATER_SURFACE',
+    'TYPE_SEWAGE_PUMP', 'TYPE_SEWAGE_ENDSTATION', 'TYPE_SEWAGE_TREATMENT',
+    'TYPE_SEWAGE_DISCHARGE', 'TYPE_HEATING_PLANT', 'TYPE_HEATING_ENDSTATION',
+    'TYPE_HEATING_SWITCH', 'TYPE_TRASH_CONTAINER', 'TYPE_GARBAGE_OFFICE',
+    'TYPE_POLLUTION_METER', 'TYPE_FOREIGN_PIPELINE_EXPORT', 'TYPE_ELETRIC_EXPORT']],
+  ['transport', ['TYPE_CARGO_STATION', 'TYPE_PASSANGER_STATION', 'TYPE_WAITING_STATION',
+    'TYPE_ROADDEPO', 'TYPE_RAILDEPO', 'TYPE_FORKLIFT_GARAGE',
+    'TYPE_GAS_STATION', 'TYPE_GAS_STATION_COAL',
+    'TYPE_AIRPLANE_GATE', 'TYPE_AIRPLANE_PARKING', 'TYPE_AIRPLANE_TOWER',
+    'TYPE_TRAM_GATE', 'TYPE_SHIP_DOCK', 'TYPE_CUSTOMHOUSE',
+    'TYPE_PEDESTRIAN_BRIDGE', 'TYPE_PARKING',
+    'SUBTYPE_CABLEWAY', 'SUBTYPE_TRAM', 'SUBTYPE_TROLLEYBUS', 'SUBTYPE_METRO',
+    'SUBTYPE_AIRPLANE', 'SUBTYPE_AIR', 'SUBTYPE_AIRCUSTOM', 'SUBTYPE_SHIP',
+    'SUBTYPE_RAIL', 'SUBTYPE_ROAD', 'SUBTYPE_HORSE_WAGON',
+    'SUBTYPE_SPACE_FOR_VEHICLES']],
+  ['storage', ['TYPE_STORAGE', 'TYPE_DISTRIBUTION_OFFICE',
+    'TYPE_DISTRIBUTION_OFFICE_RAIL', 'TYPE_CONTAINER_FACILITY']],
+  ['living', ['TYPE_LIVING', 'TYPE_HOTEL', 'SUBTYPE_HOSTEL']],
+  ['civic', ['CIVIL_BUILDING', 'TYPE_SHOP', 'TYPE_CAR_DEALER',
+    'TYPE_UNIVERSITY', 'TYPE_SCHOOL', 'TYPE_KINDERGARTEN', 'TYPE_ORPHANAGE',
+    'TYPE_HOSPITAL', 'SUBTYPE_MEDICAL', 'TYPE_SPORT', 'TYPE_ATTRACTION',
+    'TYPE_MONUMENT', 'TYPE_POLICE_STATION', 'TYPE_SECRET_POLICE',
+    'TYPE_FIRESTATION', 'TYPE_KINO', 'TYPE_CHURCH', 'TYPE_PUB',
+    'SUBTYPE_RESTAURANT', 'TYPE_BROADCAST', 'SUBTYPE_RADIO', 'SUBTYPE_TELEVISION',
+    'TYPE_CONSTRUCTION_OFFICE', 'TYPE_CONSTRUCTION_OFFICE_RAIL',
+    'TYPE_DEMOLITION_OFFICE', 'TYPE_REPAIR_OFFICE',
+    'TYPE_PRISON', 'TYPE_COURT_HOUSE', 'TYPE_CITYHALL']],
+]);
+
+// Flags that describe how a building looks or behaves rather than what it is
+// for. They always sit beside a real type flag, so leaving them out of the
+// rules costs nothing — but the coverage test needs to know they were left out
+// on purpose rather than forgotten.
+export const UNCATEGORISED_FLAGS = Object.freeze([
+  'SUBTYPE_SOVIET', 'SUBTYPE_TECHNICAL', 'SUBTYPE_OWN_CUSTOM', 'SUBTYPE_HORSE_STUD',
 ]);
 
 // What a player actually wants to tell apart: where people live, where things

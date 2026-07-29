@@ -10,14 +10,17 @@ const at = (x, y, extra = {}) => ({ x, y, ...extra });
 test('a marker keeps a constant screen size, so its world radius follows the zoom', () => {
   const plain = at(0, 0);
   // Zooming in halves the scale, so the world radius halves with it.
-  assert.equal(markerRadius(plain, 1), 1.35);
-  assert.equal(markerRadius(plain, 0.5), 0.675);
+  assert.equal(markerRadius(plain, 1), 2.9);
+  assert.equal(markerRadius(plain, 0.5), 1.45);
 });
 
 test('status markers stay larger than the buildings around them', () => {
   const scale = 1;
   assert.ok(markerRadius(at(0, 0, { focused: true }), scale) > markerRadius(at(0, 0, { outlier: true }), scale));
   assert.ok(markerRadius(at(0, 0, { outlier: true }), scale) > markerRadius(at(0, 0, { borderPost: true }), scale));
+  // A building in the selected area outranks an ordinary one, which it did
+  // not when ordinary markers were sized by their category scale.
+  assert.ok(markerRadius(at(0, 0, { selected: true }), scale) > markerRadius(at(0, 0), scale));
   assert.ok(markerRadius(at(0, 0, { borderPost: true }), scale) > markerRadius(at(0, 0), scale));
 });
 
