@@ -301,7 +301,16 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .republic-map .map-pedestrian path { fill: none; stroke: #e7bd69; stroke-width: .7; stroke-linecap: round; stroke-linejoin: round; opacity: .72; vector-effect: non-scaling-stroke; }
 .republic-map .map-buildings circle { fill: var(--muted); opacity: .52; }
 .republic-map .map-selected circle { fill: var(--accent); opacity: .9; }
-.republic-map .map-scopes circle { fill: var(--panel); stroke: var(--accent2); stroke-width: 2; cursor: pointer; vector-effect: non-scaling-stroke; }
+/* Area centres were opaque discs drawn over the buildings, so a cluster
+   underneath one was both hidden and unclickable — the single largest reason
+   clicking a building appeared to do nothing. Hollow now, and clicks pass
+   through the middle to whatever is beneath; the ring itself still selects the
+   area, so it is drawn thick enough to hit. */
+.republic-map .map-scopes circle {
+  fill: none; stroke: var(--accent2); stroke-width: 3.5;
+  cursor: pointer; vector-effect: non-scaling-stroke;
+  pointer-events: stroke;
+}
 .republic-map .map-outliers circle { fill: var(--neg); stroke: var(--panel); stroke-width: 1.8; vector-effect: non-scaling-stroke; }
 .republic-map .map-borders circle { fill: #ffb02e; stroke: #111; stroke-width: 1.8; vector-effect: non-scaling-stroke; }
 .republic-map circle.focused { fill: var(--neg); stroke: #ffd54a; stroke-width: 3.5; vector-effect: non-scaling-stroke; }
@@ -365,6 +374,24 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-building-inspector h3, .map-building-inspector > p { grid-column: 1 / -1; margin: 0; }
 .republic-map.standalone circle[data-map-kind] { cursor: pointer; }
 .republic-map circle.map-inspected { stroke: var(--accent2); stroke-width: 3; vector-effect: non-scaling-stroke; }
+
+/* An ordinary building marker is under four pixels across, which is fine to
+   look at and nearly impossible to click: the details panel worked all along,
+   most clicks simply landed on empty ground beside the marker.
+
+   A transparent stroke widens the target without changing what is drawn.
+   `non-scaling-stroke` keeps it a constant number of screen pixels at every
+   zoom, and `pointer-events: all` is what makes an unpainted stroke count as
+   part of the shape. Markers that carry a visible stroke of their own — the
+   focused, under-construction and inspected ones — are excluded so this does
+   not overwrite it; all three are drawn larger anyway. */
+.republic-map.standalone [data-map-kind]:not(.focused):not(.under-construction):not(.map-inspected) {
+  stroke: transparent;
+  stroke-width: 12;
+  paint-order: stroke;
+  vector-effect: non-scaling-stroke;
+  pointer-events: all;
+}
 .area-health tbody tr.warning td:first-child { box-shadow: inset 3px 0 var(--warn); }
 .area-health tbody tr.critical td:first-child { box-shadow: inset 3px 0 var(--neg); }
 .area-health tbody tr.selected-area td { background: color-mix(in srgb, var(--accent) 10%, var(--panel)); }
@@ -856,6 +883,9 @@ table.data th, table.data td { border-color: var(--border); }
 /* With nothing selected it is only a prompt, so it stays out of the way. */
 .map-viewport.standalone > .map-building-inspector.empty {
   border-color: var(--border); box-shadow: none; opacity: .82; width: auto;
+  /* It is a prompt, not a control, and it was intercepting clicks meant for
+     the markers behind it. */
+  pointer-events: none;
 }
 @media (max-width: 720px) {
   .map-viewport.standalone > .map-building-inspector {
