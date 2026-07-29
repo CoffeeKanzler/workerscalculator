@@ -13,6 +13,10 @@ export const STRINGS = {
     liveLoading: 'Live-Telemetrie wird angefordert …', liveResynchronizing: 'Spielgeneration oder Ereigniszeiger hat sich geändert. Der alte Stand wird verworfen.',
     liveUnavailable: 'Live-SDK ist nicht verfügbar.', lastObserved: 'Zuletzt beobachtet:', liveBriefHint: 'Livewerte bleiben beobachtet; Planwerte darunter sind hypothetisch und werden nie automatisch an das Spiel gesendet.',
     cities: 'Städte', buildings: 'Gebäude', resources: 'Ressourcen', transport: 'Transport',
+    // The map draws a shape and colour per category, so the legend has to name
+    // them or the distinction is decoration.
+    mapCategoryLiving: 'Wohnen', mapCategoryIndustry: 'Produktion',
+    mapCategoryServices: 'Dienste', mapCategorySupport: 'Ver- und Entsorgung, Transport',
     'surface.ready': 'bereit', 'surface.loading': 'lädt', 'surface.resynchronizing': 'Neuabgleich',
     'surface.error': 'Fehler', 'surface.empty': 'wartet auf Spielstand',
     tabHome: 'Start', tabPrices: 'Preise', tabProduction: 'Produktion', tabAnalysis: 'Preisanalyse',
@@ -409,6 +413,8 @@ export const STRINGS = {
     liveLoading: 'Requesting live telemetry …', liveResynchronizing: 'The game generation or event cursor changed. The old state is discarded.',
     liveUnavailable: 'The live SDK is unavailable.', lastObserved: 'Last observed:', liveBriefHint: 'Live values are observations; the plan values below are hypothetical and are never sent to the game automatically.',
     cities: 'Cities', buildings: 'Buildings', resources: 'Resources', transport: 'Transport',
+    mapCategoryLiving: 'Housing', mapCategoryIndustry: 'Production',
+    mapCategoryServices: 'Services', mapCategorySupport: 'Utilities and transport',
     'surface.ready': 'ready', 'surface.loading': 'loading', 'surface.resynchronizing': 'resynchronizing',
     'surface.error': 'error', 'surface.empty': 'waiting for save',
     tabHome: 'Start', tabPrices: 'Prices', tabProduction: 'Production', tabAnalysis: 'Price analysis',

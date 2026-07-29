@@ -314,6 +314,12 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-legend i.pedestrian { width: 14px; height: 2px; border-radius: 0; background: #e7bd69; }
 .map-legend i.water { width: 14px; height: 7px; border-radius: 2px; background: rgba(44, 133, 190, .7); }
 .map-legend i.pollution { width: 22px; height: 7px; border-radius: 2px; background: linear-gradient(90deg, #2db058, #f6c937, #dc372d); }
+/* These have to match what the canvas draws, shape and colour both, or the
+   legend describes a map the reader is not looking at. */
+.map-legend i.cat-living { background: var(--blueprint); }
+.map-legend i.cat-industry { border-radius: 0; background: var(--accent); }
+.map-legend i.cat-services { border-radius: 0; background: var(--pos); transform: rotate(45deg); }
+.map-legend i.cat-support { width: 6px; height: 6px; background: var(--muted); }
 .map-legend i.selected { background: var(--accent); }
 .map-legend i.construction { background: transparent; border: 2px dashed var(--accent2); }
 .map-legend i.border { background: #ffb02e; border: 1px solid #111; }

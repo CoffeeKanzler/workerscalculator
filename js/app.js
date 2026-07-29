@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=123';
+import { STRINGS } from './i18n.js?v=125';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -3407,7 +3407,16 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     model.roads.length ? el('span', { 'data-map-legend': 'roads' }, el('i', { class: 'road' }), t('roads')) : null,
     model.rails.length ? el('span', { 'data-map-legend': 'rails' }, el('i', { class: 'rail' }), t('rails')) : null,
     model.pedestrian.length ? el('span', { 'data-map-legend': 'pedestrian' }, el('i', { class: 'pedestrian' }), t('pedestrianPaths')) : null,
-    el('span', { 'data-map-legend': 'buildings' }, el('i', { class: 'building' }), t('buildings')),
+    // One grey dot said 'Buildings' while the map drew four shapes in four
+    // colours, so the legend explained none of what a reader was looking at.
+    el('span', { 'data-map-legend': 'buildings' },
+      el('i', { class: 'building cat-living' }), t('mapCategoryLiving')),
+    el('span', { 'data-map-legend': 'buildings' },
+      el('i', { class: 'building cat-industry' }), t('mapCategoryIndustry')),
+    el('span', { 'data-map-legend': 'buildings' },
+      el('i', { class: 'building cat-services' }), t('mapCategoryServices')),
+    el('span', { 'data-map-legend': 'buildings' },
+      el('i', { class: 'building cat-support' }), t('mapCategorySupport')),
     Number.isInteger(state.republicScope)
       ? el('span', { 'data-map-legend': 'selected' }, el('i', { class: 'selected' }), t('selectedAreaBuildings')) : null,
     hasUnderConstruction
