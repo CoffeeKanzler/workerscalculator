@@ -181,7 +181,84 @@ export function mergeVehiclePools(sheetVehicles, railSupplement, rawGameVehicles
     vehicle.provenance.performance = 'game-file';
     vehicle.provenance.availability = 'game-file';
   }
+
+  // Everything above only reaches a game vehicle that happens to share a name
+  // with a spreadsheet row, so the pool was capped by the spreadsheet: 800 of
+  // the game's vehicles had no row and could not be listed at all, whole bus
+  // and DLC families among them. The game files are the authority on what
+  // exists, so anything they describe and the spreadsheet does not is added
+  // here on its own terms rather than left out.
+  for (const raw of rawGameVehicles) {
+    const name = raw.de || raw.en;
+    if (!name || byName.has(name.toLowerCase())) continue;
+    const entry = gameOnlyVehicle(raw);
+    if (!entry) continue;
+    byName.set(name.toLowerCase(), entry);
+    merged.push(entry);
+  }
   return merged;
+}
+
+// A pool entry built from game data alone. The interface reads German attr
+// keys because that is the shape the spreadsheet defined, so the mapping stays
+// even though the spreadsheet no longer supplies the values.
+function gameOnlyVehicle(raw) {
+  const recipe = normalVehicleProductionRecipe({
+    runtimeCategory: vehicleRuntimeCategory(raw.type),
+    emptyWeight: raw.emptyWeight,
+    powerKW: raw.powerKW ?? 0,
+    introductionYear: raw.from ?? 0,
+    transportSubtype: resourceTransportSubtype(raw.transportType) ?? 0,
+    capacity: raw.capacity ?? 0,
+    electric: raw.electric,
+    roadRecipeBranch: raw.roadRecipeBranch,
+    singleHorsePower: raw.singleHorsePower,
+  });
+  const name = raw.de || raw.en;
+  const entry = {
+    name,
+    attrs: {
+      Typ: gameVehicleTypeLabel(raw),
+      Von: raw.from ?? '',
+      Bis: raw.to ?? '',
+      'Max. Geschwindigkeit': raw.speed ?? '',
+      Motorleistung: raw.powerKW ?? '',
+      Leergewicht: raw.emptyWeight ?? '',
+      'Länge': raw.length ?? '',
+      Passagiere: raw.capacity ?? '',
+    },
+    sourceGameId: raw.id,
+    gameOnly: true,
+    provenance: {
+      productionCost: recipe ? 'game-file' : 'unavailable',
+      cargoCapacities: Number.isFinite(raw.capacity) && raw.transportType ? 'game-file' : 'unavailable',
+      dimensions: 'game-file',
+      performance: 'game-file',
+      availability: 'game-file',
+    },
+  };
+  if (recipe) entry.gameRecipe = recipe;
+  if (Number.isFinite(raw.capacity) && raw.transportType) {
+    entry.gameCapacity = raw.capacity;
+    entry.gameTransportType = raw.transportType;
+  }
+  if (typeof raw.electric === 'boolean') entry.gameElectric = raw.electric;
+  return entry;
+}
+
+// The type filter groups by this label, so it has to land in the same buckets
+// the spreadsheet rows use rather than inventing a parallel vocabulary.
+function gameVehicleTypeLabel(raw) {
+  const transport = String(raw.transportType ?? '');
+  if (Number.isFinite(raw.capacity) && raw.capacity > 0
+    && transport.includes('PASSANGER')) return 'Bus';
+  switch (raw.type) {
+    case 'VEHICLETYPE_RAIL': return 'Zug';
+    case 'VEHICLETYPE_SHIP': return 'Schiff';
+    case 'VEHICLETYPE_AIRPLANE': return 'Flugzeug';
+    case 'VEHICLETYPE_HELICOPTER': return 'Helikopter';
+    default: return 'LKW';
+  }
 }
 
 function vehicleMap(vehicles) {
