@@ -31,6 +31,7 @@ import { parseWorkshopBuildingIni, workshopBuildingIdentity } from '../js/worksh
 import { workshopIdsInTypes, missingWorkshopIds } from './workshop_missing.mjs';
 import { parseBuildingsGame } from '../js/savegame.js';
 import { readWorkshopIndex, writeWorkshopIndex } from '../js/models/workshop_index.js';
+import { parseBoundingBoxes } from './extract_building_footprints.mjs';
 
 const APP_ID = '784150';
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
@@ -68,6 +69,31 @@ export function buildingFoldersIn(dir) {
     .sort();
 }
 
+// A building's outline, read from the `.bbox` companion beside its ini. The
+// boxes are local to the building and the map rotates them by the saved
+// rotation, so nothing here needs to know where the building stands.
+//
+// Rounded to centimetres to keep the catalogue small. A box thinner than that
+// collapses to a line and is dropped after rounding rather than before, or a
+// wall two centimetres thick would round to nothing and take the building's
+// whole outline with it.
+export function footprintBesideIni(folder) {
+  const file = path.join(folder, 'building.bbox');
+  if (!existsSync(file)) return null;
+  try {
+    const boxes = parseBoundingBoxes(readFileSync(file));
+    const round = value => Math.round(value * 100) / 100;
+    const rounded = boxes
+      .map(box => [round(box.minX), round(box.minZ), round(box.maxX), round(box.maxZ)])
+      .filter(([minX, minZ, maxX, maxZ]) => maxX > minX && maxZ > minZ);
+    if (!rounded.length) return null;
+    return { boxes: rounded, height: round(Math.max(...boxes.map(box => box.height))) };
+  } catch {
+    // A malformed bbox costs the building its outline, not its definition.
+    return null;
+  }
+}
+
 export function extractItem(id, dir, { now = new Date().toISOString() } = {}) {
   const buildings = [];
   for (const folder of buildingFoldersIn(dir)) {
@@ -77,7 +103,19 @@ export function extractItem(id, dir, { now = new Date().toISOString() } = {}) {
     const text = readFileSync(file, 'latin1');
     const identity = workshopBuildingIdentity(`${folder}/building.ini`);
     const parsed = parseWorkshopBuildingIni(text, `${id}/${folder}`, identity);
-    buildings.push({ ...parsed, id: `${id}/${folder}`, workshopId: String(id), modPath: folder });
+    // The map draws each building's real outline rather than an identical dot,
+    // and a modded republic is most of what a modded save contains. Mods ship
+    // the same `building.bbox` the retail install does, in the same format, so
+    // reading it here means a Workshop building is shaped on the map exactly
+    // as a vanilla one is.
+    const footprint = footprintBesideIni(path.join(dir, folder));
+    buildings.push({
+      ...parsed,
+      id: `${id}/${folder}`,
+      workshopId: String(id),
+      modPath: folder,
+      ...(footprint ? { footprint } : {}),
+    });
   }
   return {
     schemaVersion: 1,
@@ -182,6 +220,7 @@ function main(argv) {
   const extractOnly = argv.includes('--extract-only');
   const fromSaves = argv.includes('--from-saves');
   const prune = argv.includes('--prune');
+  const refresh = argv.includes('--refresh');
   const size = Number(flagValue(argv, '--batch-size', '100'));
   const idsFile = flagValue(argv, '--ids-file', null);
   const flagValues = new Set([idsFile, String(size)].filter(Boolean));
@@ -203,8 +242,13 @@ function main(argv) {
     console.log(`${ids.length} missing item(s) referenced by ${rest.length} save(s)`);
   }
   // Resumable: anything already catalogued is skipped, so a re-run continues.
+  //
+  // --refresh re-fetches them instead. The catalogue is a cache of what was
+  // extracted, so widening what gets extracted — building footprints, say —
+  // leaves every existing entry missing the new field, and skipping them is
+  // exactly wrong.
   const requested = new Set(ids);
-  ids = missingWorkshopIds(requested, index);
+  if (!refresh) ids = missingWorkshopIds(requested, index);
 
   // Skipping them is right, but they were reaching the catalogue without ever
   // reaching the pruning that happens alongside it, so their raw downloads
@@ -215,7 +259,9 @@ function main(argv) {
   // Scoped to `requested` it could not see downloads left by an earlier run
   // with a different list, which is how 33 GB accumulated while a run with
   // --prune was in progress and apparently working.
-  if (prune) reclaimCataloguedDownloads(index);
+  // Not under --refresh: that pass is re-downloading the very items this
+  // would delete, and the per-item prune after cataloguing still runs.
+  if (prune && !refresh) reclaimCataloguedDownloads(index);
   if (!ids.length) {
     console.log('nothing to fetch');
     return;
@@ -247,7 +293,7 @@ function main(argv) {
     // Between batches, not only at startup: a failed download leaves its
     // directory behind, and a long run would otherwise hold every one of them
     // until it finished.
-    if (prune) reclaimCataloguedDownloads(index);
+    if (prune && !refresh) reclaimCataloguedDownloads(index);
     console.log(`batch ${number + 1}/${groups.length}: ${added} catalogued, `
       + `${failed} unavailable, ${buildings} building definitions, `
       + `catalog holds ${index.itemCount}`);

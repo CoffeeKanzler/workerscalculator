@@ -1996,6 +1996,13 @@ async function handleSaveDirectory(fileList) {
       statsFile, deferredMapFiles, workshop,
     } = result;
     DATA.workshopBuildings = workshop.workshopBuildings;
+    // A modded republic is mostly Workshop buildings, so without these the map
+    // draws real outlines for the vanilla ones and fallback dots for the rest.
+    // The catalogue carries each mod's own `building.bbox`, in the same format
+    // and the same local coordinates the retail install uses, so they merge
+    // straight in.
+    DATA.buildingFootprints = mergedFootprints(DATA.buildingFootprints,
+      workshop.workshopBuildings);
     DATA.workshopVehicles = workshop.workshopVehicles;
     DATA.workshopProduction = workshop.workshopProduction;
 
