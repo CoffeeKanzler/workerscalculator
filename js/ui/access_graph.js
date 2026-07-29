@@ -17,6 +17,7 @@ const DEFAULT_LABELS = {
   hidden: 'more nodes outside this neighborhood',
   hiddenEdges: 'more links not drawn',
   maxWorkers: 'Theoretical maximum workers',
+  ofSlots: 'of the workplace',
   bottleneck: 'Bottleneck',
   walkingDistance: 'Walking distance',
   pathType: 'Path type',
@@ -81,9 +82,15 @@ export function workerAccessEdgeLabel(edge, labels = {}) {
   return parts.join(' · ');
 }
 
+export function boundLabel(bound) {
+  const workers = Math.round(bound.workers);
+  if (!bound.slots) return `≤${workers}`;
+  return `≤${workers}/${Math.round(bound.slots)}`;
+}
+
 function nodeAriaLabel(node, bound, labels) {
   const kind = labels[node.kind] ?? node.kind;
-  const capacity = bound ? `. ${labels.maxWorkers}: ${Math.round(bound.workers)}` : '';
+  const capacity = bound ? `. ${labels.maxWorkers}: ${boundLabel(bound)}` : '';
   return `${kind}: ${node.label}${capacity}`;
 }
 
@@ -174,8 +181,10 @@ export function mountWorkerAccessGraph(container, evidence, {
         labels[node.kind] ?? node.kind),
       svg('text', { x: 10, y: 37, class: 'node-label' }, clippedLabel(node.label)),
       bound ? svg('text', {
-        x: 108, y: 18, class: 'node-capacity', 'text-anchor': 'end',
-      }, `≤${Math.round(bound.workers)}`) : null);
+        x: 108, y: 18,
+        class: `node-capacity${bound.coverage != null && bound.coverage < 1 ? ' short' : ''}`,
+        'text-anchor': 'end',
+      }, boundLabel(bound)) : null);
       return group;
     });
     const graphSvg = svg('svg', {
@@ -249,7 +258,12 @@ export function mountWorkerAccessGraph(container, evidence, {
       bound ? html('dl', {},
         html('div', {},
           html('dt', {}, labels.maxWorkers),
-          html('dd', {}, `≤ ${Math.round(bound.workers)}`)),
+          html('dd', {
+            class: bound.coverage != null && bound.coverage < 1 ? 'short' : null,
+          }, bound.slots
+            ? `≤ ${Math.round(bound.workers)} / ${Math.round(bound.slots)} `
+              + `· ${Math.round(bound.coverage * 100)} % ${labels.ofSlots}`
+            : `≤ ${Math.round(bound.workers)}`)),
         html('div', {},
           html('dt', {}, labels.bottleneck),
           html('dd', {}, workerAccessEdgeLabel(

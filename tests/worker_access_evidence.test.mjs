@@ -15,7 +15,11 @@ function corridor(edgeCount = 5, length = 100) {
 }
 
 function building(index, type, edgeIds, extra = {}) {
-  return { index, type, name: `${type} ${index}`, pedestrianEdgeIds: edgeIds, ...extra };
+  return {
+    index, type, name: `${type} ${index}`,
+    walkingEdgeRefs: edgeIds.map(id => [4, id]),
+    ...extra,
+  };
 }
 
 const HOME = building(1, 'panelak', [0]);
@@ -46,7 +50,7 @@ test('the corridor bound is the smallest exact count on it, never a fabricated r
   });
   const graph = buildWorkerAccessGraph(evidence, { focusId: 'residence:1' });
   assert.deepEqual(graph.upperBounds, [
-    { nodeId: 'workplace:2', workers: 7, bottleneckEdgeId: 'walk:1:2' },
+    { nodeId: 'workplace:2', workers: 7, slots: 12, coverage: 7 / 12, bottleneckEdgeId: 'walk:1:2' },
   ]);
 });
 
@@ -159,16 +163,18 @@ test('a dense corridor is bounded rather than drawn as a hairball', () => {
   });
   assert.ok(evidence.edges.length > 300);
   const graph = buildWorkerAccessGraph(evidence, { focusId: 'residence:0' });
-  assert.ok(graph.edges.length <= 60);
-  assert.ok(graph.hiddenEdges > 0);
   assert.ok(graph.edges.every(edge => graph.nodes.some(node => node.id === edge.source)
     && graph.nodes.some(node => node.id === edge.target)));
-  // The focus keeps every one of its own links before any neighbour's are drawn.
-  const ownLinks = evidence.edges.filter(edge =>
-    edge.source === 'residence:0' || edge.target === 'residence:0').length;
-  assert.equal(graph.edges.filter(edge =>
-    edge.source === 'residence:0' || edge.target === 'residence:0').length,
-  Math.min(ownLinks, 60));
+  // Picking one residence must not put nineteen unrelated ones on screen just
+  // because they happen to share a workplace with it.
+  assert.deepEqual(graph.nodes.filter(node => node.kind === 'residence').map(node => node.id),
+    ['residence:0']);
+  // No stage may grow past what fits in the canvas, so the picked node is never
+  // scrolled off the top of its own corridor.
+  const perStage = new Map();
+  for (const node of graph.nodes) perStage.set(node.stage, (perStage.get(node.stage) ?? 0) + 1);
+  assert.ok(Math.max(...perStage.values()) <= 6, `stages: ${[...perStage]}`);
+  assert.ok(graph.hiddenNodes > 0 && graph.hiddenEdges > 0);
 });
 
 test('an undecoded pedestrian network yields no graph rather than a guessed one', () => {

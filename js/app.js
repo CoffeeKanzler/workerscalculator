@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=145';
+import { STRINGS } from './i18n.js?v=146';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -44,7 +44,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   filterCitizenDiagnostics, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=29';
+} from './save_model.js?v=30';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -54,11 +54,11 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=29';
-import { workerAccessAvailability } from './models/access_graph.js?v=9';
-import { mountWorkerAccessGraph } from './ui/access_graph.js?v=9';
-import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=4';
-import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=3';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=30';
+import { workerAccessAvailability } from './models/access_graph.js?v=11';
+import { mountWorkerAccessGraph } from './ui/access_graph.js?v=11';
+import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=5';
+import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=4';
 import {
   buildMapTransportLines,
   mapCountOrDash,
@@ -2937,12 +2937,23 @@ function renderWalkReachSection(building) {
   const entries = [...mapWalkReach.buildings.values()];
   const furthest = entries.reduce((worst, entry) =>
     !worst || entry.budgetUsed > worst.budgetUsed ? entry : worst, null);
+  // The reverse question, which is the one a player asks of a workplace: not
+  // "where can I walk from here" but "who can get here".
+  const catchment = workerAccessContext().evidence?.catchment?.get(building.index) ?? null;
+  const count = (key, value) => t(key).replace('{count}', fmt(value, 0));
   return el('section', { class: 'map-walk-reach', 'data-walk-reach': String(entries.length) },
     el('h4', {}, t('walkReachTitle')),
     kv(t('walkReachCount'), fmt(entries.length, 0)),
     furthest ? kv(t('walkReachFurthest'),
       `${fmt(furthest.distanceMeters, 0)} m · ${fmt(furthest.budgetUsed, 0)} / ${fmt(mapWalkReach.budgetMeters ?? 480, 0)} ${t('walkReachBudget')}`) : null,
     furthest ? kv(t('walkReachLimitingLeg'), walkSurfaceLabel(furthest.limitingSurface)) : null,
+    catchment?.walkAdults ? kv(t('walkReachCatchmentWalk'),
+      `${fmt(catchment.walkAdults, 0)} ${t('walkReachPeople')} · `
+      + count('walkReachFromResidences', catchment.walkResidences)) : null,
+    catchment?.transitAdults ? kv(t('walkReachCatchmentTransit'),
+      `${fmt(catchment.transitAdults, 0)} ${t('walkReachPeople')} · `
+      + count('walkReachFromResidences', catchment.transitResidences)
+      + ` · ${count('walkReachViaLines', catchment.transitLineSlots.size)}`) : null,
     el('p', { class: 'hint' }, t('walkReachHint')));
 }
 
@@ -3245,7 +3256,27 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
       }, line.name || `${t('vehicleLine')} #${line.slot}`)))) : null,
     el('div', { class: 'map-zoom-controls' },
       el('button', { onclick: () => api?.fitDeveloped() }, t('mapFitDeveloped')),
-      el('button', { onclick: () => api?.fitFull() }, t('mapFullTerrain'))));
+      el('button', { onclick: () => api?.fitFull() }, t('mapFullTerrain')),
+      // Every layer, filter and selection is sticky across sessions, so there
+      // has to be one way back to the view the map opens with.
+      el('button', {
+        'data-map-reset': '',
+        onclick: () => {
+          state.mapLayers = null;
+          state.mapCategoryVisibility = null;
+          state.mapBuildingFilter = '';
+          state.mapMetric = 'category';
+          state.mapPollutionOpacity = null;
+          state.mapRadiationOpacity = null;
+          mapSelectedBuildingIndex = null;
+          mapSelectedTransportLineSlot = null;
+          mapWalkReach = null;
+          mapFocusBuildingIndex = null;
+          standaloneLeafletCamera = null;
+          saveState();
+          update();
+        },
+      }, t('mapResetView'))));
   const selectedLine = transportLines.find(line => line.slot === mapSelectedTransportLineSlot);
   const selectedBuilding = buildings.find(building => building.inspected || building.focused);
   mapInspector = selectedLine ? renderMapTransportInspector(selectedLine)
@@ -3293,6 +3324,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         hidden: t('workerAccessHidden'),
         hiddenEdges: t('workerAccessHiddenEdges'),
         maxWorkers: t('workerAccessMaxWorkers'),
+        ofSlots: t('workerAccessOfSlots'),
         bottleneck: t('workerAccessBottleneck'),
         walkingDistance: t('walkingDistance'),
         pathType: t('pathType'),
@@ -3309,8 +3341,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         ...Object.fromEntries(Object.entries(WALK_SURFACE_KEYS)
           .map(([surface, key]) => [surface, t(key)])),
       },
-      initialFocusId: accessEvidence?.nodes?.find(node =>
-        node.buildingIndex === mapSelectedBuildingIndex)?.id ?? null,
+      initialFocusId: accessNodeForBuilding(accessEvidence, mapSelectedBuildingIndex)?.id ?? null,
       showHeading: false,
       onLocateBuilding: index => {
         const building = buildings.find(item => item.index === index);
@@ -3382,14 +3413,15 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         mapSelectedBuildingIndex = building.index;
         mapInspector.replaceWith(mapInspector = renderMapBuildingInspector(building));
         container.dataset.selectedBuilding = String(building.index);
-        const graphNode = accessEvidence?.nodes?.find(node =>
-          node.buildingIndex === building.index);
+        container.dataset.selectedTransportLine = '';
+        const graphNode = accessNodeForBuilding(accessEvidence, building.index);
         if (graphNode) accessGraph.focus(graphNode.id);
       },
       onSelectTransportLine: line => {
         mapSelectedBuildingIndex = null;
         mapSelectedTransportLineSlot = line.slot;
         mapInspector.replaceWith(mapInspector = renderMapTransportInspector(line));
+        container.dataset.selectedBuilding = '';
         container.dataset.selectedTransportLine = String(line.slot);
       },
       onSelectScope: scope => {
@@ -3421,7 +3453,14 @@ function accessKeyForImport(imported) {
   if (!imported?.pedestrianNetwork) return null;
   return [imported.sourceName, imported.importedAt,
     imported.pedestrianNetwork.summary?.byteLength ?? 0,
+    imported.roadNetwork?.summary?.byteLength ?? 0,
     imported.observedBuildings?.length ?? 0].join('|');
+}
+
+// Citizens walk beside roads as well as on footpaths, so both networks are
+// joined into one walking graph at the nodes they share.
+function walkingNetworksOf(imported) {
+  return { pedestrian: imported?.pedestrianNetwork ?? null, road: imported?.roadNetwork ?? null };
 }
 
 function workerAccessContext() {
@@ -3432,15 +3471,33 @@ function workerAccessContext() {
   const buildings = imported.observedBuildings ?? [];
   accessCache = {
     key,
-    network: buildWalkingNetwork(imported.pedestrianNetwork, buildings),
+    network: buildWalkingNetwork(walkingNetworksOf(imported), buildings),
     evidence: buildWorkerAccessEvidence({
-      pedestrianNetwork: imported.pedestrianNetwork,
+      pedestrianNetwork: walkingNetworksOf(imported),
       buildings,
       residenceOccupancy: imported.residenceOccupancy,
       vehicleLines: imported.vehicleLines,
+      labelFor: mapBuildingDisplayName,
     }),
   };
   return accessCache;
+}
+
+// A map click should move the graph to that building. Several nodes can carry
+// the same building — a stop is both boarded at and alighted at — so the one
+// the reader most likely means is picked rather than whichever came first.
+const ACCESS_NODE_PRIORITY = ['residence', 'workplace', 'stop', 'transfer'];
+
+function accessNodeForBuilding(evidence, buildingIndex) {
+  const candidates = (evidence?.nodes ?? []).filter(node => node.buildingIndex === buildingIndex);
+  if (!candidates.length) return null;
+  return candidates.slice().sort((a, b) => {
+    const rank = kind => {
+      const at = ACCESS_NODE_PRIORITY.indexOf(kind);
+      return at === -1 ? ACCESS_NODE_PRIORITY.length : at;
+    };
+    return rank(a.kind) - rank(b.kind) || a.stage - b.stage;
+  })[0];
 }
 
 function walkableBuildingsFrom(buildingIndex) {

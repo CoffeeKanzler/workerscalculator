@@ -1,4 +1,4 @@
-import { pedestrianEdgeIdsOf } from './models/walking_access.js?v=3';
+import { walkingEdgeRefsOf } from './models/walking_access.js?v=4';
 import { footprintRingsFor } from './models/building_footprint.js?v=3';
 
 export function citizenProductivity(citizen) {
@@ -385,13 +385,13 @@ export function compactObservedBuildings(buildings) {
   const keys = [
     'index', 'type', 'name', 'scopeId', 'x', 'y', 'z', 'rotation', 'currentWorkers',
     'configuredWorkers', 'configuredWorkersHighEducation', 'mineQuality',
-    'constructionProgress', 'pedestrianEdgeIds', 'storages',
+    'constructionProgress', 'walkingEdgeRefs', 'storages',
   ];
   for (const building of buildings) {
     // The full connection slots carry pipes, wires and rails too; the walking
-    // graph only needs the pedestrian edge ids, and a snapshot keeps them.
-    const ids = pedestrianEdgeIdsOf(building);
-    if (ids.length) building.pedestrianEdgeIds = ids;
+    // graph only needs the footpath and road edges, and a snapshot keeps them.
+    const refs = walkingEdgeRefsOf(building);
+    if (refs.length) building.walkingEdgeRefs = refs;
   }
   return buildings.map((building) => Object.fromEntries(
     keys.filter((key) => building[key] !== undefined && (key !== 'storages' || building[key].some(

@@ -71,8 +71,8 @@ test('the focused access corridor reports max-worker upper bounds and its bottle
   assert.equal(graph.nodes.length, 6);
   assert.equal(graph.edges.length, 5);
   assert.deepEqual(graph.upperBounds, [
-    { nodeId: 'work:4', workers: 72, bottleneckEdgeId: 'ride:7:3' },
-    { nodeId: 'work:5', workers: 30, bottleneckEdgeId: 'walk:3:5' },
+    { nodeId: 'work:4', workers: 72, slots: null, coverage: null, bottleneckEdgeId: 'ride:7:3' },
+    { nodeId: 'work:5', workers: 30, slots: null, coverage: null, bottleneckEdgeId: 'walk:3:5' },
   ]);
   assert.equal(graph.edges.find(edge => edge.id === 'ride:7:3').bottleneck, true);
   assert.equal(graph.hiddenNodes, 0);
@@ -106,14 +106,17 @@ test('large republic graphs render a deterministic bounded neighborhood', () => 
   };
 
   const graph = buildWorkerAccessGraph(evidence, {
-    focusId: 'home', maxNodes: 24, depth: 1,
+    focusId: 'home', maxNodes: 24, depth: 1, maxPerStage: 6,
   });
 
-  assert.equal(graph.nodes.length, 24);
-  assert.equal(graph.edges.length, 23);
-  assert.equal(graph.hiddenNodes, 177);
-  assert.deepEqual(graph.nodes.slice(0, 4).map(node => node.id), [
-    'home', 'work:0', 'work:1', 'work:2',
+  // Six workplaces plus the focus, and they are the six nearest — the picture
+  // stays inside the canvas rather than scrolling the focus out of view.
+  assert.equal(graph.nodes.length, 7);
+  assert.equal(graph.edges.length, 6);
+  assert.equal(graph.hiddenNodes, 194);
+  assert.equal(graph.hiddenEdges, 194);
+  assert.deepEqual(graph.nodes.map(node => node.id), [
+    'home', 'work:0', 'work:1', 'work:2', 'work:3', 'work:4', 'work:5',
   ]);
 });
 

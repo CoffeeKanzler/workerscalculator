@@ -1360,3 +1360,8 @@ table.data th, table.data td { border-color: var(--border); }
 }
 
 .map-viewport .republic-map { position: relative; z-index: 1; }
+
+/* A bound that does not fill the workplace is the interesting case, so it is
+   the one that carries colour. */
+.worker-access-graph .node-capacity.short { fill: var(--warn); }
+.worker-access-inspector dd.short { color: var(--warn); }

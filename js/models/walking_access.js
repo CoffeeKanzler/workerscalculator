@@ -24,7 +24,7 @@ const REACH_NUMERATOR = 400;
 const percentOf = factor => Math.fround(Math.fround(factor * REACH_NUMERATOR) / WALKING_BUDGET_METRES);
 
 const DEFAULT_SURFACE = { key: 'other', factor: 1 };
-const SURFACE_BY_TYPE = new Map([
+const PEDESTRIAN_SURFACES = new Map([
   [-1, { key: 'mud', factor: 0.6 }],
   [0, { key: 'gravel', factor: 1.05 }],
   [1, { key: 'asphalt', factor: 1.15, bySubtype: new Map([[1, 'brick']]) }],
@@ -33,10 +33,37 @@ const SURFACE_BY_TYPE = new Map([
   [20, { key: 'tunnel', factor: 1 }],
 ]);
 
-export function pedestrianSurface(edge) {
-  const entry = SURFACE_BY_TYPE.get(edge?.surfaceType) ?? DEFAULT_SURFACE;
+// Citizens walk beside roads too: the reach search seeds a building's road
+// connection as readily as its footpath one, and the same speed table answers
+// for class 0. Roads are slower than dedicated footpaths, which is what the
+// factors below say — a dirt road is 50%, a paved one 87.5%.
+const ROAD_SURFACES = new Map([
+  [-1, { key: 'roadMud', factor: 0.6 }],
+  [0, { key: 'roadGravel', factor: 0.75 }],
+  [1, { key: 'roadAsphalt', factor: 0.95 }],
+  [2, { key: 'roadSidewalk', factor: 1.05 }],
+  [3, { key: 'roadSidewalk', factor: 1.05 }],
+  [4, { key: 'roadSidewalk', factor: 1.05 }],
+  [10, { key: 'roadBridge', factor: 0.75 }],
+  [20, { key: 'roadTunnel', factor: 0.65 }],
+]);
+
+export const ROAD_NETWORK_CLASS = 0;
+const SURFACES_BY_CLASS = new Map([
+  [PEDESTRIAN_NETWORK_CLASS, PEDESTRIAN_SURFACES],
+  [ROAD_NETWORK_CLASS, ROAD_SURFACES],
+]);
+
+export function walkingSurface(edge) {
+  const table = SURFACES_BY_CLASS.get(edge?.networkClass);
+  if (!table) return null;
+  const entry = table.get(edge?.surfaceType) ?? DEFAULT_SURFACE;
   const key = entry.bySubtype?.get(edge?.surfaceSubtype) ?? entry.key;
   return { key, percent: percentOf(entry.factor) };
+}
+
+export function pedestrianSurface(edge) {
+  return walkingSurface({ networkClass: PEDESTRIAN_NETWORK_CLASS, ...edge });
 }
 
 class MinHeap {
@@ -78,41 +105,86 @@ class MinHeap {
   }
 }
 
-// The pedestrian edges a building is bound to, taken either from the raw
-// connection slots or from the compact list an imported snapshot carries.
-export function pedestrianEdgeIdsOf(building) {
-  if (Array.isArray(building?.pedestrianEdgeIds)) return building.pedestrianEdgeIds;
-  const ids = [];
+// The slots the game's own reach search seeds: kind 2 always, kind 0 unless the
+// asset opts out. Kind 2 is the footpath connection and kind 0 the road one,
+// which is why a building with only a road frontage is still walkable to.
+const WALKING_SLOT_KINDS = new Set([0, 2]);
+
+// The walkable edges a building is bound to, taken either from the raw
+// connection slots or from the compact list an imported snapshot carries. Each
+// is a (class, id) pair because the id only means anything within its network.
+export function walkingEdgeRefsOf(building) {
+  if (Array.isArray(building?.walkingEdgeRefs)) return building.walkingEdgeRefs;
+  const refs = [];
+  const seen = new Set();
   for (const connection of building?.connections ?? []) {
+    if (!WALKING_SLOT_KINDS.has(connection.kind)) continue;
     for (const reference of connection.references ?? []) {
-      if (reference.networkClass !== PEDESTRIAN_NETWORK_CLASS) continue;
-      if (!ids.includes(reference.id)) ids.push(reference.id);
+      if (!SURFACES_BY_CLASS.has(reference.networkClass)) continue;
+      const key = `${reference.networkClass}:${reference.id}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      refs.push([reference.networkClass, reference.id]);
     }
   }
-  return ids;
+  return refs;
 }
 
 // A building's connection slots name the network edge the game bound them to,
 // so attachment needs no proximity guess. The search seeds those edges with
 // zero distance walked and charges every edge it steps onto afterwards, which
 // is why the graph below is walked edge to edge rather than node to node.
-export function buildWalkingNetwork(pedestrianNetwork, buildings = []) {
-  const nodes = pedestrianNetwork?.nodes ?? [];
-  const rawEdges = pedestrianNetwork?.edges ?? [];
-  const edges = [];
-  const adjacency = Array.from({ length: nodes.length }, () => []);
-  let unusableEdges = 0;
-  for (const edge of rawEdges) {
-    const usable = Number.isFinite(edge.length) && edge.length >= 0
-      && adjacency[edge.from] && adjacency[edge.to];
-    if (!usable) { unusableEdges += 1; continue; }
-    const surface = pedestrianSurface(edge);
-    const index = edges.length;
-    edges.push({ id: edge.id, from: edge.from, to: edge.to, length: edge.length, ...surface });
-    adjacency[edge.from].push(index);
-    adjacency[edge.to].push(index);
+export function buildWalkingNetwork(networks, buildings = []) {
+  // A bare network keeps meaning "the footpaths", which is what the unit tests
+  // and any direct caller pass.
+  const byClass = networks?.edges
+    ? new Map([[PEDESTRIAN_NETWORK_CLASS, networks]])
+    : new Map([
+      [PEDESTRIAN_NETWORK_CLASS, networks?.pedestrian],
+      [ROAD_NETWORK_CLASS, networks?.road],
+    ].filter(([, network]) => network?.edges?.length));
+
+  // Node ids are per-file, so the two graphs are joined on the coordinates
+  // themselves. They meet exactly: on the test saves 433 and 794 junctions
+  // match to the bit in x and z, every one of them with the same 0.38 m
+  // difference in height between the footpath surface and the road surface.
+  const nodeIds = new Map();
+  const nodeIdFor = node => {
+    const key = `${node.x}|${node.z}`;
+    if (!nodeIds.has(key)) nodeIds.set(key, nodeIds.size);
+    return nodeIds.get(key);
+  };
+  const localNodeIds = new Map();
+  for (const [networkClass, network] of byClass) {
+    localNodeIds.set(networkClass, network.nodes.map(nodeIdFor));
   }
-  const edgeById = new Map(edges.map((edge, index) => [edge.id, index]));
+
+  const edges = [];
+  const adjacency = Array.from({ length: nodeIds.size }, () => []);
+  const edgeIndex = new Map();
+  let rawEdgeCount = 0;
+  let unusableEdges = 0;
+  for (const [networkClass, network] of byClass) {
+    const local = localNodeIds.get(networkClass);
+    for (const edge of network.edges) {
+      rawEdgeCount += 1;
+      const from = local[edge.from];
+      const to = local[edge.to];
+      const surface = walkingSurface({ networkClass, ...edge });
+      if (!surface || !Number.isFinite(edge.length) || edge.length < 0
+        || from === undefined || to === undefined) {
+        unusableEdges += 1;
+        continue;
+      }
+      const index = edges.length;
+      edges.push({
+        id: edge.id, networkClass, from, to, length: edge.length, ...surface,
+      });
+      edgeIndex.set(`${networkClass}:${edge.id}`, index);
+      adjacency[from].push(index);
+      adjacency[to].push(index);
+    }
+  }
 
   const buildingEdges = new Map();
   const edgeBuildings = new Map();
@@ -120,8 +192,11 @@ export function buildWalkingNetwork(pedestrianNetwork, buildings = []) {
   let attachedBuildings = 0;
   for (const building of buildings) {
     const attached = [];
-    for (const id of pedestrianEdgeIdsOf(building)) {
-      const index = edgeById.get(id);
+    for (const [networkClass, id] of walkingEdgeRefsOf(building)) {
+      // A reference into a network this save did not ship is not a decoding
+      // failure, it is simply a network we were not given.
+      if (!byClass.has(networkClass)) continue;
+      const index = edgeIndex.get(`${networkClass}:${id}`);
       if (index === undefined) { danglingReferences += 1; continue; }
       if (!attached.includes(index)) attached.push(index);
     }
@@ -135,13 +210,14 @@ export function buildWalkingNetwork(pedestrianNetwork, buildings = []) {
   }
 
   return {
-    nodeCount: nodes.length,
+    nodeCount: nodeIds.size,
     edges,
     adjacency,
     buildingEdges,
     edgeBuildings,
     completeness: {
-      edgeCount: rawEdges.length,
+      networkClasses: [...byClass.keys()],
+      edgeCount: rawEdgeCount,
       usableEdgeCount: edges.length,
       unusableEdges,
       danglingReferences,

@@ -309,21 +309,30 @@ export function mountRepublicLeafletMap(container, options) {
     container.dataset.mapWalkReachCount = walkReach ? String(walkReach.buildings.size) : '';
     onWalkReach?.(walkReach);
   };
+  // Picking a line dims every other line. Nothing used to undo that, so one
+  // pick left the whole transport layer faded and one line permanently thick,
+  // however far the reader moved on. Selecting anything else clears it.
+  const styleTransportLines = slot => {
+    for (const record of transportRecords) {
+      const highlighted = slot != null && record.line.slot === slot;
+      record.path.setStyle({
+        weight: highlighted ? 6 : 3,
+        opacity: slot == null ? 0.82 : highlighted ? 1 : 0.55,
+      });
+    }
+    container.dataset.mapSelectedTransportLine = slot == null ? '' : String(slot);
+  };
   selectBuilding = building => {
     for (const record of markerRecords) {
       record.building.inspected = record.building.index === building.index;
     }
+    styleTransportLines(null);
     applyWalkReach(building);
     refreshBuildings();
     onSelectBuilding(building);
   };
   selectTransportLine = line => {
-    for (const record of transportRecords) {
-      record.path.setStyle({
-        weight: record.line.slot === line.slot ? 6 : 3,
-        opacity: record.line.slot === line.slot ? 1 : 0.55,
-      });
-    }
+    styleTransportLines(line.slot);
     onSelectTransportLine(line);
   };
   const updateLayer = key => {

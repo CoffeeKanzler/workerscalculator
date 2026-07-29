@@ -1,5 +1,5 @@
 import { resolveVehicleModels } from '../fleet.js?v=4';
-import { latestProductivity } from '../save_model.js?v=8';
+import { latestProductivity } from '../save_model.js?v=9';
 import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=8';
 import { readWorkshopIndex } from '../models/workshop_index.js?v=2';
 

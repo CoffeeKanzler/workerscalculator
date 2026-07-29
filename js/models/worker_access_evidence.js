@@ -1,6 +1,6 @@
 import {
   WALKING_BUDGET_METRES, buildWalkingNetwork, walkingReachFrom,
-} from './walking_access.js?v=1';
+} from './walking_access.js?v=2';
 
 // The access corridor a worker can actually use: walk, or walk to a saved stop,
 // ride a saved line in its saved stop order, change at most once, and walk the
@@ -11,9 +11,20 @@ const STAGE = Object.freeze({
   residence: 0, board: 1, firstLine: 2, transfer: 3, secondLine: 4, alight: 5, workplace: 6,
 });
 
-function displayName(building) {
-  const name = String(building?.name ?? '').trim();
-  return name || String(building?.type ?? '').trim() || `#${building?.index}`;
+// "Building 464" is the game's auto-generated instance name and says nothing;
+// what a reader needs on a node is "Kindergarten". The caller supplies the
+// localised type name, and an instance name is only used when the player
+// actually chose one.
+const AUTO_INSTANCE_NAME = /^building\s*\d+$/i;
+
+function makeDisplayName(labelFor) {
+  return building => {
+    const typeName = String(labelFor?.(building) ?? '').trim();
+    const given = String(building?.name ?? '').trim();
+    if (typeName && (!given || AUTO_INSTANCE_NAME.test(given))) return typeName;
+    if (typeName && given) return `${typeName} · ${given}`;
+    return given || String(building?.type ?? '').trim() || `#${building?.index}`;
+  };
 }
 
 function workerSlots(building) {
@@ -47,14 +58,20 @@ export function buildWorkerAccessEvidence({
   buildings = [],
   residenceOccupancy = null,
   vehicleLines = null,
+  labelFor = null,
   maxDirectEdgesPerResidence = 60,
   maxWalkEdgesPerStop = 60,
 } = {}) {
+  const displayName = makeDisplayName(labelFor);
   const unavailable = reason => ({
     completeness: 'unavailable', walkingEdgesComplete: false, reason,
     nodes: [], edges: [], summary: null,
   });
-  if (!pedestrianNetwork?.edges?.length) return unavailable('pedestrian-network-missing');
+  // Either a bare footpath network or the { pedestrian, road } pair the import
+  // supplies; walking uses both.
+  const hasEdges = pedestrianNetwork?.edges?.length
+    || pedestrianNetwork?.pedestrian?.edges?.length || pedestrianNetwork?.road?.edges?.length;
+  if (!hasEdges) return unavailable('pedestrian-network-missing');
 
   const byIndex = new Map(buildings.map(building => [building.index, building]));
   const network = buildWalkingNetwork(pedestrianNetwork, buildings);
@@ -130,12 +147,35 @@ export function buildWorkerAccessEvidence({
     vehicleCount: (line.vehicleIds ?? []).length,
   });
 
+  // Who can get to a given building, counted from the other end. The graph
+  // answers "where can this residence reach"; a player looking at a farm wants
+  // the reverse, and the two are not the same question because the walking rule
+  // is not symmetric — a leg that is refused uphill of a dirt path is allowed
+  // in the other order. So this is accumulated from the residence searches that
+  // were run anyway, never by reversing one of them.
+  const catchment = new Map();
+  const catchmentEntry = index => {
+    if (!catchment.has(index)) {
+      catchment.set(index, {
+        buildingIndex: index, walkAdults: 0, walkResidences: 0,
+        transitAdults: 0, transitResidences: 0, transitLineSlots: new Set(),
+      });
+    }
+    return catchment.get(index);
+  };
+
   // Direct walking. This is the corridor most workers actually use, so it is
   // built first and never truncated below the nearest workplaces.
   let truncatedResidences = 0;
   for (const [index, sourceId] of residenceIds) {
     const reach = reachOf(index);
     if (!reach.available) continue;
+    const people = nodes.get(sourceId).people;
+    for (const entry of reach.buildings.values()) {
+      const row = catchmentEntry(entry.buildingIndex);
+      row.walkAdults += people;
+      row.walkResidences += 1;
+    }
     const targets = [...reach.buildings.values()]
       .filter(entry => workplaceIds.has(entry.buildingIndex))
       .sort((a, b) => a.distanceMeters - b.distanceMeters);
@@ -230,6 +270,46 @@ export function buildWorkerAccessEvidence({
     }
   }
 
+  // The transit half of the catchment, one residence at a time: walk to any
+  // stop, ride any line calling there, change once, then walk again from
+  // wherever that puts you. Buildings already within walking distance of the
+  // residence are not counted twice.
+  const servedStopsOf = slot => (bySlot.get(slot)?.stopIds ?? [])
+    .filter(stop => stop >= 0 && stopIndices.has(stop));
+  for (const [index, sourceId] of residenceIds) {
+    const reach = reachOf(index);
+    if (!reach.available) continue;
+    const people = nodes.get(sourceId).people;
+    const boardStops = [...reach.buildings.keys()].filter(stop => stopIndices.has(stop));
+    if (!boardStops.length) continue;
+    const usedLines = new Set();
+    for (const stop of boardStops) for (const slot of linesByStop.get(stop) ?? []) usedLines.add(slot);
+    const alightStops = new Set();
+    for (const slot of [...usedLines]) {
+      for (const stop of servedStopsOf(slot)) {
+        alightStops.add(stop);
+        for (const other of linesByStop.get(stop) ?? []) {
+          if (usedLines.has(other)) continue;
+          usedLines.add(other);
+          for (const onward of servedStopsOf(other)) alightStops.add(onward);
+        }
+      }
+    }
+    const seen = new Set(reach.buildings.keys());
+    for (const stop of alightStops) {
+      const onward = reachOf(stop);
+      if (!onward.available) continue;
+      for (const target of [stop, ...onward.buildings.keys()]) {
+        if (seen.has(target) || target === index) continue;
+        seen.add(target);
+        const row = catchmentEntry(target);
+        row.transitAdults += people;
+        row.transitResidences += 1;
+        for (const slot of usedLines) row.transitLineSlots.add(slot);
+      }
+    }
+  }
+
   const connected = new Set();
   for (const edge of edges) { connected.add(edge.source); connected.add(edge.target); }
   const keptNodes = [...nodes.values()].filter(node => connected.has(node.id));
@@ -242,6 +322,7 @@ export function buildWorkerAccessEvidence({
     reason: null,
     nodes: keptNodes,
     edges: keptEdges,
+    catchment,
     summary: {
       walkingBudgetMeters: WALKING_BUDGET_METRES,
       residenceCount: keptNodes.filter(node => node.kind === 'residence').length,

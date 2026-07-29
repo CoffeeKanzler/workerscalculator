@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 
 import {
   PEDESTRIAN_NETWORK_CLASS, WALKING_BUDGET_METRES,
-  pedestrianSurface, buildWalkingNetwork, walkingReachFrom,
+  pedestrianSurface, walkingSurface, buildWalkingNetwork, walkingReachFrom,
 } from '../js/models/walking_access.js';
 
 function chain(lengths, { surfaceType = 2, surfaceSubtype = 0 } = {}) {
@@ -123,4 +123,58 @@ test('references to other networks and to missing edges never attach a building'
   assert.equal(network.buildingEdges.has(4), false);
   assert.equal(network.completeness.danglingReferences, 1);
   assert.equal(network.completeness.walkingEdgesComplete, false);
+});
+
+test('citizens walk beside roads, not only on footpaths', () => {
+  // The game's reach search seeds a building's road connection as readily as
+  // its footpath one, so a building with only a road frontage is reachable.
+  const roadEdge = (id, from, to, length, surfaceType = 1) => ({
+    id, from, to, length, points: [], surfaceType, surfaceSubtype: 0, networkClass: 0,
+  });
+  const networks = {
+    pedestrian: {
+      nodes: [{ id: 0, x: 0, y: 0.38, z: 0 }, { id: 1, x: 100, y: 0.38, z: 0 }],
+      edges: [{
+        id: 0, from: 0, to: 1, length: 100, points: [],
+        surfaceType: 2, surfaceSubtype: 0, networkClass: PEDESTRIAN_NETWORK_CLASS,
+      }],
+    },
+    // The road meets the footpath at exactly the shared x/z of node 1; the
+    // saved height differs by the constant surface offset, so the join is on
+    // the horizontal coordinates.
+    road: {
+      nodes: [{ id: 0, x: 100, y: 0, z: 0 }, { id: 1, x: 200, y: 0, z: 0 }],
+      edges: [roadEdge(0, 0, 1, 100)],
+    },
+  };
+  const network = buildWalkingNetwork(networks, [
+    { index: 1, connections: [{ kind: 2, references: [{ id: 0, networkClass: 4 }] }] },
+    { index: 2, connections: [{ kind: 0, references: [{ id: 0, networkClass: 0 }] }] },
+  ]);
+  assert.equal(network.nodeCount, 3, 'the shared node is one node, not two');
+  assert.equal(network.completeness.walkingEdgesComplete, true);
+  const reach = walkingReachFrom(network, 1);
+  assert.equal(reach.buildings.get(2).distanceMeters, 100);
+  assert.equal(reach.buildings.get(2).limitingSurface, 'roadAsphalt');
+});
+
+test('road surfaces carry their own percentages, slower than a footpath', () => {
+  const percent = surfaceType =>
+    walkingSurface({ networkClass: 0, surfaceType, surfaceSubtype: 0 }).percent;
+  assert.equal(percent(-1), 0.5);
+  assert.equal(percent(0), 0.625);
+  assert.equal(percent(2), 0.875);
+  assert.equal(walkingSurface({ networkClass: 0, surfaceType: 1 }).key, 'roadAsphalt');
+  // Rails and pipes are not walkable and must not be given a made-up speed.
+  assert.equal(walkingSurface({ networkClass: 1, surfaceType: 0 }), null);
+  assert.equal(walkingSurface({ networkClass: 9, surfaceType: 0 }), null);
+});
+
+test('a slot kind the reach search never seeds does not attach a building', () => {
+  const network = buildWalkingNetwork(chain([10]), [{
+    index: 3,
+    // Kind 6 is the conveyor slot; the game seeds only kinds 0 and 2.
+    connections: [{ kind: 6, references: [{ id: 0, networkClass: PEDESTRIAN_NETWORK_CLASS }] }],
+  }]);
+  assert.equal(network.buildingEdges.has(3), false);
 });

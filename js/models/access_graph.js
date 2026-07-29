@@ -113,9 +113,15 @@ function widestWorkplaceBounds(nodes, edges, focusId) {
         if (limit < bottleneckLimit) { bottleneck = edge; bottleneckLimit = limit; }
         cursor = edge.source;
       }
+      // A bound of 18 means nothing on its own: the reader needs to know
+      // whether that fills the workplace or leaves it two thirds empty.
+      const workers = capacity.get(node.id);
+      const slots = finiteNonnegative(node.workerSlots) ? node.workerSlots : null;
       return {
         nodeId: node.id,
-        workers: capacity.get(node.id),
+        workers,
+        slots,
+        coverage: slots ? Math.min(1, workers / slots) : null,
         bottleneckEdgeId: bottleneck?.id ?? null,
       };
     })
@@ -146,27 +152,51 @@ function layoutNodes(nodes) {
   return { width, height, positions };
 }
 
-// A residence in a dense city can reach sixty workplaces, and every one of its
-// neighbours can reach the same sixty. Drawing all of that is a hairball in
-// which no single corridor can be read, so the view keeps the focus node's own
-// links and then the shortest walks around it, and says how much it left out.
-function boundEdges(edges, focusId, maximum) {
-  if (edges.length <= maximum) return edges;
+// A residence in a dense city reaches sixty workplaces, so drawing all of them
+// gives a picture too tall to see at once — scrolled away from the very node
+// the reader picked. The view keeps the nearest few per stage instead: the
+// focus first, then the shortest walks, and it says how much it left out.
+function boundEdges(nodes, edges, focusId, { maxEdges, maxPerStage }) {
+  const stageOf = new Map(nodes.map(node => [node.id, node.stage]));
   const rank = edge => (edge.source === focusId || edge.target === focusId ? 0 : 1);
-  return [...edges]
-    .sort((a, b) => rank(a) - rank(b)
-      || (a.distanceMeters ?? 0) - (b.distanceMeters ?? 0)
-      || a.id.localeCompare(b.id))
-    .slice(0, maximum);
+  const ordered = [...edges].sort((a, b) => rank(a) - rank(b)
+    || (a.distanceMeters ?? 0) - (b.distanceMeters ?? 0)
+    || a.id.localeCompare(b.id));
+  const perStage = new Map();
+  const kept = new Set([focusId]);
+  const hasRoom = id => {
+    if (kept.has(id)) return true;
+    const stage = stageOf.get(id);
+    return (perStage.get(stage) ?? 0) < maxPerStage;
+  };
+  const admit = id => {
+    if (kept.has(id)) return;
+    kept.add(id);
+    const stage = stageOf.get(id);
+    perStage.set(stage, (perStage.get(stage) ?? 0) + 1);
+  };
+  const result = [];
+  for (const edge of ordered) {
+    if (result.length >= maxEdges) break;
+    if (!hasRoom(edge.source) || !hasRoom(edge.target)) continue;
+    admit(edge.source);
+    admit(edge.target);
+    result.push(edge);
+  }
+  return result;
 }
 
 export function buildWorkerAccessGraph(evidence, {
   focusId = null,
   expandedIds = [],
-  depth = 2,
+  // One step. Two steps pulled in every other residence that happened to share
+  // a workplace with the focus, which is why picking one building put thirty
+  // unrelated ones on screen. "Expand neighborhood" is there for going wider.
+  depth = 1,
   expansionDepth = 1,
   maxNodes = 72,
-  maxEdges = 60,
+  maxEdges = 24,
+  maxPerStage = 6,
 } = {}) {
   const availability = workerAccessAvailability(evidence);
   if (!availability.available) return { ...availability, nodes: [], edges: [] };
@@ -197,7 +227,10 @@ export function buildWorkerAccessGraph(evidence, {
   }
   const candidateEdges = evidence.edges.filter(edge =>
     selected.has(edge.source) && selected.has(edge.target));
-  const visibleEdges = boundEdges(candidateEdges, resolvedFocus, Math.max(1, Math.floor(maxEdges)));
+  const visibleEdges = boundEdges(nodes, candidateEdges, resolvedFocus, {
+    maxEdges: Math.max(1, Math.floor(maxEdges)),
+    maxPerStage: Math.max(1, Math.floor(maxPerStage)),
+  });
   const drawn = new Set([resolvedFocus]);
   for (const edge of visibleEdges) { drawn.add(edge.source); drawn.add(edge.target); }
   const visibleNodes = nodes.filter(node => drawn.has(node.id));
@@ -212,7 +245,10 @@ export function buildWorkerAccessGraph(evidence, {
     edges: visibleEdges.map(edge => ({ ...edge, bottleneck: bottlenecks.has(edge.id) })),
     upperBounds,
     hiddenNodes: Math.max(0, nodes.length - visibleNodes.length),
-    hiddenEdges: Math.max(0, candidateEdges.length - visibleEdges.length),
+    // Counted against every link the drawn nodes actually have, not just those
+    // inside the neighbourhood: "not drawn" has to mean what a reader assumes.
+    hiddenEdges: Math.max(0, evidence.edges.filter(edge =>
+      drawn.has(edge.source) || drawn.has(edge.target)).length - visibleEdges.length),
     width: layout.width,
     height: layout.height,
   };
