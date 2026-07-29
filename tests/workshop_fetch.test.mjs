@@ -131,3 +131,32 @@ test('the sweep is safe when nothing has been downloaded', async () => {
   const { reclaimCataloguedDownloads } = await import('../tools/workshop_fetch.mjs');
   assert.equal(reclaimCataloguedDownloads({ items: {} }, '/nonexistent-content-dir'), 0);
 });
+
+// A failed steamcmd download leaves an empty directory behind, which is
+// indistinguishable from a mod that declares nothing. Under --refresh that
+// overwrote 61 good catalogue entries with empty ones: the entry is the only
+// copy of the extraction, and the raw download it came from is long pruned.
+test('an empty download directory is cleared rather than read as a result', async () => {
+  const { mkdtempSync, mkdirSync, writeFileSync, existsSync, rmSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const nodePath = await import('node:path');
+  const { reclaimCataloguedDownloads } = await import('../tools/workshop_fetch.mjs');
+
+  const content = mkdtempSync(nodePath.join(tmpdir(), 'workshop-empty-'));
+  try {
+    // 111 failed to download: empty, and not in the catalogue.
+    mkdirSync(nodePath.join(content, '111'), { recursive: true });
+    // 222 downloaded and has not been catalogued yet: it must survive.
+    mkdirSync(nodePath.join(content, '222', 'somebuilding'), { recursive: true });
+    writeFileSync(nodePath.join(content, '222', 'somebuilding', 'building.ini'), '');
+
+    reclaimCataloguedDownloads({ items: {} }, content);
+
+    assert.equal(existsSync(nodePath.join(content, '111')), false,
+      'the empty leftover should be cleared');
+    assert.equal(existsSync(nodePath.join(content, '222')), true,
+      'a real uncatalogued download must not be deleted');
+  } finally {
+    rmSync(content, { recursive: true, force: true });
+  }
+});

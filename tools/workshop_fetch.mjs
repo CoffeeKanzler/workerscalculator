@@ -171,7 +171,17 @@ export function reclaimCataloguedDownloads(index, contentDir = CONTENT) {
   if (!existsSync(contentDir)) return 0;
   let reclaimed = 0;
   for (const entry of readdirSync(contentDir)) {
-    if (!index.items[entry]) continue;
+    // steamcmd leaves an empty directory behind for every download it fails,
+    // and an empty directory is indistinguishable from a mod that declares
+    // nothing. Clearing them is what stops a later pass reading one as an
+    // extraction result.
+    const full = path.join(contentDir, entry);
+    if (!index.items[entry]) {
+      try {
+        if (!readdirSync(full).length) rmSync(full, { recursive: true, force: true });
+      } catch { /* raced with a download; it will be caught next sweep */ }
+      continue;
+    }
     rmSync(path.join(contentDir, entry), { recursive: true, force: true });
     reclaimed += 1;
   }
@@ -183,6 +193,18 @@ function catalogueOne(id, index, { prune = false } = {}) {
   const dir = path.join(CONTENT, String(id));
   if (!existsSync(dir)) return { ok: false };
   const item = extractItem(id, dir);
+  // A failed download leaves an empty directory behind, which looks exactly
+  // like a mod that declares nothing. Under --refresh that overwrote 61 good
+  // catalogue entries with empty ones before it was caught: the entry is the
+  // only copy of the extraction, and the download it came from is long pruned.
+  //
+  // So an extraction that found nothing may create an entry but never replace
+  // a richer one.
+  const existing = index.items[String(id)];
+  if (!item.buildings.length && existing?.buildingCount > 0) {
+    if (prune) rmSync(dir, { recursive: true, force: true });
+    return { ok: false };
+  }
   const relative = catalogPathFor(id);
   const target = path.join(CATALOG, relative);
   mkdirSync(path.dirname(target), { recursive: true });

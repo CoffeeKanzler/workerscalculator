@@ -59,6 +59,7 @@ import { workerAccessAvailability } from './models/access_graph.js?v=11';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=11';
 import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=6';
 import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=6';
+import { mergedFootprints } from './models/building_footprint.js?v=2';
 import {
   buildMapTransportLines,
   mapCountOrDash,
@@ -370,23 +371,39 @@ const DATA_V = new URL(import.meta.url).searchParams.get('v') ?? '0';
 
 // index.html carries no marker of its own, so a browser holding a stale copy of
 // the shell keeps loading the module versions that copy names and behaves like
-// an old build long after a new one is deployed. Asking the origin for the
-// dataset stamp uncached is the only way the running page can find that out.
-async function deployedAppBuild() {
+// an old build long after a new one is deployed.
+//
+// The authoritative question is not "is the dataset stamp newer" — that is ahead
+// of the shell for as long as a deploy takes to propagate, and answering it
+// would nag on every release. It is "does the shell the server is serving right
+// now name a newer app.js than the one actually running". Only that means the
+// reader is looking at a stale page.
+async function fetchDeployedShellBuild() {
   try {
-    const url = new URL('../data/VERSION.json', import.meta.url);
+    const url = new URL('../index.html', import.meta.url);
     url.searchParams.set('build', String(Date.now()));
     const response = await fetch(url, { cache: 'no-store' });
     if (!response.ok) return null;
-    return (await response.json())?.appBuild ?? null;
+    return appBuildMarker(await response.text());
   } catch {
     return null;
   }
 }
 
+export function appBuildMarker(html) {
+  return String(html ?? '').match(/js\/app\.js\?v=(\d+)/)?.[1] ?? null;
+}
+
+export function isStaleBuild(running, deployed) {
+  const current = Number(running);
+  const latest = Number(deployed);
+  if (!Number.isFinite(current) || !Number.isFinite(latest)) return false;
+  return latest > current;
+}
+
 export async function checkForNewerBuild() {
-  const deployed = await deployedAppBuild();
-  if (!deployed || String(deployed) === String(DATA_V)) return null;
+  const deployed = await fetchDeployedShellBuild();
+  if (!isStaleBuild(DATA_V, deployed)) return null;
   return { running: String(DATA_V), deployed: String(deployed) };
 }
 
@@ -6276,7 +6293,13 @@ async function announceNewerBuild() {
   const mismatch = await checkForNewerBuild();
   if (!mismatch || document.querySelector('[data-stale-build]')) return;
   const reload = el('button', {
-    onclick: () => {
+    onclick: async () => {
+      // A reload alone can be answered from the same cached shell, which is
+      // what put the reader here; the query makes it a different document.
+      try {
+        const keys = await globalThis.caches?.keys?.();
+        await Promise.all((keys ?? []).map(key => caches.delete(key)));
+      } catch { /* best effort; the fresh URL is what actually matters */ }
       const url = new URL(location.href);
       url.searchParams.set('build', mismatch.deployed);
       location.replace(url);

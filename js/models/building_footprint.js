@@ -46,3 +46,18 @@ export function footprintRingsFor(building, footprints) {
       return { x: building.x + rotated.x, z: building.z + rotated.z };
     }));
 }
+
+// A modded republic is mostly Workshop buildings, and the mod catalogue carries
+// each one's own outline in the same shape and the same local coordinates the
+// retail extraction produces. Merging is therefore a key-by-key overlay rather
+// than a conversion — and it returns a new object, because the base dataset is
+// shared with everything else already drawn from it.
+export function mergedFootprints(base, workshopBuildings = []) {
+  const merged = { ...(base ?? {}) };
+  for (const building of workshopBuildings ?? []) {
+    const footprint = building?.footprint;
+    if (!building?.id || !footprint?.boxes?.length) continue;
+    merged[String(building.id).toLowerCase()] = footprint;
+  }
+  return merged;
+}

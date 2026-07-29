@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 import {
-  footprintKeyFor, footprintRingsFor, rotateLocalPoint,
+  footprintKeyFor, footprintRingsFor, mergedFootprints, rotateLocalPoint,
 } from '../js/models/building_footprint.js';
 import { parseBoundingBoxes } from '../tools/extract_building_footprints.mjs';
 
@@ -78,4 +78,32 @@ test('the rotation runs in the direction the saves agree with', () => {
 test('a type with no extracted geometry stays a marker instead of an invented box', () => {
   assert.equal(footprintRingsFor({ type: 'no_such_building', x: 0, z: 0 }, FOOTPRINTS), null);
   assert.equal(footprintRingsFor({ type: 'panelak', x: NaN, z: 0 }, FOOTPRINTS), null);
+});
+
+test('workshop outlines overlay the extracted ones without disturbing them', () => {
+  const base = { panelak: { boxes: [[-5, -10, 5, 10]], height: 20 } };
+  const merged = mergedFootprints(base, [
+    { id: '2114329588/ConveyorTower', footprint: { boxes: [[-1, -1, 1, 1]], height: 5 } },
+    { id: 'panelak', footprint: { boxes: [[-2, -2, 2, 2]], height: 9 } },
+  ]);
+  // Save types are matched lowercased, so a mod folder's casing cannot hide it.
+  assert.equal(footprintKeyFor('2114329588/conveyortower', merged), '2114329588/conveyortower');
+  assert.equal(merged.panelak.height, 9, 'a mod may replace a type it overrides');
+  assert.deepEqual(base.panelak.boxes, [[-5, -10, 5, 10]], 'the shared base is never mutated');
+});
+
+test('a mod with no usable outline is skipped rather than keyed to nothing', () => {
+  const merged = mergedFootprints({}, [
+    { id: 'mod/no-footprint' },
+    { id: 'mod/empty', footprint: { boxes: [], height: 3 } },
+    { footprint: { boxes: [[0, 0, 1, 1]], height: 1 } },
+    null,
+  ]);
+  assert.deepEqual(merged, {});
+});
+
+test('merging without a catalogue leaves the extracted dataset alone', () => {
+  const base = { panelak: { boxes: [[0, 0, 1, 1]], height: 2 } };
+  assert.deepEqual(mergedFootprints(base), base);
+  assert.deepEqual(mergedFootprints(null, []), {});
 });
