@@ -44,7 +44,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=21';
+} from './save_model.js?v=22';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -66,7 +66,7 @@ import {
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
 } from './adapters/save_folder_adapter.js?v=6';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=3';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=4';
 import { bootstrapRuntime } from './bootstrap.js?v=2';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
