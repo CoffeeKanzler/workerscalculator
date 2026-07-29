@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 import {
-  bumpReferencesTo, planBump, moduleName, isJavaScript,
+  bumpReferencesTo, planBump, moduleName, isJavaScript, staleReferenceTargets,
 } from '../tools/bump_cache_versions.mjs';
 
 // Pages caches for ten minutes, so a module whose marker did not move is
@@ -93,6 +93,32 @@ test('a changed shell or stylesheet advances exactly once', () => {
   const plan = planBump(['css/style.css', 'js/app.js']);
   assert.ok(plan.modules.includes('style.css'), 'the shell case must know to stand down');
   assert.ok(plan.modules.includes('app.js'));
+});
+
+test('check mode accepts a changed referenced module whose marker advanced', () => {
+  const targets = ['index.html'];
+  const previousFiles = {
+    'index.html': '<script type="module" src="js/app.js?v=41"></script>',
+  };
+  const currentFiles = {
+    'index.html': '<script type="module" src="js/app.js?v=42"></script>',
+  };
+  assert.deepEqual(staleReferenceTargets(['js/app.js'], {
+    targets, previousFiles, currentFiles,
+  }), []);
+});
+
+test('check mode rejects a changed referenced module whose marker stayed put', () => {
+  const targets = ['index.html'];
+  const previousFiles = {
+    'index.html': '<script type="module" src="js/app.js?v=41"></script>',
+  };
+  const currentFiles = {
+    'index.html': '<script type="module" src="js/app.js?v=41"></script>',
+  };
+  assert.deepEqual(staleReferenceTargets(['js/app.js'], {
+    targets, previousFiles, currentFiles,
+  }), ['index.html']);
 });
 
 // data/ files are fetched with DATA_V, which is the shell's own marker. A
