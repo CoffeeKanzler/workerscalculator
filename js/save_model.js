@@ -75,14 +75,25 @@ export function aggregateCitizensByScope(citizens, buildings) {
   };
 }
 
+export function criminalityThreshold(citizens, {
+  multiplier = 5, minAbsolute = 0.1,
+} = {}) {
+  const measured = (citizens ?? [])
+    .map(citizen => citizen.criminality)
+    .filter(Number.isFinite);
+  if (!measured.length) return null;
+  const averageCriminality = measured.reduce((sum, value) => sum + value, 0)
+    / measured.length;
+  return Math.max(minAbsolute, averageCriminality * multiplier);
+}
+
 export function summarizeCriminalityOutliers(citizens, buildings, {
   multiplier = 5, minAbsolute = 0.1, limit = 10,
 } = {}) {
   const measured = (citizens ?? []).filter(citizen => Number.isFinite(citizen.criminality));
   const averageCriminality = measured.length
     ? measured.reduce((sum, citizen) => sum + citizen.criminality, 0) / measured.length : null;
-  const threshold = averageCriminality == null ? null
-    : Math.max(minAbsolute, averageCriminality * multiplier);
+  const threshold = criminalityThreshold(citizens, { multiplier, minAbsolute });
   const buildingsByIndex = new Map((buildings ?? []).map(building => [building.index, building]));
   const outliers = threshold == null ? [] : measured
     .filter(citizen => citizen.criminality >= threshold)
@@ -110,6 +121,66 @@ export function summarizeCriminalityOutliers(citizens, buildings, {
     unlocatedOutlierCount: outliers.length - located.length,
     residents,
   };
+}
+
+export function summarizeResidenceDetails(citizens, buildings, options = {}) {
+  const threshold = criminalityThreshold(citizens, options);
+  const buildingsByIndex = new Map((buildings ?? []).map(building => [building.index, building]));
+  const aggregates = new Map();
+  const measurementKeys = ['health', 'happiness', 'loyalty', 'criminality'];
+
+  for (const citizen of citizens ?? []) {
+    const buildingIndex = citizen.residenceBuildingIndex;
+    if (!Number.isInteger(buildingIndex) || buildingIndex < 0 || !buildingsByIndex.has(buildingIndex)) {
+      continue;
+    }
+    const aggregate = aggregates.get(buildingIndex) ?? {
+      buildingIndex,
+      residents: 0,
+      adults: 0,
+      children: 0,
+      higherEducation: 0,
+      health: { sum: 0, count: 0 },
+      happiness: { sum: 0, count: 0 },
+      loyalty: { sum: 0, count: 0 },
+      criminality: { sum: 0, count: 0, highest: null },
+      highRiskResidents: 0,
+    };
+    aggregate.residents += 1;
+    aggregate.adults += citizen.age > 21 ? 1 : 0;
+    aggregate.children += Number.isFinite(citizen.age) && citizen.age <= 21 ? 1 : 0;
+    aggregate.higherEducation += citizen.education >= 2 ? 1 : 0;
+    for (const key of measurementKeys) {
+      const value = citizen[key];
+      if (!Number.isFinite(value)) continue;
+      aggregate[key].sum += value;
+      aggregate[key].count += 1;
+      if (key === 'criminality') {
+        aggregate.criminality.highest = aggregate.criminality.highest == null
+          ? value : Math.max(aggregate.criminality.highest, value);
+        aggregate.highRiskResidents += threshold != null && value >= threshold ? 1 : 0;
+      }
+    }
+    aggregates.set(buildingIndex, aggregate);
+  }
+
+  const averageMeasurement = measurement => measurement.count
+    ? measurement.sum / measurement.count : null;
+  const result = [...aggregates.values()].map(aggregate => ({
+    buildingIndex: aggregate.buildingIndex,
+    residents: aggregate.residents,
+    adults: aggregate.adults,
+    children: aggregate.children,
+    higherEducation: aggregate.higherEducation,
+    health: averageMeasurement(aggregate.health),
+    happiness: averageMeasurement(aggregate.happiness),
+    loyalty: averageMeasurement(aggregate.loyalty),
+    criminality: averageMeasurement(aggregate.criminality),
+    highestCriminality: aggregate.criminality.highest,
+    highRiskResidents: aggregate.highRiskResidents,
+  }));
+  result.sort((a, b) => a.buildingIndex - b.buildingIndex);
+  return { threshold, buildings: result };
 }
 
 export function summarizeResidenceOccupancy(citizens, buildings) {

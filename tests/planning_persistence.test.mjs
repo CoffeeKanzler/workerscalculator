@@ -97,6 +97,10 @@ test('a reload restores the imported save, not just the plan', async () => {
         { id: 0, name: 'Tabarz', city: true },
         { id: 1, name: 'VEB Stoff&Bau', production: true },
       ],
+      residenceDetails: {
+        threshold: 0.1,
+        buildings: [{ buildingIndex: 7, residents: 12 }],
+      },
     },
     planning: createPlanningModel({ cities: [{ name: 'Tabarz', scopeId: 0, rows: [] }] }),
   });
@@ -108,6 +112,10 @@ test('a reload restores the imported save, not just the plan', async () => {
   assert.equal(reloaded.state.saveImport.buildingCount, 1812);
   assert.equal(reloaded.state.saveImport.scopes.length, 2);
   assert.equal(reloaded.state.saveImport.scopes[1].name, 'VEB Stoff&Bau');
+  assert.deepEqual(reloaded.state.saveImport.residenceDetails, {
+    threshold: 0.1,
+    buildings: [{ buildingIndex: 7, residents: 12 }],
+  });
   // Plan and observation must come back together, describing the same republic.
   assert.equal(reloaded.state.planning.cities[0].scopeId, 0);
   assert.equal(reloaded.error, null);

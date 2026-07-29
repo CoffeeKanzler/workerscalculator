@@ -132,7 +132,14 @@ test('save folder reads required and optional core files locally and defers map 
     const result = await importSaveFolder(files, {
       parseCore: async value => {
         payload = value;
-        return parsedSave();
+        return parsedSave({
+          citizens: [
+            { index: 0, id: 501, residenceBuildingIndex: 41, education: 2, age: 32,
+              happiness: 0.8, food: 0.9, health: 0.75, loyalty: 0.6, criminality: 0.1 },
+            { index: 1, id: 502, residenceBuildingIndex: 41, education: 1, age: 20,
+              happiness: 0.7, food: 0.9, health: 0.8, loyalty: 0.5, criminality: 0.02 },
+          ],
+        });
       },
       resolveWorkshop: async () => ({
         catalog: { referenced: 0, resolved: 0 },
@@ -165,6 +172,9 @@ test('save folder reads required and optional core files locally and defers map 
     assert.equal(result.statsRecords.length, 1);
     assert.equal(result.productivity, 0.82);
     assert.equal(result.planning.metadata.operationalServices.regional[0].clinics.currentWorkers, 8);
+    assert.equal(result.planning.metadata.residenceDetails.buildings[0].buildingIndex, 41);
+    assert.equal(result.planning.metadata.residenceDetails.buildings[0].residents, 2);
+    assert.equal('citizens' in result.planning.metadata, false);
   } finally {
     globalThis.fetch = oldFetch;
   }

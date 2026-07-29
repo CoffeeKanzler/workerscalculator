@@ -5,7 +5,7 @@ import {
   groupObservedProduction, latestProductivity, productionBufferStatus, productionBufferAlerts,
   inferObservedHousing, summarizeDistributionOffices, summarizeVehicleLines,
   evaluateDistributionResourceRule,
-  summarizeCriminalityOutliers,
+  criminalityThreshold, summarizeCriminalityOutliers, summarizeResidenceDetails,
   summarizeResidenceOccupancy, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   isNonPlannerSupportType,
@@ -445,6 +445,71 @@ test('criminality outliers resolve exact residence and scope locations', () => {
     residenceBuildingIndex: 4,
     residence: { index: 4, scopeId: 7, type: 'panelak', name: 'House A' },
   }]);
+});
+
+test('residence details aggregate exact demographics wellbeing and crime', () => {
+  const citizens = [
+    {
+      residenceBuildingIndex: 4, age: 35, education: 2,
+      health: 0.8, happiness: 0.7, loyalty: 0.6, criminality: 0.02,
+    },
+    {
+      residenceBuildingIndex: 4, age: 12, education: 0.5,
+      health: 1, happiness: 0.9, loyalty: 0.4, criminality: 0.3,
+    },
+    {
+      residenceBuildingIndex: 5, age: 44, education: 1,
+      health: Number.NaN, happiness: 0.5, loyalty: 0.2, criminality: 0.01,
+    },
+  ];
+  const result = summarizeResidenceDetails(citizens, [
+    { index: 4, type: 'flat' }, { index: 5, type: 'flat' },
+  ]);
+
+  assert.equal(result.threshold, 0.55);
+  assert.deepEqual(result.buildings[0], {
+    buildingIndex: 4,
+    residents: 2,
+    adults: 1,
+    children: 1,
+    higherEducation: 1,
+    health: 0.9,
+    happiness: 0.8,
+    loyalty: 0.5,
+    criminality: 0.16,
+    highestCriminality: 0.3,
+    highRiskResidents: 0,
+  });
+  assert.equal(result.buildings[1].health, null);
+});
+
+test('residence details keep the crime floor and omit missing measurements', () => {
+  const citizens = [
+    { residenceBuildingIndex: 4, age: 21, health: 0.8, happiness: 0.5, criminality: 0 },
+    { residenceBuildingIndex: 4, age: 22, health: Number.NaN, loyalty: 0.7, criminality: 0.02 },
+    { residenceBuildingIndex: 4, health: 1, loyalty: Number.NaN, criminality: 0.01 },
+  ];
+  const result = summarizeResidenceDetails(citizens, [{ index: 4 }]);
+
+  assert.equal(criminalityThreshold(citizens), 0.1);
+  assert.equal(result.buildings[0].health, 0.9);
+  assert.equal(result.buildings[0].loyalty, 0.7);
+  assert.equal(result.buildings[0].children, 1);
+  assert.equal(result.buildings[0].adults, 1);
+});
+
+test('residence crime uses the same threshold as republic outliers', () => {
+  const citizens = [
+    ...Array.from({ length: 9 }, () => ({
+      residenceBuildingIndex: 4, criminality: 0,
+    })),
+    { residenceBuildingIndex: 4, criminality: 0.6 },
+  ];
+  const threshold = criminalityThreshold(citizens);
+  assert.equal(summarizeCriminalityOutliers(citizens, [{ index: 4 }]).threshold, threshold);
+  assert.equal(summarizeResidenceDetails(citizens, [{ index: 4 }]).threshold, threshold);
+  assert.equal(summarizeResidenceDetails(citizens, [{ index: 4 }]).buildings[0]
+    .highRiskResidents, 1);
 });
 
 test('occupied-building pollution samples exact saved cells and aggregates resident-weighted areas', () => {

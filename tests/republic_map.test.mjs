@@ -4,25 +4,39 @@ import assert from 'node:assert/strict';
 import {
   buildingMapMetric,
   filterMapBuildings,
+  mapCountOrDash,
   mapPointToLeaflet,
+  normalizeMapMetric,
+  residenceDetailForBuilding,
   summarizeMapViewport,
 } from '../js/ui/republic_map.js';
+
+test('map counts retain finite values and render non-finite values as unavailable', () => {
+  const format = (value, digits) => `${value}:${digits}`;
+  assert.equal(mapCountOrDash(0, format), '0:0');
+  assert.equal(mapCountOrDash(12, format), '12:0');
+  assert.equal(mapCountOrDash(Number.NaN, format), '—');
+  assert.equal(mapCountOrDash(Number.POSITIVE_INFINITY, format), '—');
+});
 
 test('the Leaflet adapter preserves the schematic map coordinate system', () => {
   assert.deepEqual(mapPointToLeaflet({ mapX: 125, mapY: 80 }, 480), [400, 125]);
   assert.deepEqual(mapPointToLeaflet({ mapX: 0, mapY: 480 }, 480), [0, 0]);
 });
 
-test('staffing mode reports exact utilization and a readable band', () => {
-  assert.deepEqual(buildingMapMetric({
-    currentWorkers: 30,
-    configuredWorkers: 40,
-    configuredWorkersHighEducation: 10,
-  }, 'staffing'), {
-    mode: 'staffing', value: 0.6, band: 'medium', numerator: 30, denominator: 50,
+test('the focused map supports category and construction only', () => {
+  assert.equal(normalizeMapMetric('category'), 'category');
+  assert.equal(normalizeMapMetric('construction'), 'construction');
+  assert.equal(normalizeMapMetric('staffing'), 'category');
+  assert.equal(normalizeMapMetric('anything-else'), 'category');
+});
+
+test('category mode preserves the building category as its exact band', () => {
+  assert.deepEqual(buildingMapMetric({ category: 'industry' }, 'category'), {
+    mode: 'category', value: 'industry', band: 'industry',
   });
-  assert.deepEqual(buildingMapMetric({ currentWorkers: 4 }, 'staffing'), {
-    mode: 'staffing', value: null, band: 'unknown', numerator: 4, denominator: 0,
+  assert.deepEqual(buildingMapMetric({}, 'category'), {
+    mode: 'category', value: 'other', band: 'other',
   });
 });
 
@@ -65,4 +79,29 @@ test('viewport summary only totals visible filtered buildings', () => {
   }), {
     buildings: 2, workers: 11, positions: 17, underConstruction: 1,
   });
+});
+
+test('residence details join by exact building index and retain exact zero', () => {
+  const summaries = [{
+    buildingIndex: 7, residents: 12, adults: 8, children: 4,
+    higherEducation: 3, health: 0.8, happiness: 0.7, loyalty: 0.6,
+    criminality: 0.02, highestCriminality: 0.12, highRiskResidents: 1,
+  }];
+  assert.deepEqual(residenceDetailForBuilding(
+    { index: 7 }, summaries, { residential: true, capacity: 20 },
+  ), { ...summaries[0], capacity: 20 });
+  assert.deepEqual(residenceDetailForBuilding(
+    { index: 7 }, summaries, { residential: false, capacity: null },
+  ), { ...summaries[0], capacity: null });
+  assert.deepEqual(residenceDetailForBuilding(
+    { index: 8 }, summaries, { residential: true, capacity: 40 },
+  ), {
+    buildingIndex: 8, residents: 0, adults: 0, children: 0,
+    higherEducation: 0, health: null, happiness: null, loyalty: null,
+    criminality: null, highestCriminality: null, highRiskResidents: 0,
+    capacity: 40,
+  });
+  assert.equal(residenceDetailForBuilding(
+    { index: 9 }, summaries, { residential: false, capacity: null },
+  ), null);
 });

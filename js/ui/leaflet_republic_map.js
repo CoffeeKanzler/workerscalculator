@@ -14,7 +14,7 @@ import {
   filterMapBuildings,
   mapPointToLeaflet,
   summarizeMapViewport,
-} from './republic_map.js?v=1';
+} from './republic_map.js?v=10';
 
 function imageBounds(image, height) {
   return [
@@ -36,12 +36,6 @@ function metricStyle(building, mode, palette) {
   if (mode === 'category') {
     fillColor = palette[building.category] ?? palette.muted;
     fillOpacity = ['support', 'other'].includes(building.category) ? 0.48 : 0.9;
-  } else if (mode === 'staffing') {
-    fillColor = metric.band === 'full' ? palette.pos
-      : metric.band === 'medium' ? palette.accent2
-        : metric.band === 'low' ? palette.warn
-          : metric.band === 'empty' ? palette.neg : palette.muted;
-    fillOpacity = metric.band === 'unknown' ? 0.3 : 0.9;
   } else if (metric.band === 'active') {
     fillColor = metric.value >= 0.8 ? palette.pos
       : metric.value >= 0.4 ? palette.warn : palette.neg;

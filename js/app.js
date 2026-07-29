@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=129';
+import { STRINGS } from './i18n.js?v=133';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -44,7 +44,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=21';
+} from './save_model.js?v=22';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -54,7 +54,12 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=4';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=18';
+import {
+  mapCountOrDash,
+  normalizeMapMetric,
+  residenceDetailForBuilding,
+} from './ui/republic_map.js?v=10';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -65,9 +70,9 @@ import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=6';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=3';
-import { bootstrapRuntime } from './bootstrap.js?v=2';
+} from './adapters/save_folder_adapter.js?v=7';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=4';
+import { bootstrapRuntime } from './bootstrap.js?v=3';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
@@ -2726,11 +2731,11 @@ function buildingEstablishment(building) {
     + (Number.isFinite(building.configuredWorkersHighEducation) ? building.configuredWorkersHighEducation : 0);
 }
 
-function mapBuildingDisplayName(building) {
-  const raw = matchSaveBuilding(building.type,
-    [...(DATA.rawBuildings ?? []), ...(DATA.workshopBuildings ?? [])], entry => entry.id);
-  const localized = state.lang === 'de' ? raw?.de : raw?.en;
-  return localized || raw?.en || raw?.de || raw?.nameStr || building.type || t('building');
+function mapBuildingDisplayName(building, catalog = matchSaveBuilding(building.type,
+  [...(DATA.rawBuildings ?? []), ...(DATA.workshopBuildings ?? [])], entry => entry.id)) {
+  const localized = state.lang === 'de' ? catalog?.de : catalog?.en;
+  return localized || catalog?.en || catalog?.de || catalog?.nameStr
+    || building.type || t('building');
 }
 
 function standaloneWaterImageHref(water) {
@@ -2789,8 +2794,11 @@ function standalonePollutionImageHref(pollution) {
 
 function renderMapBuildingInspector(building) {
   const progress = building.constructionProgress ?? 1;
+  const percentOrDash = value =>
+    Number.isFinite(value) ? `${fmt(value * 100, 0)} %` : '—';
+  const residence = building.residenceDetail;
   return el('aside', { class: 'map-building-inspector', 'aria-live': 'polite' },
-    el('h3', {}, mapBuildingDisplayName(building),
+    el('h3', {}, building.displayName || mapBuildingDisplayName(building),
       el('span', { class: 'evidence-badge exact' }, t('exact'))),
     building.name ? kv(t('savedBuildingName'), building.name) : null,
     kv(t('savedBuildingType'), building.type || '—'),
@@ -2800,20 +2808,50 @@ function renderMapBuildingInspector(building) {
       ? `${t('underConstruction')} · ${fmt(progress * 100, 0)} %` : t('completed')),
     buildingEstablishment(building) > 0
       ? kv(t('staffing'), `${fmt(building.currentWorkers ?? 0, 0)} / ${fmt(buildingEstablishment(building), 0)}`) : null,
+    residence ? el('section', {
+      class: 'map-residence-ledger', 'data-residence-ledger': '',
+    },
+    el('h4', {}, t('residenceLedger')),
+    kv(t('occupancy'), residence.capacity == null
+      ? mapCountOrDash(residence.residents, fmt)
+      : `${mapCountOrDash(residence.residents, fmt)} / ${mapCountOrDash(residence.capacity, fmt)}`),
+    kv(t('residentComposition'),
+      `${mapCountOrDash(residence.adults, fmt)} ${t('adults')} · `
+      + `${mapCountOrDash(residence.children, fmt)} ${t('children')} · `
+      + `${mapCountOrDash(residence.higherEducation, fmt)} ${t('higherEducationShort')}`),
+    kv(t('residentWellbeing'),
+      `${percentOrDash(residence.health)} ${t('health')} · `
+      + `${percentOrDash(residence.happiness)} ${t('happiness')} · `
+      + `${percentOrDash(residence.loyalty)} ${t('loyalty')}`),
+    kv(t('residentCriminality'),
+      `${t('averageShort')} ${percentOrDash(residence.criminality)} · `
+      + `${t('highest')} ${percentOrDash(residence.highestCriminality)} · `
+      + `${mapCountOrDash(residence.highRiskResidents, fmt)} ${t('highRiskResidents')}`)) : null,
     kv(t('mapCoordinates'), `X ${fmt(building.x, 1)} · Z ${fmt(building.z, 1)}`));
 }
 
 function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
+  const mapMetric = normalizeMapMetric(state.mapMetric);
+  if (state.mapMetric !== mapMetric) state.mapMetric = mapMetric;
   const scopeNames = new Map(model.scopes.map(scope => [scope.id, scope.name]));
-  const categoryIndex = buildTypeCategoryIndex(
-    [...(DATA?.rawBuildings ?? []), ...(DATA?.workshopBuildings ?? [])]);
+  const catalogEntries = [...(DATA?.rawBuildings ?? []), ...(DATA?.workshopBuildings ?? [])];
+  const categoryIndex = buildTypeCategoryIndex(catalogEntries);
+  const residenceDetails = new Map(
+    (state.saveImport?.residenceDetails?.buildings ?? [])
+      .map(detail => [detail.buildingIndex, detail]),
+  );
   const buildings = model.buildings.filter(building =>
     !isExternalAirLinkType(building.type) && building.type !== 'temp').map(building => {
+    const catalog = matchSaveBuilding(building.type, catalogEntries, entry => entry.id);
     const category = categoryForSaveType(building.type, categoryIndex);
     return {
       ...building,
       category,
-      displayName: mapBuildingDisplayName(building),
+      displayName: mapBuildingDisplayName(building, catalog),
+      residenceDetail: residenceDetailForBuilding(building, residenceDetails, {
+        residential: category === 'living',
+        capacity: Number.isFinite(catalog?.livingSpace) ? catalog.livingSpace : null,
+      }),
       areaName: scopeNames.get(building.scopeId) ?? t('unassigned'),
       markScale: CATEGORY_MARKS[category]?.scale ?? CATEGORY_MARKS.other.scale,
       borderPost: isBorderPostType(building.type),
@@ -2861,6 +2899,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
       countLabels.set(category, count);
       return el('button', {
         class: categoryVisibility[category] === false ? 'muted' : 'active',
+        'data-map-category': category,
         'aria-pressed': String(categoryVisibility[category] !== false),
         onclick: event => {
           const visible = event.currentTarget.getAttribute('aria-pressed') !== 'true';
@@ -2879,13 +2918,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
     'aria-label': t('mapMetricScale'),
   });
   const renderMetricKey = metric => {
-    const entries = metric === 'staffing' ? [
-      ['empty', 'mapScaleNoWorkers'],
-      ['low', 'mapScaleStaffingLow'],
-      ['medium', 'mapScaleStaffingMedium'],
-      ['full', 'mapScaleStaffingFull'],
-      ['unknown', 'mapScaleNoPositions'],
-    ] : metric === 'construction' ? [
+    const entries = metric === 'construction' ? [
       ['construction-low', 'mapScaleConstructionLow'],
       ['construction-medium', 'mapScaleConstructionMedium'],
       ['construction-high', 'mapScaleConstructionHigh'],
@@ -2895,7 +2928,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
     metricKey.replaceChildren(...entries.map(([band, key]) =>
       el('span', {}, el('i', { class: `map-metric-swatch ${band}` }), t(key))));
   };
-  renderMetricKey(state.mapMetric ?? 'category');
+  renderMetricKey(mapMetric);
   const layerToggle = (key, label, available = true) => available ? el('label', {},
     el('input', {
       type: 'checkbox', checked: layers[key], 'data-map-layer': key,
@@ -2909,11 +2942,10 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
   const modeButtons = el('div', { class: 'view-toggle map-metric-toggle', role: 'group', 'aria-label': t('mapMetric') },
     ...[
       ['category', 'mapMetricCategory'],
-      ['staffing', 'mapMetricStaffing'],
       ['construction', 'mapMetricConstruction'],
     ].map(([metric, key]) => el('button', {
-      class: state.mapMetric === metric ? 'active' : '',
-      'aria-pressed': String(state.mapMetric === metric),
+      class: mapMetric === metric ? 'active' : '',
+      'aria-pressed': String(mapMetric === metric),
       onclick: event => {
         state.mapMetric = metric;
         for (const button of event.currentTarget.parentElement.children) {
@@ -3006,7 +3038,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
       scopes,
       layers,
       categoryVisibility,
-      mode: state.mapMetric ?? 'category',
+      mode: mapMetric,
       query: state.mapBuildingFilter ?? '',
       pollutionOpacity: state.mapPollutionOpacity ?? 0.68,
       palette: {

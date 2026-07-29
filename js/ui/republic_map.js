@@ -2,23 +2,21 @@ export function mapPointToLeaflet(point, mapHeight) {
   return [mapHeight - point.mapY, point.mapX];
 }
 
+export function mapCountOrDash(value, formatter) {
+  return Number.isFinite(value) ? formatter(value, 0) : '—';
+}
+
 function workerPositions(building) {
   return (Number.isFinite(building.configuredWorkers) ? building.configuredWorkers : 0)
     + (Number.isFinite(building.configuredWorkersHighEducation)
       ? building.configuredWorkersHighEducation : 0);
 }
 
+export function normalizeMapMetric(mode) {
+  return mode === 'construction' ? 'construction' : 'category';
+}
+
 export function buildingMapMetric(building, mode) {
-  if (mode === 'staffing') {
-    const numerator = Number.isFinite(building.currentWorkers) ? building.currentWorkers : 0;
-    const denominator = workerPositions(building);
-    if (denominator <= 0) {
-      return { mode, value: null, band: 'unknown', numerator, denominator };
-    }
-    const value = numerator / denominator;
-    const band = value <= 0 ? 'empty' : value < 0.5 ? 'low' : value < 0.9 ? 'medium' : 'full';
-    return { mode, value, band, numerator, denominator };
-  }
   if (mode === 'construction') {
     const value = Number.isFinite(building.constructionProgress)
       ? building.constructionProgress : 1;
@@ -33,6 +31,30 @@ export function filterMapBuildings(buildings, query) {
   return buildings.filter(building =>
     [building.name, building.displayName, building.type, building.areaName]
       .some(value => String(value ?? '').toLocaleLowerCase().includes(needle)));
+}
+
+export function residenceDetailForBuilding(building, summaries, options) {
+  const capacity = Number.isFinite(options.capacity) && options.capacity >= 0
+    ? options.capacity : null;
+  const summary = summaries instanceof Map
+    ? summaries.get(building.index)
+    : summaries.find(detail => detail.buildingIndex === building.index);
+  if (summary) return { ...summary, capacity };
+  if (!options.residential) return null;
+  return {
+    buildingIndex: building.index,
+    residents: 0,
+    adults: 0,
+    children: 0,
+    higherEducation: 0,
+    health: null,
+    happiness: null,
+    loyalty: null,
+    criminality: null,
+    highestCriminality: null,
+    highRiskResidents: 0,
+    capacity,
+  };
 }
 
 export function summarizeMapViewport(buildings, bounds) {

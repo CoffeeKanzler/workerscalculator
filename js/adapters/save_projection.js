@@ -8,9 +8,10 @@ import {
   matchObservedBuilding,
   summarizeCriminalityOutliers,
   summarizeDistributionOffices,
+  summarizeResidenceDetails,
   summarizeResidenceOccupancy,
   summarizeVehicleLines,
-} from '../save_model.js';
+} from '../save_model.js?v=1';
 import {
   createEvidence,
   createEvidenceCollection,
@@ -555,6 +556,8 @@ export function buildImportedPlanning(sourceName, settlements, buildings, member
     ? summarizeVehicleLines(vehicleLines, vehicles ?? [], buildings) : null;
   const criminalityOutliers = citizens
     ? summarizeCriminalityOutliers(citizens, buildings) : null;
+  const residenceDetails = citizens
+    ? summarizeResidenceDetails(citizens, buildings) : null;
   const residenceOccupancy = citizens ? summarizeResidenceOccupancy(citizens, buildings) : null;
   const inventoryBuildings = buildings.filter(building =>
     building.storages?.some(storage => storage.resources?.length));
@@ -598,6 +601,7 @@ export function buildImportedPlanning(sourceName, settlements, buildings, member
       vehicleLines: lineOperations,
       distributionOffices: distributionOperations,
       criminalityOutliers,
+      residenceDetails,
       residenceOccupancy,
       vehicleModelCoverage,
       usedVehicleOffers,

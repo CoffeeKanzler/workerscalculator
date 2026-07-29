@@ -42,6 +42,34 @@ const screenshot = async (page, name) => {
   });
 };
 
+const paintedMarkerSpot = page => page.evaluate(() => {
+  const layer = document.querySelector('.leaflet-mapVector-pane canvas');
+  if (!layer) return null;
+  const context = layer.getContext('2d', { willReadFrequently: true });
+  const pixels = context.getImageData(0, 0, layer.width, layer.height).data;
+  const rect = layer.getBoundingClientRect();
+  for (let y = 20; y < layer.height - 60; y += 2) {
+    for (let x = 20; x < layer.width - 20; x += 2) {
+      let solid = true;
+      for (let dy = -1; dy <= 1 && solid; dy += 1) {
+        for (let dx = -1; dx <= 1; dx += 1) {
+          if (pixels[((y + dy) * layer.width + x + dx) * 4 + 3] < 220) {
+            solid = false;
+            break;
+          }
+        }
+      }
+      if (!solid) continue;
+      const clientX = rect.left + x / layer.width * rect.width;
+      const clientY = rect.top + y / layer.height * rect.height;
+      if (document.elementFromPoint(clientX, clientY) === layer) {
+        return { x: clientX, y: clientY };
+      }
+    }
+  }
+  return null;
+});
+
 
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1600, height: 1000 } });
@@ -165,32 +193,7 @@ try {
     // The building pane is its own canvas. Read an actually painted pixel and
     // drive the real mouse there: dispatching an event would bypass the map's
     // gesture and hit-testing stack.
-    const spot = await page.evaluate(() => {
-      const layer = document.querySelector('.leaflet-mapVector-pane canvas');
-      if (!layer) return null;
-      const context = layer.getContext('2d', { willReadFrequently: true });
-      const pixels = context.getImageData(0, 0, layer.width, layer.height).data;
-      const rect = layer.getBoundingClientRect();
-      for (let y = 20; y < layer.height - 60; y += 2) {
-        for (let x = 20; x < layer.width - 20; x += 2) {
-          let solid = true;
-          for (let dy = -1; dy <= 1 && solid; dy += 1) {
-            for (let dx = -1; dx <= 1; dx += 1) {
-              if (pixels[((y + dy) * layer.width + x + dx) * 4 + 3] < 220) {
-                solid = false;
-                break;
-              }
-            }
-          }
-          if (!solid) continue;
-          const clientX = rect.left + x / layer.width * rect.width;
-          const clientY = rect.top + y / layer.height * rect.height;
-          if (document.elementFromPoint(clientX, clientY) !== layer) continue;
-          return { x: clientX, y: clientY };
-        }
-      }
-      return null;
-    });
+    const spot = await paintedMarkerSpot(page);
     check(spot, 'no painted building marker was visible to click');
     if (spot) {
       await page.mouse.click(spot.x, spot.y);
@@ -221,15 +224,40 @@ try {
     check(afterLegend < beforeLegend,
       'clicking a category legend item hid no buildings',
       JSON.stringify({ beforeLegend, afterLegend, beforePressed, afterPressed }));
-    await page.locator('.map-metric-toggle button', { hasText: /Staffing|Besetzung/i }).click();
-    await page.waitForTimeout(250);
-    check(await page.locator('.map-metric-toggle button.active', {
-      hasText: /Staffing|Besetzung/i,
-    }).count() === 1, 'staffing metric did not become active');
-    const metricKey = (await page.locator('.map-metric-key').innerText()).trim();
-    check(metricKey.includes('50–89%') && /90% (and over|und mehr)/.test(metricKey),
-      'staffing metric did not expose a readable scale', metricKey);
-    await screenshot(page, 'map-light-staffing');
+    const metricLabels = await page.locator('.map-metric-toggle button').allTextContents();
+    check(!metricLabels.some(label => /Staffing|Besetzung/i.test(label)),
+      'the removed staffing map mode is still visible', JSON.stringify(metricLabels));
+
+    const categoryButtons = page.locator('.map-data-legend button');
+    for (let index = 0; index < await categoryButtons.count(); index += 1) {
+      const button = categoryButtons.nth(index);
+      const category = await button.getAttribute('data-map-category');
+      const pressed = await button.getAttribute('aria-pressed');
+      if ((category === 'living') !== (pressed === 'true')) await button.click();
+    }
+    await page.locator('.map-layer-menu > summary').click();
+    for (const layer of ['borders', 'outliers']) {
+      const toggle = page.locator(`[data-map-layer="${layer}"]`);
+      if (await toggle.count() && await toggle.isChecked()) await toggle.uncheck();
+    }
+    await page.locator('.map-layer-menu > summary').click();
+    await page.locator('.map-zoom-controls button', {
+      hasText: /Fit developed area|Bebautes Gebiet/i,
+    }).click();
+    await page.waitForTimeout(500);
+
+    const residenceSpot = await paintedMarkerSpot(page);
+    check(residenceSpot, 'no residential marker was visible to click');
+    if (residenceSpot) {
+      await page.mouse.click(residenceSpot.x, residenceSpot.y);
+      await page.waitForTimeout(400);
+    }
+    const ledger = page.locator('.map-building-inspector [data-residence-ledger]');
+    check(await ledger.count() === 1, 'a residential marker opened no residence ledger');
+    const ledgerText = await ledger.count() ? (await ledger.innerText()).trim() : '';
+    check(/\d/.test(ledgerText) && /Residence|Wohnregister|Occupancy|Belegung/i.test(ledgerText),
+      'the residence ledger contains no exact occupancy', ledgerText);
+    await screenshot(page, 'map-light-residence');
 
     const themeButton = page.locator('.themeswitch').first();
     for (let step = 0; step < 3; step += 1) {
@@ -238,7 +266,7 @@ try {
       await page.waitForTimeout(250);
     }
     await page.waitForSelector('.leaflet-republic-map.leaflet-container');
-    await screenshot(page, 'map-dark-staffing');
+    await screenshot(page, 'map-dark-residence');
   } else {
     failures.push('no map tab was offered after importing a save');
   }
