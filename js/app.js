@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=140';
+import { STRINGS } from './i18n.js?v=142';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -55,6 +55,8 @@ import {
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
 import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=28';
+import { workerAccessAvailability } from './models/access_graph.js?v=5';
+import { mountWorkerAccessGraph } from './ui/access_graph.js?v=5';
 import {
   buildMapTransportLines,
   mapCountOrDash,
@@ -2995,6 +2997,8 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
     ...scope, selected: scope.id === state.republicScope,
   }));
   const transportLines = buildMapTransportLines(state.saveImport?.vehicleLines, buildings);
+  const accessEvidence = state.saveImport?.workerAccessEvidence ?? null;
+  const accessAvailable = workerAccessAvailability(accessEvidence).available;
   const categoryVisibility = {
     living: true, industry: true, services: true, support: true, other: true,
     ...(state.mapCategoryVisibility ?? {}),
@@ -3201,6 +3205,17 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
       el('p', { class: 'hint' }, t('selectMapBuilding')));
   const viewport = el('div', { class: 'map-viewport standalone leaflet-map-viewport' },
     container, mapInspector, summary);
+  const accessContainer = el('div', { class: 'worker-access-mount' });
+  const accessSection = el('details', {
+    class: 'worker-access-section',
+    open: accessAvailable,
+  },
+  el('summary', {},
+    el('strong', {}, t('workerAccessGraph')),
+    el('span', {
+      class: `evidence-badge ${accessAvailable ? 'exact' : 'unavailable'}`,
+    }, accessAvailable ? t('exactSavedEvidence') : t('awaitingExactWalkingEvidence'))),
+  accessContainer);
   const section = el('section', { class: 'map-page' },
     el('h2', {}, t('republicMapTitle')),
     el('p', { class: 'hint' }, t(mapHintKey)),
@@ -3208,10 +3223,44 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
     legend,
     metricKey,
     radiationKey,
-    viewport);
+    viewport,
+    accessSection);
 
   requestAnimationFrame(() => {
     if (!container.isConnected) return;
+    const accessGraph = mountWorkerAccessGraph(accessContainer, accessEvidence, {
+      labels: {
+        title: t('workerAccessGraph'),
+        exact: t('exactSavedEvidence'),
+        unavailable: t('workerAccessUnavailable'),
+        missing: t('workerAccessMissing'),
+        incomplete: t('workerAccessIncomplete'),
+        notExact: t('workerAccessNotExact'),
+        invalid: t('workerAccessInvalid'),
+        select: t('workerAccessSelect'),
+        focus: t('workerAccessFocus'),
+        expand: t('workerAccessExpand'),
+        locate: t('locateOnMap'),
+        hidden: t('workerAccessHidden'),
+        maxWorkers: t('workerAccessMaxWorkers'),
+        bottleneck: t('workerAccessBottleneck'),
+        walkingDistance: t('walkingDistance'),
+        pathType: t('pathType'),
+        connections: t('workerAccessConnections'),
+        residence: t('residence'),
+        stop: t('transportStop'),
+        line: t('vehicleLine'),
+        transfer: t('transfer'),
+        workplace: t('workplace'),
+      },
+      initialFocusId: accessEvidence?.nodes?.find(node =>
+        node.buildingIndex === mapSelectedBuildingIndex)?.id ?? null,
+      showHeading: false,
+      onLocateBuilding: index => {
+        const building = buildings.find(item => item.index === index);
+        if (building) api?.focusBuilding(building);
+      },
+    });
     const styles = getComputedStyle(document.documentElement);
     const color = (name, fallback) => styles.getPropertyValue(name).trim() || fallback;
     const radiationLow = themeHexRgb(color('--blueprint', '#48657b'));
@@ -3267,6 +3316,9 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         mapSelectedBuildingIndex = building.index;
         mapInspector.replaceWith(mapInspector = renderMapBuildingInspector(building));
         container.dataset.selectedBuilding = String(building.index);
+        const graphNode = accessEvidence?.nodes?.find(node =>
+          node.buildingIndex === building.index);
+        if (graphNode) accessGraph.focus(graphNode.id);
       },
       onSelectTransportLine: line => {
         mapSelectedBuildingIndex = null;

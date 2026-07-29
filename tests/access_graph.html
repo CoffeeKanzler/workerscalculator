@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body { padding: 20px; }
+    main { max-width: 1200px; margin: auto; }
+    #theme { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <main>
+    <button id="theme" type="button">Toggle theme</button>
+    <details class="worker-access-section" open>
+      <summary><strong>Worker access graph</strong><span class="evidence-badge exact">exact saved evidence</span></summary>
+      <div id="graph" class="worker-access-mount"></div>
+    </details>
+    <details class="worker-access-section">
+      <summary><strong>Unavailable contract</strong></summary>
+      <div id="unavailable" class="worker-access-mount"></div>
+    </details>
+  </main>
+  <script type="module">
+    import { mountWorkerAccessGraph } from '../js/ui/access_graph.js';
+
+    const evidence = {
+      completeness: 'complete',
+      walkingEdgesComplete: true,
+      nodes: [
+        { id: 'home', kind: 'residence', stage: 0, label: 'Petrograd block 971', buildingIndex: 1188 },
+        { id: 'square', kind: 'stop', stage: 1, label: 'October Square', buildingIndex: 1201 },
+        { id: 'bus-7', kind: 'line', stage: 2, label: 'Bus 7 · Steel shift' },
+        { id: 'exchange', kind: 'transfer', stage: 2, label: 'Central exchange' },
+        { id: 'steel-stop', kind: 'stop', stage: 3, label: 'Steelworks gate', buildingIndex: 800 },
+        { id: 'mill', kind: 'workplace', stage: 4, label: 'Petrograd steel mill', buildingIndex: 801 },
+        { id: 'heat', kind: 'workplace', stage: 4, label: 'District heating plant', buildingIndex: 802 },
+      ],
+      edges: [
+        { id: 'walk-home', source: 'home', target: 'square', kind: 'walk', evidence: 'exact', pathType: 'lit-footpath', distanceMeters: 185, capacityUpperBound: 217 },
+        { id: 'board-7', source: 'square', target: 'bus-7', kind: 'board', evidence: 'exact', capacityUpperBound: 112 },
+        { id: 'ride-7', source: 'bus-7', target: 'steel-stop', kind: 'ride', evidence: 'exact', capacityUpperBound: 72 },
+        { id: 'transfer', source: 'square', target: 'exchange', kind: 'transfer', evidence: 'exact', capacityUpperBound: 60 },
+        { id: 'transfer-out', source: 'exchange', target: 'steel-stop', kind: 'ride', evidence: 'exact', capacityUpperBound: 60 },
+        { id: 'walk-mill', source: 'steel-stop', target: 'mill', kind: 'walk', evidence: 'exact', pathType: 'gravel-footpath', distanceMeters: 241, capacityUpperBound: 100 },
+        { id: 'walk-heat', source: 'steel-stop', target: 'heat', kind: 'walk', evidence: 'exact', pathType: 'footpath', distanceMeters: 92, capacityUpperBound: 30 },
+      ],
+    };
+
+    window.accessGraph = mountWorkerAccessGraph(document.querySelector('#graph'), evidence, {
+      initialFocusId: 'home',
+      showHeading: false,
+      onLocateBuilding: index => document.body.dataset.locatedBuilding = String(index),
+    });
+    mountWorkerAccessGraph(document.querySelector('#unavailable'), null);
+    document.querySelector('#theme').addEventListener('click', () => {
+      const root = document.documentElement;
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    });
+    document.body.dataset.ready = 'true';
+  </script>
+</body>
+</html>
