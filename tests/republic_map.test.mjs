@@ -11,6 +11,7 @@ import {
   radiationRasterPixels,
   residenceDetailForBuilding,
   summarizeMapViewport,
+  waterRasterPixels,
 } from '../js/ui/republic_map.js';
 
 test('radiation raster colors only nonzero samples with the supplied theme palette', () => {
@@ -162,4 +163,32 @@ test('residence details join by exact building index and retain exact zero', () 
   assert.equal(residenceDetailForBuilding(
     { index: 9 }, summaries, { residential: false, capacity: null },
   ), null);
+});
+
+// The whole water pipeline has to agree on one row order, and the order is the
+// one every other raster uses: row 0 is north. The parser emits it that way and
+// nothing between there and the overlay may mirror it — two copies of this
+// conversion used to, which cancelled a bottom-up parser and hid the convention.
+test('water cells are converted in place, north stays north', () => {
+  // Four cells: levels 0, 1, 2, 3 in reading order.
+  const packed = Buffer.from([0 | (1 << 2) | (2 << 4) | (3 << 6)]).toString('base64');
+
+  const pixels = waterRasterPixels(packed, 4);
+
+  assert.deepEqual([...pixels], [
+    44, 133, 190, 0,
+    44, 133, 190, 65,
+    44, 133, 190, 115,
+    44, 133, 190, 165,
+  ]);
+});
+
+test('a dry north and a wet south stay that way through the conversion', () => {
+  // A 2x2 map: both northern cells dry, both southern cells fully wet.
+  const packed = Buffer.from([0 | (0 << 2) | (3 << 4) | (3 << 6)]).toString('base64');
+
+  const pixels = waterRasterPixels(packed, 4);
+
+  assert.deepEqual([pixels[3], pixels[7], pixels[11], pixels[15]], [0, 0, 165, 165],
+    'transparent on the first row, opaque on the last');
 });

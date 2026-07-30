@@ -23,6 +23,30 @@ export function radiationRasterPixels(packed, low, high) {
   return pixels;
 }
 
+// Water coverage, two bits per cell, drawn in the one order every raster here
+// uses: row 0 is the north edge of the map, the same as pollution and radiation.
+//
+// This deliberately does not mirror the rows. It used to, in two copies, which
+// cancelled out a heightmap parser that emitted the DDS bottom-up and left the
+// pipeline right by accident and impossible to reason about — until the parser
+// was corrected to north-up and the surviving mirror flipped every coastline.
+const WATER_ALPHA = [0, 65, 115, 165];
+const WATER_RGB = [44, 133, 190];
+
+export function waterRasterPixels(packed, cellCount) {
+  const samples = Uint8Array.from(atob(packed), character => character.charCodeAt(0));
+  const pixels = new Uint8ClampedArray(cellCount * 4);
+  for (let index = 0; index < cellCount; index += 1) {
+    const level = (samples[index >> 2] >> ((index & 3) * 2)) & 3;
+    const target = index * 4;
+    pixels[target] = WATER_RGB[0];
+    pixels[target + 1] = WATER_RGB[1];
+    pixels[target + 2] = WATER_RGB[2];
+    pixels[target + 3] = WATER_ALPHA[level];
+  }
+  return pixels;
+}
+
 function workerPositions(building) {
   return (Number.isFinite(building.configuredWorkers) ? building.configuredWorkers : 0)
     + (Number.isFinite(building.configuredWorkersHighEducation)

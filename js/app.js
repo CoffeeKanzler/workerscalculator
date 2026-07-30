@@ -54,7 +54,7 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=30';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=31';
 import { workerAccessAvailability } from './models/access_graph.js?v=11';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=11';
 import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=11';
@@ -69,7 +69,8 @@ import {
   normalizeMapMetric,
   radiationRasterPixels,
   residenceDetailForBuilding,
-} from './ui/republic_map.js?v=24';
+  waterRasterPixels,
+} from './ui/republic_map.js?v=26';
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
@@ -2925,24 +2926,12 @@ function mapBuildingDisplayName(building, catalog = matchSaveBuilding(building.t
 
 function standaloneWaterImageHref(water) {
   if (terrainWaterImageCache.has(water.packed)) return terrainWaterImageCache.get(water.packed);
-  const packed = Uint8Array.from(atob(water.packed), character => character.charCodeAt(0));
   const canvas = document.createElement('canvas');
   canvas.width = water.width;
   canvas.height = water.height;
   const context = canvas.getContext('2d');
   const pixels = context.createImageData(water.width, water.height);
-  const alpha = [0, 65, 115, 165];
-  for (let sourceY = 0; sourceY < water.height; sourceY += 1) {
-    for (let x = 0; x < water.width; x += 1) {
-      const sourceIndex = sourceY * water.width + x;
-      const level = (packed[sourceIndex >> 2] >> ((sourceIndex & 3) * 2)) & 3;
-      const targetIndex = ((water.height - 1 - sourceY) * water.width + x) * 4;
-      pixels.data[targetIndex] = 44;
-      pixels.data[targetIndex + 1] = 133;
-      pixels.data[targetIndex + 2] = 190;
-      pixels.data[targetIndex + 3] = alpha[level];
-    }
-  }
+  pixels.data.set(waterRasterPixels(water.packed, water.width * water.height));
   context.putImageData(pixels, 0, 0);
   const href = canvas.toDataURL('image/png');
   terrainWaterImageCache.set(water.packed, href);
@@ -3847,24 +3836,12 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   }
   const waterImageHref = water => {
     if (terrainWaterImageCache.has(water.packed)) return terrainWaterImageCache.get(water.packed);
-    const packed = Uint8Array.from(atob(water.packed), character => character.charCodeAt(0));
     const canvas = document.createElement('canvas');
     canvas.width = water.width;
     canvas.height = water.height;
     const context = canvas.getContext('2d');
     const pixels = context.createImageData(water.width, water.height);
-    const alpha = [0, 65, 115, 165];
-    for (let sourceY = 0; sourceY < water.height; sourceY += 1) {
-      for (let x = 0; x < water.width; x += 1) {
-        const sourceIndex = sourceY * water.width + x;
-        const level = (packed[sourceIndex >> 2] >> ((sourceIndex & 3) * 2)) & 3;
-        const targetIndex = ((water.height - 1 - sourceY) * water.width + x) * 4;
-        pixels.data[targetIndex] = 44;
-        pixels.data[targetIndex + 1] = 133;
-        pixels.data[targetIndex + 2] = 190;
-        pixels.data[targetIndex + 3] = alpha[level];
-      }
-    }
+    pixels.data.set(waterRasterPixels(water.packed, water.width * water.height));
     context.putImageData(pixels, 0, 0);
     const href = canvas.toDataURL('image/png');
     terrainWaterImageCache.set(water.packed, href);
