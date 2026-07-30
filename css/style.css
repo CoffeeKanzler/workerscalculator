@@ -465,82 +465,80 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 }
 .worker-access-heading > div { display: flex; align-items: center; gap: 8px; }
 .worker-access-heading h3 { margin: 0; font-size: 14px; }
-.worker-access-hidden { margin-left: auto; color: var(--muted); font-size: 11px; }
 .worker-access-body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
-  min-height: 340px;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  min-height: 460px;
 }
+.worker-access-stage { position: relative; min-width: 0; }
+/* Cytoscape measures its container, so the canvas needs a real height of its
+   own rather than one inherited from content that does not exist yet. */
 .worker-access-canvas {
-  position: relative;
-  min-width: 0;
-  max-height: 560px;
-  overflow: auto;
-  background: var(--panel2);
-}
-.worker-access-hidden-overlay {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  z-index: 2;
-  padding: 3px 6px;
-  color: var(--muted);
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-size: 10px;
-}
-.worker-access-graph {
-  display: block;
   width: 100%;
-  min-width: 760px;
-  min-height: 320px;
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  height: 100%;
+  min-height: 460px;
+  background:
+    radial-gradient(circle at 1px 1px,
+      color-mix(in srgb, var(--border) 55%, transparent) 1px, transparent 0) 0 0 / 22px 22px,
+    var(--panel2);
+  cursor: grab;
 }
-.worker-access-edge line {
-  stroke: var(--muted);
-  stroke-width: 1.5;
-  opacity: .64;
+.worker-access-canvas:active { cursor: grabbing; }
+.worker-access-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  display: grid;
+  gap: 4px;
 }
-.worker-access-edge.edge-walk line { stroke: var(--blueprint); }
-.worker-access-edge.edge-ride line,
-.worker-access-edge.edge-board line { stroke: var(--focus); }
-.worker-access-edge.edge-transfer line { stroke: var(--accent2); stroke-dasharray: 4 3; }
-.worker-access-edge.bottleneck line { stroke: var(--neg); stroke-width: 3; opacity: 1; }
-.worker-access-edge text {
-  fill: var(--muted);
-  stroke: var(--panel2);
-  stroke-width: 4px;
-  paint-order: stroke;
-  font-size: 10px;
+.worker-access-controls button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
 }
-.worker-access-graph marker path { fill: var(--muted); }
-.worker-access-node { cursor: pointer; outline: none; }
-.worker-access-node rect {
-  fill: var(--panel);
-  stroke: var(--border);
-  stroke-width: 1.2;
+.worker-access-controls button:hover { background: var(--panel); border-color: var(--focus); }
+.worker-access-counter {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 2;
+  margin: 0;
+  padding: 3px 7px;
+  color: var(--muted);
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 11px;
 }
-.worker-access-node.node-residence rect { stroke: var(--blueprint); }
-.worker-access-node.node-line rect { stroke: var(--focus); }
-.worker-access-node.node-transfer rect,
-.worker-access-node.node-stop rect { stroke: var(--accent2); }
-.worker-access-node.node-workplace rect { stroke: var(--accent); }
-.worker-access-node:hover rect,
-.worker-access-node:focus-visible rect,
-.worker-access-node.selected rect {
-  stroke: var(--focus);
-  stroke-width: 3;
+.worker-access-hint {
+  margin: 0;
+  padding: 7px 12px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
 }
-.worker-access-node text { pointer-events: none; }
-.worker-access-node .node-kind {
-  fill: var(--muted);
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: .06em;
+.worker-access-headline {
+  margin: 0 0 12px;
+  padding: 7px 9px;
+  background: color-mix(in srgb, var(--pos) 12%, transparent);
+  border-left: 3px solid var(--pos);
+  border-radius: 0 5px 5px 0;
+  font: 700 13px/1.3 ui-monospace, monospace;
 }
-.worker-access-node .node-label { fill: var(--text); font-size: 11px; font-weight: 600; }
-.worker-access-node .node-capacity { fill: var(--pos); font-size: 10px; font-weight: 700; }
+.worker-access-headline.short {
+  background: color-mix(in srgb, var(--neg) 12%, transparent);
+  border-left-color: var(--neg);
+  color: var(--neg);
+}
+.worker-access-legs { margin-bottom: 12px; }
+.worker-access-legs .worker-access-kind { margin-bottom: 4px; }
 .worker-access-inspector {
   min-width: 0;
   padding: 13px;
@@ -556,17 +554,6 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-.worker-access-inspector dl { margin: 0 0 10px; }
-.worker-access-inspector dl div {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 8px;
-  padding: 6px 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
-}
-.worker-access-inspector dt { color: var(--muted); font-size: 11px; }
-.worker-access-inspector dd { margin: 0; font: 600 12px/1.3 ui-monospace, monospace; }
-.worker-access-connection-count { margin: 10px 0 5px; color: var(--muted); font-size: 11px; }
 .worker-access-connection {
   margin: 0;
   padding: 4px 0;
@@ -1363,7 +1350,6 @@ table.data th, table.data td { border-color: var(--border); }
 
 /* A bound that does not fill the workplace is the interesting case, so it is
    the one that carries colour. */
-.worker-access-graph .node-capacity.short { fill: var(--warn); }
 .worker-access-inspector dd.short { color: var(--warn); }
 
 .stale-build-banner {

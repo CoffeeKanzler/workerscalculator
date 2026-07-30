@@ -81,7 +81,7 @@ function nodeCapacity(node) {
   return Number.POSITIVE_INFINITY;
 }
 
-function widestWorkplaceBounds(nodes, edges, focusId) {
+export function widestWorkplaceBounds(nodes, edges, focusId) {
   const nodeById = new Map(nodes.map(node => [node.id, node]));
   const outgoing = new Map();
   for (const edge of edges) {

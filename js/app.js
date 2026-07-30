@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=157';
+import { STRINGS } from './i18n.js?v=161';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -55,8 +55,8 @@ import {
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
 import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=32';
-import { workerAccessAvailability } from './models/access_graph.js?v=11';
-import { mountWorkerAccessGraph } from './ui/access_graph.js?v=11';
+import { workerAccessAvailability } from './models/access_graph.js?v=18';
+import { mountWorkerAccessGraph } from './ui/access_graph.js?v=18';
 import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=12';
 import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=8';
 import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
@@ -3439,11 +3439,21 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         notExact: t('workerAccessNotExact'),
         invalid: t('workerAccessInvalid'),
         select: t('workerAccessSelect'),
-        focus: t('workerAccessFocus'),
-        expand: t('workerAccessExpand'),
         locate: t('locateOnMap'),
-        hidden: t('workerAccessHidden'),
-        hiddenEdges: t('workerAccessHiddenEdges'),
+        hint: t('workerAccessHint'),
+        fit: t('workerAccessFit'),
+        zoomIn: t('zoomIn'),
+        zoomOut: t('zoomOut'),
+        arrivesBy: t('workerAccessArrivesBy'),
+        places: t('workerAccessPlaces'),
+        ofCanReach: t('workerAccessOf'),
+        canReach: t('workerAccessCanReach'),
+        staffable: t('workerAccessStaffable'),
+        notStaffable: t('workerAccessNotStaffable'),
+        adults: t('workerAccessAdults'),
+        leadsTo: t('workerAccessLeadsTo'),
+        more: t('workerAccessMore'),
+        showingOf: t('workerAccessShowingOf'),
         maxWorkers: t('workerAccessMaxWorkers'),
         ofSlots: t('workerAccessOfSlots'),
         bottleneck: t('workerAccessBottleneck'),
