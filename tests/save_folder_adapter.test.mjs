@@ -315,3 +315,35 @@ test('configured staffing counts basic and high-education workers as one establi
   assert.ok(clinics.currentWorkers <= clinics.configuredWorkers,
     'observed staff must never exceed the configured establishment');
 });
+
+// The transport model reads vehicle routes off the imported fleet, and the fleet
+// lives under `ownedVehicles` — not `vehicles`. Reading the wrong key found no
+// transport at all and said so in a way that looked like the save had none, so
+// the name and the route field are both pinned here.
+test('the imported fleet keeps its saved routes under the key the app reads', () => {
+  const parsed = parsedSave();
+  const planning = buildImportedPlanning(
+    'Kohleburg Republic',
+    parsed.settlements,
+    parsed.buildings,
+    parsed.membershipAudit,
+    {
+      ...parsed,
+      vehicles: [{
+        id: 12, model: 'peckett', modelFacts: null,
+        routeTargetBuildingIndices: [41, 42],
+      }],
+      rawBuildings: [rawHospital],
+      productionBuildings: [],
+      importedAt: '2026-07-27T12:30:00.000Z',
+      translate: key => key,
+    },
+  );
+
+  const fleet = planning.metadata.ownedVehicles;
+  assert.ok(Array.isArray(fleet), 'the fleet is stored as ownedVehicles');
+  assert.equal(planning.metadata.vehicles, undefined,
+    'nothing else on the import is called vehicles');
+  assert.deepEqual(fleet[0].routeTargetBuildingIndices, [41, 42],
+    'the saved route survives the projection');
+});

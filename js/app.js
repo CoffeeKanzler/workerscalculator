@@ -3552,7 +3552,7 @@ function accessKeyForImport(imported) {
     imported.pedestrianNetwork.summary?.byteLength ?? 0,
     imported.roadNetwork?.summary?.byteLength ?? 0,
     imported.cablewayNetwork?.summary?.byteLength ?? 0,
-    imported.vehicles?.length ?? 0,
+    imported.ownedVehicles?.length ?? 0,
     imported.observedBuildings?.length ?? 0].join('|');
 }
 
@@ -3577,7 +3577,9 @@ function workerAccessContext() {
       residenceOccupancy: imported.residenceOccupancy,
       vehicleLines: imported.vehicleLines,
       vehicleRoutes: buildVehicleRoutes({
-        vehicles: imported.vehicles ?? [],
+        // The import stores the resolved fleet as ownedVehicles; there is no
+        // `vehicles` on it, and reading one silently found no transport at all.
+        vehicles: imported.ownedVehicles ?? [],
         buildings,
         lineVehicleIds: (Array.isArray(imported.vehicleLines)
           ? imported.vehicleLines : imported.vehicleLines?.lines ?? [])
