@@ -172,7 +172,7 @@ export async function orchestrateWorkshopCatalog(buildings, vehicles = [], {
 
 export function parseSaveInWorker(payload, {
   WorkerClass = globalThis.Worker,
-  workerUrl = new URL('../savegame_worker.js?v=33', import.meta.url),
+  workerUrl = new URL('../savegame_worker.js?v=34', import.meta.url),
   onProgress,
 } = {}) {
   return new Promise((resolve, reject) => {
@@ -203,7 +203,7 @@ export function parseSaveInWorker(payload, {
 
 export function parseMapLayersInWorker(files, {
   WorkerClass = globalThis.Worker,
-  workerUrl = new URL('../savegame_map_worker.js?v=7', import.meta.url),
+  workerUrl = new URL('../savegame_map_worker.js?v=8', import.meta.url),
   onProgress,
 } = {}) {
   return new Promise((resolve, reject) => {

@@ -132,7 +132,7 @@ function heightmapFixture({ water = 0.1, land = 0.3, border = false } = {}) {
 test('heightmap parser validates R32F DDS and packs heightmap-derived water coverage', () => {
   const buffer = heightmapFixture();
   assert.deepEqual(parseHeightmapWater(buffer, { outputSize: 2 }), {
-    width: 2, height: 2, packed: 'Yw==', sourceWidth: 8, sourceHeight: 8,
+    width: 2, height: 2, packed: 'Ng==', sourceWidth: 8, sourceHeight: 8,
     waterHeight: Math.fround(0.1),
     worldBounds: { minX: -10000, maxX: 10000, minZ: -10000, maxZ: 10000 },
   });
@@ -151,6 +151,39 @@ test('water follows each map own flat water plane instead of a fixed height', ()
   assert.deepEqual(derived.packed, parseHeightmapWater(heightmapFixture(), { outputSize: 2 }).packed);
   // The same map read with the old fixed threshold drowns every land sample.
   assert.equal(parseHeightmapWater(lowLandMap, { outputSize: 2, waterHeight: 0.2 }).packed, '/w==');
+});
+
+// The save writes the heightmap bottom-up, and the map draws rasters top-down
+// with north in row 0 — the same convention pollution.bin is already flipped
+// into. Reading it the other way put every shoreline on the wrong side of the
+// republic, which is what "the buildings are not set in the right way" looked
+// like on screen.
+test('heightmap water is packed north-up like every other map raster', () => {
+  const size = 4;
+  const buffer = new ArrayBuffer(0x80 + size * size * 4);
+  const view = new DataView(buffer);
+  view.setUint32(0, 0x20534444, true);
+  view.setUint32(4, 0x7c, true);
+  view.setUint32(0x0c, size, true);
+  view.setUint32(0x10, size, true);
+  view.setUint32(0x4c, 0x20, true);
+  view.setUint32(0x50, 0x04, true);
+  view.setUint32(0x54, 114, true);
+  // Water along the save's first rows, which are the south edge of the map.
+  for (let y = 0; y < size; y += 1) {
+    for (let x = 0; x < size; x += 1) {
+      view.setFloat32(0x80 + (y * size + x) * 4, y < 2 ? 0.1 : 0.3, true);
+    }
+  }
+
+  const derived = parseHeightmapWater(buffer, { outputSize: 2 });
+  const packed = Uint8Array.from(atob(derived.packed), character => character.charCodeAt(0));
+  const level = index => (packed[index >> 2] >> ((index & 3) * 2)) & 3;
+
+  assert.equal(level(0), 0, 'the northern row stays dry');
+  assert.equal(level(1), 0);
+  assert.equal(level(2), 3, 'the water the save wrote first belongs in the southern row');
+  assert.equal(level(3), 3);
 });
 
 test('border padding of exact zero is terrain edge, not a water plane', () => {
