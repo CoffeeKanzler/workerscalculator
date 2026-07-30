@@ -173,7 +173,7 @@ export async function orchestrateWorkshopCatalog(buildings, vehicles = [], {
 
 export function parseSaveInWorker(payload, {
   WorkerClass = globalThis.Worker,
-  workerUrl = new URL('../savegame_worker.js?v=34', import.meta.url),
+  workerUrl = new URL('../savegame_worker.js?v=36', import.meta.url),
   onProgress,
 } = {}) {
   return new Promise((resolve, reject) => {
@@ -204,8 +204,11 @@ export function parseSaveInWorker(payload, {
 
 export function parseMapLayersInWorker(files, {
   WorkerClass = globalThis.Worker,
-  workerUrl = new URL('../savegame_map_worker.js?v=10', import.meta.url),
+  workerUrl = new URL('../savegame_map_worker.js?v=12', import.meta.url),
   onProgress,
+  // Sea level comes from the buildings' own saved heights, which the map files
+  // alone cannot supply.
+  buildingHeights = null,
 } = {}) {
   return new Promise((resolve, reject) => {
     const worker = new WorkerClass(workerUrl, { type: 'module' });
@@ -224,7 +227,7 @@ export function parseMapLayersInWorker(files, {
         resolve(data);
       }
     };
-    worker.postMessage(files);
+    worker.postMessage(buildingHeights ? { ...files, buildingHeights } : files);
   });
 }
 

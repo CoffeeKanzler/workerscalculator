@@ -1,5 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+
+import { buildingHeightSamples } from '../js/models/water_level.js';
 import {
   parseBuildingsGame, parseWorkers, parseHeader, parseMapClimate, parseResearch,
   parseVehicles, parseUsedVehicles, parseLines, parseRoadNetwork, parseHeightmapWater, parsePollution,
@@ -134,6 +136,8 @@ test('heightmap parser validates R32F DDS and packs heightmap-derived water cove
   assert.deepEqual(parseHeightmapWater(buffer, { outputSize: 2 }), {
     width: 2, height: 2, packed: 'Ng==', sourceWidth: 8, sourceHeight: 8,
     waterHeight: Math.fround(0.1),
+    waterHeightSource: 'flat-plane',
+    heightScale: null,
     worldBounds: { minX: -10000, maxX: 10000, minZ: -10000, maxZ: 10000 },
   });
   assert.throws(() => parseHeightmapWater(buffer.slice(0, -4), { outputSize: 2 }), /expected/);
@@ -719,4 +723,80 @@ test('live emergency events preserve object references and crime stage', () => {
       normalizedStageProgress: 0.5, state: 3, field68: 7.5, field6c: 8.5,
     },
   ]);
+});
+
+// The shoreline a map really has is the one its own buildings stand above. The
+// flat-plane search found a deep plateau on a save whose seabed slopes and drew
+// 4.4% of the map as water where the truth was nearer 15%.
+function slopedHeightmap(size = 8) {
+  const buffer = new ArrayBuffer(0x80 + size * size * 4);
+  const view = new DataView(buffer);
+  view.setUint32(0, 0x20534444, true);
+  view.setUint32(4, 0x7c, true);
+  view.setUint32(0x0c, size, true);
+  view.setUint32(0x10, size, true);
+  view.setUint32(0x4c, 0x20, true);
+  view.setUint32(0x50, 0x04, true);
+  view.setUint32(0x54, 114, true);
+  // A ramp from 0.02 in the west to 0.30 in the east, nothing repeating.
+  for (let y = 0; y < size; y += 1) {
+    for (let x = 0; x < size; x += 1) {
+      view.setFloat32(0x80 + (y * size + x) * 4, 0.02 + x * (0.28 / (size - 1)), true);
+    }
+  }
+  return buffer;
+}
+
+test('sea level is read from the buildings that stand on the terrain', () => {
+  const size = 8;
+  const buffer = slopedHeightmap(size);
+  const sampleOfColumn = column => 0.02 + column * (0.28 / (size - 1));
+  // 1000 m per sample unit with zero metres at sample 0.10, stated by putting
+  // sixty buildings on known columns at their exact heights.
+  const buildings = Array.from({ length: 60 }, (_, index) => {
+    const column = index % size;
+    const x = -10000 + (column + 0.5) * (20000 / size);
+    return { x, z: 0, y: 1000 * sampleOfColumn(column) - 100 };
+  });
+
+  const fitted = parseHeightmapWater(buffer, {
+    outputSize: 2,
+    buildingHeights: buildingHeightSamples(buildings),
+  });
+
+  assert.equal(fitted.waterHeightSource, 'building-height-fit');
+  assert.ok(Math.abs(fitted.waterHeight - 0.1) < 1e-4, `plane ${fitted.waterHeight}`);
+  assert.ok(Math.abs(fitted.heightScale.metresPerSample - 1000) < 1);
+  assert.ok(fitted.heightScale.correlation > 0.999);
+  assert.equal(fitted.heightScale.buildingCount, 60);
+
+  // Without the buildings the same file falls back to the flat-plane search,
+  // which settles on the lowest step of the ramp — the deep end, not the
+  // shoreline. That is the failure this reads sea level to avoid.
+  const fallback = parseHeightmapWater(buffer, { outputSize: 2 });
+  assert.equal(fallback.waterHeightSource, 'flat-plane');
+  assert.equal(fallback.waterHeight, Math.fround(0.02));
+  assert.equal(fallback.heightScale, null);
+
+  // An explicit level still wins, which is what the water-plane tests rely on.
+  const given = parseHeightmapWater(buffer, {
+    outputSize: 2, waterHeight: 0.2, buildingHeights: buildingHeightSamples(buildings),
+  });
+  assert.equal(given.waterHeightSource, 'given');
+  assert.equal(given.waterHeight, 0.2);
+});
+
+test('a republic on one flat plain keeps the flat-plane shoreline', () => {
+  const bordered = heightmapFixture({ water: 0.175, land: 0.3 });
+  // Every building at the same height: no slope to recover.
+  const buildings = Array.from({ length: 60 }, (_, index) => ({
+    x: -5000 + index * 10, z: 1000, y: 12,
+  }));
+
+  const derived = parseHeightmapWater(bordered, {
+    outputSize: 2, buildingHeights: buildingHeightSamples(buildings),
+  });
+
+  assert.equal(derived.waterHeightSource, 'flat-plane');
+  assert.equal(derived.waterHeight, Math.fround(0.175));
 });

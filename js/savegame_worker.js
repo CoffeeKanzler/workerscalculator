@@ -3,10 +3,11 @@ import {
   parseMapClimate, parseVehicles, parseUsedVehicles, parseLines, reconcileSettlementMembership,
   parseRoadNetwork,
   parseHeightmapWater,
-} from './savegame.js?v=34';
+} from './savegame.js?v=36';
 import {
   parseBlueprintOwned, parseCityStatsIni, parseStatsIni, statsPayloadText,
 } from './statsini.js?v=26';
+import { buildingHeightSamples } from './models/water_level.js?v=3';
 
 const sourceStatus = (payload) => Object.fromEntries(
   ['namepoints', 'buildings', 'workers', 'vehicles', 'usedVehicles', 'lines', 'road', 'rail', 'pedestrian', 'heightmap', 'pollution', 'header', 'research', 'events', 'stats', 'material']
@@ -61,7 +62,11 @@ self.onmessage = ({ data }) => {
     }));
     const roadNetwork = optional('road', parseRoadNetwork);
     const railNetwork = optional('rail', parseRoadNetwork);
-    const terrainWater = optional('heightmap', parseHeightmapWater);
+    // Sea level is read off the buildings' own heights, so the heightmap is
+    // parsed after them. See models/water_level.js.
+    const terrainWater = optional('heightmap', (buffer) => parseHeightmapWater(buffer, {
+      buildingHeights: buildingHeightSamples(buildings),
+    }));
     const research = optional('research', parseResearch);
     const events = optional('events', parseEvents);
     const statsRecords = optional('stats', () => parseStatsIni(statsText));

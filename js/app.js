@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=154';
+import { STRINGS } from './i18n.js?v=156';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -62,6 +62,7 @@ import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.j
 import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
 import { workerAccessAlerts } from './models/access_alerts.js?v=3';
 import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';
+import { buildingHeightSamples } from './models/water_level.js?v=3';
 import { mergedFootprints } from './models/building_footprint.js?v=3';
 import {
   buildMapTransportLines,
@@ -81,9 +82,9 @@ import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=13';
+} from './adapters/save_folder_adapter.js?v=15';
 import { matchSaveBuilding } from './adapters/save_projection.js?v=11';
-import { bootstrapRuntime } from './bootstrap.js?v=5';
+import { bootstrapRuntime } from './bootstrap.js?v=6';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
@@ -2124,6 +2125,7 @@ async function handleSaveDirectory(fileList) {
       try {
         const mapResult = await parseMapLayersInWorker(deferredMapRetry.files, {
           onProgress: presentSaveAdapterProgress,
+          buildingHeights: buildingHeightSamples(state.saveImport?.observedBuildings ?? []),
         });
         if (state.saveSlotName !== importName || state.saveImport?.sourceName !== sourceName) return;
         Object.assign(state.saveImport, mapResult.parsed);
@@ -2178,6 +2180,7 @@ async function retryDeferredMapLayers() {
   try {
     const mapResult = await parseMapLayersInWorker(retry.files, {
       onProgress: presentSaveAdapterProgress,
+      buildingHeights: buildingHeightSamples(state.saveImport?.observedBuildings ?? []),
     });
     if (!deferredMapRetryMatchesState() || deferredMapRetry !== retry) return;
     Object.assign(state.saveImport, mapResult.parsed);
@@ -3099,6 +3102,23 @@ function renderMapTransportInspector(line) {
   el('p', { class: 'hint' }, t('mapTransportStraightLineHint')));
 }
 
+// Which rule drew the shoreline. A level measured from the buildings' own heights
+// is a different claim from one guessed at by looking for a flat surface, and a
+// reader comparing the map with the game deserves to know which they have.
+function waterLevelNote(water) {
+  if (!water?.waterHeightSource) return null;
+  if (water.waterHeightSource === 'building-height-fit') {
+    return el('span', { 'data-water-level': 'building-height-fit' },
+      t('waterLevelMeasured')
+        .replace('{count}', fmt(water.heightScale?.buildingCount ?? 0, 0))
+        .replace('{r}', fmt(water.heightScale?.correlation ?? 0, 3)));
+  }
+  if (water.waterHeightSource === 'flat-plane') {
+    return el('span', { 'data-water-level': 'flat-plane' }, t('waterLevelFlatPlane'));
+  }
+  return el('span', { 'data-water-level': water.waterHeightSource }, t('waterLevelUnknown'));
+}
+
 function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
   const mapMetric = normalizeMapMetric(state.mapMetric);
   if (state.mapMetric !== mapMetric) state.mapMetric = mapMetric;
@@ -3395,7 +3415,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
   accessContainer);
   const section = el('section', { class: 'map-page' },
     el('h2', {}, t('republicMapTitle')),
-    el('p', { class: 'hint' }, t(mapHintKey)),
+    el('p', { class: 'hint' }, t(mapHintKey), ' ', waterLevelNote(model.water)),
     toolbar,
     legend,
     metricKey,

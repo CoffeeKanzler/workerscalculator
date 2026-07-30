@@ -2,6 +2,8 @@
 // The buildings_game traversal mirrors the current game's writer order; it
 // does not search for plausible strings or infer record boundaries.
 
+import { waterLevelFromBuildingHeights } from './models/water_level.js?v=3';
+
 const MAX_COUNT = 10_000_000;
 const ascii = new TextDecoder('utf-8');
 const utf16 = new TextDecoder('utf-16le');
@@ -89,6 +91,12 @@ class BinaryCursor {
     return utf16.decode(this.bytes.subarray(offset, end));
   }
 }
+
+// The terrain rasters all cover the same square, and pollution.bin is validated
+// against it, so it is stated once.
+export const HEIGHTMAP_WORLD_BOUNDS = Object.freeze({
+  minX: -10000, maxX: 10000, minZ: -10000, maxZ: 10000,
+});
 
 export function parseNamepoints(buffer) {
   const c = new BinaryCursor(buffer);
@@ -266,6 +274,8 @@ export function parseHeightmapWater(buffer, {
   outputSize = 512,
   waterHeight = null,
   waterPlaneMinimumShare = 0.001,
+  buildingHeights = null,
+  worldBounds = HEIGHTMAP_WORLD_BOUNDS,
 } = {}) {
   const c = new BinaryCursor(buffer);
   c.require(0x80, 'heightmap DDS header');
@@ -288,10 +298,35 @@ export function parseHeightmapWater(buffer, {
   if (!Number.isInteger(size) || size <= 0 || width % size || height % size) {
     throw new Error(`heightmap.dds cannot downsample ${width}x${height} to ${outputSize}`);
   }
-  const plane = waterHeight ?? detectWaterPlane(c.view, width, height, waterPlaneMinimumShare);
-  // Without a detectable plane the map has no flat surface to call water, and
-  // guessing a level would invent shoreline the save never recorded.
+  // Sea level, read out of the buildings' own heights, is the shoreline the map
+  // really has; the flat-plane search is the fallback for a republic too level to
+  // recover a height scale from. See models/water_level.js.
+  const sampleAt = (x, z) => {
+    const col = Math.floor((x - worldBounds.minX) / (worldBounds.maxX - worldBounds.minX) * width);
+    const row = Math.floor((z - worldBounds.minZ) / (worldBounds.maxZ - worldBounds.minZ) * height);
+    if (col < 0 || col >= width || row < 0 || row >= height) return NaN;
+    return c.view.getFloat32(0x80 + (row * width + col) * 4, true);
+  };
+  let sampleMin = Infinity;
+  let sampleMax = -Infinity;
+  for (let index = 0; index < width * height; index += 1) {
+    const value = c.view.getFloat32(0x80 + index * 4, true);
+    if (value < sampleMin) sampleMin = value;
+    if (value > sampleMax) sampleMax = value;
+  }
+  const fitted = waterHeight === null && buildingHeights?.length
+    ? waterLevelFromBuildingHeights(buildingHeights, sampleAt,
+      { min: sampleMin, max: sampleMax })
+    : { plane: null, reason: 'not-attempted', fit: null };
+  const detected = fitted.plane === null && waterHeight === null
+    ? detectWaterPlane(c.view, width, height, waterPlaneMinimumShare) : null;
+  const plane = waterHeight ?? fitted.plane ?? detected;
+  // Without any plane the map has no surface to call water, and guessing a level
+  // would invent shoreline the save never recorded.
   const waterLevel = plane ?? 0;
+  const waterHeightSource = waterHeight !== null ? 'given'
+    : fitted.plane !== null ? 'building-height-fit'
+      : detected !== null ? 'flat-plane' : 'none';
   const blockWidth = width / size;
   const blockHeight = height / size;
   const samplesPerBlock = blockWidth * blockHeight;
@@ -333,7 +368,16 @@ export function parseHeightmapWater(buffer, {
     sourceWidth: width,
     sourceHeight: height,
     waterHeight: waterLevel,
-    worldBounds: { minX: -10000, maxX: 10000, minZ: -10000, maxZ: 10000 },
+    waterHeightSource,
+    // Kept so the reader can be told which rule drew their shoreline, and so a
+    // republic too flat to fit is not mistaken for one that was measured.
+    heightScale: fitted.fit?.slope != null ? {
+      metresPerSample: fitted.fit.slope,
+      metresAtZeroSample: fitted.fit.intercept,
+      correlation: fitted.fit.correlation,
+      buildingCount: fitted.fit.count,
+    } : null,
+    worldBounds: { ...worldBounds },
   };
 }
 
