@@ -156,7 +156,32 @@ test('border posts remain a distinct exact map type', () => {
   assert.equal(isExternalAirLinkType('MIRRORZ_zoll_air_west'), true);
   assert.equal(isExternalAirLinkType('zoll_siatre'), false);
   assert.equal(isBorderPostType('CWC_SecretPoliceSmall'), false);
-  assert.equal(isBorderPostType('eletric_transformator_customin'), false);
+});
+
+// Everything on the frontier, whatever pack or mod named it. These were counted
+// as ordinary buildings, so "fit the developed area" framed a customs post 20 km
+// from town and left the republic a smudge in the corner: on one save the fitted
+// box ran z -9779..9841, against -9726..-3641 once they are out of it. The
+// standalone map used to exclude one of these types by name at the call site,
+// which is the same fix made in the wrong place.
+test('customs houses and checkpoints stand on the border, not in the republic', () => {
+  for (const type of [
+    'DLC3_customs_medium', 'DLC3_customs_big', 'MIRRORZ_DLC3_customs_big',
+    'customhouse_small', 'eletric_transformator_customin',
+    '2041250003/Checkpoint_Rail', 'border_post_road',
+  ]) {
+    assert.equal(isBorderPostType(type), true, type);
+  }
+  // Things that merely sound like one, and ordinary buildings.
+  for (const type of [
+    'panelak', 'shop_prior', 'DLC3_h_farm', 'tram_stop_big',
+    'MIRRORZ_2560296003/HOUSE1', 'DLC3_police_station_small',
+  ]) {
+    assert.equal(isBorderPostType(type), false, type);
+  }
+  // The off-map marker foreign trade is booked against stays its own thing.
+  assert.equal(isBorderPostType('zoll_air_soviet'), false);
+  assert.equal(isExternalAirLinkType('zoll_air_soviet'), true);
 });
 
 test('citizens aggregate through residence buildings without forced assignment', () => {

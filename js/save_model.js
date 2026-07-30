@@ -833,13 +833,26 @@ export function isNonPlannerSupportType(type) {
   ].some(fragment => clean.includes(fragment));
 }
 
+// Everything that stands on the frontier rather than in the republic: customs
+// houses of every pack and mod, rail and road checkpoints, and the transformer
+// that carries an electricity contract across the border. They are excluded
+// from "fit the developed area", which otherwise framed a customs post 20 km
+// from town and left the republic itself a smudge in one corner.
+const FRONTIER_FRAGMENTS = [
+  'customhouse', 'customs', 'customin', 'customout',
+  'border_post', 'borderpost', 'checkpoint',
+];
+
 export function isBorderPostType(type) {
   const clean = String(type ?? '')
     .replace(/^MIRRORZ_/i, '')
     .replace(/^\d{6,20}\//, '')
     .toLowerCase();
-  return (clean.startsWith('zoll_') && !clean.startsWith('zoll_air_'))
-    || clean.includes('customhouse') || clean.includes('border_post');
+  // zoll_air_* is the off-map marker foreign trade is booked against, sitting at
+  // +-19000 outside the terrain; it is not a building standing on the border.
+  if (clean.startsWith('zoll_air_')) return false;
+  if (clean.startsWith('zoll_')) return true;
+  return FRONTIER_FRAGMENTS.some(fragment => clean.includes(fragment));
 }
 
 export function isExternalAirLinkType(type) {

@@ -44,7 +44,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   filterCitizenDiagnostics, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=35';
+} from './save_model.js?v=36';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -3754,8 +3754,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     });
   };
   const developedBuildings = model.buildings.filter(building =>
-    !isBorderPostType(building.type) && !isExternalAirLinkType(building.type)
-    && !String(building.type ?? '').toLowerCase().includes('transformator_customin'));
+    !isBorderPostType(building.type) && !isExternalAirLinkType(building.type));
   const developedViewBox = fitView(developedBuildings, { minimumWidth: 95, marginRatio: 0.08 });
   const scopeBuildings = Number.isInteger(mapFocusScopeId)
     ? model.buildings.filter(building => building.scopeId === mapFocusScopeId) : [];
