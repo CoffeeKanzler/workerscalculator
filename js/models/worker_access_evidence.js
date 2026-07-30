@@ -1,7 +1,9 @@
 import {
   WALKING_BUDGET_METRES, buildWalkingNetwork, walkingReachFrom,
 } from './walking_access.js?v=8';
-import { composeServices, indexServices, transitReachFrom } from './transit_reach.js?v=2';
+import {
+  composeServices, indexServices, indexStopWalkers, transitReachFrom,
+} from './transit_reach.js?v=4';
 
 // The access corridor a worker can actually use: walk, or walk to a saved stop,
 // ride a saved line in its saved stop order, change at most once, and walk the
@@ -269,7 +271,13 @@ export function buildWorkerAccessEvidence({
 
   // The transit half of the catchment: the same walk-ride-change-walk rule the
   // map's click overlay answers with, so the two can never disagree.
-  const services = { reachOf, stopIndices, servicesByStop: linesByStop, bySlot };
+  const services = {
+    reachOf, stopIndices, servicesByStop: linesByStop, bySlot,
+    // The last leg is measured from the far building outward, so every building
+    // a walk could end at is indexed by the stops it can reach — once, not once
+    // per residence.
+    stopWalkers: indexStopWalkers([...network.buildingEdges.keys()], reachOf, stopIndices),
+  };
   for (const [index, sourceId] of residenceIds) {
     const reach = transitReachFrom(index, services);
     if (!reach.available || !reach.transit.size) continue;
@@ -297,7 +305,10 @@ export function buildWorkerAccessEvidence({
     catchment,
     // Kept so the map's click overlay answers with the same services this graph
     // was built from, rather than composing its own set.
-    services: { services: lines, stopIndices, servicesByStop: linesByStop, bySlot },
+    services: {
+      services: lines, stopIndices, servicesByStop: linesByStop, bySlot,
+      stopWalkers: services.stopWalkers,
+    },
     summary: {
       walkingBudgetMeters: WALKING_BUDGET_METRES,
       residenceCount: keptNodes.filter(node => node.kind === 'residence').length,

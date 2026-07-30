@@ -328,3 +328,24 @@ test('a cable whose cabins carry the route is not counted a second time', () => 
   assert.equal(withCabins.summary.cablewayRouteCount, 0, 'the cabins describe it');
   assert.equal(withCabins.summary.vehicleRouteCount, 1);
 });
+
+// The map overlay answers with the same services this graph was built from, and
+// the last leg is measured from the far building — so the index that makes that
+// cheap has to travel with them or the overlay silently loses every ride.
+test('the services handed to the map carry what the last leg needs', () => {
+  const evidence = buildWorkerAccessEvidence({
+    pedestrianNetwork: corridor(4),
+    buildings: [
+      building(1, 'panelak', [0]),
+      building(5, 'bus_stop', [0]),
+      building(6, 'bus_stop', [2]),
+      building(3, 'mine', [3], { configuredWorkers: 5 }),
+    ],
+    residenceOccupancy: [{ buildingIndex: 1, residents: 9, adults: 9 }],
+    vehicleLines: [{ slot: 0, name: 'Bus', stopIds: [5, 6], vehicleIds: [1] }],
+  });
+
+  assert.ok(evidence.services.stopWalkers instanceof Map);
+  assert.ok(evidence.services.stopWalkers.size > 0,
+    'the stops know which buildings can walk to them');
+});

@@ -63,11 +63,30 @@ export function indexServices(services, isAttached = () => true) {
   return { stopIndices, servicesByStop, bySlot };
 }
 
+// Which buildings can walk to which stop, measured from each building outward
+// and computed once. Done inside the per-residence search instead it was
+// 600 residences times 1400 buildings, and the evidence build went from a third
+// of a second to three and a half.
+export function indexStopWalkers(candidates, reachOf, stopIndices) {
+  const byStop = new Map();
+  for (const candidate of candidates ?? []) {
+    const outward = reachOf?.(candidate);
+    if (!outward?.available) continue;
+    for (const [reached, leg] of outward.buildings) {
+      if (!stopIndices.has(reached)) continue;
+      if (!byStop.has(reached)) byStop.set(reached, []);
+      byStop.get(reached).push({ buildingIndex: candidate, leg });
+    }
+  }
+  return byStop;
+}
+
 export function transitReachFrom(index, {
   reachOf,
   stopIndices = new Set(),
   servicesByStop = new Map(),
   bySlot = new Map(),
+  stopWalkers = new Map(),
 } = {}) {
   const empty = {
     available: false, walk: new Map(), transit: new Map(),
@@ -98,28 +117,38 @@ export function transitReachFrom(index, {
     }
   }
 
-  // Anything already within walking distance is reported as a walk, not as a
-  // ride: the shorter, surer answer is the one the reader wants.
+  // The last leg is measured from the far building outward, not from the stop
+  // towards it. The walking rule is not symmetric — a short slow stub beside a
+  // building passes as the first step of a walk and fails as the last — and on
+  // the test save two workplaces the game staffs 5 of 5 came out unreachable
+  // when the leg was walked from the stop. Measured from the building, no
+  // staffed building the game fills is reported unreachable at all.
   const transit = new Map();
   const seen = new Set(walkReach.buildings.keys());
   seen.add(index);
   for (const stop of alightStops) {
-    const onward = reachOf(stop);
-    if (!onward?.available) continue;
-    for (const target of [stop, ...onward.buildings.keys()]) {
-      if (seen.has(target)) continue;
-      seen.add(target);
-      const leg = target === stop ? null : onward.buildings.get(target);
-      transit.set(target, {
-        buildingIndex: target,
+    if (seen.has(stop)) continue;
+    seen.add(stop);
+    transit.set(stop, {
+      buildingIndex: stop, alightStop: stop,
+      distanceMeters: 0, budgetUsed: 0, limitingSurface: null,
+    });
+  }
+  for (const stop of alightStops) {
+    for (const { buildingIndex, leg } of stopWalkers.get(stop) ?? []) {
+      if (seen.has(buildingIndex)) continue;
+      const held = transit.get(buildingIndex);
+      if (held && held.distanceMeters <= leg.distanceMeters) continue;
+      transit.set(buildingIndex, {
+        buildingIndex,
         alightStop: stop,
-        // The last walk, which is what decides whether the corridor is usable.
-        distanceMeters: leg?.distanceMeters ?? 0,
-        budgetUsed: leg?.budgetUsed ?? 0,
-        limitingSurface: leg?.limitingSurface ?? null,
+        distanceMeters: leg.distanceMeters,
+        budgetUsed: leg.budgetUsed,
+        limitingSurface: leg.limitingSurface ?? null,
       });
     }
   }
+  for (const buildingIndex of transit.keys()) seen.add(buildingIndex);
   return {
     available: true,
     walk: walkReach.buildings,

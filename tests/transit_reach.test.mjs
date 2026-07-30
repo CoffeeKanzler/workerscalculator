@@ -1,7 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { composeServices, indexServices, transitReachFrom } from '../js/models/transit_reach.js';
+import {
+  composeServices, indexServices, indexStopWalkers, transitReachFrom,
+} from '../js/models/transit_reach.js';
 
 // A walking search result in the shape walkingReachFrom returns.
 function walk(...pairs) {
@@ -64,7 +66,9 @@ test('riding reaches what walking alone never does', () => {
   ]);
   const index = indexServices([{ slot: 0, stopIds: [1, 2] }]);
 
-  const reach = transitReachFrom(10, { reachOf: key => reaches.get(key), ...index });
+  const reach = transitReachFrom(10,
+    { reachOf: key => reaches.get(key), ...index,
+      stopWalkers: indexStopWalkers([20], key => reaches.get(key), index.stopIndices) });
 
   assert.equal(reach.available, true);
   assert.deepEqual([...reach.walk.keys()], [1], 'on foot, only the stop');
@@ -97,8 +101,10 @@ test('one change is allowed and a second is not', () => {
     [3, walk()],
     [4, walk([40, 90])],
     [5, walk([50, 90])],
-    [40, walk()],
-    [50, walk()],
+    // The last leg is measured from the far building, so each needs its own
+    // walk to the stop beside it.
+    [40, walk([4, 90])],
+    [50, walk([5, 90])],
   ]);
   const index = indexServices([
     { slot: 'a', stopIds: [1, 2] },
@@ -107,7 +113,9 @@ test('one change is allowed and a second is not', () => {
     { slot: 'd', stopIds: [4, 5] },
   ]);
 
-  const reach = transitReachFrom(10, { reachOf: key => reaches.get(key), ...index });
+  const reach = transitReachFrom(10,
+    { reachOf: key => reaches.get(key), ...index,
+      stopWalkers: indexStopWalkers([40, 50], key => reaches.get(key), index.stopIndices) });
 
   assert.deepEqual([...reach.serviceSlots].sort(), ['a', 'b'],
     'boarded a, changed once onto b, and stopped there');
@@ -135,4 +143,43 @@ test('a republic with no services reaches only what it can walk to', () => {
   assert.equal(reach.available, true);
   assert.equal(reach.transit.size, 0);
   assert.deepEqual([...reach.walk.keys()], [11]);
+});
+
+// The walking rule divides the distance walked so far by the speed of the step
+// being taken, so it is not symmetric: a short slow stub beside a building
+// passes as the first step of a walk and fails as the last. Walking the final
+// leg from the stop towards the building therefore reported two workplaces the
+// game staffs 5 of 5 as unreachable. It is measured from the building instead.
+test('the last leg is measured from the building, not from the stop', () => {
+  const reaches = new Map([
+    [10, walk([1, 50])],
+    [1, walk()],
+    // The stop cannot walk to the works — the stub beside it is too slow by the
+    // time the walk arrives — but the works can walk to the stop.
+    [2, walk()],
+    [20, walk([2, 300])],
+  ]);
+  const index = indexServices([{ slot: 0, stopIds: [1, 2] }]);
+
+  const reach = transitReachFrom(10,
+    { reachOf: key => reaches.get(key), ...index,
+      stopWalkers: indexStopWalkers([20], key => reaches.get(key), index.stopIndices) });
+
+  assert.ok(reach.transit.has(20), 'the works is reached');
+  assert.equal(reach.transit.get(20).alightStop, 2);
+  assert.equal(reach.transit.get(20).distanceMeters, 300, 'its own walk to the stop');
+});
+
+test('a candidate that cannot reach any stop stays unreached', () => {
+  const reaches = new Map([
+    [10, walk([1, 50])], [1, walk()], [2, walk()],
+    [20, walk([99, 100])],
+  ]);
+  const index = indexServices([{ slot: 0, stopIds: [1, 2] }]);
+
+  const reach = transitReachFrom(10,
+    { reachOf: key => reaches.get(key), ...index,
+      stopWalkers: indexStopWalkers([20], key => reaches.get(key), index.stopIndices) });
+
+  assert.ok(!reach.transit.has(20));
 });

@@ -57,13 +57,13 @@ import { createVirtualTable } from './ui/virtual_table.js?v=1';
 import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=32';
 import { workerAccessAvailability } from './models/access_graph.js?v=18';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=18';
-import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=13';
+import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=15';
 import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=10';
 import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
 import { workerAccessAlerts } from './models/access_alerts.js?v=3';
 import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';
 import { buildingHeightSamples } from './models/water_level.js?v=3';
-import { transitReachFrom } from './models/transit_reach.js?v=2';
+import { transitReachFrom } from './models/transit_reach.js?v=4';
 import { mergedFootprints } from './models/building_footprint.js?v=3';
 import {
   buildMapTransportLines,
