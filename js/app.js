@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=150';
+import { STRINGS } from './i18n.js?v=152';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -48,7 +48,7 @@ import {
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
-} from './republic.js?v=12';
+} from './republic.js?v=14';
 import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
@@ -60,6 +60,7 @@ import { mountWorkerAccessGraph } from './ui/access_graph.js?v=11';
 import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=9';
 import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=8';
 import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
+import { workerAccessAlerts } from './models/access_alerts.js?v=3';
 import { mergedFootprints } from './models/building_footprint.js?v=3';
 import {
   buildMapTransportLines,
@@ -100,7 +101,8 @@ const SHARE_KEYS = ['lang', 'theme', 'currency', 'priceSource', 'decade', 'overr
   'chains', 'activeChain', 'tuning', 'productionScope', 'saveImport', 'republicView',
   'buildingOverrides', 'customBuildings',
   'republicRange', 'republicResource', 'republicScope', 'mapLayers', 'mapBuildingFilter',
-  'mapPollutionOpacity', 'mapMetric', 'mapCategoryVisibility', 'republicAlertFilter', 'tab'];
+  'mapPollutionOpacity', 'mapMetric', 'mapCategoryVisibility', 'republicAlertFilter',
+  'accessAlertsMuted', 'tab'];
 const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex'];
 
 // ---------------------------------------------------------------- state
@@ -209,6 +211,7 @@ function createInitialState() {
     fleetDetails: false,
     republicAlertsExpanded: false,
     republicAlertFilter: 'all',
+    accessAlertsMuted: [],
     runtimeStatus: RUNTIME_CONFIG.mode === 'hosted' ? 'ready' : 'loading',
     runtimeReason: '',
     runtimeGeneration: null,
@@ -5152,7 +5155,17 @@ function renderRepublic() {
   // Alerts the snapshot cannot raise: a republic in a three-year decline has
   // nothing wrong with it at this instant, which is why nothing else says so.
   const trendAlerts = republicTrendAlerts(state.statsRecords ?? []);
-  const alerts = [...republicAlerts(republicModel), ...trendAlerts, ...bufferAlerts].sort((a, b) =>
+  const accessContextForAlerts = HAS_SAVE_WORKSPACE ? workerAccessContext() : {};
+  const accessAlerts = workerAccessAlerts({
+    evidence: accessContextForAlerts.evidence,
+    walkingNetwork: accessContextForAlerts.network,
+    buildings: state.saveImport?.observedBuildings ?? [],
+    labelFor: mapBuildingDisplayName,
+    scopeNameFor: plannerScopeName,
+    muted: state.accessAlertsMuted ?? [],
+  });
+  const alerts = [...republicAlerts(republicModel), ...trendAlerts, ...bufferAlerts,
+    ...accessAlerts].sort((a, b) =>
     severityOrder[a.severity] - severityOrder[b.severity]
       || (a.observed ?? Infinity) - (b.observed ?? Infinity)
       || String(a.scopeName).localeCompare(String(b.scopeName)));
@@ -5299,6 +5312,21 @@ function renderRepublic() {
       behavior: 'smooth', block: 'center',
     }), 0);
   };
+  // An understaffed building is only answerable on the map, where the reader can
+  // see which housing does and does not reach it, so the alert opens it there
+  // already selected rather than leaving them to hunt for it.
+  const locateBuildingOnMap = (buildingIndex, scopeId) => {
+    mapFocusBuildingIndex = buildingIndex;
+    mapSelectedBuildingIndex = buildingIndex;
+    mapFocusScopeId = null;
+    standaloneMapViewBox = null;
+    if (Number.isInteger(scopeId)) state.republicScope = scopeId;
+    state.mapLayers = { ...state.mapLayers, buildings: true, walkReach: true };
+    state.mapBuildingFilter = '';
+    state.tab = 'map';
+    update();
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+  };
   const severities = new Map();
   for (const alert of alerts) if (alert.scopeId != null && !severities.has(alert.scopeId)) severities.set(alert.scopeId, alert.severity);
   const areaIds = [...new Set([...actualArea.keys(), ...planArea.keys()])].filter(scopeId => {
@@ -5357,7 +5385,20 @@ function renderRepublic() {
   const alertPresentation = visibleRepublicAlerts(filteredAlerts, {
     expanded: state.republicAlertsExpanded,
   });
+  const silenceAccessAlert = buildingIndex => {
+    state.accessAlertsMuted = [...new Set([...(state.accessAlertsMuted ?? []), buildingIndex])];
+    update();
+  };
   const alertAction = alert => {
+    if (alert.metric?.startsWith('access.')) {
+      return el('span', { class: 'alert-actions' },
+        el('button', { onclick: () => locateBuildingOnMap(alert.buildingIndex, alert.scopeId) },
+          t('locateOnMap')),
+        el('button', {
+          class: 'secondary', title: t('silenceAlertHint'),
+          onclick: () => silenceAccessAlert(alert.buildingIndex),
+        }, t('silenceAlert')));
+    }
     if (!Number.isInteger(alert.scopeId)) return null;
     const scope = scopeInfo.get(alert.scopeId) ?? {};
     if (HAS_SAVE_WORKSPACE && alert.metric === 'coverage.workshop') {
@@ -5382,12 +5423,16 @@ function renderRepublic() {
   const alertItems = filteredAlerts.length ? alertPresentation.visible.map(alert => el('div', { class: `alert ${alert.severity}` },
       el('strong', {}, alert.scopeName || t('republicOverview')),
       el('span', {}, t(`alert.${alert.metric}`),
+        alert.metric?.startsWith('access.') ? el('span', { class: 'alert-trend' },
+          ` · ${fmt(alert.reachableAdults, 0)} / ${fmt(alert.slots, 0)} `
+          + `${t('accessAlertReachable')}${alert.areaName ? ` · ${alert.areaName}` : ''}`) : null,
         alert.trend?.years >= 1 ? el('span', { class: 'alert-trend' },
           ` · ${t(alert.trend.years === 1 ? 'trendOneYear' : 'trendYears')
             .replace('{n}', fmt(alert.trend.years, 0))}`) : null),
       el('span', { class: 'alert-tail' },
         Number.isFinite(alert.observed) ? el('span', { class: 'alert-value' },
           alert.metric === 'staffing' || alert.metric === 'health' || alert.metric === 'food'
+            || alert.metric.startsWith('access.')
             ? fmt(alert.observed * 100, 1) + ' %'
             : alert.metric.startsWith('buffer.') ? `${fmt(alert.observed, 2)} ${t('day')}`
               : fmt(alert.observed, 1)) : null,
@@ -5409,6 +5454,13 @@ function renderRepublic() {
           },
         }, `${t(`alertCategory.${category}`)} (${fmt(count, 0)})`))) : null,
     ...alertItems,
+    (state.accessAlertsMuted ?? []).length ? el('p', { class: 'hint', 'data-access-alerts-muted': String(state.accessAlertsMuted.length) },
+      t('accessAlertsSilenced').replace('{count}', fmt(state.accessAlertsMuted.length, 0)),
+      ' ',
+      el('button', {
+        class: 'secondary',
+        onclick: () => { state.accessAlertsMuted = []; update(); },
+      }, t('accessAlertsRestore'))) : null,
     filteredAlerts.length > 8 ? el('button', {
       class: 'secondary',
       onclick: () => { state.republicAlertsExpanded = !state.republicAlertsExpanded; update(); },

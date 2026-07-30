@@ -270,7 +270,9 @@ export function visibleRepublicAlerts(alerts, { expanded = false, limit = 8 } = 
 
 export function alertCategory(alert) {
   const metric = String(alert?.metric ?? '');
-  if (metric === 'staffing' || metric === 'netWorkers') return 'workforce';
+  if (metric === 'staffing' || metric === 'netWorkers' || metric.startsWith('access.')) {
+    return 'workforce';
+  }
   if (metric === 'health' || metric === 'food') return 'needs';
   if (metric.startsWith('buffer.')) return 'buffers';
   if (metric.startsWith('coverage.')) return 'coverage';
