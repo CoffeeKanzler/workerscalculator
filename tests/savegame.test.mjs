@@ -104,7 +104,10 @@ test('road network parser exposes exact node topology and saved polyline samples
       surfaceType: 1, surfaceSubtype: 1, networkClass: 4,
       referencedObjectIds: [17, 29],
     }],
-    summary: { nodeCount: 2, edgeCount: 1, groupCount: 0, pointCount: 1, byteLength: buffer.byteLength },
+    summary: {
+      nodeCount: 2, edgeCount: 1, groupCount: 0, pointCount: 1, degenerateEdges: 0,
+      byteLength: buffer.byteLength,
+    },
   });
   assert.throws(() => parseRoadNetwork(buffer.slice(0, -1)), /tail vectors/);
 });
@@ -799,4 +802,31 @@ test('a republic on one flat plain keeps the flat-plane shoreline', () => {
 
   assert.equal(derived.waterHeightSource, 'flat-plane');
   assert.equal(derived.waterHeight, Math.fround(0.175));
+});
+
+// road_secondary.bin carries stubs whose length field holds nonsense — one on
+// the Volldampf save at -7919.89, six on myCanyon — every one with no polyline
+// and endpoints between 0 and 1.6 m apart. Treating that as a desync threw away
+// the whole 164 MB file, all 33,977 edges of it.
+test('an impossible length falls back to the geometry, which is the other source', () => {
+  const buffer = roadFixture();
+  const view = new DataView(buffer);
+  const nodeSize = 0x48;
+  // Endpoints 3 m apart, and a length field that cannot be a length.
+  view.setFloat32(12 + nodeSize, 13, true);
+  view.setFloat32(16 + nodeSize, 2, true);
+  view.setFloat32(20 + nodeSize, 30, true);
+  view.setFloat32(12 + nodeSize * 2 + 0x3c, -7919.8896484375, true);
+
+  const network = parseRoadNetwork(buffer);
+
+  assert.equal(network.edges[0].length, 3, 'the straight line between its own endpoints');
+  assert.equal(network.summary.degenerateEdges, 1, 'and it is counted, not hidden');
+});
+
+test('a length that is not a number at all is still fatal', () => {
+  const buffer = roadFixture();
+  new DataView(buffer).setUint32(12 + 0x48 * 2 + 0x3c, 0x7fc00000, true);
+
+  assert.throws(() => parseRoadNetwork(buffer), /invalid length/);
 });

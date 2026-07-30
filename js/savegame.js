@@ -165,6 +165,7 @@ export function parseRoadNetwork(buffer) {
 
   const edges = [];
   let pointCount = 0;
+  let degenerateEdges = 0;
   for (let index = 0; index < edgeCount; index += 1) {
     const start = c.offset;
     c.require(0x88, `road edge ${index} header`);
@@ -182,7 +183,26 @@ export function parseRoadNetwork(buffer) {
     if (from < 0 || from >= nodeCount || to < 0 || to >= nodeCount) {
       throw new Error(`road edge ${index}: invalid endpoints ${from}/${to}`);
     }
-    if (!Number.isFinite(length) || length < 0) throw new Error(`road edge ${index}: invalid length ${length}`);
+    // Some stubs carry nonsense in the length field: road_secondary.bin holds one
+    // on the Volldampf save and six on myCanyon, every one of them with no
+    // polyline and endpoints between 0 and 1.6 m apart. Treating a negative
+    // length as a desync threw away the whole 164 MB file over them.
+    //
+    // There are two sources for how long an edge is, so when the stored one is
+    // impossible the geometry answers instead. What actually guards this format
+    // against a desync is the exact-EOF check at the end of the parse, which no
+    // mis-stepped cursor survives; a sign test is only a local heuristic, and it
+    // was rejecting real files.
+    if (!Number.isFinite(length)) {
+      throw new Error(`road edge ${index}: invalid length ${length}`);
+    }
+    let measured = length;
+    if (length < 0) {
+      const a = nodes[from];
+      const b = nodes[to];
+      measured = Math.hypot(b.x - a.x, b.y - a.y, b.z - a.z);
+      degenerateEdges += 1;
+    }
     const references = countInBlock(start, 0x0c, `road edge ${index} reference count`);
     const blocks30A = countInBlock(start, 0x10, `road edge ${index} block A count`);
     const blocks30D = countInBlock(start, 0x14, `road edge ${index} block D count`);
@@ -232,7 +252,7 @@ export function parseRoadNetwork(buffer) {
     skipItems(pairedReferences, 8, `road edge ${index} paired references`);
     c.skip(0x18, `road edge ${index} tail vectors`);
     edges.push({
-      id: index, from, to, length, points,
+      id: index, from, to, length: measured, points,
       surfaceType, surfaceSubtype, networkClass,
       ...(referencedObjectIds.length ? { referencedObjectIds } : {}),
     });
@@ -244,7 +264,14 @@ export function parseRoadNetwork(buffer) {
     skipItems(members, 4, `road group ${index} members`);
   }
   if (c.offset !== c.bytes.length) throw new Error(`road.bin has ${c.bytes.length - c.offset} trailing bytes`);
-  return { nodes, edges, summary: { nodeCount, edgeCount, groupCount, pointCount, byteLength: c.bytes.length } };
+  return {
+    nodes,
+    edges,
+    summary: {
+      nodeCount, edgeCount, groupCount, pointCount, degenerateEdges,
+      byteLength: c.bytes.length,
+    },
+  };
 }
 
 // The saved heightmap is normalized and every map sets its own water plane, so no

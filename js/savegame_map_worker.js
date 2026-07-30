@@ -1,4 +1,4 @@
-import { parseRoadNetwork, parseHeightmapWater, parsePollution } from './savegame.js?v=36';
+import { parseRoadNetwork, parseHeightmapWater, parsePollution } from './savegame.js?v=38';
 
 // The heightmap needs the buildings' own saved heights to place sea level, so
 // each source is parsed with the whole payload in reach rather than the file
