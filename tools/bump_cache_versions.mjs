@@ -127,6 +127,19 @@ function previousFile(file) {
 
 function main(argv) {
   const check = argv.includes('--check');
+  // The pre-commit hook has to re-stage exactly what was rewritten. Guessing at
+  // that with a glob missed data/VERSION.json for as long as the stamp has
+  // existed, leaving every commit recording a build one behind the shell it
+  // ships. Reporting the paths is the only way the hook can be right.
+  const printChanged = argv.includes('--print-changed');
+  const report = (edits, summary) => {
+    if (printChanged) {
+      if (edits.length) process.stdout.write(`${edits.join('\n')}\n`);
+      if (summary) process.stderr.write(`${summary}\n`);
+      return;
+    }
+    if (summary) console.log(summary);
+  };
   const explicit = argv.filter(arg => !arg.startsWith('--'));
   const changed = explicit.length ? explicit : stagedFiles();
   const plan = planBump(changed, { allFiles: listTrackedFiles() });
@@ -140,7 +153,10 @@ function main(argv) {
       console.error('data/VERSION.json appBuild is stale');
       return 1;
     }
-    if (!check) console.log(stamped ? `advanced markers in ${stamped}` : 'no js/, css/ or data/ change, nothing to advance');
+    if (!check) {
+      report(stamped ? [stamped] : [],
+        stamped ? `advanced markers in ${stamped}` : 'no js/, css/ or data/ change, nothing to advance');
+    }
     return 0;
   }
 
@@ -203,7 +219,7 @@ function main(argv) {
   }
   if (stampEdit) edits.push(stampEdit);
 
-  console.log(edits.length ? `advanced markers in ${edits.join(', ')}` : 'markers already current');
+  report(edits, edits.length ? `advanced markers in ${edits.join(', ')}` : 'markers already current');
   return 0;
 }
 

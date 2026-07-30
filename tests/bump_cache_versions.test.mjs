@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  cpSync, mkdirSync, mkdtempSync, rmSync, writeFileSync,
+  chmodSync, cpSync, mkdirSync, mkdtempSync, rmSync, writeFileSync,
 } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -198,4 +198,63 @@ test('a dataset change advances the shell, since DATA_V is its marker', () => {
   assert.equal(plan.touchesJs, true, 'data changes must advance DATA_V');
   assert.deepEqual(plan.modules, [], 'no module changed, so no module marker moves');
   assert.ok(plan.targets.includes('index.html'));
+});
+
+// The stamp exists so a browser holding a stale index.html can be told a newer
+// one is deployed. It is only worth anything if it agrees with the shell that
+// actually ships, and for as long as it existed it did not: the hook re-staged
+// index.html and js/ with a glob and never data/VERSION.json, so every commit
+// recorded a build one behind and the working tree never came clean.
+test('the recorded build is the build the shell ships', async () => {
+  const { readFileSync } = await import('node:fs');
+  const shell = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+  const version = JSON.parse(readFileSync(new URL('../data/VERSION.json', import.meta.url), 'utf8'));
+
+  assert.equal(version.appBuild, shell.match(/js\/app\.js\?v=(\d+)/)?.[1],
+    'run: node tools/bump_cache_versions.mjs');
+});
+
+test('the pre-commit hook stages every file the bumper rewrote', () => {
+  const directory = mkdtempSync(join(tmpdir(), 'workers-cache-hook-'));
+  const runGit = (...args) => execFileSync('git', args, { cwd: directory, stdio: 'ignore' });
+  const read = relative => execFileSync('git', ['show', `HEAD:${relative}`], {
+    cwd: directory, encoding: 'utf8',
+  });
+  try {
+    mkdirSync(join(directory, 'js'));
+    mkdirSync(join(directory, 'tools'));
+    mkdirSync(join(directory, 'data'));
+    mkdirSync(join(directory, '.githooks'));
+    cpSync(new URL('../tools/bump_cache_versions.mjs', import.meta.url),
+      join(directory, 'tools/bump_cache_versions.mjs'));
+    cpSync(new URL('../.githooks/pre-commit', import.meta.url),
+      join(directory, '.githooks/pre-commit'));
+    chmodSync(join(directory, '.githooks/pre-commit'), 0o755);
+    writeFileSync(join(directory, 'js/app.js'), 'export const revision = 1;\n');
+    writeFileSync(join(directory, 'index.html'),
+      '<script type="module" src="js/app.js?v=1"></script>\n');
+    writeFileSync(join(directory, 'data/VERSION.json'), `${JSON.stringify({ appBuild: '1' }, null, 1)}\n`);
+    runGit('init');
+    runGit('config', 'user.email', 'tests@example.invalid');
+    runGit('config', 'user.name', 'Cache tests');
+    runGit('config', 'core.hooksPath', '.githooks');
+    runGit('add', '.');
+    runGit('commit', '-m', 'base');
+
+    writeFileSync(join(directory, 'js/app.js'), 'export const revision = 2;\n');
+    runGit('add', 'js/app.js');
+    runGit('commit', '-m', 'change the module');
+
+    // The base commit runs the hook too, so the exact number is not the point;
+    // that the two files agree and nothing is left behind is.
+    const marker = read('index.html').match(/js\/app\.js\?v=(\d+)/)?.[1];
+    assert.ok(Number(marker) > 1, `the hook advanced the shell, got ${marker}`);
+    assert.equal(JSON.parse(read('data/VERSION.json')).appBuild, marker,
+      'the commit records the build it ships');
+    assert.equal(
+      execFileSync('git', ['status', '--porcelain'], { cwd: directory, encoding: 'utf8' }).trim(),
+      '', 'the hook leaves nothing behind in the working tree');
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
 });

@@ -7,12 +7,16 @@
 # browser never loaded it.
 set -e
 
-node tools/bump_cache_versions.mjs
+# Stage exactly the files the bumper rewrote, so nothing else the author left
+# unstaged is swept in. Matching them with a glob instead missed
+# data/VERSION.json, which the bumper also writes: every commit then recorded a
+# build one behind the shell it shipped, and the working tree never came clean.
+changed=$(node tools/bump_cache_versions.mjs --print-changed)
 
-# Re-stage only the files the bumper is allowed to touch, so nothing else the
-# author left unstaged is swept into the commit.
-for file in index.html $(git ls-files 'js/*.js' 'js/**/*.js'); do
-  if [ -f "$file" ] && ! git diff --quiet -- "$file" 2>/dev/null; then
-    git add "$file"
-  fi
-done
+if [ -n "$changed" ]; then
+  printf '%s\n' "$changed" | while IFS= read -r file; do
+    if [ -n "$file" ] && [ -f "$file" ]; then
+      git add -- "$file"
+    fi
+  done
+fi
