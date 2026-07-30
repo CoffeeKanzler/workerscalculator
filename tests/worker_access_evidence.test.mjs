@@ -256,3 +256,75 @@ test('cableway routes and saved lines change onto one another at a shared statio
   assert.ok(evidence.nodes.some(node => node.kind === 'transfer' && node.buildingIndex === 6),
     'the station both serve is a place to change');
 });
+
+// The case the save's owner knew about and the model did not: four steam
+// locomotives shuttling between two passenger rail stations, on no line at all.
+test('a train on its own route carries workers even with lines.bin holding no line', () => {
+  const network = {
+    nodes: [0, 1, 2, 3].map(id => ({ id, x: id, y: 0, z: 0 })),
+    edges: [
+      { id: 0, from: 0, to: 1, length: 40, points: [], surfaceType: 2, surfaceSubtype: 0, networkClass: 4 },
+      { id: 1, from: 2, to: 3, length: 40, points: [], surfaceType: 2, surfaceSubtype: 0, networkClass: 4 },
+    ],
+  };
+  const evidence = buildWorkerAccessEvidence({
+    pedestrianNetwork: network,
+    buildings: [
+      building(1, 'panelak', [0]),
+      building(5, 'rail_station_passenger', [0]),
+      building(6, 'rail_station_passenger', [1]),
+      building(3, 'coal_mine', [1], { configuredWorkers: 30 }),
+    ],
+    residenceOccupancy: [{ buildingIndex: 1, residents: 20, adults: 14 }],
+    vehicleLines: [],
+    vehicleRoutes: {
+      routes: [{
+        id: 'route:5-6', stopIds: [5, 6], stopSignature: '5-6',
+        vehicleIds: [11, 12, 13, 14], mode: 'vehicleRoute', name: 'Peckett',
+      }],
+    },
+  });
+
+  const line = evidence.nodes.find(node => node.kind === 'line');
+  assert.equal(line.label, 'Peckett');
+  assert.equal(line.mode, 'vehicleRoute');
+  assert.equal(line.vehicleCount, 4);
+  assert.equal(evidence.summary.vehicleRouteCount, 1);
+  const graph = buildWorkerAccessGraph(evidence, { focusId: 'workplace:3' });
+  assert.ok(graph.nodes.some(node => node.id === 'residence:1'),
+    'the mine shows the housing the train brings its workers from');
+  assert.equal(evidence.catchment.get(3).transitAdults, 14);
+});
+
+// Cabins running a cable are the same service the cable is, so it must not be
+// drawn twice.
+test('a cable whose cabins carry the route is not counted a second time', () => {
+  const shared = {
+    pedestrianNetwork: corridor(3),
+    buildings: [
+      building(1, 'panelak', [0]),
+      building(5, 'cableway_station_small', [0]),
+      building(6, 'cableway_station_small', [2]),
+    ],
+    residenceOccupancy: [{ buildingIndex: 1, residents: 6, adults: 6 }],
+    cablewayRoutes: {
+      routes: [{ id: 'cableway:0', edgeIds: [0], stationIndices: [5, 6], lengthMeters: 200 }],
+    },
+    cablewayLabel: 'Cableway',
+  };
+
+  const networkOnly = buildWorkerAccessEvidence(shared);
+  assert.equal(networkOnly.summary.cablewayRouteCount, 1);
+
+  const withCabins = buildWorkerAccessEvidence({
+    ...shared,
+    vehicleRoutes: {
+      routes: [{
+        id: 'route:5-6', stopIds: [5, 6], stopSignature: '5-6',
+        vehicleIds: [1, 2], mode: 'vehicleRoute', name: 'Cabin',
+      }],
+    },
+  });
+  assert.equal(withCabins.summary.cablewayRouteCount, 0, 'the cabins describe it');
+  assert.equal(withCabins.summary.vehicleRouteCount, 1);
+});

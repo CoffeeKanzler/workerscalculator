@@ -58,6 +58,7 @@ export function buildWorkerAccessEvidence({
   buildings = [],
   residenceOccupancy = null,
   vehicleLines = null,
+  vehicleRoutes = null,
   cablewayRoutes = null,
   cablewayLabel = null,
   labelFor = null,
@@ -93,10 +94,22 @@ export function buildWorkerAccessEvidence({
   // The import carries line operations as { lines, summary }; a bare array is
   // what the tests and any direct caller pass.
   const savedLines = Array.isArray(vehicleLines) ? vehicleLines : vehicleLines?.lines ?? [];
-  // A cableway has no line to schedule — the cabins just run the cable — so its
-  // route stands in for one, with the stations along it as its stops. Beyond the
-  // label there is nothing to special-case: boarding, riding, changing and the
-  // last walk are the same legs.
+  // Most services in a real republic are not lines at all: each vehicle is given
+  // its own route, and the save records the stops it calls at. Those routes stand
+  // in for lines here, and so do cableway routes, whose cabins run the cable with
+  // nothing scheduling them. Beyond the label there is nothing to special-case —
+  // boarding, riding, changing and the last walk are the same legs.
+  const routeLines = (vehicleRoutes?.routes ?? []).map(route => ({
+    slot: route.id,
+    name: route.name,
+    stopIds: route.stopIds,
+    vehicleIds: route.vehicleIds ?? [],
+    mode: route.mode ?? 'vehicleRoute',
+    stopSignature: route.stopSignature,
+  }));
+  // A cable whose cabins already carry a route is described by that route; the
+  // network topology is only needed for a cable nothing is running on yet.
+  const routeSignatures = new Set(routeLines.map(line => line.stopSignature));
   const cablewayLines = (cablewayRoutes?.routes ?? []).map((route, order) => ({
     slot: route.id,
     name: cablewayLabel ? `${cablewayLabel} ${order + 1}` : `#${order + 1}`,
@@ -104,9 +117,10 @@ export function buildWorkerAccessEvidence({
     vehicleIds: [],
     mode: 'cableway',
     lengthMeters: route.lengthMeters,
-  }));
-  const lines = [...savedLines, ...cablewayLines].filter(line => (line.stopIds ?? [])
-    .filter(stop => stop >= 0).length >= 2);
+    stopSignature: [...route.stationIndices].sort((a, b) => a - b).join('-'),
+  })).filter(line => !routeSignatures.has(line.stopSignature));
+  const lines = [...savedLines, ...routeLines, ...cablewayLines]
+    .filter(line => (line.stopIds ?? []).filter(stop => stop >= 0).length >= 2);
   const stopIndices = new Set();
   const linesByStop = new Map();
   for (const line of lines) {
@@ -347,6 +361,7 @@ export function buildWorkerAccessEvidence({
       lineCount: keptNodes.filter(node => node.kind === 'line').length,
       cablewayLineCount: keptNodes.filter(node => node.mode === 'cableway').length,
       cablewayRouteCount: cablewayLines.length,
+      vehicleRouteCount: routeLines.length,
       walkEdgeCount: keptEdges.filter(edge => edge.kind === 'walk').length,
       truncatedResidences,
       ...network.completeness,

@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=152';
+import { STRINGS } from './i18n.js?v=154';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -57,10 +57,11 @@ import { createVirtualTable } from './ui/virtual_table.js?v=1';
 import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=30';
 import { workerAccessAvailability } from './models/access_graph.js?v=11';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=11';
-import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=9';
+import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=11';
 import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=8';
 import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
 import { workerAccessAlerts } from './models/access_alerts.js?v=3';
+import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';
 import { mergedFootprints } from './models/building_footprint.js?v=3';
 import {
   buildMapTransportLines,
@@ -3387,11 +3388,20 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
     el('span', {
       class: `evidence-badge ${accessAvailable ? 'exact' : 'unavailable'}`,
     }, accessAvailable ? t('exactSavedEvidence') : t('awaitingExactWalkingEvidence')),
-    // A cableway carries no line, so a reader who moves workers by Seilbahn has
-    // no other way of telling whether the graph found it.
-    accessEvidence?.summary?.cablewayRouteCount
-      ? el('span', { class: 'hint', 'data-access-cableway-routes': String(accessEvidence.summary.cablewayRouteCount) },
-        t('accessCablewayRoutes').replace('{count}', fmt(accessEvidence.summary.cablewayRouteCount, 0)))
+    // Most services are not lines: a vehicle carries its own route, and a
+    // cableway is scheduled by nothing at all. A reader whose workers travel
+    // that way has no other way of telling whether the graph found them.
+    accessEvidence?.summary?.vehicleRouteCount || accessEvidence?.summary?.cablewayRouteCount
+      ? el('span', {
+        class: 'hint',
+        'data-access-vehicle-routes': String(accessEvidence.summary.vehicleRouteCount ?? 0),
+        'data-access-cableway-routes': String(accessEvidence.summary.cablewayRouteCount ?? 0),
+      }, [
+        accessEvidence.summary.vehicleRouteCount
+          ? t('accessVehicleRoutes').replace('{count}', fmt(accessEvidence.summary.vehicleRouteCount, 0)) : null,
+        accessEvidence.summary.cablewayRouteCount
+          ? t('accessCablewayRoutes').replace('{count}', fmt(accessEvidence.summary.cablewayRouteCount, 0)) : null,
+      ].filter(Boolean).join(' · '))
       : null),
   accessContainer);
   const section = el('section', { class: 'map-page' },
@@ -3553,6 +3563,7 @@ function accessKeyForImport(imported) {
     imported.pedestrianNetwork.summary?.byteLength ?? 0,
     imported.roadNetwork?.summary?.byteLength ?? 0,
     imported.cablewayNetwork?.summary?.byteLength ?? 0,
+    imported.vehicles?.length ?? 0,
     imported.observedBuildings?.length ?? 0].join('|');
 }
 
@@ -3576,6 +3587,13 @@ function workerAccessContext() {
       buildings,
       residenceOccupancy: imported.residenceOccupancy,
       vehicleLines: imported.vehicleLines,
+      vehicleRoutes: buildVehicleRoutes({
+        vehicles: imported.vehicles ?? [],
+        buildings,
+        lineVehicleIds: (Array.isArray(imported.vehicleLines)
+          ? imported.vehicleLines : imported.vehicleLines?.lines ?? [])
+          .flatMap(line => line.vehicleIds ?? []),
+      }),
       cablewayRoutes: buildCablewayRoutes(imported.cablewayNetwork, buildings),
       cablewayLabel: t('accessCablewayLine'),
       labelFor: mapBuildingDisplayName,
