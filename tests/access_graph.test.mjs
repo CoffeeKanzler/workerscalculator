@@ -134,3 +134,30 @@ test('expansion adds a selected node neighborhood without exceeding the cap', ()
   ]);
   assert.equal(graph.hiddenNodes, 1);
 });
+
+test('the corridor is followed towards the end the reader did not pick', () => {
+  // A refinery reachable only by tram: its housing is six hops away, on the
+  // far side of a stop, a line and another stop.
+  const nodes = [
+    { id: 'home', kind: 'residence', stage: 0, label: 'Flats', buildingIndex: 1, people: 40 },
+    { id: 'board', kind: 'stop', stage: 1, label: 'Tram A', buildingIndex: 2 },
+    { id: 'line', kind: 'line', stage: 2, label: 'Line 1', lineSlot: 0 },
+    { id: 'alight', kind: 'stop', stage: 5, label: 'Tram B', buildingIndex: 3 },
+    { id: 'work', kind: 'workplace', stage: 6, label: 'Refinery', buildingIndex: 4, workerSlots: 30 },
+  ];
+  const edges = [
+    { id: 'w1', source: 'home', target: 'board', kind: 'walk', evidence: 'exact', distanceMeters: 60, pathType: 'asphalt' },
+    { id: 'b1', source: 'board', target: 'line', kind: 'board', evidence: 'exact' },
+    { id: 'r1', source: 'line', target: 'alight', kind: 'ride', evidence: 'exact' },
+    { id: 'w2', source: 'alight', target: 'work', kind: 'walk', evidence: 'exact', distanceMeters: 90, pathType: 'asphalt' },
+  ];
+  const evidence = { completeness: 'complete', walkingEdgesComplete: true, nodes, edges };
+
+  const fromWork = buildWorkerAccessGraph(evidence, { focusId: 'work' });
+  assert.deepEqual(fromWork.nodes.map(node => node.id).sort(),
+    ['alight', 'board', 'home', 'line', 'work'], 'a workplace shows where its workers come from');
+
+  const fromHome = buildWorkerAccessGraph(evidence, { focusId: 'home' });
+  assert.deepEqual(fromHome.nodes.map(node => node.id).sort(),
+    ['alight', 'board', 'home', 'line', 'work'], 'a residence shows where its people can get to');
+});

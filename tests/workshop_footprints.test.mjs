@@ -80,3 +80,77 @@ test('a malformed bbox costs the building its outline, not its definition', () =
     assert.equal(footprintBesideIni(dir), null);
   });
 });
+
+// A catalogue entry is the only copy of an extraction: the raw download is
+// pruned the moment it is written. Replacing an entry outright cost 61 of them
+// their definitions on one run and around 4,000 on the next, because a failed
+// download leaves an empty directory behind and an empty directory is
+// indistinguishable from a mod that declares nothing.
+import { mergeIntoCatalogue } from '../tools/workshop_fetch.mjs';
+
+const catalogueFile = (contents, run) => withFolder(dir => {
+  const file = path.join(dir, 'entry.json');
+  if (contents) writeFileSync(file, JSON.stringify(contents));
+  return run(file);
+});
+
+test('a re-extraction that found nothing keeps every known building', () => {
+  const previous = {
+    workshopId: '1', buildings: [{ id: '1/a', workers: 5 }, { id: '1/b', workers: 9 }],
+  };
+  catalogueFile(previous, file => {
+    const merged = mergeIntoCatalogue(file, { workshopId: '1', buildings: [] });
+    assert.deepEqual(merged.buildings.map(b => b.id), ['1/a', '1/b']);
+    assert.equal(merged.buildings[0].workers, 5);
+  });
+});
+
+test('a re-extraction adds the footprint without disturbing the definition', () => {
+  const previous = { workshopId: '1', buildings: [{ id: '1/a', workers: 5, production: { x: 1 } }] };
+  catalogueFile(previous, file => {
+    const merged = mergeIntoCatalogue(file, {
+      workshopId: '1',
+      buildings: [{ id: '1/a', workers: 5, footprint: { boxes: [[0, 0, 2, 2]], height: 4 } }],
+    });
+    assert.equal(merged.buildings.length, 1);
+    assert.equal(merged.buildings[0].footprint.height, 4);
+    // The field the fresh extraction did not carry must survive.
+    assert.deepEqual(merged.buildings[0].production, { x: 1 });
+  });
+});
+
+test('a building the catalogue had never seen is added', () => {
+  catalogueFile({ workshopId: '1', buildings: [{ id: '1/a' }] }, file => {
+    const merged = mergeIntoCatalogue(file, { workshopId: '1', buildings: [{ id: '1/b' }] });
+    assert.deepEqual(merged.buildings.map(b => b.id).sort(), ['1/a', '1/b']);
+  });
+});
+
+test('a partial re-extraction keeps the buildings it did not see', () => {
+  // Exactly the shape of the damage: a mod with many buildings re-extracting
+  // as one must not lose the rest.
+  const previous = {
+    workshopId: '1',
+    buildings: Array.from({ length: 30 }, (_, i) => ({ id: `1/b${i}` })),
+  };
+  catalogueFile(previous, file => {
+    const merged = mergeIntoCatalogue(file, { workshopId: '1', buildings: [{ id: '1/b0' }] });
+    assert.equal(merged.buildings.length, 30);
+  });
+});
+
+test('with no entry yet the fresh extraction is used as-is', () => {
+  catalogueFile(null, file => {
+    const fresh = { workshopId: '1', buildings: [{ id: '1/a' }] };
+    assert.deepEqual(mergeIntoCatalogue(file, fresh), fresh);
+  });
+});
+
+test('an unreadable entry is replaced rather than propagated', () => {
+  withFolder(dir => {
+    const file = path.join(dir, 'entry.json');
+    writeFileSync(file, '{ not json');
+    const fresh = { workshopId: '1', buildings: [{ id: '1/a' }] };
+    assert.deepEqual(mergeIntoCatalogue(file, fresh), fresh);
+  });
+});

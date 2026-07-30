@@ -94,6 +94,32 @@ export function footprintBesideIni(folder) {
   }
 }
 
+// Folds a fresh extraction into whatever the catalogue already holds. New
+// buildings are added, known ones gain any field they were missing — a
+// footprint, typically — and nothing is ever dropped, because the catalogue may
+// be the only record of a mod that no longer downloads.
+export function mergeIntoCatalogue(target, extracted) {
+  if (!existsSync(target)) return extracted;
+  let previous;
+  try {
+    previous = JSON.parse(readFileSync(target, 'utf8'));
+  } catch {
+    // An unreadable entry is worse than no entry, so the fresh one wins.
+    return extracted;
+  }
+  const byId = new Map((previous.buildings ?? []).map(building => [building.id, building]));
+  for (const building of extracted.buildings ?? []) {
+    const known = byId.get(building.id);
+    byId.set(building.id, known ? { ...known, ...building } : building);
+  }
+  return {
+    ...previous,
+    ...extracted,
+    extractedAt: extracted.extractedAt ?? previous.extractedAt,
+    buildings: [...byId.values()],
+  };
+}
+
 export function extractItem(id, dir, { now = new Date().toISOString() } = {}) {
   const buildings = [];
   for (const folder of buildingFoldersIn(dir)) {
@@ -192,21 +218,18 @@ export function reclaimCataloguedDownloads(index, contentDir = CONTENT) {
 function catalogueOne(id, index, { prune = false } = {}) {
   const dir = path.join(CONTENT, String(id));
   if (!existsSync(dir)) return { ok: false };
-  const item = extractItem(id, dir);
-  // A failed download leaves an empty directory behind, which looks exactly
-  // like a mod that declares nothing. Under --refresh that overwrote 61 good
-  // catalogue entries with empty ones before it was caught: the entry is the
-  // only copy of the extraction, and the download it came from is long pruned.
-  //
-  // So an extraction that found nothing may create an entry but never replace
-  // a richer one.
-  const existing = index.items[String(id)];
-  if (!item.buildings.length && existing?.buildingCount > 0) {
-    if (prune) rmSync(dir, { recursive: true, force: true });
-    return { ok: false };
-  }
+  const extracted = extractItem(id, dir);
   const relative = catalogPathFor(id);
   const target = path.join(CATALOG, relative);
+  // A catalogue entry is the only copy of an extraction: the raw download is
+  // pruned as soon as it is written, and re-deriving it needs another download
+  // of an item that may well refuse to download again.
+  //
+  // So a re-extraction merges into what is already there and never removes.
+  // Replacing outright cost 61 entries their definitions on one run and around
+  // 4,000 on the next — a failed download leaves an empty directory behind,
+  // which is indistinguishable from a mod that declares nothing.
+  const item = mergeIntoCatalogue(target, extracted);
   mkdirSync(path.dirname(target), { recursive: true });
   writeFileSync(target, `${JSON.stringify(item, null, 2)}\n`);
   // An item that declares no buildings is still recorded: without it the next
