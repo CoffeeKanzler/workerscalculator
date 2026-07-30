@@ -164,31 +164,42 @@ export function buildWorkerAccessEvidence({
     return catchment.get(index);
   };
 
-  // Direct walking. This is the corridor most workers actually use, so it is
-  // built first and never truncated below the nearest workplaces.
+  // Direct walking, measured from the workplace outward.
+  //
+  // The rule divides the distance walked so far by the speed of the step being
+  // taken, so it is not symmetric: a short slow stub beside a building is cheap
+  // as the first step of a walk and expensive as the last. Searching from each
+  // residence therefore refused workplaces whose own walk plainly reaches the
+  // housing — a woodcutting post with housing 371 m away, staffed 5 of 5 by the
+  // game, came out with nobody able to reach it. The game seeds its own reach
+  // search at a building's connection slots, and every case observed agrees
+  // with measuring the question "who can staff this" from the workplace.
   let truncatedResidences = 0;
+  const walkers = new Map();
+  for (const index of workplaceIds.keys()) {
+    const reach = reachOf(index);
+    if (!reach.available) continue;
+    const found = [];
+    for (const entry of reach.buildings.values()) {
+      if (!residenceIds.has(entry.buildingIndex)) continue;
+      found.push(entry);
+      const row = catchmentEntry(index);
+      row.walkAdults += nodes.get(residenceIds.get(entry.buildingIndex)).people;
+      row.walkResidences += 1;
+    }
+    walkers.set(index, found.sort((a, b) => a.distanceMeters - b.distanceMeters));
+  }
+  // Everything else a residence can walk to is still counted from the residence:
+  // only the staffing question is asked of the workplace.
   for (const [index, sourceId] of residenceIds) {
     const reach = reachOf(index);
     if (!reach.available) continue;
     const people = nodes.get(sourceId).people;
     for (const entry of reach.buildings.values()) {
+      if (workplaceIds.has(entry.buildingIndex)) continue;
       const row = catchmentEntry(entry.buildingIndex);
       row.walkAdults += people;
       row.walkResidences += 1;
-    }
-    const targets = [...reach.buildings.values()]
-      .filter(entry => workplaceIds.has(entry.buildingIndex))
-      .sort((a, b) => a.distanceMeters - b.distanceMeters);
-    if (targets.length > maxDirectEdgesPerResidence) truncatedResidences += 1;
-    for (const entry of targets.slice(0, maxDirectEdgesPerResidence)) {
-      edges.push({
-        ...walkEdge(`walk:${index}:${entry.buildingIndex}`, sourceId,
-          workplaceIds.get(entry.buildingIndex), entry),
-        capacityUpperBound: Math.min(
-          nodes.get(sourceId).people,
-          nodes.get(workplaceIds.get(entry.buildingIndex)).workerSlots,
-        ),
-      });
     }
     for (const entry of reach.buildings.values()) {
       if (!stopIndices.has(entry.buildingIndex)) continue;
@@ -196,6 +207,20 @@ export function buildWorkerAccessEvidence({
       edges.push({
         ...walkEdge(`walk:${index}:stop:${entry.buildingIndex}`, sourceId, boardId, entry),
         capacityUpperBound: nodes.get(sourceId).people,
+      });
+    }
+  }
+  for (const [index, found] of walkers) {
+    if (found.length > maxDirectEdgesPerResidence) truncatedResidences += 1;
+    for (const entry of found.slice(0, maxDirectEdgesPerResidence)) {
+      const sourceId = residenceIds.get(entry.buildingIndex);
+      edges.push({
+        ...walkEdge(`walk:${entry.buildingIndex}:${index}`, sourceId, workplaceIds.get(index),
+          entry),
+        capacityUpperBound: Math.min(
+          nodes.get(sourceId).people,
+          nodes.get(workplaceIds.get(index)).workerSlots,
+        ),
       });
     }
   }
