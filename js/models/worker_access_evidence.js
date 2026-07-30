@@ -1,6 +1,7 @@
 import {
   WALKING_BUDGET_METRES, buildWalkingNetwork, walkingReachFrom,
 } from './walking_access.js?v=6';
+import { composeServices, indexServices, transitReachFrom } from './transit_reach.js?v=2';
 
 // The access corridor a worker can actually use: walk, or walk to a saved stop,
 // ride a saved line in its saved stop order, change at most once, and walk the
@@ -91,46 +92,14 @@ export function buildWorkerAccessEvidence({
     .filter(building => workerSlots(building) > 0 && network.buildingEdges.has(building.index))
     .map(building => building.index));
 
-  // The import carries line operations as { lines, summary }; a bare array is
-  // what the tests and any direct caller pass.
-  const savedLines = Array.isArray(vehicleLines) ? vehicleLines : vehicleLines?.lines ?? [];
-  // Most services in a real republic are not lines at all: each vehicle is given
-  // its own route, and the save records the stops it calls at. Those routes stand
-  // in for lines here, and so do cableway routes, whose cabins run the cable with
-  // nothing scheduling them. Beyond the label there is nothing to special-case —
-  // boarding, riding, changing and the last walk are the same legs.
-  const routeLines = (vehicleRoutes?.routes ?? []).map(route => ({
-    slot: route.id,
-    name: route.name,
-    stopIds: route.stopIds,
-    vehicleIds: route.vehicleIds ?? [],
-    mode: route.mode ?? 'vehicleRoute',
-    stopSignature: route.stopSignature,
-  }));
-  // A cable whose cabins already carry a route is described by that route; the
-  // network topology is only needed for a cable nothing is running on yet.
-  const routeSignatures = new Set(routeLines.map(line => line.stopSignature));
-  const cablewayLines = (cablewayRoutes?.routes ?? []).map((route, order) => ({
-    slot: route.id,
-    name: cablewayLabel ? `${cablewayLabel} ${order + 1}` : `#${order + 1}`,
-    stopIds: route.stationIndices,
-    vehicleIds: [],
-    mode: 'cableway',
-    lengthMeters: route.lengthMeters,
-    stopSignature: [...route.stationIndices].sort((a, b) => a - b).join('-'),
-  })).filter(line => !routeSignatures.has(line.stopSignature));
-  const lines = [...savedLines, ...routeLines, ...cablewayLines]
-    .filter(line => (line.stopIds ?? []).filter(stop => stop >= 0).length >= 2);
-  const stopIndices = new Set();
-  const linesByStop = new Map();
-  for (const line of lines) {
-    for (const stop of line.stopIds) {
-      if (stop < 0 || !network.buildingEdges.has(stop)) continue;
-      stopIndices.add(stop);
-      if (!linesByStop.has(stop)) linesByStop.set(stop, []);
-      if (!linesByStop.get(stop).includes(line.slot)) linesByStop.get(stop).push(line.slot);
-    }
-  }
+  // Saved lines, the routes individual vehicles carry, and cableway routes that
+  // nothing schedules — composed once, so the map overlay and this graph answer
+  // with the same set of services. See models/transit_reach.js.
+  const lines = composeServices({ vehicleLines, vehicleRoutes, cablewayRoutes, cablewayLabel });
+  const routeLines = lines.filter(line => line.mode === 'vehicleRoute');
+  const cablewayLines = lines.filter(line => line.mode === 'cableway');
+  const { stopIndices, servicesByStop: linesByStop, bySlot } =
+    indexServices(lines, stop => network.buildingEdges.has(stop));
 
   const nodes = new Map();
   const edges = [];
@@ -231,7 +200,6 @@ export function buildWorkerAccessEvidence({
 
   // Riding legs. A line's saved stop order is kept exactly as written; the
   // vehicles run it as a cycle, so any stop on a line can be left at any other.
-  const bySlot = new Map(lines.map(line => [line.slot, line]));
   const alightIds = new Map();
   for (const line of lines) {
     const served = line.stopIds.filter(stop => stop >= 0 && stopIndices.has(stop));
@@ -299,43 +267,18 @@ export function buildWorkerAccessEvidence({
     }
   }
 
-  // The transit half of the catchment, one residence at a time: walk to any
-  // stop, ride any line calling there, change once, then walk again from
-  // wherever that puts you. Buildings already within walking distance of the
-  // residence are not counted twice.
-  const servedStopsOf = slot => (bySlot.get(slot)?.stopIds ?? [])
-    .filter(stop => stop >= 0 && stopIndices.has(stop));
+  // The transit half of the catchment: the same walk-ride-change-walk rule the
+  // map's click overlay answers with, so the two can never disagree.
+  const services = { reachOf, stopIndices, servicesByStop: linesByStop, bySlot };
   for (const [index, sourceId] of residenceIds) {
-    const reach = reachOf(index);
-    if (!reach.available) continue;
+    const reach = transitReachFrom(index, services);
+    if (!reach.available || !reach.transit.size) continue;
     const people = nodes.get(sourceId).people;
-    const boardStops = [...reach.buildings.keys()].filter(stop => stopIndices.has(stop));
-    if (!boardStops.length) continue;
-    const usedLines = new Set();
-    for (const stop of boardStops) for (const slot of linesByStop.get(stop) ?? []) usedLines.add(slot);
-    const alightStops = new Set();
-    for (const slot of [...usedLines]) {
-      for (const stop of servedStopsOf(slot)) {
-        alightStops.add(stop);
-        for (const other of linesByStop.get(stop) ?? []) {
-          if (usedLines.has(other)) continue;
-          usedLines.add(other);
-          for (const onward of servedStopsOf(other)) alightStops.add(onward);
-        }
-      }
-    }
-    const seen = new Set(reach.buildings.keys());
-    for (const stop of alightStops) {
-      const onward = reachOf(stop);
-      if (!onward.available) continue;
-      for (const target of [stop, ...onward.buildings.keys()]) {
-        if (seen.has(target) || target === index) continue;
-        seen.add(target);
-        const row = catchmentEntry(target);
-        row.transitAdults += people;
-        row.transitResidences += 1;
-        for (const slot of usedLines) row.transitLineSlots.add(slot);
-      }
+    for (const target of reach.transit.keys()) {
+      const row = catchmentEntry(target);
+      row.transitAdults += people;
+      row.transitResidences += 1;
+      for (const slot of reach.serviceSlots) row.transitLineSlots.add(slot);
     }
   }
 
@@ -352,6 +295,9 @@ export function buildWorkerAccessEvidence({
     nodes: keptNodes,
     edges: keptEdges,
     catchment,
+    // Kept so the map's click overlay answers with the same services this graph
+    // was built from, rather than composing its own set.
+    services: { services: lines, stopIndices, servicesByStop: linesByStop, bySlot },
     summary: {
       walkingBudgetMeters: WALKING_BUDGET_METRES,
       residenceCount: keptNodes.filter(node => node.kind === 'residence').length,

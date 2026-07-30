@@ -43,6 +43,17 @@ function reachStyle(building, reach, palette) {
   }
   const entry = reach.buildings.get(building.index);
   if (!entry) {
+    // Reached by boarding something rather than on foot. Drawn in its own colour
+    // because "twenty minutes away on the cableway" and "across the road" are
+    // not the same answer, and a republic that runs transport would otherwise
+    // see almost nothing light up.
+    if (reach.transit?.has(building.index)) {
+      return {
+        radius: Math.max(3.2, 4.2 * (building.markScale ?? 1)),
+        color: palette.panel, weight: 1,
+        fillColor: palette.accent, fillOpacity: 0.9, opacity: 0.9, dashArray: null,
+      };
+    }
     return {
       radius: Math.max(2, 2.4 * (building.markScale ?? 1)),
       color: palette.panel, weight: 1,
@@ -307,6 +318,7 @@ export function mountRepublicLeafletMap(container, options) {
         : { sourceIndex: building.index, buildings: new Map(), unattached: true };
     }
     container.dataset.mapWalkReachCount = walkReach ? String(walkReach.buildings.size) : '';
+    container.dataset.mapTransitReachCount = walkReach ? String(walkReach.transit?.size ?? 0) : '';
     onWalkReach?.(walkReach);
   };
   // Picking a line dims every other line. Nothing used to undo that, so one

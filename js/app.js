@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=156';
+import { STRINGS } from './i18n.js?v=157';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -54,15 +54,16 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=31';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=32';
 import { workerAccessAvailability } from './models/access_graph.js?v=11';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=11';
-import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=11';
+import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=12';
 import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=8';
 import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
 import { workerAccessAlerts } from './models/access_alerts.js?v=3';
 import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';
 import { buildingHeightSamples } from './models/water_level.js?v=3';
+import { transitReachFrom } from './models/transit_reach.js?v=2';
 import { mergedFootprints } from './models/building_footprint.js?v=3';
 import {
   buildMapTransportLines,
@@ -3032,6 +3033,9 @@ function renderWalkReachSection(building) {
     furthest ? kv(t('walkReachFurthest'),
       `${fmt(furthest.distanceMeters, 0)} m · ${fmt(furthest.budgetUsed, 0)} / ${fmt(mapWalkReach.budgetMeters ?? 480, 0)} ${t('walkReachBudget')}`) : null,
     furthest ? kv(t('walkReachLimitingLeg'), walkSurfaceLabel(furthest.limitingSurface)) : null,
+    mapWalkReach.transit?.size ? kv(t('transitReachCount'),
+      `${fmt(mapWalkReach.transit.size, 0)} · `
+      + count('walkReachViaLines', mapWalkReach.serviceSlots?.size ?? 0)) : null,
     catchment?.walkAdults ? kv(t('walkReachCatchmentWalk'),
       `${fmt(catchment.walkAdults, 0)} ${t('walkReachPeople')} · `
       + count('walkReachFromResidences', catchment.walkResidences)) : null,
@@ -3630,11 +3634,37 @@ function accessNodeForBuilding(evidence, buildingIndex) {
   })[0];
 }
 
+// One search per building, reused for both halves of the overlay and cheap
+// enough to keep: a walking search is bounded by the 480 m budget.
+let overlayReachCache = { key: null, byBuilding: new Map() };
+
+function reachOfBuilding(network, key) {
+  if (overlayReachCache.key !== key) overlayReachCache = { key, byBuilding: new Map() };
+  return index => {
+    if (!overlayReachCache.byBuilding.has(index)) {
+      overlayReachCache.byBuilding.set(index, walkingReachFrom(network, index));
+    }
+    return overlayReachCache.byBuilding.get(index);
+  };
+}
+
+// Clicking a building asks "who can get here, and how" — and on a republic that
+// runs cableways or trains, the walking half alone answers almost nothing.
 function walkableBuildingsFrom(buildingIndex) {
-  const { network } = workerAccessContext();
+  const { network, evidence, key } = workerAccessContext();
   if (!network || !Number.isInteger(buildingIndex)) return null;
-  const result = walkingReachFrom(network, buildingIndex);
-  return result.available ? result : null;
+  const reachOf = reachOfBuilding(network, key);
+  const walk = reachOf(buildingIndex);
+  if (!walk.available) return null;
+  const services = evidence?.services;
+  const reach = services
+    ? transitReachFrom(buildingIndex, { reachOf, ...services })
+    : { transit: new Map(), serviceSlots: new Set() };
+  return {
+    ...walk,
+    transit: reach.transit ?? new Map(),
+    serviceSlots: reach.serviceSlots ?? new Set(),
+  };
 }
 
 function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = false } = {}) {
