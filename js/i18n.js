@@ -420,6 +420,7 @@ export const STRINGS = {
     workerAccessNotStaffable: 'Nur {reachable} Erwachsene erreichen dieses Gebäude, es hat {slots} Stellen',
 
     workerAccessAdults: 'Erwachsene',
+    dismiss: 'Schließen',
     workerAccessHint: 'Knoten anklicken, um zu öffnen, was daran hängt · Doppelklick startet von dort neu · ziehen zum Verschieben, scrollen zum Zoomen',
     workerAccessFit: 'Alles einpassen',
     zoomIn: 'Vergrößern',
@@ -916,6 +917,7 @@ export const STRINGS = {
     workerAccessNotStaffable: 'Only {reachable} adults can reach this building, which has {slots} places',
 
     workerAccessAdults: 'adults',
+    dismiss: 'Dismiss',
     workerAccessHint: 'Click a node to open what connects to it · double-click to start again from there · drag to pan, scroll to zoom',
     workerAccessFit: 'Fit everything',
     zoomIn: 'Zoom in',

@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=161';
+import { STRINGS } from './i18n.js?v=162';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -817,7 +817,7 @@ function renderEvidenceRail() {
 
 function renderSharedLinkBanner() {
   return el('div', { class: 'sharedlinkbanner' },
-    el('span', {}, '🔗 ' + t('viewingSharedLink')),
+    el('span', {}, '\u26AD ' + t('viewingSharedLink')),
     hasPlanningBackup ? el('button', {
       onclick: async () => {
         try {
@@ -848,7 +848,7 @@ function applyTheme() {
   else document.documentElement.removeAttribute('data-theme');
 }
 
-const THEME_ICONS = { auto: '🌗', light: '☀️', dark: '🌙' };
+const THEME_ICONS = { auto: '\u25D0', light: '\u25CB', dark: '\u25CF' };
 
 function renderHeader() {
   const themeSwitch = () => {
@@ -882,7 +882,7 @@ function renderHeader() {
     onchange: e => e.target.files[0] && handleFile(e.target.files[0]),
   });
   const drop = el('label', { class: 'dropzone', for: 'fileInput' },
-    file, '📄 ', state.statsName ? `${state.statsName} (${state.statsRecords?.length ?? 0} ${t('record')})` : t('dropHint'));
+    file, '\u25A4 ', state.statsName ? `${state.statsName} (${state.statsRecords?.length ?? 0} ${t('record')})` : t('dropHint'));
   drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('over'); });
   drop.addEventListener('dragleave', () => drop.classList.remove('over'));
   drop.addEventListener('drop', e => {
@@ -933,11 +933,15 @@ function renderHeader() {
           state.dataset, v => { state.dataset = v; }),
         DATA.dataVersion ? el('small', { class: 'dataset-version' }, DATA.dataVersion.datasetRelease) : null) : null,
       el('div', { class: 'sharebtns' },
-        el('button', { title: t('exportPlan'), onclick: exportPlan }, '⬇'),
-        el('label', { title: t('importPlan'), class: 'iconbtn' }, '⬆',
+        el('button', {
+      title: t('exportPlan'), 'aria-label': t('exportPlan'), onclick: exportPlan,
+    }, '\u2193'),
+        el('label', { title: t('importPlan'), class: 'iconbtn' }, '\u2191',
           el('input', { type: 'file', accept: '.json', class: 'hidden',
             onchange: e => e.target.files[0] && importPlan(e.target.files[0]) })),
-        el('button', { title: t('shareLink'), onclick: shareLink }, '🔗')),
+        el('button', {
+      title: t('shareLink'), 'aria-label': t('shareLink'), onclick: shareLink,
+    }, '\u26AD')),
       renderSaveSlots(),
       languageSwitch()));
 }
@@ -964,7 +968,7 @@ function renderSaveSlots() {
         state.snapshotNotice = t('saveSlotSaved').replace('{name}', name);
         update();
       },
-    }, '💾'),
+    }, '\u25A3'),
     el('button', {
       title: t('saveSlotLoad'),
       onclick: async () => {
@@ -976,7 +980,7 @@ function renderSaveSlots() {
           update();
         }
       },
-    }, '📂'),
+    }, '\u25B7'),
     names.length ? el('button', {
       class: 'danger', title: t('saveSlotDelete'),
       onclick: async () => {
@@ -989,7 +993,7 @@ function renderSaveSlots() {
           update();
         }
       },
-    }, '🗑') : null,
+    }, '\u2715') : null,
     state.snapshotNotice ? el('span', { class: 'saveslotnotice' }, state.snapshotNotice) : null);
 }
 
@@ -1966,7 +1970,7 @@ function renderLocalWorkshopPicker() {
   return el('details', { class: 'workshop-local-picker secondary-section' },
     el('summary', {}, t('localWorkshopTitle')),
     el('p', { class: 'hint' }, t('localWorkshopHint')),
-    el('label', { class: 'importpicker' }, '🧩 ', t('chooseWorkshopFolder'),
+    el('label', { class: 'importpicker' }, '\u25A6 ', t('chooseWorkshopFolder'),
       el('input', { type: 'file', class: 'hidden', webkitdirectory: '', multiple: '',
         onchange: event => event.target.files.length && handleLocalWorkshopDirectory(event.target.files) })),
     state.localWorkshopStatus ? el('p', { class: 'pos' }, state.localWorkshopStatus) : null);
@@ -2215,7 +2219,7 @@ async function retryDeferredMapLayers() {
 function renderHome() {
   if (!HAS_SAVE_WORKSPACE) return el('section');
   const picker = el('label', { class: 'start-card primary-start importpicker' },
-    el('span', { class: 'start-icon' }, '📂'),
+    el('span', { class: 'start-icon' }, '\u25B7'),
     el('strong', {}, t('openRepublicSave')),
     el('span', { class: 'hint' }, t('openRepublicSaveHint')),
     el('input', { type: 'file', class: 'hidden', webkitdirectory: '', multiple: '',
@@ -2231,14 +2235,14 @@ function renderHome() {
     update();
   };
   const manual = el('div', { class: 'start-card' },
-    el('span', { class: 'start-icon' }, '✏️'),
+    el('span', { class: 'start-icon' }, '\u25F1'),
     el('strong', {}, t('startManualPlan')),
     el('span', { class: 'hint' }, t('startManualPlanHint')),
     el('div', { class: 'start-actions' },
       el('button', { onclick: () => startManual('city') }, t('tabCity')),
       el('button', { onclick: () => startManual('production') }, t('tabProduction'))));
   const current = state.saveImport ? el('div', { class: 'start-card current-republic' },
-    el('span', { class: 'start-icon' }, '🏛️'),
+    el('span', { class: 'start-icon' }, '\u25A3'),
     el('strong', {}, state.saveImport.header?.title || state.saveImport.sourceName),
     el('span', { class: 'hint' }, `${fmt(state.saveImport.citizenCount ?? 0, 0)} ${t('importedCitizens')} · `
       + `${fmt(state.saveImport.buildingCount ?? 0, 0)} ${t('importedBuildings')}`),
@@ -2254,7 +2258,7 @@ function renderHome() {
           update();
         }
       },
-    }, '📁 ', name)))) : null;
+    }, '\u25B7 ', name)))) : null;
   return el('section', { class: 'start-page' },
     el('div', { class: 'start-hero' }, el('h2', {}, t('startTitle')), el('p', {}, t('startHint'))),
     state.importStatus ? el('p', { class: state.importStatusError ? 'neg' : 'pos' }, state.importStatus) : null,
@@ -2268,7 +2272,7 @@ function renderSaveImport() {
   const workshopPackageId = type => String(type ?? '').match(/^(\d{8,})\//)?.[1] ?? null;
   const hasUnmatchedWorkshopPackages = info?.unmatched?.some(item => workshopPackageId(item.type));
   const picker = el('label', { class: 'importpicker' },
-    '📂 ', t('chooseSaveFolder'),
+    '\u25B7 ', t('chooseSaveFolder'),
     el('input', { type: 'file', class: 'hidden', webkitdirectory: '', multiple: '',
       ...(importControls({ importBusy: state.importBusy }).pickerDisabled ? { disabled: '' } : {}),
       onchange: event => event.target.files.length && handleSaveDirectory(event.target.files) }));
@@ -2337,7 +2341,7 @@ function renderSaveImport() {
         info.citizenSummary ? kv(t('populatedScopes'), fmt(info.citizenSummary.populatedScopeCount, 0)) : null,
         info.research ? kv(t('importedResearch'), `${fmt(info.researchComplete, 0)} / ${fmt(info.research.length, 0)}`) : null,
         info.researchPartial ? kv(t('partialResearch'), fmt(info.researchPartial, 0)) : null,
-        info.latestProductivity ? kv(t('productivity'), fmt(info.latestProductivity * 100, 4) + ' %') : null,
+        info.latestProductivity ? kv(t('productivity'), fmt(info.latestProductivity * 100, 1) + ' %') : null,
         kv(t('importedCityBuildings'), fmt(info.cityBuildingCount, 0)),
         kv(t('importedProductionBuildings'), fmt(info.productionBuildingCount, 0)),
         Number.isFinite(info.inventoryBuildingCount)
@@ -2921,11 +2925,24 @@ function buildingEstablishment(building) {
     + (Number.isFinite(building.configuredWorkersHighEducation) ? building.configuredWorkersHighEducation : 0);
 }
 
+// A Workshop building the catalogue has never heard of falls back to its saved
+// type, which is a file name with a package id on the front — "3564803239/shed"
+// told a reader nothing in an alert that was otherwise plain English. The id and
+// the mirror marker are machine bookkeeping, so they come off; what is left is
+// the asset's own name, which is at least a word.
+export function readableSaveType(type) {
+  return String(type ?? '')
+    .replace(/^MIRRORZ_/i, '')
+    .replace(/^\d{6,20}\//, '')
+    .replace(/_/g, ' ')
+    .trim();
+}
+
 function mapBuildingDisplayName(building, catalog = matchSaveBuilding(building.type,
   [...(DATA.rawBuildings ?? []), ...(DATA.workshopBuildings ?? [])], entry => entry.id)) {
   const localized = state.lang === 'de' ? catalog?.de : catalog?.en;
   return localized || catalog?.en || catalog?.de || catalog?.nameStr
-    || building.type || t('building');
+    || readableSaveType(building.type) || t('building');
 }
 
 function standaloneWaterImageHref(water) {
@@ -5330,7 +5347,7 @@ function renderRepublic() {
     metricCard(t('configuredWorkers'), fmt(view.totals.configuredIndustryWorkers, 0), t('exact')),
     metricCard(t('currentStaffing'), staffingRatio == null ? null : fmt(staffingRatio * 100, 1) + ' %', t('exact'), staffingRatio < 0.7 ? 'warn' : ''),
     metricCard(t('productivity'), Number.isFinite(state.saveImport?.latestProductivity)
-      ? fmt(state.saveImport.latestProductivity * 100, 4) + ' %'
+      ? fmt(state.saveImport.latestProductivity * 100, 1) + ' %'
       : view.totals.productivity == null ? null : fmt(view.totals.productivity * 100, 2) + ' %',
     Number.isFinite(state.saveImport?.latestProductivity) ? 'stats.ini' : t('derived')),
   ] : [
@@ -5792,7 +5809,7 @@ function renderTrains() {
     el('button', { class: 'primary', onclick: () => {
       const rec = recommendTrain(tr, locos, wagons);
       if (rec) { tr.consist = rec; update(); }
-    } }, '⚙ ' + t('recommend')));
+    } }, '\u25C8 ' + t('recommend')));
 
   // ---- wagon table (click = add)
   const usedLen = evaluateConsist(consist, byName, resDeNames).totalLength;

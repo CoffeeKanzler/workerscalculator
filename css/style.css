@@ -568,6 +568,15 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
   .worker-access-body { grid-template-columns: minmax(0, 1fr); }
   .worker-access-inspector { border-top: 1px solid var(--border); border-left: 0; }
 }
+/* Ten of thirty data tables were built without the scroll wrapper, and one of
+   them was cut off mid-header at 1440 px. A table that can outgrow its column
+   scrolls on its own rather than depending on every call site remembering. */
+.tablewrap,
+table.data { max-width: 100%; overflow-x: auto; }
+table.data { display: block; }
+table.data > thead,
+table.data > tbody { display: table; width: 100%; }
+
 .map-toolbar { display: flex; flex-wrap: wrap; align-items: end; gap: 10px 18px; margin: 0 0 10px; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--panel); }
 .map-toolbar fieldset { display: flex; flex-wrap: wrap; gap: 6px 14px; min-width: min(100%, 620px); margin: 0; padding: 5px 8px 8px; border: 1px solid var(--border); border-radius: 6px; }
 .map-toolbar fieldset label { white-space: nowrap; }
