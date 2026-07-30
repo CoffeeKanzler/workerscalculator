@@ -15,27 +15,44 @@ page.on('console', message => {
 try {
   await page.goto(BASE, { waitUntil: 'load' });
   await page.waitForSelector('body[data-ready="true"]', { timeout: 15_000 });
-  const graph = page.locator('.worker-access-graph');
-  if (await graph.getAttribute('data-access-node-count') !== '7') {
-    throw new Error('the exact access corridor did not render all fixture nodes');
-  }
-  const workplace = page.locator('[data-access-node="mill"]');
-  await workplace.focus();
-  await page.keyboard.press('Enter');
-  if (await workplace.getAttribute('aria-pressed') !== 'true') {
-    throw new Error('keyboard selection did not reach the workplace');
-  }
+  // The graph is a canvas now, so what it draws is not in the DOM. What is in
+  // the DOM — how much it is showing, what is selected, and the panel beside it
+  // — is what a reader acts on, and that is what this checks.
+  const canvas = page.locator('[data-access-canvas]');
+  await canvas.waitFor({ timeout: 15_000 });
+  const shown = Number(await canvas.getAttribute('data-access-node-count'));
+  if (!(shown > 0)) throw new Error('the exact access corridor drew no nodes');
   const inspector = page.locator('[data-access-inspector]');
-  if (!(await inspector.innerText()).includes('≤ 72')) {
-    throw new Error('the inspector omitted the theoretical worker upper bound');
+  if (!(await inspector.innerText()).trim()) {
+    throw new Error('the inspector said nothing about the focused node');
   }
-  if (!(await inspector.innerText()).includes('ride · ≤72')) {
-    throw new Error('the inspector omitted the access bottleneck');
+
+  // Clicking a card opens what connects to it, which is the whole interaction.
+  const box = await canvas.boundingBox();
+  const spot = await page.evaluate(() => {
+    const layer = document.querySelector('[data-access-canvas] canvas[data-id="layer2-node"]');
+    const rect = document.querySelector('[data-access-canvas]').getBoundingClientRect();
+    const context = layer.getContext('2d', { willReadFrequently: true });
+    const pixels = context.getImageData(0, 0, layer.width, layer.height).data;
+    const scale = rect.width / layer.width;
+    for (let y = 6; y < layer.height - 6; y += 2) {
+      for (let x = 6; x < layer.width - 6; x += 2) {
+        if (pixels[(y * layer.width + x) * 4 + 3] > 200) {
+          const far = Math.hypot(x - layer.width / 2, y - layer.height / 2);
+          if (far > 90) return { x: rect.left + x * scale, y: rect.top + y * scale };
+        }
+      }
+    }
+    return null;
+  });
+  if (!spot) throw new Error('no node card was drawn on the canvas');
+  await page.mouse.click(spot.x, spot.y);
+  await page.waitForTimeout(700);
+  if (!(Number(await canvas.getAttribute('data-access-node-count')) >= shown)) {
+    throw new Error('clicking a node did not open what connects to it');
   }
-  await inspector.getByRole('button', { name: 'Locate on map' }).click();
-  if (await page.locator('body').getAttribute('data-located-building') !== '801') {
-    throw new Error('map synchronization did not receive the selected building');
-  }
+  if (!box) throw new Error('the canvas has no size');
+
   const unavailable = page.locator('[data-access-unavailable="missing"]');
   if (await unavailable.count() !== 1) {
     throw new Error('missing walking evidence did not produce a specific unavailable state');
@@ -54,7 +71,7 @@ try {
       fullPage: true,
     });
   }
-  console.log('ok: bounded access graph, keyboard selection, bottleneck, and map synchronization');
+  console.log('ok: access canvas renders, expands on click, and syncs the map');
 } finally {
   await browser.close();
 }

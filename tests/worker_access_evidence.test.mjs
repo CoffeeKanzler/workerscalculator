@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import { buildWorkerAccessEvidence } from '../js/models/worker_access_evidence.js';
-import { workerAccessAvailability, buildWorkerAccessGraph } from '../js/models/access_graph.js';
+import { workerAccessAvailability, widestWorkplaceBounds } from '../js/models/access_graph.js';
 
 // A straight footpath of five lit 100 m edges: node 0 .. node 5.
 function corridor(edgeCount = 5, length = 100) {
@@ -48,8 +48,8 @@ test('the corridor bound is the smallest exact count on it, never a fabricated r
     buildings: [HOME, NEAR],
     residenceOccupancy: [{ buildingIndex: 1, residents: 30, adults: 7 }],
   });
-  const graph = buildWorkerAccessGraph(evidence, { focusId: 'residence:1' });
-  assert.deepEqual(graph.upperBounds, [
+  const bounds = widestWorkplaceBounds(evidence.nodes, evidence.edges, 'residence:1');
+  assert.deepEqual(bounds, [
     { nodeId: 'workplace:2', workers: 7, slots: 12, coverage: 7 / 12, bottleneckEdgeId: 'walk:1:2' },
   ]);
 });
@@ -77,9 +77,9 @@ test('a stop reached by a line starts a fresh walking search of its own', () => 
   });
   const kinds = new Set(evidence.edges.map(edge => edge.kind));
   assert.deepEqual([...kinds].sort(), ['board', 'ride', 'walk']);
-  const graph = buildWorkerAccessGraph(evidence, { focusId: 'residence:1' });
-  assert.deepEqual(graph.upperBounds.map(bound => bound.nodeId), ['workplace:3']);
-  assert.equal(graph.upperBounds[0].workers, 9);
+  const bounds = widestWorkplaceBounds(evidence.nodes, evidence.edges, 'residence:1');
+  assert.deepEqual(bounds.map(bound => bound.nodeId), ['workplace:3']);
+  assert.equal(bounds[0].workers, 9);
 });
 
 test('a saved line keeps its stop order and its own vehicle facts', () => {
@@ -148,9 +148,10 @@ test('a change between two saved lines is shown as a transfer', () => {
   assert.ok(evidence.nodes.some(node => node.id === 'line:1:2'));
 });
 
-test('a dense corridor is bounded rather than drawn as a hairball', () => {
-  // Twenty residences and twenty workplaces all within reach of each other is
-  // 400 links; the view must keep the focus legible and admit what it dropped.
+// Bounding what ends up on screen belongs to the view, and access_ego covers it.
+// What the evidence model owes here is that it produces the whole dense set in
+// the first place, and that a corridor's ceiling is the smallest count on it.
+test('a dense corridor produces every link, and its ceiling is the smallest count', () => {
   const workplaces = Array.from({ length: 20 }, (_, index) =>
     building(100 + index, 'factory', [1], { configuredWorkers: 5 }));
   const residences = Array.from({ length: 20 }, (_, index) => building(index, 'panelak', [0]));
@@ -161,20 +162,12 @@ test('a dense corridor is bounded rather than drawn as a hairball', () => {
       buildingIndex: item.index, residents: 10, adults: 10,
     })),
   });
-  assert.ok(evidence.edges.length > 300);
-  const graph = buildWorkerAccessGraph(evidence, { focusId: 'residence:0' });
-  assert.ok(graph.edges.every(edge => graph.nodes.some(node => node.id === edge.source)
-    && graph.nodes.some(node => node.id === edge.target)));
-  // Picking one residence must not put nineteen unrelated ones on screen just
-  // because they happen to share a workplace with it.
-  assert.deepEqual(graph.nodes.filter(node => node.kind === 'residence').map(node => node.id),
-    ['residence:0']);
-  // No stage may grow past what fits in the canvas, so the picked node is never
-  // scrolled off the top of its own corridor.
-  const perStage = new Map();
-  for (const node of graph.nodes) perStage.set(node.stage, (perStage.get(node.stage) ?? 0) + 1);
-  assert.ok(Math.max(...perStage.values()) <= 6, `stages: ${[...perStage]}`);
-  assert.ok(graph.hiddenNodes > 0 && graph.hiddenEdges > 0);
+
+  assert.ok(evidence.edges.length > 300, `${evidence.edges.length} links`);
+  const bounds = widestWorkplaceBounds(evidence.nodes, evidence.edges, 'residence:0');
+  assert.equal(bounds.length, 20);
+  // Ten adults in that one house against five places at each works.
+  assert.ok(bounds.every(bound => bound.workers === 5 && bound.slots === 5));
 });
 
 test('an undecoded pedestrian network yields no graph rather than a guessed one', () => {
@@ -224,9 +217,9 @@ test('a cableway route carries workers even though no saved line mentions it', (
   assert.equal(line.mode, 'cableway');
   assert.equal(line.vehicleCount, 0, 'the save assigns no vehicle to a cable');
   assert.equal(evidence.summary.cablewayRouteCount, 1);
-  const graph = buildWorkerAccessGraph(evidence, { focusId: 'residence:1' });
-  assert.deepEqual(graph.upperBounds.map(bound => bound.nodeId), ['workplace:3']);
-  assert.equal(graph.upperBounds[0].workers, 8);
+  const bounds = widestWorkplaceBounds(evidence.nodes, evidence.edges, 'residence:1');
+  assert.deepEqual(bounds.map(bound => bound.nodeId), ['workplace:3']);
+  assert.equal(bounds[0].workers, 8);
   assert.equal(evidence.catchment.get(3).transitAdults, 8,
     'the mine can count the people the cableway brings it');
 });
@@ -290,9 +283,11 @@ test('a train on its own route carries workers even with lines.bin holding no li
   assert.equal(line.mode, 'vehicleRoute');
   assert.equal(line.vehicleCount, 4);
   assert.equal(evidence.summary.vehicleRouteCount, 1);
-  const graph = buildWorkerAccessGraph(evidence, { focusId: 'workplace:3' });
-  assert.ok(graph.nodes.some(node => node.id === 'residence:1'),
-    'the mine shows the housing the train brings its workers from');
+  // The corridor runs home, board, ride, then walk out to the mine.
+  assert.deepEqual([...new Set(evidence.edges.map(edge => edge.kind))].sort(),
+    ['board', 'ride', 'walk']);
+  assert.ok(evidence.edges.some(edge => edge.source === 'residence:1'),
+    'the housing the train brings its workers from is in the corridor');
   assert.equal(evidence.catchment.get(3).transitAdults, 14);
 });
 

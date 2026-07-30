@@ -1,3 +1,7 @@
+// What the access model can still be asked: is the evidence usable at all, and
+// how many workers can a corridor carry. Laying the graph out was this module's
+// other job until the view moved to a canvas that places its own nodes; see
+// models/access_ego.js.
 const NODE_KINDS = new Set(['residence', 'stop', 'line', 'transfer', 'workplace']);
 
 function finiteNonnegative(value) {
@@ -34,47 +38,6 @@ export function workerAccessAvailability(evidence) {
   return { available: true, reason: null };
 }
 
-// A corridor runs one way: people leave a residence and arrive at a workplace.
-// Which end the reader picked decides which way the view should look. Standing
-// at a refinery, the question is where the workers come from, and expanding
-// forwards from it answers a question nobody asked — while expanding both ways
-// spends the budget on the wrong side and leaves the housing off screen.
-function adjacencyFor(nodes, edges, { forward = true, backward = true } = {}) {
-  const adjacency = new Map(nodes.map(node => [node.id, []]));
-  edges.forEach((edge, order) => {
-    if (forward) adjacency.get(edge.source)?.push({ nodeId: edge.target, order });
-    if (backward) adjacency.get(edge.target)?.push({ nodeId: edge.source, order });
-  });
-  return adjacency;
-}
-
-export function traversalFor(node) {
-  if (node?.kind === 'residence') return { forward: true, backward: false };
-  if (node?.kind === 'workplace') return { forward: false, backward: true };
-  return { forward: true, backward: true };
-}
-
-function addNeighborhood(selected, startId, adjacency, depth, maximum) {
-  if (!adjacency.has(startId) || selected.size >= maximum) return;
-  const queued = new Set([startId]);
-  const queue = [{ id: startId, distance: 0 }];
-  while (queue.length && selected.size < maximum) {
-    const current = queue.shift();
-    selected.add(current.id);
-    if (current.distance >= depth) continue;
-    for (const neighbor of adjacency.get(current.id) ?? []) {
-      if (queued.has(neighbor.nodeId)) continue;
-      queued.add(neighbor.nodeId);
-      queue.push({ id: neighbor.nodeId, distance: current.distance + 1 });
-    }
-  }
-}
-
-// The bound a corridor can carry is the smallest of the exact counts along it:
-// the adults living at the source, the worker slots at the destination, and any
-// leg that states a limit of its own. A leg that states none — walking has no
-// capacity — must not cut the corridor off, which is why an absent
-// capacityUpperBound reads as unbounded rather than as zero.
 function nodeCapacity(node) {
   if (finiteNonnegative(node?.people)) return node.people;
   if (finiteNonnegative(node?.workerSlots)) return node.workerSlots;
@@ -138,131 +101,4 @@ export function widestWorkplaceBounds(nodes, edges, focusId) {
     })
     .sort((a, b) => b.workers - a.workers
       || nodeById.get(a.nodeId).label.localeCompare(nodeById.get(b.nodeId).label));
-}
-
-function layoutNodes(nodes) {
-  const byStage = new Map();
-  for (const node of nodes) {
-    if (!byStage.has(node.stage)) byStage.set(node.stage, []);
-    byStage.get(node.stage).push(node);
-  }
-  const maxRows = Math.max(1, ...[...byStage.values()].map(group => group.length));
-  const width = 900;
-  const height = Math.max(320, maxRows * 88 + 72);
-  const stages = [...byStage.keys()].sort((a, b) => a - b);
-  const stageSpan = Math.max(1, stages.at(-1) - stages[0]);
-  const positions = new Map();
-  for (const [stage, group] of byStage) {
-    const x = 82 + ((stage - stages[0]) / stageSpan) * (width - 164);
-    const rowSpan = Math.max(1, group.length - 1);
-    group.forEach((node, index) => {
-      const y = group.length === 1 ? height / 2 : 58 + index / rowSpan * (height - 116);
-      positions.set(node.id, { x, y });
-    });
-  }
-  return { width, height, positions };
-}
-
-// A residence in a dense city reaches sixty workplaces, so drawing all of them
-// gives a picture too tall to see at once — scrolled away from the very node
-// the reader picked. The view keeps the nearest few per stage instead: the
-// focus first, then the shortest walks, and it says how much it left out.
-function boundEdges(nodes, edges, focusId, { maxEdges, maxPerStage }) {
-  const stageOf = new Map(nodes.map(node => [node.id, node.stage]));
-  const rank = edge => (edge.source === focusId || edge.target === focusId ? 0 : 1);
-  const ordered = [...edges].sort((a, b) => rank(a) - rank(b)
-    || (a.distanceMeters ?? 0) - (b.distanceMeters ?? 0)
-    || a.id.localeCompare(b.id));
-  const perStage = new Map();
-  const kept = new Set([focusId]);
-  const hasRoom = id => {
-    if (kept.has(id)) return true;
-    const stage = stageOf.get(id);
-    return (perStage.get(stage) ?? 0) < maxPerStage;
-  };
-  const admit = id => {
-    if (kept.has(id)) return;
-    kept.add(id);
-    const stage = stageOf.get(id);
-    perStage.set(stage, (perStage.get(stage) ?? 0) + 1);
-  };
-  const result = [];
-  for (const edge of ordered) {
-    if (result.length >= maxEdges) break;
-    if (!hasRoom(edge.source) || !hasRoom(edge.target)) continue;
-    admit(edge.source);
-    admit(edge.target);
-    result.push(edge);
-  }
-  return result;
-}
-
-export function buildWorkerAccessGraph(evidence, {
-  focusId = null,
-  expandedIds = [],
-  // Far enough to run the whole ladder — residence, stop, line, change, line,
-  // stop, workplace — because a refinery that is only reachable by tram has its
-  // housing six hops away. What keeps the picture legible is the per-stage cap
-  // below, not a short depth: cutting the depth instead simply hid the answer.
-  depth = 6,
-  expansionDepth = 2,
-  maxNodes = 72,
-  maxEdges = 24,
-  maxPerStage = 6,
-} = {}) {
-  const availability = workerAccessAvailability(evidence);
-  if (!availability.available) return { ...availability, nodes: [], edges: [] };
-  const nodes = evidence.nodes;
-  const nodeById = new Map(nodes.map(node => [node.id, node]));
-  const resolvedFocus = nodeById.has(focusId)
-    ? focusId
-    : nodes.find(node => node.kind === 'residence')?.id ?? nodes[0]?.id ?? null;
-  if (!resolvedFocus) {
-    return {
-      available: true,
-      reason: null,
-      focusId: null,
-      nodes: [],
-      edges: [],
-      upperBounds: [],
-      hiddenNodes: 0,
-      width: 900,
-      height: 320,
-    };
-  }
-  const boundedMaximum = Math.max(1, Math.floor(maxNodes));
-  const adjacency = adjacencyFor(nodes, evidence.edges,
-    traversalFor(nodeById.get(resolvedFocus)));
-  const selected = new Set();
-  addNeighborhood(selected, resolvedFocus, adjacency, Math.max(0, depth), boundedMaximum);
-  for (const id of expandedIds) {
-    addNeighborhood(selected, id, adjacency, Math.max(0, expansionDepth), boundedMaximum);
-  }
-  const candidateEdges = evidence.edges.filter(edge =>
-    selected.has(edge.source) && selected.has(edge.target));
-  const visibleEdges = boundEdges(nodes, candidateEdges, resolvedFocus, {
-    maxEdges: Math.max(1, Math.floor(maxEdges)),
-    maxPerStage: Math.max(1, Math.floor(maxPerStage)),
-  });
-  const drawn = new Set([resolvedFocus]);
-  for (const edge of visibleEdges) { drawn.add(edge.source); drawn.add(edge.target); }
-  const visibleNodes = nodes.filter(node => drawn.has(node.id));
-  const upperBounds = widestWorkplaceBounds(nodes, evidence.edges, resolvedFocus);
-  const bottlenecks = new Set(upperBounds.map(bound => bound.bottleneckEdgeId).filter(Boolean));
-  const layout = layoutNodes(visibleNodes);
-  return {
-    available: true,
-    reason: null,
-    focusId: resolvedFocus,
-    nodes: visibleNodes.map(node => ({ ...node, ...layout.positions.get(node.id) })),
-    edges: visibleEdges.map(edge => ({ ...edge, bottleneck: bottlenecks.has(edge.id) })),
-    upperBounds,
-    hiddenNodes: Math.max(0, nodes.length - visibleNodes.length),
-    // Counted against every link the drawn nodes actually have, not just those
-    // inside the neighbourhood: "not drawn" has to mean what a reader assumes.
-    hiddenEdges: Math.max(0, evidence.edges.filter(edge =>
-      drawn.has(edge.source) || drawn.has(edge.target)).length - visibleEdges.length),
-    width: layout.width,
-    height: layout.height,
-  };
 }

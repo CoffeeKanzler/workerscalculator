@@ -10,7 +10,7 @@
 // failing the run if any request leaves the page's origin. That test is the
 // guard that a save never escapes the machine it was opened on.
 import cytoscape from '../vendor/cytoscape-src.esm.js?v=3';
-import { buildAccessEgoView, NODE_HEIGHT, NODE_WIDTH } from '../models/access_ego.js?v=7';
+import { buildAccessEgoView, NODE_HEIGHT, NODE_WIDTH } from '../models/access_ego.js?v=8';
 
 const DEFAULT_LABELS = {
   title: 'Worker access graph',

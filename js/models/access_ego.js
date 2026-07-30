@@ -14,7 +14,7 @@
 // Layout is computed here rather than left to the graph library so it is
 // deterministic — the same save and the same clicks give the same picture, which
 // is what makes it testable.
-import { workerAccessAvailability, widestWorkplaceBounds } from './access_graph.js?v=15';
+import { workerAccessAvailability, widestWorkplaceBounds } from './access_graph.js?v=17';
 
 export const NODE_WIDTH = 210;
 export const NODE_HEIGHT = 76;

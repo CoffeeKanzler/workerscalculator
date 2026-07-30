@@ -55,8 +55,8 @@ import {
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
 import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=32';
-import { workerAccessAvailability } from './models/access_graph.js?v=18';
-import { mountWorkerAccessGraph } from './ui/access_graph.js?v=18';
+import { workerAccessAvailability } from './models/access_graph.js?v=20';
+import { mountWorkerAccessGraph } from './ui/access_graph.js?v=20';
 import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=17';
 import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=10';
 import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
