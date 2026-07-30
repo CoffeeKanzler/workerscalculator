@@ -1,6 +1,6 @@
 import { resolveVehicleModels } from '../fleet.js?v=4';
-import { latestProductivity } from '../save_model.js?v=12';
-import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=10';
+import { latestProductivity } from '../save_model.js?v=14';
+import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=11';
 import { readWorkshopIndex } from '../models/workshop_index.js?v=2';
 
 const REQUIRED_FILES = ['namepoints.bin', 'buildings_game.bin'];
@@ -20,6 +20,7 @@ const DEFERRED_MAP_FILES = {
   road: 'road.bin',
   rail: 'rail.bin',
   pedestrian: 'pedestrianway.bin',
+  cableway: 'cableway.bin',
   heightmap: 'heightmap.dds',
   pollution: 'pollution.bin',
 };
@@ -203,7 +204,7 @@ export function parseSaveInWorker(payload, {
 
 export function parseMapLayersInWorker(files, {
   WorkerClass = globalThis.Worker,
-  workerUrl = new URL('../savegame_map_worker.js?v=8', import.meta.url),
+  workerUrl = new URL('../savegame_map_worker.js?v=10', import.meta.url),
   onProgress,
 } = {}) {
   return new Promise((resolve, reject) => {

@@ -58,6 +58,8 @@ export function buildWorkerAccessEvidence({
   buildings = [],
   residenceOccupancy = null,
   vehicleLines = null,
+  cablewayRoutes = null,
+  cablewayLabel = null,
   labelFor = null,
   maxDirectEdgesPerResidence = 60,
   maxWalkEdgesPerStop = 60,
@@ -91,7 +93,19 @@ export function buildWorkerAccessEvidence({
   // The import carries line operations as { lines, summary }; a bare array is
   // what the tests and any direct caller pass.
   const savedLines = Array.isArray(vehicleLines) ? vehicleLines : vehicleLines?.lines ?? [];
-  const lines = savedLines.filter(line => (line.stopIds ?? [])
+  // A cableway has no line to schedule — the cabins just run the cable — so its
+  // route stands in for one, with the stations along it as its stops. Beyond the
+  // label there is nothing to special-case: boarding, riding, changing and the
+  // last walk are the same legs.
+  const cablewayLines = (cablewayRoutes?.routes ?? []).map((route, order) => ({
+    slot: route.id,
+    name: cablewayLabel ? `${cablewayLabel} ${order + 1}` : `#${order + 1}`,
+    stopIds: route.stationIndices,
+    vehicleIds: [],
+    mode: 'cableway',
+    lengthMeters: route.lengthMeters,
+  }));
+  const lines = [...savedLines, ...cablewayLines].filter(line => (line.stopIds ?? [])
     .filter(stop => stop >= 0).length >= 2);
   const stopIndices = new Set();
   const linesByStop = new Map();
@@ -142,6 +156,7 @@ export function buildWorkerAccessEvidence({
   const lineNode = (line, leg) => addNode(`line:${line.slot}:${leg}`, {
     kind: 'line', stage: leg === 1 ? STAGE.firstLine : STAGE.secondLine,
     label: String(line.name ?? '').trim() || `#${line.slot + 1}`,
+    mode: line.mode ?? 'vehicle',
     lineSlot: line.slot,
     stopCount: (line.stopIds ?? []).filter(stop => stop >= 0).length,
     vehicleCount: (line.vehicleIds ?? []).length,
@@ -330,6 +345,8 @@ export function buildWorkerAccessEvidence({
       stopCount: keptNodes.filter(node => node.kind === 'stop').length,
       transferCount: keptNodes.filter(node => node.kind === 'transfer').length,
       lineCount: keptNodes.filter(node => node.kind === 'line').length,
+      cablewayLineCount: keptNodes.filter(node => node.mode === 'cableway').length,
+      cablewayRouteCount: cablewayLines.length,
       walkEdgeCount: keptEdges.filter(edge => edge.kind === 'walk').length,
       truncatedResidences,
       ...network.completeness,

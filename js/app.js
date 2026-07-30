@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=148';
+import { STRINGS } from './i18n.js?v=150';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -34,7 +34,7 @@ import { planningAreas } from './models/planning_areas.js';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
-import { mapLayerReport } from './models/map_layer_report.js';
+import { mapLayerReport } from './models/map_layer_report.js?v=2';
 import {
   CATEGORY_MARKS, buildTypeCategoryIndex, categoryForSaveType,
 } from './models/building_category.js?v=6';
@@ -44,7 +44,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   filterCitizenDiagnostics, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=33';
+} from './save_model.js?v=35';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -57,8 +57,9 @@ import { createVirtualTable } from './ui/virtual_table.js?v=1';
 import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=30';
 import { workerAccessAvailability } from './models/access_graph.js?v=11';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=11';
-import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=7';
+import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=9';
 import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=8';
+import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
 import { mergedFootprints } from './models/building_footprint.js?v=3';
 import {
   buildMapTransportLines,
@@ -77,9 +78,9 @@ import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=11';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=10';
-import { bootstrapRuntime } from './bootstrap.js?v=4';
+} from './adapters/save_folder_adapter.js?v=13';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=11';
+import { bootstrapRuntime } from './bootstrap.js?v=5';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
@@ -2283,6 +2284,7 @@ function renderSaveImport() {
     namepoints: 'namepoints.bin', buildings: 'buildings_game.bin', workers: 'workers.bin',
     vehicles: 'vehicles.bin', usedVehicles: 'usedveh.bin', lines: 'lines.bin',
     road: 'road.bin', rail: 'rail.bin', pedestrian: 'pedestrianway.bin',
+    cableway: 'cableway.bin',
     heightmap: 'heightmap.dds', pollution: 'pollution.bin',
     header: 'header.bin', research: 'research.bin', events: 'events.bin', stats: 'stats.ini',
     material: 'material.mtl',
@@ -3381,7 +3383,13 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
     el('strong', {}, t('workerAccessGraph')),
     el('span', {
       class: `evidence-badge ${accessAvailable ? 'exact' : 'unavailable'}`,
-    }, accessAvailable ? t('exactSavedEvidence') : t('awaitingExactWalkingEvidence'))),
+    }, accessAvailable ? t('exactSavedEvidence') : t('awaitingExactWalkingEvidence')),
+    // A cableway carries no line, so a reader who moves workers by Seilbahn has
+    // no other way of telling whether the graph found it.
+    accessEvidence?.summary?.cablewayRouteCount
+      ? el('span', { class: 'hint', 'data-access-cableway-routes': String(accessEvidence.summary.cablewayRouteCount) },
+        t('accessCablewayRoutes').replace('{count}', fmt(accessEvidence.summary.cablewayRouteCount, 0)))
+      : null),
   accessContainer);
   const section = el('section', { class: 'map-page' },
     el('h2', {}, t('republicMapTitle')),
@@ -3541,6 +3549,7 @@ function accessKeyForImport(imported) {
   return [imported.sourceName, imported.importedAt,
     imported.pedestrianNetwork.summary?.byteLength ?? 0,
     imported.roadNetwork?.summary?.byteLength ?? 0,
+    imported.cablewayNetwork?.summary?.byteLength ?? 0,
     imported.observedBuildings?.length ?? 0].join('|');
 }
 
@@ -3564,6 +3573,8 @@ function workerAccessContext() {
       buildings,
       residenceOccupancy: imported.residenceOccupancy,
       vehicleLines: imported.vehicleLines,
+      cablewayRoutes: buildCablewayRoutes(imported.cablewayNetwork, buildings),
+      cablewayLabel: t('accessCablewayLine'),
       labelFor: mapBuildingDisplayName,
     }),
   };
@@ -6154,8 +6165,10 @@ async function initializeNamedSnapshots() {
 async function restoreNamedMapLayers() {
   const expectsPollution = state.saveImport?.sourceStatus?.pollution === 'exact';
   const expectsPedestrian = state.saveImport?.sourceStatus?.pedestrian === 'exact';
+  const expectsCableway = state.saveImport?.sourceStatus?.cableway === 'exact';
   if ((!state.saveImport || (state.saveImport.roadNetwork && state.saveImport.railNetwork
       && (!expectsPedestrian || state.saveImport.pedestrianNetwork)
+      && (!expectsCableway || state.saveImport.cablewayNetwork)
       && state.saveImport.terrainWater && (!expectsPollution || state.saveImport.pollutionLayer)))
     || !state.saveSlotName
     || !namedSnapshotNames.includes(state.saveSlotName)) return;
@@ -6169,6 +6182,9 @@ async function restoreNamedMapLayers() {
   if (!state.saveImport.railNetwork && candidate.railNetwork) state.saveImport.railNetwork = candidate.railNetwork;
   if (!state.saveImport.pedestrianNetwork && candidate.pedestrianNetwork) {
     state.saveImport.pedestrianNetwork = candidate.pedestrianNetwork;
+  }
+  if (!state.saveImport.cablewayNetwork && candidate.cablewayNetwork) {
+    state.saveImport.cablewayNetwork = candidate.cablewayNetwork;
   }
   if (!state.saveImport.terrainWater && candidate.terrainWater) state.saveImport.terrainWater = candidate.terrainWater;
   if (!state.saveImport.pollutionLayer && candidate.pollutionLayer) {

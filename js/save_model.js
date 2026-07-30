@@ -1,4 +1,5 @@
 import { walkingEdgeRefsOf } from './models/walking_access.js?v=8';
+import { cablewayEdgeIdsOf } from './models/cableway_access.js?v=3';
 import { footprintRingsFor } from './models/building_footprint.js?v=4';
 
 export function citizenProductivity(citizen) {
@@ -385,13 +386,18 @@ export function compactObservedBuildings(buildings) {
   const keys = [
     'index', 'type', 'name', 'scopeId', 'x', 'y', 'z', 'rotation', 'currentWorkers',
     'configuredWorkers', 'configuredWorkersHighEducation', 'mineQuality',
-    'constructionProgress', 'walkingEdgeRefs', 'storages',
+    'constructionProgress', 'walkingEdgeRefs', 'cablewayEdgeIds', 'savedTypePlusOne',
+    'storages',
   ];
   for (const building of buildings) {
     // The full connection slots carry pipes, wires and rails too; the walking
     // graph only needs the footpath and road edges, and a snapshot keeps them.
     const refs = walkingEdgeRefsOf(building);
     if (refs.length) building.walkingEdgeRefs = refs;
+    // Cableway spans, kept for the same reason: a Seilbahn is public transport
+    // and its route is only recoverable from the buildings that carry it.
+    const cableway = cablewayEdgeIdsOf(building);
+    if (cableway.length) building.cablewayEdgeIds = cableway;
   }
   return buildings.map((building) => Object.fromEntries(
     keys.filter((key) => building[key] !== undefined && (key !== 'storages' || building[key].some(

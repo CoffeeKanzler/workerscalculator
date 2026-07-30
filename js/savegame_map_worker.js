@@ -4,6 +4,7 @@ const sources = [
   ['road', 'roadNetwork', parseRoadNetwork],
   ['rail', 'railNetwork', parseRoadNetwork],
   ['pedestrian', 'pedestrianNetwork', parseRoadNetwork],
+  ['cableway', 'cablewayNetwork', parseRoadNetwork],
   ['heightmap', 'terrainWater', parseHeightmapWater],
 ];
 

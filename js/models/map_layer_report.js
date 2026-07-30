@@ -1,6 +1,8 @@
 // The deferred map pass parses these after the core import returns, so a
 // failure here leaves the republic intact and only the map degraded.
-export const MAP_LAYER_KEYS = Object.freeze(['road', 'rail', 'pedestrian', 'heightmap', 'pollution']);
+export const MAP_LAYER_KEYS = Object.freeze([
+  'road', 'rail', 'pedestrian', 'cableway', 'heightmap', 'pollution',
+]);
 
 const LAYER_SET = new Set(MAP_LAYER_KEYS);
 

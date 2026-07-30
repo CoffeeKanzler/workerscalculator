@@ -190,3 +190,69 @@ test('an undecoded pedestrian network yields no graph rather than a guessed one'
   assert.equal(dangling.completeness, 'unavailable');
   assert.equal(workerAccessAvailability(dangling).available, false);
 });
+
+// A Seilbahn is public transport that no line describes: nothing in lines.bin
+// mentions it, so a republic that moves its workers by cableway reported no
+// transport at all until the route itself stood in for a line.
+test('a cableway route carries workers even though no saved line mentions it', () => {
+  // Two footpaths that never touch: home and the valley station on one, the
+  // mountain station and the mine on the other.
+  const network = {
+    nodes: [0, 1, 2, 3].map(id => ({ id, x: id, y: 0, z: 0 })),
+    edges: [
+      { id: 0, from: 0, to: 1, length: 40, points: [], surfaceType: 2, surfaceSubtype: 0, networkClass: 4 },
+      { id: 1, from: 2, to: 3, length: 40, points: [], surfaceType: 2, surfaceSubtype: 0, networkClass: 4 },
+    ],
+  };
+  const evidence = buildWorkerAccessEvidence({
+    pedestrianNetwork: network,
+    buildings: [
+      building(1, 'panelak', [0]),
+      building(5, 'cableway_station_small', [0]),
+      building(6, 'cableway_station_small', [1]),
+      building(3, 'mine', [1], { configuredWorkers: 40 }),
+    ],
+    residenceOccupancy: [{ buildingIndex: 1, residents: 12, adults: 8 }],
+    cablewayRoutes: {
+      routes: [{ id: 'cableway:0', edgeIds: [0, 1], stationIndices: [5, 6], lengthMeters: 600 }],
+    },
+    cablewayLabel: 'Cableway',
+  });
+
+  const line = evidence.nodes.find(node => node.kind === 'line');
+  assert.equal(line.label, 'Cableway 1');
+  assert.equal(line.mode, 'cableway');
+  assert.equal(line.vehicleCount, 0, 'the save assigns no vehicle to a cable');
+  assert.equal(evidence.summary.cablewayRouteCount, 1);
+  const graph = buildWorkerAccessGraph(evidence, { focusId: 'residence:1' });
+  assert.deepEqual(graph.upperBounds.map(bound => bound.nodeId), ['workplace:3']);
+  assert.equal(graph.upperBounds[0].workers, 8);
+  assert.equal(evidence.catchment.get(3).transitAdults, 8,
+    'the mine can count the people the cableway brings it');
+});
+
+test('cableway routes and saved lines change onto one another at a shared station', () => {
+  const evidence = buildWorkerAccessEvidence({
+    pedestrianNetwork: corridor(4),
+    buildings: [
+      building(1, 'panelak', [0]),
+      building(5, 'cableway_station_small', [0]),
+      building(6, 'cableway_station_small', [2]),
+      building(7, 'bus_stop', [3]),
+      building(3, 'mine', [3], { configuredWorkers: 5 }),
+    ],
+    residenceOccupancy: [{ buildingIndex: 1, residents: 4, adults: 4 }],
+    vehicleLines: [{ slot: 0, name: 'Bus 1', stopIds: [6, 7], vehicleIds: [1] }],
+    cablewayRoutes: {
+      routes: [{ id: 'cableway:0', edgeIds: [0], stationIndices: [5, 6], lengthMeters: 200 }],
+    },
+    cablewayLabel: 'Cableway',
+  });
+
+  // Each line appears twice: once as the first leg, once as the leg after a change.
+  const labels = [...new Set(evidence.nodes.filter(node => node.kind === 'line')
+    .map(node => `${node.label}/${node.mode}`))].sort();
+  assert.deepEqual(labels, ['Bus 1/vehicle', 'Cableway 1/cableway']);
+  assert.ok(evidence.nodes.some(node => node.kind === 'transfer' && node.buildingIndex === 6),
+    'the station both serve is a place to change');
+});
