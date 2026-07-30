@@ -273,20 +273,31 @@ export function walkingReachFrom(network, buildingIndex, {
     visited += 1;
     if (visited > maxVisitedEdges) { truncated = true; break; }
     const edge = network.edges[index];
+    const step = candidate => {
+      if (candidate === index) return;
+      const next = network.edges[candidate];
+      const walked = key + next.length;
+      const ratio = walked / next.percent;
+      if (ratio > budgetMeters) return;
+      if (walked >= distance[candidate]) return;
+      distance[candidate] = walked;
+      const carried = Math.max(worstRatio[index], ratio);
+      worstRatio[candidate] = carried;
+      worstEdge[candidate] = carried === ratio ? next : worstEdge[index];
+      queue.push(walked, candidate);
+    };
     for (const node of [edge.from, edge.to]) {
-      for (const candidate of network.adjacency[node]) {
-        if (candidate === index) continue;
-        const next = network.edges[candidate];
-        const walked = key + next.length;
-        const ratio = walked / next.percent;
-        if (ratio > budgetMeters) continue;
-        if (walked >= distance[candidate]) continue;
-        distance[candidate] = walked;
-        const carried = Math.max(worstRatio[index], ratio);
-        worstRatio[candidate] = carried;
-        worstEdge[candidate] = carried === ratio ? next : worstEdge[index];
-        queue.push(walked, candidate);
-      }
+      for (const candidate of network.adjacency[node]) step(candidate);
+    }
+    // A building that declares two edges joins them, whether or not they share
+    // a node: a metro entrance has a door on the surface and another on the
+    // platform below, and walking in one and out of the other is what it is
+    // for. Without this a dozen buildings behind such a passage looked like an
+    // island with no housing and no stops, while the game staffed them.
+    // The passage itself is free; every edge beyond it is charged as usual, so
+    // the budget still decides how far anyone actually gets.
+    for (const building of network.edgeBuildings.get(index) ?? []) {
+      for (const candidate of network.buildingEdges.get(building) ?? []) step(candidate);
     }
   }
 

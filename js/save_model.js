@@ -1,4 +1,4 @@
-import { walkingEdgeRefsOf } from './models/walking_access.js?v=8';
+import { walkingEdgeRefsOf } from './models/walking_access.js?v=10';
 import { cablewayEdgeIdsOf } from './models/cableway_access.js?v=3';
 import { footprintRingsFor } from './models/building_footprint.js?v=4';
 

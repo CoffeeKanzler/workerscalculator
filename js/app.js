@@ -44,7 +44,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   filterCitizenDiagnostics, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=36';
+} from './save_model.js?v=37';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -57,8 +57,8 @@ import { createVirtualTable } from './ui/virtual_table.js?v=1';
 import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=32';
 import { workerAccessAvailability } from './models/access_graph.js?v=18';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=18';
-import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=12';
-import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=8';
+import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=13';
+import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=10';
 import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
 import { workerAccessAlerts } from './models/access_alerts.js?v=3';
 import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';

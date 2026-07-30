@@ -1,6 +1,6 @@
 import {
   WALKING_BUDGET_METRES, buildWalkingNetwork, walkingReachFrom,
-} from './walking_access.js?v=6';
+} from './walking_access.js?v=8';
 import { composeServices, indexServices, transitReachFrom } from './transit_reach.js?v=2';
 
 // The access corridor a worker can actually use: walk, or walk to a saved stop,

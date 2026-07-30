@@ -178,3 +178,55 @@ test('a slot kind the reach search never seeds does not attach a building', () =
   }]);
   assert.equal(network.buildingEdges.has(3), false);
 });
+
+// A metro entrance has a door on the surface and another underground, and
+// declares both in its own connection slots. The search only ever stepped
+// between edges sharing a node, so it never walked in one door and out of the
+// other — which left a dozen buildings on the far side looking like an island
+// with no housing and no stops, while the game staffed a repair station there.
+//
+// Node ids are array positions, and the graph joins networks on coordinates, so
+// the second chain continues the numbering and sits well away in z.
+function twoNetworks(surfaceLengths, platformLengths) {
+  const nodes = [];
+  const edges = [];
+  const addChain = (lengths, z, edgeId) => {
+    const first = nodes.length;
+    lengths.forEach((_, index) => nodes.push({ id: first + index, x: index, y: 0, z }));
+    nodes.push({ id: first + lengths.length, x: lengths.length, y: 0, z });
+    lengths.forEach((length, index) => edges.push({
+      id: edgeId + index, from: first + index, to: first + index + 1, length, points: [],
+      surfaceType: 2, surfaceSubtype: 0, networkClass: PEDESTRIAN_NETWORK_CLASS,
+    }));
+  };
+  addChain(surfaceLengths, 0, 0);
+  addChain(platformLengths, 999, 100);
+  return { nodes, edges };
+}
+
+test('a building with two doors joins the networks they stand on', () => {
+  // Surface edges 0 and 1; platform edges 100 and 101, sharing no node.
+  const network = twoNetworks([60, 60], [60, 60]);
+  const walking = buildWalkingNetwork(network,
+    [attach(1, [0]), attach(2, [101]), attach(9, [1, 100])]);
+
+  assert.equal(walking.completeness.walkingEdgesComplete, true, 'the fixture is sound');
+  const reach = walkingReachFrom(walking, 1);
+
+  assert.ok(reach.available);
+  assert.ok(reach.buildings.has(9), 'the entrance itself is reached');
+  assert.ok(reach.buildings.has(2),
+    'the workplace on the far network is reached through the entrance');
+});
+
+test('walking through a door still costs what the walk costs', () => {
+  const network = twoNetworks([60, 60], [300, 300]);
+  const walking = buildWalkingNetwork(network,
+    [attach(1, [0]), attach(2, [101]), attach(9, [1, 100])]);
+
+  const reach = walkingReachFrom(walking, 1);
+
+  // 60 m to the entrance edge, 300 m through the platform, 300 m more to the
+  // far end: past the budget whatever door it went through.
+  assert.ok(!reach.buildings.has(2), 'a passage is not a shortcut past the budget');
+});
