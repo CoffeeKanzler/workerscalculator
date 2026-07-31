@@ -505,8 +505,11 @@ def build_dataset(buildings, repo_root, loc):
         seen[sig] = True
         collision = any(k[0] == name_de and k != sig for k in seen)
         if collision:
-            name_de = f'{name_de} ({int(g["workers"])} 👷)'
-            name_en = f'{name_en} ({int(g["workers"])} 👷)'
+            # Spelled out rather than pictured: the worker emoji has no glyph
+            # in the shipped font stack and rendered as an empty box, which told
+            # the reader neither "workers" nor anything else.
+            name_de = f'{name_de} ({int(g["workers"])} Arbeiter)'
+            name_en = f'{name_en} ({int(g["workers"])} workers)'
 
         # 'vehicles'/'trains' entries are service-vehicle transit markers in the
         # inis (produced AND consumed 1:1), not real economic output.

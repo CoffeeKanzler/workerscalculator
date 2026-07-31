@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=166';
+import { STRINGS } from './i18n.js?v=168';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -711,6 +711,38 @@ document.addEventListener('visibilitychange', () => {
 });
 
 // ---------------------------------------------------------------- rendering
+// Numbers are right-aligned in their cells but their headers were not, so in a
+// wide column the header sat at the far left and its numbers at the far right.
+// Read across a row and the values appeared to belong to the column before.
+// Done here rather than at the call sites because every table in the app has
+// the problem and a new one would otherwise be born with it.
+// Ten of thirty tables were written without the .tablewrap their CSS needs to
+// scroll. Wrapping them here rather than at the call sites means a table added
+// later cannot be born without one.
+function wrapOverflowingTables(root) {
+  for (const table of root.querySelectorAll('table.data')) {
+    if (table.parentElement?.classList.contains('tablewrap')) continue;
+    const wrap = document.createElement('div');
+    wrap.className = 'tablewrap';
+    table.replaceWith(wrap);
+    wrap.appendChild(table);
+  }
+}
+
+function alignNumericHeaders(root) {
+  for (const table of root.querySelectorAll('table.data')) {
+    const headers = [...table.querySelectorAll(':scope > thead > tr:last-child > th')];
+    const rows = [...table.querySelectorAll(':scope > tbody > tr')];
+    if (!headers.length || !rows.length) continue;
+    const bodies = rows.filter(row => row.children.length === headers.length);
+    if (!bodies.length) continue;
+    headers.forEach((header, index) => {
+      const numeric = bodies.filter(row => row.children[index]?.classList.contains('r')).length;
+      if (numeric > bodies.length / 2) header.classList.add('r');
+    });
+  }
+}
+
 function decorateResponsiveTables(root) {
   for (const table of root.querySelectorAll('table.data')) {
     if (table.querySelector('input, select, textarea')) continue;
@@ -762,6 +794,8 @@ function render() {
     ...(state.observationPersistenceError ? [el('p', { class: 'neg', role: 'alert' }, state.observationPersistenceError)] : []),
     ...[renderImportActivity()].filter(Boolean),
     renderTabs(), renderCurrentTab());
+  wrapOverflowingTables(root);
+  alignNumericHeaders(root);
   decorateResponsiveTables(root);
   for (const mount of pendingChartMounts) mount();
   pendingChartMounts = [];
@@ -4569,11 +4603,17 @@ function renderEnvironment() {
   const criminalityOutlierDetails = criminalityOutliers?.residents?.length ? el('section', {
     class: 'secondary-section',
   },
+    // The heading counts every outlier the save holds. The line under it says
+    // how many of those could be placed and how many are shown, because the
+    // three numbers used to appear as two unrelated fractions.
     el('h2', {}, `${t('highCriminalityResidents')} (`
-      + `${fmt(criminalityOutliers.residents.length, 0)} / ${fmt(criminalityOutliers.locatedOutlierCount, 0)})`),
+      + `${fmt(criminalityOutliers.locatedOutlierCount + criminalityOutliers.unlocatedOutlierCount, 0)})`),
     el('p', { class: 'hint' }, t('criminalityOutlierRule')
       .replace('{average}', fmt(criminalityOutliers.averageCriminality * 100, 2))
       .replace('{threshold}', fmt(criminalityOutliers.threshold * 100, 2))),
+    el('p', { class: 'hint' }, t('criminalityOutlierShown')
+      .replace('{shown}', fmt(criminalityOutliers.residents.length, 0))
+      .replace('{located}', fmt(criminalityOutliers.locatedOutlierCount, 0))),
     criminalityOutliers.unlocatedOutlierCount ? el('p', { class: 'hint warn' },
       t('unlocatedCriminalityOutliers').replace('{count}', fmt(criminalityOutliers.unlocatedOutlierCount, 0))) : null,
     el('div', { class: 'tablewrap' }, el('table', { class: 'data' },

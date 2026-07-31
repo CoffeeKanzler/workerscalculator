@@ -131,6 +131,9 @@ table.data {
 }
 table.data th, table.data td { padding: 5px 8px; border-bottom: 1px solid var(--border); text-align: left; }
 table.data th { background: var(--panel2); color: var(--accent2); font-weight: 600; white-space: nowrap; position: sticky; top: 0; }
+/* Set by alignNumericHeaders: a header over right-aligned numbers has to be
+   right-aligned too, or it drifts away from the column it names. */
+table.data th.r { text-align: right; }
 table.data tr:hover td { background: rgba(255,255,255,0.025); }
 table.data .r { text-align: right; font-variant-numeric: tabular-nums; }
 table.wide { font-size: 13px; }
@@ -581,11 +584,14 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 /* Ten of thirty data tables were built without the scroll wrapper, and one of
    them was cut off mid-header at 1440 px. A table that can outgrow its column
    scrolls on its own rather than depending on every call site remembering. */
-.tablewrap,
-table.data { max-width: 100%; overflow-x: auto; }
-table.data { display: block; }
-table.data > thead,
-table.data > tbody { display: table; width: 100%; }
+/* The scroll lives on the wrapper, never on the table. Making table.data
+   itself `display: block` with `display: table` on thead and tbody did stop the
+   overflow, but it also made head and body two independent tables: each sized
+   its columns alone, so a header no longer stood above the numbers it named.
+   wrapOverflowingTables() gives every table a wrapper instead, so no call site
+   has to remember one and the table stays a table. */
+.tablewrap { max-width: 100%; overflow-x: auto; }
+table.data { max-width: 100%; }
 
 .map-toolbar { display: flex; flex-wrap: wrap; align-items: end; gap: 10px 18px; margin: 0 0 10px; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--panel); }
 .map-toolbar fieldset { display: flex; flex-wrap: wrap; gap: 6px 14px; min-width: min(100%, 620px); margin: 0; padding: 5px 8px 8px; border: 1px solid var(--border); border-radius: 6px; }
