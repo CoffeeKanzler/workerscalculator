@@ -151,6 +151,7 @@ export function mountRepublicLeafletMap(container, options) {
     roads: layerGroup(),
     rails: layerGroup(),
     pedestrian: layerGroup(),
+    power: layerGroup(),
     transport: layerGroup(),
     footprints: layerGroup(),
     buildings: layerGroup(),
@@ -193,6 +194,15 @@ export function mountRepublicLeafletMap(container, options) {
   });
   addNetwork('pedestrian', model.pedestrian, {
     color: palette.pedestrian, weight: 1, opacity: 0.76,
+  });
+  // The grid, drawn as one layer with the two voltages told apart by weight:
+  // high tension carries between plants and substations, low tension from a
+  // substation into the streets around it.
+  addNetwork('power', model.powerLow, {
+    color: palette.warn, weight: 1.2, opacity: 0.75, dashArray: '4 3',
+  });
+  addNetwork('power', model.powerHigh, {
+    color: palette.warn, weight: 2.4, opacity: 0.9,
   });
 
   const transportRecords = (transportLines ?? []).map(line => {
@@ -377,7 +387,7 @@ export function mountRepublicLeafletMap(container, options) {
     container.dataset.mapCenter = `${center.lat.toFixed(4)},${center.lng.toFixed(4)}`;
   }
 
-  for (const key of ['water', 'pollution', 'radiation', 'roads', 'rails', 'pedestrian', 'transport', 'scopes', 'walkReach']) {
+  for (const key of ['water', 'pollution', 'radiation', 'roads', 'rails', 'pedestrian', 'power', 'transport', 'scopes', 'walkReach']) {
     updateLayer(key);
   }
   groups.footprints.addTo(map);

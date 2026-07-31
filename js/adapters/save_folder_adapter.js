@@ -1,6 +1,6 @@
 import { resolveVehicleModels } from '../fleet.js?v=4';
-import { latestProductivity } from '../save_model.js?v=16';
-import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=11';
+import { latestProductivity } from '../save_model.js?v=18';
+import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=12';
 import { readWorkshopIndex } from '../models/workshop_index.js?v=2';
 
 const REQUIRED_FILES = ['namepoints.bin', 'buildings_game.bin'];
@@ -21,6 +21,8 @@ const DEFERRED_MAP_FILES = {
   rail: 'rail.bin',
   pedestrian: 'pedestrianway.bin',
   cableway: 'cableway.bin',
+  powerHigh: 'electro_high.bin',
+  powerLow: 'electro_low.bin',
   heightmap: 'heightmap.dds',
   pollution: 'pollution.bin',
 };
@@ -204,7 +206,7 @@ export function parseSaveInWorker(payload, {
 
 export function parseMapLayersInWorker(files, {
   WorkerClass = globalThis.Worker,
-  workerUrl = new URL('../savegame_map_worker.js?v=13', import.meta.url),
+  workerUrl = new URL('../savegame_map_worker.js?v=15', import.meta.url),
   onProgress,
   // Sea level comes from the buildings' own saved heights, which the map files
   // alone cannot supply.

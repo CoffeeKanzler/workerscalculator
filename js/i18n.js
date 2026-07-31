@@ -421,6 +421,7 @@ export const STRINGS = {
 
     workerAccessAdults: 'Erwachsene',
     dismiss: 'Schließen',
+    mapPowerLines: 'Stromleitungen',
     workerAccessHint: 'Knoten anklicken, um zu öffnen, was daran hängt · Doppelklick startet von dort neu · ziehen zum Verschieben, scrollen zum Zoomen',
     workerAccessFit: 'Alles einpassen',
     zoomIn: 'Vergrößern',
@@ -918,6 +919,7 @@ export const STRINGS = {
 
     workerAccessAdults: 'adults',
     dismiss: 'Dismiss',
+    mapPowerLines: 'Power lines',
     workerAccessHint: 'Click a node to open what connects to it · double-click to start again from there · drag to pan, scroll to zoom',
     workerAccessFit: 'Fit everything',
     zoomIn: 'Zoom in',

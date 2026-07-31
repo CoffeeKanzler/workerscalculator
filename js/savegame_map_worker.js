@@ -8,6 +8,8 @@ const sources = [
   ['rail', 'railNetwork', buffer => parseRoadNetwork(buffer)],
   ['pedestrian', 'pedestrianNetwork', buffer => parseRoadNetwork(buffer)],
   ['cableway', 'cablewayNetwork', buffer => parseRoadNetwork(buffer)],
+  ['powerHigh', 'powerHighNetwork', buffer => parseRoadNetwork(buffer)],
+  ['powerLow', 'powerLowNetwork', buffer => parseRoadNetwork(buffer)],
   ['heightmap', 'terrainWater', (buffer, data) =>
     parseHeightmapWater(buffer, { buildingHeights: data.buildingHeights ?? null })],
 ];

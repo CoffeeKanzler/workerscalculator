@@ -79,5 +79,6 @@ test('malformed input is treated as nothing to report', () => {
 
 test('every deferred map layer is a known key', () => {
   assert.deepEqual([...MAP_LAYER_KEYS].sort(),
-    ['cableway', 'heightmap', 'pedestrian', 'pollution', 'rail', 'road'].sort());
+    ['cableway', 'heightmap', 'pedestrian', 'pollution', 'powerHigh', 'powerLow',
+      'rail', 'road'].sort());
 });

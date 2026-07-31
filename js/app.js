@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=162';
+import { STRINGS } from './i18n.js?v=164';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -34,7 +34,7 @@ import { planningAreas } from './models/planning_areas.js';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
-import { mapLayerReport } from './models/map_layer_report.js?v=2';
+import { mapLayerReport } from './models/map_layer_report.js?v=4';
 import {
   CATEGORY_MARKS, buildTypeCategoryIndex, categoryForSaveType,
 } from './models/building_category.js?v=6';
@@ -44,7 +44,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   filterCitizenDiagnostics, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=37';
+} from './save_model.js?v=39';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
@@ -54,7 +54,7 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=32';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=34';
 import { workerAccessAvailability } from './models/access_graph.js?v=20';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=20';
 import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=17';
@@ -83,9 +83,9 @@ import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=15';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=11';
-import { bootstrapRuntime } from './bootstrap.js?v=6';
+} from './adapters/save_folder_adapter.js?v=17';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=12';
+import { bootstrapRuntime } from './bootstrap.js?v=7';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
@@ -2298,6 +2298,7 @@ function renderSaveImport() {
     vehicles: 'vehicles.bin', usedVehicles: 'usedveh.bin', lines: 'lines.bin',
     road: 'road.bin', rail: 'rail.bin', pedestrian: 'pedestrianway.bin',
     cableway: 'cableway.bin',
+    powerHigh: 'electro_high.bin', powerLow: 'electro_low.bin',
     heightmap: 'heightmap.dds', pollution: 'pollution.bin',
     header: 'header.bin', research: 'research.bin', events: 'events.bin', stats: 'stats.ini',
     material: 'material.mtl',
@@ -3326,6 +3327,8 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         layerToggle('roads', t('roads'), !!model.roads.length),
         layerToggle('rails', t('rails'), !!model.rails.length),
         layerToggle('pedestrian', t('pedestrianPaths'), !!model.pedestrian.length),
+        layerToggle('power', t('mapPowerLines'),
+          !!(model.powerHigh?.length || model.powerLow?.length)),
         layerToggle('walkReach', t('mapWalkReachLayer'), walkingAvailable),
         layerToggle('transport', t('savedTransportLines'), !!transportLines.length),
         layerToggle('buildings', t('buildings')),
@@ -3716,6 +3719,8 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     roadNetwork: state.saveImport?.roadNetwork,
     railNetwork: state.saveImport?.railNetwork,
     pedestrianNetwork: standalone ? state.saveImport?.pedestrianNetwork : null,
+    powerHighNetwork: standalone ? state.saveImport?.powerHighNetwork : null,
+    powerLowNetwork: standalone ? state.saveImport?.powerLowNetwork : null,
     terrainWater: state.saveImport?.terrainWater,
     pollutionLayer: state.saveImport?.pollutionLayer,
     footprints: standalone ? DATA.buildingFootprints : null,
@@ -3724,7 +3729,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   const layers = standalone ? {
     water: true, pollution: true, radiation: false, roads: true, rails: true, pedestrian: false, buildings: true,
     transport: false, construction: true, scopes: true, borders: true, outliers: true, walkReach: true,
-    footprints: true,
+    footprints: true, power: false,
     ...(state.mapLayers ?? {}),
   } : {
     water: true, pollution: false, radiation: false, roads: true, rails: true, pedestrian: false, buildings: true,
@@ -6310,6 +6315,9 @@ async function restoreNamedMapLayers() {
   }
   if (!state.saveImport.cablewayNetwork && candidate.cablewayNetwork) {
     state.saveImport.cablewayNetwork = candidate.cablewayNetwork;
+  }
+  for (const key of ['powerHighNetwork', 'powerLowNetwork']) {
+    if (!state.saveImport[key] && candidate[key]) state.saveImport[key] = candidate[key];
   }
   if (!state.saveImport.terrainWater && candidate.terrainWater) state.saveImport.terrainWater = candidate.terrainWater;
   if (!state.saveImport.pollutionLayer && candidate.pollutionLayer) {
