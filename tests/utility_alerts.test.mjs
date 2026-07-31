@@ -122,3 +122,47 @@ test('only waste counts towards fullness', () => {
     buildings: [wasteStore(1, 100, [['wood', 99]], { configuredWorkers: 2 })],
   }), []);
 });
+
+// Clusters are what the overview shows, so the grouping is part of the contract.
+test('alerts cluster by the kind of problem, not by filter category', async () => {
+  const { alertGroup, groupRepublicAlerts } = await import('../js/republic.js');
+  assert.equal(alertGroup({ metric: 'power.unpowered' }), 'power');
+  assert.equal(alertGroup({ metric: 'water.missing' }), 'water');
+  assert.equal(alertGroup({ metric: 'waste.full' }), 'waste');
+  assert.equal(alertGroup({ metric: 'access.unreachable' }), 'access');
+  assert.equal(alertGroup({ metric: 'buffer.input' }), 'buffers');
+  // All four share the 'coverage' filter category, which is why the overview
+  // cannot summarise with it: it would say "30 coverage" and name nothing.
+  const category = (await import('../js/republic.js')).alertCategory;
+  for (const metric of ['power.unpowered', 'water.missing', 'heat.missing', 'waste.full']) {
+    assert.equal(category({ metric }), 'coverage');
+  }
+});
+
+test('a cluster carries the worst severity in it and the biggest goes first', async () => {
+  const { groupRepublicAlerts } = await import('../js/republic.js');
+  const groups = groupRepublicAlerts([
+    { metric: 'buffer.input', severity: 'warning' },
+    { metric: 'buffer.output', severity: 'warning' },
+    { metric: 'buffer.input', severity: 'warning' },
+    { metric: 'water.missing', severity: 'warning' },
+    { metric: 'water.missing', severity: 'critical' },
+  ]);
+  assert.deepEqual(groups, [
+    { group: 'water', count: 2, severity: 'critical' },
+    { group: 'buffers', count: 3, severity: 'warning' },
+  ]);
+});
+
+test('every cluster is named in both languages', async () => {
+  const { alertGroup } = await import('../js/republic.js');
+  const metrics = ['power.unpowered', 'water.missing', 'heat.missing', 'waste.full',
+    'access.unreachable', 'staffing', 'netWorkers', 'health', 'food',
+    'buffer.input', 'trend.debt', 'coverage.workers', 'whatever'];
+  for (const metric of metrics) {
+    for (const [lang, table] of Object.entries(STRINGS)) {
+      const key = `alertGroup.${alertGroup({ metric })}`;
+      assert.ok(table[key], `${lang} is missing ${key}`);
+    }
+  }
+});

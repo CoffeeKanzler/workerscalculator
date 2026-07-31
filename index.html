@@ -8,10 +8,15 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='13' font-size='13'%3E%E2%98%AD%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/vendor/leaflet.css?v=3">
   <link rel="stylesheet" href="css/vendor/uPlot.min.css?v=3">
-  <link rel="stylesheet" href="css/style.css?v=116">
+  <link rel="stylesheet" href="css/style.css?v=121">
 </head>
 <body>
-  <div id="app"><noscript>This planner needs JavaScript.</noscript>⏳</div>
+  <div id="app"><noscript>This planner needs JavaScript.</noscript>
+    <div class="app-boot" data-app-boot role="status" aria-live="polite">
+      <span class="app-boot-mark" aria-hidden="true"></span>
+      <p class="app-boot-text">Loading all republic data…</p>
+    </div>
+  </div>
   <!-- The module graph cannot rescue itself. If a browser is holding a cached
        copy of one module and a fresh copy of another, the two may no longer
        agree on what is exported, and the whole graph fails to link: nothing
@@ -19,6 +24,12 @@
        script imports nothing, so it always runs, and it reloads once past the
        cache. One retry only, so a genuine fault still surfaces. -->
   <script>
+    (function () {
+      if ((navigator.language || '').toLowerCase().indexOf('de') === 0) {
+        var line = document.querySelector('.app-boot-text');
+        if (line) line.textContent = 'Alle Republikdaten werden geladen \u2026';
+      }
+    }());
     (function () {
       var KEY = 'appBootRetry';
       var retried = sessionStorage.getItem(KEY);
@@ -39,12 +50,12 @@
         // A graph that never linked leaves the placeholder exactly as served.
         setTimeout(function () {
           var app = document.getElementById('app');
-          if (app && app.childElementCount <= 1 && app.textContent.indexOf('\u23F3') !== -1) recover('stalled');
+          if (app && app.querySelector('[data-app-boot]')) recover('stalled');
         }, 8000);
       });
       window.addEventListener('appready', function () { sessionStorage.removeItem(KEY); });
     }());
   </script>
-  <script type="module" src="js/app.js?v=314"></script>
+  <script type="module" src="js/app.js?v=317"></script>
 </body>
 </html>

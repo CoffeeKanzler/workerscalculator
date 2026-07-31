@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=175';
+import { STRINGS } from './i18n.js?v=178';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -47,8 +47,8 @@ import {
 } from './save_model.js?v=41';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
-  alertCategory, filterRepublicAlerts,
-} from './republic.js?v=20';
+  alertCategory, alertGroup, filterRepublicAlerts, groupRepublicAlerts,
+} from './republic.js?v=22';
 import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
@@ -106,7 +106,7 @@ const SHARE_KEYS = ['lang', 'theme', 'currency', 'priceSource', 'decade', 'overr
   'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'dataset',
   'chains', 'activeChain', 'tuning', 'productionScope', 'saveImport', 'republicView',
   'buildingOverrides', 'customBuildings',
-  'republicRange', 'republicResource', 'republicScope', 'mapLayers', 'mapBuildingFilter',
+  'republicRange', 'republicResource', 'republicScope', 'republicAlertGroup', 'mapLayers', 'mapBuildingFilter',
   'mapPollutionOpacity', 'mapMetric', 'mapCategoryVisibility', 'republicAlertFilter',
   'accessAlertsMuted', 'tab'];
 const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex'];
@@ -5209,13 +5209,15 @@ function renderAlertsTab() {
   const scopeInfo = new Map(plannerScopes().map(scope => [scope.id, scope]));
   const mappableScopeIds = new Set((state.saveImport?.observedBuildings ?? [])
     .map(building => building.scopeId).filter(Number.isInteger));
+  const grouped = state.republicAlertGroup
+    ? alerts.filter(alert => alertGroup(alert) === state.republicAlertGroup) : alerts;
   const alertCategories = ['workforce', 'needs', 'buffers', 'coverage'];
   if (!['all', ...alertCategories].includes(state.republicAlertFilter)) {
     state.republicAlertFilter = 'all';
   }
   const categoryCounts = new Map(alertCategories.map(category => [category,
-    alerts.filter(alert => alertCategory(alert) === category).length]));
-  const filteredAlerts = filterRepublicAlerts(alerts, state.republicAlertFilter);
+    grouped.filter(alert => alertCategory(alert) === category).length]));
+  const filteredAlerts = filterRepublicAlerts(grouped, state.republicAlertFilter);
   const alertPresentation = visibleRepublicAlerts(filteredAlerts, {
     expanded: state.republicAlertsExpanded,
   });
@@ -5278,11 +5280,23 @@ function renderAlertsTab() {
         alertAction(alert))))
     : [el('p', { class: 'hint pos' }, t('noAlerts'))];
   const alertList = el('div', { class: 'alert-list' },
-    el('h3', {}, state.republicAlertFilter === 'all'
+    el('h3', {}, filteredAlerts.length === alerts.length
       ? `${t('attention')} (${fmt(alerts.length, 0)})`
       : `${t('attention')} (${fmt(filteredAlerts.length, 0)} / ${fmt(alerts.length, 0)})`),
-    alerts.length > 8 ? el('div', { class: 'settingsbar alert-filters' },
-      ...[['all', alerts.length], ...alertCategories.map(category =>
+    // Arriving from a cluster, the reader has to be told what they are looking
+    // at and be able to get back out of it.
+    state.republicAlertGroup ? el('div', { class: 'alert-group-chip' },
+      el('span', {}, t(`alertGroup.${state.republicAlertGroup}`)),
+      el('button', {
+        class: 'secondary', 'data-clear-alert-group': state.republicAlertGroup,
+        onclick: () => {
+          state.republicAlertGroup = null;
+          state.republicAlertsExpanded = false;
+          update();
+        },
+      }, t('showAllKinds'))) : null,
+    grouped.length > 8 ? el('div', { class: 'settingsbar alert-filters' },
+      ...[['all', grouped.length], ...alertCategories.map(category =>
         [category, categoryCounts.get(category)])].filter(([, count]) => count > 0).map(([category, count]) =>
         el('button', {
           class: state.republicAlertFilter === category ? 'active' : '',
@@ -5833,17 +5847,34 @@ function renderRepublic() {
       // The overview carries only what cannot wait, so a republic in trouble is
       // visible without changing section. The full list, with filters and
       // silencing, is the Diagnose tab's job.
+      // Counted by kind rather than listed. Five raw criticals said less than
+      // "11 buildings held no water" does, and each tile opens the full list
+      // already narrowed to the thing it names.
       (() => {
-        const critical = alerts.filter(alert => alert.severity === 'critical');
+        const groups = groupRepublicAlerts(alerts);
         return el('div', { class: 'alert-list overview-alerts' },
           el('h3', {}, `${t('attention')} (${fmt(alerts.length, 0)})`),
-          ...(critical.length ? critical.slice(0, 5).map(alert => el('div', { class: 'alert critical' },
-            el('strong', {}, alert.scopeName || t('republicOverview')),
-            el('span', {}, t(`alert.${alert.metric}`))))
-            : [el('p', { class: 'hint pos' }, t('noCriticalAlerts'))]),
+          groups.length ? el('div', { class: 'alert-clusters' }, ...groups.map(group =>
+            el('button', {
+              class: `alert-cluster ${group.severity}`,
+              'data-alert-group': group.group,
+              onclick: () => {
+                state.tab = 'alerts';
+                state.republicAlertGroup = group.group;
+                state.republicAlertFilter = 'all';
+                state.republicAlertsExpanded = false;
+                update();
+              },
+            }, el('span', { class: 'alert-cluster-count' }, fmt(group.count, 0)),
+            el('span', { class: 'alert-cluster-name' }, t(`alertGroup.${group.group}`)))))
+            : el('p', { class: 'hint pos' }, t('noCriticalAlerts')),
           el('button', {
             class: 'secondary',
-            onclick: () => { state.tab = 'alerts'; update(); },
+            onclick: () => {
+              state.tab = 'alerts';
+              state.republicAlertGroup = null;
+              update();
+            },
           }, t('openAllAlerts').replace('{count}', fmt(alerts.length, 0))));
       })(),
       institutionOverview,

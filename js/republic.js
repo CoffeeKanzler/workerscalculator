@@ -268,6 +268,47 @@ export function visibleRepublicAlerts(alerts, { expanded = false, limit = 8 } = 
   return { visible, total: source.length, hiddenCount: source.length - visible.length };
 }
 
+// Alerts cluster tighter than they categorise. "Coverage" holds electricity,
+// water, heating, waste and missing files at once, which is the right filter but
+// a useless summary: the overview needs to say "11 buildings held no water", not
+// "30 coverage findings". A group is one kind of problem, named in one phrase.
+const ALERT_GROUPS = [
+  ['power.unpowered', 'power'],
+  ['water.missing', 'water'],
+  ['heat.missing', 'heat'],
+  ['waste.full', 'waste'],
+  ['staffing', 'staffing'],
+  ['netWorkers', 'workers'],
+  ['health', 'health'],
+  ['food', 'food'],
+];
+
+export function alertGroup(alert) {
+  const metric = String(alert?.metric ?? '');
+  for (const [exact, group] of ALERT_GROUPS) if (metric === exact) return group;
+  if (metric.startsWith('access.')) return 'access';
+  if (metric.startsWith('buffer.')) return 'buffers';
+  if (metric.startsWith('trend.')) return 'trend';
+  if (metric.startsWith('coverage.')) return 'coverage';
+  return 'other';
+}
+
+// Worst severity first, then the biggest cluster: an overview reads top-left.
+export function groupRepublicAlerts(alerts = []) {
+  const rank = { critical: 0, warning: 1 };
+  const groups = new Map();
+  for (const alert of alerts) {
+    const key = alertGroup(alert);
+    const entry = groups.get(key) ?? { group: key, count: 0, severity: 'warning' };
+    entry.count += 1;
+    if (rank[alert.severity] < rank[entry.severity]) entry.severity = alert.severity;
+    groups.set(key, entry);
+  }
+  return [...groups.values()].sort((a, b) => rank[a.severity] - rank[b.severity]
+    || b.count - a.count
+    || a.group.localeCompare(b.group));
+}
+
 export function alertCategory(alert) {
   const metric = String(alert?.metric ?? '');
   if (metric === 'staffing' || metric === 'netWorkers' || metric.startsWith('access.')) {

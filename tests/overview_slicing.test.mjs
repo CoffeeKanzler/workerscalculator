@@ -88,14 +88,17 @@ test('the overview keeps what someone reads first', async () => {
   const republic = source.slice(source.indexOf('function renderRepublic()'));
   const body = republic.slice(0, republic.indexOf('\nfunction '));
 
-  // Identity, the critical alerts and the area table are the overview. The
-  // filterable list moved to Diagnose, but a republic in trouble still has to
-  // be visible here without changing section, so the criticals stay.
+  // Identity, the alert clusters and the area table are the overview. The
+  // filterable list moved to Diagnose, but a republic in trouble still has to be
+  // visible here without changing section, so the counts by kind stay — and each
+  // one opens the list already narrowed to what it names.
   assert.match(body, /areaTable/);
-  assert.match(body, /severity === 'critical'/);
+  assert.match(body, /groupRepublicAlerts/);
+  assert.match(body, /republicAlertGroup = group\.group/);
   assert.match(body, /openAllAlerts/);
-  // ...and the full list is built once, over there.
-  assert.doesNotMatch(body, /republicAlertFilter/);
+  // The overview counts alerts; it does not build the list. Setting a filter on
+  // the way out is not building one, so the marker is the list itself.
+  assert.doesNotMatch(body, /filterRepublicAlerts/);
   const alertsTab = source.slice(source.indexOf('function renderAlertsTab()'));
-  assert.match(alertsTab.slice(0, alertsTab.indexOf('\nfunction ')), /republicAlertFilter/);
+  assert.match(alertsTab.slice(0, alertsTab.indexOf('\nfunction ')), /filterRepublicAlerts/);
 });

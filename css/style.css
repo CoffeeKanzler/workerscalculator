@@ -720,6 +720,26 @@ table.data { max-width: 100%; }
 .import-activity.warn { border-color: var(--warn); color: var(--warn); }
 .import-activity button { margin-left: auto; }
 .import-activity button + button { margin-left: 10px; }
+/* The first thing anyone sees, before a single module has linked. It used to be
+   a bare hourglass character in the corner, which says neither what is happening
+   nor that anything is. Centred, named, and it announces itself to a screen
+   reader; the app replaces the whole block on its first render. */
+/* Counts by kind, worst first. Each tile is a button because each one opens the
+   full list already narrowed to what it names. */
+.alert-group-chip { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; padding: 6px 10px; border: 1px solid var(--accent2); border-radius: 6px; background: var(--panel); font-size: 13px; }
+.alert-clusters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
+.alert-cluster { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-left-width: 4px; border-radius: 6px; background: var(--panel); color: var(--text); cursor: pointer; text-align: left; }
+.alert-cluster:hover { border-color: var(--accent2); }
+.alert-cluster.critical { border-left-color: var(--neg); }
+.alert-cluster.warning { border-left-color: var(--warn); }
+.alert-cluster-count { font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.alert-cluster-name { color: var(--muted); font-size: 12px; }
+@media (max-width: 620px) { .alert-cluster { flex: 1 1 44%; } }
+
+.app-boot { display: grid; place-content: center; justify-items: center; gap: 14px; min-height: 70vh; padding: 24px; text-align: center; }
+.app-boot-mark { width: 30px; height: 30px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: import-spin .8s linear infinite; }
+.app-boot-text { margin: 0; color: var(--muted); font-size: 15px; letter-spacing: .02em; }
+@media (prefers-reduced-motion: reduce) { .app-boot-mark { animation: none; border-top-color: var(--accent); } }
 .import-spinner { width: 15px; height: 15px; flex: 0 0 auto; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: import-spin .8s linear infinite; }
 @keyframes import-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .import-spinner { animation: none; border-top-color: var(--border); background: var(--accent); } }
