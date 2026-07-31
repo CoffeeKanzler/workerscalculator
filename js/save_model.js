@@ -839,14 +839,22 @@ export function isNonPlannerSupportType(type) {
 }
 
 // Everything that stands on the frontier rather than in the republic: customs
-// houses of every pack and mod, rail and road checkpoints, and the transformer
-// that carries an electricity contract across the border. They are excluded
-// from "fit the developed area", which otherwise framed a customs post 20 km
-// from town and left the republic itself a smudge in one corner.
-const FRONTIER_FRAGMENTS = [
-  'customhouse', 'customs', 'customin', 'customout',
-  'border_post', 'borderpost', 'checkpoint',
-];
+// houses, and the transformers an electricity contract crosses the border on.
+// They are excluded from "fit the developed area", which otherwise framed a
+// customs post 20 km from town and left the republic a smudge in one corner.
+//
+// Taken from the game's own building-type enum rather than from names. The ini
+// parser assigns $TYPE_CUSTOMHOUSE 20, $TYPE_ELETRIC_EXPORT 31 and
+// $TYPE_ELETRIC_IMPORT 32, and the save stores that number plus one. Matching on
+// names instead was wrong both ways on every test save: it called
+// eletric_transformator_customin a customs house when it is an electricity
+// export, it called a mod's Checkpoint_Rail one when it is a passenger station,
+// and it missed the zoll_air markers that really are customs houses.
+const FRONTIER_SAVED_TYPES = new Set([21, 32, 33]);
+
+// Older snapshots were stored before the type was kept, so the names still
+// answer when the number is missing.
+const FRONTIER_FRAGMENTS = ['customhouse', 'customs', 'border_post', 'borderpost'];
 
 export function isBorderPostType(type) {
   const clean = String(type ?? '')
@@ -858,6 +866,13 @@ export function isBorderPostType(type) {
   if (clean.startsWith('zoll_air_')) return false;
   if (clean.startsWith('zoll_')) return true;
   return FRONTIER_FRAGMENTS.some(fragment => clean.includes(fragment));
+}
+
+export function isFrontierBuilding(building) {
+  if (isExternalAirLinkType(building?.type)) return false;
+  return Number.isFinite(building?.savedTypePlusOne)
+    ? FRONTIER_SAVED_TYPES.has(building.savedTypePlusOne)
+    : isBorderPostType(building?.type);
 }
 
 export function isExternalAirLinkType(type) {

@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=164';
+import { STRINGS } from './i18n.js?v=166';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -43,12 +43,12 @@ import { isTheme, nextTheme, resolveTheme, themeAttribute } from './ui/theme.js?
 import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
-  filterCitizenDiagnostics, isBorderPostType, isExternalAirLinkType,
-} from './save_model.js?v=39';
+  filterCitizenDiagnostics, isBorderPostType, isFrontierBuilding, isExternalAirLinkType,
+} from './save_model.js?v=41';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
-} from './republic.js?v=14';
+} from './republic.js?v=16';
 import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
@@ -61,6 +61,7 @@ import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=
 import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=10';
 import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
 import { workerAccessAlerts } from './models/access_alerts.js?v=3';
+import { unpoweredBuildingAlerts } from './models/power_alerts.js?v=3';
 import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';
 import { buildingHeightSamples } from './models/water_level.js?v=3';
 import { transitReachFrom } from './models/transit_reach.js?v=4';
@@ -83,8 +84,8 @@ import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=17';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=12';
+} from './adapters/save_folder_adapter.js?v=18';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=13';
 import { bootstrapRuntime } from './bootstrap.js?v=7';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
@@ -3165,7 +3166,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
       }),
       areaName: scopeNames.get(building.scopeId) ?? t('unassigned'),
       markScale: CATEGORY_MARKS[category]?.scale ?? CATEGORY_MARKS.other.scale,
-      borderPost: isBorderPostType(building.type),
+      borderPost: isFrontierBuilding(building),
       outlier: !!building.criminalityOutlier,
       underConstruction: (building.constructionProgress ?? 1) < 1,
       selected: building.scopeId === state.republicScope,
@@ -3786,7 +3787,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     });
   };
   const developedBuildings = model.buildings.filter(building =>
-    !isBorderPostType(building.type) && !isExternalAirLinkType(building.type));
+    !isFrontierBuilding(building) && !isExternalAirLinkType(building.type));
   const developedViewBox = fitView(developedBuildings, { minimumWidth: 95, marginRatio: 0.08 });
   const scopeBuildings = Number.isInteger(mapFocusScopeId)
     ? model.buildings.filter(building => building.scopeId === mapFocusScopeId) : [];
@@ -4035,7 +4036,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     // scaffolding rather than buildings, no dataset entry describes them, and
     // they were a fifth of every marker on the map.
     if (building.type === 'temp') continue;
-    const borderPost = isBorderPostType(building.type);
+    const borderPost = isFrontierBuilding(building);
     const selected = building.scopeId === state.republicScope;
     const outlier = building.criminalityOutlier;
     const underConstruction = (building.constructionProgress ?? 1) < 1;
@@ -4142,7 +4143,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     el('span', {}, `${t('mappedBuildings')}: ${fmt(scopeBuildings.length, 0)}`),
     el('span', {}, `${t('underConstruction')}: ${fmt(scopeUnderConstruction, 0)}`),
     el('span', { class: 'evidence-badge exact' }, t('exact'))) : null;
-  const borderPosts = model.buildings.filter(building => isBorderPostType(building.type));
+  const borderPosts = model.buildings.filter(building => isFrontierBuilding(building));
   const legend = el('div', { class: 'map-legend' },
     model.water ? el('span', { 'data-map-legend': 'water' }, el('i', { class: 'water' }), t('waterFootprint')) : null,
     model.pollution ? el('span', {
@@ -4182,7 +4183,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
         },
       }), ' ', label) : null;
     const buildingTypes = [...new Map(model.buildings
-      .filter(building => !isBorderPostType(building.type) && !isExternalAirLinkType(building.type))
+      .filter(building => !isFrontierBuilding(building) && !isExternalAirLinkType(building.type))
       .map(building => [building.type, {
         type: building.type, label: mapBuildingDisplayName(building),
       }])).values()].sort((a, b) => a.label.localeCompare(b.label) || a.type.localeCompare(b.type));
@@ -5242,8 +5243,16 @@ function renderRepublic() {
     scopeNameFor: plannerScopeName,
     muted: state.accessAlertsMuted ?? [],
   });
+  const powerAlerts = unpoweredBuildingAlerts({
+    buildings: state.saveImport?.observedBuildings ?? [],
+    occupiedResidences: (state.saveImport?.residenceOccupancy ?? [])
+      .filter(row => (row.residents ?? 0) > 0).map(row => row.buildingIndex),
+    labelFor: mapBuildingDisplayName,
+    scopeNameFor: plannerScopeName,
+    muted: state.accessAlertsMuted ?? [],
+  });
   const alerts = [...republicAlerts(republicModel), ...trendAlerts, ...bufferAlerts,
-    ...accessAlerts].sort((a, b) =>
+    ...accessAlerts, ...powerAlerts].sort((a, b) =>
     severityOrder[a.severity] - severityOrder[b.severity]
       || (a.observed ?? Infinity) - (b.observed ?? Infinity)
       || String(a.scopeName).localeCompare(String(b.scopeName)));
@@ -5468,7 +5477,7 @@ function renderRepublic() {
     update();
   };
   const alertAction = alert => {
-    if (alert.metric?.startsWith('access.')) {
+    if (alert.metric?.startsWith('access.') || alert.metric?.startsWith('power.')) {
       return el('span', { class: 'alert-actions' },
         el('button', { onclick: () => locateBuildingOnMap(alert.buildingIndex, alert.scopeId) },
           t('locateOnMap')),
@@ -5501,6 +5510,8 @@ function renderRepublic() {
   const alertItems = filteredAlerts.length ? alertPresentation.visible.map(alert => el('div', { class: `alert ${alert.severity}` },
       el('strong', {}, alert.scopeName || t('republicOverview')),
       el('span', {}, t(`alert.${alert.metric}`),
+        alert.metric?.startsWith('power.') && alert.areaName ? el('span', { class: 'alert-trend' },
+          ` · ${alert.areaName}`) : null,
         alert.metric?.startsWith('access.') ? el('span', { class: 'alert-trend' },
           ` · ${fmt(alert.reachableAdults, 0)} / ${fmt(alert.slots, 0)} `
           + `${t('accessAlertReachable')}${alert.areaName ? ` · ${alert.areaName}` : ''}`) : null,

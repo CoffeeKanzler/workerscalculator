@@ -10,7 +10,8 @@ import {
   summarizeResidenceOccupancy, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   isNonPlannerSupportType,
-  isBorderPostType, isExternalAirLinkType,
+  isBorderPostType,
+  isFrontierBuilding, isExternalAirLinkType,
 } from '../js/save_model.js';
 
 test('citizen diagnostics separate exact resident facts from known housing capacity', () => {
@@ -158,30 +159,31 @@ test('border posts remain a distinct exact map type', () => {
   assert.equal(isBorderPostType('CWC_SecretPoliceSmall'), false);
 });
 
-// Everything on the frontier, whatever pack or mod named it. These were counted
-// as ordinary buildings, so "fit the developed area" framed a customs post 20 km
-// from town and left the republic a smudge in the corner: on one save the fitted
-// box ran z -9779..9841, against -9726..-3641 once they are out of it. The
-// standalone map used to exclude one of these types by name at the call site,
-// which is the same fix made in the wrong place.
-test('customs houses and checkpoints stand on the border, not in the republic', () => {
-  for (const type of [
-    'DLC3_customs_medium', 'DLC3_customs_big', 'MIRRORZ_DLC3_customs_big',
-    'customhouse_small', 'eletric_transformator_customin',
-    '2041250003/Checkpoint_Rail', 'border_post_road',
-  ]) {
-    assert.equal(isBorderPostType(type), true, type);
-  }
-  // Things that merely sound like one, and ordinary buildings.
-  for (const type of [
-    'panelak', 'shop_prior', 'DLC3_h_farm', 'tram_stop_big',
-    'MIRRORZ_2560296003/HOUSE1', 'DLC3_police_station_small',
-  ]) {
-    assert.equal(isBorderPostType(type), false, type);
-  }
-  // The off-map marker foreign trade is booked against stays its own thing.
-  assert.equal(isBorderPostType('zoll_air_soviet'), false);
-  assert.equal(isExternalAirLinkType('zoll_air_soviet'), true);
+// The game's own building-type enum, read out of the ini parser in SOVIET64.exe:
+// $TYPE_CUSTOMHOUSE 20, $TYPE_ELETRIC_EXPORT 31, $TYPE_ELETRIC_IMPORT 32, and
+// the save stores that number plus one. Matching on names was wrong both ways —
+// it called an electricity export a customs house, called a mod's rail
+// checkpoint one when it is a passenger station, and missed the zoll_air
+// markers that really are customs houses.
+test('the frontier is read from the building type, not from its name', () => {
+  const frontier = index => ({ index, type: 'anything', savedTypePlusOne: index });
+  assert.equal(isFrontierBuilding(frontier(21)), true, 'customs house');
+  assert.equal(isFrontierBuilding(frontier(32)), true, 'electricity export');
+  assert.equal(isFrontierBuilding(frontier(33)), true, 'electricity import');
+  assert.equal(isFrontierBuilding(frontier(2)), false, 'a passenger station is not a border post');
+  assert.equal(isFrontierBuilding(frontier(9)), false, 'a field is not a border post');
+});
+
+test('the off-map trade markers are not buildings on the border', () => {
+  assert.equal(isFrontierBuilding({ type: 'zoll_air_west', savedTypePlusOne: 21 }), false);
+  assert.equal(isExternalAirLinkType('zoll_air_west'), true);
+});
+
+// Snapshots taken before the type was stored still have to answer.
+test('without a stored type the names still answer', () => {
+  assert.equal(isFrontierBuilding({ type: 'zoll_siatre' }), true);
+  assert.equal(isFrontierBuilding({ type: 'customhouse_small' }), true);
+  assert.equal(isFrontierBuilding({ type: 'panelak' }), false);
 });
 
 test('citizens aggregate through residence buildings without forced assignment', () => {
