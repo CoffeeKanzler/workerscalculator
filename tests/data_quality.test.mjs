@@ -43,11 +43,16 @@ test('explicit game construction resources override stale sheet measurements', (
   assert.equal(coal.provenance.power, 'sheet-measured');
 });
 
-test('sheet-unit heating output is not labelled as exact game production', () => {
+test('heating output is computed from the building file, and still matches what was measured', () => {
   const heating = production.find(building => building.gameId === 'heating_plant_big');
   assert.equal(heating.production[0].de, 'Heißwasser');
+  // Unchanged by the switch away from the sheet, which is the whole reason to
+  // trust the rule: 350 in the ini x 30 workers / 10 is the 1050 the community
+  // measured, and 350 x 30 / 50 is the 210 MJ the game itself publishes.
   assert.equal(heating.production[0].rate, 1050);
-  assert.equal(heating.provenance.production, 'sheet-measured');
+  // Previously sheet-measured, because it was copied from the sheet. It is now
+  // derived from the building file, so claiming otherwise would understate it.
+  assert.equal(heating.provenance.production, 'game-file');
   assert.equal(heating.provenance.consumption, 'game-file');
 
   const steel = production.find(building => building.gameId === 'steel_mill');

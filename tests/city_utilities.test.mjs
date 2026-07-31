@@ -76,11 +76,23 @@ test('the shipped catalogue still carries game-sourced supply rates', () => {
     assert.ok(building, `${name} is missing from the catalogue`);
     assert.equal(building.provenance?.production, 'game-file', `${name} production is not game-sourced`);
   }
-  // Heating is not, and the difference is recorded rather than glossed: this
-  // pins it so nothing starts claiming otherwise, in either direction.
+  // Heating too, now that the extractor computes it from the building file by
+  // the rate x workers / 10 rule rather than copying a measured figure. The
+  // rule is pinned here because it reproduces what the sheet measured for the
+  // vanilla plants, which is the reason to believe it.
   const heating = rows.find(b => b.en === 'Small heating plant');
   assert.ok(heating, 'Small heating plant is missing from the catalogue');
-  assert.equal(heating.provenance?.production, 'sheet-measured');
+  assert.equal(heating.provenance?.production, 'game-file');
+  const hotWater = name => rows.find(b => b.en === name)
+    .production.find(p => p.en === 'Hot water').rate;
+  assert.equal(hotWater('Small heating plant'), 210);            // 300 x 7 / 10
+  assert.equal(hotWater('Heating plant'), 1050);                 // 350 x 30 / 10
+  assert.equal(hotWater('Incinerator - heating plant'), 675);    // 450 x 15 / 10
+  // And it corrects the DLC plants nobody measured: these used to read 350,
+  // 210 and 210, the last two being the vanilla small plant's figure copied.
+  assert.equal(hotWater('Heating plant (20 workers)'), 700);     // 350 x 20 / 10
+  assert.equal(hotWater('Small heating plant (3 workers)'), 60); // 200 x 3 / 10
+  assert.equal(hotWater('Small heating plant (5 workers)'), 150);// 300 x 5 / 10
   const plan = cityUtilityPlan({ demand: { water: 575, hotwater: 300 }, catalogue: rows });
   for (const entry of plan) {
     assert.ok(entry.chosen, `nothing supplies ${entry.kind}`);

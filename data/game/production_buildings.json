@@ -3383,7 +3383,7 @@
   "measured": true,
   "provenance": {
    "workers": "game-file",
-   "production": "sheet-measured",
+   "production": "game-file",
    "consumption": "game-file",
    "power": "sheet-measured",
    "maxKW": "sheet-measured",
@@ -3430,7 +3430,7 @@
    {
     "de": "Heißwasser",
     "en": "Hot water",
-    "rate": 350.0
+    "rate": 700.0
    }
   ],
   "consumption": [
@@ -3518,7 +3518,7 @@
   "measured": true,
   "provenance": {
    "workers": "game-file",
-   "production": "sheet-measured",
+   "production": "game-file",
    "consumption": "game-file",
    "power": "sheet-measured",
    "maxKW": "sheet-measured",
@@ -3565,7 +3565,7 @@
    {
     "de": "Heißwasser",
     "en": "Hot water",
-    "rate": 210.0
+    "rate": 60.0
    }
   ],
   "consumption": [
@@ -3578,7 +3578,7 @@
   "measured": false,
   "provenance": {
    "workers": "game-file",
-   "production": "sheet-measured",
+   "production": "game-file",
    "consumption": "game-file",
    "power": "sheet-scaled",
    "maxKW": "sheet-scaled",
@@ -3626,7 +3626,7 @@
    {
     "de": "Heißwasser",
     "en": "Hot water",
-    "rate": 210.0
+    "rate": 150.0
    }
   ],
   "consumption": [
@@ -3639,7 +3639,7 @@
   "measured": false,
   "provenance": {
    "workers": "game-file",
-   "production": "sheet-measured",
+   "production": "game-file",
    "consumption": "game-file",
    "power": "sheet-scaled",
    "maxKW": "sheet-scaled",
@@ -3694,7 +3694,7 @@
   "measured": true,
   "provenance": {
    "workers": "game-file",
-   "production": "sheet-measured",
+   "production": "game-file",
    "consumption": "game-file",
    "power": "sheet-measured",
    "maxKW": "sheet-measured",

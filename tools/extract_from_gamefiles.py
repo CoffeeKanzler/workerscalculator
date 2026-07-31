@@ -520,11 +520,20 @@ def build_dataset(buildings, repo_root, loc):
             r = bykey.get(key)
             if not r or key in PSEUDO:
                 continue
-            if heat_only and s:
-                # heating output does not follow the ×workers rule; trust the sheet
-                tday = next((p['rate'] for p in s['production'] if de2key.get(p['de']) == key), rate)
-            elif heat_only:
-                tday = rate
+            if heat_only:
+                # Heating does follow a ×workers rule, just a different one: the
+                # delivered hot water is rate × workers / 10. That reproduces
+                # every vanilla plant the sheet measured — 300×7/10 = 210,
+                # 350×30/10 = 1050, 450×15/10 = 675 — and agrees with the game's
+                # own published heat figures through the documented 1:5 heat-to-
+                # hot-water ratio: 300×7/50 = 42 MJ and 350×30/50 = 210 MJ.
+                #
+                # Trusting the sheet instead left the DLC plants wrong, because
+                # nobody measured them: the tiny and small DLC plants both
+                # carried the vanilla small plant's 210, and the 20-worker plant
+                # fell through to the raw per-worker rate and reported 350
+                # where it delivers 700.
+                tday = rate * g['workers'] / 10 if g['workers'] else rate
             else:
                 tday = rate * g['workers'] if g['workers'] else rate
             prods.append({'de': r['de'], 'en': r['en'], 'rate': round(tday, 4)})
@@ -552,7 +561,11 @@ def build_dataset(buildings, repo_root, loc):
                 # Heat-only output uses the sheet's planning-unit value when a
                 # match exists because the raw game unit conversion is not yet
                 # proven. Do not label that substituted number game-exact.
-                'production': 'sheet-measured' if heat_only and s else 'game-file',
+                # Heating output is computed from the building file by the
+                # ×workers/10 rule above, not copied from the sheet, so it is
+                # game-sourced like everything else here. It used to be labelled
+                # sheet-measured because it used to be taken from the sheet.
+                'production': 'game-file',
                 'consumption': 'game-file',
             },
         }
