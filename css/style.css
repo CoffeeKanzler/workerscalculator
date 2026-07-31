@@ -727,6 +727,9 @@ table.data { max-width: 100%; }
 /* Counts by kind, worst first. Each tile is a button because each one opens the
    full list already narrowed to what it names. */
 .alert-group-chip { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; padding: 6px 10px; border: 1px solid var(--accent2); border-radius: 6px; background: var(--panel); font-size: 13px; }
+.city-utilities .utility-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; padding: 5px 0; border-top: 1px solid var(--border); }
+.city-utilities .utility-need { min-width: 150px; font-weight: 600; }
+.city-utilities .utility-count { font-variant-numeric: tabular-nums; font-weight: 700; }
 .alert-clusters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
 .alert-cluster { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-left-width: 4px; border-radius: 6px; background: var(--panel); color: var(--text); cursor: pointer; text-align: left; }
 .alert-cluster:hover { border-color: var(--accent2); }

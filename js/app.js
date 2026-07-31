@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=180';
+import { STRINGS } from './i18n.js?v=182';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -64,6 +64,7 @@ import { workerAccessAlerts } from './models/access_alerts.js?v=3';
 import { unpoweredBuildingAlerts } from './models/power_alerts.js?v=6';
 import { missingUtilityAlerts, fullWasteStorageAlerts } from './models/utility_alerts.js?v=5';
 import { largestChainForWorkforce } from './models/workforce_plan.js?v=3';
+import { cityUtilityPlan } from './models/city_utilities.js?v=3';
 import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';
 import { buildingHeightSamples } from './models/water_level.js?v=3';
 import { transitReachFrom } from './models/transit_reach.js?v=4';
@@ -2920,6 +2921,36 @@ function renderCity() {
     kv(`${t('buildCost')} $`, fmt(res.buildCostUSD, 0)),
     kv(t('workday'), fmt(res.workdays, 0)));
 
+  // What supplies the water and the heating, which the planner could state the
+  // need for and never the answer to. Counts are whole buildings and the rate
+  // they are drawn from is the game's own for water; the demand they are matched
+  // against is measured, so the panel is badged derived rather than exact.
+  const utilityPlan = cityUtilityPlan({
+    demand: { water: res.water, hotwater: res.hotwater },
+    catalogue: prodBuildings(),
+    choice: city.utilityChoice ?? {},
+  });
+  const utilityBox = el('div', { class: 'totalsbox city-utilities' },
+    el('h3', {}, t('cityUtilitiesTitle'),
+      el('span', { class: 'evidence-badge derived' }, t('derived'))),
+    ...utilityPlan.map(entry => {
+      const label = t(entry.kind === 'water' ? 'waterUse' : 'hotwater');
+      if (!entry.chosen) return kv(label, t('unavailable'));
+      const options = entry.suppliers.map(o => [o.building.en, bname(o.building)]);
+      return el('div', { class: 'utility-row' },
+        el('span', { class: 'utility-need' },
+          `${label}: ${fmt(entry.demand, 1)}`),
+        selectInput(options, entry.chosen.en, v => {
+          city.utilityChoice = { ...(city.utilityChoice ?? {}), [entry.kind]: v };
+        }),
+        el('span', { class: 'utility-count' },
+          `x ${fmt(entry.coverage.count, 0)}`),
+        el('span', { class: 'hint' },
+          `${fmt(entry.coverage.supplied, 0)} ${t('cityUtilitySupplied')}`
+          + ` · ${fmt(entry.coverage.workers, 0)} ${t('workers')}`
+          + ` · ${fmt(entry.coverage.power, 1)} ${t('power')}`));
+    }));
+
   const mats = el('div', { class: 'totalsbox' },
     el('h3', {}, t('materials')),
     ...Object.entries(res.materials).map(([m, amt]) => {
@@ -2936,7 +2967,7 @@ function renderCity() {
     addBtn,
     el('div', { class: 'columns' },
       el('div', {}, el('h3', {}, t('services')), services),
-      summary, mats));
+      summary, utilityBox, mats));
 }
 
 function utilizationCell(u) {
