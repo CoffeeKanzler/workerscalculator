@@ -15,7 +15,7 @@ const app = () => fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
 test('the sliced tab table is what ships', () => {
   assert.deepEqual(tabsForSection('observe'),
     ['home', 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'prices']);
-  assert.deepEqual(tabsForSection('diagnose'), ['analysis', 'environment']);
+  assert.deepEqual(tabsForSection('diagnose'), ['alerts', 'pollution', 'crime']);
   assert.deepEqual(tabsForSection('compare'), ['saveimport', 'snapshots', 'help']);
 });
 
@@ -23,14 +23,21 @@ test('the moved surfaces resolve to the section that matches their question', ()
   // What is happening: observation.
   assert.equal(sectionForTab('construction'), 'observe');
   assert.equal(sectionForTab('logistics'), 'observe');
-  // What is wrong: diagnosis.
-  assert.equal(sectionForTab('environment'), 'diagnose');
+  // What is wrong: diagnosis. The alert list is the answer to that question, so
+  // it belongs here rather than at the foot of the overview; the overview keeps
+  // only the critical ones. Price analysis moved the other way: it is the same
+  // table whatever you built, which makes it planning input, not a diagnosis.
+  assert.equal(sectionForTab('alerts'), 'diagnose');
+  assert.equal(sectionForTab('pollution'), 'diagnose');
+  assert.equal(sectionForTab('crime'), 'diagnose');
+  assert.equal(sectionForTab('analysis'), 'plan');
   // Versus another save: comparison.
   assert.equal(sectionForTab('snapshots'), 'compare');
 });
 
 test('every new tab is named in both languages', async () => {
-  for (const key of ['tabConstruction', 'tabLogistics', 'tabEnvironment', 'tabSnapshots']) {
+  for (const key of ['tabConstruction', 'tabLogistics', 'tabEnvironment', 'tabSnapshots',
+    'tabAlerts', 'tabPollution', 'tabCrime', 'noCriticalAlerts', 'openAllAlerts']) {
     for (const [lang, table] of Object.entries(STRINGS)) {
       assert.ok(table[key], `${lang} is missing ${key}`);
     }
@@ -42,7 +49,7 @@ test('the shipped app registers and dispatches each new tab', async () => {
   for (const [tab, renderer] of [
     ['construction', 'renderConstruction'],
     ['logistics', 'renderLogistics'],
-    ['environment', 'renderEnvironment'],
+    ['alerts', 'renderAlertsTab'],
     ['snapshots', 'renderSnapshots'],
   ]) {
     assert.match(source, new RegExp(`TABS = \\[[\\s\\S]*'${tab}'`), `TABS is missing ${tab}`);
@@ -81,7 +88,14 @@ test('the overview keeps what someone reads first', async () => {
   const republic = source.slice(source.indexOf('function renderRepublic()'));
   const body = republic.slice(0, republic.indexOf('\nfunction '));
 
-  // Identity, the alert list and the area table are the overview.
+  // Identity, the critical alerts and the area table are the overview. The
+  // filterable list moved to Diagnose, but a republic in trouble still has to
+  // be visible here without changing section, so the criticals stay.
   assert.match(body, /areaTable/);
-  assert.match(body, /republicAlertFilter/);
+  assert.match(body, /severity === 'critical'/);
+  assert.match(body, /openAllAlerts/);
+  // ...and the full list is built once, over there.
+  assert.doesNotMatch(body, /republicAlertFilter/);
+  const alertsTab = source.slice(source.indexOf('function renderAlertsTab()'));
+  assert.match(alertsTab.slice(0, alertsTab.indexOf('\nfunction ')), /republicAlertFilter/);
 });

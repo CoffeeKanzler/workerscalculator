@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=168';
+import { STRINGS } from './i18n.js?v=171';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -91,13 +91,13 @@ import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
   shouldOpenStartPage, relativeAge,
-} from './ui/command_center.js?v=5';
+} from './ui/command_center.js?v=8';
 
 const RUNTIME_CONFIG = getRuntimeConfig();
 const APP_RUNTIME = bootstrapRuntime({ config: RUNTIME_CONFIG });
 const IS_BETA = RUNTIME_CONFIG.variant === 'beta';
 const HAS_SAVE_WORKSPACE = hasSaveWorkspace(RUNTIME_CONFIG);
-const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'environment', 'snapshots', 'production', 'city', 'chain',
+const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'alerts', 'pollution', 'crime', 'environment', 'snapshots', 'production', 'city', 'chain',
   'prices', 'priceedit', 'analysis', 'vehicleprod', ...(HAS_SAVE_WORKSPACE ? ['saveimport'] : []),
   'trains', 'research', 'advanced', 'help'];
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
@@ -764,6 +764,7 @@ function decorateResponsiveTables(root) {
 }
 
 function render() {
+  republicSnapshotCache = null;
   document.title = t('appTitle');
   applyTheme();
   const root = $('#app');
@@ -1035,7 +1036,7 @@ function renderSaveSlots() {
 function renderTabs() {
   const labels = { home: 'tabHome', prices: 'tabPrices', priceedit: 'tabPriceEdit', production: 'tabProduction', chain: 'tabChain',
     analysis: 'tabAnalysis', vehicleprod: 'tabVehicleProd', city: 'tabCity', cities: 'tabCities', republic: 'tabRepublic',
-    map: 'tabMap', history: 'tabHistory', construction: 'tabConstruction', logistics: 'tabLogistics', environment: 'tabEnvironment', snapshots: 'tabSnapshots', saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
+    map: 'tabMap', history: 'tabHistory', construction: 'tabConstruction', logistics: 'tabLogistics', environment: 'tabEnvironment', alerts: 'tabAlerts', pollution: 'tabPollution', crime: 'tabCrime', snapshots: 'tabSnapshots', saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
   const button = id => el('button', {
     class: state.tab === id ? 'active' : '',
     'aria-current': state.tab === id ? 'page' : false,
@@ -1068,7 +1069,12 @@ function renderCurrentTab() {
     case 'history': return renderRepublicHistory();
     case 'construction': return renderConstruction();
     case 'logistics': return renderLogistics();
-    case 'environment': return renderEnvironment();
+    // 'environment' is the tab these two were split out of. Kept as an alias
+    // so a restored session or a shared link from before the split still lands.
+    case 'environment':
+    case 'pollution': return renderEnvironment('pollution');
+    case 'crime': return renderEnvironment('crime');
+    case 'alerts': return renderAlertsTab();
     case 'snapshots': return renderSnapshots();
     case 'production': return renderProduction();
     case 'chain': return renderChain();
@@ -4585,7 +4591,7 @@ function renderSnapshots() {
 // Diagnose: where the republic is hurting its own people. Pollution exposure
 // and criminality outliers were two collapsed disclosures on the overview,
 // which is where a reader looks for what is, not for what is wrong.
-function renderEnvironment() {
+function renderEnvironment(which = 'pollution') {
   if (!state.saveImport) {
     return el('section', {}, el('p', { class: 'hint' }, t('citiesEmpty')));
   }
@@ -4673,11 +4679,14 @@ function renderEnvironment() {
         el('td', { class: 'r' }, `#${residence.buildingIndex}`),
         el('td', {}, el('button', { onclick: () => locatePollutedResidence(residence) },
           t('locateOnMap'))))))))) : null;
-  if (!criminalityOutlierDetails && !pollutionDetails) {
-    return el('section', {}, el('h2', {}, t('tabEnvironment')),
+  // Crime and air pollution answer different questions and were only ever in
+  // one tab because they arrived together; each is now its own.
+  const wanted = which === 'crime' ? criminalityOutlierDetails : pollutionDetails;
+  if (!wanted) {
+    return el('section', {}, el('h2', {}, t(which === 'crime' ? 'tabCrime' : 'tabPollution')),
       el('p', { class: 'hint' }, t('unavailable')));
   }
-  return el('section', {}, criminalityOutlierDetails, pollutionDetails);
+  return el('section', {}, wanted);
 }
 
 
@@ -5190,7 +5199,156 @@ function renderLogistics() {
   return el('section', {}, fleetOpportunities, logisticsOperations);
 }
 
-function renderRepublic() {
+// The full alert list, which is what "diagnose" means: every finding the save
+// supports, filterable and silenceable. The overview keeps the critical ones so
+// that a republic in trouble is visible without changing section, but the
+// complete list lives here rather than at the bottom of an overview page.
+function renderAlertsTab() {
+  const { alerts } = republicSnapshot();
+  const scopeInfo = new Map(plannerScopes().map(scope => [scope.id, scope]));
+  const mappableScopeIds = new Set((state.saveImport?.observedBuildings ?? [])
+    .map(building => building.scopeId).filter(Number.isInteger));
+  const alertCategories = ['workforce', 'needs', 'buffers', 'coverage'];
+  if (!['all', ...alertCategories].includes(state.republicAlertFilter)) {
+    state.republicAlertFilter = 'all';
+  }
+  const categoryCounts = new Map(alertCategories.map(category => [category,
+    alerts.filter(alert => alertCategory(alert) === category).length]));
+  const filteredAlerts = filterRepublicAlerts(alerts, state.republicAlertFilter);
+  const alertPresentation = visibleRepublicAlerts(filteredAlerts, {
+    expanded: state.republicAlertsExpanded,
+  });
+  const silenceAccessAlert = buildingIndex => {
+    state.accessAlertsMuted = [...new Set([...(state.accessAlertsMuted ?? []), buildingIndex])];
+    update();
+  };
+  const alertAction = alert => {
+    if (alert.metric?.startsWith('access.') || alert.metric?.startsWith('power.')) {
+      return el('span', { class: 'alert-actions' },
+        el('button', { onclick: () => locateBuildingOnMap(alert.buildingIndex, alert.scopeId) },
+          t('locateOnMap')),
+        el('button', {
+          class: 'secondary', title: t('silenceAlertHint'),
+          onclick: () => silenceAccessAlert(alert.buildingIndex),
+        }, t('silenceAlert')));
+    }
+    if (!Number.isInteger(alert.scopeId)) return null;
+    const scope = scopeInfo.get(alert.scopeId) ?? {};
+    if (HAS_SAVE_WORKSPACE && alert.metric === 'coverage.workshop') {
+      return el('button', { onclick: () => {
+        unmatchedScopeFilter = String(alert.scopeId);
+        state.tab = 'saveimport';
+        update();
+        setTimeout(() => document.querySelector('details.unmatched-types')?.scrollIntoView({
+          behavior: 'smooth', block: 'start',
+        }), 0);
+      } }, t('reviewUnmatched'));
+    }
+    if (alert.metric.startsWith('buffer.') && scope.production) {
+      return el('button', { onclick: () => openArea(alert.scopeId, 'production') }, t('openProduction'));
+    }
+    if (['health', 'food'].includes(alert.metric) && scope.city) {
+      return el('button', { onclick: () => openArea(alert.scopeId, 'city') }, t('openCity'));
+    }
+    return mappableScopeIds.has(alert.scopeId)
+      ? el('button', { onclick: () => locateAreaOnMap(alert.scopeId) }, t('locateOnMap')) : null;
+  };
+  const alertItems = filteredAlerts.length ? alertPresentation.visible.map(alert => el('div', { class: `alert ${alert.severity}` },
+      el('strong', {}, alert.scopeName || t('republicOverview')),
+      el('span', {}, t(`alert.${alert.metric}`),
+        alert.metric?.startsWith('power.') && alert.areaName ? el('span', { class: 'alert-trend' },
+          ` · ${alert.areaName}`) : null,
+        alert.metric?.startsWith('access.') ? el('span', { class: 'alert-trend' },
+          ` · ${fmt(alert.reachableAdults, 0)} / ${fmt(alert.slots, 0)} `
+          + `${t('accessAlertReachable')}${alert.areaName ? ` · ${alert.areaName}` : ''}`) : null,
+        alert.trend?.years >= 1 ? el('span', { class: 'alert-trend' },
+          ` · ${t(alert.trend.years === 1 ? 'trendOneYear' : 'trendYears')
+            .replace('{n}', fmt(alert.trend.years, 0))}`) : null),
+      el('span', { class: 'alert-tail' },
+        Number.isFinite(alert.observed) ? el('span', { class: 'alert-value' },
+          alert.metric === 'staffing' || alert.metric === 'health' || alert.metric === 'food'
+            || alert.metric.startsWith('access.')
+            ? fmt(alert.observed * 100, 1) + ' %'
+            : alert.metric.startsWith('buffer.') ? `${fmt(alert.observed, 2)} ${t('day')}`
+              : fmt(alert.observed, 1)) : null,
+        alertAction(alert))))
+    : [el('p', { class: 'hint pos' }, t('noAlerts'))];
+  const alertList = el('div', { class: 'alert-list' },
+    el('h3', {}, state.republicAlertFilter === 'all'
+      ? `${t('attention')} (${fmt(alerts.length, 0)})`
+      : `${t('attention')} (${fmt(filteredAlerts.length, 0)} / ${fmt(alerts.length, 0)})`),
+    alerts.length > 8 ? el('div', { class: 'settingsbar alert-filters' },
+      ...[['all', alerts.length], ...alertCategories.map(category =>
+        [category, categoryCounts.get(category)])].filter(([, count]) => count > 0).map(([category, count]) =>
+        el('button', {
+          class: state.republicAlertFilter === category ? 'active' : '',
+          onclick: () => {
+            state.republicAlertFilter = category;
+            state.republicAlertsExpanded = false;
+            update();
+          },
+        }, `${t(`alertCategory.${category}`)} (${fmt(count, 0)})`))) : null,
+    ...alertItems,
+    (state.accessAlertsMuted ?? []).length ? el('p', { class: 'hint', 'data-access-alerts-muted': String(state.accessAlertsMuted.length) },
+      t('accessAlertsSilenced').replace('{count}', fmt(state.accessAlertsMuted.length, 0)),
+      ' ',
+      el('button', {
+        class: 'secondary',
+        onclick: () => { state.accessAlertsMuted = []; update(); },
+      }, t('accessAlertsRestore'))) : null,
+    filteredAlerts.length > 8 ? el('button', {
+      class: 'secondary',
+      onclick: () => { state.republicAlertsExpanded = !state.republicAlertsExpanded; update(); },
+    }, state.republicAlertsExpanded ? t('showFewerAlerts')
+      : t('showAllAlerts').replace('{count}', fmt(alertPresentation.hiddenCount, 0))) : null);
+  return el('section', {}, el('h2', {}, t('tabAlerts')), alertList);
+}
+
+// Shared by the overview and the alert list, which both offer these actions.
+function openArea(scopeId, tab) {
+    state.republicScope = scopeId;
+    if (tab === 'production') state.productionScope = String(scopeId);
+    if (tab === 'city') {
+      const index = cityPlanningAreas().findIndex(area => area.scopeId === scopeId);
+      if (index >= 0) state.activeCity = index;
+    }
+    state.tab = tab;
+    update();
+  }
+
+function locateAreaOnMap(scopeId) {
+    mapFocusBuildingIndex = null;
+    mapFocusScopeId = scopeId;
+    state.republicScope = scopeId;
+    update();
+    setTimeout(() => document.querySelector('.map-section')?.scrollIntoView({
+      behavior: 'smooth', block: 'center',
+    }), 0);
+  }
+
+function locateBuildingOnMap(buildingIndex, scopeId) {
+    mapFocusBuildingIndex = buildingIndex;
+    mapSelectedBuildingIndex = buildingIndex;
+    mapFocusScopeId = null;
+    standaloneMapViewBox = null;
+    if (Number.isInteger(scopeId)) state.republicScope = scopeId;
+    state.mapLayers = { ...state.mapLayers, buildings: true, walkReach: true };
+    state.mapBuildingFilter = '';
+    state.tab = 'map';
+    update();
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+  }
+
+// Everything the republic overview and the alert list both need.
+//
+// Both surfaces ask for the same alerts: the overview shows the critical ones
+// so a burning republic is visible without changing section, and the Diagnose
+// tab shows all of them with filters and silencing. Computing this twice per
+// render would evaluate every city and chain plan twice, so it is cached for
+// the render that asked and dropped at the start of the next one.
+let republicSnapshotCache = null;
+function republicSnapshot() {
+  if (republicSnapshotCache) return republicSnapshotCache;
   const eco = economy();
   if (!state.cities.length && !Array.isArray(state.saveImport?.scopes)) state.cities.push(defaultCity());
   state.plan.settings.currency = state.currency;
@@ -5278,7 +5436,6 @@ function renderRepublic() {
       areas: plannedAreas,
     },
   });
-  if (!observedImport && state.republicView !== 'plan') state.republicView = 'plan';
   const bufferAlerts = productionBufferAlerts(
     state.plan.rows, prodBuildings(), state.plan.settings, name => eco.keyForName(name),
   ).map(alert => ({ ...alert, scopeName: plannerScopeName(alert.scopeId) }));
@@ -5308,6 +5465,13 @@ function renderRepublic() {
     severityOrder[a.severity] - severityOrder[b.severity]
       || (a.observed ?? Infinity) - (b.observed ?? Infinity)
       || String(a.scopeName).localeCompare(String(b.scopeName)));
+  republicSnapshotCache = { alerts, buildings, chainLabel, chains, cityBuildCost, cityResults, cityTotals, eco, netWorkers, observedImport, plan, republicModel };
+  return republicSnapshotCache;
+}
+
+function renderRepublic() {
+  const { alerts, buildings, chainLabel, chains, cityBuildCost, cityResults, cityTotals, eco, netWorkers, observedImport, plan, republicModel } = republicSnapshot();
+  if (!observedImport && state.republicView !== 'plan') state.republicView = 'plan';
 
   const cityBody = cityResults.map(({ city, res, industry }, i) => {
     const available = city.syntheticArea ? null : res.workerSurplus - industry.workersPerShift;
@@ -5427,45 +5591,17 @@ function renderRepublic() {
     metricCard(t('wasteOut'), Number.isFinite(view.totals.waste) ? fmt(view.totals.waste, 1) : null, t('derived')),
   ];
 
-  const openArea = (scopeId, tab) => {
-    state.republicScope = scopeId;
-    if (tab === 'production') state.productionScope = String(scopeId);
-    if (tab === 'city') {
-      const index = cityPlanningAreas().findIndex(area => area.scopeId === scopeId);
-      if (index >= 0) state.activeCity = index;
-    }
-    state.tab = tab;
-    update();
-  };
+
   const actualArea = new Map(republicModel.actual.areas.map(area => [area.scopeId, area]));
   const planArea = new Map(republicModel.plan.areas.map(area => [area.scopeId, area]));
   const scopeInfo = new Map(plannerScopes().map(scope => [scope.id, scope]));
   const mappableScopeIds = new Set((state.saveImport?.observedBuildings ?? [])
     .map(building => building.scopeId).filter(Number.isInteger));
-  const locateAreaOnMap = scopeId => {
-    mapFocusBuildingIndex = null;
-    mapFocusScopeId = scopeId;
-    state.republicScope = scopeId;
-    update();
-    setTimeout(() => document.querySelector('.map-section')?.scrollIntoView({
-      behavior: 'smooth', block: 'center',
-    }), 0);
-  };
+
   // An understaffed building is only answerable on the map, where the reader can
   // see which housing does and does not reach it, so the alert opens it there
   // already selected rather than leaving them to hunt for it.
-  const locateBuildingOnMap = (buildingIndex, scopeId) => {
-    mapFocusBuildingIndex = buildingIndex;
-    mapSelectedBuildingIndex = buildingIndex;
-    mapFocusScopeId = null;
-    standaloneMapViewBox = null;
-    if (Number.isInteger(scopeId)) state.republicScope = scopeId;
-    state.mapLayers = { ...state.mapLayers, buildings: true, walkReach: true };
-    state.mapBuildingFilter = '';
-    state.tab = 'map';
-    update();
-    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
-  };
+
   const severities = new Map();
   for (const alert of alerts) if (alert.scopeId != null && !severities.has(alert.scopeId)) severities.set(alert.scopeId, alert.severity);
   const areaIds = [...new Set([...actualArea.keys(), ...planArea.keys()])].filter(scopeId => {
@@ -5514,99 +5650,7 @@ function renderRepublic() {
           scope.production ? el('button', { onclick: () => openArea(scopeId, 'production') }, t('openProduction')) : null));
     })));
 
-  const alertCategories = ['workforce', 'needs', 'buffers', 'coverage'];
-  if (!['all', ...alertCategories].includes(state.republicAlertFilter)) {
-    state.republicAlertFilter = 'all';
-  }
-  const categoryCounts = new Map(alertCategories.map(category => [category,
-    alerts.filter(alert => alertCategory(alert) === category).length]));
-  const filteredAlerts = filterRepublicAlerts(alerts, state.republicAlertFilter);
-  const alertPresentation = visibleRepublicAlerts(filteredAlerts, {
-    expanded: state.republicAlertsExpanded,
-  });
-  const silenceAccessAlert = buildingIndex => {
-    state.accessAlertsMuted = [...new Set([...(state.accessAlertsMuted ?? []), buildingIndex])];
-    update();
-  };
-  const alertAction = alert => {
-    if (alert.metric?.startsWith('access.') || alert.metric?.startsWith('power.')) {
-      return el('span', { class: 'alert-actions' },
-        el('button', { onclick: () => locateBuildingOnMap(alert.buildingIndex, alert.scopeId) },
-          t('locateOnMap')),
-        el('button', {
-          class: 'secondary', title: t('silenceAlertHint'),
-          onclick: () => silenceAccessAlert(alert.buildingIndex),
-        }, t('silenceAlert')));
-    }
-    if (!Number.isInteger(alert.scopeId)) return null;
-    const scope = scopeInfo.get(alert.scopeId) ?? {};
-    if (HAS_SAVE_WORKSPACE && alert.metric === 'coverage.workshop') {
-      return el('button', { onclick: () => {
-        unmatchedScopeFilter = String(alert.scopeId);
-        state.tab = 'saveimport';
-        update();
-        setTimeout(() => document.querySelector('details.unmatched-types')?.scrollIntoView({
-          behavior: 'smooth', block: 'start',
-        }), 0);
-      } }, t('reviewUnmatched'));
-    }
-    if (alert.metric.startsWith('buffer.') && scope.production) {
-      return el('button', { onclick: () => openArea(alert.scopeId, 'production') }, t('openProduction'));
-    }
-    if (['health', 'food'].includes(alert.metric) && scope.city) {
-      return el('button', { onclick: () => openArea(alert.scopeId, 'city') }, t('openCity'));
-    }
-    return mappableScopeIds.has(alert.scopeId)
-      ? el('button', { onclick: () => locateAreaOnMap(alert.scopeId) }, t('locateOnMap')) : null;
-  };
-  const alertItems = filteredAlerts.length ? alertPresentation.visible.map(alert => el('div', { class: `alert ${alert.severity}` },
-      el('strong', {}, alert.scopeName || t('republicOverview')),
-      el('span', {}, t(`alert.${alert.metric}`),
-        alert.metric?.startsWith('power.') && alert.areaName ? el('span', { class: 'alert-trend' },
-          ` · ${alert.areaName}`) : null,
-        alert.metric?.startsWith('access.') ? el('span', { class: 'alert-trend' },
-          ` · ${fmt(alert.reachableAdults, 0)} / ${fmt(alert.slots, 0)} `
-          + `${t('accessAlertReachable')}${alert.areaName ? ` · ${alert.areaName}` : ''}`) : null,
-        alert.trend?.years >= 1 ? el('span', { class: 'alert-trend' },
-          ` · ${t(alert.trend.years === 1 ? 'trendOneYear' : 'trendYears')
-            .replace('{n}', fmt(alert.trend.years, 0))}`) : null),
-      el('span', { class: 'alert-tail' },
-        Number.isFinite(alert.observed) ? el('span', { class: 'alert-value' },
-          alert.metric === 'staffing' || alert.metric === 'health' || alert.metric === 'food'
-            || alert.metric.startsWith('access.')
-            ? fmt(alert.observed * 100, 1) + ' %'
-            : alert.metric.startsWith('buffer.') ? `${fmt(alert.observed, 2)} ${t('day')}`
-              : fmt(alert.observed, 1)) : null,
-        alertAction(alert))))
-    : [el('p', { class: 'hint pos' }, t('noAlerts'))];
-  const alertList = el('div', { class: 'alert-list' },
-    el('h3', {}, state.republicAlertFilter === 'all'
-      ? `${t('attention')} (${fmt(alerts.length, 0)})`
-      : `${t('attention')} (${fmt(filteredAlerts.length, 0)} / ${fmt(alerts.length, 0)})`),
-    alerts.length > 8 ? el('div', { class: 'settingsbar alert-filters' },
-      ...[['all', alerts.length], ...alertCategories.map(category =>
-        [category, categoryCounts.get(category)])].filter(([, count]) => count > 0).map(([category, count]) =>
-        el('button', {
-          class: state.republicAlertFilter === category ? 'active' : '',
-          onclick: () => {
-            state.republicAlertFilter = category;
-            state.republicAlertsExpanded = false;
-            update();
-          },
-        }, `${t(`alertCategory.${category}`)} (${fmt(count, 0)})`))) : null,
-    ...alertItems,
-    (state.accessAlertsMuted ?? []).length ? el('p', { class: 'hint', 'data-access-alerts-muted': String(state.accessAlertsMuted.length) },
-      t('accessAlertsSilenced').replace('{count}', fmt(state.accessAlertsMuted.length, 0)),
-      ' ',
-      el('button', {
-        class: 'secondary',
-        onclick: () => { state.accessAlertsMuted = []; update(); },
-      }, t('accessAlertsRestore'))) : null,
-    filteredAlerts.length > 8 ? el('button', {
-      class: 'secondary',
-      onclick: () => { state.republicAlertsExpanded = !state.republicAlertsExpanded; update(); },
-    }, state.republicAlertsExpanded ? t('showFewerAlerts')
-      : t('showAllAlerts').replace('{count}', fmt(alertPresentation.hiddenCount, 0))) : null);
+
 
 
 
@@ -5764,7 +5808,22 @@ function renderRepublic() {
         el('span', {}, `${fmt(view.totals.liveBuildingCount ?? state.saveImport.buildingCount, 0)} ${t('importedBuildings')}`),
         state.saveImport.research ? el('span', {}, `${fmt(state.saveImport.researchComplete, 0)} / ${fmt(state.saveImport.research.length, 0)} ${t('importedResearch')}`) : null) : null,
       el('div', { class: 'metric-grid' }, ...cards),
-      alertList,
+      // The overview carries only what cannot wait, so a republic in trouble is
+      // visible without changing section. The full list, with filters and
+      // silencing, is the Diagnose tab's job.
+      (() => {
+        const critical = alerts.filter(alert => alert.severity === 'critical');
+        return el('div', { class: 'alert-list overview-alerts' },
+          el('h3', {}, `${t('attention')} (${fmt(alerts.length, 0)})`),
+          ...(critical.length ? critical.slice(0, 5).map(alert => el('div', { class: 'alert critical' },
+            el('strong', {}, alert.scopeName || t('republicOverview')),
+            el('span', {}, t(`alert.${alert.metric}`))))
+            : [el('p', { class: 'hint pos' }, t('noCriticalAlerts'))]),
+          el('button', {
+            class: 'secondary',
+            onclick: () => { state.tab = 'alerts'; update(); },
+          }, t('openAllAlerts').replace('{count}', fmt(alerts.length, 0))));
+      })(),
       institutionOverview,
       el('div', { class: 'tablewrap area-table-panel' }, areaTable),
       historyLink,

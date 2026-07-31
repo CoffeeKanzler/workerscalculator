@@ -8,7 +8,7 @@ import {
 test('command center keeps observe, diagnose, plan, and compare as stable IA sections', () => {
   assert.deepEqual(COMMAND_SECTIONS.map(section => section.id), ['observe', 'diagnose', 'plan', 'compare']);
   assert.equal(sectionForTab('republic'), 'observe');
-  assert.equal(sectionForTab('analysis'), 'diagnose');
+  assert.equal(sectionForTab('alerts'), 'diagnose');
   assert.equal(sectionForTab('chain'), 'plan');
   assert.ok(tabsForSection('plan').includes('trains'));
 });
@@ -38,9 +38,9 @@ test('each section opens on a tab it actually owns', () => {
 test('the confirmed tab to section table is what ships', () => {
   assert.deepEqual(tabsForSection('observe'),
     ['home', 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'prices']);
-  assert.deepEqual(tabsForSection('diagnose'), ['analysis', 'environment']);
+  assert.deepEqual(tabsForSection('diagnose'), ['alerts', 'pollution', 'crime']);
   assert.deepEqual(tabsForSection('plan'), [
-    'chain', 'city', 'priceedit', 'production', 'vehicleprod', 'trains', 'research', 'advanced',
+    'chain', 'city', 'priceedit', 'production', 'vehicleprod', 'analysis', 'trains', 'research', 'advanced',
   ]);
   assert.deepEqual(tabsForSection('compare'), ['saveimport', 'snapshots', 'help']);
 });
