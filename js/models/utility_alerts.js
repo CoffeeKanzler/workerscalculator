@@ -18,6 +18,14 @@
 // instant is an instant, and the wording says so.
 const FIELD_SAVED_TYPE = 9;
 
+// A waste store is the opposite reading: the number rises until something
+// collects it, so the alert is fullness rather than emptiness. `capacity` bounds
+// one storage record and is shared by every line in it — checked against three
+// republics, where only 7 of 1,568 waste storages exceed that sum, by rounding,
+// and the full ones sit exactly at 100%. Summing capacity across records instead
+// reports buildings as 162% full, which is a bug in the reading, not a fire.
+export const WASTE_FULL_SHARE = 0.95;
+
 export const UTILITIES = Object.freeze({
   eletric: 'power.unpowered',
   water: 'water.missing',
@@ -87,5 +95,57 @@ export function missingUtilityAlerts({
   const order = { critical: 0, warning: 1 };
   return alerts.sort((a, b) => order[a.severity] - order[b.severity]
     || b.slots - a.slots
+    || a.buildingIndex - b.buildingIndex);
+}
+
+function wasteFullness(building) {
+  let worst = 0;
+  for (const storage of building?.storages ?? []) {
+    const capacity = storage.capacity ?? 0;
+    if (!(capacity > 0)) continue;
+    let held = 0;
+    for (const line of storage.resources ?? []) {
+      if (line.resource?.startsWith('waste_')) held += line.amount ?? 0;
+    }
+    if (held > 0) worst = Math.max(worst, held / capacity);
+  }
+  return worst;
+}
+
+// A waste store at capacity stops whatever fills it, so this is the one utility
+// finding that is about a building being too full rather than too empty.
+export function fullWasteStorageAlerts({
+  buildings = [],
+  labelFor = null,
+  scopeNameFor = null,
+  muted = [],
+  threshold = WASTE_FULL_SHARE,
+} = {}) {
+  const silenced = new Set(muted ?? []);
+  const alerts = [];
+  for (const building of buildings) {
+    if (silenced.has(building.index)) continue;
+    if (building.savedTypePlusOne === FIELD_SAVED_TYPE) continue;
+    const progress = building.constructionProgress;
+    if (Number.isFinite(progress) && progress < 1) continue;
+    const share = wasteFullness(building);
+    if (share < threshold) continue;
+    const slots = establishmentOf(building);
+    alerts.push({
+      severity: slots > 0 ? 'critical' : 'warning',
+      metric: 'waste.full',
+      buildingIndex: building.index,
+      scopeId: building.scopeId ?? null,
+      scopeName: labelFor?.(building) ?? building.name ?? building.type ?? `#${building.index}`,
+      areaName: scopeNameFor?.(building.scopeId) ?? null,
+      observed: share,
+      threshold,
+      slots,
+      evidence: 'buildings_game.bin',
+    });
+  }
+  const order = { critical: 0, warning: 1 };
+  return alerts.sort((a, b) => order[a.severity] - order[b.severity]
+    || b.observed - a.observed
     || a.buildingIndex - b.buildingIndex);
 }

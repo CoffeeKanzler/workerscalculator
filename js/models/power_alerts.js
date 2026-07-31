@@ -5,7 +5,7 @@
 // building that had none when the save was written. water and heat record
 // themselves identically, so the reading moved to utility_alerts.js and this
 // is the electricity-shaped door onto it.
-import { buildingNeedsUtility, missingUtilityAlerts } from './utility_alerts.js?v=3';
+import { buildingNeedsUtility, missingUtilityAlerts } from './utility_alerts.js?v=5';
 
 export function buildingNeedsElectricity(building) {
   return buildingNeedsUtility(building, 'eletric');

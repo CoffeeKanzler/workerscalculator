@@ -274,7 +274,7 @@ export function alertCategory(alert) {
     return 'workforce';
   }
   if (metric.startsWith('power.') || metric.startsWith('water.')
-    || metric.startsWith('heat.')) return 'coverage';
+    || metric.startsWith('heat.') || metric.startsWith('waste.')) return 'coverage';
   if (metric === 'health' || metric === 'food') return 'needs';
   if (metric.startsWith('buffer.')) return 'buffers';
   if (metric.startsWith('coverage.')) return 'coverage';

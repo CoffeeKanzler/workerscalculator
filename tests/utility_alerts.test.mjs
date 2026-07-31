@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { buildingNeedsUtility, missingUtilityAlerts, UTILITIES } from '../js/models/utility_alerts.js';
+import { buildingNeedsUtility, missingUtilityAlerts, fullWasteStorageAlerts, UTILITIES } from '../js/models/utility_alerts.js';
 import { unpoweredBuildingAlerts } from '../js/models/power_alerts.js';
 import { alertCategory } from '../js/republic.js';
 import { STRINGS } from '../js/i18n.js';
@@ -36,7 +36,7 @@ test('holding none is the alert; holding any is not', () => {
 // moment the save was written, and claims nothing about whether supply is
 // possible. Both languages have to keep that tense.
 test('every utility alert is worded as an instant, in both languages', () => {
-  for (const metric of Object.values(UTILITIES)) {
+  for (const metric of [...Object.values(UTILITIES), 'waste.full']) {
     for (const [lang, table] of Object.entries(STRINGS)) {
       const text = table[`alert.${metric}`];
       assert.ok(text, `${lang} is missing alert.${metric}`);
@@ -83,4 +83,42 @@ test('the electricity door still reports electricity', () => {
 
 test('an unknown utility is refused rather than silently reporting nothing', () => {
   assert.throws(() => missingUtilityAlerts({ resource: 'beer', buildings: [] }), /beer/);
+});
+
+// Waste is the inverse reading, and the one that was easy to get wrong.
+const wasteStore = (index, capacity, lines, extra = {}) => ({
+  index, type: 'tartak', scopeId: 1,
+  storages: [{ capacity, resources: lines.map(([resource, amount]) => ({ resource, amount })) }],
+  ...extra,
+});
+
+test('capacity bounds one storage record, shared by the lines inside it', () => {
+  // 60 + 15 of 100 is three quarters full, not two separate near-full stores.
+  const alerts = fullWasteStorageAlerts({
+    buildings: [wasteStore(1, 100, [['waste_bio', 60], ['waste_ash', 15]], { configuredWorkers: 2 })],
+  });
+  assert.deepEqual(alerts, []);
+});
+
+test('a store at capacity is reported, and says how full', () => {
+  const alerts = fullWasteStorageAlerts({
+    buildings: [wasteStore(1, 100, [['waste_bio', 96], ['waste_ash', 3]], { configuredWorkers: 2 })],
+  });
+  assert.equal(alerts.length, 1);
+  assert.equal(alerts[0].metric, 'waste.full');
+  assert.equal(alertCategory(alerts[0]), 'coverage');
+  assert.equal(alerts[0].observed, 0.99);
+});
+
+test('a storage with no capacity recorded cannot be judged full', () => {
+  // Dividing by a missing capacity is what reported buildings as 162% full.
+  assert.deepEqual(fullWasteStorageAlerts({
+    buildings: [wasteStore(1, 0, [['waste_bio', 500]], { configuredWorkers: 2 })],
+  }), []);
+});
+
+test('only waste counts towards fullness', () => {
+  assert.deepEqual(fullWasteStorageAlerts({
+    buildings: [wasteStore(1, 100, [['wood', 99]], { configuredWorkers: 2 })],
+  }), []);
 });

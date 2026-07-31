@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=173';
+import { STRINGS } from './i18n.js?v=175';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -48,7 +48,7 @@ import {
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
-} from './republic.js?v=18';
+} from './republic.js?v=20';
 import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
@@ -61,8 +61,8 @@ import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=
 import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=10';
 import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
 import { workerAccessAlerts } from './models/access_alerts.js?v=3';
-import { unpoweredBuildingAlerts } from './models/power_alerts.js?v=5';
-import { missingUtilityAlerts } from './models/utility_alerts.js?v=3';
+import { unpoweredBuildingAlerts } from './models/power_alerts.js?v=6';
+import { missingUtilityAlerts, fullWasteStorageAlerts } from './models/utility_alerts.js?v=5';
 import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';
 import { buildingHeightSamples } from './models/water_level.js?v=3';
 import { transitReachFrom } from './models/transit_reach.js?v=4';
@@ -5225,7 +5225,8 @@ function renderAlertsTab() {
   };
   const alertAction = alert => {
     if (alert.metric?.startsWith('access.') || alert.metric?.startsWith('power.')
-      || alert.metric?.startsWith('water.') || alert.metric?.startsWith('heat.')) {
+      || alert.metric?.startsWith('water.') || alert.metric?.startsWith('heat.')
+      || alert.metric?.startsWith('waste.')) {
       return el('span', { class: 'alert-actions' },
         el('button', { onclick: () => locateBuildingOnMap(alert.buildingIndex, alert.scopeId) },
           t('locateOnMap')),
@@ -5259,7 +5260,7 @@ function renderAlertsTab() {
       el('strong', {}, alert.scopeName || t('republicOverview')),
       el('span', {}, t(`alert.${alert.metric}`),
         (alert.metric?.startsWith('power.') || alert.metric?.startsWith('water.')
-          || alert.metric?.startsWith('heat.')) && alert.areaName ? el('span', { class: 'alert-trend' },
+          || alert.metric?.startsWith('heat.') || alert.metric?.startsWith('waste.')) && alert.areaName ? el('span', { class: 'alert-trend' },
           ` · ${alert.areaName}`) : null,
         alert.metric?.startsWith('access.') ? el('span', { class: 'alert-trend' },
           ` · ${fmt(alert.reachableAdults, 0)} / ${fmt(alert.slots, 0)} `
@@ -5270,7 +5271,7 @@ function renderAlertsTab() {
       el('span', { class: 'alert-tail' },
         Number.isFinite(alert.observed) ? el('span', { class: 'alert-value' },
           alert.metric === 'staffing' || alert.metric === 'health' || alert.metric === 'food'
-            || alert.metric.startsWith('access.')
+            || alert.metric.startsWith('access.') || alert.metric === 'waste.full'
             ? fmt(alert.observed * 100, 1) + ' %'
             : alert.metric.startsWith('buffer.') ? `${fmt(alert.observed, 2)} ${t('day')}`
               : fmt(alert.observed, 1)) : null,
@@ -5474,8 +5475,15 @@ function republicSnapshot() {
     scopeNameFor: plannerScopeName,
     muted: state.accessAlertsMuted ?? [],
   }));
+  // A waste store reads the other way round: it fills until something empties it.
+  const wasteAlerts = fullWasteStorageAlerts({
+    buildings: state.saveImport?.observedBuildings ?? [],
+    labelFor: mapBuildingDisplayName,
+    scopeNameFor: plannerScopeName,
+    muted: state.accessAlertsMuted ?? [],
+  });
   const alerts = [...republicAlerts(republicModel), ...trendAlerts, ...bufferAlerts,
-    ...accessAlerts, ...powerAlerts, ...utilityAlerts].sort((a, b) =>
+    ...accessAlerts, ...powerAlerts, ...utilityAlerts, ...wasteAlerts].sort((a, b) =>
     severityOrder[a.severity] - severityOrder[b.severity]
       || (a.observed ?? Infinity) - (b.observed ?? Infinity)
       || String(a.scopeName).localeCompare(String(b.scopeName)));
