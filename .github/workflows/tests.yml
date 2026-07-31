@@ -25,15 +25,28 @@ jobs:
           # structuredClone needs 17+, Object.hasOwn 16.9+. 22 is current LTS.
           node-version: '22'
 
-      # Pinned, reviewed uPlot 1.6.32 and Leaflet 1.9.4 copies are permitted
-      # under js/vendor and css/vendor. They make large histories and republic
-      # maps interactive without uploading save data or requiring a build;
-      # a lockfile or node_modules would mean that offline contract changed.
-      - name: Confirm the project has no install-time dependencies
+      # The project takes dependencies now. What still has to hold is the
+      # contract the old dependency-free rule was really protecting: the app is
+      # loaded straight from GitHub Pages as ES modules with no build step, and
+      # a page holding save data must not fetch anything from a third party.
+      # Libraries are vendored under js/vendor and css/vendor for that reason.
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Confirm nothing shipped fetches from a third party
         run: |
-          if [ -f package-lock.json ] || [ -d node_modules ]; then
-            echo "This project has no install-time dependencies by design."
-            echo "Vendored browser assets belong under js/vendor or css/vendor."
+          # A CDN reference would send a request from a page that has the
+          # user's save in memory, and would break the app offline.
+          #
+          # js/vendor and css/vendor are excluded: those are the pinned local
+          # copies, and their own source carries attribution links and doc
+          # comments that are text, not fetches.
+          if grep -rInE '(src|href)=["'"'"']https?://' index.html js css \
+              --include='*.html' --include='*.js' --include='*.css' \
+              --exclude-dir=vendor; then
+            echo
+            echo "Shipped files must not reference remote assets."
+            echo "Vendor the library under js/vendor or css/vendor instead."
             exit 1
           fi
 
