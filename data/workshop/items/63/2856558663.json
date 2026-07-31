@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "2856558663",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T03:26:05+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.535Z",
   "buildings": [
     {
       "id": "2856558663/TAOL-Winery",
@@ -10,7 +10,7 @@
       "types": [
         "TYPE_FACTORY"
       ],
-      "workers": 85.0,
+      "workers": 85,
       "professors": 0,
       "production": {
         "alcohol": 0.1

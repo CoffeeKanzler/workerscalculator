@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "3689910119",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T02:47:50+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.585Z",
   "buildings": [
     {
       "id": "3689910119/church",
@@ -10,13 +10,13 @@
       "types": [
         "TYPE_CHURCH"
       ],
-      "workers": 20.0,
+      "workers": 20,
       "professors": 0,
       "production": {},
       "consumption": {},
       "consumptionPerSecond": {},
       "livingSpace": 0,
-      "citizenAbleServe": 50.0,
+      "citizenAbleServe": 50,
       "qualityOfLiving": null,
       "attractiveScore": null,
       "storages": {},

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "3729636494",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T02:23:34+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.586Z",
   "buildings": [
     {
       "id": "3729636494/1",
@@ -11,7 +11,7 @@
         "CIVIL_BUILDING",
         "TYPE_CITYHALL"
       ],
-      "workers": 400.0,
+      "workers": 400,
       "professors": 0,
       "production": {},
       "consumption": {},
@@ -22,9 +22,9 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "mcomponents": 45.0,
-        "asphalt": 160.0,
-        "ecomponents": 25.0
+        "mcomponents": 45,
+        "asphalt": 160,
+        "ecomponents": 25
       },
       "electricWorkerFactors": {},
       "nameStr": "House of Soviets of the RSFSR",
@@ -38,7 +38,7 @@
         "CIVIL_BUILDING",
         "TYPE_CITYHALL"
       ],
-      "workers": 400.0,
+      "workers": 400,
       "professors": 0,
       "production": {},
       "consumption": {},
@@ -49,9 +49,9 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "mcomponents": 45.0,
-        "asphalt": 160.0,
-        "ecomponents": 25.0
+        "mcomponents": 45,
+        "asphalt": 160,
+        "ecomponents": 25
       },
       "electricWorkerFactors": {},
       "nameStr": "House of Soviets of the RSFSR - compact variant",

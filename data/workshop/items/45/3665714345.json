@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "3665714345",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T04:36:16+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.585Z",
   "buildings": [
     {
       "id": "3665714345/cieplownia",
@@ -10,10 +10,10 @@
       "types": [
         "TYPE_HEATING_PLANT"
       ],
-      "workers": 5.0,
+      "workers": 5,
       "professors": 0,
       "production": {
-        "heat": 140.0
+        "heat": 140
       },
       "consumption": {
         "coal": 0.08

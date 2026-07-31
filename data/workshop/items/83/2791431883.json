@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "2791431883",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-17T20:14:06+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.532Z",
   "buildings": [
     {
       "id": "2791431883/C1",
@@ -10,8 +10,8 @@
       "types": [
         "TYPE_POWERPLANT"
       ],
-      "workers": 125.0,
-      "professors": 25.0,
+      "workers": 125,
+      "professors": 25,
       "production": {
         "eletric": 80.35
       },
@@ -43,12 +43,12 @@
       "production": {},
       "consumption": {},
       "consumptionPerSecond": {},
-      "livingSpace": 130.0,
+      "livingSpace": 130,
       "citizenAbleServe": 0,
       "qualityOfLiving": 0.96,
       "attractiveScore": null,
       "storages": {
-        "RESOURCE_TRANSPORT_PASSANGER": 130.0
+        "RESOURCE_TRANSPORT_PASSANGER": 130
       },
       "constructionResources": {},
       "electricWorkerFactors": {},
@@ -62,13 +62,13 @@
       "types": [
         "TYPE_CITYHALL"
       ],
-      "workers": 45.0,
+      "workers": 45,
       "professors": 0,
       "production": {},
       "consumption": {},
       "consumptionPerSecond": {},
       "livingSpace": 0,
-      "citizenAbleServe": 10.0,
+      "citizenAbleServe": 10,
       "qualityOfLiving": null,
       "attractiveScore": null,
       "storages": {},

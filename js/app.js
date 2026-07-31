@@ -1,7 +1,7 @@
-import { STRINGS } from './i18n.js?v=182';
+import { STRINGS } from './i18n.js?v=184';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=33';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -88,7 +88,7 @@ import {
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
 } from './adapters/save_folder_adapter.js?v=18';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=13';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=14';
 import { bootstrapRuntime } from './bootstrap.js?v=7';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
@@ -2925,8 +2925,12 @@ function renderCity() {
   // need for and never the answer to. Counts are whole buildings and the rate
   // they are drawn from is the game's own for water; the demand they are matched
   // against is measured, so the panel is badged derived rather than exact.
+  // Only the shortfall needs recommending: whatever supply is already in the
+  // plan is subtracted first, so a town with two wells is told to build a
+  // third rather than three.
+  const waterShort = Math.max(0, res.water - (res.waterSupply ?? 0));
   const utilityPlan = cityUtilityPlan({
-    demand: { water: res.water, hotwater: res.hotwater },
+    demand: { water: waterShort, hotwater: res.hotwater },
     catalogue: prodBuildings(),
     choice: city.utilityChoice ?? {},
   });
@@ -2937,14 +2941,19 @@ function renderCity() {
       const label = t(entry.kind === 'water' ? 'waterUse' : 'hotwater');
       if (!entry.chosen) return kv(label, t('unavailable'));
       const options = entry.suppliers.map(o => [o.building.en, bname(o.building)]);
+      const placed = entry.kind === 'water' ? (res.waterSupply ?? 0) : 0;
       return el('div', { class: 'utility-row' },
         el('span', { class: 'utility-need' },
-          `${label}: ${fmt(entry.demand, 1)}`),
+          placed > 0
+            ? `${label}: ${fmt(entry.demand, 1)} ${t('cityUtilityStillShort')}`
+            + ` (${fmt(placed, 0)} ${t('cityUtilitySupplied')})`
+            : `${label}: ${fmt(entry.demand, 1)}`),
         selectInput(options, entry.chosen.en, v => {
           city.utilityChoice = { ...(city.utilityChoice ?? {}), [entry.kind]: v };
         }),
-        el('span', { class: 'utility-count' },
-          `x ${fmt(entry.coverage.count, 0)}`),
+        entry.coverage.count === 0
+          ? el('span', { class: 'utility-count pos' }, t('cityUtilityCovered'))
+          : el('span', { class: 'utility-count' }, `x ${fmt(entry.coverage.count, 0)}`),
         el('span', { class: 'hint' },
           `${fmt(entry.coverage.supplied, 0)} ${t('cityUtilitySupplied')}`
           + ` · ${fmt(entry.coverage.workers, 0)} ${t('workers')}`

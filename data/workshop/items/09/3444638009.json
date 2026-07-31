@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "3444638009",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T04:27:05+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.580Z",
   "buildings": [
     {
       "id": "3444638009/1",
@@ -21,10 +21,10 @@
       "qualityOfLiving": null,
       "attractiveScore": null,
       "storages": {
-        "RESOURCE_TRANSPORT_COVERED": 4000.0,
-        "RESOURCE_TRANSPORT_OPEN": 3500.0,
-        "RESOURCE_TRANSPORT_COOLER": 500.0,
-        "RESOURCE_TRANSPORT_VEHICLES": 2000.0
+        "RESOURCE_TRANSPORT_COVERED": 4000,
+        "RESOURCE_TRANSPORT_OPEN": 3500,
+        "RESOURCE_TRANSPORT_COOLER": 500,
+        "RESOURCE_TRANSPORT_VEHICLES": 2000
       },
       "constructionResources": {},
       "electricWorkerFactors": {},
@@ -49,10 +49,10 @@
       "qualityOfLiving": null,
       "attractiveScore": null,
       "storages": {
-        "RESOURCE_TRANSPORT_COVERED": 4000.0,
-        "RESOURCE_TRANSPORT_OPEN": 3500.0,
-        "RESOURCE_TRANSPORT_COOLER": 500.0,
-        "RESOURCE_TRANSPORT_VEHICLES": 2000.0
+        "RESOURCE_TRANSPORT_COVERED": 4000,
+        "RESOURCE_TRANSPORT_OPEN": 3500,
+        "RESOURCE_TRANSPORT_COOLER": 500,
+        "RESOURCE_TRANSPORT_VEHICLES": 2000
       },
       "constructionResources": {},
       "electricWorkerFactors": {},

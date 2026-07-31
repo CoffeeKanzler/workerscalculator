@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "2513359292",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T00:35:21+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.499Z",
   "buildings": [
     {
       "id": "2513359292/palace",
@@ -10,13 +10,13 @@
       "types": [
         "TYPE_KINO"
       ],
-      "workers": 30.0,
+      "workers": 30,
       "professors": 0,
       "production": {},
       "consumption": {},
       "consumptionPerSecond": {},
       "livingSpace": 0,
-      "citizenAbleServe": 12.0,
+      "citizenAbleServe": 12,
       "qualityOfLiving": null,
       "attractiveScore": 4.5,
       "storages": {},

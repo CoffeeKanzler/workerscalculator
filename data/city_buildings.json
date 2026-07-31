@@ -9295,7 +9295,11 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 1.6,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "waterSupply": 120.0,
+  "provenance": {
+   "waterSupply": "game-file"
+  }
  },
  {
   "de": "Wasseraufbereitung",
@@ -9325,7 +9329,11 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 7.4,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "waterSupply": 300.0,
+  "provenance": {
+   "waterSupply": "game-file"
+  }
  },
  {
   "de": "Klärwerk klein",
@@ -9359,8 +9367,10 @@
   "gameId": "sewage_treatment_small",
   "provenance": {
    "identity": "game-file",
-   "workers": "game-file"
-  }
+   "workers": "game-file",
+   "waterSupply": "game-file"
+  },
+  "waterSupply": 165.0
  },
  {
   "de": "Klärwerk",
@@ -9390,7 +9400,11 @@
   "panels": 0.0,
   "ecomponents": 0.0,
   "mcomponents": 9.2,
-  "recommendedFor": 0
+  "recommendedFor": 0,
+  "waterSupply": 440.0,
+  "provenance": {
+   "waterSupply": "game-file"
+  }
  },
  {
   "de": "Heizwerk klein m³",
@@ -10801,5 +10815,122 @@
   "ecomponents": 0,
   "mcomponents": 0,
   "recommendedFor": 0
+ },
+ {
+  "de": "Kleiner Brunnen",
+  "en": "Small water well",
+  "type": {
+   "de": "Sonstiges",
+   "en": "Miscellaneous"
+  },
+  "kind": "Vanilla",
+  "quality": null,
+  "workers": 0,
+  "special": 0,
+  "visitors": 0,
+  "inhabitants": 0,
+  "power": 0,
+  "maxKW": 0,
+  "water": 0,
+  "hotwater": 0.0,
+  "waste": 0,
+  "waterSupply": 70.0,
+  "workdays": 0,
+  "gravel": 0,
+  "bricks": 0,
+  "steel": 0,
+  "concrete": 0,
+  "asphalt": 0,
+  "boards": 0,
+  "panels": 0,
+  "ecomponents": 0,
+  "mcomponents": 0,
+  "recommendedFor": 0,
+  "gameId": "water_well_small",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "waterSupply": "game-file",
+   "power": "unavailable",
+   "maxKW": "unavailable"
+  }
+ },
+ {
+  "de": "Großer Brunnen",
+  "en": "Big water well",
+  "type": {
+   "de": "Sonstiges",
+   "en": "Miscellaneous"
+  },
+  "kind": "Vanilla",
+  "quality": null,
+  "workers": 7.0,
+  "special": 0,
+  "visitors": 0,
+  "inhabitants": 0,
+  "power": 4.3925,
+  "maxKW": 155.225,
+  "water": 0,
+  "hotwater": 0.0,
+  "waste": 0,
+  "waterSupply": 1505.0,
+  "workdays": 0,
+  "gravel": 0,
+  "bricks": 0,
+  "steel": 0,
+  "concrete": 0,
+  "asphalt": 0,
+  "boards": 0,
+  "panels": 0,
+  "ecomponents": 0,
+  "mcomponents": 0,
+  "recommendedFor": 0,
+  "gameId": "water_well_big",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "waterSupply": "game-file",
+   "power": "sheet-category-estimate",
+   "maxKW": "sheet-category-estimate"
+  }
+ },
+ {
+  "de": "Oberflächenwasser-Entnahme",
+  "en": "Surface water intake",
+  "type": {
+   "de": "Sonstiges",
+   "en": "Miscellaneous"
+  },
+  "kind": "Vanilla",
+  "quality": null,
+  "workers": 0,
+  "special": 0,
+  "visitors": 0,
+  "inhabitants": 0,
+  "power": 0,
+  "maxKW": 0,
+  "water": 0,
+  "hotwater": 0.0,
+  "waste": 0,
+  "waterSupply": 150.0,
+  "workdays": 0,
+  "gravel": 0,
+  "bricks": 0,
+  "steel": 0,
+  "concrete": 0,
+  "asphalt": 0,
+  "boards": 0,
+  "panels": 0,
+  "ecomponents": 0,
+  "mcomponents": 0,
+  "recommendedFor": 0,
+  "gameId": "water_to_water",
+  "provenance": {
+   "identity": "game-file",
+   "workers": "game-file",
+   "waterSupply": "game-file",
+   "power": "unavailable",
+   "maxKW": "unavailable"
+  }
  }
 ]

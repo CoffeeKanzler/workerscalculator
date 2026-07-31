@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "3263395017",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T03:04:17+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.574Z",
   "buildings": [
     {
       "id": "3263395017/Shabolovka",
@@ -11,8 +11,8 @@
         "TYPE_BROADCAST",
         "SUBTYPE_TELEVISION"
       ],
-      "workers": 200.0,
-      "professors": 120.0,
+      "workers": 200,
+      "professors": 120,
       "production": {},
       "consumption": {},
       "consumptionPerSecond": {},

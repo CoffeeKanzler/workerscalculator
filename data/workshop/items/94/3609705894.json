@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "3609705894",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T01:38:49+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.583Z",
   "buildings": [
     {
       "id": "3609705894/administration",
@@ -10,7 +10,7 @@
       "types": [
         "TYPE_CITYHALL"
       ],
-      "workers": 85.0,
+      "workers": 85,
       "professors": 0,
       "production": {},
       "consumption": {},

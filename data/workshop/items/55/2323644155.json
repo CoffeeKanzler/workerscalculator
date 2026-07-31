@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "2323644155",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T00:43:42+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.404Z",
   "buildings": [
     {
       "id": "2323644155/Powerplant",
@@ -10,16 +10,16 @@
       "types": [
         "TYPE_POWERPLANT"
       ],
-      "workers": 100.0,
-      "professors": 50.0,
+      "workers": 100,
+      "professors": 50,
       "production": {
-        "eletric": 90.0,
+        "eletric": 90,
         "nuclearfuelburned": 0.0005,
-        "vehicles": 1.0
+        "vehicles": 1
       },
       "consumption": {
         "nuclearfuel": 0.0009,
-        "vehicles": 1.0
+        "vehicles": 1
       },
       "consumptionPerSecond": {},
       "livingSpace": 0,
@@ -28,15 +28,15 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "gravel": 320.0,
-        "concrete": 420.0,
-        "asphalt": 300.0,
-        "workers": 8800.0,
-        "bricks": 240.0,
-        "steel": 630.0,
-        "boards": 80.0,
-        "mcomponents": 44.0,
-        "ecomponents": 28.0
+        "gravel": 320,
+        "concrete": 420,
+        "asphalt": 300,
+        "workers": 8800,
+        "bricks": 240,
+        "steel": 630,
+        "boards": 80,
+        "mcomponents": 44,
+        "ecomponents": 28
       },
       "electricWorkerFactors": {},
       "workshopId": "2323644155",

@@ -69,7 +69,11 @@ test('per-second electricity stays a utility field, not a per-worker material in
 test('stable city-building IDs expose only exact raw game facts', () => {
   const raw = new Map(rawBuildings.map(building => [building.id, building]));
   const identified = cityBuildings.filter(building => building.gameId);
-  assert.equal(identified.length, 41);
+  // 41 spreadsheet rows matched to a game building, plus the three water
+  // supply buildings added straight from the game files by
+  // tools/add_city_water_supply.py, which are the game building rather than a
+  // row matched to one.
+  assert.equal(identified.length, 44);
   for (const building of identified) {
     const source = raw.get(building.gameId);
     assert.ok(source, `missing city source ${building.gameId}`);

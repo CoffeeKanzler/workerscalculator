@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "3703395215",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T03:53:25+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.585Z",
   "buildings": [
     {
       "id": "3703395215/.",
@@ -16,18 +16,18 @@
       "production": {},
       "consumption": {},
       "consumptionPerSecond": {},
-      "livingSpace": 180.0,
+      "livingSpace": 180,
       "citizenAbleServe": 0,
       "qualityOfLiving": 0.97,
       "attractiveScore": null,
       "storages": {
-        "RESOURCE_TRANSPORT_PASSANGER": 180.0
+        "RESOURCE_TRANSPORT_PASSANGER": 180
       },
       "constructionResources": {
-        "mcomponents": 8.0,
-        "concrete": 35.0,
-        "asphalt": 15.0,
-        "bricks": 5.0
+        "mcomponents": 8,
+        "concrete": 35,
+        "asphalt": 15,
+        "bricks": 5
       },
       "electricWorkerFactors": {},
       "nameStr": "1980s Kievan residential highrise",

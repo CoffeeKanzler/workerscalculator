@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "2692705292",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T00:43:01+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.530Z",
   "buildings": [
     {
       "id": "2692705292/ferma16",
@@ -13,7 +13,7 @@
       "workers": 0,
       "professors": 0,
       "production": {
-        "plants": 10.0
+        "plants": 10
       },
       "consumption": {},
       "consumptionPerSecond": {},
@@ -23,12 +23,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 2850.0,
-        "prefabpanels": 13.0,
-        "bricks": 125.0,
-        "boards": 4.0,
-        "concrete": 127.0,
-        "steel": 22.0,
+        "workers": 2850,
+        "prefabpanels": 13,
+        "bricks": 125,
+        "boards": 4,
+        "concrete": 127,
+        "steel": 22,
         "mcomponents": 2.5,
         "ecomponents": 0.15
       },
@@ -45,7 +45,7 @@
       "workers": 0,
       "professors": 0,
       "production": {
-        "plants": 10.0
+        "plants": 10
       },
       "consumption": {},
       "consumptionPerSecond": {},
@@ -55,12 +55,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 3700.0,
-        "prefabpanels": 19.0,
-        "bricks": 150.0,
-        "boards": 5.0,
-        "concrete": 192.0,
-        "steel": 32.0
+        "workers": 3700,
+        "prefabpanels": 19,
+        "bricks": 150,
+        "boards": 5,
+        "concrete": 192,
+        "steel": 32
       },
       "electricWorkerFactors": {},
       "workshopId": "2692705292",
@@ -75,7 +75,7 @@
       "workers": 0,
       "professors": 0,
       "production": {
-        "plants": 10.0
+        "plants": 10
       },
       "consumption": {},
       "consumptionPerSecond": {},
@@ -85,13 +85,13 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 3700.0,
-        "prefabpanels": 19.0,
-        "bricks": 150.0,
-        "boards": 5.0,
-        "concrete": 192.0,
-        "steel": 32.0,
-        "mcomponents": 3.0,
+        "workers": 3700,
+        "prefabpanels": 19,
+        "bricks": 150,
+        "boards": 5,
+        "concrete": 192,
+        "steel": 32,
+        "mcomponents": 3,
         "ecomponents": 0.2
       },
       "electricWorkerFactors": {},
@@ -107,7 +107,7 @@
       "workers": 0,
       "professors": 0,
       "production": {
-        "plants": 10.0
+        "plants": 10
       },
       "consumption": {},
       "consumptionPerSecond": {},
@@ -117,13 +117,13 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 1725.0,
-        "prefabpanels": 6.0,
-        "bricks": 80.0,
-        "boards": 2.0,
+        "workers": 1725,
+        "prefabpanels": 6,
+        "bricks": 80,
+        "boards": 2,
         "concrete": 63.5,
-        "steel": 10.0,
-        "mcomponents": 1.0,
+        "steel": 10,
+        "mcomponents": 1,
         "ecomponents": 0.1
       },
       "electricWorkerFactors": {},

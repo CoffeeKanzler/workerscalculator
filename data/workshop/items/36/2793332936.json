@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "2793332936",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T04:07:36+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.532Z",
   "buildings": [
     {
       "id": "2793332936/.",
@@ -10,10 +10,10 @@
       "types": [
         "TYPE_FACTORY"
       ],
-      "workers": 20.0,
+      "workers": 20,
       "professors": 0,
       "production": {
-        "fuel": 1.0
+        "fuel": 1
       },
       "consumption": {
         "chemicals": 0.1,

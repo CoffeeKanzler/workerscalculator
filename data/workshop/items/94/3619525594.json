@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "3619525594",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T01:52:25+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.583Z",
   "buildings": [
     {
       "id": "3619525594/residential_palace",
@@ -15,12 +15,12 @@
       "production": {},
       "consumption": {},
       "consumptionPerSecond": {},
-      "livingSpace": 1196.0,
+      "livingSpace": 1196,
       "citizenAbleServe": 0,
       "qualityOfLiving": 0.94,
       "attractiveScore": null,
       "storages": {
-        "RESOURCE_TRANSPORT_PASSANGER": 1196.0
+        "RESOURCE_TRANSPORT_PASSANGER": 1196
       },
       "constructionResources": {},
       "electricWorkerFactors": {},

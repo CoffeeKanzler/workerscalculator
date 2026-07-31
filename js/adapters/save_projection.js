@@ -1,4 +1,4 @@
-import { CABLES } from '../calc.js?v=2';
+import { CABLES } from '../calc.js?v=4';
 import {
   aggregateCitizensByScope,
   compactObservedBuildings,

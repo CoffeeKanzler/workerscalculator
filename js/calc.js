@@ -392,6 +392,9 @@ export function evaluateCity(city, eco) {
     power: sum(b => b.power),
     maxKW: sum(b => b.maxKW),
     water: sum(b => b.water),
+    // Wells, intakes and treatment plants placed in the plan. Demand alone
+    // could never say whether a town was actually supplied.
+    waterSupply: sum(b => b.waterSupply ?? 0),
     hotwater: city.heatingEnabled === false ? 0 : sum(b => b.hotwater),
     waste: sum(b => b.waste),
     workdays: sum(b => b.workdays),

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "2798793083",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-18T02:44:30+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.532Z",
   "buildings": [
     {
       "id": "2798793083/gallery",
@@ -10,13 +10,13 @@
       "types": [
         "TYPE_ATTRACTION"
       ],
-      "workers": 40.0,
+      "workers": 40,
       "professors": 0,
       "production": {},
       "consumption": {},
       "consumptionPerSecond": {},
       "livingSpace": 0,
-      "citizenAbleServe": 6.0,
+      "citizenAbleServe": 6,
       "qualityOfLiving": null,
       "attractiveScore": 4.5,
       "storages": {},

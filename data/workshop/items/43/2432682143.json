@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "workshopId": "2432682143",
-  "source": "steam-workshop-config",
-  "extractedAt": "2026-07-17T17:25:24+00:00",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-07-31T06:34:56.443Z",
   "buildings": [
     {
       "id": "2432682143/avtopark016",
@@ -20,12 +20,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 1100.0,
-        "prefabpanels": 19.0,
-        "bricks": 80.0,
-        "boards": 3.0,
-        "concrete": 13.0,
-        "steel": 10.0
+        "workers": 1100,
+        "prefabpanels": 19,
+        "bricks": 80,
+        "boards": 3,
+        "concrete": 13,
+        "steel": 10
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -47,12 +47,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 750.0,
-        "prefabpanels": 15.0,
-        "bricks": 40.0,
-        "boards": 2.0,
-        "concrete": 10.0,
-        "steel": 8.0
+        "workers": 750,
+        "prefabpanels": 15,
+        "bricks": 40,
+        "boards": 2,
+        "concrete": 10,
+        "steel": 8
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -74,12 +74,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 1450.0,
-        "prefabpanels": 23.0,
-        "bricks": 80.0,
-        "boards": 4.0,
-        "concrete": 14.0,
-        "steel": 12.0
+        "workers": 1450,
+        "prefabpanels": 23,
+        "bricks": 80,
+        "boards": 4,
+        "concrete": 14,
+        "steel": 12
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -101,12 +101,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 1300.0,
-        "prefabpanels": 11.0,
-        "bricks": 20.0,
-        "boards": 1.0,
-        "concrete": 9.0,
-        "steel": 6.0
+        "workers": 1300,
+        "prefabpanels": 11,
+        "bricks": 20,
+        "boards": 1,
+        "concrete": 9,
+        "steel": 6
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -128,12 +128,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 400.0,
-        "prefabpanels": 11.0,
-        "bricks": 20.0,
-        "boards": 1.0,
-        "concrete": 9.0,
-        "steel": 6.0
+        "workers": 400,
+        "prefabpanels": 11,
+        "bricks": 20,
+        "boards": 1,
+        "concrete": 9,
+        "steel": 6
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -155,12 +155,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 750.0,
-        "prefabpanels": 15.0,
-        "bricks": 40.0,
-        "boards": 2.0,
-        "concrete": 10.0,
-        "steel": 8.0
+        "workers": 750,
+        "prefabpanels": 15,
+        "bricks": 40,
+        "boards": 2,
+        "concrete": 10,
+        "steel": 8
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -182,12 +182,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 1100.0,
-        "prefabpanels": 19.0,
-        "bricks": 80.0,
-        "boards": 3.0,
-        "concrete": 13.0,
-        "steel": 10.0
+        "workers": 1100,
+        "prefabpanels": 19,
+        "bricks": 80,
+        "boards": 3,
+        "concrete": 13,
+        "steel": 10
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -209,12 +209,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 750.0,
-        "prefabpanels": 15.0,
-        "bricks": 40.0,
-        "boards": 2.0,
-        "concrete": 10.0,
-        "steel": 8.0
+        "workers": 750,
+        "prefabpanels": 15,
+        "bricks": 40,
+        "boards": 2,
+        "concrete": 10,
+        "steel": 8
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -236,12 +236,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 1450.0,
-        "prefabpanels": 23.0,
-        "bricks": 80.0,
-        "boards": 4.0,
-        "concrete": 14.0,
-        "steel": 12.0
+        "workers": 1450,
+        "prefabpanels": 23,
+        "bricks": 80,
+        "boards": 4,
+        "concrete": 14,
+        "steel": 12
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -263,12 +263,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 1300.0,
-        "prefabpanels": 11.0,
-        "bricks": 20.0,
-        "boards": 1.0,
-        "concrete": 9.0,
-        "steel": 6.0
+        "workers": 1300,
+        "prefabpanels": 11,
+        "bricks": 20,
+        "boards": 1,
+        "concrete": 9,
+        "steel": 6
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -290,12 +290,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 400.0,
-        "prefabpanels": 11.0,
-        "bricks": 20.0,
-        "boards": 1.0,
-        "concrete": 9.0,
-        "steel": 6.0
+        "workers": 400,
+        "prefabpanels": 11,
+        "bricks": 20,
+        "boards": 1,
+        "concrete": 9,
+        "steel": 6
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -317,12 +317,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 750.0,
-        "prefabpanels": 15.0,
-        "bricks": 40.0,
-        "boards": 2.0,
-        "concrete": 10.0,
-        "steel": 8.0
+        "workers": 750,
+        "prefabpanels": 15,
+        "bricks": 40,
+        "boards": 2,
+        "concrete": 10,
+        "steel": 8
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -344,12 +344,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 750.0,
-        "prefabpanels": 15.0,
-        "bricks": 40.0,
-        "boards": 2.0,
-        "concrete": 10.0,
-        "steel": 8.0
+        "workers": 750,
+        "prefabpanels": 15,
+        "bricks": 40,
+        "boards": 2,
+        "concrete": 10,
+        "steel": 8
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -371,12 +371,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 750.0,
-        "prefabpanels": 15.0,
-        "bricks": 40.0,
-        "boards": 2.0,
-        "concrete": 10.0,
-        "steel": 8.0
+        "workers": 750,
+        "prefabpanels": 15,
+        "bricks": 40,
+        "boards": 2,
+        "concrete": 10,
+        "steel": 8
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -398,12 +398,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 1300.0,
-        "prefabpanels": 11.0,
-        "bricks": 20.0,
-        "boards": 1.0,
-        "concrete": 9.0,
-        "steel": 6.0
+        "workers": 1300,
+        "prefabpanels": 11,
+        "bricks": 20,
+        "boards": 1,
+        "concrete": 9,
+        "steel": 6
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -425,12 +425,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 1300.0,
-        "prefabpanels": 11.0,
-        "bricks": 20.0,
-        "boards": 1.0,
-        "concrete": 9.0,
-        "steel": 6.0
+        "workers": 1300,
+        "prefabpanels": 11,
+        "bricks": 20,
+        "boards": 1,
+        "concrete": 9,
+        "steel": 6
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
@@ -452,12 +452,12 @@
       "attractiveScore": null,
       "storages": {},
       "constructionResources": {
-        "workers": 400.0,
-        "prefabpanels": 11.0,
-        "bricks": 20.0,
-        "boards": 1.0,
-        "concrete": 9.0,
-        "steel": 6.0
+        "workers": 400,
+        "prefabpanels": 11,
+        "bricks": 20,
+        "boards": 1,
+        "concrete": 9,
+        "steel": 6
       },
       "electricWorkerFactors": {},
       "workshopId": "2432682143",
