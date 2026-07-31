@@ -359,6 +359,16 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-legend i.road { width: 14px; height: 2px; border-radius: 0; background: var(--muted); }
 .map-legend i.rail { width: 14px; height: 4px; border-radius: 0; border-top: 1px solid var(--accent2); border-bottom: 1px solid var(--accent2); background: transparent; }
 .map-legend i.pedestrian { width: 14px; height: 2px; border-radius: 0; background: #e7bd69; }
+/* Drawn dashed because the map draws low tension dashed and high tension solid;
+   a solid swatch would describe only half the layer. */
+.map-legend i.power { width: 14px; height: 2px; border-radius: 0; background: transparent; background-image: repeating-linear-gradient(90deg, var(--power) 0 4px, transparent 4px 7px); }
+/* Colour chips beside the layer names, matching the stroke each layer draws. */
+.map-layer-menu .layer-swatch { display: inline-block; width: 12px; height: 3px; margin-right: 4px; vertical-align: middle; border-radius: 1px; }
+.map-layer-menu .layer-swatch.roads { background: var(--muted); }
+.map-layer-menu .layer-swatch.rails { background: var(--accent2); }
+.map-layer-menu .layer-swatch.pedestrian { background: #e7bd69; }
+.map-layer-menu .layer-swatch.power { background: var(--power); }
+.map-layer-menu .layer-swatch.transport { background: var(--focus); }
 .map-legend i.water { width: 14px; height: 7px; border-radius: 2px; background: rgba(44, 133, 190, .7); }
 .map-legend i.pollution { width: 22px; height: 7px; border-radius: 2px; background: linear-gradient(90deg, #2db058, #f6c937, #dc372d); }
 /* These have to match what the canvas draws, shape and colour both, or the
@@ -889,6 +899,11 @@ table.data > tbody { display: table; width: 100%; }
   --pos: #3f6d55;
   --neg: #9f2f2b;
   --warn: #a36f19;
+  /* The grid needs a hue of its own: --warn is the same amber as --accent2,
+     which draws the railways, so power and rail were the same colour on the
+     map and told apart only by stroke weight. Violet is the one family the
+     poster palette was not already using. */
+  --power: #6b3fa0;
   --border: #aaa18f;
   --blueprint: #48657b;
   --focus: #1f587d;
@@ -927,6 +942,7 @@ table.data > tbody { display: table; width: 100%; }
     --pos: #74c295;
     --neg: #e2705f;
     --warn: #d9a441;
+    --power: #b98ddb;
     --border: #3b403f;
     --blueprint: #8fb3cd;
     --focus: #6fb2df;
@@ -957,6 +973,7 @@ table.data > tbody { display: table; width: 100%; }
   --pos: #74c295;
   --neg: #e2705f;
   --warn: #d9a441;
+  --power: #b98ddb;
   --border: #3b403f;
   --blueprint: #8fb3cd;
   --focus: #6fb2df;

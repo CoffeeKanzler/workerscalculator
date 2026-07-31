@@ -199,10 +199,10 @@ export function mountRepublicLeafletMap(container, options) {
   // high tension carries between plants and substations, low tension from a
   // substation into the streets around it.
   addNetwork('power', model.powerLow, {
-    color: palette.warn, weight: 1.2, opacity: 0.75, dashArray: '4 3',
+    color: palette.power, weight: 1.2, opacity: 0.75, dashArray: '4 3',
   });
   addNetwork('power', model.powerHigh, {
-    color: palette.warn, weight: 2.4, opacity: 0.9,
+    color: palette.power, weight: 2.4, opacity: 0.9,
   });
 
   const transportRecords = (transportLines ?? []).map(line => {

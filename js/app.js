@@ -54,7 +54,7 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=34';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=37';
 import { workerAccessAvailability } from './models/access_graph.js?v=20';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=20';
 import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=17';
@@ -2908,7 +2908,7 @@ function applyStandaloneMapVisibility(svg, layers, buildingFilter = '', legend =
   if (legend) {
     const visibility = {
       water: layers.water, pollution: layers.pollution, roads: layers.roads, rails: layers.rails,
-      pedestrian: layers.pedestrian,
+      pedestrian: layers.pedestrian, power: layers.power,
       buildings: layers.buildings, selected: layers.buildings,
       construction: layers.construction, borders: layers.borders,
       scopes: layers.scopes, outliers: layers.outliers,
@@ -3261,6 +3261,11 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
     model.pollution.radiationNonzero
       ? `${fmt(model.pollution.radiationNonzero, 0)} ${t('radiationCells')}`
       : t('noRadiationDetected'))) : null;
+  // The line layers are named here and nowhere else — this map has no legend
+  // beyond the building categories — so the toggle carries the colour swatch.
+  // Without it the reader has a name and a colour and no way to pair them,
+  // which is how railways and power lines read as one amber layer.
+  const LINE_SWATCH = new Set(['roads', 'rails', 'pedestrian', 'power', 'transport']);
   const layerToggle = (key, label, available = true) => available ? el('label', {},
     el('input', {
       type: 'checkbox', checked: layers[key], 'data-map-layer': key,
@@ -3271,7 +3276,9 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         if (key === 'radiation' && radiationKey) radiationKey.hidden = !event.target.checked;
         saveState();
       },
-    }), ' ', label) : null;
+    }), ' ',
+    LINE_SWATCH.has(key) ? el('i', { class: `layer-swatch ${key}`, 'aria-hidden': 'true' }) : null,
+    label) : null;
   const modeButtons = el('div', { class: 'view-toggle map-metric-toggle', role: 'group', 'aria-label': t('mapMetric') },
     ...[
       ['category', 'mapMetricCategory'],
@@ -3530,6 +3537,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         neg: color('--neg', '#b63b35'),
         pedestrian: '#e7bd69',
         transport: color('--focus', '#d19042'),
+        power: color('--power', '#6b3fa0'),
       },
       waterHref: standaloneWaterImageHref,
       pollutionHref: standalonePollutionImageHref,
@@ -4153,6 +4161,10 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     model.roads.length ? el('span', { 'data-map-legend': 'roads' }, el('i', { class: 'road' }), t('roads')) : null,
     model.rails.length ? el('span', { 'data-map-legend': 'rails' }, el('i', { class: 'rail' }), t('rails')) : null,
     model.pedestrian.length ? el('span', { 'data-map-legend': 'pedestrian' }, el('i', { class: 'pedestrian' }), t('pedestrianPaths')) : null,
+    // The grid was drawn with no legend entry at all, so its lines were both
+    // the same colour as the railways and unnamed.
+    (model.powerLow?.length || model.powerHigh?.length)
+      ? el('span', { 'data-map-legend': 'power' }, el('i', { class: 'power' }), t('mapPowerLines')) : null,
     // One grey dot said 'Buildings' while the map drew four shapes in four
     // colours, so the legend explained none of what a reader was looking at.
     el('span', { 'data-map-legend': 'buildings' },
