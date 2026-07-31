@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=178';
+import { STRINGS } from './i18n.js?v=180';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -63,6 +63,7 @@ import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
 import { workerAccessAlerts } from './models/access_alerts.js?v=3';
 import { unpoweredBuildingAlerts } from './models/power_alerts.js?v=6';
 import { missingUtilityAlerts, fullWasteStorageAlerts } from './models/utility_alerts.js?v=5';
+import { largestChainForWorkforce } from './models/workforce_plan.js?v=3';
 import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';
 import { buildingHeightSamples } from './models/water_level.js?v=3';
 import { transitReachFrom } from './models/transit_reach.js?v=4';
@@ -1617,10 +1618,69 @@ function renderChain() {
       type: 'checkbox', checked: ch.includeUtilities,
       onchange: e => { ch.includeUtilities = e.target.checked; update(); } })));
 
+  // "How much can this town run?" rather than "what does this rate cost?".
+  //
+  // The workforce is typed by default, because a republic that has not been
+  // founded yet has no areas to pick from and planning one is the commonest
+  // reason to be here at all. A loaded save adds its areas as choices; it never
+  // becomes the only way in.
+  const chainOptions = {
+    productivity: state.plan.settings.productivity,
+    currency: state.currency,
+    imports: new Set(ch.imports),
+    producerChoice: new Map(Object.entries(ch.producerChoice)),
+    includeUtilities: ch.includeUtilities,
+    qualityTiers: new Map(Object.entries(ch.qualityTiers)),
+  };
+  const workforceSources = [['manual', t('workforceTyped')],
+    ...cityPlanningAreas().map((area, index) => [`area:${index}`, area.name || `${t('area')} ${index + 1}`])];
+  const chosenSource = workforceSources.some(([id]) => id === ch.workforceSource)
+    ? ch.workforceSource : 'manual';
+  const areaSurplus = index => {
+    const area = cityPlanningAreas()[index];
+    if (!area) return null;
+    const evaluated = evaluateCity({ ...area, rows: (area.rows ?? []).map(row => ({
+      ...row,
+      building: row.importedBuilding ?? (Number.isInteger(row.buildingIndex)
+        ? DATA.cityBuildings[row.buildingIndex]
+        : DATA.cityBuildings.find(b => b.de === row.name)),
+    })) }, eco);
+    return evaluated.workerSurplus;
+  };
+  const budget = chosenSource === 'manual'
+    ? (ch.workforceBudget ?? 100)
+    : areaSurplus(Number(chosenSource.slice('area:'.length)));
+  const fit = largestChainForWorkforce({
+    goalKey: ch.goal, workerBudget: budget, buildings, eco,
+    opts: chainOptions, solve: solveChain,
+  });
+  const workforceBox = el('div', { class: 'settingsbar workforce-plan' },
+    el('strong', {}, t('workforcePlanTitle')),
+    el('label', {}, t('workforceFrom') + ' ',
+      selectInput(workforceSources, chosenSource, v => { ch.workforceSource = v; })),
+    chosenSource === 'manual'
+      ? el('label', {}, t('workers') + ' ',
+        numInput(ch.workforceBudget ?? 100, v => { ch.workforceBudget = v; }, { min: 0, step: 10 }))
+      : el('span', { class: 'hint' },
+        `${t('workers')}: ${Number.isFinite(budget) ? fmt(budget, 1) : '—'}`),
+    fit.reason === 'fits' ? el('span', {},
+      el('strong', {}, `${fmt(fit.amount, 1)} t / ${t('day')}`),
+      el('span', { class: 'hint' },
+        ` · ${fmt(fit.workers, 0)} / ${fmt(fit.budget, 0)} ${t('workers')}`
+        + ` · ${fmt(fit.spare, 1)} ${t('workforceSpare')}`)) : null,
+    fit.reason === 'smallest-chain-too-big' ? el('span', { class: 'hint warn' },
+      t('workforceTooSmall').replace('{workers}', fmt(fit.smallestChainWorkers, 0))) : null,
+    fit.reason === 'no-workers' ? el('span', { class: 'hint' }, t('workforceNone')) : null,
+    fit.reason === 'unsolvable' ? el('span', { class: 'hint warn' }, t('chainDiverged')) : null,
+    fit.reason === 'fits' ? el('button', {
+      class: 'primary',
+      onclick: () => { ch.amount = Number(fit.amount.toFixed(2)); update(); },
+    }, t('workforceApply')) : null);
+
   if (result.diverged) {
     return el('section', {},
       el('p', { class: 'hint' }, t('chainHint')),
-      chainTabs, settings,
+      chainTabs, settings, workforceBox,
       el('p', { class: 'neg' }, t('chainDiverged')));
   }
 
@@ -1692,7 +1752,7 @@ function renderChain() {
 
   return el('section', {},
     el('p', { class: 'hint' }, t('chainHint')),
-    chainTabs, settings, tbl,
+    chainTabs, settings, workforceBox, tbl,
     el('div', { class: 'columns' }, totals, bypBox));
 }
 
