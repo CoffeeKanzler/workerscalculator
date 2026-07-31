@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=171';
+import { STRINGS } from './i18n.js?v=173';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=31';
@@ -48,7 +48,7 @@ import {
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, filterRepublicAlerts,
-} from './republic.js?v=16';
+} from './republic.js?v=18';
 import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
@@ -61,7 +61,8 @@ import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=
 import { buildWalkingNetwork, walkingReachFrom } from './models/walking_access.js?v=10';
 import { buildCablewayRoutes } from './models/cableway_access.js?v=3';
 import { workerAccessAlerts } from './models/access_alerts.js?v=3';
-import { unpoweredBuildingAlerts } from './models/power_alerts.js?v=3';
+import { unpoweredBuildingAlerts } from './models/power_alerts.js?v=5';
+import { missingUtilityAlerts } from './models/utility_alerts.js?v=3';
 import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';
 import { buildingHeightSamples } from './models/water_level.js?v=3';
 import { transitReachFrom } from './models/transit_reach.js?v=4';
@@ -5223,7 +5224,8 @@ function renderAlertsTab() {
     update();
   };
   const alertAction = alert => {
-    if (alert.metric?.startsWith('access.') || alert.metric?.startsWith('power.')) {
+    if (alert.metric?.startsWith('access.') || alert.metric?.startsWith('power.')
+      || alert.metric?.startsWith('water.') || alert.metric?.startsWith('heat.')) {
       return el('span', { class: 'alert-actions' },
         el('button', { onclick: () => locateBuildingOnMap(alert.buildingIndex, alert.scopeId) },
           t('locateOnMap')),
@@ -5256,7 +5258,8 @@ function renderAlertsTab() {
   const alertItems = filteredAlerts.length ? alertPresentation.visible.map(alert => el('div', { class: `alert ${alert.severity}` },
       el('strong', {}, alert.scopeName || t('republicOverview')),
       el('span', {}, t(`alert.${alert.metric}`),
-        alert.metric?.startsWith('power.') && alert.areaName ? el('span', { class: 'alert-trend' },
+        (alert.metric?.startsWith('power.') || alert.metric?.startsWith('water.')
+          || alert.metric?.startsWith('heat.')) && alert.areaName ? el('span', { class: 'alert-trend' },
           ` · ${alert.areaName}`) : null,
         alert.metric?.startsWith('access.') ? el('span', { class: 'alert-trend' },
           ` · ${fmt(alert.reachableAdults, 0)} / ${fmt(alert.slots, 0)} `
@@ -5460,8 +5463,19 @@ function republicSnapshot() {
     scopeNameFor: plannerScopeName,
     muted: state.accessAlertsMuted ?? [],
   });
+  // Water and heat record themselves exactly as electricity does, so they are
+  // read the same way rather than inferred from anything.
+  const utilityAlerts = ['water', 'heat'].flatMap(resource => missingUtilityAlerts({
+    resource,
+    buildings: state.saveImport?.observedBuildings ?? [],
+    occupiedResidences: (state.saveImport?.residenceOccupancy ?? [])
+      .filter(row => (row.residents ?? 0) > 0).map(row => row.buildingIndex),
+    labelFor: mapBuildingDisplayName,
+    scopeNameFor: plannerScopeName,
+    muted: state.accessAlertsMuted ?? [],
+  }));
   const alerts = [...republicAlerts(republicModel), ...trendAlerts, ...bufferAlerts,
-    ...accessAlerts, ...powerAlerts].sort((a, b) =>
+    ...accessAlerts, ...powerAlerts, ...utilityAlerts].sort((a, b) =>
     severityOrder[a.severity] - severityOrder[b.severity]
       || (a.observed ?? Infinity) - (b.observed ?? Infinity)
       || String(a.scopeName).localeCompare(String(b.scopeName)));

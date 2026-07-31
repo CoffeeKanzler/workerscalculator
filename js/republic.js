@@ -273,7 +273,8 @@ export function alertCategory(alert) {
   if (metric === 'staffing' || metric === 'netWorkers' || metric.startsWith('access.')) {
     return 'workforce';
   }
-  if (metric.startsWith('power.')) return 'coverage';
+  if (metric.startsWith('power.') || metric.startsWith('water.')
+    || metric.startsWith('heat.')) return 'coverage';
   if (metric === 'health' || metric === 'food') return 'needs';
   if (metric.startsWith('buffer.')) return 'buffers';
   if (metric.startsWith('coverage.')) return 'coverage';
