@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3769879528",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:47:01.714Z",
+  "buildings": [
+    {
+      "id": "3769879528/cargo_harbor",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 2,
+        "RESOURCE_TRANSPORT_COOLER": 2,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 2
+      },
+      "constructionResources": {
+        "workers": 600,
+        "gravel": 150,
+        "concrete": 35,
+        "boards": 100,
+        "steel": 8,
+        "mcomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Cargo Terminal",
+      "workshopId": "3769879528",
+      "modPath": "cargo_harbor",
+      "footprint": {
+        "boxes": [
+          [
+            17,
+            -31,
+            21,
+            24
+          ],
+          [
+            -10,
+            -31,
+            17,
+            24
+          ],
+          [
+            21,
+            -12.4,
+            24.82,
+            9
+          ],
+          [
+            17.66,
+            -8.97,
+            20.8,
+            1.28
+          ],
+          [
+            -7.08,
+            -34.27,
+            25.84,
+            31.49
+          ],
+          [
+            17.85,
+            5.53,
+            21.83,
+            9.51
+          ],
+          [
+            18.64,
+            6.32,
+            21.04,
+            8.72
+          ],
+          [
+            18.11,
+            5.79,
+            21.57,
+            9.25
+          ],
+          [
+            10.63,
+            -27.42,
+            18.38,
+            5.99
+          ],
+          [
+            19.7,
+            -28.58,
+            20.3,
+            20.02
+          ],
+          [
+            20.77,
+            20.62,
+            21.48,
+            21.32
+          ],
+          [
+            4,
+            -11.29,
+            25,
+            30
+          ]
+        ],
+        "height": 9.34
+      }
+    }
+  ],
+  "vehicles": []
+}

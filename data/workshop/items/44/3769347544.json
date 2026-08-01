@@ -1,0 +1,553 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3769347544",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:44:29.659Z",
+  "buildings": [
+    {
+      "id": "3769347544/ad_column",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ad Column",
+      "workshopId": "3769347544",
+      "modPath": "ad_column",
+      "footprint": {
+        "boxes": [
+          [
+            -1,
+            -1,
+            1,
+            1
+          ]
+        ],
+        "height": 4.35
+      }
+    },
+    {
+      "id": "3769347544/awning",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Markise",
+      "workshopId": "3769347544",
+      "modPath": "awning",
+      "footprint": {
+        "boxes": [
+          [
+            -1.02,
+            0.05,
+            1.02,
+            2.06
+          ],
+          [
+            -1.02,
+            -0.07,
+            1.02,
+            0.08
+          ]
+        ],
+        "height": 2.8
+      }
+    },
+    {
+      "id": "3769347544/cafe1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cafe 1",
+      "workshopId": "3769347544",
+      "modPath": "cafe1",
+      "footprint": {
+        "boxes": [
+          [
+            0.34,
+            0.05,
+            0.75,
+            0.49
+          ],
+          [
+            0.72,
+            0.05,
+            0.88,
+            0.49
+          ],
+          [
+            0.73,
+            0.09,
+            0.84,
+            0.46
+          ],
+          [
+            0.34,
+            0.05,
+            0.72,
+            0.49
+          ],
+          [
+            0.34,
+            -0.48,
+            0.75,
+            -0.05
+          ],
+          [
+            0.72,
+            -0.48,
+            0.88,
+            -0.05
+          ],
+          [
+            0.73,
+            -0.45,
+            0.84,
+            -0.07
+          ],
+          [
+            0.34,
+            -0.48,
+            0.72,
+            -0.05
+          ],
+          [
+            -0.7,
+            0.05,
+            -0.29,
+            0.49
+          ],
+          [
+            -0.3,
+            0.05,
+            -0.29,
+            0.49
+          ],
+          [
+            -0.83,
+            0.05,
+            -0.67,
+            0.49
+          ],
+          [
+            -0.67,
+            0.05,
+            -0.29,
+            0.49
+          ],
+          [
+            -0.79,
+            0.09,
+            -0.68,
+            0.46
+          ],
+          [
+            -0.25,
+            -0.49,
+            0.3,
+            0.49
+          ],
+          [
+            -0.29,
+            -0.61,
+            0.36,
+            0.63
+          ],
+          [
+            -0.7,
+            -0.48,
+            -0.29,
+            -0.05
+          ],
+          [
+            -0.3,
+            -0.48,
+            -0.29,
+            -0.05
+          ],
+          [
+            -0.83,
+            -0.48,
+            -0.67,
+            -0.05
+          ],
+          [
+            -0.79,
+            -0.45,
+            -0.68,
+            -0.07
+          ],
+          [
+            -0.67,
+            -0.48,
+            -0.29,
+            -0.05
+          ]
+        ],
+        "height": 0.96
+      }
+    },
+    {
+      "id": "3769347544/cafe_chair",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cafe chair",
+      "workshopId": "3769347544",
+      "modPath": "cafe_chair",
+      "footprint": {
+        "boxes": [
+          [
+            -0.18,
+            -0.21,
+            0.18,
+            0.32
+          ]
+        ],
+        "height": 0.83
+      }
+    },
+    {
+      "id": "3769347544/cafe_table",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cafe table",
+      "workshopId": "3769347544",
+      "modPath": "cafe_table"
+    },
+    {
+      "id": "3769347544/hedge_bush",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hege",
+      "workshopId": "3769347544",
+      "modPath": "hedge_bush",
+      "footprint": {
+        "boxes": [
+          [
+            -0.89,
+            -0.88,
+            0.97,
+            0.84
+          ]
+        ],
+        "height": 1.52
+      }
+    },
+    {
+      "id": "3769347544/mailbox",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mailbox",
+      "workshopId": "3769347544",
+      "modPath": "mailbox",
+      "footprint": {
+        "boxes": [
+          [
+            -0.24,
+            -0.23,
+            0.28,
+            0.2
+          ]
+        ],
+        "height": 1.5
+      }
+    },
+    {
+      "id": "3769347544/phone_booth",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Phone Booth",
+      "workshopId": "3769347544",
+      "modPath": "phone_booth",
+      "footprint": {
+        "boxes": [
+          [
+            -0.32,
+            -0.18,
+            0.32,
+            0.58
+          ]
+        ],
+        "height": 2.15
+      }
+    },
+    {
+      "id": "3769347544/sarajevo_80s_lamp",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sarajevo 80s Lamp",
+      "workshopId": "3769347544",
+      "modPath": "sarajevo_80s_lamp",
+      "footprint": {
+        "boxes": [
+          [
+            -0.28,
+            -0.28,
+            0.34,
+            0.35
+          ],
+          [
+            -0.32,
+            0.16,
+            -0.02,
+            0.46
+          ],
+          [
+            -0.38,
+            -0.38,
+            -0.08,
+            -0.08
+          ],
+          [
+            0.14,
+            -0.13,
+            0.44,
+            0.17
+          ]
+        ],
+        "height": 3.18
+      }
+    },
+    {
+      "id": "3769347544/sunshade",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sunshade",
+      "workshopId": "3769347544",
+      "modPath": "sunshade",
+      "footprint": {
+        "boxes": [
+          [
+            -0.03,
+            -0.05,
+            0.03,
+            0.03
+          ],
+          [
+            0,
+            -0.56,
+            0.99,
+            0.57
+          ],
+          [
+            0,
+            -1.14,
+            0.98,
+            0
+          ],
+          [
+            -0.98,
+            -1.14,
+            0,
+            0
+          ],
+          [
+            -0.99,
+            -0.57,
+            0,
+            0.56
+          ],
+          [
+            -0.98,
+            0,
+            0,
+            1.14
+          ],
+          [
+            0,
+            0,
+            0.98,
+            1.14
+          ],
+          [
+            -0.31,
+            -0.31,
+            0.31,
+            0.31
+          ]
+        ],
+        "height": 2.55
+      }
+    },
+    {
+      "id": "3769347544/wire_lamp",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Hanging wire lamp",
+      "workshopId": "3769347544",
+      "modPath": "wire_lamp",
+      "footprint": {
+        "boxes": [
+          [
+            -15.58,
+            -0.1,
+            15.4,
+            0.2
+          ],
+          [
+            -0.5,
+            -0.14,
+            0.5,
+            0.36
+          ],
+          [
+            -0.45,
+            -0.12,
+            0.45,
+            0.33
+          ]
+        ],
+        "height": 10
+      }
+    }
+  ],
+  "vehicles": []
+}

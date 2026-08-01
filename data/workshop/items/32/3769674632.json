@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3769674632",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:44:29.717Z",
+  "buildings": [
+    {
+      "id": "3769674632/1-241-116",
+      "nameId": 6099,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.72,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3769674632",
+      "modPath": "1-241-116",
+      "footprint": {
+        "boxes": [
+          [
+            -22.1,
+            -8.43,
+            22.1,
+            8.43
+          ],
+          [
+            -22.71,
+            -8.11,
+            22.71,
+            8.11
+          ],
+          [
+            -22.1,
+            -7.52,
+            22.1,
+            7.53
+          ],
+          [
+            -22.71,
+            -8.7,
+            22.71,
+            8.7
+          ],
+          [
+            -13.01,
+            -7.38,
+            13.01,
+            -5.41
+          ],
+          [
+            -22.3,
+            -7.67,
+            22.3,
+            7.72
+          ]
+        ],
+        "height": 12.22
+      }
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3773463510",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:47:01.788Z",
+  "buildings": [
+    {
+      "id": "3773463510/StationaryAccumulator",
+      "nameId": null,
+      "types": [
+        "TYPE_TRANSFORMATOR"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_ELETRIC": 5000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stationary Accumulator",
+      "workshopId": "3773463510",
+      "modPath": "StationaryAccumulator",
+      "footprint": {
+        "boxes": [
+          [
+            3.22,
+            -1.99,
+            3.67,
+            3.36
+          ],
+          [
+            -4.92,
+            -2.51,
+            1.46,
+            2.83
+          ]
+        ],
+        "height": 5.43
+      }
+    }
+  ],
+  "vehicles": []
+}

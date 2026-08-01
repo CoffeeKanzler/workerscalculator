@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3773011593",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:47:01.775Z",
+  "buildings": [
+    {
+      "id": "3773011593/CopperMine",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_COPPER"
+      ],
+      "workers": 250,
+      "professors": 0,
+      "production": {
+        "copper_ore": 4
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 3050,
+        "boards": 75,
+        "concrete": 180,
+        "steel": 45
+      },
+      "electricWorkerFactors": {
+        "lighting": 1.3,
+        "living": 1.5
+      },
+      "nameStr": "Copper Mine",
+      "workshopId": "3773011593",
+      "modPath": "CopperMine",
+      "footprint": {
+        "boxes": [
+          [
+            -8.7,
+            -8.66,
+            10.88,
+            8.57
+          ],
+          [
+            -15.67,
+            -13.94,
+            4.34,
+            11.39
+          ],
+          [
+            20.07,
+            5,
+            21.29,
+            5.33
+          ]
+        ],
+        "height": 46.28
+      }
+    }
+  ],
+  "vehicles": []
+}

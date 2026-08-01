@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3766033044",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:44:29.570Z",
+  "buildings": [
+    {
+      "id": "3766033044/1.Voskresensk1920s",
+      "nameId": 6001,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3766033044",
+      "modPath": "1.Voskresensk1920s",
+      "footprint": {
+        "boxes": [
+          [
+            -13.25,
+            -6,
+            13.25,
+            7.66
+          ],
+          [
+            -13.4,
+            -6.16,
+            13.4,
+            7.74
+          ],
+          [
+            -13.6,
+            -6.3,
+            13.6,
+            8.99
+          ],
+          [
+            -13.36,
+            -6.11,
+            13.36,
+            7.77
+          ],
+          [
+            -13.6,
+            -6.3,
+            13.6,
+            8.07
+          ]
+        ],
+        "height": 11.7
+      }
+    },
+    {
+      "id": "3766033044/2.Voskresensk1920s",
+      "nameId": 6001,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3766033044",
+      "modPath": "2.Voskresensk1920s",
+      "footprint": {
+        "boxes": [
+          [
+            -13.85,
+            -6,
+            13.85,
+            7.3
+          ],
+          [
+            -12.76,
+            -6.16,
+            12.75,
+            7.38
+          ],
+          [
+            -14.19,
+            -6.3,
+            14.19,
+            8.52
+          ],
+          [
+            -14.25,
+            -6.22,
+            14.25,
+            7.55
+          ],
+          [
+            -13.97,
+            -6.11,
+            13.97,
+            7.42
+          ]
+        ],
+        "height": 10.92
+      }
+    }
+  ],
+  "vehicles": []
+}

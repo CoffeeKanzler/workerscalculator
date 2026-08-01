@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3773012565",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:47:01.777Z",
+  "buildings": [
+    {
+      "id": "3773012565/CopperSmelter",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 370,
+      "professors": 0,
+      "production": {
+        "raw_copper": 0.09
+      },
+      "consumption": {
+        "copper_concentrate": 0.21,
+        "coal": 0.08,
+        "chemicals": 0.007,
+        "water": 0.08
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Copper Smelter",
+      "workshopId": "3773012565",
+      "modPath": "CopperSmelter",
+      "footprint": {
+        "boxes": [
+          [
+            -56.21,
+            68.42,
+            3.64,
+            142.68
+          ],
+          [
+            -2.6,
+            -60.71,
+            44.94,
+            73.09
+          ],
+          [
+            -68.97,
+            25.1,
+            1.4,
+            80.08
+          ],
+          [
+            -47.45,
+            -60.29,
+            -1.84,
+            31.97
+          ],
+          [
+            35.58,
+            -57.35,
+            51.44,
+            -43.14
+          ],
+          [
+            35.37,
+            44.6,
+            39.76,
+            114.03
+          ],
+          [
+            46.19,
+            -43.24,
+            50.57,
+            82.9
+          ],
+          [
+            18.49,
+            31.61,
+            25.52,
+            38.64
+          ],
+          [
+            18.49,
+            -29.63,
+            25.52,
+            -22.6
+          ],
+          [
+            1.51,
+            68.42,
+            8.47,
+            119.44
+          ],
+          [
+            33.82,
+            103.84,
+            52.99,
+            143.13
+          ]
+        ],
+        "height": 94.57
+      }
+    }
+  ],
+  "vehicles": []
+}

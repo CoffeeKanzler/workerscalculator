@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3773879292",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:47:01.803Z",
+  "buildings": [
+    {
+      "id": "3773879292/17367_MOORWERK_A_BRECHT",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 0.72
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "MOORWERK_A_BRECHT",
+      "workshopId": "3773879292",
+      "modPath": "17367_MOORWERK_A_BRECHT",
+      "footprint": {
+        "boxes": [
+          [
+            -5.63,
+            -4.35,
+            0.06,
+            4.35
+          ],
+          [
+            -2.09,
+            4.22,
+            -1.09,
+            4.28
+          ],
+          [
+            -5.19,
+            -4.25,
+            4.31,
+            8.25
+          ],
+          [
+            -0.03,
+            -2.72,
+            -0.02,
+            -1.22
+          ],
+          [
+            -4.24,
+            -4.28,
+            -2.74,
+            -4.22
+          ],
+          [
+            -5.24,
+            -4.35,
+            0.06,
+            4.35
+          ],
+          [
+            -2.44,
+            -4.28,
+            -0.94,
+            -4.22
+          ],
+          [
+            -4.24,
+            4.22,
+            -2.74,
+            4.28
+          ],
+          [
+            -2.44,
+            4.22,
+            -0.94,
+            4.28
+          ],
+          [
+            -5.19,
+            -5.14,
+            0.01,
+            5.14
+          ],
+          [
+            -5.19,
+            -4.4,
+            0.01,
+            4.4
+          ]
+        ],
+        "height": 9
+      }
+    }
+  ],
+  "vehicles": []
+}

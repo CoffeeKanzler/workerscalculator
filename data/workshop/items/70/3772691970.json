@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3772691970",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:47:01.768Z",
+  "buildings": [
+    {
+      "id": "3772691970/vs",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 45,
+        "gravel": 1,
+        "boards": 2,
+        "bricks": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village School",
+      "workshopId": "3772691970",
+      "modPath": "vs",
+      "footprint": {
+        "boxes": [
+          [
+            -3.78,
+            -2.76,
+            3.56,
+            3.62
+          ]
+        ],
+        "height": 6.58
+      }
+    }
+  ],
+  "vehicles": []
+}
