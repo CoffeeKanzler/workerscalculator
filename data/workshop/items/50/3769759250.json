@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3769759250",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-02T06:47:54.112Z",
+  "buildings": [
+    {
+      "id": "3769759250/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 54,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 54
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "type_vlg_stalinka1",
+      "workshopId": "3769759250",
+      "modPath": "1",
+      "footprint": {
+        "boxes": [
+          [
+            -22.39,
+            -10.81,
+            22.27,
+            8.8
+          ]
+        ],
+        "height": 10.8
+      }
+    },
+    {
+      "id": "3769759250/10",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "vlg_type_stalinka10",
+      "workshopId": "3769759250",
+      "modPath": "10",
+      "footprint": {
+        "boxes": [
+          [
+            -23.46,
+            -21.68,
+            12.15,
+            15.29
+          ]
+        ],
+        "height": 13.97
+      }
+    },
+    {
+      "id": "3769759250/11",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "vlg_type_stalinka11",
+      "workshopId": "3769759250",
+      "modPath": "11",
+      "footprint": {
+        "boxes": [
+          [
+            -11.25,
+            -13.84,
+            56.15,
+            3.03
+          ]
+        ],
+        "height": 12.24
+      }
+    },
+    {
+      "id": "3769759250/2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "vlg_type_stalinka2",
+      "workshopId": "3769759250",
+      "modPath": "2",
+      "footprint": {
+        "boxes": [
+          [
+            -16.8,
+            -14,
+            21.78,
+            7.29
+          ]
+        ],
+        "height": 10.74
+      }
+    },
+    {
+      "id": "3769759250/3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 54,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 54
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "vlg_type_stalinka3",
+      "workshopId": "3769759250",
+      "modPath": "3",
+      "footprint": {
+        "boxes": [
+          [
+            -14.82,
+            -24.1,
+            23.77,
+            14.92
+          ]
+        ],
+        "height": 10.84
+      }
+    },
+    {
+      "id": "3769759250/4",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 54,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 54
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "vlg_type_stalinka4",
+      "workshopId": "3769759250",
+      "modPath": "4",
+      "footprint": {
+        "boxes": [
+          [
+            -23.22,
+            -23.65,
+            14.44,
+            14.5
+          ]
+        ],
+        "height": 9.94
+      }
+    },
+    {
+      "id": "3769759250/5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "vlg_type_stalinka5",
+      "workshopId": "3769759250",
+      "modPath": "5",
+      "footprint": {
+        "boxes": [
+          [
+            -20.4,
+            -7.57,
+            20.47,
+            6.74
+          ]
+        ],
+        "height": 9.99
+      }
+    },
+    {
+      "id": "3769759250/6",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "vlg_type_stalinka6",
+      "workshopId": "3769759250",
+      "modPath": "6",
+      "footprint": {
+        "boxes": [
+          [
+            -6.95,
+            -16.94,
+            6.56,
+            16.49
+          ]
+        ],
+        "height": 10.66
+      }
+    },
+    {
+      "id": "3769759250/7",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 54,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 54
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "vlg_type_stalinka7",
+      "workshopId": "3769759250",
+      "modPath": "7",
+      "footprint": {
+        "boxes": [
+          [
+            -20.02,
+            -23.16,
+            11.86,
+            13.76
+          ]
+        ],
+        "height": 10.58
+      }
+    },
+    {
+      "id": "3769759250/8",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "vlg_type_stalinka8",
+      "workshopId": "3769759250",
+      "modPath": "8",
+      "footprint": {
+        "boxes": [
+          [
+            -27.64,
+            -24.55,
+            12.15,
+            15.29
+          ]
+        ],
+        "height": 13.9
+      }
+    },
+    {
+      "id": "3769759250/9",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "vlg_type_stalinka9",
+      "workshopId": "3769759250",
+      "modPath": "9",
+      "footprint": {
+        "boxes": [
+          [
+            -12.26,
+            -6.66,
+            12.28,
+            8.24
+          ]
+        ],
+        "height": 11.06
+      }
+    }
+  ],
+  "vehicles": []
+}
