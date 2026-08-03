@@ -289,7 +289,6 @@ export function evaluateVehicleProduction(vehicle, settings, eco) {
 
 export function vehicleAvailableInRange(vehicle, start, end) {
   if (!Number.isFinite(start) || !Number.isFinite(end)) return true;
-  if (!Number.isFinite(vehicle?.attrs?.Bis)) return true;
   const from = Number.isFinite(vehicle?.attrs?.Von) ? vehicle.attrs.Von : -Infinity;
   const to = Number.isFinite(vehicle?.attrs?.Bis) && vehicle.attrs.Bis < 3000
     ? vehicle.attrs.Bis : Infinity;
