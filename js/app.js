@@ -89,7 +89,7 @@ import {
   parseMapLayersInWorker,
 } from './adapters/save_folder_adapter.js?v=19';
 import { matchSaveBuilding } from './adapters/save_projection.js?v=17';
-import { bootstrapRuntime } from './bootstrap.js?v=7';
+import { bootstrapRuntime } from './bootstrap.js?v=8';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
