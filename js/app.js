@@ -10,7 +10,7 @@ import { completedPaidResearchKeys } from './research.js?v=2';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
-} from './train.js?v=21';
+} from './train.js?v=23';
 import {
   createIndexedDbObservationStore,
   createIndexedDbStatsStore,

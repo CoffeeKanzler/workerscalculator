@@ -11,6 +11,20 @@ const rail = JSON.parse(readFileSync(new URL('../data/game/rail_vehicles.json', 
 const rawVehicles = JSON.parse(readFileSync(new URL('../data/game/vehicles_raw.json', import.meta.url)));
 const merged = mergeVehiclePools(sheetVehicles, rail, rawVehicles);
 const byName = new Map(merged.map(v => [v.name, v]));
+const D24_40_IDS = new Set([
+  'cement_russo_balt_d24_40',
+  'covered_russo_balt_d24_40',
+  'firetruck_russo_balt_d24_40',
+  'garbage_russo_balt_d24_40',
+  'gravel_russo_balt_d24_40',
+  'oil_russo_balt_d24_40',
+  'oil_russo_balt_d24_40_sewage',
+  'oil_russo_balt_d24_40_water',
+  'open_russo_balt_d24_40',
+  'refrigerator_russo_balt_d24_40',
+  'service_mixer_russo_balt_d24_40',
+  'snowplow_russo_balt_d24_40',
+]);
 
 test('matching game vehicle facts override stale sheet dimensions, performance, and production bill', () => {
   const [vehicle] = mergeVehiclePools([{
@@ -50,6 +64,29 @@ test('ambiguous raw names retain the labeled spreadsheet production fallback', (
   assert.equal(vehicle.gameRecipe, undefined);
   assert.equal(vehicle.sourceGameId, undefined);
   assert.equal(vehicle.provenance.productionCost, 'spreadsheet');
+});
+
+test('unnamed Russo-Balt D24/40 variants enter the public vehicle pool', () => {
+  const variants = merged.filter(vehicle => D24_40_IDS.has(vehicle.sourceGameId));
+  assert.equal(variants.length, D24_40_IDS.size);
+  assert.equal(new Set(variants.map(vehicle => vehicle.name)).size, D24_40_IDS.size);
+  for (const vehicle of variants) {
+    assert.match(vehicle.name, /Russo-Balt D24\/40/);
+    assert.equal(vehicle.gameOnly, true);
+    assert.ok(Array.isArray(vehicle.gameRecipe));
+    assert.equal(vehicle.provenance.productionCost, 'game-file');
+    assert.equal(vehicle.attrs.Von, 1912);
+    assert.equal(vehicle.attrs.Bis, 1924);
+  }
+});
+
+test('unrelated unnamed raw vehicles remain excluded', () => {
+  const result = mergeVehiclePools([], [], [{
+    id: 'internal_unnamed_vehicle', type: 'VEHICLETYPE_ROAD',
+    emptyWeight: 2, powerKW: 20, from: 1900, to: 1910,
+    roadRecipeBranch: 'ordinary',
+  }]);
+  assert.deepEqual(result, []);
 });
 
 test('exact wagon transport class replaces stale capacity and rejects production-material columns', () => {
