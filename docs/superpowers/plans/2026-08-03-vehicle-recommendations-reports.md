@@ -188,7 +188,8 @@ test('vehicle availability overlaps decade boundaries inclusively', () => {
   assert.equal(vehicleAvailableInRange(vehicle({ Von: 1947, Bis: 1965 }), 1950, 1960), true);
   assert.equal(vehicleAvailableInRange(vehicle({ Von: 1951, Bis: 1965 }), 1940, 1950), false);
   assert.equal(vehicleAvailableInRange(vehicle({ Von: 1947, Bis: 3000 }), 1990, 2000), true);
-  assert.equal(vehicleAvailableInRange(vehicle({ Von: 1947 }), 1900, 1910), true);
+  assert.equal(vehicleAvailableInRange(vehicle({ Von: 1947 }), 1990, 2000), true);
+  assert.equal(vehicleAvailableInRange(vehicle({ Von: 1947 }), 1900, 1910), false);
 });
 
 test('vehicle recommendations apply an optional availability range before ranking', () => {
