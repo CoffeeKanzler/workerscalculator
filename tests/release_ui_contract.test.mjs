@@ -100,3 +100,16 @@ test('the Cities tab reads the save and never writes to it', async () => {
   assert.match(renderCities, /type: 'search'/);
   assert.match(renderCities, /state\.tab = 'city'/);
 });
+
+test('vehicle recommendations expose a bilingual decade filter contract', async () => {
+  const [app, i18n] = await Promise.all([
+    fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8'),
+    fs.readFile(path.join(ROOT, 'js/i18n.js'), 'utf8'),
+  ]);
+  assert.match(app, /vehicle-recommendation-decade/);
+  assert.match(app, /recommendationDecade/);
+  assert.match(app, /noVehicleRecommendations/);
+  assert.equal((i18n.match(/recommendationDecade:/g) ?? []).length, 2);
+  assert.equal((i18n.match(/allDecades:/g) ?? []).length, 2);
+  assert.equal((i18n.match(/noVehicleRecommendations:/g) ?? []).length, 2);
+});
