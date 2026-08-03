@@ -287,9 +287,19 @@ export function evaluateVehicleProduction(vehicle, settings, eco) {
   };
 }
 
-export function recommendVehicleProduction(vehicles, settings, eco, limit = 5) {
+export function vehicleAvailableInRange(vehicle, start, end) {
+  if (!Number.isFinite(start) || !Number.isFinite(end)) return true;
+  if (!Number.isFinite(vehicle?.attrs?.Bis)) return true;
+  const from = Number.isFinite(vehicle?.attrs?.Von) ? vehicle.attrs.Von : -Infinity;
+  const to = Number.isFinite(vehicle?.attrs?.Bis) && vehicle.attrs.Bis < 3000
+    ? vehicle.attrs.Bis : Infinity;
+  return from <= end && to >= start;
+}
+
+export function recommendVehicleProduction(vehicles, settings, eco, limit = 5, availabilityRange = null) {
   return vehicles
     .map((vehicle, index) => ({ vehicle, index, result: evaluateVehicleProduction(vehicle, settings, eco) }))
+    .filter(row => vehicleAvailableInRange(row.vehicle, availabilityRange?.start, availabilityRange?.end))
     .filter(row => row.result.workdays > 0
       && Number.isFinite(row.result.profitPerWorker) && row.result.profit > 0)
     .sort((a, b) => b.result.profitPerWorker - a.result.profitPerWorker)
