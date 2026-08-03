@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3747882115",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:44:29.562Z",
+  "buildings": [
+    {
+      "id": "3747882115/Windbender_1",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 25
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 25.4,
+        "concrete": 1.04,
+        "gravel": 0.792,
+        "chemicals": 7.758,
+        "steel": 4.96,
+        "mcomponents": 0.88,
+        "ecomponents": 0.552
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "M-7 Windbender (25m)",
+      "workshopId": "3747882115",
+      "modPath": "Windbender_1"
+    },
+    {
+      "id": "3747882115/Windbender_2",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 58.33333
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 69.10000000000001,
+        "concrete": 2.56,
+        "gravel": 2,
+        "chemicals": 20.94,
+        "steel": 13.6,
+        "mcomponents": 2.32,
+        "ecomponents": 1.52
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "M-7 Windbender (50m)",
+      "workshopId": "3747882115",
+      "modPath": "Windbender_2",
+      "footprint": {
+        "boxes": [
+          [
+            -5.5,
+            -0.25,
+            5.5,
+            0.25
+          ],
+          [
+            -5.75,
+            -0.05,
+            5.25,
+            0.05
+          ],
+          [
+            -5.83,
+            -0.08,
+            -5.68,
+            0.07
+          ],
+          [
+            -0.4,
+            -0.4,
+            0.4,
+            0.4
+          ],
+          [
+            -2.88,
+            -2.88,
+            2.88,
+            2.88
+          ],
+          [
+            -1.22,
+            -1.23,
+            1.28,
+            1.27
+          ],
+          [
+            -2.03,
+            -0.35,
+            2.03,
+            0.35
+          ],
+          [
+            -1.02,
+            -0.6,
+            1.02,
+            0.6
+          ],
+          [
+            -0.07,
+            0.22,
+            0.08,
+            0.67
+          ],
+          [
+            -0.08,
+            -0.67,
+            0.07,
+            -0.22
+          ],
+          [
+            -0.67,
+            -0.08,
+            -0.22,
+            0.07
+          ],
+          [
+            0.22,
+            -0.08,
+            0.67,
+            0.07
+          ],
+          [
+            -0.47,
+            -0.42,
+            0.47,
+            0.42
+          ],
+          [
+            -0.5,
+            -0.5,
+            0.5,
+            0.5
+          ]
+        ],
+        "height": 46.16
+      }
+    },
+    {
+      "id": "3747882115/Windbender_3",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "eletric": 141
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 167.0147,
+        "concrete": 6.18752,
+        "gravel": 4.834,
+        "chemicals": 50.61198,
+        "steel": 32.8712,
+        "mcomponents": 5.60744,
+        "ecomponents": 3.67384
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "M-7 Windbender (100m)",
+      "workshopId": "3747882115",
+      "modPath": "Windbender_3",
+      "footprint": {
+        "boxes": [
+          [
+            -11,
+            -0.5,
+            11,
+            0.5
+          ],
+          [
+            -11.5,
+            -0.1,
+            10.5,
+            0.1
+          ],
+          [
+            -11.65,
+            -0.15,
+            -11.35,
+            0.15
+          ],
+          [
+            -0.8,
+            -0.8,
+            0.8,
+            0.8
+          ],
+          [
+            -5.76,
+            -5.76,
+            5.76,
+            5.76
+          ],
+          [
+            -2.5,
+            -2.5,
+            2.5,
+            2.5
+          ],
+          [
+            -4.07,
+            -0.7,
+            4.07,
+            0.7
+          ],
+          [
+            -2.03,
+            -1.2,
+            2.03,
+            1.2
+          ],
+          [
+            -0.15,
+            0.43,
+            0.15,
+            1.34
+          ],
+          [
+            -0.15,
+            -1.34,
+            0.15,
+            -0.43
+          ],
+          [
+            -1.34,
+            -0.15,
+            -0.43,
+            0.15
+          ],
+          [
+            0.43,
+            -0.15,
+            1.34,
+            0.15
+          ],
+          [
+            -0.95,
+            -0.83,
+            0.95,
+            0.83
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1
+          ]
+        ],
+        "height": 92.5
+      }
+    }
+  ],
+  "vehicles": []
+}

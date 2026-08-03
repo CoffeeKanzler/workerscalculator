@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3772067955",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:47:01.752Z",
+  "buildings": [
+    {
+      "id": "3772067955/1-241-117_court",
+      "nameId": 6268,
+      "types": [
+        "TYPE_COURT_HOUSE"
+      ],
+      "workers": 15,
+      "professors": 10,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3772067955",
+      "modPath": "1-241-117_court",
+      "footprint": {
+        "boxes": [
+          [
+            -15.09,
+            -6.34,
+            15.09,
+            6.36
+          ],
+          [
+            -16.52,
+            -4.72,
+            16.52,
+            4.71
+          ],
+          [
+            -15,
+            -6.26,
+            15,
+            6.26
+          ],
+          [
+            -4.08,
+            -7.38,
+            2.07,
+            7.64
+          ],
+          [
+            -15.22,
+            -6.44,
+            15.22,
+            6.44
+          ],
+          [
+            -15.67,
+            -6.87,
+            15.67,
+            6.83
+          ]
+        ],
+        "height": 10.71
+      }
+    },
+    {
+      "id": "3772067955/1-241-117_dormitory",
+      "nameId": 6006,
+      "types": [
+        "TYPE_LIVING",
+        "TYPE_LIVING",
+        "SUBTYPE_HOSTEL",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 50,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.68,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 50
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3772067955",
+      "modPath": "1-241-117_dormitory",
+      "footprint": {
+        "boxes": [
+          [
+            -15.09,
+            -6.34,
+            15.09,
+            6.36
+          ],
+          [
+            -16.52,
+            -4.72,
+            16.52,
+            4.71
+          ],
+          [
+            -15,
+            -6.26,
+            15,
+            6.26
+          ],
+          [
+            -4.08,
+            -7.38,
+            2.07,
+            7.64
+          ],
+          [
+            -15.22,
+            -6.44,
+            15.22,
+            6.44
+          ],
+          [
+            -15.67,
+            -6.87,
+            15.67,
+            6.83
+          ]
+        ],
+        "height": 10.71
+      }
+    },
+    {
+      "id": "3772067955/1-241-117_orphanage",
+      "nameId": 6263,
+      "types": [
+        "TYPE_ORPHANAGE"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": 0.68,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3772067955",
+      "modPath": "1-241-117_orphanage",
+      "footprint": {
+        "boxes": [
+          [
+            -15.09,
+            -6.34,
+            15.09,
+            6.36
+          ],
+          [
+            -16.52,
+            -4.72,
+            16.52,
+            4.71
+          ],
+          [
+            -15,
+            -6.26,
+            15,
+            6.26
+          ],
+          [
+            -4.08,
+            -7.38,
+            2.07,
+            7.64
+          ],
+          [
+            -15.22,
+            -6.44,
+            15.22,
+            6.44
+          ],
+          [
+            -15.67,
+            -6.87,
+            15.67,
+            6.83
+          ]
+        ],
+        "height": 10.71
+      }
+    },
+    {
+      "id": "3772067955/1-241-117_police",
+      "nameId": 9073,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 15,
+      "professors": 15,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3772067955",
+      "modPath": "1-241-117_police",
+      "footprint": {
+        "boxes": [
+          [
+            -15.09,
+            -6.34,
+            15.09,
+            6.36
+          ],
+          [
+            -16.52,
+            -4.72,
+            16.52,
+            4.71
+          ],
+          [
+            -15,
+            -6.26,
+            15,
+            6.26
+          ],
+          [
+            -4.08,
+            -7.38,
+            2.07,
+            7.64
+          ],
+          [
+            -15.22,
+            -6.44,
+            15.22,
+            6.44
+          ],
+          [
+            -15.67,
+            -6.87,
+            15.67,
+            6.83
+          ]
+        ],
+        "height": 10.71
+      }
+    },
+    {
+      "id": "3772067955/1-241-117_secretpolice",
+      "nameId": 6266,
+      "types": [
+        "TYPE_SECRET_POLICE"
+      ],
+      "workers": 0,
+      "professors": 15,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3772067955",
+      "modPath": "1-241-117_secretpolice",
+      "footprint": {
+        "boxes": [
+          [
+            -15.09,
+            -6.34,
+            15.09,
+            6.36
+          ],
+          [
+            -16.52,
+            -4.72,
+            16.52,
+            4.71
+          ],
+          [
+            -15,
+            -6.26,
+            15,
+            6.26
+          ],
+          [
+            -4.08,
+            -7.38,
+            2.07,
+            7.64
+          ],
+          [
+            -15.22,
+            -6.44,
+            15.22,
+            6.44
+          ],
+          [
+            -15.67,
+            -6.87,
+            15.67,
+            6.83
+          ]
+        ],
+        "height": 10.71
+      }
+    }
+  ],
+  "vehicles": []
+}

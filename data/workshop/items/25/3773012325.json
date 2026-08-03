@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3773012325",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:47:01.776Z",
+  "buildings": [
+    {
+      "id": "3773012325/CopperConcentrator",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {
+        "copper_concentrate": 3
+      },
+      "consumption": {
+        "copper_ore": 5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Copper Concentrate Factory",
+      "workshopId": "3773012325",
+      "modPath": "CopperConcentrator",
+      "footprint": {
+        "boxes": [
+          [
+            4.04,
+            -34.31,
+            19.36,
+            -22.49
+          ],
+          [
+            -34.5,
+            7.21,
+            -27.34,
+            23.99
+          ],
+          [
+            -5.73,
+            -2.33,
+            8.49,
+            14.5
+          ],
+          [
+            -26.46,
+            2.1,
+            -13.85,
+            4.88
+          ],
+          [
+            -14.18,
+            -11,
+            -3.74,
+            22.19
+          ],
+          [
+            8.26,
+            -16.81,
+            20.15,
+            22.19
+          ]
+        ],
+        "height": 21.99
+      }
+    }
+  ],
+  "vehicles": []
+}

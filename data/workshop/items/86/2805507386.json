@@ -1,0 +1,1296 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "2805507386",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:44:29.523Z",
+  "buildings": [
+    {
+      "id": "2805507386/1FONAR1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lamp_big",
+      "workshopId": "2805507386",
+      "modPath": "1FONAR1",
+      "footprint": {
+        "boxes": [
+          [
+            -2.31,
+            -2.35,
+            2.38,
+            2.35
+          ]
+        ],
+        "height": 16.81
+      }
+    },
+    {
+      "id": "2805507386/1FONAR2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lamp_medium",
+      "workshopId": "2805507386",
+      "modPath": "1FONAR2",
+      "footprint": {
+        "boxes": [
+          [
+            -1.2,
+            -0.3,
+            1.2,
+            0.3
+          ]
+        ],
+        "height": 10.04
+      }
+    },
+    {
+      "id": "2805507386/1FONTAN",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fountain_small",
+      "workshopId": "2805507386",
+      "modPath": "1FONTAN",
+      "footprint": {
+        "boxes": [
+          [
+            -0.29,
+            -0.29,
+            0.29,
+            0.29
+          ]
+        ],
+        "height": 0.7
+      }
+    },
+    {
+      "id": "2805507386/1FONTAN1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fountain_medium",
+      "workshopId": "2805507386",
+      "modPath": "1FONTAN1",
+      "footprint": {
+        "boxes": [
+          [
+            -0.29,
+            -0.29,
+            0.29,
+            0.29
+          ]
+        ],
+        "height": 0.7
+      }
+    },
+    {
+      "id": "2805507386/1FONTAN2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fountain_big",
+      "workshopId": "2805507386",
+      "modPath": "1FONTAN2",
+      "footprint": {
+        "boxes": [
+          [
+            -0.29,
+            -0.29,
+            0.29,
+            0.29
+          ]
+        ],
+        "height": 0.7
+      }
+    },
+    {
+      "id": "2805507386/1KIOSK",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Newsstand",
+      "workshopId": "2805507386",
+      "modPath": "1KIOSK",
+      "footprint": {
+        "boxes": [
+          [
+            -1.39,
+            -1.39,
+            1.39,
+            1.39
+          ]
+        ],
+        "height": 3.03
+      }
+    },
+    {
+      "id": "2805507386/1STOJANKA",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Barrier_stone",
+      "workshopId": "2805507386",
+      "modPath": "1STOJANKA",
+      "footprint": {
+        "boxes": [
+          [
+            -0.29,
+            -0.29,
+            0.29,
+            0.29
+          ]
+        ],
+        "height": 0.7
+      }
+    },
+    {
+      "id": "2805507386/2FONAR",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Lamp_small",
+      "workshopId": "2805507386",
+      "modPath": "2FONAR",
+      "footprint": {
+        "boxes": [
+          [
+            -0.41,
+            -0.26,
+            0.16,
+            0.31
+          ]
+        ],
+        "height": 6.47
+      }
+    },
+    {
+      "id": "2805507386/2LAVKA",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bench",
+      "workshopId": "2805507386",
+      "modPath": "2LAVKA",
+      "footprint": {
+        "boxes": [
+          [
+            -2.11,
+            -0.68,
+            2.11,
+            0.62
+          ]
+        ],
+        "height": 1.11
+      }
+    },
+    {
+      "id": "2805507386/2TELEGA",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Soda_Cart",
+      "workshopId": "2805507386",
+      "modPath": "2TELEGA",
+      "footprint": {
+        "boxes": [
+          [
+            -1.49,
+            -0.45,
+            0.76,
+            0.37
+          ]
+        ],
+        "height": 1.96
+      }
+    },
+    {
+      "id": "2805507386/2URNA",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Trash_can",
+      "workshopId": "2805507386",
+      "modPath": "2URNA",
+      "footprint": {
+        "boxes": [
+          [
+            -0.28,
+            -0.28,
+            0.28,
+            0.28
+          ]
+        ],
+        "height": 0.91
+      }
+    },
+    {
+      "id": "2805507386/3CAFE",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Street_Cafe(Medium)1",
+      "workshopId": "2805507386",
+      "modPath": "3CAFE",
+      "footprint": {
+        "boxes": [
+          [
+            -6.94,
+            -4.77,
+            6.89,
+            4.82
+          ]
+        ],
+        "height": 3.36
+      }
+    },
+    {
+      "id": "2805507386/3CAFE_BIG",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Street_Cafe(Big)1",
+      "workshopId": "2805507386",
+      "modPath": "3CAFE_BIG",
+      "footprint": {
+        "boxes": [
+          [
+            -9.03,
+            -6.94,
+            8.99,
+            6.85
+          ]
+        ],
+        "height": 3.36
+      }
+    },
+    {
+      "id": "2805507386/3CAFE_KRUG",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Street_Cafe(Medium)2",
+      "workshopId": "2805507386",
+      "modPath": "3CAFE_KRUG",
+      "footprint": {
+        "boxes": [
+          [
+            -5.28,
+            -3.84,
+            5.3,
+            3.86
+          ]
+        ],
+        "height": 2.98
+      }
+    },
+    {
+      "id": "2805507386/3CAFE_KRUG_BIG",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Street_Cafe(Big)2",
+      "workshopId": "2805507386",
+      "modPath": "3CAFE_KRUG_BIG",
+      "footprint": {
+        "boxes": [
+          [
+            -8.96,
+            -5.36,
+            9.06,
+            5.2
+          ]
+        ],
+        "height": 2.98
+      }
+    },
+    {
+      "id": "2805507386/3CVETI",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flower_bed1",
+      "workshopId": "2805507386",
+      "modPath": "3CVETI",
+      "footprint": {
+        "boxes": [
+          [
+            -0.79,
+            -0.38,
+            0.78,
+            0.41
+          ]
+        ],
+        "height": 1.35
+      }
+    },
+    {
+      "id": "2805507386/3CVETI_CAFE",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Flower_bed2",
+      "workshopId": "2805507386",
+      "modPath": "3CVETI_CAFE",
+      "footprint": {
+        "boxes": [
+          [
+            -0.78,
+            -0.38,
+            0.79,
+            0.41
+          ]
+        ],
+        "height": 1.35
+      }
+    },
+    {
+      "id": "2805507386/3LEZAK",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Deckchair",
+      "workshopId": "2805507386",
+      "modPath": "3LEZAK",
+      "footprint": {
+        "boxes": [
+          [
+            -0.39,
+            -0.67,
+            0.39,
+            0.79
+          ]
+        ],
+        "height": 0.81
+      }
+    },
+    {
+      "id": "2805507386/3PLAZ",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Deckchairs",
+      "workshopId": "2805507386",
+      "modPath": "3PLAZ",
+      "footprint": {
+        "boxes": [
+          [
+            -1.42,
+            -1.44,
+            1.41,
+            1.39
+          ]
+        ],
+        "height": 2.59
+      }
+    },
+    {
+      "id": "2805507386/3PLAZ10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Deckchairs_10",
+      "workshopId": "2805507386",
+      "modPath": "3PLAZ10",
+      "footprint": {
+        "boxes": [
+          [
+            -1.42,
+            -1.44,
+            53.71,
+            1.39
+          ]
+        ],
+        "height": 2.59
+      }
+    },
+    {
+      "id": "2805507386/3PLAZ3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Deckchairs_3",
+      "workshopId": "2805507386",
+      "modPath": "3PLAZ3",
+      "footprint": {
+        "boxes": [
+          [
+            -7.42,
+            -1.44,
+            7.03,
+            1.39
+          ]
+        ],
+        "height": 2.59
+      }
+    },
+    {
+      "id": "2805507386/3PLAZ5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Deckchairs_5",
+      "workshopId": "2805507386",
+      "modPath": "3PLAZ5",
+      "footprint": {
+        "boxes": [
+          [
+            -13.02,
+            -1.44,
+            13.05,
+            1.39
+          ]
+        ],
+        "height": 2.59
+      }
+    },
+    {
+      "id": "2805507386/3STOL",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Table+chairs",
+      "workshopId": "2805507386",
+      "modPath": "3STOL",
+      "footprint": {
+        "boxes": [
+          [
+            -1.21,
+            -1.2,
+            1.2,
+            1.2
+          ]
+        ],
+        "height": 1.22
+      }
+    },
+    {
+      "id": "2805507386/3STOLB",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pillar_2m",
+      "workshopId": "2805507386",
+      "modPath": "3STOLB",
+      "footprint": {
+        "boxes": [
+          [
+            1.93,
+            -0.07,
+            2.07,
+            0.07
+          ]
+        ],
+        "height": 1.12
+      }
+    },
+    {
+      "id": "2805507386/3STOLB18",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pillar_20m",
+      "workshopId": "2805507386",
+      "modPath": "3STOLB18",
+      "footprint": {
+        "boxes": [
+          [
+            1.93,
+            -0.07,
+            20.07,
+            0.07
+          ]
+        ],
+        "height": 1.12
+      }
+    },
+    {
+      "id": "2805507386/3STOLB3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pillar_6m",
+      "workshopId": "2805507386",
+      "modPath": "3STOLB3",
+      "footprint": {
+        "boxes": [
+          [
+            1.93,
+            -0.07,
+            6.07,
+            0.07
+          ]
+        ],
+        "height": 1.12
+      }
+    },
+    {
+      "id": "2805507386/3STOLBR2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pillar_R2",
+      "workshopId": "2805507386",
+      "modPath": "3STOLBR2",
+      "footprint": {
+        "boxes": [
+          [
+            -0.07,
+            -0.07,
+            1.89,
+            1.9
+          ]
+        ],
+        "height": 1.12
+      }
+    },
+    {
+      "id": "2805507386/3STOLBR8",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pillar_R8",
+      "workshopId": "2805507386",
+      "modPath": "3STOLBR8",
+      "footprint": {
+        "boxes": [
+          [
+            -0.07,
+            -0.07,
+            7.43,
+            7.39
+          ]
+        ],
+        "height": 1.12
+      }
+    },
+    {
+      "id": "2805507386/3STOL_ODIN",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Table",
+      "workshopId": "2805507386",
+      "modPath": "3STOL_ODIN",
+      "footprint": {
+        "boxes": [
+          [
+            -0.42,
+            -0.42,
+            0.42,
+            0.41
+          ]
+        ],
+        "height": 1
+      }
+    },
+    {
+      "id": "2805507386/3STUL",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Chair",
+      "workshopId": "2805507386",
+      "modPath": "3STUL",
+      "footprint": {
+        "boxes": [
+          [
+            -0.28,
+            -1.2,
+            0.28,
+            -0.42
+          ]
+        ],
+        "height": 1.22
+      }
+    },
+    {
+      "id": "2805507386/3TELEFON",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Phone_booth",
+      "workshopId": "2805507386",
+      "modPath": "3TELEFON",
+      "footprint": {
+        "boxes": [
+          [
+            -0.44,
+            -0.43,
+            0.43,
+            0.43
+          ]
+        ],
+        "height": 2.32
+      }
+    },
+    {
+      "id": "2805507386/3ZABOR2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fencing_2m",
+      "workshopId": "2805507386",
+      "modPath": "3ZABOR2",
+      "footprint": {
+        "boxes": [
+          [
+            1.93,
+            -0.07,
+            4,
+            0.07
+          ]
+        ],
+        "height": 1.12
+      }
+    },
+    {
+      "id": "2805507386/3ZABOR20",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fencing_20m",
+      "workshopId": "2805507386",
+      "modPath": "3ZABOR20",
+      "footprint": {
+        "boxes": [
+          [
+            1.95,
+            -0.07,
+            22.01,
+            0.07
+          ]
+        ],
+        "height": 1.12
+      }
+    },
+    {
+      "id": "2805507386/3ZABOR6",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fencing_6m",
+      "workshopId": "2805507386",
+      "modPath": "3ZABOR6",
+      "footprint": {
+        "boxes": [
+          [
+            1.93,
+            -0.07,
+            8,
+            0.07
+          ]
+        ],
+        "height": 1.12
+      }
+    },
+    {
+      "id": "2805507386/3ZABORR2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fencing_R2",
+      "workshopId": "2805507386",
+      "modPath": "3ZABORR2",
+      "footprint": {
+        "boxes": [
+          [
+            -0.07,
+            -0.08,
+            1.89,
+            1.9
+          ]
+        ],
+        "height": 1.12
+      }
+    },
+    {
+      "id": "2805507386/3ZABORR8",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fencing_R8",
+      "workshopId": "2805507386",
+      "modPath": "3ZABORR8",
+      "footprint": {
+        "boxes": [
+          [
+            -0.06,
+            -0.06,
+            7.44,
+            7.39
+          ]
+        ],
+        "height": 1.12
+      }
+    },
+    {
+      "id": "2805507386/3ZABOR_UGOL",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Fencing_angular",
+      "workshopId": "2805507386",
+      "modPath": "3ZABOR_UGOL",
+      "footprint": {
+        "boxes": [
+          [
+            1.93,
+            -2,
+            4,
+            0.07
+          ]
+        ],
+        "height": 1.12
+      }
+    },
+    {
+      "id": "2805507386/3ZONTIK",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Umbrella1",
+      "workshopId": "2805507386",
+      "modPath": "3ZONTIK",
+      "footprint": {
+        "boxes": [
+          [
+            -1.41,
+            -1.41,
+            1.41,
+            1.41
+          ]
+        ],
+        "height": 2.98
+      }
+    },
+    {
+      "id": "2805507386/3ZONTIK_KVADRAT",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Umbrella2",
+      "workshopId": "2805507386",
+      "modPath": "3ZONTIK_KVADRAT",
+      "footprint": {
+        "boxes": [
+          [
+            -2,
+            -2,
+            2,
+            2
+          ]
+        ],
+        "height": 3.36
+      }
+    }
+  ],
+  "vehicles": []
+}

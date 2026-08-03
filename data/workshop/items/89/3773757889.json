@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3773757889",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:47:01.798Z",
+  "buildings": [
+    {
+      "id": "3773757889/FurnitureFactory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 80,
+      "professors": 0,
+      "production": {
+        "furniture": 0.012
+      },
+      "consumption": {
+        "boards": 0.02,
+        "fabric": 0.008
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.25,
+        "living": 1.5
+      },
+      "nameStr": "Furniture Factory",
+      "workshopId": "3773757889",
+      "modPath": "FurnitureFactory",
+      "footprint": {
+        "boxes": [
+          [
+            -21.91,
+            -25.52,
+            29.43,
+            14.92
+          ],
+          [
+            -38.25,
+            1.68,
+            -21.14,
+            14.92
+          ]
+        ],
+        "height": 22.08
+      }
+    }
+  ],
+  "vehicles": []
+}

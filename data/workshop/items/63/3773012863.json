@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3773012863",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-01T06:47:01.778Z",
+  "buildings": [
+    {
+      "id": "3773012863/ElectrolysisPlant",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 350,
+      "professors": 0,
+      "production": {
+        "copper": 0.087
+      },
+      "consumption": {
+        "raw_copper": 0.15,
+        "chemicals": 0.0072
+      },
+      "consumptionPerSecond": {
+        "eletric": 2.35
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Electrolysis Plant",
+      "workshopId": "3773012863",
+      "modPath": "ElectrolysisPlant",
+      "footprint": {
+        "boxes": [
+          [
+            -78.37,
+            -13.45,
+            40.6,
+            23.69
+          ],
+          [
+            71.19,
+            44.6,
+            91.05,
+            77.62
+          ],
+          [
+            40.29,
+            -8.11,
+            90.71,
+            11.74
+          ],
+          [
+            -20.91,
+            -96.9,
+            -12.69,
+            -36.19
+          ],
+          [
+            -76.11,
+            42.34,
+            -26.35,
+            64.95
+          ],
+          [
+            -5.46,
+            51.94,
+            56.49,
+            74.6
+          ],
+          [
+            8.63,
+            -2.79,
+            23.79,
+            12.37
+          ],
+          [
+            -59.14,
+            -2.79,
+            -43.97,
+            12.37
+          ],
+          [
+            -13.14,
+            -98.39,
+            70.4,
+            -40.73
+          ],
+          [
+            -114.42,
+            -39,
+            90.85,
+            -16.49
+          ],
+          [
+            -114.42,
+            23.78,
+            90.85,
+            46.28
+          ],
+          [
+            -20.65,
+            -26.41,
+            -16.67,
+            33.6
+          ],
+          [
+            -108.14,
+            -72.13,
+            -94.08,
+            -31.41
+          ],
+          [
+            -84.59,
+            -103.59,
+            -70.53,
+            -62.87
+          ],
+          [
+            -113.31,
+            -95.65,
+            -63.22,
+            -39.22
+          ],
+          [
+            -110.77,
+            -8.62,
+            -77.76,
+            14.64
+          ]
+        ],
+        "height": 66.74
+      }
+    }
+  ],
+  "vehicles": []
+}
