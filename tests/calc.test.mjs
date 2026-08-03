@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   Economy, evaluatePlan, evaluateCity, lowTechPoints,
-  evaluateVehicleProduction, recommendVehicleProduction, vehicleSaleValue,
+  evaluateVehicleProduction, recommendVehicleProduction, vehicleAvailableInRange, vehicleSaleValue,
   vehicleBlueprintQuote, vehicleProductionGroup, SEASON_FACTOR, NO_SEASON_FACTOR,
   buildingPlanningAuthority,
 } from '../js/calc.js';
@@ -400,6 +400,32 @@ test('vehicle recommendations rank profitable models per worker', () => {
   }, fakeEco, 2);
   assert.deepEqual(rows.map(row => row.vehicle.name), ['Best', 'Slow']);
   assert.ok(rows[0].result.profitPerWorker > rows[1].result.profitPerWorker);
+});
+
+test('vehicle availability overlaps decade boundaries inclusively', () => {
+  const vehicle = attrs => ({ attrs });
+  assert.equal(vehicleAvailableInRange(vehicle({ Von: 1947, Bis: 1965 }), 1940, 1950), true);
+  assert.equal(vehicleAvailableInRange(vehicle({ Von: 1947, Bis: 1965 }), 1950, 1960), true);
+  assert.equal(vehicleAvailableInRange(vehicle({ Von: 1951, Bis: 1965 }), 1940, 1950), false);
+  assert.equal(vehicleAvailableInRange(vehicle({ Von: 1947, Bis: 3000 }), 1990, 2000), true);
+  assert.equal(vehicleAvailableInRange(vehicle({ Von: 1947 }), 1990, 2000), true);
+  assert.equal(vehicleAvailableInRange(vehicle({ Von: 1947 }), 1900, 1910), false);
+});
+
+test('vehicle recommendations apply an optional availability range before ranking', () => {
+  const vehicles = [
+    { name: '1947 model', attrs: { Von: 1947, Bis: 1965, Typ: 'Bus', Arbeitstage: 10, Stahl: 1 } },
+    { name: '1951 model', attrs: { Von: 1951, Bis: 1965, Typ: 'Bus', Arbeitstage: 10, Stahl: 1 } },
+  ];
+  const fakeEco = { inputPrice: () => 1 };
+  const rows = recommendVehicleProduction(
+    vehicles,
+    { workers: 100, productivity: 1, timeUnit: 'day', currency: 'RUB', salePrice: 100 },
+    fakeEco,
+    5,
+    { start: 1940, end: 1950 },
+  );
+  assert.deepEqual(rows.map(row => row.vehicle.name), ['1947 model']);
 });
 
 test('vehicle production groups match factory categories', () => {

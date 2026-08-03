@@ -78,6 +78,25 @@ const AMBIGUOUS_SHEET_CARGO = cargoNames(
   'ecomponents', 'Elektronik-Bauteile', 'Electronic components',
   'eletronics', 'Elektronik', 'Electronics');
 
+const D24_40_DISPLAY_NAMES = Object.freeze({
+  cement_russo_balt_d24_40: 'Russo-Balt D24/40 (cement)',
+  covered_russo_balt_d24_40: 'Russo-Balt D24/40 (covered cargo)',
+  firetruck_russo_balt_d24_40: 'Russo-Balt D24/40 (fire truck)',
+  garbage_russo_balt_d24_40: 'Russo-Balt D24/40 (garbage)',
+  gravel_russo_balt_d24_40: 'Russo-Balt D24/40 (gravel)',
+  oil_russo_balt_d24_40: 'Russo-Balt D24/40 (cistern)',
+  oil_russo_balt_d24_40_sewage: 'Russo-Balt D24/40 (sewage cistern)',
+  oil_russo_balt_d24_40_water: 'Russo-Balt D24/40 (water cistern)',
+  open_russo_balt_d24_40: 'Russo-Balt D24/40 (open cargo)',
+  refrigerator_russo_balt_d24_40: 'Russo-Balt D24/40 (refrigerated)',
+  service_mixer_russo_balt_d24_40: 'Russo-Balt D24/40 (concrete mixer)',
+  snowplow_russo_balt_d24_40: 'Russo-Balt D24/40 (snowplow)',
+});
+
+function rawVehicleDisplayName(raw) {
+  return raw.de || raw.en || D24_40_DISPLAY_NAMES[raw.id] || null;
+}
+
 export function vehicleSupportsCargo(vehicle, cargo) {
   if (Number.isFinite(vehicle?.gameCapacity) && vehicle?.gameTransportType) {
     return vehicle.gameCapacity > 0
@@ -189,7 +208,7 @@ export function mergeVehiclePools(sheetVehicles, railSupplement, rawGameVehicles
   // exists, so anything they describe and the spreadsheet does not is added
   // here on its own terms rather than left out.
   for (const raw of rawGameVehicles) {
-    const name = raw.de || raw.en;
+    const name = rawVehicleDisplayName(raw);
     if (!name || byName.has(name.toLowerCase())) continue;
     const entry = gameOnlyVehicle(raw);
     if (!entry) continue;
@@ -214,7 +233,7 @@ function gameOnlyVehicle(raw) {
     roadRecipeBranch: raw.roadRecipeBranch,
     singleHorsePower: raw.singleHorsePower,
   });
-  const name = raw.de || raw.en;
+  const name = rawVehicleDisplayName(raw);
   const entry = {
     name,
     attrs: {

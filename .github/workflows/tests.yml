@@ -110,3 +110,5 @@ jobs:
             http://localhost:8765/tests/access_graph.html
           node tests/browser/analysis_virtualization.mjs \
             http://localhost:8765/index.html
+          node tests/browser/vehicle_production.mjs \
+            http://localhost:8765/index.html

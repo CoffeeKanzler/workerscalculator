@@ -1,7 +1,7 @@
-import { STRINGS } from './i18n.js?v=184';
+import { STRINGS } from './i18n.js?v=187';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=33';
+import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=39';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -10,7 +10,7 @@ import { completedPaidResearchKeys } from './research.js?v=2';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
-} from './train.js?v=21';
+} from './train.js?v=24';
 import {
   createIndexedDbObservationStore,
   createIndexedDbStatsStore,
@@ -87,9 +87,9 @@ import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=18';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=14';
-import { bootstrapRuntime } from './bootstrap.js?v=7';
+} from './adapters/save_folder_adapter.js?v=20';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=18';
+import { bootstrapRuntime } from './bootstrap.js?v=9';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
@@ -1826,12 +1826,36 @@ function renderAnalysis() {
 function renderVehicleProduction() {
   const plan = state.vehicleProduction ??= { productivity: 1, timeUnit: 'year', rows: [] };
   plan.recommendationGroup ??= 'road';
+  plan.recommendationDecade ??= 'all';
   const eco = economy();
   const recipeWorkdays = vehicle => vehicleProductionRecipe(vehicle)
     .reduce((sum, [resource, amount]) => resource === 'workers' ? sum + amount : sum, 0);
   const available = DATA.vehicles
     .map((vehicle, index) => ({ vehicle, index }))
     .filter(({ vehicle }) => recipeWorkdays(vehicle) > 0);
+  const finiteEnds = available
+    .map(({ vehicle }) => vehicle.attrs.Bis)
+    .filter(year => Number.isFinite(year) && year < 3000);
+  const lastDecadeStart = Math.max(
+    1900,
+    finiteEnds.length ? Math.floor(Math.max(...finiteEnds) / 10) * 10 : 1900,
+  );
+  const recommendationDecades = [
+    ['all', t('allDecades')],
+    ...Array.from(
+      { length: Math.floor((lastDecadeStart - 1900) / 10) + 1 },
+      (_, index) => {
+        const start = 1900 + index * 10;
+        return [String(start), `${start}–${start + 10}`];
+      },
+    ),
+  ];
+  const selectedDecade = plan.recommendationDecade === 'all'
+    ? null
+    : Number(plan.recommendationDecade);
+  const recommendationRange = Number.isFinite(selectedDecade)
+    ? { start: selectedDecade, end: selectedDecade + 10 }
+    : null;
   const types = [...new Set(available.map(({ vehicle }) => vehicle.attrs.Typ))]
     .sort((a, b) => a.localeCompare(b));
   if (!plan.rows.length && available.length) {
@@ -1854,6 +1878,8 @@ function renderVehicleProduction() {
     available.map(item => item.vehicle).filter(vehicle => vehicleProductionGroup(vehicle) === plan.recommendationGroup),
     { workers: 100, productivity: plan.productivity, timeUnit: plan.timeUnit, currency: state.currency },
     eco,
+    5,
+    recommendationRange,
   );
   const blueprintOwned = Array.isArray(state.saveImport?.blueprintOwned)
     ? state.saveImport.blueprintOwned : null;
@@ -1879,6 +1905,25 @@ function renderVehicleProduction() {
         `${fmt(paybackUnits, 1)} ${t('unitsToRepay')}`) : null,
       el('span', { class: 'evidence-badge derived' }, t('standardBlueprint')));
   };
+  const recommendationRows = recommendations.length ? recommendations.map((item, rank) => {
+    const source = available.find(candidate => candidate.vehicle === item.vehicle);
+    return el('tr', {},
+      el('td', { class: 'r' }, rank + 1),
+      el('td', {}, item.vehicle.name),
+      el('td', {}, item.vehicle.attrs.Typ ?? '—'),
+      el('td', {}, item.vehicle.attrs.Bauland ?? '—'),
+      el('td', { class: 'r' }, fmt(item.result.salePrice, 0)),
+      el('td', { class: 'r' }, fmt(item.result.materialCostPerUnit, 0)),
+      el('td', { class: 'r pos' }, fmt(item.result.profitPerWorker, 1)),
+      el('td', { class: 'r' }, blueprintCell(item.vehicle)),
+      el('td', {}, el('button', {
+        title: t('addVehicle'),
+        onclick: () => {
+          if (source) plan.rows.push({ type: source.vehicle.attrs.Typ, vehicleIndex: source.index, workers: 100 });
+          update();
+        },
+      }, '+')));
+  }) : [el('tr', {}, el('td', { colSpan: 9, class: 'hint' }, t('noVehicleRecommendations')))];
   const recommendationTable = el('div', { class: 'tablewrap recommendations' },
     el('table', { class: 'data wide' },
       el('thead', {}, el('tr', {},
@@ -1887,25 +1932,7 @@ function renderVehicleProduction() {
         el('th', {}, `${t('materialPerUnit')} ${cur()}`),
         el('th', {}, `${t('profitPerWorker')} / ${t(plan.timeUnit)}`),
         el('th', {}, t('blueprintAndPayback')), el('th', {}))),
-      el('tbody', {}, recommendations.map((item, rank) => {
-        const source = available.find(candidate => candidate.vehicle === item.vehicle);
-        return el('tr', {},
-          el('td', { class: 'r' }, rank + 1),
-          el('td', {}, item.vehicle.name),
-          el('td', {}, item.vehicle.attrs.Typ ?? '—'),
-          el('td', {}, item.vehicle.attrs.Bauland ?? '—'),
-          el('td', { class: 'r' }, fmt(item.result.salePrice, 0)),
-          el('td', { class: 'r' }, fmt(item.result.materialCostPerUnit, 0)),
-          el('td', { class: 'r pos' }, fmt(item.result.profitPerWorker, 1)),
-          el('td', { class: 'r' }, blueprintCell(item.vehicle)),
-          el('td', {}, el('button', {
-            title: t('addVehicle'),
-            onclick: () => {
-              if (source) plan.rows.push({ type: source.vehicle.attrs.Typ, vehicleIndex: source.index, workers: 100 });
-              update();
-            },
-          }, '+')));
-      }))));
+      el('tbody', {}, recommendationRows)));
 
   const results = [];
   const table = el('table', { class: 'data wide' },
@@ -1970,7 +1997,13 @@ function renderVehicleProduction() {
     el('div', { class: 'settingsbar' },
       el('label', {}, t('vehicleGroup') + ' ', selectInput(
         [['road', t('roadVehicles')], ['trains', t('trains')], ['boats', t('boats')], ['aircraft', t('aircraft')]],
-        plan.recommendationGroup, value => { plan.recommendationGroup = value; }))),
+        plan.recommendationGroup, value => { plan.recommendationGroup = value; })),
+      el('label', {}, t('recommendationDecade') + ' ', selectInput(
+        recommendationDecades,
+        plan.recommendationDecade,
+        value => { plan.recommendationDecade = value; },
+        { class: 'vehicle-recommendation-decade' },
+      ))),
     recommendationTable,
     el('p', { class: 'hint' }, t('blueprintStandardHint')),
     el('div', { class: 'tablewrap' }, table),
