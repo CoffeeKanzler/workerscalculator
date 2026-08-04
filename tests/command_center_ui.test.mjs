@@ -40,7 +40,7 @@ test('the confirmed tab to section table is what ships', () => {
     ['home', 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'prices']);
   assert.deepEqual(tabsForSection('diagnose'), ['alerts', 'pollution', 'crime']);
   assert.deepEqual(tabsForSection('plan'), [
-    'chain', 'city', 'priceedit', 'production', 'vehicleprod', 'analysis', 'trains', 'research', 'advanced',
+    'chain', 'city', 'priceedit', 'production', 'vehicleprod', 'analysisRUB', 'analysisUSD', 'trains', 'research', 'advanced',
   ]);
   assert.deepEqual(tabsForSection('compare'), ['saveimport', 'snapshots', 'help']);
 });

@@ -8,7 +8,7 @@
 export const COMMAND_SECTIONS = Object.freeze([
   Object.freeze({ id: 'observe', labelKey: 'navObserve', defaultTab: 'republic', tabs: Object.freeze(['home', 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'prices']) }),
   Object.freeze({ id: 'diagnose', labelKey: 'navDiagnose', defaultTab: 'alerts', tabs: Object.freeze(['alerts', 'pollution', 'crime']) }),
-  Object.freeze({ id: 'plan', labelKey: 'navPlan', defaultTab: 'chain', tabs: Object.freeze(['chain', 'city', 'priceedit', 'production', 'vehicleprod', 'analysis', 'trains', 'research', 'advanced']) }),
+  Object.freeze({ id: 'plan', labelKey: 'navPlan', defaultTab: 'chain', tabs: Object.freeze(['chain', 'city', 'priceedit', 'production', 'vehicleprod', 'analysisRUB', 'analysisUSD', 'trains', 'research', 'advanced']) }),
   Object.freeze({ id: 'compare', labelKey: 'navCompare', defaultTab: 'saveimport', tabs: Object.freeze(['saveimport', 'snapshots', 'help']) }),
 ]);
 
@@ -16,6 +16,9 @@ const TAB_SECTION = new Map();
 for (const section of COMMAND_SECTIONS) {
   for (const tab of section.tabs) TAB_SECTION.set(tab, section.id);
 }
+// Keep old shared links and saved sessions on the same section while the two
+// explicit currency tabs become the visible navigation.
+TAB_SECTION.set('analysis', 'plan');
 
 export function sectionForTab(tab) {
   return TAB_SECTION.get(tab) ?? 'observe';

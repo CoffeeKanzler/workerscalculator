@@ -12,8 +12,19 @@ page.on('console', message => {
 try {
   await page.goto(BASE, { waitUntil: 'load' });
   await page.waitForSelector('.section-tabs button', { timeout: 30_000 });
-  await page.locator('.section-tabs button', { hasText: /Diagnose|Diagnose/i }).first().click();
-  await page.locator('.context-tabs button', { hasText: /Analysis|Analyse/i }).first().click();
+  await page.locator('.section-tabs button', { hasText: /Plan|Planen/i }).first().click();
+  await page.locator('.context-tabs button', { hasText: /Price analysis \$|Preisanalyse \$/i }).first().click();
+
+  const usdHeaders = await page.locator('.analysis-table th').allTextContents();
+  if (!usdHeaders.some(header => header.includes('$'))) {
+    throw new Error(`USD analysis headers missing currency marker: ${JSON.stringify(usdHeaders)}`);
+  }
+
+  await page.locator('.context-tabs button', { hasText: /Price analysis ₽|Preisanalyse ₽/i }).first().click();
+  const rubHeaders = await page.locator('.analysis-table th').allTextContents();
+  if (!rubHeaders.some(header => header.includes('₽'))) {
+    throw new Error(`RUB analysis headers missing currency marker: ${JSON.stringify(rubHeaders)}`);
+  }
 
   const viewport = page.locator('.virtual-tablewrap');
   await viewport.waitFor({ state: 'visible', timeout: 10_000 });

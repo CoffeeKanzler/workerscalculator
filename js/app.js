@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=187';
+import { STRINGS } from './i18n.js?v=189';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=39';
@@ -94,15 +94,16 @@ import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
   shouldOpenStartPage, relativeAge,
-} from './ui/command_center.js?v=8';
+} from './ui/command_center.js?v=10';
 
 const RUNTIME_CONFIG = getRuntimeConfig();
 const APP_RUNTIME = bootstrapRuntime({ config: RUNTIME_CONFIG });
 const IS_BETA = RUNTIME_CONFIG.variant === 'beta';
 const HAS_SAVE_WORKSPACE = hasSaveWorkspace(RUNTIME_CONFIG);
 const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'alerts', 'pollution', 'crime', 'environment', 'snapshots', 'production', 'city', 'chain',
-  'prices', 'priceedit', 'analysis', 'vehicleprod', ...(HAS_SAVE_WORKSPACE ? ['saveimport'] : []),
+  'prices', 'priceedit', 'analysisRUB', 'analysisUSD', 'analysis', 'vehicleprod', ...(HAS_SAVE_WORKSPACE ? ['saveimport'] : []),
   'trains', 'research', 'advanced', 'help'];
+const LEGACY_TAB_ALIASES = new Set(['analysis']);
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'theme', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
   'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'dataset',
@@ -524,7 +525,8 @@ function fmt(n, digits = 2) {
   if (!Number.isFinite(n)) return '∞';
   return n.toLocaleString(state.lang === 'de' ? 'de-DE' : 'en-US', { maximumFractionDigits: digits });
 }
-function cur() { return state.currency === 'USD' ? '$' : '₽'; }
+function currencySymbol(currency) { return currency === 'USD' ? '$' : '₽'; }
+function cur() { return currencySymbol(state.currency); }
 
 function el(tag, attrs = {}, ...children) {
   const e = document.createElement(tag);
@@ -915,7 +917,7 @@ function renderHeader() {
         el('h1', {}, t('appTitle')),
         el('p', { class: 'product-subtitle' }, t('appSubtitle'))), languageSwitch());
   }
-  const showEconomyControls = ['prices', 'production', 'chain', 'analysis', 'vehicleprod'].includes(state.tab);
+  const showEconomyControls = ['prices', 'production', 'chain', 'analysis', 'analysisRUB', 'analysisUSD', 'vehicleprod'].includes(state.tab);
   const file = el('input', {
     type: 'file', accept: '.ini,.txt', id: 'fileInput', class: 'hidden',
     onchange: e => e.target.files[0] && handleFile(e.target.files[0]),
@@ -1038,11 +1040,13 @@ function renderSaveSlots() {
 
 function renderTabs() {
   const labels = { home: 'tabHome', prices: 'tabPrices', priceedit: 'tabPriceEdit', production: 'tabProduction', chain: 'tabChain',
-    analysis: 'tabAnalysis', vehicleprod: 'tabVehicleProd', city: 'tabCity', cities: 'tabCities', republic: 'tabRepublic',
+    analysis: 'tabAnalysis', analysisRUB: 'tabAnalysisRUB', analysisUSD: 'tabAnalysisUSD', vehicleprod: 'tabVehicleProd', city: 'tabCity', cities: 'tabCities', republic: 'tabRepublic',
     map: 'tabMap', history: 'tabHistory', construction: 'tabConstruction', logistics: 'tabLogistics', environment: 'tabEnvironment', alerts: 'tabAlerts', pollution: 'tabPollution', crime: 'tabCrime', snapshots: 'tabSnapshots', saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
+  const activeTab = state.tab === 'analysis'
+    ? (state.currency === 'USD' ? 'analysisUSD' : 'analysisRUB') : state.tab;
   const button = id => el('button', {
-    class: state.tab === id ? 'active' : '',
-    'aria-current': state.tab === id ? 'page' : false,
+    class: activeTab === id ? 'active' : '',
+    'aria-current': activeTab === id ? 'page' : false,
     onclick: () => { state.tab = id; update(); },
   }, t(labels[id]));
   const activeSection = sectionForTab(state.tab);
@@ -1060,7 +1064,7 @@ function renderTabs() {
       ...sectionTabs.map(button)),
     el('details', { class: 'more-nav' },
       el('summary', {}, t('moreTools')),
-      el('div', { class: 'more-nav-menu' }, ...TABS.filter(id => !sectionTabs.includes(id)).map(button))));
+      el('div', { class: 'more-nav-menu' }, ...TABS.filter(id => !sectionTabs.includes(id) && !LEGACY_TAB_ALIASES.has(id)).map(button))));
 }
 
 function renderCurrentTab() {
@@ -1081,7 +1085,9 @@ function renderCurrentTab() {
     case 'snapshots': return renderSnapshots();
     case 'production': return renderProduction();
     case 'chain': return renderChain();
-    case 'analysis': return renderAnalysis();
+    case 'analysisRUB': return renderAnalysis('RUB');
+    case 'analysisUSD': return renderAnalysis('USD');
+    case 'analysis': return renderAnalysis(state.currency);
     case 'vehicleprod': return renderVehicleProduction();
     case 'city': return renderCity();
     case 'republic': return RUNTIME_CONFIG.mode === 'addon'
@@ -1758,11 +1764,11 @@ function renderChain() {
 }
 
 // ---------------------------------------------------------------- analysis tab
-function renderAnalysis() {
+function renderAnalysis(currency = state.currency) {
   const eco = economy();
   const rows = prodBuildings().map(b => {
-    const { income, expenses, profit } = eco.buildingProfit(b, state.currency);
-    const buildCost = eco.buildCost(b, state.currency);
+    const { income, expenses, profit } = eco.buildingProfit(b, currency);
+    const buildCost = eco.buildCost(b, currency);
     return {
       b, income, expenses, profit,
       profitPerWorker: b.workers ? profit / (b.workers / 2) : 0,
@@ -1793,13 +1799,13 @@ function renderAnalysis() {
     rows,
     columnCount: 9,
     className: 'data wide analysis-table',
-    ariaLabel: t('tabAnalysis'),
+    ariaLabel: currency === 'USD' ? t('tabAnalysisUSD') : t('tabAnalysisRUB'),
     rowHeight: 52,
     renderHead: () => el('thead', {}, el('tr', {},
       th('name', t('building')), el('th', {}, t('group')), el('th', {}, t('workers')),
-      th('profit', `${t('profit')} ${cur()}`), th('profitPerWorker', t('profitPerWorker')),
-      th('amortDays', t('amortDays')), th('income', `${t('income')} ${cur()}`),
-      th('expenses', `${t('expenses')} ${cur()}`), th('buildCost', `${t('buildCost')} ${cur()}`))),
+      th('profit', `${t('profit')} ${currencySymbol(currency)}`), th('profitPerWorker', t('profitPerWorker')),
+      th('amortDays', t('amortDays')), th('income', `${t('income')} ${currencySymbol(currency)}`),
+      th('expenses', `${t('expenses')} ${currencySymbol(currency)}`), th('buildCost', `${t('buildCost')} ${currencySymbol(currency)}`))),
     renderRow: r => el('tr', {},
       el('td', {}, bname(r.b), planningAuthorityBadge(r.b, ['economy', 'construction'])),
       el('td', {}, r.b.group[state.lang]),
