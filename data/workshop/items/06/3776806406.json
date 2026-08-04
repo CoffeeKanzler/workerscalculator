@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3776806406",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-04T06:43:46.520Z",
+  "buildings": [
+    {
+      "id": "3776806406/kaplica_duza",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "roadside chapel, large",
+      "workshopId": "3776806406",
+      "modPath": "kaplica_duza",
+      "footprint": {
+        "boxes": [
+          [
+            -3.7,
+            -1.89,
+            1.9,
+            1.89
+          ]
+        ],
+        "height": 8.61
+      }
+    },
+    {
+      "id": "3776806406/kaplica_mala",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "roadside chapel, small",
+      "workshopId": "3776806406",
+      "modPath": "kaplica_mala",
+      "footprint": {
+        "boxes": [
+          [
+            -0.8,
+            -0.8,
+            0.8,
+            0.8
+          ]
+        ],
+        "height": 2.12
+      }
+    },
+    {
+      "id": "3776806406/krzyz_duzy",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Roadside cross, large",
+      "workshopId": "3776806406",
+      "modPath": "krzyz_duzy",
+      "footprint": {
+        "boxes": [
+          [
+            -1.8,
+            -1.8,
+            1.8,
+            1.8
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3776806406/krzyz_maly",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Roadside cross, small",
+      "workshopId": "3776806406",
+      "modPath": "krzyz_maly",
+      "footprint": {
+        "boxes": [
+          [
+            -0.51,
+            -0.51,
+            0.51,
+            0.51
+          ]
+        ],
+        "height": 3.04
+      }
+    }
+  ],
+  "vehicles": []
+}
