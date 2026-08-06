@@ -420,6 +420,66 @@ export function rankUsedMarketArbitrage(quotes, options) {
     .sort((a, b) => b.profit - a.profit);
 }
 
+const MARKET_BORDER_BY_CURRENCY = Object.freeze({ RUB: 'east', USD: 'west' });
+
+export function marketBorderForCurrency(currency) {
+  return MARKET_BORDER_BY_CURRENCY[currency] ?? null;
+}
+
+// Expand each exact used-market offer into both possible sale borders. The
+// offer's model currency is the only source-border evidence available here;
+// the target currency is the border at which recovered material is sold.
+// Keep an unavailable target route visible so missing price evidence is not
+// mistaken for a loss or silently dropped from the market view.
+export function rankUsedMarketBorderRoutes(offers, { economy }) {
+  const routes = [];
+  for (const [offerIndex, offer] of (offers ?? []).entries()) {
+    const sourceCurrency = offer?.modelFacts?.originCurrency;
+    const sourceBorder = marketBorderForCurrency(sourceCurrency);
+    if (!sourceBorder) continue;
+    for (const targetCurrency of Object.keys(MARKET_BORDER_BY_CURRENCY)) {
+      const targetBorder = marketBorderForCurrency(targetCurrency);
+      const quote = vehicleUsedMarketQuote(offer, { currency: targetCurrency, economy });
+      const arbitrage = quote
+        ? usedMarketRecyclingArbitrage(quote, { currency: targetCurrency, economy })
+        : null;
+      routes.push(arbitrage ? {
+        ...arbitrage,
+        offer,
+        quote,
+        sourceCurrency,
+        sourceBorder,
+        targetCurrency,
+        targetBorder,
+        routeKey: `${sourceBorder}->${targetBorder}`,
+        available: true,
+        offerIndex,
+      } : {
+        offer,
+        quote,
+        sourceCurrency,
+        sourceBorder,
+        targetCurrency,
+        targetBorder,
+        routeKey: `${sourceBorder}->${targetBorder}`,
+        available: false,
+        purchaseValue: null,
+        recoveredValue: null,
+        laborCost: null,
+        netRecycleValue: null,
+        profit: null,
+        worthBuying: false,
+        offerIndex,
+      });
+    }
+  }
+  return routes.sort((a, b) => {
+    if (a.available !== b.available) return a.available ? -1 : 1;
+    if (a.available && b.available && a.profit !== b.profit) return b.profit - a.profit;
+    return a.offerIndex - b.offerIndex || a.targetCurrency.localeCompare(b.targetCurrency);
+  });
+}
+
 export function rankUsedVehicleReplacements(ownedOpportunities, usedQuotes) {
   if (!Array.isArray(ownedOpportunities) || !Array.isArray(usedQuotes)) return [];
   const results = [];

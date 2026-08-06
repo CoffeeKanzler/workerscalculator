@@ -5,7 +5,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
-  Economy, evaluatePlan, evaluateCity, lowTechPoints,
+  Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, lowTechPoints,
   evaluateVehicleProduction, recommendVehicleProduction, vehicleAvailableInRange, vehicleSaleValue,
   vehicleBlueprintQuote, vehicleProductionGroup, SEASON_FACTOR, NO_SEASON_FACTOR,
   buildingPlanningAuthority,
@@ -262,6 +262,49 @@ test('city: utilizationByType exposes per-type utilization, absent for types wit
   assert.equal(r.utilizationByType.get('Schule'), svc.utilization);
   // residential ('Plattenbau') has no demand model -> not in the map
   assert.equal(r.utilizationByType.has('Plattenbau'), false);
+});
+
+test('city productivity scenarios expose the 100% threshold and worst-case load', () => {
+  const residential = {
+    de: 'TestHaus', type: { de: 'Plattenbau', en: 'Prefab' }, inhabitants: 200, workers: 0,
+    power: 0, maxKW: 0, water: 0, hotwater: 0, waste: 0, workdays: 0,
+    gravel: 0, bricks: 0, steel: 0, concrete: 0, asphalt: 0, boards: 0, panels: 0,
+    ecomponents: 0, mcomponents: 0, special: 0, visitors: 0,
+  };
+  const school = { ...residential, de: 'TestSchule', type: { de: 'Schule', en: 'School' },
+    inhabitants: 0, workers: 10, visitors: 15 };
+  const result = evaluateCityProductivityScenarios({
+    productivity: 0.8, worstCaseProductivity: 0.4,
+    rows: [{ building: residential, count: 1 }, { building: school, count: 1 }],
+  }, eco());
+  const service = result.services.find(row => row.id === 'school');
+
+  assert.equal(result.normalProductivity, 0.8);
+  assert.equal(result.worstCaseProductivity, 0.4);
+  assert.ok(service.normalUtilization < service.worstCaseUtilization);
+  assert.ok(Math.abs(service.requiredProductivity - (200 / (15 * 18))) < 1e-12);
+  assert.equal(service.normalSufficient, true);
+  assert.equal(service.worstCaseSufficient, false);
+  assert.equal(result.normal.services.find(row => row.id === 'school').provided, 216);
+  assert.equal(result.worst.services.find(row => row.id === 'school').provided, 108);
+});
+
+test('city productivity scenarios keep category-only services neutral without capacity', () => {
+  const city = {
+    productivity: 0.7, worstCaseProductivity: 0.3,
+    rows: [{ building: {
+      type: { de: 'Einkaufzentrum', en: 'Shopping centre' }, inhabitants: 100,
+      workers: 0, power: 0, maxKW: 0, water: 0, hotwater: 0, waste: 0, workdays: 0,
+      quality: null, gravel: 0, bricks: 0, steel: 0, concrete: 0, asphalt: 0,
+      boards: 0, panels: 0, ecomponents: 0, mcomponents: 0, special: 0, visitors: 0,
+    }, count: 1 }],
+  };
+  const shopping = evaluateCityProductivityScenarios(city, eco()).services
+    .find(row => row.id === 'shopping');
+  assert.equal(shopping.requiredProductivity, null);
+  assert.equal(shopping.normalUtilization, null);
+  assert.equal(shopping.worstCaseUtilization, null);
+  assert.equal(shopping.worstCaseSufficient, null);
 });
 
 test('LowTech example from the sheet = 4 points', () => {

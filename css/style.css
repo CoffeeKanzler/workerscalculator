@@ -1352,6 +1352,12 @@ table.data th, table.data td { border-color: var(--border); }
 .scrap-headline strong { font-size: 22px; color: var(--pos); font-variant-numeric: tabular-nums; }
 .scrap-headline span { color: var(--muted); font-size: 13px; }
 .scrap-arbitrage { border-left: 3px solid var(--pos); padding-left: 12px; margin: 12px 0; }
+.scrap-border-routes { border-left-color: var(--accent); }
+.scrap-border-routes table { min-width: 980px; }
+.scrap-border-routes .scrap-route-unavailable { opacity: .72; }
+.scrap-border-routes td.pos { color: var(--pos); font-weight: 650; }
+.scrap-border-routes td.neg { color: var(--neg); }
+.scrap-border-routes td.warn { color: var(--warn); }
 
 /* Markers are kept at a constant screen size of roughly 2-3px across, which is
    right for reading a republic of two thousand buildings at once and far too

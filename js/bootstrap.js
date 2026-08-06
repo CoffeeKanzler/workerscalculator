@@ -1,9 +1,9 @@
 import { createSdkClient } from './adapters/sdk_client.js';
 import { createLiveSdkAdapter } from './adapters/live_sdk_adapter.js';
-import { importSaveFolder } from './adapters/save_folder_adapter.js?v=18';
+import { importSaveFolder } from './adapters/save_folder_adapter.js?v=19';
 import { createAddonRuntime } from './runtime/addon_runtime.js';
 import { createHostedRuntime } from './runtime/hosted_runtime.js';
-import { getRuntimeConfig } from './runtime/runtime_config.js';
+import { getRuntimeConfig } from './runtime/runtime_config.js?v=2';
 
 export function bootstrapRuntime({
   config = getRuntimeConfig(),

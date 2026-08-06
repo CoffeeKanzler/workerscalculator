@@ -1,6 +1,6 @@
-import { resolveVehicleModels } from '../fleet.js?v=4';
+import { resolveVehicleModels } from '../fleet.js?v=6';
 import { latestProductivity } from '../save_model.js?v=20';
-import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=18';
+import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=19';
 import { readWorkshopIndex } from '../models/workshop_index.js?v=2';
 
 const REQUIRED_FILES = ['namepoints.bin', 'buildings_game.bin'];
