@@ -1,7 +1,7 @@
-import { STRINGS } from './i18n.js?v=189';
+import { STRINGS } from './i18n.js?v=190';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
-import { Economy, evaluatePlan, evaluateCity, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=39';
+import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=40';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -31,6 +31,7 @@ import {
   seedPlanningFromObservation,
 } from './models/planning_model.js?v=8';
 import { planningAreas } from './models/planning_areas.js';
+import { CITY_CORE_CATEGORY_TYPES, addMissingCityCategoryRows } from './city_planning.js?v=2';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
@@ -80,6 +81,7 @@ import {
 import { parseWorkshopBuildingIni, workshopBuildingIdentity } from './workshop_ini.js?v=1';
 import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
+  rankUsedMarketBorderRoutes,
   paginateVehicleOpportunities, shareSafeSaveImport, vehicleCategoryGroup,
   vehicleEconomicOpportunity, vehicleUsedMarketQuote,
 } from './fleet.js?v=19';
@@ -313,7 +315,7 @@ function returnToRepublicButton() {
 function defaultCity() {
   return {
     name: 'Nowa Huta', productivity: 0.7, cable: CABLES[2].de, exchanger: 'small',
-    waterDivisor: 3, rows: [], assignedChain: null,
+    worstCaseProductivity: 0.5, waterDivisor: 3, rows: [], assignedChain: null,
   };
 }
 
@@ -2737,6 +2739,8 @@ function renderCity() {
   if (state.activeCity >= areas.length || state.activeCity < 0) state.activeCity = 0;
   const city = materializeCityArea(areas[state.activeCity]);
   const eco = economy();
+  const worstCaseProductivity = Number.isFinite(city.worstCaseProductivity)
+    ? Math.max(0, city.worstCaseProductivity) : 0.5;
 
   const workspaceBar = el('div', { class: 'workspace-bar' },
     returnToRepublicButton(),
@@ -2765,6 +2769,9 @@ function renderCity() {
     el('label', {}, t('cityName') + ' ', el('input', {
       type: 'text', value: city.name, onchange: e => { city.name = e.target.value; update(); } })),
     el('label', {}, t('productivity') + ' ', pctInput(city.productivity, v => city.productivity = v)),
+    el('label', {}, t('cityProductivityWorstCase') + ' ', pctInput(
+      worstCaseProductivity, v => city.worstCaseProductivity = v,
+    )),
     el('label', {}, t('cable') + ' ',
       selectInput(CABLES.map(c => [c.de, c[state.lang]]), city.cable, v => city.cable = v)),
     el('label', {}, t('heatExchangers') + ' ',
@@ -2857,7 +2864,10 @@ function renderCity() {
   };
 
   const rowsResolved = city.rows.map(r => ({ ...r, building: resolveRow(r) }));
-  const res = evaluateCity({ ...city, rows: rowsResolved }, eco);
+  const productivityScenarios = evaluateCityProductivityScenarios(
+    { ...city, rows: rowsResolved }, eco, worstCaseProductivity,
+  );
+  const res = productivityScenarios.normal;
 
   const tbl = el('table', { class: 'data wide' },
     el('thead', {}, el('tr', {},
@@ -2873,7 +2883,9 @@ function renderCity() {
         ? row.type
         : (pool.find(({ building }) => Object.values(building.type).includes(row.type))?.building.type.de ?? row.type);
       const typeSel = selectInput([[t('none'), t('none')], ...types.map(([key, label]) => [key, label[state.lang]])],
-        selectedType ?? t('none'), v => { row.type = v; row.name = null; delete row.buildingIndex; });
+        selectedType ?? t('none'), v => {
+          row.type = v; row.name = null; delete row.buildingIndex; delete row.categoryOnly;
+        });
       const inType = pool.filter(({ building }) => building.type.de === selectedType);
       const selectedIndex = Number.isInteger(row.buildingIndex)
         ? row.buildingIndex
@@ -2884,6 +2896,7 @@ function renderCity() {
           if (v === '') { row.name = null; delete row.buildingIndex; return; }
           row.buildingIndex = Number(v);
           row.name = DATA.cityBuildings[row.buildingIndex].de;
+          delete row.categoryOnly;
         });
       const n = row.count || 0;
       // Per-row breakdown of the type-level utilization (only types with a
@@ -2900,7 +2913,9 @@ function renderCity() {
           row.importedBuilding.observedOccupancy
             ? el('div', { class: 'sourceid' }, t('observedOccupancyBaseline')) : null,
           el('div', { class: 'sourceid' }, `${t('sourceGameId')}: ${row.sourceGameId ?? row.importedBuilding.gameId}`))
-        : bSel;
+        : row.categoryOnly
+          ? el('div', {}, el('span', { class: 'category-placeholder' }, t('cityCategoryPlaceholder')), bSel)
+          : bSel;
       return el('tr', {},
         el('td', {}, typeCell), el('td', {}, buildingCell),
         el('td', {}, numInput(row.count, v => row.count = v, { min: 0, step: 1 })),
@@ -2921,26 +2936,42 @@ function renderCity() {
   const addBtn = el('button', {
     onclick: () => { city.rows.push({ type: types[0]?.[0], name: null, count: 1 }); update(); },
   }, t('addRow'));
+  const addCategoriesBtn = el('button', {
+    onclick: () => {
+      city.rows = addMissingCityCategoryRows(city.rows, CITY_CORE_CATEGORY_TYPES).rows;
+      update();
+    },
+  }, t('cityCoreCategories'));
 
   const services = el('table', { class: 'data' },
     el('thead', {}, el('tr', {},
-      el('th', {}, t('services')), el('th', {}, t('provided')), el('th', {}, t('utilization')),
+      el('th', {}, t('services')), el('th', {}, t('provided')),
+      el('th', {}, `${t('utilization')} (${t('productivity')})`),
+      el('th', {}, `${t('utilization')} (${t('cityProductivityWorstCase')})`),
+      el('th', {}, t('cityRequiredProductivity')),
       el('th', {}, t('workersNeeded')))),
     el('tbody', {},
-      res.services.map(s => el('tr', {},
+      productivityScenarios.services.map(s => el('tr', {},
         el('td', {}, t(s.id)),
         el('td', { class: 'r' }, fmt(s.provided, 0)),
-        utilizationCell(s.utilization),
+        utilizationCell(s.normalUtilization),
+        utilizationCell(s.worstCaseUtilization),
+        el('td', { class: s.worstCaseSufficient === false ? 'r neg' : 'r' },
+          s.requiredProductivity == null ? '—' : fmt(s.requiredProductivity * 100, 1) + ' %'),
         workersNeededCell(s.workersNeeded))),
       el('tr', {},
         el('td', {}, t('secretPolice') + ` (${fmt(res.residentialBuildings, 0)} ${t('residential')})`),
         el('td', { class: 'r' }, fmt(res.secretPolice.provided, 1)),
         utilizationCell(res.secretPolice.utilization),
+        utilizationCell(productivityScenarios.worst.secretPolice.utilization),
+        el('td', { class: 'r' }, '—'),
         workersNeededCell(res.secretPolice.workersNeeded)),
       el('tr', {},
         el('td', {}, t('heating')),
         el('td', { class: 'r' }, fmt(res.heating.provided, 0)),
         utilizationCell(res.heating.utilization),
+        utilizationCell(productivityScenarios.worst.heating.utilization),
+        el('td', { class: 'r' }, '—'),
         workersNeededCell(res.heating.workersNeeded))));
 
   const summary = el('div', { class: 'totalsbox' },
@@ -3012,7 +3043,7 @@ function renderCity() {
       ? el('div', { class: 'columns operational-summary' }, observedCard, regionalOperationsCard, coverageCard) : null,
     assumptions,
     city.rows.length ? el('div', { class: 'tablewrap' }, tbl) : el('p', { class: 'empty-state' }, t('emptyCityPlan')),
-    addBtn,
+    el('div', { class: 'settingsbar city-row-actions' }, addBtn, addCategoriesBtn),
     el('div', { class: 'columns' },
       el('div', {}, el('h3', {}, t('services')), services),
       summary, utilityBox, mats));
@@ -4964,6 +4995,70 @@ function renderConstruction() {
 // opportunities, vehicle lines, and distribution offices — three surfaces that
 // shared the foot of the overview, several of them nesting a disclosure per
 // line and per office.
+function renderLegacyScrapProfitTable(scrapArbitrage, scrapTrades, scrapArbitrageTotal) {
+  if (!scrapArbitrage.length) return null;
+  return el('div', { class: 'used-fleet-offers scrap-arbitrage' },
+    el('div', { class: 'scrap-headline' },
+      el('strong', {}, `${fmt(scrapArbitrageTotal, 0)} ${cur()}`),
+      el('span', {}, t('fleetScrapTotalHint').replace('{n}', fmt(scrapTrades.length, 0)))),
+    el('p', { class: 'hint' }, t('fleetScrapArbitrageHint')),
+    el('p', { class: 'hint' }, t('fleetScrapAllHint')
+      .replace('{n}', fmt(scrapArbitrage.length, 0))),
+    el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+      el('thead', {}, el('tr', {},
+        el('th', {}, t('vehicle')),
+        el('th', { class: 'r' }, t('fleetScrapBuyPrice')),
+        el('th', { class: 'r' }, t('fleetScrapRecovered')),
+        el('th', { class: 'r' }, t('fleetScrapLabor')),
+        el('th', { class: 'r' }, t('fleetScrapProfit')))),
+      el('tbody', {}, ...scrapArbitrage.map(row => el('tr', {},
+        el('td', {}, row.quote.offer.modelFacts.name),
+        el('td', { class: 'r' }, fmt(row.purchaseValue, 0)),
+        el('td', { class: 'r' }, fmt(row.recoveredValue.immediateExportValue, 0)),
+        el('td', { class: 'r' }, '-' + fmt(row.laborCost, 0)),
+        el('td', { class: row.worthBuying ? 'r pos' : 'r neg' }, fmt(row.profit, 0))))))));
+}
+
+function renderBorderScrapProfitTable(routes) {
+  if (!routes.length) return null;
+  const profitableRoutes = routes.filter(route => route.available && route.worthBuying);
+  const borderLabel = border => t(border === 'east' ? 'fleetScrapEast' : 'fleetScrapWest');
+  const routeLabel = route => `${borderLabel(route.sourceBorder)} → ${borderLabel(route.targetBorder)}`;
+  return el('div', { class: 'used-fleet-offers scrap-arbitrage scrap-border-routes' },
+    el('div', { class: 'scrap-headline' },
+      el('strong', {}, `${fmt(profitableRoutes.length, 0)} ${t('fleetScrapWorthBuying')}`),
+      el('span', {}, t('fleetScrapBorderCount').replace('{n}', fmt(routes.length, 0)))),
+    el('p', { class: 'hint' }, t('fleetScrapBorderHint')),
+    el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+      el('thead', {}, el('tr', {},
+        el('th', {}, t('vehicle')),
+        el('th', {}, t('fleetScrapSourceBorder')),
+        el('th', {}, t('fleetScrapBorderHeading')),
+        el('th', { class: 'r' }, t('fleetScrapBuyPrice')),
+        el('th', { class: 'r' }, t('fleetScrapRecovered')),
+        el('th', { class: 'r' }, t('fleetScrapLabor')),
+        el('th', { class: 'r' }, t('fleetScrapNetValue')),
+        el('th', { class: 'r' }, t('fleetScrapProfit')),
+        el('th', {}, t('fleetScrapStatus')))),
+      el('tbody', {}, ...routes.map(route => {
+        const facts = route.offer?.modelFacts;
+        const status = !route.available
+          ? 'fleetScrapUnavailable'
+          : route.worthBuying ? 'fleetScrapWorthBuying' : 'fleetScrapNotWorthBuying';
+        const value = key => route.available ? fmt(route[key], 0) : '—';
+        return el('tr', { class: route.available ? '' : 'scrap-route-unavailable' },
+          el('td', {}, facts?.name || '—', el('div', { class: 'subline' }, `#${route.offerIndex + 1}`)),
+          el('td', {}, `${borderLabel(route.sourceBorder)} · ${route.sourceCurrency}`),
+          el('td', {}, `${routeLabel(route)} · ${route.targetCurrency}`),
+          el('td', { class: 'r' }, value('purchaseValue')),
+          el('td', { class: 'r' }, route.available ? fmt(route.recoveredValue.immediateExportValue, 0) : '—'),
+          el('td', { class: 'r' }, route.available ? '-' + fmt(route.laborCost, 0) : '—'),
+          el('td', { class: 'r' }, value('netRecycleValue')),
+          el('td', { class: route.worthBuying ? 'r pos' : route.available ? 'r neg' : 'r' }, value('profit')),
+          el('td', { class: route.worthBuying ? 'pos' : route.available ? 'neg' : 'warn' }, t(status)));
+      })))));
+}
+
 function renderLogistics() {
   if (!state.saveImport) {
     return el('section', {}, el('p', { class: 'hint' }, t('citiesEmpty')));
@@ -4992,6 +5087,7 @@ function renderLogistics() {
   });
   const scrapTrades = scrapArbitrage.filter(row => row.worthBuying);
   const scrapArbitrageTotal = scrapTrades.reduce((sum, row) => sum + row.profit, 0);
+  const scrapBorderRoutes = rankUsedMarketBorderRoutes(usedFleetRecords, { economy: eco });
   const replacementCandidates = rankUsedVehicleReplacements(
     exactFleetOpportunities, exactUsedVehicleQuotes,
   );
@@ -5050,6 +5146,9 @@ function renderLogistics() {
         ? fmt(opportunity.advantage, 0) : '—'),
       el('td', { class: 'r' }, fmt(opportunity.recycling.workdays, 0))))))
     : el('p', { class: 'hint warn' }, t('fleetNoFilterResults'));
+  const scrapProfitTable = RUNTIME_CONFIG.scrapProfitTable === 'legacy'
+    ? renderLegacyScrapProfitTable(scrapArbitrage, scrapTrades, scrapArbitrageTotal)
+    : renderBorderScrapProfitTable(scrapBorderRoutes);
   const fleetOpportunities = fleetRecords.length ? el('section', { class: 'institution-overview' },
     el('h3', {}, t('fleetEconomicOpportunities'), el('span', { class: 'evidence-badge exact' }, t('exact'))),
     el('p', { class: 'hint' }, t('fleetEconomicHint')),
@@ -5058,29 +5157,6 @@ function renderLogistics() {
       : el('p', { class: 'hint warn' }, t('fleetNoExactOpportunities')),
     el('p', { class: 'hint' }, t('fleetCoverageHint')
       .replace('{exact}', fmt(exactFleetOpportunities.length, 0)).replace('{total}', fmt(fleetRecords.length, 0))),
-    scrapArbitrage.length ? el('div', { class: 'used-fleet-offers scrap-arbitrage' },
-      // Lead with the money: this is the one panel here describing a trade
-      // available right now rather than an appraisal of what is already owned.
-      el('div', { class: 'scrap-headline' },
-        el('strong', {}, `${fmt(scrapArbitrageTotal, 0)} ${cur()}`),
-        el('span', {}, t('fleetScrapTotalHint')
-          .replace('{n}', fmt(scrapTrades.length, 0)))),
-      el('p', { class: 'hint' }, t('fleetScrapArbitrageHint')),
-      el('p', { class: 'hint' }, t('fleetScrapAllHint')
-        .replace('{n}', fmt(scrapArbitrage.length, 0))),
-      el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
-        el('thead', {}, el('tr', {},
-          el('th', {}, t('vehicle')),
-          el('th', { class: 'r' }, t('fleetScrapBuyPrice')),
-          el('th', { class: 'r' }, t('fleetScrapRecovered')),
-          el('th', { class: 'r' }, t('fleetScrapLabor')),
-          el('th', { class: 'r' }, t('fleetScrapProfit')))),
-        el('tbody', {}, ...scrapArbitrage.map(row => el('tr', {},
-          el('td', {}, row.quote.offer.modelFacts.name),
-          el('td', { class: 'r' }, fmt(row.purchaseValue, 0)),
-          el('td', { class: 'r' }, fmt(row.recoveredValue.immediateExportValue, 0)),
-          el('td', { class: 'r' }, '-' + fmt(row.laborCost, 0)),
-          el('td', { class: row.worthBuying ? 'r pos' : 'r neg' }, fmt(row.profit, 0))))))) ) : null,
     exactUsedVehicleQuotes.length ? el('div', { class: 'used-fleet-offers' },
       el('h4', {}, t('fleetUsedHeading')),
       el('p', { class: 'hint' }, t('fleetUsedHint')),
@@ -5332,11 +5408,11 @@ function renderLogistics() {
                     el('li', { class: 'warn' }, `${assignment.target?.name || assignment.target?.type
                       || `#${assignment.targetBuildingIndex}`} · ${t('inactiveAssignments')}`)))) : '—'));
         }))))) : null) : null;
-  if (!fleetOpportunities && !logisticsOperations) {
+  if (!fleetOpportunities && !scrapProfitTable && !logisticsOperations) {
     return el('section', {}, el('h2', {}, t('tabLogistics')),
       el('p', { class: 'hint' }, t('unavailable')));
   }
-  return el('section', {}, fleetOpportunities, logisticsOperations);
+  return el('section', {}, scrapProfitTable, fleetOpportunities, logisticsOperations);
 }
 
 // The full alert list, which is what "diagnose" means: every finding the save

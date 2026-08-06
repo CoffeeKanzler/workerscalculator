@@ -480,6 +480,43 @@ export function evaluateCity(city, eco) {
   return res;
 }
 
+// Compare the same city at two productivity assumptions without changing the
+// caller's plan. The threshold answers the structural question "at which
+// productivity does this service reach 100% load?"; it is only calculable for
+// services with an evidenced capacity and an existing ratio in SERVICES.
+export function evaluateCityProductivityScenarios(city, eco, worstCaseProductivity) {
+  const normalProductivity = Number.isFinite(city?.productivity)
+    ? Math.max(0, city.productivity) : 1;
+  const worstProductivity = Number.isFinite(worstCaseProductivity)
+    ? Math.max(0, worstCaseProductivity)
+    : Number.isFinite(city?.worstCaseProductivity)
+      ? Math.max(0, city.worstCaseProductivity) : 0.5;
+  const normal = evaluateCity({ ...city, productivity: normalProductivity }, eco);
+  const worst = evaluateCity({ ...city, productivity: worstProductivity }, eco);
+  const services = normal.services.map((service, index) => {
+    const worstService = worst.services[index];
+    const denominator = service.capacity * service.ratio;
+    const requiredProductivity = denominator > 0
+      ? normal.population / denominator : null;
+    return {
+      ...service,
+      requiredProductivity,
+      normalUtilization: service.utilization,
+      worstCaseUtilization: worstService?.utilization ?? null,
+      normalSufficient: service.utilization == null ? null : service.utilization <= 1,
+      worstCaseSufficient: worstService?.utilization == null
+        ? null : worstService.utilization <= 1,
+    };
+  });
+  return {
+    normal,
+    worst,
+    normalProductivity,
+    worstCaseProductivity: worstProductivity,
+    services,
+  };
+}
+
 // LowTech research rule (community rule by DasBreitschwert).
 export function lowTechPoints({ population, cities, currentYear, startYear, researched }) {
   const decadeBonus = startYear > 1960 ? 0 : Math.floor((Math.min(currentYear, 1980) - startYear) / 10) + 1;
