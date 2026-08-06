@@ -15,6 +15,8 @@ import {
   vehicleComponentBaseValue,
   vehicleEconomicOpportunity,
   vehicleUsedMarketQuote,
+  marketBorderForCurrency,
+  rankUsedMarketBorderRoutes,
   rankUsedVehicleReplacements,
   filterAndSortVehicleOpportunities,
   paginateVehicleOpportunities,
@@ -627,8 +629,14 @@ function arbitrageFixture({ purchaseValue }) {
     buy: () => 120,
   };
   const quote = {
+    age: 1,
+    accumulatedUsage: 1,
+    modifier: 0,
     purchaseValue,
     offer: {
+      age: 1,
+      accumulatedUsage: 1,
+      modifier: 0,
       cargo: null,
       modelFacts: {
         runtimeCategory: 2,
@@ -694,4 +702,49 @@ test('an offer with no model facts is skipped rather than guessed at', async () 
   assert.equal(usedMarketRecyclingArbitrage(null, { currency: 'RUB', economy }), null);
   assert.equal(usedMarketRecyclingArbitrage({ purchaseValue: 5 }, { currency: 'RUB', economy }), null);
   assert.deepEqual(rankUsedMarketArbitrage(null, { currency: 'RUB', economy }), []);
+});
+
+test('border-aware scrap ranking expands East and West offers to both targets', () => {
+  assert.equal(marketBorderForCurrency('RUB'), 'east');
+  assert.equal(marketBorderForCurrency('USD'), 'west');
+  assert.equal(marketBorderForCurrency('CHF'), null);
+
+  const east = arbitrageFixture({ purchaseValue: 1 }).quote;
+  const west = {
+    ...east,
+    offer: { ...east.offer, modelFacts: { ...east.offer.modelFacts, originCurrency: 'USD' } },
+  };
+  const economy = arbitrageFixture({ purchaseValue: 1 }).economy;
+  const routes = rankUsedMarketBorderRoutes([east.offer, west.offer], { economy });
+
+  assert.deepEqual(
+    new Set(routes.map(route => `${route.sourceBorder}->${route.targetBorder}`)),
+    new Set(['east->east', 'east->west', 'west->east', 'west->west']),
+  );
+  assert.ok(routes.every(route => ['RUB', 'USD'].includes(route.targetCurrency)));
+  assert.ok(routes.some(route => route.sourceCurrency === 'RUB' && route.targetCurrency === 'USD'));
+  assert.ok(routes.some(route => route.sourceCurrency === 'USD' && route.targetCurrency === 'RUB'));
+  assert.ok(routes.every(route => route.available === true));
+  assert.ok(routes.every(route => route.profit === route.netRecycleValue - route.purchaseValue));
+  assert.ok(routes.every(route => route.worthBuying === (route.profit > 0)));
+
+  const unknown = { ...east, offer: { ...east.offer, modelFacts: {
+    ...east.offer.modelFacts, originCurrency: null,
+  } } };
+  assert.deepEqual(rankUsedMarketBorderRoutes([unknown], { economy }), []);
+});
+
+test('border-aware ranking retains a target route when its prices are unavailable', () => {
+  const east = arbitrageFixture({ purchaseValue: 1 }).quote;
+  const economy = {
+    ...arbitrageFixture({ purchaseValue: 1 }).economy,
+    sell: (_resource, currency) => currency === 'USD' ? Number.NaN : 100,
+  };
+  const routes = rankUsedMarketBorderRoutes([east.offer], { economy });
+  const unavailable = routes.find(route => route.targetCurrency === 'USD');
+  assert.ok(unavailable);
+  assert.equal(unavailable.available, false);
+  assert.equal(unavailable.profit, null);
+  assert.equal(unavailable.worthBuying, false);
+  assert.equal(unavailable.targetBorder, 'west');
 });

@@ -82,7 +82,7 @@ import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
   paginateVehicleOpportunities, shareSafeSaveImport, vehicleCategoryGroup,
   vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=18';
+} from './fleet.js?v=19';
 import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
