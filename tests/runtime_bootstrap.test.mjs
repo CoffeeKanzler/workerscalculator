@@ -9,7 +9,20 @@ test('runtime config uses explicit metadata and never infers beta mode from path
     document: { documentElement: { dataset: { runtimeMode: 'hosted', runtimeVariant: 'standard' } } },
     location: { pathname: '/beta/index.html', search: '' },
   });
-  assert.deepEqual(hosted, { mode: 'hosted', variant: 'standard', sdkBaseUrl: '/sdk/v1' });
+  assert.deepEqual(hosted, {
+    mode: 'hosted', variant: 'standard', sdkBaseUrl: '/sdk/v1', scrapProfitTable: 'v2',
+  });
+});
+
+test('runtime config selects the scrap table version explicitly and rejects unknown values', () => {
+  const base = { document: { documentElement: { dataset: {} } }, location: { pathname: '/', search: '' } };
+  assert.equal(getRuntimeConfig({ ...base, location: { ...base.location, search: '?scrapProfitTable=legacy' } }).scrapProfitTable, 'legacy');
+  assert.equal(getRuntimeConfig({ ...base, location: { ...base.location, search: '?scrapProfitTable=v2' } }).scrapProfitTable, 'v2');
+  assert.equal(getRuntimeConfig({ ...base, location: { ...base.location, search: '?scrapProfitTable=broken' } }).scrapProfitTable, 'v2');
+  assert.equal(getRuntimeConfig({
+    document: { documentElement: { dataset: { scrapProfitTable: 'legacy' } } },
+    location: base.location,
+  }).scrapProfitTable, 'legacy');
 });
 
 test('hosted bootstrap is save-folder local-only and does not construct a live client', async () => {

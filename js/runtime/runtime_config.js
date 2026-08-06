@@ -10,12 +10,15 @@ export function getRuntimeConfig({ document = globalThis.document, location = gl
   const mode = query.get('mode') ?? data.runtimeMode ?? 'hosted';
   if (!MODES.has(mode)) throw new TypeError(`Unsupported runtime mode '${mode}'`);
   const variant = query.get('variant') ?? data.runtimeVariant ?? 'standard';
+  const scrapProfitTableCandidate = query.get('scrapProfitTable')
+    ?? data.scrapProfitTable ?? 'v2';
+  const scrapProfitTable = scrapProfitTableCandidate === 'legacy' ? 'legacy' : 'v2';
   const sdkBaseUrl = query.get('sdk') ?? data.sdkBaseUrl ?? '/sdk/v1';
   if (!sdkBaseUrl || typeof sdkBaseUrl !== 'string'
     || /^\/\//.test(sdkBaseUrl) || /^[a-z][a-z\d+.-]*:/i.test(sdkBaseUrl)) {
     throw new TypeError('SDK base URL must be a non-empty relative path');
   }
-  return Object.freeze({ mode, variant, sdkBaseUrl });
+  return Object.freeze({ mode, variant, sdkBaseUrl, scrapProfitTable });
 }
 
 export function hasSaveWorkspace(config) {

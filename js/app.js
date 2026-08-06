@@ -90,7 +90,7 @@ import {
 } from './adapters/save_folder_adapter.js?v=20';
 import { matchSaveBuilding } from './adapters/save_projection.js?v=18';
 import { bootstrapRuntime } from './bootstrap.js?v=9';
-import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=2';
+import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=3';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
   shouldOpenStartPage, relativeAge,
