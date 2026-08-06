@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3778025170",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-06T06:49:35.574Z",
+  "buildings": [
+    {
+      "id": "3778025170/custom",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "heat": 250
+      },
+      "consumption": {
+        "coal": 0.4
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Village heating plant",
+      "workshopId": "3778025170",
+      "modPath": "custom",
+      "footprint": {
+        "boxes": [
+          [
+            -0.73,
+            -28.45,
+            2.37,
+            -23.72
+          ],
+          [
+            -7.76,
+            -44.37,
+            -0.19,
+            -13.25
+          ],
+          [
+            -7.76,
+            -44.37,
+            -0.48,
+            -13.25
+          ],
+          [
+            -7.97,
+            -44.42,
+            -0.09,
+            -13.25
+          ],
+          [
+            -4.03,
+            -44.63,
+            0.36,
+            -12.95
+          ],
+          [
+            -8.3,
+            -44.59,
+            -3.97,
+            -12.91
+          ],
+          [
+            -9.88,
+            -27.4,
+            -6.36,
+            -26.77
+          ],
+          [
+            1.39,
+            -27.03,
+            1.75,
+            -25.21
+          ],
+          [
+            1.11,
+            -25.23,
+            2.02,
+            -24.34
+          ],
+          [
+            1.11,
+            -27.87,
+            2.02,
+            -26.98
+          ],
+          [
+            12.8,
+            -43.74,
+            13.71,
+            -42.83
+          ]
+        ],
+        "height": 10.92
+      }
+    }
+  ],
+  "vehicles": []
+}

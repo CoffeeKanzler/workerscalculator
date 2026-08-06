@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3776862813",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-06T06:49:35.563Z",
+  "buildings": [
+    {
+      "id": "3776862813/DockDistributionOfficeMedium",
+      "nameId": null,
+      "types": [
+        "TYPE_SHIP_DOCK"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dock Distribution Office (Medium)",
+      "workshopId": "3776862813",
+      "modPath": "DockDistributionOfficeMedium",
+      "footprint": {
+        "boxes": [
+          [
+            274.56,
+            -28.86,
+            276.05,
+            -21.62
+          ],
+          [
+            13.71,
+            -32.93,
+            180.36,
+            -26.44
+          ],
+          [
+            -3.59,
+            -91.54,
+            25.33,
+            90.28
+          ],
+          [
+            13.71,
+            26.75,
+            180.36,
+            33.24
+          ],
+          [
+            3.2,
+            -22.95,
+            21.31,
+            23.23
+          ]
+        ],
+        "height": 20.42
+      }
+    },
+    {
+      "id": "3776862813/DockDistributionOfficeSmall",
+      "nameId": null,
+      "types": [
+        "TYPE_SHIP_DOCK"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dock Distribution Office (Small)",
+      "workshopId": "3776862813",
+      "modPath": "DockDistributionOfficeSmall",
+      "footprint": {
+        "boxes": [
+          [
+            3.2,
+            -22.95,
+            21.31,
+            23.23
+          ],
+          [
+            171.43,
+            -57.94,
+            172.93,
+            -50.7
+          ],
+          [
+            167.48,
+            48.8,
+            168.97,
+            56.05
+          ],
+          [
+            22.58,
+            14.07,
+            122.88,
+            20.56
+          ],
+          [
+            23.38,
+            -24.4,
+            123.68,
+            -17.91
+          ],
+          [
+            -3.59,
+            -38.16,
+            25.33,
+            37.06
+          ]
+        ],
+        "height": 20.42
+      }
+    }
+  ],
+  "vehicles": []
+}
