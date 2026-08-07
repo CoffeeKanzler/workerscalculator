@@ -123,10 +123,18 @@ test('the Observe price table carries no editable control', async () => {
 
   assert.ok(renderPrices.length > 0, 'renderPrices and renderPriceEdit must both exist');
   assert.match(renderPrices, /priceTable\(\{ editable: false \}\)/);
-  // The scalars and the override reset belong to Plan.
-  assert.doesNotMatch(renderPrices, /scalars/);
+  assert.match(renderPrices, /renderPriceScalars\(prices, false\)/);
   assert.doesNotMatch(renderPrices, /state\.overrides\[/);
   assert.doesNotMatch(renderPrices, /el\('input'/);
+});
+
+test('price scalars appear above both price-analysis currency tables', async () => {
+  const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
+  const renderAnalysis = app.slice(
+    app.indexOf('function renderAnalysis('),
+    app.indexOf('// ---------------------------------------------------------------- vehicle production tab'),
+  );
+  assert.match(renderAnalysis, /renderPriceScalars\(prices, false\)/);
 });
 
 test('the Cities tab reads the save and never writes to it', async () => {

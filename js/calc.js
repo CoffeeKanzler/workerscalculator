@@ -11,6 +11,14 @@ export {
   SERVICES, CABLES, NON_DELIVERABLE,
 };
 
+// The analysis follows the spreadsheet's worker basis: one building's worker
+// count is divided by two for the per-worker figure. Labor cost is selected by
+// the UI because resident and guest-worker prices are separate game inputs.
+export function profitPerWorkerAfterLabor(profit, workers, laborCost) {
+  const workerBasis = workers / 2;
+  return workerBasis > 0 ? profit / workerBasis - laborCost : 0;
+}
+
 const PLANNING_AUTHORITY_FIELDS = {
   economy: ['workers', 'production', 'consumption'],
   utilities: ['power', 'maxKW', 'water', 'wastePerWorker'],

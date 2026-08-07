@@ -1,7 +1,7 @@
-import { STRINGS } from './i18n.js?v=198';
+import { STRINGS } from './i18n.js?v=200';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
-import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=43';
+import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=45';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -99,7 +99,7 @@ import {
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
 } from './adapters/save_folder_adapter.js?v=21';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=20';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=21';
 import { bootstrapRuntime } from './bootstrap.js?v=10';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
 import {
@@ -254,6 +254,7 @@ function createInitialState() {
     saveImport: null,
     analysisSort: { col: 'profit', dir: -1 },
     analysisSearch: '',
+    analysisWorkerType: 'resident',
     priceSort: { col: 'name', dir: 1 },
     saveSlotName: '',   // transient UI field for the named-save-slot input, not shared/exported
     snapshotNotice: '', // transient feedback for named snapshot actions
@@ -1422,12 +1423,29 @@ function priceTable({ editable }) {
 
 // Observe: the observed price table and its history, with no way to type a
 // hypothetical value into it.
+function renderPriceScalars(prices, editable) {
+  const fields = [
+    ['workdayCostRUB', `${t('workday')} ₽`], ['workdayCostUSD', `${t('workday')} $`],
+    ['deliveryCostRUB', `${t('delivery')} ₽`], ['deliveryCostUSD', `${t('delivery')} $`],
+    ['imigrantCostRUB', `${t('imigrant')} ₽`], ['imigrantCostUSD', `${t('imigrant')} $`],
+  ];
+  return el('div', { class: `scalars ${editable ? 'scalars-editable' : 'scalars-readonly'}` },
+    ...fields.map(([key, label]) => editable
+      ? el('label', {}, label + ' ', el('input', {
+        type: 'number', step: 'any', class: 'num',
+        value: Math.round((prices[key] ?? 0) * 100) / 100,
+        onchange: e => { state.overrides[key] = parseFloat(e.target.value) || 0; update(); },
+      }))
+      : el('div', { class: 'scalar' }, el('span', {}, label), el('strong', {}, fmt(prices[key], 2)))));
+}
+
 function renderPrices() {
-  const { table } = priceTable({ editable: false });
+  const { prices, table } = priceTable({ editable: false });
   return el('section', {},
     el('p', { class: 'hint' }, t('pricesObservedHint'), ' ',
       el('button', { class: 'linklike', onclick: () => { state.tab = 'priceedit'; update(); } },
         t('editPricesLink'))),
+    renderPriceScalars(prices, false),
     el('div', { class: 'columns' },
       el('div', { class: 'pricetablecol' }, table),
       el('div', { class: 'pricehistorycol' }, renderHistory())));
@@ -1436,15 +1454,7 @@ function renderPrices() {
 // Plan: the same prices as hypotheses the user controls.
 function renderPriceEdit() {
   const { prices, table } = priceTable({ editable: true });
-  const scalars = el('div', { class: 'scalars' },
-    ...[['workdayCostRUB', `${t('workday')} ₽`], ['workdayCostUSD', `${t('workday')} $`],
-        ['deliveryCostRUB', `${t('delivery')} ₽`], ['deliveryCostUSD', `${t('delivery')} $`],
-        ['imigrantCostRUB', `${t('imigrant')} ₽`], ['imigrantCostUSD', `${t('imigrant')} $`]]
-      .map(([k, label]) => el('label', {}, label + ' ', el('input', {
-        type: 'number', step: 'any', class: 'num',
-        value: Math.round((prices[k] ?? 0) * 100) / 100,
-        onchange: e => { state.overrides[k] = parseFloat(e.target.value) || 0; update(); },
-      }))));
+  const scalars = renderPriceScalars(prices, true);
 
   const resetBtn = Object.keys(state.overrides).length
     ? el('button', { class: 'danger', onclick: () => { state.overrides = {}; update(); } }, t('reset'))
@@ -1933,13 +1943,20 @@ function renderChain() {
 
 // ---------------------------------------------------------------- analysis tab
 function renderAnalysis(currency = state.currency) {
+  const prices = currentPrices();
+  const workerType = state.analysisWorkerType === 'guest' ? 'guest' : 'resident';
+  const workerCostKey = currency === 'USD'
+    ? (workerType === 'guest' ? 'imigrantCostUSD' : 'workdayCostUSD')
+    : (workerType === 'guest' ? 'imigrantCostRUB' : 'workdayCostRUB');
+  const workerCost = prices[workerCostKey] ?? 0;
+  const workerLabel = t(workerType === 'guest' ? 'workerGuest' : 'workerResident');
   const eco = economy();
   const rows = prodBuildings().map(b => {
     const { income, expenses, profit } = eco.buildingProfit(b, currency);
     const buildCost = eco.buildCost(b, currency);
     return {
       b, income, expenses, profit,
-      profitPerWorker: b.workers ? profit / (b.workers / 2) : 0,
+      profitPerWorker: profitPerWorkerAfterLabor(profit, b.workers, workerCost),
       amortDays: profit > 0 ? buildCost / profit : Infinity,
       buildCost,
     };
@@ -1971,7 +1988,8 @@ function renderAnalysis(currency = state.currency) {
     rowHeight: 52,
     renderHead: () => el('thead', {}, el('tr', {},
       th('name', t('building')), el('th', {}, t('group')), el('th', {}, t('workers')),
-      th('profit', `${t('profit')} ${currencySymbol(currency)}`), th('profitPerWorker', t('profitPerWorker')),
+      th('profit', `${t('profit')} ${currencySymbol(currency)}`),
+      th('profitPerWorker', `${t('profitPerWorker')} (${workerLabel})`),
       th('amortDays', t('amortDays')), th('income', `${t('income')} ${currencySymbol(currency)}`),
       th('expenses', `${t('expenses')} ${currencySymbol(currency)}`), th('buildCost', `${t('buildCost')} ${currencySymbol(currency)}`))),
     renderRow: r => el('tr', {},
@@ -1989,6 +2007,14 @@ function renderAnalysis(currency = state.currency) {
 
   return el('section', {},
     el('p', { class: 'hint' }, t('analysisHint')),
+    renderPriceScalars(prices, false),
+    el('div', { class: 'analysis-worker-mode' },
+      el('label', {}, t('workerType'), selectInput(
+        [['resident', t('workerResident')], ['guest', t('workerGuest')]],
+        workerType,
+        value => { state.analysisWorkerType = value; },
+      )),
+      el('span', { class: 'hint' }, `${t('workerCost')}: ${fmt(workerCost, 2)} ${currencySymbol(currency)}`)),
     el('input', {
       type: 'search', placeholder: t('searchPlaceholder'), value: state.analysisSearch,
       oninput: e => { state.analysisSearch = e.target.value; update(); },

@@ -213,6 +213,17 @@ button.danger:hover { border-color: var(--neg); }
 
 .scalars { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0; }
 .scalars label { display: flex; align-items: center; gap: 6px; color: var(--muted); }
+.scalars-readonly { gap: 6px; }
+.scalars-readonly .scalar { display: flex; align-items: baseline; gap: 6px; padding: 4px 8px; background: var(--panel); border: 1px solid var(--border); color: var(--muted); }
+.scalars-readonly .scalar strong { color: var(--text); font-variant-numeric: tabular-nums; }
+.analysis-worker-mode {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+  margin: 8px 0 10px; padding: 8px 10px;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 6px;
+}
+.analysis-worker-mode label { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.analysis-worker-mode .hint { margin: 0; }
+.analysis-worker-mode select { min-width: 150px; }
 
 .history { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
 .history h3 { margin: 0 0 6px; color: var(--accent2); }

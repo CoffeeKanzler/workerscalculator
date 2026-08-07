@@ -46,3 +46,23 @@ test('analysis rows and labels use the selected analysis currency', async () => 
   assert.match(renderAnalysis, /buildCost\(b, currency\)/);
   assert.match(renderAnalysis, /currencySymbol\(currency\)/);
 });
+
+test('analysis lets profit per worker use resident or guest-worker costs', async () => {
+  const [app, i18n] = await Promise.all([
+    fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8'),
+    fs.readFile(path.join(ROOT, 'js/i18n.js'), 'utf8'),
+  ]);
+  const renderAnalysis = app.slice(
+    app.indexOf('function renderAnalysis('),
+    app.indexOf('\nfunction renderVehicleProduction('),
+  );
+
+  assert.match(renderAnalysis, /state\.analysisWorkerType/);
+  assert.match(renderAnalysis, /profitPerWorkerAfterLabor/);
+  assert.match(renderAnalysis, /workerResident/);
+  assert.match(renderAnalysis, /workerGuest/);
+  for (const key of ['workerType', 'workerResident', 'workerGuest']) {
+    assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2,
+      `${key} must be translated in both languages`);
+  }
+});
