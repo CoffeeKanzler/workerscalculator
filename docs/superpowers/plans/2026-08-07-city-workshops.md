@@ -178,7 +178,7 @@ Extend `tests/city_planning_ui.test.mjs` to require the separate source and
 state path:
 
 ```js
-assert.match(app, /CITY_WORKSHOP_GROUPS/);
+assert.match(app, /cityWorkshopBuildings/);
 assert.match(app, /resolveCityWorkshopRows/);
 assert.match(app, /city\.workshops/);
 assert.match(app, /cityWorkshopSection/);
