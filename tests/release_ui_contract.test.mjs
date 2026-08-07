@@ -66,6 +66,32 @@ test('the more-tools menu opens inside the viewport when navigation wraps', asyn
   assert.match(app, /menu\.style\.maxHeight/);
 });
 
+test('the command center ships a personal quick-tools rail', async () => {
+  const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
+  assert.match(app, /QUICK_TOOLS_STORAGE_KEY/);
+  assert.match(app, /class: 'quick-tools-bar'/);
+  assert.match(app, /class: 'quick-tools-editor'/);
+  assert.match(app, /reorderQuickTools\(/);
+});
+
+test('the quick-tools rail has bilingual copy and an in-flow visual layer', async () => {
+  const [css, i18n] = await Promise.all([
+    fs.readFile(path.join(ROOT, 'css/style.css'), 'utf8'),
+    fs.readFile(path.join(ROOT, 'js/i18n.js'), 'utf8'),
+  ]);
+  for (const key of ['quickTools', 'quickToolsHint', 'quickToolsManage', 'quickToolsSelected', 'quickToolsAvailable', 'quickToolsEmpty', 'quickToolsMoveUp', 'quickToolsMoveDown', 'quickToolsRemove']) {
+    assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2, `${key} needs both languages`);
+  }
+  assert.match(css, /\.quick-tools-bar/);
+  assert.match(css, /\.quick-tools-editor/);
+});
+
+test('the evidence mode rail is hidden by default while its state logic remains available', async () => {
+  const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
+  assert.match(app, /const SHOW_EVIDENCE_RAIL = false/);
+  assert.match(app, /\.\.\.\(SHOW_EVIDENCE_RAIL \? \[renderEvidenceRail\(\)\] : \[\]\)/);
+});
+
 // The IA rework: Observe reports, Plan edits. The shipped app has to carry the
 // two new tabs the section table names, in both languages.
 test('the shipped app registers the read-only Cities tab and the split price overrides', async () => {

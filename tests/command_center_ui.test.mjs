@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   COMMAND_SECTIONS, sectionForTab, sectionById, tabsForSection, evidenceTone, surfaceState,
-  shouldOpenStartPage, relativeAge,
+  shouldOpenStartPage, relativeAge, normalizeQuickTools, defaultQuickTools, reorderQuickTools,
 } from '../js/ui/command_center.js';
 
 test('command center keeps observe, diagnose, plan, and compare as stable IA sections', () => {
@@ -108,4 +108,23 @@ test('the start page can say how long ago the republic was last open', () => {
   assert.deepEqual(relativeAge(now - 60_000, now), { key: 'agoMinute', value: 1 });
   assert.deepEqual(relativeAge(now - 60 * 60_000, now), { key: 'agoHour', value: 1 });
   assert.deepEqual(relativeAge(now - 26 * 60 * 60_000, now), { key: 'agoDay', value: 1 });
+});
+
+test('quick tools normalize saved ids without inventing or duplicating links', () => {
+  assert.deepEqual(normalizeQuickTools(
+    ['map', 'stale', 'map', 'research', 'prices'],
+    ['map', 'research', 'prices'],
+  ), ['map', 'research', 'prices']);
+  assert.deepEqual(normalizeQuickTools([], ['map', 'research']), []);
+  assert.equal(normalizeQuickTools(Array.from({ length: 10 }, (_, i) => `tool-${i}`),
+    Array.from({ length: 10 }, (_, i) => `tool-${i}`)).length, 8);
+});
+
+test('quick tools provide only available defaults and reorder immutably', () => {
+  assert.deepEqual(defaultQuickTools(['map', 'chain']), ['map', 'chain']);
+  const original = ['map', 'chain', 'research'];
+  assert.deepEqual(reorderQuickTools(original, 'research', -1), ['map', 'research', 'chain']);
+  assert.deepEqual(original, ['map', 'chain', 'research']);
+  assert.deepEqual(reorderQuickTools(original, 'map', -1), original);
+  assert.deepEqual(reorderQuickTools(original, 'research', 1), original);
 });

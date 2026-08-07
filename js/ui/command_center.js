@@ -5,6 +5,30 @@
 // Observe is read-only throughout: it reports what the save holds. Anything
 // that accepts a hypothetical value belongs to Plan — which is why the price
 // table (Observe) and the price overrides (Plan) are separate tabs.
+export const QUICK_TOOLS_STORAGE_KEY = 'wr-command-quick-tools-v1';
+export const QUICK_TOOLS_DEFAULTS = Object.freeze(['map', 'cities', 'chain', 'research']);
+export const QUICK_TOOLS_LIMIT = 8;
+
+export function normalizeQuickTools(ids, allowedTabs = []) {
+  const allowed = new Set(allowedTabs);
+  return [...new Set(Array.isArray(ids) ? ids : [])]
+    .filter(id => allowed.has(id))
+    .slice(0, QUICK_TOOLS_LIMIT);
+}
+
+export function defaultQuickTools(allowedTabs = []) {
+  return normalizeQuickTools(QUICK_TOOLS_DEFAULTS, allowedTabs);
+}
+
+export function reorderQuickTools(ids, tab, direction) {
+  const result = [...ids];
+  const index = result.indexOf(tab);
+  const next = index + direction;
+  if (index < 0 || next < 0 || next >= result.length) return result;
+  [result[index], result[next]] = [result[next], result[index]];
+  return result;
+}
+
 export const COMMAND_SECTIONS = Object.freeze([
   Object.freeze({ id: 'observe', labelKey: 'navObserve', defaultTab: 'republic', tabs: Object.freeze(['home', 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'prices']) }),
   Object.freeze({ id: 'diagnose', labelKey: 'navDiagnose', defaultTab: 'alerts', tabs: Object.freeze(['alerts', 'pollution', 'crime']) }),

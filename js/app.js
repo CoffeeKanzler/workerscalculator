@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=196';
+import { STRINGS } from './i18n.js?v=198';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=43';
@@ -104,17 +104,54 @@ import { bootstrapRuntime } from './bootstrap.js?v=10';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
+  QUICK_TOOLS_STORAGE_KEY, defaultQuickTools, normalizeQuickTools, reorderQuickTools,
   shouldOpenStartPage, relativeAge,
-} from './ui/command_center.js?v=10';
+} from './ui/command_center.js?v=12';
 
 const RUNTIME_CONFIG = getRuntimeConfig();
 const APP_RUNTIME = bootstrapRuntime({ config: RUNTIME_CONFIG });
 const IS_BETA = RUNTIME_CONFIG.variant === 'beta';
+const SHOW_EVIDENCE_RAIL = false;
 const HAS_SAVE_WORKSPACE = hasSaveWorkspace(RUNTIME_CONFIG);
 const TABS = [...(HAS_SAVE_WORKSPACE ? ['home'] : []), 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'alerts', 'pollution', 'crime', 'environment', 'snapshots', 'production', 'city', 'chain',
   'prices', 'priceedit', 'analysisRUB', 'analysisUSD', 'analysis', 'vehicleprod', ...(HAS_SAVE_WORKSPACE ? ['saveimport'] : []),
   'trains', 'research', 'advanced', 'help'];
 const LEGACY_TAB_ALIASES = new Set(['analysis']);
+const TAB_LABEL_KEYS = { home: 'tabHome', prices: 'tabPrices', priceedit: 'tabPriceEdit', production: 'tabProduction', chain: 'tabChain',
+  analysis: 'tabAnalysis', analysisRUB: 'tabAnalysisRUB', analysisUSD: 'tabAnalysisUSD', vehicleprod: 'tabVehicleProd', city: 'tabCity', cities: 'tabCities', republic: 'tabRepublic',
+  map: 'tabMap', history: 'tabHistory', construction: 'tabConstruction', logistics: 'tabLogistics', environment: 'tabEnvironment', alerts: 'tabAlerts', pollution: 'tabPollution', crime: 'tabCrime', snapshots: 'tabSnapshots', saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
+
+function loadQuickTools() {
+  try {
+    const raw = globalThis.localStorage?.getItem(QUICK_TOOLS_STORAGE_KEY);
+    if (raw !== null && raw !== undefined) return normalizeQuickTools(JSON.parse(raw), TABS);
+  } catch { /* a locked-down profile uses the defaults for this session */ }
+  return defaultQuickTools(TABS);
+}
+
+let quickToolTabs = loadQuickTools();
+let quickToolsEditorOpen = false;
+
+function saveQuickTools() {
+  try { globalThis.localStorage?.setItem(QUICK_TOOLS_STORAGE_KEY, JSON.stringify(quickToolTabs)); }
+  catch { /* navigation remains usable when browser storage is unavailable */ }
+}
+
+function setQuickTools(next) {
+  quickToolTabs = normalizeQuickTools(next, TABS);
+  saveQuickTools();
+  update();
+}
+
+function toggleQuickTool(tab) {
+  setQuickTools(quickToolTabs.includes(tab)
+    ? quickToolTabs.filter(id => id !== tab)
+    : [...quickToolTabs, tab]);
+}
+
+function moveQuickTool(tab, direction) {
+  setQuickTools(reorderQuickTools(quickToolTabs, tab, direction));
+}
 // Keys worth sharing/exporting (statsRecords stay local: big + personal to the save).
 const SHARE_KEYS = ['lang', 'theme', 'currency', 'priceSource', 'decade', 'overrides', 'plan',
   'cities', 'activeCity', 'vanillaOnly', 'vehicleProduction', 'train', 'lowtech', 'dataset',
@@ -861,7 +898,7 @@ function render() {
     try { selStart = focused.selectionStart; selEnd = focused.selectionEnd; } catch { /* not a text-selectable input */ }
   }
 
-  root.replaceChildren(renderHeader(), renderEvidenceRail(), ...(IS_BETA ? [renderBetaBanner()] : []),
+  root.replaceChildren(renderHeader(), ...(SHOW_EVIDENCE_RAIL ? [renderEvidenceRail()] : []), ...(IS_BETA ? [renderBetaBanner()] : []),
     ...(state.viewingSharedLink ? [renderSharedLinkBanner()] : []),
     ...(state.planningPersistenceError ? [el('p', { class: 'neg', role: 'alert' }, state.planningPersistenceError)] : []),
     ...(state.observationPersistenceError ? [el('p', { class: 'neg', role: 'alert' }, state.observationPersistenceError)] : []),
@@ -1105,10 +1142,61 @@ function renderSaveSlots() {
     state.snapshotNotice ? el('span', { class: 'saveslotnotice' }, state.snapshotNotice) : null);
 }
 
+function renderQuickTools() {
+  const activeTab = state.tab === 'analysis'
+    ? (state.currency === 'USD' ? 'analysisUSD' : 'analysisRUB') : state.tab;
+  const availableTools = TABS.filter(id => !LEGACY_TAB_ALIASES.has(id));
+  const selectedRows = quickToolTabs.length
+    ? quickToolTabs.map((id, index) => el('div', { class: 'quick-tools-row' },
+      el('span', {}, t(TAB_LABEL_KEYS[id])),
+      el('span', { class: 'quick-tools-row-actions' },
+        el('button', {
+          class: 'iconbtn', type: 'button', title: t('quickToolsMoveUp'), 'aria-label': t('quickToolsMoveUp'),
+          disabled: index === 0, onclick: () => moveQuickTool(id, -1),
+        }, '↑'),
+        el('button', {
+          class: 'iconbtn', type: 'button', title: t('quickToolsMoveDown'), 'aria-label': t('quickToolsMoveDown'),
+          disabled: index === quickToolTabs.length - 1, onclick: () => moveQuickTool(id, 1),
+        }, '↓'),
+        el('button', {
+          class: 'iconbtn', type: 'button', title: t('quickToolsRemove'), 'aria-label': t('quickToolsRemove'),
+          onclick: () => toggleQuickTool(id),
+        }, '×'))))
+    : el('p', { class: 'hint' }, t('quickToolsEmpty'));
+  const toolOptions = availableTools.map(id => {
+    const selected = quickToolTabs.includes(id);
+    return el('button', {
+      class: `quick-tool-option${selected ? ' selected' : ''}`,
+      type: 'button', 'aria-pressed': selected,
+      onclick: () => toggleQuickTool(id),
+    }, selected ? '✓ ' : '+ ', t(TAB_LABEL_KEYS[id]));
+  });
+  return el('div', { class: 'quick-tools-bar', 'aria-label': t('quickTools') },
+    el('div', { class: 'quick-tools-heading' },
+      el('span', { class: 'section-kicker' }, t('quickTools')),
+      el('span', { class: 'quick-tools-hint' }, t('quickToolsHint'))),
+    el('div', { class: 'quick-tools-body' },
+      el('div', { class: 'quick-tools-links', role: 'navigation', 'aria-label': t('quickTools') },
+        ...quickToolTabs.map(id => el('button', {
+          class: `quick-tool${activeTab === id ? ' active' : ''}`,
+          type: 'button', 'aria-current': activeTab === id ? 'page' : false,
+          onclick: () => { state.tab = id; update(); },
+        }, t(TAB_LABEL_KEYS[id]))),
+        el('button', {
+          class: 'quick-tools-manage', type: 'button', 'aria-expanded': quickToolsEditorOpen,
+          onclick: () => { quickToolsEditorOpen = !quickToolsEditorOpen; update(); },
+        }, t('quickToolsManage'))),
+      quickToolsEditorOpen ? el('div', { class: 'quick-tools-editor' },
+        el('div', { class: 'quick-tools-selected' },
+          el('h3', {}, t('quickToolsSelected')),
+          ...selectedRows),
+        el('div', { class: 'quick-tools-available' },
+          el('h3', {}, t('quickToolsAvailable')),
+          ...toolOptions)) : null));
+}
+
 function renderTabs() {
-  const labels = { home: 'tabHome', prices: 'tabPrices', priceedit: 'tabPriceEdit', production: 'tabProduction', chain: 'tabChain',
-    analysis: 'tabAnalysis', analysisRUB: 'tabAnalysisRUB', analysisUSD: 'tabAnalysisUSD', vehicleprod: 'tabVehicleProd', city: 'tabCity', cities: 'tabCities', republic: 'tabRepublic',
-    map: 'tabMap', history: 'tabHistory', construction: 'tabConstruction', logistics: 'tabLogistics', environment: 'tabEnvironment', alerts: 'tabAlerts', pollution: 'tabPollution', crime: 'tabCrime', snapshots: 'tabSnapshots', saveimport: 'tabSaveImport', trains: 'tabTrains', research: 'tabResearch', advanced: 'tabAdvanced', help: 'tabHelp' };
+  const labels = TAB_LABEL_KEYS;
   const activeTab = state.tab === 'analysis'
     ? (state.currency === 'USD' ? 'analysisUSD' : 'analysisRUB') : state.tab;
   const button = id => el('button', {
@@ -1129,6 +1217,7 @@ function renderTabs() {
     el('div', { class: 'section-tabs', role: 'tablist' }, ...COMMAND_SECTIONS.map(sectionButton)),
     el('div', { class: 'context-tabs', role: 'navigation', 'aria-label': t('sectionNavigation') },
       ...sectionTabs.map(button)),
+    renderQuickTools(),
     el('details', {
       class: 'more-nav',
       ontoggle: event => {

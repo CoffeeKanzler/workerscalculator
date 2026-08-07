@@ -1051,13 +1051,40 @@ button.primary, .langswitch button.active, nav button.active, .citytabs button.a
 
 .command-navigation { display: grid; gap: 8px; margin: 12px 0 10px; }
 .section-tabs, .context-tabs { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
-.section-tabs { border-bottom: 1px solid var(--border); padding-bottom: 7px; }
+.section-tabs { border: 1px solid var(--border); border-left: 4px solid var(--blueprint); padding: 4px 6px 5px; background: var(--panel); }
 .section-tab { min-height: 38px; padding: 8px 16px; background: transparent; border: 0; border-bottom: 3px solid transparent; color: var(--muted); font-weight: 750; text-transform: uppercase; letter-spacing: .08em; }
 .section-tab.active { color: var(--accent); border-bottom-color: var(--accent); background: transparent; }
 .context-tabs button { color: var(--blueprint); background: var(--panel); }
 .context-tabs button.active { background: var(--blueprint); border-color: var(--blueprint); color: #fff; }
 .more-nav > summary { border-radius: 2px; background: var(--panel); color: var(--muted); }
 .more-nav-menu { border-radius: 2px; background: var(--panel); border-color: var(--border); box-shadow: 0 8px 22px rgba(45, 42, 35, .18); }
+
+.quick-tools-bar {
+  display: grid; grid-template-columns: minmax(170px, .28fr) minmax(0, 1fr); gap: 10px; align-items: start;
+  border: 1px solid var(--border); border-left: 4px solid var(--accent2); padding: 8px 10px;
+  background: var(--panel2);
+}
+.quick-tools-heading { display: grid; gap: 2px; align-content: center; min-width: 0; padding: 4px 6px; }
+.quick-tools-hint { color: var(--muted); font-size: 11px; }
+.quick-tools-body { min-width: 0; }
+.quick-tools-links { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.quick-tools-links .quick-tool { color: var(--ink-soft); background: var(--panel); }
+.quick-tools-links .quick-tool.active { color: #fff; background: var(--accent2); border-color: var(--accent2); }
+.quick-tools-manage { color: var(--accent2); border-style: dashed; }
+.quick-tools-editor {
+  display: grid; grid-template-columns: minmax(220px, .8fr) minmax(0, 1.4fr); gap: 12px;
+  margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border);
+}
+.quick-tools-selected, .quick-tools-available { display: grid; gap: 5px; align-content: start; min-width: 0; }
+.quick-tools-editor h3 { margin: 0 0 2px; color: var(--ink-soft); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.quick-tools-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; padding: 3px 0 3px 7px; border-left: 2px solid var(--accent2); background: var(--panel); }
+.quick-tools-row > span:first-child { min-width: 0; overflow-wrap: anywhere; }
+.quick-tools-row-actions { display: flex; flex: 0 0 auto; gap: 3px; }
+.quick-tools-row-actions .iconbtn { padding: 2px 6px; }
+.quick-tools-available { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.quick-tools-available h3 { grid-column: 1 / -1; }
+.quick-tool-option { min-width: 0; text-align: left; overflow-wrap: anywhere; }
+.quick-tool-option.selected { border-color: var(--accent2); color: var(--ink-soft); background: rgba(217, 164, 65, .12); }
 
 .evidence-rail { display: grid; grid-template-columns: minmax(150px, .8fr) minmax(0, 4fr) auto; gap: 10px; align-items: stretch; margin: 12px 0; padding: 8px; border: 1px solid var(--border); border-left: 5px solid var(--blueprint); background: var(--panel); }
 .evidence-rail.rail-resynchronizing { border-left-color: var(--warn); }
@@ -1122,6 +1149,9 @@ table.data th, table.data td { border-color: var(--border); }
   .evidence-stamp { min-height: 48px; }
   .brief-ledger { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .brief-row:nth-child(even) { border-right: 0; }
+  .quick-tools-bar { grid-template-columns: 1fr; }
+  .quick-tools-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .quick-tools-editor { grid-template-columns: 1fr; }
   .context-tabs { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 3px; }
   .context-tabs button { flex: 0 0 auto; }
 }
