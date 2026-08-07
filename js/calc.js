@@ -19,6 +19,11 @@ export function profitPerWorkerAfterLabor(profit, workers, laborCost) {
   return workerBasis > 0 ? profit / workerBasis - laborCost : 0;
 }
 
+export function workerCostForType(prices, currency, workerType) {
+  if (workerType !== 'guest') return 0;
+  return currency === 'USD' ? (prices.workdayCostUSD ?? 0) : (prices.workdayCostRUB ?? 0);
+}
+
 const PLANNING_AUTHORITY_FIELDS = {
   economy: ['workers', 'production', 'consumption'],
   utilities: ['power', 'maxKW', 'water', 'wastePerWorker'],

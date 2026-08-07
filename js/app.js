@@ -1,7 +1,7 @@
-import { STRINGS } from './i18n.js?v=200';
+import { STRINGS } from './i18n.js?v=202';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
-import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=45';
+import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=47';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -99,7 +99,7 @@ import {
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
 } from './adapters/save_folder_adapter.js?v=21';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=21';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=22';
 import { bootstrapRuntime } from './bootstrap.js?v=10';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
 import {
@@ -1945,11 +1945,11 @@ function renderChain() {
 function renderAnalysis(currency = state.currency) {
   const prices = currentPrices();
   const workerType = state.analysisWorkerType === 'guest' ? 'guest' : 'resident';
-  const workerCostKey = currency === 'USD'
-    ? (workerType === 'guest' ? 'imigrantCostUSD' : 'workdayCostUSD')
-    : (workerType === 'guest' ? 'imigrantCostRUB' : 'workdayCostRUB');
-  const workerCost = prices[workerCostKey] ?? 0;
+  const workerCost = workerCostForType(prices, currency, workerType);
   const workerLabel = t(workerType === 'guest' ? 'workerGuest' : 'workerResident');
+  const workerCostHint = workerType === 'guest'
+    ? `${t('workerCost')}: ${fmt(workerCost, 2)} ${currencySymbol(currency)}`
+    : t('workerNoDirectCost');
   const eco = economy();
   const rows = prodBuildings().map(b => {
     const { income, expenses, profit } = eco.buildingProfit(b, currency);
@@ -2014,7 +2014,7 @@ function renderAnalysis(currency = state.currency) {
         workerType,
         value => { state.analysisWorkerType = value; },
       )),
-      el('span', { class: 'hint' }, `${t('workerCost')}: ${fmt(workerCost, 2)} ${currencySymbol(currency)}`)),
+      el('span', { class: 'hint' }, workerCostHint)),
     el('input', {
       type: 'search', placeholder: t('searchPlaceholder'), value: state.analysisSearch,
       oninput: e => { state.analysisSearch = e.target.value; update(); },

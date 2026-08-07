@@ -8,7 +8,7 @@ import {
   Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, lowTechPoints,
   evaluateVehicleProduction, recommendVehicleProduction, vehicleAvailableInRange, vehicleSaleValue,
   vehicleBlueprintQuote, vehicleProductionGroup, SEASON_FACTOR, NO_SEASON_FACTOR,
-  buildingPlanningAuthority, profitPerWorkerAfterLabor,
+  buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType,
 } from '../js/calc.js';
 
 const res = JSON.parse(readFileSync(new URL('../data/resources.json', import.meta.url)));
@@ -57,6 +57,14 @@ test('profit per worker subtracts the selected labor cost on the sheet worker ba
   assert.equal(profitPerWorkerAfterLabor(1000, 100, 2), 18);
   assert.equal(profitPerWorkerAfterLabor(1000, 100, 10), 10);
   assert.equal(profitPerWorkerAfterLabor(1000, 0, 2), 0);
+});
+
+test('only guest workers carry the workday cost; immigrant cost is not labor cost', () => {
+  const prices = { workdayCostRUB: 9, workdayCostUSD: 12, imigrantCostRUB: 400, imigrantCostUSD: 100 };
+  assert.equal(workerCostForType(prices, 'RUB', 'resident'), 0);
+  assert.equal(workerCostForType(prices, 'USD', 'resident'), 0);
+  assert.equal(workerCostForType(prices, 'RUB', 'guest'), 9);
+  assert.equal(workerCostForType(prices, 'USD', 'guest'), 12);
 });
 
 test('Brennerei profit matches sheet G26 = 7506.114 ₽/day (inputs at sell price)', () => {

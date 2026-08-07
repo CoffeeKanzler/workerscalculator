@@ -59,9 +59,11 @@ test('analysis lets profit per worker use resident or guest-worker costs', async
 
   assert.match(renderAnalysis, /state\.analysisWorkerType/);
   assert.match(renderAnalysis, /profitPerWorkerAfterLabor/);
+  assert.match(renderAnalysis, /workerCostForType/);
   assert.match(renderAnalysis, /workerResident/);
   assert.match(renderAnalysis, /workerGuest/);
-  for (const key of ['workerType', 'workerResident', 'workerGuest']) {
+  assert.match(renderAnalysis, /workerNoDirectCost/);
+  for (const key of ['workerType', 'workerResident', 'workerGuest', 'workerNoDirectCost']) {
     assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2,
       `${key} must be translated in both languages`);
   }
