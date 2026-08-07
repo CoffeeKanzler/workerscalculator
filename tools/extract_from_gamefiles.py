@@ -369,6 +369,7 @@ GROUP_BY_RESOURCE = {
     'aluminium': ('Metallurgie', 'metallurgy'),
 }
 ADVANCED = ('Fortschrittliche Industrie', 'Advanced Industry')
+WORKSHOPS = ('Werkstätten', 'Workshops')
 MISC = ('Sonstiges', 'Miscellaneous')
 for k in ('uranium', 'yellowcake', 'uf6', 'nuclearfuel', 'nuclearfuelburned',
           'ecomponents', 'mcomponents', 'eletronics', 'explosives', 'fabric',
@@ -478,7 +479,11 @@ def build_dataset(buildings, repo_root, loc):
 
     out, seen = [], {}
     for g in buildings:
-        if not (g['production'] or g['consumption']):
+        # The vanilla construction office unfortunately shares the repair-office
+        # flag, but it is not a vehicle/horse workshop for the planner.
+        is_workshop = ('TYPE_REPAIR_OFFICE' in g.get('types', [])
+                       and g.get('id') != 'repair_service_office')
+        if not is_workshop and not (g['production'] or g['consumption']):
             continue
         if not g.get('de') and not g.get('nameStr'):
             continue
@@ -580,7 +585,7 @@ def build_dataset(buildings, repo_root, loc):
                 entry['provenance'][f] = 'sheet-measured' if scale == 1.0 else 'sheet-scaled'
         else:
             main_key = next(iter(g['production']), None) or next(iter(g['consumption']), None)
-            gr = GROUP_BY_RESOURCE.get(main_key, MISC)
+            gr = WORKSHOPS if is_workshop else GROUP_BY_RESOURCE.get(main_key, MISC)
             entry['group'] = {'de': gr[0], 'en': gr[1]}
             avg = group_avg_per_worker.get(gr[0], {})
             for f in EXTRA_FIELDS:

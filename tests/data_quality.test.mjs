@@ -15,6 +15,17 @@ test('dataset metadata never invents an unrecorded upstream game build', () => {
   assert.equal(dataVersion.gameBuildStatus, 'not-recorded');
 });
 
+test('game dataset includes horse veterinary workshop', () => {
+  const horseWorkshop = production.find(building => building.gameId === 'dlc3/h_repair_station');
+  assert.ok(horseWorkshop, 'horse veterinary workshop is missing from the game dataset');
+  assert.deepEqual(horseWorkshop.group, { de: 'Werkstätten', en: 'Workshops' });
+  assert.equal(horseWorkshop.workers, 10);
+  assert.deepEqual(horseWorkshop.production, []);
+  assert.deepEqual(horseWorkshop.consumption, []);
+  assert.ok(!production.some(building => building.gameId === 'repair_service_office'),
+    'construction office must not be listed as a workshop');
+});
+
 test('game production dataset keeps game workers and economic rates authoritative', () => {
   const raw = new Map(rawBuildings.map(building => [building.id, building]));
   const resourceKey = new Map(resources.flatMap(resource =>

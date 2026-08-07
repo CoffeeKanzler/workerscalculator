@@ -530,6 +530,59 @@ function fmt(n, digits = 2) {
 function currencySymbol(currency) { return currency === 'USD' ? '$' : '₽'; }
 function cur() { return currencySymbol(state.currency); }
 
+let openMoreToolsDetails = null;
+
+// The navigation can wrap the More tools trigger onto a row whose right edge
+// is far left of the viewport. CSS gives the menu a useful default position;
+// when it opens, clamp that position to the visible viewport and use the side
+// with more room. If neither side has enough room, the menu becomes internally
+// scrollable instead of hiding its last tools below the screen.
+function positionMoreToolsMenu(details) {
+  if (!details?.open) return;
+  const summary = details.querySelector(':scope > summary');
+  const menu = details.querySelector(':scope > .more-nav-menu');
+  if (!summary || !menu) return;
+
+  const margin = 10;
+  const gap = 5;
+  menu.style.left = '0px';
+  menu.style.top = '0px';
+  menu.style.maxHeight = 'none';
+
+  const trigger = summary.getBoundingClientRect();
+  const detailsBox = details.getBoundingClientRect();
+  const menuWidth = Math.min(menu.getBoundingClientRect().width, window.innerWidth - margin * 2);
+  const naturalHeight = menu.scrollHeight;
+  const availableBelow = Math.max(1, window.innerHeight - margin - (trigger.bottom + gap));
+  const availableAbove = Math.max(1, trigger.top - gap - margin);
+  const opensAbove = naturalHeight > availableBelow && availableAbove > availableBelow;
+  const available = opensAbove ? availableAbove : availableBelow;
+  const maxHeight = Math.max(1, Math.min(naturalHeight, available));
+  const viewportLeft = Math.min(
+    Math.max(margin, trigger.left),
+    Math.max(margin, window.innerWidth - margin - menuWidth),
+  );
+  const viewportTop = opensAbove
+    ? trigger.top - gap - maxHeight
+    : trigger.bottom + gap;
+
+  menu.style.left = `${viewportLeft - detailsBox.left}px`;
+  menu.style.top = `${viewportTop - detailsBox.top}px`;
+  menu.style.maxHeight = `${maxHeight}px`;
+}
+
+function resetMoreToolsMenu(details) {
+  const menu = details?.querySelector(':scope > .more-nav-menu');
+  if (!menu) return;
+  menu.style.left = '';
+  menu.style.top = '';
+  menu.style.maxHeight = '';
+}
+
+window.addEventListener('resize', () => {
+  if (openMoreToolsDetails?.isConnected) positionMoreToolsMenu(openMoreToolsDetails);
+});
+
 function el(tag, attrs = {}, ...children) {
   const e = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) {
@@ -1064,7 +1117,19 @@ function renderTabs() {
     el('div', { class: 'section-tabs', role: 'tablist' }, ...COMMAND_SECTIONS.map(sectionButton)),
     el('div', { class: 'context-tabs', role: 'navigation', 'aria-label': t('sectionNavigation') },
       ...sectionTabs.map(button)),
-    el('details', { class: 'more-nav' },
+    el('details', {
+      class: 'more-nav',
+      ontoggle: event => {
+        const details = event.currentTarget;
+        if (details.open) {
+          openMoreToolsDetails = details;
+          requestAnimationFrame(() => positionMoreToolsMenu(details));
+        } else {
+          if (openMoreToolsDetails === details) openMoreToolsDetails = null;
+          resetMoreToolsMenu(details);
+        }
+      },
+    },
       el('summary', {}, t('moreTools')),
       el('div', { class: 'more-nav-menu' }, ...TABS.filter(id => !sectionTabs.includes(id) && !LEGACY_TAB_ALIASES.has(id)).map(button))));
 }

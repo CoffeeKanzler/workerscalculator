@@ -101,7 +101,8 @@ nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
 .more-nav > summary::-webkit-details-marker { display: none; }
 .more-nav > summary::after { content: ' ▾'; }
 .more-nav > summary.active { color: #fff; background: var(--accent); border-color: var(--accent); }
-.more-nav-menu { position: absolute; z-index: 20; top: calc(100% + 5px); right: 0; display: grid; grid-template-columns: repeat(2, max-content); gap: 5px; min-width: 260px; padding: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,.28); }
+.more-nav-menu { position: absolute; z-index: 20; top: calc(100% + 5px); left: 0; right: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; width: min(410px, calc(100vw - 32px)); max-width: calc(100vw - 32px); max-height: min(35vh, 520px); min-width: 0; overflow-y: auto; padding: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,.28); }
+.more-nav-menu button { min-width: 0; white-space: normal; overflow-wrap: anywhere; }
 
 section { animation: none; }
 

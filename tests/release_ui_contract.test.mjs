@@ -50,6 +50,22 @@ test('the operations desk stays crisp and uses the ultrawide runway intentionall
   assert.match(css, /\.area-table-panel \.area-health[\s\S]*table-layout: fixed;/);
 });
 
+test('the more-tools menu opens inside the viewport when navigation wraps', async () => {
+  const [css, app] = await Promise.all([
+    fs.readFile(path.join(ROOT, 'css/style.css'), 'utf8'),
+    fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8'),
+  ]);
+  const baseMenuRule = css.match(/\.more-nav-menu \{([^}]*)\}/)?.[1] ?? '';
+  assert.match(baseMenuRule, /left:\s*0/);
+  assert.match(baseMenuRule, /right:\s*auto/);
+  assert.match(baseMenuRule, /max-width:\s*calc\(100vw - 32px\)/);
+  assert.match(baseMenuRule, /max-height:\s*min\(35vh, 520px\)/);
+  assert.match(baseMenuRule, /overflow-y:\s*auto/);
+  assert.match(app, /function positionMoreToolsMenu\(details\)/);
+  assert.match(app, /const availableAbove/);
+  assert.match(app, /menu\.style\.maxHeight/);
+});
+
 // The IA rework: Observe reports, Plan edits. The shipped app has to carry the
 // two new tabs the section table names, in both languages.
 test('the shipped app registers the read-only Cities tab and the split price overrides', async () => {
