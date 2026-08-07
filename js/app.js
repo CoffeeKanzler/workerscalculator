@@ -106,7 +106,7 @@ import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
   QUICK_TOOLS_STORAGE_KEY, defaultQuickTools, normalizeQuickTools, reorderQuickTools,
   shouldOpenStartPage, relativeAge,
-} from './ui/command_center.js?v=12';
+} from './ui/command_center.js?v=14';
 
 const RUNTIME_CONFIG = getRuntimeConfig();
 const APP_RUNTIME = bootstrapRuntime({ config: RUNTIME_CONFIG });

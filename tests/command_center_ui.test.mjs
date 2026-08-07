@@ -116,8 +116,8 @@ test('quick tools normalize saved ids without inventing or duplicating links', (
     ['map', 'research', 'prices'],
   ), ['map', 'research', 'prices']);
   assert.deepEqual(normalizeQuickTools([], ['map', 'research']), []);
-  assert.equal(normalizeQuickTools(Array.from({ length: 10 }, (_, i) => `tool-${i}`),
-    Array.from({ length: 10 }, (_, i) => `tool-${i}`)).length, 8);
+  const manyTools = Array.from({ length: 12 }, (_, i) => `tool-${i}`);
+  assert.equal(normalizeQuickTools(manyTools, manyTools).length, 12);
 });
 
 test('quick tools provide only available defaults and reorder immutably', () => {

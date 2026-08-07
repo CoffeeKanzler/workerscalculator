@@ -29,11 +29,12 @@ Die Schnellzugriffe verwenden keine neuen Parallelrouten, sondern navigieren
   `LowTech Forschung`, sofern diese Werkzeuge im aktuellen Runtime-Modus
   verfügbar sind.
 - Ein lokaler Browser-Schlüssel `wr-command-quick-tools-v1` speichert eine
-  validierte, deduplizierte Liste von höchstens acht Tab-IDs.
+  validierte und deduplizierte Liste aller gewünschten verfügbaren Tab-IDs.
 - Nutzer können Werkzeuge über „Werkzeuge bearbeiten“ hinzufügen oder
   entfernen und die Reihenfolge mit Auf-/Ab-Schaltflächen ändern.
 - Ungültige, veraltete oder doppelte gespeicherte IDs werden beim Laden
-  verworfen. Eine absichtlich leere Liste bleibt leer.
+  verworfen. Eine absichtlich leere Liste bleibt leer; es gibt kein künstliches
+  Acht-Werkzeuge-Limit.
 - Der aktive Schnellzugriff erhält den bestehenden aktiven Navigationszustand;
   jede Navigation bleibt über die bestehende `state.tab`-Logik erreichbar.
 - Wenn `localStorage` nicht verfügbar ist, funktioniert die Navigation mit
@@ -52,4 +53,3 @@ Die Schnellzugriffe verwenden keine neuen Parallelrouten, sondern navigieren
 - Unit-Tests prüfen Defaults, Bereinigung, Deduplizierung, Limit und
   Reihenfolgeoperationen. Ein UI-Vertrag prüft beide Sprachpakete und die
   gerenderte Schnellzugriff-Struktur.
-

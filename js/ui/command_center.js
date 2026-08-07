@@ -7,13 +7,11 @@
 // table (Observe) and the price overrides (Plan) are separate tabs.
 export const QUICK_TOOLS_STORAGE_KEY = 'wr-command-quick-tools-v1';
 export const QUICK_TOOLS_DEFAULTS = Object.freeze(['map', 'cities', 'chain', 'research']);
-export const QUICK_TOOLS_LIMIT = 8;
 
 export function normalizeQuickTools(ids, allowedTabs = []) {
   const allowed = new Set(allowedTabs);
   return [...new Set(Array.isArray(ids) ? ids : [])]
-    .filter(id => allowed.has(id))
-    .slice(0, QUICK_TOOLS_LIMIT);
+    .filter(id => allowed.has(id));
 }
 
 export function defaultQuickTools(allowedTabs = []) {

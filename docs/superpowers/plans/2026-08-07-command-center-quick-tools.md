@@ -12,7 +12,7 @@
 
 - Preserve the existing Observe/Diagnose/Plan/Compare navigation and More Tools menu.
 - Store only validated quick-tool tab IDs under `wr-command-quick-tools-v1` in browser-local storage.
-- Limit the personal list to eight tools, deduplicate it, and keep a deliberately empty saved list empty.
+- Allow every available tool in the personal list, deduplicate it, and keep a deliberately empty saved list empty.
 - Keep the editor in normal document flow so it cannot open outside the viewport.
 - Do not stage or alter unrelated untracked reports, images, or workspace files.
 
@@ -64,7 +64,7 @@ Expected: the test file fails at module import because the new helper exports do
 - Modify: `js/ui/command_center.js`
 
 **Interfaces:**
-- Produces: `QUICK_TOOLS_STORAGE_KEY`, `QUICK_TOOLS_DEFAULTS`, `QUICK_TOOLS_LIMIT`, `normalizeQuickTools(ids, allowedTabs)`, `defaultQuickTools(allowedTabs)`, and `reorderQuickTools(ids, tab, direction)`
+- Produces: `QUICK_TOOLS_STORAGE_KEY`, `QUICK_TOOLS_DEFAULTS`, `normalizeQuickTools(ids, allowedTabs)`, `defaultQuickTools(allowedTabs)`, and `reorderQuickTools(ids, tab, direction)`
 
 - [ ] **Step 1: Write the minimal helper implementation**
 
@@ -73,13 +73,11 @@ Use these contracts:
 ```js
 export const QUICK_TOOLS_STORAGE_KEY = 'wr-command-quick-tools-v1';
 export const QUICK_TOOLS_DEFAULTS = Object.freeze(['map', 'cities', 'chain', 'research']);
-export const QUICK_TOOLS_LIMIT = 8;
 
 export function normalizeQuickTools(ids, allowedTabs = []) {
   const allowed = new Set(allowedTabs);
   return [...new Set(Array.isArray(ids) ? ids : [])]
-    .filter(id => allowed.has(id))
-    .slice(0, QUICK_TOOLS_LIMIT);
+    .filter(id => allowed.has(id));
 }
 
 export function defaultQuickTools(allowedTabs = []) {
@@ -217,4 +215,3 @@ Expected: only quick-tools source, tests, translations, styles, cache markers, a
 git add js/ui/command_center.js js/app.js js/i18n.js css/style.css tests/command_center_ui.test.mjs tests/release_ui_contract.test.mjs index.html data/VERSION.json
 git commit -m "feat: add personal command center quick tools"
 ```
-
