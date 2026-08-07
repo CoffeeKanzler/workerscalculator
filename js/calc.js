@@ -385,9 +385,13 @@ export function evaluateCity(city, eco) {
   const prod = city.productivity;
   const rows = city.rows.filter(r => r.building && r.count > 0);
   const sum = fn => rows.reduce((a, r) => a + fn(r.building) * r.count, 0);
+  const workshops = (city.workshops ?? []).filter(r => r.building && r.count > 0);
+  const workshopWorkers = workshops.reduce(
+    (a, r) => a + (r.building.workers ?? 0) * r.count, 0,
+  );
 
   const population = sum(b => b.inhabitants);
-  const workersNeeded = sum(b => b.workers);
+  const workersNeeded = sum(b => b.workers) + workshopWorkers;
   // Population-weighted average, over only the residents whose building has a
   // known housing quality (unrated mod buildings are excluded, not zeroed).
   const ratedRows = rows.filter(r => r.building.quality != null);
@@ -396,6 +400,7 @@ export function evaluateCity(city, eco) {
   const res = {
     population,
     workersNeeded,
+    workshopWorkers,
     avgHousingQuality: ratedPopulation > 0 ? qualityWeighted / ratedPopulation : null,
     workerSurplus: (population - workersNeeded * 3) / 4, // sheet formula
     power: sum(b => b.power),

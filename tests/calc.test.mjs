@@ -198,6 +198,29 @@ test('city: worker surplus (200 pop, 94 workers) = -20.5; service coverage', () 
   assert.equal(r.avgHousingQuality, null);
 });
 
+test('city workshop workers affect workforce only', () => {
+  const result = evaluateCity({
+    productivity: 0.7,
+    rows: [],
+    workshops: [
+      { count: 2, building: { workers: 10 } },
+    ],
+    cable: 'Untergrund Kabel 1,85 MW',
+    exchanger: 'small',
+    waterDivisor: 3,
+  }, eco());
+
+  assert.equal(result.workshopWorkers, 20);
+  assert.equal(result.workersNeeded, 20);
+  assert.equal(result.workerSurplus, -15);
+  assert.equal(result.population, 0);
+  assert.equal(result.power, 0);
+  assert.equal(result.water, 0);
+  assert.equal(result.waste, 0);
+  assert.equal(result.buildCostRUB, 0);
+  assert.ok(result.services.every(service => service.capacity === 0));
+});
+
 test('city: average housing quality is population-weighted over rated buildings only', () => {
   const rated = {
     de: 'RatedHaus', type: { de: 'Plattenbau', en: 'Prefab' }, inhabitants: 40, quality: 0.8, workers: 0,
