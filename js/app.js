@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=193';
+import { STRINGS } from './i18n.js?v=195';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=43';
@@ -6,7 +6,11 @@ import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13'
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
 import { applyBuildingOverrides, buildingOverrideKey, BUILDING_OVERRIDE_FIELDS, duplicateCustomBuilding } from './building_overrides.js?v=2';
-import { completedPaidResearchKeys } from './research.js?v=2';
+import {
+  completedPaidResearchKeys,
+  lowTechDisplayValues,
+  lowTechSaveValues,
+} from './research.js?v=6';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
@@ -20,7 +24,7 @@ import {
   createPlanningSaveCoordinator,
   migrateLegacySnapshots,
   serializePlannerState,
-} from './storage.js?v=9';
+} from './storage.js?v=10';
 import {
   PLANNING_KEYS,
   createPlanningCompatibleState,
@@ -29,7 +33,7 @@ import {
   planningProjection,
   refreshPlanningFromObservation,
   seedPlanningFromObservation,
-} from './models/planning_model.js?v=8';
+} from './models/planning_model.js?v=10';
 import { planningAreas } from './models/planning_areas.js';
 import {
   CITY_CORE_CATEGORY_TYPES,
@@ -188,7 +192,10 @@ function createInitialState() {
     buildingOverrides: {}, // dataset-scoped advanced production-building overrides
     customBuildings: [],
     advancedBuildingKey: null,
-    lowtech: { population: 2500, cities: 1, currentYear: 1930, startYear: 1920, researched: 0, researchKeys: null },
+    lowtech: {
+      population: 2500, cities: 1, currentYear: 1930, startYear: 1920,
+      researched: 0, researchKeys: null, inputSource: 'auto',
+    },
     chains: [defaultChainPlan()],
     activeChain: 0,
     productionScope: 'all',
@@ -6489,14 +6496,31 @@ function renderTrains() {
 }
 
 // ---------------------------------------------------------------- research tab
+function importedLowTechValues() {
+  return lowTechSaveValues(state.saveImport, {
+    definitions: DATA.research,
+    gameDate: state.planning?.evidence?.gameDate,
+    statsRecords: state.statsRecords,
+  });
+}
+
+function makeLowTechManual(values) {
+  const lt = state.lowtech;
+  if (lt.inputSource === 'manual') return;
+  Object.assign(lt, lowTechDisplayValues(lt, values), { inputSource: 'manual' });
+}
+
 function renderResearch() {
   const lt = state.lowtech;
+  const saveValues = importedLowTechValues();
+  const effective = lowTechDisplayValues(lt, saveValues);
   const paidResearch = DATA.research.filter(item => item.pointCost === 1)
     .sort((a, b) => (a[state.lang] || a.en).localeCompare(b[state.lang] || b.en, state.lang));
-  const checkedKeys = Array.isArray(lt.researchKeys) ? new Set(lt.researchKeys) : null;
-  const researched = checkedKeys ? checkedKeys.size : lt.researched;
-  const pts = lowTechPoints({ ...lt, researched });
+  const checkedKeys = Array.isArray(effective.researchKeys) ? new Set(effective.researchKeys) : null;
+  const researched = checkedKeys ? checkedKeys.size : effective.researched;
+  const pts = lowTechPoints({ ...effective, researched });
   const setResearchChecked = (key, checked) => {
+    makeLowTechManual(saveValues);
     const keys = new Set(lt.researchKeys ?? []);
     if (checked) keys.add(key); else keys.delete(key);
     lt.researchKeys = [...keys].sort();
@@ -6504,20 +6528,34 @@ function renderResearch() {
     update();
   };
   const importedPaidKeys = completedPaidResearchKeys(DATA.research, state.saveImport?.research);
+  const saveValuesAvailable = Object.keys(saveValues).length > 0;
+  const saveSource = saveValuesAvailable
+    ? el('p', { class: 'hint' }, lt.inputSource === 'manual' ? t('ltManualSource') : t('ltSaveSource'), ' ', t('ltStartManual'))
+    : null;
+  const saveButton = saveValuesAvailable && lt.inputSource === 'manual'
+    ? el('button', { onclick: () => { lt.inputSource = 'auto'; update(); } }, t('ltUseSave'))
+    : null;
   return el('section', {},
     el('p', { class: 'hint' }, t('ltHint'), ' ',
       el('a', { href: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3046902889', target: '_blank' }, 'Steam Guide')),
+    saveSource,
     el('div', { class: 'settingsbar column' },
-      el('label', {}, t('ltPop') + ' ', numInput(lt.population, v => lt.population = v, { min: 0, step: 100 })),
-      el('label', {}, t('ltCities') + ' ', numInput(lt.cities, v => lt.cities = v, { min: 0, step: 1 })),
-      el('label', {}, t('ltStart') + ' ', numInput(lt.startYear, v => lt.startYear = v, { min: 1900, step: 1 })),
-      el('label', {}, t('ltYear') + ' ', numInput(lt.currentYear, v => lt.currentYear = v, { min: 1900, step: 1 })),
+      el('label', {}, t('ltPop') + ' ', numInput(effective.population, v => { makeLowTechManual(saveValues); lt.population = v; }, { min: 0, step: 100 })),
+      el('label', {}, t('ltCities') + ' ', numInput(effective.cities, v => { makeLowTechManual(saveValues); lt.cities = v; }, { min: 0, step: 1 })),
+      el('label', {}, t('ltStart') + ' ', numInput(effective.startYear, v => { makeLowTechManual(saveValues); lt.startYear = v; }, { min: 1900, step: 1 })),
+      el('label', {}, t('ltYear') + ' ', numInput(effective.currentYear, v => { makeLowTechManual(saveValues); lt.currentYear = v; }, { min: 1900, step: 1 })),
       checkedKeys
         ? el('span', {}, `${t('ltDone')}: `, el('strong', {}, fmt(researched, 0)), ' / ', fmt(paidResearch.length, 0))
-        : el('label', {}, t('ltDone') + ' ', numInput(lt.researched, v => lt.researched = v, { min: 0, step: 1 })),
-      checkedKeys ? el('button', { onclick: () => { lt.researched = researched; lt.researchKeys = null; update(); } },
-        t('ltUseManual')) : el('button', { onclick: () => { lt.researchKeys = []; update(); } }, t('ltUseChecklist')),
+        : el('label', {}, t('ltDone') + ' ', numInput(effective.researched, v => { makeLowTechManual(saveValues); lt.researched = v; }, { min: 0, step: 1 })),
+      checkedKeys ? el('button', { onclick: () => {
+        makeLowTechManual(saveValues); lt.researched = researched; lt.researchKeys = null; update();
+      } },
+        t('ltUseManual')) : el('button', { onclick: () => {
+          makeLowTechManual(saveValues); lt.researchKeys = []; lt.researched = 0; update();
+        } }, t('ltUseChecklist')),
+      saveButton,
       importedPaidKeys.length ? el('button', { class: 'primary', onclick: () => {
+        makeLowTechManual(saveValues);
         lt.researchKeys = importedPaidKeys; lt.researched = importedPaidKeys.length; update();
       } }, t('ltUseImported').replace('{count}', fmt(importedPaidKeys.length, 0))) : null),
     el('div', { class: 'totalsbox big' },

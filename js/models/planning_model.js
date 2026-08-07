@@ -44,7 +44,7 @@ const DEFAULT_PLANNING = {
   train: { cargo: 'Kohle', length: 450, locoName: null, locoCount: 1 },
   lowtech: {
     population: 2500, cities: 1, currentYear: 1930, startYear: 1920,
-    researched: 0, researchKeys: null,
+    researched: 0, researchKeys: null, inputSource: 'auto',
   },
   dataset: 'game',
   tuning: {},

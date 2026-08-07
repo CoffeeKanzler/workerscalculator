@@ -3,7 +3,7 @@ import {
   createPlanningModel,
   isPlanningKey,
   planningProjection,
-} from '../models/planning_model.js?v=8';
+} from '../models/planning_model.js?v=10';
 
 export const PLANNER_STATE_SCHEMA_VERSION = 1;
 
