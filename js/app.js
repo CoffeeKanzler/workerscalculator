@@ -31,7 +31,7 @@ import {
   seedPlanningFromObservation,
 } from './models/planning_model.js?v=8';
 import { planningAreas } from './models/planning_areas.js';
-import { CITY_CORE_CATEGORY_TYPES, addMissingCityCategoryRows } from './city_planning.js?v=3';
+import { CITY_CORE_CATEGORY_TYPES, addMissingCityCategoryRows } from './city_planning.js?v=4';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';

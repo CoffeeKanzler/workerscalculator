@@ -4,6 +4,8 @@ import assert from 'node:assert/strict';
 import {
   CITY_CORE_CATEGORY_TYPES,
   addMissingCityCategoryRows,
+  cityWorkshopBuildings,
+  resolveCityWorkshopRows,
 } from '../js/city_planning.js';
 
 test('city quick-start covers the requested exact building categories', () => {
@@ -28,4 +30,34 @@ test('city quick-start preserves rows and is idempotent', () => {
   assert.equal(second.rows.length, first.rows.length);
   assert.deepEqual(second.addedTypes, []);
   assert.equal(second.rows.filter(row => row.type === 'Schule').length, 1);
+});
+
+const workshopCatalog = [
+  {
+    gameId: 'dlc3/h_repair_station',
+    de: 'Pferdearzt und Tischlerei',
+    group: { de: 'Werkstätten', en: 'Workshops' },
+    workers: 10,
+  },
+  {
+    gameId: 'coal_mine',
+    de: 'Kohlemine',
+    group: { de: 'Rohstoffe', en: 'Resources' },
+    workers: 300,
+  },
+];
+
+test('city workshops are selected by the bilingual workshop group', () => {
+  assert.deepEqual(cityWorkshopBuildings(workshopCatalog).map(building => building.gameId),
+    ['dlc3/h_repair_station']);
+});
+
+test('city workshop rows resolve by stable gameId and retain unknown rows', () => {
+  const rows = resolveCityWorkshopRows([
+    { gameId: 'dlc3/h_repair_station', count: 2 },
+    { gameId: 'missing/workshop', count: 1 },
+  ], workshopCatalog);
+  assert.equal(rows[0].building.workers, 10);
+  assert.equal(rows[1].building, null);
+  assert.equal(rows[1].gameId, 'missing/workshop');
 });
