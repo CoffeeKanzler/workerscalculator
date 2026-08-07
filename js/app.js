@@ -1,7 +1,7 @@
-import { STRINGS } from './i18n.js?v=192';
+import { STRINGS } from './i18n.js?v=193';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
-import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=42';
+import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=43';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -36,7 +36,7 @@ import {
   addMissingCityCategoryRows,
   cityWorkshopBuildings,
   resolveCityWorkshopRows,
-} from './city_planning.js?v=4';
+} from './city_planning.js?v=5';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
@@ -95,7 +95,7 @@ import {
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
 } from './adapters/save_folder_adapter.js?v=21';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=19';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=20';
 import { bootstrapRuntime } from './bootstrap.js?v=10';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
 import {
@@ -3021,6 +3021,7 @@ function renderCity() {
       el('th', {}, t('building')), el('th', {}, t('count')), el('th', {}, t('workers')),
       el('th', {}, t('sourceCoverage')), el('th', {}))),
     el('tbody', {}, workshopRows.map((row, idx) => {
+      const storedRow = city.workshops[idx];
       const options = [['', t('none')], ...workshopCatalogue.map(building => [
         building.gameId,
         `${bname(building)} — ${fmt(building.workers ?? 0, 0)} ${t('workers')}`,
@@ -3029,12 +3030,12 @@ function renderCity() {
         options.push([row.gameId, `${t('cityWorkshopUnavailable')}: ${row.gameId}`]);
       }
       const workshopSel = selectInput(options, row.gameId ?? '', value => {
-        row.gameId = value || null;
+        storedRow.gameId = value || null;
         update();
       });
       return el('tr', {},
         el('td', {}, workshopSel),
-        el('td', {}, numInput(row.count, value => { row.count = value; update(); }, { min: 0, step: 1 })),
+        el('td', {}, numInput(row.count, value => { storedRow.count = value; }, { min: 0, step: 1 })),
         el('td', { class: 'r' }, row.building
           ? fmt((row.building.workers ?? 0) * (row.count || 0), 0) : '—'),
         el('td', {}, row.building ? t('cityWorkshopGameFact') : t('cityWorkshopUnavailable')),
