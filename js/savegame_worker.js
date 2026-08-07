@@ -6,7 +6,7 @@ import {
 } from './savegame.js?v=38';
 import {
   parseBlueprintOwned, parseCityStatsIni, parseStatsIni, statsPayloadText,
-} from './statsini.js?v=26';
+} from './statsini.js?v=27';
 import { buildingHeightSamples } from './models/water_level.js?v=3';
 
 const sourceStatus = (payload) => Object.fromEntries(

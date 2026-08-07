@@ -231,6 +231,7 @@ export function recordToPrices(rec, allRecords) {
     purchaseRUB: { ...rec.purchaseRUB },
     sellUSD: { ...rec.sellUSD },
     sellRUB: { ...rec.sellRUB },
+    resourcesSpendShops: { ...rec.resourcesSpendShops },
     workdayCostUSD: scalarWithFallback(recs, idx, 'workdayCostUSD'),
     workdayCostRUB: scalarWithFallback(recs, idx, 'workdayCostRUB'),
     deliveryCostUSD: scalarWithFallback(recs, idx, 'deliveryCostUSD'),

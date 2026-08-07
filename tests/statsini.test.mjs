@@ -23,6 +23,11 @@ $end
 
 $Economy_WorkdayCostRUB 9.000000
 $Economy_DeliveryCostRUB 4.000000
+$Resources_SpendShops
+  workers 10.000000 0.000000
+  food 2.000000 0.000000
+  meat 1.000000 0.000000
+$end
 $Loan_Ballance_RUB 125000.000000
 $Loan_Interest_RUB 625.000000
 $Vehicles_ImportRUB 35326.394531
@@ -67,6 +72,9 @@ test('parses records with prices, dates and scalars', () => {
   assert.equal(recs[0].purchaseUSD.coal, 16.9);
   assert.equal(recs[0].sellRUB.steel, 1700);
   assert.equal(recs[0].workdayCostRUB, 9);
+  assert.deepEqual(recs[0].resourcesSpendShops, { workers: 10, food: 2, meat: 1 });
+  assert.deepEqual(recordToPrices(recs[0], recs).resourcesSpendShops,
+    { workers: 10, food: 2, meat: 1 });
   assert.equal(recs[0].loanBalanceRUB, 125000);
   assert.equal(recs[0].loanInterestRUB, 625);
   assert.equal(recs[0].vehicleImportRUB, 35326.394531);

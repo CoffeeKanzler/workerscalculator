@@ -1,7 +1,7 @@
-import { STRINGS } from './i18n.js?v=202';
-import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
+import { STRINGS } from './i18n.js?v=203';
+import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=28';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
-import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=47';
+import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=49';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -1945,11 +1945,14 @@ function renderChain() {
 function renderAnalysis(currency = state.currency) {
   const prices = currentPrices();
   const workerType = state.analysisWorkerType === 'guest' ? 'guest' : 'resident';
-  const workerCost = workerCostForType(prices, currency, workerType);
+  const measuredWorkerCost = workerCostForType(prices, currency, workerType);
+  const workerCost = measuredWorkerCost ?? 0;
   const workerLabel = t(workerType === 'guest' ? 'workerGuest' : 'workerResident');
   const workerCostHint = workerType === 'guest'
     ? `${t('workerCost')}: ${fmt(workerCost, 2)} ${currencySymbol(currency)}`
-    : t('workerNoDirectCost');
+    : measuredWorkerCost == null
+      ? t('workerNoDirectCost')
+      : `${t('workerNeedCost')}: ${fmt(workerCost, 2)} ${currencySymbol(currency)}`;
   const eco = economy();
   const rows = prodBuildings().map(b => {
     const { income, expenses, profit } = eco.buildingProfit(b, currency);

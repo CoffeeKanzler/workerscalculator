@@ -19,8 +19,28 @@ export function profitPerWorkerAfterLabor(profit, workers, laborCost) {
   return workerBasis > 0 ? profit / workerBasis - laborCost : 0;
 }
 
+// Resident workdays are priced by the needs goods recorded in the save's
+// shop-flow vector. The workers entry is the denominator; guest workers use
+// the separate market workday scalar below.
+export function residentWorkdayCost(prices, currency) {
+  const flow = prices?.resourcesSpendShops;
+  const workdays = Number(flow?.workers);
+  if (!Number.isFinite(workdays) || workdays <= 0) return null;
+  const sell = currency === 'USD' ? prices.sellUSD : prices.sellRUB;
+  let total = 0;
+  for (const [key, amountRaw] of Object.entries(flow)) {
+    if (key === 'workers') continue;
+    const amount = Number(amountRaw);
+    if (!Number.isFinite(amount) || amount <= 0) continue;
+    const price = Number(sell?.[key]);
+    if (!Number.isFinite(price)) return null;
+    total += amount * price;
+  }
+  return total / workdays;
+}
+
 export function workerCostForType(prices, currency, workerType) {
-  if (workerType !== 'guest') return 0;
+  if (workerType !== 'guest') return residentWorkdayCost(prices, currency);
   return currency === 'USD' ? (prices.workdayCostUSD ?? 0) : (prices.workdayCostRUB ?? 0);
 }
 

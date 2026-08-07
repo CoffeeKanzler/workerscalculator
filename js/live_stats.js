@@ -1,4 +1,4 @@
-import { parseBlueprintOwned, parseStatsIni } from './statsini.js?v=17';
+import { parseBlueprintOwned, parseStatsIni } from './statsini.js?v=18';
 
 const PRICE_MAPS = ['purchaseUSD', 'purchaseRUB', 'sellUSD', 'sellRUB'];
 

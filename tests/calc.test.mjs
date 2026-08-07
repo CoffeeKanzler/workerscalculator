@@ -8,7 +8,7 @@ import {
   Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, lowTechPoints,
   evaluateVehicleProduction, recommendVehicleProduction, vehicleAvailableInRange, vehicleSaleValue,
   vehicleBlueprintQuote, vehicleProductionGroup, SEASON_FACTOR, NO_SEASON_FACTOR,
-  buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType,
+  buildingPlanningAuthority, profitPerWorkerAfterLabor, residentWorkdayCost, workerCostForType,
 } from '../js/calc.js';
 
 const res = JSON.parse(readFileSync(new URL('../data/resources.json', import.meta.url)));
@@ -59,10 +59,17 @@ test('profit per worker subtracts the selected labor cost on the sheet worker ba
   assert.equal(profitPerWorkerAfterLabor(1000, 0, 2), 0);
 });
 
-test('only guest workers carry the workday cost; immigrant cost is not labor cost', () => {
-  const prices = { workdayCostRUB: 9, workdayCostUSD: 12, imigrantCostRUB: 400, imigrantCostUSD: 100 };
-  assert.equal(workerCostForType(prices, 'RUB', 'resident'), 0);
-  assert.equal(workerCostForType(prices, 'USD', 'resident'), 0);
+test('residents use saved need cost per workday while guests use Economy_WorkdayCost', () => {
+  const prices = {
+    sellRUB: { food: 2, meat: 5, clothes: 7 },
+    sellUSD: { food: 3, meat: 6, clothes: 8 },
+    resourcesSpendShops: { workers: 10, food: 2, meat: 1, clothes: 0.5 },
+    workdayCostRUB: 9, workdayCostUSD: 12, imigrantCostRUB: 400, imigrantCostUSD: 100,
+  };
+  assert.equal(residentWorkdayCost(prices, 'RUB'), 1.25);
+  assert.equal(residentWorkdayCost(prices, 'USD'), 1.6);
+  assert.equal(workerCostForType(prices, 'RUB', 'resident'), 1.25);
+  assert.equal(workerCostForType(prices, 'USD', 'resident'), 1.6);
   assert.equal(workerCostForType(prices, 'RUB', 'guest'), 9);
   assert.equal(workerCostForType(prices, 'USD', 'guest'), 12);
 });
