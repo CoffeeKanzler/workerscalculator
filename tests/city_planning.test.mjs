@@ -3,10 +3,22 @@ import assert from 'node:assert/strict';
 
 import {
   CITY_CORE_CATEGORY_TYPES,
+  aggregateCityObservations,
   addMissingCityCategoryRows,
   cityWorkshopBuildings,
   resolveCityWorkshopRows,
 } from '../js/city_planning.js';
+
+test('aggregates assigned real cities without changing the planned rows', () => {
+  const result = aggregateCityObservations([
+    { scopeId: 1, rows: [{ sourceGameId: 'house', count: 2 }], observed: { residents: 100, happiness: .5 } },
+    { scopeId: 2, rows: [{ sourceGameId: 'house', count: 3 }], observed: { residents: 50, happiness: .8 } },
+  ], [1, 2]);
+
+  assert.equal(result.rows[0].count, 5);
+  assert.equal(result.observed.residents, 150);
+  assert.equal(result.observed.happiness, 0.6);
+});
 
 test('city quick-start covers the requested exact building categories', () => {
   assert.deepEqual([...CITY_CORE_CATEGORY_TYPES], [

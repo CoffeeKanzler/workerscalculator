@@ -8,7 +8,7 @@ import {
   createStatsStore,
   restorePlannerState,
 } from './storage/planning_store.js?v=6';
-import { PLANNING_KEYS, createPlanningModel } from './models/planning_model.js?v=10';
+import { PLANNING_KEYS, createPlanningModel } from './models/planning_model.js?v=11';
 
 export {
   createObservationStore,

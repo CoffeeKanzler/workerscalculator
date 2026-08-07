@@ -194,15 +194,39 @@ export function buildRepublicModel({ observed = {}, planned = {} }) {
     evidence: { kind: 'editable-plan' },
   };
   const actualAreas = new Map(actual.areas.map(area => [area.scopeId, area]));
-  const planAreas = new Map(plan.areas.map(area => [area.scopeId, area]));
   const comparable = ['population', 'configuredIndustryWorkers', 'netWorkers', 'power', 'water', 'waste'];
-  const differenceAreas = [...new Set([...actualAreas.keys(), ...planAreas.keys()])].map(scopeId => {
-    const result = { scopeId, name: planAreas.get(scopeId)?.name ?? actualAreas.get(scopeId)?.name };
-    for (const key of comparable) result[key] = differenceValue(planAreas.get(scopeId), actualAreas.get(scopeId), key);
+  const coveredActual = new Set();
+  const areaScopeIds = area => Array.isArray(area?.scopeIds)
+    ? area.scopeIds.filter(Number.isInteger)
+    : Number.isInteger(area?.scopeId) ? [area.scopeId] : [];
+  const sumActual = (ids, key) => ids.reduce((sum, id) => {
+    const value = actualAreas.get(id)?.[key];
+    return sum + (Number.isFinite(value) ? value : 0);
+  }, 0);
+  const differenceAreas = plan.areas.map(area => {
+    const scopeIds = areaScopeIds(area);
+    scopeIds.forEach(scopeId => coveredActual.add(scopeId));
+    const actualAggregate = scopeIds.length
+      ? Object.fromEntries(comparable.map(key => [key, sumActual(scopeIds, key)]))
+      : null;
+    const result = {
+      scopeId: scopeIds[0] ?? null, scopeIds, name: area.name,
+    };
+    for (const key of comparable) {
+      result[key] = actualAggregate ? differenceValue(area, actualAggregate, key) : null;
+    }
     result.currentIndustryWorkers = null;
     result.realizedProduction = null;
     return result;
   });
+  for (const area of actual.areas) {
+    if (coveredActual.has(area.scopeId)) continue;
+    const result = { scopeId: area.scopeId, scopeIds: [area.scopeId], name: area.name };
+    for (const key of comparable) result[key] = null;
+    result.currentIndustryWorkers = null;
+    result.realizedProduction = null;
+    differenceAreas.push(result);
+  }
   const differenceTotals = {};
   for (const key of comparable) differenceTotals[key] = differenceValue(plan.totals, actual.totals, key);
   differenceTotals.currentIndustryWorkers = null;

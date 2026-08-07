@@ -224,6 +224,23 @@ button.danger:hover { border-color: var(--neg); }
 .analysis-worker-mode label { display: flex; align-items: center; gap: 8px; font-weight: 600; }
 .analysis-worker-mode .hint { margin: 0; }
 .analysis-worker-mode select { min-width: 150px; }
+.city-assignment { display: flex; align-items: center; gap: 8px; }
+.city-assignment-select { min-width: 190px; max-width: 260px; }
+.observed-buildings { margin: 8px 0 10px; }
+.observed-buildings summary { cursor: pointer; color: var(--accent2); font-weight: 600; }
+.observed-buildings .tablewrap { margin-top: 6px; max-height: 300px; overflow: auto; }
+.worker-cost-summary {
+  margin: 8px 0 10px; padding: 10px 12px;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 6px;
+}
+.worker-cost-summary-title { margin-bottom: 7px; color: var(--accent2); font-weight: 600; }
+.worker-cost-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 8px; }
+.worker-cost-item {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 12px;
+  align-items: baseline; padding: 7px 9px; background: var(--panel2); border-radius: 4px;
+}
+.worker-cost-item strong { font-size: 1.08em; font-variant-numeric: tabular-nums; }
+.worker-cost-item .hint { grid-column: 1 / -1; margin: 0; font-size: 12px; }
 
 .history { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
 .history h3 { margin: 0 0 6px; color: var(--accent2); }

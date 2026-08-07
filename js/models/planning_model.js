@@ -213,6 +213,81 @@ export function refreshPlanningFromObservation(model, observation, nextValues = 
   });
 }
 
+// A plan can outlive the save it was first based on.  Keep the hypothetical
+// rows and settings, but drop the optional link and copied save-only citizen
+// facts when a different republic is loaded.  The next save can be assigned
+// explicitly from the city planner.
+export function detachPlanningAssignments(model) {
+  const current = createPlanningModel(model, {
+    seededFrom: model?.seededFrom ?? null,
+    evidence: model?.evidence,
+    edited: model?.edited === true,
+    revision: model?.revision ?? 0,
+    lastObserved: model?.lastObserved ?? null,
+  });
+  const cities = current.cities.map(city => {
+    const detached = { ...city };
+    delete detached.scopeId;
+    delete detached.scopeIds;
+    delete detached.scopeNames;
+    delete detached.observed;
+    detached.source = 'plan';
+    return detached;
+  });
+  return createPlanningModel({ ...current, cities }, {
+    seededFrom: current.seededFrom,
+    evidence: current.evidence,
+    edited: true,
+    revision: current.revision + 1,
+    lastObserved: current.lastObserved,
+  });
+}
+
+// Scope ids are array positions in a save, not stable city identities. Keep
+// assignments by city name while replacing the observed save and resolve them
+// to the new scope ids for the current snapshot.
+export function rebindPlanningAssignments(model, previousScopes = [], nextScopes = []) {
+  const current = createPlanningModel(model, {
+    seededFrom: model?.seededFrom ?? null,
+    evidence: model?.evidence,
+    edited: model?.edited === true,
+    revision: model?.revision ?? 0,
+    lastObserved: model?.lastObserved ?? null,
+  });
+  const previousById = new Map((previousScopes ?? []).map(scope => [scope.id, scope.name]));
+  const nextByName = new Map((nextScopes ?? []).map(scope => [
+    String(scope.name ?? '').trim().toLocaleLowerCase(), scope.id,
+  ]));
+  const cities = current.cities.map(city => {
+    const oldIds = Array.isArray(city.scopeIds)
+      ? city.scopeIds.filter(Number.isInteger)
+      : Number.isInteger(city.scopeId) ? [city.scopeId] : [];
+    const names = Array.isArray(city.scopeNames) && city.scopeNames.length
+      ? city.scopeNames
+      : oldIds.map(id => previousById.get(id)).filter(Boolean);
+    const ids = [...new Set(names.flatMap(name => {
+      const id = nextByName.get(String(name).trim().toLocaleLowerCase());
+      return Number.isInteger(id) ? [id] : [];
+    }))];
+    const rebound = { ...city, scopeNames: [...new Set(names)] };
+    if (ids.length) {
+      rebound.scopeIds = ids;
+      rebound.scopeId = ids[0];
+    } else {
+      delete rebound.scopeIds;
+      delete rebound.scopeId;
+    }
+    return rebound;
+  });
+  return createPlanningModel({ ...current, cities }, {
+    seededFrom: current.seededFrom,
+    evidence: current.evidence,
+    edited: current.edited,
+    revision: current.revision,
+    lastObserved: current.lastObserved,
+  });
+}
+
 export function planningProjection(model) {
   const current = createPlanningModel(model, {
     seededFrom: model?.seededFrom ?? null,

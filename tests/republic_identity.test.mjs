@@ -1,9 +1,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
 
 import {
   republicFingerprint, areaOverlap, isSameRepublic,
 } from '../js/models/republic_identity.js';
+
+const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 
 const save = (sourceName, path, names) => ({
   sourceName,
@@ -70,6 +74,15 @@ test('a missing or empty save is never a match', () => {
   assert.equal(isSameRepublic(null, later), false);
   assert.equal(isSameRepublic(earlier, null), false);
   assert.equal(isSameRepublic({}, {}), false);
+});
+
+test('save import uses republic identity before deciding to reseed planning', async () => {
+  const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
+  const handler = app.slice(app.indexOf('async function handleSaveDirectory'));
+
+  assert.match(app, /models\/republic_identity\.js/);
+  assert.match(handler, /isSameRepublic\(state\.saveImport, imported\.metadata\)/);
+  assert.doesNotMatch(handler, /const currentIdentity = state\.saveImport/);
 });
 
 test('half a republic in common is not enough to keep a plan', () => {

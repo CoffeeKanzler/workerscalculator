@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=203';
+import { STRINGS } from './i18n.js?v=204';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=28';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=49';
@@ -29,18 +29,22 @@ import {
   PLANNING_KEYS,
   createPlanningCompatibleState,
   createPlanningModel,
+  detachPlanningAssignments,
   isPlanningKey,
   planningProjection,
+  rebindPlanningAssignments,
   refreshPlanningFromObservation,
   seedPlanningFromObservation,
-} from './models/planning_model.js?v=10';
-import { planningAreas } from './models/planning_areas.js';
+} from './models/planning_model.js?v=11';
+import { isSameRepublic } from './models/republic_identity.js?v=1';
+import { cityScopeIds, planningAreas } from './models/planning_areas.js?v=1';
 import {
   CITY_CORE_CATEGORY_TYPES,
   addMissingCityCategoryRows,
+  aggregateCityObservations,
   cityWorkshopBuildings,
   resolveCityWorkshopRows,
-} from './city_planning.js?v=5';
+} from './city_planning.js?v=6';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
@@ -58,7 +62,7 @@ import {
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, alertGroup, filterRepublicAlerts, groupRepublicAlerts,
-} from './republic.js?v=22';
+} from './republic.js?v=23';
 import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
@@ -93,13 +97,13 @@ import {
   rankUsedMarketBorderRoutes,
   paginateVehicleOpportunities, shareSafeSaveImport, vehicleCategoryGroup,
   vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=20';
+} from './fleet.js?v=21';
 import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
 } from './adapters/save_folder_adapter.js?v=21';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=22';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=23';
 import { bootstrapRuntime } from './bootstrap.js?v=10';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
 import {
@@ -326,9 +330,9 @@ for (const [target, event] of [[window, 'pagehide'], [document, 'visibilitychang
 function plannerScopes(kind = null) {
   const imported = state.saveImport?.scopes;
   if (Array.isArray(imported)) return kind ? imported.filter(scope => scope[kind]) : imported;
-  return state.cities.filter(city => Number.isInteger(city.scopeId)).map(city => ({
-    id: city.scopeId, name: city.name, city: true, production: true,
-  }));
+  return state.cities.flatMap(city => cityScopeIds(city).map(scopeId => ({
+    id: scopeId, name: city.name, city: true, production: true,
+  })));
 }
 
 // City planning works on the same areas the republic overview lists, so a save
@@ -348,8 +352,24 @@ function cityPlanningAreas() {
 function materializeCityArea(area) {
   if (!area?.syntheticArea) return area;
   const { syntheticArea, ...stored } = area;
+  stored.scopeIds = cityScopeIds(stored);
   state.cities.push(stored);
   return state.cities[state.cities.length - 1];
+}
+
+function setCityScopeAssignments(city, values) {
+  const scopeIds = [...new Set(values.map(value => Number(value)).filter(Number.isInteger))];
+  if (scopeIds.length) {
+    city.scopeIds = scopeIds;
+    // Keep the old scalar alias for imported plans and older render paths.
+    city.scopeId = scopeIds[0];
+    const names = new Map(plannerScopes('city').map(scope => [scope.id, scope.name]));
+    city.scopeNames = scopeIds.map(scopeId => names.get(scopeId)).filter(Boolean);
+  } else {
+    delete city.scopeIds;
+    delete city.scopeId;
+    delete city.scopeNames;
+  }
 }
 
 function plannerScopeName(scopeId) {
@@ -1439,6 +1459,23 @@ function renderPriceScalars(prices, editable) {
       : el('div', { class: 'scalar' }, el('span', {}, label), el('strong', {}, fmt(prices[key], 2)))));
 }
 
+function renderWorkerCostSummary(prices, currency) {
+  const residentCost = workerCostForType(prices, currency, 'resident');
+  const guestCost = workerCostForType(prices, currency, 'guest');
+  const amount = value => value == null ? '—' : `${fmt(value, 2)} ${currencySymbol(currency)}`;
+  const costRow = (label, value, detail) => el('div', { class: 'worker-cost-item' },
+    el('span', {}, label),
+    el('strong', {}, amount(value)),
+    el('small', { class: 'hint' }, detail));
+
+  return el('div', { class: 'worker-cost-summary' },
+    el('div', { class: 'worker-cost-summary-title' }, t('workerCostsPerWorkday')),
+    el('div', { class: 'worker-cost-grid' },
+      costRow(t('workerResidentCost'), residentCost,
+        residentCost == null ? t('workerNoDirectCost') : t('workerNeedCost')),
+      costRow(t('workerGuestCost'), guestCost, t('workerCost'))));
+}
+
 function renderPrices() {
   const { prices, table } = priceTable({ editable: false });
   return el('section', {},
@@ -1446,6 +1483,7 @@ function renderPrices() {
       el('button', { class: 'linklike', onclick: () => { state.tab = 'priceedit'; update(); } },
         t('editPricesLink'))),
     renderPriceScalars(prices, false),
+    renderWorkerCostSummary(prices, state.currency),
     el('div', { class: 'columns' },
       el('div', { class: 'pricetablecol' }, table),
       el('div', { class: 'pricehistorycol' }, renderHistory())));
@@ -2011,6 +2049,7 @@ function renderAnalysis(currency = state.currency) {
   return el('section', {},
     el('p', { class: 'hint' }, t('analysisHint')),
     renderPriceScalars(prices, false),
+    renderWorkerCostSummary(prices, currency),
     el('div', { class: 'analysis-worker-mode' },
       el('label', {}, t('workerType'), selectInput(
         [['resident', t('workerResident')], ['guest', t('workerGuest')]],
@@ -2416,11 +2455,18 @@ async function handleSaveDirectory(fileList) {
     });
     next.priceSource = statsState.priceSource;
     if (statsRecords.length) next.overrides = {};
-    const currentIdentity = state.saveImport?.header?.savePath || state.saveImport?.sourceName;
-    const importedIdentity = parsed.header?.savePath || sourceName;
-    const sameRepublic = !!currentIdentity && currentIdentity === importedIdentity;
+    const sameRepublic = isSameRepublic(state.saveImport, imported.metadata);
     if (sameRepublic && state.planning) {
-      next.planning = refreshPlanningFromObservation(state.planning, result.model);
+      const rebound = rebindPlanningAssignments(
+        state.planning, state.saveImport?.scopes, imported.metadata?.scopes,
+      );
+      next.planning = refreshPlanningFromObservation(rebound, result.model);
+    } else if (state.planning?.edited) {
+      // A different save replaces observations, never the user's hypothetical
+      // city. Drop only the optional link to the old real city.
+      next.planning = detachPlanningAssignments(
+        refreshPlanningFromObservation(state.planning, result.model),
+      );
     } else {
       const planningSeed = {
         ...next.planning,
@@ -2436,7 +2482,7 @@ async function handleSaveDirectory(fileList) {
       }
       next.planning = seedPlanningFromObservation(result.model, planningSeed);
     }
-    next.saveImport = imported.metadata;
+    next.saveImport = { ...imported.metadata, observedCities: imported.cities };
     next.tab = 'republic';
 
     const importName = uniqueSnapshotName(sourceName);
@@ -2829,7 +2875,7 @@ function renderCities() {
   const pct = value => (Number.isFinite(value) ? fmt(value * 100, 1) + ' %' : '—');
   const count = value => (Number.isFinite(value) ? fmt(value, 0) : '—');
   const openArea = scopeId => {
-    const index = cityPlanningAreas().findIndex(area => area.scopeId === scopeId);
+    const index = cityPlanningAreas().findIndex(area => cityScopeIds(area).includes(scopeId));
     if (index >= 0) state.activeCity = index;
     state.tab = 'city';
     update();
@@ -2934,6 +2980,20 @@ function renderCity() {
   if (state.activeCity >= areas.length || state.activeCity < 0) state.activeCity = 0;
   const city = materializeCityArea(areas[state.activeCity]);
   if (!Array.isArray(city.workshops)) city.workshops = [];
+  const assignedScopeIds = cityScopeIds(city);
+  const realCityScopes = plannerScopes('city');
+  const assignedRealCities = realCityScopes.length ? el('label', { class: 'city-assignment' },
+    el('span', {}, t('assignRealCities')),
+    el('select', {
+      class: 'city-assignment-select', multiple: true,
+      size: Math.min(6, Math.max(2, realCityScopes.length)),
+      onchange: event => {
+        setCityScopeAssignments(city, [...event.target.selectedOptions].map(option => option.value));
+        update();
+      },
+    }, realCityScopes.map(scope => el('option', {
+      value: String(scope.id), selected: assignedScopeIds.includes(scope.id),
+    }, scope.name)))) : null;
   const eco = economy();
   const worstCaseProductivity = Number.isFinite(city.worstCaseProductivity)
     ? Math.max(0, city.worstCaseProductivity) : 0.5;
@@ -2943,6 +3003,7 @@ function renderCity() {
     el('label', { class: 'workspace-context' }, el('span', {}, t('cityArea')), selectInput(
       areas.map((item, index) => [String(index), item.name || `${t('city')} ${index + 1}`]),
       String(state.activeCity), value => { state.activeCity = Number(value); })),
+    assignedRealCities,
     el('div', { class: 'workspace-actions' },
       el('button', { onclick: () => {
         state.cities.push(defaultCity());
@@ -2979,20 +3040,25 @@ function renderCity() {
       t(state.cityDetails ? 'hideUtilityDetails' : 'showUtilityDetails')));
   const assumptions = el('details', { class: 'planner-assumptions secondary-section' },
     el('summary', {}, t('planAssumptions')), settings);
-  const observedCard = city.observed ? el('div', { class: 'totalsbox observed-card' },
+  const observedAggregate = aggregateCityObservations(state.saveImport?.observedCities, assignedScopeIds);
+  const observed = observedAggregate?.observed ?? city.observed;
+  const observedBuildingCount = observedAggregate?.rows.reduce((sum, row) =>
+    sum + (Number.isFinite(row.count) ? row.count : 0), 0);
+  const observedCard = observed ? el('div', { class: 'totalsbox observed-card' },
     el('h3', {}, t('observedAtSave'), el('span', { class: 'evidence-badge derived' }, t('derived'))),
-    kv(t('population'), fmt(city.observed.residents, 0)),
-    kv(t('adults'), fmt(city.observed.adults, 0)),
-    kv(t('highEducation'), fmt(city.observed.highEducation, 0)),
-    kv(t('productivity'), fmt(city.observed.productivity * 100, 2) + ' %'),
-    kv(t('happiness'), fmt(city.observed.happiness * 100, 1) + ' %'),
-    kv(t('food'), fmt(city.observed.food * 100, 1) + ' %'),
-    kv(t('health'), fmt(city.observed.health * 100, 1) + ' %'),
-    kv(t('loyalty'), fmt(city.observed.loyalty * 100, 1) + ' %'),
-    Number.isFinite(city.observed.criminality)
-      ? kv(t('criminality'), fmt(city.observed.criminality * 100, 2) + ' %') : null) : null;
+    kv(t('population'), fmt(observed.residents, 0)),
+    observedBuildingCount == null ? null : kv(t('observedBuildingsTotal'), fmt(observedBuildingCount, 0)),
+    kv(t('adults'), fmt(observed.adults, 0)),
+    kv(t('highEducation'), fmt(observed.highEducation, 0)),
+    kv(t('productivity'), fmt(observed.productivity * 100, 2) + ' %'),
+    kv(t('happiness'), fmt(observed.happiness * 100, 1) + ' %'),
+    kv(t('food'), fmt(observed.food * 100, 1) + ' %'),
+    kv(t('health'), fmt(observed.health * 100, 1) + ' %'),
+    kv(t('loyalty'), fmt(observed.loyalty * 100, 1) + ' %'),
+    Number.isFinite(observed.criminality)
+      ? kv(t('criminality'), fmt(observed.criminality * 100, 2) + ' %') : null) : null;
   const cityOperations = state.saveImport?.operationalServices?.regional
-    ?.find(scope => scope.scopeId === city.scopeId);
+    ?.find(scope => cityScopeIds(city).includes(scope.scopeId));
   const crime = cityOperations?.crime;
   const clinics = cityOperations?.clinics;
   const police = cityOperations?.police;
@@ -3281,10 +3347,19 @@ function renderCity() {
       return kv(r ? rname(r) : m, fmt(amt, 1));
     }));
 
+  const observedBuildings = observedAggregate?.rows?.length ? el('details', { class: 'observed-buildings' },
+    el('summary', {}, `${t('observedBuildingsDetail')} (${fmt(observedBuildingCount, 0)})`),
+    el('div', { class: 'tablewrap' }, el('table', { class: 'data' },
+      el('thead', {}, el('tr', {}, el('th', {}, t('building')), el('th', {}, t('count')))),
+      el('tbody', {}, observedAggregate.rows.map(row => el('tr', {},
+        el('td', {}, row.importedBuilding ? bname(row.importedBuilding) : (row.name ?? row.type ?? '—')),
+        el('td', { class: 'r' }, fmt(row.count, 0)))))))) : null;
+
   return el('section', {}, workspaceBar,
     (observedCard || regionalOperationsCard || coverageCard)
       ? el('div', { class: 'columns operational-summary' }, observedCard, regionalOperationsCard, coverageCard) : null,
     assumptions,
+    observedBuildings,
     city.rows.length ? el('div', { class: 'tablewrap' }, tbl) : el('p', { class: 'empty-state' }, t('emptyCityPlan')),
     el('div', { class: 'settingsbar city-row-actions' }, addBtn, addCategoriesBtn),
     workshopSection,
@@ -5786,7 +5861,7 @@ function openArea(scopeId, tab) {
     state.republicScope = scopeId;
     if (tab === 'production') state.productionScope = String(scopeId);
     if (tab === 'city') {
-      const index = cityPlanningAreas().findIndex(area => area.scopeId === scopeId);
+    const index = cityPlanningAreas().findIndex(area => cityScopeIds(area).includes(scopeId));
       if (index >= 0) state.activeCity = index;
     }
     state.tab = tab;
@@ -5837,11 +5912,8 @@ function republicSnapshot() {
     return r ? rname(r) : c.goal;
   };
 
-  const cityByScope = new Map(state.cities.filter(city => Number.isInteger(city.scopeId)).map(city => [city.scopeId, city]));
   const overviewCities = Array.isArray(state.saveImport?.scopes)
-    ? plannerScopes().filter(scope => scope.city || scope.production).map(scope => cityByScope.get(scope.id) ?? {
-      ...defaultCity(), name: scope.name, scopeId: scope.id, rows: [], syntheticArea: true,
-    })
+    ? cityPlanningAreas()
     : state.cities;
   const cityResults = overviewCities.map(city => {
     const rowsResolved = city.rows.map(r => ({
@@ -5850,8 +5922,9 @@ function republicSnapshot() {
         ? DATA.cityBuildings[r.buildingIndex]
         : DATA.cityBuildings.find(b => b.de === r.name)),
     }));
-    const industryRows = Number.isInteger(city.scopeId)
-      ? state.plan.rows.filter(row => row.scopeId === city.scopeId).map(row => ({
+    const assignedScopeIds = cityScopeIds(city);
+    const industryRows = assignedScopeIds.length
+      ? state.plan.rows.filter(row => assignedScopeIds.includes(row.scopeId)).map(row => ({
         ...row, building: prodBuildings().find(building => building.de === row.name),
       })) : [];
     const industry = evaluatePlan(industryRows, { small: 0, medium: 0, large: 0, hectares: 0 }, state.plan.settings, eco);
@@ -5887,9 +5960,10 @@ function republicSnapshot() {
   // compare directly: workers the cities can send out vs. what industry needs.
   const netWorkers = cityTotals.workerSurplus - plan.workersPerShift;
   const plannedAreas = cityResults.map(({ city, res, industry }) => {
-    const workforceLinked = !city.syntheticArea;
+    const workforceLinked = !city.syntheticArea && cityScopeIds(city).length > 0;
     return {
-      scopeId: Number.isInteger(city.scopeId) ? city.scopeId : null,
+      scopeId: cityScopeIds(city)[0] ?? null,
+      scopeIds: cityScopeIds(city),
       name: city.name,
       population: res.population,
       configuredIndustryWorkers: industry.workersPerShift,

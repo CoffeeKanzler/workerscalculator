@@ -137,6 +137,29 @@ test('price scalars appear above both price-analysis currency tables', async () 
   assert.match(renderAnalysis, /renderPriceScalars\(prices, false\)/);
 });
 
+test('price displays expose resident and guest worker costs separately', async () => {
+  const [app, i18n] = await Promise.all([
+    fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8'),
+    fs.readFile(path.join(ROOT, 'js/i18n.js'), 'utf8'),
+  ]);
+  const renderPrices = app.slice(
+    app.indexOf('function renderPrices()'),
+    app.indexOf('function renderPriceEdit()'),
+  );
+  const renderAnalysis = app.slice(
+    app.indexOf('function renderAnalysis('),
+    app.indexOf('// ---------------------------------------------------------------- vehicle production tab'),
+  );
+
+  assert.match(renderPrices, /renderWorkerCostSummary\(prices, state\.currency\)/);
+  assert.match(renderAnalysis, /renderWorkerCostSummary\(prices, currency\)/);
+  assert.match(app, /function renderWorkerCostSummary\(prices, currency\)/);
+  for (const key of ['workerCostsPerWorkday', 'workerResidentCost', 'workerGuestCost']) {
+    assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2,
+      `${key} must be translated in both languages`);
+  }
+});
+
 test('the Cities tab reads the save and never writes to it', async () => {
   const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
   const renderCities = app.slice(

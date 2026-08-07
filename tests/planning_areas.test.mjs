@@ -58,6 +58,32 @@ test('city planning keeps hand-made areas that belong to no scope', () => {
   assert.equal(areas[1], handMade);
 });
 
+test('city planning keeps an assigned plan when its old save scope disappeared', () => {
+  const planned = { name: 'Old assignment', scopeId: 9, rows: [{ name: 'Panelak' }] };
+  const areas = planningAreas({
+    cities: [planned],
+    scopes: [{ id: 0, name: 'New save town', city: true }],
+    createDefault,
+  });
+
+  assert.equal(areas.at(-1), planned);
+  assert.equal(areas.at(-1).name, 'Old assignment');
+});
+
+test('one planned city can represent multiple real save cities', () => {
+  const merged = { name: 'Combined plan', scopeIds: [0, 1], rows: [] };
+  const areas = planningAreas({
+    cities: [merged],
+    scopes: [
+      { id: 0, name: 'West', city: true },
+      { id: 1, name: 'East', city: true },
+    ],
+    createDefault,
+  });
+
+  assert.deepEqual(areas, [merged]);
+});
+
 test('city planning renders through the shared area resolver instead of state.cities alone', async () => {
   const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
   const renderCity = app.slice(app.indexOf('function renderCity()'), app.indexOf('function renderCity()') + 2000);
@@ -83,5 +109,5 @@ test('opening an area from the republic overview resolves against the listed are
   const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
   const openArea = app.slice(app.indexOf('const openArea ='), app.indexOf('const openArea =') + 400);
 
-  assert.match(openArea, /cityPlanningAreas\(\)\.findIndex\(area => area\.scopeId === scopeId\)/);
+  assert.match(openArea, /cityPlanningAreas\(\)\.findIndex\(area => cityScopeIds\(area\)\.includes\(scopeId\)\)/);
 });

@@ -743,7 +743,7 @@ export function shareSafeSaveImport(saveImport) {
   if (!saveImport) return saveImport;
   const {
     ownedVehicles, usedVehicleOffers, vehicleLines, distributionOffices, criminalityOutliers,
-    blueprintOwned, roadNetwork, railNetwork, pedestrianNetwork, terrainWater, pollutionLayer, ...summary
+    blueprintOwned, observedCities, roadNetwork, railNetwork, pedestrianNetwork, terrainWater, pollutionLayer, ...summary
   } = saveImport;
   return summary;
 }

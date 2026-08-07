@@ -4,6 +4,8 @@ import assert from 'node:assert/strict';
 import {
   createPlanningModel,
   createPlanningCompatibleState,
+  detachPlanningAssignments,
+  rebindPlanningAssignments,
   refreshPlanningFromObservation,
   seedPlanningFromObservation,
   updatePlanningModel,
@@ -215,4 +217,31 @@ test('compatibility proxy batches one revision for an array operation', () => {
 
   assert.equal(compatible.state.planning.revision, 1);
   assert.deepEqual(compatible.state.plan.rows.map(row => row.count), [9, 10, 2]);
+});
+
+test('detaching a plan from a different save keeps planned rows but clears save assignment', () => {
+  const model = createPlanningModel({
+    cities: [{
+      name: 'Planned town', scopeId: 7, observed: { residents: 120 },
+      rows: [{ name: 'Panelak', count: 4 }],
+    }],
+  });
+
+  const detached = detachPlanningAssignments(model);
+  assert.equal(detached.cities[0].scopeId, undefined);
+  assert.equal(detached.cities[0].observed, undefined);
+  assert.deepEqual(detached.cities[0].rows, [{ name: 'Panelak', count: 4 }]);
+  assert.equal(detached.edited, true);
+});
+
+test('rebinds assigned plan cities by name when save scope ids move', () => {
+  const model = createPlanningModel({
+    cities: [{ name: 'Combined', scopeIds: [4, 8], scopeNames: ['West', 'East'], rows: [] }],
+  });
+
+  const rebound = rebindPlanningAssignments(model,
+    [{ id: 4, name: 'West' }, { id: 8, name: 'East' }],
+    [{ id: 1, name: 'East' }, { id: 2, name: 'West' }]);
+  assert.deepEqual(rebound.cities[0].scopeIds, [2, 1]);
+  assert.deepEqual(rebound.cities[0].scopeNames, ['West', 'East']);
 });

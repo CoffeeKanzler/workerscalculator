@@ -22,9 +22,14 @@ test('city planning exposes the category quick-start and productivity scenarios'
   assert.match(app, /city\.workshops/);
   assert.match(app, /cityWorkshopSection/);
   assert.match(app, /workshopWorkers/);
+  assert.match(app, /aggregateCityObservations/);
+  assert.match(app, /setCityScopeAssignments/);
+  assert.match(app, /scopeIds/);
+  assert.match(app, /assignRealCities/);
   assert.equal((i18n.match(/cityCoreCategories:/g) ?? []).length, 2);
   assert.equal((i18n.match(/cityProductivityWorstCase:/g) ?? []).length, 2);
   assert.equal((i18n.match(/cityRequiredProductivity:/g) ?? []).length, 2);
   assert.equal((i18n.match(/cityWorkshopSection:/g) ?? []).length, 2);
   assert.equal((i18n.match(/cityWorkshopUnavailable:/g) ?? []).length, 2);
+  assert.equal((i18n.match(/assignRealCities:/g) ?? []).length, 2);
 });

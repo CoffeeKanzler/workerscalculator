@@ -521,6 +521,9 @@ export function buildImportedPlanning(sourceName, settlements, buildings, member
       ...defaultCity(),
       name: settlement.name || settlement.extraName || `${translate('city')} ${settlement.id + 1}`,
       scopeId: settlement.id,
+      scopeIds: [settlement.id],
+      scopeNames: [settlement.name || settlement.extraName
+        || `${translate('area')} ${settlement.id + 1}`],
       source: 'save',
       productivity: citizenScopes.get(settlement.id)?.productivity ?? defaultProductivity,
       heatingEnabled: (header?.settings?.seasonsEnabled ?? true)

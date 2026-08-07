@@ -55,6 +55,34 @@ test('projects actual plan and evidence-aware difference', () => {
   assert.equal(model.difference.totals.currentIndustryWorkers, null);
 });
 
+test('a merged planning city compares one target against summed real cities', () => {
+  const model = buildRepublicModel({
+    observed: {
+      scopes: [
+        { id: 1, name: 'West', citizens: { residents: 100 } },
+        { id: 2, name: 'East', citizens: { residents: 80 } },
+      ],
+      productionRows: [
+        { scopeId: 1, count: 1, configuredWorkers: 100, currentWorkers: 90 },
+        { scopeId: 2, count: 1, configuredWorkers: 80, currentWorkers: 70 },
+      ],
+      sourceStatus: {},
+    },
+    planned: {
+      totals: {},
+      areas: [{
+        scopeId: 1, scopeIds: [1, 2], name: 'Combined',
+        population: 200, configuredIndustryWorkers: 190,
+      }],
+    },
+  });
+
+  assert.equal(model.difference.areas.length, 1);
+  assert.equal(model.difference.areas[0].name, 'Combined');
+  assert.equal(model.difference.areas[0].population, 20);
+  assert.equal(model.difference.areas[0].configuredIndustryWorkers, 10);
+});
+
 test('alerts prioritize critically understaffed areas and plan deficits', () => {
   const model = buildRepublicModel({
     observed: {
