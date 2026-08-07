@@ -39,6 +39,13 @@ export function lowTechSaveValues(saveImport, {
   if (importedYear === null && Number.isInteger(gameDate?.year)) importedYear = gameDate.year;
   if (importedYear !== null) values.currentYear = importedYear;
 
+  if (exact('stats') && Array.isArray(statsRecords)) {
+    const historyYears = statsRecords
+      .map(record => record?.year)
+      .filter(Number.isInteger);
+    if (historyYears.length) values.startYear = Math.min(...historyYears);
+  }
+
   if (exact('research') && Array.isArray(saveImport.research)) {
     const researchKeys = completedPaidResearchKeys(definitions, saveImport.research);
     values.researched = researchKeys.length;

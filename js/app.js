@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=195';
+import { STRINGS } from './i18n.js?v=196';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=43';
@@ -10,7 +10,7 @@ import {
   completedPaidResearchKeys,
   lowTechDisplayValues,
   lowTechSaveValues,
-} from './research.js?v=6';
+} from './research.js?v=8';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
@@ -6529,8 +6529,10 @@ function renderResearch() {
   };
   const importedPaidKeys = completedPaidResearchKeys(DATA.research, state.saveImport?.research);
   const saveValuesAvailable = Object.keys(saveValues).length > 0;
+  const startSource = lt.inputSource === 'manual' || !Number.isInteger(saveValues.startYear)
+    ? t('ltStartManual') : t('ltHistoryStart');
   const saveSource = saveValuesAvailable
-    ? el('p', { class: 'hint' }, lt.inputSource === 'manual' ? t('ltManualSource') : t('ltSaveSource'), ' ', t('ltStartManual'))
+    ? el('p', { class: 'hint' }, lt.inputSource === 'manual' ? t('ltManualSource') : t('ltSaveSource'), ' ', startSource)
     : null;
   const saveButton = saveValuesAvailable && lt.inputSource === 'manual'
     ? el('button', { onclick: () => { lt.inputSource = 'auto'; update(); } }, t('ltUseSave'))

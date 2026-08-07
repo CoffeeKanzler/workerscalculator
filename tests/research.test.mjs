@@ -107,3 +107,24 @@ test('LowTech prefers the newest imported stats year over stale plan provenance'
     statsRecords: [{ year: 2001 }, { year: 2002 }],
   }).currentYear, 2002);
 });
+
+test('LowTech uses the earliest valid imported history year as start year', () => {
+  assert.equal(lowTechSaveValues({ sourceStatus: { stats: 'exact' } }, {
+    definitions,
+    gameDate: { year: 2001 },
+    statsRecords: [{ year: 2001 }, { year: 1932 }, { year: 'bad' }, {}, { year: 1950 }],
+  }).startYear, 1932);
+});
+
+test('LowTech leaves start year unavailable without exact usable history', () => {
+  assert.equal(lowTechSaveValues({ sourceStatus: { stats: 'missing' } }, {
+    definitions,
+    gameDate: { year: 2001 },
+    statsRecords: [{ year: 1932 }],
+  }).startYear, undefined);
+  assert.equal(lowTechSaveValues({ sourceStatus: { stats: 'exact' } }, {
+    definitions,
+    gameDate: { year: 2001 },
+    statsRecords: [{ year: 'bad' }],
+  }).startYear, undefined);
+});
