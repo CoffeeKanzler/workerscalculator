@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=191';
+import { STRINGS } from './i18n.js?v=192';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=26';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=42';
@@ -31,7 +31,12 @@ import {
   seedPlanningFromObservation,
 } from './models/planning_model.js?v=8';
 import { planningAreas } from './models/planning_areas.js';
-import { CITY_CORE_CATEGORY_TYPES, addMissingCityCategoryRows } from './city_planning.js?v=4';
+import {
+  CITY_CORE_CATEGORY_TYPES,
+  addMissingCityCategoryRows,
+  cityWorkshopBuildings,
+  resolveCityWorkshopRows,
+} from './city_planning.js?v=4';
 import { statsStateForImport } from './models/import_stats.js';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
@@ -315,7 +320,7 @@ function returnToRepublicButton() {
 function defaultCity() {
   return {
     name: 'Nowa Huta', productivity: 0.7, cable: CABLES[2].de, exchanger: 'small',
-    worstCaseProductivity: 0.5, waterDivisor: 3, rows: [], assignedChain: null,
+    worstCaseProductivity: 0.5, waterDivisor: 3, rows: [], workshops: [], assignedChain: null,
   };
 }
 
@@ -1718,7 +1723,7 @@ function renderChain() {
       building: row.importedBuilding ?? (Number.isInteger(row.buildingIndex)
         ? DATA.cityBuildings[row.buildingIndex]
         : DATA.cityBuildings.find(b => b.de === row.name)),
-    })) }, eco);
+    })), workshops: resolveCityWorkshopRows(area.workshops, prodBuildings()) }, eco);
     return evaluated.workerSurplus;
   };
   const budget = chosenSource === 'manual'
@@ -2803,6 +2808,7 @@ function renderCity() {
   const areas = cityPlanningAreas();
   if (state.activeCity >= areas.length || state.activeCity < 0) state.activeCity = 0;
   const city = materializeCityArea(areas[state.activeCity]);
+  if (!Array.isArray(city.workshops)) city.workshops = [];
   const eco = economy();
   const worstCaseProductivity = Number.isFinite(city.worstCaseProductivity)
     ? Math.max(0, city.worstCaseProductivity) : 0.5;
@@ -2929,8 +2935,9 @@ function renderCity() {
   };
 
   const rowsResolved = city.rows.map(r => ({ ...r, building: resolveRow(r) }));
+  const workshopRows = resolveCityWorkshopRows(city.workshops, prodBuildings());
   const productivityScenarios = evaluateCityProductivityScenarios(
-    { ...city, rows: rowsResolved }, eco, worstCaseProductivity,
+    { ...city, rows: rowsResolved, workshops: workshopRows }, eco, worstCaseProductivity,
   );
   const res = productivityScenarios.normal;
 
@@ -3008,6 +3015,50 @@ function renderCity() {
     },
   }, t('cityCoreCategories'));
 
+  const workshopCatalogue = cityWorkshopBuildings(prodBuildings());
+  const workshopTable = el('table', { class: 'data wide' },
+    el('thead', {}, el('tr', {},
+      el('th', {}, t('building')), el('th', {}, t('count')), el('th', {}, t('workers')),
+      el('th', {}, t('sourceCoverage')), el('th', {}))),
+    el('tbody', {}, workshopRows.map((row, idx) => {
+      const options = [['', t('none')], ...workshopCatalogue.map(building => [
+        building.gameId,
+        `${bname(building)} — ${fmt(building.workers ?? 0, 0)} ${t('workers')}`,
+      ])];
+      if (!row.building && row.gameId) {
+        options.push([row.gameId, `${t('cityWorkshopUnavailable')}: ${row.gameId}`]);
+      }
+      const workshopSel = selectInput(options, row.gameId ?? '', value => {
+        row.gameId = value || null;
+        update();
+      });
+      return el('tr', {},
+        el('td', {}, workshopSel),
+        el('td', {}, numInput(row.count, value => { row.count = value; update(); }, { min: 0, step: 1 })),
+        el('td', { class: 'r' }, row.building
+          ? fmt((row.building.workers ?? 0) * (row.count || 0), 0) : '—'),
+        el('td', {}, row.building ? t('cityWorkshopGameFact') : t('cityWorkshopUnavailable')),
+        el('td', {}, el('button', {
+          class: 'danger', onclick: () => { city.workshops.splice(idx, 1); update(); },
+        }, '✕')));
+    })));
+  const workshopActions = el('div', { class: 'settingsbar city-row-actions' },
+    el('button', {
+      disabled: workshopCatalogue.length === 0,
+      onclick: () => {
+        if (!workshopCatalogue.length) return;
+        city.workshops.push({ gameId: workshopCatalogue[0].gameId, count: 1 });
+        update();
+      },
+    }, t('addRow')),
+    workshopCatalogue.length === 0 ? el('span', { class: 'hint warn' }, t('cityWorkshopUnavailable')) : null);
+  const workshopSection = el('div', { class: 'planner-subsection', 'data-city-workshops': '' },
+    el('h3', {}, t('cityWorkshopSection')),
+    el('p', { class: 'hint' }, t('cityWorkshopGameFact')),
+    workshopRows.length ? el('div', { class: 'tablewrap' }, workshopTable)
+      : el('p', { class: 'empty-state' }, t('emptyCityPlan')),
+    workshopActions);
+
   const services = el('table', { class: 'data' },
     el('thead', {}, el('tr', {},
       el('th', {}, t('services')), el('th', {}, t('provided')),
@@ -3044,6 +3095,7 @@ function renderCity() {
     kv(t('population'), fmt(res.population, 0)),
     kv(t('housingQuality'), res.avgHousingQuality != null ? fmt(res.avgHousingQuality * 100, 0) + ' %' : '—'),
     kv(t('workers'), fmt(res.workersNeeded, 0)),
+    kv(`${t('cityWorkshopSection')} ${t('workers')}`, fmt(res.workshopWorkers, 0)),
     kv(t('workerSurplus'), fmt(res.workerSurplus, 1), res.workerSurplus < 0 ? 'neg' : 'pos'),
     kv(t('maxWatt'), fmt(res.maxKW, 0)),
     kv(t('transformers'), fmt(Math.ceil(res.transformers), 0) + ` (${fmt(res.transformers, 2)})`),
@@ -3109,6 +3161,7 @@ function renderCity() {
     assumptions,
     city.rows.length ? el('div', { class: 'tablewrap' }, tbl) : el('p', { class: 'empty-state' }, t('emptyCityPlan')),
     el('div', { class: 'settingsbar city-row-actions' }, addBtn, addCategoriesBtn),
+    workshopSection,
     el('div', { class: 'columns' },
       el('div', {}, el('h3', {}, t('services')), services),
       summary, utilityBox, mats));
@@ -5676,7 +5729,15 @@ function republicSnapshot() {
         ...row, building: prodBuildings().find(building => building.de === row.name),
       })) : [];
     const industry = evaluatePlan(industryRows, { small: 0, medium: 0, large: 0, hectares: 0 }, state.plan.settings, eco);
-    return { city, res: evaluateCity({ ...city, rows: rowsResolved }, eco), industry };
+    return {
+      city,
+      res: evaluateCity({
+        ...city,
+        rows: rowsResolved,
+        workshops: resolveCityWorkshopRows(city.workshops, prodBuildings()),
+      }, eco),
+      industry,
+    };
   });
   const sumCities = fn => cityResults.reduce((a, { res }) => a + (fn(res) || 0), 0);
   const cityTotals = {
@@ -6701,6 +6762,9 @@ function replaceStateProjection(obj, keys) {
     state.chains = [{ name: null, ...cloneStateValue(obj.chain) }];
   }
   if (!Array.isArray(state.cities)) state.cities = [];
+  for (const city of state.cities) {
+    if (!Array.isArray(city.workshops)) city.workshops = [];
+  }
   // A restored save supplies its areas through saveImport.scopes, so the
   // hand-made placeholder must not be planted on top of them.
   if (!state.cities.length && !Array.isArray(state.saveImport?.scopes)) {
