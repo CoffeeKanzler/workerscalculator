@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3777129336",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-07T05:53:18.980Z",
+  "buildings": [
+    {
+      "id": "3777129336/MOORWERK_Fischkantine",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 3,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "MOORWERK_FISCHKANTINE",
+      "workshopId": "3777129336",
+      "modPath": "MOORWERK_Fischkantine",
+      "footprint": {
+        "boxes": [
+          [
+            -5.2,
+            -4.35,
+            10.4,
+            4.35
+          ],
+          [
+            -5.64,
+            -4.3,
+            10.34,
+            6.25
+          ],
+          [
+            -5.25,
+            -5.14,
+            5.15,
+            5.14
+          ],
+          [
+            -4.99,
+            4.2,
+            10.11,
+            9.2
+          ],
+          [
+            9.97,
+            4.2,
+            10.17,
+            9.2
+          ],
+          [
+            -5.3,
+            -4.4,
+            10.3,
+            4.4
+          ],
+          [
+            -5.3,
+            -4.35,
+            10.34,
+            4.47
+          ],
+          [
+            -4.5,
+            -5.77,
+            9.77,
+            -4.27
+          ]
+        ],
+        "height": 9
+      }
+    }
+  ],
+  "vehicles": []
+}

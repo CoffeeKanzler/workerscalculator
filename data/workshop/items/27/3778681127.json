@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3778681127",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-07T05:53:18.985Z",
+  "buildings": [
+    {
+      "id": "3778681127/silos",
+      "nameId": 6107,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3778681127",
+      "modPath": "silos",
+      "footprint": {
+        "boxes": [
+          [
+            -4.85,
+            -4.85,
+            5.81,
+            4.85
+          ]
+        ],
+        "height": 21.35
+      }
+    }
+  ],
+  "vehicles": []
+}
