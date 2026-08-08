@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3779223657",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-08T05:11:56.146Z",
+  "buildings": [
+    {
+      "id": "3779223657/MOORWERK_KOMMUNALSCHULE",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 25,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "MOORWERK_KOMMUNALSCHULE",
+      "workshopId": "3779223657",
+      "modPath": "MOORWERK_KOMMUNALSCHULE",
+      "footprint": {
+        "boxes": [
+          [
+            -4.09,
+            6.2,
+            2.51,
+            12.8
+          ],
+          [
+            -11.29,
+            -3,
+            78.21,
+            21.43
+          ],
+          [
+            -10.79,
+            -2.61,
+            77.63,
+            20.04
+          ],
+          [
+            -10.79,
+            -2.5,
+            9.21,
+            -2.38
+          ],
+          [
+            -11.29,
+            -3,
+            77.9,
+            19.99
+          ],
+          [
+            -10.1,
+            9.35,
+            76.85,
+            59.48
+          ],
+          [
+            -10.03,
+            15.3,
+            76.97,
+            59.3
+          ],
+          [
+            -8.09,
+            32,
+            22.09,
+            58.96
+          ]
+        ],
+        "height": 21.9
+      }
+    }
+  ],
+  "vehicles": []
+}
