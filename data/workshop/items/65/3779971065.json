@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3779971065",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-09T05:23:39.167Z",
+  "buildings": [
+    {
+      "id": "3779971065/MOORWERK_WK0-3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 22,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 22
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "MOORWERK_WK0-3",
+      "workshopId": "3779971065",
+      "modPath": "MOORWERK_WK0-3",
+      "footprint": {
+        "boxes": [
+          [
+            -6.26,
+            -6.28,
+            6.26,
+            6.26
+          ],
+          [
+            -6.26,
+            -6.35,
+            6.26,
+            6.26
+          ],
+          [
+            -6.26,
+            -6.26,
+            6.26,
+            6.26
+          ],
+          [
+            -6.26,
+            -6.35,
+            6.26,
+            6.26
+          ]
+        ],
+        "height": 9.85
+      }
+    },
+    {
+      "id": "3779971065/MOORWERK_WK0-5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "MOORWERK_WK0-5",
+      "workshopId": "3779971065",
+      "modPath": "MOORWERK_WK0-5",
+      "footprint": {
+        "boxes": [
+          [
+            -6.26,
+            -6.28,
+            6.26,
+            6.26
+          ],
+          [
+            -6.26,
+            -6.35,
+            6.26,
+            6.26
+          ],
+          [
+            -6.26,
+            -6.35,
+            6.26,
+            6.26
+          ],
+          [
+            -6.26,
+            -6.35,
+            6.26,
+            6.26
+          ],
+          [
+            -6.26,
+            -6.26,
+            6.26,
+            6.26
+          ],
+          [
+            -6.26,
+            -6.35,
+            6.26,
+            6.26
+          ]
+        ],
+        "height": 15
+      }
+    }
+  ],
+  "vehicles": []
+}
