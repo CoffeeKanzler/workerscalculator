@@ -62,6 +62,8 @@ test('electronics is an optional closed experiment with plain-language productio
     'electronics must be a named native disclosure');
   assert.doesNotMatch(electronics, /el\('details', \{[^}]*open:/,
     'electronics must start closed');
+  assert.match(electronics, /el\('summary',\s*\{\},\s*t\('electronicsOptionalTitle'\)\)/,
+    'the optional electronics title must be the visible disclosure summary');
   assert.match(history, /el\('details', \{[^}]*class: 'credit-history-disclosure'[^}]*\}/,
     'history evidence must be a named native disclosure');
   assert.doesNotMatch(history, /el\('details', \{[^}]*open:/,

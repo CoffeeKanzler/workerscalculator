@@ -12,6 +12,18 @@ function functionBody(source, name) {
   return source.slice(start, next === -1 ? source.length : next);
 }
 
+function assertPrimaryContentBeforeDisclosure(source, name, copyKeys) {
+  const body = functionBody(source, name);
+  const firstDisclosure = body.indexOf("el('details'");
+  const primaryBoundary = firstDisclosure === -1 ? body.length : firstDisclosure;
+
+  for (const key of copyKeys) {
+    const position = body.indexOf(`t('${key}')`);
+    assert.ok(position >= 0 && position < primaryBoundary,
+      `${name} must render ${key} with its primary facts before any optional assessment disclosure`);
+  }
+}
+
 test('dedicated credit tab owns decisions, relevant investments, and amortization corridor', async () => {
   const [app, navigation, i18n, css] = await Promise.all([
     fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8'),
@@ -70,8 +82,15 @@ test('credits keeps current facts visible before progressively disclosed experim
   assert.doesNotMatch(app, /t\('creditTakeLoanAction'\)/,
     'no Credits renderer may present an imperative borrowing recommendation');
 
-  for (const name of sectionNames.slice(0, 3)) {
-    assert.doesNotMatch(functionBody(app, name), /return\s+el\('details'/,
-      `${name} must return current credit facts directly, not hide the section in a disclosure`);
-  }
+  assertPrimaryContentBeforeDisclosure(app, 'renderCreditDataStatus', [
+    'creditDataStatusTitle', 'creditForecastEvidence',
+  ]);
+  assertPrimaryContentBeforeDisclosure(app, 'renderActiveCreditPosition', [
+    'creditActivePositionTitle', 'creditTotalRepayment', 'creditMaximumDailyPayment',
+    'creditExpectedRealRate',
+  ]);
+  assertPrimaryContentBeforeDisclosure(app, 'renderNewCreditCalculator', [
+    'creditNewCalculatorTitle', 'creditAmount', 'creditTotalRepayment', 'creditAdditionalCost',
+    'creditMaximumDailyPayment', 'creditExpectedRealRate',
+  ]);
 });
