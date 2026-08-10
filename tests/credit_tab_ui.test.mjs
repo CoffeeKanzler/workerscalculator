@@ -100,8 +100,65 @@ function stringLiteral(expression) {
 }
 
 function classTokens(properties) {
-  const match = properties.match(/(?:^|[,\s])class\s*:\s*(['"])(.*?)\1/s);
-  return new Set((match?.[2] ?? '').split(/\s+/).filter(Boolean));
+  const className = objectProperties(properties)?.get('class');
+  return new Set((className ? staticStringValue(className) ?? '' : '')
+    .split(/\s+/).filter(Boolean));
+}
+
+function topLevelSeparator(source, separator) {
+  const stack = [];
+  const pairs = { '(': ')', '[': ']', '{': '}' };
+  for (let index = 0; index < source.length; index += 1) {
+    if (source[index] === "'" || source[index] === '"' || source[index] === '`') {
+      index = skipQuoted(source, index) - 1;
+    } else if (source.startsWith('//', index) || source.startsWith('/*', index)) {
+      index = skipTrivia(source, index) - 1;
+    } else if (pairs[source[index]]) {
+      stack.push(pairs[source[index]]);
+    } else if (source[index] === stack.at(-1)) {
+      stack.pop();
+    } else if (source[index] === separator && !stack.length) {
+      return index;
+    }
+  }
+  return -1;
+}
+
+function objectProperties(expression) {
+  const source = expression.trim();
+  if (source[0] !== '{') return null;
+  const close = matchingDelimiter(source, 0);
+  if (source.slice(close + 1).trim()) return null;
+  const properties = new Map();
+  for (const entry of splitTopLevel(source.slice(1, close))) {
+    if (!entry) continue;
+    const separator = topLevelSeparator(entry, ':');
+    if (separator === -1) return null;
+    const rawKey = entry.slice(0, separator).trim();
+    const key = stringLiteral(rawKey)
+      ?? (/^[A-Za-z_$][\w$-]*$/.test(rawKey) ? rawKey : null);
+    if (!key) return null;
+    properties.set(key, entry.slice(separator + 1).trim());
+  }
+  return properties;
+}
+
+function staticStringValue(expression) {
+  const source = expression.trim();
+  if (!["'", '"', '`'].includes(source[0])) return null;
+  if (skipQuoted(source, 0) !== source.length || (source[0] === '`' && source.includes('${'))) {
+    return null;
+  }
+  return source.slice(1, -1);
+}
+
+function isStructurallyVisible(node) {
+  const properties = objectProperties(node.properties);
+  if (!properties || properties.has('hidden') || properties.has('aria-hidden')
+    || node.classes.has('hidden')) return false;
+  if (!properties.has('style')) return true;
+  const style = staticStringValue(properties.get('style'));
+  return style !== null && !/(?:^|;)\s*(?:display\s*:\s*none|visibility\s*:\s*hidden)\b/i.test(style);
 }
 
 function parseElNode(expression) {
@@ -161,15 +218,32 @@ function translationKeys(node) {
   return keys;
 }
 
-function outputTranslationKeys(node) {
+function visibleTranslationKeys(node) {
   const keys = new Set();
+  if (!isStructurallyVisible(node)) return keys;
+  for (const child of node.children) {
+    const childNode = parseElNode(child);
+    if (childNode) {
+      for (const key of visibleTranslationKeys(childNode)) keys.add(key);
+      continue;
+    }
+    const call = parseCall(child, 't');
+    const key = call?.length === 1 ? stringLiteral(call[0]) : null;
+    if (key) keys.add(key);
+  }
+  return keys;
+}
+
+function visibleOutputTranslationKeys(node) {
+  const keys = new Set();
+  if (!isStructurallyVisible(node)) return keys;
   if (['output', 'span', 'strong'].includes(node.tag)) {
-    for (const key of translationKeys(node)) keys.add(key);
+    for (const key of visibleTranslationKeys(node)) keys.add(key);
   }
   for (const child of node.children) {
     const childNode = parseElNode(child);
     if (childNode) {
-      for (const key of outputTranslationKeys(childNode)) keys.add(key);
+      for (const key of visibleOutputTranslationKeys(childNode)) keys.add(key);
     }
   }
   return keys;
@@ -181,6 +255,16 @@ function descendantTags(node) {
     const childNode = parseElNode(child);
     if (!childNode) continue;
     tags.push(childNode.tag, ...descendantTags(childNode));
+  }
+  return tags;
+}
+
+function visibleDescendantTags(node) {
+  const tags = [];
+  for (const child of node.children) {
+    const childNode = parseElNode(child);
+    if (!childNode || !isStructurallyVisible(childNode)) continue;
+    tags.push(childNode.tag, ...visibleDescendantTags(childNode));
   }
   return tags;
 }
@@ -200,19 +284,21 @@ function assertDirectFactsContainer(source, { name, sectionClass, factsClass, co
   assert.ok(section && ['section', 'div'].includes(section.tag)
     && section.classes.has(sectionClass),
   `${name} must directly return its visible ${sectionClass} primary section`);
+  assert.ok(isStructurallyVisible(section),
+    `${sectionClass} must be structurally visible`);
   const facts = section.children.map(parseElNode)
     .map((node, index) => ({ node, index }))
     .filter(({ node }) => node?.classes.has(factsClass));
   assert.equal(facts.length, 1,
     `${name} must return ${factsClass} as one direct child of ${sectionClass}`);
   const { node: factsNode, index: factsIndex } = facts[0];
-  assert.doesNotMatch(factsNode.properties, /(?:^|[,\s])(?:hidden|aria-hidden)\s*:/,
-    `${factsClass} must not be explicitly hidden`);
+  assert.ok(isStructurallyVisible(factsNode),
+    `${factsClass} must be structurally visible`);
   assert.ok(section.children.slice(0, factsIndex).every(provablyBeforeDisclosure),
     `${factsClass} must be a visible child before any disclosure or opaque helper output`);
   assert.ok(!descendantTags(factsNode).includes('details'),
     `${factsClass} must keep its required outputs outside details`);
-  assert.ok(descendantTags(factsNode).some(tag => tag === 'strong' || tag === 'output'),
+  assert.ok(visibleDescendantTags(factsNode).some(tag => tag === 'strong' || tag === 'output'),
     `${factsClass} must directly build visible value output nodes`);
 
   const renderedKeys = translationKeys(section);
@@ -220,7 +306,7 @@ function assertDirectFactsContainer(source, { name, sectionClass, factsClass, co
     assert.ok(renderedKeys.has(key),
       `${name} must render ${key} in its returned ${sectionClass} DOM tree`);
   }
-  const renderedFactKeys = outputTranslationKeys(factsNode);
+  const renderedFactKeys = visibleOutputTranslationKeys(factsNode);
   for (const key of factKeys) {
     assert.ok(renderedFactKeys.has(key),
       `${name} must render ${key} in a visible output node inside ${factsClass}`);
@@ -274,6 +360,47 @@ function assertCreditFactsContractGuards() {
     }
   `, contract('disclosureFirstRenderer')), /before any disclosure or opaque helper output/,
   'primary facts must precede disclosures in the returned DOM-builder tree');
+
+  assert.throws(() => assertDirectFactsContainer(`
+    function hiddenRootRenderer() {
+      return el('section', { class: 'primary-section', hidden: true }, ${visible(facts)});
+    }
+  `, contract('hiddenRootRenderer')), /primary-section must be structurally visible/,
+  'a hidden returned section must not satisfy the primary-facts contract');
+
+  assert.throws(() => assertDirectFactsContainer(`
+    function hiddenFactsRenderer() {
+      return el('section', { class: 'primary-section' }, ${visible(`el('div', {
+        class: 'primary-facts', 'aria-hidden': 'true'
+      }, el('span', {}, t('factLabel')), el('strong', {}, '42'))`)});
+    }
+  `, contract('hiddenFactsRenderer')), /primary-facts must be structurally visible/,
+  'an aria-hidden facts container must not satisfy the primary-facts contract');
+
+  assert.throws(() => assertDirectFactsContainer(`
+    function hiddenOutputRenderer() {
+      return el('section', { class: 'primary-section' }, ${visible(`el('div', {
+        class: 'primary-facts'
+      }, el('span', {}, t('factLabel')), el('strong', { hidden: true }, '42'))`)});
+    }
+  `, contract('hiddenOutputRenderer')), /visible value output nodes/,
+  'a hidden required output node must not satisfy the primary-facts contract');
+
+  assert.throws(() => assertDirectFactsContainer(`
+    function displayNoneRenderer() {
+      return el('section', { class: 'primary-section', style: 'display: none' }, ${visible(facts)});
+    }
+  `, contract('displayNoneRenderer')), /primary-section must be structurally visible/,
+  'a display:none returned section must not satisfy the primary-facts contract');
+
+  assert.throws(() => assertDirectFactsContainer(`
+    function visibilityHiddenRenderer() {
+      return el('section', { class: 'primary-section' }, ${visible(`el('div', {
+        class: 'primary-facts'
+      }, el('span', { style: 'visibility:hidden' }, t('factLabel')), el('strong', {}, '42'))`)});
+    }
+  `, contract('visibilityHiddenRenderer')), /factLabel.*visible output/,
+  'a visibility:hidden required output node must not satisfy the primary-facts contract');
 }
 
 test('dedicated credit tab owns decisions, relevant investments, and amortization corridor', async () => {
