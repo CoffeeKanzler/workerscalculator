@@ -827,6 +827,56 @@ table.data { max-width: 100%; }
 .electronics-recipe-card h4 { margin-top: 0; }
 .electronics-trade-table { min-width: 1320px; }
 .loan-reasons { display: block; min-width: 170px; color: var(--muted); font-size: 12px; line-height: 1.3; }
+.credit-data-status, .active-credit-card, .credit-calculator {
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.credit-data-status-facts { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; color: var(--muted); font-size: 12px; }
+.credit-data-status-facts > span { display: inline-flex; align-items: baseline; gap: 6px; }
+.credit-data-status-facts strong { color: var(--text); font-size: 14px; font-variant-numeric: tabular-nums; }
+.credit-status-provenance { padding: 3px 7px; border: 1px solid var(--border); border-radius: 4px; color: var(--text); font-weight: 700; }
+.active-credit-facts { display: grid; gap: 9px; }
+.active-credit-ledger-head { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--muted); font-size: 11px; font-weight: 650; letter-spacing: .02em; }
+.credit-ledger-card { display: grid; gap: 10px; padding: 11px 12px; border: 1px solid var(--border); border-left: 4px solid var(--muted); border-radius: 6px; background: var(--panel); }
+.credit-ledger-card.favorable { border-left-color: var(--pos); }
+.credit-ledger-card.tight { border-left-color: var(--warn); }
+.credit-ledger-card.risky { border-left-color: var(--neg); }
+.credit-ledger-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.credit-fact-ledger, .credit-history-values { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 7px 14px; margin: 0; }
+.credit-fact-ledger > div, .credit-history-values > div { display: grid; gap: 2px; padding-top: 6px; border-top: 1px solid var(--border); }
+.credit-fact-ledger dt, .credit-history-values dt { color: var(--muted); font-size: 12px; }
+.credit-fact-ledger dd, .credit-history-values dd { margin: 0; font-weight: 750; font-variant-numeric: tabular-nums; }
+.credit-fact-ledger .penalty dd { color: var(--neg); }
+.credit-verdict-strip { display: inline-flex; align-items: center; padding: 5px 9px; border-left: 3px solid var(--muted); background: var(--panel2); font-size: 13px; }
+.credit-verdict-strip.favorable, .credit-verdict-strip.profitable-adverse { border-left-color: var(--pos); }
+.credit-verdict-strip.tight, .credit-verdict-strip.profitable-base-only { border-left-color: var(--warn); }
+.credit-verdict-strip.risky { border-left-color: var(--neg); }
+.credit-verdict-strip.unavailable { color: var(--muted); }
+.credit-assessment-disclosure, .credit-inflation-disclosure, .credit-electronics-assumptions { margin-top: 8px; border-top: 1px solid var(--border); }
+.credit-assessment-disclosure > summary, .credit-inflation-disclosure > summary, .credit-electronics-assumptions > summary { padding: 9px 0; color: var(--muted); cursor: pointer; font-weight: 700; }
+.credit-scenario-row { display: flex; flex-wrap: wrap; gap: 6px 16px; padding: 7px 0; border-top: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+.credit-calculator-results { display: grid; gap: 11px; }
+.credit-calculator-controls { margin: 0; }
+.credit-calculator-result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; }
+.credit-calculator-result-grid output { display: grid; gap: 3px; padding: 9px 10px; border-top: 1px solid var(--border); }
+.credit-calculator-result-grid output span { color: var(--muted); font-size: 12px; }
+.credit-calculator-result-grid output strong { font-size: 17px; font-variant-numeric: tabular-nums; }
+.credit-inflation-comparison { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 8px 0; }
+.credit-inflation-comparison strong { font-variant-numeric: tabular-nums; }
+.credit-inflation-comparison p { flex-basis: 100%; margin: 0; }
+.credit-electronics-disclosure, .credit-history-disclosure { border-top: 1px solid var(--border); background: var(--panel); }
+.credit-electronics-disclosure > summary, .credit-history-disclosure > summary { padding: 12px 2px; cursor: pointer; font-size: 15px; font-weight: 800; }
+.credit-disclosure-body { display: grid; gap: 11px; padding: 3px 12px 14px; }
+.credit-experimental-warning { margin: 0; padding: 9px 11px; border-left: 3px solid var(--warn); background: var(--panel2); font-weight: 700; }
+.electronics-missing-costs { color: var(--muted); font-size: 13px; }
+.electronics-missing-costs ul { display: flex; flex-wrap: wrap; gap: 4px 24px; margin: 6px 0 0; padding-left: 18px; }
+.electronics-strategy-result { display: grid; gap: 9px; }
+.electronics-strategy-result > p { margin: 0; }
+.credit-recipe-evidence { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 8px 0; border-top: 1px solid var(--border); }
+.credit-milestone-ledger { margin-top: 10px; font-size: 12px; }
+.credit-saved-values { padding-top: 8px; border-top: 1px solid var(--border); }
+.credit-saved-values h4 { margin: 0 0 8px; }
+.credit-history-boundary { margin: 0; padding-top: 8px; border-top: 1px solid var(--border); }
 @media (max-width: 1100px) {
   .economic-decision-body { grid-template-columns: 1fr; }
 }
