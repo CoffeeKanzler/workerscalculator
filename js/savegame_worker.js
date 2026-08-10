@@ -5,7 +5,7 @@ import {
   parseHeightmapWater,
 } from './savegame.js?v=38';
 import {
-  parseBlueprintOwned, parseCityStatsIni, parseStatsIni, statsPayloadText,
+  parseBlueprintOwned, parseCityStatsIni, parseLoans, parseStatsIni, statsPayloadText,
 } from './statsini.js?v=28';
 import { buildingHeightSamples } from './models/water_level.js?v=3';
 
@@ -70,6 +70,7 @@ self.onmessage = ({ data }) => {
     const research = optional('research', parseResearch);
     const events = optional('events', parseEvents);
     const statsRecords = optional('stats', () => parseStatsIni(statsText));
+    const activeLoans = data.stats ? parseLoans(statsText) : [];
     const cityStats = data.stats ? parseCityStatsIni(statsText) : [];
     const blueprintOwned = data.stats ? parseBlueprintOwned(statsText) : null;
     const mapClimate = optional('material', parseMapClimate);
@@ -84,7 +85,7 @@ self.onmessage = ({ data }) => {
         vehicleLines: lines?.lines ?? null, lineFileSummary: lines?.summary ?? null,
         roadNetwork, railNetwork,
         terrainWater,
-        statsRecords, cityStats, blueprintOwned, membershipAudit, sourceStatus: status, warnings,
+        statsRecords, activeLoans, cityStats, blueprintOwned, membershipAudit, sourceStatus: status, warnings,
       },
     });
   } catch {

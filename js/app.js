@@ -45,7 +45,7 @@ import {
   cityWorkshopBuildings,
   resolveCityWorkshopRows,
 } from './city_planning.js?v=6';
-import { statsStateForImport } from './models/import_stats.js';
+import { statsStateForImport } from './models/import_stats.js?v=1';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
 import { mapLayerReport } from './models/map_layer_report.js?v=4';
@@ -102,7 +102,7 @@ import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=21';
+} from './adapters/save_folder_adapter.js?v=22';
 import { matchSaveBuilding } from './adapters/save_projection.js?v=23';
 import { bootstrapRuntime } from './bootstrap.js?v=10';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
@@ -164,7 +164,7 @@ const SHARE_KEYS = ['lang', 'theme', 'currency', 'priceSource', 'decade', 'overr
   'republicRange', 'republicResource', 'republicScope', 'republicAlertGroup', 'mapLayers', 'mapBuildingFilter',
   'mapPollutionOpacity', 'mapMetric', 'mapCategoryVisibility', 'republicAlertFilter',
   'accessAlertsMuted', 'tab'];
-const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex'];
+const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex', 'activeLoans'];
 
 // ---------------------------------------------------------------- state
 const SAVES_KEY = 'wr-planner-saves-v1';
@@ -214,6 +214,7 @@ function createInitialState() {
     recordIndex: 0,
     statsRecords: null,          // parsed stats.ini records
     statsName: null,
+    activeLoans: [],             // current $LoanStart contracts from stats.ini
     overrides: {},               // {"sellRUB.steel": 123}
     historyKey: 'steel',
     historyCompareKeys: [],
@@ -742,6 +743,7 @@ function handleFile(file) {
     catch (error) { return alert(error.message); }
     const { records } = parsed;
     state.statsRecords = records;
+    state.activeLoans = parsed.loans;
     state.statsName = file.name;
     state.recordIndex = records.length - 1; // newest snapshot
     state.priceSource = 'stats';
@@ -784,6 +786,7 @@ async function refreshLiveStats() {
 
     liveStatsRevision = parsed.revision;
     state.statsRecords = parsed.records;
+    state.activeLoans = parsed.loans;
     state.statsName = parsed.name;
     state.recordIndex = parsed.records.length - 1;
     state.priceSource = 'stats';
@@ -2430,7 +2433,7 @@ async function handleSaveDirectory(fileList) {
       onProgress: presentSaveAdapterProgress,
     });
     const {
-      sourceName, parsed, planning: imported, statsRecords, productivity,
+      sourceName, parsed, planning: imported, statsRecords, activeLoans, productivity,
       statsFile, deferredMapFiles, workshop,
     } = result;
     DATA.workshopBuildings = workshop.workshopBuildings;
@@ -2459,6 +2462,7 @@ async function handleSaveDirectory(fileList) {
     // republic's price history.
     const statsState = statsStateForImport({
       statsRecords,
+      activeLoans,
       statsFileName: statsFile?.name ?? null,
       previousPriceSource: next.priceSource,
     });
@@ -2504,6 +2508,7 @@ async function handleSaveDirectory(fileList) {
     state.statsRecords = statsState.statsRecords;
     state.statsName = statsState.statsName;
     state.recordIndex = statsState.recordIndex;
+    state.activeLoans = statsState.activeLoans;
     await statsStore.save(statsState.statsRecords, { name: statsState.statsName })
       .catch(error => console.error('stats history was not saved:', error));
     state.saveSlotName = importName;
@@ -2626,6 +2631,7 @@ function renderHome() {
     replaceSharedState({ ...createInitialState(), ...preserved, tab });
     state.statsRecords = null;
     state.statsName = null;
+    state.activeLoans = [];
     update();
   };
   const manual = el('div', { class: 'start-card' },
