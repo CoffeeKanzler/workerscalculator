@@ -1,5 +1,5 @@
-import { quantile, simulateLoanPath } from './economic_analysis.js?v=4';
-import { recipeYearFactors, resolveElectronicsProducerSet } from './electronics_analysis.js?v=2';
+import { quantile, simulateLoanPath } from './economic_analysis.js?v=5';
+import { recipeYearFactors, resolveElectronicsProducerSet } from './electronics_analysis.js?v=4';
 
 const DAYS_PER_YEAR = 365;
 

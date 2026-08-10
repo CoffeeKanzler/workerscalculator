@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=211';
+import { STRINGS } from './i18n.js?v=212';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
 import { parseLiveStatsFile } from './live_stats.js?v=4';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=51';
@@ -67,11 +67,11 @@ import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
 import {
   buildPriceIndex, buildResourcePriceIndex, evaluateLoanScenarios, rollingAnnualRates,
   simulateLoan, summarizeInflation,
-} from './models/economic_analysis.js?v=6';
+} from './models/economic_analysis.js?v=7';
 import {
   amortizationCorridor, deriveForecastRateScenarios, electronicsComponentIndex,
   forecastElectronicsPrices, futureExchangePath, rankRelevantCreditOpportunities,
-} from './models/credit_forecast.js?v=1';
+} from './models/credit_forecast.js?v=3';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
@@ -118,7 +118,7 @@ import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
   QUICK_TOOLS_STORAGE_KEY, defaultQuickTools, normalizeQuickTools, reorderQuickTools,
   shouldOpenStartPage, relativeAge,
-} from './ui/command_center.js?v=15';
+} from './ui/command_center.js?v=16';
 
 const RUNTIME_CONFIG = getRuntimeConfig();
 const APP_RUNTIME = bootstrapRuntime({ config: RUNTIME_CONFIG });
