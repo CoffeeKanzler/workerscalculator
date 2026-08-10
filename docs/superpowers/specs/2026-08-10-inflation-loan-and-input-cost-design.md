@@ -60,10 +60,12 @@ index[t,c] = index[t-1,c] * factor[t,c]
 
 Only resources with finite positive prices at both endpoints belong to that
 step. A step with no common resources is unavailable and does not invent a
-change. Purchase and sell indices are separate; RUB and USD are separate. The
-purchase index is the default because it measures the purchasing power relevant
-to borrowing. The UI states that this is an equal-weight save price index, not
-an official consumer-price statistic.
+change. Base, purchase, and sell indices are separate; RUB and USD are separate.
+The saved `Economy_BaseRUB/USD` series is the default for borrowing because it
+isolates normal currency inflation before resource-specific import/export
+movement. Purchase and sell indices remain visible as separate border-market
+risk evidence. The UI states that these are equal-weight save price indices,
+not official consumer-price statistics.
 
 For endpoints separated by `days`:
 
@@ -119,7 +121,7 @@ realRate = (1 + effectiveRate) / (1 + inflationRate) - 1
 
 Scenario rates come only from the imported save:
 
-- **Base:** latest usable annualized purchase-price inflation;
+- **Base:** latest usable annualized normal currency inflation;
 - **Best for borrower:** upper quartile of usable rolling annual rates;
 - **Worst for borrower:** lower quartile of usable rolling annual rates.
 

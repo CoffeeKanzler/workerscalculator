@@ -13,7 +13,8 @@ function positivePrices(record, field) {
 }
 
 export function buildPriceIndex(records, { currency = 'RUB', basis = 'purchase' } = {}) {
-  const field = `${basis === 'sell' ? 'sell' : 'purchase'}${currency === 'USD' ? 'USD' : 'RUB'}`;
+  const normalizedBasis = ['base', 'purchase', 'sell'].includes(basis) ? basis : 'base';
+  const field = `${normalizedBasis}${currency === 'USD' ? 'USD' : 'RUB'}`;
   const dated = (records ?? [])
     .map(record => ({ record, ordinal: ordinal(record), prices: positivePrices(record, field) }))
     .filter(item => item.ordinal !== null)
@@ -95,4 +96,122 @@ export function quantile(values, q) {
   const lower = Math.floor(position);
   const fraction = position - lower;
   return sorted[lower] + (sorted[Math.min(lower + 1, sorted.length - 1)] - sorted[lower]) * fraction;
+}
+
+export function effectiveAnnualRate(annualPercent) {
+  const rate = Number(annualPercent);
+  if (!Number.isFinite(rate)) return null;
+  return (1 + rate / 100 / DAYS_PER_YEAR) ** DAYS_PER_YEAR - 1;
+}
+
+export function realAnnualRate(effectiveRate, inflationRate) {
+  const effective = Number(effectiveRate);
+  const inflation = Number(inflationRate);
+  if (!Number.isFinite(effective) || !Number.isFinite(inflation) || inflation <= -1) return null;
+  return (1 + effective) / (1 + inflation) - 1;
+}
+
+function cashAvailable(availableCash, day, state) {
+  const value = typeof availableCash === 'function'
+    ? availableCash(day, { ...state })
+    : availableCash;
+  return Number.isFinite(Number(value)) ? Math.max(0, Number(value)) : Infinity;
+}
+
+export function simulateLoan(loan, { availableCash = Infinity, maxDays = 10000 } = {}) {
+  let remainingDays = Math.max(0, Math.trunc(Number(loan?.remainingDays) || 0));
+  let currentAmount = Math.max(0, Number(loan?.currentAmount) || 0);
+  let penaltyAmount = Math.max(0, Number(loan?.penaltyAmount) || 0);
+  const annualRate = Number(loan?.annualRate) || 0;
+  const dailyRate = annualRate / 100 / DAYS_PER_YEAR;
+  const safetyDays = Math.max(0, Math.trunc(Number(maxDays) || 0));
+  let totalPaid = 0;
+  let interestPaid = 0;
+  let maxDailyPayment = 0;
+  let days = 0;
+
+  while ((currentAmount > 1e-7 || penaltyAmount > 1e-7) && days < safetyDays) {
+    if (remainingDays > 0) remainingDays -= 1;
+    const balanceAfterInterest = currentAmount * (1 + dailyRate) + penaltyAmount * dailyRate;
+    const interestPart = currentAmount * (1 + dailyRate) * dailyRate + penaltyAmount * dailyRate;
+    const scheduledPrincipal = remainingDays > 0
+      ? balanceAfterInterest / remainingDays
+      : balanceAfterInterest;
+    const amountDue = scheduledPrincipal + penaltyAmount;
+    const payment = Math.min(cashAvailable(availableCash, days, {
+      remainingDays,
+      currentAmount,
+      penaltyAmount,
+      amountDue,
+    }), amountDue);
+
+    currentAmount = balanceAfterInterest;
+    const penaltyPayment = Math.min(penaltyAmount, payment);
+    penaltyAmount -= penaltyPayment;
+    currentAmount = Math.max(0, currentAmount - (payment - penaltyPayment));
+
+    if (scheduledPrincipal > payment) {
+      const shortfall = scheduledPrincipal - payment;
+      currentAmount = Math.max(0, currentAmount - shortfall);
+      penaltyAmount += shortfall;
+    }
+
+    totalPaid += payment;
+    interestPaid += Math.min(payment, interestPart);
+    maxDailyPayment = Math.max(maxDailyPayment, payment);
+    days += 1;
+  }
+
+  return {
+    days,
+    totalPaid,
+    interestPaid,
+    maxDailyPayment,
+    endingCurrentAmount: currentAmount,
+    endingPenaltyAmount: penaltyAmount,
+    remainingDays,
+    completed: currentAmount <= 1e-7 && penaltyAmount <= 1e-7,
+  };
+}
+
+export function evaluateLoanScenarios(loan, normalInflationIndex) {
+  const rates = rollingAnnualRates(normalInflationIndex);
+  const baseInflation = rates.at(-1) ?? null;
+  const scenarios = {
+    base: baseInflation,
+    best: quantile(rates, 0.75),
+    worst: quantile(rates, 0.25),
+  };
+  const effectiveRate = effectiveAnnualRate(loan?.annualRate);
+  const realRates = Object.fromEntries(Object.entries(scenarios)
+    .map(([name, inflation]) => [name, realAnnualRate(effectiveRate, inflation)]));
+  const simulation = simulateLoan(loan);
+  const hasPenalty = Number(loan?.penaltyAmount) > 1e-7;
+  let recommendation = 'tight';
+  const reasons = [];
+
+  if (hasPenalty) {
+    recommendation = 'risky';
+    reasons.push('existingPenalty');
+  } else if (!Number.isFinite(realRates.base)) {
+    reasons.push('insufficientInflationHistory');
+  } else if (realRates.base < 0) {
+    recommendation = 'favorable';
+    reasons.push('inflationExceedsLoanCost');
+  } else if (realRates.base <= 0.03) {
+    reasons.push('lowPositiveRealCost');
+  } else {
+    recommendation = 'risky';
+    reasons.push('highPositiveRealCost');
+  }
+
+  return {
+    inflationSource: 'base',
+    inflationRates: scenarios,
+    effectiveRate,
+    realRates,
+    simulation,
+    recommendation,
+    reasons,
+  };
 }
