@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=217';
+import { STRINGS } from './i18n.js?v=218';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
 import { parseLiveStatsFile } from './live_stats.js?v=4';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=51';
@@ -72,7 +72,7 @@ import {
   creditProvenanceKeys, creditVerdictKey, electronicsAvailabilityState,
   hasUsableInflationEvidence,
   summarizeCreditTerms,
-} from './models/credit_summary.js?v=1';
+} from './models/credit_summary.js?v=2';
 import {
   amortizationCorridor, deriveForecastRateScenarios, electronicsComponentIndex,
   forecastElectronicsPrices, futureExchangePath, historicalElectronicsComponentIndex,
