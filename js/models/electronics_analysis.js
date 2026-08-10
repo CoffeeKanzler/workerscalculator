@@ -2,7 +2,7 @@ import {
   quantile,
   rollingAnnualRates,
   simulateLoan,
-} from './economic_analysis.js?v=5';
+} from './economic_analysis.js?v=6';
 
 const DAYS_PER_YEAR = 365;
 const ELECTRONICS_SHIP_SUBTYPES = new Set([0, 11]);

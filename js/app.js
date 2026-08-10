@@ -66,7 +66,7 @@ import {
 import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
 import {
   buildPriceIndex, buildResourcePriceIndex, evaluateLoanScenarios, summarizeInflation,
-} from './models/economic_analysis.js?v=5';
+} from './models/economic_analysis.js?v=6';
 import {
   electronicsRecipeCost, rankElectronicsShipTrades,
 } from './models/electronics_analysis.js?v=5';
