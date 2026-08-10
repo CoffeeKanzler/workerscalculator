@@ -10,7 +10,9 @@ const requiredCreditCopy = [
   'creditTotalRepayment', 'creditAdditionalCost', 'creditMaximumDailyPayment',
   'creditExpectedRealRate', 'creditInflationExceeds', 'creditCostsSimilar',
   'creditCostsExceed', 'creditInflationUnavailable', 'creditAssessmentDetails',
-  'creditHistoryNeedsStats',
+  'creditHistoryNeedsStats', 'creditEnteredCalculationEvidence',
+  'creditStatsInflationEvidence', 'creditImportedSaveEvidence',
+  'creditForecastUnavailableEvidence',
 ];
 
 test('credit tab renders normal, import, and export inflation with saved loan decisions', async () => {
@@ -28,7 +30,8 @@ test('credit tab renders normal, import, and export inflation with saved loan de
   assert.match(app, /buildPriceIndex\(state\.statsRecords, \{ currency, basis: 'base' \}\)/);
   assert.match(app, /function renderCredits\(\)/);
   assert.match(app, /case 'credits': return renderCredits\(\)/);
-  assert.match(app, /state\.activeLoans\.filter/);
+  assert.match(app, /const activeCredits = state\.activeLoans\.map/,
+    'every active contract must be adapted independently of calculator currency');
   assert.match(css, /\.economic-decision-strip/);
   assert.match(css, /\.loan-decision-table/);
 
@@ -55,17 +58,25 @@ test('plain-language credit burden and insufficient-history labels are translate
   }
 });
 
-test('history visibility follows the selected range and inflation series', async () => {
+test('Credits history ignores the hidden republic range and requires usable price evidence', async () => {
   const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
+  const creditsStart = app.indexOf('function renderCredits(');
+  const creditsEnd = app.indexOf('\nfunction ', creditsStart + 1);
+  const credits = app.slice(creditsStart, creditsEnd);
   const start = app.indexOf('function renderCreditHistoryEvidence(');
   const end = app.indexOf('\nfunction ', start + 1);
   const history = app.slice(start, end);
 
   assert.match(app,
-    /const visibleInflationSufficient = Number\.isFinite\(visibleSummary\.latestAnnual\)/,
-    'history sufficiency must be derived from the selected visible index summary');
+    /const visibleInflationSufficient = hasUsableInflationEvidence\(visibleIndex\)/,
+    'history sufficiency must require a usable covered inflation interval');
+  assert.match(app,
+    /summary\.hasInflationEvidence\s*\?\s*el\('span',[\s\S]*loanRealBest[\s\S]*:\s*el\('span',[\s\S]*creditInflationUnavailable/,
+    'active-credit scenario rates must be hidden when their normal-price evidence is unusable');
+  assert.doesNotMatch(credits, /filterRange\(/,
+    'Credits must use all available history instead of a hidden range from another tab');
   assert.doesNotMatch(history, /hypotheticalSummary\.hasInflationEvidence/,
-    'history must not reuse the all-history base-series credit verdict gate');
+    'history must evaluate the selected series rather than the calculator verdict');
   assert.match(history, /context\.visibleInflationSufficient\s*\?\s*renderRepublicLineChart/,
     'an insufficient selected series must show the actionable history state instead of a chart');
   assert.match(history, /context\.visibleInflationSufficient\s*\?\s*el\('dl'/,

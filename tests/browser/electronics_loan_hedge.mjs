@@ -215,9 +215,9 @@ try {
   await capture(page, LIGHT_SCREENSHOT);
   await setResolvedTheme(page, 'dark');
   if (await page.locator('details.credit-electronics-assumptions').getAttribute('open') === null) {
-    await page.locator('details.credit-electronics-assumptions > summary').click();
-    await page.waitForSelector('details.credit-electronics-assumptions .republic-chart .uplot');
+    throw new Error('theme rerender closed the nested assumptions disclosure');
   }
+  await page.waitForSelector('details.credit-electronics-assumptions .republic-chart .uplot');
   await page.locator('details.credit-electronics-disclosure').scrollIntoViewIfNeeded();
   await capture(page, DARK_SCREENSHOT);
   console.log(`browser: desktop screenshots captured: ${LIGHT_SCREENSHOT}, ${DARK_SCREENSHOT}`);

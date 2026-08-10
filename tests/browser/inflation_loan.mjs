@@ -6,15 +6,15 @@ const BASE = process.argv[2] ?? 'http://localhost:8765/index.html';
 const LIGHT_SCREENSHOT = process.argv[3] ?? '/tmp/workers-inflation-loans-light.png';
 const DARK_SCREENSHOT = process.argv[4] ?? '/tmp/workers-inflation-loans-dark.png';
 
-const priceRecord = (year, base, purchase, sell) => `$STAT_RECORD
+const priceRecord = (year, base, purchase, sell, baseUSD = 10) => `$STAT_RECORD
 $DATE_YEAR ${year}
 $DATE_DAY 0
 $Economy_BaseRUB
 food ${base}
 steel ${base * 4}
 $Economy_BaseUSD
-food ${base / 10}
-steel ${base * 0.4}
+food ${baseUSD}
+steel ${baseUSD * 4}
 $Economy_PurchaseCostRUB
 food ${purchase}
 steel ${purchase * 4}
@@ -55,6 +55,19 @@ const oneRecordStats = [
   loan(1, 5, 100000),
 ].join('\n');
 
+const zeroCoverageStats = [
+  priceRecord(1980, 0, 100, 90, 0),
+  priceRecord(1981, 0, 110, 95, 0),
+  loan(1, 5, 100000),
+].join('\n');
+
+const noLoanStats = [
+  priceRecord(1980, 100, 100, 90),
+  priceRecord(1981, 108, 120, 92),
+  priceRecord(1982, 116.64, 126, 99),
+  priceRecord(1983, 125.9712, 130, 105),
+].join('\n');
+
 const numberFromAmount = text => Number(text.replace(/[^\d-]/g, ''));
 
 async function setResolvedTheme(page, expected) {
@@ -83,6 +96,29 @@ async function openCredits(page) {
   await page.waitForSelector('.credit-center');
 }
 
+async function selectShortRepublicHistoryRange(page) {
+  await page.locator('.section-tabs button', { hasText: 'Observe' }).first().click();
+  await page.locator('.context-tabs button', { hasText: 'History' }).first().click();
+  await page.waitForSelector('.history-section .chart-controls');
+  await page.locator('.history-section .chart-controls button', { hasText: 'Month' }).click();
+  await page.waitForFunction(() => document.querySelector(
+    '.history-section .chart-controls button.active')?.textContent.trim() === 'Month');
+}
+
+async function setDisclosureOpen(page, details, open) {
+  const isOpen = await details.getAttribute('open') !== null;
+  if (isOpen !== open) await details.locator(':scope > summary').click();
+  const selector = await details.evaluate(node => {
+    if (!node.id) node.id = `browser-disclosure-${Math.random().toString(36).slice(2)}`;
+    return `#${node.id}`;
+  });
+  await page.waitForFunction(({ selector: target, expected }) =>
+    Boolean(document.querySelector(target)?.open) === expected, {
+    selector,
+    expected: open,
+  });
+}
+
 async function loadStats(page, name, contents) {
   await openPrices(page);
   await page.locator('#fileInput').setInputFiles({
@@ -109,6 +145,7 @@ try {
 
   await loadStats(page, 'multi-year-credit-stats.ini', multiYearStats);
   console.log('browser: controlled multi-year stats loaded');
+  await selectShortRepublicHistoryRange(page);
   await openCredits(page);
 
   const hierarchy = await page.locator('.credit-center').evaluate(center => {
@@ -125,8 +162,22 @@ try {
       || !hierarchy.currentPrecedesCalculator) {
     throw new Error(`current credit does not visibly precede the calculator: ${JSON.stringify(hierarchy)}`);
   }
-  if (await page.locator('.active-credit-card .credit-ledger-card').count() !== 1) {
-    throw new Error('the current RUB credit was not rendered as a visible ledger card');
+  const creditCards = page.locator('.active-credit-card .credit-ledger-card');
+  if (await creditCards.count() !== 2) {
+    throw new Error(`both active currencies were not rendered: ${await creditCards.count()} cards`);
+  }
+  const rubCard = page.locator('.active-credit-card .credit-ledger-card[data-credit-currency="RUB"]');
+  const usdCard = page.locator('.active-credit-card .credit-ledger-card[data-credit-currency="USD"]');
+  if (await rubCard.count() !== 1 || await usdCard.count() !== 1) {
+    throw new Error('the active-credit cards do not expose their own RUB/USD currencies');
+  }
+  const rubText = await rubCard.innerText();
+  const usdText = await usdCard.innerText();
+  if (!rubText.includes('Inflation exceeds credit costs') || !rubText.includes('₽')) {
+    throw new Error(`RUB credit did not use RUB inflation and amounts: ${rubText}`);
+  }
+  if (!usdText.includes('Credit costs clearly exceed inflation') || !usdText.includes('$')) {
+    throw new Error(`USD credit did not use USD inflation and amounts: ${usdText}`);
   }
   if (await page.locator('details.credit-electronics-disclosure').getAttribute('open') !== null) {
     throw new Error('optional electronics was not initially closed');
@@ -138,7 +189,28 @@ try {
   if (/Take the loan|Kredit aufnehmen/i.test(initiallyVisibleText)) {
     throw new Error('an imperative take-loan action is still visible');
   }
-  console.log('browser: current credit, calculator, and closed optional sections verified');
+  const statusText = await page.locator('.credit-data-status').innerText();
+  for (const expected of ['entered calculation', 'stats.ini inflation', 'forecast evidence unavailable']) {
+    if (!statusText.includes(expected)) {
+      throw new Error(`stats-only provenance omitted ${expected}: ${statusText}`);
+    }
+  }
+  if (statusText.includes('save-derived forecast') || statusText.includes('imported-save evidence')) {
+    throw new Error(`stats-only provenance claims imported save evidence: ${statusText}`);
+  }
+  const electronics = page.locator('details.credit-electronics-disclosure');
+  const electronicsSummary = await electronics.locator(':scope > summary').innerText();
+  if (!/used-market offers from an imported save are required/i.test(electronicsSummary)) {
+    throw new Error(`closed electronics summary omitted the used-market requirement: ${electronicsSummary}`);
+  }
+  await setDisclosureOpen(page, electronics, true);
+  const electronicsEmpty = await electronics.locator('.empty-state').innerText();
+  if (!/used-market offers from an imported save are required/i.test(electronicsEmpty)
+      || /No relevant loan-financed electronics strategy/i.test(electronicsEmpty)) {
+    throw new Error(`expanded electronics conflated missing offers with a losing evaluation: ${electronicsEmpty}`);
+  }
+  await setDisclosureOpen(page, electronics, false);
+  console.log('browser: mixed-credit facts, stats-only provenance, and missing-offer state verified');
 
   const repaymentOutput = () => page.locator('.credit-calculator-result-grid output', {
     hasText: 'Total repayment',
@@ -164,6 +236,24 @@ try {
   }
   console.log(`browser: calculator amount ${enteredAmount} coherently produced repayment ${repayment}`);
 
+  await page.locator('.credit-calculator-controls label', { hasText: 'Currency' })
+    .locator('select').selectOption('USD');
+  await page.waitForFunction(() => document.querySelectorAll(
+    '.active-credit-card .credit-ledger-card').length === 2);
+  if (await page.locator('.active-credit-card [data-credit-currency="RUB"]').count() !== 1
+      || await page.locator('.active-credit-card [data-credit-currency="USD"]').count() !== 1) {
+    throw new Error('changing calculator currency hid an active contract');
+  }
+
+  const allHistory = page.locator('details.credit-history-disclosure');
+  await setDisclosureOpen(page, allHistory, true);
+  if (await allHistory.locator('.republic-chart').count() !== 1
+      || await allHistory.locator('.empty-state').count()) {
+    throw new Error('Credits inherited the hidden one-month history range instead of using all records');
+  }
+  await setDisclosureOpen(page, allHistory, false);
+  console.log('browser: calculator currency isolation and all-history Credits evidence verified');
+
   await setResolvedTheme(page, 'light');
   await capture(page, LIGHT_SCREENSHOT);
   await setResolvedTheme(page, 'dark');
@@ -172,10 +262,8 @@ try {
 
   await loadStats(page, 'one-record-credit-stats.ini', oneRecordStats);
   await openCredits(page);
-  await page.locator('details.credit-history-disclosure > summary').click();
-  await page.waitForFunction(() => document.querySelector(
-    'details.credit-history-disclosure')?.open === true);
   const history = page.locator('details.credit-history-disclosure');
+  await setDisclosureOpen(page, history, true);
   const emptyMessage = await history.locator('.empty-state').innerText();
   if (!/Import a stats\.ini with multiple dated price records/i.test(emptyMessage)) {
     throw new Error(`one-record history omitted the actionable stats.ini message: ${emptyMessage}`);
@@ -185,8 +273,44 @@ try {
   }
   console.log('browser: one-record history shows the actionable stats.ini empty state without dash cards');
 
+  await setDisclosureOpen(page, history, false);
+  await loadStats(page, 'zero-coverage-credit-stats.ini', zeroCoverageStats);
+  await openCredits(page);
+  const zeroCoverageVerdict = await page.locator('.credit-calculator .credit-verdict-strip').innerText();
+  if (!/General price development is unavailable/i.test(zeroCoverageVerdict)) {
+    throw new Error(`zero-coverage records became inflation evidence: ${zeroCoverageVerdict}`);
+  }
+  const zeroCoverageHistory = page.locator('details.credit-history-disclosure');
+  await setDisclosureOpen(page, zeroCoverageHistory, true);
+  if (!await zeroCoverageHistory.locator('.empty-state').count()
+      || await zeroCoverageHistory.locator('.republic-chart').count()) {
+    throw new Error('zero-coverage history rendered finite inflation evidence');
+  }
+  const zeroCoverageAssessment = page.locator('details.credit-assessment-disclosure');
+  await setDisclosureOpen(page, zeroCoverageAssessment, true);
+  const zeroCoverageAssessmentText = await zeroCoverageAssessment.innerText();
+  if (!/General price development is unavailable/i.test(zeroCoverageAssessmentText)
+      || /\d(?:[.,]\d+)?\s*%/.test(zeroCoverageAssessmentText)) {
+    throw new Error(`zero-coverage active-credit assessment leaked finite rates: ${zeroCoverageAssessmentText}`);
+  }
+  console.log('browser: two dated zero-coverage records remain unavailable across all credit evidence');
+
+  await setDisclosureOpen(page, zeroCoverageAssessment, false);
+  await setDisclosureOpen(page, zeroCoverageHistory, false);
+  await loadStats(page, 'no-active-credit-stats.ini', noLoanStats);
+  await openCredits(page);
+  if (await page.locator('.active-credit-card .credit-ledger-card').count()
+      || await page.locator('.active-credit-ledger-head').count()) {
+    throw new Error('no-contract state retained an orphan active-credit header');
+  }
+  const noCreditText = await page.locator('.active-credit-card .empty-state').innerText();
+  if (!/No active loans/i.test(noCreditText)) {
+    throw new Error(`no-contract state omitted its single empty message: ${noCreditText}`);
+  }
+  console.log('browser: no-contract state has one message and no orphan ledger header');
+
   if (errors.length) throw new Error(errors.join('\n'));
-  console.log('ok: simplified credit hierarchy, amount coherence, themes, and empty history verified');
+  console.log('ok: mixed credits, evidence states, all-history scope, provenance, and empty states verified');
 } finally {
   await browser.close();
 }

@@ -67,8 +67,9 @@ test('electronics is an optional closed experiment with plain-language productio
   assert.match(electronics,
     /ontoggle: event => \{ creditElectronicsOpen = event\.currentTarget\.open; \}/,
     'electronics must persist user disclosure toggles');
-  assert.match(electronics, /el\('summary',\s*\{\},\s*t\('electronicsOptionalTitle'\)\)/,
-    'the optional electronics title must be the visible disclosure summary');
+  assert.match(electronics,
+    /el\('summary',\s*\{\},\s*el\('span',\s*\{\},\s*t\('electronicsOptionalTitle'\)\)/,
+    'the optional electronics title must remain in the visible disclosure summary');
   assert.match(history, /el\('details', \{[^}]*class: 'credit-history-disclosure'[^}]*\}/,
     'history evidence must be a named native disclosure');
   assert.match(app, /let creditHistoryOpen = false;/,
@@ -84,6 +85,18 @@ test('electronics is an optional closed experiment with plain-language productio
     'the optional experiment must visibly offer the standard production chain');
   assert.match(electronics, /\['dlc3', t\('electronicsProductionChainDlc3'\)\]/,
     'the optional experiment must visibly offer the DLC production chain');
+  assert.match(app, /let creditElectronicsAssumptionsOpen = false;/,
+    'nested assumptions must start closed');
+  assert.match(electronics,
+    /\.\.\.\(creditElectronicsAssumptionsOpen \? \{ open: '' \} : \{\}\)/,
+    'nested assumptions must restore its open state after a theme rerender');
+  assert.match(electronics,
+    /ontoggle: event => \{ creditElectronicsAssumptionsOpen = event\.currentTarget\.open; \}/,
+    'nested assumptions must persist user disclosure toggles');
+  assert.match(electronics, /context\.electronicsAvailability\.messageKey/,
+    'expanded missing and no-strategy states must use the explicit availability result');
+  assert.match(electronics, /electronicsAvailability\.requiresUsedMarket/,
+    'the closed summary must expose the used-market requirement when it blocks evaluation');
 
   for (const key of [
     'electronicsExperimentalWarning', 'electronicsMissingCosts', 'electronicsBreakEvenConditional',
@@ -103,6 +116,7 @@ test('electronics is an optional closed experiment with plain-language productio
     'electronicsAssumptionsDetails', 'electronicsProductionChain',
     'electronicsProductionChainVanilla', 'electronicsProductionChainDlc3', 'electronicsTradeCaveat',
     'creditScenarioBase', 'creditScenarioFavorable', 'creditScenarioAdverse',
+    'electronicsNoUsedOffers', 'electronicsNoHistory', 'electronicsNoCompatibleShips',
   ]) {
     assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2,
       `${key} must be translated in both languages`);

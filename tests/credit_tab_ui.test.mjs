@@ -174,6 +174,26 @@ function parseElNode(expression) {
   };
 }
 
+function embeddedElNodes(expression) {
+  const nodes = [];
+  for (let index = 0; index < expression.length; index += 1) {
+    if (expression[index] === "'" || expression[index] === '"' || expression[index] === '`') {
+      index = skipQuoted(expression, index) - 1;
+    } else if (expression.startsWith('//', index) || expression.startsWith('/*', index)) {
+      index = skipTrivia(expression, index) - 1;
+    } else if (expression.startsWith('el', index)
+      && !/[\w$]/.test(expression[index - 1] ?? '')
+      && !/[\w$]/.test(expression[index + 2] ?? '')) {
+      const open = skipTrivia(expression, index + 2);
+      if (expression[open] !== '(') continue;
+      const close = matchingDelimiter(expression, open);
+      const node = parseElNode(expression.slice(index, close + 1));
+      if (node) nodes.push(node);
+    }
+  }
+  return nodes;
+}
+
 function topLevelReturn(body) {
   const returns = [];
   const pairs = { '(': ')', '[': ']', '{': '}' };
@@ -237,7 +257,7 @@ function visibleTranslationKeys(node) {
 function visibleOutputTranslationKeys(node) {
   const keys = new Set();
   if (!isStructurallyVisible(node)) return keys;
-  if (['output', 'span', 'strong'].includes(node.tag)) {
+  if (['output', 'span', 'strong', 'dt'].includes(node.tag)) {
     for (const key of visibleTranslationKeys(node)) keys.add(key);
   }
   for (const child of node.children) {
@@ -296,17 +316,32 @@ function assertDirectFactsContainer(source, { name, sectionClass, factsClass, co
     `${factsClass} must be structurally visible`);
   assert.ok(section.children.slice(0, factsIndex).every(provablyBeforeDisclosure),
     `${factsClass} must be a visible child before any disclosure or opaque helper output`);
-  assert.ok(!descendantTags(factsNode).includes('details'),
+  const embeddedFacts = factsNode.children.flatMap(embeddedElNodes);
+  const factTags = [
+    ...descendantTags(factsNode),
+    ...embeddedFacts.flatMap(node => [node.tag, ...descendantTags(node)]),
+  ];
+  assert.ok(!factTags.includes('details'),
     `${factsClass} must keep its required outputs outside details`);
-  assert.ok(visibleDescendantTags(factsNode).some(tag => tag === 'strong' || tag === 'output'),
+  assert.ok([
+    ...visibleDescendantTags(factsNode),
+    ...embeddedFacts.filter(isStructurallyVisible)
+      .flatMap(node => [node.tag, ...visibleDescendantTags(node)]),
+  ].some(tag => tag === 'strong' || tag === 'output'),
     `${factsClass} must directly build visible value output nodes`);
 
   const renderedKeys = translationKeys(section);
+  for (const node of embeddedFacts) {
+    for (const key of translationKeys(node)) renderedKeys.add(key);
+  }
   for (const key of copyKeys) {
     assert.ok(renderedKeys.has(key),
       `${name} must render ${key} in its returned ${sectionClass} DOM tree`);
   }
   const renderedFactKeys = visibleOutputTranslationKeys(factsNode);
+  for (const node of embeddedFacts) {
+    for (const key of visibleOutputTranslationKeys(node)) renderedFactKeys.add(key);
+  }
   for (const key of factKeys) {
     assert.ok(renderedFactKeys.has(key),
       `${name} must render ${key} in a visible output node inside ${factsClass}`);
@@ -465,8 +500,8 @@ test('credits keeps current facts visible before progressively disclosed experim
   assertDirectFactsContainer(app, {
     name: 'renderCreditDataStatus', sectionClass: 'credit-data-status',
     factsClass: 'credit-data-status-facts',
-    copyKeys: ['creditDataStatusTitle', 'creditForecastEvidence'],
-    factKeys: ['creditForecastEvidence'],
+    copyKeys: ['creditDataStatusTitle', 'creditDataActiveCount'],
+    factKeys: ['creditDataActiveCount'],
   });
   assertDirectFactsContainer(app, {
     name: 'renderActiveCreditPosition', sectionClass: 'active-credit-card',
