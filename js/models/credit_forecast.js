@@ -18,7 +18,11 @@ function unitRecipeCost(building, outputKey, year, priceFor) {
   if (workers > 0) {
     const workdayPrice = Number(priceFor('workers'));
     if (!(workdayPrice > 0)) return null;
-    inputCost += workers * workdayPrice;
+    // Game production and consumption rates are both per worker. One worker's
+    // workday belongs beside those rates; multiplying all three by the factory
+    // capacity would cancel in the quotient, while multiplying labor alone
+    // would overstate it by the establishment size.
+    inputCost += workdayPrice;
   }
   const output = outputRate * factors.productionFactor;
   return output > 0 ? inputCost / output : null;

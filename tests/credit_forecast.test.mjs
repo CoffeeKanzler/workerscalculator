@@ -48,6 +48,16 @@ test('component index recomputes electronic components before electronics', () =
   assert.ok(points[10].index > points[1].index);
   assert.ok(points[30].ecomponentsCost > points[10].ecomponentsCost);
   assert.ok(points[30].electronicsCost > points[10].electronicsCost);
+  const consumptionFactor = 0.4;
+  const productionFactor = 1 - 40 / 110;
+  const expectedComponents = ((0.01 * prices.plastics + 0.01 * prices.steel
+    + 0.008 * prices.chemicals) * consumptionFactor + prices.workers)
+    / (0.025 * productionFactor);
+  const expectedElectronics = ((0.01 * expectedComponents + 0.015 * prices.plastics
+    + 0.01 * prices.mcomponents) * consumptionFactor + prices.workers)
+    / (0.03 * productionFactor);
+  assert.ok(Math.abs(points[0].ecomponentsCost - expectedComponents) < 1e-9);
+  assert.ok(Math.abs(points[0].electronicsCost - expectedElectronics) < 1e-9);
 });
 
 test('component index keeps vanilla and DLC3 recipe chains separate', () => {

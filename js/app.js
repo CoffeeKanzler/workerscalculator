@@ -72,7 +72,7 @@ import {
   amortizationCorridor, deriveForecastRateScenarios, electronicsComponentIndex,
   forecastElectronicsPrices, futureExchangePath, historicalElectronicsComponentIndex,
   rankRelevantCreditOpportunities, rubPerUsdFromBasePrices,
-} from './models/credit_forecast.js?v=9';
+} from './models/credit_forecast.js?v=11';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
