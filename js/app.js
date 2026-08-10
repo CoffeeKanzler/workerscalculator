@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=207';
+import { STRINGS } from './i18n.js?v=209';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
 import { parseLiveStatsFile } from './live_stats.js?v=4';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=51';
@@ -65,8 +65,11 @@ import {
 } from './republic.js?v=23';
 import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
 import {
-  buildPriceIndex, evaluateLoanScenarios, summarizeInflation,
-} from './models/economic_analysis.js?v=2';
+  buildPriceIndex, buildResourcePriceIndex, evaluateLoanScenarios, summarizeInflation,
+} from './models/economic_analysis.js?v=5';
+import {
+  electronicsRecipeCost, rankElectronicsShipTrades,
+} from './models/electronics_analysis.js?v=4';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
@@ -99,8 +102,8 @@ import {
   filterAndSortVehicleOpportunities, rankUsedVehicleReplacements, rankUsedMarketArbitrage,
   rankUsedMarketBorderRoutes,
   paginateVehicleOpportunities, shareSafeSaveImport, vehicleCategoryGroup,
-  vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=21';
+  usedMarketRecyclingArbitrage, vehicleEconomicOpportunity, vehicleUsedMarketQuote,
+} from './fleet.js?v=22';
 import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
@@ -4877,6 +4880,110 @@ function renderMapTab() {
 // Observe: the save's own recorded history. Twelve series over the full span
 // of the republic — this was previously collapsed at the foot of the overview,
 // where a 3,002-record history sat 92% of the way down the page.
+function renderElectronicsInvestmentStrategy(historyRecords, currency, selectedLoans) {
+  const eco = economy();
+  const symbol = currencySymbol(currency);
+  const amount = value => Number.isFinite(value) ? `${fmt(value, 0)} ${symbol}` : '—';
+  const rate = value => Number.isFinite(value)
+    ? `${value >= 0 ? '+' : ''}${fmt(value * 100, 2)} %` : '—';
+  const currentRecord = state.statsRecords?.[
+    Math.min(state.recordIndex, (state.statsRecords?.length ?? 1) - 1)
+  ];
+  const year = Number(currentRecord?.year ?? historyRecords.at(-1)?.year);
+  const purchasePrice = eco.buy('eletronics', currency);
+  const sellPrice = eco.sell('eletronics', currency);
+  const priceIndex = buildResourcePriceIndex(state.statsRecords, {
+    resource: 'eletronics', currency, basis: 'sell',
+  });
+  const priceSummary = summarizeInflation(priceIndex);
+  const usedOffers = state.saveImport?.usedVehicleOffers ?? [];
+  const quotes = usedOffers.map(offer => vehicleUsedMarketQuote(offer, {
+    year, currency, economy: eco,
+  })).filter(Boolean);
+  const recoveryValue = quote => usedMarketRecyclingArbitrage(quote, {
+    currency, economy: eco,
+  })?.netRecycleValue;
+  const trades = selectedLoans.flatMap((loan, loanIndex) =>
+    rankElectronicsShipTrades(quotes, {
+      loan, purchasePrice, sellPrice, priceIndex, recoveryValue,
+    }).map(trade => ({ ...trade, loanIndex })))
+    .sort((a, b) => (b.scenarios.base?.profitWithCurrentRecovery ?? -Infinity)
+      - (a.scenarios.base?.profitWithCurrentRecovery ?? -Infinity));
+
+  const horizonYears = selectedLoans.length
+    ? Math.max(...selectedLoans.map(loan => loan.remainingDays)) / 365 : 10;
+  const recipeRows = (DATA.rawBuildings ?? [])
+    .filter(building => ['eletronic_factory', 'dlc3/electronics_factory'].includes(building.id))
+    .map(building => {
+      const current = electronicsRecipeCost(building, year, key => eco.buy(key, currency));
+      const future = electronicsRecipeCost(building, year + horizonYears, key => eco.buy(key, currency));
+      const pressure = current?.inputCostPerOutputTonne > 0
+        && Number.isFinite(future?.inputCostPerOutputTonne)
+        ? future.inputCostPerOutputTonne / current.inputCostPerOutputTonne - 1 : null;
+      return { building, current, future, pressure };
+    });
+  const recommendationKey = {
+    robust: 'electronicsTradeRobust', speculative: 'electronicsTradeSpeculative',
+    reject: 'electronicsTradeReject', unavailable: 'electronicsTradeUnavailable',
+  };
+
+  return el('section', { class: 'electronics-investment-strategy' },
+    el('div', { class: 'economic-decision-heading' },
+      el('div', {}, el('h3', {}, t('electronicsStrategyTitle')),
+        el('p', { class: 'hint' }, t('electronicsStrategyHint'))),
+      el('span', { class: 'evidence-badge exact' }, 'stats.ini + building.ini + usedveh.bin')),
+    el('div', { class: 'metric-grid economic-rate-grid' },
+      el('div', { class: 'metric-card' }, el('span', { class: 'metric-label' }, t('electronicsBuyNow')),
+        el('strong', {}, amount(purchasePrice))),
+      el('div', { class: 'metric-card' }, el('span', { class: 'metric-label' }, t('electronicsSellNow')),
+        el('strong', {}, amount(sellPrice))),
+      el('div', { class: 'metric-card' }, el('span', { class: 'metric-label' }, t('electronicsLatestExportInflation')),
+        el('strong', {}, rate(priceSummary.latestAnnual))),
+      el('div', { class: 'metric-card' }, el('span', { class: 'metric-label' }, t('electronicsCandidateCount')),
+        el('strong', {}, fmt(new Set(trades.map(trade => trade.quote.offer)).size, 0)))),
+    el('div', { class: 'electronics-recipe-grid' }, ...recipeRows.map(row =>
+      el('div', { class: 'totalsbox electronics-recipe-card' },
+        el('h4', {}, row.building.id.startsWith('dlc3/') ? t('electronicsRecipeDlc3') : t('electronicsRecipeVanilla')),
+        kv(t('electronicsRecipeYear'), Number.isFinite(year) ? fmt(year, 0) : '—'),
+        kv(t('electronicsConsumptionFactor'), row.current ? `${fmt(row.current.consumptionFactor * 100, 1)} %` : '—'),
+        kv(t('electronicsProductionFactor'), row.current ? `${fmt(row.current.productionFactor * 100, 1)} %` : '—'),
+        kv(t('electronicsDirectInputCost'), amount(row.current?.inputCostPerOutputTonne)),
+        kv(t('electronicsRecipePressure').replace('{years}', fmt(horizonYears, 1)), rate(row.pressure)),
+        el('p', { class: 'hint' }, t('electronicsRecipeCaveat'))))),
+    trades.length ? el('div', { class: 'tablewrap' },
+      el('table', { class: 'data electronics-trade-table' },
+        el('thead', {}, el('tr', {},
+          el('th', {}, t('vehicle')), el('th', {}, t('electronicsLoanTerms')),
+          el('th', { class: 'r' }, t('fleetCapacity')), el('th', { class: 'r' }, t('electronicsCapital')),
+          el('th', { class: 'r' }, t('electronicsRepayment')), el('th', { class: 'r' }, t('electronicsBreakEvenZero')),
+          el('th', { class: 'r' }, t('electronicsCurrentRecovery')), el('th', { class: 'r' }, t('electronicsFutureBase')),
+          el('th', { class: 'r' }, t('electronicsBaseResult')), el('th', { class: 'r' }, t('electronicsWorstZeroResult')),
+          el('th', {}, t('loanRecommendation')))),
+        el('tbody', {}, ...trades.slice(0, 25).map(trade => {
+          const base = trade.scenarios.base;
+          const worst = trade.scenarios.worst;
+          const baseProfit = base?.profitWithCurrentRecovery;
+          const worstProfit = worst?.profitZeroResidual;
+          return el('tr', {},
+            el('td', {}, trade.quote.offer.modelFacts.name),
+            el('td', {}, `#${trade.loanIndex + 1} · ${fmt(trade.loan.annualRate, 2)} % · ${fmt(trade.loan.remainingDays, 0)} d`),
+            el('td', { class: 'r' }, `${fmt(trade.capacity, 0)} t`),
+            el('td', { class: 'r' }, amount(trade.capitalRequired)),
+            el('td', { class: 'r' }, amount(trade.financing.totalPaid)),
+            el('td', { class: 'r' }, amount(trade.breakEvenSellPriceZeroResidual)),
+            el('td', { class: 'r' }, amount(trade.currentRecoveryValue)),
+            el('td', { class: 'r' }, amount(base?.futureSellPrice)),
+            el('td', { class: Number.isFinite(baseProfit) ? baseProfit >= 0 ? 'r pos' : 'r neg' : 'r' }, amount(baseProfit)),
+            el('td', { class: Number.isFinite(worstProfit) ? worstProfit >= 0 ? 'r pos' : 'r neg' : 'r' }, amount(worstProfit)),
+            el('td', {}, el('span', { class: `loan-recommendation ${trade.recommendation}` },
+              t(recommendationKey[trade.recommendation]))));
+        }))))
+      : el('p', { class: 'empty-state' }, t(!selectedLoans.length
+        ? 'electronicsNoLoan' : !usedOffers.length ? 'electronicsNoUsedOffers'
+          : !priceIndex.length ? 'electronicsNoHistory' : 'electronicsNoCompatibleShips')),
+    el('p', { class: 'hint warn' }, t('electronicsTradeCaveat')));
+}
+
 function renderEconomicDecisionSurface(historyRecords) {
   const currency = state.historyCurrency === 'USD' ? 'USD' : 'RUB';
   const basis = ['base', 'purchase', 'sell'].includes(state.historyInflationBasis)
@@ -4963,7 +5070,8 @@ function renderEconomicDecisionSurface(historyRecords) {
               el('th', {}, t('loanRealWorst')), el('th', {}, t('loanNominalPaid')),
               el('th', {}, t('loanMaxDailyPayment')), el('th', {}, t('loanRecommendation')))),
             el('tbody', {}, ...loanRows)))
-          : el('p', { class: 'empty-state' }, t('noActiveLoans')))));
+          : el('p', { class: 'empty-state' }, t('noActiveLoans')))),
+    renderElectronicsInvestmentStrategy(historyRecords, currency, selectedLoans));
 }
 
 function renderRepublicHistory() {

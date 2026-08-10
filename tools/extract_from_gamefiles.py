@@ -56,6 +56,7 @@ ECON_TOKENS = {
     'NAME', 'NAME_STR', 'WORKERS_NEEDED', 'PROFESORS_NEEDED', 'PRODUCTION', 'CONSUMPTION',
     'CONSUMPTION_PER_SECOND', 'CITIZEN_ABLE_SERVE', 'QUALITY_OF_LIVING',
     'ATTRACTIVE_SCORE', 'STORAGE', 'COST_RESOURCE', 'WASTE_CONSUMPTION',
+    'CONSUMPTION_INCREASE_ACCORDING_YEAR', 'PRODUCTION_DECREASE_ACCORDING_YEAR',
     'ELETRIC_CONSUMPTION_LIGHTING_WORKER_FACTOR',
     'ELETRIC_CONSUMPTION_LIVING_WORKER_FACTOR',
     'ELETRIC_CONSUMPTION_HEATING_WORKER_FACTOR',
@@ -105,6 +106,18 @@ def parse_building(path, ident=None, keep_all=False):
                 b['consumption'][args[0]] = float(args[1])
             elif key == 'CONSUMPTION_PER_SECOND':
                 b['consumptionPerSecond'][args[0]] = float(args[1])
+            elif key == 'CONSUMPTION_INCREASE_ACCORDING_YEAR' and len(args) >= 3:
+                b['consumptionIncreaseAccordingYear'] = {
+                    'startYear': float(args[0]),
+                    'yearSpan': float(args[1]),
+                    'maximumFactor': float(args[2]),
+                }
+            elif key == 'PRODUCTION_DECREASE_ACCORDING_YEAR' and len(args) >= 3:
+                b['productionDecreaseAccordingYear'] = {
+                    'startYear': float(args[0]),
+                    'yearSpan': float(args[1]),
+                    'minimumFactor': float(args[2]),
+                }
             elif key == 'CITIZEN_ABLE_SERVE':
                 b['citizenAbleServe'] = float(args[0])
             elif key == 'QUALITY_OF_LIVING':

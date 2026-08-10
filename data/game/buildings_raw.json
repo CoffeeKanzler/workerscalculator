@@ -3855,6 +3855,16 @@
   "electricWorkerFactors": {
    "living": 1.4
   },
+  "consumptionIncreaseAccordingYear": {
+   "startYear": 1960.0,
+   "yearSpan": 85.0,
+   "maximumFactor": 1.7
+  },
+  "productionDecreaseAccordingYear": {
+   "startYear": 1960.0,
+   "yearSpan": 120.0,
+   "minimumFactor": 0.3
+  },
   "de": "Fabrik für elektronische Bauteile",
   "en": "Electrical components factory"
  },
@@ -3883,6 +3893,16 @@
   "constructionResources": {},
   "electricWorkerFactors": {
    "living": 1.2
+  },
+  "consumptionIncreaseAccordingYear": {
+   "startYear": 1960.0,
+   "yearSpan": 100.0,
+   "maximumFactor": 2.0
+  },
+  "productionDecreaseAccordingYear": {
+   "startYear": 1960.0,
+   "yearSpan": 110.0,
+   "minimumFactor": 0.3
   },
   "de": "Elektronikmontagehalle",
   "en": "Electronics assembly hall"
@@ -18485,6 +18505,16 @@
   "electricWorkerFactors": {
    "living": 1.4
   },
+  "consumptionIncreaseAccordingYear": {
+   "startYear": 1930.0,
+   "yearSpan": 85.0,
+   "maximumFactor": 2.0
+  },
+  "productionDecreaseAccordingYear": {
+   "startYear": 1930.0,
+   "yearSpan": 120.0,
+   "minimumFactor": 0.2
+  },
   "dlc": "dlc3",
   "de": "Fabrik für elektronische Bauteile",
   "en": "Electrical components factory"
@@ -18514,6 +18544,16 @@
   "constructionResources": {},
   "electricWorkerFactors": {
    "living": 1.2
+  },
+  "consumptionIncreaseAccordingYear": {
+   "startYear": 1930.0,
+   "yearSpan": 100.0,
+   "maximumFactor": 2.0
+  },
+  "productionDecreaseAccordingYear": {
+   "startYear": 1930.0,
+   "yearSpan": 110.0,
+   "minimumFactor": 0.2
   },
   "dlc": "dlc3",
   "de": "Elektronikmontagehalle",
