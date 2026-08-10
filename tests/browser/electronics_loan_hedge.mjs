@@ -47,6 +47,19 @@ $Stat_ContractDurationDays 730
 $Stat_PaidAmount 0`,
 ].join('\n');
 
+const normalizeDisplay = text => text.replace(/(\d),(\d)/g, '$1.$2')
+  .replace(/\s+/g, ' ').trim();
+const integerFromLocaleAmount = text => Number([...text]
+  .filter(character => /\d/.test(character)).join(''));
+
+async function definitionValue(page, listSelector, label) {
+  return page.locator(`${listSelector} > div`).evaluateAll((rows, expectedLabel) => {
+    const row = rows.find(candidate => candidate.querySelector(':scope > dt')
+      ?.textContent.trim() === expectedLabel);
+    return row?.querySelector(':scope > dd')?.textContent.trim() ?? null;
+  }, label);
+}
+
 async function setResolvedTheme(page, expected) {
   for (let attempt = 0; attempt < 4; attempt += 1) {
     const resolved = await page.locator('.themeswitch').getAttribute('data-theme-resolved');
@@ -127,11 +140,28 @@ try {
   for (const expected of [
     'Experimental long-term forecast, not a general recommendation to borrow.',
     'Under these assumptions, the electronics strategy would be profitable after about',
-    'Required loan',
-    'Expected holding time',
-    'Cautious holding time',
   ]) {
     if (!electronicsText.includes(expected)) throw new Error(`expanded electronics is missing: ${expected}`);
+  }
+  const principalText = await definitionValue(page, '.electronics-primary-facts', 'Required loan');
+  const expectedHold = normalizeDisplay(await definitionValue(
+    page, '.electronics-primary-facts', 'Expected holding time') ?? '');
+  const cautiousHold = normalizeDisplay(await definitionValue(
+    page, '.electronics-primary-facts', 'Cautious holding time') ?? '');
+  const primaryExit = await definitionValue(page, '.electronics-primary-facts', 'Sell in');
+  const calculatorAmount = Number(await page.locator(
+    '.credit-calculator-controls label', { hasText: 'Credit amount' }).locator('input').inputValue());
+  const requiredPrincipal = integerFromLocaleAmount(principalText ?? '');
+  if (requiredPrincipal !== 323429 || requiredPrincipal === calculatorAmount
+      || calculatorAmount !== 100000) {
+    throw new Error(`electronics principal was not distinct from calculator amount: ${JSON.stringify({
+      principalText, requiredPrincipal, calculatorAmount,
+    })}`);
+  }
+  if (expectedHold !== '2.6 Years' || cautiousHold !== '3 Years' || primaryExit !== 'RUB') {
+    throw new Error(`electronics primary facts do not match the fixture: ${JSON.stringify({
+      expectedHold, cautiousHold, primaryExit,
+    })}`);
   }
   if (/Take the loan|Kredit aufnehmen|Assembly hall|Montagehalle/i.test(electronicsText)) {
     throw new Error('expanded electronics retains imperative or assembly-hall wording');
@@ -146,10 +176,17 @@ try {
   if (/Assembly hall|Montagehalle/i.test(assumptionsText)) {
     throw new Error('expanded assumptions retain an Assembly hall/Montagehalle label');
   }
-  const exitsText = `${await page.locator('.electronics-primary-facts').innerText()}\n${await page.locator(
-    'details.credit-electronics-assumptions .credit-investment-table').innerText()}`;
-  if (!exitsText.includes('RUB') || !exitsText.includes('USD')) {
-    throw new Error(`both exit currencies are not inspectable: ${exitsText}`);
+  const alternateExitRows = page.locator(
+    'details.credit-electronics-assumptions .credit-investment-table tbody tr');
+  if (await alternateExitRows.count() !== 1) {
+    throw new Error(`expected exactly one alternate exit row, got ${await alternateExitRows.count()}`);
+  }
+  const alternateExitCells = (await alternateExitRows.first().locator('td').allInnerTexts())
+    .map(normalizeDisplay);
+  if (primaryExit !== 'RUB' || alternateExitCells[0] !== 'USD') {
+    throw new Error(`primary and alternate exit rows do not match the fixture: ${JSON.stringify({
+      primaryExit, alternateExitCells,
+    })}`);
   }
 
   const plotOver = page.locator(
@@ -167,8 +204,9 @@ try {
   }));
   if (!tooltip.visible || tooltip.rows < 3
       || !tooltip.text.includes('Expected assumption')
+      || !tooltip.text.includes('Optimistic assumption')
       || !tooltip.text.includes('Cautious assumption')) {
-    throw new Error(`amortization hover did not expose expected/cautious paths: ${JSON.stringify(tooltip)}`);
+    throw new Error(`amortization hover did not expose all three forecast paths: ${JSON.stringify(tooltip)}`);
   }
   console.log('browser: both exit currencies and chart hover paths verified');
 
