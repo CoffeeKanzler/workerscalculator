@@ -66,17 +66,40 @@ test('electronics is an optional closed experiment with plain-language productio
     'history evidence must be a named native disclosure');
   assert.doesNotMatch(history, /el\('details', \{[^}]*open:/,
     'history evidence must start closed');
-  assert.doesNotMatch(electronics, /electronicsRecipeVanilla/,
-    'the production selector must not expose the internal Vanilla recipe label');
+  assert.match(electronics, /t\('electronicsProductionChain'\)/,
+    'the optional experiment must visibly name its production-chain selector');
+  assert.match(electronics, /\['vanilla', t\('electronicsProductionChainVanilla'\)\]/,
+    'the optional experiment must visibly offer the standard production chain');
+  assert.match(electronics, /\['dlc3', t\('electronicsProductionChainDlc3'\)\]/,
+    'the optional experiment must visibly offer the DLC production chain');
+
+  for (const key of [
+    'electronicsExperimentalWarning', 'electronicsMissingCosts', 'electronicsBreakEvenConditional',
+    'electronicsHoldingExpected', 'electronicsHoldingCautious', 'electronicsTradeCaveat',
+    'electronicsAssumptionsDetails', 'creditScenarioBase', 'creditScenarioFavorable',
+    'creditScenarioAdverse',
+  ]) {
+    assert.match(electronics, new RegExp(`t\\('${key}'\\)`),
+      `${key} must be visible in the optional electronics experiment`);
+  }
+  assert.match(history, /t\('creditHistoryNeedsStats'\)/,
+    'history evidence must tell the user when more stats.ini records are needed');
 
   for (const key of [
     'electronicsOptionalTitle', 'electronicsExperimentalWarning', 'electronicsMissingCosts',
     'electronicsBreakEvenConditional', 'electronicsHoldingExpected', 'electronicsHoldingCautious',
-    'electronicsAssumptionsDetails', 'electronicsProductionChain', 'electronicsRecipeVanilla',
-    'electronicsRecipeDlc3', 'electronicsTradeCaveat',
+    'electronicsAssumptionsDetails', 'electronicsProductionChain',
+    'electronicsProductionChainVanilla', 'electronicsProductionChainDlc3', 'electronicsTradeCaveat',
     'creditScenarioBase', 'creditScenarioFavorable', 'creditScenarioAdverse',
   ]) {
     assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2,
       `${key} must be translated in both languages`);
+  }
+
+  for (const key of ['electronicsProductionChainVanilla', 'electronicsProductionChainDlc3']) {
+    const values = i18n.match(new RegExp(`${key}: '([^']*)'`, 'g')) ?? [];
+    assert.equal(values.length, 2, `${key} must have a German and English visible value`);
+    assert.ok(values.every(value => !/Assembly hall|Montagehalle/.test(value)),
+      `${key} must not retain an Assembly hall/Montagehalle label`);
   }
 });

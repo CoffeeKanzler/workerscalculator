@@ -67,6 +67,11 @@ test('credits keeps current facts visible before progressively disclosed experim
     'renderCredits must compose the five dedicated sections');
   assert.deepEqual([...positions].sort((a, b) => a - b), positions,
     'current credit facts must precede the optional electronics experiment and history evidence');
-  assert.doesNotMatch(credits, /creditTakeLoanAction/,
-    'the Credits page must not present an imperative borrowing recommendation');
+  assert.doesNotMatch(app, /t\('creditTakeLoanAction'\)/,
+    'no Credits renderer may present an imperative borrowing recommendation');
+
+  for (const name of sectionNames.slice(0, 3)) {
+    assert.doesNotMatch(functionBody(app, name), /return\s+el\('details'/,
+      `${name} must return current credit facts directly, not hide the section in a disclosure`);
+  }
 });
