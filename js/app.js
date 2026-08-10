@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=214';
+import { STRINGS } from './i18n.js?v=215';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
 import { parseLiveStatsFile } from './live_stats.js?v=4';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=51';
@@ -14,7 +14,7 @@ import {
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
-} from './train.js?v=26';
+} from './train.js?v=28';
 import {
   createIndexedDbObservationStore,
   createIndexedDbStatsStore,
@@ -67,12 +67,12 @@ import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
 import {
   buildPriceIndex, buildResourcePriceIndex, evaluateLoanScenarios, rollingAnnualRates,
   rollingAnnualRateIntervals, simulateLoan, summarizeInflation,
-} from './models/economic_analysis.js?v=9';
+} from './models/economic_analysis.js?v=10';
 import {
   amortizationCorridor, deriveForecastRateScenarios, electronicsComponentIndex,
   forecastElectronicsPrices, futureExchangePath, historicalElectronicsComponentIndex,
   rankRelevantCreditOpportunities, rubPerUsdFromBasePrices,
-} from './models/credit_forecast.js?v=7';
+} from './models/credit_forecast.js?v=9';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
@@ -106,20 +106,20 @@ import {
   rankUsedMarketBorderRoutes,
   paginateVehicleOpportunities, shareSafeSaveImport, vehicleCategoryGroup,
   vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=24';
+} from './fleet.js?v=25';
 import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=24';
+} from './adapters/save_folder_adapter.js?v=26';
 import { matchSaveBuilding } from './adapters/save_projection.js?v=24';
-import { bootstrapRuntime } from './bootstrap.js?v=11';
+import { bootstrapRuntime } from './bootstrap.js?v=13';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
   QUICK_TOOLS_STORAGE_KEY, defaultQuickTools, normalizeQuickTools, reorderQuickTools,
   shouldOpenStartPage, relativeAge,
-} from './ui/command_center.js?v=16';
+} from './ui/command_center.js?v=17';
 
 const RUNTIME_CONFIG = getRuntimeConfig();
 const APP_RUNTIME = bootstrapRuntime({ config: RUNTIME_CONFIG });
