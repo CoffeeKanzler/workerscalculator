@@ -62,6 +62,7 @@ function parsedSave(overrides = {}) {
     vehicleLines: null,
     lineFileSummary: null,
     statsRecords: [{ index: 0, year: 1984, day: 123, current: true, averageProductivity: 0.82 }],
+    activeLoans: [{ currency: 'RUB', currentAmount: 100000 }],
     cityStats: [],
     blueprintOwned: ['bus'],
     membershipAudit: {
@@ -169,7 +170,8 @@ test('save folder reads required and optional core files locally and defers map 
     ]);
     assert.ok(progress.every(event => event.localOnly === true));
     assert.equal(result.sourceName, 'Kohleburg Republic');
-    assert.equal(result.statsRecords.length, 1);
+  assert.equal(result.statsRecords.length, 1);
+  assert.deepEqual(result.activeLoans, [{ currency: 'RUB', currentAmount: 100000 }]);
     assert.equal(result.productivity, 0.82);
     assert.equal(result.planning.metadata.operationalServices.regional[0].clinics.currentWorkers, 8);
     assert.equal(result.planning.metadata.residenceDetails.buildings[0].buildingIndex, 41);

@@ -1,7 +1,7 @@
-import { STRINGS } from './i18n.js?v=204';
-import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=28';
-import { parseLiveStatsFile } from './live_stats.js?v=2';
-import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=49';
+import { STRINGS } from './i18n.js?v=207';
+import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
+import { parseLiveStatsFile } from './live_stats.js?v=4';
+import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=51';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -45,7 +45,7 @@ import {
   cityWorkshopBuildings,
   resolveCityWorkshopRows,
 } from './city_planning.js?v=6';
-import { statsStateForImport } from './models/import_stats.js';
+import { statsStateForImport } from './models/import_stats.js?v=2';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
 import { mapLayerReport } from './models/map_layer_report.js?v=4';
@@ -64,6 +64,9 @@ import {
   alertCategory, alertGroup, filterRepublicAlerts, groupRepublicAlerts,
 } from './republic.js?v=23';
 import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
+import {
+  buildPriceIndex, evaluateLoanScenarios, summarizeInflation,
+} from './models/economic_analysis.js?v=2';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
@@ -102,9 +105,9 @@ import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=21';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=23';
-import { bootstrapRuntime } from './bootstrap.js?v=10';
+} from './adapters/save_folder_adapter.js?v=23';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=24';
+import { bootstrapRuntime } from './bootstrap.js?v=11';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
@@ -163,8 +166,8 @@ const SHARE_KEYS = ['lang', 'theme', 'currency', 'priceSource', 'decade', 'overr
   'buildingOverrides', 'customBuildings',
   'republicRange', 'republicResource', 'republicScope', 'republicAlertGroup', 'mapLayers', 'mapBuildingFilter',
   'mapPollutionOpacity', 'mapMetric', 'mapCategoryVisibility', 'republicAlertFilter',
-  'accessAlertsMuted', 'tab'];
-const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex'];
+  'accessAlertsMuted', 'historyCurrency', 'historyInflationBasis', 'tab'];
+const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex', 'activeLoans'];
 
 // ---------------------------------------------------------------- state
 const SAVES_KEY = 'wr-planner-saves-v1';
@@ -214,10 +217,13 @@ function createInitialState() {
     recordIndex: 0,
     statsRecords: null,          // parsed stats.ini records
     statsName: null,
+    activeLoans: [],             // current $LoanStart contracts from stats.ini
     overrides: {},               // {"sellRUB.steel": 123}
     historyKey: 'steel',
     historyCompareKeys: [],
     historyLogScale: false,
+    historyCurrency: 'RUB',
+    historyInflationBasis: 'base',
     plan: {
       settings: { productivity: 1, timeUnit: 'day', seasons: true, calendarFlow: 1, fertilizer: 1, currency: 'RUB' },
       fields: { small: 0, medium: 0, large: 0, hectares: null },
@@ -259,6 +265,7 @@ function createInitialState() {
     analysisSort: { col: 'profit', dir: -1 },
     analysisSearch: '',
     analysisWorkerType: 'resident',
+    analysisCostBasis: 'purchase',
     priceSort: { col: 'name', dir: 1 },
     saveSlotName: '',   // transient UI field for the named-save-slot input, not shared/exported
     snapshotNotice: '', // transient feedback for named snapshot actions
@@ -741,6 +748,7 @@ function handleFile(file) {
     catch (error) { return alert(error.message); }
     const { records } = parsed;
     state.statsRecords = records;
+    state.activeLoans = parsed.loans;
     state.statsName = file.name;
     state.recordIndex = records.length - 1; // newest snapshot
     state.priceSource = 'stats';
@@ -783,6 +791,7 @@ async function refreshLiveStats() {
 
     liveStatsRevision = parsed.revision;
     state.statsRecords = parsed.records;
+    state.activeLoans = parsed.loans;
     state.statsName = parsed.name;
     state.recordIndex = parsed.records.length - 1;
     state.priceSource = 'stats';
@@ -1983,6 +1992,7 @@ function renderChain() {
 function renderAnalysis(currency = state.currency) {
   const prices = currentPrices();
   const workerType = state.analysisWorkerType === 'guest' ? 'guest' : 'resident';
+  const costBasis = state.analysisCostBasis === 'opportunity' ? 'opportunity' : 'purchase';
   const measuredWorkerCost = workerCostForType(prices, currency, workerType);
   const workerCost = measuredWorkerCost ?? 0;
   const workerLabel = t(workerType === 'guest' ? 'workerGuest' : 'workerResident');
@@ -1993,7 +2003,7 @@ function renderAnalysis(currency = state.currency) {
       : `${t('workerNeedCost')}: ${fmt(workerCost, 2)} ${currencySymbol(currency)}`;
   const eco = economy();
   const rows = prodBuildings().map(b => {
-    const { income, expenses, profit } = eco.buildingProfit(b, currency);
+    const { income, expenses, profit } = eco.buildingProfit(b, currency, 1, 1, 1, costBasis);
     const buildCost = eco.buildCost(b, currency);
     return {
       b, income, expenses, profit,
@@ -2056,7 +2066,14 @@ function renderAnalysis(currency = state.currency) {
         workerType,
         value => { state.analysisWorkerType = value; },
       )),
-      el('span', { class: 'hint' }, workerCostHint)),
+      el('span', { class: 'hint' }, workerCostHint),
+      el('label', {}, t('costBasis'), selectInput(
+        [['purchase', t('costBasisPurchase')], ['opportunity', t('costBasisOpportunity')]],
+        costBasis,
+        value => { state.analysisCostBasis = value; },
+      )),
+      el('span', { class: 'hint cost-basis-hint' },
+        t(costBasis === 'purchase' ? 'costBasisPurchaseHint' : 'costBasisOpportunityHint'))),
     el('input', {
       type: 'search', placeholder: t('searchPlaceholder'), value: state.analysisSearch,
       oninput: e => { state.analysisSearch = e.target.value; update(); },
@@ -2421,7 +2438,7 @@ async function handleSaveDirectory(fileList) {
       onProgress: presentSaveAdapterProgress,
     });
     const {
-      sourceName, parsed, planning: imported, statsRecords, productivity,
+      sourceName, parsed, planning: imported, statsRecords, activeLoans, productivity,
       statsFile, deferredMapFiles, workshop,
     } = result;
     DATA.workshopBuildings = workshop.workshopBuildings;
@@ -2450,6 +2467,7 @@ async function handleSaveDirectory(fileList) {
     // republic's price history.
     const statsState = statsStateForImport({
       statsRecords,
+      activeLoans,
       statsFileName: statsFile?.name ?? null,
       previousPriceSource: next.priceSource,
     });
@@ -2495,6 +2513,7 @@ async function handleSaveDirectory(fileList) {
     state.statsRecords = statsState.statsRecords;
     state.statsName = statsState.statsName;
     state.recordIndex = statsState.recordIndex;
+    state.activeLoans = statsState.activeLoans;
     await statsStore.save(statsState.statsRecords, { name: statsState.statsName })
       .catch(error => console.error('stats history was not saved:', error));
     state.saveSlotName = importName;
@@ -2617,6 +2636,7 @@ function renderHome() {
     replaceSharedState({ ...createInitialState(), ...preserved, tab });
     state.statsRecords = null;
     state.statsName = null;
+    state.activeLoans = [];
     update();
   };
   const manual = el('div', { class: 'start-card' },
@@ -3382,9 +3402,9 @@ function workersNeededCell(w) {
   return el('td', { class: 'r' }, `${fmt(w.optimal, 0)} / ${fmt(w.max, 0)}`);
 }
 
-function renderRepublicLineChart(title, series, evidence = 'stats.ini') {
+function renderRepublicLineChart(title, series, evidence = 'stats.ini', evidenceClass = 'exact') {
   const box = el('div', { class: 'history republic-chart' },
-    el('h3', {}, title, el('span', { class: 'evidence-badge exact' }, evidence)));
+    el('h3', {}, title, el('span', { class: `evidence-badge ${evidenceClass}` }, evidence)));
   const nonEmpty = series.filter(item => item.points.length);
   if (!nonEmpty.length) return el('div', { class: 'history republic-chart' },
     el('h3', {}, title), el('p', { class: 'hint' }, t('unavailable')));
@@ -4857,6 +4877,95 @@ function renderMapTab() {
 // Observe: the save's own recorded history. Twelve series over the full span
 // of the republic — this was previously collapsed at the foot of the overview,
 // where a 3,002-record history sat 92% of the way down the page.
+function renderEconomicDecisionSurface(historyRecords) {
+  const currency = state.historyCurrency === 'USD' ? 'USD' : 'RUB';
+  const basis = ['base', 'purchase', 'sell'].includes(state.historyInflationBasis)
+    ? state.historyInflationBasis : 'base';
+  const normalIndex = buildPriceIndex(state.statsRecords, { currency, basis: 'base' });
+  const visibleIndex = buildPriceIndex(historyRecords, { currency, basis });
+  const summary = summarizeInflation(visibleIndex);
+  const symbol = currencySymbol(currency);
+  const rate = value => Number.isFinite(value)
+    ? `${value >= 0 ? '+' : ''}${fmt(value * 100, 2)} %` : '—';
+  const amount = value => Number.isFinite(value) ? `${fmt(value, 0)} ${symbol}` : '—';
+  const basisLabel = {
+    base: t('inflationNormal'), purchase: t('inflationImport'), sell: t('inflationExport'),
+  }[basis];
+  const metric = (label, value) => el('div', { class: 'metric-card' },
+    el('span', { class: 'metric-label' }, label),
+    el('strong', {}, value),
+    el('span', { class: 'evidence-badge derived' }, t('derived')));
+  const selectedLoans = state.activeLoans.filter(loan => loan.currency === currency);
+  const reasonKeys = {
+    existingPenalty: 'loanReasonExistingPenalty',
+    insufficientInflationHistory: 'loanReasonInsufficientInflationHistory',
+    inflationExceedsLoanCost: 'loanReasonInflationExceedsLoanCost',
+    lowPositiveRealCost: 'loanReasonLowPositiveRealCost',
+    highPositiveRealCost: 'loanReasonHighPositiveRealCost',
+  };
+  const recommendationKeys = {
+    favorable: 'loanFavorable', tight: 'loanTight', risky: 'loanRisky',
+  };
+  const loanRows = selectedLoans.map((loan, index) => {
+    const decision = evaluateLoanScenarios(loan, normalIndex);
+    return el('tr', {},
+      el('td', {}, `#${index + 1}`),
+      el('td', { class: 'r' }, amount(loan.currentAmount + loan.penaltyAmount)),
+      el('td', { class: 'r' }, fmt(loan.remainingDays, 0)),
+      el('td', { class: 'r' }, rate(loan.annualRate / 100)),
+      el('td', { class: 'r' }, rate(decision.effectiveRate)),
+      el('td', { class: 'r' }, rate(decision.realRates.base)),
+      el('td', { class: 'r pos' }, rate(decision.realRates.best)),
+      el('td', { class: 'r warn' }, rate(decision.realRates.worst)),
+      el('td', { class: 'r' }, amount(decision.simulation.totalPaid)),
+      el('td', { class: 'r' }, amount(decision.simulation.maxDailyPayment)),
+      el('td', {}, el('span', { class: `loan-recommendation ${decision.recommendation}` },
+        t(recommendationKeys[decision.recommendation])),
+      el('span', { class: 'loan-reasons' }, decision.reasons
+        .map(reason => t(reasonKeys[reason] ?? reason)).join(' '))));
+  });
+
+  return el('section', { class: 'economic-decision-strip' },
+    el('div', { class: 'economic-decision-heading' },
+      el('div', {}, el('h2', {}, t('economicDecisionTitle')),
+        el('p', { class: 'hint' }, t('economicDecisionHint'))),
+      el('span', { class: 'evidence-badge exact' }, 'stats.ini')),
+    el('div', { class: 'settingsbar economic-decision-controls' },
+      el('label', {}, t('inflationCurrency'), selectInput(
+        [['RUB', '₽ · RUB'], ['USD', '$ · USD']], currency,
+        value => { state.historyCurrency = value; })),
+      el('label', {}, t('inflationSeries'), selectInput(
+        [['base', t('inflationNormal')], ['purchase', t('inflationImport')], ['sell', t('inflationExport')]],
+        basis, value => { state.historyInflationBasis = value; }))),
+    el('div', { class: 'economic-decision-body' },
+      el('div', { class: 'economic-inflation-panel' },
+        el('div', { class: 'metric-grid economic-rate-grid' },
+          metric(t('inflationLatestAnnual'), rate(summary.latestAnnual)),
+          metric(t('inflationFiveYear'), rate(summary.fiveYearAnnual)),
+          metric(t('inflationAllHistory'), rate(summary.allAnnual)),
+          metric(t('inflationCoverage'), fmt(summary.coverage, 0))),
+        renderRepublicLineChart(
+          `${basisLabel} · ${t('inflationIndex')} (${currency})`,
+          [{ label: basisLabel, color: currency === 'USD' ? '#27ae60' : '#8e44ad',
+            points: seriesFromRecords(visibleIndex, point => point.index) }],
+          t('derived'), 'derived'),
+        el('p', { class: 'hint' }, basis === 'base'
+          ? t('normalInflationLoanEvidence') : t('marketInflationRiskHint'))),
+      el('div', { class: 'economic-loan-panel' },
+        el('h3', {}, `${t('loanDecisionTitle')} · ${currency}`),
+        el('p', { class: 'hint' }, t('loanDecisionHint')),
+        selectedLoans.length ? el('div', { class: 'tablewrap' },
+          el('table', { class: 'data loan-decision-table' },
+            el('thead', {}, el('tr', {},
+              el('th', {}, '#'), el('th', {}, t('loanPrincipal')), el('th', {}, t('loanDays')),
+              el('th', {}, t('loanApr')), el('th', {}, t('loanEffectiveRate')),
+              el('th', {}, t('loanRealBase')), el('th', {}, t('loanRealBest')),
+              el('th', {}, t('loanRealWorst')), el('th', {}, t('loanNominalPaid')),
+              el('th', {}, t('loanMaxDailyPayment')), el('th', {}, t('loanRecommendation')))),
+            el('tbody', {}, ...loanRows)))
+          : el('p', { class: 'empty-state' }, t('noActiveLoans')))));
+}
+
 function renderRepublicHistory() {
   if (!state.statsRecords?.length) {
     return el('section', {}, el('p', { class: 'hint' }, t('noHistory')));
@@ -4896,6 +5005,7 @@ function renderRepublicHistory() {
       }, t(`range.${range}`))),
       resourceOptions.length ? selectInput(resourceOptions, state.republicResource,
         value => { state.republicResource = value; }) : null),
+    renderEconomicDecisionSurface(historyRecords),
     el('div', { class: 'chart-grid' },
       renderRepublicLineChart(t('citizenHistory'), [
         series(t('adults'), '#d35400', record => record.adults),

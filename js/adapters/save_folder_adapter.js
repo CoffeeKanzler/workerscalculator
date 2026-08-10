@@ -1,6 +1,6 @@
 import { resolveVehicleModels } from '../fleet.js?v=7';
 import { latestProductivity } from '../save_model.js?v=20';
-import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=23';
+import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=24';
 import { readWorkshopIndex } from '../models/workshop_index.js?v=2';
 
 const REQUIRED_FILES = ['namepoints.bin', 'buildings_game.bin'];
@@ -175,7 +175,7 @@ export async function orchestrateWorkshopCatalog(buildings, vehicles = [], {
 
 export function parseSaveInWorker(payload, {
   WorkerClass = globalThis.Worker,
-  workerUrl = new URL('../savegame_worker.js?v=37', import.meta.url),
+  workerUrl = new URL('../savegame_worker.js?v=39', import.meta.url),
   onProgress,
 } = {}) {
   return new Promise((resolve, reject) => {
@@ -277,6 +277,7 @@ export async function importSaveFolder(fileList, {
   const sourceName = parsed.header?.title || relative.split('/')[0]
     || namepoints.name.replace(/\.bin$/i, '') || 'W&R save';
   const statsRecords = parsed.statsRecords ?? [];
+  const activeLoans = parsed.activeLoans ?? [];
   const productivity = latestProductivity(statsRecords, 1);
 
   emit(onProgress, 'resolving-workshop');
@@ -347,6 +348,7 @@ export async function importSaveFolder(fileList, {
     planning,
     model,
     statsRecords,
+    activeLoans,
     productivity,
     statsFile: byName.get('stats.ini') ?? null,
     deferredMapFiles,

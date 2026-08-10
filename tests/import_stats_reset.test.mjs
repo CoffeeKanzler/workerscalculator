@@ -8,8 +8,10 @@ import { statsStateForImport } from '../js/models/import_stats.js';
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 
 test('a save with stats.ini becomes the price source', () => {
+  const activeLoans = [{ currency: 'RUB', currentAmount: 100000 }];
   const next = statsStateForImport({
     statsRecords: [{ year: 1979 }, { year: 1980 }, { year: 1981 }],
+    activeLoans,
     statsFileName: 'stats.ini',
     previousPriceSource: 'default',
   });
@@ -18,6 +20,7 @@ test('a save with stats.ini becomes the price source', () => {
   assert.equal(next.statsName, 'stats.ini');
   assert.equal(next.recordIndex, 2, 'the newest record is the one shown');
   assert.equal(next.priceSource, 'stats');
+  assert.deepEqual(next.activeLoans, activeLoans);
 });
 
 // replaceSharedState only replaces SHARE_KEYS, and statsRecords is deliberately
@@ -36,6 +39,7 @@ test('a save without stats.ini clears the previous save records', () => {
   assert.equal(next.recordIndex, 0);
   // Leaving this at 'stats' would price the new republic from the old save.
   assert.equal(next.priceSource, 'default');
+  assert.deepEqual(next.activeLoans, []);
 });
 
 test('a save without stats.ini keeps a price source that does not depend on stats', () => {
@@ -65,4 +69,13 @@ test('the import path resets stats state instead of letting it leak across saves
   assert.match(body, /statsStateForImport\(/);
   // The bare conditional assignment left the previous save's records in place.
   assert.doesNotMatch(body, /if \(statsRecords\.length\) \{\s*state\.statsRecords = statsRecords;/);
+  assert.match(app, /activeLoans:\s*\[\]/);
+  assert.match(body, /activeLoans/);
+  assert.match(body, /state\.activeLoans = statsState\.activeLoans/);
+});
+
+test('manual and live stats refreshes replace active loans with the current file', async () => {
+  const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
+
+  assert.ok((app.match(/state\.activeLoans = parsed\.loans/g) ?? []).length >= 2);
 });

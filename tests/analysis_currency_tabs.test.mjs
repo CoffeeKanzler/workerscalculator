@@ -42,7 +42,7 @@ test('analysis rows and labels use the selected analysis currency', async () => 
   );
 
   assert.match(renderAnalysis, /function renderAnalysis\(currency = state\.currency\)/);
-  assert.match(renderAnalysis, /buildingProfit\(b, currency\)/);
+  assert.match(renderAnalysis, /buildingProfit\(b, currency,/);
   assert.match(renderAnalysis, /buildCost\(b, currency\)/);
   assert.match(renderAnalysis, /currencySymbol\(currency\)/);
 });

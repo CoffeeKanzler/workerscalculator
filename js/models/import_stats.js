@@ -8,12 +8,14 @@
 // "start a manual plan" path telling the same story.
 export function statsStateForImport({
   statsRecords = null,
+  activeLoans = [],
   statsFileName = null,
   previousPriceSource = 'default',
 } = {}) {
   if (Array.isArray(statsRecords) && statsRecords.length) {
     return {
       statsRecords,
+      activeLoans: Array.isArray(activeLoans) ? activeLoans : [],
       statsName: statsFileName,
       recordIndex: statsRecords.length - 1,
       priceSource: 'stats',
@@ -21,6 +23,7 @@ export function statsStateForImport({
   }
   return {
     statsRecords: null,
+    activeLoans: [],
     statsName: null,
     recordIndex: 0,
     // Only fall back when the current source has nothing left to read from.

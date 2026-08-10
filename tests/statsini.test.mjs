@@ -1,9 +1,49 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  parseBlueprintOwned, parseCityStatsIni, parseStatsIni, recordToPrices, resourceHistoryKeys,
+  parseBlueprintOwned, parseCityStatsIni, parseLoans, parseStatsIni, recordToPrices, resourceHistoryKeys,
   statsPayloadText,
 } from '../js/statsini.js';
+
+const LOANS = `$LoanStart
+$LoanSubType 3
+$YearInterestRate 5.0000
+$YearInterestRatePenalty 10.0000
+$LoanType 1
+$CurrentDurationDays 364
+$CurrentAmount 100000.0000
+$CurrentAmountForPenalty 250.0000
+$Stat_InitialAmount 100000.0000
+$Stat_ContractDurationDays 365
+$Stat_PaidAmount 800.0000
+$LoanStart
+$LoanSubType 4
+$YearInterestRate 6.5000
+$YearInterestRatePenalty 13.0000
+$LoanType 2
+$CurrentDurationDays 729
+$CurrentAmount 50000.0000
+$CurrentAmountForPenalty 0.0000
+$Stat_InitialAmount 60000.0000
+$Stat_ContractDurationDays 730
+$Stat_PaidAmount 12000.0000
+$LoanStart
+$LoanType 1
+$CurrentAmount 99
+`;
+
+test('parses complete active RUB and USD loan contracts without accepting partial blocks', () => {
+  const loans = parseLoans(LOANS);
+  assert.equal(loans.length, 2);
+  assert.deepEqual(loans[0], {
+    annualRate: 5, penaltyRate: 10, type: 1, currency: 'RUB', subtype: 3,
+    remainingDays: 364, currentAmount: 100000, penaltyAmount: 250,
+    initialAmount: 100000, contractDays: 365, paidAmount: 800,
+  });
+  assert.equal(loans[1].currency, 'USD');
+  assert.equal(loans[1].annualRate, 6.5);
+  assert.equal(loans[1].remainingDays, 729);
+});
 
 const SAMPLE = `$STAT_RECORD 0
 ====
