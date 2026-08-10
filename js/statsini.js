@@ -124,6 +124,45 @@ export function parseBlueprintOwned(text) {
   return ids;
 }
 
+const LOAN_FIELDS = {
+  YearInterestRate: 'annualRate',
+  YearInterestRatePenalty: 'penaltyRate',
+  LoanType: 'type',
+  LoanSubType: 'subtype',
+  CurrentDurationDays: 'remainingDays',
+  CurrentAmount: 'currentAmount',
+  CurrentAmountForPenalty: 'penaltyAmount',
+  Stat_InitialAmount: 'initialAmount',
+  Stat_ContractDurationDays: 'contractDays',
+  Stat_PaidAmount: 'paidAmount',
+};
+
+export function parseLoans(text) {
+  const loans = [];
+  let loan = null;
+  const finish = () => {
+    if (!loan) return;
+    const complete = Object.values(LOAN_FIELDS).every(field => Number.isFinite(loan[field]));
+    if (complete && (loan.type === 1 || loan.type === 2)) {
+      loans.push({ ...loan, currency: loan.type === 1 ? 'RUB' : 'USD' });
+    }
+  };
+  for (const rawLine of String(text ?? '').split(/\r?\n/)) {
+    const line = rawLine.trim();
+    if (line === '$LoanStart') {
+      finish();
+      loan = {};
+      continue;
+    }
+    if (!loan) continue;
+    const match = line.match(/^\$(\S+)\s+(-?[\d.]+)/);
+    const field = match ? LOAN_FIELDS[match[1]] : null;
+    if (field) loan[field] = Number(match[2]);
+  }
+  finish();
+  return loans;
+}
+
 export function parseStatsIni(text) {
   const records = [];
   let rec = null;

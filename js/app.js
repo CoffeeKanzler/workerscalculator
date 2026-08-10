@@ -1,6 +1,6 @@
 import { STRINGS } from './i18n.js?v=205';
-import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=28';
-import { parseLiveStatsFile } from './live_stats.js?v=2';
+import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=29';
+import { parseLiveStatsFile } from './live_stats.js?v=3';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=50';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
