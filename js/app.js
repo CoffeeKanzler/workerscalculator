@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=216';
+import { STRINGS } from './i18n.js?v=217';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
 import { parseLiveStatsFile } from './live_stats.js?v=4';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=51';
@@ -68,6 +68,7 @@ import {
   buildPriceIndex, buildResourcePriceIndex, evaluateLoanScenarios, rollingAnnualRates,
   rollingAnnualRateIntervals, simulateLoan, summarizeInflation,
 } from './models/economic_analysis.js?v=11';
+import { creditVerdictKey, summarizeCreditTerms } from './models/credit_summary.js?v=1';
 import {
   amortizationCorridor, deriveForecastRateScenarios, electronicsComponentIndex,
   forecastElectronicsPrices, futureExchangePath, historicalElectronicsComponentIndex,
@@ -4913,6 +4914,206 @@ function electronicsForecastFor(currency, year, variant, eco) {
   return { normalIndex, electronicsIndex, recipe, rates, paths };
 }
 
+function renderCreditDataStatus(context) {
+  return el('section', { class: 'credit-data-status' },
+    el('h3', {}, t('creditDataStatusTitle')),
+    el('div', { class: 'credit-data-status-facts' },
+      el('span', { class: 'credit-status-provenance' }, t('creditForecastEvidence')),
+      el('span', {}, t('creditDataActiveCount'), el('strong', {}, fmt(context.selectedLoans.length, 0))),
+      el('span', {}, t('creditDataHistoryCount'), el('strong', {}, fmt(context.normalIndex.length, 0))),
+      el('span', {}, t('creditDataUsedOffers'), el('strong', {}, fmt(context.quotes.length, 0)))));
+}
+
+function renderActiveCreditPosition(context) {
+  return el('section', { class: 'active-credit-card' },
+    el('h3', {}, t('creditActivePositionTitle')),
+    el('p', { class: 'hint' }, t('creditPaymentReality')),
+    el('div', { class: 'active-credit-facts' },
+      el('div', { class: 'active-credit-ledger-head' },
+        el('output', {}, t('creditTotalRepayment')),
+        el('output', {}, t('creditMaximumDailyPayment')),
+        el('output', {}, t('creditExpectedRealRate'))),
+      context.activeCredits.length
+        ? context.activeCredits.map(({ loan, summary }, index) => el('article', {
+          class: `credit-ledger-card ${context.verdictClass(summary)}`,
+        },
+        el('div', { class: 'credit-ledger-heading' },
+          el('strong', {}, `${t('creditActiveContracts')} #${index + 1}`),
+          el('span', { class: `credit-verdict-strip ${context.verdictClass(summary)}` },
+            t(creditVerdictKey(summary)))),
+        el('dl', { class: 'credit-fact-ledger' },
+          el('div', {}, el('dt', {}, t('loanPrincipal')), el('dd', {}, context.amount(loan.currentAmount))),
+          Number(loan.penaltyAmount) > 0
+            ? el('div', { class: 'penalty' }, el('dt', {}, t('loanPenalty')),
+              el('dd', {}, context.amount(loan.penaltyAmount))) : null,
+          el('div', {}, el('dt', {}, t('loanDays')), el('dd', {}, fmt(loan.remainingDays, 0))),
+          el('div', {}, el('dt', {}, t('creditTotalRepayment')), el('dd', {}, context.amount(summary.totalPaid))),
+          el('div', {}, el('dt', {}, t('creditMaximumDailyPayment')),
+            el('dd', {}, context.amount(summary.maxDailyPayment))),
+          el('div', {}, el('dt', {}, t('loanEffectiveRate')), el('dd', {}, context.rate(summary.effectiveRate))),
+          el('div', {}, el('dt', {}, t('creditExpectedRealRate')), el('dd', {},
+            summary.hasInflationEvidence ? context.rate(summary.expectedRealRate) : t('creditInflationUnavailable'))))))
+        : el('p', { class: 'empty-state' }, t('noActiveLoans'))),
+    context.activeCredits.length ? el('details', { class: 'credit-assessment-disclosure' },
+      el('summary', {}, t('creditAssessmentDetails')),
+      el('p', { class: 'hint' }, t('loanDecisionHint')),
+      ...context.activeCredits.map(({ scenarios }, index) => el('div', { class: 'credit-scenario-row' },
+        el('strong', {}, `#${index + 1}`),
+        el('span', {}, `${t('loanRealBest')}: ${context.rate(scenarios.realRates.best)}`),
+        el('span', {}, `${t('loanRealBase')}: ${context.rate(scenarios.realRates.base)}`),
+        el('span', {}, `${t('loanRealWorst')}: ${context.rate(scenarios.realRates.worst)}`))))
+      : null);
+}
+
+function renderNewCreditCalculator(context) {
+  return el('section', { class: 'credit-calculator' },
+    el('h3', {}, t('creditNewCalculatorTitle')),
+    el('p', { class: 'hint' }, t('creditCalculatorHint')),
+    el('div', { class: 'credit-calculator-results' },
+      el('div', { class: 'settingsbar credit-calculator-controls' },
+        el('label', {}, t('creditAmount'), numInput(state.creditAmount,
+          value => { state.creditAmount = value; }, { min: 0 })),
+        el('label', {}, t('loanApr'), numInput(state.creditApr,
+          value => { state.creditApr = value; }, { min: 0, step: .1 })),
+        el('label', {}, t('creditTermYears'), numInput(state.creditTermYears,
+          value => { state.creditTermYears = value; }, { min: .1, step: .5 })),
+        el('label', {}, t('inflationCurrency'), selectInput(
+          [['RUB', '₽ · RUB'], ['USD', '$ · USD']], context.currency,
+          value => { state.historyCurrency = value; }))),
+      el('div', { class: 'credit-calculator-result-grid' },
+        el('output', {}, el('span', {}, t('creditTotalRepayment')),
+          el('strong', {}, context.amount(context.hypotheticalSummary.totalPaid))),
+        el('output', {}, el('span', {}, t('creditAdditionalCost')),
+          el('strong', {}, context.amount(context.hypotheticalSummary.additionalCost))),
+        el('output', {}, el('span', {}, t('creditMaximumDailyPayment')),
+          el('strong', {}, context.amount(context.hypotheticalSummary.maxDailyPayment))),
+        el('output', {}, el('span', {}, t('loanEffectiveRate')),
+          el('strong', {}, context.rate(context.hypotheticalSummary.effectiveRate))),
+        el('output', {}, el('span', {}, t('creditExpectedRealRate')),
+          el('strong', {}, context.hypotheticalSummary.hasInflationEvidence
+            ? context.rate(context.hypotheticalSummary.expectedRealRate) : '—'))),
+      el('div', { class: `credit-verdict-strip ${context.verdictClass(context.hypotheticalSummary)}` },
+        el('strong', {}, t(creditVerdictKey(context.hypotheticalSummary))))),
+    el('details', { class: 'credit-inflation-disclosure' },
+      el('summary', {}, t('creditCompareInflationDetails')),
+      context.hypotheticalSummary.hasInflationEvidence
+        ? el('div', { class: 'credit-inflation-comparison' },
+          el('span', {}, t('creditGeneralPriceDevelopment')),
+          el('strong', {}, context.rate(context.normalSummary.latestAnnual)),
+          el('p', { class: 'hint' }, t('normalInflationLoanEvidence')))
+        : el('p', { class: 'empty-state' }, t('creditHistoryNeedsStats'))));
+}
+
+function renderOptionalElectronicsStrategy(context) {
+  return el('details', { class: 'credit-electronics-disclosure' },
+    el('summary', {}, t('electronicsOptionalTitle')),
+    el('div', { class: 'credit-disclosure-body' },
+      el('p', { class: 'credit-experimental-warning' }, t('electronicsExperimentalWarning')),
+      el('div', { class: 'electronics-missing-costs' },
+        el('strong', {}, t('electronicsMissingCosts')),
+        el('ul', {},
+          el('li', {}, t('electronicsMissingOperations')),
+          el('li', {}, t('electronicsMissingTransport')),
+          el('li', {}, t('electronicsMissingStorage')),
+          el('li', {}, t('electronicsMissingRules')))),
+      el('div', { class: 'settingsbar credit-electronics-controls' },
+        el('label', {}, t('creditFinancingTerms'), selectInput(
+          context.financingOptions,
+          context.financingOptions.some(([value]) => value === state.creditFinancingSource)
+            ? state.creditFinancingSource : 'hypothetical',
+          value => { state.creditFinancingSource = value; })),
+        el('label', {}, t('electronicsProductionChain'), selectInput(
+          [['vanilla', t('electronicsProductionChainVanilla')],
+            ['dlc3', t('electronicsProductionChainDlc3')]],
+          context.variant, value => { state.creditRecipeVariant = value; }))),
+      context.best ? el('div', { class: 'electronics-strategy-result' },
+        el('p', { class: `credit-verdict-strip ${context.best.assessment}` },
+          t('electronicsBreakEvenConditional').replace(
+            '{years}', fmt(context.best.baseBreakEvenMonth / 12, 1))),
+        el('dl', { class: 'credit-fact-ledger electronics-primary-facts' },
+          el('div', {}, el('dt', {}, t('creditRequiredPrincipal')),
+            el('dd', {}, context.amount(context.best.capitalRequired))),
+          el('div', {}, el('dt', {}, t('electronicsHoldingExpected')),
+            el('dd', {}, context.monthLabel(context.best.baseBreakEvenMonth))),
+          el('div', {}, el('dt', {}, t('electronicsHoldingCautious')),
+            el('dd', {}, context.monthLabel(context.best.adverseBreakEvenMonth))),
+          el('div', {}, el('dt', {}, t('creditExitCurrency')),
+            el('dd', {}, context.best.exitCurrency))),
+        el('p', { class: 'hint' }, `${context.best.shipName} · ${fmt(context.best.capacity, 0)} t`))
+        : el('p', { class: 'empty-state' }, t('creditNoRelevantElectronics')),
+      context.best ? el('details', { class: 'credit-electronics-assumptions' },
+        el('summary', {}, t('electronicsAssumptionsDetails')),
+        el('p', { class: 'hint' }, t('electronicsTradeCaveat')),
+        el('div', { class: 'credit-recipe-evidence' },
+          el('strong', {}, t('electronicsProductionChain')),
+          el('span', {}, context.variant === 'dlc3'
+            ? t('electronicsProductionChainDlc3') : t('electronicsProductionChainVanilla')),
+          context.activeRecipe?.length ? el('span', {}, t('electronicsRecipePressure')
+            .replace('{years}', '30'), `: ${fmt(context.activeRecipe.at(-1).index - 100, 1)} %`) : null),
+        context.best.alternateRoutes.length ? el('div', { class: 'tablewrap' },
+          el('table', { class: 'data credit-investment-table' },
+            el('thead', {}, el('tr', {}, el('th', {}, t('creditAlternateExits')),
+              el('th', {}, t('electronicsHoldingExpected')),
+              el('th', {}, t('electronicsHoldingCautious')))),
+            el('tbody', {}, ...context.best.alternateRoutes.map(route => el('tr', {},
+              el('td', {}, route.exitCurrency),
+              el('td', { class: 'r' }, context.monthLabel(route.baseBreakEvenMonth)),
+              el('td', { class: 'r' }, context.monthLabel(route.adverseBreakEvenMonth))))))) : null,
+        renderRepublicLineChart(t('creditAmortizationTitle'), [
+          { label: t('creditScenarioBase'), color: '#2980b9',
+            points: seriesFromRecords(context.forecastRecords, row => row.base) },
+          { label: t('creditScenarioFavorable'), color: '#27ae60',
+            points: seriesFromRecords(context.forecastRecords, row => row.favorable) },
+          { label: t('creditScenarioAdverse'), color: '#c0392b',
+            points: seriesFromRecords(context.forecastRecords, row => row.adverse) },
+          { label: '0', color: '#7f8c8d',
+            points: seriesFromRecords(context.forecastRecords, row => row.zero) },
+        ], t('creditForecastEvidence'), 'derived'),
+        el('table', { class: 'data credit-milestone-ledger' },
+          el('thead', {}, el('tr', {}, el('th', {}, t('creditScenarioBase')),
+            ...[5, 10, 20, 30].map(years => el('th', {}, `${years} ${t('creditTermYears')}`)))),
+          el('tbody', {}, el('tr', {}, el('td', {}, t('creditAmortizationTitle')),
+            ...[5, 10, 20, 30].map(years => el('td', { class: 'r' },
+              context.amount(context.best.milestones.base?.[years])))))))
+        : null));
+}
+
+function renderCreditHistoryEvidence(context) {
+  return el('details', { class: 'credit-history-disclosure' },
+    el('summary', {}, t('creditHistoryEvidenceTitle')),
+    el('div', { class: 'credit-disclosure-body' },
+      el('div', { class: 'settingsbar credit-history-controls' },
+        el('label', {}, t('inflationCurrency'), selectInput(
+          [['RUB', '₽ · RUB'], ['USD', '$ · USD']], context.currency,
+          value => { state.historyCurrency = value; })),
+        el('label', {}, t('inflationSeries'), selectInput(
+          [['base', t('inflationNormal')], ['purchase', t('inflationImport')], ['sell', t('inflationExport')]],
+          context.basis, value => { state.historyInflationBasis = value; }))),
+      context.hypotheticalSummary.hasInflationEvidence
+        ? renderRepublicLineChart(
+          `${context.basisLabel} · ${t('inflationIndex')} (${context.currency})`,
+          [{ label: context.basisLabel,
+            color: context.currency === 'USD' ? '#27ae60' : '#8e44ad',
+            points: seriesFromRecords(context.visibleIndex, point => point.index) }],
+          t('creditStatsEvidence'), 'exact')
+        : el('p', { class: 'empty-state' }, t('creditHistoryNeedsStats')),
+      context.hypotheticalSummary.hasInflationEvidence ? el('dl', { class: 'credit-history-values' },
+        el('div', {}, el('dt', {}, t('inflationLatestAnnual')),
+          el('dd', {}, context.rate(context.visibleSummary.latestAnnual))),
+        el('div', {}, el('dt', {}, t('inflationFiveYear')),
+          el('dd', {}, context.rate(context.visibleSummary.fiveYearAnnual))),
+        el('div', {}, el('dt', {}, t('inflationAllHistory')),
+          el('dd', {}, context.rate(context.visibleSummary.allAnnual)))) : null,
+      context.historicalValues.length ? el('section', { class: 'credit-saved-values' },
+        el('h4', {}, t('creditSavedValuesTitle')),
+        el('dl', { class: 'credit-history-values' }, ...context.historicalValues.map(item =>
+          el('div', {}, el('dt', {}, t(item.key)), el('dd', {}, context.amount(item.value))))))
+        : null,
+      el('p', { class: 'hint' }, context.basis === 'base'
+        ? t('normalInflationLoanEvidence') : t('marketInflationRiskHint')),
+      el('p', { class: 'hint credit-history-boundary' }, t('creditHistoricalBoundary'))));
+}
+
 function renderCredits() {
   const historyRecords = filterRange(state.statsRecords ?? [], state.republicRange);
   const currency = state.historyCurrency === 'USD' ? 'USD' : 'RUB';
@@ -4920,57 +5121,37 @@ function renderCredits() {
     ? state.historyInflationBasis : 'base';
   const normalIndex = buildPriceIndex(state.statsRecords, { currency, basis: 'base' });
   const visibleIndex = buildPriceIndex(historyRecords, { currency, basis });
-  const summary = summarizeInflation(visibleIndex);
+  const normalSummary = summarizeInflation(normalIndex);
+  const visibleSummary = summarizeInflation(visibleIndex);
   const symbol = currencySymbol(currency);
   const rate = value => Number.isFinite(value)
     ? `${value >= 0 ? '+' : ''}${fmt(value * 100, 2)} %` : '—';
   const amount = value => Number.isFinite(value) ? `${fmt(value, 0)} ${symbol}` : '—';
+  const verdictClass = summary => !summary.hasInflationEvidence ? 'unavailable'
+    : summary.recommendation;
   const basisLabel = {
-    base: t('inflationNormal'), purchase: t('inflationImport'), sell: t('inflationExport'),
+    base: t('creditGeneralPriceDevelopment'), purchase: t('inflationImport'), sell: t('inflationExport'),
   }[basis];
-  const metric = (label, value) => el('div', { class: 'metric-card' },
-    el('span', { class: 'metric-label' }, label),
-    el('strong', {}, value),
-    el('span', { class: 'evidence-badge derived' }, t('derived')));
   const selectedLoans = state.activeLoans.filter(loan => loan.currency === currency);
-  const reasonKeys = {
-    existingPenalty: 'loanReasonExistingPenalty',
-    insufficientInflationHistory: 'loanReasonInsufficientInflationHistory',
-    inflationExceedsLoanCost: 'loanReasonInflationExceedsLoanCost',
-    lowPositiveRealCost: 'loanReasonLowPositiveRealCost',
-    highPositiveRealCost: 'loanReasonHighPositiveRealCost',
-  };
-  const recommendationKeys = {
-    favorable: 'loanFavorable', tight: 'loanTight', risky: 'loanRisky',
-  };
-  const loanRows = selectedLoans.map((loan, index) => {
-    const decision = evaluateLoanScenarios(loan, normalIndex);
-    return el('tr', {},
-      el('td', {}, `#${index + 1}`),
-      el('td', { class: 'r' }, amount(loan.currentAmount)),
-      el('td', { class: 'r' }, amount(loan.penaltyAmount)),
-      el('td', { class: 'r' }, fmt(loan.remainingDays, 0)),
-      el('td', { class: 'r' }, rate(loan.annualRate / 100)),
-      el('td', { class: 'r' }, rate(decision.effectiveRate)),
-      el('td', { class: 'r' }, rate(decision.realRates.base)),
-      el('td', { class: 'r pos' }, rate(decision.realRates.best)),
-      el('td', { class: 'r warn' }, rate(decision.realRates.worst)),
-      el('td', { class: 'r' }, amount(decision.simulation.totalPaid)),
-      el('td', { class: 'r' }, amount(decision.simulation.maxDailyPayment)),
-      el('td', {}, el('span', { class: `loan-recommendation ${decision.recommendation}` },
-        t(recommendationKeys[decision.recommendation])),
-      el('span', { class: 'loan-reasons' }, decision.reasons
-        .map(reason => t(reasonKeys[reason] ?? reason)).join(' '))));
-  });
-
+  const activeCredits = selectedLoans.map(loan => ({
+    loan,
+    summary: summarizeCreditTerms({ loan, normalIndex }),
+    scenarios: evaluateLoanScenarios(loan, normalIndex),
+  }));
   const hypotheticalLoan = {
     currency, currentAmount: Math.max(0, state.creditAmount), penaltyAmount: 0,
     annualRate: Math.max(0, state.creditApr),
     remainingDays: Math.max(1, Math.round(state.creditTermYears * 365)),
   };
-  const hypothetical = simulateLoan(hypotheticalLoan, {
+  const hypotheticalNominal = simulateLoan(hypotheticalLoan, {
     maxDays: hypotheticalLoan.remainingDays + 1,
   });
+  const hypotheticalSummary = {
+    ...summarizeCreditTerms({ loan: hypotheticalLoan, normalIndex }),
+    totalPaid: hypotheticalNominal.totalPaid,
+    additionalCost: hypotheticalNominal.totalPaid - hypotheticalLoan.currentAmount,
+    maxDailyPayment: hypotheticalNominal.maxDailyPayment,
+  };
   const financingOptions = [
     ['hypothetical', t('creditHypotheticalTerms')],
     ...selectedLoans.map((loan, index) => [
@@ -5023,11 +5204,8 @@ function renderCredits() {
     } },
   });
   const best = opportunities[0];
-  const monthLabel = month => Number.isFinite(month) ? `${fmt(month / 12, 1)} ${t('creditTermYears')}` : '—';
-  const assessmentKey = {
-    'profitable-adverse': 'creditAssessmentAdverse',
-    'profitable-base-only': 'creditAssessmentBaseOnly',
-  };
+  const monthLabel = month => Number.isFinite(month)
+    ? `${fmt(month / 12, 1)} ${t('creditTermYears')}` : '—';
   const forecastRecords = best?.paths?.base?.map((point, index) => ({
     year: year + Math.floor(point.month / 12), day: Math.round((point.month % 12) * 365 / 12),
     base: point.net, favorable: best.paths.favorable?.[index]?.net,
@@ -5035,114 +5213,27 @@ function renderCredits() {
   })) ?? [];
   const historicalField = field => [...historyRecords].reverse()
     .map(record => Number(record?.[`${field}${currency}`])).find(Number.isFinite);
+  const historicalValues = [
+    { key: 'creditHistoricalBalance', value: historicalField('loanBalance') },
+    { key: 'creditHistoricalInterest', value: historicalField('loanInterest') },
+  ].filter(item => Number.isFinite(item.value));
+  const context = {
+    historyRecords, currency, basis, normalIndex, visibleIndex, normalSummary, visibleSummary,
+    rate, amount, verdictClass, basisLabel, selectedLoans, activeCredits, hypotheticalLoan,
+    hypotheticalSummary, financingOptions, investmentLoan, currentRecord, year, variant, eco,
+    forecasts, exchange, quotes, opportunities, best, monthLabel, forecastRecords,
+    historicalValues, activeRecipe: forecasts[currency]?.recipe,
+  };
 
   return el('section', { class: 'credit-center economic-decision-strip' },
     el('div', { class: 'economic-decision-heading' },
       el('div', {}, el('h2', {}, t('creditCenterTitle')),
-        el('p', { class: 'hint' }, t('creditCenterHint'))),
-      el('span', { class: 'evidence-badge derived' }, t('creditForecastEvidence'))),
-    el('div', { class: 'settingsbar economic-decision-controls' },
-      el('label', {}, t('inflationCurrency'), selectInput(
-        [['RUB', '₽ · RUB'], ['USD', '$ · USD']], currency,
-        value => { state.historyCurrency = value; })),
-      el('label', {}, t('inflationSeries'), selectInput(
-        [['base', t('inflationNormal')], ['purchase', t('inflationImport')], ['sell', t('inflationExport')]],
-        basis, value => { state.historyInflationBasis = value; }))),
-    el('h3', {}, t('creditActionTitle')),
-    el('div', { class: `credit-action ${best ? best.assessment : 'none'}` },
-      el('strong', {}, best
-        ? t('creditTakeLoanAction').replace('{amount}', amount(best.capitalRequired))
-        : t('creditNoLoanAction')),
-      best ? el('span', {}, `${best.shipName} · ${best.exitCurrency} · ${monthLabel(best.baseBreakEvenMonth)}`) : null),
-    el('div', { class: 'economic-decision-body' },
-      el('div', { class: 'economic-inflation-panel' },
-        el('div', { class: 'metric-grid economic-rate-grid' },
-          metric(t('inflationLatestAnnual'), rate(summary.latestAnnual)),
-          metric(t('inflationFiveYear'), rate(summary.fiveYearAnnual)),
-          metric(t('inflationAllHistory'), rate(summary.allAnnual)),
-          metric(t('inflationCoverage'), fmt(summary.coverage, 0))),
-        renderRepublicLineChart(
-          `${basisLabel} · ${t('inflationIndex')} (${currency})`,
-          [{ label: basisLabel, color: currency === 'USD' ? '#27ae60' : '#8e44ad',
-            points: seriesFromRecords(visibleIndex, point => point.index) }],
-          t('derived'), 'derived'),
-        el('p', { class: 'hint' }, basis === 'base'
-          ? t('normalInflationLoanEvidence') : t('marketInflationRiskHint'))),
-      el('div', { class: 'economic-loan-panel' },
-        el('h3', {}, `${t('creditActiveContracts')} · ${currency}`),
-        el('p', { class: 'hint' }, t('loanDecisionHint')),
-        selectedLoans.length ? el('div', { class: 'tablewrap' },
-          el('table', { class: 'data loan-decision-table' },
-            el('thead', {}, el('tr', {},
-              el('th', {}, '#'), el('th', {}, t('loanPrincipal')), el('th', {}, t('loanPenalty')),
-              el('th', {}, t('loanDays')),
-              el('th', {}, t('loanApr')), el('th', {}, t('loanEffectiveRate')),
-              el('th', {}, t('loanRealBase')), el('th', {}, t('loanRealBest')),
-              el('th', {}, t('loanRealWorst')), el('th', {}, t('loanNominalPaid')),
-              el('th', {}, t('loanMaxDailyPayment')), el('th', {}, t('loanRecommendation')))),
-            el('tbody', {}, ...loanRows)))
-          : el('p', { class: 'empty-state' }, t('noActiveLoans')))),
-    el('section', { class: 'credit-hypothetical' },
-      el('h3', {}, t('creditHypotheticalTitle')),
-      el('div', { class: 'settingsbar' },
-        el('label', {}, t('creditFinancingTerms'), selectInput(
-          financingOptions, financingOptions.some(([value]) => value === state.creditFinancingSource)
-            ? state.creditFinancingSource : 'hypothetical',
-          value => { state.creditFinancingSource = value; })),
-        el('label', {}, t('creditAmount'), numInput(state.creditAmount,
-          value => { state.creditAmount = value; }, { min: 0 })),
-        el('label', {}, t('loanApr'), numInput(state.creditApr,
-          value => { state.creditApr = value; }, { min: 0, step: .1 })),
-        el('label', {}, t('creditTermYears'), numInput(state.creditTermYears,
-          value => { state.creditTermYears = value; }, { min: .1, step: .5 })),
-        el('label', {}, t('creditRecipeVariant'), selectInput(
-          [['vanilla', t('electronicsRecipeVanilla')], ['dlc3', t('electronicsRecipeDlc3')]],
-          variant, value => { state.creditRecipeVariant = value; }))),
-      el('p', { class: 'hint' }, t('creditLoanPreviewHint')),
-      el('div', { class: 'metric-grid economic-rate-grid' },
-        metric(t('loanNominalPaid'), amount(hypothetical.totalPaid)),
-        metric(t('loanMaxDailyPayment'), amount(hypothetical.maxDailyPayment)),
-        metric(t('creditShipResidualZero'), amount(0)),
-        metric(t('electronicsCandidateCount'), fmt(opportunities.length, 0)))),
-    el('section', { class: 'credit-investments' },
-      el('h3', {}, t('creditRelevantInvestments')),
-      opportunities.length ? el('div', { class: 'tablewrap' },
-        el('table', { class: 'data credit-investment-table' },
-          el('thead', {}, el('tr', {}, el('th', {}, t('vehicle')),
-            el('th', {}, t('creditExitCurrency')), el('th', {}, t('fleetCapacity')),
-            el('th', {}, t('electronicsCapital')), el('th', {}, t('creditBreakEvenBase')),
-            el('th', {}, t('creditBreakEvenAdverse')), el('th', {}, t('loanRecommendation')))),
-          el('tbody', {}, ...opportunities.slice(0, 20).map(item => el('tr', {},
-            el('td', {}, item.shipName), el('td', {}, item.alternateRoutes.length
-              ? el('details', {}, el('summary', {}, item.exitCurrency),
-                el('span', { class: 'loan-reasons' }, `${t('creditAlternateExits')}: ${item.alternateRoutes
-                  .map(route => `${route.exitCurrency} · ${monthLabel(route.baseBreakEvenMonth)}`).join(' · ')}`))
-              : item.exitCurrency),
-            el('td', { class: 'r' }, `${fmt(item.capacity, 0)} t`),
-            el('td', { class: 'r' }, amount(item.capitalRequired)),
-            el('td', { class: 'r pos' }, monthLabel(item.baseBreakEvenMonth)),
-            el('td', { class: 'r' }, monthLabel(item.adverseBreakEvenMonth)),
-            el('td', {}, el('span', { class: `loan-recommendation ${item.assessment}` },
-              t(assessmentKey[item.assessment]))))))))
-        : el('p', { class: 'empty-state' }, t('creditNoRelevantElectronics')),
-      best ? el('div', { class: 'amortization-corridor' },
-        el('div', { class: 'metric-grid economic-rate-grid' },
-          metric(t('creditRequiredPrincipal'), amount(best.capitalRequired)),
-          ...[5, 10, 20, 30].map(years => metric(`${years} ${t('creditTermYears')}`,
-            amount(best.milestones.base?.[years])))),
-        renderRepublicLineChart(t('creditAmortizationTitle'), [
-          { label: t('creditScenarioBase'), color: '#2980b9', points: seriesFromRecords(forecastRecords, row => row.base) },
-          { label: t('creditScenarioFavorable'), color: '#27ae60', points: seriesFromRecords(forecastRecords, row => row.favorable) },
-          { label: t('creditScenarioAdverse'), color: '#c0392b', points: seriesFromRecords(forecastRecords, row => row.adverse) },
-          { label: '0', color: '#7f8c8d', points: seriesFromRecords(forecastRecords, row => row.zero) },
-        ], t('creditForecastEvidence'), 'derived'),
-        el('p', { class: 'hint' }, t('creditShipResidualZero'))) : null),
-    el('section', { class: 'credit-history-boundary' },
-      el('h3', {}, t('creditHistoricalTitle')),
-      el('div', { class: 'metric-grid economic-rate-grid' },
-        metric(t('creditHistoricalBalance'), amount(historicalField('loanBalance'))),
-        metric(t('creditHistoricalInterest'), amount(historicalField('loanInterest')))),
-      el('p', { class: 'hint' }, t('creditHistoricalBoundary'))));
+        el('p', { class: 'hint' }, t('creditCenterHint')))),
+    renderCreditDataStatus(context),
+    renderActiveCreditPosition(context),
+    renderNewCreditCalculator(context),
+    renderOptionalElectronicsStrategy(context),
+    renderCreditHistoryEvidence(context));
 }
 
 function renderRepublicHistory() {
