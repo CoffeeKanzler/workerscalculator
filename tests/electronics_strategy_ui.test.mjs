@@ -5,6 +5,13 @@ import path from 'node:path';
 
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 
+function functionBody(source, name) {
+  const start = source.indexOf(`function ${name}(`);
+  assert.notEqual(start, -1, `${name} must be a dedicated Credits section renderer`);
+  const next = source.indexOf('\nfunction ', start + 1);
+  return source.slice(start, next === -1 ? source.length : next);
+}
+
 test('credit strategy wires save prices, dynamic recipes, used ships, and future loan paths', async () => {
   const [app, i18n, css, buildings] = await Promise.all([
     fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8'),
@@ -37,6 +44,37 @@ test('credit strategy wires save prices, dynamic recipes, used ships, and future
     'electronicsFutureBase', 'electronicsBaseResult', 'electronicsWorstZeroResult',
     'creditAssessmentAdverse', 'creditAssessmentBaseOnly', 'creditNoRelevantElectronics',
     'creditForecastEvidence',
+  ]) {
+    assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2,
+      `${key} must be translated in both languages`);
+  }
+});
+
+test('electronics is an optional closed experiment with plain-language production labels', async () => {
+  const [app, i18n] = await Promise.all([
+    fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8'),
+    fs.readFile(path.join(ROOT, 'js/i18n.js'), 'utf8'),
+  ]);
+  const electronics = functionBody(app, 'renderOptionalElectronicsStrategy');
+  const history = functionBody(app, 'renderCreditHistoryEvidence');
+
+  assert.match(electronics, /el\('details', \{[^}]*class: 'credit-electronics-disclosure'[^}]*\}/,
+    'electronics must be a named native disclosure');
+  assert.doesNotMatch(electronics, /el\('details', \{[^}]*open:/,
+    'electronics must start closed');
+  assert.match(history, /el\('details', \{[^}]*class: 'credit-history-disclosure'[^}]*\}/,
+    'history evidence must be a named native disclosure');
+  assert.doesNotMatch(history, /el\('details', \{[^}]*open:/,
+    'history evidence must start closed');
+  assert.doesNotMatch(electronics, /electronicsRecipeVanilla/,
+    'the production selector must not expose the internal Vanilla recipe label');
+
+  for (const key of [
+    'electronicsOptionalTitle', 'electronicsExperimentalWarning', 'electronicsMissingCosts',
+    'electronicsBreakEvenConditional', 'electronicsHoldingExpected', 'electronicsHoldingCautious',
+    'electronicsAssumptionsDetails', 'electronicsProductionChain', 'electronicsRecipeVanilla',
+    'electronicsRecipeDlc3', 'electronicsTradeCaveat',
+    'creditScenarioBase', 'creditScenarioFavorable', 'creditScenarioAdverse',
   ]) {
     assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2,
       `${key} must be translated in both languages`);

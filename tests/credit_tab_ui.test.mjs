@@ -5,6 +5,13 @@ import path from 'node:path';
 
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 
+function functionBody(source, name) {
+  const start = source.indexOf(`function ${name}(`);
+  assert.notEqual(start, -1, `${name} must be a dedicated Credits section renderer`);
+  const next = source.indexOf('\nfunction ', start + 1);
+  return source.slice(start, next === -1 ? source.length : next);
+}
+
 test('dedicated credit tab owns decisions, relevant investments, and amortization corridor', async () => {
   const [app, navigation, i18n, css] = await Promise.all([
     fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8'),
@@ -42,4 +49,24 @@ test('dedicated credit tab owns decisions, relevant investments, and amortizatio
     assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2,
       `${key} must be translated in both languages`);
   }
+});
+
+test('credits keeps current facts visible before progressively disclosed experiments and evidence', async () => {
+  const app = await fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
+  const credits = functionBody(app, 'renderCredits');
+  const sectionNames = [
+    'renderCreditDataStatus',
+    'renderActiveCreditPosition',
+    'renderNewCreditCalculator',
+    'renderOptionalElectronicsStrategy',
+    'renderCreditHistoryEvidence',
+  ];
+  const positions = sectionNames.map(name => credits.indexOf(`${name}(`));
+
+  assert.ok(positions.every(position => position >= 0),
+    'renderCredits must compose the five dedicated sections');
+  assert.deepEqual([...positions].sort((a, b) => a - b), positions,
+    'current credit facts must precede the optional electronics experiment and history evidence');
+  assert.doesNotMatch(credits, /creditTakeLoanAction/,
+    'the Credits page must not present an imperative borrowing recommendation');
 });

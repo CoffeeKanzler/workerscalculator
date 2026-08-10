@@ -5,6 +5,14 @@ import path from 'node:path';
 
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 
+const requiredCreditCopy = [
+  'creditDataStatusTitle', 'creditActivePositionTitle', 'creditNewCalculatorTitle',
+  'creditTotalRepayment', 'creditAdditionalCost', 'creditMaximumDailyPayment',
+  'creditExpectedRealRate', 'creditInflationExceeds', 'creditCostsSimilar',
+  'creditCostsExceed', 'creditInflationUnavailable', 'creditAssessmentDetails',
+  'creditHistoryNeedsStats',
+];
+
 test('credit tab renders normal, import, and export inflation with saved loan decisions', async () => {
   const [app, i18n, css] = await Promise.all([
     fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8'),
@@ -33,6 +41,15 @@ test('credit tab renders normal, import, and export inflation with saved loan de
     'loanNominalPaid', 'loanMaxDailyPayment', 'loanRecommendation', 'loanFavorable',
     'loanTight', 'loanRisky', 'normalInflationLoanEvidence', 'marketInflationRiskHint',
   ]) {
+    assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2,
+      `${key} must be translated in both languages`);
+  }
+});
+
+test('plain-language credit burden and insufficient-history labels are translated in both languages', async () => {
+  const i18n = await fs.readFile(path.join(ROOT, 'js/i18n.js'), 'utf8');
+
+  for (const key of requiredCreditCopy) {
     assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2,
       `${key} must be translated in both languages`);
   }
