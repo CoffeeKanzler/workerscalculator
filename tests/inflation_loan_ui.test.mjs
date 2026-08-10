@@ -5,7 +5,7 @@ import path from 'node:path';
 
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 
-test('history renders normal, import, and export inflation with saved loan decisions', async () => {
+test('credit tab renders normal, import, and export inflation with saved loan decisions', async () => {
   const [app, i18n, css] = await Promise.all([
     fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8'),
     fs.readFile(path.join(ROOT, 'js/i18n.js'), 'utf8'),
@@ -18,7 +18,8 @@ test('history renders normal, import, and export inflation with saved loan decis
   assert.match(app, /historyInflationBasis: 'base'/);
   assert.match(app, /\[\['base', t\('inflationNormal'\)\], \['purchase', t\('inflationImport'\)\], \['sell', t\('inflationExport'\)\]\]/);
   assert.match(app, /buildPriceIndex\(state\.statsRecords, \{ currency, basis: 'base' \}\)/);
-  assert.match(app, /renderEconomicDecisionSurface\(historyRecords\)/);
+  assert.match(app, /function renderCredits\(\)/);
+  assert.match(app, /case 'credits': return renderCredits\(\)/);
   assert.match(app, /state\.activeLoans\.filter/);
   assert.match(css, /\.economic-decision-strip/);
   assert.match(css, /\.loan-decision-table/);

@@ -5,7 +5,7 @@ import path from 'node:path';
 
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 
-test('history strategy wires save prices, dynamic recipes, used ships, and loan terms', async () => {
+test('credit strategy wires save prices, dynamic recipes, used ships, and future loan paths', async () => {
   const [app, i18n, css, buildings] = await Promise.all([
     fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8'),
     fs.readFile(path.join(ROOT, 'js/i18n.js'), 'utf8'),
@@ -14,13 +14,12 @@ test('history strategy wires save prices, dynamic recipes, used ships, and loan 
   ]);
 
   assert.match(app, /buildResourcePriceIndex/);
-  assert.match(app, /electronicsRecipeCost/);
-  assert.match(app, /rankElectronicsShipTrades/);
+  assert.match(app, /electronicsComponentIndex/);
+  assert.match(app, /rankRelevantCreditOpportunities/);
   assert.match(app, /state\.saveImport\?\.usedVehicleOffers/);
-  assert.match(app, /usedMarketRecyclingArbitrage/);
-  assert.match(app, /renderElectronicsInvestmentStrategy\(historyRecords, currency, selectedLoans\)/);
-  assert.match(css, /\.electronics-investment-strategy/);
-  assert.match(css, /\.electronics-trade-table/);
+  assert.match(app, /amortizationCorridor/);
+  assert.match(app, /function renderCredits\(\)/);
+  assert.match(css, /\.credit-investment-table/);
 
   const raw = JSON.parse(buildings);
   for (const id of ['eletronic_factory', 'dlc3/electronics_factory']) {
@@ -36,8 +35,8 @@ test('history strategy wires save prices, dynamic recipes, used ships, and loan 
     'electronicsRecipeCaveat', 'electronicsLoanTerms', 'electronicsCapital',
     'electronicsRepayment', 'electronicsBreakEvenZero', 'electronicsCurrentRecovery',
     'electronicsFutureBase', 'electronicsBaseResult', 'electronicsWorstZeroResult',
-    'electronicsTradeRobust', 'electronicsTradeSpeculative', 'electronicsTradeReject',
-    'electronicsTradeUnavailable', 'electronicsTradeCaveat',
+    'creditAssessmentAdverse', 'creditAssessmentBaseOnly', 'creditNoRelevantElectronics',
+    'creditForecastEvidence',
   ]) {
     assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2,
       `${key} must be translated in both languages`);
