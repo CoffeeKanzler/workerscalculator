@@ -171,3 +171,77 @@ export function amortizationCorridor({
     routes,
   };
 }
+
+function firstBreakEvenMonth(points, horizonMonth) {
+  return points?.find(point => point.month <= horizonMonth && Number(point.net) >= 0)?.month ?? null;
+}
+
+function routeSummary({ quote, loan, corridor, exitCurrency, paths, horizonMonth }) {
+  const baseBreakEvenMonth = firstBreakEvenMonth(paths?.base, horizonMonth);
+  if (!Number.isFinite(baseBreakEvenMonth)) return null;
+  const adverseBreakEvenMonth = firstBreakEvenMonth(paths?.adverse, horizonMonth);
+  const baseEnd = [...(paths.base ?? [])].reverse()
+    .find(point => point.month <= horizonMonth && Number.isFinite(point.net));
+  return {
+    quote,
+    loan,
+    shipName: quote.offer.modelFacts.name,
+    financingCurrency: loan.currency,
+    exitCurrency,
+    capacity: corridor.capacity,
+    capitalRequired: corridor.capitalRequired,
+    corridor,
+    paths,
+    baseBreakEvenMonth,
+    adverseBreakEvenMonth,
+    baseValue30Years: baseEnd?.net ?? null,
+    assessment: Number.isFinite(adverseBreakEvenMonth)
+      ? 'profitable-adverse' : 'profitable-base-only',
+  };
+}
+
+function compatibleElectronicsShip(quote) {
+  const facts = quote?.offer?.modelFacts;
+  return facts?.runtimeCategory === 6
+    && (facts.transportSubtype === 0 || facts.transportSubtype === 11)
+    && Number.isFinite(facts.capacity) && facts.capacity > 0
+    && Number.isFinite(quote?.purchaseValue) && quote.purchaseValue >= 0;
+}
+
+export function rankRelevantCreditOpportunities({
+  quotes = [], loans = [], forecastContext, horizonYears = 30,
+} = {}) {
+  if (typeof forecastContext?.corridorFor !== 'function') return [];
+  const horizonMonth = Math.max(0, Math.trunc(Number(horizonYears) * 12 || 0));
+  const byOffer = new Map();
+  for (const quote of quotes.filter(compatibleElectronicsShip)) {
+    const candidates = [];
+    for (const loan of loans) {
+      if (!['RUB', 'USD'].includes(loan?.currency)) continue;
+      const corridor = forecastContext.corridorFor({ quote, loan, horizonYears });
+      if (!corridor) continue;
+      for (const [exitCurrency, paths] of Object.entries(corridor.routes ?? {})) {
+        const summary = routeSummary({
+          quote, loan, corridor, exitCurrency, paths, horizonMonth,
+        });
+        if (summary) candidates.push(summary);
+      }
+    }
+    candidates.sort((a, b) => a.baseBreakEvenMonth - b.baseBreakEvenMonth
+      || (b.baseValue30Years ?? -Infinity) - (a.baseValue30Years ?? -Infinity));
+    if (candidates.length) byOffer.set(quote.offer, candidates);
+  }
+  return [...byOffer.values()].map(candidates => ({
+    ...candidates[0],
+    alternateRoutes: candidates.slice(1).map(candidate => ({
+      financingCurrency: candidate.financingCurrency,
+      exitCurrency: candidate.exitCurrency,
+      baseBreakEvenMonth: candidate.baseBreakEvenMonth,
+      adverseBreakEvenMonth: candidate.adverseBreakEvenMonth,
+      baseValue30Years: candidate.baseValue30Years,
+      assessment: candidate.assessment,
+      paths: candidate.paths,
+    })),
+  })).sort((a, b) => a.baseBreakEvenMonth - b.baseBreakEvenMonth
+    || (b.baseValue30Years ?? -Infinity) - (a.baseValue30Years ?? -Infinity));
+}
