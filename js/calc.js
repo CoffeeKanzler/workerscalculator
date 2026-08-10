@@ -93,11 +93,11 @@ export class Economy {
   // save's own stats.ini — nor how a vehicle's sale value is derived, which is
   // the executable's ordered component formula. Two settings that explained
   // nothing they appeared to explain are worse than one convention that holds.
-  inputPrice(nameOrKey, currency) {
+  inputPrice(nameOrKey, currency, costBasis = 'opportunity') {
     const key = this.byKey.has(nameOrKey) ? nameOrKey : this.keyForName(nameOrKey);
     if (!key) return 0;
     if (key === 'workers') return this.workday(currency);
-    return this.sell(key, currency);
+    return costBasis === 'purchase' ? this.buy(key, currency) : this.sell(key, currency);
   }
 
   keyForName(name) {
@@ -141,11 +141,14 @@ export class Economy {
   }
 
   // Profit of one production building instance per day (sheet: Einnahmen - Ausgaben).
-  buildingProfit(b, currency, productivity = 1, count = 1, quality = 1) {
+  buildingProfit(b, currency, productivity = 1, count = 1, quality = 1,
+    costBasis = 'opportunity') {
     const mult = (b.usesQuality || QUALITY_BUILDINGS_DE.has(b.de)) ? count * quality : count;
     let income = 0, expenses = 0;
     for (const p of b.production) income += this.outputPrice(p.de, currency) * p.rate * mult * productivity;
-    for (const c of b.consumption) expenses += this.inputPrice(c.de, currency) * c.rate * count * productivity;
+    for (const c of b.consumption) {
+      expenses += this.inputPrice(c.de, currency, costBasis) * c.rate * count * productivity;
+    }
     return { income, expenses, profit: income - expenses };
   }
 }

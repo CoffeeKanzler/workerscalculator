@@ -53,6 +53,21 @@ test('price lookup: sell/buy by German and English name and key', () => {
   assert.equal(e.buy('workers', 'RUB'), defaults.workdayCostRUB);
 });
 
+test('production input cost basis distinguishes cash purchases from opportunity cost', () => {
+  const e = eco();
+  assert.equal(e.inputPrice('livestock', 'RUB', 'purchase'), 810.024963);
+  assert.equal(e.inputPrice('livestock', 'RUB', 'opportunity'), 732.879761);
+  assert.equal(e.inputPrice('workers', 'RUB', 'purchase'), defaults.workdayCostRUB);
+});
+
+test('slaughterhouse cash analysis prices 2.5 tonnes of bought livestock per tonne of sold meat', () => {
+  const slaughterhouse = byDe('Schlachthof');
+  const result = eco().buildingProfit(slaughterhouse, 'RUB', 1, 1, 1, 'purchase');
+  assert.ok(Math.abs(result.income - 116627.96628) < 0.0001, `income ${result.income}`);
+  assert.ok(Math.abs(result.expenses - 121503.74445) < 0.0001, `expenses ${result.expenses}`);
+  assert.ok(Math.abs(result.profit - -4875.77817) < 0.0001, `profit ${result.profit}`);
+});
+
 test('profit per worker subtracts the selected labor cost on the sheet worker basis', () => {
   assert.equal(profitPerWorkerAfterLabor(1000, 100, 2), 18);
   assert.equal(profitPerWorkerAfterLabor(1000, 100, 10), 10);
