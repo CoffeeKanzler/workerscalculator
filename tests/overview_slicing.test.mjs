@@ -14,7 +14,7 @@ const app = () => fs.readFile(path.join(ROOT, 'js/app.js'), 'utf8');
 // below answers a different question and now has somewhere of its own.
 test('the sliced tab table is what ships', () => {
   assert.deepEqual(tabsForSection('observe'),
-    ['home', 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'prices']);
+    ['home', 'republic', 'map', 'cities', 'history', 'credits', 'construction', 'logistics', 'prices']);
   assert.deepEqual(tabsForSection('diagnose'), ['alerts', 'pollution', 'crime']);
   assert.deepEqual(tabsForSection('compare'), ['saveimport', 'snapshots', 'help']);
 });

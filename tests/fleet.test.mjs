@@ -265,6 +265,9 @@ test('ship component base value preserves ordered cross-market recurrence', () =
   }
   assert.equal(vehicleComponentBaseValue(recipe, 'RUB', 'USD', economy), expected);
   assert.equal(vehicleComponentBaseValue(recipe, null, 'USD', economy), null);
+  assert.equal(vehicleComponentBaseValue(recipe, 'RUB', 'USD', {
+    workday: () => 10, sell: () => 0,
+  }), null, 'missing save prices cannot become a zero-value quote');
 });
 
 test('ship opportunity compares exact export with derived recycling labor view', () => {

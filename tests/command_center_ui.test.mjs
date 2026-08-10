@@ -37,7 +37,7 @@ test('each section opens on a tab it actually owns', () => {
 
 test('the confirmed tab to section table is what ships', () => {
   assert.deepEqual(tabsForSection('observe'),
-    ['home', 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'prices']);
+    ['home', 'republic', 'map', 'cities', 'history', 'credits', 'construction', 'logistics', 'prices']);
   assert.deepEqual(tabsForSection('diagnose'), ['alerts', 'pollution', 'crime']);
   assert.deepEqual(tabsForSection('plan'), [
     'chain', 'city', 'priceedit', 'production', 'vehicleprod', 'analysisRUB', 'analysisUSD', 'trains', 'research', 'advanced',

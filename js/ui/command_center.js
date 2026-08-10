@@ -28,7 +28,7 @@ export function reorderQuickTools(ids, tab, direction) {
 }
 
 export const COMMAND_SECTIONS = Object.freeze([
-  Object.freeze({ id: 'observe', labelKey: 'navObserve', defaultTab: 'republic', tabs: Object.freeze(['home', 'republic', 'map', 'cities', 'history', 'construction', 'logistics', 'prices']) }),
+  Object.freeze({ id: 'observe', labelKey: 'navObserve', defaultTab: 'republic', tabs: Object.freeze(['home', 'republic', 'map', 'cities', 'history', 'credits', 'construction', 'logistics', 'prices']) }),
   Object.freeze({ id: 'diagnose', labelKey: 'navDiagnose', defaultTab: 'alerts', tabs: Object.freeze(['alerts', 'pollution', 'crime']) }),
   Object.freeze({ id: 'plan', labelKey: 'navPlan', defaultTab: 'chain', tabs: Object.freeze(['chain', 'city', 'priceedit', 'production', 'vehicleprod', 'analysisRUB', 'analysisUSD', 'trains', 'research', 'advanced']) }),
   Object.freeze({ id: 'compare', labelKey: 'navCompare', defaultTab: 'saveimport', tabs: Object.freeze(['saveimport', 'snapshots', 'help']) }),

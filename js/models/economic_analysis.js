@@ -83,16 +83,22 @@ function pointAtOrBefore(points, targetOrdinal) {
   return found;
 }
 
-export function rollingAnnualRates(points) {
+export function rollingAnnualRateIntervals(points) {
   const sorted = [...(points ?? [])].sort((a, b) => a.ordinal - b.ordinal);
   const rates = [];
   for (let index = 1; index < sorted.length; index += 1) {
     const end = sorted[index];
     const start = pointAtOrBefore(sorted.slice(0, index), end.ordinal - DAYS_PER_YEAR);
     const rate = start ? annualizedBetween(start, end) : null;
-    if (Number.isFinite(rate)) rates.push(rate);
+    if (Number.isFinite(rate)) rates.push({
+      startOrdinal: start.ordinal, endOrdinal: end.ordinal, rate,
+    });
   }
   return rates;
+}
+
+export function rollingAnnualRates(points) {
+  return rollingAnnualRateIntervals(points).map(interval => interval.rate);
 }
 
 export function summarizeInflation(points) {
@@ -142,60 +148,105 @@ function cashAvailable(availableCash, day, state) {
   return Number.isFinite(Number(value)) ? Math.max(0, Number(value)) : Infinity;
 }
 
-export function simulateLoan(loan, { availableCash = Infinity, maxDays = 10000 } = {}) {
-  let remainingDays = Math.max(0, Math.trunc(Number(loan?.remainingDays) || 0));
-  let currentAmount = Math.max(0, Number(loan?.currentAmount) || 0);
-  let penaltyAmount = Math.max(0, Number(loan?.penaltyAmount) || 0);
-  const annualRate = Number(loan?.annualRate) || 0;
-  const dailyRate = annualRate / 100 / DAYS_PER_YEAR;
-  const safetyDays = Math.max(0, Math.trunc(Number(maxDays) || 0));
-  let totalPaid = 0;
-  let interestPaid = 0;
-  let maxDailyPayment = 0;
-  let days = 0;
-
-  while ((currentAmount > 1e-7 || penaltyAmount > 1e-7) && days < safetyDays) {
-    if (remainingDays > 0) remainingDays -= 1;
-    const balanceAfterInterest = currentAmount * (1 + dailyRate) + penaltyAmount * dailyRate;
-    const interestPart = currentAmount * (1 + dailyRate) * dailyRate + penaltyAmount * dailyRate;
-    const scheduledPrincipal = remainingDays > 0
-      ? balanceAfterInterest / remainingDays
-      : balanceAfterInterest;
-    const amountDue = scheduledPrincipal + penaltyAmount;
-    const payment = Math.min(cashAvailable(availableCash, days, {
-      remainingDays,
-      currentAmount,
-      penaltyAmount,
-      amountDue,
-    }), amountDue);
-
-    currentAmount = balanceAfterInterest;
-    const penaltyPayment = Math.min(penaltyAmount, payment);
-    penaltyAmount -= penaltyPayment;
-    currentAmount = Math.max(0, currentAmount - (payment - penaltyPayment));
-
-    if (scheduledPrincipal > payment) {
-      const shortfall = scheduledPrincipal - payment;
-      currentAmount = Math.max(0, currentAmount - shortfall);
-      penaltyAmount += shortfall;
-    }
-
-    totalPaid += payment;
-    interestPaid += Math.min(payment, interestPart);
-    maxDailyPayment = Math.max(maxDailyPayment, payment);
-    days += 1;
-  }
-
+function initialLoanState(loan) {
   return {
-    days,
-    totalPaid,
-    interestPaid,
-    maxDailyPayment,
-    endingCurrentAmount: currentAmount,
-    endingPenaltyAmount: penaltyAmount,
-    remainingDays,
-    completed: currentAmount <= 1e-7 && penaltyAmount <= 1e-7,
+    remainingDays: Math.max(0, Math.trunc(Number(loan?.remainingDays) || 0)),
+    currentAmount: Math.max(0, Number(loan?.currentAmount) || 0),
+    penaltyAmount: Math.max(0, Number(loan?.penaltyAmount) || 0),
+    totalPaid: 0,
+    interestPaid: 0,
+    maxDailyPayment: 0,
+    days: 0,
   };
+}
+
+function loanStateCompleted(state) {
+  return state.currentAmount <= 1e-7 && state.penaltyAmount <= 1e-7;
+}
+
+function stepLoanDay(state, annualRate, availableCash) {
+  if (loanStateCompleted(state)) return state;
+  const dailyRate = annualRate / 100 / DAYS_PER_YEAR;
+  if (state.remainingDays > 0) state.remainingDays -= 1;
+  const balanceAfterInterest = state.currentAmount * (1 + dailyRate)
+    + state.penaltyAmount * dailyRate;
+  const interestPart = state.currentAmount * (1 + dailyRate) * dailyRate
+    + state.penaltyAmount * dailyRate;
+  const scheduledPrincipal = state.remainingDays > 0
+    ? balanceAfterInterest / state.remainingDays
+    : balanceAfterInterest;
+  const amountDue = scheduledPrincipal + state.penaltyAmount;
+  const payment = Math.min(cashAvailable(availableCash, state.days, {
+    remainingDays: state.remainingDays,
+    currentAmount: state.currentAmount,
+    penaltyAmount: state.penaltyAmount,
+    amountDue,
+  }), amountDue);
+
+  state.currentAmount = balanceAfterInterest;
+  const penaltyPayment = Math.min(state.penaltyAmount, payment);
+  state.penaltyAmount -= penaltyPayment;
+  state.currentAmount = Math.max(0, state.currentAmount - (payment - penaltyPayment));
+  if (scheduledPrincipal > payment) {
+    const shortfall = scheduledPrincipal - payment;
+    state.currentAmount = Math.max(0, state.currentAmount - shortfall);
+    state.penaltyAmount += shortfall;
+  }
+  state.totalPaid += payment;
+  state.interestPaid += Math.min(payment, interestPart);
+  state.maxDailyPayment = Math.max(state.maxDailyPayment, payment);
+  state.days += 1;
+  return state;
+}
+
+function loanSimulationResult(state) {
+  return {
+    days: state.days,
+    totalPaid: state.totalPaid,
+    interestPaid: state.interestPaid,
+    maxDailyPayment: state.maxDailyPayment,
+    endingCurrentAmount: state.currentAmount,
+    endingPenaltyAmount: state.penaltyAmount,
+    remainingDays: state.remainingDays,
+    completed: loanStateCompleted(state),
+  };
+}
+
+export function simulateLoan(loan, { availableCash = Infinity, maxDays = 10000 } = {}) {
+  const state = initialLoanState(loan);
+  const annualRate = Number(loan?.annualRate) || 0;
+  const safetyDays = Math.max(0, Math.trunc(Number(maxDays) || 0));
+  while (!loanStateCompleted(state) && state.days < safetyDays) {
+    stepLoanDay(state, annualRate, availableCash);
+  }
+  return loanSimulationResult(state);
+}
+
+export function simulateLoanPath(loan, {
+  horizonDays = loan?.remainingDays ?? 0,
+  sampleEveryDays = 30,
+  availableCash = Infinity,
+} = {}) {
+  const state = initialLoanState(loan);
+  const annualRate = Number(loan?.annualRate) || 0;
+  const horizon = Math.max(0, Math.trunc(Number(horizonDays) || 0));
+  const interval = Math.max(1, Math.trunc(Number(sampleEveryDays) || 1));
+  const point = day => ({
+    day,
+    paid: state.totalPaid,
+    currentAmount: state.currentAmount,
+    penaltyAmount: state.penaltyAmount,
+    remainingDebt: state.currentAmount + state.penaltyAmount,
+    completed: loanStateCompleted(state),
+  });
+  const points = [point(0)];
+  for (let day = 1; day <= horizon; day += 1) {
+    const wasCompleted = loanStateCompleted(state);
+    if (!wasCompleted) stepLoanDay(state, annualRate, availableCash);
+    const justCompleted = !wasCompleted && loanStateCompleted(state);
+    if (day % interval === 0 || day === horizon || justCompleted) points.push(point(day));
+  }
+  return { points, simulation: loanSimulationResult(state) };
 }
 
 export function evaluateLoanScenarios(loan, normalInflationIndex) {

@@ -7,7 +7,7 @@ if (!SAVE) throw new Error('usage: electronics_loan_hedge.mjs <save-dir> [base-u
 
 const resources = {
   workers: 10, steel: 100, plastics: 220, fabric: 180,
-  mcomponents: 300, ecomponents: 550, boards: 90,
+  mcomponents: 300, ecomponents: 550, boards: 90, chemicals: 340, gravel: 45,
   waste_steel: 20, waste_other: -5, eletronics: 1000,
 };
 const block = (heading, factor) => `${heading}\n${Object.entries(resources)
@@ -17,6 +17,8 @@ const record = (year, electronicsSell) => {
   return `$STAT_RECORD
 $DATE_YEAR ${year}
 $DATE_DAY 1
+$Economy_WorkdayCostRUB ${10 * ratio}
+$Economy_WorkdayCostUSD ${ratio}
 ${block('$Economy_BaseRUB', ratio)}
 ${block('$Economy_BaseUSD', ratio / 10)}
 ${block('$Economy_PurchaseCostRUB', ratio * 1.15)}
@@ -67,28 +69,42 @@ try {
   console.log('browser: controlled loan and electronics history loaded');
 
   await page.locator('.section-tabs button', { hasText: 'Observe' }).first().click();
-  await page.locator('.context-tabs button', { hasText: 'History' }).first().click();
-  await page.waitForSelector('.electronics-investment-strategy');
-  const strategy = page.locator('.electronics-investment-strategy');
-  if (await strategy.locator('.electronics-recipe-card').count() !== 2) {
-    throw new Error('vanilla and DLC3 recipe cards were not both rendered');
-  }
-  if (await strategy.locator('.electronics-trade-table tbody tr').count() < 1) {
+  await page.locator('.context-tabs button', { hasText: 'Credits' }).first().click();
+  await page.waitForSelector('.credit-center');
+  const strategy = page.locator('.credit-center');
+  if (await strategy.locator('.credit-investment-table tbody tr').count() < 1) {
     throw new Error('real used market produced no electronics ship trade row');
   }
   const text = await strategy.innerText();
-  for (const expected of ['River cargo ship', 'Break-even per t', 'Recipe pressure']) {
+  for (const expected of ['River cargo ship', 'Holding time', 'Amortization corridor']) {
     if (!text.includes(expected)) throw new Error(`strategy is missing ${expected}`);
   }
-  if (await strategy.locator('.electronics-trade-table .loan-recommendation.robust').count() !== 1) {
-    throw new Error('the controlled profitable worst-case was not classified as robust');
+  if (await strategy.locator('.credit-investment-table .loan-recommendation').count() < 1) {
+    throw new Error('the controlled profitable path received no direct assessment');
   }
+  if (text.includes('Robust') || text.includes('Speculative')) throw new Error('legacy labels remain visible');
+  const exits = strategy.locator('.credit-investment-table details').first();
+  await exits.locator('summary').click();
+  const exitText = await exits.innerText();
+  if (!exitText.includes('RUB') || !exitText.includes('USD')) {
+    throw new Error(`both exit currencies are not inspectable: ${exitText}`);
+  }
+  const plot = strategy.locator('.amortization-corridor .uplot').first();
+  const plotBox = await plot.boundingBox();
+  await page.mouse.move(plotBox.x + plotBox.width * .45, plotBox.y + plotBox.height * .55);
+  await page.waitForTimeout(250);
+  const tooltip = await strategy.locator('.amortization-corridor .chart-tooltip').innerText();
+  if (!tooltip.includes('Base')) throw new Error('amortization hover omitted the Base path');
+  await page.screenshot({ path: '/tmp/workers-credit-center-light.png', fullPage: true });
+  await page.locator('.context-tabs button', { hasText: 'History' }).first().click();
+  if (await page.locator('.credit-center').count()) throw new Error('History still owns the credit surface');
+  await page.locator('.context-tabs button', { hasText: 'Credits' }).first().click();
   await page.locator('.themeswitch').click();
   await page.locator('.themeswitch').click();
   if (await page.locator('.themeswitch').getAttribute('data-theme-resolved') !== 'dark') {
     throw new Error('the electronics strategy was not exercised in dark mode');
   }
-  await strategy.scrollIntoViewIfNeeded();
+  await page.locator('.credit-center').scrollIntoViewIfNeeded();
   await page.screenshot({ path: SCREENSHOT, fullPage: true });
   if (errors.length) throw new Error(errors.join('\n'));
   console.log(`ok: real used ship, dynamic recipes, electronics history, and loan decision rendered; ${SCREENSHOT}`);
