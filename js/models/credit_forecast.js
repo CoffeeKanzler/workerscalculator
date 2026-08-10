@@ -1,5 +1,5 @@
-import { quantile, simulateLoanPath } from './economic_analysis.js?v=5';
-import { recipeYearFactors, resolveElectronicsProducerSet } from './electronics_analysis.js?v=4';
+import { quantile, simulateLoanPath } from './economic_analysis.js?v=7';
+import { recipeYearFactors, resolveElectronicsProducerSet } from './electronics_analysis.js?v=5';
 
 const DAYS_PER_YEAR = 365;
 
@@ -11,8 +11,14 @@ function unitRecipeCost(building, outputKey, year, priceFor) {
   for (const [resource, rateRaw] of Object.entries(building?.consumption ?? {})) {
     const price = Number(priceFor(resource));
     const rate = Number(rateRaw);
-    if (!Number.isFinite(price) || !Number.isFinite(rate)) return null;
+    if (!(price > 0) || !Number.isFinite(rate)) return null;
     inputCost += rate * factors.consumptionFactor * price;
+  }
+  const workers = Number(building?.workers ?? 0);
+  if (workers > 0) {
+    const workdayPrice = Number(priceFor('workers'));
+    if (!(workdayPrice > 0)) return null;
+    inputCost += workers * workdayPrice;
   }
   const output = outputRate * factors.productionFactor;
   return output > 0 ? inputCost / output : null;
@@ -45,17 +51,30 @@ export function historicalElectronicsComponentIndex({
   buildings, records = [], currency = 'RUB', variant = 'vanilla',
 } = {}) {
   const priceField = currency === 'USD' ? 'purchaseUSD' : 'purchaseRUB';
-  const costs = records.flatMap(record => {
+  const dated = records.flatMap(record => {
     const year = Number(record?.year);
     const day = Number(record?.day);
     if (!Number.isFinite(year) || year <= 0 || !Number.isFinite(day) || day < 0) return [];
-    const point = electronicsComponentIndex({
-      buildings, startYear: year, years: 0, variant,
-      priceFor: key => Number(record?.[priceField]?.[key]),
-    })?.[0];
-    if (!(point?.electronicsCost > 0)) return [];
-    return [{ year, day, ordinal: year * DAYS_PER_YEAR + day, price: point.electronicsCost }];
+    return [{ record, year, day, ordinal: year * DAYS_PER_YEAR + day }];
   }).sort((a, b) => a.ordinal - b.ordinal);
+  const sourceIndex = dated.findIndex(({ record, year }) => electronicsComponentIndex({
+    buildings, startYear: year, years: 0, variant,
+    priceFor: key => key === 'workers'
+      ? Number(record?.[currency === 'USD' ? 'workdayCostUSD' : 'workdayCostRUB'])
+      : Number(record?.[priceField]?.[key]),
+  })?.[0]?.electronicsCost > 0);
+  if (sourceIndex < 0) return [];
+  const source = dated[sourceIndex].record;
+  const fixedPriceFor = key => key === 'workers'
+    ? Number(source?.[currency === 'USD' ? 'workdayCostUSD' : 'workdayCostRUB'])
+    : Number(source?.[priceField]?.[key]);
+  const costs = dated.slice(sourceIndex).flatMap(({ year, day, ordinal }) => {
+    const point = electronicsComponentIndex({
+      buildings, startYear: year, years: 0, variant, priceFor: fixedPriceFor,
+    })?.[0];
+    return point?.electronicsCost > 0
+      ? [{ year, day, ordinal, price: point.electronicsCost }] : [];
+  });
   const first = costs[0]?.price;
   if (!(first > 0)) return [];
   return costs.map(point => ({ ...point, index: point.price / first * 100, coverage: 1 }));
@@ -102,13 +121,33 @@ export function forecastElectronicsPrices({
 export function deriveForecastRateScenarios({
   normalRates = [], electronicsRates = [], componentRates = [],
 } = {}) {
-  const count = Math.min(normalRates.length, electronicsRates.length);
-  const normals = normalRates.slice(-count).filter(rate => Number.isFinite(rate) && rate > -1);
+  const dated = [normalRates, electronicsRates, componentRates].some(rates =>
+    rates.some(item => typeof item === 'object' && item !== null));
+  let alignedNormal = normalRates;
+  let alignedElectronics = electronicsRates;
+  let alignedComponents = componentRates;
+  if (dated) {
+    const key = item => `${item?.startOrdinal}:${item?.endOrdinal}`;
+    const normalByInterval = new Map(normalRates.map(item => [key(item), item?.rate]));
+    const componentByInterval = new Map(componentRates.map(item => [key(item), item?.rate]));
+    const aligned = electronicsRates.flatMap(item => {
+      const interval = key(item);
+      const normal = normalByInterval.get(interval);
+      const component = componentByInterval.get(interval);
+      return [normal, item?.rate, component].every(Number.isFinite)
+        ? [{ normal, electronics: item.rate, component }] : [];
+    });
+    alignedNormal = aligned.map(item => item.normal);
+    alignedElectronics = aligned.map(item => item.electronics);
+    alignedComponents = aligned.map(item => item.component);
+  }
+  const count = Math.min(alignedNormal.length, alignedElectronics.length);
+  const normals = alignedNormal.slice(-count).filter(rate => Number.isFinite(rate) && rate > -1);
   const residuals = [];
   for (let offset = 0; offset < count; offset += 1) {
-    const normal = Number(normalRates[normalRates.length - count + offset]);
-    const electronics = Number(electronicsRates[electronicsRates.length - count + offset]);
-    const component = Number(componentRates[componentRates.length - count + offset] ?? 0);
+    const normal = Number(alignedNormal[alignedNormal.length - count + offset]);
+    const electronics = Number(alignedElectronics[alignedElectronics.length - count + offset]);
+    const component = Number(alignedComponents[alignedComponents.length - count + offset] ?? 0);
     if (![normal, electronics, component].every(Number.isFinite)
         || normal <= -1 || electronics <= -1 || component <= -1) continue;
     residuals.push((1 + electronics) / ((1 + normal) * (1 + component)) - 1);

@@ -83,16 +83,22 @@ function pointAtOrBefore(points, targetOrdinal) {
   return found;
 }
 
-export function rollingAnnualRates(points) {
+export function rollingAnnualRateIntervals(points) {
   const sorted = [...(points ?? [])].sort((a, b) => a.ordinal - b.ordinal);
   const rates = [];
   for (let index = 1; index < sorted.length; index += 1) {
     const end = sorted[index];
     const start = pointAtOrBefore(sorted.slice(0, index), end.ordinal - DAYS_PER_YEAR);
     const rate = start ? annualizedBetween(start, end) : null;
-    if (Number.isFinite(rate)) rates.push(rate);
+    if (Number.isFinite(rate)) rates.push({
+      startOrdinal: start.ordinal, endOrdinal: end.ordinal, rate,
+    });
   }
   return rates;
+}
+
+export function rollingAnnualRates(points) {
+  return rollingAnnualRateIntervals(points).map(interval => interval.rate);
 }
 
 export function summarizeInflation(points) {

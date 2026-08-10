@@ -66,13 +66,13 @@ import {
 import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
 import {
   buildPriceIndex, buildResourcePriceIndex, evaluateLoanScenarios, rollingAnnualRates,
-  simulateLoan, summarizeInflation,
-} from './models/economic_analysis.js?v=7';
+  rollingAnnualRateIntervals, simulateLoan, summarizeInflation,
+} from './models/economic_analysis.js?v=9';
 import {
   amortizationCorridor, deriveForecastRateScenarios, electronicsComponentIndex,
   forecastElectronicsPrices, futureExchangePath, historicalElectronicsComponentIndex,
   rankRelevantCreditOpportunities, rubPerUsdFromBasePrices,
-} from './models/credit_forecast.js?v=5';
+} from './models/credit_forecast.js?v=7';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
@@ -4899,9 +4899,9 @@ function electronicsForecastFor(currency, year, variant, eco) {
     priceFor: key => eco.buy(key, currency),
   });
   const rates = deriveForecastRateScenarios({
-    normalRates: rollingAnnualRates(normalIndex),
-    electronicsRates: rollingAnnualRates(electronicsIndex),
-    componentRates: rollingAnnualRates(historicalElectronicsComponentIndex({
+    normalRates: rollingAnnualRateIntervals(normalIndex),
+    electronicsRates: rollingAnnualRateIntervals(electronicsIndex),
+    componentRates: rollingAnnualRateIntervals(historicalElectronicsComponentIndex({
       buildings: DATA.rawBuildings ?? [], records: state.statsRecords,
       currency, variant,
     })),

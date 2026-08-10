@@ -8,6 +8,7 @@ import {
   quantile,
   realAnnualRate,
   rollingAnnualRates,
+  rollingAnnualRateIntervals,
   simulateLoan,
   summarizeInflation,
 } from '../js/models/economic_analysis.js';
@@ -73,6 +74,8 @@ test('rolling annual rates and quartiles are deterministic save-derived scenario
   assert.ok(Math.abs(quantile(rates, 0.25) - 0) < 1e-12);
   assert.ok(Math.abs(quantile(rates, 0.5) - 0.1) < 1e-12);
   assert.ok(Math.abs(quantile(rates, 0.75) - 0.15) < 1e-12);
+  assert.deepEqual(rollingAnnualRateIntervals(points).map(({ startOrdinal, endOrdinal }) =>
+    [startOrdinal, endOrdinal]), [[0, 365], [365, 730], [730, 1095]]);
 });
 
 test('effective and real annual rates use daily compounding and Fisher adjustment', () => {

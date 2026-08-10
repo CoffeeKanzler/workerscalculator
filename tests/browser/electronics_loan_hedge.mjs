@@ -7,7 +7,7 @@ if (!SAVE) throw new Error('usage: electronics_loan_hedge.mjs <save-dir> [base-u
 
 const resources = {
   workers: 10, steel: 100, plastics: 220, fabric: 180,
-  mcomponents: 300, ecomponents: 550, boards: 90,
+  mcomponents: 300, ecomponents: 550, boards: 90, chemicals: 340, gravel: 45,
   waste_steel: 20, waste_other: -5, eletronics: 1000,
 };
 const block = (heading, factor) => `${heading}\n${Object.entries(resources)

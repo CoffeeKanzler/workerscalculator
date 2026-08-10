@@ -12,6 +12,7 @@ import {
 
 const producer = (id, output, inputs, start, minimum = 0.3) => ({
   id,
+  workers: 150,
   production: output,
   consumption: inputs,
   consumptionIncreaseAccordingYear: {
@@ -35,6 +36,7 @@ const buildings = [
 const prices = {
   plastics: 200, steel: 100, chemicals: 300, mcomponents: 400,
   gravel: 20, boards: 80,
+  workers: 10,
 };
 
 test('component index recomputes electronic components before electronics', () => {
@@ -63,17 +65,18 @@ test('component index keeps vanilla and DLC3 recipe chains separate', () => {
   }), null);
 });
 
-test('historical component index uses each saved year and its own purchase prices', () => {
+test('historical component index uses each saved year with fixed save-derived root prices', () => {
   const records = [
-    { year: 2000, day: 1, purchaseRUB: { chemicals: 20, plastics: 30, steel: 40, mcomponents: 50 } },
-    { year: 2010, day: 1, purchaseRUB: { chemicals: 40, plastics: 60, steel: 80, mcomponents: 100 } },
+    { year: 2000, day: 1, workdayCostRUB: 10, purchaseRUB: { chemicals: 20, plastics: 30, steel: 40, mcomponents: 50 } },
+    { year: 2010, day: 1, workdayCostRUB: 20, purchaseRUB: { chemicals: 40, plastics: 60, steel: 80, mcomponents: 100 } },
   ];
   const points = historicalElectronicsComponentIndex({
     buildings, records, currency: 'RUB', variant: 'vanilla',
   });
   assert.equal(points.length, 2);
   assert.equal(points[0].index, 100);
-  assert.ok(points[1].index > 200, 'saved input inflation and the later recipe both apply');
+  assert.ok(points[1].index > 100, 'the later recipe applies');
+  assert.ok(points[1].index < 200, 'historical input inflation is held fixed');
   assert.equal(points[1].ordinal, 2010 * 365 + 1);
 });
 
@@ -105,6 +108,24 @@ test('forecast scenarios separate normal inflation from electronics residuals', 
   assert.ok(scenarios.favorable.residual >= scenarios.base.residual);
   assert.ok(scenarios.base.residual >= scenarios.adverse.residual);
   assert.equal(scenarios.base.normal, 0.06, 'Base uses the latest stable normal-inflation estimate');
+});
+
+test('forecast residuals join only identical historical intervals', () => {
+  const interval = (startOrdinal, endOrdinal, rate) => ({ startOrdinal, endOrdinal, rate });
+  const scenarios = deriveForecastRateScenarios({
+    normalRates: [interval(0, 365, 0.5), interval(365, 730, 0.1)],
+    electronicsRates: [interval(365, 730, 0.32)],
+    componentRates: [interval(0, 365, 0.2), interval(365, 730, 0.1)],
+  });
+  assert.equal(scenarios.base.normal, 0.1);
+  assert.ok(Math.abs(scenarios.base.residual - 0.09090909090909083) < 1e-12);
+});
+
+test('component forecast rejects a missing or zero root price', () => {
+  assert.equal(electronicsComponentIndex({
+    buildings, startYear: 2000, years: 1, variant: 'vanilla',
+    priceFor: key => key === 'steel' ? 0 : prices[key],
+  }), null);
 });
 
 test('exchange anchor uses common normal base prices rather than electronics export', () => {
