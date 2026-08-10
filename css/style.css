@@ -789,6 +789,34 @@ table.data { max-width: 100%; }
 .metric-card .evidence-badge { margin-left: 0; align-self: end; }
 .metric-card.warn, .metric-card.negative { border-color: var(--warn); }
 .metric-label { color: var(--muted); font-size: 13px; }
+.economic-decision-strip {
+  margin: 14px 0 18px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--blueprint);
+  background: var(--panel2);
+}
+.economic-decision-heading { display: flex; justify-content: space-between; gap: 16px; align-items: start; }
+.economic-decision-heading h2, .economic-decision-heading p { margin: 0; }
+.economic-decision-body { display: grid; grid-template-columns: minmax(320px, .8fr) minmax(0, 1.2fr); gap: 14px; }
+.economic-inflation-panel, .economic-loan-panel { min-width: 0; }
+.economic-rate-grid { margin-bottom: 9px; grid-template-columns: repeat(4, minmax(120px, 1fr)); }
+.economic-rate-grid .metric-card { min-height: 78px; }
+.loan-decision-table { min-width: 1180px; font-size: 13px; }
+.loan-decision-table th { white-space: normal; }
+.loan-recommendation { display: block; font-weight: 750; }
+.loan-recommendation.favorable { color: var(--pos); }
+.loan-recommendation.tight { color: var(--warn); }
+.loan-recommendation.risky { color: var(--neg); }
+.loan-reasons { display: block; min-width: 170px; color: var(--muted); font-size: 12px; line-height: 1.3; }
+@media (max-width: 1100px) {
+  .economic-decision-body { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  .economic-decision-heading { display: block; }
+  .economic-rate-grid { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+  .economic-decision-strip { padding: 10px; }
+}
 .alert-list { display: grid; gap: 6px; }
 .alert-list h3 { margin: 0 0 3px; }
 .alert { display: grid; grid-template-columns: minmax(120px, .5fr) 2fr auto; gap: 12px; padding: 8px 10px; border-left: 3px solid var(--warn); background: var(--panel); border-radius: 5px; }

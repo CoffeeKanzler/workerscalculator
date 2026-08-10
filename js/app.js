@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=205';
+import { STRINGS } from './i18n.js?v=206';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=29';
 import { parseLiveStatsFile } from './live_stats.js?v=3';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=50';
@@ -64,6 +64,9 @@ import {
   alertCategory, alertGroup, filterRepublicAlerts, groupRepublicAlerts,
 } from './republic.js?v=23';
 import { filterRange, seriesFromRecords } from './timeseries.js?v=3';
+import {
+  buildPriceIndex, evaluateLoanScenarios, summarizeInflation,
+} from './models/economic_analysis.js?v=1';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
@@ -163,7 +166,7 @@ const SHARE_KEYS = ['lang', 'theme', 'currency', 'priceSource', 'decade', 'overr
   'buildingOverrides', 'customBuildings',
   'republicRange', 'republicResource', 'republicScope', 'republicAlertGroup', 'mapLayers', 'mapBuildingFilter',
   'mapPollutionOpacity', 'mapMetric', 'mapCategoryVisibility', 'republicAlertFilter',
-  'accessAlertsMuted', 'tab'];
+  'accessAlertsMuted', 'historyCurrency', 'historyInflationBasis', 'tab'];
 const SNAPSHOT_KEYS = [...SHARE_KEYS, 'statsRecords', 'statsName', 'recordIndex', 'activeLoans'];
 
 // ---------------------------------------------------------------- state
@@ -219,6 +222,8 @@ function createInitialState() {
     historyKey: 'steel',
     historyCompareKeys: [],
     historyLogScale: false,
+    historyCurrency: 'RUB',
+    historyInflationBasis: 'base',
     plan: {
       settings: { productivity: 1, timeUnit: 'day', seasons: true, calendarFlow: 1, fertilizer: 1, currency: 'RUB' },
       fields: { small: 0, medium: 0, large: 0, hectares: null },
@@ -3397,9 +3402,9 @@ function workersNeededCell(w) {
   return el('td', { class: 'r' }, `${fmt(w.optimal, 0)} / ${fmt(w.max, 0)}`);
 }
 
-function renderRepublicLineChart(title, series, evidence = 'stats.ini') {
+function renderRepublicLineChart(title, series, evidence = 'stats.ini', evidenceClass = 'exact') {
   const box = el('div', { class: 'history republic-chart' },
-    el('h3', {}, title, el('span', { class: 'evidence-badge exact' }, evidence)));
+    el('h3', {}, title, el('span', { class: `evidence-badge ${evidenceClass}` }, evidence)));
   const nonEmpty = series.filter(item => item.points.length);
   if (!nonEmpty.length) return el('div', { class: 'history republic-chart' },
     el('h3', {}, title), el('p', { class: 'hint' }, t('unavailable')));
@@ -4872,6 +4877,95 @@ function renderMapTab() {
 // Observe: the save's own recorded history. Twelve series over the full span
 // of the republic — this was previously collapsed at the foot of the overview,
 // where a 3,002-record history sat 92% of the way down the page.
+function renderEconomicDecisionSurface(historyRecords) {
+  const currency = state.historyCurrency === 'USD' ? 'USD' : 'RUB';
+  const basis = ['base', 'purchase', 'sell'].includes(state.historyInflationBasis)
+    ? state.historyInflationBasis : 'base';
+  const normalIndex = buildPriceIndex(state.statsRecords, { currency, basis: 'base' });
+  const visibleIndex = buildPriceIndex(historyRecords, { currency, basis });
+  const summary = summarizeInflation(visibleIndex);
+  const symbol = currencySymbol(currency);
+  const rate = value => Number.isFinite(value)
+    ? `${value >= 0 ? '+' : ''}${fmt(value * 100, 2)} %` : '—';
+  const amount = value => Number.isFinite(value) ? `${fmt(value, 0)} ${symbol}` : '—';
+  const basisLabel = {
+    base: t('inflationNormal'), purchase: t('inflationImport'), sell: t('inflationExport'),
+  }[basis];
+  const metric = (label, value) => el('div', { class: 'metric-card' },
+    el('span', { class: 'metric-label' }, label),
+    el('strong', {}, value),
+    el('span', { class: 'evidence-badge derived' }, t('derived')));
+  const selectedLoans = state.activeLoans.filter(loan => loan.currency === currency);
+  const reasonKeys = {
+    existingPenalty: 'loanReasonExistingPenalty',
+    insufficientInflationHistory: 'loanReasonInsufficientInflationHistory',
+    inflationExceedsLoanCost: 'loanReasonInflationExceedsLoanCost',
+    lowPositiveRealCost: 'loanReasonLowPositiveRealCost',
+    highPositiveRealCost: 'loanReasonHighPositiveRealCost',
+  };
+  const recommendationKeys = {
+    favorable: 'loanFavorable', tight: 'loanTight', risky: 'loanRisky',
+  };
+  const loanRows = selectedLoans.map((loan, index) => {
+    const decision = evaluateLoanScenarios(loan, normalIndex);
+    return el('tr', {},
+      el('td', {}, `#${index + 1}`),
+      el('td', { class: 'r' }, amount(loan.currentAmount + loan.penaltyAmount)),
+      el('td', { class: 'r' }, fmt(loan.remainingDays, 0)),
+      el('td', { class: 'r' }, rate(loan.annualRate / 100)),
+      el('td', { class: 'r' }, rate(decision.effectiveRate)),
+      el('td', { class: 'r' }, rate(decision.realRates.base)),
+      el('td', { class: 'r pos' }, rate(decision.realRates.best)),
+      el('td', { class: 'r warn' }, rate(decision.realRates.worst)),
+      el('td', { class: 'r' }, amount(decision.simulation.totalPaid)),
+      el('td', { class: 'r' }, amount(decision.simulation.maxDailyPayment)),
+      el('td', {}, el('span', { class: `loan-recommendation ${decision.recommendation}` },
+        t(recommendationKeys[decision.recommendation])),
+      el('span', { class: 'loan-reasons' }, decision.reasons
+        .map(reason => t(reasonKeys[reason] ?? reason)).join(' '))));
+  });
+
+  return el('section', { class: 'economic-decision-strip' },
+    el('div', { class: 'economic-decision-heading' },
+      el('div', {}, el('h2', {}, t('economicDecisionTitle')),
+        el('p', { class: 'hint' }, t('economicDecisionHint'))),
+      el('span', { class: 'evidence-badge exact' }, 'stats.ini')),
+    el('div', { class: 'settingsbar economic-decision-controls' },
+      el('label', {}, t('inflationCurrency'), selectInput(
+        [['RUB', '₽ · RUB'], ['USD', '$ · USD']], currency,
+        value => { state.historyCurrency = value; })),
+      el('label', {}, t('inflationSeries'), selectInput(
+        [['base', t('inflationNormal')], ['purchase', t('inflationImport')], ['sell', t('inflationExport')]],
+        basis, value => { state.historyInflationBasis = value; }))),
+    el('div', { class: 'economic-decision-body' },
+      el('div', { class: 'economic-inflation-panel' },
+        el('div', { class: 'metric-grid economic-rate-grid' },
+          metric(t('inflationLatestAnnual'), rate(summary.latestAnnual)),
+          metric(t('inflationFiveYear'), rate(summary.fiveYearAnnual)),
+          metric(t('inflationAllHistory'), rate(summary.allAnnual)),
+          metric(t('inflationCoverage'), fmt(summary.coverage, 0))),
+        renderRepublicLineChart(
+          `${basisLabel} · ${t('inflationIndex')} (${currency})`,
+          [{ label: basisLabel, color: currency === 'USD' ? '#27ae60' : '#8e44ad',
+            points: seriesFromRecords(visibleIndex, point => point.index) }],
+          t('derived'), 'derived'),
+        el('p', { class: 'hint' }, basis === 'base'
+          ? t('normalInflationLoanEvidence') : t('marketInflationRiskHint'))),
+      el('div', { class: 'economic-loan-panel' },
+        el('h3', {}, `${t('loanDecisionTitle')} · ${currency}`),
+        el('p', { class: 'hint' }, t('loanDecisionHint')),
+        selectedLoans.length ? el('div', { class: 'tablewrap' },
+          el('table', { class: 'data loan-decision-table' },
+            el('thead', {}, el('tr', {},
+              el('th', {}, '#'), el('th', {}, t('loanPrincipal')), el('th', {}, t('loanDays')),
+              el('th', {}, t('loanApr')), el('th', {}, t('loanEffectiveRate')),
+              el('th', {}, t('loanRealBase')), el('th', {}, t('loanRealBest')),
+              el('th', {}, t('loanRealWorst')), el('th', {}, t('loanNominalPaid')),
+              el('th', {}, t('loanMaxDailyPayment')), el('th', {}, t('loanRecommendation')))),
+            el('tbody', {}, ...loanRows)))
+          : el('p', { class: 'empty-state' }, t('noActiveLoans')))));
+}
+
 function renderRepublicHistory() {
   if (!state.statsRecords?.length) {
     return el('section', {}, el('p', { class: 'hint' }, t('noHistory')));
@@ -4911,6 +5005,7 @@ function renderRepublicHistory() {
       }, t(`range.${range}`))),
       resourceOptions.length ? selectInput(resourceOptions, state.republicResource,
         value => { state.republicResource = value; }) : null),
+    renderEconomicDecisionSurface(historyRecords),
     el('div', { class: 'chart-grid' },
       renderRepublicLineChart(t('citizenHistory'), [
         series(t('adults'), '#d35400', record => record.adults),
