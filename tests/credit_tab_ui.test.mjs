@@ -12,15 +12,28 @@ function functionBody(source, name) {
   return source.slice(start, next === -1 ? source.length : next);
 }
 
-function assertPrimaryContentBeforeDisclosure(source, name, copyKeys) {
+function assertDirectFactsContainer(source, { name, sectionClass, factsClass, copyKeys, factKeys }) {
   const body = functionBody(source, name);
-  const firstDisclosure = body.indexOf("el('details'");
-  const primaryBoundary = firstDisclosure === -1 ? body.length : firstDisclosure;
+  const sectionStart = body.indexOf(`class: '${sectionClass}'`);
+  const factsStart = body.indexOf(`class: '${factsClass}'`);
+
+  assert.match(body, new RegExp(
+    `return\\s+el\\('(?:section|div)',\\s*\\{\\s*class:\\s*'${sectionClass}'`),
+    `${name} must directly return its visible primary section`);
+  assert.ok(factsStart > sectionStart,
+    `${name} must directly construct a ${factsClass} container inside its primary section`);
+  assert.match(body.slice(factsStart), /el\('(strong|output|span)'/,
+    `${name} must directly construct visible metric or output nodes in ${factsClass}`);
 
   for (const key of copyKeys) {
     const position = body.indexOf(`t('${key}')`);
-    assert.ok(position >= 0 && position < primaryBoundary,
-      `${name} must render ${key} with its primary facts before any optional assessment disclosure`);
+    assert.ok(position > sectionStart,
+      `${name} must render ${key} directly in its ${sectionClass} primary section`);
+  }
+  for (const key of factKeys) {
+    const position = body.indexOf(`t('${key}')`);
+    assert.ok(position > factsStart,
+      `${name} must render ${key} in its direct ${factsClass} output container`);
   }
 }
 
@@ -82,15 +95,25 @@ test('credits keeps current facts visible before progressively disclosed experim
   assert.doesNotMatch(app, /t\('creditTakeLoanAction'\)/,
     'no Credits renderer may present an imperative borrowing recommendation');
 
-  assertPrimaryContentBeforeDisclosure(app, 'renderCreditDataStatus', [
-    'creditDataStatusTitle', 'creditForecastEvidence',
-  ]);
-  assertPrimaryContentBeforeDisclosure(app, 'renderActiveCreditPosition', [
-    'creditActivePositionTitle', 'creditTotalRepayment', 'creditMaximumDailyPayment',
-    'creditExpectedRealRate',
-  ]);
-  assertPrimaryContentBeforeDisclosure(app, 'renderNewCreditCalculator', [
-    'creditNewCalculatorTitle', 'creditAmount', 'creditTotalRepayment', 'creditAdditionalCost',
-    'creditMaximumDailyPayment', 'creditExpectedRealRate',
-  ]);
+  assertDirectFactsContainer(app, {
+    name: 'renderCreditDataStatus', sectionClass: 'credit-data-status',
+    factsClass: 'credit-data-status-facts',
+    copyKeys: ['creditDataStatusTitle', 'creditForecastEvidence'],
+    factKeys: ['creditForecastEvidence'],
+  });
+  assertDirectFactsContainer(app, {
+    name: 'renderActiveCreditPosition', sectionClass: 'active-credit-card',
+    factsClass: 'active-credit-facts',
+    copyKeys: ['creditActivePositionTitle', 'creditTotalRepayment', 'creditMaximumDailyPayment',
+      'creditExpectedRealRate'],
+    factKeys: ['creditTotalRepayment', 'creditMaximumDailyPayment', 'creditExpectedRealRate'],
+  });
+  assertDirectFactsContainer(app, {
+    name: 'renderNewCreditCalculator', sectionClass: 'credit-calculator',
+    factsClass: 'credit-calculator-results',
+    copyKeys: ['creditNewCalculatorTitle', 'creditAmount', 'creditTotalRepayment', 'creditAdditionalCost',
+      'creditMaximumDailyPayment', 'creditExpectedRealRate'],
+    factKeys: ['creditTotalRepayment', 'creditAdditionalCost', 'creditMaximumDailyPayment',
+      'creditExpectedRealRate'],
+  });
 });
