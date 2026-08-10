@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3780807256",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-10T05:46:50.445Z",
+  "buildings": [
+    {
+      "id": "3780807256/callofthemotherland",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Call of the Motherland",
+      "workshopId": "3780807256",
+      "modPath": "callofthemotherland",
+      "footprint": {
+        "boxes": [
+          [
+            -4.41,
+            -2.81,
+            4.61,
+            2.81
+          ],
+          [
+            -1.9,
+            -5.13,
+            3.88,
+            5.13
+          ],
+          [
+            -2.03,
+            -4.92,
+            2.22,
+            4.92
+          ],
+          [
+            -4.61,
+            -4.92,
+            4.81,
+            4.92
+          ],
+          [
+            3.66,
+            -3.06,
+            4.33,
+            -2.39
+          ],
+          [
+            0.92,
+            3.74,
+            1.59,
+            4.41
+          ],
+          [
+            3.45,
+            0.66,
+            4.12,
+            1.33
+          ],
+          [
+            -3.85,
+            -3.03,
+            -3.18,
+            -2.36
+          ],
+          [
+            0.09,
+            -4.85,
+            0.11,
+            4.85
+          ],
+          [
+            -0.58,
+            -0.67,
+            0.77,
+            0.67
+          ],
+          [
+            -4.55,
+            -0.01,
+            4.74,
+            0.01
+          ],
+          [
+            0.66,
+            -5.44,
+            1.33,
+            -4.77
+          ],
+          [
+            3.82,
+            2.18,
+            4.49,
+            2.85
+          ],
+          [
+            -2.29,
+            -1.29,
+            -1.61,
+            -0.62
+          ],
+          [
+            -3.55,
+            3.13,
+            -2.88,
+            3.8
+          ],
+          [
+            -0.25,
+            1.71,
+            0.45,
+            2.41
+          ],
+          [
+            1.81,
+            -1.24,
+            2.51,
+            -0.54
+          ],
+          [
+            -2.01,
+            -2.26,
+            -1.31,
+            -1.56
+          ],
+          [
+            -1.99,
+            1.54,
+            -1.29,
+            2.24
+          ]
+        ],
+        "height": 13.6
+      }
+    }
+  ],
+  "vehicles": []
+}

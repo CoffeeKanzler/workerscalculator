@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3779842468",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-10T05:46:50.432Z",
+  "buildings": [
+    {
+      "id": "3779842468/FreeHeliportCargo",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_GRAVEL": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Free Heliport Cargo",
+      "workshopId": "3779842468",
+      "modPath": "FreeHeliportCargo",
+      "footprint": {
+        "boxes": [
+          [
+            -15.25,
+            -15.58,
+            15.24,
+            15.77
+          ]
+        ],
+        "height": 1.74
+      }
+    },
+    {
+      "id": "3779842468/FreeHeliportParking",
+      "nameId": null,
+      "types": [
+        "TYPE_AIRPLANE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Free Heliport Parking",
+      "workshopId": "3779842468",
+      "modPath": "FreeHeliportParking",
+      "footprint": {
+        "boxes": [
+          [
+            -15.25,
+            -15.58,
+            15.24,
+            15.77
+          ]
+        ],
+        "height": 1.74
+      }
+    }
+  ],
+  "vehicles": []
+}

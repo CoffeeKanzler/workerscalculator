@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3777599268",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-10T05:46:50.428Z",
+  "buildings": [
+    {
+      "id": "3777599268/green",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 35,
+      "professors": 15,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "bricks": 950,
+        "boards": 300,
+        "steel": 300,
+        "concrete": 400,
+        "mcomponents": 5,
+        "workers": 6000
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Green Mansion",
+      "workshopId": "3777599268",
+      "modPath": "green",
+      "footprint": {
+        "boxes": [
+          [
+            -9.56,
+            -9.44,
+            9.62,
+            7.56
+          ],
+          [
+            -3.43,
+            -5.24,
+            2.67,
+            12.71
+          ]
+        ],
+        "height": 43.06
+      }
+    }
+  ],
+  "vehicles": []
+}
