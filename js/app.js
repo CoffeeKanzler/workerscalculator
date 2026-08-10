@@ -69,7 +69,7 @@ import {
 } from './models/economic_analysis.js?v=5';
 import {
   electronicsRecipeCost, rankElectronicsShipTrades,
-} from './models/electronics_analysis.js?v=4';
+} from './models/electronics_analysis.js?v=5';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';

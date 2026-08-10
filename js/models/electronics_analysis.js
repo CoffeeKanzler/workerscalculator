@@ -7,6 +7,20 @@ import {
 const DAYS_PER_YEAR = 365;
 const ELECTRONICS_SHIP_SUBTYPES = new Set([0, 11]);
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+const ELECTRONICS_PRODUCER_IDS = Object.freeze({
+  vanilla: ['eletronic_components_factory', 'eletronic_factory'],
+  dlc3: ['dlc3/electronic_components_factory', 'dlc3/electronics_factory'],
+});
+
+export function resolveElectronicsProducerSet(buildings) {
+  const byId = new Map((buildings ?? []).map(building => [building?.id, building]));
+  return Object.fromEntries(Object.entries(ELECTRONICS_PRODUCER_IDS).map(([variant, ids]) => {
+    const rows = ids.map(id => byId.get(id));
+    const complete = rows.every(row => row?.consumptionIncreaseAccordingYear
+      && row?.productionDecreaseAccordingYear);
+    return [variant, complete ? rows : null];
+  }));
+}
 
 function curveValues(curve) {
   const startYear = Number(curve?.startYear);
