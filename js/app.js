@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=204';
+import { STRINGS } from './i18n.js?v=205';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=28';
 import { parseLiveStatsFile } from './live_stats.js?v=2';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=50';
@@ -259,6 +259,7 @@ function createInitialState() {
     analysisSort: { col: 'profit', dir: -1 },
     analysisSearch: '',
     analysisWorkerType: 'resident',
+    analysisCostBasis: 'purchase',
     priceSort: { col: 'name', dir: 1 },
     saveSlotName: '',   // transient UI field for the named-save-slot input, not shared/exported
     snapshotNotice: '', // transient feedback for named snapshot actions
@@ -1983,6 +1984,7 @@ function renderChain() {
 function renderAnalysis(currency = state.currency) {
   const prices = currentPrices();
   const workerType = state.analysisWorkerType === 'guest' ? 'guest' : 'resident';
+  const costBasis = state.analysisCostBasis === 'opportunity' ? 'opportunity' : 'purchase';
   const measuredWorkerCost = workerCostForType(prices, currency, workerType);
   const workerCost = measuredWorkerCost ?? 0;
   const workerLabel = t(workerType === 'guest' ? 'workerGuest' : 'workerResident');
@@ -1993,7 +1995,7 @@ function renderAnalysis(currency = state.currency) {
       : `${t('workerNeedCost')}: ${fmt(workerCost, 2)} ${currencySymbol(currency)}`;
   const eco = economy();
   const rows = prodBuildings().map(b => {
-    const { income, expenses, profit } = eco.buildingProfit(b, currency);
+    const { income, expenses, profit } = eco.buildingProfit(b, currency, 1, 1, 1, costBasis);
     const buildCost = eco.buildCost(b, currency);
     return {
       b, income, expenses, profit,
@@ -2056,7 +2058,14 @@ function renderAnalysis(currency = state.currency) {
         workerType,
         value => { state.analysisWorkerType = value; },
       )),
-      el('span', { class: 'hint' }, workerCostHint)),
+      el('span', { class: 'hint' }, workerCostHint),
+      el('label', {}, t('costBasis'), selectInput(
+        [['purchase', t('costBasisPurchase')], ['opportunity', t('costBasisOpportunity')]],
+        costBasis,
+        value => { state.analysisCostBasis = value; },
+      )),
+      el('span', { class: 'hint cost-basis-hint' },
+        t(costBasis === 'purchase' ? 'costBasisPurchaseHint' : 'costBasisOpportunityHint'))),
     el('input', {
       type: 'search', placeholder: t('searchPlaceholder'), value: state.analysisSearch,
       oninput: e => { state.analysisSearch = e.target.value; update(); },
