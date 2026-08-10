@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=212';
+import { STRINGS } from './i18n.js?v=214';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
 import { parseLiveStatsFile } from './live_stats.js?v=4';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=51';
@@ -14,7 +14,7 @@ import {
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
-} from './train.js?v=25';
+} from './train.js?v=26';
 import {
   createIndexedDbObservationStore,
   createIndexedDbStatsStore,
@@ -70,8 +70,9 @@ import {
 } from './models/economic_analysis.js?v=7';
 import {
   amortizationCorridor, deriveForecastRateScenarios, electronicsComponentIndex,
-  forecastElectronicsPrices, futureExchangePath, rankRelevantCreditOpportunities,
-} from './models/credit_forecast.js?v=3';
+  forecastElectronicsPrices, futureExchangePath, historicalElectronicsComponentIndex,
+  rankRelevantCreditOpportunities, rubPerUsdFromBasePrices,
+} from './models/credit_forecast.js?v=5';
 import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
@@ -105,12 +106,12 @@ import {
   rankUsedMarketBorderRoutes,
   paginateVehicleOpportunities, shareSafeSaveImport, vehicleCategoryGroup,
   vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=22';
+} from './fleet.js?v=24';
 import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=23';
+} from './adapters/save_folder_adapter.js?v=24';
 import { matchSaveBuilding } from './adapters/save_projection.js?v=24';
 import { bootstrapRuntime } from './bootstrap.js?v=11';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
@@ -233,6 +234,7 @@ function createInitialState() {
     creditApr: 5,
     creditTermYears: 10,
     creditRecipeVariant: 'vanilla',
+    creditFinancingSource: 'hypothetical',
     plan: {
       settings: { productivity: 1, timeUnit: 'day', seasons: true, calendarFlow: 1, fertilizer: 1, currency: 'RUB' },
       fields: { small: 0, medium: 0, large: 0, hectares: null },
@@ -4887,13 +4889,7 @@ function renderMapTab() {
 // Observe: the save's own recorded history. Twelve series over the full span
 // of the republic — this was previously collapsed at the foot of the overview,
 // where a 3,002-record history sat 92% of the way down the page.
-function componentRates(points) {
-  return (points ?? []).slice(1).map((point, index) =>
-    point.index / points[index].index - 1).filter(Number.isFinite);
-}
-
-function electronicsForecastFor(currency, year, variant) {
-  const eco = economy();
+function electronicsForecastFor(currency, year, variant, eco) {
   const normalIndex = buildPriceIndex(state.statsRecords, { currency, basis: 'base' });
   const electronicsIndex = buildResourcePriceIndex(state.statsRecords, {
     resource: 'eletronics', currency, basis: 'sell',
@@ -4905,19 +4901,16 @@ function electronicsForecastFor(currency, year, variant) {
   const rates = deriveForecastRateScenarios({
     normalRates: rollingAnnualRates(normalIndex),
     electronicsRates: rollingAnnualRates(electronicsIndex),
-    componentRates: componentRates(recipe),
+    componentRates: rollingAnnualRates(historicalElectronicsComponentIndex({
+      buildings: DATA.rawBuildings ?? [], records: state.statsRecords,
+      currency, variant,
+    })),
   });
   const paths = forecastElectronicsPrices({
     currentPrice: eco.sell('eletronics', currency), rateScenarios: rates,
     componentIndex: recipe, months: 360,
   });
   return { normalIndex, electronicsIndex, recipe, rates, paths };
-}
-
-function currentRubPerUsd(eco) {
-  const rub = eco.sell('eletronics', 'RUB');
-  const usd = eco.sell('eletronics', 'USD');
-  return rub > 0 && usd > 0 ? rub / usd : null;
 }
 
 function renderCredits() {
@@ -4954,7 +4947,8 @@ function renderCredits() {
     const decision = evaluateLoanScenarios(loan, normalIndex);
     return el('tr', {},
       el('td', {}, `#${index + 1}`),
-      el('td', { class: 'r' }, amount(loan.currentAmount + loan.penaltyAmount)),
+      el('td', { class: 'r' }, amount(loan.currentAmount)),
+      el('td', { class: 'r' }, amount(loan.penaltyAmount)),
       el('td', { class: 'r' }, fmt(loan.remainingDays, 0)),
       el('td', { class: 'r' }, rate(loan.annualRate / 100)),
       el('td', { class: 'r' }, rate(decision.effectiveRate)),
@@ -4974,16 +4968,30 @@ function renderCredits() {
     annualRate: Math.max(0, state.creditApr),
     remainingDays: Math.max(1, Math.round(state.creditTermYears * 365)),
   };
-  const hypothetical = simulateLoan(hypotheticalLoan);
+  const hypothetical = simulateLoan(hypotheticalLoan, {
+    maxDays: hypotheticalLoan.remainingDays + 1,
+  });
+  const financingOptions = [
+    ['hypothetical', t('creditHypotheticalTerms')],
+    ...selectedLoans.map((loan, index) => [
+      `active-${index}`,
+      `${t('creditActiveTerms')} #${index + 1} · ${fmt(loan.annualRate, 2)} % · ${fmt(loan.remainingDays, 0)} d`,
+    ]),
+  ];
+  const activeSourceIndex = /^active-(\d+)$/.exec(state.creditFinancingSource)?.[1];
+  const investmentLoan = Number.isInteger(Number(activeSourceIndex))
+    && selectedLoans[Number(activeSourceIndex)]
+    ? selectedLoans[Number(activeSourceIndex)] : hypotheticalLoan;
   const currentRecord = state.statsRecords?.[
     Math.min(state.recordIndex, (state.statsRecords?.length ?? 1) - 1)
   ];
   const year = Number(currentRecord?.year ?? state.statsRecords?.at(-1)?.year);
   const variant = state.creditRecipeVariant === 'dlc3' ? 'dlc3' : 'vanilla';
+  const eco = currentRecord
+    ? new Economy(DATA.resources, recordToPrices(currentRecord, state.statsRecords)) : null;
   const forecasts = Object.fromEntries(['RUB', 'USD'].map(code =>
-    [code, electronicsForecastFor(code, year, variant)]));
-  const eco = economy();
-  const rubPerUsd = currentRubPerUsd(eco);
+    [code, eco ? electronicsForecastFor(code, year, variant, eco) : {}]));
+  const rubPerUsd = rubPerUsdFromBasePrices(currentRecord);
   const exchange = forecasts.RUB.rates && forecasts.USD.rates && rubPerUsd
     ? futureExchangePath({
       currentRubPerUsd: rubPerUsd,
@@ -4991,10 +4999,11 @@ function renderCredits() {
       usdNormalRate: forecasts.USD.rates.base.normal,
       months: 360,
     }) : null;
-  const quotes = (state.saveImport?.usedVehicleOffers ?? []).map(offer =>
-    vehicleUsedMarketQuote(offer, { year, currency, economy: eco })).filter(Boolean);
+  const quotes = eco ? (state.saveImport?.usedVehicleOffers ?? []).map(offer =>
+    vehicleUsedMarketQuote(offer, { year, currency, economy: eco })).filter(Boolean)
+    : [];
   const opportunities = rankRelevantCreditOpportunities({
-    quotes, loans: [hypotheticalLoan], horizonYears: 30,
+    quotes, loans: [investmentLoan], horizonYears: 30,
     forecastContext: { corridorFor: ({ quote, loan }) => {
       if (!exchange || !forecasts.RUB.paths || !forecasts.USD.paths) return null;
       const conversionPaths = loan.currency === 'RUB'
@@ -5024,6 +5033,8 @@ function renderCredits() {
     base: point.net, favorable: best.paths.favorable?.[index]?.net,
     adverse: best.paths.adverse?.[index]?.net, zero: 0,
   })) ?? [];
+  const historicalField = field => [...historyRecords].reverse()
+    .map(record => Number(record?.[`${field}${currency}`])).find(Number.isFinite);
 
   return el('section', { class: 'credit-center economic-decision-strip' },
     el('div', { class: 'economic-decision-heading' },
@@ -5039,7 +5050,9 @@ function renderCredits() {
         basis, value => { state.historyInflationBasis = value; }))),
     el('h3', {}, t('creditActionTitle')),
     el('div', { class: `credit-action ${best ? best.assessment : 'none'}` },
-      el('strong', {}, best ? t('creditTakeLoanAction') : t('creditNoLoanAction')),
+      el('strong', {}, best
+        ? t('creditTakeLoanAction').replace('{amount}', amount(best.capitalRequired))
+        : t('creditNoLoanAction')),
       best ? el('span', {}, `${best.shipName} · ${best.exitCurrency} · ${monthLabel(best.baseBreakEvenMonth)}`) : null),
     el('div', { class: 'economic-decision-body' },
       el('div', { class: 'economic-inflation-panel' },
@@ -5061,7 +5074,8 @@ function renderCredits() {
         selectedLoans.length ? el('div', { class: 'tablewrap' },
           el('table', { class: 'data loan-decision-table' },
             el('thead', {}, el('tr', {},
-              el('th', {}, '#'), el('th', {}, t('loanPrincipal')), el('th', {}, t('loanDays')),
+              el('th', {}, '#'), el('th', {}, t('loanPrincipal')), el('th', {}, t('loanPenalty')),
+              el('th', {}, t('loanDays')),
               el('th', {}, t('loanApr')), el('th', {}, t('loanEffectiveRate')),
               el('th', {}, t('loanRealBase')), el('th', {}, t('loanRealBest')),
               el('th', {}, t('loanRealWorst')), el('th', {}, t('loanNominalPaid')),
@@ -5071,6 +5085,10 @@ function renderCredits() {
     el('section', { class: 'credit-hypothetical' },
       el('h3', {}, t('creditHypotheticalTitle')),
       el('div', { class: 'settingsbar' },
+        el('label', {}, t('creditFinancingTerms'), selectInput(
+          financingOptions, financingOptions.some(([value]) => value === state.creditFinancingSource)
+            ? state.creditFinancingSource : 'hypothetical',
+          value => { state.creditFinancingSource = value; })),
         el('label', {}, t('creditAmount'), numInput(state.creditAmount,
           value => { state.creditAmount = value; }, { min: 0 })),
         el('label', {}, t('loanApr'), numInput(state.creditApr,
@@ -5080,6 +5098,7 @@ function renderCredits() {
         el('label', {}, t('creditRecipeVariant'), selectInput(
           [['vanilla', t('electronicsRecipeVanilla')], ['dlc3', t('electronicsRecipeDlc3')]],
           variant, value => { state.creditRecipeVariant = value; }))),
+      el('p', { class: 'hint' }, t('creditLoanPreviewHint')),
       el('div', { class: 'metric-grid economic-rate-grid' },
         metric(t('loanNominalPaid'), amount(hypothetical.totalPaid)),
         metric(t('loanMaxDailyPayment'), amount(hypothetical.maxDailyPayment)),
@@ -5094,7 +5113,11 @@ function renderCredits() {
             el('th', {}, t('electronicsCapital')), el('th', {}, t('creditBreakEvenBase')),
             el('th', {}, t('creditBreakEvenAdverse')), el('th', {}, t('loanRecommendation')))),
           el('tbody', {}, ...opportunities.slice(0, 20).map(item => el('tr', {},
-            el('td', {}, item.shipName), el('td', {}, item.exitCurrency),
+            el('td', {}, item.shipName), el('td', {}, item.alternateRoutes.length
+              ? el('details', {}, el('summary', {}, item.exitCurrency),
+                el('span', { class: 'loan-reasons' }, `${t('creditAlternateExits')}: ${item.alternateRoutes
+                  .map(route => `${route.exitCurrency} · ${monthLabel(route.baseBreakEvenMonth)}`).join(' · ')}`))
+              : item.exitCurrency),
             el('td', { class: 'r' }, `${fmt(item.capacity, 0)} t`),
             el('td', { class: 'r' }, amount(item.capitalRequired)),
             el('td', { class: 'r pos' }, monthLabel(item.baseBreakEvenMonth)),
@@ -5103,13 +5126,23 @@ function renderCredits() {
               t(assessmentKey[item.assessment]))))))))
         : el('p', { class: 'empty-state' }, t('creditNoRelevantElectronics')),
       best ? el('div', { class: 'amortization-corridor' },
+        el('div', { class: 'metric-grid economic-rate-grid' },
+          metric(t('creditRequiredPrincipal'), amount(best.capitalRequired)),
+          ...[5, 10, 20, 30].map(years => metric(`${years} ${t('creditTermYears')}`,
+            amount(best.milestones.base?.[years])))),
         renderRepublicLineChart(t('creditAmortizationTitle'), [
           { label: t('creditScenarioBase'), color: '#2980b9', points: seriesFromRecords(forecastRecords, row => row.base) },
           { label: t('creditScenarioFavorable'), color: '#27ae60', points: seriesFromRecords(forecastRecords, row => row.favorable) },
           { label: t('creditScenarioAdverse'), color: '#c0392b', points: seriesFromRecords(forecastRecords, row => row.adverse) },
           { label: '0', color: '#7f8c8d', points: seriesFromRecords(forecastRecords, row => row.zero) },
         ], t('creditForecastEvidence'), 'derived'),
-        el('p', { class: 'hint' }, `${t('creditShipResidualZero')} · ${t('creditHistoricalBoundary')}`)) : null));
+        el('p', { class: 'hint' }, t('creditShipResidualZero'))) : null),
+    el('section', { class: 'credit-history-boundary' },
+      el('h3', {}, t('creditHistoricalTitle')),
+      el('div', { class: 'metric-grid economic-rate-grid' },
+        metric(t('creditHistoricalBalance'), amount(historicalField('loanBalance'))),
+        metric(t('creditHistoricalInterest'), amount(historicalField('loanInterest')))),
+      el('p', { class: 'hint' }, t('creditHistoricalBoundary'))));
 }
 
 function renderRepublicHistory() {

@@ -17,6 +17,8 @@ const record = (year, electronicsSell) => {
   return `$STAT_RECORD
 $DATE_YEAR ${year}
 $DATE_DAY 1
+$Economy_WorkdayCostRUB ${10 * ratio}
+$Economy_WorkdayCostUSD ${ratio}
 ${block('$Economy_BaseRUB', ratio)}
 ${block('$Economy_BaseUSD', ratio / 10)}
 ${block('$Economy_PurchaseCostRUB', ratio * 1.15)}
@@ -81,12 +83,28 @@ try {
     throw new Error('the controlled profitable path received no direct assessment');
   }
   if (text.includes('Robust') || text.includes('Speculative')) throw new Error('legacy labels remain visible');
+  const exits = strategy.locator('.credit-investment-table details').first();
+  await exits.locator('summary').click();
+  const exitText = await exits.innerText();
+  if (!exitText.includes('RUB') || !exitText.includes('USD')) {
+    throw new Error(`both exit currencies are not inspectable: ${exitText}`);
+  }
+  const plot = strategy.locator('.amortization-corridor .uplot').first();
+  const plotBox = await plot.boundingBox();
+  await page.mouse.move(plotBox.x + plotBox.width * .45, plotBox.y + plotBox.height * .55);
+  await page.waitForTimeout(250);
+  const tooltip = await strategy.locator('.amortization-corridor .chart-tooltip').innerText();
+  if (!tooltip.includes('Base')) throw new Error('amortization hover omitted the Base path');
+  await page.screenshot({ path: '/tmp/workers-credit-center-light.png', fullPage: true });
+  await page.locator('.context-tabs button', { hasText: 'History' }).first().click();
+  if (await page.locator('.credit-center').count()) throw new Error('History still owns the credit surface');
+  await page.locator('.context-tabs button', { hasText: 'Credits' }).first().click();
   await page.locator('.themeswitch').click();
   await page.locator('.themeswitch').click();
   if (await page.locator('.themeswitch').getAttribute('data-theme-resolved') !== 'dark') {
     throw new Error('the electronics strategy was not exercised in dark mode');
   }
-  await strategy.scrollIntoViewIfNeeded();
+  await page.locator('.credit-center').scrollIntoViewIfNeeded();
   await page.screenshot({ path: SCREENSHOT, fullPage: true });
   if (errors.length) throw new Error(errors.join('\n'));
   console.log(`ok: real used ship, dynamic recipes, electronics history, and loan decision rendered; ${SCREENSHOT}`);

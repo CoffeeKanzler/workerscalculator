@@ -35,6 +35,9 @@ test('dedicated credit tab owns decisions, relevant investments, and amortizatio
     'creditAssessmentBaseOnly', 'creditAmortizationTitle', 'creditHistoricalBoundary',
     'creditForecastEvidence', 'creditShipResidualZero', 'creditTakeLoanAction',
     'creditNoLoanAction', 'creditScenarioBase', 'creditScenarioFavorable', 'creditScenarioAdverse',
+    'creditHistoricalTitle', 'creditHistoricalBalance', 'creditHistoricalInterest',
+    'creditAlternateExits', 'creditRequiredPrincipal', 'loanPenalty', 'creditLoanPreviewHint',
+    'creditFinancingTerms', 'creditHypotheticalTerms', 'creditActiveTerms',
   ]) {
     assert.equal((i18n.match(new RegExp(`${key}:`, 'g')) ?? []).length, 2,
       `${key} must be translated in both languages`);

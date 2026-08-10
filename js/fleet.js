@@ -249,7 +249,7 @@ export function vehicleComponentBaseValue(recipe, originCurrency, currency, econ
   for (const [resource, amount] of recipe) {
     if (!Number.isFinite(amount) || !(amount > 0)) continue;
     let price = resource === 'workers' ? economy.workday(currency) : economy.sell(resource, currency);
-    if (!Number.isFinite(price)) return null;
+    if (!Number.isFinite(price) || !(price > 0)) return null;
     if (currency === 'RUB' && resource === 'workers') price *= 0.45;
     value = (value + amount * price) * crossMarketFactor;
   }

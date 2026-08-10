@@ -67,6 +67,9 @@ test('ranking keeps one best route per ship and nests alternate exits', () => {
   assert.equal(rows[0].exitCurrency, 'USD');
   assert.equal(rows[0].alternateRoutes.length, 1);
   assert.equal(rows[0].alternateRoutes[0].exitCurrency, 'RUB');
+  assert.deepEqual(rows[0].milestones.base, { 5: 8, 10: 8, 20: 8, 30: 8 });
+  assert.equal(rows[0].neverBreaksEven.adverse, false);
+  assert.equal(rows[0].alternateRoutes[0].neverBreaksEven.adverse, true);
 });
 
 test('incompatible and unresolved ship offers are never evaluated', () => {

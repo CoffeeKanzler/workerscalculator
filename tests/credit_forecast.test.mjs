@@ -6,6 +6,8 @@ import {
   electronicsComponentIndex,
   forecastElectronicsPrices,
   futureExchangePath,
+  historicalElectronicsComponentIndex,
+  rubPerUsdFromBasePrices,
 } from '../js/models/credit_forecast.js';
 
 const producer = (id, output, inputs, start, minimum = 0.3) => ({
@@ -61,6 +63,20 @@ test('component index keeps vanilla and DLC3 recipe chains separate', () => {
   }), null);
 });
 
+test('historical component index uses each saved year and its own purchase prices', () => {
+  const records = [
+    { year: 2000, day: 1, purchaseRUB: { chemicals: 20, plastics: 30, steel: 40, mcomponents: 50 } },
+    { year: 2010, day: 1, purchaseRUB: { chemicals: 40, plastics: 60, steel: 80, mcomponents: 100 } },
+  ];
+  const points = historicalElectronicsComponentIndex({
+    buildings, records, currency: 'RUB', variant: 'vanilla',
+  });
+  assert.equal(points.length, 2);
+  assert.equal(points[0].index, 100);
+  assert.ok(points[1].index > 200, 'saved input inflation and the later recipe both apply');
+  assert.equal(points[1].ordinal, 2010 * 365 + 1);
+});
+
 test('forecast applies component movement and normal inflation once', () => {
   const paths = forecastElectronicsPrices({
     currentPrice: 100,
@@ -88,6 +104,15 @@ test('forecast scenarios separate normal inflation from electronics residuals', 
   assert.ok(scenarios.base.normal >= scenarios.adverse.normal);
   assert.ok(scenarios.favorable.residual >= scenarios.base.residual);
   assert.ok(scenarios.base.residual >= scenarios.adverse.residual);
+  assert.equal(scenarios.base.normal, 0.06, 'Base uses the latest stable normal-inflation estimate');
+});
+
+test('exchange anchor uses common normal base prices rather than electronics export', () => {
+  assert.equal(rubPerUsdFromBasePrices({
+    baseRUB: { food: 100, steel: 200, eletronics: 9999 },
+    baseUSD: { food: 10, steel: 20, eletronics: 1 },
+  }), 10);
+  assert.equal(rubPerUsdFromBasePrices({ baseRUB: { food: 100 }, baseUSD: {} }), null);
 });
 
 test('future exchange follows relative normal currency inflation', () => {

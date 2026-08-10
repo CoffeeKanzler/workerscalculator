@@ -802,7 +802,7 @@ table.data { max-width: 100%; }
 .credit-action.profitable-adverse { border-left-color: var(--pos); }
 .credit-action.profitable-base-only { border-left-color: var(--warn); }
 .credit-action.none { color: var(--muted); }
-.credit-hypothetical, .credit-investments { padding-top: 14px; border-top: 1px solid var(--border); }
+.credit-hypothetical, .credit-investments, .credit-history-boundary { padding-top: 14px; border-top: 1px solid var(--border); }
 .credit-investment-table { min-width: 980px; }
 .loan-recommendation.profitable-adverse { color: var(--pos); }
 .loan-recommendation.profitable-base-only { color: var(--warn); }

@@ -41,6 +41,26 @@ export function electronicsComponentIndex({
   return points;
 }
 
+export function historicalElectronicsComponentIndex({
+  buildings, records = [], currency = 'RUB', variant = 'vanilla',
+} = {}) {
+  const priceField = currency === 'USD' ? 'purchaseUSD' : 'purchaseRUB';
+  const costs = records.flatMap(record => {
+    const year = Number(record?.year);
+    const day = Number(record?.day);
+    if (!Number.isFinite(year) || year <= 0 || !Number.isFinite(day) || day < 0) return [];
+    const point = electronicsComponentIndex({
+      buildings, startYear: year, years: 0, variant,
+      priceFor: key => Number(record?.[priceField]?.[key]),
+    })?.[0];
+    if (!(point?.electronicsCost > 0)) return [];
+    return [{ year, day, ordinal: year * DAYS_PER_YEAR + day, price: point.electronicsCost }];
+  }).sort((a, b) => a.ordinal - b.ordinal);
+  const first = costs[0]?.price;
+  if (!(first > 0)) return [];
+  return costs.map(point => ({ ...point, index: point.price / first * 100, coverage: 1 }));
+}
+
 function componentIndexAt(componentIndex, month) {
   if (!Array.isArray(componentIndex) || !componentIndex.length) return null;
   const yearOffset = month / 12;
@@ -94,11 +114,24 @@ export function deriveForecastRateScenarios({
     residuals.push((1 + electronics) / ((1 + normal) * (1 + component)) - 1);
   }
   if (!normals.length || !residuals.length) return null;
+  const baseNormal = normals.at(-1);
   return {
-    base: { normal: quantile(normals, 0.5), residual: quantile(residuals, 0.5) },
-    favorable: { normal: quantile(normals, 0.75), residual: quantile(residuals, 0.75) },
-    adverse: { normal: quantile(normals, 0.25), residual: quantile(residuals, 0.25) },
+    base: { normal: baseNormal, residual: quantile(residuals, 0.5) },
+    favorable: { normal: Math.max(baseNormal, quantile(normals, 0.75)), residual: quantile(residuals, 0.75) },
+    adverse: { normal: Math.min(baseNormal, quantile(normals, 0.25)), residual: quantile(residuals, 0.25) },
   };
+}
+
+export function rubPerUsdFromBasePrices(record) {
+  const rub = record?.baseRUB ?? {};
+  const usd = record?.baseUSD ?? {};
+  const ratios = Object.keys(rub).flatMap(key => {
+    const rubPrice = Number(rub[key]);
+    const usdPrice = Number(usd[key]);
+    return rubPrice > 0 && usdPrice > 0 ? [rubPrice / usdPrice] : [];
+  }).sort((a, b) => a - b);
+  if (ratios.length < 2) return null;
+  return quantile(ratios, 0.5);
 }
 
 export function futureExchangePath({
@@ -182,6 +215,15 @@ function routeSummary({ quote, loan, corridor, exitCurrency, paths, horizonMonth
   const adverseBreakEvenMonth = firstBreakEvenMonth(paths?.adverse, horizonMonth);
   const baseEnd = [...(paths.base ?? [])].reverse()
     .find(point => point.month <= horizonMonth && Number.isFinite(point.net));
+  const milestones = Object.fromEntries(Object.entries(paths ?? {}).map(([scenario, points]) =>
+    [scenario, Object.fromEntries([5, 10, 20, 30].map(years => {
+      const target = years * 12;
+      const point = [...(points ?? [])].reverse()
+        .find(item => item.month <= target && Number.isFinite(item.net));
+      return [years, point?.net ?? null];
+    }))]));
+  const neverBreaksEven = Object.fromEntries(Object.entries(paths ?? {}).map(([scenario, points]) =>
+    [scenario, !Number.isFinite(firstBreakEvenMonth(points, horizonMonth))]));
   return {
     quote,
     loan,
@@ -195,6 +237,8 @@ function routeSummary({ quote, loan, corridor, exitCurrency, paths, horizonMonth
     baseBreakEvenMonth,
     adverseBreakEvenMonth,
     baseValue30Years: baseEnd?.net ?? null,
+    milestones,
+    neverBreaksEven,
     assessment: Number.isFinite(adverseBreakEvenMonth)
       ? 'profitable-adverse' : 'profitable-base-only',
   };
@@ -241,6 +285,8 @@ export function rankRelevantCreditOpportunities({
       baseValue30Years: candidate.baseValue30Years,
       assessment: candidate.assessment,
       paths: candidate.paths,
+      milestones: candidate.milestones,
+      neverBreaksEven: candidate.neverBreaksEven,
     })),
   })).sort((a, b) => a.baseBreakEvenMonth - b.baseBreakEvenMonth
     || (b.baseValue30Years ?? -Infinity) - (a.baseValue30Years ?? -Infinity));
