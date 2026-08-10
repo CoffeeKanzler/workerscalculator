@@ -60,14 +60,24 @@ test('electronics is an optional closed experiment with plain-language productio
 
   assert.match(electronics, /el\('details', \{[^}]*class: 'credit-electronics-disclosure'[^}]*\}/,
     'electronics must be a named native disclosure');
-  assert.doesNotMatch(electronics, /el\('details', \{[^}]*open:/,
-    'electronics must start closed');
+  assert.match(app, /let creditElectronicsOpen = false;/,
+    'electronics must start closed before any user toggle');
+  assert.match(electronics, /\.\.\.\(creditElectronicsOpen \? \{ open: '' \} : \{\}\)/,
+    'electronics must restore its open state after a selector rerender');
+  assert.match(electronics,
+    /ontoggle: event => \{ creditElectronicsOpen = event\.currentTarget\.open; \}/,
+    'electronics must persist user disclosure toggles');
   assert.match(electronics, /el\('summary',\s*\{\},\s*t\('electronicsOptionalTitle'\)\)/,
     'the optional electronics title must be the visible disclosure summary');
   assert.match(history, /el\('details', \{[^}]*class: 'credit-history-disclosure'[^}]*\}/,
     'history evidence must be a named native disclosure');
-  assert.doesNotMatch(history, /el\('details', \{[^}]*open:/,
-    'history evidence must start closed');
+  assert.match(app, /let creditHistoryOpen = false;/,
+    'history evidence must start closed before any user toggle');
+  assert.match(history, /\.\.\.\(creditHistoryOpen \? \{ open: '' \} : \{\}\)/,
+    'history evidence must restore its open state after a selector rerender');
+  assert.match(history,
+    /ontoggle: event => \{ creditHistoryOpen = event\.currentTarget\.open; \}/,
+    'history evidence must persist user disclosure toggles');
   assert.match(electronics, /t\('electronicsProductionChain'\)/,
     'the optional experiment must visibly name its production-chain selector');
   assert.match(electronics, /\['vanilla', t\('electronicsProductionChainVanilla'\)\]/,
@@ -104,4 +114,11 @@ test('electronics is an optional closed experiment with plain-language productio
     assert.ok(values.every(value => !/Assembly hall|Montagehalle/.test(value)),
       `${key} must not retain an Assembly hall/Montagehalle label`);
   }
+
+  const caveats = i18n.match(/electronicsTradeCaveat: '([^']*)'/g) ?? [];
+  assert.equal(caveats.length, 2, 'the assumptions caveat must exist in both languages');
+  assert.ok(caveats.every(value => !/Robust|Speculative|Spekulativ|Recyclingwert|recycling value/i.test(value)),
+    'the caveat must not describe removed recommendation classes or current recycling value');
+  assert.ok(caveats.every(value => /Erwartete|Expected/.test(value) && /null|zero/i.test(value)),
+    'the caveat must describe expected scenarios and the zero ship-residual assumption');
 });

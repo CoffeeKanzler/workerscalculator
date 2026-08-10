@@ -201,6 +201,8 @@ let standaloneLeafletMap = null;
 let standaloneLeafletCamera = null;
 let compactMapExpanded = false;
 let compactMapOpen = false;
+let creditElectronicsOpen = false;
+let creditHistoryOpen = false;
 let pendingChartMounts = [];
 let constructionPage = 1;
 let constructionDetailsOpen = false;
@@ -5005,7 +5007,11 @@ function renderNewCreditCalculator(context) {
 }
 
 function renderOptionalElectronicsStrategy(context) {
-  return el('details', { class: 'credit-electronics-disclosure' },
+  return el('details', {
+    class: 'credit-electronics-disclosure',
+    ...(creditElectronicsOpen ? { open: '' } : {}),
+    ontoggle: event => { creditElectronicsOpen = event.currentTarget.open; },
+  },
     el('summary', {}, t('electronicsOptionalTitle')),
     el('div', { class: 'credit-disclosure-body' },
       el('p', { class: 'credit-experimental-warning' }, t('electronicsExperimentalWarning')),
@@ -5079,7 +5085,11 @@ function renderOptionalElectronicsStrategy(context) {
 }
 
 function renderCreditHistoryEvidence(context) {
-  return el('details', { class: 'credit-history-disclosure' },
+  return el('details', {
+    class: 'credit-history-disclosure',
+    ...(creditHistoryOpen ? { open: '' } : {}),
+    ontoggle: event => { creditHistoryOpen = event.currentTarget.open; },
+  },
     el('summary', {}, t('creditHistoryEvidenceTitle')),
     el('div', { class: 'credit-disclosure-body' },
       el('div', { class: 'settingsbar credit-history-controls' },
@@ -5089,7 +5099,7 @@ function renderCreditHistoryEvidence(context) {
         el('label', {}, t('inflationSeries'), selectInput(
           [['base', t('inflationNormal')], ['purchase', t('inflationImport')], ['sell', t('inflationExport')]],
           context.basis, value => { state.historyInflationBasis = value; }))),
-      context.hypotheticalSummary.hasInflationEvidence
+      context.visibleInflationSufficient
         ? renderRepublicLineChart(
           `${context.basisLabel} · ${t('inflationIndex')} (${context.currency})`,
           [{ label: context.basisLabel,
@@ -5097,7 +5107,7 @@ function renderCreditHistoryEvidence(context) {
             points: seriesFromRecords(context.visibleIndex, point => point.index) }],
           t('creditStatsEvidence'), 'exact')
         : el('p', { class: 'empty-state' }, t('creditHistoryNeedsStats')),
-      context.hypotheticalSummary.hasInflationEvidence ? el('dl', { class: 'credit-history-values' },
+      context.visibleInflationSufficient ? el('dl', { class: 'credit-history-values' },
         el('div', {}, el('dt', {}, t('inflationLatestAnnual')),
           el('dd', {}, context.rate(context.visibleSummary.latestAnnual))),
         el('div', {}, el('dt', {}, t('inflationFiveYear')),
@@ -5123,6 +5133,7 @@ function renderCredits() {
   const visibleIndex = buildPriceIndex(historyRecords, { currency, basis });
   const normalSummary = summarizeInflation(normalIndex);
   const visibleSummary = summarizeInflation(visibleIndex);
+  const visibleInflationSufficient = Number.isFinite(visibleSummary.latestAnnual);
   const symbol = currencySymbol(currency);
   const rate = value => Number.isFinite(value)
     ? `${value >= 0 ? '+' : ''}${fmt(value * 100, 2)} %` : '—';
@@ -5219,6 +5230,7 @@ function renderCredits() {
   ].filter(item => Number.isFinite(item.value));
   const context = {
     historyRecords, currency, basis, normalIndex, visibleIndex, normalSummary, visibleSummary,
+    visibleInflationSufficient,
     rate, amount, verdictClass, basisLabel, selectedLoans, activeCredits, hypotheticalLoan,
     hypotheticalSummary, financingOptions, investmentLoan, currentRecord, year, variant, eco,
     forecasts, exchange, quotes, opportunities, best, monthLabel, forecastRecords,
