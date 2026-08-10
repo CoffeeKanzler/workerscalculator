@@ -44,6 +44,30 @@ export function buildPriceIndex(records, { currency = 'RUB', basis = 'purchase' 
   });
 }
 
+export function buildResourcePriceIndex(records, {
+  resource, currency = 'RUB', basis = 'purchase',
+} = {}) {
+  const normalizedBasis = ['base', 'purchase', 'sell'].includes(basis) ? basis : 'base';
+  const field = `${normalizedBasis}${currency === 'USD' ? 'USD' : 'RUB'}`;
+  const dated = (records ?? [])
+    .map(record => ({
+      year: Number(record?.year),
+      day: Number(record?.day),
+      price: Number(record?.[field]?.[resource]),
+    }))
+    .filter(item => Number.isFinite(item.year) && Number.isFinite(item.day)
+      && Number.isFinite(item.price) && item.price > 0)
+    .map(item => ({ ...item, ordinal: item.year * DAYS_PER_YEAR + item.day }))
+    .sort((a, b) => a.ordinal - b.ordinal);
+  if (!dated.length) return [];
+  const firstPrice = dated[0].price;
+  return dated.map(item => ({
+    ...item,
+    index: item.price / firstPrice * 100,
+    coverage: 1,
+  }));
+}
+
 function annualizedBetween(start, end) {
   const days = end.ordinal - start.ordinal;
   if (!(days > 0) || !(start.index > 0) || !(end.index > 0)) return null;

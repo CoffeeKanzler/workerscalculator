@@ -808,6 +808,13 @@ table.data { max-width: 100%; }
 .loan-recommendation.favorable { color: var(--pos); }
 .loan-recommendation.tight { color: var(--warn); }
 .loan-recommendation.risky { color: var(--neg); }
+.loan-recommendation.robust { color: var(--pos); }
+.loan-recommendation.speculative { color: var(--warn); }
+.loan-recommendation.reject, .loan-recommendation.unavailable { color: var(--neg); }
+.electronics-investment-strategy { grid-column: 1 / -1; border-top: 1px solid var(--border); padding-top: 1rem; }
+.electronics-recipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .75rem; margin: .8rem 0; }
+.electronics-recipe-card h4 { margin-top: 0; }
+.electronics-trade-table { min-width: 1320px; }
 .loan-reasons { display: block; min-width: 170px; color: var(--muted); font-size: 12px; line-height: 1.3; }
 @media (max-width: 1100px) {
   .economic-decision-body { grid-template-columns: 1fr; }
