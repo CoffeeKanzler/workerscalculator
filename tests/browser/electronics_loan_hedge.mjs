@@ -67,22 +67,20 @@ try {
   console.log('browser: controlled loan and electronics history loaded');
 
   await page.locator('.section-tabs button', { hasText: 'Observe' }).first().click();
-  await page.locator('.context-tabs button', { hasText: 'History' }).first().click();
-  await page.waitForSelector('.electronics-investment-strategy');
-  const strategy = page.locator('.electronics-investment-strategy');
-  if (await strategy.locator('.electronics-recipe-card').count() !== 2) {
-    throw new Error('vanilla and DLC3 recipe cards were not both rendered');
-  }
-  if (await strategy.locator('.electronics-trade-table tbody tr').count() < 1) {
+  await page.locator('.context-tabs button', { hasText: 'Credits' }).first().click();
+  await page.waitForSelector('.credit-center');
+  const strategy = page.locator('.credit-center');
+  if (await strategy.locator('.credit-investment-table tbody tr').count() < 1) {
     throw new Error('real used market produced no electronics ship trade row');
   }
   const text = await strategy.innerText();
-  for (const expected of ['River cargo ship', 'Break-even per t', 'Recipe pressure']) {
+  for (const expected of ['River cargo ship', 'Holding time', 'Amortization corridor']) {
     if (!text.includes(expected)) throw new Error(`strategy is missing ${expected}`);
   }
-  if (await strategy.locator('.electronics-trade-table .loan-recommendation.robust').count() !== 1) {
-    throw new Error('the controlled profitable worst-case was not classified as robust');
+  if (await strategy.locator('.credit-investment-table .loan-recommendation').count() < 1) {
+    throw new Error('the controlled profitable path received no direct assessment');
   }
+  if (text.includes('Robust') || text.includes('Speculative')) throw new Error('legacy labels remain visible');
   await page.locator('.themeswitch').click();
   await page.locator('.themeswitch').click();
   if (await page.locator('.themeswitch').getAttribute('data-theme-resolved') !== 'dark') {

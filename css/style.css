@@ -798,6 +798,10 @@ table.data { max-width: 100%; }
 }
 .credit-center { display: grid; gap: 14px; }
 .credit-center > h3, .credit-center section > h3 { margin: 0; }
+.credit-action { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 12px 14px; border-left: 4px solid var(--muted); background: var(--panel); }
+.credit-action.profitable-adverse { border-left-color: var(--pos); }
+.credit-action.profitable-base-only { border-left-color: var(--warn); }
+.credit-action.none { color: var(--muted); }
 .credit-hypothetical, .credit-investments { padding-top: 14px; border-top: 1px solid var(--border); }
 .credit-investment-table { min-width: 980px; }
 .loan-recommendation.profitable-adverse { color: var(--pos); }

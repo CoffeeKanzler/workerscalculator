@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=210';
+import { STRINGS } from './i18n.js?v=211';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
 import { parseLiveStatsFile } from './live_stats.js?v=4';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=51';
@@ -5038,6 +5038,9 @@ function renderCredits() {
         [['base', t('inflationNormal')], ['purchase', t('inflationImport')], ['sell', t('inflationExport')]],
         basis, value => { state.historyInflationBasis = value; }))),
     el('h3', {}, t('creditActionTitle')),
+    el('div', { class: `credit-action ${best ? best.assessment : 'none'}` },
+      el('strong', {}, best ? t('creditTakeLoanAction') : t('creditNoLoanAction')),
+      best ? el('span', {}, `${best.shipName} · ${best.exitCurrency} · ${monthLabel(best.baseBreakEvenMonth)}`) : null),
     el('div', { class: 'economic-decision-body' },
       el('div', { class: 'economic-inflation-panel' },
         el('div', { class: 'metric-grid economic-rate-grid' },
@@ -5074,7 +5077,7 @@ function renderCredits() {
           value => { state.creditApr = value; }, { min: 0, step: .1 })),
         el('label', {}, t('creditTermYears'), numInput(state.creditTermYears,
           value => { state.creditTermYears = value; }, { min: .1, step: .5 })),
-        el('label', {}, t('electronicsRecipeYear'), selectInput(
+        el('label', {}, t('creditRecipeVariant'), selectInput(
           [['vanilla', t('electronicsRecipeVanilla')], ['dlc3', t('electronicsRecipeDlc3')]],
           variant, value => { state.creditRecipeVariant = value; }))),
       el('div', { class: 'metric-grid economic-rate-grid' },
@@ -5101,9 +5104,9 @@ function renderCredits() {
         : el('p', { class: 'empty-state' }, t('creditNoRelevantElectronics')),
       best ? el('div', { class: 'amortization-corridor' },
         renderRepublicLineChart(t('creditAmortizationTitle'), [
-          { label: t('inflationNormal'), color: '#2980b9', points: seriesFromRecords(forecastRecords, row => row.base) },
-          { label: t('loanFavorable'), color: '#27ae60', points: seriesFromRecords(forecastRecords, row => row.favorable) },
-          { label: t('loanRisky'), color: '#c0392b', points: seriesFromRecords(forecastRecords, row => row.adverse) },
+          { label: t('creditScenarioBase'), color: '#2980b9', points: seriesFromRecords(forecastRecords, row => row.base) },
+          { label: t('creditScenarioFavorable'), color: '#27ae60', points: seriesFromRecords(forecastRecords, row => row.favorable) },
+          { label: t('creditScenarioAdverse'), color: '#c0392b', points: seriesFromRecords(forecastRecords, row => row.adverse) },
           { label: '0', color: '#7f8c8d', points: seriesFromRecords(forecastRecords, row => row.zero) },
         ], t('creditForecastEvidence'), 'derived'),
         el('p', { class: 'hint' }, `${t('creditShipResidualZero')} · ${t('creditHistoricalBoundary')}`)) : null));

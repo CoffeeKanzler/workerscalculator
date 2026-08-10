@@ -68,9 +68,9 @@ try {
   await page.waitForFunction(() => document.querySelector('.dropzone')?.textContent.includes('stats.ini'));
   console.log('browser: synthetic stats loaded');
   await page.locator('.section-tabs button', { hasText: 'Observe' }).click();
-  await page.locator('.context-tabs button', { hasText: 'History' }).click();
+  await page.locator('.context-tabs button', { hasText: 'Credits' }).click();
   await page.waitForSelector('.economic-decision-strip');
-  console.log('browser: history decision surface opened');
+  console.log('browser: credit decision surface opened');
 
   const controls = page.locator('.economic-decision-controls select');
   if (await controls.nth(0).inputValue() !== 'RUB') throw new Error('RUB was not the default currency');
