@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3775045241",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-11T05:30:43.307Z",
+  "buildings": [
+    {
+      "id": "3775045241/ARLK_Lira",
+      "nameId": null,
+      "types": [
+        "TYPE_AIRPLANE_TOWER"
+      ],
+      "workers": 0,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ ÐÐ ÐÐ¸ÑÐ°",
+      "workshopId": "3775045241",
+      "modPath": "ARLK_Lira",
+      "footprint": {
+        "boxes": [
+          [
+            -7.33,
+            -4.01,
+            3.83,
+            3.83
+          ]
+        ],
+        "height": 24.99
+      }
+    }
+  ],
+  "vehicles": []
+}
