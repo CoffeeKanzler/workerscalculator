@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3782428163",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-13T05:51:19.085Z",
+  "buildings": [
+    {
+      "id": "3782428163/Bass",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.8,
+      "storages": {},
+      "constructionResources": {
+        "gravel": 200,
+        "concrete": 500,
+        "workers": 5200,
+        "boards": 50,
+        "bricks": 200,
+        "steel": 200
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Bass Pro Pyramid",
+      "workshopId": "3782428163",
+      "modPath": "Bass",
+      "footprint": {
+        "boxes": [
+          [
+            -71.62,
+            -76.72,
+            76.66,
+            77.88
+          ],
+          [
+            -60.2,
+            -59.71,
+            55.21,
+            55.67
+          ]
+        ],
+        "height": 85.35
+      }
+    }
+  ],
+  "vehicles": []
+}
