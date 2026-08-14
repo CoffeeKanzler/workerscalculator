@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3747882391",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-14T05:48:33.023Z",
+  "buildings": [
+    {
+      "id": "3747882391/Birch_1",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0.1,
+      "professors": 0,
+      "production": {
+        "eletric": 120
+      },
+      "consumption": {
+        "chemicals": 0.048239
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 36.072857,
+        "concrete": 5.2457139999999995,
+        "gravel": 1.165714,
+        "chemicals": 13.542857000000001,
+        "steel": 9.771429,
+        "mcomponents": 0.336,
+        "ecomponents": 1.508571,
+        "wood": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PEC-4 Birchtree",
+      "workshopId": "3747882391",
+      "modPath": "Birch_1",
+      "footprint": {
+        "boxes": [
+          [
+            -5.06,
+            -0.01,
+            6.44,
+            0
+          ],
+          [
+            -8,
+            -8,
+            8,
+            8
+          ],
+          [
+            -7.9,
+            -7.9,
+            7.9,
+            7.9
+          ],
+          [
+            -6.81,
+            5.08,
+            -5.08,
+            6.81
+          ],
+          [
+            5.08,
+            -6.81,
+            6.81,
+            -5.08
+          ],
+          [
+            5.08,
+            5.08,
+            6.81,
+            6.81
+          ],
+          [
+            -6.81,
+            -6.81,
+            -5.08,
+            -5.08
+          ],
+          [
+            -4,
+            -4,
+            4,
+            4
+          ],
+          [
+            -4.38,
+            -3.23,
+            5.58,
+            2.53
+          ],
+          [
+            -3.26,
+            -5.64,
+            2.56,
+            4.43
+          ],
+          [
+            -2.53,
+            -5.58,
+            3.23,
+            4.38
+          ],
+          [
+            -5.64,
+            -3.26,
+            4.43,
+            2.56
+          ]
+        ],
+        "height": 24.25
+      }
+    },
+    {
+      "id": "3747882391/Birch_2",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0.1,
+      "professors": 0,
+      "production": {
+        "eletric": 240
+      },
+      "consumption": {
+        "chemicals": 0.048239
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 72.145714,
+        "concrete": 10.491427999999999,
+        "gravel": 2.331428,
+        "chemicals": 27.085714000000003,
+        "steel": 19.542858,
+        "mcomponents": 0.672,
+        "ecomponents": 3.017142,
+        "wood": 2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PEC-4 Birchtree (x2)",
+      "workshopId": "3747882391",
+      "modPath": "Birch_2",
+      "footprint": {
+        "boxes": [
+          [
+            -13,
+            -6,
+            -1,
+            6
+          ],
+          [
+            -12.93,
+            -5.93,
+            -1.07,
+            5.93
+          ],
+          [
+            -12.41,
+            3.68,
+            -10.68,
+            5.41
+          ],
+          [
+            -3.32,
+            -5.41,
+            -1.59,
+            -3.68
+          ],
+          [
+            -3.32,
+            3.68,
+            -1.59,
+            5.41
+          ],
+          [
+            -12.41,
+            -5.41,
+            -10.68,
+            -3.68
+          ],
+          [
+            -10,
+            -3,
+            -4,
+            3
+          ],
+          [
+            -10.29,
+            -2.42,
+            -2.81,
+            1.9
+          ],
+          [
+            -9.44,
+            -4.23,
+            -5.08,
+            3.32
+          ],
+          [
+            -8.9,
+            -4.19,
+            -4.58,
+            3.29
+          ],
+          [
+            -11.23,
+            -2.44,
+            -3.68,
+            1.92
+          ],
+          [
+            1,
+            -6,
+            13,
+            6
+          ],
+          [
+            1.07,
+            -5.93,
+            12.93,
+            5.93
+          ],
+          [
+            1.59,
+            3.68,
+            3.32,
+            5.41
+          ],
+          [
+            10.68,
+            -5.41,
+            12.41,
+            -3.68
+          ],
+          [
+            10.68,
+            3.68,
+            12.41,
+            5.41
+          ],
+          [
+            1.59,
+            -5.41,
+            3.32,
+            -3.68
+          ],
+          [
+            4,
+            -3,
+            10,
+            3
+          ],
+          [
+            3.71,
+            -2.42,
+            11.19,
+            1.9
+          ],
+          [
+            4.56,
+            -4.23,
+            8.92,
+            3.32
+          ],
+          [
+            5.1,
+            -4.19,
+            9.42,
+            3.29
+          ],
+          [
+            2.77,
+            -2.44,
+            10.32,
+            1.92
+          ]
+        ],
+        "height": 18.58
+      }
+    },
+    {
+      "id": "3747882391/Birch_3",
+      "nameId": null,
+      "types": [
+        "TYPE_POWERPLANT"
+      ],
+      "workers": 0.1,
+      "professors": 0,
+      "production": {
+        "eletric": 480
+      },
+      "consumption": {
+        "chemicals": 0.048239
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 144.291428,
+        "concrete": 20.982855999999998,
+        "gravel": 4.662856,
+        "chemicals": 54.171428000000006,
+        "steel": 39.085716,
+        "mcomponents": 1.344,
+        "ecomponents": 6.034284,
+        "wood": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "PEC-4 Birchtree (x4)",
+      "workshopId": "3747882391",
+      "modPath": "Birch_3"
+    }
+  ],
+  "vehicles": []
+}

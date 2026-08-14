@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3780144152",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-14T05:48:33.029Z",
+  "buildings": [
+    {
+      "id": "3780144152/fertilizer",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {
+        "fertiliser_liquid": 1.5
+      },
+      "consumption": {
+        "naturalgas": 4,
+        "water": 1.2
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ammonia Fertilizer Factory",
+      "workshopId": "3780144152",
+      "modPath": "fertilizer",
+      "footprint": {
+        "boxes": [
+          [
+            -11.91,
+            -12.37,
+            5.25,
+            -2.6
+          ],
+          [
+            17.79,
+            -19.21,
+            18.26,
+            -18.73
+          ],
+          [
+            -12.77,
+            0.99,
+            -7.81,
+            2.99
+          ],
+          [
+            -10.93,
+            10.29,
+            5.4,
+            16.4
+          ],
+          [
+            -11.05,
+            -5.75,
+            3.54,
+            -0.52
+          ],
+          [
+            -7.82,
+            -3.65,
+            -6.38,
+            4.44
+          ],
+          [
+            -16.79,
+            4.34,
+            -6.56,
+            6.43
+          ],
+          [
+            -22.63,
+            -17.84,
+            -9,
+            -5.68
+          ],
+          [
+            -12.4,
+            -19.46,
+            -10.32,
+            -17.32
+          ],
+          [
+            -21.03,
+            -6.93,
+            -12.48,
+            8.48
+          ],
+          [
+            -23.59,
+            -10.82,
+            -11.62,
+            11.31
+          ],
+          [
+            -21.37,
+            10.73,
+            -14.56,
+            13.68
+          ],
+          [
+            -18.78,
+            -15.02,
+            -7.81,
+            10.39
+          ],
+          [
+            -14.42,
+            6.39,
+            -5.91,
+            8.32
+          ],
+          [
+            -6.81,
+            -0.62,
+            7.97,
+            14.17
+          ],
+          [
+            -5.17,
+            -4.25,
+            2.76,
+            0.65
+          ]
+        ],
+        "height": 25.26
+      }
+    },
+    {
+      "id": "3780144152/heating",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 50,
+      "professors": 0,
+      "production": {
+        "heat": 150
+      },
+      "consumption": {
+        "naturalgas": 0.5
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 50,
+        "steel": 45,
+        "bricks": 80,
+        "mcomponents": 1,
+        "workers": 1600
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Natural Gas Heating Plant",
+      "workshopId": "3780144152",
+      "modPath": "heating",
+      "footprint": {
+        "boxes": [
+          [
+            -1.75,
+            -15.33,
+            5.71,
+            -7.88
+          ],
+          [
+            -14.56,
+            -49.1,
+            14.63,
+            -14.27
+          ],
+          [
+            -10.65,
+            -16.24,
+            13.08,
+            12.03
+          ]
+        ],
+        "height": 63.11
+      }
+    }
+  ],
+  "vehicles": []
+}
