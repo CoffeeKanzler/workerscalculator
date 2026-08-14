@@ -1,7 +1,7 @@
-import { STRINGS } from './i18n.js?v=218';
+import { STRINGS } from './i18n.js?v=222';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
 import { parseLiveStatsFile } from './live_stats.js?v=4';
-import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=51';
+import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=55';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -93,6 +93,7 @@ import { unpoweredBuildingAlerts } from './models/power_alerts.js?v=6';
 import { missingUtilityAlerts, fullWasteStorageAlerts } from './models/utility_alerts.js?v=5';
 import { largestChainForWorkforce } from './models/workforce_plan.js?v=3';
 import { cityUtilityPlan } from './models/city_utilities.js?v=3';
+import { mergeVanillaCityResidences } from './models/vanilla_city_catalog.js?v=5';
 import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';
 import { buildingHeightSamples } from './models/water_level.js?v=3';
 import { transitReachFrom } from './models/transit_reach.js?v=4';
@@ -117,7 +118,7 @@ import {
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
 } from './adapters/save_folder_adapter.js?v=28';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=24';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=26';
 import { bootstrapRuntime } from './bootstrap.js?v=15';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
 import {
@@ -529,7 +530,7 @@ async function loadData() {
     get('data/production_buildings.json').then(r => r.json()),
     get('data/game/production_buildings.json').then(r => r.ok ? r.json() : null).catch(() => null),
     get('data/city_buildings.json').then(r => r.json()),
-    HAS_SAVE_WORKSPACE ? get('data/game/buildings_raw.json').then(r => r.ok ? r.json() : []).catch(() => []) : [],
+    get('data/game/buildings_raw.json').then(r => r.ok ? r.json() : []).catch(() => []),
     HAS_SAVE_WORKSPACE ? get('data/workshop/index.json').then(r => r.ok ? r.json() : null).catch(() => null) : null,
     get('data/vehicles.json').then(r => r.json()),
     get('data/game/rail_vehicles.json').then(r => r.ok ? r.json() : []).catch(() => []),
@@ -542,7 +543,7 @@ async function loadData() {
   DATA = {
     resources: res.resources, defaults: res.defaults,
     prodSets: { sheet: prod, game: prodGame },
-    cityBuildings: city,
+    cityBuildings: mergeVanillaCityResidences(city, rawBuildings),
     rawBuildings, rawVehicles, workshopIndex, workshopBuildings: [], workshopVehicles: [],
     localWorkshopBuildings: [], workshopProduction: [],
     // Game-only rail vehicles join the pool; hard-attached tenders stay nested.
@@ -623,6 +624,7 @@ function fmt(n, digits = 2) {
   if (!Number.isFinite(n)) return '∞';
   return n.toLocaleString(state.lang === 'de' ? 'de-DE' : 'en-US', { maximumFractionDigits: digits });
 }
+const addKnown = (a, b) => a == null || b == null ? null : a + b;
 function currencySymbol(currency) { return currency === 'USD' ? '$' : '₽'; }
 function cur() { return currencySymbol(state.currency); }
 
@@ -3171,6 +3173,9 @@ function renderCity() {
     { ...city, rows: rowsResolved, workshops: workshopRows }, eco, worstCaseProductivity,
   );
   const res = productivityScenarios.normal;
+  const scaledFact = (value, count, digits) => Number.isFinite(value)
+    ? fmt(value * count, digits)
+    : '—';
 
   const tbl = el('table', { class: 'data wide' },
     el('thead', {}, el('tr', {},
@@ -3227,11 +3232,12 @@ function renderCity() {
         el('td', { class: 'r' }, b ? fmt(b.workers * n, 0) : '—'),
         workersNeededCell(rowWorkersNeeded),
         ...(state.cityDetails ? [
-          el('td', { class: 'r' }, b ? fmt(b.maxKW * n, 0) : '—'),
-          el('td', { class: 'r' }, b ? fmt(b.water * n, 2) : '—'),
-          el('td', { class: 'r' }, b ? fmt(b.hotwater * n, 2) : '—'),
-          el('td', { class: 'r' }, b ? fmt(b.waste * n, 1) : '—'),
-          el('td', { class: 'r' }, b ? fmt(eco.buildCost(b, state.currency) * n, 0) : '—'),
+          el('td', { class: 'r' }, b ? scaledFact(b.maxKW, n, 0) : '—'),
+          el('td', { class: 'r' }, b ? scaledFact(b.water, n, 2) : '—'),
+          el('td', { class: 'r' }, b ? scaledFact(b.hotwater, n, 2) : '—'),
+          el('td', { class: 'r' }, b ? scaledFact(b.waste, n, 1) : '—'),
+          el('td', { class: 'r' }, b
+            ? scaledFact(eco.buildCost(b, state.currency), n, 0) : '—'),
         ] : []),
         el('td', {}, el('button', { class: 'danger', onclick: () => { city.rows.splice(idx, 1); update(); } }, '✕')));
     })));
@@ -3330,15 +3336,20 @@ function renderCity() {
     kv(`${t('cityWorkshopSection')} ${t('workers')}`, fmt(res.workshopWorkers, 0)),
     kv(t('workerSurplus'), fmt(res.workerSurplus, 1), res.workerSurplus < 0 ? 'neg' : 'pos'),
     kv(t('maxWatt'), fmt(res.maxKW, 0)),
-    kv(t('transformers'), fmt(Math.ceil(res.transformers), 0) + ` (${fmt(res.transformers, 2)})`),
+    kv(t('transformers'), res.transformers == null ? '—'
+      : fmt(Math.ceil(res.transformers), 0) + ` (${fmt(res.transformers, 2)})`),
     kv(t('hotwater'), fmt(res.hotwater, 1)),
-    kv(t('heatExchangers'), fmt(Math.ceil(res.heatExchangers), 0) + ` (${fmt(res.heatExchangers, 2)})`),
+    kv(t('heatExchangers'), res.heatExchangers == null ? '—'
+      : fmt(Math.ceil(res.heatExchangers), 0) + ` (${fmt(res.heatExchangers, 2)})`),
     kv(t('waterUse'), fmt(res.water, 1)),
-    kv(t('waterConnections'), fmt(Math.ceil(res.waterConnections), 0)),
+    kv(t('waterConnections'), res.waterConnections == null
+      ? '—' : fmt(Math.ceil(res.waterConnections), 0)),
     kv(t('wasteOut'), fmt(res.waste, 1)),
     kv(`${t('buildCost')} ₽`, fmt(res.buildCostRUB, 0)),
     kv(`${t('buildCost')} $`, fmt(res.buildCostUSD, 0)),
-    kv(t('workday'), fmt(res.workdays, 0)));
+    kv(t('workday'), fmt(res.workdays, 0)),
+    res.incomplete.utilities || res.incomplete.construction
+      ? el('p', { class: 'hint warn' }, t('cityPlanningFactsUnavailable')) : null);
 
   // What supplies the water and the heating, which the planner could state the
   // need for and never the answer to. Counts are whole buildings and the rate
@@ -3347,8 +3358,10 @@ function renderCity() {
   // Only the shortfall needs recommending: whatever supply is already in the
   // plan is subtracted first, so a town with two wells is told to build a
   // third rather than three.
-  const waterShort = Math.max(0, res.water - (res.waterSupply ?? 0));
-  const utilityPlan = cityUtilityPlan({
+  const utilityFactsUnavailable = res.water == null || res.hotwater == null;
+  const waterShort = utilityFactsUnavailable
+    ? null : Math.max(0, res.water - (res.waterSupply ?? 0));
+  const utilityPlan = utilityFactsUnavailable ? [] : cityUtilityPlan({
     demand: { water: waterShort, hotwater: res.hotwater },
     catalogue: prodBuildings(),
     choice: city.utilityChoice ?? {},
@@ -3356,6 +3369,8 @@ function renderCity() {
   const utilityBox = el('div', { class: 'totalsbox city-utilities' },
     el('h3', {}, t('cityUtilitiesTitle'),
       el('span', { class: 'evidence-badge derived' }, t('derived'))),
+    utilityFactsUnavailable
+      ? el('p', { class: 'hint warn' }, t('cityPlanningFactsUnavailable')) : null,
     ...utilityPlan.map(entry => {
       const label = t(entry.kind === 'water' ? 'waterUse' : 'hotwater');
       if (!entry.chosen) return kv(label, t('unavailable'));
@@ -6389,16 +6404,19 @@ function republicSnapshot() {
     };
   });
   const sumCities = fn => cityResults.reduce((a, { res }) => a + (fn(res) || 0), 0);
+  const sumCitiesKnown = fn => cityResults.some(({ res }) => fn(res) == null)
+    ? null
+    : cityResults.reduce((a, { res }) => a + fn(res), 0);
   const cityTotals = {
     population: sumCities(r => r.population),
     workersNeeded: sumCities(r => r.workersNeeded),
     workerSurplus: sumCities(r => r.workerSurplus),
-    power: sumCities(r => r.power),
-    maxKW: sumCities(r => r.maxKW),
-    water: sumCities(r => r.water),
-    waste: sumCities(r => r.waste),
-    buildCostRUB: sumCities(r => r.buildCostRUB),
-    buildCostUSD: sumCities(r => r.buildCostUSD),
+    power: sumCitiesKnown(r => r.power),
+    maxKW: sumCitiesKnown(r => r.maxKW),
+    water: sumCitiesKnown(r => r.water),
+    waste: sumCitiesKnown(r => r.waste),
+    buildCostRUB: sumCitiesKnown(r => r.buildCostRUB),
+    buildCostUSD: sumCitiesKnown(r => r.buildCostUSD),
   };
   const cityBuildCost = state.currency === 'USD' ? cityTotals.buildCostUSD : cityTotals.buildCostRUB;
 
@@ -6419,9 +6437,9 @@ function republicSnapshot() {
       configuredIndustryWorkers: industry.workersPerShift,
       netWorkers: workforceLinked ? res.workerSurplus - industry.workersPerShift : null,
       workforceLinked,
-      power: res.power + industry.totalPower,
-      water: res.water + industry.totalWater,
-      waste: res.waste + industry.totalWaste,
+      power: addKnown(res.power, industry.totalPower),
+      water: addKnown(res.water, industry.totalWater),
+      waste: addKnown(res.waste, industry.totalWaste),
       unresolvedBuildingCount: city.unresolvedBuildingCount ?? 0,
     };
   });
@@ -6438,9 +6456,9 @@ function republicSnapshot() {
         population: cityTotals.population,
         configuredIndustryWorkers: plan.workersPerShift,
         netWorkers,
-        power: cityTotals.power + plan.totalPower,
-        water: cityTotals.water + plan.totalWater,
-        waste: cityTotals.waste + plan.totalWaste,
+        power: addKnown(cityTotals.power, plan.totalPower),
+        water: addKnown(cityTotals.water, plan.totalWater),
+        waste: addKnown(cityTotals.waste, plan.totalWaste),
       },
       areas: plannedAreas,
     },
@@ -6585,11 +6603,11 @@ function renderRepublic() {
 
   const utilities = el('div', { class: 'totalsbox' },
     el('h3', {}, t('republicUtilities')),
-    kv(t('maxWatt'), fmt(cityTotals.maxKW + plan.totalMaxKW, 0)),
-    kv(t('powerUse'), fmt(cityTotals.power + plan.totalPower, 1)),
-    kv(t('waterUse'), fmt(cityTotals.water + plan.totalWater, 1)),
-    kv(t('wasteOut'), fmt(cityTotals.waste + plan.totalWaste, 1)),
-    kv(`${t('buildCost')} ${cur()}`, fmt(cityBuildCost + plan.totalBuildCost, 0)));
+    kv(t('maxWatt'), fmt(addKnown(cityTotals.maxKW, plan.totalMaxKW), 0)),
+    kv(t('powerUse'), fmt(addKnown(cityTotals.power, plan.totalPower), 1)),
+    kv(t('waterUse'), fmt(addKnown(cityTotals.water, plan.totalWater), 1)),
+    kv(t('wasteOut'), fmt(addKnown(cityTotals.waste, plan.totalWaste), 1)),
+    kv(`${t('buildCost')} ${cur()}`, fmt(addKnown(cityBuildCost, plan.totalBuildCost), 0)));
 
   const view = republicModel[state.republicView];
   const metricCard = (label, value, evidence, cls = '') => el('div', { class: `metric-card ${cls}` },

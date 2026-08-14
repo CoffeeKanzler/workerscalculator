@@ -133,9 +133,11 @@ export class Economy {
       asphalt: 'asphalt', boards: 'boards', panels: 'prefabpanels',
       ecomponents: 'ecomponents', mcomponents: 'mcomponents',
     };
-    let cost = (b.workdays ?? 0) * this.workday(currency);
+    const required = ['workdays', ...Object.keys(mats)];
+    if (required.some(field => !Number.isFinite(b[field]))) return null;
+    let cost = b.workdays * this.workday(currency);
     for (const [prop, key] of Object.entries(mats)) {
-      cost += (b[prop] ?? 0) * this.buy(key, currency);
+      cost += b[prop] * this.buy(key, currency);
     }
     return cost;
   }
@@ -421,6 +423,9 @@ export function evaluateCity(city, eco) {
   const prod = city.productivity;
   const rows = city.rows.filter(r => r.building && r.count > 0);
   const sum = fn => rows.reduce((a, r) => a + fn(r.building) * r.count, 0);
+  const sumKnown = field => rows.some(r => !Number.isFinite(r.building[field]))
+    ? null
+    : rows.reduce((a, r) => a + r.building[field] * r.count, 0);
   const workshops = (city.workshops ?? []).filter(r => r.building && r.count > 0);
   const workshopWorkers = workshops.reduce(
     (a, r) => a + (r.building.workers ?? 0) * r.count, 0,
@@ -439,26 +444,37 @@ export function evaluateCity(city, eco) {
     workshopWorkers,
     avgHousingQuality: ratedPopulation > 0 ? qualityWeighted / ratedPopulation : null,
     workerSurplus: (population - workersNeeded * 3) / 4, // sheet formula
-    power: sum(b => b.power),
-    maxKW: sum(b => b.maxKW),
-    water: sum(b => b.water),
+    power: sumKnown('power'),
+    maxKW: sumKnown('maxKW'),
+    water: sumKnown('water'),
     // Wells, intakes and treatment plants placed in the plan. Demand alone
     // could never say whether a town was actually supplied.
     waterSupply: sum(b => b.waterSupply ?? 0),
-    hotwater: city.heatingEnabled === false ? 0 : sum(b => b.hotwater),
-    waste: sum(b => b.waste),
-    workdays: sum(b => b.workdays),
+    hotwater: city.heatingEnabled === false ? 0 : sumKnown('hotwater'),
+    waste: sumKnown('waste'),
+    workdays: sumKnown('workdays'),
     materials: {},
     services: [],
   };
   for (const m of ['gravel', 'bricks', 'steel', 'concrete', 'asphalt', 'boards', 'panels', 'ecomponents', 'mcomponents']) {
-    res.materials[m] = sum(b => b[m] ?? 0);
+    res.materials[m] = sumKnown(m);
   }
-  const matKeys = { gravel: 'gravel', bricks: 'bricks', steel: 'steel', concrete: 'concrete', asphalt: 'asphalt', boards: 'boards', panels: 'prefabpanels', ecomponents: 'ecomponents', mcomponents: 'mcomponents' };
-  res.buildCostRUB = Object.entries(res.materials).reduce((a, [m, amt]) => a + amt * eco.buy(matKeys[m], 'RUB'), 0);
-  res.buildCostUSD = Object.entries(res.materials).reduce((a, [m, amt]) => a + amt * eco.buy(matKeys[m], 'USD'), 0);
-  res.buildCostRUB += res.workdays * eco.workday('RUB');
-  res.buildCostUSD += res.workdays * eco.workday('USD');
+  const totalBuildCost = currency => {
+    let total = 0;
+    for (const row of rows) {
+      const cost = eco.buildCost(row.building, currency);
+      if (cost == null) return null;
+      total += cost * row.count;
+    }
+    return total;
+  };
+  res.buildCostRUB = totalBuildCost('RUB');
+  res.buildCostUSD = totalBuildCost('USD');
+  res.incomplete = {
+    utilities: [res.power, res.maxKW, res.water, res.hotwater, res.waste]
+      .some(value => value == null),
+    construction: res.buildCostRUB == null || res.buildCostUSD == null,
+  };
 
   // Workers of a given building type for 100% utilization, assuming the same
   // worker/capacity mix as what's already built: optimal = current * utilization,
@@ -499,16 +515,17 @@ export function evaluateCity(city, eco) {
   // Heating plants inside the city (special value → m³ hot water).
   const heatCap = rows.filter(r => r.building.type.de === 'Heizwerk')
     .reduce((a, r) => a + (r.building.special ?? 0) * r.count, 0) * TUNABLES.heatPerSpecial;
-  const heatUtilization = heatCap > 0 ? res.hotwater / heatCap : null;
+  const heatUtilization = heatCap > 0 && res.hotwater != null ? res.hotwater / heatCap : null;
   res.heating = {
     provided: heatCap, utilization: heatUtilization,
     workersNeeded: optimalWorkers('Heizwerk', heatUtilization),
   };
   // Infrastructure sizing.
   const cable = CABLES.find(c => c.de === city.cable) || CABLES[2];
-  res.transformers = res.maxKW / 1000 / cable.mw;
-  res.heatExchangers = res.hotwater / (city.exchanger === 'large' ? HEAT_EXCHANGERS.large : HEAT_EXCHANGERS.small);
-  res.waterConnections = res.water / (city.waterDivisor || 3);
+  res.transformers = res.maxKW == null ? null : res.maxKW / 1000 / cable.mw;
+  res.heatExchangers = res.hotwater == null ? null
+    : res.hotwater / (city.exchanger === 'large' ? HEAT_EXCHANGERS.large : HEAT_EXCHANGERS.small);
+  res.waterConnections = res.water == null ? null : res.water / (city.waterDivisor || 3);
 
   // Utilization by building type.de, for per-row optimal-staffing breakdowns
   // in the UI (only types with a demand model — services, secret police,

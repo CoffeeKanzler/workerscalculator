@@ -56,6 +56,7 @@ ECON_TOKENS = {
     'NAME', 'NAME_STR', 'WORKERS_NEEDED', 'PROFESORS_NEEDED', 'PRODUCTION', 'CONSUMPTION',
     'CONSUMPTION_PER_SECOND', 'CITIZEN_ABLE_SERVE', 'QUALITY_OF_LIVING',
     'ATTRACTIVE_SCORE', 'STORAGE', 'COST_RESOURCE', 'WASTE_CONSUMPTION',
+    'MENU_SFX',
     'CONSUMPTION_INCREASE_ACCORDING_YEAR', 'PRODUCTION_DECREASE_ACCORDING_YEAR',
     'ELETRIC_CONSUMPTION_LIGHTING_WORKER_FACTOR',
     'ELETRIC_CONSUMPTION_LIVING_WORKER_FACTOR',
@@ -94,6 +95,8 @@ def parse_building(path, ident=None, keep_all=False):
         try:
             if key == 'NAME_STR' and args:
                 b['nameStr'] = ' '.join(args).strip('"')
+            elif key == 'MENU_SFX' and args:
+                b['menuSfx'] = args[0]
             elif key == 'NAME' and args:
                 b['nameId'] = int(args[0])
             elif key == 'WORKERS_NEEDED':
@@ -141,6 +144,18 @@ def parse_building(path, ident=None, keep_all=False):
             or b['livingSpace'] or b['citizenAbleServe']):
         return None
     return b
+
+
+def attach_names(items, localization):
+    """Attach localized names, falling back to a literal $NAME_STR."""
+    for item in items:
+        name_id = item.get('nameId')
+        if name_id is not None:
+            item['de'] = localization.get('de', {}).get(name_id)
+            item['en'] = localization.get('en', {}).get(name_id)
+        elif item.get('nameStr'):
+            item['de'] = item['nameStr']
+            item['en'] = item['nameStr']
 
 
 def extract_buildings(media, keep_all=True):
@@ -747,21 +762,17 @@ def main():
     loc = load_localization(media)
     print(f'localization: {len(loc)} languages, {len(loc.get("en", {}))} strings (en)')
 
-    def attach_names(items):
-        for it in items:
-            nid = it.get('nameId')
-            if nid is not None:
-                it['de'] = loc.get('de', {}).get(nid)
-                it['en'] = loc.get('en', {}).get(nid)
-
     buildings = extract_buildings(media)
-    attach_names(buildings)
+    attach_names(buildings, loc)
     with open(os.path.join(outdir, 'buildings_raw.json'), 'w') as f:
         json.dump(buildings, f, ensure_ascii=False, indent=1)
     print(f'buildings with economic data: {len(buildings)} -> data/game/buildings_raw.json')
 
+    if '--buildings-only' in sys.argv:
+        return
+
     vehicles = extract_vehicles(media)
-    attach_names(vehicles)
+    attach_names(vehicles, loc)
     with open(os.path.join(outdir, 'vehicles_raw.json'), 'w') as f:
         json.dump(vehicles, f, ensure_ascii=False, indent=1)
     from collections import Counter

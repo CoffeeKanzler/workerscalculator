@@ -118,6 +118,14 @@ test('build cost = workdays × workday cost + Σ material × buy price', () => {
   assert.ok(Math.abs(eco().buildCost(b, 'RUB') - expected) < 1e-9);
 });
 
+test('build cost is unavailable when any required construction fact is unavailable', () => {
+  const incomplete = {
+    workdays: null, gravel: 0, bricks: 0, steel: 0, concrete: 0,
+    asphalt: 0, boards: 0, panels: 0, ecomponents: 0, mcomponents: 0,
+  };
+  assert.equal(eco().buildCost(incomplete, 'RUB'), null);
+});
+
 test('mine production scales with quality, consumption does not', () => {
   const mine = byDe('Kohlemine');
   const settings = { productivity: 1, timeUnit: 'day', seasons: false, currency: 'RUB' };
@@ -255,6 +263,29 @@ test('city workshop workers affect workforce only', () => {
   assert.equal(result.waste, 0);
   assert.equal(result.buildCostRUB, 0);
   assert.ok(result.services.every(service => service.capacity === 0));
+});
+
+test('city keeps known housing facts but does not zero unknown utilities or cost', () => {
+  const residence = {
+    de: 'Unknown planning facts',
+    type: { de: 'Mittlere Wohnhäuser', en: 'Medium residential buildings' },
+    inhabitants: 68, quality: 0.85, workers: 0, visitors: 0, special: 0,
+    power: null, maxKW: null, water: null, hotwater: null, waste: null,
+    workdays: null, gravel: null, bricks: null, steel: null, concrete: null,
+    asphalt: null, boards: null, panels: null, ecomponents: null, mcomponents: null,
+  };
+  const result = evaluateCity({
+    productivity: 1, cable: 'Untergrund Kabel 1,85 MW', exchanger: 'small', waterDivisor: 3,
+    rows: [{ building: residence, count: 1 }],
+  }, eco());
+  assert.equal(result.population, 68);
+  assert.equal(result.avgHousingQuality, 0.85);
+  assert.equal(result.power, null);
+  assert.equal(result.water, null);
+  assert.equal(result.buildCostRUB, null);
+  assert.equal(result.transformers, null);
+  assert.equal(result.incomplete.utilities, true);
+  assert.equal(result.incomplete.construction, true);
 });
 
 test('city: average housing quality is population-weighted over rated buildings only', () => {
