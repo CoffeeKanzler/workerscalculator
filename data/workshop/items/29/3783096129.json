@@ -1,0 +1,1709 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3783096129",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-15T04:50:06.674Z",
+  "buildings": [
+    {
+      "id": "3783096129/10_bustram_50_4",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450
+      },
+      "constructionResources": {
+        "workers": 515,
+        "gravel": 35,
+        "concrete": 5,
+        "steel": 7.5,
+        "prefabpanels": 5,
+        "ecomponents": 0.9,
+        "asphalt": 24.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "bus_tram_50m_4",
+      "workshopId": "3783096129",
+      "modPath": "10_bustram_50_4",
+      "footprint": {
+        "boxes": [
+          [
+            -50.77,
+            3.64,
+            50.68,
+            18
+          ]
+        ],
+        "height": 2.8
+      }
+    },
+    {
+      "id": "3783096129/11_bustram_50_2_E",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450
+      },
+      "constructionResources": {
+        "workers": 513,
+        "gravel": 29,
+        "concrete": 5,
+        "steel": 7.5,
+        "ecomponents": 0.9,
+        "asphalt": 16.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "bus_tram_50m_2_E",
+      "workshopId": "3783096129",
+      "modPath": "11_bustram_50_2_E",
+      "footprint": {
+        "boxes": [
+          [
+            -22.07,
+            3.64,
+            20.38,
+            16.62
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/12_bustram_50_4_E",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450
+      },
+      "constructionResources": {
+        "workers": 515,
+        "gravel": 35,
+        "steel": 1.5,
+        "ecomponents": 0.9,
+        "asphalt": 24.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "bus_tram_50m_4_E",
+      "workshopId": "3783096129",
+      "modPath": "12_bustram_50_4_E",
+      "footprint": {
+        "boxes": [
+          [
+            -22.07,
+            3.64,
+            20.38,
+            22.62
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/17_street_200_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 787,
+        "gravel": 98,
+        "concrete": 21,
+        "steel": 31.5,
+        "ecomponents": 2.1,
+        "asphalt": 63.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "street_200m_2",
+      "workshopId": "3783096129",
+      "modPath": "17_street_200_2",
+      "footprint": {
+        "boxes": [
+          [
+            -103.21,
+            8.29,
+            103.21,
+            8.72
+          ],
+          [
+            -103.21,
+            17.58,
+            103.21,
+            18
+          ],
+          [
+            -102.46,
+            3.64,
+            102.46,
+            16.62
+          ]
+        ],
+        "height": 1.99
+      }
+    },
+    {
+      "id": "3783096129/18_street_200_4",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 787,
+        "gravel": 128,
+        "concrete": 21,
+        "steel": 31.5,
+        "ecomponents": 2.1,
+        "asphalt": 83.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "street_200m_4",
+      "workshopId": "3783096129",
+      "modPath": "18_street_200_4",
+      "footprint": {
+        "boxes": [
+          [
+            -103.21,
+            3.64,
+            103.21,
+            24.28
+          ]
+        ],
+        "height": 2.8
+      }
+    },
+    {
+      "id": "3783096129/19_street_200_2_E",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 787,
+        "gravel": 98,
+        "concrete": 21,
+        "steel": 1.5,
+        "ecomponents": 2.1,
+        "asphalt": 63.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "street_200m_2_E",
+      "workshopId": "3783096129",
+      "modPath": "19_street_200_2_E",
+      "footprint": {
+        "boxes": [
+          [
+            -102.46,
+            3.64,
+            102.46,
+            16.62
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/1_bustram_200_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450
+      },
+      "constructionResources": {
+        "workers": 787,
+        "gravel": 98,
+        "concrete": 21,
+        "steel": 31.5,
+        "prefabpanels": 5,
+        "ecomponents": 2.1,
+        "asphalt": 63.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "bus_tram_200m_2",
+      "workshopId": "3783096129",
+      "modPath": "1_bustram_200_2",
+      "footprint": {
+        "boxes": [
+          [
+            -103.21,
+            3.64,
+            103.21,
+            18
+          ]
+        ],
+        "height": 2.8
+      }
+    },
+    {
+      "id": "3783096129/20_street_200_4_E",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 787,
+        "gravel": 128,
+        "concrete": 21,
+        "steel": 1.5,
+        "ecomponents": 2.1,
+        "asphalt": 83.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "street_200m_4_E",
+      "workshopId": "3783096129",
+      "modPath": "20_street_200_4_E",
+      "footprint": {
+        "boxes": [
+          [
+            -102.46,
+            3.64,
+            102.46,
+            16.62
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/21_street_100_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 357,
+        "gravel": 50,
+        "concrete": 10,
+        "steel": 15.5,
+        "ecomponents": 1.1,
+        "asphalt": 32.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "street_100m_2",
+      "workshopId": "3783096129",
+      "modPath": "21_street_100_2",
+      "footprint": {
+        "boxes": [
+          [
+            -50.68,
+            8.29,
+            50.77,
+            24.28
+          ],
+          [
+            -44.95,
+            3.64,
+            46.64,
+            21.52
+          ]
+        ],
+        "height": 1.99
+      }
+    },
+    {
+      "id": "3783096129/22_street_100_4",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 357,
+        "gravel": 70,
+        "concrete": 10,
+        "steel": 15.5,
+        "ecomponents": 1.1,
+        "asphalt": 43.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "street_100m_4",
+      "workshopId": "3783096129",
+      "modPath": "22_street_100_4",
+      "footprint": {
+        "boxes": [
+          [
+            -50.77,
+            3.64,
+            50.68,
+            24
+          ]
+        ],
+        "height": 2.8
+      }
+    },
+    {
+      "id": "3783096129/23_street_100_2_E",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 357,
+        "gravel": 50,
+        "concrete": 10,
+        "steel": 1.5,
+        "ecomponents": 1.1,
+        "asphalt": 32.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "street_100m_2_E",
+      "workshopId": "3783096129",
+      "modPath": "23_street_100_2_E",
+      "footprint": {
+        "boxes": [
+          [
+            -44.95,
+            3.64,
+            46.64,
+            21.52
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/24_street_100_4_E",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 357,
+        "gravel": 70,
+        "concrete": 10,
+        "steel": 1.5,
+        "ecomponents": 1.1,
+        "asphalt": 43.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "street_100m_4_E",
+      "workshopId": "3783096129",
+      "modPath": "24_street_100_4_E",
+      "footprint": {
+        "boxes": [
+          [
+            -44.95,
+            3.64,
+            46.64,
+            21.52
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/25_street_50_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 513,
+        "gravel": 29,
+        "concrete": 5,
+        "steel": 7.5,
+        "ecomponents": 0.9,
+        "asphalt": 16.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "street_50m_2",
+      "workshopId": "3783096129",
+      "modPath": "25_street_50_2",
+      "footprint": {
+        "boxes": [
+          [
+            -25.55,
+            3.64,
+            25.42,
+            18
+          ]
+        ],
+        "height": 2.8
+      }
+    },
+    {
+      "id": "3783096129/26_street_50_4",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 515,
+        "gravel": 35,
+        "concrete": 5,
+        "steel": 7.5,
+        "ecomponents": 0.9,
+        "asphalt": 24.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "street_50m_4",
+      "workshopId": "3783096129",
+      "modPath": "26_street_50_4",
+      "footprint": {
+        "boxes": [
+          [
+            -25.54,
+            3.64,
+            25.45,
+            24
+          ]
+        ],
+        "height": 2.8
+      }
+    },
+    {
+      "id": "3783096129/27_street_50_2_E",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 513,
+        "gravel": 29,
+        "concrete": 5,
+        "steel": 0.5,
+        "ecomponents": 0.9,
+        "asphalt": 16.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "street_50m_2_E",
+      "workshopId": "3783096129",
+      "modPath": "27_street_50_2_E",
+      "footprint": {
+        "boxes": [
+          [
+            -22.07,
+            3.64,
+            20.38,
+            16.62
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/28_street_50_4_E",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 515,
+        "gravel": 35,
+        "concrete": 5,
+        "steel": 0.7,
+        "ecomponents": 0.9,
+        "asphalt": 24.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "street_50m_4_E",
+      "workshopId": "3783096129",
+      "modPath": "28_street_50_4_E",
+      "footprint": {
+        "boxes": [
+          [
+            -22.07,
+            3.64,
+            20.38,
+            16.62
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/2_bustram_200_4",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450
+      },
+      "constructionResources": {
+        "workers": 787,
+        "gravel": 128,
+        "concrete": 21,
+        "steel": 31.5,
+        "prefabpanels": 5,
+        "ecomponents": 2.1,
+        "asphalt": 83.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "bus_tram_200m_4",
+      "workshopId": "3783096129",
+      "modPath": "2_bustram_200_4",
+      "footprint": {
+        "boxes": [
+          [
+            -103.21,
+            3.64,
+            103.21,
+            18
+          ]
+        ],
+        "height": 2.8
+      }
+    },
+    {
+      "id": "3783096129/3_bustram_200_2_E",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450
+      },
+      "constructionResources": {
+        "workers": 787,
+        "gravel": 98,
+        "concrete": 21,
+        "steel": 1.5,
+        "ecomponents": 2.1,
+        "asphalt": 63.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "bus_tram_200m_2_E",
+      "workshopId": "3783096129",
+      "modPath": "3_bustram_200_2_E",
+      "footprint": {
+        "boxes": [
+          [
+            -102.46,
+            3.64,
+            102.46,
+            16.62
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/40_ped_undegrund_1",
+      "nameId": 1078,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3783096129",
+      "modPath": "40_ped_undegrund_1",
+      "footprint": {
+        "boxes": [
+          [
+            -1.86,
+            -6.19,
+            1.85,
+            6.03
+          ],
+          [
+            -3.76,
+            -10.15,
+            3.8,
+            1.95
+          ]
+        ],
+        "height": 7.34
+      }
+    },
+    {
+      "id": "3783096129/40_ped_undegrund_2",
+      "nameId": 1078,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3783096129",
+      "modPath": "40_ped_undegrund_2",
+      "footprint": {
+        "boxes": [
+          [
+            -1.61,
+            -5.99,
+            1.65,
+            5.92
+          ],
+          [
+            -3.76,
+            -10.15,
+            3.8,
+            1.95
+          ]
+        ],
+        "height": 7.34
+      }
+    },
+    {
+      "id": "3783096129/40_ped_up_concret_1",
+      "nameId": 1079,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3783096129",
+      "modPath": "40_ped_up_concret_1",
+      "footprint": {
+        "boxes": [
+          [
+            -1.43,
+            -8.4,
+            1.17,
+            9.56
+          ]
+        ],
+        "height": 10.62
+      }
+    },
+    {
+      "id": "3783096129/40_ped_up_concret_2",
+      "nameId": 1079,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3783096129",
+      "modPath": "40_ped_up_concret_2",
+      "footprint": {
+        "boxes": [
+          [
+            -1.45,
+            -23.65,
+            1.17,
+            9.56
+          ]
+        ],
+        "height": 10.62
+      }
+    },
+    {
+      "id": "3783096129/40_ped_up_concret_3",
+      "nameId": 1079,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3783096129",
+      "modPath": "40_ped_up_concret_3",
+      "footprint": {
+        "boxes": [
+          [
+            -32.32,
+            -16.6,
+            32.3,
+            16.6
+          ]
+        ],
+        "height": 10.62
+      }
+    },
+    {
+      "id": "3783096129/40_ped_up_steel_1",
+      "nameId": 1089,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3783096129",
+      "modPath": "40_ped_up_steel_1",
+      "footprint": {
+        "boxes": [
+          [
+            -1.32,
+            -8.4,
+            1.4,
+            10.06
+          ]
+        ],
+        "height": 10.75
+      }
+    },
+    {
+      "id": "3783096129/40_ped_up_steel_2",
+      "nameId": 1089,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3783096129",
+      "modPath": "40_ped_up_steel_2",
+      "footprint": {
+        "boxes": [
+          [
+            -1.35,
+            -16.99,
+            1.4,
+            17.01
+          ]
+        ],
+        "height": 10.75
+      }
+    },
+    {
+      "id": "3783096129/41_free_rail_20m",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "free_rail-20m",
+      "workshopId": "3783096129",
+      "modPath": "41_free_rail_20m",
+      "footprint": {
+        "boxes": [
+          [
+            -2,
+            -7.82,
+            0,
+            7.82
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/42_free_rail_40m",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "free_rail-40m",
+      "workshopId": "3783096129",
+      "modPath": "42_free_rail_40m",
+      "footprint": {
+        "boxes": [
+          [
+            -7.5,
+            -3.62,
+            7.5,
+            -2.38
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/43_free_rail_80m",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "free_rail-80m",
+      "workshopId": "3783096129",
+      "modPath": "43_free_rail_80m",
+      "footprint": {
+        "boxes": [
+          [
+            -7.5,
+            -3.62,
+            7.5,
+            -2.38
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/4_bustram_200_4_E",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450
+      },
+      "constructionResources": {
+        "workers": 787,
+        "gravel": 128,
+        "concrete": 21,
+        "steel": 1.5,
+        "ecomponents": 2.1,
+        "asphalt": 83.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "bus_tram_200m_4_E",
+      "workshopId": "3783096129",
+      "modPath": "4_bustram_200_4_E",
+      "footprint": {
+        "boxes": [
+          [
+            -102.46,
+            3.64,
+            102.46,
+            22.62
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/50_circle",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 27,
+        "gravel": 40,
+        "concrete": 129,
+        "steel": 3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐ¾Ð»ÑÑÐ¾",
+      "workshopId": "3783096129",
+      "modPath": "50_circle",
+      "footprint": {
+        "boxes": [
+          [
+            -10.47,
+            -14.81,
+            10.47,
+            -8.18
+          ],
+          [
+            -19.8,
+            -28,
+            19.8,
+            -19.78
+          ]
+        ],
+        "height": 17.07
+      }
+    },
+    {
+      "id": "3783096129/5_bustram_100_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450
+      },
+      "constructionResources": {
+        "workers": 357,
+        "gravel": 50,
+        "concrete": 10,
+        "steel": 15.5,
+        "prefabpanels": 5,
+        "ecomponents": 1.1,
+        "asphalt": 32.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "bus_tram_100m_2",
+      "workshopId": "3783096129",
+      "modPath": "5_bustram_100_2",
+      "footprint": {
+        "boxes": [
+          [
+            -50.68,
+            3.64,
+            50.77,
+            18
+          ],
+          [
+            -50.77,
+            4.78,
+            -24.48,
+            8.23
+          ]
+        ],
+        "height": 2.8
+      }
+    },
+    {
+      "id": "3783096129/6_bustram_100_4",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450
+      },
+      "constructionResources": {
+        "workers": 357,
+        "gravel": 70,
+        "concrete": 10,
+        "steel": 15.5,
+        "prefabpanels": 5,
+        "ecomponents": 1.1,
+        "asphalt": 43.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "bus_tram_100m_4",
+      "workshopId": "3783096129",
+      "modPath": "6_bustram_100_4",
+      "footprint": {
+        "boxes": [
+          [
+            -48.13,
+            3.64,
+            53.33,
+            18
+          ]
+        ],
+        "height": 2.8
+      }
+    },
+    {
+      "id": "3783096129/70_fance_100",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "100m",
+      "workshopId": "3783096129",
+      "modPath": "70_fance_100",
+      "footprint": {
+        "boxes": [
+          [
+            -48.13,
+            -0.2,
+            53.33,
+            0.22
+          ]
+        ],
+        "height": 1.99
+      }
+    },
+    {
+      "id": "3783096129/71_fance_50",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "50m",
+      "workshopId": "3783096129",
+      "modPath": "71_fance_50",
+      "footprint": {
+        "boxes": [
+          [
+            -25.29,
+            -0.2,
+            25.71,
+            0.22
+          ]
+        ],
+        "height": 1.99
+      }
+    },
+    {
+      "id": "3783096129/72_fance_25",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "25m",
+      "workshopId": "3783096129",
+      "modPath": "72_fance_25",
+      "footprint": {
+        "boxes": [
+          [
+            -12.89,
+            -0.2,
+            12.88,
+            0.22
+          ]
+        ],
+        "height": 1.99
+      }
+    },
+    {
+      "id": "3783096129/73_fance_12",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "12m",
+      "workshopId": "3783096129",
+      "modPath": "73_fance_12",
+      "footprint": {
+        "boxes": [
+          [
+            -6.57,
+            -0.2,
+            6.57,
+            0.22
+          ]
+        ],
+        "height": 1.99
+      }
+    },
+    {
+      "id": "3783096129/74_fance_6",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "6m",
+      "workshopId": "3783096129",
+      "modPath": "74_fance_6",
+      "footprint": {
+        "boxes": [
+          [
+            -2.37,
+            -0.2,
+            2.37,
+            0.22
+          ]
+        ],
+        "height": 1.99
+      }
+    },
+    {
+      "id": "3783096129/7_bustram_100_2_E",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450
+      },
+      "constructionResources": {
+        "workers": 357,
+        "gravel": 50,
+        "concrete": 10,
+        "steel": 1.5,
+        "ecomponents": 1.1,
+        "asphalt": 32.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "bus_tram_100m_2_E",
+      "workshopId": "3783096129",
+      "modPath": "7_bustram_100_2_E",
+      "footprint": {
+        "boxes": [
+          [
+            -50.68,
+            3.64,
+            50.77,
+            18
+          ],
+          [
+            -50.77,
+            4.78,
+            -24.48,
+            8.23
+          ]
+        ],
+        "height": 2.8
+      }
+    },
+    {
+      "id": "3783096129/8_bustram_100_4_E",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450
+      },
+      "constructionResources": {
+        "workers": 357,
+        "gravel": 70,
+        "steel": 1.5,
+        "ecomponents": 1.1,
+        "asphalt": 43.7
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "bus_tram_100m_4_E",
+      "workshopId": "3783096129",
+      "modPath": "8_bustram_100_4_E",
+      "footprint": {
+        "boxes": [
+          [
+            -46.64,
+            3.64,
+            44.95,
+            22.62
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3783096129/90_mon_clumba_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "decor-1",
+      "workshopId": "3783096129",
+      "modPath": "90_mon_clumba_1",
+      "footprint": {
+        "boxes": [
+          [
+            -1,
+            -1,
+            1,
+            1
+          ]
+        ],
+        "height": 0.12
+      }
+    },
+    {
+      "id": "3783096129/91_mon_clumba_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "decor-2",
+      "workshopId": "3783096129",
+      "modPath": "91_mon_clumba_2",
+      "footprint": {
+        "boxes": [
+          [
+            -3,
+            -1,
+            3,
+            1
+          ]
+        ],
+        "height": 0.12
+      }
+    },
+    {
+      "id": "3783096129/92_mon_clumba_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "decor-3",
+      "workshopId": "3783096129",
+      "modPath": "92_mon_clumba_3",
+      "footprint": {
+        "boxes": [
+          [
+            -5,
+            -1,
+            5,
+            1
+          ]
+        ],
+        "height": 0.12
+      }
+    },
+    {
+      "id": "3783096129/93_mon_clumba_4",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "flowers",
+      "workshopId": "3783096129",
+      "modPath": "93_mon_clumba_4",
+      "footprint": {
+        "boxes": [
+          [
+            -10,
+            -2,
+            10,
+            2
+          ]
+        ],
+        "height": 0.28
+      }
+    },
+    {
+      "id": "3783096129/9_bustram_50_2",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 450,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 450
+      },
+      "constructionResources": {
+        "workers": 513,
+        "gravel": 29,
+        "concrete": 5,
+        "steel": 7.5,
+        "prefabpanels": 5,
+        "ecomponents": 0.9,
+        "asphalt": 16.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "bus_tram_50m_2",
+      "workshopId": "3783096129",
+      "modPath": "9_bustram_50_2",
+      "footprint": {
+        "boxes": [
+          [
+            -25.55,
+            3.64,
+            25.42,
+            18
+          ],
+          [
+            -24.97,
+            4.78,
+            1.33,
+            8.23
+          ]
+        ],
+        "height": 2.8
+      }
+    }
+  ],
+  "vehicles": []
+}
