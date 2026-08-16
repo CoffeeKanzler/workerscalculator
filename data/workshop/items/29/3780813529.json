@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3780813529",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-16T04:52:38.127Z",
+  "buildings": [
+    {
+      "id": "3780813529/CablewayCustomsHouse",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_CABLEWAY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 20,
+        "RESOURCE_TRANSPORT_GRAVEL": 20
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cableway Customs House",
+      "workshopId": "3780813529",
+      "modPath": "CablewayCustomsHouse",
+      "footprint": {
+        "boxes": [
+          [
+            -15.32,
+            -4.41,
+            0.63,
+            6.96
+          ],
+          [
+            -1.01,
+            -14.07,
+            7.09,
+            12.03
+          ],
+          [
+            6.2,
+            -7.24,
+            10.37,
+            -2.22
+          ]
+        ],
+        "height": 17.96
+      }
+    },
+    {
+      "id": "3780813529/LargeCablewayCustomsHouse",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_CABLEWAY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 40,
+        "RESOURCE_TRANSPORT_GRAVEL": 40
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Cableway Customs House",
+      "workshopId": "3780813529",
+      "modPath": "LargeCablewayCustomsHouse",
+      "footprint": {
+        "boxes": [
+          [
+            -31.4,
+            -14.12,
+            -9.73,
+            4.34
+          ],
+          [
+            -23.57,
+            4.34,
+            13.71,
+            20.63
+          ],
+          [
+            13.71,
+            4.42,
+            26.4,
+            10.67
+          ],
+          [
+            -33.96,
+            -17.22,
+            4.86,
+            20.97
+          ],
+          [
+            4.36,
+            4.48,
+            26.18,
+            16.73
+          ]
+        ],
+        "height": 14.6
+      }
+    }
+  ],
+  "vehicles": []
+}

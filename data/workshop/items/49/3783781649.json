@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3783781649",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-16T04:52:38.134Z",
+  "buildings": [
+    {
+      "id": "3783781649/rail_x2",
+      "nameId": null,
+      "types": [
+        "TYPE_FORKLIFT_GARAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cross[x]2 line",
+      "workshopId": "3783781649",
+      "modPath": "rail_x2",
+      "footprint": {
+        "boxes": [
+          [
+            -7.15,
+            -5,
+            7.15,
+            5
+          ]
+        ],
+        "height": 0
+      }
+    }
+  ],
+  "vehicles": []
+}

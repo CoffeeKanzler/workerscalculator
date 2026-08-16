@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3783693434",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-16T04:52:38.132Z",
+  "buildings": [
+    {
+      "id": "3783693434/Little",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 28,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.7,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 28
+      },
+      "constructionResources": {
+        "boards": 8,
+        "concrete": 3,
+        "bricks": 22,
+        "workers": 120
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Chinese District",
+      "workshopId": "3783693434",
+      "modPath": "Little",
+      "footprint": {
+        "boxes": [
+          [
+            -18.83,
+            -15.06,
+            18.45,
+            14.98
+          ]
+        ],
+        "height": 5.3
+      }
+    }
+  ],
+  "vehicles": []
+}
