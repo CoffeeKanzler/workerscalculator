@@ -42,9 +42,10 @@ import {
   CITY_CORE_CATEGORY_TYPES,
   addMissingCityCategoryRows,
   aggregateCityObservations,
+  cityBuildingDisplayName,
   cityWorkshopBuildings,
   resolveCityWorkshopRows,
-} from './city_planning.js?v=6';
+} from './city_planning.js?v=8';
 import { statsStateForImport } from './models/import_stats.js?v=2';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
@@ -3164,7 +3165,7 @@ function renderCity() {
       if (building.provenance?.serviceCapacity === 'game-file') exactFields.push(t('serviceCapacity'));
       details.push(`${t('gameFacts')}: ${exactFields.join(', ') || t('identity')}`);
     }
-    return `${building[state.lang]} — ${details.join(' · ')}`;
+    return `${cityBuildingDisplayName(building, state.lang)} — ${details.join(' · ')}`;
   };
 
   const rowsResolved = city.rows.map(r => ({ ...r, building: resolveRow(r) }));

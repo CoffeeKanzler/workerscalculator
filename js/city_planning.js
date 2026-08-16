@@ -8,6 +8,10 @@ export const CITY_CORE_CATEGORY_TYPES = Object.freeze([
 
 export const CITY_WORKSHOP_GROUPS = Object.freeze(['Werkstätten', 'Workshops']);
 
+export function cityBuildingDisplayName(building, lang = 'de') {
+  return `${building?.[lang] ?? ''}${building?.dlc ? ' [DLC]' : ''}`;
+}
+
 export function cityWorkshopBuildings(buildings = []) {
   return buildings.filter(building => CITY_WORKSHOP_GROUPS.some(group =>
     building?.group?.de === group || building?.group?.en === group));

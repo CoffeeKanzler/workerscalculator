@@ -6,3 +6,8 @@ __pycache__/
 .worktrees/
 private/
 node_modules/
+
+# Code-ex / handoff / workspace scratch (per 2026-08-16)
+.superpowers/
+CODEX-charts-and-tables.md
+HANDOFF-workerscalculator.md

@@ -10,8 +10,8 @@ Both facts are in the game's own files and already extracted into
 data/game/production_buildings.json, where a `$PRODUCTION water` line is
 recorded with game-file provenance. This copies that figure onto the matching
 city rows as `waterSupply`, and appends the supply buildings the city catalogue
-is missing entirely — the wells and the surface intake — so they can be picked
-under Miscellaneous like anything else.
+is missing entirely — the wells, the surface intake, and the early DLC water
+buildings — so they can be picked under Miscellaneous like anything else.
 
 Only water is handled. Heating plants also declare `$PRODUCTION heat` in the
 game files, but that figure disagrees with the measured hot-water rate the
@@ -44,6 +44,21 @@ MISSING = {
     'water_well_small': {"de": "Kleiner Brunnen", "en": "Small water well"},
     'water_well_big': {"de": "Großer Brunnen", "en": "Big water well"},
     'water_to_water': {"de": "Oberflächenwasser-Entnahme", "en": "Surface water intake"},
+    'dlc3/water_treatment': {
+        "de": "Wasseraufbereitung (klein) (10 Arbeiter)",
+        "en": "Water treatment (small) (10 workers)",
+        "dlc": "dlc3", "copyPlanning": True,
+    },
+    'dlc3/water_well': {
+        "de": "Wasserbrunnen (groß) (8 Arbeiter)",
+        "en": "Big water well (8 workers)",
+        "dlc": "dlc3", "copyPlanning": True,
+    },
+    'dlc3/water_well_small': {
+        "de": "Wasserbrunnen (klein) (5 Arbeiter)",
+        "en": "Small water well (5 workers)",
+        "dlc": "dlc3", "copyPlanning": True,
+    },
 }
 
 
@@ -93,22 +108,37 @@ def main():
         if names['en'] in by_en:
             continue
         rate = water_rate(source)
+        copy_planning = names.get('copyPlanning', False)
+        planning_fields = [
+            'power', 'maxKW', 'water', 'hotwater', 'workdays', 'gravel',
+            'bricks', 'steel', 'concrete', 'asphalt', 'boards', 'panels',
+            'ecomponents', 'mcomponents',
+        ]
+        planning = {
+            field: source.get(field, 0) if copy_planning else 0
+            for field in planning_fields
+        }
+        planning_provenance = {
+            field: source.get('provenance', {}).get(field, 'unavailable')
+            for field in planning_fields
+        } if copy_planning else {
+            'power': source.get('provenance', {}).get('power', 'unavailable'),
+            'maxKW': source.get('provenance', {}).get('maxKW', 'unavailable'),
+        }
         rows.append({
-            **names,
+            'de': names['de'], 'en': names['en'],
             'type': dict(MISC_TYPE),
             'kind': 'Vanilla',
+            **({'dlc': names['dlc']} if names.get('dlc') else {}),
             'quality': None,
             'workers': source.get('workers') or 0,
             'special': 0, 'visitors': 0, 'inhabitants': 0,
-            'power': source.get('power') or 0,
-            'maxKW': source.get('maxKW') or 0,
-            # What it draws for itself is not recorded for these; a well that
-            # needs nobody and nothing is left at zero rather than invented.
-            'water': 0, 'hotwater': 0.0, 'waste': 0,
+            **planning,
+            # Preserve the planning values already shown in production for the
+            # DLC variants; the older zero-worker sources stay at zero.
+            'waste': ((source.get('wastePerWorker') or 0) * (source.get('workers') or 0)
+                      if copy_planning else 0),
             'waterSupply': rate,
-            'workdays': 0,
-            'gravel': 0, 'bricks': 0, 'steel': 0, 'concrete': 0, 'asphalt': 0,
-            'boards': 0, 'panels': 0, 'ecomponents': 0, 'mcomponents': 0,
             'recommendedFor': 0,
             'gameId': game_id,
             'provenance': {
@@ -116,8 +146,7 @@ def main():
                 # matched to one, so their identity is game-file by construction.
                 'identity': 'game-file',
                 'workers': 'game-file', 'waterSupply': 'game-file',
-                'power': source.get('provenance', {}).get('power', 'unavailable'),
-                'maxKW': source.get('provenance', {}).get('maxKW', 'unavailable'),
+                **planning_provenance,
             },
         })
         changes.append(f"added {names['en']}: {rate} water/day, {source.get('workers') or 0} workers")

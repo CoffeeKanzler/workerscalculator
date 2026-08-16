@@ -85,11 +85,11 @@ test('per-second electricity stays a utility field, not a per-worker material in
 test('stable city-building IDs expose only exact raw game facts', () => {
   const raw = new Map(rawBuildings.map(building => [building.id, building]));
   const identified = cityBuildings.filter(building => building.gameId);
-  // 41 spreadsheet rows matched to a game building, plus the three water
-  // supply buildings added straight from the game files by
+  // 41 spreadsheet rows matched to a game building, plus six water-supply
+  // buildings added straight from the game files by
   // tools/add_city_water_supply.py, which are the game building rather than a
   // row matched to one.
-  assert.equal(identified.length, 44);
+  assert.equal(identified.length, 47);
   for (const building of identified) {
     const source = raw.get(building.gameId);
     assert.ok(source, `missing city source ${building.gameId}`);
@@ -103,5 +103,24 @@ test('stable city-building IDs expose only exact raw game facts', () => {
       assert.equal(Math.max(building.visitors, building.special),
         source.workers * source.citizenAbleServe, `${building.gameId} service capacity`);
     }
+  }
+});
+
+test('city planner offers the early DLC water-supply buildings', () => {
+  const expected = [
+    ['dlc3/water_treatment', 'Wasseraufbereitung (klein) (10 Arbeiter)', 10, 240],
+    ['dlc3/water_well', 'Wasserbrunnen (groß) (8 Arbeiter)', 8, 1920],
+    ['dlc3/water_well_small', 'Wasserbrunnen (klein) (5 Arbeiter)', 5, 250],
+  ];
+
+  for (const [gameId, name, workers, waterSupply] of expected) {
+    const building = cityBuildings.find(row => row.gameId === gameId);
+    assert.ok(building, `${gameId} is missing from the city planner catalogue`);
+    assert.equal(building.de, name);
+    assert.equal(building.kind, 'Vanilla');
+    assert.deepEqual(building.type, { de: 'Sonstiges', en: 'Miscellaneous' });
+    assert.equal(building.workers, workers);
+    assert.equal(building.waterSupply, waterSupply);
+    assert.equal(building.dlc, 'dlc3');
   }
 });

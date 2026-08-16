@@ -1,13 +1,19 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-
 import {
   CITY_CORE_CATEGORY_TYPES,
   aggregateCityObservations,
   addMissingCityCategoryRows,
+  cityBuildingDisplayName,
   cityWorkshopBuildings,
   resolveCityWorkshopRows,
 } from '../js/city_planning.js';
+
+test('city building names distinguish DLC variants', () => {
+  assert.equal(cityBuildingDisplayName({ de: 'Wasserbrunnen', dlc: 'dlc3' }, 'de'),
+    'Wasserbrunnen [DLC]');
+  assert.equal(cityBuildingDisplayName({ en: 'Water well' }, 'en'), 'Water well');
+});
 
 test('aggregates assigned real cities without changing the planned rows', () => {
   const result = aggregateCityObservations([
