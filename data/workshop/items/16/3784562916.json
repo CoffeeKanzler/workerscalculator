@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3784562916",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-17T05:00:56.354Z",
+  "buildings": [
+    {
+      "id": "3784562916/MOORWERK_ROTEBURG_ACADEMY",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 25,
+      "professors": 25,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "MOORWERK_ROTEBURG_ACADEMY",
+      "workshopId": "3784562916",
+      "modPath": "MOORWERK_ROTEBURG_ACADEMY",
+      "footprint": {
+        "boxes": [
+          [
+            -13.25,
+            8,
+            13.25,
+            47
+          ],
+          [
+            -16.65,
+            13.85,
+            16.65,
+            41.15
+          ],
+          [
+            -19.44,
+            -8.9,
+            19.43,
+            52.95
+          ],
+          [
+            -1.04,
+            31.75,
+            0.96,
+            33.75
+          ],
+          [
+            -16.5,
+            6.8,
+            16.5,
+            46.8
+          ]
+        ],
+        "height": 14.62
+      }
+    }
+  ],
+  "vehicles": []
+}

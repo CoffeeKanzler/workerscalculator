@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3784431464",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-17T05:00:56.352Z",
+  "buildings": [
+    {
+      "id": "3784431464/deposito",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_NUCLEAR2": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Deposito Militar",
+      "workshopId": "3784431464",
+      "modPath": "deposito",
+      "footprint": {
+        "boxes": [
+          [
+            -7.65,
+            -12.4,
+            5.1,
+            7.23
+          ],
+          [
+            -3.79,
+            6.44,
+            1.18,
+            6.61
+          ]
+        ],
+        "height": 4.64
+      }
+    }
+  ],
+  "vehicles": []
+}

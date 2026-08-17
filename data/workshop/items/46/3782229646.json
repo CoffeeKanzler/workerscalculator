@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3782229646",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-17T05:00:56.340Z",
+  "buildings": [
+    {
+      "id": "3782229646/RSP_10",
+      "nameId": null,
+      "types": [
+        "TYPE_AIRPLANE_TOWER"
+      ],
+      "workers": 0,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð Ð°Ð´Ð¸Ð¾Ð»Ð¾ÐºÐ°ÑÐ¸Ð¾Ð½Ð½Ð°Ñ ÑÐ¸ÑÑÐµÐ¼Ð° Ð¿Ð¾ÑÐ°Ð´ÐºÐ¸ Ð Ð¡Ð-10",
+      "workshopId": "3782229646",
+      "modPath": "RSP_10",
+      "footprint": {
+        "boxes": [
+          [
+            -4.22,
+            -0.97,
+            2.52,
+            1.01
+          ],
+          [
+            -62.93,
+            -2.67,
+            -60.98,
+            2.67
+          ],
+          [
+            -61.79,
+            -2.67,
+            -60.57,
+            1.09
+          ],
+          [
+            -63.93,
+            -1.66,
+            -55.59,
+            1.35
+          ],
+          [
+            -62.93,
+            -1.36,
+            -57.6,
+            1.16
+          ],
+          [
+            -4.84,
+            -1.62,
+            6.26,
+            1.62
+          ],
+          [
+            -4.58,
+            -1.22,
+            6.12,
+            1.22
+          ],
+          [
+            -4.07,
+            -1.65,
+            5.83,
+            1.63
+          ]
+        ],
+        "height": 8.15
+      }
+    }
+  ],
+  "vehicles": []
+}
