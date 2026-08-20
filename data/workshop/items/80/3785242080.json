@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3785242080",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-20T04:56:13.481Z",
+  "buildings": [
+    {
+      "id": "3785242080/sklad_pojazdow",
+      "nameId": 2037,
+      "types": [
+        "TYPE_STORAGE",
+        "SUBTYPE_SPACE_FOR_VEHICLES"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3785242080",
+      "modPath": "sklad_pojazdow",
+      "footprint": {
+        "boxes": [
+          [
+            -30,
+            -10,
+            30,
+            10
+          ],
+          [
+            -0.18,
+            7,
+            20.22,
+            9.84
+          ],
+          [
+            -12.64,
+            -3.15,
+            -9.46,
+            -0.85
+          ],
+          [
+            -14.65,
+            -3.99,
+            -9.03,
+            1.1
+          ]
+        ],
+        "height": 9.44
+      }
+    },
+    {
+      "id": "3785242080/stacja1",
+      "nameId": 1812,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_GRAVEL": 1,
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3785242080",
+      "modPath": "stacja1",
+      "footprint": {
+        "boxes": [
+          [
+            -20.2,
+            2.5,
+            40.2,
+            11.5
+          ],
+          [
+            -39.8,
+            -2.5,
+            40.1,
+            11.5
+          ],
+          [
+            -20.22,
+            5.5,
+            40.18,
+            8.34
+          ]
+        ],
+        "height": 9.69
+      }
+    },
+    {
+      "id": "3785242080/stacja2",
+      "nameId": 1812,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_GRAVEL": 1,
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3785242080",
+      "modPath": "stacja2",
+      "footprint": {
+        "boxes": [
+          [
+            -20.2,
+            2.5,
+            40.2,
+            11.5
+          ],
+          [
+            -20.22,
+            5.5,
+            40.18,
+            8.34
+          ],
+          [
+            -39.8,
+            -8.5,
+            40.1,
+            11.5
+          ]
+        ],
+        "height": 9.69
+      }
+    },
+    {
+      "id": "3785242080/stacja3",
+      "nameId": 1812,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_GRAVEL": 1,
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3785242080",
+      "modPath": "stacja3",
+      "footprint": {
+        "boxes": [
+          [
+            -60.2,
+            2.5,
+            80.2,
+            11.5
+          ],
+          [
+            -79.8,
+            -2.5,
+            80.1,
+            11.5
+          ],
+          [
+            -40.22,
+            5.5,
+            60.18,
+            8.34
+          ]
+        ],
+        "height": 9.69
+      }
+    },
+    {
+      "id": "3785242080/stacja4",
+      "nameId": 1812,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_GRAVEL": 1,
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3785242080",
+      "modPath": "stacja4",
+      "footprint": {
+        "boxes": [
+          [
+            -60.2,
+            2.5,
+            80.2,
+            11.5
+          ],
+          [
+            -60.22,
+            5.5,
+            80.18,
+            8.34
+          ],
+          [
+            -79.8,
+            -8.5,
+            80.1,
+            11.5
+          ]
+        ],
+        "height": 9.69
+      }
+    }
+  ],
+  "vehicles": []
+}
