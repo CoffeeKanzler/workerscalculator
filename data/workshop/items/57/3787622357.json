@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3787622357",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-22T04:53:04.816Z",
+  "buildings": [
+    {
+      "id": "3787622357/DockDistributionOfficePioneer_dock2",
+      "nameId": null,
+      "types": [
+        "TYPE_SHIP_DOCK"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pioneer Boat Distribution Office",
+      "workshopId": "3787622357",
+      "modPath": "DockDistributionOfficePioneer_dock2",
+      "footprint": {
+        "boxes": [
+          [
+            15.24,
+            19.81,
+            15.54,
+            20.12
+          ],
+          [
+            15.24,
+            -20.12,
+            15.54,
+            -19.81
+          ],
+          [
+            -1.83,
+            -20.12,
+            15.54,
+            20.12
+          ]
+        ],
+        "height": 22.25
+      }
+    }
+  ],
+  "vehicles": []
+}
