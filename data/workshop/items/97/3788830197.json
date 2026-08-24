@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3788830197",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-24T05:04:33.048Z",
+  "buildings": [
+    {
+      "id": "3788830197/16655_1Mg-601_5Pod_2Part",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 616,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 616
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1Mg-601_5Pod_2Part",
+      "workshopId": "3788830197",
+      "modPath": "16655_1Mg-601_5Pod_2Part",
+      "footprint": {
+        "boxes": [
+          [
+            -22.32,
+            -40.05,
+            15.35,
+            40.05
+          ],
+          [
+            -22.32,
+            -40,
+            13.32,
+            40
+          ],
+          [
+            -22.32,
+            -40,
+            13.32,
+            40
+          ],
+          [
+            -21.04,
+            -40,
+            12.04,
+            40
+          ],
+          [
+            -21,
+            -40,
+            12,
+            40
+          ],
+          [
+            -15,
+            -40.05,
+            9,
+            40.05
+          ],
+          [
+            -15.01,
+            -40,
+            9,
+            40
+          ],
+          [
+            -21,
+            -40,
+            12,
+            40
+          ],
+          [
+            -21,
+            -40,
+            12,
+            40
+          ]
+        ],
+        "height": 59.41
+      }
+    },
+    {
+      "id": "3788830197/20610_1Mg-601_1Pod_2Part",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1Mg-601_1Pod_2Part",
+      "workshopId": "3788830197",
+      "modPath": "20610_1Mg-601_1Pod_2Part",
+      "footprint": {
+        "boxes": [
+          [
+            -10.04,
+            -20.35,
+            10.04,
+            11.35
+          ]
+        ],
+        "height": 59.44
+      }
+    },
+    {
+      "id": "3788830197/22818_1Mg-601_1fl_Part2_Big_ver",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 240,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 240
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1Mg-601_1fl_Part2_Big_ver",
+      "workshopId": "3788830197",
+      "modPath": "22818_1Mg-601_1fl_Part2_Big_ver",
+      "footprint": {
+        "boxes": [
+          [
+            -27,
+            -10.35,
+            27,
+            8.05
+          ],
+          [
+            -27.05,
+            -7.08,
+            27.05,
+            11.35
+          ]
+        ],
+        "height": 59.44
+      }
+    }
+  ],
+  "vehicles": []
+}
