@@ -1,0 +1,1491 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3789182283",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-25T04:56:44.438Z",
+  "buildings": [
+    {
+      "id": "3789182283/Q-251",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Q-251 wheel crane",
+      "workshopId": "3789182283",
+      "modPath": "Q-251",
+      "footprint": {
+        "boxes": [
+          [
+            1.42,
+            3.07,
+            2.09,
+            4.21
+          ],
+          [
+            -2.09,
+            -3.11,
+            2.09,
+            -1.97
+          ],
+          [
+            -2.09,
+            -1.37,
+            2.09,
+            -0.23
+          ],
+          [
+            -2.06,
+            -3.44,
+            2.06,
+            4.67
+          ],
+          [
+            -2.09,
+            3.07,
+            -1.42,
+            4.21
+          ],
+          [
+            -1.65,
+            -4.49,
+            1.65,
+            2.33
+          ],
+          [
+            -0.64,
+            -1.72,
+            0.63,
+            15.27
+          ]
+        ],
+        "height": 4.58
+      }
+    },
+    {
+      "id": "3789182283/Q-251-1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Q-251 wheel crane(Lifting status: 13m)",
+      "workshopId": "3789182283",
+      "modPath": "Q-251-1",
+      "footprint": {
+        "boxes": [
+          [
+            -2.68,
+            -4.24,
+            2.69,
+            3.87
+          ],
+          [
+            1.42,
+            2.27,
+            2.09,
+            3.41
+          ],
+          [
+            -2.09,
+            2.27,
+            -1.42,
+            3.41
+          ],
+          [
+            -2.09,
+            -2.17,
+            2.09,
+            -1.03
+          ],
+          [
+            -2.09,
+            -3.91,
+            2.09,
+            -2.77
+          ],
+          [
+            -1.65,
+            -5.29,
+            1.65,
+            1.53
+          ],
+          [
+            -0.64,
+            -2.5,
+            0.63,
+            10.51
+          ]
+        ],
+        "height": 12.02
+      }
+    },
+    {
+      "id": "3789182283/Q-251-2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Q-251 wheel crane(Lifting status: 25m)",
+      "workshopId": "3789182283",
+      "modPath": "Q-251-2",
+      "footprint": {
+        "boxes": [
+          [
+            -2.68,
+            -4.24,
+            2.69,
+            3.87
+          ],
+          [
+            1.42,
+            2.27,
+            2.09,
+            3.41
+          ],
+          [
+            -2.09,
+            2.27,
+            -1.42,
+            3.41
+          ],
+          [
+            -2.09,
+            -2.17,
+            2.09,
+            -1.03
+          ],
+          [
+            -2.09,
+            -3.91,
+            2.09,
+            -2.77
+          ],
+          [
+            -1.65,
+            -5.29,
+            1.65,
+            1.53
+          ],
+          [
+            -0.64,
+            -2.5,
+            0.63,
+            10.51
+          ]
+        ],
+        "height": 12.02
+      }
+    },
+    {
+      "id": "3789182283/Q-251-3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Q-251 wheel crane(Lifting status: 25m additional attached arm)",
+      "workshopId": "3789182283",
+      "modPath": "Q-251-3",
+      "footprint": {
+        "boxes": [
+          [
+            -2.68,
+            -4.24,
+            2.69,
+            3.87
+          ],
+          [
+            1.42,
+            2.27,
+            2.09,
+            3.41
+          ],
+          [
+            -2.09,
+            2.27,
+            -1.42,
+            3.41
+          ],
+          [
+            -2.09,
+            -2.17,
+            2.09,
+            -1.03
+          ],
+          [
+            -2.09,
+            -3.91,
+            2.09,
+            -2.77
+          ],
+          [
+            -1.65,
+            -5.29,
+            1.65,
+            1.53
+          ],
+          [
+            -0.64,
+            -2.51,
+            0.63,
+            23.72
+          ]
+        ],
+        "height": 22.39
+      }
+    },
+    {
+      "id": "3789182283/QL1-151",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL1-151 wheel crane",
+      "workshopId": "3789182283",
+      "modPath": "QL1-151",
+      "footprint": {
+        "boxes": [
+          [
+            -1.68,
+            -1.82,
+            1.68,
+            1.88
+          ],
+          [
+            -1.25,
+            -2.73,
+            1.26,
+            14.44
+          ],
+          [
+            -0.04,
+            8.12,
+            0.07,
+            9.41
+          ],
+          [
+            -0.36,
+            8.34,
+            0.36,
+            14.67
+          ],
+          [
+            -0.38,
+            1.34,
+            0.38,
+            8.44
+          ],
+          [
+            -1.25,
+            -3.05,
+            1.21,
+            1.5
+          ],
+          [
+            1.04,
+            0.75,
+            1.65,
+            1.6
+          ],
+          [
+            -1.65,
+            0.75,
+            -1.04,
+            1.6
+          ],
+          [
+            -1.65,
+            -1.63,
+            1.65,
+            -0.78
+          ]
+        ],
+        "height": 3.62
+      }
+    },
+    {
+      "id": "3789182283/QL1-151-1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL1-151 wheel crane(Lifting status: 13m)",
+      "workshopId": "3789182283",
+      "modPath": "QL1-151-1",
+      "footprint": {
+        "boxes": [
+          [
+            -1.25,
+            -3.05,
+            1.21,
+            1.5
+          ],
+          [
+            1.04,
+            0.75,
+            1.65,
+            1.6
+          ],
+          [
+            -1.65,
+            0.75,
+            -1.04,
+            1.6
+          ],
+          [
+            -1.65,
+            -1.63,
+            1.65,
+            -0.78
+          ],
+          [
+            -1.68,
+            -1.82,
+            1.68,
+            1.88
+          ],
+          [
+            -0.38,
+            1.24,
+            0.38,
+            5.86
+          ],
+          [
+            -0.36,
+            5.33,
+            0.36,
+            9.49
+          ],
+          [
+            -0.04,
+            9.06,
+            0.07,
+            9.61
+          ],
+          [
+            -0.25,
+            -2.82,
+            0.25,
+            9.59
+          ]
+        ],
+        "height": 12.41
+      }
+    },
+    {
+      "id": "3789182283/QL1-151-2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL1-151 wheel crane(Lifting status: 25m)",
+      "workshopId": "3789182283",
+      "modPath": "QL1-151-2",
+      "footprint": {
+        "boxes": [
+          [
+            -1.25,
+            -3.05,
+            1.21,
+            1.5
+          ],
+          [
+            1.04,
+            0.75,
+            1.65,
+            1.6
+          ],
+          [
+            -1.65,
+            0.75,
+            -1.04,
+            1.6
+          ],
+          [
+            -1.65,
+            -1.63,
+            1.65,
+            -0.78
+          ],
+          [
+            -1.68,
+            -1.82,
+            1.68,
+            1.88
+          ],
+          [
+            -0.38,
+            1.23,
+            0.38,
+            5.7
+          ],
+          [
+            -0.36,
+            5.15,
+            0.36,
+            9.25
+          ],
+          [
+            -0.36,
+            12.26,
+            0.36,
+            16.3
+          ],
+          [
+            -0.25,
+            -2.89,
+            0.25,
+            16.37
+          ],
+          [
+            -0.36,
+            8.7,
+            0.36,
+            12.81
+          ],
+          [
+            -0.04,
+            15.84,
+            0.07,
+            16.38
+          ]
+        ],
+        "height": 22.77
+      }
+    },
+    {
+      "id": "3789182283/QL1-151-3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL1-151 wheel crane(Lifting status: 25m additional attached arm)",
+      "workshopId": "3789182283",
+      "modPath": "QL1-151-3",
+      "footprint": {
+        "boxes": [
+          [
+            -1.25,
+            -3.05,
+            1.21,
+            1.5
+          ],
+          [
+            1.04,
+            0.75,
+            1.65,
+            1.6
+          ],
+          [
+            -1.65,
+            0.75,
+            -1.04,
+            1.6
+          ],
+          [
+            -1.65,
+            -1.63,
+            1.65,
+            -0.78
+          ],
+          [
+            -1.68,
+            -1.82,
+            1.68,
+            1.88
+          ],
+          [
+            -0.38,
+            1.18,
+            0.38,
+            6.32
+          ],
+          [
+            -0.36,
+            5.83,
+            0.36,
+            10.48
+          ],
+          [
+            -0.36,
+            9.99,
+            0.36,
+            14.66
+          ],
+          [
+            -0.36,
+            14.17,
+            0.36,
+            18.79
+          ],
+          [
+            -0.16,
+            17.92,
+            0.16,
+            22.45
+          ],
+          [
+            -0.04,
+            18.34,
+            0.07,
+            22.45
+          ],
+          [
+            -0.26,
+            -2.87,
+            0.25,
+            22.44
+          ]
+        ],
+        "height": 22.28
+      }
+    },
+    {
+      "id": "3789182283/QL3-16",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL3-16 wheel crane",
+      "workshopId": "3789182283",
+      "modPath": "QL3-16",
+      "footprint": {
+        "boxes": [
+          [
+            -1.42,
+            -3.07,
+            1.48,
+            1.35
+          ],
+          [
+            -0.64,
+            -3.06,
+            0.64,
+            1.73
+          ],
+          [
+            -1.49,
+            -2.77,
+            1.49,
+            2.8
+          ],
+          [
+            -0.81,
+            -2.92,
+            0.81,
+            14.17
+          ],
+          [
+            -0.43,
+            4.29,
+            0.43,
+            14.34
+          ],
+          [
+            0.91,
+            0.86,
+            1.45,
+            1.9
+          ],
+          [
+            -1.49,
+            -2.03,
+            1.45,
+            -0.99
+          ],
+          [
+            -1.48,
+            0.86,
+            -0.94,
+            1.9
+          ]
+        ],
+        "height": 3.55
+      }
+    },
+    {
+      "id": "3789182283/QL3-16-1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL3-16 wheel crane(Lifting status: 13m)",
+      "workshopId": "3789182283",
+      "modPath": "QL3-16-1",
+      "footprint": {
+        "boxes": [
+          [
+            -1.42,
+            -3.07,
+            1.48,
+            1.35
+          ],
+          [
+            -0.64,
+            -3.06,
+            0.64,
+            1.73
+          ],
+          [
+            -2.06,
+            -2.77,
+            2.07,
+            2.8
+          ],
+          [
+            -1.49,
+            -2.03,
+            1.45,
+            -0.99
+          ],
+          [
+            -1.48,
+            0.86,
+            -0.94,
+            1.9
+          ],
+          [
+            0.91,
+            0.86,
+            1.45,
+            1.9
+          ],
+          [
+            -0.43,
+            6.89,
+            0.43,
+            8.37
+          ],
+          [
+            -0.81,
+            -2.92,
+            0.81,
+            8.25
+          ]
+        ],
+        "height": 12.55
+      }
+    },
+    {
+      "id": "3789182283/QL3-16-2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL3-16 wheel crane(Lifting status: 20m)",
+      "workshopId": "3789182283",
+      "modPath": "QL3-16-2",
+      "footprint": {
+        "boxes": [
+          [
+            -1.42,
+            -3.07,
+            1.48,
+            1.35
+          ],
+          [
+            -0.64,
+            -3.06,
+            0.64,
+            1.73
+          ],
+          [
+            -2.06,
+            -2.77,
+            2.07,
+            2.8
+          ],
+          [
+            -1.49,
+            -2.03,
+            1.45,
+            -0.99
+          ],
+          [
+            -1.48,
+            0.86,
+            -0.94,
+            1.9
+          ],
+          [
+            0.91,
+            0.86,
+            1.45,
+            1.9
+          ],
+          [
+            -0.43,
+            10.98,
+            0.43,
+            12.46
+          ],
+          [
+            -0.81,
+            -2.92,
+            0.81,
+            12.33
+          ]
+        ],
+        "height": 19.57
+      }
+    },
+    {
+      "id": "3789182283/QL3-253",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL3-253 wheel crane",
+      "workshopId": "3789182283",
+      "modPath": "QL3-253",
+      "footprint": {
+        "boxes": [
+          [
+            -1.76,
+            -2.57,
+            1.76,
+            2.91
+          ],
+          [
+            -1.54,
+            -2.87,
+            1.54,
+            2.53
+          ],
+          [
+            -0.43,
+            8.32,
+            0.43,
+            15.37
+          ],
+          [
+            -0.45,
+            2.09,
+            0.45,
+            8.46
+          ],
+          [
+            -0.37,
+            1.2,
+            0.4,
+            15.17
+          ],
+          [
+            -0.39,
+            -2.37,
+            0.39,
+            15.15
+          ],
+          [
+            0.91,
+            1.02,
+            1.58,
+            2.06
+          ],
+          [
+            -1.58,
+            1.02,
+            -0.9,
+            2.06
+          ],
+          [
+            -1.58,
+            -1.83,
+            1.58,
+            -0.79
+          ]
+        ],
+        "height": 3.64
+      }
+    },
+    {
+      "id": "3789182283/QL3-253-1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL3-253 wheel crane(Lifting status: 13m)",
+      "workshopId": "3789182283",
+      "modPath": "QL3-253-1",
+      "footprint": {
+        "boxes": [
+          [
+            -1.58,
+            -2.75,
+            1.51,
+            2.65
+          ],
+          [
+            -0.43,
+            5.84,
+            0.43,
+            10.61
+          ],
+          [
+            -0.45,
+            2.24,
+            0.45,
+            6.55
+          ],
+          [
+            -0.39,
+            -1.77,
+            0.39,
+            10.36
+          ],
+          [
+            -0.28,
+            1.33,
+            0.27,
+            10.6
+          ],
+          [
+            -2.19,
+            -2.44,
+            2.2,
+            3.03
+          ],
+          [
+            0.91,
+            1.15,
+            1.58,
+            2.19
+          ],
+          [
+            -1.58,
+            -1.7,
+            1.58,
+            -0.67
+          ],
+          [
+            -1.58,
+            1.15,
+            -0.9,
+            2.19
+          ]
+        ],
+        "height": 12.02
+      }
+    },
+    {
+      "id": "3789182283/QL3-253-2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL3-253 wheel crane(Lifting status: 32m)",
+      "workshopId": "3789182283",
+      "modPath": "QL3-253-2",
+      "footprint": {
+        "boxes": [
+          [
+            -1.58,
+            -2.75,
+            1.51,
+            2.65
+          ],
+          [
+            -2.19,
+            -2.44,
+            2.2,
+            3.03
+          ],
+          [
+            0.91,
+            1.15,
+            1.58,
+            2.19
+          ],
+          [
+            -1.58,
+            -1.7,
+            1.58,
+            -0.67
+          ],
+          [
+            -1.58,
+            1.15,
+            -0.9,
+            2.19
+          ],
+          [
+            -0.43,
+            14.38,
+            0.43,
+            18.53
+          ],
+          [
+            -0.45,
+            9.79,
+            0.45,
+            12.84
+          ],
+          [
+            -0.45,
+            12.09,
+            0.45,
+            15.14
+          ],
+          [
+            -0.45,
+            2.22,
+            0.45,
+            5.96
+          ],
+          [
+            -0.45,
+            7.49,
+            0.45,
+            10.54
+          ],
+          [
+            -0.45,
+            5.19,
+            0.45,
+            8.24
+          ],
+          [
+            -0.28,
+            1.33,
+            0.27,
+            18.51
+          ],
+          [
+            -0.39,
+            -1.77,
+            0.39,
+            18.29
+          ]
+        ],
+        "height": 28.62
+      }
+    },
+    {
+      "id": "3789182283/QL3-253-3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL3-253 wheel crane(Lifting status: 32m additional attached arm)",
+      "workshopId": "3789182283",
+      "modPath": "QL3-253-3",
+      "footprint": {
+        "boxes": [
+          [
+            -1.58,
+            -2.75,
+            1.51,
+            2.65
+          ],
+          [
+            -2.19,
+            -2.44,
+            2.2,
+            3.03
+          ],
+          [
+            0.91,
+            1.15,
+            1.58,
+            2.19
+          ],
+          [
+            -1.58,
+            -1.7,
+            1.58,
+            -0.67
+          ],
+          [
+            -1.58,
+            1.15,
+            -0.9,
+            2.19
+          ],
+          [
+            -0.45,
+            2.18,
+            0.45,
+            6.59
+          ],
+          [
+            -0.45,
+            5.89,
+            0.45,
+            9.4
+          ],
+          [
+            -0.45,
+            8.71,
+            0.45,
+            12.22
+          ],
+          [
+            -0.45,
+            14.36,
+            0.45,
+            17.87
+          ],
+          [
+            -0.39,
+            -1.77,
+            0.39,
+            21.78
+          ],
+          [
+            -0.45,
+            11.54,
+            0.45,
+            15.05
+          ],
+          [
+            -0.43,
+            17.18,
+            0.43,
+            22.06
+          ],
+          [
+            -0.23,
+            21.8,
+            0.23,
+            25.79
+          ],
+          [
+            -0.25,
+            20.6,
+            0.26,
+            21.8
+          ],
+          [
+            -0.28,
+            1.22,
+            0.27,
+            25.71
+          ]
+        ],
+        "height": 28.75
+      }
+    },
+    {
+      "id": "3789182283/QL3-40",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL3-40 wheel crane",
+      "workshopId": "3789182283",
+      "modPath": "QL3-40",
+      "footprint": {
+        "boxes": [
+          [
+            -1.63,
+            -3.66,
+            1.63,
+            4.52
+          ],
+          [
+            -0.63,
+            -3.57,
+            0.63,
+            16.38
+          ],
+          [
+            -0.76,
+            -3.64,
+            0.77,
+            -0.44
+          ],
+          [
+            -1.56,
+            -3.91,
+            1.56,
+            2.03
+          ],
+          [
+            -0.94,
+            -3.54,
+            0.94,
+            1.82
+          ],
+          [
+            0.98,
+            2.88,
+            1.62,
+            3.91
+          ],
+          [
+            -1.62,
+            2.88,
+            -0.98,
+            3.91
+          ],
+          [
+            -1.63,
+            -1.31,
+            1.63,
+            -0.28
+          ],
+          [
+            -1.63,
+            -2.74,
+            1.63,
+            -1.69
+          ]
+        ],
+        "height": 3.71
+      }
+    },
+    {
+      "id": "3789182283/QL3-40-1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL3-40 wheel crane(Lifting status: 15m)",
+      "workshopId": "3789182283",
+      "modPath": "QL3-40-1",
+      "footprint": {
+        "boxes": [
+          [
+            -2.61,
+            -3.66,
+            2.61,
+            4.52
+          ],
+          [
+            0.98,
+            2.88,
+            1.62,
+            3.91
+          ],
+          [
+            -1.62,
+            2.88,
+            -0.98,
+            3.91
+          ],
+          [
+            -1.63,
+            -1.31,
+            1.63,
+            -0.28
+          ],
+          [
+            -1.63,
+            -2.74,
+            1.63,
+            -1.69
+          ],
+          [
+            -0.94,
+            -3.54,
+            0.94,
+            1.82
+          ],
+          [
+            -1.56,
+            -3.91,
+            1.56,
+            2.03
+          ],
+          [
+            -0.63,
+            -3.57,
+            0.63,
+            10.44
+          ],
+          [
+            -0.76,
+            -3.64,
+            0.77,
+            -0.44
+          ]
+        ],
+        "height": 13.88
+      }
+    },
+    {
+      "id": "3789182283/QL3-40-2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "QL3-40 wheel crane(Lifting status: 42m)",
+      "workshopId": "3789182283",
+      "modPath": "QL3-40-2",
+      "footprint": {
+        "boxes": [
+          [
+            -2.61,
+            -3.66,
+            2.61,
+            4.52
+          ],
+          [
+            0.98,
+            2.88,
+            1.62,
+            3.91
+          ],
+          [
+            -1.62,
+            2.88,
+            -0.98,
+            3.91
+          ],
+          [
+            -1.63,
+            -1.31,
+            1.63,
+            -0.28
+          ],
+          [
+            -1.63,
+            -2.74,
+            1.63,
+            -1.69
+          ],
+          [
+            -0.94,
+            -3.54,
+            0.94,
+            1.82
+          ],
+          [
+            -1.56,
+            -3.91,
+            1.56,
+            2.03
+          ],
+          [
+            -0.76,
+            -3.53,
+            0.77,
+            -0.38
+          ],
+          [
+            -0.63,
+            -2.27,
+            0.63,
+            21.64
+          ]
+        ],
+        "height": 39.57
+      }
+    }
+  ],
+  "vehicles": []
+}
