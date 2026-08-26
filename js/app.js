@@ -207,6 +207,7 @@ let standaloneLeafletMap = null;
 let standaloneLeafletCamera = null;
 let compactMapExpanded = false;
 let compactMapOpen = false;
+let plannerAssumptionsOpen = false;
 let creditElectronicsOpen = false;
 let creditElectronicsAssumptionsOpen = false;
 let creditHistoryOpen = false;
@@ -1774,7 +1775,11 @@ function renderProduction() {
     kv(t('wasteOut'), fmt(result.totalWaste, 1)),
     kv(t('buildCost') + ` ${cur()}`, fmt(result.totalBuildCost, 0)));
 
-  const assumptions = el('details', { class: 'planner-assumptions secondary-section' },
+  const assumptions = el('details', {
+    class: 'planner-assumptions secondary-section',
+    open: plannerAssumptionsOpen,
+    ontoggle: event => { plannerAssumptionsOpen = event.currentTarget.open; },
+  },
     el('summary', {}, t('planAssumptions')), settings, fieldsBox);
   const planEditor = el('div', { class: 'planner-main' },
     el('div', { class: 'planner-table' },
@@ -3081,7 +3086,11 @@ function renderCity() {
       type: 'checkbox', checked: state.vanillaOnly, onchange: e => { state.vanillaOnly = e.target.checked; update(); } })),
     el('button', { onclick: () => { state.cityDetails = !state.cityDetails; update(); } },
       t(state.cityDetails ? 'hideUtilityDetails' : 'showUtilityDetails')));
-  const assumptions = el('details', { class: 'planner-assumptions secondary-section' },
+  const assumptions = el('details', {
+    class: 'planner-assumptions secondary-section',
+    open: plannerAssumptionsOpen,
+    ontoggle: event => { plannerAssumptionsOpen = event.currentTarget.open; },
+  },
     el('summary', {}, t('planAssumptions')), settings);
   const observedAggregate = aggregateCityObservations(state.saveImport?.observedCities, assignedScopeIds);
   const observed = observedAggregate?.observed ?? city.observed;
