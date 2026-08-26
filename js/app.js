@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=222';
+import { STRINGS } from './i18n.js?v=224';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
 import { parseLiveStatsFile } from './live_stats.js?v=4';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=55';
@@ -286,6 +286,7 @@ function createInitialState() {
     saveImport: null,
     analysisSort: { col: 'profit', dir: -1 },
     analysisSearch: '',
+    analysisResource: 'all',
     analysisWorkerType: 'resident',
     analysisCostBasis: 'purchase',
     priceSort: { col: 'name', dir: 1 },
@@ -2017,6 +2018,19 @@ function renderChain() {
 }
 
 // ---------------------------------------------------------------- analysis tab
+const PRICE_ANALYSIS_EXCLUDED_GROUPS = new Set([
+  'Wasser & Abwasser', 'Water & Wastewater', 'Heizwerk', 'Heating plant',
+]);
+
+function isPriceAnalysisBuildingEligible(building) {
+  const groups = [building.group?.de, building.group?.en].filter(Boolean);
+  if (groups.some(group => PRICE_ANALYSIS_EXCLUDED_GROUPS.has(group))) return false;
+  const gameId = String(building.gameId ?? '').toLowerCase();
+  if (gameId.includes('incinerator') || gameId === 'waste_treatment_plant') return false;
+  const names = `${building.de ?? ''} ${building.en ?? ''}`.toLowerCase();
+  return !/(müllbehandlungsanlage|müllverbrennung|waste treatment|waste incineration)/.test(names);
+}
+
 function renderAnalysis(currency = state.currency) {
   const prices = currentPrices();
   const workerType = state.analysisWorkerType === 'guest' ? 'guest' : 'resident';
@@ -2030,7 +2044,24 @@ function renderAnalysis(currency = state.currency) {
       ? t('workerNoDirectCost')
       : `${t('workerNeedCost')}: ${fmt(workerCost, 2)} ${currencySymbol(currency)}`;
   const eco = economy();
-  const rows = prodBuildings().map(b => {
+  const eligibleBuildings = prodBuildings().filter(isPriceAnalysisBuildingEligible);
+  const producedResources = new Map();
+  for (const building of eligibleBuildings) {
+    for (const resource of building.production ?? []) {
+      const key = resource.de ?? resource.en;
+      if (key && !producedResources.has(key)) producedResources.set(key, resource);
+    }
+  }
+  const resourceOptions = [...producedResources.entries()]
+    .sort(([, a], [, b]) => (a[state.lang] ?? a.de ?? a.en)
+      .localeCompare(b[state.lang] ?? b.de ?? b.en, state.lang))
+    .map(([key, resource]) => [key, resource[state.lang] ?? resource.de ?? resource.en]);
+  if (state.analysisResource !== 'all' && !producedResources.has(state.analysisResource)) {
+    state.analysisResource = 'all';
+  }
+  const rows = eligibleBuildings.filter(building => state.analysisResource === 'all'
+    || building.production?.some(resource => (resource.de ?? resource.en) === state.analysisResource))
+    .map(b => {
     const { income, expenses, profit } = eco.buildingProfit(b, currency, 1, 1, 1, costBasis);
     const buildCost = eco.buildCost(b, currency);
     return {
@@ -2102,10 +2133,18 @@ function renderAnalysis(currency = state.currency) {
       )),
       el('span', { class: 'hint cost-basis-hint' },
         t(costBasis === 'purchase' ? 'costBasisPurchaseHint' : 'costBasisOpportunityHint'))),
-    el('input', {
-      type: 'search', placeholder: t('searchPlaceholder'), value: state.analysisSearch,
-      oninput: e => { state.analysisSearch = e.target.value; update(); },
-    }),
+    el('div', { class: 'analysis-filterbar' },
+      el('label', {}, el('span', {}, t('producedResource')), selectInput(
+        [['all', t('allProducedResources')], ...resourceOptions],
+        state.analysisResource,
+        value => { state.analysisResource = value; },
+        { class: 'analysis-resource-select' },
+      )),
+      el('label', { class: 'analysis-search' }, el('span', {}, t('search')),
+        el('input', {
+          type: 'search', placeholder: t('searchPlaceholder'), value: state.analysisSearch,
+          oninput: e => { state.analysisSearch = e.target.value; update(); },
+        }))),
     table);
 }
 
