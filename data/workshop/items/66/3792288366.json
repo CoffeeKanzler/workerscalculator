@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3792288366",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-30T09:58:56.052Z",
+  "buildings": [
+    {
+      "id": "3792288366/barraco",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 150,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "barraco",
+      "workshopId": "3792288366",
+      "modPath": "barraco"
+    }
+  ],
+  "vehicles": []
+}
