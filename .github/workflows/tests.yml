@@ -106,6 +106,7 @@ jobs:
           node tests/browser/smoke.mjs http://localhost:8765/index.html
           node tests/browser/stored_data_reset.mjs http://localhost:8765/index.html
           node tests/browser/city_services_layout.mjs http://localhost:8765/index.html
+          node tests/browser/city_planning_reload.mjs http://localhost:8765/index.html
           node tests/browser/chart_interactions.mjs \
             http://localhost:8765/tests/time_series_chart.html
           node tests/browser/access_graph.mjs \

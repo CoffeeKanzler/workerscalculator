@@ -50,6 +50,10 @@ import {
 import { statsStateForImport } from './models/import_stats.js?v=2';
 import { importBannerState, importControls } from './ui/import_banner.js';
 import { observationForAutosave } from './models/autosave_observation.js';
+import {
+  loadCityPlanningDraft,
+  saveCityPlanningDraft,
+} from './storage/city_planning_draft.js?v=3';
 import { mapLayerReport } from './models/map_layer_report.js?v=4';
 import {
   CATEGORY_MARKS, buildTypeCategoryIndex, categoryForSaveType,
@@ -441,6 +445,11 @@ function chainPlans() {
 }
 
 function saveState() {
+  // City plans are small enough for a synchronous crash journal. The main
+  // IndexedDB autosave remains debounced because a loaded observation can be
+  // many megabytes, but F5 must not land inside that debounce and erase the
+  // user's latest city edit.
+  saveCityPlanningDraft(state.planning);
   // The persistence layer serialises what it is given, so this hands over a
   // shallow projection rather than a second JSON round-trip of the same
   // multi-megabyte observation.
@@ -458,6 +467,15 @@ async function loadState() {
   try {
     const loaded = await planningPersistence.load();
     Object.assign(state, loaded.state);
+    const cityDraft = loadCityPlanningDraft();
+    if (cityDraft && cityDraft.revision > state.planning.revision) {
+      state.planning = createPlanningModel({
+        ...state.planning,
+        revision: cityDraft.revision,
+        activeCity: cityDraft.activeCity,
+        cities: cityDraft.cities,
+      });
+    }
     observationSavedAt = loaded.lastSavedAt ?? null;
     // stats.ini history is written once at import rather than with the
     // autosave: it is tens of megabytes and never changes until the next save.
