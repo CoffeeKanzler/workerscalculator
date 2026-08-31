@@ -280,8 +280,7 @@ function requestResult(request) {
 
 const PLANNER_DB_VERSION = 2;
 
-export function createIndexedDbSnapshotStore(indexedDB = globalThis.indexedDB) {
-  if (!indexedDB) throw new Error('IndexedDB is not available');
+function openPlannerDatabase(indexedDB) {
   const opened = indexedDB.open('wr-planner', PLANNER_DB_VERSION);
   opened.onupgradeneeded = () => {
     if (!opened.result.objectStoreNames.contains('snapshots')) {
@@ -291,7 +290,35 @@ export function createIndexedDbSnapshotStore(indexedDB = globalThis.indexedDB) {
       opened.result.createObjectStore('planning', { keyPath: 'key' });
     }
   };
-  const database = requestResult(opened);
+  return requestResult(opened).then(database => {
+    // Never leave an old page holding an upgrade or deletion hostage.
+    database.onversionchange = () => database.close();
+    return database;
+  });
+}
+
+export async function clearIndexedDbStorage(indexedDB = globalThis.indexedDB) {
+  if (!indexedDB) return;
+  const database = await openPlannerDatabase(indexedDB);
+  try {
+    const stores = ['snapshots', 'planning']
+      .filter(name => database.objectStoreNames.contains(name));
+    if (!stores.length) return;
+    const transaction = database.transaction(stores, 'readwrite');
+    for (const name of stores) transaction.objectStore(name).clear();
+    await new Promise((resolve, reject) => {
+      transaction.oncomplete = resolve;
+      transaction.onerror = () => reject(transaction.error);
+      transaction.onabort = () => reject(transaction.error ?? new Error('IndexedDB transaction aborted'));
+    });
+  } finally {
+    database.close();
+  }
+}
+
+export function createIndexedDbSnapshotStore(indexedDB = globalThis.indexedDB) {
+  if (!indexedDB) throw new Error('IndexedDB is not available');
+  const database = openPlannerDatabase(indexedDB);
 
   async function withStore(mode, action) {
     const db = await database;
@@ -321,16 +348,7 @@ export function createIndexedDbSnapshotStore(indexedDB = globalThis.indexedDB) {
 // and the observation all live in it without a schema change.
 function createPlanningRecordAdapter(indexedDB) {
   if (!indexedDB) throw new Error('IndexedDB is not available');
-  const opened = indexedDB.open('wr-planner', PLANNER_DB_VERSION);
-  opened.onupgradeneeded = () => {
-    if (!opened.result.objectStoreNames.contains('snapshots')) {
-      opened.result.createObjectStore('snapshots', { keyPath: 'name' });
-    }
-    if (!opened.result.objectStoreNames.contains('planning')) {
-      opened.result.createObjectStore('planning', { keyPath: 'key' });
-    }
-  };
-  const database = requestResult(opened);
+  const database = openPlannerDatabase(indexedDB);
 
   async function withStore(mode, action) {
     const db = await database;

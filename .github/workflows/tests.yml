@@ -104,6 +104,7 @@ jobs:
           curl -sf -o /dev/null http://localhost:8765/index.html || {
             echo "the app did not start serving"; exit 1; }
           node tests/browser/smoke.mjs http://localhost:8765/index.html
+          node tests/browser/stored_data_reset.mjs http://localhost:8765/index.html
           node tests/browser/chart_interactions.mjs \
             http://localhost:8765/tests/time_series_chart.html
           node tests/browser/access_graph.mjs \

@@ -20,11 +20,12 @@ import {
   createIndexedDbStatsStore,
   createIndexedDbPlanningStore,
   createIndexedDbSnapshotStore,
+  clearIndexedDbStorage,
   createPlanningPersistence,
   createPlanningSaveCoordinator,
   migrateLegacySnapshots,
   serializePlannerState,
-} from './storage.js?v=10';
+} from './storage.js?v=12';
 import {
   PLANNING_KEYS,
   createPlanningCompatibleState,
@@ -2917,18 +2918,8 @@ function renderStoredDataReset() {
 export async function clearStoredData() {
   try { localStorage.clear(); } catch { /* a locked-down profile still deserves the reload */ }
   try { sessionStorage.clear(); } catch { /* same */ }
-  if (!globalThis.indexedDB?.databases) return;
-  try {
-    const databases = await indexedDB.databases();
-    await Promise.all(databases.map(database => database.name
-      ? new Promise(resolve => {
-        const request = indexedDB.deleteDatabase(database.name);
-        request.onsuccess = resolve;
-        request.onerror = resolve;
-        request.onblocked = resolve;
-      })
-      : null));
-  } catch { /* deleting is best effort; the reload is what the reader needs */ }
+  try { await clearIndexedDbStorage(); }
+  catch { /* clearing is best effort; the reload is what the reader needs */ }
 }
 
 // ---------------------------------------------------------------- city tab
