@@ -96,6 +96,37 @@ test('LowTech does not present the raw workers.bin record count as resident popu
   }, { definitions }).population, undefined);
 });
 
+test('LowTech prefers the game actual-population statistic over a workers.bin estimate', () => {
+  const values = lowTechSaveValues({
+    citizenCount: 12777,
+    residentCount: 11959,
+    sourceStatus: { workers: 'exact', stats: 'exact' },
+  }, {
+    definitions,
+    statsRecords: [{
+      year: 1970,
+      adults: 8530,
+      adultsParent: 116,
+      childrenSmall: 1080,
+      childrenMedium: 2224,
+    }],
+  });
+
+  assert.equal(values.population, 11950);
+});
+
+test('LowTech falls back to housed citizens when population statistics are incomplete', () => {
+  const values = lowTechSaveValues({
+    residentCount: 11959,
+    sourceStatus: { workers: 'exact', stats: 'exact' },
+  }, {
+    definitions,
+    statsRecords: [{ year: 1970, adults: 8530 }],
+  });
+
+  assert.equal(values.population, 11959);
+});
+
 test('LowTech does not invent save values from missing optional files', () => {
   assert.deepEqual(lowTechSaveValues({
     citizenCount: 20302,

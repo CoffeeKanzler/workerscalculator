@@ -10,6 +10,17 @@ export function completedPaidResearchKeys(definitions, savedResearch) {
     .map(item => item.key))].sort();
 }
 
+const ACTUAL_POPULATION_FIELDS = [
+  'adults', 'adultsParent', 'childrenSmall', 'childrenMedium',
+];
+
+function actualPopulationFromStats(records) {
+  const latest = [...(records ?? [])].reverse().find(record =>
+    ACTUAL_POPULATION_FIELDS.every(key => Number.isFinite(record?.[key]) && record[key] >= 0));
+  if (!latest) return null;
+  return ACTUAL_POPULATION_FIELDS.reduce((sum, key) => sum + latest[key], 0);
+}
+
 // LowTech is a planning rule, but these inputs are observable in an imported
 // save. Keep the source gate strict: a missing optional file must leave the
 // planner's manual value alone rather than turning an unavailable value into 0.
@@ -22,8 +33,15 @@ export function lowTechSaveValues(saveImport, {
   const exact = key => saveImport.sourceStatus?.[key] === 'exact';
   const values = {};
 
+  const actualPopulation = exact('stats') && Array.isArray(statsRecords)
+    ? actualPopulationFromStats(statsRecords) : null;
+  if (actualPopulation !== null) {
+    values.population = Math.max(0, Math.floor(actualPopulation));
+  }
   if (exact('workers') && Number.isFinite(saveImport.residentCount)) {
-    values.population = Math.max(0, Math.floor(saveImport.residentCount));
+    if (actualPopulation === null) {
+      values.population = Math.max(0, Math.floor(saveImport.residentCount));
+    }
     const scopes = Array.isArray(saveImport.scopes) ? saveImport.scopes : [];
     const hasScopePopulation = scopes.some(scope => Number.isFinite(scope?.citizens?.residents));
     if (hasScopePopulation) {

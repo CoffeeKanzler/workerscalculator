@@ -10,7 +10,7 @@ import {
   completedPaidResearchKeys,
   lowTechDisplayValues,
   lowTechSaveValues,
-} from './research.js?v=11';
+} from './research.js?v=13';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
@@ -120,7 +120,7 @@ import {
   parseMapLayersInWorker,
 } from './adapters/save_folder_adapter.js?v=30';
 import { matchSaveBuilding } from './adapters/save_projection.js?v=30';
-import { bootstrapRuntime } from './bootstrap.js?v=15';
+import { bootstrapRuntime } from './bootstrap.js?v=16';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
