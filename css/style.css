@@ -206,6 +206,7 @@ button.danger:hover { border-color: var(--neg); }
    a sideways viewport. Give the matrix the useful share of the row and let
    the two scenario headings wrap instead of setting the column width. */
 .columns > .city-services-panel { flex: 2 1 700px; overflow-x: visible; }
+.city-service-assumptions { margin: -3px 0 6px; }
 .city-services-table { table-layout: fixed; font-size: 12px; }
 table.city-services-table th {
   white-space: normal;

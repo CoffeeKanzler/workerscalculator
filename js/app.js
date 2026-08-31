@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=224';
+import { STRINGS } from './i18n.js?v=226';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
 import { parseLiveStatsFile } from './live_stats.js?v=4';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=55';
@@ -3459,7 +3459,12 @@ function renderCity() {
     el('div', { class: 'settingsbar city-row-actions' }, addBtn, addCategoriesBtn),
     workshopSection,
     el('div', { class: 'columns' },
-      el('div', { class: 'city-services-panel' }, el('h3', {}, t('services')), services),
+      el('div', { class: 'city-services-panel' },
+        el('h3', {}, t('services')),
+        el('p', { class: 'hint city-service-assumptions' }, t('cityServiceProductivityBasis')
+          .replace('{normal}', fmt(city.productivity * 100, 0) + ' %')
+          .replace('{worst}', fmt(worstCaseProductivity * 100, 0) + ' %')),
+        services),
       summary, utilityBox, mats));
 }
 

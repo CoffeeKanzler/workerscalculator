@@ -9,6 +9,10 @@ try {
   await page.locator('.langswitch button', { hasText: 'DE' }).click();
   const panel = page.locator('.city-services-panel');
   await panel.waitFor({ timeout: 30_000 });
+  const basis = await panel.locator('.city-service-assumptions').innerText();
+  if (!basis.includes('Produktivität 70 %') || !basis.includes('Worst-Case 50 %')) {
+    throw new Error(`service calculation basis is not visible: ${basis}`);
+  }
   const layout = await panel.evaluate(element => {
     const wrapper = element.querySelector('.tablewrap');
     const table = element.querySelector('table');
