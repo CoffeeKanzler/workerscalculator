@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3792830585",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-31T10:55:06.944Z",
+  "buildings": [
+    {
+      "id": "3792830585/heavy_flow_conveyor",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Flow Conveyor (Low/Low)",
+      "workshopId": "3792830585",
+      "modPath": "heavy_flow_conveyor",
+      "footprint": {
+        "boxes": [
+          [
+            -4.13,
+            -4.92,
+            4.04,
+            4.5
+          ],
+          [
+            -0.94,
+            -14.44,
+            0.99,
+            -1.01
+          ]
+        ],
+        "height": 25.02
+      }
+    },
+    {
+      "id": "3792830585/heavy_flow_conveyor_1to3_f",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Flow Conveyor (Low/High)",
+      "workshopId": "3792830585",
+      "modPath": "heavy_flow_conveyor_1to3_f",
+      "footprint": {
+        "boxes": [
+          [
+            -4.13,
+            -4.92,
+            4.04,
+            4.5
+          ],
+          [
+            -0.94,
+            -14.44,
+            0.99,
+            -1.01
+          ]
+        ],
+        "height": 34.99
+      }
+    },
+    {
+      "id": "3792830585/heavy_flow_conveyor_1to3_g",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Flow Conveyor (High/Low)",
+      "workshopId": "3792830585",
+      "modPath": "heavy_flow_conveyor_1to3_g",
+      "footprint": {
+        "boxes": [
+          [
+            -4.13,
+            -4.92,
+            4.04,
+            4.68
+          ],
+          [
+            -0.94,
+            -14.44,
+            0.99,
+            -1
+          ]
+        ],
+        "height": 25.02
+      }
+    },
+    {
+      "id": "3792830585/heavy_flow_conveyor_1to3_h",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Flow Conveyor (High/High)",
+      "workshopId": "3792830585",
+      "modPath": "heavy_flow_conveyor_1to3_h",
+      "footprint": {
+        "boxes": [
+          [
+            -4.13,
+            -4.92,
+            4.04,
+            4.68
+          ],
+          [
+            -0.94,
+            -14.44,
+            0.99,
+            -1.01
+          ]
+        ],
+        "height": 34.95
+      }
+    },
+    {
+      "id": "3792830585/heavy_flow_conveyor_3to1_e",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Flow Conveyor 3-to-1 (Low/Low)",
+      "workshopId": "3792830585",
+      "modPath": "heavy_flow_conveyor_3to1_e",
+      "footprint": {
+        "boxes": [
+          [
+            -3.48,
+            -4.92,
+            3.45,
+            4.5
+          ],
+          [
+            -6.31,
+            -14.44,
+            6.36,
+            1.49
+          ]
+        ],
+        "height": 25.02
+      }
+    },
+    {
+      "id": "3792830585/heavy_flow_conveyor_3to1_f",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Flow Conveyor 3-to-1 (Low/High)",
+      "workshopId": "3792830585",
+      "modPath": "heavy_flow_conveyor_3to1_f",
+      "footprint": {
+        "boxes": [
+          [
+            -3.48,
+            -4.92,
+            3.45,
+            4.5
+          ],
+          [
+            -6.31,
+            -14.44,
+            6.36,
+            1.49
+          ]
+        ],
+        "height": 34.99
+      }
+    },
+    {
+      "id": "3792830585/heavy_flow_conveyor_3to1_g",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Flow Conveyor 3-to-1 (High/Low)",
+      "workshopId": "3792830585",
+      "modPath": "heavy_flow_conveyor_3to1_g",
+      "footprint": {
+        "boxes": [
+          [
+            -3.48,
+            -4.92,
+            3.45,
+            4.68
+          ],
+          [
+            -6.31,
+            -14.44,
+            6.36,
+            1.49
+          ]
+        ],
+        "height": 25.02
+      }
+    },
+    {
+      "id": "3792830585/heavy_flow_conveyor_3to1_h",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Flow Conveyor 3-to-1 (High/High)",
+      "workshopId": "3792830585",
+      "modPath": "heavy_flow_conveyor_3to1_h",
+      "footprint": {
+        "boxes": [
+          [
+            -3.48,
+            -4.92,
+            3.45,
+            4.68
+          ],
+          [
+            -6.31,
+            -14.44,
+            6.36,
+            1.49
+          ]
+        ],
+        "height": 34.95
+      }
+    },
+    {
+      "id": "3792830585/heavy_flow_conveyor_overpass_1to1",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Flow Conveyor Overpass (1-to-1)",
+      "workshopId": "3792830585",
+      "modPath": "heavy_flow_conveyor_overpass_1to1",
+      "footprint": {
+        "boxes": [
+          [
+            -1.4,
+            -11.72,
+            1.44,
+            11.8
+          ],
+          [
+            -3.48,
+            -19.77,
+            3.46,
+            19.54
+          ]
+        ],
+        "height": 24.79
+      }
+    },
+    {
+      "id": "3792830585/heavy_flow_conveyor_overpass_1to3",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Flow Conveyor Overpass (1-to-3)",
+      "workshopId": "3792830585",
+      "modPath": "heavy_flow_conveyor_overpass_1to3",
+      "footprint": {
+        "boxes": [
+          [
+            -1.4,
+            -11.72,
+            1.44,
+            11.8
+          ],
+          [
+            -4.44,
+            -20.35,
+            4.42,
+            19.54
+          ]
+        ],
+        "height": 24.79
+      }
+    },
+    {
+      "id": "3792830585/heavy_flow_conveyor_overpass_3to1",
+      "nameId": null,
+      "types": [
+        "TYPE_ENGINE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Flow Conveyor Overpass (3-to-1)",
+      "workshopId": "3792830585",
+      "modPath": "heavy_flow_conveyor_overpass_3to1",
+      "footprint": {
+        "boxes": [
+          [
+            -1.44,
+            -11.8,
+            1.4,
+            11.72
+          ],
+          [
+            -4.42,
+            -19.54,
+            4.44,
+            20.35
+          ]
+        ],
+        "height": 24.79
+      }
+    }
+  ],
+  "vehicles": []
+}

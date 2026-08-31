@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3792849258",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-31T10:55:06.951Z",
+  "buildings": [
+    {
+      "id": "3792849258/MOORWERK_Torfstich",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "waste_bio": 0.45,
+        "usagewater": 0.6
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 200,
+        "boards": 40,
+        "steel": 1.5,
+        "mcomponents": 0.4
+      },
+      "electricWorkerFactors": {
+        "living": 0,
+        "lighting": 0
+      },
+      "nameStr": "MOORWERK_Torfstich",
+      "workshopId": "3792849258",
+      "modPath": "MOORWERK_Torfstich",
+      "footprint": {
+        "boxes": [
+          [
+            -16.32,
+            -55.46,
+            18.14,
+            57.59
+          ],
+          [
+            -13.78,
+            -87.5,
+            13.83,
+            -53.59
+          ]
+        ],
+        "height": 2.33
+      }
+    },
+    {
+      "id": "3792849258/MOORWERK_Torfwerk",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {
+        "coal": 0.36
+      },
+      "consumption": {
+        "waste_bio": 0.9,
+        "fuel": 0.012
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 600,
+        "concrete": 28,
+        "gravel": 18,
+        "bricks": 125,
+        "boards": 31,
+        "steel": 17,
+        "mcomponents": 1.6,
+        "ecomponents": 0.35
+      },
+      "electricWorkerFactors": {
+        "living": 0,
+        "lighting": 0
+      },
+      "nameStr": "MOORWERK_Torfwerk",
+      "workshopId": "3792849258",
+      "modPath": "MOORWERK_Torfwerk",
+      "footprint": {
+        "boxes": [
+          [
+            -0.43,
+            -4.73,
+            0.43,
+            19.66
+          ],
+          [
+            -4.49,
+            -5.11,
+            4.49,
+            20.11
+          ],
+          [
+            -5.55,
+            2.48,
+            -2.5,
+            7.53
+          ],
+          [
+            2.45,
+            3.85,
+            4.79,
+            6.15
+          ],
+          [
+            -2.96,
+            1.7,
+            3.3,
+            8.3
+          ],
+          [
+            2.37,
+            -0.96,
+            3.71,
+            0.44
+          ],
+          [
+            -2.66,
+            -5.14,
+            2.72,
+            20.14
+          ],
+          [
+            -4.24,
+            -5.4,
+            0.21,
+            20.4
+          ],
+          [
+            1.55,
+            -0.95,
+            2.35,
+            0.3
+          ],
+          [
+            -11.28,
+            -5.02,
+            -10.98,
+            20.01
+          ]
+        ],
+        "height": 10.2
+      }
+    }
+  ],
+  "vehicles": []
+}

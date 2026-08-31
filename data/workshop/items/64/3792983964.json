@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3792983964",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-31T10:55:06.976Z",
+  "buildings": [
+    {
+      "id": "3792983964/cnii_rtk",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 200,
+      "professors": 200,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CNII_RTK",
+      "workshopId": "3792983964",
+      "modPath": "cnii_rtk",
+      "footprint": {
+        "boxes": [
+          [
+            -19,
+            -18.39,
+            19,
+            24.07
+          ]
+        ],
+        "height": 107.69
+      }
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3792965629",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-08-31T10:55:06.975Z",
+  "buildings": [
+    {
+      "id": "3792965629/claw_waste_station_6",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WASTE": 1250
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Waste Loading Cargo Station v3 (cargo-type)",
+      "workshopId": "3792965629",
+      "modPath": "claw_waste_station_6",
+      "footprint": {
+        "boxes": [
+          [
+            -18.41,
+            -17.5,
+            33.41,
+            17.5
+          ]
+        ],
+        "height": 11.62
+      }
+    }
+  ],
+  "vehicles": []
+}
