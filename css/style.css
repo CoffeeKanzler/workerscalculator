@@ -201,6 +201,25 @@ button.danger:hover { border-color: var(--neg); }
 .columns > .pricetablecol { flex: 3 1 560px; }
 .columns > .pricehistorycol { flex: 1 1 320px; }
 
+/* Six short service metrics used to be squeezed into the same 380px flex
+   column as a summary card. The table then grew to its header text and became
+   a sideways viewport. Give the matrix the useful share of the row and let
+   the two scenario headings wrap instead of setting the column width. */
+.columns > .city-services-panel { flex: 2 1 700px; overflow-x: visible; }
+.city-services-table { table-layout: fixed; font-size: 12px; }
+table.city-services-table th {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.2;
+  vertical-align: bottom;
+}
+.city-services-table th:nth-child(1) { width: 20%; }
+.city-services-table th:nth-child(2) { width: 11%; }
+.city-services-table th:nth-child(3),
+.city-services-table th:nth-child(4) { width: 18%; }
+.city-services-table th:nth-child(5) { width: 18%; }
+.city-services-table th:nth-child(6) { width: 15%; }
+
 .totalsbox {
   flex: 0 1 340px; background: var(--panel); border: 1px solid var(--border);
   border-radius: 8px; padding: 12px 14px;

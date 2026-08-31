@@ -3337,7 +3337,7 @@ function renderCity() {
       : el('p', { class: 'empty-state' }, t('emptyCityPlan')),
     workshopActions);
 
-  const services = el('table', { class: 'data' },
+  const services = el('table', { class: 'data city-services-table' },
     el('thead', {}, el('tr', {},
       el('th', {}, t('services')), el('th', {}, t('provided')),
       el('th', {}, `${t('utilization')} (${t('productivity')})`),
@@ -3459,7 +3459,7 @@ function renderCity() {
     el('div', { class: 'settingsbar city-row-actions' }, addBtn, addCategoriesBtn),
     workshopSection,
     el('div', { class: 'columns' },
-      el('div', {}, el('h3', {}, t('services')), services),
+      el('div', { class: 'city-services-panel' }, el('h3', {}, t('services')), services),
       summary, utilityBox, mats));
 }
 
