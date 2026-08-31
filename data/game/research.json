@@ -266,8 +266,8 @@
   "de": "Visa für westliche Touristen",
   "en": "Tourist Visa (Western Countries)",
   "cost": 2000.0,
-  "pointCost": 0,
-  "classification": "prerequisite-only"
+  "pointCost": 1,
+  "classification": "gameplay-effect"
  },
  {
   "key": "tourist_visa_east",
@@ -275,8 +275,8 @@
   "de": "Visa für Sowjet-Touristen",
   "en": "Tourist Visa (Soviet Countries)",
   "cost": 1000.0,
-  "pointCost": 0,
-  "classification": "prerequisite-only"
+  "pointCost": 1,
+  "classification": "gameplay-effect"
  },
  {
   "key": "adverstiment_campaign_west",
@@ -788,8 +788,8 @@
   "de": "Druckanpassung für Pipelines",
   "en": "Pipeline Pressure",
   "cost": 1100.0,
-  "pointCost": 0,
-  "classification": "prerequisite-only"
+  "pointCost": 1,
+  "classification": "gameplay-effect"
  },
  {
   "key": "pipeline_to_west",

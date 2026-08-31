@@ -139,6 +139,9 @@ test('save folder reads required and optional core files locally and defers map 
               happiness: 0.8, food: 0.9, health: 0.75, loyalty: 0.6, criminality: 0.1 },
             { index: 1, id: 502, residenceBuildingIndex: 41, education: 1, age: 20,
               happiness: 0.7, food: 0.9, health: 0.8, loyalty: 0.5, criminality: 0.02 },
+            { index: 2, id: 503, citizenType: 2, residenceBuildingIndex: 41,
+              education: 2, age: 35, happiness: 1, food: 1, health: 1, loyalty: 1,
+              criminality: 0 },
           ],
         });
       },
@@ -176,6 +179,8 @@ test('save folder reads required and optional core files locally and defers map 
     assert.equal(result.planning.metadata.operationalServices.regional[0].clinics.currentWorkers, 8);
     assert.equal(result.planning.metadata.residenceDetails.buildings[0].buildingIndex, 41);
     assert.equal(result.planning.metadata.residenceDetails.buildings[0].residents, 2);
+    assert.equal(result.planning.metadata.residentCount, 2);
+    assert.equal(result.planning.metadata.touristCount, 1);
     assert.equal(result.planning.metadata.citizenDiagnostics.areas[0].approachingAdulthood, 1);
     assert.equal(result.planning.metadata.citizenDiagnostics.areas[0].adultSpaceBalance, null);
     assert.equal(result.planning.metadata.citizenDiagnostics.areas[0]

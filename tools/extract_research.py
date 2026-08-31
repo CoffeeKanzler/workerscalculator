@@ -17,6 +17,16 @@ import sys
 from extract_from_gamefiles import load_localization
 
 
+# These intermediate nodes have runtime effects under their own research key
+# in addition to unlocking the next node. They therefore cost a LowTech point
+# even though research.ini has no separate functional $UNLOCK_* directive.
+IMPLICIT_GAMEPLAY_EFFECTS = {
+    'pipeline_pressure',
+    'tourist_visa_east',
+    'tourist_visa_west',
+}
+
+
 def parse_research(path, localization):
     text = open(path, encoding='utf-8', errors='replace').read()
     blocks = re.split(r'(?m)^\$RESEARCH\s+', text)[1:]
@@ -34,7 +44,7 @@ def parse_research(path, localization):
         functional_unlocks = [line.split()[0][1:] for line in directives
                               if line.startswith('$UNLOCK_')
                               and not line.startswith('$UNLOCK_RESEARCH ')]
-        paid = bool(functional_unlocks) or not unlocks_research
+        paid = bool(functional_unlocks) or not unlocks_research or key in IMPLICIT_GAMEPLAY_EFFECTS
         record = {
             'key': key,
             'nameId': name_id,
@@ -42,7 +52,8 @@ def parse_research(path, localization):
             'en': localization.get('en', {}).get(name_id, key),
             'cost': float(cost_match.group(1)) if cost_match else None,
             'pointCost': 1 if paid else 0,
-            'classification': ('gameplay-unlock' if functional_unlocks
+            'classification': ('gameplay-effect' if key in IMPLICIT_GAMEPLAY_EFFECTS
+                               else 'gameplay-unlock' if functional_unlocks
                                else 'terminal-effect' if paid else 'prerequisite-only'),
         }
         records.append(record)
@@ -53,10 +64,11 @@ def validate(records):
     by_key = {record['key']: record for record in records}
     expected = {
         'phone_tapping': 1, 'woodcutting_planting': 1, 'opec': 1,
+        'pipeline_pressure': 1, 'tourist_visa_east': 1, 'tourist_visa_west': 1,
         'concrete_study': 0, 'logistic_optimization': 0, 'faculty_geology': 0,
     }
     assert len(records) == 117, f'expected 117 research entries, got {len(records)}'
-    assert sum(record['pointCost'] for record in records) == 84
+    assert sum(record['pointCost'] for record in records) == 87
     for key, point_cost in expected.items():
         assert by_key[key]['pointCost'] == point_cost, (key, by_key[key])
     assert all(record['en'] and record['de'] for record in records)

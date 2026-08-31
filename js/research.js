@@ -22,8 +22,8 @@ export function lowTechSaveValues(saveImport, {
   const exact = key => saveImport.sourceStatus?.[key] === 'exact';
   const values = {};
 
-  if (exact('workers') && Number.isFinite(saveImport.citizenCount)) {
-    values.population = Math.max(0, Math.floor(saveImport.citizenCount));
+  if (exact('workers') && Number.isFinite(saveImport.residentCount)) {
+    values.population = Math.max(0, Math.floor(saveImport.residentCount));
     const scopes = Array.isArray(saveImport.scopes) ? saveImport.scopes : [];
     const hasScopePopulation = scopes.some(scope => Number.isFinite(scope?.citizens?.residents));
     if (hasScopePopulation) {

@@ -21,12 +21,19 @@ export function aggregateCitizensByScope(citizens, buildings) {
   const scopes = new Map();
   let unassigned = 0;
   let invalidResidenceRefs = 0;
+  let residentCount = 0;
+  let touristCount = 0;
 
   for (const citizen of citizens) {
+    if (citizen.citizenType > 0) {
+      touristCount += 1;
+      continue;
+    }
     if (citizen.residenceBuildingIndex < 0) {
       unassigned += 1;
       continue;
     }
+    residentCount += 1;
 
     const residence = buildingsByIndex.get(citizen.residenceBuildingIndex);
     if (!residence) {
@@ -75,6 +82,8 @@ export function aggregateCitizensByScope(citizens, buildings) {
     scopes,
     unassigned,
     invalidResidenceRefs,
+    residentCount,
+    touristCount,
     recordCount: citizens.length,
   };
 }

@@ -11,12 +11,15 @@ const definitions = JSON.parse(readFileSync(new URL('../data/game/research.json'
 
 test('game research data reproduces the LowTech paid/free boundary', () => {
   assert.equal(definitions.length, 117);
-  assert.equal(definitions.filter(item => item.pointCost === 1).length, 84);
-  assert.equal(definitions.filter(item => item.pointCost === 0).length, 33);
+  assert.equal(definitions.filter(item => item.pointCost === 1).length, 87);
+  assert.equal(definitions.filter(item => item.pointCost === 0).length, 30);
   const byKey = new Map(definitions.map(item => [item.key, item]));
   assert.equal(byKey.get('phone_tapping').pointCost, 1);
   assert.equal(byKey.get('woodcutting_planting').pointCost, 1);
   assert.equal(byKey.get('opec').pointCost, 1);
+  assert.equal(byKey.get('pipeline_pressure').pointCost, 1);
+  assert.equal(byKey.get('tourist_visa_east').pointCost, 1);
+  assert.equal(byKey.get('tourist_visa_west').pointCost, 1);
   assert.equal(byKey.get('concrete_study').pointCost, 0);
   assert.equal(byKey.get('logistic_optimization').pointCost, 0);
   assert.equal(byKey.get('faculty_geology').pointCost, 0);
@@ -26,10 +29,13 @@ test('game research data reproduces the LowTech paid/free boundary', () => {
 test('imported completion spends points only for completed paid research', () => {
   assert.deepEqual(completedPaidResearchKeys(definitions, [
     { key: 'phone_tapping', progress: 1 },
+    { key: 'pipeline_pressure', progress: 1 },
+    { key: 'tourist_visa_east', progress: 1 },
+    { key: 'tourist_visa_west', progress: 1 },
     { key: 'concrete_study', progress: 1 },
     { key: 'opec', progress: 0.75 },
     { key: 'phone_tapping', progress: 1 },
-  ]), ['phone_tapping']);
+  ]), ['phone_tapping', 'pipeline_pressure', 'tourist_visa_east', 'tourist_visa_west']);
 });
 
 // Only namepoints.bin and buildings_game.bin are required, so a perfectly
@@ -61,6 +67,7 @@ test('LowTech uses exact values from the loaded save', () => {
   const paid = definitions.find(item => item.pointCost === 1).key;
   assert.deepEqual(lowTechSaveValues({
     citizenCount: 20302,
+    residentCount: 19815,
     cityScopeCount: 3,
     scopes: [
       { citizens: { residents: 199 } },
@@ -74,12 +81,19 @@ test('LowTech uses exact values from the loaded save', () => {
     definitions,
     gameDate: { year: 2001, day: 116 },
   }), {
-    population: 20302,
+    population: 19815,
     cities: 2,
     currentYear: 2001,
     researched: 1,
     researchKeys: [paid],
   });
+});
+
+test('LowTech does not present the raw workers.bin record count as resident population', () => {
+  assert.equal(lowTechSaveValues({
+    citizenCount: 12777,
+    sourceStatus: { workers: 'exact' },
+  }, { definitions }).population, undefined);
 });
 
 test('LowTech does not invent save values from missing optional files', () => {

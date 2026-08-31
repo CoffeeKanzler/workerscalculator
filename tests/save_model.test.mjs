@@ -192,6 +192,8 @@ test('citizens aggregate through residence buildings without forced assignment',
     { residenceBuildingIndex: 0, age: 30, education: 2, happiness: 0.8, food: 1, health: 0.9, loyalty: 0.7 },
     { residenceBuildingIndex: 0, age: 10, education: 0.5, happiness: 0.7, food: 1, health: 0.8, loyalty: 0.6 },
     { residenceBuildingIndex: -1, age: 25, education: 1, happiness: 0.6, food: 1, health: 0.7, loyalty: 0.5 },
+    { citizenType: 2, residenceBuildingIndex: 0, age: 40, education: 2,
+      happiness: 1, food: 1, health: 1, loyalty: 1 },
   ];
 
   const result = aggregateCitizensByScope(citizens, buildings);
@@ -201,7 +203,9 @@ test('citizens aggregate through residence buildings without forced assignment',
   assert.equal(result.scopes.get(4).highEducation, 1);
   assert.equal(result.unassigned, 1);
   assert.equal(result.invalidResidenceRefs, 0);
-  assert.equal(result.recordCount, 3);
+  assert.equal(result.residentCount, 2);
+  assert.equal(result.touristCount, 1);
+  assert.equal(result.recordCount, 4);
   assert.ok(Math.abs(result.scopes.get(4).productivity -
     (citizenProductivity(citizens[0]) + citizenProductivity(citizens[1])) / 2) < 1e-12);
 });

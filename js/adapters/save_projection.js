@@ -12,7 +12,7 @@ import {
   summarizeResidenceDetails,
   summarizeResidenceOccupancy,
   summarizeVehicleLines,
-} from '../save_model.js?v=20';
+} from '../save_model.js?v=23';
 import {
   createEvidence,
   createEvidenceCollection,
@@ -53,7 +53,7 @@ const OPERATIONAL_TYPES = new Map([
 // saved snapshot cannot satisfy. A snapshot from before roads were walkable
 // carries no road attachments and no walking edge refs, and silently showing an
 // empty access graph for it reads as a broken build rather than as old data.
-export const SAVE_IMPORT_VERSION = 7;
+export const SAVE_IMPORT_VERSION = 8;
 
 function clone(value) {
   return value === undefined ? undefined : JSON.parse(JSON.stringify(value));
@@ -369,9 +369,10 @@ export function buildImportedPlanning(sourceName, settlements, buildings, member
   const occupiedSettlements = settlements.filter(settlement => occupiedScopeIds.has(settlement.id));
   const cityRows = new Map(occupiedSettlements.map(settlement => [settlement.id, new Map()]));
   const citizenResult = citizens ? aggregateCitizensByScope(citizens, buildings) : null;
+  const residentCitizens = citizens?.filter(citizen => !(citizen.citizenType > 0)) ?? null;
   const citizenScopes = citizenResult?.scopes ?? new Map();
   const allRawBuildings = [...rawBuildings, ...workshopBuildings];
-  const inferredHousing = citizens ? inferObservedHousing(citizens, buildings, building => {
+  const inferredHousing = residentCitizens ? inferObservedHousing(residentCitizens, buildings, building => {
     const raw = matchSaveBuilding(building.type, allRawBuildings, entry => entry.id);
     return !!(raw && importedCityBuilding(raw, building.type)?.inhabitants > 0);
   }) : [];
@@ -564,16 +565,17 @@ export function buildImportedPlanning(sourceName, settlements, buildings, member
   const distributionOperations = summarizeDistributionOffices(buildings, vehicles ?? []);
   const lineOperations = vehicleLines
     ? summarizeVehicleLines(vehicleLines, vehicles ?? [], buildings) : null;
-  const criminalityOutliers = citizens
-    ? summarizeCriminalityOutliers(citizens, buildings) : null;
-  const residenceDetails = citizens
-    ? summarizeResidenceDetails(citizens, buildings) : null;
-  const citizenDiagnostics = citizens
-    ? summarizeCitizenDiagnostics(citizens, buildings, building => {
+  const criminalityOutliers = residentCitizens
+    ? summarizeCriminalityOutliers(residentCitizens, buildings) : null;
+  const residenceDetails = residentCitizens
+    ? summarizeResidenceDetails(residentCitizens, buildings) : null;
+  const citizenDiagnostics = residentCitizens
+    ? summarizeCitizenDiagnostics(residentCitizens, buildings, building => {
       const raw = matchSaveBuilding(building.type, allRawBuildings, entry => entry.id);
       return Number.isFinite(raw?.livingSpace) && raw.livingSpace > 0 ? raw.livingSpace : null;
     }) : null;
-  const residenceOccupancy = citizens ? summarizeResidenceOccupancy(citizens, buildings) : null;
+  const residenceOccupancy = residentCitizens
+    ? summarizeResidenceOccupancy(residentCitizens, buildings) : null;
   const inventoryBuildings = buildings.filter(building =>
     building.storages?.some(storage => storage.resources?.length));
   const inventoryStorageCount = inventoryBuildings.reduce(
@@ -604,6 +606,8 @@ export function buildImportedPlanning(sourceName, settlements, buildings, member
       emptySettlementCount: settlements.length - occupiedSettlements.length,
       buildingCount: buildings.length,
       citizenCount: citizenResult?.recordCount ?? 0,
+      residentCount: citizenResult?.residentCount ?? 0,
+      touristCount: citizenResult?.touristCount ?? 0,
       citizenSummary: citizenResult ? {
         ...citizenFileSummary,
         unassigned: citizenResult.unassigned,

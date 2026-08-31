@@ -10,7 +10,7 @@ import {
   completedPaidResearchKeys,
   lowTechDisplayValues,
   lowTechSaveValues,
-} from './research.js?v=8';
+} from './research.js?v=11';
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
@@ -59,7 +59,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   filterCitizenDiagnostics, isBorderPostType, isFrontierBuilding, isExternalAirLinkType,
-} from './save_model.js?v=41';
+} from './save_model.js?v=44';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, alertGroup, filterRepublicAlerts, groupRepublicAlerts,
@@ -118,8 +118,8 @@ import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=28';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=26';
+} from './adapters/save_folder_adapter.js?v=30';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=30';
 import { bootstrapRuntime } from './bootstrap.js?v=15';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
 import {
