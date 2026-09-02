@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3793881691",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-02T08:48:57.637Z",
+  "buildings": [
+    {
+      "id": "3793881691/temply",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 250,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "pt",
+      "workshopId": "3793881691",
+      "modPath": "temply",
+      "footprint": {
+        "boxes": [
+          [
+            -5.03,
+            -5.03,
+            5.03,
+            5.03
+          ]
+        ],
+        "height": 2.64
+      }
+    }
+  ],
+  "vehicles": []
+}
