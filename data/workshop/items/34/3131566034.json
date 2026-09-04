@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3131566034",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-04T08:53:13.310Z",
+  "buildings": [
+    {
+      "id": "3131566034/torre_picasso",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 1250,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.96,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 1250
+      },
+      "constructionResources": {
+        "gravel": 43.4,
+        "asphalt": 55.2,
+        "concrete": 257.59999999999997,
+        "workers": 5421,
+        "steel": 559.9999999999999,
+        "mcomponents": 1.5,
+        "ecomponents": 3,
+        "boards": 50.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Picasso tower",
+      "workshopId": "3131566034",
+      "modPath": "torre_picasso",
+      "footprint": {
+        "boxes": [
+          [
+            -25.65,
+            -25.54,
+            25.71,
+            17.52
+          ],
+          [
+            -25.17,
+            -24.77,
+            25.36,
+            17.65
+          ],
+          [
+            -25.12,
+            -24.81,
+            25.15,
+            16.9
+          ],
+          [
+            -24.69,
+            -20.91,
+            24.85,
+            16.3
+          ],
+          [
+            -19.33,
+            -23.11,
+            19.91,
+            12.88
+          ],
+          [
+            -24.66,
+            -20.9,
+            24.77,
+            16.29
+          ]
+        ],
+        "height": 162.52
+      }
+    }
+  ],
+  "vehicles": []
+}

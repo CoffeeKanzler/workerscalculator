@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3794024553",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-04T08:53:13.314Z",
+  "buildings": [
+    {
+      "id": "3794024553/1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3
+      },
+      "constructionResources": {
+        "bricks": 2,
+        "boards": 3,
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1980s panel-based dacha 1",
+      "workshopId": "3794024553",
+      "modPath": "1",
+      "footprint": {
+        "boxes": [
+          [
+            -11.05,
+            -5.25,
+            2.3,
+            4.85
+          ],
+          [
+            -10.28,
+            -5.19,
+            0.57,
+            5.3
+          ]
+        ],
+        "height": 7.7
+      }
+    },
+    {
+      "id": "3794024553/2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2
+      },
+      "constructionResources": {
+        "bricks": 1,
+        "boards": 2,
+        "ecomponents": 0.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1980s panel-based dacha 2",
+      "workshopId": "3794024553",
+      "modPath": "2",
+      "footprint": {
+        "boxes": [
+          [
+            -9.85,
+            -5.95,
+            2.3,
+            5.67
+          ],
+          [
+            -9.16,
+            -6.44,
+            1.83,
+            6.18
+          ]
+        ],
+        "height": 4.88
+      }
+    },
+    {
+      "id": "3794024553/3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.95,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {
+        "bricks": 2,
+        "boards": 4,
+        "ecomponents": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1980s panel-based dacha 3",
+      "workshopId": "3794024553",
+      "modPath": "3",
+      "footprint": {
+        "boxes": [
+          [
+            -9.85,
+            -11.4,
+            2.3,
+            11.34
+          ],
+          [
+            -9.16,
+            -11.88,
+            1.83,
+            11.83
+          ]
+        ],
+        "height": 4.88
+      }
+    },
+    {
+      "id": "3794024553/4",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Wooden fence for dachas",
+      "workshopId": "3794024553",
+      "modPath": "4",
+      "footprint": {
+        "boxes": [
+          [
+            -5,
+            -0.03,
+            0.09,
+            0.06
+          ]
+        ],
+        "height": 0.92
+      }
+    }
+  ],
+  "vehicles": []
+}

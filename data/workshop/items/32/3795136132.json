@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3795136132",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-04T08:53:13.324Z",
+  "buildings": [
+    {
+      "id": "3795136132/free_technical",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Free Technical",
+      "workshopId": "3795136132",
+      "modPath": "free_technical",
+      "footprint": {
+        "boxes": [
+          [
+            -12.09,
+            -6.07,
+            8,
+            9.07
+          ]
+        ],
+        "height": 2.23
+      }
+    }
+  ],
+  "vehicles": []
+}
