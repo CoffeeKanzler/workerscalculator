@@ -1,0 +1,837 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3797633240",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-08T08:54:13.815Z",
+  "buildings": [
+    {
+      "id": "3797633240/embassy_soviet",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 18,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.9,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Soviet Embassy",
+      "workshopId": "3797633240",
+      "modPath": "embassy_soviet",
+      "footprint": {
+        "boxes": [
+          [
+            21.46,
+            1.8,
+            22.1,
+            2.44
+          ],
+          [
+            -14,
+            -13.99,
+            14.04,
+            13.09
+          ],
+          [
+            -12.31,
+            11.94,
+            8.69,
+            34.03
+          ]
+        ],
+        "height": 22.62
+      }
+    },
+    {
+      "id": "3797633240/embassy_west",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 18,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 0.9,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Western Embassy",
+      "workshopId": "3797633240",
+      "modPath": "embassy_west",
+      "footprint": {
+        "boxes": [
+          [
+            21.46,
+            1.8,
+            22.1,
+            2.44
+          ],
+          [
+            -14,
+            -13.99,
+            14.04,
+            13.09
+          ],
+          [
+            -12.31,
+            11.94,
+            8.69,
+            34.03
+          ]
+        ],
+        "height": 22.62
+      }
+    },
+    {
+      "id": "3797633240/espionage_hq",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY"
+      ],
+      "workers": 250,
+      "professors": 250,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "concrete": 489,
+        "steel": 92.70000000000002,
+        "prefabpanels": 332,
+        "workers": 13491,
+        "mcomponents": 5.4,
+        "ecomponents": 2.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Espionage HQ",
+      "workshopId": "3797633240",
+      "modPath": "espionage_hq",
+      "footprint": {
+        "boxes": [
+          [
+            -19.12,
+            -13.51,
+            12.66,
+            14.49
+          ],
+          [
+            -60.74,
+            30.64,
+            17.51,
+            75.3
+          ],
+          [
+            -60.74,
+            -74.32,
+            17.51,
+            -29.66
+          ],
+          [
+            -74.85,
+            -15.31,
+            17.49,
+            16.3
+          ],
+          [
+            -52.2,
+            -30.06,
+            -38.6,
+            31.04
+          ],
+          [
+            -9.73,
+            -30.66,
+            -2.48,
+            31.64
+          ],
+          [
+            -72.26,
+            -59.6,
+            15.7,
+            60.58
+          ]
+        ],
+        "height": 88.14
+      }
+    },
+    {
+      "id": "3797633240/foreign_relations_hq",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 400,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 45,
+        "asphalt": 160,
+        "ecomponents": 25
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Foreign Relations HQ",
+      "workshopId": "3797633240",
+      "modPath": "foreign_relations_hq",
+      "footprint": {
+        "boxes": [
+          [
+            -2.11,
+            -39.58,
+            32.46,
+            38.5
+          ],
+          [
+            -114.6,
+            -75.33,
+            28.58,
+            97.94
+          ],
+          [
+            -109.57,
+            -49.76,
+            -18.8,
+            49.13
+          ],
+          [
+            -111.51,
+            -55.17,
+            -14.73,
+            55.04
+          ]
+        ],
+        "height": 83.82
+      }
+    },
+    {
+      "id": "3797633240/heavy_arms_large",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 780,
+      "professors": 0,
+      "production": {
+        "large_arms": 0.012
+      },
+      "consumption": {
+        "steel": 0.03,
+        "chemicals": 0.0175,
+        "mcomponents": 0.0205
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Weapons Factory (LARGE)",
+      "workshopId": "3797633240",
+      "modPath": "heavy_arms_large",
+      "footprint": {
+        "boxes": [
+          [
+            -78.37,
+            -13.45,
+            40.6,
+            23.69
+          ],
+          [
+            71.19,
+            44.6,
+            91.05,
+            77.62
+          ],
+          [
+            40.29,
+            -8.11,
+            90.71,
+            11.74
+          ],
+          [
+            -20.91,
+            -96.9,
+            -12.69,
+            -36.19
+          ],
+          [
+            -76.11,
+            42.34,
+            -26.35,
+            64.95
+          ],
+          [
+            -5.46,
+            51.94,
+            56.49,
+            74.6
+          ],
+          [
+            8.63,
+            -2.79,
+            23.79,
+            12.37
+          ],
+          [
+            -59.14,
+            -2.79,
+            -43.97,
+            12.37
+          ],
+          [
+            -13.14,
+            -98.39,
+            70.4,
+            -40.73
+          ],
+          [
+            -114.42,
+            -39,
+            90.85,
+            -16.49
+          ],
+          [
+            -114.42,
+            23.78,
+            90.85,
+            46.28
+          ],
+          [
+            -20.65,
+            -26.41,
+            -16.67,
+            33.6
+          ],
+          [
+            -108.14,
+            -72.13,
+            -94.08,
+            -31.41
+          ],
+          [
+            -84.59,
+            -103.59,
+            -70.53,
+            -62.87
+          ],
+          [
+            -113.31,
+            -95.65,
+            -63.22,
+            -39.22
+          ],
+          [
+            -110.77,
+            -8.62,
+            -77.76,
+            14.64
+          ]
+        ],
+        "height": 66.74
+      }
+    },
+    {
+      "id": "3797633240/heavy_arms_small",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 380,
+      "professors": 0,
+      "production": {
+        "large_arms": 0.0055
+      },
+      "consumption": {
+        "steel": 0.014,
+        "chemicals": 0.008,
+        "mcomponents": 0.0095
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Heavy Weapons Factory (SMALL)",
+      "workshopId": "3797633240",
+      "modPath": "heavy_arms_small",
+      "footprint": {
+        "boxes": [
+          [
+            -29.07,
+            21.02,
+            23.3,
+            35.44
+          ],
+          [
+            -27.28,
+            -29.9,
+            -13.01,
+            22.47
+          ],
+          [
+            -13.47,
+            -29.9,
+            0.8,
+            22.47
+          ],
+          [
+            0.4,
+            -11.96,
+            20.49,
+            21.4
+          ]
+        ],
+        "height": 21.42
+      }
+    },
+    {
+      "id": "3797633240/munitions_large",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 900,
+      "professors": 0,
+      "production": {
+        "munitions": 0.055
+      },
+      "consumption": {
+        "aluminium": 0.043,
+        "explosives": 0.065,
+        "chemicals": 0.087
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Munitions Plant (LARGE)",
+      "workshopId": "3797633240",
+      "modPath": "munitions_large",
+      "footprint": {
+        "boxes": [
+          [
+            -31,
+            -18,
+            -23,
+            -10
+          ],
+          [
+            -31,
+            -8,
+            -23,
+            0
+          ],
+          [
+            -17,
+            -36,
+            -9,
+            -28
+          ],
+          [
+            -30,
+            2,
+            6,
+            26
+          ],
+          [
+            -43.29,
+            -65.29,
+            40.5,
+            26
+          ],
+          [
+            -30.79,
+            -60,
+            -7,
+            -40
+          ],
+          [
+            -7,
+            -64,
+            17,
+            -28
+          ],
+          [
+            2.88,
+            -64,
+            41,
+            -18.24
+          ],
+          [
+            -43.29,
+            -24.5,
+            3,
+            1.49
+          ]
+        ],
+        "height": 14.04
+      }
+    },
+    {
+      "id": "3797633240/munitions_small",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 220,
+      "professors": 0,
+      "production": {
+        "munitions": 0.0045
+      },
+      "consumption": {
+        "aluminium": 0.0035,
+        "explosives": 0.0055,
+        "chemicals": 0.007
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Munitions Plant (SMALL)",
+      "workshopId": "3797633240",
+      "modPath": "munitions_small",
+      "footprint": {
+        "boxes": [
+          [
+            -34.75,
+            -86,
+            37.1,
+            42.25
+          ],
+          [
+            -34.3,
+            -73.42,
+            37.1,
+            41.9
+          ],
+          [
+            -14.83,
+            14.3,
+            -6.93,
+            22.19
+          ],
+          [
+            -34.59,
+            -74.1,
+            37.1,
+            41.93
+          ],
+          [
+            -8.77,
+            -12.77,
+            -3.09,
+            -7.1
+          ],
+          [
+            -13.58,
+            -14.65,
+            22,
+            12.09
+          ]
+        ],
+        "height": 41.11
+      }
+    },
+    {
+      "id": "3797633240/small_arms_large",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 620,
+      "professors": 250,
+      "production": {
+        "small_arms": 0.018
+      },
+      "consumption": {
+        "wood": 0.027,
+        "steel": 0.0225,
+        "fabric": 0.0105
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Arms Factory (LARGE)",
+      "workshopId": "3797633240",
+      "modPath": "small_arms_large",
+      "footprint": {
+        "boxes": [
+          [
+            -79.22,
+            23.45,
+            -0.24,
+            40.63
+          ],
+          [
+            -97.22,
+            -35.3,
+            88.4,
+            41.85
+          ],
+          [
+            -97.22,
+            -34.8,
+            88.4,
+            36.7
+          ],
+          [
+            -97.22,
+            -35.3,
+            88.4,
+            37.2
+          ],
+          [
+            -90.89,
+            -35.42,
+            67.64,
+            37.32
+          ],
+          [
+            -45.44,
+            -11.39,
+            3.37,
+            12.99
+          ],
+          [
+            -90.89,
+            -35.72,
+            83.93,
+            37.62
+          ],
+          [
+            -91.96,
+            -35.61,
+            88.73,
+            37.51
+          ],
+          [
+            -97.22,
+            -35.3,
+            51.45,
+            37.2
+          ],
+          [
+            -39.3,
+            -7.21,
+            81.25,
+            28.23
+          ],
+          [
+            14.11,
+            8.25,
+            86.48,
+            15.94
+          ],
+          [
+            -79.22,
+            -35.3,
+            86.94,
+            22.54
+          ],
+          [
+            -45.46,
+            15.89,
+            88.25,
+            34.7
+          ],
+          [
+            70.15,
+            15.75,
+            72.15,
+            15.9
+          ],
+          [
+            -77.1,
+            23.95,
+            -0.24,
+            41.85
+          ],
+          [
+            -25.16,
+            34.73,
+            -0.24,
+            38.63
+          ],
+          [
+            -79.22,
+            23.45,
+            -0.47,
+            41.85
+          ],
+          [
+            -88.82,
+            -35.33,
+            87.1,
+            40.63
+          ],
+          [
+            -79.22,
+            24.54,
+            -11.9,
+            34.85
+          ],
+          [
+            -79.22,
+            4.95,
+            88.2,
+            40.31
+          ],
+          [
+            -44.51,
+            -13.19,
+            5.59,
+            5.75
+          ],
+          [
+            -97.02,
+            -34.8,
+            55.92,
+            36.7
+          ],
+          [
+            -94.79,
+            -36.63,
+            89.71,
+            41.61
+          ],
+          [
+            -9.38,
+            38.23,
+            -6.25,
+            38.37
+          ],
+          [
+            -44.6,
+            -13.29,
+            5.67,
+            12.41
+          ],
+          [
+            -91.96,
+            -35.61,
+            -84.48,
+            37.51
+          ],
+          [
+            -79.22,
+            -35.22,
+            -72.44,
+            22.46
+          ]
+        ],
+        "height": 28.46
+      }
+    },
+    {
+      "id": "3797633240/small_arms_small",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 220,
+      "professors": 0,
+      "production": {
+        "small_arms": 0.006
+      },
+      "consumption": {
+        "wood": 0.009,
+        "steel": 0.0075,
+        "fabric": 0.0035
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Arms Factory (SMALL)",
+      "workshopId": "3797633240",
+      "modPath": "small_arms_small",
+      "footprint": {
+        "boxes": [
+          [
+            21.86,
+            -38.51,
+            44.79,
+            1.43
+          ],
+          [
+            5.04,
+            11.73,
+            34.3,
+            26.32
+          ],
+          [
+            -5.89,
+            20.06,
+            -0.86,
+            20.94
+          ],
+          [
+            -29.91,
+            10.65,
+            -26.74,
+            13.9
+          ],
+          [
+            -48.19,
+            -27.28,
+            5.99,
+            26.81
+          ],
+          [
+            30.12,
+            -34.85,
+            31,
+            -29.81
+          ]
+        ],
+        "height": 52.13
+      }
+    }
+  ],
+  "vehicles": []
+}

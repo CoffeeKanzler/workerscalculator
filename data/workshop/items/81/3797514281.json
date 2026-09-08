@@ -1,0 +1,1457 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3797514281",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-08T08:54:13.727Z",
+  "buildings": [
+    {
+      "id": "3797514281/base100",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 35
+      },
+      "constructionResources": {
+        "gravel": 11,
+        "steel": 5.5,
+        "boards": 7,
+        "workers": 55
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 100m",
+      "workshopId": "3797514281",
+      "modPath": "base100",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base1000",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 350
+      },
+      "constructionResources": {
+        "gravel": 80,
+        "steel": 45,
+        "boards": 54,
+        "workers": 400
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 1000m",
+      "workshopId": "3797514281",
+      "modPath": "base1000",
+      "footprint": {
+        "boxes": [
+          [
+            -500,
+            -15,
+            500,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base150",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 50
+      },
+      "constructionResources": {
+        "gravel": 15,
+        "steel": 8,
+        "boards": 10,
+        "workers": 80
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 150m",
+      "workshopId": "3797514281",
+      "modPath": "base150",
+      "footprint": {
+        "boxes": [
+          [
+            -75,
+            -15,
+            75,
+            15
+          ],
+          [
+            -75,
+            -15,
+            75,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base200",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 65
+      },
+      "constructionResources": {
+        "gravel": 20,
+        "steel": 10,
+        "boards": 13,
+        "workers": 105
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 200m",
+      "workshopId": "3797514281",
+      "modPath": "base200",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base250",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 80
+      },
+      "constructionResources": {
+        "gravel": 25,
+        "steel": 12.5,
+        "boards": 16,
+        "workers": 130
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 250m",
+      "workshopId": "3797514281",
+      "modPath": "base250",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ],
+          [
+            -125,
+            -15,
+            125,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base300",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 100
+      },
+      "constructionResources": {
+        "gravel": 25,
+        "steel": 15,
+        "boards": 18,
+        "workers": 150
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 300m",
+      "workshopId": "3797514281",
+      "modPath": "base300",
+      "footprint": {
+        "boxes": [
+          [
+            -75,
+            -15,
+            75,
+            15
+          ],
+          [
+            -75,
+            -15,
+            75,
+            15
+          ],
+          [
+            -150,
+            -15,
+            150,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base350",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 115
+      },
+      "constructionResources": {
+        "gravel": 30,
+        "steel": 17.5,
+        "boards": 21,
+        "workers": 175
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 350m",
+      "workshopId": "3797514281",
+      "modPath": "base350",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ],
+          [
+            -125,
+            -15,
+            125,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base400",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 130
+      },
+      "constructionResources": {
+        "gravel": 35,
+        "steel": 20,
+        "boards": 24,
+        "workers": 195
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 400m",
+      "workshopId": "3797514281",
+      "modPath": "base400",
+      "footprint": {
+        "boxes": [
+          [
+            -200,
+            -15,
+            200,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base450",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {
+        "gravel": 40,
+        "steel": 22.6,
+        "boards": 27.1,
+        "workers": 217
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 450m",
+      "workshopId": "3797514281",
+      "modPath": "base450",
+      "footprint": {
+        "boxes": [
+          [
+            -75,
+            -15,
+            75,
+            15
+          ],
+          [
+            -75,
+            -15,
+            75,
+            15
+          ],
+          [
+            -150,
+            -15,
+            150,
+            15
+          ],
+          [
+            -225,
+            -15,
+            225,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base50",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 20
+      },
+      "constructionResources": {
+        "gravel": 6,
+        "steel": 3,
+        "boards": 4,
+        "workers": 30
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 50m",
+      "workshopId": "3797514281",
+      "modPath": "base50",
+      "footprint": {
+        "boxes": [
+          [
+            -25,
+            -15,
+            25,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base500",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 170
+      },
+      "constructionResources": {
+        "gravel": 45,
+        "steel": 25,
+        "boards": 30,
+        "workers": 240
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 500m",
+      "workshopId": "3797514281",
+      "modPath": "base500",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ],
+          [
+            -125,
+            -15,
+            125,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -250,
+            -15,
+            250,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base550",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 190
+      },
+      "constructionResources": {
+        "gravel": 50,
+        "steel": 28,
+        "boards": 33,
+        "workers": 265
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 550m",
+      "workshopId": "3797514281",
+      "modPath": "base550",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ],
+          [
+            -125,
+            -15,
+            125,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -250,
+            -15,
+            250,
+            15
+          ],
+          [
+            -275,
+            -15,
+            275,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base600",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 210
+      },
+      "constructionResources": {
+        "gravel": 55,
+        "steel": 30,
+        "boards": 36,
+        "workers": 290
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 600m",
+      "workshopId": "3797514281",
+      "modPath": "base600",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ],
+          [
+            -125,
+            -15,
+            125,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -250,
+            -15,
+            250,
+            15
+          ],
+          [
+            -275,
+            -15,
+            275,
+            15
+          ],
+          [
+            -300,
+            -15,
+            300,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base650",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 230
+      },
+      "constructionResources": {
+        "gravel": 60,
+        "steel": 33,
+        "boards": 39,
+        "workers": 315
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 650m",
+      "workshopId": "3797514281",
+      "modPath": "base650",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ],
+          [
+            -125,
+            -15,
+            125,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -250,
+            -15,
+            250,
+            15
+          ],
+          [
+            -275,
+            -15,
+            275,
+            15
+          ],
+          [
+            -300,
+            -15,
+            300,
+            15
+          ],
+          [
+            -325,
+            -15,
+            325,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base700",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 250
+      },
+      "constructionResources": {
+        "gravel": 65,
+        "steel": 36,
+        "boards": 42,
+        "workers": 340
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 700m",
+      "workshopId": "3797514281",
+      "modPath": "base700",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ],
+          [
+            -125,
+            -15,
+            125,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -250,
+            -15,
+            250,
+            15
+          ],
+          [
+            -275,
+            -15,
+            275,
+            15
+          ],
+          [
+            -300,
+            -15,
+            300,
+            15
+          ],
+          [
+            -325,
+            -15,
+            325,
+            15
+          ],
+          [
+            -350,
+            -15,
+            350,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base750",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 270
+      },
+      "constructionResources": {
+        "gravel": 70,
+        "steel": 38,
+        "boards": 45,
+        "workers": 365
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 750m",
+      "workshopId": "3797514281",
+      "modPath": "base750",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ],
+          [
+            -125,
+            -15,
+            125,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -250,
+            -15,
+            250,
+            15
+          ],
+          [
+            -275,
+            -15,
+            275,
+            15
+          ],
+          [
+            -300,
+            -15,
+            300,
+            15
+          ],
+          [
+            -325,
+            -15,
+            325,
+            15
+          ],
+          [
+            -350,
+            -15,
+            350,
+            15
+          ],
+          [
+            -375,
+            -15,
+            375,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base800",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 290
+      },
+      "constructionResources": {
+        "gravel": 75,
+        "steel": 41,
+        "boards": 48,
+        "workers": 390
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 800m",
+      "workshopId": "3797514281",
+      "modPath": "base800",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ],
+          [
+            -125,
+            -15,
+            125,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -250,
+            -15,
+            250,
+            15
+          ],
+          [
+            -275,
+            -15,
+            275,
+            15
+          ],
+          [
+            -300,
+            -15,
+            300,
+            15
+          ],
+          [
+            -325,
+            -15,
+            325,
+            15
+          ],
+          [
+            -350,
+            -15,
+            350,
+            15
+          ],
+          [
+            -375,
+            -15,
+            375,
+            15
+          ],
+          [
+            -400,
+            -15,
+            400,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base850",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 310
+      },
+      "constructionResources": {
+        "gravel": 80,
+        "steel": 43,
+        "boards": 51,
+        "workers": 415
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 850m",
+      "workshopId": "3797514281",
+      "modPath": "base850",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ],
+          [
+            -125,
+            -15,
+            125,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -250,
+            -15,
+            250,
+            15
+          ],
+          [
+            -275,
+            -15,
+            275,
+            15
+          ],
+          [
+            -300,
+            -15,
+            300,
+            15
+          ],
+          [
+            -325,
+            -15,
+            325,
+            15
+          ],
+          [
+            -350,
+            -15,
+            350,
+            15
+          ],
+          [
+            -375,
+            -15,
+            375,
+            15
+          ],
+          [
+            -400,
+            -15,
+            400,
+            15
+          ],
+          [
+            -425,
+            -15,
+            425,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base900",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 330
+      },
+      "constructionResources": {
+        "gravel": 85,
+        "steel": 46,
+        "boards": 54,
+        "workers": 440
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 900m",
+      "workshopId": "3797514281",
+      "modPath": "base900",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ],
+          [
+            -125,
+            -15,
+            125,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -250,
+            -15,
+            250,
+            15
+          ],
+          [
+            -275,
+            -15,
+            275,
+            15
+          ],
+          [
+            -300,
+            -15,
+            300,
+            15
+          ],
+          [
+            -325,
+            -15,
+            325,
+            15
+          ],
+          [
+            -350,
+            -15,
+            350,
+            15
+          ],
+          [
+            -375,
+            -15,
+            375,
+            15
+          ],
+          [
+            -400,
+            -15,
+            400,
+            15
+          ],
+          [
+            -425,
+            -15,
+            425,
+            15
+          ],
+          [
+            -450,
+            -15,
+            450,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3797514281/base950",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 350
+      },
+      "constructionResources": {
+        "gravel": 90,
+        "steel": 48,
+        "boards": 57,
+        "workers": 465
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Yard - 950m",
+      "workshopId": "3797514281",
+      "modPath": "base950",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            -15,
+            50,
+            15
+          ],
+          [
+            -100,
+            -15,
+            100,
+            15
+          ],
+          [
+            -125,
+            -15,
+            125,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -175,
+            -15,
+            175,
+            15
+          ],
+          [
+            -250,
+            -15,
+            250,
+            15
+          ],
+          [
+            -275,
+            -15,
+            275,
+            15
+          ],
+          [
+            -300,
+            -15,
+            300,
+            15
+          ],
+          [
+            -325,
+            -15,
+            325,
+            15
+          ],
+          [
+            -350,
+            -15,
+            350,
+            15
+          ],
+          [
+            -375,
+            -15,
+            375,
+            15
+          ],
+          [
+            -400,
+            -15,
+            400,
+            15
+          ],
+          [
+            -425,
+            -15,
+            425,
+            15
+          ],
+          [
+            -450,
+            -15,
+            450,
+            15
+          ],
+          [
+            -475,
+            -15,
+            475,
+            15
+          ]
+        ],
+        "height": 0
+      }
+    }
+  ],
+  "vehicles": []
+}
