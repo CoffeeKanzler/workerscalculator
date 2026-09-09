@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3797915010",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-09T08:59:59.248Z",
+  "buildings": [
+    {
+      "id": "3797915010/MOORWERK_DAVYHALL",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {
+        "steel": 0.16
+      },
+      "consumption": {
+        "waste_steel": 0.26,
+        "water": 0.03
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.12
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "MOORWERK_DAVYHALL_E-STEELWORKS",
+      "workshopId": "3797915010",
+      "modPath": "MOORWERK_DAVYHALL",
+      "footprint": {
+        "boxes": [
+          [
+            -6,
+            -20,
+            6,
+            10
+          ],
+          [
+            -6,
+            -20,
+            6,
+            10
+          ],
+          [
+            -4.5,
+            -33.9,
+            4.5,
+            17.5
+          ],
+          [
+            -1,
+            7.32,
+            1,
+            9.43
+          ],
+          [
+            -4.52,
+            4.3,
+            3.9,
+            7.71
+          ],
+          [
+            -8.09,
+            -20,
+            6,
+            10
+          ],
+          [
+            -1.65,
+            -25.37,
+            1.65,
+            4.7
+          ],
+          [
+            -2.67,
+            -27.4,
+            2.35,
+            4.62
+          ]
+        ],
+        "height": 12.75
+      }
+    }
+  ],
+  "vehicles": []
+}
