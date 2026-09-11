@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3799225069",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-11T08:57:31.357Z",
+  "buildings": [
+    {
+      "id": "3799225069/Foundation_2x2_H05",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Foundation 2x2m - 0.5m",
+      "workshopId": "3799225069",
+      "modPath": "Foundation_2x2_H05",
+      "footprint": {
+        "boxes": [
+          [
+            -1,
+            -1,
+            1,
+            1
+          ]
+        ],
+        "height": 2.5
+      }
+    },
+    {
+      "id": "3799225069/Foundation_2x2_H10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Foundation 2x2m - 1.0m",
+      "workshopId": "3799225069",
+      "modPath": "Foundation_2x2_H10",
+      "footprint": {
+        "boxes": [
+          [
+            -1,
+            -1,
+            1,
+            1
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3799225069/Foundation_4x4_H05",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Foundation 4x4m - 0.5m",
+      "workshopId": "3799225069",
+      "modPath": "Foundation_4x4_H05",
+      "footprint": {
+        "boxes": [
+          [
+            -2,
+            -2,
+            2,
+            2
+          ]
+        ],
+        "height": 2.5
+      }
+    },
+    {
+      "id": "3799225069/Foundation_4x4_H10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Foundation 4x4m - 1.0m",
+      "workshopId": "3799225069",
+      "modPath": "Foundation_4x4_H10",
+      "footprint": {
+        "boxes": [
+          [
+            -2,
+            -2,
+            2,
+            2
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3799225069/Foundation_4x4_H20",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Foundation 4x4m - 2.0m",
+      "workshopId": "3799225069",
+      "modPath": "Foundation_4x4_H20",
+      "footprint": {
+        "boxes": [
+          [
+            -2,
+            -2,
+            2,
+            2
+          ]
+        ],
+        "height": 4
+      }
+    },
+    {
+      "id": "3799225069/Foundation_8x8_H05",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Foundation 8x8m - 0.5m",
+      "workshopId": "3799225069",
+      "modPath": "Foundation_8x8_H05",
+      "footprint": {
+        "boxes": [
+          [
+            -4,
+            -4,
+            4,
+            4
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3799225069/Foundation_8x8_H10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Foundation 8x8m - 1.0m",
+      "workshopId": "3799225069",
+      "modPath": "Foundation_8x8_H10",
+      "footprint": {
+        "boxes": [
+          [
+            -4,
+            -4,
+            4,
+            4
+          ]
+        ],
+        "height": 3.5
+      }
+    },
+    {
+      "id": "3799225069/Stairs_2x_H05",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Stairs 2x2m - 0.5m",
+      "workshopId": "3799225069",
+      "modPath": "Stairs_2x_H05",
+      "footprint": {
+        "boxes": [
+          [
+            -1,
+            -1,
+            1,
+            1
+          ]
+        ],
+        "height": 2.5
+      }
+    },
+    {
+      "id": "3799225069/Stairs_2x_H10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Stairs 2x4m - 1.0m",
+      "workshopId": "3799225069",
+      "modPath": "Stairs_2x_H10",
+      "footprint": {
+        "boxes": [
+          [
+            -1,
+            -2,
+            1,
+            2
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3799225069/Stairs_2x_H20",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Stairs 2x8m - 2.0m",
+      "workshopId": "3799225069",
+      "modPath": "Stairs_2x_H20",
+      "footprint": {
+        "boxes": [
+          [
+            -1,
+            -4,
+            1,
+            4
+          ]
+        ],
+        "height": 4
+      }
+    },
+    {
+      "id": "3799225069/Stairs_4x_H05",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Stairs 4x2m - 0.5m",
+      "workshopId": "3799225069",
+      "modPath": "Stairs_4x_H05",
+      "footprint": {
+        "boxes": [
+          [
+            -2,
+            -1,
+            2,
+            1
+          ]
+        ],
+        "height": 2.5
+      }
+    },
+    {
+      "id": "3799225069/Stairs_4x_H10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Stairs 4x4m - 1.0m",
+      "workshopId": "3799225069",
+      "modPath": "Stairs_4x_H10",
+      "footprint": {
+        "boxes": [
+          [
+            -2,
+            -2,
+            2,
+            2
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3799225069/Stairs_4x_H20",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Stairs 4x8m - 2.0m",
+      "workshopId": "3799225069",
+      "modPath": "Stairs_4x_H20",
+      "footprint": {
+        "boxes": [
+          [
+            -2,
+            -4,
+            2,
+            4
+          ]
+        ],
+        "height": 4
+      }
+    },
+    {
+      "id": "3799225069/Stairs_8x_H05",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Stairs 8x2m - 0.5m",
+      "workshopId": "3799225069",
+      "modPath": "Stairs_8x_H05",
+      "footprint": {
+        "boxes": [
+          [
+            -4,
+            -1,
+            4,
+            1
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3799225069/Stairs_8x_H10",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Stairs 8x4m - 1.0m",
+      "workshopId": "3799225069",
+      "modPath": "Stairs_8x_H10",
+      "footprint": {
+        "boxes": [
+          [
+            -4,
+            -2,
+            4,
+            2
+          ]
+        ],
+        "height": 3.5
+      }
+    },
+    {
+      "id": "3799225069/Stairs_8x_H20",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Base Stairs 8x8m - 2.0m",
+      "workshopId": "3799225069",
+      "modPath": "Stairs_8x_H20",
+      "footprint": {
+        "boxes": [
+          [
+            -4,
+            -4,
+            4,
+            4
+          ]
+        ],
+        "height": 4.5
+      }
+    }
+  ],
+  "vehicles": []
+}

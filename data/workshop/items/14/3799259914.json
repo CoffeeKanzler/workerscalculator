@@ -1,0 +1,1092 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3799259914",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-11T08:57:31.384Z",
+  "buildings": [
+    {
+      "id": "3799259914/combinedpumpingstation",
+      "nameId": null,
+      "types": [
+        "TYPE_UTILITY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gigantic Pump",
+      "workshopId": "3799259914",
+      "modPath": "combinedpumpingstation"
+    },
+    {
+      "id": "3799259914/combinedsubstation",
+      "nameId": null,
+      "types": [
+        "TYPE_UTILITY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 520,
+        "gravel": 6,
+        "concrete": 20,
+        "steel": 11,
+        "boards": 3,
+        "bricks": 18,
+        "mcomponents": 3,
+        "ecomponents": 1.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Microdistrict Utilities",
+      "workshopId": "3799259914",
+      "modPath": "combinedsubstation",
+      "footprint": {
+        "boxes": [
+          [
+            -3.07,
+            -3.86,
+            4.63,
+            6.72
+          ]
+        ],
+        "height": 8.81
+      }
+    },
+    {
+      "id": "3799259914/combinedsubstationlarge",
+      "nameId": null,
+      "types": [
+        "TYPE_UTILITY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large combined substation",
+      "workshopId": "3799259914",
+      "modPath": "combinedsubstationlarge",
+      "footprint": {
+        "boxes": [
+          [
+            -17.5,
+            -21.99,
+            17.5,
+            21.99
+          ],
+          [
+            -24,
+            -28.49,
+            24,
+            28.49
+          ],
+          [
+            -23.82,
+            -28.31,
+            23.82,
+            28.31
+          ],
+          [
+            -23.75,
+            -28.24,
+            23.75,
+            28.24
+          ]
+        ],
+        "height": 25.2
+      }
+    },
+    {
+      "id": "3799259914/switchhighcapacity110",
+      "nameId": null,
+      "types": [
+        "TYPE_UTILITY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 25,
+        "concrete": 52,
+        "gravel": 25,
+        "workers": 3100,
+        "ecomponents": 16
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "110kV High Capacity Underground Cable Connection Switchyard Station",
+      "workshopId": "3799259914",
+      "modPath": "switchhighcapacity110",
+      "footprint": {
+        "boxes": [
+          [
+            -57.85,
+            -41.78,
+            56.32,
+            41.78
+          ],
+          [
+            -56.07,
+            -36.42,
+            -47.59,
+            -21.53
+          ],
+          [
+            -49.62,
+            -25.86,
+            49.62,
+            26.12
+          ],
+          [
+            -36.11,
+            -13.22,
+            36.43,
+            13.22
+          ],
+          [
+            -36.11,
+            -31.87,
+            36.43,
+            31.83
+          ],
+          [
+            -36.11,
+            -20.19,
+            36.43,
+            20.18
+          ],
+          [
+            -49.61,
+            3.82,
+            49.54,
+            11.87
+          ],
+          [
+            -49.61,
+            7.57,
+            49.54,
+            8.12
+          ],
+          [
+            -49.61,
+            -8.12,
+            49.54,
+            -7.57
+          ],
+          [
+            -49.61,
+            -11.87,
+            49.54,
+            -3.82
+          ],
+          [
+            -35.64,
+            -20.16,
+            35.98,
+            20.16
+          ],
+          [
+            -36.11,
+            -0.85,
+            36.43,
+            0.35
+          ],
+          [
+            -35.6,
+            -30.96,
+            35.91,
+            30.84
+          ],
+          [
+            -36,
+            -11.97,
+            36.34,
+            11.97
+          ],
+          [
+            -35.64,
+            -42.11,
+            35.98,
+            42.08
+          ],
+          [
+            -36.11,
+            -37.52,
+            36.43,
+            37.73
+          ],
+          [
+            -36.15,
+            -42.88,
+            36.46,
+            42.82
+          ]
+        ],
+        "height": 12.37
+      }
+    },
+    {
+      "id": "3799259914/switchlargehighcapacity110",
+      "nameId": null,
+      "types": [
+        "TYPE_UTILITY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 42.5,
+        "concrete": 76,
+        "gravel": 35,
+        "workers": 3625,
+        "ecomponents": 22
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "110kV Large High Capacity Underground Cable Connection Switchyard Station",
+      "workshopId": "3799259914",
+      "modPath": "switchlargehighcapacity110",
+      "footprint": {
+        "boxes": [
+          [
+            -82.46,
+            -41.78,
+            82.46,
+            41.78
+          ],
+          [
+            -80.79,
+            -36.42,
+            -72.31,
+            -21.53
+          ],
+          [
+            -74.34,
+            -25.86,
+            24.91,
+            26.12
+          ],
+          [
+            -60.83,
+            -13.22,
+            11.72,
+            13.22
+          ],
+          [
+            -60.83,
+            -31.87,
+            11.72,
+            31.83
+          ],
+          [
+            -60.83,
+            -20.19,
+            11.72,
+            20.18
+          ],
+          [
+            -74.83,
+            3.82,
+            74.05,
+            11.87
+          ],
+          [
+            -74.83,
+            7.57,
+            74.05,
+            8.12
+          ],
+          [
+            -74.83,
+            -8.12,
+            74.05,
+            -7.57
+          ],
+          [
+            -74.83,
+            -11.87,
+            74.05,
+            -3.82
+          ],
+          [
+            -60.35,
+            -20.16,
+            11.26,
+            20.16
+          ],
+          [
+            -60.83,
+            -0.85,
+            11.72,
+            0.35
+          ],
+          [
+            -60.31,
+            -30.96,
+            11.19,
+            30.84
+          ],
+          [
+            -60.72,
+            -11.97,
+            11.62,
+            11.97
+          ],
+          [
+            -60.35,
+            -42.11,
+            11.26,
+            42.08
+          ],
+          [
+            -60.83,
+            -37.52,
+            11.72,
+            37.73
+          ],
+          [
+            -60.86,
+            -42.88,
+            11.75,
+            42.82
+          ],
+          [
+            36.99,
+            -11.97,
+            60.48,
+            11.97
+          ],
+          [
+            37.36,
+            -42.11,
+            60.12,
+            42.08
+          ],
+          [
+            37.36,
+            -20.16,
+            60.12,
+            20.16
+          ],
+          [
+            37.4,
+            -30.96,
+            60.05,
+            30.84
+          ],
+          [
+            36.88,
+            -0.85,
+            60.57,
+            0.35
+          ],
+          [
+            36.88,
+            -20.19,
+            60.57,
+            20.18
+          ],
+          [
+            36.88,
+            -31.87,
+            60.57,
+            31.83
+          ],
+          [
+            36.88,
+            -13.22,
+            60.57,
+            13.22
+          ],
+          [
+            37.22,
+            -25.86,
+            73.76,
+            26.12
+          ],
+          [
+            36.88,
+            -37.52,
+            60.57,
+            37.73
+          ],
+          [
+            36.85,
+            -42.88,
+            60.6,
+            42.82
+          ]
+        ],
+        "height": 12.37
+      }
+    },
+    {
+      "id": "3799259914/switchlargehighcapacity22",
+      "nameId": null,
+      "types": [
+        "TYPE_UTILITY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 17.5,
+        "concrete": 40,
+        "gravel": 12,
+        "workers": 2080,
+        "ecomponents": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "22kV Large High Capacity Underground Cable Connection Switchyard Station",
+      "workshopId": "3799259914",
+      "modPath": "switchlargehighcapacity22",
+      "footprint": {
+        "boxes": [
+          [
+            -26.46,
+            -7.53,
+            26.65,
+            7.49
+          ],
+          [
+            -29.14,
+            -7.55,
+            29.4,
+            7.52
+          ],
+          [
+            -26.35,
+            -26.79,
+            26.54,
+            26.75
+          ],
+          [
+            -42.55,
+            -22.61,
+            -34.07,
+            -12.67
+          ],
+          [
+            -26.41,
+            -13,
+            26.59,
+            12.96
+          ],
+          [
+            -26.54,
+            -2.64,
+            26.73,
+            -2.15
+          ],
+          [
+            -26.54,
+            -10.01,
+            26.73,
+            -9.52
+          ],
+          [
+            -26.54,
+            22.66,
+            26.73,
+            23.17
+          ],
+          [
+            -26.32,
+            -15.88,
+            26.5,
+            15.84
+          ],
+          [
+            -26.54,
+            15.68,
+            26.73,
+            16.18
+          ],
+          [
+            -26.54,
+            9.48,
+            26.73,
+            9.97
+          ],
+          [
+            -26.54,
+            2.11,
+            26.73,
+            2.6
+          ],
+          [
+            -26.54,
+            -16.21,
+            26.73,
+            -15.72
+          ],
+          [
+            -26.54,
+            -23.19,
+            26.73,
+            -22.7
+          ],
+          [
+            -28.84,
+            -7.55,
+            29.13,
+            7.52
+          ],
+          [
+            -26.54,
+            -27.1,
+            26.72,
+            -25.99
+          ],
+          [
+            -42.91,
+            -26.54,
+            42.91,
+            26.54
+          ],
+          [
+            -26.54,
+            25.96,
+            26.72,
+            27.07
+          ]
+        ],
+        "height": 8.05
+      }
+    },
+    {
+      "id": "3799259914/switchsmallhighcapacity22",
+      "nameId": null,
+      "types": [
+        "TYPE_UTILITY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 8.4,
+        "concrete": 20,
+        "gravel": 6.5,
+        "workers": 1540,
+        "ecomponents": 6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "22kV Small High Capacity Underground Cable Connection Switchyard Station",
+      "workshopId": "3799259914",
+      "modPath": "switchsmallhighcapacity22",
+      "footprint": {
+        "boxes": [
+          [
+            -28.2,
+            -22.61,
+            -19.72,
+            -12.67
+          ],
+          [
+            -14.63,
+            -26.79,
+            14.65,
+            26.75
+          ],
+          [
+            -12.19,
+            -10.01,
+            12.15,
+            -2.15
+          ],
+          [
+            -12.19,
+            15.68,
+            12.15,
+            23.17
+          ],
+          [
+            -12.19,
+            2.11,
+            12.15,
+            9.97
+          ],
+          [
+            -12.19,
+            -23.19,
+            12.15,
+            -15.72
+          ],
+          [
+            -28.6,
+            -26.54,
+            28.6,
+            26.54
+          ],
+          [
+            -12.19,
+            -27.1,
+            12.15,
+            27.07
+          ]
+        ],
+        "height": 8.02
+      }
+    },
+    {
+      "id": "3799259914/trafohighcapacity",
+      "nameId": null,
+      "types": [
+        "TYPE_UTILITY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 51,
+        "concrete": 74,
+        "gravel": 30,
+        "workers": 3770,
+        "ecomponents": 35,
+        "mcomponents": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Small 110kV High Capacity Underground Cable Connection Transformer Station",
+      "workshopId": "3799259914",
+      "modPath": "trafohighcapacity",
+      "footprint": {
+        "boxes": [
+          [
+            1.88,
+            -10.35,
+            21.02,
+            10.19
+          ],
+          [
+            -7.53,
+            -67.45,
+            7.53,
+            67.44
+          ],
+          [
+            20.87,
+            -11.44,
+            61.82,
+            11.32
+          ],
+          [
+            -26.93,
+            -55.11,
+            -2.24,
+            55.35
+          ],
+          [
+            22.74,
+            -13.41,
+            30.25,
+            -3.66
+          ],
+          [
+            22.74,
+            1.6,
+            30.25,
+            11.35
+          ],
+          [
+            -7.52,
+            -57.71,
+            7.52,
+            57.37
+          ],
+          [
+            32.48,
+            -11.92,
+            58.3,
+            11.77
+          ],
+          [
+            -25.97,
+            -7.84,
+            -17.49,
+            7.05
+          ],
+          [
+            -7.6,
+            -67.55,
+            7.6,
+            67.56
+          ],
+          [
+            45.79,
+            -11.57,
+            46.66,
+            11.44
+          ],
+          [
+            40.77,
+            -11.4,
+            51.74,
+            11.24
+          ],
+          [
+            60.15,
+            -11.95,
+            62.49,
+            11.8
+          ],
+          [
+            -26.63,
+            -76.68,
+            61.37,
+            76.81
+          ],
+          [
+            -9.98,
+            -55.19,
+            -9.49,
+            55.23
+          ],
+          [
+            -16.19,
+            -55.19,
+            -15.7,
+            55.23
+          ],
+          [
+            -21.75,
+            -55.19,
+            -21.26,
+            55.23
+          ],
+          [
+            -27.24,
+            -55.2,
+            -26.13,
+            55.23
+          ],
+          [
+            -2.62,
+            -55.19,
+            -2.12,
+            55.23
+          ]
+        ],
+        "height": 9.17
+      }
+    },
+    {
+      "id": "3799259914/trafohighcapacitylarge",
+      "nameId": null,
+      "types": [
+        "TYPE_UTILITY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 82,
+        "concrete": 134,
+        "gravel": 60,
+        "workers": 5540,
+        "ecomponents": 60,
+        "mcomponents": 20
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Large 110kV High Capacity Underground Cable Connection Transformer Station",
+      "workshopId": "3799259914",
+      "modPath": "trafohighcapacitylarge",
+      "footprint": {
+        "boxes": [
+          [
+            -15.49,
+            -61.11,
+            3.65,
+            -40.57
+          ],
+          [
+            -24.9,
+            -76.81,
+            -9.84,
+            75.46
+          ],
+          [
+            3.5,
+            -62.2,
+            44.45,
+            -39.44
+          ],
+          [
+            -44.29,
+            -62.79,
+            -19.6,
+            18.44
+          ],
+          [
+            5.37,
+            -64.17,
+            12.88,
+            -54.42
+          ],
+          [
+            5.37,
+            -49.16,
+            12.88,
+            -39.41
+          ],
+          [
+            -33.56,
+            -62.98,
+            -33.06,
+            18.64
+          ],
+          [
+            -27.35,
+            -62.98,
+            -26.86,
+            18.64
+          ],
+          [
+            -19.98,
+            -62.98,
+            -19.49,
+            18.64
+          ],
+          [
+            -33.22,
+            -62.75,
+            -27.35,
+            18.41
+          ],
+          [
+            -24.97,
+            -76.91,
+            -9.77,
+            75.56
+          ],
+          [
+            15.12,
+            -62.68,
+            40.94,
+            -38.99
+          ],
+          [
+            34,
+            -7.91,
+            42.48,
+            6.98
+          ],
+          [
+            28.42,
+            -62.33,
+            29.29,
+            -39.32
+          ],
+          [
+            23.4,
+            -62.15,
+            34.37,
+            -39.52
+          ],
+          [
+            42.79,
+            -62.71,
+            45.12,
+            -38.96
+          ],
+          [
+            -44.61,
+            -62.98,
+            -43.5,
+            18.63
+          ],
+          [
+            -39.11,
+            -62.98,
+            -38.62,
+            18.64
+          ],
+          [
+            -30.34,
+            -62.83,
+            -29.97,
+            18.5
+          ],
+          [
+            -24.87,
+            -62.9,
+            -19.81,
+            18.55
+          ],
+          [
+            -44,
+            -76.75,
+            44,
+            76.75
+          ],
+          [
+            5.37,
+            51.52,
+            12.88,
+            61.27
+          ],
+          [
+            5.37,
+            36.51,
+            12.88,
+            46.26
+          ],
+          [
+            15.12,
+            38,
+            40.94,
+            61.7
+          ],
+          [
+            28.42,
+            38.35,
+            29.29,
+            61.36
+          ],
+          [
+            23.4,
+            38.53,
+            34.37,
+            61.16
+          ],
+          [
+            42.79,
+            37.97,
+            45.12,
+            61.72
+          ],
+          [
+            -15.49,
+            39.57,
+            3.65,
+            60.11
+          ],
+          [
+            3.5,
+            38.48,
+            44.45,
+            61.24
+          ],
+          [
+            -44.61,
+            23.21,
+            -43.5,
+            61.92
+          ],
+          [
+            -24.87,
+            23.3,
+            -19.81,
+            61.85
+          ],
+          [
+            -39.11,
+            23.22,
+            -38.62,
+            61.93
+          ],
+          [
+            -44.29,
+            23.4,
+            -19.6,
+            61.73
+          ],
+          [
+            -33.56,
+            23.21,
+            -33.06,
+            61.93
+          ],
+          [
+            -27.35,
+            23.21,
+            -26.86,
+            61.93
+          ],
+          [
+            -19.98,
+            23.21,
+            -19.49,
+            61.93
+          ],
+          [
+            -33.22,
+            23.44,
+            -27.35,
+            61.7
+          ],
+          [
+            -30.34,
+            23.36,
+            -29.97,
+            61.79
+          ]
+        ],
+        "height": 9.17
+      }
+    }
+  ],
+  "vehicles": []
+}

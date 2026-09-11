@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3798979523",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-11T08:57:31.341Z",
+  "buildings": [
+    {
+      "id": "3798979523/open_42x100",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 2000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Open.Stor.42x100(2kT)",
+      "workshopId": "3798979523",
+      "modPath": "open_42x100",
+      "footprint": {
+        "boxes": [
+          [
+            -5.71,
+            -6.87,
+            15.43,
+            7.24
+          ],
+          [
+            -5.58,
+            -80.09,
+            15.38,
+            20
+          ],
+          [
+            4.17,
+            -0.77,
+            10.39,
+            1.08
+          ],
+          [
+            -17.88,
+            -1.53,
+            24.12,
+            1.84
+          ]
+        ],
+        "height": 17.12
+      }
+    },
+    {
+      "id": "3798979523/open_42x150",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 3000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Open.Stor.42x150(3kT)",
+      "workshopId": "3798979523",
+      "modPath": "open_42x150",
+      "footprint": {
+        "boxes": [
+          [
+            -5.71,
+            -6.87,
+            15.43,
+            7.24
+          ],
+          [
+            -5.58,
+            -130,
+            15.38,
+            20
+          ],
+          [
+            4.17,
+            -0.77,
+            10.39,
+            1.08
+          ],
+          [
+            -17.88,
+            -1.53,
+            24.12,
+            1.84
+          ]
+        ],
+        "height": 17.12
+      }
+    },
+    {
+      "id": "3798979523/open_42x50",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1400
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Open.Stor.42x50(1,4kT)",
+      "workshopId": "3798979523",
+      "modPath": "open_42x50",
+      "footprint": {
+        "boxes": [
+          [
+            -5.71,
+            -6.87,
+            15.43,
+            7.24
+          ],
+          [
+            -5.58,
+            -30,
+            15.38,
+            20
+          ],
+          [
+            4.17,
+            -0.77,
+            10.39,
+            1.08
+          ],
+          [
+            -17.88,
+            -1.53,
+            24.12,
+            1.84
+          ]
+        ],
+        "height": 17.12
+      }
+    }
+  ],
+  "vehicles": []
+}

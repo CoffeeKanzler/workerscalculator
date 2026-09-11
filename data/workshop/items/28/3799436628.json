@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3799436628",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-11T08:57:31.541Z",
+  "buildings": [
+    {
+      "id": "3799436628/thebuilder",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "thebuilder",
+      "workshopId": "3799436628",
+      "modPath": "thebuilder",
+      "footprint": {
+        "boxes": [
+          [
+            -1.09,
+            -1.21,
+            1.1,
+            1.14
+          ]
+        ],
+        "height": 5.45
+      }
+    }
+  ],
+  "vehicles": []
+}
