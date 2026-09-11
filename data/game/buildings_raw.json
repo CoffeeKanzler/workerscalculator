@@ -12593,6 +12593,84 @@
   "en": "Bus platform"
  },
  {
+  "id": "cwc/BustStation1",
+  "nameId": null,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 400.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "storages": {
+   "RESOURCE_TRANSPORT_PASSANGER": 400.0
+  },
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "nameStr": "Small trolleybus station",
+  "menuSfx": "building_road_busstation",
+  "dlc": "cwc",
+  "de": "Small trolleybus station",
+  "en": "Small trolleybus station"
+ },
+ {
+  "id": "cwc/BustStation2",
+  "nameId": null,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 600.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "storages": {
+   "RESOURCE_TRANSPORT_PASSANGER": 600.0
+  },
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "nameStr": "Medium trolleybus station",
+  "menuSfx": "building_road_busstation",
+  "dlc": "cwc",
+  "de": "Medium trolleybus station",
+  "en": "Medium trolleybus station"
+ },
+ {
+  "id": "cwc/BustStation3",
+  "nameId": null,
+  "types": [
+   "TYPE_PASSANGER_STATION"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 800.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "storages": {
+   "RESOURCE_TRANSPORT_PASSANGER": 800.0
+  },
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "nameStr": "Big trolleybus station",
+  "menuSfx": "building_road_busstation",
+  "dlc": "cwc",
+  "de": "Big trolleybus station",
+  "en": "Big trolleybus station"
+ },
+ {
   "id": "cwc/Cafe",
   "nameId": 6097,
   "types": [
@@ -18152,6 +18230,29 @@
   "en": "Clothing factory"
  },
  {
+  "id": "dlc3/co_beach",
+  "nameId": 6044,
+  "types": [
+   "TYPE_ATTRACTION"
+  ],
+  "workers": 5.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 18.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 4.0,
+  "storages": {},
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "menuSfx": "building_beach",
+  "dlc": "dlc3",
+  "de": "Strand",
+  "en": "Beach"
+ },
+ {
   "id": "dlc3/coal_processing",
   "nameId": 6162,
   "types": [
@@ -20861,7 +20962,7 @@
   "consumption": {},
   "consumptionPerSecond": {},
   "livingSpace": 0,
-  "citizenAbleServe": 5.0,
+  "citizenAbleServe": 8.0,
   "qualityOfLiving": null,
   "attractiveScore": 4.0,
   "storages": {},
@@ -20998,6 +21099,30 @@
   "en": "Orphanage"
  },
  {
+  "id": "dlc3/philharmonic",
+  "nameId": null,
+  "types": [
+   "TYPE_KINO"
+  ],
+  "workers": 20.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 7.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 3.0,
+  "storages": {},
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "nameStr": "Philharmonic",
+  "menuSfx": "building_co_theatre",
+  "dlc": "dlc3",
+  "de": "Philharmonic",
+  "en": "Philharmonic"
+ },
+ {
   "id": "dlc3/police_station_big",
   "nameId": 9073,
   "types": [
@@ -21005,6 +21130,29 @@
   ],
   "workers": 45.0,
   "professors": 45.0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "storages": {},
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "menuSfx": "building_police",
+  "dlc": "dlc3",
+  "de": "Polizeirevier",
+  "en": "Police station"
+ },
+ {
+  "id": "dlc3/police_station_medium",
+  "nameId": 9073,
+  "types": [
+   "TYPE_POLICE_STATION"
+  ],
+  "workers": 25.0,
+  "professors": 25.0,
   "production": {},
   "consumption": {},
   "consumptionPerSecond": {},
@@ -22403,6 +22551,131 @@
   "en": "Flats - brick"
  },
  {
+  "id": "dlc3/residential31",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 70.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.75,
+  "attractiveScore": null,
+  "storages": {
+   "RESOURCE_TRANSPORT_PASSANGER": 70.0
+  },
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "menuSfx": "building_residential_big",
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential32",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 176.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.7,
+  "attractiveScore": null,
+  "storages": {
+   "RESOURCE_TRANSPORT_PASSANGER": 176.0
+  },
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "menuSfx": "building_residential_big",
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential33",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 255.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.75,
+  "attractiveScore": null,
+  "storages": {
+   "RESOURCE_TRANSPORT_PASSANGER": 255.0
+  },
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "menuSfx": "building_residential_big",
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential34",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 112.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.8,
+  "attractiveScore": null,
+  "storages": {
+   "RESOURCE_TRANSPORT_PASSANGER": 112.0
+  },
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "menuSfx": "building_residential_big",
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
+  "id": "dlc3/residential35",
+  "nameId": 6001,
+  "types": [
+   "TYPE_LIVING"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 220.0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": 0.75,
+  "attractiveScore": null,
+  "storages": {
+   "RESOURCE_TRANSPORT_PASSANGER": 220.0
+  },
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "menuSfx": "building_residential_big",
+  "dlc": "dlc3",
+  "de": "Wohnungen - Ziegel",
+  "en": "Flats - brick"
+ },
+ {
   "id": "dlc3/residential4",
   "nameId": 6001,
   "types": [
@@ -22989,6 +23262,28 @@
   "en": "Sewage switch"
  },
  {
+  "id": "dlc3/sight_tower",
+  "nameId": 6039,
+  "types": [
+   "TYPE_ATTRACTION"
+  ],
+  "workers": 8.0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 8.0,
+  "qualityOfLiving": null,
+  "attractiveScore": 3.5,
+  "storages": {},
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "dlc": "dlc3",
+  "de": "Aussichtsturm",
+  "en": "Sight tower"
+ },
+ {
   "id": "dlc3/silo1",
   "nameId": 6107,
   "types": [
@@ -23316,6 +23611,29 @@
   "electricWorkerFactors": {},
   "nameStr": "Statue",
   "menuSfx": "building_monument",
+  "dlc": "dlc3",
+  "de": "Statue",
+  "en": "Statue"
+ },
+ {
+  "id": "dlc3/statue_4",
+  "nameId": null,
+  "types": [
+   "TYPE_MONUMENT"
+  ],
+  "workers": 0,
+  "professors": 0,
+  "production": {},
+  "consumption": {},
+  "consumptionPerSecond": {},
+  "livingSpace": 0,
+  "citizenAbleServe": 0,
+  "qualityOfLiving": null,
+  "attractiveScore": null,
+  "storages": {},
+  "constructionResources": {},
+  "electricWorkerFactors": {},
+  "nameStr": "Statue",
   "dlc": "dlc3",
   "de": "Statue",
   "en": "Statue"

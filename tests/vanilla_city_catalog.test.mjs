@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { mergeVanillaCityResidences } from '../js/models/vanilla_city_catalog.js';
+import { mergeVanillaCityCatalog, mergeVanillaCityResidences } from '../js/models/vanilla_city_catalog.js';
 
 const rawBuildings = JSON.parse(readFileSync(new URL('../data/game/buildings_raw.json', import.meta.url)));
 const cityBuildings = JSON.parse(readFileSync(new URL('../data/city_buildings.json', import.meta.url)));
@@ -73,4 +73,48 @@ test('every eligible official raw residence has one representation', () => {
     assert.ok(remaining > 0, `missing ${raw.id}`);
     signatureCounts.set(key, remaining - 1);
   }
+});
+
+test('official police stations are matched by exact staffing and missing variants are appended', () => {
+  const rawPolice = [
+    {
+      id: 'police_small', de: 'Polizeirevier (klein)', en: 'Police station (small)',
+      types: ['TYPE_POLICE_STATION'], workers: 12, professors: 12,
+    },
+    {
+      id: 'dlc3/police_station_medium', de: 'Polizeirevier', en: 'Police station',
+      types: ['TYPE_POLICE_STATION'], workers: 25, professors: 25,
+    },
+  ];
+  const existing = [{
+    de: 'Polizei klein', en: 'police small', kind: 'Vanilla',
+    type: { de: 'Polizei', en: 'police' }, workers: 24, special: 12,
+  }];
+
+  const merged = mergeVanillaCityCatalog(existing, rawPolice);
+  assert.equal(merged.length, 2);
+  assert.equal(merged[0].gameId, 'police_small');
+  assert.equal(merged[0].workers, 24);
+  assert.equal(merged[0].special, 12);
+
+  const medium = merged.find(row => row.gameId === 'dlc3/police_station_medium');
+  assert.ok(medium);
+  assert.equal(medium.de, 'Polizeirevier (25 Helfer + 25 Polizisten)');
+  assert.equal(medium.en, 'Police station (25 workers + 25 police officers)');
+  assert.equal(medium.kind, 'Vanilla');
+  assert.deepEqual(medium.type, { de: 'Polizei', en: 'police' });
+  assert.equal(medium.workers, 50);
+  assert.equal(medium.special, 25);
+  assert.equal(medium.workdays, null);
+  assert.equal(medium.provenance.workers, 'game-file');
+  assert.equal(medium.provenance.specialStaff, 'game-file');
+  assert.equal(medium.provenance.workdays, 'unavailable');
+});
+
+test('current game catalogue exposes the reported 25 plus 25 early police station', () => {
+  const merged = mergeVanillaCityCatalog(cityBuildings, rawBuildings);
+  const medium = merged.find(row => row.gameId === 'dlc3/police_station_medium');
+  assert.ok(medium, 'dlc3/police_station_medium is missing from the city planner catalogue');
+  assert.equal(medium.workers, 50);
+  assert.equal(medium.special, 25);
 });

@@ -99,7 +99,7 @@ import { unpoweredBuildingAlerts } from './models/power_alerts.js?v=6';
 import { missingUtilityAlerts, fullWasteStorageAlerts } from './models/utility_alerts.js?v=5';
 import { largestChainForWorkforce } from './models/workforce_plan.js?v=3';
 import { cityUtilityPlan } from './models/city_utilities.js?v=3';
-import { mergeVanillaCityResidences } from './models/vanilla_city_catalog.js?v=5';
+import { mergeVanillaCityCatalog } from './models/vanilla_city_catalog.js?v=9';
 import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';
 import { buildingHeightSamples } from './models/water_level.js?v=3';
 import { transitReachFrom } from './models/transit_reach.js?v=4';
@@ -565,7 +565,7 @@ async function loadData() {
   DATA = {
     resources: res.resources, defaults: res.defaults,
     prodSets: { sheet: prod, game: prodGame },
-    cityBuildings: mergeVanillaCityResidences(city, rawBuildings),
+    cityBuildings: mergeVanillaCityCatalog(city, rawBuildings),
     rawBuildings, rawVehicles, workshopIndex, workshopBuildings: [], workshopVehicles: [],
     localWorkshopBuildings: [], workshopProduction: [],
     // Game-only rail vehicles join the pool; hard-attached tenders stay nested.
