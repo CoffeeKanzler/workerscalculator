@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3801073145",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-14T09:56:03.421Z",
+  "buildings": [
+    {
+      "id": "3801073145/abandonedbuilding",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.55,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {
+        "mcomponents": 10
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "abandonedbuilding",
+      "workshopId": "3801073145",
+      "modPath": "abandonedbuilding",
+      "footprint": {
+        "boxes": [
+          [
+            -13.34,
+            -48.04,
+            0.94,
+            0.4
+          ],
+          [
+            -13.34,
+            -48.04,
+            0.94,
+            47.93
+          ],
+          [
+            -13.9,
+            -43.31,
+            0.75,
+            43.22
+          ],
+          [
+            -13.34,
+            -2.42,
+            0.94,
+            47.93
+          ]
+        ],
+        "height": 23.16
+      }
+    }
+  ],
+  "vehicles": []
+}

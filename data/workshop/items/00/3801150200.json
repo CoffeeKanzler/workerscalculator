@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3801150200",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-14T09:56:03.432Z",
+  "buildings": [
+    {
+      "id": "3801150200/MOORWERK_Zentralheizung_1928",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {
+        "heat": 200
+      },
+      "consumption": {
+        "oil": 0.15
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 450,
+        "gravel": 6,
+        "concrete": 9,
+        "bricks": 17,
+        "boards": 4,
+        "steel": 10,
+        "mcomponents": 1.4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "MOORWERK_Oelzentralheizung_1928",
+      "workshopId": "3801150200",
+      "modPath": "MOORWERK_Zentralheizung_1928",
+      "footprint": {
+        "boxes": [
+          [
+            -3,
+            -6.05,
+            10.05,
+            4
+          ],
+          [
+            9.95,
+            3.95,
+            10.05,
+            4.05
+          ],
+          [
+            -2.8,
+            -1.95,
+            2.8,
+            4.05
+          ],
+          [
+            -3.76,
+            0.6,
+            -0.48,
+            1.6
+          ],
+          [
+            -1.95,
+            0.54,
+            0.85,
+            3.38
+          ],
+          [
+            -2.93,
+            -5.84,
+            0.3,
+            0.66
+          ],
+          [
+            -3,
+            -6,
+            4.5,
+            4.3
+          ],
+          [
+            -1.55,
+            4.18,
+            1.57,
+            4.23
+          ],
+          [
+            2.82,
+            -0.65,
+            2.87,
+            0.59
+          ],
+          [
+            -2.88,
+            -0.65,
+            -2.83,
+            0.59
+          ],
+          [
+            -2.88,
+            1.59,
+            -2.83,
+            2.81
+          ]
+        ],
+        "height": 8.5
+      }
+    }
+  ],
+  "vehicles": []
+}
