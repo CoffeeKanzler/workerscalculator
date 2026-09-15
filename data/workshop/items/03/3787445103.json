@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3787445103",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-15T09:29:41.585Z",
+  "buildings": [
+    {
+      "id": "3787445103/free_quay",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150,
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_OIL": 1,
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Free Quay",
+      "workshopId": "3787445103",
+      "modPath": "free_quay",
+      "footprint": {
+        "boxes": [
+          [
+            12.11,
+            -7.69,
+            14.72,
+            7.77
+          ],
+          [
+            4.65,
+            -1.65,
+            12.13,
+            1.8
+          ],
+          [
+            14.46,
+            28.28,
+            14.75,
+            28.56
+          ],
+          [
+            14.46,
+            7.14,
+            14.75,
+            7.42
+          ],
+          [
+            14.46,
+            -7.34,
+            14.75,
+            -7.06
+          ],
+          [
+            12.19,
+            7.09,
+            12.48,
+            7.38
+          ],
+          [
+            12.19,
+            -7.39,
+            12.48,
+            -7.1
+          ],
+          [
+            14.46,
+            -28.42,
+            14.75,
+            -28.13
+          ],
+          [
+            12.11,
+            -7.69,
+            14.72,
+            7.77
+          ],
+          [
+            4.65,
+            -1.65,
+            12.13,
+            1.8
+          ],
+          [
+            14.46,
+            28.28,
+            14.75,
+            28.56
+          ],
+          [
+            14.46,
+            7.14,
+            14.75,
+            7.42
+          ],
+          [
+            14.46,
+            -7.34,
+            14.75,
+            -7.06
+          ],
+          [
+            12.19,
+            7.09,
+            12.48,
+            7.38
+          ],
+          [
+            12.19,
+            -7.39,
+            12.48,
+            -7.1
+          ],
+          [
+            14.46,
+            -28.42,
+            14.75,
+            -28.13
+          ]
+        ],
+        "height": 21.05
+      }
+    },
+    {
+      "id": "3787445103/quay_aggregate_loading",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Aggregate Loading Quay",
+      "workshopId": "3787445103",
+      "modPath": "quay_aggregate_loading",
+      "footprint": {
+        "boxes": [
+          [
+            -12.05,
+            -63.73,
+            19.54,
+            24.75
+          ],
+          [
+            -11.25,
+            -56.78,
+            16.87,
+            -52.95
+          ],
+          [
+            -12.18,
+            -5.17,
+            -0.89,
+            17.93
+          ],
+          [
+            -5.19,
+            -20.39,
+            35.77,
+            10.78
+          ]
+        ],
+        "height": 23.93
+      }
+    },
+    {
+      "id": "3787445103/quay_aggregate_unloading",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Aggregate Unloading Quay",
+      "workshopId": "3787445103",
+      "modPath": "quay_aggregate_unloading",
+      "footprint": {
+        "boxes": [
+          [
+            -12.05,
+            -44.18,
+            19.54,
+            44.28
+          ],
+          [
+            -11.25,
+            -37.23,
+            16.87,
+            -33.4
+          ],
+          [
+            4.93,
+            -16.19,
+            44.82,
+            27.46
+          ],
+          [
+            -13.69,
+            16.7,
+            19.09,
+            40.42
+          ],
+          [
+            13.04,
+            23.17,
+            19.31,
+            34.2
+          ]
+        ],
+        "height": 36.39
+      }
+    },
+    {
+      "id": "3787445103/quay_general",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1,
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cargo Quay",
+      "workshopId": "3787445103",
+      "modPath": "quay_general",
+      "footprint": {
+        "boxes": [
+          [
+            -12.05,
+            -44.18,
+            19.54,
+            44.28
+          ],
+          [
+            -11.25,
+            -37.23,
+            16.87,
+            -33.4
+          ],
+          [
+            4.93,
+            -16.19,
+            44.82,
+            27.46
+          ]
+        ],
+        "height": 36.39
+      }
+    },
+    {
+      "id": "3787445103/quay_liquid",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_SHIP"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pumping Quay",
+      "workshopId": "3787445103",
+      "modPath": "quay_liquid",
+      "footprint": {
+        "boxes": [
+          [
+            -12.05,
+            -63.73,
+            19.54,
+            24.73
+          ],
+          [
+            -8.83,
+            -56.78,
+            16.87,
+            -52.95
+          ],
+          [
+            13.51,
+            2.81,
+            22.14,
+            8.55
+          ],
+          [
+            8.86,
+            -9.05,
+            17.96,
+            13.14
+          ],
+          [
+            -1.48,
+            -51.37,
+            14.52,
+            -5.74
+          ],
+          [
+            -16.88,
+            -49.59,
+            8.33,
+            -26.78
+          ]
+        ],
+        "height": 21.9
+      }
+    }
+  ],
+  "vehicles": []
+}

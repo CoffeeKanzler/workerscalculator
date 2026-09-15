@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3801853142",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-15T09:29:41.618Z",
+  "buildings": [
+    {
+      "id": "3801853142/MOORWERK_CAFE_ACHTECK",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "MOORWERK_CAFE_ACHTECK",
+      "workshopId": "3801853142",
+      "modPath": "MOORWERK_CAFE_ACHTECK",
+      "footprint": {
+        "boxes": [
+          [
+            -1.62,
+            -1.32,
+            1.62,
+            1.92
+          ],
+          [
+            -1.53,
+            -1.9,
+            1.53,
+            1.87
+          ],
+          [
+            -2.01,
+            -2.09,
+            2.01,
+            2.09
+          ]
+        ],
+        "height": 3.64
+      }
+    }
+  ],
+  "vehicles": []
+}
