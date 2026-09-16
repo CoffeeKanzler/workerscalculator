@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3802069210",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-16T09:20:55.134Z",
+  "buildings": [
+    {
+      "id": "3802069210/pripyat_sign",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¡ÑÐµÐ»Ð° ÐÑÐ¸Ð¿ÑÑÑ | Pripyat sign",
+      "workshopId": "3802069210",
+      "modPath": "pripyat_sign",
+      "footprint": {
+        "boxes": [
+          [
+            -1.32,
+            -0.23,
+            7.09,
+            0.23
+          ],
+          [
+            -2.7,
+            -1.18,
+            7.75,
+            1.18
+          ],
+          [
+            -1.14,
+            -0.08,
+            6.82,
+            0.08
+          ],
+          [
+            -0.99,
+            0.35,
+            1.09,
+            0.47
+          ]
+        ],
+        "height": 4.14
+      }
+    }
+  ],
+  "vehicles": []
+}

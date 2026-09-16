@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3802050299",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-16T09:20:55.104Z",
+  "buildings": [
+    {
+      "id": "3802050299/41_white_grid_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 0.0001
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "white_grid_1",
+      "workshopId": "3802050299",
+      "modPath": "41_white_grid_1",
+      "footprint": {
+        "boxes": [
+          [
+            -0.09,
+            -8.89,
+            2.09,
+            6.98
+          ]
+        ],
+        "height": 0.08
+      }
+    }
+  ],
+  "vehicles": []
+}
