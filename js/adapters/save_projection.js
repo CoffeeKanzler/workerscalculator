@@ -12,7 +12,7 @@ import {
   summarizeResidenceDetails,
   summarizeResidenceOccupancy,
   summarizeVehicleLines,
-} from '../save_model.js?v=23';
+} from '../save_model.js?v=26';
 import {
   createEvidence,
   createEvidenceCollection,
@@ -356,6 +356,7 @@ export function buildImportedPlanning(sourceName, settlements, buildings, member
   events = null,
   roadNetwork = null,
   railNetwork = null,
+  airplaneNetwork = null,
   terrainWater = null,
   rawBuildings = [],
   workshopBuildings = [],
@@ -600,6 +601,7 @@ export function buildImportedPlanning(sourceName, settlements, buildings, member
       mapClimate,
       roadNetwork,
       railNetwork,
+      airplaneNetwork,
       terrainWater,
       settlementCount: occupiedSettlements.length,
       sourceSettlementCount: settlements.length,

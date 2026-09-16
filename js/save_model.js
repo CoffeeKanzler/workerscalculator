@@ -442,7 +442,7 @@ export function filterConstructionProjects(projects = [], {
 
 export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
   width = 760, height = 480, padding = 18, focusBuildingIndex = null, roadNetwork = null,
-  railNetwork = null, pedestrianNetwork = null,
+  railNetwork = null, airplaneNetwork = null, pedestrianNetwork = null,
   powerHighNetwork = null, powerLowNetwork = null,
   terrainWater = null, pollutionLayer = null,
   footprints = null,
@@ -459,7 +459,7 @@ export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
     maxZ = Math.max(maxZ, point.z);
   };
   located.forEach(includeExtent);
-  for (const network of [roadNetwork, railNetwork, pedestrianNetwork,
+  for (const network of [roadNetwork, railNetwork, airplaneNetwork, pedestrianNetwork,
     powerHighNetwork, powerLowNetwork]) {
     for (const edge of network?.edges ?? []) {
       includeExtent(network.nodes?.[edge.from]);
@@ -501,6 +501,7 @@ export function buildSchematicMap(buildings, scopes, criminalityOutliers, {
     pollution: projectRaster(pollutionLayer),
     roads: projectNetwork(roadNetwork),
     rails: projectNetwork(railNetwork),
+    runways: projectNetwork(airplaneNetwork),
     pedestrian: projectNetwork(pedestrianNetwork),
     powerHigh: projectNetwork(powerHighNetwork),
     powerLow: projectNetwork(powerLowNetwork),

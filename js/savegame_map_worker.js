@@ -6,6 +6,7 @@ import { parseRoadNetwork, parseHeightmapWater, parsePollution } from './savegam
 const sources = [
   ['road', 'roadNetwork', buffer => parseRoadNetwork(buffer)],
   ['rail', 'railNetwork', buffer => parseRoadNetwork(buffer)],
+  ['airplane', 'airplaneNetwork', buffer => parseRoadNetwork(buffer)],
   ['pedestrian', 'pedestrianNetwork', buffer => parseRoadNetwork(buffer)],
   ['cableway', 'cablewayNetwork', buffer => parseRoadNetwork(buffer)],
   ['powerHigh', 'powerHighNetwork', buffer => parseRoadNetwork(buffer)],

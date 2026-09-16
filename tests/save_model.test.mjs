@@ -718,6 +718,19 @@ test('schematic map projects exact saved rail centerlines with shared bounds', (
   assert.equal(result.roads.length, 0);
 });
 
+test('schematic map projects the saved airplane network as runways', () => {
+  const result = buildSchematicMap([{ index: 1, x: 0, z: 0 }], [], null, {
+    width: 100, height: 100, padding: 10,
+    airplaneNetwork: {
+      nodes: [{ id: 0, x: -40, z: -10 }, { id: 1, x: 40, z: 10 }],
+      edges: [{ id: 2, from: 0, to: 1, length: 82, points: [] }],
+    },
+  });
+  assert.deepEqual(result.runways, [{ id: 2, length: 82, points: [
+    { mapX: 10, mapY: 90 }, { mapX: 90, mapY: 10 },
+  ] }]);
+});
+
 test('schematic map projects exact saved pedestrian centerlines with shared bounds', () => {
   const result = buildSchematicMap([{ index: 1, x: 0, z: 0 }], [], null, {
     width: 100, height: 100, padding: 10,

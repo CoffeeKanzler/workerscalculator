@@ -34,8 +34,30 @@ try {
   await page.waitForTimeout(300);
   const text = await row.innerText();
   if (!/68/.test(text) || !/85\s*%/.test(text)) throw new Error(`selected row is wrong: ${text}`);
+
+  await plan.locator('tbody tr').first().locator('select').nth(0)
+    .selectOption({ label: 'Kleine Wohnhäuser' });
+  await page.waitForTimeout(250);
+  const smallBuilding = plan.locator('tbody tr').first().locator('select').nth(1);
+  const choices = (await smallBuilding.locator('option[value]').evaluateAll(options => options.map(option => ({
+    value: option.value, text: option.textContent ?? '',
+  })))).filter(option => option.text.includes('20 EW') && option.text.includes('60% Wohnqualität'));
+  if (choices.length !== 2) throw new Error(`expected two 60-percent DLC houses, got ${choices.length}`);
+  for (const [index, choice] of choices.entries()) {
+    if (!choice?.value) throw new Error(`60-percent house ${index + 1} has no selectable option`);
+    await smallBuilding.selectOption(choice.value);
+    await page.waitForTimeout(250);
+    const selected = await row.innerText();
+    if (!/20/.test(selected) || !/60\s*%/.test(selected)) {
+      throw new Error(`60-percent house ${index + 1} selected the wrong residence: ${selected}`);
+    }
+    const summary = await page.locator('.totalsbox').filter({ hasText: 'Arbeiterüberschuss' }).first().innerText();
+    if (/Einige Bau- oder Versorgungswerte sind nicht verfügbar/.test(summary)) {
+      throw new Error(`60-percent house ${index + 1} still marks construction or utility facts unavailable`);
+    }
+  }
   if (errors.length) throw new Error(errors.join('\n'));
-  console.log('ok: the 68-person 85-percent vanilla prefab is selectable under medium residences');
+  console.log('ok: vanilla residences including the two 60-percent DLC houses expose planning facts');
 } finally {
   await browser.close();
 }

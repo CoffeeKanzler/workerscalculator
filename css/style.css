@@ -397,6 +397,7 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .republic-map .map-pollution image { image-rendering: auto; }
 .republic-map .map-rails path { fill: none; stroke: var(--accent2); stroke-width: 1.15; stroke-linecap: round; stroke-linejoin: round; opacity: .78; vector-effect: non-scaling-stroke; }
 .republic-map .map-roads path { fill: none; stroke: var(--muted); stroke-width: .9; stroke-linecap: round; stroke-linejoin: round; opacity: .55; vector-effect: non-scaling-stroke; }
+.republic-map .map-runways path { fill: none; stroke: var(--blueprint); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; opacity: .82; vector-effect: non-scaling-stroke; }
 .republic-map .map-pedestrian path { fill: none; stroke: #e7bd69; stroke-width: .7; stroke-linecap: round; stroke-linejoin: round; opacity: .72; vector-effect: non-scaling-stroke; }
 .republic-map .map-buildings circle { fill: var(--muted); opacity: .52; }
 .republic-map .map-selected circle { fill: var(--accent); opacity: .9; }
@@ -419,6 +420,7 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-legend i { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }
 .map-legend i.road { width: 14px; height: 2px; border-radius: 0; background: var(--muted); }
 .map-legend i.rail { width: 14px; height: 4px; border-radius: 0; border-top: 1px solid var(--accent2); border-bottom: 1px solid var(--accent2); background: transparent; }
+.map-legend i.runway { width: 14px; height: 5px; border-radius: 0; background: var(--blueprint); }
 .map-legend i.pedestrian { width: 14px; height: 2px; border-radius: 0; background: #e7bd69; }
 /* Drawn dashed because the map draws low tension dashed and high tension solid;
    a solid swatch would describe only half the layer. */
@@ -427,6 +429,7 @@ table.selectable tbody tr.selected td:first-child { box-shadow: inset 3px 0 0 va
 .map-layer-menu .layer-swatch { display: inline-block; width: 12px; height: 3px; margin-right: 4px; vertical-align: middle; border-radius: 1px; }
 .map-layer-menu .layer-swatch.roads { background: var(--muted); }
 .map-layer-menu .layer-swatch.rails { background: var(--accent2); }
+.map-layer-menu .layer-swatch.runways { background: var(--blueprint); height: 5px; }
 .map-layer-menu .layer-swatch.pedestrian { background: #e7bd69; }
 .map-layer-menu .layer-swatch.power { background: var(--power); }
 .map-layer-menu .layer-swatch.transport { background: var(--focus); }

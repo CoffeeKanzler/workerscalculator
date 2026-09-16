@@ -63,7 +63,109 @@ ECON_TOKENS = {
     'ELETRIC_CONSUMPTION_HEATING_WORKER_FACTOR',
 }
 
+# Exact implementation of BuildingResourceCostAuto. The game derives these
+# construction quantities from the bounding boxes of the model nodes selected
+# by each construction phase; the multipliers below are the game's own
+# resource coefficients. Keeping the calculation here means DLC buildings that
+# only use $COST_RESOURCE_AUTO no longer lose their complete construction bill
+# during extraction.
+AUTO_COST_FIELDS = (
+    'workers', 'concrete', 'gravel', 'asphalt', 'bricks', 'boards', 'steel',
+    'mcomponents', 'ecomponents', 'prefabpanels',
+)
+AUTO_COST_RULES = {
+    # ground, walls, volume, followed by AUTO_COST_FIELDS coefficients
+    'ground': (1, 0, .08, 150, 13, 10, 0, 0, 0, 0, 0, 0, 0),
+    'ground_asphalt': (1, 0, .08, 150, 13, 10, 8, 0, 0, 0, 0, 0, 0),
+    'wall_concrete': (0, 1, .3, 100, 22, 0, 0, 0, 0, 5, 0, 0, 0),
+    'wall_panels': (0, 1, .3, 65, 0, 0, 0, 0, 0, 1, 0, 0, 10),
+    'wall_brick': (0, 1, .3, 140, 0, 0, 0, 12, 4, 1.5, 0, 0, 0),
+    'wall_steel': (0, 1, .3, 90, 0, 0, 0, 0, 0, 8, 0, 0, 0),
+    'wall_wood': (0, 1, .3, 90, 0, 0, 0, 0, 10, 0, 0, 0, 0),
+    'tech_steel': (0, .25, .8, 170, 0, 0, 0, 0, 0, 6, 1.25, 0, 0),
+    'techelectro_steel': (0, .25, .8, 190, 0, 0, 0, 0, 0, 5, .85, .55, 0),
+    'electro_steel': (0, .25, .8, 170, 0, 0, 0, 0, 0, 6, 0, 1.25, 0),
+    'roof_woodbrick': (1, 0, .05, 87, 0, 0, 0, 2, 10, 0, 0, 0, 0),
+    'roof_steel': (1, 0, .05, 95, 0, 0, 0, 0, 0, 7, 0, 0, 0),
+    'roof_woodsteel': (1, 0, .05, 85, 0, 0, 0, 0, 5, 3, 0, 0, 0),
+}
+
 TYPE_RE = re.compile(r'^\$(TYPE_[A-Z_]+|SUBTYPE_[A-Z_]+|CIVIL_BUILDING)\b')
+
+
+def load_building_boxes(path):
+    """Read the game's building.bbox node extents."""
+    try:
+        data = open(path, 'rb').read()
+    except OSError:
+        return {}
+    if len(data) < 4:
+        return {}
+    count = struct.unpack_from('<I', data)[0]
+    if len(data) != 4 + count * 540:
+        return {}
+    boxes = {}
+    offset = 4
+    for _ in range(count):
+        name, _, xmin, ymin, zmin, xmax, ymax, zmax = struct.unpack_from(
+            '<512sIffffff', data, offset)
+        offset += 540
+        name = name.split(b'\0', 1)[0].decode('ascii', errors='replace')
+        boxes[name] = (xmax - xmin, ymax - ymin, zmax - zmin)
+    return boxes
+
+
+def auto_construction_resources(text, bbox_path):
+    """Evaluate $COST_RESOURCE_AUTO exactly from an INI and its node boxes."""
+    boxes = load_building_boxes(bbox_path)
+    resources = {}
+    nodes = set()
+    autos = {}
+
+    def flush():
+        for cost_type, multiplier in autos.items():
+            rule = AUTO_COST_RULES.get(cost_type)
+            if not rule:
+                continue
+            volume = ground = walls = 0.0
+            for node in nodes:
+                if node not in boxes:
+                    continue
+                x, y, z = boxes[node]
+                volume += x * y * z
+                ground += x * z
+                walls += 2 * (x + z) * y
+            ground /= 300.0
+            walls /= 300.0
+            volume /= 3000.0
+            factor = (ground * rule[0] + walls * rule[1] + volume * rule[2]) * multiplier * .5
+            for field, coefficient in zip(AUTO_COST_FIELDS, rule[3:]):
+                amount = factor * coefficient
+                if amount > 0:
+                    resources[field] = resources.get(field, 0.0) + amount
+
+    for raw in text.splitlines():
+        parts = raw.strip().split()
+        if not parts:
+            continue
+        key, args = parts[0], parts[1:]
+        try:
+            if key == '$COST_WORK':
+                flush()
+                nodes, autos = set(), {}
+            elif key == '$COST_WORK_BUILDING_NODE' and args:
+                nodes.add(args[0])
+            elif key == '$COST_WORK_BUILDING_ALL':
+                nodes.update(boxes)
+            elif key == '$COST_WORK_BUILDING_KEYWORD' and args:
+                prefix = args[0].removeprefix('$')
+                nodes.update(name for name in boxes if prefix == 'all' or name.startswith(prefix))
+            elif key == '$COST_RESOURCE_AUTO' and len(args) >= 2:
+                autos[args[0]] = float(args[1].lstrip(','))
+        except ValueError:
+            continue
+    flush()
+    return resources
 
 
 def parse_building(path, ident=None, keep_all=False):
@@ -80,6 +182,9 @@ def parse_building(path, ident=None, keep_all=False):
         text = open(path, encoding='utf-8', errors='replace').read()
     except OSError:
         return None
+    b['constructionResources'].update(auto_construction_resources(
+        text, os.path.splitext(path)[0] + '.bbox' if os.path.basename(path) != 'building.ini'
+        else os.path.join(os.path.dirname(path), 'building.bbox')))
     for raw in text.splitlines():
         line = raw.strip()
         if not line.startswith('$'):

@@ -137,6 +137,14 @@ try {
     const painted = Number(await canvas.getAttribute('data-map-marker-count'));
     check(painted > 500, `the map drew almost no markers (${painted})`);
 
+    const runwayCount = Number(await canvas.getAttribute('data-map-runway-count'));
+    check(runwayCount > 0, `saved airplane.bin produced no visible taxiway/runway network (${runwayCount})`);
+    const runwayToggle = page.locator('[data-map-layer="runways"]');
+    check(await runwayToggle.count() === 1, 'the map exposes no taxiway/runway layer control');
+    if (await runwayToggle.count()) {
+      check(await runwayToggle.isChecked(), 'the taxiway/runway layer is not visible by default');
+    }
+
     // The categories are what make the map readable rather than a field of
     // identical dots, so a map where everything is 'other' is a failure even
     // though it draws perfectly well.

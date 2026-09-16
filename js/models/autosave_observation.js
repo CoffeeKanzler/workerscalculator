@@ -13,7 +13,7 @@ const TRANSIENT_KEYS = [
 // named snapshot, which is restored separately. Re-serialising it on every
 // edit would make each keystroke pay for data no autosave consumer reads.
 const HEAVY_MAP_KEYS = [
-  'roadNetwork', 'railNetwork', 'pedestrianNetwork', 'terrainWater', 'pollutionLayer',
+  'roadNetwork', 'railNetwork', 'airplaneNetwork', 'pedestrianNetwork', 'terrainWater', 'pollutionLayer',
 ];
 
 export function hasHeavyMapData(saveImport) {

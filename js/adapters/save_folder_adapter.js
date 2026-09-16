@@ -1,6 +1,6 @@
-import { resolveVehicleModels } from '../fleet.js?v=11';
-import { latestProductivity } from '../save_model.js?v=23';
-import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=30';
+import { resolveVehicleModels } from '../fleet.js?v=14';
+import { latestProductivity } from '../save_model.js?v=26';
+import { buildImportedPlanning, projectSaveToRepublicModel } from './save_projection.js?v=33';
 import { readWorkshopIndex } from '../models/workshop_index.js?v=2';
 
 const REQUIRED_FILES = ['namepoints.bin', 'buildings_game.bin'];
@@ -19,6 +19,7 @@ const CORE_BINARY_FILES = {
 const DEFERRED_MAP_FILES = {
   road: 'road.bin',
   rail: 'rail.bin',
+  airplane: 'airplane.bin',
   pedestrian: 'pedestrianway.bin',
   cableway: 'cableway.bin',
   powerHigh: 'electro_high.bin',
@@ -206,7 +207,7 @@ export function parseSaveInWorker(payload, {
 
 export function parseMapLayersInWorker(files, {
   WorkerClass = globalThis.Worker,
-  workerUrl = new URL('../savegame_map_worker.js?v=15', import.meta.url),
+  workerUrl = new URL('../savegame_map_worker.js?v=18', import.meta.url),
   onProgress,
   // Sea level comes from the buildings' own saved heights, which the map files
   // alone cannot supply.
@@ -264,6 +265,7 @@ export async function importSaveFolder(fileList, {
     ...Object.fromEntries(payloadEntries),
     road: null,
     rail: null,
+    airplane: null,
     pedestrian: null,
     heightmap: null,
     pollution: null,
@@ -326,6 +328,7 @@ export async function importSaveFolder(fileList, {
       mapClimate: parsed.mapClimate,
       roadNetwork: parsed.roadNetwork,
       railNetwork: parsed.railNetwork,
+      airplaneNetwork: parsed.airplaneNetwork,
       terrainWater: parsed.terrainWater,
       rawBuildings,
       workshopBuildings: workshop.workshopBuildings,

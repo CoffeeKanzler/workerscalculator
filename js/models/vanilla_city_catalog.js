@@ -19,6 +19,46 @@ const UNKNOWN_FIELDS = Object.freeze([
   'ecomponents', 'mcomponents',
 ]);
 
+const CONSTRUCTION_FIELDS = Object.freeze({
+  workers: 'workdays', gravel: 'gravel', bricks: 'bricks', steel: 'steel',
+  concrete: 'concrete', asphalt: 'asphalt', boards: 'boards',
+  prefabpanels: 'panels', ecomponents: 'ecomponents', mcomponents: 'mcomponents',
+});
+
+// The utility stores created by the current game for these newly added DLC3
+// assets. Unlike the spreadsheet fallback, these figures come from actual
+// game/save structures: electricity and heat capacities plus the game's
+// per-person/per-position utility rules.
+const GAME_UTILITY_FACTS = Object.freeze({
+  'dlc3/police_station_medium': Object.freeze({
+    power: 4.5, maxKW: 75, water: 1, hotwater: 3.5, waste: 22.5,
+  }),
+  'dlc3/residential1': Object.freeze({
+    power: 3, maxKW: 50, water: 0.9, hotwater: 1.4, waste: 0,
+  }),
+  'dlc3/residential_wood1': Object.freeze({
+    power: 3, maxKW: 50, water: 0.9, hotwater: 1.4, waste: 0,
+  }),
+});
+
+const addGamePlanningFacts = (row, raw) => {
+  const hasConstructionBill = Object.keys(raw?.constructionResources ?? {}).length > 0;
+  for (const [resource, field] of Object.entries(CONSTRUCTION_FIELDS)) {
+    const value = raw?.constructionResources?.[resource];
+    if (!Number.isFinite(value) && !hasConstructionBill) continue;
+    // The game stores only non-zero resources in a completed construction
+    // bill. Once that bill exists, an absent material is an exact zero rather
+    // than an unavailable value.
+    row[field] = Number.isFinite(value) ? value : 0;
+    row.provenance[field] = 'game-file';
+  }
+  for (const [field, value] of Object.entries(GAME_UTILITY_FACTS[raw?.id] ?? {})) {
+    row[field] = value;
+    row.provenance[field] = 'game-file';
+  }
+  return row;
+};
+
 const normalize = value => String(value ?? '')
   .trim()
   .toLocaleLowerCase('de-DE')
@@ -66,7 +106,7 @@ const fallbackResidence = raw => {
     row[field] = null;
     provenance[field] = 'unavailable';
   }
-  return row;
+  return addGamePlanningFacts(row, raw);
 };
 
 const POLICE_TYPE = Object.freeze({ de: 'Polizei', en: 'police' });
@@ -116,7 +156,7 @@ const fallbackPoliceStation = raw => {
     row[field] = null;
     provenance[field] = 'unavailable';
   }
-  return row;
+  return addGamePlanningFacts(row, raw);
 };
 
 export function mergeVanillaCityResidences(cityBuildings, rawBuildings) {

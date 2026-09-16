@@ -150,6 +150,7 @@ export function mountRepublicLeafletMap(container, options) {
     radiation: layerGroup(),
     roads: layerGroup(),
     rails: layerGroup(),
+    runways: layerGroup(),
     pedestrian: layerGroup(),
     power: layerGroup(),
     transport: layerGroup(),
@@ -192,6 +193,10 @@ export function mountRepublicLeafletMap(container, options) {
   addNetwork('rails', model.rails, {
     color: palette.accent2, weight: 1.5, opacity: 0.8,
   });
+  addNetwork('runways', model.runways, {
+    color: palette.runways, weight: 4, opacity: 0.82,
+  });
+  container.dataset.mapRunwayCount = String(model.runways.length);
   addNetwork('pedestrian', model.pedestrian, {
     color: palette.pedestrian, weight: 1, opacity: 0.76,
   });
@@ -387,7 +392,7 @@ export function mountRepublicLeafletMap(container, options) {
     container.dataset.mapCenter = `${center.lat.toFixed(4)},${center.lng.toFixed(4)}`;
   }
 
-  for (const key of ['water', 'pollution', 'radiation', 'roads', 'rails', 'pedestrian', 'power', 'transport', 'scopes', 'walkReach']) {
+  for (const key of ['water', 'pollution', 'radiation', 'roads', 'rails', 'runways', 'pedestrian', 'power', 'transport', 'scopes', 'walkReach']) {
     updateLayer(key);
   }
   groups.footprints.addTo(map);

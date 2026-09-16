@@ -1,4 +1,4 @@
-import { STRINGS } from './i18n.js?v=226';
+import { STRINGS } from './i18n.js?v=229';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
 import { parseLiveStatsFile } from './live_stats.js?v=4';
 import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=55';
@@ -14,7 +14,7 @@ import {
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
-} from './train.js?v=30';
+} from './train.js?v=31';
 import {
   createIndexedDbObservationStore,
   createIndexedDbStatsStore,
@@ -49,12 +49,12 @@ import {
 } from './city_planning.js?v=8';
 import { statsStateForImport } from './models/import_stats.js?v=2';
 import { importBannerState, importControls } from './ui/import_banner.js';
-import { observationForAutosave } from './models/autosave_observation.js';
+import { observationForAutosave } from './models/autosave_observation.js?v=3';
 import {
   loadCityPlanningDraft,
   saveCityPlanningDraft,
 } from './storage/city_planning_draft.js?v=3';
-import { mapLayerReport } from './models/map_layer_report.js?v=4';
+import { mapLayerReport } from './models/map_layer_report.js?v=7';
 import {
   CATEGORY_MARKS, buildTypeCategoryIndex, categoryForSaveType,
 } from './models/building_category.js?v=6';
@@ -64,7 +64,7 @@ import {
   productionBufferStatus, productionBufferAlerts, summarizeOccupiedBuildingPollution,
   buildSchematicMap, activeConstructionProjects, filterConstructionProjects,
   filterCitizenDiagnostics, isBorderPostType, isFrontierBuilding, isExternalAirLinkType,
-} from './save_model.js?v=44';
+} from './save_model.js?v=47';
 import {
   buildRepublicModel, compareObservedSnapshots, republicAlerts, visibleRepublicAlerts,
   alertCategory, alertGroup, filterRepublicAlerts, groupRepublicAlerts,
@@ -88,7 +88,7 @@ import {
   destroyTimeSeriesCharts, mountTimeSeriesChart, resetChartGroup,
 } from './ui/time_series_chart.js?v=5';
 import { createVirtualTable } from './ui/virtual_table.js?v=1';
-import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=37';
+import { mountRepublicLeafletMap } from './ui/leaflet_republic_map.js?v=40';
 import { workerAccessAvailability } from './models/access_graph.js?v=20';
 import { mountWorkerAccessGraph } from './ui/access_graph.js?v=20';
 import { buildWorkerAccessEvidence } from './models/worker_access_evidence.js?v=17';
@@ -99,7 +99,7 @@ import { unpoweredBuildingAlerts } from './models/power_alerts.js?v=6';
 import { missingUtilityAlerts, fullWasteStorageAlerts } from './models/utility_alerts.js?v=5';
 import { largestChainForWorkforce } from './models/workforce_plan.js?v=3';
 import { cityUtilityPlan } from './models/city_utilities.js?v=3';
-import { mergeVanillaCityCatalog } from './models/vanilla_city_catalog.js?v=9';
+import { mergeVanillaCityCatalog } from './models/vanilla_city_catalog.js?v=12';
 import { buildVehicleRoutes } from './models/vehicle_routes.js?v=3';
 import { buildingHeightSamples } from './models/water_level.js?v=3';
 import { transitReachFrom } from './models/transit_reach.js?v=4';
@@ -118,14 +118,14 @@ import {
   rankUsedMarketBorderRoutes,
   paginateVehicleOpportunities, shareSafeSaveImport, vehicleCategoryGroup,
   vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=26';
+} from './fleet.js?v=29';
 import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=30';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=30';
-import { bootstrapRuntime } from './bootstrap.js?v=16';
+} from './adapters/save_folder_adapter.js?v=33';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=33';
+import { bootstrapRuntime } from './bootstrap.js?v=17';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
@@ -2787,7 +2787,7 @@ function renderSaveImport() {
   const sourceFiles = {
     namepoints: 'namepoints.bin', buildings: 'buildings_game.bin', workers: 'workers.bin',
     vehicles: 'vehicles.bin', usedVehicles: 'usedveh.bin', lines: 'lines.bin',
-    road: 'road.bin', rail: 'rail.bin', pedestrian: 'pedestrianway.bin',
+    road: 'road.bin', rail: 'rail.bin', airplane: 'airplane.bin', pedestrian: 'pedestrianway.bin',
     cableway: 'cableway.bin',
     powerHigh: 'electro_high.bin', powerLow: 'electro_low.bin',
     heightmap: 'heightmap.dds', pollution: 'pollution.bin',
@@ -3529,6 +3529,7 @@ function applyStandaloneMapVisibility(svg, layers, buildingFilter = '', legend =
   setGroupVisible('.map-pollution', layers.pollution);
   setGroupVisible('.map-roads', layers.roads);
   setGroupVisible('.map-rails', layers.rails);
+  setGroupVisible('.map-runways', layers.runways);
   setGroupVisible('.map-pedestrian', layers.pedestrian);
   setGroupVisible('.map-scopes', layers.scopes);
 
@@ -3556,6 +3557,7 @@ function applyStandaloneMapVisibility(svg, layers, buildingFilter = '', legend =
   if (legend) {
     const visibility = {
       water: layers.water, pollution: layers.pollution, roads: layers.roads, rails: layers.rails,
+      runways: layers.runways,
       pedestrian: layers.pedestrian, power: layers.power,
       buildings: layers.buildings, selected: layers.buildings,
       construction: layers.construction, borders: layers.borders,
@@ -3913,7 +3915,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
   // beyond the building categories — so the toggle carries the colour swatch.
   // Without it the reader has a name and a colour and no way to pair them,
   // which is how railways and power lines read as one amber layer.
-  const LINE_SWATCH = new Set(['roads', 'rails', 'pedestrian', 'power', 'transport']);
+  const LINE_SWATCH = new Set(['roads', 'rails', 'runways', 'pedestrian', 'power', 'transport']);
   const layerToggle = (key, label, available = true) => available ? el('label', {},
     el('input', {
       type: 'checkbox', checked: layers[key], 'data-map-layer': key,
@@ -3982,6 +3984,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         layerToggle('radiation', t('radiation'), radiationAvailable),
         layerToggle('roads', t('roads'), !!model.roads.length),
         layerToggle('rails', t('rails'), !!model.rails.length),
+        layerToggle('runways', t('runways'), !!model.runways.length),
         layerToggle('pedestrian', t('pedestrianPaths'), !!model.pedestrian.length),
         layerToggle('power', t('mapPowerLines'),
           !!(model.powerHigh?.length || model.powerLow?.length)),
@@ -4180,6 +4183,7 @@ function renderStandaloneLeafletMap(model, layers, mapHintKey, outliers) {
         muted: color('--muted', '#626762'),
         accent: color('--accent', '#9f2f2b'),
         accent2: color('--accent2', '#356b8c'),
+        runways: color('--blueprint', '#4682a9'),
         pos: color('--pos', '#477a52'),
         warn: color('--warn', '#b17a18'),
         neg: color('--neg', '#b63b35'),
@@ -4375,6 +4379,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     focusBuildingIndex: mapFocusBuildingIndex,
     roadNetwork: state.saveImport?.roadNetwork,
     railNetwork: state.saveImport?.railNetwork,
+    airplaneNetwork: state.saveImport?.airplaneNetwork,
     pedestrianNetwork: standalone ? state.saveImport?.pedestrianNetwork : null,
     powerHighNetwork: standalone ? state.saveImport?.powerHighNetwork : null,
     powerLowNetwork: standalone ? state.saveImport?.powerLowNetwork : null,
@@ -4384,12 +4389,12 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
   });
   if (!model) return null;
   const layers = standalone ? {
-    water: true, pollution: true, radiation: false, roads: true, rails: true, pedestrian: false, buildings: true,
+    water: true, pollution: true, radiation: false, roads: true, rails: true, runways: true, pedestrian: false, buildings: true,
     transport: false, construction: true, scopes: true, borders: true, outliers: true, walkReach: true,
     footprints: true, power: false,
     ...(state.mapLayers ?? {}),
   } : {
-    water: true, pollution: false, radiation: false, roads: true, rails: true, pedestrian: false, buildings: true,
+    water: true, pollution: false, radiation: false, roads: true, rails: true, runways: true, pedestrian: false, buildings: true,
     construction: true, scopes: true, borders: true, outliers: true,
   };
   const buildingFilter = standalone ? String(state.mapBuildingFilter ?? '').trim().toLowerCase() : '';
@@ -4645,6 +4650,14 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
       'data-road-count': model.roads.length,
     }));
   }
+  const runwayLayer = node('g', { class: 'map-runways' });
+  if (model.runways.length) {
+    runwayLayer.append(node('path', {
+      d: model.runways.map(runway => runway.points.map((point, index) =>
+        `${index ? 'L' : 'M'}${point.mapX.toFixed(2)} ${point.mapY.toFixed(2)}`).join(' ')).join(' '),
+      'data-runway-count': model.runways.length,
+    }));
+  }
   const pedestrianLayer = node('g', { class: 'map-pedestrian' });
   if (model.pedestrian.length) {
     pedestrianLayer.append(node('path', {
@@ -4782,7 +4795,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     marker.append(title);
     scopeLayer.append(marker);
   }
-  svg.append(waterLayer, pollutionLayer, railLayer, roadLayer, pedestrianLayer);
+  svg.append(waterLayer, pollutionLayer, railLayer, roadLayer, runwayLayer, pedestrianLayer);
   svg.append(normalLayer, selectedLayer, borderLayer, scopeLayer, outlierLayer);
   const mapHintKey = model.rails.length
     ? (model.water ? 'schematicMapNetworksWaterHint' : 'schematicMapNetworksHint')
@@ -4808,6 +4821,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
     }, el('i', { class: 'pollution' }), t('airPollution')) : null,
     model.roads.length ? el('span', { 'data-map-legend': 'roads' }, el('i', { class: 'road' }), t('roads')) : null,
     model.rails.length ? el('span', { 'data-map-legend': 'rails' }, el('i', { class: 'rail' }), t('rails')) : null,
+    model.runways.length ? el('span', { 'data-map-legend': 'runways' }, el('i', { class: 'runway' }), t('runways')) : null,
     model.pedestrian.length ? el('span', { 'data-map-legend': 'pedestrian' }, el('i', { class: 'pedestrian' }), t('pedestrianPaths')) : null,
     // The grid was drawn with no legend entry at all, so its lines were both
     // the same colour as the railways and unnamed.
@@ -4868,6 +4882,7 @@ function renderSchematicRepublicMap(buildings, scopes, outliers, { standalone = 
           layerToggle('pollution', t('airPollution'), !!model.pollution),
           layerToggle('roads', t('roads'), !!model.roads.length),
           layerToggle('rails', t('rails'), !!model.rails.length),
+          layerToggle('runways', t('runways'), !!model.runways.length),
           layerToggle('pedestrian', t('pedestrianPaths'), !!model.pedestrian.length),
           layerToggle('buildings', t('buildings')),
           layerToggle('construction', t('underConstruction'), hasUnderConstruction),
@@ -7577,9 +7592,11 @@ async function initializeNamedSnapshots() {
 
 async function restoreNamedMapLayers() {
   const expectsPollution = state.saveImport?.sourceStatus?.pollution === 'exact';
+  const expectsAirplane = state.saveImport?.sourceStatus?.airplane === 'exact';
   const expectsPedestrian = state.saveImport?.sourceStatus?.pedestrian === 'exact';
   const expectsCableway = state.saveImport?.sourceStatus?.cableway === 'exact';
   if ((!state.saveImport || (state.saveImport.roadNetwork && state.saveImport.railNetwork
+      && (!expectsAirplane || state.saveImport.airplaneNetwork)
       && (!expectsPedestrian || state.saveImport.pedestrianNetwork)
       && (!expectsCableway || state.saveImport.cablewayNetwork)
       && state.saveImport.terrainWater && (!expectsPollution || state.saveImport.pollutionLayer)))
@@ -7593,6 +7610,9 @@ async function restoreNamedMapLayers() {
   if (currentPath && candidatePath && currentPath !== candidatePath) return;
   if (!state.saveImport.roadNetwork && candidate.roadNetwork) state.saveImport.roadNetwork = candidate.roadNetwork;
   if (!state.saveImport.railNetwork && candidate.railNetwork) state.saveImport.railNetwork = candidate.railNetwork;
+  if (!state.saveImport.airplaneNetwork && candidate.airplaneNetwork) {
+    state.saveImport.airplaneNetwork = candidate.airplaneNetwork;
+  }
   if (!state.saveImport.pedestrianNetwork && candidate.pedestrianNetwork) {
     state.saveImport.pedestrianNetwork = candidate.pedestrianNetwork;
   }

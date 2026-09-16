@@ -36,8 +36,21 @@ try {
   if (!/50/.test(await row.innerText())) {
     throw new Error('selected early police station does not show 50 total staff');
   }
+  const assumptions = page.locator('details.planner-assumptions');
+  if (!await assumptions.getAttribute('open')) await assumptions.locator('summary').click();
+  await page.getByRole('button', { name: 'Versorgungsdetails anzeigen', exact: true }).click();
+  await page.waitForTimeout(300);
+  const details = await plan.locator('tbody tr').first().locator('td').allTextContents();
+  for (const [column, cell] of [['kW', details[7]], ['Wasser', details[8]],
+    ['Warmwasser', details[9]], ['Abfall', details[10]], ['Baukosten', details[11]]]) {
+    if (!cell || cell.trim() === '—') throw new Error(`${column} is unavailable for the early police station`);
+  }
+  const summary = await page.locator('.totalsbox').filter({ hasText: 'Arbeiterüberschuss' }).first().innerText();
+  if (/Einige Bau- oder Versorgungswerte sind nicht verfügbar/.test(summary)) {
+    throw new Error('the early police station still marks construction or utility facts unavailable');
+  }
   if (errors.length) throw new Error(errors.join('\n'));
-  console.log('ok: the 25 plus 25 early DLC police station is selectable in Stadtplanung');
+  console.log('ok: the 25 plus 25 early DLC police station shows construction and utility facts');
 } finally {
   await browser.close();
 }

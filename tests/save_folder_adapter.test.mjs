@@ -119,6 +119,7 @@ test('save folder reads required and optional core files locally and defers map 
     localFile('stats.ini', '$STAT_CURRENT\n$DATE_YEAR 1984\n$DATE_DAY 123'),
     localFile('material.mtl', '$TEXTURE tiles_normal/grass2.dds'),
     localFile('road.bin'),
+    localFile('airplane.bin'),
   ];
   const progress = [];
   let payload;
@@ -165,6 +166,7 @@ test('save folder reads required and optional core files locally and defers map 
     assert.equal(payload.material, '$TEXTURE tiles_normal/grass2.dds');
     assert.equal(payload.road, null);
     assert.equal(result.deferredMapFiles.road.name, 'road.bin');
+    assert.equal(result.deferredMapFiles.airplane.name, 'airplane.bin');
     assert.equal(files.at(-1).reads.arrayBuffer, 0);
     assert.equal(networkCalls, 0);
     assert.deepEqual(progress.map(event => event.phase), [

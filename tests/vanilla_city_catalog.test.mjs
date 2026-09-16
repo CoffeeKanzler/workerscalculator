@@ -47,7 +47,8 @@ test('reported prefab2 is a medium 68-person 85-percent residence', () => {
   assert.equal(prefab.inhabitants, 68);
   assert.equal(prefab.quality, 0.85);
   assert.equal(prefab.provenance.housing, 'game-file');
-  assert.equal(prefab.provenance.workdays, 'unavailable');
+  assert.ok(prefab.workdays > 0);
+  assert.equal(prefab.provenance.workdays, 'game-file');
 });
 
 test('every eligible official raw residence has one representation', () => {
@@ -117,4 +118,33 @@ test('current game catalogue exposes the reported 25 plus 25 early police statio
   assert.ok(medium, 'dlc3/police_station_medium is missing from the city planner catalogue');
   assert.equal(medium.workers, 50);
   assert.equal(medium.special, 25);
+  assert.ok(Math.abs(medium.workdays - 1378.2728) < 0.001);
+  assert.ok(Math.abs(medium.bricks - 91.1237) < 0.001);
+  assert.equal(medium.power, 4.5);
+  assert.equal(medium.maxKW, 75);
+  assert.equal(medium.water, 1);
+  assert.equal(medium.hotwater, 3.5);
+  assert.equal(medium.waste, 22.5);
+  assert.equal(medium.panels, 0);
+  assert.equal(medium.ecomponents, 0);
+  for (const field of ['workdays', 'bricks', 'power', 'water', 'hotwater', 'waste']) {
+    assert.equal(medium.provenance[field], 'game-file');
+  }
+});
+
+test('reported 60-percent small residences carry game construction and utility facts', () => {
+  const merged = mergeVanillaCityCatalog(cityBuildings, rawBuildings);
+  for (const gameId of ['dlc3/residential1', 'dlc3/residential_wood1']) {
+    const residence = merged.find(row => row.gameId === gameId);
+    assert.ok(residence, `${gameId} is missing`);
+    assert.equal(residence.inhabitants, 20);
+    assert.equal(residence.quality, 0.6);
+    assert.ok(residence.workdays > 100);
+    assert.ok(residence.gravel > 1);
+    assert.equal(residence.power, 3);
+    assert.equal(residence.maxKW, 50);
+    assert.equal(residence.water, 0.9);
+    assert.equal(residence.hotwater, 1.4);
+    assert.equal(residence.waste, 0);
+  }
 });

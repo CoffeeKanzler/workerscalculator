@@ -598,6 +598,7 @@ test('shared plans retain fleet coverage but omit per-vehicle save facts', () =>
     blueprintOwned: ['bus_cav11m3'],
     roadNetwork: { nodes: [{ id: 0, x: 1, z: 2 }], edges: [] },
     railNetwork: { nodes: [{ id: 0, x: 3, z: 4 }], edges: [] },
+    airplaneNetwork: { nodes: [{ id: 0, x: 4, z: 5 }], edges: [] },
     pedestrianNetwork: { nodes: [{ id: 0, x: 5, z: 6 }], edges: [] },
     terrainWater: { width: 2, height: 2, packed: 'Yw==' },
     pollutionLayer: { width: 2, height: 2, airPacked: 'AAEC/w==' },
@@ -615,6 +616,7 @@ test('shared plans retain fleet coverage but omit per-vehicle save facts', () =>
   assert.equal('blueprintOwned' in shared, false);
   assert.equal('roadNetwork' in shared, false);
   assert.equal('railNetwork' in shared, false);
+  assert.equal('airplaneNetwork' in shared, false);
   assert.equal('pedestrianNetwork' in shared, false);
   assert.equal('terrainWater' in shared, false);
   assert.equal('pollutionLayer' in shared, false);
