@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3802284797",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-17T09:29:20.002Z",
+  "buildings": [
+    {
+      "id": "3802284797/MOORWERK_LICHTLOCH_ERZGRUBE",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_IRON"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "iron": 2.3
+      },
+      "consumption": {
+        "wood": 0.05,
+        "coal": 0.016667,
+        "explosives": 0.001667
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "MOORWERK - LICHTLOCH IRON MINE",
+      "workshopId": "3802284797",
+      "modPath": "MOORWERK_LICHTLOCH_ERZGRUBE",
+      "footprint": {
+        "boxes": [
+          [
+            -10.99,
+            -1.36,
+            10.63,
+            31.6
+          ],
+          [
+            -2.5,
+            0.76,
+            1.5,
+            7.24
+          ],
+          [
+            -5.29,
+            0.78,
+            7.28,
+            7.22
+          ],
+          [
+            -4.14,
+            8.69,
+            7.55,
+            18.92
+          ]
+        ],
+        "height": 16.65
+      }
+    },
+    {
+      "id": "3802284797/MOORWERK_LICHTLOCH_KOHLEGRUBE",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_COAL"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {
+        "rawcoal": 2.5
+      },
+      "consumption": {
+        "wood": 0.046667,
+        "coal": 0.016667,
+        "explosives": 0.000667
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "MOORWERK - LICHTLOCH COAL MINE",
+      "workshopId": "3802284797",
+      "modPath": "MOORWERK_LICHTLOCH_KOHLEGRUBE",
+      "footprint": {
+        "boxes": [
+          [
+            -10.99,
+            -1.36,
+            10.63,
+            31.6
+          ],
+          [
+            -2.5,
+            0.76,
+            1.5,
+            7.24
+          ],
+          [
+            -5.29,
+            0.78,
+            7.28,
+            7.22
+          ],
+          [
+            -4.14,
+            8.69,
+            7.55,
+            18.92
+          ]
+        ],
+        "height": 16.65
+      }
+    }
+  ],
+  "vehicles": []
+}
