@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3803771996",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-20T09:19:45.083Z",
+  "buildings": [
+    {
+      "id": "3803771996/BillyBigMonument",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big monument to Billy Herrington",
+      "workshopId": "3803771996",
+      "modPath": "BillyBigMonument",
+      "footprint": {
+        "boxes": [
+          [
+            -6.86,
+            -7.25,
+            6.18,
+            6.17
+          ]
+        ],
+        "height": 30.79
+      }
+    },
+    {
+      "id": "3803771996/BillyMonument",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small monument to Billy Herrington",
+      "workshopId": "3803771996",
+      "modPath": "BillyMonument",
+      "footprint": {
+        "boxes": [
+          [
+            -1.14,
+            -1.21,
+            1.03,
+            1.03
+          ]
+        ],
+        "height": 5.13
+      }
+    }
+  ],
+  "vehicles": []
+}
