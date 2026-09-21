@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3802040038",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-21T10:00:04.346Z",
+  "buildings": [
+    {
+      "id": "3802040038/distribution_office_tiny",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Distribution Office (Tiny)",
+      "workshopId": "3802040038",
+      "modPath": "distribution_office_tiny",
+      "footprint": {
+        "boxes": [
+          [
+            0.01,
+            21.08,
+            0.81,
+            21.88
+          ],
+          [
+            -14.01,
+            -28.15,
+            12.42,
+            -9.53
+          ]
+        ],
+        "height": 11.38
+      }
+    },
+    {
+      "id": "3802040038/technical_office_tiny",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Technical Services (Tiny)",
+      "workshopId": "3802040038",
+      "modPath": "technical_office_tiny",
+      "footprint": {
+        "boxes": [
+          [
+            -14.65,
+            -21.28,
+            11.78,
+            -2.66
+          ],
+          [
+            -11.68,
+            18.75,
+            -4.87,
+            19.32
+          ]
+        ],
+        "height": 11.38
+      }
+    }
+  ],
+  "vehicles": []
+}

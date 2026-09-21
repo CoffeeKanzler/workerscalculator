@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3804957706",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-21T10:00:04.419Z",
+  "buildings": [
+    {
+      "id": "3804957706/old_distribution_office_tiny",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Distribution Office (Tiny)",
+      "workshopId": "3804957706",
+      "modPath": "old_distribution_office_tiny",
+      "footprint": {
+        "boxes": [
+          [
+            -24.4,
+            -13.5,
+            -13.7,
+            1.83
+          ],
+          [
+            -8.09,
+            6.13,
+            8.08,
+            23.15
+          ],
+          [
+            -8.35,
+            -6.81,
+            19.65,
+            4.34
+          ]
+        ],
+        "height": 9.18
+      }
+    },
+    {
+      "id": "3804957706/old_technical_office_tiny",
+      "nameId": 6218,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3804957706",
+      "modPath": "old_technical_office_tiny",
+      "footprint": {
+        "boxes": [
+          [
+            -20.77,
+            -7.44,
+            -4.77,
+            16.25
+          ],
+          [
+            -3,
+            -7.55,
+            21,
+            15.75
+          ]
+        ],
+        "height": 6.5
+      }
+    }
+  ],
+  "vehicles": []
+}

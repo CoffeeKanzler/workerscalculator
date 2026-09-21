@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3804920187",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-21T10:00:04.418Z",
+  "buildings": [
+    {
+      "id": "3804920187/H",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 35,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Bratislava - RaÄa Municipal Volunteer Fire Station",
+      "workshopId": "3804920187",
+      "modPath": "H",
+      "footprint": {
+        "boxes": [
+          [
+            -10.95,
+            -7.11,
+            15.01,
+            11.05
+          ]
+        ],
+        "height": 13.1
+      }
+    }
+  ],
+  "vehicles": []
+}
