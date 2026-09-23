@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3794574581",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-23T09:21:48.056Z",
+  "buildings": [
+    {
+      "id": "3794574581/2426",
+      "nameId": 6250,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3794574581",
+      "modPath": "2426",
+      "footprint": {
+        "boxes": [
+          [
+            -13.75,
+            -6.16,
+            13.75,
+            6.15
+          ],
+          [
+            -14.27,
+            -6.65,
+            14.27,
+            6.65
+          ],
+          [
+            -13.81,
+            -6.22,
+            13.81,
+            6.23
+          ],
+          [
+            -13.85,
+            -6.25,
+            12.78,
+            6.32
+          ],
+          [
+            -15.15,
+            -8.12,
+            7.85,
+            8.35
+          ],
+          [
+            -13.88,
+            -6.29,
+            13.88,
+            6.29
+          ]
+        ],
+        "height": 8.9
+      }
+    }
+  ],
+  "vehicles": []
+}

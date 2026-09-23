@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3788684314",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-23T09:21:48.052Z",
+  "buildings": [
+    {
+      "id": "3788684314/p.624",
+      "nameId": 6253,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 20,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3788684314",
+      "modPath": "p.624",
+      "footprint": {
+        "boxes": [
+          [
+            -13.04,
+            -6.08,
+            13.04,
+            18.96
+          ],
+          [
+            -13.73,
+            -4.42,
+            -6.96,
+            12.95
+          ],
+          [
+            -12.82,
+            -6.17,
+            12.82,
+            18.57
+          ],
+          [
+            -13.2,
+            -6.21,
+            13.2,
+            19.2
+          ],
+          [
+            -13.63,
+            -7.2,
+            7.26,
+            20.14
+          ],
+          [
+            -12.51,
+            -6.08,
+            12.5,
+            18.41
+          ],
+          [
+            -12.64,
+            -6.17,
+            12.64,
+            18.57
+          ],
+          [
+            -2.33,
+            18.56,
+            2.48,
+            18.62
+          ]
+        ],
+        "height": 11.79
+      }
+    }
+  ],
+  "vehicles": []
+}

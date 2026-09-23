@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3775861978",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-23T09:21:48.047Z",
+  "buildings": [
+    {
+      "id": "3775861978/wooden_school",
+      "nameId": 6252,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 10,
+      "professors": 10,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3775861978",
+      "modPath": "wooden_school",
+      "footprint": {
+        "boxes": [
+          [
+            -15.25,
+            -14.4,
+            15.25,
+            5
+          ],
+          [
+            -15.67,
+            -14.83,
+            15.67,
+            7.03
+          ],
+          [
+            -15.25,
+            -14.41,
+            15.25,
+            5.04
+          ],
+          [
+            -15.67,
+            -14.84,
+            15.67,
+            7.02
+          ],
+          [
+            -15.47,
+            -14.62,
+            15.47,
+            6.8
+          ],
+          [
+            -5.56,
+            -12.65,
+            5.56,
+            7.74
+          ]
+        ],
+        "height": 7.29
+      }
+    }
+  ],
+  "vehicles": []
+}
