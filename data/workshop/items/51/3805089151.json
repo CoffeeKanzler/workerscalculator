@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3805089151",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-24T09:21:25.300Z",
+  "buildings": [
+    {
+      "id": "3805089151/1.Khabarovsk.1930s",
+      "nameId": 6001,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 8,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 8
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3805089151",
+      "modPath": "1.Khabarovsk.1930s",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -7.04,
+            8,
+            7.39
+          ],
+          [
+            -8.18,
+            -7.17,
+            8.18,
+            7.57
+          ],
+          [
+            -8.18,
+            -7.17,
+            8.18,
+            8.7
+          ],
+          [
+            -6.81,
+            -7.12,
+            6.81,
+            7.51
+          ],
+          [
+            -8.37,
+            -7.36,
+            8.37,
+            7.35
+          ]
+        ],
+        "height": 10.46
+      }
+    }
+  ],
+  "vehicles": []
+}

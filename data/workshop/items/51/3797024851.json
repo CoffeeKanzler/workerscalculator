@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3797024851",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-24T09:21:25.281Z",
+  "buildings": [
+    {
+      "id": "3797024851/p.1030",
+      "nameId": 6256,
+      "types": [
+        "TYPE_HOSPITAL"
+      ],
+      "workers": 10,
+      "professors": 10,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 2,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3797024851",
+      "modPath": "p.1030",
+      "footprint": {
+        "boxes": [
+          [
+            -14.93,
+            -8.03,
+            14.93,
+            8.03
+          ],
+          [
+            -15.27,
+            -8.37,
+            15.27,
+            8.38
+          ],
+          [
+            -14.91,
+            -8.03,
+            14.93,
+            8.03
+          ],
+          [
+            -13.73,
+            -9.07,
+            16.52,
+            9.97
+          ],
+          [
+            -14.91,
+            -8.11,
+            14.9,
+            8.01
+          ],
+          [
+            14.63,
+            -0.85,
+            16.03,
+            2.91
+          ]
+        ],
+        "height": 11.73
+      }
+    }
+  ],
+  "vehicles": []
+}

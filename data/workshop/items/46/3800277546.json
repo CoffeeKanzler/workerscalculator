@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3800277546",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-24T09:21:25.289Z",
+  "buildings": [
+    {
+      "id": "3800277546/4.Orsk1930",
+      "nameId": 6001,
+      "types": [
+        "TYPE_LIVING",
+        "CIVIL_BUILDING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3800277546",
+      "modPath": "4.Orsk1930",
+      "footprint": {
+        "boxes": [
+          [
+            -20.5,
+            -6.46,
+            20.5,
+            6.66
+          ],
+          [
+            -10.51,
+            -6.26,
+            10.51,
+            6.66
+          ],
+          [
+            -20.61,
+            -5.61,
+            20.61,
+            5.67
+          ],
+          [
+            -20.83,
+            -5.9,
+            20.83,
+            5.84
+          ],
+          [
+            -20.61,
+            -5.6,
+            21.04,
+            5.71
+          ],
+          [
+            -20.61,
+            -5.6,
+            20.61,
+            5.6
+          ]
+        ],
+        "height": 13.49
+      }
+    }
+  ],
+  "vehicles": []
+}
