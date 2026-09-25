@@ -1,0 +1,450 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3807209613",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-25T09:39:35.544Z",
+  "buildings": [
+    {
+      "id": "3807209613/27_car_6",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_6",
+      "workshopId": "3807209613",
+      "modPath": "27_car_6",
+      "footprint": {
+        "boxes": [
+          [
+            -6.26,
+            -6.23,
+            3.17,
+            6.23
+          ]
+        ],
+        "height": 0.95
+      }
+    },
+    {
+      "id": "3807209613/28_car_8",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_8",
+      "workshopId": "3807209613",
+      "modPath": "28_car_8",
+      "footprint": {
+        "boxes": [
+          [
+            -6.26,
+            -8.23,
+            3.17,
+            8.23
+          ]
+        ],
+        "height": 0.95
+      }
+    },
+    {
+      "id": "3807209613/29_car_10",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_10",
+      "workshopId": "3807209613",
+      "modPath": "29_car_10",
+      "footprint": {
+        "boxes": [
+          [
+            -6.26,
+            -10.23,
+            3.17,
+            10.23
+          ]
+        ],
+        "height": 0.95
+      }
+    },
+    {
+      "id": "3807209613/30_car_6",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_6",
+      "workshopId": "3807209613",
+      "modPath": "30_car_6",
+      "footprint": {
+        "boxes": [
+          [
+            -24.13,
+            -2.79,
+            24.27,
+            4.79
+          ]
+        ],
+        "height": 0.95
+      }
+    },
+    {
+      "id": "3807209613/31_car_12",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_12",
+      "workshopId": "3807209613",
+      "modPath": "31_car_12",
+      "footprint": {
+        "boxes": [
+          [
+            -24.13,
+            -4.79,
+            24.27,
+            4.79
+          ]
+        ],
+        "height": 0.95
+      }
+    },
+    {
+      "id": "3807209613/32_car_12",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_13",
+      "workshopId": "3807209613",
+      "modPath": "32_car_12",
+      "footprint": {
+        "boxes": [
+          [
+            -33.5,
+            -4.79,
+            24.27,
+            4.79
+          ]
+        ],
+        "height": 0.95
+      }
+    },
+    {
+      "id": "3807209613/33_car_12",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_12_in|out",
+      "workshopId": "3807209613",
+      "modPath": "33_car_12",
+      "footprint": {
+        "boxes": [
+          [
+            -24.08,
+            -4.67,
+            24.32,
+            4.9
+          ]
+        ],
+        "height": 0.95
+      }
+    },
+    {
+      "id": "3807209613/34_car_18L",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_18_Ð",
+      "workshopId": "3807209613",
+      "modPath": "34_car_18L",
+      "footprint": {
+        "boxes": [
+          [
+            -24.13,
+            -25.19,
+            33.62,
+            4.79
+          ]
+        ],
+        "height": 0.95
+      }
+    },
+    {
+      "id": "3807209613/35_car_19L",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_19_Ð",
+      "workshopId": "3807209613",
+      "modPath": "35_car_19L",
+      "footprint": {
+        "boxes": [
+          [
+            -33.5,
+            -25.19,
+            33.62,
+            4.79
+          ],
+          [
+            -33.5,
+            -4.79,
+            -33.26,
+            4.79
+          ]
+        ],
+        "height": 0.95
+      }
+    },
+    {
+      "id": "3807209613/36_car_26L",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_26_Ð",
+      "workshopId": "3807209613",
+      "modPath": "36_car_26L",
+      "footprint": {
+        "boxes": [
+          [
+            -24.13,
+            -53.19,
+            33.62,
+            4.79
+          ]
+        ],
+        "height": 0.95
+      }
+    },
+    {
+      "id": "3807209613/37_car_27L",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_27_Ð",
+      "workshopId": "3807209613",
+      "modPath": "37_car_27L",
+      "footprint": {
+        "boxes": [
+          [
+            -33.5,
+            -53.19,
+            33.62,
+            4.79
+          ],
+          [
+            -33.5,
+            -4.79,
+            -33.26,
+            4.79
+          ]
+        ],
+        "height": 0.95
+      }
+    },
+    {
+      "id": "3807209613/38_car_23",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_23_L",
+      "workshopId": "3807209613",
+      "modPath": "38_car_23",
+      "footprint": {
+        "boxes": [
+          [
+            -24.44,
+            -43.59,
+            24.05,
+            4.9
+          ]
+        ],
+        "height": 0.95
+      }
+    },
+    {
+      "id": "3807209613/39_car_32",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "car_32_L",
+      "workshopId": "3807209613",
+      "modPath": "39_car_32",
+      "footprint": {
+        "boxes": [
+          [
+            -24.44,
+            -43.59,
+            24.05,
+            4.9
+          ]
+        ],
+        "height": 0.95
+      }
+    }
+  ],
+  "vehicles": []
+}
