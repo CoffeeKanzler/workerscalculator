@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3807907320",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-09-26T09:23:30.598Z",
+  "buildings": [
+    {
+      "id": "3807907320/InIn",
+      "nameId": 9107,
+      "types": [
+        "TYPE_FOREIGN_PIPELINE_EXPORT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3807907320",
+      "modPath": "InIn",
+      "footprint": {
+        "boxes": [
+          [
+            -6.03,
+            -7.92,
+            6,
+            8.88
+          ],
+          [
+            -7.1,
+            3.97,
+            7.1,
+            7.57
+          ],
+          [
+            -5.56,
+            0.53,
+            4.66,
+            7.45
+          ],
+          [
+            -7.1,
+            -7.57,
+            7.1,
+            -3.97
+          ],
+          [
+            -4.66,
+            -7.45,
+            5.56,
+            -0.53
+          ]
+        ],
+        "height": 8.51
+      }
+    },
+    {
+      "id": "3807907320/InOut",
+      "nameId": 9107,
+      "types": [
+        "TYPE_FOREIGN_PIPELINE_EXPORT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3807907320",
+      "modPath": "InOut",
+      "footprint": {
+        "boxes": [
+          [
+            -6.03,
+            -7.92,
+            6,
+            8.88
+          ],
+          [
+            -7.1,
+            3.97,
+            7.1,
+            7.57
+          ],
+          [
+            -5.56,
+            0.53,
+            4.66,
+            7.45
+          ],
+          [
+            -7.1,
+            -7.57,
+            7.1,
+            -3.97
+          ],
+          [
+            -4.66,
+            -7.45,
+            5.56,
+            -0.53
+          ]
+        ],
+        "height": 8.51
+      }
+    },
+    {
+      "id": "3807907320/OutOut",
+      "nameId": 9107,
+      "types": [
+        "TYPE_FOREIGN_PIPELINE_EXPORT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3807907320",
+      "modPath": "OutOut",
+      "footprint": {
+        "boxes": [
+          [
+            -6.03,
+            -7.92,
+            6,
+            8.88
+          ],
+          [
+            -7.1,
+            3.97,
+            7.1,
+            7.57
+          ],
+          [
+            -5.56,
+            0.53,
+            4.66,
+            7.45
+          ],
+          [
+            -7.1,
+            -7.57,
+            7.1,
+            -3.97
+          ],
+          [
+            -4.66,
+            -7.45,
+            5.56,
+            -0.53
+          ]
+        ],
+        "height": 8.51
+      }
+    }
+  ],
+  "vehicles": []
+}
