@@ -215,6 +215,7 @@ export function mergeVehiclePools(sheetVehicles, railSupplement, rawGameVehicles
   for (const raw of rawGameVehicles) {
     const name = rawVehicleDisplayName(raw);
     if (!name || byName.has(name.toLowerCase())) continue;
+    if (isGameTender(raw)) continue;
     const entry = gameOnlyVehicle(raw);
     if (!entry) continue;
     byName.set(name.toLowerCase(), entry);
@@ -270,12 +271,40 @@ function gameOnlyVehicle(raw) {
   return entry;
 }
 
+// A tender is attached to its locomotive by the game, never bought on its own,
+// so it must not become a purchasable pool entry. Same rule the extractor uses
+// when it nests a tender on the locomotive it belongs to.
+function isGameTender(raw) {
+  return raw.type === 'VEHICLETYPE_RAIL_VAGON'
+    && (raw.trainGroup === 'locomotive' || /tender/i.test(raw.id));
+}
+
 // The type filter groups by this label, so it has to land in the same buckets
-// the spreadsheet rows use rather than inventing a parallel vocabulary.
+// the spreadsheet rows use rather than inventing a parallel vocabulary. The
+// $TRAINGROUP_* the game states for its rail stock is exactly what separates
+// those buckets, and each one lines up with the sheet's own rows: the six
+// motorvagon stock are the sheet's six Triebwagen, the metro sets are its
+// U-Bahn, the track-laying sets its Gleisbau. Falling through to the road
+// default instead published 52 rail wagons and locomotives as trucks.
 function gameVehicleTypeLabel(raw) {
   const transport = String(raw.transportType ?? '');
-  if (Number.isFinite(raw.capacity) && raw.capacity > 0
-    && transport.includes('PASSANGER')) return 'Bus';
+  const passenger = Number.isFinite(raw.capacity) && raw.capacity > 0
+    && transport.includes('PASSANGER');
+  const rail = raw.type === 'VEHICLETYPE_RAIL_LOCOMOTIVE' || raw.type === 'VEHICLETYPE_RAIL_VAGON';
+  if (rail) {
+    switch (raw.trainGroup) {
+      case 'tram': return 'Straßenbahn';
+      case 'metro': return 'U-Bahn';
+      case 'motorvagon': return 'Triebwagen';
+      case 'trainset': return 'Zugverband';
+      case 'trackbuilder':
+      case 'trackbuilder_steam': return 'Gleisbau';
+      default: break;
+    }
+    if (raw.type === 'VEHICLETYPE_RAIL_LOCOMOTIVE') return 'Lokomotive';
+    return passenger ? 'Passagierwagen' : 'Güterwagon';
+  }
+  if (passenger) return 'Bus';
   switch (raw.type) {
     case 'VEHICLETYPE_RAIL': return 'Zug';
     case 'VEHICLETYPE_SHIP': return 'Schiff';

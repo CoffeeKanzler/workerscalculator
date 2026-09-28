@@ -176,12 +176,12 @@ test('unmatched wagons do not mistake construction materials for cargo', () => {
   assert.equal(vehicleCargoCapacity(covered, 'Elektronik-Bauteile'), 0);
 });
 
-test('current game data gives exact capacities to 70 of 98 train wagons', () => {
+test('current game data gives exact capacities to 86 of 116 train wagons', () => {
   const wagons = merged.filter(vehicle =>
     ['Güterwagon', 'Passagierwagen'].includes(vehicle.attrs.Typ));
-  assert.equal(wagons.length, 98);
+  assert.equal(wagons.length, 116);
   assert.equal(wagons.filter(vehicle =>
-    vehicle.provenance?.cargoCapacities === 'game-file').length, 70);
+    vehicle.provenance?.cargoCapacities === 'game-file').length, 86);
 
   const hopper = byName.get('Schüttgutwagen');
   assert.equal(vehicleCargoCapacity(hopper, 'Kohle'), 50);
@@ -189,6 +189,74 @@ test('current game data gives exact capacities to 70 of 98 train wagons', () => 
   const open = byName.get('Offener Wagen 13-401');
   assert.equal(vehicleCargoCapacity(open, 'Stahl'), 67);
   assert.equal(vehicleCargoCapacity(open, 'Kohle'), 0);
+});
+
+test('a rail vehicle is never published as a truck or a bus', () => {
+  // $TRAINGROUP_* is what separates the sheet's own rail buckets, and the game
+  // states it for every rail vehicle. Falling through to the road default had
+  // the pool advertising cement wagons and tunnel boring machines as LKW, and
+  // trams as buses, which put them in the wrong filter of the wrong tab.
+  const railBuckets = ['Güterwagon', 'Passagierwagen', 'Lokomotive', 'Straßenbahn',
+    'U-Bahn', 'Triebwagen', 'Zugverband', 'Gleisbau', 'Tender'];
+  const byGameId = new Map(merged
+    .filter(vehicle => vehicle.sourceGameId)
+    .map(vehicle => [vehicle.sourceGameId, vehicle]));
+  const labels = new Map([
+    ['tram', 'Straßenbahn'], ['metro', 'U-Bahn'], ['motorvagon', 'Triebwagen'],
+    ['trainset', 'Zugverband'], ['trackbuilder', 'Gleisbau'],
+    ['trackbuilder_steam', 'Gleisbau'],
+  ]);
+
+  let rail = 0;
+  let road = 0;
+  for (const raw of rawVehicles) {
+    const entry = byGameId.get(raw.id);
+    if (!entry) continue;
+    if (String(raw.type).startsWith('VEHICLETYPE_RAIL')) {
+      rail += 1;
+      assert.ok(railBuckets.includes(entry.attrs.Typ),
+        `${raw.id} (${raw.type}) is published as ${entry.attrs.Typ}`);
+      // The label rule only governs the entries the pool builds from the game
+      // alone; one that matched a spreadsheet row keeps the sheet's own label.
+      if (!entry.gameOnly) continue;
+      // The game states set membership itself, so a car of a tram, metro or
+      // multiple-unit set belongs with its set; anything else that runs on
+      // rails is a locomotive or a freight or passenger coach.
+      const setBucket = labels.get(raw.trainGroup);
+      if (setBucket) {
+        assert.equal(entry.attrs.Typ, setBucket, `${raw.id} is published as ${entry.attrs.Typ}`);
+      } else if (raw.type === 'VEHICLETYPE_RAIL_VAGON') {
+        assert.ok(['Güterwagon', 'Passagierwagen'].includes(entry.attrs.Typ),
+          `${raw.id} is published as ${entry.attrs.Typ}`);
+      } else {
+        // No train group: the game types it a locomotive, and nothing in the
+        // file says more, so the sheet's locomotive bucket is the honest one.
+        assert.equal(entry.attrs.Typ, 'Lokomotive', `${raw.id} is published as ${entry.attrs.Typ}`);
+      }
+    } else {
+      road += 1;
+      assert.ok(!railBuckets.includes(entry.attrs.Typ),
+        `${raw.id} (${raw.type}) is published as ${entry.attrs.Typ}`);
+    }
+  }
+  assert.ok(rail > 40, `only ${rail} rail vehicles reached the pool`);
+  assert.ok(road > 400, `only ${road} road vehicles reached the pool`);
+});
+
+test('a tender the game hard-attaches is never offered as a vehicle choice', () => {
+  const tenders = rawVehicles.filter(vehicle => vehicle.type === 'VEHICLETYPE_RAIL_VAGON'
+    && (vehicle.trainGroup === 'locomotive' || /tender/i.test(vehicle.id)));
+  assert.ok(tenders.length >= 9, `only ${tenders.length} tenders in the raw dataset`);
+  const published = new Set(merged
+    .filter(vehicle => vehicle.sourceGameId)
+    .map(vehicle => vehicle.sourceGameId));
+  for (const tender of tenders) {
+    assert.equal(published.has(tender.id), false,
+      `tender ${tender.id} is offered as a vehicle choice`);
+  }
+  // The ones the sheet knows keep their nested tender instead.
+  assert.equal(byName.get('FD-Serie').tender.name, 'FD Tender');
+  assert.equal(merged.filter(v => v.attrs.Typ === 'Tender').length, 0);
 });
 
 test('exact electric fact controls catenary state without inventing diesel versus steam', () => {

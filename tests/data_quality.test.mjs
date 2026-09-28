@@ -44,14 +44,78 @@ test('game production dataset keeps game workers and economic rates authoritativ
   }
 });
 
-test('explicit game construction resources override stale sheet measurements', () => {
+test('game construction resources add the explicit and the node-derived bill', () => {
+  // coal_mine.ini states $COST_RESOURCE workers 3000 / concrete 180 / steel 45
+  // and, per construction phase, $COST_RESOURCE_AUTO for ground, walls and
+  // steel. The game adds the two, which the spreadsheet's own measured 3878
+  // workdays confirms against 3000 + 878.5. Publishing the explicit lines
+  // alone understates the mine by a third, and the dataset used to do exactly
+  // that while claiming `game-file`.
   const coal = production.find(building => building.gameId === 'coal_mine');
-  assert.equal(coal.workdays, 3000);
+  assert.equal(coal.workdays, 3878.5327282528924);
   assert.equal(coal.boards, 75);
-  assert.equal(coal.concrete, 180);
-  assert.equal(coal.steel, 45);
+  assert.equal(coal.concrete, 249.63124783878877);
+  assert.equal(coal.steel, 74.83902940814868);
   assert.equal(coal.provenance.workdays, 'game-file');
+  assert.equal(coal.provenance.concrete, 'game-file');
+  assert.equal(coal.provenance.steel, 'game-file');
+  // The game file states no power, so that stays a measured sheet value.
   assert.equal(coal.provenance.power, 'sheet-measured');
+  assert.equal(coal.provenance.maxKW, 'sheet-measured');
+
+  // The three mines are the only ones the spreadsheet also measured, and every
+  // one lands on the sum rather than on either part.
+  const measured = { coal_mine: 3878, iron_mine: 3928, uranium_mine: 5205 };
+  for (const [gameId, workdays] of Object.entries(measured)) {
+    const building = production.find(entry => entry.gameId === gameId);
+    assert.ok(building, `${gameId} is missing from the game dataset`);
+    assert.ok(Math.abs(building.workdays - workdays) < 1.5,
+      `${gameId} workdays ${building.workdays} disagree with the measured ${workdays}`);
+  }
+});
+
+test('a game-file construction value is the one the raw building states', () => {
+  // This is the check that was missing: the dataset claimed `game-file` for 20
+  // construction fields while 17 of them contradicted buildings_raw.json, and
+  // nothing noticed, because a stale derived dataset still reads as
+  // authoritative.
+  const raw = new Map(rawBuildings.map(building => [building.id, building]));
+  const fields = [['workdays', 'workers'], ['asphalt', 'asphalt'], ['boards', 'boards'],
+    ['bricks', 'bricks'], ['concrete', 'concrete'], ['gravel', 'gravel'], ['steel', 'steel'],
+    ['mcomponents', 'mcomponents'], ['panels', 'prefabpanels'], ['ecomponents', 'ecomponents']];
+  let claimed = 0;
+  for (const entry of production) {
+    const source = raw.get(entry.gameId);
+    if (!source) continue;
+    for (const [field, rawField] of fields) {
+      if (entry.provenance?.[field] !== 'game-file') continue;
+      const stated = source.constructionResources?.[rawField];
+      assert.ok(stated != null,
+        `${entry.gameId} ${field} claims game-file but the building states no ${rawField}`);
+      assert.ok(Math.abs(entry[field] - stated) <= Math.max(1e-6, Math.abs(stated) * 1e-9),
+        `${entry.gameId} ${field} is ${entry[field]} but the building states ${stated}`);
+      claimed += 1;
+    }
+  }
+  assert.ok(claimed > 500, `only ${claimed} game-file construction fields to check`);
+});
+
+test('a building the game fully specifies is never published as a zero bill', () => {
+  // dlc3/h_repair_station has no explicit $COST_RESOURCE at all: the whole bill
+  // comes from the node-derived costs, and the dataset used to publish zeroes
+  // while the raw source carried every quantity.
+  const workshop = production.find(building => building.gameId === 'dlc3/h_repair_station');
+  const source = rawBuildings.find(building => building.id === 'dlc3/h_repair_station');
+  for (const [field, rawField] of [['workdays', 'workers'], ['boards', 'boards'],
+    ['bricks', 'bricks'], ['concrete', 'concrete'], ['gravel', 'gravel'], ['steel', 'steel']]) {
+    assert.ok(workshop[field] > 0, `${field} is not published for the horse workshop`);
+    assert.equal(workshop.provenance[field], 'game-file');
+    const stated = source.constructionResources[rawField];
+    // The two files come from separate extraction runs, so compare with the
+    // tolerance the sums deserve rather than bit-for-bit.
+    assert.ok(Math.abs(workshop[field] - stated) <= Math.abs(stated) * 1e-12,
+      `${field} is ${workshop[field]} but the building states ${stated}`);
+  }
 });
 
 test('heating output is computed from the building file, and still matches what was measured', () => {
