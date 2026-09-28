@@ -3,8 +3,9 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   expandConsist, evaluateConsist, recommendTrain, mergeVehiclePools,
-  vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
+  vehicleCargoCapacity, vehicleReference, vehicleSupportsCargo, vehicleDrive,
 } from '../js/train.js';
+import { vehicleProductionGroup } from '../js/calc.js';
 
 const sheetVehicles = JSON.parse(readFileSync(new URL('../data/vehicles.json', import.meta.url))).vehicles;
 const rail = JSON.parse(readFileSync(new URL('../data/game/rail_vehicles.json', import.meta.url)));
@@ -78,6 +79,59 @@ test('unnamed Russo-Balt D24/40 variants enter the public vehicle pool', () => {
     assert.equal(vehicle.attrs.Von, 1912);
     assert.equal(vehicle.attrs.Bis, 1924);
   }
+});
+
+test('every pool entry carries a stable reference that is not its array index', () => {
+  for (const vehicle of merged) {
+    assert.ok(vehicle.vehicleRef, `${vehicle.name} has no vehicle reference`);
+    assert.equal(vehicleReference(vehicle), vehicle.vehicleRef);
+  }
+  // A game vehicle is identified by the game's own id, so re-extracting the
+  // pool cannot repoint a saved plan at a different truck the way an index can.
+  const covered = merged.find(vehicle => vehicle.sourceGameId === 'covered_skd706r');
+  assert.equal(covered.vehicleRef, 'game:covered_skd706r');
+  // A spreadsheet row the game files do not describe falls back to its name.
+  const sheetOnly = merged.find(vehicle => !vehicle.sourceGameId);
+  assert.match(sheetOnly.vehicleRef, /^name:/);
+});
+
+test('a plan row survives the pool being rebuilt around it', () => {
+  // The failure this guards: a row that stored DATA.vehicles[561] silently
+  // described a different vehicle once re-extraction reordered the pool, and
+  // the app overwrote the user's choice without saying so. Resolution is by
+  // reference, so an index that no longer agrees is ignored rather than obeyed.
+  const resolveRow = (row, pool) => {
+    const byRef = pool.find(vehicle => vehicle.vehicleRef === row.vehicleRef);
+    if (byRef && byRef.attrs.Typ === row.type) return byRef;
+    const byIndex = pool[Number(row.vehicleIndex)];
+    return byIndex && byIndex.attrs.Typ === row.type ? byIndex : null;
+  };
+  const target = merged.find(vehicle => vehicle.sourceGameId === 'gravel_skd_706rt');
+  const targetIndex = merged.indexOf(target);
+  const row = { type: target.attrs.Typ, vehicleRef: target.vehicleRef, vehicleIndex: targetIndex };
+
+  // The same pool, reordered the way a re-extraction reorders it: the target
+  // no longer sits at the index the row stored, and that index now names a
+  // different vehicle of the same type.
+  const reordered = [...merged];
+  const [moved] = reordered.splice(targetIndex, 1);
+  reordered.unshift(moved);
+  const occupant = reordered[targetIndex];
+  assert.notEqual(occupant.vehicleRef, target.vehicleRef);
+  assert.equal(occupant.attrs.Typ, target.attrs.Typ,
+    'and it is a plausible substitute, which is why the bug went unnoticed');
+
+  assert.equal(resolveRow(row, reordered), target,
+    'the row still resolves to the vehicle the user chose');
+  // Resolution went through the reference: obeying the index picks a different
+  // vehicle, silently.
+  assert.notEqual(resolveRow({ ...row, vehicleRef: null }, reordered), target,
+    'without a reference the stale index picks a different vehicle');
+
+  // A row whose vehicle is genuinely gone resolves to nothing, so the UI can
+  // say so rather than quietly substituting a different vehicle.
+  assert.equal(resolveRow({ type: 'LKW', vehicleRef: 'game:removed_vehicle', vehicleIndex: 3 },
+    reordered), null);
 });
 
 test('unrelated unnamed raw vehicles remain excluded', () => {
@@ -257,6 +311,126 @@ test('a tender the game hard-attaches is never offered as a vehicle choice', () 
   // The ones the sheet knows keep their nested tender instead.
   assert.equal(byName.get('FD-Serie').tender.name, 'FD Tender');
   assert.equal(merged.filter(v => v.attrs.Typ === 'Tender').length, 0);
+});
+
+test('every pool label belongs to a group the recommendations can reach', () => {
+  // vehicleProductionGroup keys on a fixed set of labels, and the production
+  // tab's type filter keys on the pool's. A label in neither belongs to no
+  // group: 'Schiff' did exactly that, so the 16 game-only ships and ferries
+  // carrying it were filed as road vehicles and topped the road table.
+  // 'LKW' and 'Helikopter' are the pool's own default labels for a game vehicle
+  // with no spreadsheet row, so they are legitimate.
+  const defaultLabels = new Set(['LKW', 'Helikopter']);
+  const vocabulary = new Set(sheetVehicles.map(vehicle => vehicle.attrs.Typ));
+  const groups = ['road', 'trains', 'boats', 'aircraft'];
+  for (const vehicle of merged) {
+    const label = vehicle.attrs.Typ;
+    assert.ok(vocabulary.has(label) || defaultLabels.has(label),
+      `${vehicle.name} is typed "${label}", which no spreadsheet row and no default uses`);
+    assert.ok(groups.includes(vehicleProductionGroup(vehicle)),
+      `${vehicle.name} (${label}) belongs to no recommendation group`);
+  }
+  // Every group the UI offers is reachable from the pool.
+  const present = new Set(merged.map(vehicle => vehicle.attrs.Typ));
+  for (const label of ['Güterwagon', 'Passagierwagen', 'Lokomotive', 'Frachtschiff',
+    'Passagierschiff', 'Flugzeug']) {
+    assert.ok(present.has(label), `no vehicle carries the label ${label}`);
+  }
+});
+
+test('a vehicle is bucketed by what it is, not by carrying passengers', () => {
+  // The passenger test is a bus test, and only for a road vehicle. Three
+  // ferries that carry people were labelled Bus, and 'Schiff' matched no sheet
+  // row at all, so both mistakes landed in the road recommendation group.
+  const ferry = merged.find(vehicle => vehicle.sourceGameId === 'daneferry');
+  assert.equal(ferry.attrs.Typ, 'Passagierschiff');
+  const tanker = merged.find(vehicle => vehicle.sourceGameId === 'yellow_tanker');
+  assert.equal(tanker.attrs.Typ, 'Frachtschiff');
+  const bus = merged.find(vehicle => vehicle.sourceGameId === 'bus_lz_695b');
+  assert.equal(bus.attrs.Typ, 'Bus');
+  for (const vehicle of merged) {
+    const isRoad = ['LKW', 'Bus', 'Personenkraftwagen', 'Kipper', 'Tanklaster'].includes(vehicle.attrs.Typ);
+    const isShip = ['Frachtschiff', 'Passagierschiff'].includes(vehicle.attrs.Typ);
+    assert.ok(!(isShip && isRoad), `${vehicle.name} is both`);
+  }
+  const shipLabels = new Set(merged
+    .filter(vehicle => ['Frachtschiff', 'Passagierschiff'].includes(vehicle.attrs.Typ))
+    .map(vehicle => vehicle.attrs.Typ));
+  assert.deepEqual([...shipLabels].sort(), ['Frachtschiff', 'Passagierschiff']);
+});
+
+test('a game vehicle keeps the origin the game file states', () => {
+  // The cross-market factor and the blueprint currency both read the origin.
+  // A game-only vehicle has no spreadsheet row, so before this the origin came
+  // out absent and every one of the 579 such vehicles was priced as Soviet.
+  const gameOnly = merged.filter(vehicle => vehicle.gameOnly);
+  assert.equal(gameOnly.length, 579, 'the size of the game-only pool moved');
+  const withOrigin = merged.filter(vehicle => Number.isInteger(vehicle.gameCountryId));
+  assert.ok(withOrigin.length >= gameOnly.length,
+    `only ${withOrigin.length} entries carry the country the game states`);
+  for (const vehicle of gameOnly) {
+    assert.ok(Number.isInteger(vehicle.gameCountryId),
+      `${vehicle.name} states no country at all`);
+  }
+  // A vehicle matched to a spreadsheet row keeps the origin too, so the two
+  // sources never disagree about the same vehicle.
+  const matched = merged.filter(vehicle => vehicle.sourceGameId && !vehicle.gameOnly);
+  for (const vehicle of matched) {
+    const raw = rawVehicles.find(entry => entry.id === vehicle.sourceGameId);
+    assert.equal(vehicle.gameCountryId ?? null, raw?.countryId ?? null,
+      `${vehicle.name} states a different country than the game file`);
+  }
+  // A vehicle the game gives no country for says so rather than defaulting.
+  const unknown = mergeVehiclePools([], [], [{
+    id: 'no_country', de: 'No country', type: 'VEHICLETYPE_ROAD',
+    emptyWeight: 2, powerKW: 20, from: 1950, to: 1960, roadRecipeBranch: 'ordinary',
+  }])[0];
+  assert.equal(unknown.gameCountryId, null);
+});
+
+test('a game vehicle only claims the facts the game file states', () => {
+  // Provenance is what tells the reader a number came from the game rather than
+  // from a measurement, so claiming it for a value the file omits is the same
+  // defect as publishing a zero.
+  const byGameId = new Map(merged
+    .filter(vehicle => vehicle.sourceGameId)
+    .map(vehicle => [vehicle.sourceGameId, vehicle]));
+  let claimed = 0;
+  for (const raw of rawVehicles) {
+    const entry = byGameId.get(raw.id);
+    if (!entry) continue;
+    if (entry.provenance?.dimensions === 'game-file') {
+      assert.ok(Number.isFinite(raw.length), `${raw.id} has no length but claims dimensions`);
+      claimed += 1;
+    }
+    if (entry.provenance?.performance === 'game-file') {
+      assert.ok(Number.isFinite(raw.speed) || Number.isFinite(raw.powerKW)
+        || Number.isFinite(raw.emptyWeight),
+      `${raw.id} states no performance but claims it`);
+    }
+    if (entry.provenance?.availability === 'game-file') {
+      assert.ok(Number.isFinite(raw.from) && Number.isFinite(raw.to),
+        `${raw.id} states no era but claims availability`);
+    }
+  }
+  assert.ok(claimed > 100, `only ${claimed} dimensions claims to check`);
+  // 84 pool entries used to claim a performance figure the game states for
+  // none of them: the fields were copied individually under a Number.isFinite
+  // guard, then the whole record was labelled game-file regardless.
+  const unstated = rawVehicles.filter(vehicle =>
+    !Number.isFinite(vehicle.speed) && !Number.isFinite(vehicle.powerKW)
+    && !Number.isFinite(vehicle.emptyWeight));
+  for (const raw of unstated) {
+    const entry = byGameId.get(raw.id);
+    if (entry) assert.notEqual(entry.provenance?.performance, 'game-file', raw.id);
+  }
+  // And the count the old claim produced is no longer reachable.
+  const overclaimed = merged.filter(vehicle => vehicle.provenance?.performance === 'game-file'
+    && !Number.isFinite(vehicle.attrs?.['Max. Geschwindigkeit'])
+    && !Number.isFinite(vehicle.attrs?.Motorleistung)
+    && !Number.isFinite(vehicle.attrs?.Leergewicht));
+  assert.equal(overclaimed.length, 0,
+    `${overclaimed.length} entries still claim a performance they do not carry`);
 });
 
 test('exact electric fact controls catenary state without inventing diesel versus steam', () => {

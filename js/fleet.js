@@ -695,11 +695,22 @@ export function resolveVehicleModels(records, { game = [], workshop = [] } = {})
     resolvedCount += 1;
     resolvedModelIds.add(key);
     const runtimeCategory = entry.type ? vehicleRuntimeCategory(entry.type) : null;
+    // A $LIFESPAN the game states is exact. Where it states none, the
+    // community default for the category is a rule, not an observation, and
+    // this export value is badged exact in the UI - so the two are told apart
+    // rather than the rule passing as the game's own number.
+    const statedLifespan = Number.isFinite(entry.lifespanYears) && entry.lifespanYears > 0;
+    const fallbackLifespan = entry.type && (gameEntry || entry.lifespanYears === 0);
+    const lifespanDays = statedLifespan ? entry.lifespanYears * 365.25
+      : fallbackLifespan ? defaultVehicleLifespan(vehicleRuntimeCategory(entry.type)) : null;
     return {
       ...record,
       modelFacts: {
         id: entry.id,
-        name: entry.en ?? entry.de ?? entry.nameStr ?? entry.id,
+        // German first: the planner's own vocabulary is German, and 42 vehicles
+        // carry an English name with no German one, where this used to show the
+        // English string in a German list.
+        name: entry.de || entry.en || entry.nameStr || entry.id,
         type: entry.type ?? null,
         category: entry.category ?? null,
         runtimeCategory,
@@ -707,16 +718,20 @@ export function resolveVehicleModels(records, { game = [], workshop = [] } = {})
         powerKW: Number.isFinite(entry.powerKW) ? entry.powerKW : null,
         capacity: Number.isFinite(entry.capacity) ? entry.capacity : null,
         transportType: entry.transportType ?? null,
-        transportSubtype: entry.transportType ? resourceTransportSubtype(entry.transportType) : 0,
+        // An unrecognised cargo class is unavailable, not covered cargo. Zero
+        // is RESOURCE_TRANSPORT_COVERED, so the old default priced a vehicle
+        // the map cannot classify as if its hold were covered.
+        transportSubtype: entry.transportType
+          ? resourceTransportSubtype(entry.transportType) : null,
         availableFrom: Number.isFinite(entry.from) ? entry.from : null,
         originCurrency: Number.isFinite(entry.costUSD) ? 'USD'
           : Number.isFinite(entry.costRUB) ? 'RUB' : null,
-        lifespanDays: Number.isFinite(entry.lifespanYears) && entry.lifespanYears > 0
-          ? entry.lifespanYears * 365.25
-          : entry.type && (gameEntry || entry.lifespanYears === 0)
-            ? defaultVehicleLifespan(vehicleRuntimeCategory(entry.type)) : null,
-        electric: typeof entry.electric === 'boolean' ? entry.electric
-          : gameEntry && entry.type === 'VEHICLETYPE_SHIP' ? false : null,
+        lifespanDays,
+        lifespanSource: lifespanDays == null ? 'unavailable'
+          : statedLifespan ? 'game-file' : 'community-default',
+        // Absence of an electric trigger is not a statement that a ship is
+        // not electric, and the recipe branches on this.
+        electric: typeof entry.electric === 'boolean' ? entry.electric : null,
         ...(runtimeCategory === 1 ? {
           roadRecipeBranch: ['ordinary', 'horse-team', 'single-horse'].includes(entry.roadRecipeBranch)
             ? entry.roadRecipeBranch : null,

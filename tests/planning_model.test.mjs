@@ -5,6 +5,7 @@ import {
   createPlanningModel,
   createPlanningCompatibleState,
   detachPlanningAssignments,
+  PLANNING_MODEL_SCHEMA_VERSION,
   rebindPlanningAssignments,
   refreshPlanningFromObservation,
   seedPlanningFromObservation,
@@ -157,7 +158,7 @@ test('wr-planner-v1 flat state migrates planning fields into the canonical model
 
 test('new planning models preserve defaults while accepting partial values', () => {
   const model = createPlanningModel({ plan: { rows: [{ count: 1 }] } });
-  assert.equal(model.schemaVersion, 1);
+  assert.equal(model.schemaVersion, PLANNING_MODEL_SCHEMA_VERSION);
   assert.equal(model.plan.settings.productivity, 1);
   assert.deepEqual(model.plan.rows, [{ count: 1 }]);
   assert.equal(model.evidence.source, 'plan');

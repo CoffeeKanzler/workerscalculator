@@ -1,6 +1,6 @@
 import {
   normalVehicleProductionRecipe, resourceTransportSubtype, vehicleRuntimeCategory,
-} from './fleet.js?v=21';
+} from './fleet.js?v=26';
 
 export const isLocomotive = vehicle =>
   ['Lokomotive', 'Triebwagen'].includes(vehicle?.attrs?.Typ);
@@ -188,6 +188,7 @@ export function mergeVehiclePools(sheetVehicles, railSupplement, rawGameVehicles
       singleHorsePower: raw.singleHorsePower,
     });
     vehicle.sourceGameId = raw.id;
+    if (Number.isInteger(raw.countryId)) vehicle.gameCountryId = raw.countryId;
     if (Number.isFinite(raw.capacity) && raw.transportType) {
       vehicle.gameCapacity = raw.capacity;
       vehicle.gameTransportType = raw.transportType;
@@ -201,9 +202,17 @@ export function mergeVehiclePools(sheetVehicles, railSupplement, rawGameVehicles
       vehicle.gameRecipe = recipe;
       vehicle.provenance.productionCost = 'game-file';
     }
-    vehicle.provenance.dimensions = 'game-file';
-    vehicle.provenance.performance = 'game-file';
-    vehicle.provenance.availability = 'game-file';
+    // Each of these is only claimed where the game file actually states the
+    // value. A vehicle with no bbox has no length, and one with no $AVAILABLE
+    // has no era, so calling the whole record game-file asserted dimensions and
+    // performance the source never gave - 84 entries claimed a performance the
+    // game does not state.
+    if (Number.isFinite(raw.length)) vehicle.provenance.dimensions = 'game-file';
+    if (Number.isFinite(raw.speed) || Number.isFinite(raw.powerKW)
+      || Number.isFinite(raw.emptyWeight)) vehicle.provenance.performance = 'game-file';
+    if (Number.isFinite(raw.from) && Number.isFinite(raw.to)) {
+      vehicle.provenance.availability = 'game-file';
+    }
   }
 
   // Everything above only reaches a game vehicle that happens to share a name
@@ -221,7 +230,20 @@ export function mergeVehiclePools(sheetVehicles, railSupplement, rawGameVehicles
     byName.set(name.toLowerCase(), entry);
     merged.push(entry);
   }
+  for (const vehicle of merged) vehicle.vehicleRef = vehicleReference(vehicle);
   return merged;
+}
+
+// A plan row that remembers which vehicle the user picked has to survive the
+// pool being reordered. The array index it used to store does not: re-extracting
+// the game added 264 vehicles, which moved 321 of the 1148 that already had a
+// row, so a saved plan silently started describing a different truck. The game's
+// own id is the stable identity; the display name is the fallback for a
+// spreadsheet row the game files do not describe.
+export function vehicleReference(vehicle) {
+  const gameId = vehicle?.sourceGameId;
+  if (typeof gameId === 'string' && gameId) return `game:${gameId}`;
+  return vehicle?.name ? `name:${vehicle.name}` : null;
 }
 
 // A pool entry built from game data alone. The interface reads German attr
@@ -254,12 +276,20 @@ function gameOnlyVehicle(raw) {
     },
     sourceGameId: raw.id,
     gameOnly: true,
+    // The game states the country of origin as a $COUNTRY id, which is what
+    // decides the cross-market factor and the blueprint currency. Without it
+    // every vehicle built here rather than described by the spreadsheet is
+    // priced as Soviet, which is how the whole DLC catalogue ended up that way.
+    gameCountryId: Number.isInteger(raw.countryId) ? raw.countryId : null,
     provenance: {
       productionCost: recipe ? 'game-file' : 'unavailable',
       cargoCapacities: Number.isFinite(raw.capacity) && raw.transportType ? 'game-file' : 'unavailable',
-      dimensions: 'game-file',
-      performance: 'game-file',
-      availability: 'game-file',
+      // Only what the game file states, for the same reason as above.
+      dimensions: Number.isFinite(raw.length) ? 'game-file' : 'unavailable',
+      performance: Number.isFinite(raw.speed) || Number.isFinite(raw.powerKW)
+        || Number.isFinite(raw.emptyWeight) ? 'game-file' : 'unavailable',
+      availability: Number.isFinite(raw.from) && Number.isFinite(raw.to)
+        ? 'game-file' : 'unavailable',
     },
   };
   if (recipe) entry.gameRecipe = recipe;
@@ -290,6 +320,12 @@ function gameVehicleTypeLabel(raw) {
   const transport = String(raw.transportType ?? '');
   const passenger = Number.isFinite(raw.capacity) && raw.capacity > 0
     && transport.includes('PASSANGER');
+  const isPassengerStock = passenger;
+  // Passenger capacity only makes something a bus if the game says it runs on
+  // roads. A ferry or a plane that carries people is still a ship or an
+  // aircraft, and three ships were being offered as buses, which put them in
+  // the road recommendation group alongside the trucks.
+  if (raw.type === 'VEHICLETYPE_ROAD' && passenger) return 'Bus';
   const rail = raw.type === 'VEHICLETYPE_RAIL_LOCOMOTIVE' || raw.type === 'VEHICLETYPE_RAIL_VAGON';
   if (rail) {
     switch (raw.trainGroup) {
@@ -304,10 +340,13 @@ function gameVehicleTypeLabel(raw) {
     if (raw.type === 'VEHICLETYPE_RAIL_LOCOMOTIVE') return 'Lokomotive';
     return passenger ? 'Passagierwagen' : 'Güterwagon';
   }
-  if (passenger) return 'Bus';
   switch (raw.type) {
-    case 'VEHICLETYPE_RAIL': return 'Zug';
-    case 'VEHICLETYPE_SHIP': return 'Schiff';
+    case 'VEHICLETYPE_RAIL': return 'Güterwagen';
+    // The sheet splits ships by what they carry, and 'Schiff' is not a label it
+    // uses at all: a game-only ship labelled 'Schiff' matched no sheet row, so
+    // vehicleProductionGroup - which keys on the sheet's own labels - filed it
+    // under road, and the road recommendation table filled up with ferries.
+    case 'VEHICLETYPE_SHIP': return isPassengerStock ? 'Passagierschiff' : 'Frachtschiff';
     case 'VEHICLETYPE_AIRPLANE': return 'Flugzeug';
     case 'VEHICLETYPE_HELICOPTER': return 'Helikopter';
     default: return 'LKW';

@@ -27,6 +27,7 @@ import {
   resolveVehicleModels,
   shareSafeSaveImport,
 } from '../js/fleet.js';
+import { buildingPlanningAuthority } from '../js/calc.js';
 
 test('runtime vehicle categories and default lifespans follow the executable type table', () => {
   assert.equal(vehicleRuntimeCategory('VEHICLETYPE_SHIP'), 6);
@@ -533,6 +534,34 @@ test('recovered materials keep avoided-purchase value distinct from export value
   });
 });
 
+test('a building with no stated provenance is not presented as an exact game fact', () => {
+  // The authority badge is what tells a reader whether a number came from the
+  // game or from a measurement. It used to answer 'game-file' whenever a row
+  // stated no provenance for any of the fields in scope, so every such row -
+  // a save-imported city building among them - was badged exact.
+  const silent = buildingPlanningAuthority({ workers: 10, power: 5 });
+  assert.equal(silent.strongest, 'unknown');
+  assert.equal(silent.exact, false);
+  // Every field in scope counts as non-exact, across all three scopes.
+  assert.equal(silent.nonExactCount, Object.keys(silent.groups.unknown).length);
+  assert.ok(silent.nonExactCount > 10, `only ${silent.nonExactCount} fields counted`);
+
+  // A row that does state the game as its source is still exact: reaching the
+  // end of the severity list with a game-file group is a real claim.
+  const stated = buildingPlanningAuthority({ provenance: {
+    workers: 'game-file', production: 'game-file', consumption: 'game-file',
+  } }, ['economy']);
+  assert.equal(stated.strongest, 'game-file');
+  assert.equal(stated.exact, true);
+
+  // And a row that states a mix still reports the weakest source it names.
+  const mixed = buildingPlanningAuthority({ provenance: {
+    workers: 'game-file', power: 'sheet-measured', water: 'unavailable',
+  } }, ['utilities']);
+  assert.equal(mixed.strongest, 'unavailable');
+  assert.equal(mixed.exact, false);
+});
+
 test('missing recovery prices remain unavailable instead of becoming zero', () => {
   const economy = { buy: () => undefined, sell: () => undefined };
 
@@ -553,15 +582,19 @@ test('fleet model resolution prefers exact authoritative game IDs', () => {
   const resolved = resolveVehicleModels(records, { game, workshop });
 
   assert.deepEqual(resolved.records.map(record => record.modelFacts), [
+    // The tanker states no $LIFESPAN, so 21915 days is the community rule for
+    // ships, not the game's number, and the ship states no electric trigger
+    // rather than a false one.
     { id: 'tanker', name: 'The Pride', type: 'VEHICLETYPE_SHIP', category: null,
       runtimeCategory: 6, emptyWeight: 8780.2, powerKW: 18000, capacity: 19250,
       transportType: 'RESOURCE_TRANSPORT_OIL', transportSubtype: 3, availableFrom: 1979,
-      originCurrency: 'RUB', lifespanDays: 21915, electric: false,
+      originCurrency: 'RUB', lifespanDays: 21915, lifespanSource: 'community-default',
+      electric: null,
       hasHardAttachments: false, source: 'game-file' },
     { id: '1945481818/UAZ_452', name: '1945481818/UAZ_452', type: 'VEHICLETYPE_ROAD',
       category: null, runtimeCategory: 1, emptyWeight: 1.85, powerKW: null, capacity: null,
-      transportType: null, transportSubtype: 0, availableFrom: null,
-      originCurrency: null, lifespanDays: 4383,
+      transportType: null, transportSubtype: null, availableFrom: null,
+      originCurrency: null, lifespanDays: 4383, lifespanSource: 'game-file',
       electric: null, roadRecipeBranch: 'ordinary', singleHorsePower: null,
       hasHardAttachments: false, source: 'workshop-catalog' },
     null,
@@ -570,6 +603,70 @@ test('fleet model resolution prefers exact authoritative game IDs', () => {
     recordCount: 3, resolvedCount: 2, unresolvedCount: 1,
     modelCount: 3, resolvedModelCount: 2,
   });
+});
+
+test('a rule is never presented as a fact the game stated', () => {
+  // The fleet export value is badged exact in the UI, so a value assembled
+  // from community defaults has to be distinguishable from one the game file
+  // states, or the badge claims a precision nobody measured.
+  const [stated] = resolveVehicleModels([{ model: 'stated' }], { game: [{
+    id: 'stated', de: 'Stated', type: 'VEHICLETYPE_ROAD', lifespanYears: 12,
+    emptyWeight: 2, roadRecipeBranch: 'ordinary',
+  }] }).records;
+  assert.equal(stated.modelFacts.lifespanDays, 12 * 365.25);
+  assert.equal(stated.modelFacts.lifespanSource, 'game-file');
+
+  const [unstated] = resolveVehicleModels([{ model: 'unstated' }], { game: [{
+    id: 'unstated', de: 'Unstated', type: 'VEHICLETYPE_ROAD', lifespanYears: 0,
+    emptyWeight: 2, roadRecipeBranch: 'ordinary',
+  }] }).records;
+  assert.equal(unstated.modelFacts.lifespanSource, 'community-default');
+  assert.ok(unstated.modelFacts.lifespanDays > 0, 'and it still yields a usable figure');
+
+  // An unclassifiable cargo hold is unavailable. RESOURCE_TRANSPORT_COVERED is
+  // subtype 0, so defaulting to 0 priced it as a covered hold.
+  const [odd] = resolveVehicleModels([{ model: 'odd' }], { game: [{
+    id: 'odd', de: 'Odd', type: 'VEHICLETYPE_ROAD', lifespanYears: 5,
+    emptyWeight: 2, transportType: 'RESOURCE_TRANSPORT_SOMETHING_NEW', roadRecipeBranch: 'ordinary',
+  }] }).records;
+  assert.equal(odd.modelFacts.transportSubtype, null);
+
+  // No cargo class at all is also unavailable rather than covered.
+  const [none] = resolveVehicleModels([{ model: 'none' }], { game: [{
+    id: 'none', de: 'None', type: 'VEHICLETYPE_ROAD', lifespanYears: 5,
+    emptyWeight: 2, roadRecipeBranch: 'ordinary',
+  }] }).records;
+  assert.equal(none.modelFacts.transportSubtype, null);
+
+  // A ship with no electric trigger is not asserted to be non-electric.
+  const [ship] = resolveVehicleModels([{ model: 'ship' }], { game: [{
+    id: 'ship', de: 'Ship', type: 'VEHICLETYPE_SHIP', lifespanYears: 60,
+    emptyWeight: 8000, capacity: 100, transportType: 'RESOURCE_TRANSPORT_OIL',
+  }] }).records;
+  assert.equal(ship.modelFacts.electric, null);
+  // And one that states it keeps the stated value.
+  const [diesel] = resolveVehicleModels([{ model: 'diesel' }], { game: [{
+    id: 'diesel', de: 'Diesel', type: 'VEHICLETYPE_SHIP', lifespanYears: 60,
+    emptyWeight: 8000, capacity: 100, transportType: 'RESOURCE_TRANSPORT_OIL', electric: false,
+  }] }).records;
+  assert.equal(diesel.modelFacts.electric, false);
+});
+
+test('a vehicle with an English-only name is still shown its German name', () => {
+  // 42 vehicles carry an English name and no German one. This reads English
+  // first, so those showed the English string inside a German list, and the
+  // same vehicle could carry two different names in two tabs.
+  const [vehicle] = resolveVehicleModels([{ model: 'mixed' }], { game: [{
+    id: 'mixed', de: 'Skd 706R Abgedeckt', en: 'Skd 706R Covered',
+    type: 'VEHICLETYPE_ROAD', lifespanYears: 50, emptyWeight: 6,
+  }] }).records;
+  assert.equal(vehicle.modelFacts.name, 'Skd 706R Abgedeckt');
+
+  const [englishOnly] = resolveVehicleModels([{ model: 'en' }], { game: [{
+    id: 'en', de: null, en: 'T24 Bus', type: 'VEHICLETYPE_ROAD',
+    lifespanYears: 50, emptyWeight: 7,
+  }] }).records;
+  assert.equal(englishOnly.modelFacts.name, 'T24 Bus');
 });
 
 test('numeric Workshop models never resolve by basename', () => {

@@ -5,7 +5,9 @@ import path from 'node:path';
 
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 
-import { createPlanningCompatibleState, createPlanningModel } from '../js/models/planning_model.js';
+import {
+  createPlanningCompatibleState, createPlanningModel, PLANNING_MODEL_SCHEMA_VERSION,
+} from '../js/models/planning_model.js';
 import {
   createObservationStore, createPlanningStore, restorePlannerState, serializePlannerState,
 } from '../js/storage/planning_store.js';
@@ -134,7 +136,7 @@ test('restoring tolerates an envelope that carries no planning of its own', () =
 
   assert.equal(restored.saveImport.scopes.length, 1);
   assert.equal(restored.tab, 'map');
-  assert.equal(restored.planning.schemaVersion, 1);
+  assert.equal(restored.planning.schemaVersion, PLANNING_MODEL_SCHEMA_VERSION);
 });
 
 test('app persistence migrates legacy localStorage planning into the planning store', async () => {

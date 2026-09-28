@@ -1,7 +1,7 @@
-import { STRINGS } from './i18n.js?v=229';
+import { STRINGS } from './i18n.js?v=234';
 import { recordToPrices, resourceHistoryKeys } from './statsini.js?v=30';
 import { parseLiveStatsFile } from './live_stats.js?v=4';
-import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=55';
+import { Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, evaluateVehicleProduction, recommendVehicleProduction, vehicleBlueprintQuote, vehicleProductionGroup, vehicleProductionRecipe, buildingPlanningAuthority, profitPerWorkerAfterLabor, workerCostForType, CABLES, QUALITY_BUILDINGS_DE, lowTechPoints, FIELD_SIZES } from './calc.js?v=60';
 import { stateToFragment, fragmentToState, downloadJson } from './share.js?v=13';
 import { solveChain, producersByResource, defaultProducer } from './chain.js?v=17';
 import { TUNABLES, TUNABLE_DEFAULTS, applyTuning } from './community_constants.js?v=13';
@@ -14,7 +14,7 @@ import {
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
-} from './train.js?v=36';
+} from './train.js?v=41';
 import {
   createIndexedDbObservationStore,
   createIndexedDbStatsStore,
@@ -25,7 +25,7 @@ import {
   createPlanningSaveCoordinator,
   migrateLegacySnapshots,
   serializePlannerState,
-} from './storage.js?v=12';
+} from './storage.js?v=16';
 import {
   PLANNING_KEYS,
   createPlanningCompatibleState,
@@ -36,7 +36,7 @@ import {
   rebindPlanningAssignments,
   refreshPlanningFromObservation,
   seedPlanningFromObservation,
-} from './models/planning_model.js?v=11';
+} from './models/planning_model.js?v=16';
 import { isSameRepublic } from './models/republic_identity.js?v=1';
 import { cityScopeIds, planningAreas } from './models/planning_areas.js?v=1';
 import {
@@ -118,14 +118,14 @@ import {
   rankUsedMarketBorderRoutes,
   paginateVehicleOpportunities, shareSafeSaveImport, vehicleCategoryGroup,
   vehicleEconomicOpportunity, vehicleUsedMarketQuote,
-} from './fleet.js?v=29';
+} from './fleet.js?v=34';
 import {
   SaveFolderValidationError,
   orchestrateWorkshopCatalog,
   parseMapLayersInWorker,
-} from './adapters/save_folder_adapter.js?v=33';
-import { matchSaveBuilding } from './adapters/save_projection.js?v=33';
-import { bootstrapRuntime } from './bootstrap.js?v=17';
+} from './adapters/save_folder_adapter.js?v=37';
+import { matchSaveBuilding } from './adapters/save_projection.js?v=37';
+import { bootstrapRuntime } from './bootstrap.js?v=20';
 import { getRuntimeConfig, hasSaveWorkspace } from './runtime/runtime_config.js?v=4';
 import {
   COMMAND_SECTIONS, sectionForTab, tabsForSection, surfaceState,
@@ -2203,9 +2203,31 @@ function renderVehicleProduction() {
     : null;
   const types = [...new Set(available.map(({ vehicle }) => vehicle.attrs.Typ))]
     .sort((a, b) => a.localeCompare(b));
+  // A row remembers the vehicle by its stable reference, not by its position in
+  // the pool. An index into DATA.vehicles is not an identity: the pool is
+  // rebuilt from the game files, and re-extracting moved 321 of the 1148
+  // vehicles that already had a row, which silently repointed every saved plan
+  // at a different truck. The index stays as a display cache and is still
+  // honoured for rows written before this, but only when it still lands on the
+  // type the row recorded.
+  const byRef = new Map(available
+    .map(({ vehicle }) => [vehicle.vehicleRef, vehicle])
+    .filter(([ref]) => ref));
+  const resolveRow = row => {
+    const byReference = row.vehicleRef ? byRef.get(row.vehicleRef) : null;
+    if (byReference && byReference.attrs.Typ === row.type) return byReference;
+    const byIndex = available.find(({ index }) => index === Number(row.vehicleIndex));
+    if (byIndex && byIndex.vehicle.attrs.Typ === row.type) return byIndex.vehicle;
+    return null;
+  };
   if (!plan.rows.length && available.length) {
     const initial = available.find(({ vehicle }) => vehicle.attrs.Typ === 'Bus') ?? available[0];
-    plan.rows.push({ type: initial.vehicle.attrs.Typ, vehicleIndex: initial.index, workers: 100 });
+    plan.rows.push({
+      type: initial.vehicle.attrs.Typ,
+      vehicleRef: initial.vehicle.vehicleRef,
+      vehicleIndex: initial.index,
+      workers: 100,
+    });
   }
 
   const vehicleLabel = vehicle => {
@@ -2264,7 +2286,12 @@ function renderVehicleProduction() {
       el('td', {}, el('button', {
         title: t('addVehicle'),
         onclick: () => {
-          if (source) plan.rows.push({ type: source.vehicle.attrs.Typ, vehicleIndex: source.index, workers: 100 });
+          if (source) plan.rows.push({
+            type: source.vehicle.attrs.Typ,
+            vehicleRef: source.vehicle.vehicleRef,
+            vehicleIndex: source.index,
+            workers: 100,
+          });
           update();
         },
       }, '+')));
@@ -2289,10 +2316,19 @@ function renderVehicleProduction() {
       el('th', {}, `${t('profit')} ${cur()}`), el('th', {}, t('profitPerWorker')), el('th', {}))),
     el('tbody', {}, plan.rows.map((row, rowIndex) => {
       const inType = available.filter(({ vehicle }) => vehicle.attrs.Typ === row.type);
-      let selected = available.find(({ index }) => index === Number(row.vehicleIndex));
-      if (!selected || selected.vehicle.attrs.Typ !== row.type) selected = inType[0];
-      const vehicle = selected?.vehicle;
-      if (selected && row.vehicleIndex !== selected.index) row.vehicleIndex = selected.index;
+      const resolved = resolveRow(row);
+      // Falling back to the first vehicle of the type is unavoidable for a row
+      // whose vehicle is genuinely gone, but the user is told rather than left
+      // with a row that silently changed meaning.
+      const rematched = !resolved;
+      const vehicle = resolved ?? inType[0]?.vehicle;
+      const selected = vehicle
+        ? inType.find(({ vehicle: item }) => item === vehicle) ?? null
+        : null;
+      if (vehicle) {
+        row.vehicleRef = vehicle.vehicleRef;
+        row.vehicleIndex = available.find(({ vehicle: item }) => item === vehicle)?.index ?? null;
+      }
       const result = evaluateVehicleProduction(vehicle, {
         workers: row.workers, productivity: plan.productivity, timeUnit: plan.timeUnit,
         currency: state.currency,
@@ -2308,12 +2344,20 @@ function renderVehicleProduction() {
       return el('tr', {},
         el('td', {}, selectInput(types.map(type => [type, type]), row.type, v => {
           row.type = v;
-          row.vehicleIndex = available.find(({ vehicle: item }) => item.attrs.Typ === v)?.index ?? null;
+          const first = available.find(({ vehicle: item }) => item.attrs.Typ === v);
+          row.vehicleRef = first?.vehicle.vehicleRef ?? null;
+          row.vehicleIndex = first?.index ?? null;
         })),
-        el('td', {}, selectInput(
-          inType.map(({ vehicle: item, index }) => [String(index), vehicleLabel(item)]),
-          String(selected?.index ?? ''), v => { row.vehicleIndex = Number(v); }),
-          (materialLine || recipeBadge) ? el('div', { class: 'subline' }, materialLine, recipeBadge) : null),
+        el('td', {}, el('div', {},
+          selectInput(
+            inType.map(({ vehicle: item, index }) => [String(index), vehicleLabel(item)]),
+            String(selected?.index ?? ''), v => {
+              const picked = available.find(({ index }) => index === Number(v))?.vehicle;
+              row.vehicleIndex = Number(v);
+              row.vehicleRef = picked?.vehicleRef ?? null;
+            }),
+          (materialLine || recipeBadge) ? el('div', { class: 'subline' }, materialLine, recipeBadge) : null,
+          rematched ? el('div', { class: 'hint warn' }, t('planVehicleRematched')) : null)),
         el('td', {}, numInput(row.workers, v => row.workers = v, { min: 0, step: 10 })),
         el('td', { class: 'r' }, fmt(result.salePrice, 0)),
         el('td', { class: 'r' }, vehicle ? fmt(result.workdays, 0) : '—'),
@@ -2354,7 +2398,12 @@ function renderVehicleProduction() {
     el('div', { class: 'tablewrap' }, table),
     el('button', { onclick: () => {
       const initial = available[0];
-      if (initial) plan.rows.push({ type: initial.vehicle.attrs.Typ, vehicleIndex: initial.index, workers: 100 });
+      if (initial) plan.rows.push({
+        type: initial.vehicle.attrs.Typ,
+        vehicleRef: initial.vehicle.vehicleRef,
+        vehicleIndex: initial.index,
+        workers: 100,
+      });
       update();
     } }, t('addVehicle')),
     el('div', { class: 'totalsbox vehicletotals' },

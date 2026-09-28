@@ -61,7 +61,14 @@ export function buildingPlanningAuthority(building, scopes = ['economy', 'utilit
     (groups[source] ??= []).push(field);
   }
   const priority = ['user-override', 'unavailable', 'unknown', 'sheet-category-estimate', 'sheet-scaled', 'sheet-measured'];
-  const strongest = priority.find(source => groups[source]?.length) ?? 'game-file';
+  // 'game-file' is the last resort only when the row actually states it, which
+  // is why it is not in the list above: reaching the end of the list with no
+  // group matched means no field claims a game-file origin, and the honest
+  // answer then is that the source is unknown. Defaulting to 'game-file' made
+  // every row carrying no provenance at all - a save-imported city building
+  // among them - read as an exact observation, the one claim this badge is for.
+  const strongest = priority.find(source => groups[source]?.length)
+    ?? (groups['game-file']?.length ? 'game-file' : 'unknown');
   return {
     strongest,
     exact: strongest === 'game-file',
@@ -172,6 +179,35 @@ const WESTERN_VEHICLE_ORIGINS = new Set([
   'West Deutschland', 'West Germany',
 ]);
 
+// The spreadsheet states an origin by name, which is what the set above reads.
+// A vehicle the game files describe has no spreadsheet row and so no name, and
+// the cross-market factor and blueprint currency both default to Soviet for
+// every one of them: naming the DLC packs put 579 Western and Japanese
+// vehicles into the pool, all of them priced as if Soviet-built. The game
+// states the same fact as a numeric $COUNTRY, so the id is mapped to the same
+// spreadsheet vocabulary. Every entry here is read off a vehicle the game and
+// the spreadsheet agree on, so the two sources cannot drift apart silently.
+const WESTERN_COUNTRY_IDS = new Set([
+  39003, // East Germany
+  39004, // East Germany
+  39005, // West Germany
+  39016, // France
+  39017, // Italy
+  39018, // USA
+  39021, // Russia, in its post-Soviet export vehicles
+  39022, // Sweden
+  39030, // Japan
+]);
+
+// Whether the vehicle is built outside the Soviet bloc, from either source.
+// An unavailable origin is not evidence of a Soviet one, so this only answers
+// true when a source actually states a Western origin.
+export function isWesternVehicle(vehicle) {
+  if (WESTERN_VEHICLE_ORIGINS.has(vehicle?.attrs?.Bauland)) return true;
+  const id = vehicle?.gameCountryId;
+  return Number.isInteger(id) && WESTERN_COUNTRY_IDS.has(id);
+}
+
 const SHIP_TYPES = new Set(['Frachtschiff', 'Passagierschiff']);
 const RAIL_TYPES = new Set([
   'Gleisbau', 'Güterwagon', 'Lokomotive', 'Passagierwagen', 'Straßenbahn',
@@ -259,7 +295,7 @@ function summarizeVehicleRecipe(recipe) {
 // origin adjustment is inside the loop, so component order is significant.
 export function vehicleSaleValue(vehicle, currency, eco) {
   const attrs = vehicle?.attrs ?? {};
-  const western = WESTERN_VEHICLE_ORIGINS.has(attrs.Bauland);
+  const western = isWesternVehicle(vehicle);
   const crossMarketFactor = currency === 'USD'
     ? (western ? 1 : 0.65)
     : (western ? 1.27 : 1);
@@ -282,7 +318,7 @@ export function vehicleSaleValue(vehicle, currency, eco) {
 // label the default 1x result as a standard-rule quote rather than a saved fee.
 export function vehicleBlueprintQuote(vehicle, eco, ownedIds = null, options = {}) {
   const attrs = vehicle?.attrs ?? {};
-  const currency = WESTERN_VEHICLE_ORIGINS.has(attrs.Bauland) ? 'USD' : 'RUB';
+  const currency = isWesternVehicle(vehicle) ? 'USD' : 'RUB';
   if (!vehicle?.sourceGameId || !Array.isArray(vehicle.gameRecipe)) {
     return { status: 'unavailable', currency, cost: null, factor: null };
   }

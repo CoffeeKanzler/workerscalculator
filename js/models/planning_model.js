@@ -1,6 +1,12 @@
 import { createEvidence } from './evidence.js';
 
-export const PLANNING_MODEL_SCHEMA_VERSION = 1;
+// 2: a vehicleProduction row records `vehicleRef`, the game's own id for the
+// vehicle it names. Version 1 stored only `vehicleIndex`, a position in the
+// merged pool, which is not an identity: rebuilding the pool from the game
+// files reorders it and the row silently described a different vehicle. An
+// index is still read for rows written before this, and still written as a
+// display cache, but it no longer decides what the row means.
+export const PLANNING_MODEL_SCHEMA_VERSION = 2;
 
 // These values are hypothetical or user-controlled.  The application keeps
 // compatibility aliases for the old flat state shape, but this list is the

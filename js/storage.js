@@ -7,8 +7,8 @@ import {
   createPlanningStore,
   createStatsStore,
   restorePlannerState,
-} from './storage/planning_store.js?v=6';
-import { PLANNING_KEYS, createPlanningModel } from './models/planning_model.js?v=11';
+} from './storage/planning_store.js?v=10';
+import { PLANNING_KEYS, createPlanningModel } from './models/planning_model.js?v=16';
 
 export {
   createObservationStore,
@@ -17,7 +17,7 @@ export {
   migrateLegacyPlannerState,
   restorePlannerState,
   serializePlannerState,
-} from './storage/planning_store.js?v=6';
+} from './storage/planning_store.js?v=10';
 
 export function createPlanningPersistence({
   planningStore,

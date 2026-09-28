@@ -6,7 +6,8 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   Economy, evaluatePlan, evaluateCity, evaluateCityProductivityScenarios, lowTechPoints,
-  evaluateVehicleProduction, recommendVehicleProduction, vehicleAvailableInRange, vehicleSaleValue,
+  evaluateVehicleProduction, isWesternVehicle, recommendVehicleProduction,
+  vehicleAvailableInRange, vehicleSaleValue,
   vehicleBlueprintQuote, vehicleProductionGroup, SEASON_FACTOR, NO_SEASON_FACTOR,
   buildingPlanningAuthority, profitPerWorkerAfterLabor, residentWorkdayCost, workerCostForType,
 } from '../js/calc.js';
@@ -567,6 +568,39 @@ test('vehicle production groups match factory categories', () => {
   assert.equal(vehicleProductionGroup(vehicle('Lokomotive')), 'trains');
   assert.equal(vehicleProductionGroup(vehicle('Frachtschiff')), 'boats');
   assert.equal(vehicleProductionGroup(vehicle('Hubschrauber')), 'aircraft');
+});
+
+test('a game-stated country decides the market the vehicle is priced in', () => {
+  // The origin used to come only from the spreadsheet's Bauland string, so every
+  // vehicle the game files describe rather than the spreadsheet was treated as
+  // Soviet: the Western cross-market factor was skipped and the blueprint quote
+  // came back in rubles. The game states the same fact as a $COUNTRY id.
+  const recipe = [['workers', 10], ['steel', 2]];
+  const soviet = {
+    sourceGameId: 'soviet_bus', gameCountryId: 39000,
+    attrs: { Typ: 'Bus' }, gameRecipe: recipe,
+  };
+  const western = {
+    sourceGameId: 'west_bus', gameCountryId: 39005,
+    attrs: { Typ: 'Bus' }, gameRecipe: recipe,
+  };
+
+  assert.equal(isWesternVehicle(soviet), false);
+  assert.equal(isWesternVehicle(western), true);
+  assert.equal(vehicleBlueprintQuote(soviet, eco(), []).currency, 'RUB');
+  assert.equal(vehicleBlueprintQuote(western, eco(), []).currency, 'USD');
+  // The USD cross-market factor is 1 for a Western vehicle and 0.65 otherwise,
+  // so a Western one is no longer discounted as if it were Soviet-built.
+  assert.ok(vehicleSaleValue(western, 'USD', eco())
+    > vehicleSaleValue(soviet, 'USD', eco()) * 1.4);
+
+  // Both sources agree when both are present, and neither invents one.
+  assert.equal(isWesternVehicle({ attrs: { Bauland: 'West Germany' } }), true);
+  assert.equal(isWesternVehicle({ attrs: { Bauland: 'Sowjetunion' }, gameCountryId: 39018 }),
+    true, 'the game id and the spreadsheet name must not contradict each other');
+  assert.equal(isWesternVehicle({ attrs: { Typ: 'LKW' } }), false,
+    'an unavailable origin is not evidence of a Soviet one');
+  assert.equal(isWesternVehicle(null), false);
 });
 
 test('standard blueprint quote follows native-currency road and ship branches', () => {
