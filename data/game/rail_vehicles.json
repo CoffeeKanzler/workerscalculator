@@ -1,6 +1,6 @@
 [
  {
-  "name": "russian_service_tbm_kt1_loco",
+  "name": "Razici Stit KT1-5.6m",
   "attrs": {
    "Typ": "Lokomotive",
    "Länge": 7.94,
@@ -133,7 +133,7 @@
   }
  },
  {
-  "name": "russian_diesel_te1",
+  "name": "TE1",
   "attrs": {
    "Typ": "Lokomotive",
    "Länge": 16.98,
@@ -147,13 +147,13 @@
   "dlc": "dlc3"
  },
  {
-  "name": "russian_electric_so",
+  "name": "SO Series",
   "attrs": {
    "Typ": "Lokomotive",
    "Länge": 13.75,
    "Leergewicht": 93.4,
    "Von": 1936,
-   "Bis": 1957,
+   "Bis": 1941,
    "Motorleistung": 440.0,
    "Max. Geschwindigkeit": 65.0,
    "Antriebsart": "?"
@@ -161,7 +161,7 @@
   "dlc": "dlc3"
  },
  {
-  "name": "russian_electric_vl19",
+  "name": "VL19",
   "attrs": {
    "Typ": "Lokomotive",
    "Länge": 16.12,
@@ -175,7 +175,7 @@
   "dlc": "dlc3"
  },
  {
-  "name": "russian_electric_vl22m",
+  "name": "VL22m",
   "attrs": {
    "Typ": "Lokomotive",
    "Länge": 16.21,
@@ -232,7 +232,7 @@
   }
  },
  {
-  "name": "west_diesel_RSD1",
+  "name": "RSD-1",
   "attrs": {
    "Typ": "Lokomotive",
    "Länge": 16.51,
@@ -246,7 +246,7 @@
   "dlc": "dlc3"
  },
  {
-  "name": "west_service_steamcrane_v2",
+  "name": "Steam crane Industrial works Bay City",
   "attrs": {
    "Typ": "Lokomotive",
    "Länge": 8.46,

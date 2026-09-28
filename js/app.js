@@ -14,7 +14,7 @@ import {
 import {
   isLocomotive, evaluateConsist, eraOk, recommendTrain, mergeVehiclePools,
   vehicleCargoCapacity, vehicleSupportsCargo, vehicleDrive,
-} from './train.js?v=31';
+} from './train.js?v=34';
 import {
   createIndexedDbObservationStore,
   createIndexedDbStatsStore,

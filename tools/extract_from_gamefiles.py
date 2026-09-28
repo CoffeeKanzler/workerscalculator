@@ -386,6 +386,11 @@ def parse_vehicle(path, category):
             if key in VEHICLE_SCALARS and args:
                 field, conv = VEHICLE_SCALARS[key]
                 v[field] = conv(float(args[0])) if conv is int else conv(args[0])
+            elif key == 'NAME_STR' and args:
+                # DLC vehicle packs ship a literal name instead of a $NAME id.
+                # Without this every DLC vehicle stayed nameless, and the site
+                # drops a game vehicle it cannot name (rawVehicleDisplayName).
+                v['nameStr'] = ' '.join(args).strip('"')
             elif key == 'TYPE' and args:
                 v['type'] = args[0]
             elif key == 'HORSE':

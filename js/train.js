@@ -78,6 +78,11 @@ const AMBIGUOUS_SHEET_CARGO = cargoNames(
   'ecomponents', 'Elektronik-Bauteile', 'Electronic components',
   'eletronics', 'Elektronik', 'Electronics');
 
+// Curated display names, not a fallback for missing data. The game now ships a
+// literal English name ("RuBalt D24/40 Dry Bulk") for these ids, but the pool
+// has always listed them in the established German spelling that matches the
+// spreadsheet's "Russo-Balt T40/65 …" rows, so this table keeps winning over
+// the raw game string instead of showing one vehicle under a second name.
 const D24_40_DISPLAY_NAMES = Object.freeze({
   cement_russo_balt_d24_40: 'Russo-Balt D24/40 (cement)',
   covered_russo_balt_d24_40: 'Russo-Balt D24/40 (covered cargo)',
@@ -94,7 +99,7 @@ const D24_40_DISPLAY_NAMES = Object.freeze({
 });
 
 function rawVehicleDisplayName(raw) {
-  return raw.de || raw.en || D24_40_DISPLAY_NAMES[raw.id] || null;
+  return D24_40_DISPLAY_NAMES[raw.id] || raw.de || raw.en || null;
 }
 
 export function vehicleSupportsCargo(vehicle, cargo) {

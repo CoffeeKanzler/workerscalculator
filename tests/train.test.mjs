@@ -89,6 +89,49 @@ test('unrelated unnamed raw vehicles remain excluded', () => {
   assert.deepEqual(result, []);
 });
 
+test('a vehicle the game names only with a literal string reaches the public pool', () => {
+  const [vehicle] = mergeVehiclePools([], [], [{
+    id: 'covered_skd706r', de: 'Skd 706R Covered', en: 'Skd 706R Covered',
+    type: 'VEHICLETYPE_ROAD', emptyWeight: 6, powerKW: 118, speed: 62,
+    from: 1945, to: 1955, capacity: 7.5,
+    transportType: 'RESOURCE_TRANSPORT_COVERED', roadRecipeBranch: 'ordinary',
+  }]);
+  assert.equal(vehicle.name, 'Skd 706R Covered');
+  assert.equal(vehicle.sourceGameId, 'covered_skd706r');
+  assert.equal(vehicle.attrs.Typ, 'LKW');
+  assert.ok(Array.isArray(vehicle.gameRecipe));
+  assert.equal(vehicle.provenance.productionCost, 'game-file');
+});
+
+test('the curated D24/40 display names win over the literal game name', () => {
+  // The game ships "RuBalt D24/40 Dry Bulk"; the pool has always listed these
+  // twelve in the German spelling that matches the T40/65 rows.
+  const [, gravel] = mergeVehiclePools([], [], [
+    { id: 'cement_russo_balt_d24_40', de: 'RuBalt D24/40 Dry Bulk', type: 'VEHICLETYPE_ROAD', emptyWeight: 8.2, powerKW: 147, from: 1912, to: 1924, roadRecipeBranch: 'ordinary' },
+    { id: 'gravel_russo_balt_d24_40', de: 'RuBalt D24/40 Dumper', type: 'VEHICLETYPE_ROAD', emptyWeight: 8.2, powerKW: 147, from: 1912, to: 1924, roadRecipeBranch: 'ordinary' },
+  ]);
+  assert.equal(gravel.name, 'Russo-Balt D24/40 (gravel)');
+});
+
+test('the Skoda DLC road vehicles the game names are offered in the pool', () => {
+  // The DLC packs name their vehicles with a literal $NAME_STR. When the
+  // extractor read only $NAME, every one of them was nameless and the pool
+  // dropped them, which is how the Skoda line went missing from the site.
+  const skoda = rawVehicles.filter(vehicle => /skd/i.test(vehicle.id));
+  assert.ok(skoda.length >= 40, `only ${skoda.length} Skoda vehicles in the raw dataset`);
+  const unlisted = skoda.filter(vehicle => !merged.some(entry =>
+    entry.sourceGameId === vehicle.id || entry.name === (vehicle.de || vehicle.en)));
+  assert.deepEqual(unlisted.map(vehicle => vehicle.id), [],
+    'Skoda vehicles the pool cannot list');
+  for (const name of ['Skd 706R Covered', 'Skd 6T + D4', 'Skd 706 RO + D4', 'Skd 9T + PO-1']) {
+    const entry = byName.get(name);
+    assert.ok(entry, `${name} is missing from the vehicle pool`);
+    assert.equal(entry.gameOnly, true);
+    assert.ok(Array.isArray(entry.gameRecipe), `${name} has no production recipe`);
+    assert.ok(['Bus', 'LKW'].includes(entry.attrs.Typ), `${name} has type ${entry.attrs.Typ}`);
+  }
+});
+
 test('exact wagon transport class replaces stale capacity and rejects production-material columns', () => {
   const [vehicle] = mergeVehiclePools([{
     name: 'Exact hopper', attrs: {
