@@ -1,0 +1,483 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3811276703",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-02T10:33:19.251Z",
+  "buildings": [
+    {
+      "id": "3811276703/Ale",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Ale barrel",
+      "workshopId": "3811276703",
+      "modPath": "Ale",
+      "footprint": {
+        "boxes": [
+          [
+            -0.63,
+            -0.63,
+            0.63,
+            0.63
+          ]
+        ],
+        "height": 1.6
+      }
+    },
+    {
+      "id": "3811276703/Bale",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Bale of straw",
+      "workshopId": "3811276703",
+      "modPath": "Bale",
+      "footprint": {
+        "boxes": [
+          [
+            -0.4,
+            -1.25,
+            0.4,
+            1.25
+          ]
+        ],
+        "height": 0.8
+      }
+    },
+    {
+      "id": "3811276703/Bale_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Hay bale",
+      "workshopId": "3811276703",
+      "modPath": "Bale_2",
+      "footprint": {
+        "boxes": [
+          [
+            -0.6,
+            -0.65,
+            0.6,
+            0.65
+          ]
+        ],
+        "height": 1.3
+      }
+    },
+    {
+      "id": "3811276703/Bale_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Hay bale",
+      "workshopId": "3811276703",
+      "modPath": "Bale_3",
+      "footprint": {
+        "boxes": [
+          [
+            -1.3,
+            -0.6,
+            1.3,
+            0.6
+          ]
+        ],
+        "height": 2.4
+      }
+    },
+    {
+      "id": "3811276703/Bale_4",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Hay bale",
+      "workshopId": "3811276703",
+      "modPath": "Bale_4",
+      "footprint": {
+        "boxes": [
+          [
+            -0.6,
+            -2.6,
+            0.6,
+            2.6
+          ]
+        ],
+        "height": 3.5
+      }
+    },
+    {
+      "id": "3811276703/Bale_s",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Small bale of straw",
+      "workshopId": "3811276703",
+      "modPath": "Bale_s",
+      "footprint": {
+        "boxes": [
+          [
+            -0.22,
+            -0.4,
+            0.22,
+            0.4
+          ]
+        ],
+        "height": 0.46
+      }
+    },
+    {
+      "id": "3811276703/Barrel_s",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Small barrel with veggies",
+      "workshopId": "3811276703",
+      "modPath": "Barrel_s",
+      "footprint": {
+        "boxes": [
+          [
+            -0.63,
+            -0.63,
+            0.63,
+            0.63
+          ]
+        ],
+        "height": 1.6
+      }
+    },
+    {
+      "id": "3811276703/Carton",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Carton boxes",
+      "workshopId": "3811276703",
+      "modPath": "Carton",
+      "footprint": {
+        "boxes": [
+          [
+            -0.6,
+            -0.4,
+            0.6,
+            0.4
+          ]
+        ],
+        "height": 0.94
+      }
+    },
+    {
+      "id": "3811276703/Carton2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Palette of carton boxes",
+      "workshopId": "3811276703",
+      "modPath": "Carton2",
+      "footprint": {
+        "boxes": [
+          [
+            -0.6,
+            -0.4,
+            0.6,
+            0.4
+          ]
+        ],
+        "height": 0.94
+      }
+    },
+    {
+      "id": "3811276703/Churn",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Churn",
+      "workshopId": "3811276703",
+      "modPath": "Churn",
+      "footprint": {
+        "boxes": [
+          [
+            -0.14,
+            -0.12,
+            0.14,
+            0.12
+          ]
+        ],
+        "height": 0.48
+      }
+    },
+    {
+      "id": "3811276703/Cooker",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Cooker",
+      "workshopId": "3811276703",
+      "modPath": "Cooker",
+      "footprint": {
+        "boxes": [
+          [
+            -0.6,
+            -0.4,
+            0.6,
+            0.4
+          ]
+        ],
+        "height": 0.97
+      }
+    },
+    {
+      "id": "3811276703/Crate_s",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Small crate with food",
+      "workshopId": "3811276703",
+      "modPath": "Crate_s",
+      "footprint": {
+        "boxes": [
+          [
+            -0.6,
+            -0.4,
+            0.6,
+            0.4
+          ]
+        ],
+        "height": 0.64
+      }
+    },
+    {
+      "id": "3811276703/Petrol",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Petrol barrel",
+      "workshopId": "3811276703",
+      "modPath": "Petrol",
+      "footprint": {
+        "boxes": [
+          [
+            -0.3,
+            -0.31,
+            0.3,
+            0.31
+          ]
+        ],
+        "height": 0.9
+      }
+    },
+    {
+      "id": "3811276703/Washing",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Washing machine",
+      "workshopId": "3811276703",
+      "modPath": "Washing",
+      "footprint": {
+        "boxes": [
+          [
+            -0.6,
+            -0.4,
+            0.6,
+            0.4
+          ],
+          [
+            -0.6,
+            -0.37,
+            0.58,
+            0.37
+          ],
+          [
+            -0.6,
+            -0.4,
+            0.6,
+            0.4
+          ]
+        ],
+        "height": 0.92
+      }
+    }
+  ],
+  "vehicles": []
+}
