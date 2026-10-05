@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3808360451",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-05T11:33:44.822Z",
+  "buildings": [
+    {
+      "id": "3808360451/AggregateStorage_small",
+      "nameId": 1562,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 500
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3808360451",
+      "modPath": "AggregateStorage_small",
+      "footprint": {
+        "boxes": [
+          [
+            -2.7,
+            -21.97,
+            2.7,
+            6
+          ],
+          [
+            -3.75,
+            6,
+            3.95,
+            14.4
+          ],
+          [
+            -15.5,
+            19.5,
+            15.5,
+            20.5
+          ]
+        ],
+        "height": 20.72
+      }
+    },
+    {
+      "id": "3808360451/AggregateStorage_tiny",
+      "nameId": 1562,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 250
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3808360451",
+      "modPath": "AggregateStorage_tiny",
+      "footprint": {
+        "boxes": [
+          [
+            -2.7,
+            -14.94,
+            2.7,
+            -0.02
+          ],
+          [
+            -3.75,
+            0,
+            3.95,
+            8.4
+          ],
+          [
+            -15.5,
+            13.5,
+            15.5,
+            14.5
+          ]
+        ],
+        "height": 13.9
+      }
+    }
+  ],
+  "vehicles": []
+}
