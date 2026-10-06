@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3814095399",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-06T11:20:10.123Z",
+  "buildings": [
+    {
+      "id": "3814095399/37_2_dom_114_24_26",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 26,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 26
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "114-24-26_2ÑÑ",
+      "workshopId": "3814095399",
+      "modPath": "37_2_dom_114_24_26",
+      "footprint": {
+        "boxes": [
+          [
+            -19.54,
+            -7.81,
+            19.54,
+            6.67
+          ]
+        ],
+        "height": 9.87
+      }
+    },
+    {
+      "id": "3814095399/38_3_dom_114_24_26",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "114-24-26_3ÑÑ",
+      "workshopId": "3814095399",
+      "modPath": "38_3_dom_114_24_26",
+      "footprint": {
+        "boxes": [
+          [
+            -19.54,
+            -7.81,
+            19.54,
+            6.67
+          ]
+        ],
+        "height": 12.75
+      }
+    },
+    {
+      "id": "3814095399/39_4_dom_114_24_26",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 54,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.78,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 54
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "114-24-26_4ÑÑ",
+      "workshopId": "3814095399",
+      "modPath": "39_4_dom_114_24_26",
+      "footprint": {
+        "boxes": [
+          [
+            -19.54,
+            -7.81,
+            19.54,
+            6.67
+          ]
+        ],
+        "height": 15.44
+      }
+    }
+  ],
+  "vehicles": []
+}

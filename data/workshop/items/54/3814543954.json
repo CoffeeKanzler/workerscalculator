@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3814543954",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-06T11:20:10.132Z",
+  "buildings": [
+    {
+      "id": "3814543954/water_rail_station",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_WATER": 120
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐµÐ»ÐµÐ·Ð½Ð¾Ð´Ð¾ÑÐ¾Ð¶Ð½Ð°Ñ Ð²Ð¾Ð´Ð¾Ð½Ð°Ð»Ð¸Ð²Ð½Ð°Ñ ÑÑÐ°Ð½ÑÐ¸Ñ",
+      "workshopId": "3814543954",
+      "modPath": "water_rail_station",
+      "footprint": {
+        "boxes": [
+          [
+            -20.22,
+            -8.91,
+            1.97,
+            8.57
+          ],
+          [
+            10.28,
+            -11.02,
+            29.64,
+            11.52
+          ],
+          [
+            9.17,
+            -13.26,
+            16.64,
+            -1.53
+          ],
+          [
+            -15.32,
+            -13.17,
+            -9.58,
+            -3.68
+          ],
+          [
+            -15.3,
+            3.81,
+            -6.34,
+            14.42
+          ],
+          [
+            9.17,
+            1.85,
+            18.2,
+            14.17
+          ]
+        ],
+        "height": 21.9
+      }
+    }
+  ],
+  "vehicles": []
+}
