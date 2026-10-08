@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3814373926",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-08T11:25:20.656Z",
+  "buildings": [
+    {
+      "id": "3814373926/tramdo_large",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE",
+        "SUBTYPE_TRAM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2750,
+        "concrete": 62,
+        "gravel": 56,
+        "asphalt": 38,
+        "bricks": 138,
+        "boards": 44,
+        "steel": 18
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tram Distribution Office (large trams)",
+      "workshopId": "3814373926",
+      "modPath": "tramdo_large",
+      "footprint": {
+        "boxes": [
+          [
+            -26.66,
+            -25.58,
+            50.3,
+            13.73
+          ],
+          [
+            -8.28,
+            13.46,
+            7.72,
+            13.61
+          ],
+          [
+            -49.4,
+            -23.67,
+            48.6,
+            14.44
+          ],
+          [
+            -10.88,
+            12.81,
+            3.63,
+            13.75
+          ],
+          [
+            -24.01,
+            -25.48,
+            25.92,
+            9.5
+          ],
+          [
+            -9.28,
+            9.45,
+            8.72,
+            13.43
+          ],
+          [
+            -26.61,
+            -25.43,
+            50.2,
+            10.33
+          ],
+          [
+            -38.01,
+            -25.46,
+            50.15,
+            14.98
+          ],
+          [
+            -38.98,
+            11.26,
+            -10.79,
+            12.93
+          ],
+          [
+            -49.7,
+            -24.17,
+            51.64,
+            22.55
+          ],
+          [
+            -49.25,
+            -22.49,
+            29.45,
+            13.68
+          ],
+          [
+            -37.86,
+            11.63,
+            -34.74,
+            14.83
+          ],
+          [
+            45.65,
+            8.68,
+            45.69,
+            9.38
+          ]
+        ],
+        "height": 16.58
+      }
+    },
+    {
+      "id": "3814373926/tramdo_small",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE",
+        "SUBTYPE_TRAM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 2200,
+        "concrete": 50,
+        "gravel": 45,
+        "asphalt": 30,
+        "bricks": 110,
+        "boards": 35,
+        "steel": 14
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Tram Distribution Office (small trams)",
+      "workshopId": "3814373926",
+      "modPath": "tramdo_small",
+      "footprint": {
+        "boxes": [
+          [
+            -13.55,
+            -21.91,
+            21.31,
+            17.81
+          ],
+          [
+            -10.14,
+            -12.64,
+            -9.99,
+            1.34
+          ],
+          [
+            -13.57,
+            -32.29,
+            20.35,
+            16.56
+          ],
+          [
+            -10.28,
+            -15.26,
+            -6.16,
+            -1.74
+          ],
+          [
+            -5.11,
+            -21.18,
+            21.21,
+            14.1
+          ],
+          [
+            -9.96,
+            -13.64,
+            -5.06,
+            2.34
+          ],
+          [
+            -13.45,
+            -21.86,
+            21.16,
+            17.71
+          ],
+          [
+            -13.4,
+            -21.76,
+            21.2,
+            17.66
+          ],
+          [
+            -12.8,
+            -19.39,
+            -9.28,
+            -15.14
+          ],
+          [
+            -19.95,
+            -32.79,
+            21.02,
+            24.07
+          ],
+          [
+            -10.21,
+            -31.11,
+            20.2,
+            1.04
+          ],
+          [
+            -11.11,
+            -20.99,
+            -7.99,
+            -17.79
+          ],
+          [
+            -13.6,
+            16.06,
+            -13.56,
+            16.76
+          ]
+        ],
+        "height": 16.58
+      }
+    }
+  ],
+  "vehicles": []
+}
