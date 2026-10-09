@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3816080236",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-09T11:22:16.237Z",
+  "buildings": [
+    {
+      "id": "3816080236/Sinergia",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 326,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 326
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Sinergia Blue",
+      "workshopId": "3816080236",
+      "modPath": "Sinergia",
+      "footprint": {
+        "boxes": [
+          [
+            -25.79,
+            -7.15,
+            26.08,
+            6.63
+          ]
+        ],
+        "height": 40.14
+      }
+    }
+  ],
+  "vehicles": []
+}

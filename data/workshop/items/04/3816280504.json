@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3816280504",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-09T11:22:16.239Z",
+  "buildings": [
+    {
+      "id": "3816280504/bus_terminal",
+      "nameId": 1801,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 2000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 2000
+      },
+      "constructionResources": {
+        "workers": 27,
+        "gravel": 68,
+        "concrete": 43,
+        "steel": 0.8,
+        "asphalt": 37
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "3816280504",
+      "modPath": "bus_terminal",
+      "footprint": {
+        "boxes": [
+          [
+            -42.9,
+            -35.75,
+            42.9,
+            35.75
+          ]
+        ],
+        "height": 0.05
+      }
+    }
+  ],
+  "vehicles": []
+}
