@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3816808930",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-10T10:39:16.464Z",
+  "buildings": [
+    {
+      "id": "3816808930/Large_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Flying PDRY Flag",
+      "workshopId": "3816808930",
+      "modPath": "Large_Flying",
+      "footprint": {
+        "boxes": [
+          [
+            -0.47,
+            -0.43,
+            0.44,
+            0.48
+          ],
+          [
+            -0.05,
+            -0.29,
+            0.02,
+            -0.07
+          ],
+          [
+            -2.85,
+            -4.41,
+            0,
+            -0.24
+          ],
+          [
+            -2.85,
+            -4.41,
+            0,
+            -0.24
+          ]
+        ],
+        "height": 31.02
+      }
+    },
+    {
+      "id": "3816808930/Large_Still",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Still PDRY Flag",
+      "workshopId": "3816808930",
+      "modPath": "Large_Still",
+      "footprint": {
+        "boxes": [
+          [
+            -0.45,
+            -0.43,
+            0.45,
+            0.48
+          ],
+          [
+            -0.7,
+            -0.88,
+            0.69,
+            0.14
+          ]
+        ],
+        "height": 31.02
+      }
+    },
+    {
+      "id": "3816808930/Med_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Flying PDRY Flag",
+      "workshopId": "3816808930",
+      "modPath": "Med_Flying",
+      "footprint": {
+        "boxes": [
+          [
+            -0.53,
+            -0.17,
+            -0.21,
+            0.15
+          ],
+          [
+            -1.97,
+            -2.44,
+            -0.37,
+            -0.11
+          ],
+          [
+            -1.97,
+            -2.44,
+            -0.37,
+            -0.11
+          ]
+        ],
+        "height": 12.7
+      }
+    },
+    {
+      "id": "3816808930/Med_Still",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Medium Still PDRY Flag",
+      "workshopId": "3816808930",
+      "modPath": "Med_Still",
+      "footprint": {
+        "boxes": [
+          [
+            -0.15,
+            -0.17,
+            0.14,
+            0.13
+          ],
+          [
+            -0.35,
+            -0.43,
+            0.36,
+            0.09
+          ],
+          [
+            -0.35,
+            -0.43,
+            0.36,
+            0.09
+          ]
+        ],
+        "height": 11.72
+      }
+    },
+    {
+      "id": "3816808930/Small_Flying",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Flying PDRY Flag",
+      "workshopId": "3816808930",
+      "modPath": "Small_Flying",
+      "footprint": {
+        "boxes": [
+          [
+            -0.53,
+            -0.17,
+            -0.21,
+            0.15
+          ],
+          [
+            -1.97,
+            -2.44,
+            -0.37,
+            -0.11
+          ],
+          [
+            -1.97,
+            -2.44,
+            -0.37,
+            -0.11
+          ]
+        ],
+        "height": 12.7
+      }
+    },
+    {
+      "id": "3816808930/Small_Still",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Small Still PDRY Flag",
+      "workshopId": "3816808930",
+      "modPath": "Small_Still",
+      "footprint": {
+        "boxes": [
+          [
+            -0.15,
+            -0.17,
+            0.14,
+            0.13
+          ],
+          [
+            -0.35,
+            -0.43,
+            0.36,
+            0.09
+          ],
+          [
+            -0.35,
+            -0.43,
+            0.36,
+            0.09
+          ]
+        ],
+        "height": 11.72
+      }
+    }
+  ],
+  "vehicles": []
+}

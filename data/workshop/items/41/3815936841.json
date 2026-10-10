@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3815936841",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-10T10:39:16.461Z",
+  "buildings": [
+    {
+      "id": "3815936841/karlmarx",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 2.4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Karl Marx Theatre",
+      "workshopId": "3815936841",
+      "modPath": "karlmarx",
+      "footprint": {
+        "boxes": [
+          [
+            -40.65,
+            -39.33,
+            22.82,
+            45.05
+          ]
+        ],
+        "height": 22.83
+      }
+    }
+  ],
+  "vehicles": []
+}
