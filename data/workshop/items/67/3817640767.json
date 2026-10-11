@@ -1,0 +1,1708 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3817640767",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-11T10:52:09.928Z",
+  "buildings": [
+    {
+      "id": "3817640767/shunting1501",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting1501",
+      "footprint": {
+        "boxes": [
+          [
+            -25.45,
+            -9.15,
+            -11.21,
+            8.75
+          ],
+          [
+            -8,
+            -75,
+            13,
+            75
+          ]
+        ],
+        "height": 10.45
+      }
+    },
+    {
+      "id": "3817640767/shunting1502",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting1502",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -75,
+            25,
+            75
+          ],
+          [
+            -28.65,
+            -16.15,
+            -10.71,
+            16.3
+          ]
+        ],
+        "height": 11.45
+      }
+    },
+    {
+      "id": "3817640767/shunting1503",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting1503",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -75,
+            37,
+            75
+          ],
+          [
+            -28.65,
+            -16.15,
+            -10.71,
+            16.3
+          ]
+        ],
+        "height": 11.45
+      }
+    },
+    {
+      "id": "3817640767/shunting1504",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting1504",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -75,
+            61,
+            75
+          ],
+          [
+            -24.85,
+            -22.24,
+            -10.71,
+            -8.96
+          ],
+          [
+            -26.55,
+            -10.85,
+            -14.15,
+            22.15
+          ],
+          [
+            -19.93,
+            -16.02,
+            -18.85,
+            -15.92
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting1505",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting1505",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -75,
+            25,
+            75
+          ],
+          [
+            -28.65,
+            -16.15,
+            -10.71,
+            16.3
+          ]
+        ],
+        "height": 11.45
+      }
+    },
+    {
+      "id": "3817640767/shunting1506",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting1506",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -75,
+            37,
+            75
+          ],
+          [
+            -28.65,
+            -16.15,
+            -10.71,
+            16.3
+          ]
+        ],
+        "height": 11.45
+      }
+    },
+    {
+      "id": "3817640767/shunting1507",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting1507",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -75,
+            61,
+            75
+          ],
+          [
+            -24.85,
+            -22.24,
+            -10.71,
+            -8.96
+          ],
+          [
+            -26.55,
+            -10.85,
+            -14.15,
+            22.15
+          ],
+          [
+            -19.93,
+            -16.02,
+            -18.85,
+            -15.92
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting2701",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting2701",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -135,
+            13,
+            135
+          ],
+          [
+            -28.65,
+            -131.15,
+            -10.71,
+            -98.7
+          ]
+        ],
+        "height": 11.45
+      }
+    },
+    {
+      "id": "3817640767/shunting2702",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting2702",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -135,
+            25,
+            135
+          ],
+          [
+            -28.65,
+            -131.15,
+            -10.71,
+            -98.7
+          ]
+        ],
+        "height": 11.45
+      }
+    },
+    {
+      "id": "3817640767/shunting2703",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting2703",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -135,
+            37,
+            135
+          ],
+          [
+            -24.85,
+            -131.04,
+            -10.71,
+            -117.76
+          ],
+          [
+            -26.55,
+            -119.65,
+            -14.15,
+            -86.65
+          ],
+          [
+            -19.93,
+            -124.82,
+            -18.85,
+            -124.72
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting2704",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting2704",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -135,
+            61,
+            135
+          ],
+          [
+            -24.85,
+            -131.04,
+            -10.71,
+            -117.76
+          ],
+          [
+            -26.55,
+            -119.65,
+            -14.15,
+            -86.65
+          ],
+          [
+            -19.93,
+            -124.82,
+            -18.85,
+            -124.72
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting2705",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting2705",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -135,
+            25,
+            135
+          ],
+          [
+            -28.65,
+            -131.15,
+            -10.71,
+            -98.7
+          ]
+        ],
+        "height": 11.45
+      }
+    },
+    {
+      "id": "3817640767/shunting2706",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting2706",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -135,
+            37,
+            135
+          ],
+          [
+            -24.85,
+            -131.04,
+            -10.71,
+            -117.76
+          ],
+          [
+            -26.55,
+            -119.65,
+            -14.15,
+            -86.65
+          ],
+          [
+            -19.93,
+            -124.82,
+            -18.85,
+            -124.72
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting2707",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting2707",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -135,
+            61,
+            135
+          ],
+          [
+            -24.85,
+            -131.04,
+            -10.71,
+            -117.76
+          ],
+          [
+            -26.55,
+            -119.65,
+            -14.15,
+            -86.65
+          ],
+          [
+            -19.93,
+            -124.82,
+            -18.85,
+            -124.72
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting3601",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting3601",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -180,
+            13,
+            180
+          ],
+          [
+            -28.65,
+            -176.15,
+            -10.71,
+            -143.7
+          ]
+        ],
+        "height": 11.45
+      }
+    },
+    {
+      "id": "3817640767/shunting3602",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting3602",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -180,
+            25,
+            180
+          ],
+          [
+            -24.85,
+            -176.04,
+            -10.71,
+            -162.76
+          ],
+          [
+            -26.55,
+            -164.65,
+            -14.15,
+            -131.65
+          ],
+          [
+            -19.93,
+            -169.82,
+            -18.85,
+            -169.72
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting3603",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting3603",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -180,
+            37,
+            180
+          ],
+          [
+            -24.85,
+            -176.04,
+            -10.71,
+            -162.76
+          ],
+          [
+            -26.55,
+            -164.65,
+            -14.15,
+            -131.65
+          ],
+          [
+            -19.93,
+            -169.82,
+            -18.85,
+            -169.72
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting3604",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting3604",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -180,
+            61,
+            180
+          ],
+          [
+            -32.2,
+            -144.7,
+            -16,
+            -106.45
+          ],
+          [
+            -20.94,
+            -150.77,
+            -19.86,
+            -148.7
+          ],
+          [
+            -26.1,
+            -157.54,
+            -12.3,
+            -141.86
+          ],
+          [
+            -24.7,
+            -176.1,
+            -10.7,
+            -154.7
+          ]
+        ],
+        "height": 23.61
+      }
+    },
+    {
+      "id": "3817640767/shunting3605",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting3605",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -180,
+            25,
+            180
+          ],
+          [
+            -24.85,
+            -176.04,
+            -10.71,
+            -162.76
+          ],
+          [
+            -26.55,
+            -164.65,
+            -14.15,
+            -131.65
+          ],
+          [
+            -19.93,
+            -169.82,
+            -18.85,
+            -169.72
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting3606",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting3606",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -180,
+            37,
+            180
+          ],
+          [
+            -24.85,
+            -176.04,
+            -10.71,
+            -162.76
+          ],
+          [
+            -26.55,
+            -164.65,
+            -14.15,
+            -131.65
+          ],
+          [
+            -19.93,
+            -169.82,
+            -18.85,
+            -169.72
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting3607",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting3607",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -180,
+            61,
+            180
+          ],
+          [
+            -32.2,
+            -144.7,
+            -16,
+            -106.45
+          ],
+          [
+            -20.94,
+            -150.77,
+            -19.86,
+            -148.7
+          ],
+          [
+            -26.1,
+            -157.54,
+            -12.3,
+            -141.86
+          ],
+          [
+            -24.7,
+            -176.1,
+            -10.7,
+            -154.7
+          ]
+        ],
+        "height": 23.61
+      }
+    },
+    {
+      "id": "3817640767/shunting4501",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting4501",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -225,
+            13,
+            225
+          ],
+          [
+            -24.85,
+            -221.04,
+            -10.71,
+            -207.76
+          ],
+          [
+            -26.55,
+            -209.65,
+            -14.15,
+            -176.65
+          ],
+          [
+            -19.93,
+            -214.82,
+            -18.85,
+            -214.72
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting4502",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting4502",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -225,
+            25,
+            225
+          ],
+          [
+            -24.85,
+            -221.04,
+            -10.71,
+            -207.76
+          ],
+          [
+            -26.55,
+            -209.65,
+            -14.15,
+            -176.65
+          ],
+          [
+            -19.93,
+            -214.82,
+            -18.85,
+            -214.72
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting4503",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting4503",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -225,
+            37,
+            225
+          ],
+          [
+            -32.2,
+            -189.7,
+            -16,
+            -151.45
+          ],
+          [
+            -20.94,
+            -195.77,
+            -19.86,
+            -193.7
+          ],
+          [
+            -26.1,
+            -202.54,
+            -12.3,
+            -186.86
+          ],
+          [
+            -24.7,
+            -221.1,
+            -10.7,
+            -199.7
+          ]
+        ],
+        "height": 23.61
+      }
+    },
+    {
+      "id": "3817640767/shunting4504",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting4504",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -225,
+            61,
+            225
+          ],
+          [
+            -32.2,
+            -189.7,
+            -16,
+            -151.45
+          ],
+          [
+            -20.94,
+            -195.77,
+            -19.86,
+            -193.7
+          ],
+          [
+            -26.1,
+            -202.54,
+            -12.3,
+            -186.86
+          ],
+          [
+            -24.7,
+            -221.1,
+            -10.7,
+            -199.7
+          ]
+        ],
+        "height": 23.61
+      }
+    },
+    {
+      "id": "3817640767/shunting4505",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting4505",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -225,
+            25,
+            225
+          ],
+          [
+            -24.85,
+            -221.04,
+            -10.71,
+            -207.76
+          ],
+          [
+            -26.55,
+            -209.65,
+            -14.15,
+            -176.65
+          ],
+          [
+            -19.93,
+            -214.82,
+            -18.85,
+            -214.72
+          ]
+        ],
+        "height": 18.1
+      }
+    },
+    {
+      "id": "3817640767/shunting4506",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting4506",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -225,
+            37,
+            225
+          ],
+          [
+            -32.2,
+            -189.7,
+            -16,
+            -151.45
+          ],
+          [
+            -20.94,
+            -195.77,
+            -19.86,
+            -193.7
+          ],
+          [
+            -26.1,
+            -202.54,
+            -12.3,
+            -186.86
+          ],
+          [
+            -24.7,
+            -221.1,
+            -10.7,
+            -199.7
+          ]
+        ],
+        "height": 23.61
+      }
+    },
+    {
+      "id": "3817640767/shunting4507",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting4507",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -225,
+            61,
+            225
+          ],
+          [
+            -32.2,
+            -189.7,
+            -16,
+            -151.45
+          ],
+          [
+            -20.94,
+            -195.77,
+            -19.86,
+            -193.7
+          ],
+          [
+            -26.1,
+            -202.54,
+            -12.3,
+            -186.86
+          ],
+          [
+            -24.7,
+            -221.1,
+            -10.7,
+            -199.7
+          ]
+        ],
+        "height": 23.61
+      }
+    },
+    {
+      "id": "3817640767/shunting901",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting901",
+      "footprint": {
+        "boxes": [
+          [
+            -25.45,
+            -9.15,
+            -11.21,
+            8.75
+          ],
+          [
+            -8,
+            -45,
+            13,
+            45
+          ]
+        ],
+        "height": 10.45
+      }
+    },
+    {
+      "id": "3817640767/shunting902",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting902",
+      "footprint": {
+        "boxes": [
+          [
+            -25.45,
+            -9.15,
+            -11.21,
+            8.75
+          ],
+          [
+            -8,
+            -45,
+            25,
+            45
+          ]
+        ],
+        "height": 10.45
+      }
+    },
+    {
+      "id": "3817640767/shunting903",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting903",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -45,
+            37,
+            45
+          ],
+          [
+            -28.65,
+            -16.15,
+            -10.71,
+            16.3
+          ]
+        ],
+        "height": 11.45
+      }
+    },
+    {
+      "id": "3817640767/shunting904",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting904",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -45,
+            61,
+            45
+          ],
+          [
+            -28.65,
+            -16.15,
+            -10.71,
+            16.3
+          ]
+        ],
+        "height": 11.45
+      }
+    },
+    {
+      "id": "3817640767/shunting905",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting905",
+      "footprint": {
+        "boxes": [
+          [
+            -25.45,
+            -9.15,
+            -11.21,
+            8.75
+          ],
+          [
+            -8,
+            -45,
+            25,
+            45
+          ]
+        ],
+        "height": 10.45
+      }
+    },
+    {
+      "id": "3817640767/shunting906",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting906",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -45,
+            37,
+            45
+          ],
+          [
+            -28.65,
+            -16.15,
+            -10.71,
+            16.3
+          ]
+        ],
+        "height": 11.45
+      }
+    },
+    {
+      "id": "3817640767/shunting907",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 150
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting yard",
+      "workshopId": "3817640767",
+      "modPath": "shunting907",
+      "footprint": {
+        "boxes": [
+          [
+            -8,
+            -45,
+            61,
+            45
+          ],
+          [
+            -28.65,
+            -16.15,
+            -10.71,
+            16.3
+          ]
+        ],
+        "height": 11.45
+      }
+    }
+  ],
+  "vehicles": []
+}
