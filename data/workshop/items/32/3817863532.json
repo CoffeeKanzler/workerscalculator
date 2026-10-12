@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3817863532",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-12T12:04:41.466Z",
+  "buildings": [
+    {
+      "id": "3817863532/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.8,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10
+      },
+      "constructionResources": {
+        "steel": 1.35,
+        "ecomponents": 0.25,
+        "workers": 55
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Village house",
+      "workshopId": "3817863532",
+      "modPath": "1"
+    }
+  ],
+  "vehicles": []
+}
