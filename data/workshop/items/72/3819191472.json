@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3819191472",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-14T09:34:09.181Z",
+  "buildings": [
+    {
+      "id": "3819191472/aggregate_hepta_load",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Aggregate Hepta-Loading Station",
+      "workshopId": "3819191472",
+      "modPath": "aggregate_hepta_load",
+      "footprint": {
+        "boxes": [
+          [
+            -17.4,
+            -4.18,
+            27.4,
+            22.18
+          ],
+          [
+            -12.38,
+            -4,
+            16,
+            23.4
+          ]
+        ],
+        "height": 6.39
+      }
+    },
+    {
+      "id": "3819191472/aggregate_hepta_unload",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Aggregate Hepta-Unloading Station",
+      "workshopId": "3819191472",
+      "modPath": "aggregate_hepta_unload",
+      "footprint": {
+        "boxes": [
+          [
+            -17.4,
+            -4.18,
+            27.4,
+            22.18
+          ],
+          [
+            -12.38,
+            -4,
+            16,
+            23.4
+          ]
+        ],
+        "height": 6.39
+      }
+    }
+  ],
+  "vehicles": []
+}
