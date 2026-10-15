@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3819688069",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-15T09:11:31.732Z",
+  "buildings": [
+    {
+      "id": "3819688069/sport_1",
+      "nameId": 6271,
+      "types": [
+        "TYPE_SPORT"
+      ],
+      "workers": 6,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "steel": 9.5,
+        "bricks": 25,
+        "concrete": 10,
+        "workers": 550
+      },
+      "electricWorkerFactors": {},
+      "workshopId": "3819688069",
+      "modPath": "sport_1",
+      "footprint": {
+        "boxes": [
+          [
+            -8.9,
+            -18.4,
+            8.9,
+            18.78
+          ],
+          [
+            -6.55,
+            -21.9,
+            6.55,
+            21.48
+          ]
+        ],
+        "height": 9.6
+      }
+    }
+  ],
+  "vehicles": []
+}
