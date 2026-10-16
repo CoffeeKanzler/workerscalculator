@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3820384302",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-16T09:04:21.058Z",
+  "buildings": [
+    {
+      "id": "3820384302/113-87-81_1x-var-1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 81,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 81
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Series 113-87-81_1x-var-1",
+      "workshopId": "3820384302",
+      "modPath": "113-87-81_1x-var-1",
+      "footprint": {
+        "boxes": [
+          [
+            -6.35,
+            -12.65,
+            8.96,
+            12.65
+          ],
+          [
+            -6.61,
+            -12.28,
+            8.36,
+            12.28
+          ],
+          [
+            -6.55,
+            -12.28,
+            7.1,
+            12.28
+          ]
+        ],
+        "height": 33.2
+      }
+    },
+    {
+      "id": "3820384302/113-87-81_1x-var-2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 90,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 90
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Series 113-87-81_1x-var-2",
+      "workshopId": "3820384302",
+      "modPath": "113-87-81_1x-var-2",
+      "footprint": {
+        "boxes": [
+          [
+            -6.35,
+            -12.65,
+            8.96,
+            12.65
+          ],
+          [
+            -7.16,
+            -12.28,
+            8.36,
+            12.28
+          ],
+          [
+            -7.1,
+            -12.28,
+            7.1,
+            12.28
+          ]
+        ],
+        "height": 33.2
+      }
+    },
+    {
+      "id": "3820384302/113-87-81_1x-var-3",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 90,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 90
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Series 113-87-81_1x-var-3",
+      "workshopId": "3820384302",
+      "modPath": "113-87-81_1x-var-3",
+      "footprint": {
+        "boxes": [
+          [
+            -6.35,
+            -12.65,
+            8.96,
+            12.65
+          ],
+          [
+            -7.16,
+            -12.28,
+            8.36,
+            12.28
+          ],
+          [
+            -7.1,
+            -12.28,
+            7.1,
+            12.28
+          ]
+        ],
+        "height": 33.2
+      }
+    },
+    {
+      "id": "3820384302/113-87-81_2x",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 162,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 162
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Series 113-87-81_2x",
+      "workshopId": "3820384302",
+      "modPath": "113-87-81_2x",
+      "footprint": {
+        "boxes": [
+          [
+            -6.59,
+            -24.58,
+            7.1,
+            24.58
+          ],
+          [
+            -6.61,
+            -24.58,
+            8.36,
+            24.58
+          ],
+          [
+            -6.35,
+            -24.95,
+            8.96,
+            24.95
+          ]
+        ],
+        "height": 33.2
+      }
+    }
+  ],
+  "vehicles": []
+}
