@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3814701726",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-17T08:36:59.985Z",
+  "buildings": [
+    {
+      "id": "3814701726/1",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 72,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.83,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 72
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1960s Series 316-318 house with workshop",
+      "workshopId": "3814701726",
+      "modPath": "1",
+      "footprint": {
+        "boxes": [
+          [
+            -11.26,
+            -19.52,
+            1.1,
+            19.44
+          ],
+          [
+            -11.35,
+            -19.44,
+            0.2,
+            19.36
+          ]
+        ],
+        "height": 20.68
+      }
+    },
+    {
+      "id": "3814701726/2",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 72,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.83,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 72
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1960s Series 316-318 house with workshop #2",
+      "workshopId": "3814701726",
+      "modPath": "2",
+      "footprint": {
+        "boxes": [
+          [
+            -11.26,
+            -19.52,
+            1.1,
+            19.44
+          ],
+          [
+            -11.2,
+            -19.44,
+            0.2,
+            19.36
+          ]
+        ],
+        "height": 20.68
+      }
+    },
+    {
+      "id": "3814701726/3",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 68,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.83,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 68
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1960s Series 316-318 house #3",
+      "workshopId": "3814701726",
+      "modPath": "3",
+      "footprint": {
+        "boxes": [
+          [
+            -11.26,
+            -19.52,
+            1.1,
+            19.44
+          ],
+          [
+            -11.2,
+            -19.45,
+            0.2,
+            19.36
+          ]
+        ],
+        "height": 17.32
+      }
+    },
+    {
+      "id": "3814701726/4",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 102,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.83,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 102
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1960s Series 316-318 house #4",
+      "workshopId": "3814701726",
+      "modPath": "4",
+      "footprint": {
+        "boxes": [
+          [
+            -11.26,
+            -30.39,
+            1.1,
+            30.37
+          ],
+          [
+            -11.2,
+            -30.31,
+            0.2,
+            30.29
+          ]
+        ],
+        "height": 17.32
+      }
+    },
+    {
+      "id": "3814701726/5",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.83,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "1960s Series 316-318 house #5",
+      "workshopId": "3814701726",
+      "modPath": "5",
+      "footprint": {
+        "boxes": [
+          [
+            -11.26,
+            -14.55,
+            1.1,
+            14.49
+          ],
+          [
+            -11.2,
+            -14.47,
+            0.2,
+            14.41
+          ]
+        ],
+        "height": 14.93
+      }
+    },
+    {
+      "id": "3814701726/6",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_MONUMENT"
+      ],
+      "workers": 10,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "mcomponents": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "1960s Series 316-318 Workshop access",
+      "workshopId": "3814701726",
+      "modPath": "6",
+      "footprint": {
+        "boxes": [
+          [
+            -0.3,
+            -0.85,
+            0.7,
+            0.85
+          ]
+        ],
+        "height": 0
+      }
+    }
+  ],
+  "vehicles": []
+}
