@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3821374752",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-18T08:53:46.014Z",
+  "buildings": [
+    {
+      "id": "3821374752/26195_15",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 150,
+      "professors": 150,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vysotka - Tekhnicheskij universitet",
+      "workshopId": "3821374752",
+      "modPath": "26195_15",
+      "footprint": {
+        "boxes": [
+          [
+            -24,
+            -24,
+            24,
+            24
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.83
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -3.63,
+            -3.63,
+            3.63,
+            3.63
+          ],
+          [
+            -2.37,
+            -2.37,
+            2.37,
+            2.37
+          ],
+          [
+            -4.32,
+            -4.32,
+            4.32,
+            4.32
+          ],
+          [
+            -4.22,
+            -4.22,
+            4.22,
+            4.22
+          ],
+          [
+            -4.12,
+            -4.12,
+            4.12,
+            4.12
+          ]
+        ],
+        "height": 142
+      }
+    },
+    {
+      "id": "3821374752/26195_16",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vysotka - Gorkom",
+      "workshopId": "3821374752",
+      "modPath": "26195_16",
+      "footprint": {
+        "boxes": [
+          [
+            -24,
+            -24,
+            24,
+            24
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.83
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -3.63,
+            -3.63,
+            3.63,
+            3.63
+          ],
+          [
+            -2.37,
+            -2.37,
+            2.37,
+            2.37
+          ],
+          [
+            -4.32,
+            -4.32,
+            4.32,
+            4.32
+          ],
+          [
+            -4.22,
+            -4.22,
+            4.22,
+            4.22
+          ],
+          [
+            -4.12,
+            -4.12,
+            4.12,
+            4.12
+          ]
+        ],
+        "height": 142
+      }
+    },
+    {
+      "id": "3821374752/26195_17",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_SOVIET"
+      ],
+      "workers": 150,
+      "professors": 150,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vysotka - Partijnaya akademiya",
+      "workshopId": "3821374752",
+      "modPath": "26195_17",
+      "footprint": {
+        "boxes": [
+          [
+            -24,
+            -24,
+            24,
+            24
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.83
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -3.63,
+            -3.63,
+            3.63,
+            3.63
+          ],
+          [
+            -2.37,
+            -2.37,
+            2.37,
+            2.37
+          ],
+          [
+            -4.32,
+            -4.32,
+            4.32,
+            4.32
+          ],
+          [
+            -4.22,
+            -4.22,
+            4.22,
+            4.22
+          ],
+          [
+            -4.12,
+            -4.12,
+            4.12,
+            4.12
+          ]
+        ],
+        "height": 142
+      }
+    },
+    {
+      "id": "3821374752/26195_18",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_RADIO"
+      ],
+      "workers": 100,
+      "professors": 100,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vysotka - Radio",
+      "workshopId": "3821374752",
+      "modPath": "26195_18",
+      "footprint": {
+        "boxes": [
+          [
+            -24,
+            -24,
+            24,
+            24
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.83
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -3.63,
+            -3.63,
+            3.63,
+            3.63
+          ],
+          [
+            -2.37,
+            -2.37,
+            2.37,
+            2.37
+          ],
+          [
+            -4.32,
+            -4.32,
+            4.32,
+            4.32
+          ],
+          [
+            -4.22,
+            -4.22,
+            4.22,
+            4.22
+          ],
+          [
+            -4.12,
+            -4.12,
+            4.12,
+            4.12
+          ]
+        ],
+        "height": 142
+      }
+    },
+    {
+      "id": "3821374752/26195_19",
+      "nameId": null,
+      "types": [
+        "TYPE_BROADCAST",
+        "SUBTYPE_TELEVISION"
+      ],
+      "workers": 100,
+      "professors": 100,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vysotka - Televidenie",
+      "workshopId": "3821374752",
+      "modPath": "26195_19",
+      "footprint": {
+        "boxes": [
+          [
+            -24,
+            -24,
+            24,
+            24
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.83
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -23.25,
+            -23.25,
+            23.25,
+            23.25
+          ],
+          [
+            -3.63,
+            -3.63,
+            3.63,
+            3.63
+          ],
+          [
+            -2.37,
+            -2.37,
+            2.37,
+            2.37
+          ],
+          [
+            -4.32,
+            -4.32,
+            4.32,
+            4.32
+          ],
+          [
+            -4.22,
+            -4.22,
+            4.22,
+            4.22
+          ],
+          [
+            -4.12,
+            -4.12,
+            4.12,
+            4.12
+          ]
+        ],
+        "height": 142
+      }
+    }
+  ],
+  "vehicles": []
+}

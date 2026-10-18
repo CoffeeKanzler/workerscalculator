@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3821517817",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-18T08:53:46.021Z",
+  "buildings": [
+    {
+      "id": "3821517817/16020_dvina",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 100,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": 4,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "dvina",
+      "workshopId": "3821517817",
+      "modPath": "16020_dvina",
+      "footprint": {
+        "boxes": [
+          [
+            -29.5,
+            -10.5,
+            29.5,
+            10.5
+          ],
+          [
+            -29.1,
+            -10,
+            29.1,
+            13.5
+          ],
+          [
+            -28.12,
+            -8.62,
+            28.12,
+            8.62
+          ],
+          [
+            -28.12,
+            -8.62,
+            28.12,
+            8.62
+          ],
+          [
+            -28.12,
+            -8.62,
+            28.12,
+            8.62
+          ],
+          [
+            -28.14,
+            -8.64,
+            28.14,
+            8.64
+          ]
+        ],
+        "height": 39.4
+      }
+    }
+  ],
+  "vehicles": []
+}
