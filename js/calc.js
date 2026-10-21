@@ -455,6 +455,22 @@ export function evaluatePlan(rows, fields, settings, eco) {
 }
 
 // City evaluation (StädteCitys Neu sheet).
+const STUDENT_RESIDENCE_TYPE = 'Studentenwohnheim';
+const CHILD_SERVICE_IDS = new Set(['kindergarten', 'school']);
+
+function isStudentResidence(building) {
+  return building?.type?.de === STUDENT_RESIDENCE_TYPE
+    || building?.type?.en === 'Student residence'
+    || building?.de === STUDENT_RESIDENCE_TYPE;
+}
+
+function cityServiceDemandPopulation(rows, serviceId, population) {
+  if (!CHILD_SERVICE_IDS.has(serviceId)) return population;
+  return rows.reduce((total, row) => isStudentResidence(row.building)
+    ? total
+    : total + (row.building.inhabitants ?? 0) * row.count, 0);
+}
+
 export function evaluateCity(city, eco) {
   const prod = city.productivity;
   const rows = city.rows.filter(r => r.building && r.count > 0);
@@ -529,9 +545,10 @@ export function evaluateCity(city, eco) {
     const cap = rows.filter(r => r.building.type.de === svc.typeDe)
       .reduce((a, r) => a + (r.building[svc.src] ?? 0) * r.count, 0);
     const provided = cap * prod * svc.ratio;
-    const utilization = provided > 0 ? population / provided : null;
+    const demandPopulation = cityServiceDemandPopulation(rows, svc.id, population);
+    const utilization = provided > 0 ? demandPopulation / provided : null;
     res.services.push({
-      ...svc, capacity: cap, provided, utilization,
+      ...svc, capacity: cap, provided, demandPopulation, utilization,
       workersNeeded: optimalWorkers(svc.typeDe, utilization),
     });
   }
@@ -591,7 +608,7 @@ export function evaluateCityProductivityScenarios(city, eco, worstCaseProductivi
     const worstService = worst.services[index];
     const denominator = service.capacity * service.ratio;
     const requiredProductivity = denominator > 0
-      ? normal.population / denominator : null;
+      ? service.demandPopulation / denominator : null;
     return {
       ...service,
       requiredProductivity,

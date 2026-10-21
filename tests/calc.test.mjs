@@ -243,6 +243,36 @@ test('city: worker surplus (200 pop, 94 workers) = -20.5; service coverage', () 
   assert.equal(r.avgHousingQuality, null);
 });
 
+test('city: student residence occupants do not create kindergarten or school demand', () => {
+  const studentResidence = {
+    de: 'Studentenwohnheim', type: { de: 'Studentenwohnheim', en: 'Student residence' },
+    inhabitants: 85, workers: 0, visitors: 0, special: 0,
+    power: 0, maxKW: 0, water: 0, hotwater: 0, waste: 0, workdays: 0,
+    gravel: 0, bricks: 0, steel: 0, concrete: 0, asphalt: 0, boards: 0,
+    panels: 0, ecomponents: 0, mcomponents: 0,
+  };
+  const kindergarten = {
+    ...studentResidence, de: 'TestKindergarten',
+    type: { de: 'Kindergarten', en: 'Kindergarten' }, inhabitants: 0, visitors: 20,
+  };
+  const school = {
+    ...studentResidence, de: 'TestSchule', type: { de: 'Schule', en: 'School' },
+    inhabitants: 0, visitors: 20,
+  };
+  const result = evaluateCity({
+    productivity: 1,
+    rows: [
+      { building: studentResidence, count: 1 },
+      { building: kindergarten, count: 1 },
+      { building: school, count: 1 },
+    ],
+  }, eco());
+
+  assert.equal(result.population, 85);
+  assert.equal(result.services.find(service => service.id === 'kindergarten').utilization, 0);
+  assert.equal(result.services.find(service => service.id === 'school').utilization, 0);
+});
+
 test('city workshop workers affect workforce only', () => {
   const result = evaluateCity({
     productivity: 0.7,
