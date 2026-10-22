@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3820801265",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-22T09:27:15.471Z",
+  "buildings": [
+    {
+      "id": "3820801265/coal1",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {
+        "heat": 150
+      },
+      "consumption": {
+        "coal": 0.16
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Frostpunk Coal Generator (Level 1)",
+      "workshopId": "3820801265",
+      "modPath": "coal1",
+      "footprint": {
+        "boxes": [
+          [
+            -10.78,
+            -10.78,
+            10.78,
+            10.78
+          ],
+          [
+            -6.64,
+            -6.66,
+            6.64,
+            6.64
+          ]
+        ],
+        "height": 34.57
+      }
+    },
+    {
+      "id": "3820801265/coal5",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {
+        "heat": 350
+      },
+      "consumption": {
+        "coal": 0.28
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Frostpunk Coal Generator (Level 5)",
+      "workshopId": "3820801265",
+      "modPath": "coal5",
+      "footprint": {
+        "boxes": [
+          [
+            -10.78,
+            -10.78,
+            10.78,
+            10.78
+          ],
+          [
+            -6.64,
+            -6.66,
+            6.64,
+            6.64
+          ]
+        ],
+        "height": 34.57
+      }
+    },
+    {
+      "id": "3820801265/oil1",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 8,
+      "professors": 0,
+      "production": {
+        "heat": 150
+      },
+      "consumption": {
+        "oil": 0.16
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Frostpunk Oil Generator (Level 1)",
+      "workshopId": "3820801265",
+      "modPath": "oil1",
+      "footprint": {
+        "boxes": [
+          [
+            -10.78,
+            -10.78,
+            10.78,
+            10.78
+          ],
+          [
+            -6.81,
+            -6.86,
+            8.12,
+            6.06
+          ],
+          [
+            -7.26,
+            -7.35,
+            7.26,
+            6.21
+          ],
+          [
+            -8.18,
+            -5.58,
+            8.18,
+            7.35
+          ]
+        ],
+        "height": 34.56
+      }
+    },
+    {
+      "id": "3820801265/oil5",
+      "nameId": null,
+      "types": [
+        "TYPE_HEATING_PLANT"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {
+        "heat": 350
+      },
+      "consumption": {
+        "oil": 0.28
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Frostpunk Oil Generator (Level 5)",
+      "workshopId": "3820801265",
+      "modPath": "oil5",
+      "footprint": {
+        "boxes": [
+          [
+            -10.78,
+            -10.78,
+            10.78,
+            10.78
+          ],
+          [
+            -6.81,
+            -6.86,
+            8.12,
+            6.06
+          ],
+          [
+            -7.26,
+            -7.35,
+            7.26,
+            6.21
+          ],
+          [
+            -8.18,
+            -5.58,
+            8.18,
+            7.35
+          ]
+        ],
+        "height": 34.56
+      }
+    }
+  ],
+  "vehicles": []
+}

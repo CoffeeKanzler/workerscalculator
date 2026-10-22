@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3824378824",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-22T09:27:15.488Z",
+  "buildings": [
+    {
+      "id": "3824378824/huge_aggregate_storage",
+      "nameId": 1562,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 50000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Aggregate Storage",
+      "workshopId": "3824378824",
+      "modPath": "huge_aggregate_storage",
+      "footprint": {
+        "boxes": [
+          [
+            -3.75,
+            26,
+            3.95,
+            34.4
+          ],
+          [
+            -2.7,
+            -82.9,
+            2.7,
+            26
+          ],
+          [
+            -30.75,
+            27.3,
+            30.75,
+            32.7
+          ],
+          [
+            -37.65,
+            21,
+            -30.5,
+            39.72
+          ],
+          [
+            30.5,
+            21,
+            37.65,
+            39.72
+          ],
+          [
+            30.55,
+            -78.4,
+            37.65,
+            21
+          ],
+          [
+            -37.65,
+            -78.4,
+            -30.55,
+            21
+          ]
+        ],
+        "height": 20.72
+      }
+    },
+    {
+      "id": "3824378824/huge_cement_silo_road",
+      "nameId": 6209,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 11200
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Cement Silo",
+      "workshopId": "3824378824",
+      "modPath": "huge_cement_silo_road",
+      "footprint": {
+        "boxes": [
+          [
+            -6.17,
+            9.22,
+            10.72,
+            23.15
+          ],
+          [
+            -16.95,
+            -18.99,
+            14.49,
+            16.54
+          ]
+        ],
+        "height": 48.18
+      }
+    },
+    {
+      "id": "3824378824/huge_covered_warehouse",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 16000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Warehouse",
+      "workshopId": "3824378824",
+      "modPath": "huge_covered_warehouse",
+      "footprint": {
+        "boxes": [
+          [
+            72.36,
+            6.83,
+            72.46,
+            13.07
+          ],
+          [
+            -72.5,
+            -17.8,
+            60.5,
+            17.8
+          ]
+        ],
+        "height": 5.93
+      }
+    },
+    {
+      "id": "3824378824/huge_dry_bulk_rail",
+      "nameId": 6205,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 23000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Dry Bulk Storage (Rail)",
+      "workshopId": "3824378824",
+      "modPath": "huge_dry_bulk_rail",
+      "footprint": {
+        "boxes": [
+          [
+            -38.04,
+            -16,
+            24,
+            16
+          ],
+          [
+            -35.43,
+            -28.54,
+            -25.43,
+            -11
+          ],
+          [
+            20,
+            -7.25,
+            33.91,
+            7.25
+          ],
+          [
+            36.83,
+            -20.6,
+            37.68,
+            -19.9
+          ]
+        ],
+        "height": 38.13
+      }
+    },
+    {
+      "id": "3824378824/huge_dry_bulk_road",
+      "nameId": 6206,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 23000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Dry Bulk Storage (Road)",
+      "workshopId": "3824378824",
+      "modPath": "huge_dry_bulk_road",
+      "footprint": {
+        "boxes": [
+          [
+            -38.04,
+            -16,
+            24,
+            16
+          ],
+          [
+            20,
+            -7.25,
+            33.91,
+            7.25
+          ],
+          [
+            36.83,
+            -15,
+            37.68,
+            -14.3
+          ]
+        ],
+        "height": 38.13
+      }
+    },
+    {
+      "id": "3824378824/huge_grain_storage_rail",
+      "nameId": 6208,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Grain Storage (Rail)",
+      "workshopId": "3824378824",
+      "modPath": "huge_grain_storage_rail",
+      "footprint": {
+        "boxes": [
+          [
+            -10.75,
+            -9.75,
+            54.75,
+            8.5
+          ],
+          [
+            -9.25,
+            10.55,
+            32.75,
+            23.45
+          ],
+          [
+            -102.48,
+            -9.5,
+            -5.25,
+            8.5
+          ],
+          [
+            -2.87,
+            5.31,
+            0.63,
+            25.21
+          ],
+          [
+            -101.87,
+            -21.75,
+            51.75,
+            -9.75
+          ]
+        ],
+        "height": 44.2
+      }
+    },
+    {
+      "id": "3824378824/huge_grain_storage_road",
+      "nameId": 6207,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Grain Storage (Road)",
+      "workshopId": "3824378824",
+      "modPath": "huge_grain_storage_road",
+      "footprint": {
+        "boxes": [
+          [
+            -10.75,
+            -9.75,
+            54.75,
+            8.5
+          ],
+          [
+            -9.25,
+            10.55,
+            32.75,
+            23.45
+          ],
+          [
+            -102.48,
+            -9.5,
+            -5.25,
+            8.5
+          ],
+          [
+            -2.87,
+            5.31,
+            0.63,
+            25.21
+          ]
+        ],
+        "height": 44.2
+      }
+    },
+    {
+      "id": "3824378824/huge_meat_storage",
+      "nameId": 6204,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 7000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Meat Storage",
+      "workshopId": "3824378824",
+      "modPath": "huge_meat_storage",
+      "footprint": {
+        "boxes": [
+          [
+            -23.1,
+            -17,
+            6.3,
+            27.5
+          ],
+          [
+            -33.53,
+            -0.69,
+            -33.43,
+            0.69
+          ]
+        ],
+        "height": 8.02
+      }
+    },
+    {
+      "id": "3824378824/huge_oil_storage",
+      "nameId": 6203,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 15000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Oil/Fuel Storage",
+      "workshopId": "3824378824",
+      "modPath": "huge_oil_storage",
+      "footprint": {
+        "boxes": [
+          [
+            -19.53,
+            -19.02,
+            16.52,
+            16.94
+          ],
+          [
+            12.41,
+            -11.6,
+            20.62,
+            -3.89
+          ],
+          [
+            8.12,
+            -13.1,
+            22.03,
+            -11.83
+          ]
+        ],
+        "height": 13.56
+      }
+    },
+    {
+      "id": "3824378824/huge_open_storage",
+      "nameId": 9006210,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 11700
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Huge Open Storage",
+      "workshopId": "3824378824",
+      "modPath": "huge_open_storage",
+      "footprint": {
+        "boxes": [
+          [
+            -40.72,
+            11.84,
+            40.8,
+            12.76
+          ],
+          [
+            -7.01,
+            -20.15,
+            7.05,
+            20.57
+          ],
+          [
+            -40.72,
+            -12.21,
+            40.7,
+            -11.29
+          ]
+        ],
+        "height": 18.46
+      }
+    }
+  ],
+  "vehicles": []
+}

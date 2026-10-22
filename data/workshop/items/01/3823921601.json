@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3823921601",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-22T09:27:15.480Z",
+  "buildings": [
+    {
+      "id": "3823921601/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka_1 (Gomel)",
+      "workshopId": "3823921601",
+      "modPath": "1",
+      "footprint": {
+        "boxes": [
+          [
+            -12.89,
+            -7.08,
+            12.89,
+            7.02
+          ],
+          [
+            -3.77,
+            -4.12,
+            0.58,
+            4.12
+          ],
+          [
+            -3,
+            5.64,
+            0,
+            6.72
+          ],
+          [
+            -12.28,
+            -6.72,
+            12,
+            6.89
+          ]
+        ],
+        "height": 17.43
+      }
+    },
+    {
+      "id": "3823921601/2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka_2 (Gomel)",
+      "workshopId": "3823921601",
+      "modPath": "2",
+      "footprint": {
+        "boxes": [
+          [
+            -10.14,
+            -7.08,
+            10.35,
+            7.09
+          ],
+          [
+            -9.59,
+            -6.72,
+            9.33,
+            6.89
+          ]
+        ],
+        "height": 17.43
+      }
+    },
+    {
+      "id": "3823921601/3",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka_3 (Gomel)",
+      "workshopId": "3823921601",
+      "modPath": "3",
+      "footprint": {
+        "boxes": [
+          [
+            -3.36,
+            -3.54,
+            3.54,
+            3.36
+          ],
+          [
+            -2.64,
+            0.35,
+            -0.35,
+            2.61
+          ],
+          [
+            -2.48,
+            -1.95,
+            1.95,
+            2.48
+          ],
+          [
+            -1.68,
+            0.9,
+            -0.9,
+            1.68
+          ]
+        ],
+        "height": 16.49
+      }
+    },
+    {
+      "id": "3823921601/4",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka_4 (Gomel)",
+      "workshopId": "3823921601",
+      "modPath": "4",
+      "footprint": {
+        "boxes": [
+          [
+            -7.01,
+            -5.99,
+            6.05,
+            7.08
+          ],
+          [
+            -6.88,
+            -5.1,
+            5.16,
+            6.95
+          ]
+        ],
+        "height": 16.49
+      }
+    },
+    {
+      "id": "3823921601/5",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stalinka_5 (Gomel)",
+      "workshopId": "3823921601",
+      "modPath": "5",
+      "footprint": {
+        "boxes": [
+          [
+            -10.14,
+            -7.08,
+            10.35,
+            7.09
+          ],
+          [
+            -9.59,
+            -6.72,
+            9.33,
+            6.89
+          ]
+        ],
+        "height": 17.43
+      }
+    }
+  ],
+  "vehicles": []
+}
