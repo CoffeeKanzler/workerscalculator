@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3823941605",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-23T09:23:37.214Z",
+  "buildings": [
+    {
+      "id": "3823941605/Bakharev71",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48
+      },
+      "constructionResources": {
+        "workers": 600,
+        "bricks": 56.666666666667,
+        "concrete": 12.666666666667,
+        "steel": 1.333333333333,
+        "boards": 4.666666666667
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Kuibysheva 71, historic corner",
+      "workshopId": "3823941605",
+      "modPath": "Bakharev71"
+    },
+    {
+      "id": "3823941605/Frunze124A",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 36,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 36
+      },
+      "constructionResources": {
+        "workers": 433.333333333333,
+        "bricks": 31.666666666667,
+        "concrete": 8,
+        "steel": 1,
+        "boards": 2.333333333333
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Frunze124A historic mansion",
+      "workshopId": "3823941605",
+      "modPath": "Frunze124A"
+    },
+    {
+      "id": "3823941605/GorinHouse",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.89,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16
+      },
+      "constructionResources": {
+        "workers": 233.333333333333,
+        "bricks": 20,
+        "concrete": 5.333333333333,
+        "steel": 0.666666666667,
+        "boards": 2.333333333333
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Gorin House - Molodogvardeyskaya 108",
+      "workshopId": "3823941605",
+      "modPath": "GorinHouse"
+    },
+    {
+      "id": "3823941605/Kalachev78",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 100,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 100
+      },
+      "constructionResources": {
+        "workers": 1066.666666666667,
+        "bricks": 90,
+        "concrete": 21.333333333333,
+        "steel": 2.666666666667,
+        "boards": 6.666666666667
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Kalachev merchant house, Bristol",
+      "workshopId": "3823941605",
+      "modPath": "Kalachev78"
+    },
+    {
+      "id": "3823941605/Kuibysheva121",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 60,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 60
+      },
+      "constructionResources": {
+        "workers": 616.666666666667,
+        "bricks": 53.333333333333,
+        "concrete": 18.333333333333,
+        "steel": 2.333333333333,
+        "boards": 3.666666666667
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Kuybysheva 121 - Malyshev House",
+      "workshopId": "3823941605",
+      "modPath": "Kuibysheva121"
+    },
+    {
+      "id": "3823941605/Kuibysheva67",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24
+      },
+      "constructionResources": {
+        "workers": 433.333333333333,
+        "bricks": 31.666666666667,
+        "concrete": 8,
+        "steel": 1,
+        "boards": 2.333333333333
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Kuybysheva 67 - Dukelsky House",
+      "workshopId": "3823941605",
+      "modPath": "Kuibysheva67"
+    },
+    {
+      "id": "3823941605/Kuibysheva72",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Kuybysheva 72 - Belousov House",
+      "workshopId": "3823941605",
+      "modPath": "Kuibysheva72"
+    },
+    {
+      "id": "3823941605/Kuibysheva96",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.93,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {
+        "workers": 383.333333333333,
+        "bricks": 36.666666666667,
+        "concrete": 13.333333333333,
+        "steel": 1.666666666667,
+        "boards": 3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Kuybysheva 96 - Egorov House",
+      "workshopId": "3823941605",
+      "modPath": "Kuibysheva96"
+    },
+    {
+      "id": "3823941605/LevinsEstate",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {
+        "workers": 416.666666666667,
+        "bricks": 50,
+        "concrete": 15,
+        "steel": 2,
+        "boards": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Levins Estate - Molodogvardeyskaya106",
+      "workshopId": "3823941605",
+      "modPath": "LevinsEstate"
+    },
+    {
+      "id": "3823941605/MyasnikovHouse",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {
+        "workers": 1166.666666666667,
+        "bricks": 100,
+        "concrete": 26.666666666667,
+        "steel": 4,
+        "boards": 8.333333333333
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Myasnikov House - Kuybysheva 104",
+      "workshopId": "3823941605",
+      "modPath": "MyasnikovHouse"
+    },
+    {
+      "id": "3823941605/NuychevHouse",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 72,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.91,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 72
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Nuychev House",
+      "workshopId": "3823941605",
+      "modPath": "NuychevHouse"
+    },
+    {
+      "id": "3823941605/SacredHeartChurch",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_CHURCH"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 80,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Sacred Heart of Jesus Church",
+      "workshopId": "3823941605",
+      "modPath": "SacredHeartChurch"
+    },
+    {
+      "id": "3823941605/SamaraFireStation",
+      "nameId": null,
+      "types": [
+        "TYPE_FIRESTATION"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1066.666666666667,
+        "bricks": 70,
+        "concrete": 16,
+        "steel": 4,
+        "boards": 6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara Historic Fire Station - Krupskoy 16",
+      "workshopId": "3823941605",
+      "modPath": "SamaraFireStation"
+    },
+    {
+      "id": "3823941605/SavelevHouse",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.92,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16
+      },
+      "constructionResources": {
+        "workers": 283.333333333333,
+        "bricks": 25,
+        "concrete": 6.666666666667,
+        "steel": 1,
+        "boards": 3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - A.A. Savelyev Mansion - Frunze 113",
+      "workshopId": "3823941605",
+      "modPath": "SavelevHouse"
+    },
+    {
+      "id": "3823941605/StGeorgeChurch",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_CHURCH"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 80,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - St George Lutheran Church",
+      "workshopId": "3823941605",
+      "modPath": "StGeorgeChurch"
+    }
+  ],
+  "vehicles": []
+}
