@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3826453788",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-26T10:12:28.029Z",
+  "buildings": [
+    {
+      "id": "3826453788/comecon_cement",
+      "nameId": 2158,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_CEMENT": 555555
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3826453788",
+      "modPath": "comecon_cement",
+      "footprint": {
+        "boxes": [
+          [
+            -6.17,
+            9.22,
+            10.72,
+            23.15
+          ],
+          [
+            -16.95,
+            -18.99,
+            14.49,
+            16.54
+          ]
+        ],
+        "height": 48.18
+      }
+    },
+    {
+      "id": "3826453788/comecon_cooler",
+      "nameId": 6106,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COOLER": 777777
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3826453788",
+      "modPath": "comecon_cooler",
+      "footprint": {
+        "boxes": [
+          [
+            -0.22,
+            15.5,
+            0.22,
+            15.6
+          ],
+          [
+            -7.13,
+            -5.69,
+            7.13,
+            7.24
+          ]
+        ],
+        "height": 10.5
+      }
+    },
+    {
+      "id": "3826453788/comecon_covered",
+      "nameId": 6202,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_COVERED": 888888
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3826453788",
+      "modPath": "comecon_covered",
+      "footprint": {
+        "boxes": [
+          [
+            -7.78,
+            -31.98,
+            9.36,
+            31.98
+          ],
+          [
+            -8.7,
+            30.59,
+            8.7,
+            43.49
+          ],
+          [
+            -8.7,
+            -30.96,
+            9.03,
+            30.96
+          ],
+          [
+            -15.18,
+            0.36,
+            15.67,
+            0.71
+          ]
+        ],
+        "height": 13.84
+      }
+    },
+    {
+      "id": "3826453788/comecon_gravel",
+      "nameId": 6157,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 666666
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3826453788",
+      "modPath": "comecon_gravel",
+      "footprint": {
+        "boxes": [
+          [
+            39.58,
+            -23.96,
+            52.35,
+            19.27
+          ],
+          [
+            18.03,
+            -4.72,
+            42.77,
+            -1.19
+          ],
+          [
+            -39.47,
+            -4.92,
+            18.85,
+            -0.99
+          ],
+          [
+            -15.24,
+            -24.18,
+            -7.05,
+            19.45
+          ],
+          [
+            22.47,
+            15.37,
+            32.41,
+            22.34
+          ],
+          [
+            -17.65,
+            17.19,
+            -3.86,
+            22.65
+          ],
+          [
+            -17.65,
+            -25.76,
+            -3.86,
+            -20.31
+          ]
+        ],
+        "height": 15.81
+      }
+    },
+    {
+      "id": "3826453788/comecon_liquid",
+      "nameId": 6052,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OIL": 444444
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3826453788",
+      "modPath": "comecon_liquid",
+      "footprint": {
+        "boxes": [
+          [
+            -19.53,
+            -19.02,
+            16.52,
+            16.94
+          ],
+          [
+            12.41,
+            -11.6,
+            20.62,
+            -3.89
+          ],
+          [
+            8.12,
+            -13.1,
+            22.03,
+            -11.83
+          ]
+        ],
+        "height": 13.56
+      }
+    },
+    {
+      "id": "3826453788/comecon_open",
+      "nameId": 6204,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 999999
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3826453788",
+      "modPath": "comecon_open",
+      "footprint": {
+        "boxes": [
+          [
+            -40.72,
+            11.84,
+            40.8,
+            12.76
+          ],
+          [
+            -7.01,
+            -20.15,
+            7.05,
+            20.57
+          ],
+          [
+            -40.72,
+            -12.21,
+            40.7,
+            -11.29
+          ]
+        ],
+        "height": 18.46
+      }
+    }
+  ],
+  "vehicles": []
+}

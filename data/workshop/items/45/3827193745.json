@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3827193745",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-26T10:12:28.044Z",
+  "buildings": [
+    {
+      "id": "3827193745/sovhoz_stalina",
+      "nameId": 6117,
+      "types": [
+        "TYPE_FARM"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "plants": 15
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3827193745",
+      "modPath": "sovhoz_stalina",
+      "footprint": {
+        "boxes": [
+          [
+            -29.14,
+            5.35,
+            2.1,
+            17.76
+          ],
+          [
+            -54.72,
+            -29.36,
+            38.51,
+            -16.95
+          ],
+          [
+            -59.46,
+            -39.97,
+            73.05,
+            40.22
+          ],
+          [
+            7.8,
+            5.35,
+            39.04,
+            17.76
+          ],
+          [
+            57.73,
+            -25.67,
+            65.68,
+            21.12
+          ],
+          [
+            -59.58,
+            6.86,
+            -43.02,
+            40.69
+          ],
+          [
+            -59.72,
+            5.89,
+            -42.88,
+            41.61
+          ]
+        ],
+        "height": 9.5
+      }
+    }
+  ],
+  "vehicles": []
+}
