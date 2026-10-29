@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3821342503",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-29T10:56:02.519Z",
+  "buildings": [
+    {
+      "id": "3821342503/guide_t",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "F21 - Guide - T junction (flat, 4 turns)",
+      "workshopId": "3821342503",
+      "modPath": "guide_t",
+      "footprint": {
+        "boxes": [
+          [
+            -4,
+            24,
+            4,
+            26
+          ]
+        ],
+        "height": 12
+      }
+    },
+    {
+      "id": "3821342503/guide_x",
+      "nameId": null,
+      "types": [
+        "TYPE_PEDESTRIAN_BRIDGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "G21 - Guide - X junction advanced (flat, 8 turns)",
+      "workshopId": "3821342503",
+      "modPath": "guide_x",
+      "footprint": {
+        "boxes": [
+          [
+            56,
+            59,
+            64,
+            61
+          ]
+        ],
+        "height": 12
+      }
+    },
+    {
+      "id": "3821342503/rail_overpass_1",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_ELETRIC": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "C21 - Overpass - 1 track over 2 rails",
+      "workshopId": "3821342503",
+      "modPath": "rail_overpass_1",
+      "footprint": {
+        "boxes": [
+          [
+            -19.27,
+            -115,
+            19.27,
+            115
+          ]
+        ],
+        "height": 15.35
+      }
+    },
+    {
+      "id": "3821342503/rail_overpass_2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_ELETRIC": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "D21 - Overpass - 2 tracks over 2 rails",
+      "workshopId": "3821342503",
+      "modPath": "rail_overpass_2",
+      "footprint": {
+        "boxes": [
+          [
+            -22.27,
+            -115,
+            22.27,
+            115
+          ]
+        ],
+        "height": 15.35
+      }
+    },
+    {
+      "id": "3821342503/rail_overpass_2_slim",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_ELETRIC": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "E21 - Overpass - 2 tracks over 2 rails (slim)",
+      "workshopId": "3821342503",
+      "modPath": "rail_overpass_2_slim",
+      "footprint": {
+        "boxes": [
+          [
+            -7.5,
+            -91,
+            7.5,
+            91
+          ]
+        ],
+        "height": 11.15
+      }
+    },
+    {
+      "id": "3821342503/road_overpass_1",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_ELETRIC": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "A21 - Overpass - 1 track over 2 roads",
+      "workshopId": "3821342503",
+      "modPath": "road_overpass_1",
+      "footprint": {
+        "boxes": [
+          [
+            -14.86,
+            -115,
+            14.91,
+            115
+          ]
+        ],
+        "height": 12.03
+      }
+    },
+    {
+      "id": "3821342503/road_overpass_2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_ELETRIC": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "B21 - Overpass - 2 tracks over 2 roads",
+      "workshopId": "3821342503",
+      "modPath": "road_overpass_2",
+      "footprint": {
+        "boxes": [
+          [
+            -17.86,
+            -115,
+            17.91,
+            115
+          ]
+        ],
+        "height": 12.03
+      }
+    }
+  ],
+  "vehicles": []
+}

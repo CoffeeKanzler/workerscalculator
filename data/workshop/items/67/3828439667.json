@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3828439667",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-29T10:56:02.527Z",
+  "buildings": [
+    {
+      "id": "3828439667/ComputerFactory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 45,
+      "professors": 25,
+      "production": {
+        "computer": 0.03
+      },
+      "consumption": {
+        "steel": 0.06,
+        "boards": 0.06,
+        "mcomponents": 0.05,
+        "ecomponents": 0.12
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Computer Factory",
+      "workshopId": "3828439667",
+      "modPath": "ComputerFactory",
+      "footprint": {
+        "boxes": [
+          [
+            -32.94,
+            -20,
+            20.07,
+            20.94
+          ]
+        ],
+        "height": 12.48
+      }
+    },
+    {
+      "id": "3828439667/RadioFactory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 25,
+      "professors": 10,
+      "production": {
+        "radio_standard": 0.07
+      },
+      "consumption": {
+        "steel": 0.01,
+        "boards": 0.01,
+        "mcomponents": 0.01,
+        "ecomponents": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Radio factory",
+      "workshopId": "3828439667",
+      "modPath": "RadioFactory",
+      "footprint": {
+        "boxes": [
+          [
+            -32.94,
+            -20,
+            20.07,
+            20.94
+          ]
+        ],
+        "height": 12.48
+      }
+    },
+    {
+      "id": "3828439667/TVFactory",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 35,
+      "professors": 15,
+      "production": {
+        "tv_standard": 0.05
+      },
+      "consumption": {
+        "steel": 0.04,
+        "boards": 0.04,
+        "mcomponents": 0.04,
+        "ecomponents": 0.05
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "TV factory",
+      "workshopId": "3828439667",
+      "modPath": "TVFactory",
+      "footprint": {
+        "boxes": [
+          [
+            -32.94,
+            -20,
+            20.07,
+            20.94
+          ]
+        ],
+        "height": 12.48
+      }
+    }
+  ],
+  "vehicles": []
+}
