@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3829170101",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-10-30T10:53:57.781Z",
+  "buildings": [
+    {
+      "id": "3829170101/water_mixer",
+      "nameId": null,
+      "types": [
+        "TYPE_WATER_TREATMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {
+        "water": 24
+      },
+      "consumption": {
+        "usagewater": 0.01
+      },
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Water Mixer",
+      "workshopId": "3829170101",
+      "modPath": "water_mixer",
+      "footprint": {
+        "boxes": [
+          [
+            -2.51,
+            -3.65,
+            3.5,
+            3.89
+          ],
+          [
+            -2.05,
+            -3.6,
+            2.22,
+            3.77
+          ]
+        ],
+        "height": 4.4
+      }
+    }
+  ],
+  "vehicles": []
+}
