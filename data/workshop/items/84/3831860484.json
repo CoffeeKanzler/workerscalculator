@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3831860484",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-02T12:31:05.071Z",
+  "buildings": [
+    {
+      "id": "3831860484/crates1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop crates 1",
+      "workshopId": "3831860484",
+      "modPath": "crates1"
+    },
+    {
+      "id": "3831860484/crates2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop crates 2",
+      "workshopId": "3831860484",
+      "modPath": "crates2"
+    },
+    {
+      "id": "3831860484/crates3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop crates 3",
+      "workshopId": "3831860484",
+      "modPath": "crates3"
+    },
+    {
+      "id": "3831860484/h_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop HESCO 3",
+      "workshopId": "3831860484",
+      "modPath": "h_3",
+      "footprint": {
+        "boxes": [
+          [
+            -1.75,
+            -0.59,
+            1.75,
+            0.59
+          ]
+        ],
+        "height": 1.11
+      }
+    },
+    {
+      "id": "3831860484/h_3_w",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop HESCO 3 wired",
+      "workshopId": "3831860484",
+      "modPath": "h_3_w",
+      "footprint": {
+        "boxes": [
+          [
+            -1.75,
+            -0.59,
+            1.75,
+            0.59
+          ],
+          [
+            -1.31,
+            -0.34,
+            1.2,
+            0.4
+          ]
+        ],
+        "height": 1.77
+      }
+    },
+    {
+      "id": "3831860484/h_7_w",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop HESCO 7 wired",
+      "workshopId": "3831860484",
+      "modPath": "h_7_w",
+      "footprint": {
+        "boxes": [
+          [
+            -4.07,
+            -0.59,
+            4.06,
+            0.59
+          ],
+          [
+            -3.81,
+            -0.34,
+            3.74,
+            0.4
+          ]
+        ],
+        "height": 1.77
+      }
+    },
+    {
+      "id": "3831860484/h_9",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop HESCO 9",
+      "workshopId": "3831860484",
+      "modPath": "h_9",
+      "footprint": {
+        "boxes": [
+          [
+            -5.22,
+            -0.59,
+            5.24,
+            0.59
+          ]
+        ],
+        "height": 1.11
+      }
+    },
+    {
+      "id": "3831860484/h_bunker",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "HESCO bunker",
+      "workshopId": "3831860484",
+      "modPath": "h_bunker",
+      "footprint": {
+        "boxes": [
+          [
+            -2.81,
+            -2.33,
+            2.88,
+            2.22
+          ],
+          [
+            -1.92,
+            -1.82,
+            1.92,
+            1.82
+          ],
+          [
+            -1.87,
+            -1.79,
+            1.88,
+            1.79
+          ]
+        ],
+        "height": 2.65
+      }
+    },
+    {
+      "id": "3831860484/h_w_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop HESCO wall 3",
+      "workshopId": "3831860484",
+      "modPath": "h_w_3",
+      "footprint": {
+        "boxes": [
+          [
+            -1.75,
+            -1.17,
+            1.75,
+            1.18
+          ]
+        ],
+        "height": 2.21
+      }
+    },
+    {
+      "id": "3831860484/h_w_3_w",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop HESCO wall 3 wired",
+      "workshopId": "3831860484",
+      "modPath": "h_w_3_w",
+      "footprint": {
+        "boxes": [
+          [
+            -1.75,
+            -1.17,
+            1.75,
+            1.18
+          ],
+          [
+            -1.43,
+            -0.41,
+            1.32,
+            0.39
+          ]
+        ],
+        "height": 2.89
+      }
+    },
+    {
+      "id": "3831860484/h_w_9",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop HESCO wall 9",
+      "workshopId": "3831860484",
+      "modPath": "h_w_9",
+      "footprint": {
+        "boxes": [
+          [
+            -5.23,
+            -1.17,
+            5.2,
+            1.18
+          ]
+        ],
+        "height": 2.21
+      }
+    },
+    {
+      "id": "3831860484/h_w_9_w",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop HESCO wall 9 wired",
+      "workshopId": "3831860484",
+      "modPath": "h_w_9_w",
+      "footprint": {
+        "boxes": [
+          [
+            1.72,
+            -1.17,
+            5.21,
+            1.18
+          ],
+          [
+            -1.75,
+            -1.17,
+            1.75,
+            1.18
+          ],
+          [
+            -5.25,
+            -1.17,
+            -1.75,
+            1.18
+          ],
+          [
+            -1.43,
+            -0.41,
+            1.32,
+            0.39
+          ],
+          [
+            2.03,
+            -0.41,
+            4.79,
+            0.39
+          ],
+          [
+            -4.94,
+            -0.41,
+            -2.18,
+            0.39
+          ]
+        ],
+        "height": 2.89
+      }
+    },
+    {
+      "id": "3831860484/ladder",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop ladder",
+      "workshopId": "3831860484",
+      "modPath": "ladder"
+    },
+    {
+      "id": "3831860484/netting",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop netting",
+      "workshopId": "3831860484",
+      "modPath": "netting",
+      "footprint": {
+        "boxes": [
+          [
+            -1,
+            -1.21,
+            1,
+            1.21
+          ],
+          [
+            -0.98,
+            -1.18,
+            0.98,
+            1.18
+          ]
+        ],
+        "height": 1.38
+      }
+    },
+    {
+      "id": "3831860484/ramp",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop ramp",
+      "workshopId": "3831860484",
+      "modPath": "ramp",
+      "footprint": {
+        "boxes": [
+          [
+            -1.25,
+            -7.93,
+            1.25,
+            7.93
+          ],
+          [
+            -1.45,
+            -7.89,
+            1.42,
+            7.89
+          ]
+        ],
+        "height": 1.24
+      }
+    },
+    {
+      "id": "3831860484/table",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop working table",
+      "workshopId": "3831860484",
+      "modPath": "table"
+    },
+    {
+      "id": "3831860484/willis",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop parked Willis",
+      "workshopId": "3831860484",
+      "modPath": "willis",
+      "footprint": {
+        "boxes": [
+          [
+            -1.69,
+            -0.68,
+            1.51,
+            0.72
+          ],
+          [
+            -1.62,
+            -0.75,
+            1.77,
+            0.82
+          ],
+          [
+            -1.74,
+            -0.84,
+            1.66,
+            0.88
+          ]
+        ],
+        "height": 1.65
+      }
+    }
+  ],
+  "vehicles": []
+}

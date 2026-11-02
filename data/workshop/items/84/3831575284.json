@@ -1,0 +1,1084 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3831575284",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-02T12:31:05.036Z",
+  "buildings": [
+    {
+      "id": "3831575284/Frunze101",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16
+      },
+      "constructionResources": {
+        "workers": 200.579167,
+        "bricks": 17.1925,
+        "boards": 2.005792,
+        "concrete": 4.584667,
+        "steel": 0.573083
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Frunze101, Pyshechnaya House",
+      "workshopId": "3831575284",
+      "modPath": "Frunze101",
+      "footprint": {
+        "boxes": [
+          [
+            -3.75,
+            -0.14,
+            3.75,
+            0.17
+          ],
+          [
+            3.63,
+            -7.88,
+            3.75,
+            0.13
+          ],
+          [
+            -3.75,
+            -7.88,
+            3.75,
+            0.17
+          ],
+          [
+            -3.75,
+            -7.88,
+            3.75,
+            -7.75
+          ],
+          [
+            -3.75,
+            -7.88,
+            3.75,
+            0.02
+          ],
+          [
+            -0.68,
+            -8.06,
+            0.68,
+            0.43
+          ]
+        ],
+        "height": 10.15
+      }
+    },
+    {
+      "id": "3831575284/Frunze103",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP",
+        "SUBTYPE_RESTAURANT"
+      ],
+      "workers": 5,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 288,
+        "bricks": 18,
+        "boards": 3.6,
+        "steel": 0.9,
+        "gravel": 4.5
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Historical Pelmennaya, Frunze103",
+      "workshopId": "3831575284",
+      "modPath": "Frunze103",
+      "footprint": {
+        "boxes": [
+          [
+            -7.79,
+            0.11,
+            -4.89,
+            1.68
+          ],
+          [
+            -9,
+            -11.85,
+            9,
+            0.45
+          ],
+          [
+            -8.55,
+            -0.27,
+            8.55,
+            0.12
+          ],
+          [
+            -12.93,
+            -0.48,
+            -8.55,
+            0
+          ],
+          [
+            -8.55,
+            -11.4,
+            8.55,
+            -11.13
+          ],
+          [
+            -12.93,
+            -11.4,
+            8.55,
+            0.54
+          ],
+          [
+            -9.13,
+            -11.98,
+            9.13,
+            0.58
+          ],
+          [
+            -8.55,
+            -10.98,
+            8.55,
+            -0.42
+          ],
+          [
+            -0.33,
+            0.39,
+            0.34,
+            0.4
+          ]
+        ],
+        "height": 9.61
+      }
+    },
+    {
+      "id": "3831575284/Furor231",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 8,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.2,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1110,
+        "boards": 6.6,
+        "bricks": 75,
+        "concrete": 22.8,
+        "steel": 4.2
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Furor Cinema / Sadovaya231",
+      "workshopId": "3831575284",
+      "modPath": "Furor231",
+      "footprint": {
+        "boxes": [
+          [
+            -10.19,
+            9.03,
+            10.2,
+            9.35
+          ],
+          [
+            -10.2,
+            -9.35,
+            10.2,
+            -9.03
+          ],
+          [
+            -8.26,
+            9.12,
+            8.23,
+            9.35
+          ],
+          [
+            -8.23,
+            9.06,
+            8.24,
+            9.68
+          ],
+          [
+            -8.21,
+            9.08,
+            8.23,
+            9.66
+          ],
+          [
+            -8.12,
+            9.17,
+            8.13,
+            9.6
+          ],
+          [
+            -10.19,
+            9.03,
+            10.2,
+            9.6
+          ],
+          [
+            -10.2,
+            -9.03,
+            10.2,
+            9.03
+          ],
+          [
+            -6.57,
+            9.03,
+            6.65,
+            9.69
+          ],
+          [
+            -10.2,
+            9.12,
+            10.2,
+            9.69
+          ],
+          [
+            -5.09,
+            9.19,
+            5.15,
+            9.22
+          ],
+          [
+            1.99,
+            9.2,
+            2.85,
+            9.22
+          ],
+          [
+            -10.2,
+            9.03,
+            10.2,
+            9.55
+          ],
+          [
+            -10.2,
+            -9.35,
+            10.2,
+            -9.17
+          ],
+          [
+            -10.2,
+            -9.35,
+            10.2,
+            9.03
+          ],
+          [
+            -10.2,
+            -9.35,
+            10.2,
+            9.35
+          ]
+        ],
+        "height": 13.46
+      }
+    },
+    {
+      "id": "3831575284/Kuybysheva68",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {
+        "workers": 1230.417062,
+        "bricks": 115,
+        "concrete": 30.666667,
+        "steel": 4.6,
+        "boards": 9.583333
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Kuybysheva 68",
+      "workshopId": "3831575284",
+      "modPath": "Kuybysheva68",
+      "footprint": {
+        "boxes": [
+          [
+            -17.25,
+            -7.7,
+            17.25,
+            7.7
+          ],
+          [
+            -17.25,
+            -7.7,
+            17.25,
+            7.7
+          ],
+          [
+            -17.11,
+            -7.5,
+            15.99,
+            7.5
+          ],
+          [
+            -16.93,
+            7.53,
+            16.93,
+            7.59
+          ],
+          [
+            -17.51,
+            -7.98,
+            17.51,
+            7.98
+          ],
+          [
+            -17.53,
+            -8.1,
+            17.53,
+            8.1
+          ]
+        ],
+        "height": 18.48
+      }
+    },
+    {
+      "id": "3831575284/Kuybysheva94",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24
+      },
+      "constructionResources": {
+        "workers": 498.333333,
+        "bricks": 36.416667,
+        "concrete": 9.2,
+        "steel": 1.15,
+        "boards": 2.683333
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Kuybysheva 94",
+      "workshopId": "3831575284",
+      "modPath": "Kuybysheva94",
+      "footprint": {
+        "boxes": [
+          [
+            -5.86,
+            -10,
+            5.86,
+            0
+          ],
+          [
+            -5.86,
+            -10,
+            5.86,
+            0
+          ]
+        ],
+        "height": 9.22
+      }
+    },
+    {
+      "id": "3831575284/Kuybysheva95",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 96,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 96
+      },
+      "constructionResources": {
+        "workers": 1341.666667,
+        "bricks": 115,
+        "boards": 9.583333,
+        "concrete": 30.666667,
+        "steel": 4.6
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Kuybysheva95, Historic House",
+      "workshopId": "3831575284",
+      "modPath": "Kuybysheva95",
+      "footprint": {
+        "boxes": [
+          [
+            -15.69,
+            -13,
+            15.69,
+            0.35
+          ],
+          [
+            -14.61,
+            -13,
+            14.45,
+            0.12
+          ],
+          [
+            -15.69,
+            -13,
+            15.69,
+            0.35
+          ],
+          [
+            -15.69,
+            0,
+            15.69,
+            0.02
+          ],
+          [
+            -15.69,
+            0,
+            15.69,
+            0.16
+          ],
+          [
+            -15.69,
+            0,
+            15.69,
+            0.16
+          ],
+          [
+            -15.69,
+            0,
+            15.69,
+            0.35
+          ]
+        ],
+        "height": 19.44
+      }
+    },
+    {
+      "id": "3831575284/MitrofanChurch",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_CHURCH"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 60,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 580,
+        "boards": 52,
+        "concrete": 14,
+        "steel": 3
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - St Mitrofan Church",
+      "workshopId": "3831575284",
+      "modPath": "MitrofanChurch",
+      "footprint": {
+        "boxes": [
+          [
+            -0.67,
+            -1.17,
+            0.73,
+            -0.05
+          ],
+          [
+            -5.38,
+            -6.68,
+            5.38,
+            7.76
+          ],
+          [
+            -3.39,
+            -4.08,
+            3.39,
+            2.7
+          ],
+          [
+            -5.41,
+            -6.72,
+            5.41,
+            5.36
+          ],
+          [
+            -5.23,
+            -5.92,
+            5.23,
+            4.54
+          ],
+          [
+            -1.77,
+            -2.46,
+            1.77,
+            5.37
+          ],
+          [
+            -3.68,
+            -4.37,
+            3.68,
+            2.99
+          ],
+          [
+            -0.12,
+            4.53,
+            0.12,
+            4.87
+          ],
+          [
+            -0.09,
+            4.69,
+            0.09,
+            4.85
+          ],
+          [
+            -5.23,
+            -5.92,
+            4.57,
+            4.54
+          ],
+          [
+            -1.77,
+            -5.92,
+            5.23,
+            5.37
+          ],
+          [
+            -1.03,
+            4.67,
+            1.12,
+            4.76
+          ],
+          [
+            -3.48,
+            -4.17,
+            3.48,
+            2.79
+          ],
+          [
+            -5.38,
+            -6.68,
+            5.38,
+            5.32
+          ],
+          [
+            -1.18,
+            -7.77,
+            1.18,
+            7.77
+          ],
+          [
+            -5.1,
+            -5.79,
+            5.1,
+            4.41
+          ],
+          [
+            -4.32,
+            -5.01,
+            4.98,
+            3.63
+          ]
+        ],
+        "height": 16.34
+      }
+    },
+    {
+      "id": "3831575284/Molodogvardeyskaya82",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 24,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 24
+      },
+      "constructionResources": {
+        "workers": 523.25,
+        "bricks": 38.2375,
+        "concrete": 9.66,
+        "steel": 1.2075,
+        "boards": 2.8175
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Molodogvardeyskaya 82",
+      "workshopId": "3831575284",
+      "modPath": "Molodogvardeyskaya82",
+      "footprint": {
+        "boxes": [
+          [
+            -12.71,
+            -14.13,
+            12.71,
+            0.36
+          ],
+          [
+            -12.64,
+            -14.05,
+            12.64,
+            1.26
+          ],
+          [
+            -12.35,
+            -13.77,
+            12.35,
+            0.34
+          ],
+          [
+            -12.62,
+            -14.03,
+            12.62,
+            0.26
+          ],
+          [
+            -12.35,
+            -13.77,
+            12.35,
+            0
+          ]
+        ],
+        "height": 12.62
+      }
+    },
+    {
+      "id": "3831575284/Sadovaya85",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.9,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48
+      },
+      "constructionResources": {
+        "workers": 690,
+        "bricks": 65.166667,
+        "concrete": 14.566667,
+        "steel": 1.533333,
+        "boards": 5.366667
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Sadovaya 85",
+      "workshopId": "3831575284",
+      "modPath": "Sadovaya85",
+      "footprint": {
+        "boxes": [
+          [
+            -7.89,
+            -11.8,
+            7.97,
+            -0.2
+          ],
+          [
+            -8.09,
+            -12,
+            12.87,
+            0
+          ],
+          [
+            -7.91,
+            -0.18,
+            7.98,
+            0
+          ],
+          [
+            -8.09,
+            -12,
+            8.17,
+            0
+          ],
+          [
+            -8.09,
+            -12,
+            8.17,
+            0
+          ],
+          [
+            -8.17,
+            -12.08,
+            8.25,
+            0.08
+          ],
+          [
+            -8.19,
+            -12.1,
+            8.27,
+            0.1
+          ]
+        ],
+        "height": 10.5
+      }
+    },
+    {
+      "id": "3831575284/Tolstogo71",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 16,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 16
+      },
+      "constructionResources": {
+        "workers": 325.833333,
+        "bricks": 28.75,
+        "concrete": 7.666667,
+        "steel": 1.15,
+        "boards": 3.45
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Lev Tolstoy 71",
+      "workshopId": "3831575284",
+      "modPath": "Tolstogo71",
+      "footprint": {
+        "boxes": [
+          [
+            -6.27,
+            4.76,
+            6.38,
+            4.89
+          ],
+          [
+            -7.26,
+            5.05,
+            7.26,
+            5.22
+          ],
+          [
+            -6.87,
+            5.04,
+            -4.14,
+            5.96
+          ],
+          [
+            -6.27,
+            4.76,
+            6.38,
+            5.08
+          ],
+          [
+            -5.56,
+            -5.62,
+            5.51,
+            -5.49
+          ],
+          [
+            -7.26,
+            -5.96,
+            7.26,
+            -5.79
+          ],
+          [
+            -7.26,
+            -5.96,
+            7.26,
+            5.22
+          ],
+          [
+            -7.26,
+            -5.96,
+            7.26,
+            5.22
+          ],
+          [
+            -7.25,
+            -5.95,
+            7.25,
+            5.21
+          ]
+        ],
+        "height": 10.19
+      }
+    },
+    {
+      "id": "3831575284/Tolstogo83",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 48,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.88,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 48
+      },
+      "constructionResources": {
+        "workers": 724.5,
+        "bricks": 68.425,
+        "concrete": 15.295,
+        "steel": 1.61,
+        "boards": 5.635
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Lev Tolstoy83",
+      "workshopId": "3831575284",
+      "modPath": "Tolstogo83",
+      "footprint": {
+        "boxes": [
+          [
+            -16.18,
+            -5.78,
+            16,
+            5.47
+          ],
+          [
+            -0.7,
+            5.2,
+            4.4,
+            5.45
+          ],
+          [
+            -16.2,
+            4.76,
+            -12.3,
+            5.2
+          ],
+          [
+            -5.89,
+            5.05,
+            9.22,
+            5.95
+          ],
+          [
+            -5.87,
+            5.92,
+            -3.62,
+            5.95
+          ],
+          [
+            4.4,
+            5.03,
+            16,
+            5.45
+          ],
+          [
+            5.18,
+            4.78,
+            15.18,
+            4.97
+          ],
+          [
+            -12.3,
+            5.03,
+            -0.7,
+            5.45
+          ],
+          [
+            -11.94,
+            4.78,
+            -1.94,
+            4.97
+          ],
+          [
+            -12.5,
+            -6.01,
+            16.2,
+            5.49
+          ],
+          [
+            -16.2,
+            -5.78,
+            16,
+            6.01
+          ]
+        ],
+        "height": 11.5
+      }
+    },
+    {
+      "id": "3831575284/Ventseka35",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 40,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.84,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 40
+      },
+      "constructionResources": {
+        "workers": 418.791667,
+        "boards": 3.2775,
+        "bricks": 40.058333,
+        "concrete": 14.566667,
+        "steel": 1.820833
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Samara - Ventseka35 / Stepana Razina53",
+      "workshopId": "3831575284",
+      "modPath": "Ventseka35",
+      "footprint": {
+        "boxes": [
+          [
+            -12.72,
+            -8.82,
+            12.72,
+            8.82
+          ],
+          [
+            -12.6,
+            -8.7,
+            12.6,
+            8.7
+          ],
+          [
+            -11.96,
+            0.85,
+            4.16,
+            1.08
+          ],
+          [
+            4.76,
+            -8.06,
+            4.98,
+            0.26
+          ],
+          [
+            -12.88,
+            -8.98,
+            12.88,
+            8.98
+          ],
+          [
+            -6.76,
+            -4.74,
+            9.96,
+            10.34
+          ],
+          [
+            -0.57,
+            8.81,
+            4.2,
+            10.29
+          ],
+          [
+            -12.88,
+            -8.98,
+            12.88,
+            10.13
+          ],
+          [
+            -12.6,
+            -8.82,
+            12.72,
+            8.82
+          ],
+          [
+            -0.72,
+            8.7,
+            2.93,
+            10.4
+          ],
+          [
+            -12.6,
+            -8.7,
+            12.6,
+            8.7
+          ],
+          [
+            -11.96,
+            8.52,
+            11.96,
+            8.74
+          ],
+          [
+            -12.88,
+            -8.98,
+            12.88,
+            8.98
+          ],
+          [
+            -12.65,
+            -8.74,
+            14,
+            10.35
+          ],
+          [
+            12.42,
+            -8.06,
+            12.65,
+            8.7
+          ]
+        ],
+        "height": 11.35
+      }
+    }
+  ],
+  "vehicles": []
+}

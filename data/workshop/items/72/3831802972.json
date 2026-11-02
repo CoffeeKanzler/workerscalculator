@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3831802972",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-02T12:31:05.066Z",
+  "buildings": [
+    {
+      "id": "3831802972/kh_jezuitska_kolej",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "JezuitskÃ¡ kolej",
+      "workshopId": "3831802972",
+      "modPath": "kh_jezuitska_kolej",
+      "footprint": {
+        "boxes": [
+          [
+            -90.19,
+            -31.1,
+            89.88,
+            31.1
+          ],
+          [
+            -89.73,
+            -30.73,
+            89.5,
+            30.73
+          ],
+          [
+            -90.08,
+            -30.4,
+            89.34,
+            31.05
+          ],
+          [
+            -89.69,
+            -30.66,
+            89.32,
+            30.84
+          ],
+          [
+            -89.78,
+            -30.77,
+            90.19,
+            30.78
+          ]
+        ],
+        "height": 46.5
+      }
+    },
+    {
+      "id": "3831802972/kh_kamenna_kasna",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "KamennÃ¡ kaÅ¡na",
+      "workshopId": "3831802972",
+      "modPath": "kh_kamenna_kasna",
+      "footprint": {
+        "boxes": [
+          [
+            -4.74,
+            -4.74,
+            4.74,
+            4.74
+          ],
+          [
+            -4.6,
+            -4.6,
+            4.6,
+            4.6
+          ],
+          [
+            -4.66,
+            -4.66,
+            4.66,
+            4.66
+          ],
+          [
+            -4.41,
+            -2.39,
+            4.11,
+            2.39
+          ],
+          [
+            -3.06,
+            -3.06,
+            3.06,
+            3.06
+          ]
+        ],
+        "height": 6.4
+      }
+    },
+    {
+      "id": "3831802972/kh_kamenny_dum",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "KamennÃ½ dÅ¯m",
+      "workshopId": "3831802972",
+      "modPath": "kh_kamenny_dum",
+      "footprint": {
+        "boxes": [
+          [
+            13.09,
+            0.58,
+            15.42,
+            10.44
+          ],
+          [
+            13.14,
+            0.7,
+            13.94,
+            10.44
+          ],
+          [
+            -15.42,
+            -10.44,
+            14,
+            10.44
+          ],
+          [
+            -6.89,
+            -10.44,
+            14.09,
+            5.28
+          ],
+          [
+            -14.61,
+            -10.44,
+            14.19,
+            10.44
+          ],
+          [
+            -14.55,
+            -8.85,
+            15.12,
+            10.42
+          ],
+          [
+            13.81,
+            -2.25,
+            13.94,
+            -0.75
+          ],
+          [
+            9.64,
+            1.6,
+            13.19,
+            9.5
+          ]
+        ],
+        "height": 25.81
+      }
+    },
+    {
+      "id": "3831802972/kh_sedlec_katedrala",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_CHURCH"
+      ],
+      "workers": 7,
+      "professors": 7,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 120,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "KatedrÃ¡la v Sedlci",
+      "workshopId": "3831802972",
+      "modPath": "kh_sedlec_katedrala",
+      "footprint": {
+        "boxes": [
+          [
+            -46.14,
+            -20.83,
+            46.14,
+            20.83
+          ],
+          [
+            -41.11,
+            -20.43,
+            36.74,
+            19.97
+          ],
+          [
+            -46.09,
+            -20.47,
+            45.53,
+            19.98
+          ],
+          [
+            -41.24,
+            -16.43,
+            2.74,
+            2.52
+          ],
+          [
+            -45.79,
+            -20.54,
+            45.14,
+            20.06
+          ],
+          [
+            -41.28,
+            -1.2,
+            -39.84,
+            0.24
+          ]
+        ],
+        "height": 48.2
+      }
+    },
+    {
+      "id": "3831802972/kh_sedlec_kostnice",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_CHURCH"
+      ],
+      "workers": 1,
+      "professors": 1,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kostnice v Sedlci",
+      "workshopId": "3831802972",
+      "modPath": "kh_sedlec_kostnice",
+      "footprint": {
+        "boxes": [
+          [
+            -2.46,
+            -5.73,
+            15.75,
+            5.73
+          ],
+          [
+            -15.93,
+            -4.8,
+            14.93,
+            4.8
+          ],
+          [
+            -7.68,
+            -11.93,
+            16.23,
+            11.93
+          ],
+          [
+            -7.63,
+            -11.88,
+            16.18,
+            11.88
+          ],
+          [
+            -16.23,
+            -5.45,
+            15.17,
+            5.45
+          ],
+          [
+            -15.99,
+            -5.61,
+            14.93,
+            5.61
+          ]
+        ],
+        "height": 25.9
+      }
+    },
+    {
+      "id": "3831802972/kh_sv_barbora",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_CHURCH"
+      ],
+      "workers": 7,
+      "professors": 7,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 120,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ChrÃ¡m sv. Barbory",
+      "workshopId": "3831802972",
+      "modPath": "kh_sv_barbora",
+      "footprint": {
+        "boxes": [
+          [
+            -34.93,
+            -22.88,
+            34.93,
+            22.84
+          ],
+          [
+            -29.01,
+            -21.12,
+            34.56,
+            22.88
+          ],
+          [
+            -28.81,
+            -22.57,
+            30.26,
+            22.53
+          ],
+          [
+            -34.73,
+            -20.88,
+            34.51,
+            20.84
+          ]
+        ],
+        "height": 63.8
+      }
+    },
+    {
+      "id": "3831802972/kh_sv_jakub",
+      "nameId": null,
+      "types": [
+        "CIVIL_BUILDING",
+        "TYPE_CHURCH"
+      ],
+      "workers": 4,
+      "professors": 4,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 100,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kostel sv. Jakuba",
+      "workshopId": "3831802972",
+      "modPath": "kh_sv_jakub",
+      "footprint": {
+        "boxes": [
+          [
+            -28.71,
+            -16.9,
+            28.71,
+            16.9
+          ],
+          [
+            -27.31,
+            -15,
+            27.01,
+            13.2
+          ],
+          [
+            -26.29,
+            -10.5,
+            19.95,
+            13.81
+          ],
+          [
+            -27.02,
+            -14.76,
+            26.77,
+            14.56
+          ],
+          [
+            -23.06,
+            9.63,
+            -22.06,
+            10.53
+          ]
+        ],
+        "height": 77.2
+      }
+    },
+    {
+      "id": "3831802972/kh_vlassky_dvur",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "VlaÅ¡skÃ½ dvÅ¯r",
+      "workshopId": "3831802972",
+      "modPath": "kh_vlassky_dvur",
+      "footprint": {
+        "boxes": [
+          [
+            -28.81,
+            -35.97,
+            29.12,
+            35.91
+          ],
+          [
+            -28.81,
+            -35.97,
+            28.87,
+            35.91
+          ],
+          [
+            -29.27,
+            -36.43,
+            29.27,
+            36.43
+          ],
+          [
+            -15.98,
+            -23.74,
+            26.48,
+            31.12
+          ],
+          [
+            -28.62,
+            -35.95,
+            28.88,
+            34.88
+          ],
+          [
+            -13.71,
+            -34.42,
+            17.95,
+            -26.06
+          ],
+          [
+            -28.64,
+            -35.98,
+            25.73,
+            34.91
+          ]
+        ],
+        "height": 34.3
+      }
+    }
+  ],
+  "vehicles": []
+}
