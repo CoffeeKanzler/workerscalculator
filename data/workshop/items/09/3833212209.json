@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3833212209",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-04T12:13:29.839Z",
+  "buildings": [
+    {
+      "id": "3833212209/rukokhod",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð ÑÐºÐ¾ÑÐ¾Ð´ Ð¢Ð¸Ð¿ I",
+      "workshopId": "3833212209",
+      "modPath": "rukokhod"
+    }
+  ],
+  "vehicles": []
+}

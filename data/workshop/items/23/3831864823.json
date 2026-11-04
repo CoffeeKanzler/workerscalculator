@@ -1,0 +1,1163 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3831864823",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-04T12:13:29.804Z",
+  "buildings": [
+    {
+      "id": "3831864823/metro_crossover_compact_elevated_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered metro scissors crossover / elevated (v2)",
+      "workshopId": "3831864823",
+      "modPath": "metro_crossover_compact_elevated_v2"
+    },
+    {
+      "id": "3831864823/metro_crossover_compact_elevated_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive metro scissors crossover / elevated (v3)",
+      "workshopId": "3831864823",
+      "modPath": "metro_crossover_compact_elevated_v3"
+    },
+    {
+      "id": "3831864823/metro_crossover_compact_underground_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered metro scissors crossover / underground (v2)",
+      "workshopId": "3831864823",
+      "modPath": "metro_crossover_compact_underground_v2"
+    },
+    {
+      "id": "3831864823/metro_crossover_compact_underground_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive metro scissors crossover / underground (v3)",
+      "workshopId": "3831864823",
+      "modPath": "metro_crossover_compact_underground_v3"
+    },
+    {
+      "id": "3831864823/metro_crossover_elevated",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Metro crossover / elevated 12m (EXPERIMENTAL)",
+      "workshopId": "3831864823",
+      "modPath": "metro_crossover_elevated"
+    },
+    {
+      "id": "3831864823/metro_crossover_underground",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Metro crossover / underground 12m (EXPERIMENTAL)",
+      "workshopId": "3831864823",
+      "modPath": "metro_crossover_underground"
+    },
+    {
+      "id": "3831864823/metro_turnout_compact_elevated_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered metro short turnout / elevated (v2)",
+      "workshopId": "3831864823",
+      "modPath": "metro_turnout_compact_elevated_v2"
+    },
+    {
+      "id": "3831864823/metro_turnout_compact_elevated_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive metro short turnout / elevated (v3)",
+      "workshopId": "3831864823",
+      "modPath": "metro_turnout_compact_elevated_v3"
+    },
+    {
+      "id": "3831864823/metro_turnout_compact_underground_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered metro short turnout / underground (v2)",
+      "workshopId": "3831864823",
+      "modPath": "metro_turnout_compact_underground_v2"
+    },
+    {
+      "id": "3831864823/metro_turnout_compact_underground_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive metro short turnout / underground (v3)",
+      "workshopId": "3831864823",
+      "modPath": "metro_turnout_compact_underground_v3"
+    },
+    {
+      "id": "3831864823/metro_turnout_elevated",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Metro turnout / elevated 12m (EXPERIMENTAL)",
+      "workshopId": "3831864823",
+      "modPath": "metro_turnout_elevated"
+    },
+    {
+      "id": "3831864823/metro_turnout_long_elevated_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered metro long turnout / elevated (v2)",
+      "workshopId": "3831864823",
+      "modPath": "metro_turnout_long_elevated_v2"
+    },
+    {
+      "id": "3831864823/metro_turnout_long_elevated_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive metro long turnout / elevated (v3)",
+      "workshopId": "3831864823",
+      "modPath": "metro_turnout_long_elevated_v3"
+    },
+    {
+      "id": "3831864823/metro_turnout_long_underground_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered metro long turnout / underground (v2)",
+      "workshopId": "3831864823",
+      "modPath": "metro_turnout_long_underground_v2"
+    },
+    {
+      "id": "3831864823/metro_turnout_long_underground_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive metro long turnout / underground (v3)",
+      "workshopId": "3831864823",
+      "modPath": "metro_turnout_long_underground_v3"
+    },
+    {
+      "id": "3831864823/metro_turnout_underground",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Metro turnout / underground 12m (EXPERIMENTAL)",
+      "workshopId": "3831864823",
+      "modPath": "metro_turnout_underground"
+    },
+    {
+      "id": "3831864823/metro_y_compact_elevated_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered metro curved Y turnout / elevated (v2)",
+      "workshopId": "3831864823",
+      "modPath": "metro_y_compact_elevated_v2"
+    },
+    {
+      "id": "3831864823/metro_y_compact_elevated_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive metro curved Y turnout / elevated (v3)",
+      "workshopId": "3831864823",
+      "modPath": "metro_y_compact_elevated_v3"
+    },
+    {
+      "id": "3831864823/metro_y_compact_underground_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered metro curved Y turnout / underground (v2)",
+      "workshopId": "3831864823",
+      "modPath": "metro_y_compact_underground_v2"
+    },
+    {
+      "id": "3831864823/metro_y_compact_underground_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive metro curved Y turnout / underground (v3)",
+      "workshopId": "3831864823",
+      "modPath": "metro_y_compact_underground_v3"
+    },
+    {
+      "id": "3831864823/rail_crossover_compact_elevated_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered rail scissors crossover / elevated (v2)",
+      "workshopId": "3831864823",
+      "modPath": "rail_crossover_compact_elevated_v2"
+    },
+    {
+      "id": "3831864823/rail_crossover_compact_elevated_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive rail scissors crossover / elevated (v3)",
+      "workshopId": "3831864823",
+      "modPath": "rail_crossover_compact_elevated_v3"
+    },
+    {
+      "id": "3831864823/rail_crossover_compact_underground_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered rail scissors crossover / underground (v2)",
+      "workshopId": "3831864823",
+      "modPath": "rail_crossover_compact_underground_v2"
+    },
+    {
+      "id": "3831864823/rail_crossover_compact_underground_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive rail scissors crossover / underground (v3)",
+      "workshopId": "3831864823",
+      "modPath": "rail_crossover_compact_underground_v3"
+    },
+    {
+      "id": "3831864823/rail_crossover_elevated",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rail crossover / elevated 12m (EXPERIMENTAL)",
+      "workshopId": "3831864823",
+      "modPath": "rail_crossover_elevated"
+    },
+    {
+      "id": "3831864823/rail_crossover_underground",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rail crossover / underground 12m (EXPERIMENTAL)",
+      "workshopId": "3831864823",
+      "modPath": "rail_crossover_underground"
+    },
+    {
+      "id": "3831864823/rail_turnout_compact_elevated_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered rail short turnout / elevated (v2)",
+      "workshopId": "3831864823",
+      "modPath": "rail_turnout_compact_elevated_v2"
+    },
+    {
+      "id": "3831864823/rail_turnout_compact_elevated_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive rail short turnout / elevated (v3)",
+      "workshopId": "3831864823",
+      "modPath": "rail_turnout_compact_elevated_v3"
+    },
+    {
+      "id": "3831864823/rail_turnout_compact_underground_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered rail short turnout / underground (v2)",
+      "workshopId": "3831864823",
+      "modPath": "rail_turnout_compact_underground_v2"
+    },
+    {
+      "id": "3831864823/rail_turnout_compact_underground_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive rail short turnout / underground (v3)",
+      "workshopId": "3831864823",
+      "modPath": "rail_turnout_compact_underground_v3"
+    },
+    {
+      "id": "3831864823/rail_turnout_elevated",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rail turnout / elevated 12m (EXPERIMENTAL)",
+      "workshopId": "3831864823",
+      "modPath": "rail_turnout_elevated"
+    },
+    {
+      "id": "3831864823/rail_turnout_long_elevated_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered rail long turnout / elevated (v2)",
+      "workshopId": "3831864823",
+      "modPath": "rail_turnout_long_elevated_v2"
+    },
+    {
+      "id": "3831864823/rail_turnout_long_elevated_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive rail long turnout / elevated (v3)",
+      "workshopId": "3831864823",
+      "modPath": "rail_turnout_long_elevated_v3"
+    },
+    {
+      "id": "3831864823/rail_turnout_long_underground_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered rail long turnout / underground (v2)",
+      "workshopId": "3831864823",
+      "modPath": "rail_turnout_long_underground_v2"
+    },
+    {
+      "id": "3831864823/rail_turnout_long_underground_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive rail long turnout / underground (v3)",
+      "workshopId": "3831864823",
+      "modPath": "rail_turnout_long_underground_v3"
+    },
+    {
+      "id": "3831864823/rail_turnout_underground",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Rail turnout / underground 12m (EXPERIMENTAL)",
+      "workshopId": "3831864823",
+      "modPath": "rail_turnout_underground"
+    },
+    {
+      "id": "3831864823/rail_y_compact_elevated_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered rail curved Y turnout / elevated (v2)",
+      "workshopId": "3831864823",
+      "modPath": "rail_y_compact_elevated_v2"
+    },
+    {
+      "id": "3831864823/rail_y_compact_elevated_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive rail curved Y turnout / elevated (v3)",
+      "workshopId": "3831864823",
+      "modPath": "rail_y_compact_elevated_v3"
+    },
+    {
+      "id": "3831864823/rail_y_compact_underground_v2",
+      "nameId": null,
+      "types": [
+        "TYPE_RAIL_TRAFO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Legacy powered rail curved Y turnout / underground (v2)",
+      "workshopId": "3831864823",
+      "modPath": "rail_y_compact_underground_v2"
+    },
+    {
+      "id": "3831864823/rail_y_compact_underground_v3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Passive rail curved Y turnout / underground (v3)",
+      "workshopId": "3831864823",
+      "modPath": "rail_y_compact_underground_v3"
+    },
+    {
+      "id": "3831864823/road_y_elevated",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Road Y junction / elevated 12m (EXPERIMENTAL)",
+      "workshopId": "3831864823",
+      "modPath": "road_y_elevated"
+    },
+    {
+      "id": "3831864823/road_y_underground",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 190.5,
+        "gravel": 15,
+        "concrete": 100,
+        "steel": 15
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Road Y junction / underground 12m (EXPERIMENTAL)",
+      "workshopId": "3831864823",
+      "modPath": "road_y_underground"
+    }
+  ],
+  "vehicles": []
+}
