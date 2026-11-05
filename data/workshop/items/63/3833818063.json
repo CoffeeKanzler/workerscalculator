@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3833818063",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-05T12:28:19.931Z",
+  "buildings": [
+    {
+      "id": "3833818063/garage100",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 563,
+        "asphalt": 38,
+        "steel": 4
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "100 Car Garage",
+      "workshopId": "3833818063",
+      "modPath": "garage100"
+    },
+    {
+      "id": "3833818063/garage200",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 1125,
+        "asphalt": 75,
+        "steel": 8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "200 Car Garage",
+      "workshopId": "3833818063",
+      "modPath": "garage200"
+    }
+  ],
+  "vehicles": []
+}
