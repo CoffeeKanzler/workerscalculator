@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3835365547",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-08T11:21:04.013Z",
+  "buildings": [
+    {
+      "id": "3835365547/swedish_wall",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Ð¨Ð²ÐµÐ´ÑÐºÐ°Ñ ÑÑÐµÐ½ÐºÐ°",
+      "workshopId": "3835365547",
+      "modPath": "swedish_wall"
+    }
+  ],
+  "vehicles": []
+}

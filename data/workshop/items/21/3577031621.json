@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3577031621",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-08T11:21:04.002Z",
+  "buildings": [
+    {
+      "id": "3577031621/seradovaci",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE_RAIL"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_VEHICLES": 258
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Shunting Station",
+      "workshopId": "3577031621",
+      "modPath": "seradovaci",
+      "footprint": {
+        "boxes": [
+          [
+            -5.18,
+            -3.33,
+            5.18,
+            5.18
+          ],
+          [
+            -17.03,
+            -30.03,
+            20.03,
+            228.03
+          ]
+        ],
+        "height": 10
+      }
+    },
+    {
+      "id": "3577031621/stavedlo",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Signal Tower",
+      "workshopId": "3577031621",
+      "modPath": "stavedlo",
+      "footprint": {
+        "boxes": [
+          [
+            -5.18,
+            -3.33,
+            5.18,
+            5.18
+          ],
+          [
+            -3.02,
+            -3.02,
+            5.02,
+            5.02
+          ]
+        ],
+        "height": 10
+      }
+    },
+    {
+      "id": "3577031621/zarazedlo",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Prop Buffer stop",
+      "workshopId": "3577031621",
+      "modPath": "zarazedlo",
+      "footprint": {
+        "boxes": [
+          [
+            -1.68,
+            -1.46,
+            1.65,
+            0.13
+          ]
+        ],
+        "height": 1.69
+      }
+    }
+  ],
+  "vehicles": []
+}

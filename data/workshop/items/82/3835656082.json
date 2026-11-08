@@ -1,0 +1,818 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3835656082",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-08T11:21:04.049Z",
+  "buildings": [
+    {
+      "id": "3835656082/MailService",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "[MAIL] Mail service",
+      "workshopId": "3835656082",
+      "modPath": "MailService",
+      "footprint": {
+        "boxes": [
+          [
+            -33.06,
+            -9.65,
+            -14.84,
+            21.61
+          ],
+          [
+            -14.87,
+            -35.28,
+            26.68,
+            -16.66
+          ]
+        ],
+        "height": 14.93
+      }
+    },
+    {
+      "id": "3835656082/MailServiceEarly",
+      "nameId": null,
+      "types": [
+        "TYPE_GARBAGE_OFFICE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "[MAIL] Mail service (early)",
+      "workshopId": "3835656082",
+      "modPath": "MailServiceEarly",
+      "footprint": {
+        "boxes": [
+          [
+            -29.8,
+            -3.85,
+            -27.8,
+            0.45
+          ],
+          [
+            0.39,
+            -24.9,
+            29.89,
+            25
+          ]
+        ],
+        "height": 11.08
+      }
+    },
+    {
+      "id": "3835656082/MailWarehouse",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "[MAIL] Mail warehouse",
+      "workshopId": "3835656082",
+      "modPath": "MailWarehouse",
+      "footprint": {
+        "boxes": [
+          [
+            -7.78,
+            -31.98,
+            9.36,
+            31.98
+          ],
+          [
+            -8.7,
+            30.59,
+            8.7,
+            43.49
+          ],
+          [
+            -8.7,
+            -30.96,
+            9.03,
+            30.96
+          ],
+          [
+            -15.18,
+            0.36,
+            15.67,
+            0.71
+          ]
+        ],
+        "height": 13.84
+      }
+    },
+    {
+      "id": "3835656082/MailWarehouseEarly",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "[MAIL] Mail warehouse (early)",
+      "workshopId": "3835656082",
+      "modPath": "MailWarehouseEarly",
+      "footprint": {
+        "boxes": [
+          [
+            -20.3,
+            -9.55,
+            21.15,
+            15.75
+          ],
+          [
+            -20.3,
+            21.03,
+            20,
+            26.97
+          ]
+        ],
+        "height": 8.75
+      }
+    },
+    {
+      "id": "3835656082/SortingCentreAuto",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {
+        "mail_done": 0.1
+      },
+      "consumption": {
+        "mail_raw": 0.1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.5
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "[MAIL] Automated sorting centre",
+      "workshopId": "3835656082",
+      "modPath": "SortingCentreAuto",
+      "footprint": {
+        "boxes": [
+          [
+            18.68,
+            15.4,
+            26.8,
+            23.12
+          ],
+          [
+            17.77,
+            -11.4,
+            28.72,
+            10.31
+          ],
+          [
+            -4.72,
+            -16.28,
+            26.72,
+            -6.94
+          ],
+          [
+            -23.06,
+            7.02,
+            10.41,
+            24.59
+          ],
+          [
+            9.02,
+            9.51,
+            23.53,
+            21.35
+          ]
+        ],
+        "height": 34.03
+      }
+    },
+    {
+      "id": "3835656082/SortingCentreAutoLarge",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 120,
+      "professors": 0,
+      "production": {
+        "mail_done": 0.1
+      },
+      "consumption": {
+        "mail_raw": 0.1
+      },
+      "consumptionPerSecond": {
+        "eletric": 3
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "[MAIL] Automated sorting centre (large)",
+      "workshopId": "3835656082",
+      "modPath": "SortingCentreAutoLarge",
+      "footprint": {
+        "boxes": [
+          [
+            14.64,
+            -54.66,
+            90.1,
+            -38.16
+          ],
+          [
+            -79.11,
+            -54.5,
+            -71.11,
+            -54.39
+          ],
+          [
+            -86.86,
+            -57.21,
+            -71.11,
+            -34.7
+          ],
+          [
+            -0.21,
+            -36.54,
+            89.19,
+            45.56
+          ],
+          [
+            -91.2,
+            24.23,
+            -38.4,
+            46.23
+          ],
+          [
+            -88.3,
+            1.91,
+            2.17,
+            18.41
+          ],
+          [
+            -69.54,
+            -57.16,
+            10.58,
+            -1.12
+          ],
+          [
+            -38.03,
+            32.58,
+            -22.03,
+            46.79
+          ],
+          [
+            -73.77,
+            -58.8,
+            -67.77,
+            -52.8
+          ],
+          [
+            -90.91,
+            -59.3,
+            -68.88,
+            -34.4
+          ],
+          [
+            83.39,
+            -7.38,
+            87.89,
+            10.3
+          ],
+          [
+            -33.23,
+            34.89,
+            -22.33,
+            44.29
+          ]
+        ],
+        "height": 60.5
+      }
+    },
+    {
+      "id": "3835656082/SortingOffice",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "mail_done": 0.025
+      },
+      "consumption": {
+        "mail_raw": 0.025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.07
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "[MAIL] Main post office",
+      "workshopId": "3835656082",
+      "modPath": "SortingOffice",
+      "footprint": {
+        "boxes": [
+          [
+            -24,
+            -9.08,
+            -3.23,
+            8.41
+          ],
+          [
+            -11.83,
+            -17.58,
+            -6.27,
+            -8.77
+          ],
+          [
+            -6.64,
+            -15.34,
+            -0.12,
+            -9.85
+          ],
+          [
+            27.38,
+            7.88,
+            32.94,
+            16.69
+          ],
+          [
+            20.33,
+            7.88,
+            25.89,
+            16.69
+          ],
+          [
+            -2.99,
+            -18.3,
+            10.68,
+            -6.13
+          ]
+        ],
+        "height": 14.85
+      }
+    },
+    {
+      "id": "3835656082/SortingOfficeEarly",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {
+        "mail_done": 0.025
+      },
+      "consumption": {
+        "mail_raw": 0.025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.07
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "lighting": 1.25,
+        "living": 1.5
+      },
+      "nameStr": "[MAIL] Main post office (early)",
+      "workshopId": "3835656082",
+      "modPath": "SortingOfficeEarly",
+      "footprint": {
+        "boxes": [
+          [
+            -31.8,
+            -30.86,
+            25.5,
+            41.8
+          ],
+          [
+            39.9,
+            7.7,
+            40,
+            12.3
+          ]
+        ],
+        "height": 12.71
+      }
+    },
+    {
+      "id": "3835656082/SortingOfficeHuge",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 320,
+      "professors": 0,
+      "production": {
+        "mail_done": 0.025
+      },
+      "consumption": {
+        "mail_raw": 0.025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.56
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.4
+      },
+      "nameStr": "[MAIL] Main post office (huge)",
+      "workshopId": "3835656082",
+      "modPath": "SortingOfficeHuge",
+      "footprint": {
+        "boxes": [
+          [
+            -29.07,
+            21.02,
+            23.3,
+            35.44
+          ],
+          [
+            -27.28,
+            -29.9,
+            -13.01,
+            22.47
+          ],
+          [
+            -13.47,
+            -29.9,
+            0.8,
+            22.47
+          ],
+          [
+            0.4,
+            -11.96,
+            20.49,
+            21.4
+          ]
+        ],
+        "height": 21.42
+      }
+    },
+    {
+      "id": "3835656082/SortingOfficeHugeEarly",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 320,
+      "professors": 0,
+      "production": {
+        "mail_done": 0.025
+      },
+      "consumption": {
+        "mail_raw": 0.025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.56
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.2
+      },
+      "nameStr": "[MAIL] Main post office (huge, early)",
+      "workshopId": "3835656082",
+      "modPath": "SortingOfficeHugeEarly",
+      "footprint": {
+        "boxes": [
+          [
+            -34.1,
+            -38.05,
+            34.1,
+            21.75
+          ],
+          [
+            -0.75,
+            38.15,
+            0.75,
+            38.25
+          ]
+        ],
+        "height": 13.45
+      }
+    },
+    {
+      "id": "3835656082/SortingOfficeLarge",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 160,
+      "professors": 0,
+      "production": {
+        "mail_done": 0.025
+      },
+      "consumption": {
+        "mail_raw": 0.025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.28
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.5
+      },
+      "nameStr": "[MAIL] Main post office (large)",
+      "workshopId": "3835656082",
+      "modPath": "SortingOfficeLarge",
+      "footprint": {
+        "boxes": [
+          [
+            -31.84,
+            -11.12,
+            35.96,
+            13.71
+          ],
+          [
+            -36.77,
+            0.3,
+            -32.05,
+            4.98
+          ]
+        ],
+        "height": 50
+      }
+    },
+    {
+      "id": "3835656082/SortingOfficeLargeEarly",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 160,
+      "professors": 0,
+      "production": {
+        "mail_done": 0.025
+      },
+      "consumption": {
+        "mail_raw": 0.025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.28
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {
+        "living": 1.8
+      },
+      "nameStr": "[MAIL] Main post office (large, early)",
+      "workshopId": "3835656082",
+      "modPath": "SortingOfficeLargeEarly",
+      "footprint": {
+        "boxes": [
+          [
+            -36.62,
+            3.02,
+            -31.97,
+            7.05
+          ],
+          [
+            31.72,
+            -3.04,
+            38.58,
+            2.92
+          ],
+          [
+            -19.33,
+            -12.34,
+            33.54,
+            12.26
+          ],
+          [
+            -33.39,
+            -11.63,
+            20.39,
+            11.54
+          ],
+          [
+            -40.69,
+            -20.41,
+            39.85,
+            18.69
+          ],
+          [
+            21.62,
+            -11.63,
+            32.2,
+            11.54
+          ],
+          [
+            -33.39,
+            -4.51,
+            -16.02,
+            11.87
+          ]
+        ],
+        "height": 58.63
+      }
+    },
+    {
+      "id": "3835656082/SortingOfficeMedium",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 80,
+      "professors": 0,
+      "production": {
+        "mail_done": 0.025
+      },
+      "consumption": {
+        "mail_raw": 0.025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.14
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "[MAIL] Main post office (medium)",
+      "workshopId": "3835656082",
+      "modPath": "SortingOfficeMedium",
+      "footprint": {
+        "boxes": [
+          [
+            -31.29,
+            -20.55,
+            -1.56,
+            20.85
+          ],
+          [
+            21.09,
+            8.72,
+            23.98,
+            11.66
+          ],
+          [
+            14.58,
+            2.42,
+            21.38,
+            16.35
+          ],
+          [
+            -3.32,
+            -20.55,
+            23.01,
+            3.96
+          ],
+          [
+            10.36,
+            -25.84,
+            23.39,
+            -18.92
+          ]
+        ],
+        "height": 37.54
+      }
+    },
+    {
+      "id": "3835656082/SortingOfficeMediumEarly",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 80,
+      "professors": 0,
+      "production": {
+        "mail_done": 0.025
+      },
+      "consumption": {
+        "mail_raw": 0.025
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.14
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "[MAIL] Main post office (medium, early)",
+      "workshopId": "3835656082",
+      "modPath": "SortingOfficeMediumEarly",
+      "footprint": {
+        "boxes": [
+          [
+            -13.59,
+            -2.86,
+            -10.58,
+            -0.26
+          ],
+          [
+            7.17,
+            7.99,
+            20.12,
+            13.39
+          ],
+          [
+            -11.24,
+            15.62,
+            -6.25,
+            25.61
+          ],
+          [
+            -7.97,
+            15.28,
+            -1.79,
+            20.64
+          ],
+          [
+            -13.18,
+            -12.56,
+            19.69,
+            9.73
+          ]
+        ],
+        "height": 52.81
+      }
+    }
+  ],
+  "vehicles": []
+}
