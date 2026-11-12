@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3838038411",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-12T12:49:07.128Z",
+  "buildings": [
+    {
+      "id": "3838038411/CablewayCustomsHouse",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_CABLEWAY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 20,
+        "RESOURCE_TRANSPORT_GRAVEL": 20
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Cableway Customs House",
+      "workshopId": "3838038411",
+      "modPath": "CablewayCustomsHouse",
+      "footprint": {
+        "boxes": [
+          [
+            -15.32,
+            -4.41,
+            0.63,
+            6.96
+          ],
+          [
+            -1.01,
+            -14.07,
+            7.09,
+            12.03
+          ],
+          [
+            6.2,
+            -7.24,
+            10.37,
+            -2.22
+          ]
+        ],
+        "height": 17.96
+      }
+    },
+    {
+      "id": "3838038411/DockDistributionOfficeMedium",
+      "nameId": null,
+      "types": [
+        "TYPE_SHIP_DOCK"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dock Distribution Office (Medium)",
+      "workshopId": "3838038411",
+      "modPath": "DockDistributionOfficeMedium",
+      "footprint": {
+        "boxes": [
+          [
+            274.56,
+            -28.86,
+            276.05,
+            -21.62
+          ],
+          [
+            13.71,
+            -32.93,
+            180.36,
+            -26.44
+          ],
+          [
+            -3.59,
+            -91.54,
+            25.33,
+            90.28
+          ],
+          [
+            13.71,
+            26.75,
+            180.36,
+            33.24
+          ],
+          [
+            3.2,
+            -22.95,
+            21.31,
+            23.23
+          ]
+        ],
+        "height": 20.42
+      }
+    },
+    {
+      "id": "3838038411/DockDistributionOfficeSmall",
+      "nameId": null,
+      "types": [
+        "TYPE_SHIP_DOCK"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Dock Distribution Office (Small)",
+      "workshopId": "3838038411",
+      "modPath": "DockDistributionOfficeSmall",
+      "footprint": {
+        "boxes": [
+          [
+            3.2,
+            -22.95,
+            21.31,
+            23.23
+          ],
+          [
+            171.43,
+            -57.94,
+            172.93,
+            -50.7
+          ],
+          [
+            167.48,
+            48.8,
+            168.97,
+            56.05
+          ],
+          [
+            22.58,
+            14.07,
+            122.88,
+            20.56
+          ],
+          [
+            23.38,
+            -24.4,
+            123.68,
+            -17.91
+          ],
+          [
+            -3.59,
+            -38.16,
+            25.33,
+            37.06
+          ]
+        ],
+        "height": 20.42
+      }
+    },
+    {
+      "id": "3838038411/FreeHeliportCargo",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_OPEN": 1,
+        "RESOURCE_TRANSPORT_GRAVEL": 1,
+        "RESOURCE_TRANSPORT_COVERED": 1,
+        "RESOURCE_TRANSPORT_LIVESTOCK": 1,
+        "RESOURCE_TRANSPORT_CEMENT": 1,
+        "RESOURCE_TRANSPORT_COOLER": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Free Heliport Cargo",
+      "workshopId": "3838038411",
+      "modPath": "FreeHeliportCargo",
+      "footprint": {
+        "boxes": [
+          [
+            -15.25,
+            -15.58,
+            15.24,
+            15.77
+          ]
+        ],
+        "height": 1.74
+      }
+    },
+    {
+      "id": "3838038411/FreeHeliportParking",
+      "nameId": null,
+      "types": [
+        "TYPE_AIRPLANE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Free Heliport Parking",
+      "workshopId": "3838038411",
+      "modPath": "FreeHeliportParking",
+      "footprint": {
+        "boxes": [
+          [
+            -15.25,
+            -15.58,
+            15.24,
+            15.77
+          ]
+        ],
+        "height": 1.74
+      }
+    },
+    {
+      "id": "3838038411/HelicopterDistributionOffice",
+      "nameId": null,
+      "types": [
+        "TYPE_DISTRIBUTION_OFFICE",
+        "SUBTYPE_AIRPLANE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Helicopter Distribution Office",
+      "workshopId": "3838038411",
+      "modPath": "HelicopterDistributionOffice",
+      "footprint": {
+        "boxes": [
+          [
+            1.53,
+            20,
+            12.13,
+            22.24
+          ],
+          [
+            20.04,
+            -15.52,
+            22.27,
+            -10.23
+          ],
+          [
+            -22.77,
+            -17.67,
+            -10.21,
+            11.13
+          ],
+          [
+            -23.26,
+            -18.01,
+            -12.05,
+            11.47
+          ],
+          [
+            -31.25,
+            24.01,
+            -29.32,
+            27.64
+          ],
+          [
+            -41,
+            -1.64,
+            -14.03,
+            25.33
+          ],
+          [
+            -41.26,
+            -28.79,
+            -14.29,
+            -1.82
+          ],
+          [
+            -18.44,
+            -22.82,
+            -16.15,
+            -17.21
+          ],
+          [
+            -20.17,
+            18.85,
+            -17.89,
+            24.47
+          ]
+        ],
+        "height": 13.8
+      }
+    },
+    {
+      "id": "3838038411/LargeCablewayCustomsHouse",
+      "nameId": null,
+      "types": [
+        "TYPE_CARGO_STATION",
+        "SUBTYPE_CABLEWAY"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GENERAL": 40,
+        "RESOURCE_TRANSPORT_GRAVEL": 40
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Large Cableway Customs House",
+      "workshopId": "3838038411",
+      "modPath": "LargeCablewayCustomsHouse",
+      "footprint": {
+        "boxes": [
+          [
+            -31.4,
+            -14.12,
+            -9.73,
+            4.34
+          ],
+          [
+            -23.57,
+            4.34,
+            13.71,
+            20.63
+          ],
+          [
+            13.71,
+            4.42,
+            26.4,
+            10.67
+          ],
+          [
+            -33.96,
+            -17.22,
+            4.86,
+            20.97
+          ],
+          [
+            4.36,
+            4.48,
+            26.18,
+            16.73
+          ]
+        ],
+        "height": 14.6
+      }
+    }
+  ],
+  "vehicles": []
+}
