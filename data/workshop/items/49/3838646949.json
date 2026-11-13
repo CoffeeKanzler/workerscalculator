@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3838646949",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-13T12:17:43.240Z",
+  "buildings": [
+    {
+      "id": "3838646949/minimalistic_logging_camp",
+      "nameId": null,
+      "types": [
+        "TYPE_MINE_WOOD"
+      ],
+      "workers": 7,
+      "professors": 0,
+      "production": {
+        "wood": 6
+      },
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Minimalistic logging camp",
+      "workshopId": "3838646949",
+      "modPath": "minimalistic_logging_camp",
+      "footprint": {
+        "boxes": [
+          [
+            -18.25,
+            -20.18,
+            19.13,
+            -8.76
+          ],
+          [
+            -20.04,
+            4.02,
+            20.04,
+            20.04
+          ]
+        ],
+        "height": 10.49
+      }
+    }
+  ],
+  "vehicles": []
+}

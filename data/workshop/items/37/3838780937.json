@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3838780937",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-13T12:17:43.859Z",
+  "buildings": [
+    {
+      "id": "3838780937/rop1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CSF Bunker 1",
+      "workshopId": "3838780937",
+      "modPath": "rop1"
+    },
+    {
+      "id": "3838780937/rop1m",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 1,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CSF Bunker 1 museum",
+      "workshopId": "3838780937",
+      "modPath": "rop1m"
+    },
+    {
+      "id": "3838780937/rop2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CSF Bunker 2",
+      "workshopId": "3838780937",
+      "modPath": "rop2"
+    },
+    {
+      "id": "3838780937/rop2m",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 2,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CSF Bunker 2 museum",
+      "workshopId": "3838780937",
+      "modPath": "rop2m"
+    },
+    {
+      "id": "3838780937/rop3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CSF Bunker 3",
+      "workshopId": "3838780937",
+      "modPath": "rop3"
+    },
+    {
+      "id": "3838780937/rop3m",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 3,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 7,
+      "qualityOfLiving": null,
+      "attractiveScore": 1.5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CSF Bunker 3 museum",
+      "workshopId": "3838780937",
+      "modPath": "rop3m"
+    },
+    {
+      "id": "3838780937/trench_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CSF Trench S",
+      "workshopId": "3838780937",
+      "modPath": "trench_1"
+    },
+    {
+      "id": "3838780937/trench_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CSF Trench L",
+      "workshopId": "3838780937",
+      "modPath": "trench_2"
+    },
+    {
+      "id": "3838780937/trench_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "CSF Trench 90Â°",
+      "workshopId": "3838780937",
+      "modPath": "trench_3"
+    }
+  ],
+  "vehicles": []
+}

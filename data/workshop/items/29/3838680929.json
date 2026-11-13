@@ -1,0 +1,1881 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3838680929",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-13T12:17:43.243Z",
+  "buildings": [
+    {
+      "id": "3838680929/church",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Georgievskaya tserkov (Velikiy Dalnik)",
+      "workshopId": "3838680929",
+      "modPath": "church",
+      "footprint": {
+        "boxes": [
+          [
+            -12.48,
+            -12.72,
+            13.32,
+            12.72
+          ],
+          [
+            -12.72,
+            -12.96,
+            13.56,
+            12.96
+          ],
+          [
+            -17.76,
+            -3.84,
+            -10.08,
+            3.84
+          ],
+          [
+            -20.52,
+            -16.32,
+            8.88,
+            13.08
+          ]
+        ],
+        "height": 38.1
+      }
+    },
+    {
+      "id": "3838680929/duma",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 25,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Odessa City Duma",
+      "workshopId": "3838680929",
+      "modPath": "duma",
+      "footprint": {
+        "boxes": [
+          [
+            -26.5,
+            -25.5,
+            26.5,
+            25.5
+          ],
+          [
+            -26.75,
+            -25.75,
+            26.75,
+            25.75
+          ],
+          [
+            -26,
+            -25,
+            26,
+            25
+          ],
+          [
+            -14.98,
+            -14.68,
+            14.98,
+            -9.35
+          ]
+        ],
+        "height": 20.9
+      }
+    },
+    {
+      "id": "3838680929/dvorec",
+      "nameId": null,
+      "types": [
+        "TYPE_ATTRACTION"
+      ],
+      "workers": 15,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 4,
+      "qualityOfLiving": null,
+      "attractiveScore": 3.2,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vorontsov Palace",
+      "workshopId": "3838680929",
+      "modPath": "dvorec",
+      "footprint": {
+        "boxes": [
+          [
+            -19.4,
+            -25.7,
+            21,
+            26.4
+          ],
+          [
+            -19.25,
+            -25.55,
+            19.65,
+            26.6
+          ],
+          [
+            -19.25,
+            -25.55,
+            18.15,
+            25.25
+          ],
+          [
+            -18.3,
+            -24.55,
+            19.11,
+            26.08
+          ]
+        ],
+        "height": 15.1
+      }
+    },
+    {
+      "id": "3838680929/kadet",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 60,
+      "professors": 90,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Odessa Cadet Corps",
+      "workshopId": "3838680929",
+      "modPath": "kadet",
+      "footprint": {
+        "boxes": [
+          [
+            -81.65,
+            -67.75,
+            81.65,
+            68.95
+          ],
+          [
+            -81.65,
+            -67.75,
+            81.65,
+            68.95
+          ],
+          [
+            -11.38,
+            -68.95,
+            11.38,
+            -59.25
+          ],
+          [
+            -3.2,
+            -71.2,
+            3.2,
+            -68.6
+          ]
+        ],
+        "height": 32.98
+      }
+    },
+    {
+      "id": "3838680929/kalancha",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 30,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 6,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Odessa Watch Tower House (Rishelievska 73)",
+      "workshopId": "3838680929",
+      "modPath": "kalancha",
+      "footprint": {
+        "boxes": [
+          [
+            -15.6,
+            -14.35,
+            15.6,
+            13.8
+          ],
+          [
+            -15.6,
+            -14.8,
+            15.6,
+            13.8
+          ],
+          [
+            -3.75,
+            -15.6,
+            3.75,
+            -8.05
+          ],
+          [
+            -16.2,
+            -14.4,
+            16.2,
+            14.4
+          ]
+        ],
+        "height": 37.3
+      }
+    },
+    {
+      "id": "3838680929/kolonnada",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Vorontsov Colonnade",
+      "workshopId": "3838680929",
+      "modPath": "kolonnada",
+      "footprint": {
+        "boxes": [
+          [
+            -15.51,
+            -10.65,
+            15.51,
+            3.73
+          ],
+          [
+            -12.26,
+            -6.58,
+            12.2,
+            2.55
+          ],
+          [
+            -12.9,
+            -7.32,
+            12.9,
+            3
+          ],
+          [
+            -12.9,
+            -7.32,
+            12.9,
+            3
+          ]
+        ],
+        "height": 11.3
+      }
+    },
+    {
+      "id": "3838680929/kv01",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Odessa Pension Fund (Kanatna 83)",
+      "workshopId": "3838680929",
+      "modPath": "kv01",
+      "footprint": {
+        "boxes": [
+          [
+            -23.42,
+            -48.16,
+            7.84,
+            36.34
+          ]
+        ],
+        "height": 69.15
+      }
+    },
+    {
+      "id": "3838680929/kv02",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 40,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Military District HQ, old building (Pyrohovska 6 - Kanatna 87)",
+      "workshopId": "3838680929",
+      "modPath": "kv02",
+      "footprint": {
+        "boxes": [
+          [
+            -83.74,
+            -25.05,
+            77.89,
+            22.92
+          ]
+        ],
+        "height": 29.6
+      }
+    },
+    {
+      "id": "3838680929/kv03",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 86,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 86
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kanatna 81/2",
+      "workshopId": "3838680929",
+      "modPath": "kv03",
+      "footprint": {
+        "boxes": [
+          [
+            -19.66,
+            -12.67,
+            19.66,
+            11.97
+          ]
+        ],
+        "height": 21.23
+      }
+    },
+    {
+      "id": "3838680929/kv04",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Yamchytskoho 3",
+      "workshopId": "3838680929",
+      "modPath": "kv04",
+      "footprint": {
+        "boxes": [
+          [
+            -5.02,
+            -9.16,
+            5.01,
+            9.17
+          ]
+        ],
+        "height": 7.96
+      }
+    },
+    {
+      "id": "3838680929/kv05",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 158,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 158
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kanatna 81",
+      "workshopId": "3838680929",
+      "modPath": "kv05",
+      "footprint": {
+        "boxes": [
+          [
+            -18.19,
+            -30.69,
+            17.8,
+            29.96
+          ]
+        ],
+        "height": 20.75
+      }
+    },
+    {
+      "id": "3838680929/kv06",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 23,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 23
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Italiiskyi bulvar 7/9",
+      "workshopId": "3838680929",
+      "modPath": "kv06",
+      "footprint": {
+        "boxes": [
+          [
+            -10.85,
+            -11.69,
+            10.85,
+            10.95
+          ]
+        ],
+        "height": 15.45
+      }
+    },
+    {
+      "id": "3838680929/kv07",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 143,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 143
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kanatna 81/1",
+      "workshopId": "3838680929",
+      "modPath": "kv07",
+      "footprint": {
+        "boxes": [
+          [
+            -30.73,
+            -21.18,
+            30.73,
+            19.83
+          ]
+        ],
+        "height": 21.04
+      }
+    },
+    {
+      "id": "3838680929/kv08",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Omelianovycha-Pavlenka 2a",
+      "workshopId": "3838680929",
+      "modPath": "kv08",
+      "footprint": {
+        "boxes": [
+          [
+            -7.17,
+            -11.43,
+            7.17,
+            11.43
+          ]
+        ],
+        "height": 8.72
+      }
+    },
+    {
+      "id": "3838680929/kv09",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 18,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 18
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Omelianovycha-Pavlenka 4",
+      "workshopId": "3838680929",
+      "modPath": "kv09",
+      "footprint": {
+        "boxes": [
+          [
+            -10.36,
+            -15.75,
+            10.35,
+            15.25
+          ]
+        ],
+        "height": 12.84
+      }
+    },
+    {
+      "id": "3838680929/kv10",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 18,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 18
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Yamchytskoho 5",
+      "workshopId": "3838680929",
+      "modPath": "kv10",
+      "footprint": {
+        "boxes": [
+          [
+            -12.47,
+            -7.22,
+            12.47,
+            6.48
+          ]
+        ],
+        "height": 15.38
+      }
+    },
+    {
+      "id": "3838680929/kv11",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 162,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 162
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kanatna 81/5",
+      "workshopId": "3838680929",
+      "modPath": "kv11",
+      "footprint": {
+        "boxes": [
+          [
+            -45.74,
+            -10.39,
+            45.52,
+            9.87
+          ]
+        ],
+        "height": 21.2
+      }
+    },
+    {
+      "id": "3838680929/kv12",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 105,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 105
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kanatna 81/4",
+      "workshopId": "3838680929",
+      "modPath": "kv12",
+      "footprint": {
+        "boxes": [
+          [
+            -33.58,
+            -9.35,
+            33.58,
+            8.6
+          ]
+        ],
+        "height": 20.43
+      }
+    },
+    {
+      "id": "3838680929/kv13",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 87,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 87
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kanatna 81/6",
+      "workshopId": "3838680929",
+      "modPath": "kv13",
+      "footprint": {
+        "boxes": [
+          [
+            -19.56,
+            -10.29,
+            19.56,
+            8.74
+          ]
+        ],
+        "height": 18.45
+      }
+    },
+    {
+      "id": "3838680929/kv14",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 88,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 88
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kanatna 81/3",
+      "workshopId": "3838680929",
+      "modPath": "kv14",
+      "footprint": {
+        "boxes": [
+          [
+            -19.32,
+            -18.55,
+            19.32,
+            17.8
+          ]
+        ],
+        "height": 20.69
+      }
+    },
+    {
+      "id": "3838680929/kv15",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mother and Child Centre",
+      "workshopId": "3838680929",
+      "modPath": "kv15",
+      "footprint": {
+        "boxes": [
+          [
+            -13.83,
+            -21.71,
+            13.6,
+            20.98
+          ]
+        ],
+        "height": 16.27
+      }
+    },
+    {
+      "id": "3838680929/kv16",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 60,
+      "professors": 30,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Southern Operational Command (Pyrohovska 4)",
+      "workshopId": "3838680929",
+      "modPath": "kv16",
+      "footprint": {
+        "boxes": [
+          [
+            -18.11,
+            -30.81,
+            23.48,
+            30.88
+          ]
+        ],
+        "height": 26.1
+      }
+    },
+    {
+      "id": "3838680929/kv17",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 67,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.75,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 67
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Kanatna 85",
+      "workshopId": "3838680929",
+      "modPath": "kv17",
+      "footprint": {
+        "boxes": [
+          [
+            -12.47,
+            -18.3,
+            11.31,
+            17.96
+          ]
+        ],
+        "height": 19.46
+      }
+    },
+    {
+      "id": "3838680929/kv18",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Workshop, Shtabnyi provulok",
+      "workshopId": "3838680929",
+      "modPath": "kv18",
+      "footprint": {
+        "boxes": [
+          [
+            -37.39,
+            -8.82,
+            37.39,
+            8.83
+          ]
+        ],
+        "height": 6.85
+      }
+    },
+    {
+      "id": "3838680929/kv19",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 84,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 84
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Omelianovycha-Pavlenka 6",
+      "workshopId": "3838680929",
+      "modPath": "kv19",
+      "footprint": {
+        "boxes": [
+          [
+            -34,
+            -8.06,
+            34,
+            6.51
+          ]
+        ],
+        "height": 15.15
+      }
+    },
+    {
+      "id": "3838680929/kv20",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 69,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 69
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Omelianovycha-Pavlenka 6, block 2",
+      "workshopId": "3838680929",
+      "modPath": "kv20",
+      "footprint": {
+        "boxes": [
+          [
+            -33.75,
+            -6.98,
+            33.75,
+            5.47
+          ]
+        ],
+        "height": 15.15
+      }
+    },
+    {
+      "id": "3838680929/kv21",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Service block A, Orlikova",
+      "workshopId": "3838680929",
+      "modPath": "kv21",
+      "footprint": {
+        "boxes": [
+          [
+            -6.52,
+            -14.14,
+            6.52,
+            13.16
+          ]
+        ],
+        "height": 10.25
+      }
+    },
+    {
+      "id": "3838680929/kv22",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Service block B, Orlikova",
+      "workshopId": "3838680929",
+      "modPath": "kv22",
+      "footprint": {
+        "boxes": [
+          [
+            -4,
+            -19.77,
+            4.05,
+            18.81
+          ]
+        ],
+        "height": 10.25
+      }
+    },
+    {
+      "id": "3838680929/kv23",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Service block C, Orlikova",
+      "workshopId": "3838680929",
+      "modPath": "kv23",
+      "footprint": {
+        "boxes": [
+          [
+            -28.97,
+            -10.38,
+            29.06,
+            10.48
+          ]
+        ],
+        "height": 10.25
+      }
+    },
+    {
+      "id": "3838680929/kv24",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Barracks, Shtabnyi 1/1",
+      "workshopId": "3838680929",
+      "modPath": "kv24",
+      "footprint": {
+        "boxes": [
+          [
+            -25.72,
+            -15.58,
+            25.72,
+            14.54
+          ]
+        ],
+        "height": 15.83
+      }
+    },
+    {
+      "id": "3838680929/kv25",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Barracks, Shtabnyi 1",
+      "workshopId": "3838680929",
+      "modPath": "kv25",
+      "footprint": {
+        "boxes": [
+          [
+            -37.65,
+            -10.92,
+            37.65,
+            9.88
+          ]
+        ],
+        "height": 16.42
+      }
+    },
+    {
+      "id": "3838680929/kv27",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Regional Administration, annex",
+      "workshopId": "3838680929",
+      "modPath": "kv27",
+      "footprint": {
+        "boxes": [
+          [
+            -21.87,
+            -11.1,
+            21.87,
+            9.55
+          ]
+        ],
+        "height": 18.45
+      }
+    },
+    {
+      "id": "3838680929/kv28",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Regional Administration, hall",
+      "workshopId": "3838680929",
+      "modPath": "kv28",
+      "footprint": {
+        "boxes": [
+          [
+            -10.75,
+            -15.78,
+            10.75,
+            15.78
+          ]
+        ],
+        "height": 9.65
+      }
+    },
+    {
+      "id": "3838680929/kv30",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pavilion Styl (6a)",
+      "workshopId": "3838680929",
+      "modPath": "kv30",
+      "footprint": {
+        "boxes": [
+          [
+            -6.36,
+            -9.67,
+            6.36,
+            9.67
+          ]
+        ],
+        "height": 6.85
+      }
+    },
+    {
+      "id": "3838680929/kv31",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Gatehouse",
+      "workshopId": "3838680929",
+      "modPath": "kv31",
+      "footprint": {
+        "boxes": [
+          [
+            -4.72,
+            -3.12,
+            4.73,
+            3.12
+          ]
+        ],
+        "height": 6.85
+      }
+    },
+    {
+      "id": "3838680929/kv33",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Booth",
+      "workshopId": "3838680929",
+      "modPath": "kv33",
+      "footprint": {
+        "boxes": [
+          [
+            -1.96,
+            -2.69,
+            1.97,
+            2.68
+          ]
+        ],
+        "height": 6.85
+      }
+    },
+    {
+      "id": "3838680929/kv34",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Guard post",
+      "workshopId": "3838680929",
+      "modPath": "kv34",
+      "footprint": {
+        "boxes": [
+          [
+            -2.31,
+            -4.53,
+            2.32,
+            4.53
+          ]
+        ],
+        "height": 9.85
+      }
+    },
+    {
+      "id": "3838680929/kv35",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.6,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Yamchytskoho 3a",
+      "workshopId": "3838680929",
+      "modPath": "kv35",
+      "footprint": {
+        "boxes": [
+          [
+            -4.77,
+            -8.38,
+            4.76,
+            8.38
+          ]
+        ],
+        "height": 7.89
+      }
+    },
+    {
+      "id": "3838680929/kv36",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Garage",
+      "workshopId": "3838680929",
+      "modPath": "kv36",
+      "footprint": {
+        "boxes": [
+          [
+            -13.42,
+            -5.63,
+            13.42,
+            5.63
+          ]
+        ],
+        "height": 6.85
+      }
+    },
+    {
+      "id": "3838680929/kv37",
+      "nameId": null,
+      "types": [
+        "TYPE_SCHOOL"
+      ],
+      "workers": 10,
+      "professors": 20,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 12,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "School (Yamchytskoho 7)",
+      "workshopId": "3838680929",
+      "modPath": "kv37",
+      "footprint": {
+        "boxes": [
+          [
+            -35.21,
+            -31.83,
+            35.22,
+            30.3
+          ]
+        ],
+        "height": 18.45
+      }
+    },
+    {
+      "id": "3838680929/kv38",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Yard block, Pyrohovska 6",
+      "workshopId": "3838680929",
+      "modPath": "kv38",
+      "footprint": {
+        "boxes": [
+          [
+            -18.19,
+            -11.19,
+            18.19,
+            11.18
+          ]
+        ],
+        "height": 15.15
+      }
+    },
+    {
+      "id": "3838680929/opera",
+      "nameId": null,
+      "types": [
+        "TYPE_KINO"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 5,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Odessa Opera and Ballet Theatre",
+      "workshopId": "3838680929",
+      "modPath": "opera",
+      "footprint": {
+        "boxes": [
+          [
+            -39.2,
+            -47.1,
+            39.2,
+            43.6
+          ],
+          [
+            -32.95,
+            -37.25,
+            32.95,
+            43.85
+          ],
+          [
+            -33.67,
+            -37.37,
+            33.67,
+            44.05
+          ],
+          [
+            -33.08,
+            -36.92,
+            33.08,
+            43.6
+          ],
+          [
+            -15.9,
+            -23.4,
+            15.9,
+            9.3
+          ],
+          [
+            -17.4,
+            8.6,
+            17.4,
+            43.6
+          ],
+          [
+            -38.47,
+            -44.85,
+            38.47,
+            10.65
+          ]
+        ],
+        "height": 39.5
+      }
+    },
+    {
+      "id": "3838680929/postgai",
+      "nameId": null,
+      "types": [
+        "TYPE_POLICE_STATION"
+      ],
+      "workers": 4,
+      "professors": 4,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Post GAI Odessa Gorod-Geroy",
+      "workshopId": "3838680929",
+      "modPath": "postgai",
+      "footprint": {
+        "boxes": [
+          [
+            -3.8,
+            -3.8,
+            3.8,
+            3.8
+          ],
+          [
+            -2.78,
+            -2.74,
+            2.78,
+            3.07
+          ]
+        ],
+        "height": 15.04
+      }
+    },
+    {
+      "id": "3838680929/profsoyuz",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 40,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Odessa House of Trade Unions",
+      "workshopId": "3838680929",
+      "modPath": "profsoyuz",
+      "footprint": {
+        "boxes": [
+          [
+            -40.4,
+            -16.3,
+            40.4,
+            2.5
+          ],
+          [
+            -50.2,
+            -26.08,
+            50.2,
+            29
+          ],
+          [
+            -50.8,
+            -23.9,
+            50.8,
+            29.6
+          ],
+          [
+            -40.1,
+            -23,
+            40.1,
+            0
+          ],
+          [
+            -50.8,
+            -5.7,
+            50.8,
+            29.6
+          ]
+        ],
+        "height": 27.6
+      }
+    },
+    {
+      "id": "3838680929/rynok",
+      "nameId": null,
+      "types": [
+        "TYPE_SHOP"
+      ],
+      "workers": 60,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 9,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Construction market Dva Stolba",
+      "workshopId": "3838680929",
+      "modPath": "rynok",
+      "footprint": {
+        "boxes": [
+          [
+            -90.5,
+            -198.5,
+            93.5,
+            196.5
+          ],
+          [
+            -71.5,
+            -187.5,
+            83,
+            193.5
+          ],
+          [
+            -71.5,
+            -187.9,
+            83.4,
+            193.9
+          ]
+        ],
+        "height": 5.9
+      }
+    },
+    {
+      "id": "3838680929/sobor",
+      "nameId": null,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 6,
+      "professors": 6,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 200,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Spaso-Preobrazhenskiy sobor",
+      "workshopId": "3838680929",
+      "modPath": "sobor",
+      "footprint": {
+        "boxes": [
+          [
+            -49.38,
+            -26.88,
+            46.8,
+            26.88
+          ],
+          [
+            -44,
+            -24.2,
+            46.4,
+            24.2
+          ],
+          [
+            -32,
+            -24,
+            46.4,
+            24
+          ],
+          [
+            -11.2,
+            -17.1,
+            30.15,
+            17.1
+          ],
+          [
+            -46.7,
+            -8.4,
+            -29.9,
+            8.4
+          ]
+        ],
+        "height": 76.93
+      }
+    },
+    {
+      "id": "3838680929/universitet",
+      "nameId": null,
+      "types": [
+        "TYPE_UNIVERSITY",
+        "SUBTYPE_TECHNICAL"
+      ],
+      "workers": 40,
+      "professors": 60,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 3,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Imperial Novorossiya University",
+      "workshopId": "3838680929",
+      "modPath": "universitet",
+      "footprint": {
+        "boxes": [
+          [
+            -48.57,
+            -3.51,
+            48.57,
+            51.38
+          ],
+          [
+            -49.02,
+            -4.08,
+            49.02,
+            51.82
+          ],
+          [
+            -48.63,
+            -3.83,
+            48.63,
+            51.44
+          ],
+          [
+            -39.95,
+            -5.55,
+            39.95,
+            41.36
+          ]
+        ],
+        "height": 22.2
+      }
+    },
+    {
+      "id": "3838680929/vokzal",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3000,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3000
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Odessa-Glavnaya railway station",
+      "workshopId": "3838680929",
+      "modPath": "vokzal",
+      "footprint": {
+        "boxes": [
+          [
+            -57.5,
+            -92,
+            57.5,
+            97.6
+          ],
+          [
+            -58,
+            -28.5,
+            58,
+            97.4
+          ],
+          [
+            -58,
+            -28.5,
+            58,
+            90.5
+          ],
+          [
+            -11.2,
+            59.3,
+            16.2,
+            86.7
+          ],
+          [
+            -14.9,
+            -92,
+            46.7,
+            38
+          ]
+        ],
+        "height": 43.8
+      }
+    }
+  ],
+  "vehicles": []
+}
