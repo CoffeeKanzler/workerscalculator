@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3838957375",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-14T11:33:29.077Z",
+  "buildings": [
+    {
+      "id": "3838957375/witacz",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Stela Szczecinek",
+      "workshopId": "3838957375",
+      "modPath": "witacz",
+      "footprint": {
+        "boxes": [
+          [
+            -0.59,
+            -1.74,
+            0.59,
+            1.74
+          ]
+        ],
+        "height": 4.85
+      }
+    }
+  ],
+  "vehicles": []
+}
