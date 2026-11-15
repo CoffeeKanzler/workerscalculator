@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3839759481",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-15T11:59:40.938Z",
+  "buildings": [
+    {
+      "id": "3839759481/1",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 72,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.82,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 72
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PV-2a 60s Type 3",
+      "workshopId": "3839759481",
+      "modPath": "1",
+      "footprint": {
+        "boxes": [
+          [
+            -6.43,
+            -26.62,
+            6.77,
+            26.73
+          ]
+        ],
+        "height": 16.91
+      }
+    },
+    {
+      "id": "3839759481/2",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 112,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.83,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 112
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "PV-2b 60s Type 3",
+      "workshopId": "3839759481",
+      "modPath": "2",
+      "footprint": {
+        "boxes": [
+          [
+            -7.32,
+            -26.65,
+            6.88,
+            26.7
+          ]
+        ],
+        "height": 24.89
+      }
+    }
+  ],
+  "vehicles": []
+}
