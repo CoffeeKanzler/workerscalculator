@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3840222795",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-16T12:50:09.483Z",
+  "buildings": [
+    {
+      "id": "3840222795/AggregateLoadingMedium",
+      "nameId": 6163,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3840222795",
+      "modPath": "AggregateLoadingMedium",
+      "footprint": {
+        "boxes": [
+          [
+            13.83,
+            8.91,
+            71.28,
+            17.71
+          ],
+          [
+            -15.7,
+            -3.85,
+            16.46,
+            16.35
+          ]
+        ],
+        "height": 29.35
+      }
+    },
+    {
+      "id": "3840222795/AggregateUnloadingMedium",
+      "nameId": 6164,
+      "types": [
+        "TYPE_CARGO_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 1
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3840222795",
+      "modPath": "AggregateUnloadingMedium",
+      "footprint": {
+        "boxes": [
+          [
+            -39.95,
+            -4,
+            39.98,
+            7.2
+          ],
+          [
+            -37.96,
+            3.35,
+            38.07,
+            18.71
+          ]
+        ],
+        "height": 9.6
+      }
+    }
+  ],
+  "vehicles": []
+}
