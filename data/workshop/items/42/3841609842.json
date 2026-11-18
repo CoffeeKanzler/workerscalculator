@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3841609842",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-18T13:08:47.325Z",
+  "buildings": [
+    {
+      "id": "3841609842/blok",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 380,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.85,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 380
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Residential building Torwar X",
+      "workshopId": "3841609842",
+      "modPath": "blok",
+      "footprint": {
+        "boxes": [
+          [
+            -11.44,
+            -21.35,
+            11.44,
+            21.35
+          ],
+          [
+            -11.44,
+            -20.22,
+            11.44,
+            20.22
+          ],
+          [
+            -11.37,
+            -21.29,
+            11.37,
+            21.29
+          ],
+          [
+            -8.68,
+            -19.83,
+            10.69,
+            19.83
+          ]
+        ],
+        "height": 43.53
+      }
+    }
+  ],
+  "vehicles": []
+}
