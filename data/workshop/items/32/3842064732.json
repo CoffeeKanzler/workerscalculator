@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3842064732",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-19T13:18:40.723Z",
+  "buildings": [
+    {
+      "id": "3842064732/custom_metro_station_1",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 800,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 800
+      },
+      "constructionResources": {
+        "workers": 1044,
+        "concrete": 139,
+        "gravel": 39,
+        "steel": 23,
+        "mcomponents": 0.17
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Metro platform (Side Exits)",
+      "workshopId": "3842064732",
+      "modPath": "custom_metro_station_1"
+    },
+    {
+      "id": "3842064732/custom_metro_station_15",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 800,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 800
+      },
+      "constructionResources": {
+        "workers": 1044,
+        "concrete": 139,
+        "gravel": 39,
+        "steel": 23,
+        "mcomponents": 0.17
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Metro platform 15m (Side Exits)",
+      "workshopId": "3842064732",
+      "modPath": "custom_metro_station_15"
+    },
+    {
+      "id": "3842064732/custom_metro_station_20",
+      "nameId": null,
+      "types": [
+        "TYPE_PASSANGER_STATION",
+        "SUBTYPE_METRO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 800,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 800
+      },
+      "constructionResources": {
+        "workers": 1044,
+        "concrete": 139,
+        "gravel": 39,
+        "steel": 23,
+        "mcomponents": 0.17
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Metro platform 20m (Side Exits)",
+      "workshopId": "3842064732",
+      "modPath": "custom_metro_station_20"
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3842299965",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-19T13:18:40.743Z",
+  "buildings": [
+    {
+      "id": "3842299965/Smolenka",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 380,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.83,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 380
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Novosmolenskaya - Light concrete",
+      "workshopId": "3842299965",
+      "modPath": "Smolenka",
+      "footprint": {
+        "boxes": [
+          [
+            -22.05,
+            -12.25,
+            22.05,
+            12.25
+          ],
+          [
+            -22.05,
+            -12.25,
+            22.05,
+            12.25
+          ],
+          [
+            -22.05,
+            -5.75,
+            3.15,
+            12.25
+          ],
+          [
+            3.15,
+            -12.25,
+            22.05,
+            5.75
+          ]
+        ],
+        "height": 71.59
+      }
+    },
+    {
+      "id": "3842299965/SmolenkaGrey",
+      "nameId": null,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 380,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": 0.83,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 380
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Novosmolenskaya - Weathered concrete",
+      "workshopId": "3842299965",
+      "modPath": "SmolenkaGrey",
+      "footprint": {
+        "boxes": [
+          [
+            -22.05,
+            -12.25,
+            22.05,
+            12.25
+          ],
+          [
+            -22.05,
+            -12.25,
+            22.05,
+            12.25
+          ],
+          [
+            -22.05,
+            -5.75,
+            3.15,
+            12.25
+          ],
+          [
+            3.15,
+            -12.25,
+            22.05,
+            5.75
+          ]
+        ],
+        "height": 71.59
+      }
+    }
+  ],
+  "vehicles": []
+}

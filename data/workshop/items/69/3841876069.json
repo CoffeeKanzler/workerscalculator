@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3841876069",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-19T13:18:40.719Z",
+  "buildings": [
+    {
+      "id": "3841876069/MicroTrainDepot",
+      "nameId": null,
+      "types": [
+        "TYPE_RAILDEPO"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Micro Train Depot",
+      "workshopId": "3841876069",
+      "modPath": "MicroTrainDepot",
+      "footprint": {
+        "boxes": [
+          [
+            -2.29,
+            -4.5,
+            2.41,
+            4.49
+          ]
+        ],
+        "height": 1.06
+      }
+    }
+  ],
+  "vehicles": []
+}
