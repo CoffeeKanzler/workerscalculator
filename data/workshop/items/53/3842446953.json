@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3842446953",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-20T13:00:12.960Z",
+  "buildings": [
+    {
+      "id": "3842446953/DDR30",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 40,
+        "concrete": 3.5,
+        "gravel": 1.8,
+        "prefabpanels": 5.5,
+        "steel": 0.8
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "Es lebe die DDR - 30 Jahre",
+      "workshopId": "3842446953",
+      "modPath": "DDR30",
+      "footprint": {
+        "boxes": [
+          [
+            -1.71,
+            -0.73,
+            1.71,
+            0.73
+          ],
+          [
+            -1.32,
+            -0.37,
+            1.32,
+            0.37
+          ]
+        ],
+        "height": 6.77
+      }
+    }
+  ],
+  "vehicles": []
+}
