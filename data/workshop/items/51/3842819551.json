@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3842819551",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-21T12:44:01.814Z",
+  "buildings": [
+    {
+      "id": "3842819551/lukoil",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐ¡ ÐÑÐºÐ¾Ð¹Ð» (GS Lukoil)",
+      "workshopId": "3842819551",
+      "modPath": "lukoil",
+      "footprint": {
+        "boxes": [
+          [
+            -15.81,
+            -5.13,
+            26.2,
+            11.25
+          ],
+          [
+            -6.71,
+            -24.15,
+            7.88,
+            -15.05
+          ],
+          [
+            -16.02,
+            -32.22,
+            12.16,
+            1.72
+          ],
+          [
+            -15.61,
+            -30.73,
+            7.88,
+            -15.07
+          ],
+          [
+            -15.77,
+            -30.89,
+            8.04,
+            -14.91
+          ],
+          [
+            -27.06,
+            -37.95,
+            -23.48,
+            -32.16
+          ],
+          [
+            -17.72,
+            -32.46,
+            9.77,
+            -13.03
+          ]
+        ],
+        "height": 9.22
+      }
+    },
+    {
+      "id": "3842819551/rosneft10",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐ¡ Ð Ð¾ÑÐ½ÐµÑÑÑ 10 Ð¼ÐµÑÑ (GS Rosneft 10)",
+      "workshopId": "3842819551",
+      "modPath": "rosneft10",
+      "footprint": {
+        "boxes": [
+          [
+            -33.43,
+            -6.01,
+            6.06,
+            3.65
+          ],
+          [
+            -10.08,
+            -29.51,
+            2.49,
+            -11.78
+          ],
+          [
+            -1.72,
+            -17.5,
+            26.29,
+            11.28
+          ],
+          [
+            -9.81,
+            -24.9,
+            2.13,
+            -14.64
+          ],
+          [
+            -11.64,
+            -30.12,
+            3.96,
+            -11.77
+          ]
+        ],
+        "height": 8.39
+      }
+    },
+    {
+      "id": "3842819551/rosneft6",
+      "nameId": null,
+      "types": [
+        "TYPE_GAS_STATION"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "ÐÐÐ¡ Ð Ð¾ÑÐ½ÐµÑÑÑ 6 (GS Rosneft 6)",
+      "workshopId": "3842819551",
+      "modPath": "rosneft6",
+      "footprint": {
+        "boxes": [
+          [
+            -14.68,
+            -6.01,
+            6.06,
+            3.65
+          ],
+          [
+            -10.08,
+            -29.51,
+            2.49,
+            -11.78
+          ],
+          [
+            -11.64,
+            -30.12,
+            3.96,
+            -11.77
+          ],
+          [
+            -9.81,
+            -24.9,
+            2.13,
+            -14.64
+          ],
+          [
+            -1.72,
+            -17.5,
+            26.29,
+            11.28
+          ]
+        ],
+        "height": 8.39
+      }
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3823927888",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-21T12:44:01.809Z",
+  "buildings": [
+    {
+      "id": "3823927888/dprk_immortality_tower",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "DPRK Immortality Tower",
+      "workshopId": "3823927888",
+      "modPath": "dprk_immortality_tower",
+      "footprint": {
+        "boxes": [
+          [
+            -26.7,
+            6.75,
+            32.7,
+            23.25
+          ],
+          [
+            14.75,
+            -21.75,
+            33.75,
+            7.75
+          ],
+          [
+            -33.5,
+            15.73,
+            -33,
+            22.25
+          ]
+        ],
+        "height": 15.84
+      }
+    }
+  ],
+  "vehicles": []
+}

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3843432266",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-21T12:44:01.853Z",
+  "buildings": [
+    {
+      "id": "3843432266/Vaterland",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {
+        "workers": 40,
+        "concrete": 3.5,
+        "gravel": 1.8,
+        "steel": 1
+      },
+      "electricWorkerFactors": {},
+      "nameStr": "DDR - unser sozialistisches Vaterland",
+      "workshopId": "3843432266",
+      "modPath": "Vaterland",
+      "footprint": {
+        "boxes": [
+          [
+            -1.82,
+            -0.38,
+            1.82,
+            0.38
+          ],
+          [
+            -1.88,
+            0.28,
+            1.88,
+            0.29
+          ],
+          [
+            -1.85,
+            -0.13,
+            1.85,
+            1.09
+          ],
+          [
+            -2.01,
+            -0.28,
+            2.01,
+            0.28
+          ],
+          [
+            -1.88,
+            -0.29,
+            1.88,
+            -0.28
+          ],
+          [
+            -2.02,
+            -0.29,
+            -1.9,
+            0.29
+          ],
+          [
+            1.9,
+            -0.29,
+            2.02,
+            0.29
+          ]
+        ],
+        "height": 8.17
+      }
+    }
+  ],
+  "vehicles": []
+}
