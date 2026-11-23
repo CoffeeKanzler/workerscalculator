@@ -1,0 +1,1235 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3844208465",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-23T14:47:45.172Z",
+  "buildings": [
+    {
+      "id": "3844208465/civ_dedina1a",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedina1a",
+      "footprint": {
+        "boxes": [
+          [
+            -3.78,
+            -2.76,
+            3.56,
+            3.62
+          ]
+        ],
+        "height": 6.58
+      }
+    },
+    {
+      "id": "3844208465/civ_dedina1b",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedina1b",
+      "footprint": {
+        "boxes": [
+          [
+            -3.78,
+            -2.76,
+            3.56,
+            3.62
+          ]
+        ],
+        "height": 6.58
+      }
+    },
+    {
+      "id": "3844208465/civ_dedina2a",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 6,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 6
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedina2a",
+      "footprint": {
+        "boxes": [
+          [
+            -4.19,
+            -3.65,
+            4.12,
+            3.82
+          ]
+        ],
+        "height": 8.13
+      }
+    },
+    {
+      "id": "3844208465/civ_dedina3a",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedina3a",
+      "footprint": {
+        "boxes": [
+          [
+            -5.33,
+            -3.63,
+            5.4,
+            2.75
+          ]
+        ],
+        "height": 7.32
+      }
+    },
+    {
+      "id": "3844208465/civ_dedina3b",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedina3b",
+      "footprint": {
+        "boxes": [
+          [
+            -5.33,
+            -3.63,
+            5.4,
+            2.75
+          ]
+        ],
+        "height": 7.32
+      }
+    },
+    {
+      "id": "3844208465/civ_dedina4a",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 10,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 10
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedina4a",
+      "footprint": {
+        "boxes": [
+          [
+            -7.18,
+            -4.95,
+            8.39,
+            2.57
+          ]
+        ],
+        "height": 8.71
+      }
+    },
+    {
+      "id": "3844208465/civ_dedina5a",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 13,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 13
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedina5a",
+      "footprint": {
+        "boxes": [
+          [
+            -7.13,
+            -3.81,
+            6.71,
+            3.49
+          ]
+        ],
+        "height": 7.76
+      }
+    },
+    {
+      "id": "3844208465/civ_dedina6a",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 4,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 4
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedina6a",
+      "footprint": {
+        "boxes": [
+          [
+            -4.18,
+            -2.44,
+            4.52,
+            3.93
+          ]
+        ],
+        "height": 6.35
+      }
+    },
+    {
+      "id": "3844208465/civ_dedina7a",
+      "nameId": 6416,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 1,
+      "professors": 1,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedina7a",
+      "footprint": {
+        "boxes": [
+          [
+            -4.82,
+            -3.17,
+            4.8,
+            3.65
+          ]
+        ],
+        "height": 16.44
+      }
+    },
+    {
+      "id": "3844208465/civ_dedina_drevenica1",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedina_drevenica1",
+      "footprint": {
+        "boxes": [
+          [
+            -2.98,
+            -5.93,
+            4.19,
+            8.67
+          ]
+        ],
+        "height": 8.82
+      }
+    },
+    {
+      "id": "3844208465/civ_dedina_drevenica2",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedina_drevenica2",
+      "footprint": {
+        "boxes": [
+          [
+            -3.39,
+            -7.96,
+            3.78,
+            6.64
+          ]
+        ],
+        "height": 8.82
+      }
+    },
+    {
+      "id": "3844208465/civ_dedina_drevenica5",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 3,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 3
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedina_drevenica5",
+      "footprint": {
+        "boxes": [
+          [
+            -2.61,
+            -6.36,
+            3.34,
+            5.28
+          ]
+        ],
+        "height": 7.49
+      }
+    },
+    {
+      "id": "3844208465/civ_dedinaru1",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedinaru1",
+      "footprint": {
+        "boxes": [
+          [
+            -5.8,
+            -5.78,
+            5.8,
+            5.78
+          ]
+        ],
+        "height": 7.49
+      }
+    },
+    {
+      "id": "3844208465/civ_dedinaru2",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedinaru2",
+      "footprint": {
+        "boxes": [
+          [
+            -4.32,
+            -5.38,
+            4.32,
+            5.38
+          ]
+        ],
+        "height": 9.19
+      }
+    },
+    {
+      "id": "3844208465/civ_dedinaru3",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedinaru3",
+      "footprint": {
+        "boxes": [
+          [
+            -3.81,
+            -8.84,
+            3.81,
+            8.84
+          ]
+        ],
+        "height": 6.45
+      }
+    },
+    {
+      "id": "3844208465/civ_dedinaru4",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedinaru4",
+      "footprint": {
+        "boxes": [
+          [
+            -4.4,
+            -6.97,
+            4.4,
+            6.97
+          ]
+        ],
+        "height": 7.54
+      }
+    },
+    {
+      "id": "3844208465/civ_dedinaru5",
+      "nameId": 6410,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 5,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 5
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_dedinaru5",
+      "footprint": {
+        "boxes": [
+          [
+            -5.24,
+            -3.88,
+            5.24,
+            3.88
+          ]
+        ],
+        "height": 5.2
+      }
+    },
+    {
+      "id": "3844208465/civ_kirche1",
+      "nameId": 6412,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 80,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_kirche1",
+      "footprint": {
+        "boxes": [
+          [
+            -30.75,
+            -13.28,
+            22.43,
+            4.92
+          ]
+        ],
+        "height": 83.37
+      }
+    },
+    {
+      "id": "3844208465/civ_kirche2",
+      "nameId": 6413,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 4,
+      "professors": 4,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 80,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_kirche2",
+      "footprint": {
+        "boxes": [
+          [
+            -25.78,
+            -26.05,
+            37.43,
+            11.68
+          ]
+        ],
+        "height": 88.79
+      }
+    },
+    {
+      "id": "3844208465/civ_kirche3",
+      "nameId": 6414,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 7,
+      "professors": 7,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 80,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_kirche3",
+      "footprint": {
+        "boxes": [
+          [
+            -56.03,
+            -19.06,
+            50.44,
+            25.15
+          ]
+        ],
+        "height": 103.69
+      }
+    },
+    {
+      "id": "3844208465/civ_kostolik",
+      "nameId": 6415,
+      "types": [
+        "TYPE_CHURCH"
+      ],
+      "workers": 2,
+      "professors": 2,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 40,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_kostolik",
+      "footprint": {
+        "boxes": [
+          [
+            -3.54,
+            -10.4,
+            5.16,
+            7.85
+          ]
+        ],
+        "height": 22.72
+      }
+    },
+    {
+      "id": "3844208465/civ_mesto1",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 95,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 95
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_mesto1",
+      "footprint": {
+        "boxes": [
+          [
+            -19.93,
+            -28.86,
+            20.05,
+            30.47
+          ]
+        ],
+        "height": 19.21
+      }
+    },
+    {
+      "id": "3844208465/civ_mesto2",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 120,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 120
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_mesto2",
+      "footprint": {
+        "boxes": [
+          [
+            -25.07,
+            -40.71,
+            24.52,
+            -0.53
+          ],
+          [
+            -25.08,
+            -1.97,
+            24.25,
+            38.17
+          ]
+        ],
+        "height": 19.22
+      }
+    },
+    {
+      "id": "3844208465/civ_mesto3",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 75,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 75
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_mesto3",
+      "footprint": {
+        "boxes": [
+          [
+            -6.38,
+            -41.8,
+            13.88,
+            47.29
+          ]
+        ],
+        "height": 19.21
+      }
+    },
+    {
+      "id": "3844208465/civ_mesto4",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 135,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 135
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_mesto4",
+      "footprint": {
+        "boxes": [
+          [
+            -28.44,
+            -48.73,
+            31.75,
+            1.07
+          ],
+          [
+            -28.53,
+            -4.01,
+            31.41,
+            60.03
+          ]
+        ],
+        "height": 19.79
+      }
+    },
+    {
+      "id": "3844208465/civ_mesto5",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 85,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 85
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_mesto5",
+      "footprint": {
+        "boxes": [
+          [
+            -11.73,
+            -51.76,
+            8.32,
+            37.25
+          ]
+        ],
+        "height": 19.34
+      }
+    },
+    {
+      "id": "3844208465/civ_newoldcity1",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_newoldcity1",
+      "footprint": {
+        "boxes": [
+          [
+            -6.18,
+            -4.09,
+            6.53,
+            4.39
+          ]
+        ],
+        "height": 14.16
+      }
+    },
+    {
+      "id": "3844208465/civ_newoldcity10",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_newoldcity10",
+      "footprint": {
+        "boxes": [
+          [
+            -5.91,
+            -3.71,
+            5.88,
+            3.6
+          ]
+        ],
+        "height": 14.2
+      }
+    },
+    {
+      "id": "3844208465/civ_newoldcity2",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_newoldcity2",
+      "footprint": {
+        "boxes": [
+          [
+            -5.76,
+            -3.62,
+            5.74,
+            3.69
+          ]
+        ],
+        "height": 15.17
+      }
+    },
+    {
+      "id": "3844208465/civ_newoldcity3",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_newoldcity3",
+      "footprint": {
+        "boxes": [
+          [
+            -5.58,
+            -3.49,
+            6,
+            3.16
+          ]
+        ],
+        "height": 16.63
+      }
+    },
+    {
+      "id": "3844208465/civ_newoldcity4",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 25,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 25
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_newoldcity4",
+      "footprint": {
+        "boxes": [
+          [
+            -6.4,
+            -4.53,
+            6.79,
+            4.59
+          ]
+        ],
+        "height": 15.22
+      }
+    },
+    {
+      "id": "3844208465/civ_newoldcity5",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 20,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 20
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_newoldcity5",
+      "footprint": {
+        "boxes": [
+          [
+            -6.94,
+            -4.37,
+            6.97,
+            4.63
+          ]
+        ],
+        "height": 19.39
+      }
+    },
+    {
+      "id": "3844208465/civ_newoldcity6",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_newoldcity6",
+      "footprint": {
+        "boxes": [
+          [
+            -6.91,
+            -4.53,
+            7.43,
+            4.33
+          ]
+        ],
+        "height": 15.84
+      }
+    },
+    {
+      "id": "3844208465/civ_newoldcity7",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_newoldcity7",
+      "footprint": {
+        "boxes": [
+          [
+            -5.85,
+            -3.87,
+            5.94,
+            3.99
+          ]
+        ],
+        "height": 14.36
+      }
+    },
+    {
+      "id": "3844208465/civ_newoldcity8",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_newoldcity8",
+      "footprint": {
+        "boxes": [
+          [
+            -5.37,
+            -3.55,
+            6.43,
+            3.77
+          ]
+        ],
+        "height": 14.49
+      }
+    },
+    {
+      "id": "3844208465/civ_newoldcity9",
+      "nameId": 6411,
+      "types": [
+        "TYPE_LIVING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 30,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_PASSANGER": 30
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "workshopId": "3844208465",
+      "modPath": "civ_newoldcity9",
+      "footprint": {
+        "boxes": [
+          [
+            -5.84,
+            -3.85,
+            5.95,
+            3.46
+          ]
+        ],
+        "height": 15.45
+      }
+    }
+  ],
+  "vehicles": []
+}

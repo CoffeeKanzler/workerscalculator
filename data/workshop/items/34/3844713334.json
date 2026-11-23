@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3844713334",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-23T14:47:45.369Z",
+  "buildings": [
+    {
+      "id": "3844713334/gdynia",
+      "nameId": null,
+      "types": [
+        "TYPE_CITYHALL"
+      ],
+      "workers": 80,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "zus_gdynia",
+      "workshopId": "3844713334",
+      "modPath": "gdynia",
+      "footprint": {
+        "boxes": [
+          [
+            -7.37,
+            -5.49,
+            19.79,
+            55.45
+          ],
+          [
+            -7.27,
+            -4.89,
+            17.58,
+            50.17
+          ],
+          [
+            -7.28,
+            6.3,
+            2.71,
+            55.34
+          ],
+          [
+            17.46,
+            46.38,
+            19.79,
+            48.27
+          ],
+          [
+            -7.37,
+            28.56,
+            2.79,
+            55.45
+          ]
+        ],
+        "height": 30.64
+      }
+    }
+  ],
+  "vehicles": []
+}
