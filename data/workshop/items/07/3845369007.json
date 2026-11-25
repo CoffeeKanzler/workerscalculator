@@ -1,0 +1,2121 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3845369007",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-25T14:31:01.314Z",
+  "buildings": [
+    {
+      "id": "3845369007/rosk0",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (8 spaces, parallel/angled)",
+      "workshopId": "3845369007",
+      "modPath": "rosk0",
+      "footprint": {
+        "boxes": [
+          [
+            -9.5,
+            -6,
+            9.5,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rosk1",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (16 spaces, parallel/angled)",
+      "workshopId": "3845369007",
+      "modPath": "rosk1",
+      "footprint": {
+        "boxes": [
+          [
+            -17.75,
+            -6,
+            17.75,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rosk2",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (24 spaces, parallel/angled)",
+      "workshopId": "3845369007",
+      "modPath": "rosk2",
+      "footprint": {
+        "boxes": [
+          [
+            -26,
+            -6,
+            26,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rosk3",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (8 spaces, parallel/angled, one-way)",
+      "workshopId": "3845369007",
+      "modPath": "rosk3",
+      "footprint": {
+        "boxes": [
+          [
+            -9.5,
+            -6,
+            9.5,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rosk4",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (16 spaces, parallel/angled, one-way)",
+      "workshopId": "3845369007",
+      "modPath": "rosk4",
+      "footprint": {
+        "boxes": [
+          [
+            -17.75,
+            -6,
+            17.75,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rosk5",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (24 spaces, parallel/angled, one-way)",
+      "workshopId": "3845369007",
+      "modPath": "rosk5",
+      "footprint": {
+        "boxes": [
+          [
+            -26,
+            -6,
+            26,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rosk6",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (8 spaces, parallel/angled, one-way, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "rosk6",
+      "footprint": {
+        "boxes": [
+          [
+            -9.5,
+            -8,
+            9.5,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rosk7",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (16 spaces, parallel/angled, one-way)",
+      "workshopId": "3845369007",
+      "modPath": "rosk7",
+      "footprint": {
+        "boxes": [
+          [
+            -17.75,
+            -8,
+            17.75,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rosk8",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (24 spaces, parallel/angled, one-way)",
+      "workshopId": "3845369007",
+      "modPath": "rosk8",
+      "footprint": {
+        "boxes": [
+          [
+            -26,
+            -8,
+            26,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown0",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (3 spaces, parallel)",
+      "workshopId": "3845369007",
+      "modPath": "rown0",
+      "footprint": {
+        "boxes": [
+          [
+            -9.5,
+            -6,
+            9.5,
+            3
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown1",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (6 spaces, parallel)",
+      "workshopId": "3845369007",
+      "modPath": "rown1",
+      "footprint": {
+        "boxes": [
+          [
+            -17.75,
+            -6,
+            17.75,
+            3
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown10",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (6 spaces, parallel)",
+      "workshopId": "3845369007",
+      "modPath": "rown10",
+      "footprint": {
+        "boxes": [
+          [
+            -9.5,
+            -6,
+            9.5,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown11",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (12 spaces, parallel)",
+      "workshopId": "3845369007",
+      "modPath": "rown11",
+      "footprint": {
+        "boxes": [
+          [
+            -17.75,
+            -6,
+            17.75,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown12",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (18 spaces, parallel)",
+      "workshopId": "3845369007",
+      "modPath": "rown12",
+      "footprint": {
+        "boxes": [
+          [
+            -26,
+            -6,
+            26,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown13",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (24 spaces, parallel)",
+      "workshopId": "3845369007",
+      "modPath": "rown13",
+      "footprint": {
+        "boxes": [
+          [
+            -34.25,
+            -6,
+            34.25,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown14",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (6 spaces, parallel, one-way)",
+      "workshopId": "3845369007",
+      "modPath": "rown14",
+      "footprint": {
+        "boxes": [
+          [
+            -9.5,
+            -6,
+            9.5,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown15",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (12 spaces, parallel, one-way)",
+      "workshopId": "3845369007",
+      "modPath": "rown15",
+      "footprint": {
+        "boxes": [
+          [
+            -17.75,
+            -6,
+            17.75,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown16",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (18 spaces, parallel, one-way)",
+      "workshopId": "3845369007",
+      "modPath": "rown16",
+      "footprint": {
+        "boxes": [
+          [
+            -26,
+            -6,
+            26,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown17",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (24 spaces, parallel, one-way)",
+      "workshopId": "3845369007",
+      "modPath": "rown17",
+      "footprint": {
+        "boxes": [
+          [
+            -34.25,
+            -6,
+            34.25,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown2",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (9 spaces, parallel)",
+      "workshopId": "3845369007",
+      "modPath": "rown2",
+      "footprint": {
+        "boxes": [
+          [
+            -26,
+            -6,
+            26,
+            3
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown3",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (12 spaces, parallel)",
+      "workshopId": "3845369007",
+      "modPath": "rown3",
+      "footprint": {
+        "boxes": [
+          [
+            -34.25,
+            -6,
+            34.25,
+            3
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown4",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (3 spaces, parallel, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "rown4",
+      "footprint": {
+        "boxes": [
+          [
+            -9.5,
+            -3,
+            9.5,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown5",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (6 spaces, parallel, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "rown5",
+      "footprint": {
+        "boxes": [
+          [
+            -17.75,
+            -3,
+            17.75,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown6",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (9 spaces, parallel, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "rown6",
+      "footprint": {
+        "boxes": [
+          [
+            -26,
+            -3,
+            26,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rown7",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (12 spaces, parallel, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "rown7",
+      "footprint": {
+        "boxes": [
+          [
+            -34.25,
+            -3,
+            34.25,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rozw0",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (10 spaces, parallel/perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "rozw0",
+      "footprint": {
+        "boxes": [
+          [
+            -9.5,
+            -6,
+            9.5,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rozw1",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (19 spaces, parallel/perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "rozw1",
+      "footprint": {
+        "boxes": [
+          [
+            -17.75,
+            -6,
+            17.75,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rozw2",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (28 spaces, parallel/perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "rozw2",
+      "footprint": {
+        "boxes": [
+          [
+            -26,
+            -6,
+            26,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rozw3",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (10 spaces, parallel/perpendicular, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "rozw3",
+      "footprint": {
+        "boxes": [
+          [
+            -9.5,
+            -8,
+            9.5,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rozw4",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (19 spaces, parallel/perpendicular, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "rozw4",
+      "footprint": {
+        "boxes": [
+          [
+            -17.75,
+            -8,
+            17.75,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/rozw5",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (28 spaces, parallel/perpendicular, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "rozw5",
+      "footprint": {
+        "boxes": [
+          [
+            -26,
+            -8,
+            26,
+            6
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos0",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (5 spaces, angled)",
+      "workshopId": "3845369007",
+      "modPath": "skos0",
+      "footprint": {
+        "boxes": [
+          [
+            -7.5,
+            -8,
+            9.2,
+            3
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos1",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (10 spaces, angled)",
+      "workshopId": "3845369007",
+      "modPath": "skos1",
+      "footprint": {
+        "boxes": [
+          [
+            -15.4,
+            -8,
+            17.1,
+            3
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos10",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (10 spaces, angled)",
+      "workshopId": "3845369007",
+      "modPath": "skos10",
+      "footprint": {
+        "boxes": [
+          [
+            -9.2,
+            -8,
+            9.2,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos11",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (20 spaces, angled)",
+      "workshopId": "3845369007",
+      "modPath": "skos11",
+      "footprint": {
+        "boxes": [
+          [
+            -17.1,
+            -8,
+            17.1,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos12",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (30 spaces, angled)",
+      "workshopId": "3845369007",
+      "modPath": "skos12",
+      "footprint": {
+        "boxes": [
+          [
+            -25,
+            -8,
+            25,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos13",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (10 spaces, angled, one-way)",
+      "workshopId": "3845369007",
+      "modPath": "skos13",
+      "footprint": {
+        "boxes": [
+          [
+            -7.5,
+            -8,
+            9.2,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos14",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (20 spaces, angled, one-way)",
+      "workshopId": "3845369007",
+      "modPath": "skos14",
+      "footprint": {
+        "boxes": [
+          [
+            -15.4,
+            -8,
+            17.1,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos15",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (30 spaces, angled, one-way)",
+      "workshopId": "3845369007",
+      "modPath": "skos15",
+      "footprint": {
+        "boxes": [
+          [
+            -23.3,
+            -8,
+            25,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos2",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (15 spaces, angled)",
+      "workshopId": "3845369007",
+      "modPath": "skos2",
+      "footprint": {
+        "boxes": [
+          [
+            -23.3,
+            -8,
+            25,
+            3
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos3",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (20 spaces, angled)",
+      "workshopId": "3845369007",
+      "modPath": "skos3",
+      "footprint": {
+        "boxes": [
+          [
+            -31.2,
+            -8,
+            32.9,
+            3
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos4",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (5 spaces, angled, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "skos4",
+      "footprint": {
+        "boxes": [
+          [
+            -7.5,
+            -3,
+            9.2,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos5",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (10 spaces, angled, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "skos5",
+      "footprint": {
+        "boxes": [
+          [
+            -15.4,
+            -3,
+            17.1,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos6",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (15 spaces, angled, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "skos6",
+      "footprint": {
+        "boxes": [
+          [
+            -23.3,
+            -3,
+            25,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skos7",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (20 spaces, angled, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "skos7",
+      "footprint": {
+        "boxes": [
+          [
+            -31.2,
+            -3,
+            32.9,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skzw0",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (11 spaces, angled/perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "skzw0",
+      "footprint": {
+        "boxes": [
+          [
+            -9.2,
+            -8,
+            9.2,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skzw1",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (22 spaces, angled/perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "skzw1",
+      "footprint": {
+        "boxes": [
+          [
+            -17.1,
+            -8,
+            17.1,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skzw2",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (32 spaces, angled/perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "skzw2",
+      "footprint": {
+        "boxes": [
+          [
+            -25,
+            -8,
+            25,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skzw3",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (11 spaces, angled/perpendicular, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "skzw3",
+      "footprint": {
+        "boxes": [
+          [
+            -9.2,
+            -8,
+            9.2,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skzw4",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (22 spaces, angled/perpendicular, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "skzw4",
+      "footprint": {
+        "boxes": [
+          [
+            -17.1,
+            -8,
+            17.1,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/skzw5",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (32 spaces, angled/perpendicular, mirrored)",
+      "workshopId": "3845369007",
+      "modPath": "skzw5",
+      "footprint": {
+        "boxes": [
+          [
+            -25,
+            -8,
+            25,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/spec0",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (16 spaces)",
+      "workshopId": "3845369007",
+      "modPath": "spec0",
+      "footprint": {
+        "boxes": [
+          [
+            -7.8,
+            -8,
+            7.8,
+            16.4
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/spec1",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (26 spaces)",
+      "workshopId": "3845369007",
+      "modPath": "spec1",
+      "footprint": {
+        "boxes": [
+          [
+            -7.8,
+            -8,
+            7.8,
+            30
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/spec2",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (16 spaces)",
+      "workshopId": "3845369007",
+      "modPath": "spec2",
+      "footprint": {
+        "boxes": [
+          [
+            -7.8,
+            -8,
+            7.8,
+            18.4
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/spec3",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (26 spaces)",
+      "workshopId": "3845369007",
+      "modPath": "spec3",
+      "footprint": {
+        "boxes": [
+          [
+            -7.8,
+            -8,
+            7.8,
+            34
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/spec4",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (16 spaces)",
+      "workshopId": "3845369007",
+      "modPath": "spec4",
+      "footprint": {
+        "boxes": [
+          [
+            -7.8,
+            -8,
+            7.8,
+            18.4
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/spec5",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (26 spaces)",
+      "workshopId": "3845369007",
+      "modPath": "spec5",
+      "footprint": {
+        "boxes": [
+          [
+            -7.8,
+            -8,
+            7.8,
+            34
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/zwyk1",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (5 spaces, perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "zwyk1",
+      "footprint": {
+        "boxes": [
+          [
+            -6.5,
+            -8,
+            6.5,
+            3
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/zwyk2",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (10 spaces, perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "zwyk2",
+      "footprint": {
+        "boxes": [
+          [
+            -13,
+            -8,
+            13,
+            3
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/zwyk3",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (15 spaces, perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "zwyk3",
+      "footprint": {
+        "boxes": [
+          [
+            -19.5,
+            -8,
+            19.5,
+            3
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/zwyk4",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (20 spaces, perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "zwyk4",
+      "footprint": {
+        "boxes": [
+          [
+            -26,
+            -8,
+            26,
+            3
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/zwyk5",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (10 spaces, perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "zwyk5",
+      "footprint": {
+        "boxes": [
+          [
+            -6.5,
+            -8,
+            6.5,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/zwyk6",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (20 spaces, perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "zwyk6",
+      "footprint": {
+        "boxes": [
+          [
+            -13,
+            -8,
+            13,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    },
+    {
+      "id": "3845369007/zwyk7",
+      "nameId": null,
+      "types": [
+        "TYPE_PARKING"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Parking (30 spaces, perpendicular)",
+      "workshopId": "3845369007",
+      "modPath": "zwyk7",
+      "footprint": {
+        "boxes": [
+          [
+            -19.5,
+            -8,
+            19.5,
+            8
+          ]
+        ],
+        "height": 0
+      }
+    }
+  ],
+  "vehicles": []
+}
