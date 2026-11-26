@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3845392578",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-26T13:57:43.224Z",
+  "buildings": [
+    {
+      "id": "3845392578/highsect_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "High Retaining Wall (10m)",
+      "workshopId": "3845392578",
+      "modPath": "highsect_1",
+      "footprint": {
+        "boxes": [
+          [
+            -10,
+            -0.01,
+            0,
+            24.99
+          ]
+        ],
+        "height": 9
+      }
+    },
+    {
+      "id": "3845392578/highsect_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "High Retaining Wall (20m)",
+      "workshopId": "3845392578",
+      "modPath": "highsect_2",
+      "footprint": {
+        "boxes": [
+          [
+            -20,
+            0,
+            0,
+            25
+          ]
+        ],
+        "height": 9
+      }
+    },
+    {
+      "id": "3845392578/highsect_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "High Retaining Wall (50m)",
+      "workshopId": "3845392578",
+      "modPath": "highsect_3",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            0,
+            0,
+            25
+          ]
+        ],
+        "height": 9
+      }
+    },
+    {
+      "id": "3845392578/highsect_4",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "High Retaining Wall (Outside Corner)",
+      "workshopId": "3845392578",
+      "modPath": "highsect_4"
+    },
+    {
+      "id": "3845392578/highsect_5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "High Retaining Wall (Inside Corner)",
+      "workshopId": "3845392578",
+      "modPath": "highsect_5"
+    },
+    {
+      "id": "3845392578/lowsect_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Low Retaining Wall (5m)",
+      "workshopId": "3845392578",
+      "modPath": "lowsect_1",
+      "footprint": {
+        "boxes": [
+          [
+            -5,
+            0,
+            0,
+            5
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3845392578/lowsect_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Low Retaining Wall (10m)",
+      "workshopId": "3845392578",
+      "modPath": "lowsect_2",
+      "footprint": {
+        "boxes": [
+          [
+            -10,
+            0,
+            0,
+            5
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3845392578/lowsect_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Low Retaining Wall (50m)",
+      "workshopId": "3845392578",
+      "modPath": "lowsect_3",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            0,
+            0,
+            5
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3845392578/lowsect_4",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Low Retaining Wall (Outside Corner)",
+      "workshopId": "3845392578",
+      "modPath": "lowsect_4"
+    },
+    {
+      "id": "3845392578/lowsect_5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Low Retaining Wall (Inside Corner)",
+      "workshopId": "3845392578",
+      "modPath": "lowsect_5",
+      "footprint": {
+        "boxes": [
+          [
+            -11,
+            0,
+            0,
+            11
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3845392578/lowsect_6",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Low Retaining Wall (5m Stairs)",
+      "workshopId": "3845392578",
+      "modPath": "lowsect_6",
+      "footprint": {
+        "boxes": [
+          [
+            -5,
+            0,
+            0,
+            5
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3845392578/lowsect_7",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Low Retaining Wall (10m Stairs)",
+      "workshopId": "3845392578",
+      "modPath": "lowsect_7",
+      "footprint": {
+        "boxes": [
+          [
+            -10,
+            0,
+            0,
+            5
+          ]
+        ],
+        "height": 3
+      }
+    },
+    {
+      "id": "3845392578/midsect_1",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mid Retaining Wall (5m)",
+      "workshopId": "3845392578",
+      "modPath": "midsect_1",
+      "footprint": {
+        "boxes": [
+          [
+            -5,
+            0,
+            0,
+            10
+          ]
+        ],
+        "height": 4.5
+      }
+    },
+    {
+      "id": "3845392578/midsect_2",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mid Retaining Wall (10m)",
+      "workshopId": "3845392578",
+      "modPath": "midsect_2",
+      "footprint": {
+        "boxes": [
+          [
+            -10,
+            0,
+            0,
+            10
+          ]
+        ],
+        "height": 4.5
+      }
+    },
+    {
+      "id": "3845392578/midsect_3",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mid Retaining Wall (50m)",
+      "workshopId": "3845392578",
+      "modPath": "midsect_3",
+      "footprint": {
+        "boxes": [
+          [
+            -50,
+            0,
+            0,
+            10
+          ]
+        ],
+        "height": 4.5
+      }
+    },
+    {
+      "id": "3845392578/midsect_4",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mid Retaining Wall (Outside Corner)",
+      "workshopId": "3845392578",
+      "modPath": "midsect_4",
+      "footprint": {
+        "boxes": [
+          [
+            5,
+            0,
+            15,
+            10
+          ]
+        ],
+        "height": 4.5
+      }
+    },
+    {
+      "id": "3845392578/midsect_5",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mid Retaining Wall (Inside Corner)",
+      "workshopId": "3845392578",
+      "modPath": "midsect_5",
+      "footprint": {
+        "boxes": [
+          [
+            -11,
+            0,
+            0,
+            11
+          ]
+        ],
+        "height": 4.5
+      }
+    },
+    {
+      "id": "3845392578/midsect_6",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mid Retaining Wall (10m Wall-Mounted Lamp)",
+      "workshopId": "3845392578",
+      "modPath": "midsect_6",
+      "footprint": {
+        "boxes": [
+          [
+            -10,
+            -0.08,
+            0,
+            10
+          ]
+        ],
+        "height": 4.5
+      }
+    },
+    {
+      "id": "3845392578/midsect_7",
+      "nameId": null,
+      "types": [
+        "TYPE_MONUMENT"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Mid Retaining Wall (10m Wall-Mounted Surveillance Camera)",
+      "workshopId": "3845392578",
+      "modPath": "midsect_7",
+      "footprint": {
+        "boxes": [
+          [
+            -10,
+            -0.2,
+            0,
+            10
+          ]
+        ],
+        "height": 4.5
+      }
+    }
+  ],
+  "vehicles": []
+}
