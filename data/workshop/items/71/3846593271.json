@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3846593271",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-27T13:56:32.865Z",
+  "buildings": [
+    {
+      "id": "3846593271/1",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 220,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste_mixed": 1.1
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big waste separation plant - Brick",
+      "workshopId": "3846593271",
+      "modPath": "1",
+      "footprint": {
+        "boxes": [
+          [
+            -24.26,
+            -45.26,
+            83.26,
+            45.26
+          ],
+          [
+            -13.01,
+            -45.26,
+            53.26,
+            45.26
+          ],
+          [
+            -14.08,
+            -45.01,
+            53.13,
+            45.01
+          ],
+          [
+            -24.18,
+            -45,
+            53,
+            45
+          ]
+        ],
+        "height": 24.7
+      }
+    },
+    {
+      "id": "3846593271/2",
+      "nameId": null,
+      "types": [
+        "TYPE_FACTORY"
+      ],
+      "workers": 220,
+      "professors": 0,
+      "production": {},
+      "consumption": {
+        "waste_mixed": 1.2
+      },
+      "consumptionPerSecond": {
+        "eletric": 0.1
+      },
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Big waste separation plant",
+      "workshopId": "3846593271",
+      "modPath": "2",
+      "footprint": {
+        "boxes": [
+          [
+            -24.26,
+            -45.26,
+            83.26,
+            45.26
+          ],
+          [
+            -13.01,
+            -45.26,
+            53.26,
+            45.26
+          ],
+          [
+            -14.08,
+            -45.01,
+            53.13,
+            45
+          ],
+          [
+            -24.18,
+            -45,
+            53,
+            45
+          ]
+        ],
+        "height": 24.7
+      }
+    }
+  ],
+  "vehicles": []
+}
