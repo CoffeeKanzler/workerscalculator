@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3846395412",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-28T13:06:57.272Z",
+  "buildings": [
+    {
+      "id": "3846395412/PioneerUnload",
+      "nameId": null,
+      "types": [
+        "TYPE_STORAGE"
+      ],
+      "workers": 0,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 0,
+      "qualityOfLiving": null,
+      "attractiveScore": null,
+      "storages": {
+        "RESOURCE_TRANSPORT_GRAVEL": 80
+      },
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "Pioneer Bulk Unloading Siding",
+      "workshopId": "3846395412",
+      "modPath": "PioneerUnload"
+    }
+  ],
+  "vehicles": []
+}

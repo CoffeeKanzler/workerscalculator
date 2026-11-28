@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "workshopId": "3846774817",
+  "source": "steamcmd-anonymous",
+  "extractedAt": "2026-11-28T13:06:57.278Z",
+  "buildings": [
+    {
+      "id": "3846774817/dalian_hotel",
+      "nameId": null,
+      "types": [
+        "TYPE_HOTEL"
+      ],
+      "workers": 20,
+      "professors": 0,
+      "production": {},
+      "consumption": {},
+      "consumptionPerSecond": {},
+      "livingSpace": 0,
+      "citizenAbleServe": 10,
+      "qualityOfLiving": null,
+      "attractiveScore": 5,
+      "storages": {},
+      "constructionResources": {},
+      "electricWorkerFactors": {},
+      "nameStr": "DalianHotel",
+      "workshopId": "3846774817",
+      "modPath": "dalian_hotel"
+    }
+  ],
+  "vehicles": []
+}
